@@ -6,3 +6,16 @@ Open Browser And Go To Allspeedy Website
 Open URL
     [Arguments]    ${url}
     Go To    ${url}
+
+Click Xpath By JavaScript
+    [Arguments]    ${path}
+    Wait Until Page Contains Element    xpath=${path}
+    Execute JavaScript    document.evaluate("${path}", document.body, null, 9, null).singleNodeValue.click()
+
+Scroll Window To Vertical
+    [Arguments]    ${value}
+    Execute JavaScript    window.scrollTo(0,${value})
+
+Scroll Window To Horizontal
+    [Arguments]    ${value}
+    Execute JavaScript    window.scrollTo(${value},0)
