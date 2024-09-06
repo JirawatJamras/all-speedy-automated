@@ -1,16 +1,19 @@
 *** Settings ***
-Library                     SeleniumLibrary
-Library                     String
-Library                     Collections
-Library                     OperatingSystem
-Library                     RequestsLibrary
-Library                     DateTime
 Resource                    config/uat/env_config.robot
-Resource                    ../keywords/pages/common/common.robot
-Resource                    ../keywords/pages/landing_page.robot
-Resource                    ../keywords/pages/login_dps/login_dps.robot
-Resource                    ../keywords/pages/login_b2c/login_b2c.robot
-Resource                    locators/landing_page.robot
-Resource                    locators/login_dps/login_dps.robot
+Resource                    ../keywords/pages/common.robot
+Resource                    ../resourses/init.robot
+
+Resource                    ../keywords/pages/dps/dps_landing_page.robot
+Resource                    ../keywords/pages/b2c/b2c_landing_page.robot
+
+Resource                    ../keywords/pages/dps/dps_login.robot
+Resource                    ../keywords/pages/b2c/b2c_login.robot
+
+Resource                    locators/dps/dps_landing_page.robot
+Resource                    locators/b2c/b2c_landing_page.robot
+
+Resource                    locators/dps/dps_login.robot
+Resource                    locators/b2c/b2c_login.robot
 Variables                   testdata/login_user.yaml
+Variables                   testdata/data_message.yaml
 

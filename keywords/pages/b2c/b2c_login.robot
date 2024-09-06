@@ -1,8 +1,8 @@
 *** Keywords ***
 Input Email
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    //input[@title='อีเมล']
-    Input Text                       //input[@title='อีเมล']    ${value}
+    Wait Until Element Is Visible    xpath=//input[@class='ant-input']
+    Input Text                       xpath=//input[@class='ant-input']    ${value}
 
 Input Password
     [Arguments]                      ${value}

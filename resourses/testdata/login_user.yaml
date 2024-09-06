@@ -1,10 +1,14 @@
 dps_login_user_01:
-  username: out-sumitrawic@gosoft.co.th
+  username: out-sumitrawicgosoftcoth
   password: Vasup#123456
 
 dps_login_user_02:
   username: out-sumitrawic@gosoft.co.th
   password: 12323131
+
+dps_login_user_03:
+  username: out-sumitrawic@gosoft.co.th
+  password: Vasup#123456
 
 b2c_login_user_01:
   username: out-sumitrawic@gosoft.co.th

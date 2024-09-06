@@ -1,214 +1,185 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-09-05T14:45:21.458873" rpa="false" schemaversion="5">
-<suite id="s1" name="Allspeedy-Dps-001" source="/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/testcases/login_dps/allspeedy-dps-001.robot">
-<kw name="Open Browser And Go To Allspeedy DPS Website" owner="common" type="SETUP">
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-09-06T10:04:19.087730" rpa="false" schemaversion="5">
+<suite id="s1" name="Allspeedy-Dps-001" source="/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/testcases/dps/allspeedy-dps-001.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Browser And Go To Allspeedy DPS Website" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-06T10:04:19.261546" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x1073eb980&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-06T10:04:19.261308" elapsed="0.000271"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-06T10:04:19.261694" elapsed="0.000099"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-06T10:04:19.262105" elapsed="0.000148"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-06T10:04:19.262377" elapsed="0.000115"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-06T10:04:19.262598" elapsed="0.000080"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-06T10:04:19.262754" elapsed="0.000086"/>
+</kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:21.639436" level="INFO">Opening browser 'Chrome' to base url 'https://dps-uat.allspeedy.co.th/'.</msg>
-<arg>${DPS_UAT_URL}</arg>
+<msg time="2024-09-06T10:04:19.263115" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
 <arg>Chrome</arg>
-<arg>options=add_experimental_option("detach", True)</arg>
+<arg>options=${chrome_options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-05T14:45:21.639241" elapsed="2.637040"/>
+<status status="PASS" start="2024-09-06T10:04:19.262947" elapsed="1.203439"/>
 </kw>
-<kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" start="2024-09-05T14:45:24.277843" elapsed="0.065578"/>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-09-06T10:04:20.467410" elapsed="0.000557"/>
 </kw>
-<status status="PASS" start="2024-09-05T14:45:21.638581" elapsed="2.705277"/>
+<status status="PASS" start="2024-09-06T10:04:19.261101" elapsed="1.207011"/>
 </kw>
-<test id="s1-t1" name="AllSpeedy-DPS-001-ID-1" line="9">
+<kw name="Set Folder Result with date" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-09-06T10:04:20.469911" level="INFO">${date_YYYY_MM_DD} = 2024-09-06 10:04:20.469</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-09-06T10:04:20.469183" elapsed="0.000779"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-09-06T10:04:20.474549" level="INFO">${date_YYYY_MM_DD} = 2024-09-06</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-09-06T10:04:20.470189" elapsed="0.004396"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-06T10:04:20.475638" level="INFO">${FOlDER_RESULT} = ../result/2024-09-06</msg>
+<var>${FOlDER_RESULT}</var>
+<arg>..${/}result${/}${date_YYYY_MM_DD}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-06T10:04:20.474815" elapsed="0.000908"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-09-06T10:04:20.476417" level="INFO">${FOlDER_RESULT} = ../result/2024-09-06</msg>
+<arg>${FOlDER_RESULT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-09-06T10:04:20.475955" elapsed="0.000503"/>
+</kw>
+<status status="PASS" start="2024-09-06T10:04:20.468604" elapsed="0.007924"/>
+</kw>
+<arg>Open Browser And Go To Allspeedy DPS Website</arg>
+<arg>AND</arg>
+<arg>Set Folder Result with date</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-09-06T10:04:19.260772" elapsed="1.215820"/>
+</kw>
+<test id="s1-t1" name="AllSpeedy-DPS-001-ID-1" line="10">
 <kw name="Open URL" owner="common">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:24.348457" level="INFO">Opening url 'https://dps-uat.allspeedy.co.th/'</msg>
+<msg time="2024-09-06T10:04:20.479126" level="INFO">Opening url 'https://dps-uat.allspeedy.co.th/'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-05T14:45:24.348195" elapsed="0.296350"/>
+<status status="PASS" start="2024-09-06T10:04:20.478927" elapsed="0.961055"/>
 </kw>
 <arg>${DPS_UAT_URL}</arg>
-<status status="PASS" start="2024-09-05T14:45:24.347573" elapsed="0.297403"/>
+<status status="PASS" start="2024-09-06T10:04:20.478620" elapsed="0.961581"/>
 </kw>
-<kw name="Click Go Login DPS Button" owner="landing_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_btn_go_login}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:24.647327" elapsed="0.069274"/>
+<kw name="dps.landing_page.Click Go Login Button">
+<msg time="2024-09-06T10:04:21.448114" level="FAIL">No keyword with name 'dps.landing_page.Click Go Login Button' found.</msg>
+<status status="FAIL" start="2024-09-06T10:04:21.447962" elapsed="0.000239">No keyword with name 'dps.landing_page.Click Go Login Button' found.</status>
 </kw>
-<kw name="Click Xpath By JavaScript" owner="common">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=${path}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-05T14:45:24.717195" elapsed="0.028450"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:24.746808" level="INFO">Executing JavaScript:
-document.evaluate("//span[text()='เข้าสู่ระบบ']/../..//button", document.body, null, 9, null).singleNodeValue.click()
-Without any arguments.</msg>
-<arg>document.evaluate("${path}", document.body, null, 9, null).singleNodeValue.click()</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2024-09-05T14:45:24.745961" elapsed="0.419718"/>
-</kw>
-<arg>${dps_btn_go_login}</arg>
-<status status="PASS" start="2024-09-05T14:45:24.716905" elapsed="0.448958"/>
-</kw>
-<status status="PASS" start="2024-09-05T14:45:24.646568" elapsed="0.519378"/>
-</kw>
-<kw name="Input Email" owner="login_dps">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_txtbox_username}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:25.167571" elapsed="0.310443"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:25.478465" level="INFO">Typing text 'out-sumitrawic@gosoft.co.th' into text field '//input[@id='login']'.</msg>
-<arg>${dps_txtbox_username}</arg>
-<arg>${value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-05T14:45:25.478239" elapsed="0.144486"/>
-</kw>
+<kw name="login_dps.Input Email">
 <arg>${dps_login_user_01['username']}</arg>
-<status status="PASS" start="2024-09-05T14:45:25.166545" elapsed="0.456278"/>
+<status status="NOT RUN" start="2024-09-06T10:04:21.462092" elapsed="0.000110"/>
 </kw>
-<kw name="Input Password" owner="login_dps">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_txtbox_password}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:25.623860" elapsed="0.015081"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:25.639305" level="INFO">Typing text 'Vasup#123456' into text field '//input[@id='login']'.</msg>
-<arg>${dps_txtbox_password}</arg>
-<arg>${value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-05T14:45:25.639092" elapsed="0.083180"/>
-</kw>
+<kw name="login_dps.Input Password">
 <arg>${dps_login_user_01['password']}</arg>
-<status status="PASS" start="2024-09-05T14:45:25.623266" elapsed="0.099138"/>
+<status status="NOT RUN" start="2024-09-06T10:04:21.477373" elapsed="0.000117"/>
 </kw>
-<kw name="Click Log On Button" owner="login_dps">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_btn_log_on}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:25.722912" elapsed="0.016621"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:25.739995" level="INFO">Clicking element '//a[@id='loginBtn']'.</msg>
-<arg>${dps_btn_log_on}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-05T14:45:25.739771" elapsed="0.058230"/>
-</kw>
-<status status="PASS" start="2024-09-05T14:45:25.722671" elapsed="0.075451"/>
+<kw name="login_dps.Click Log On Button">
+<status status="NOT RUN" start="2024-09-06T10:04:21.487688" elapsed="0.006184"/>
 </kw>
 <doc>[หน้าล็อกอินเข้าสู่ระบบจัดการงานขนส่งพัสดุAll Speedy] กรอกบัญชีผู้ใช้งานไม่ถูกต้อง</doc>
-<tag>AllSpeedy-DPS-001</tag>
 <tag>AllSpeedy-DPS-001-ID-1</tag>
-<status status="PASS" start="2024-09-05T14:45:24.344083" elapsed="1.455640"/>
+<status status="FAIL" start="2024-09-06T10:04:20.476722" elapsed="1.017669">No keyword with name 'dps.landing_page.Click Go Login Button' found.</status>
 </test>
-<test id="s1-t2" name="AllSpeedy-DPS-001-ID-2" line="19">
+<test id="s1-t2" name="AllSpeedy-DPS-001-ID-2" line="21">
 <kw name="Open URL" owner="common">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:25.805674" level="INFO">Opening url 'https://dps-uat.allspeedy.co.th/'</msg>
+<msg time="2024-09-06T10:04:21.513285" level="INFO">Opening url 'https://dps-uat.allspeedy.co.th/'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-05T14:45:25.804424" elapsed="0.360119"/>
+<status status="PASS" start="2024-09-06T10:04:21.512964" elapsed="0.457558"/>
 </kw>
 <arg>${DPS_UAT_URL}</arg>
-<status status="PASS" start="2024-09-05T14:45:25.803687" elapsed="0.360972"/>
+<status status="PASS" start="2024-09-06T10:04:21.512187" elapsed="0.458491"/>
 </kw>
-<kw name="Click Go Login DPS Button" owner="landing_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_btn_go_login}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:26.165810" elapsed="0.120795"/>
+<kw name="dps.landing_page.Click Go Login Button">
+<msg time="2024-09-06T10:04:21.989054" level="FAIL">No keyword with name 'dps.landing_page.Click Go Login Button' found.</msg>
+<status status="FAIL" start="2024-09-06T10:04:21.988966" elapsed="0.000415">No keyword with name 'dps.landing_page.Click Go Login Button' found.</status>
 </kw>
-<kw name="Click Xpath By JavaScript" owner="common">
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
-<arg>xpath=${path}</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-09-05T14:45:26.287546" elapsed="0.058092"/>
-</kw>
-<kw name="Execute Javascript" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:26.347527" level="INFO">Executing JavaScript:
-document.evaluate("//span[text()='เข้าสู่ระบบ']/../..//button", document.body, null, 9, null).singleNodeValue.click()
-Without any arguments.</msg>
-<arg>document.evaluate("${path}", document.body, null, 9, null).singleNodeValue.click()</arg>
-<doc>Executes the given JavaScript code with possible arguments.</doc>
-<status status="PASS" start="2024-09-05T14:45:26.346432" elapsed="0.391863"/>
-</kw>
-<arg>${dps_btn_go_login}</arg>
-<status status="PASS" start="2024-09-05T14:45:26.286933" elapsed="0.451533"/>
-</kw>
-<status status="PASS" start="2024-09-05T14:45:26.164910" elapsed="0.573629"/>
-</kw>
-<kw name="Input Email" owner="login_dps">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_txtbox_username}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:26.739734" elapsed="0.243630"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:26.984176" level="INFO">Typing text 'out-sumitrawic@gosoft.co.th' into text field '//input[@id='login']'.</msg>
-<arg>${dps_txtbox_username}</arg>
-<arg>${value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-05T14:45:26.983607" elapsed="0.082638"/>
-</kw>
+<kw name="login_dps.Input Email">
 <arg>${dps_login_user_02['username']}</arg>
-<status status="PASS" start="2024-09-05T14:45:26.739030" elapsed="0.327427"/>
+<status status="NOT RUN" start="2024-09-06T10:04:21.992753" elapsed="0.000049"/>
 </kw>
-<kw name="Input Password" owner="login_dps">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_txtbox_password}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:27.068485" elapsed="0.018615"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:27.088100" level="INFO">Typing text '12323131' into text field '//input[@id='login']'.</msg>
-<arg>${dps_txtbox_password}</arg>
-<arg>${value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-05T14:45:27.087491" elapsed="0.097048"/>
-</kw>
+<kw name="login_dps.Input Password">
 <arg>${dps_login_user_02['password']}</arg>
-<status status="PASS" start="2024-09-05T14:45:27.067006" elapsed="0.117681"/>
+<status status="NOT RUN" start="2024-09-06T10:04:22.002004" elapsed="0.000133"/>
 </kw>
-<kw name="Click Log On Button" owner="login_dps">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${dps_btn_log_on}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-05T14:45:27.185487" elapsed="0.017633"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-05T14:45:27.204001" level="INFO">Clicking element '//a[@id='loginBtn']'.</msg>
-<arg>${dps_btn_log_on}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-05T14:45:27.203579" elapsed="0.045560"/>
-</kw>
-<status status="PASS" start="2024-09-05T14:45:27.185094" elapsed="0.064142"/>
+<kw name="login_dps.Click Log On Button">
+<status status="NOT RUN" start="2024-09-06T10:04:22.007694" elapsed="0.000077"/>
 </kw>
 <doc>[หน้าล็อกอินเข้าสู่ระบบจัดการงานขนส่งพัสดุAll Speedy] กรอกรหัสผ่านไม่ถูกต้อง</doc>
-<tag>AllSpeedy-DPS-001</tag>
 <tag>AllSpeedy-DPS-001-ID-2</tag>
-<status status="PASS" start="2024-09-05T14:45:25.800610" elapsed="1.448778"/>
+<status status="FAIL" start="2024-09-06T10:04:21.495436" elapsed="0.512610">No keyword with name 'dps.landing_page.Click Go Login Button' found.</status>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-05T14:45:27.250036" elapsed="0.253716"/>
+<status status="PASS" start="2024-09-06T10:04:22.008833" elapsed="0.275912"/>
 </kw>
-<status status="PASS" start="2024-09-05T14:45:21.459667" elapsed="6.044272"/>
+<status status="FAIL" start="2024-09-06T10:04:19.088553" elapsed="3.196316"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">AllSpeedy-DPS-001</stat>
-<stat pass="1" fail="0" skip="0">AllSpeedy-DPS-001-ID-1</stat>
-<stat pass="1" fail="0" skip="0">AllSpeedy-DPS-001-ID-2</stat>
+<stat pass="0" fail="1" skip="0">AllSpeedy-DPS-001-ID-1</stat>
+<stat pass="0" fail="1" skip="0">AllSpeedy-DPS-001-ID-2</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Allspeedy-Dps-001">Allspeedy-Dps-001</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Allspeedy-Dps-001">Allspeedy-Dps-001</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-09-06T10:04:19.255589" level="ERROR">Error in file '/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/resourses/import.robot' on line 6: Resource file '../keywords/pages/dps/dps.landing_page.robot' does not exist.</msg>
+<msg time="2024-09-06T10:04:19.255723" level="ERROR">Error in file '/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/resourses/import.robot' on line 8: Resource file '../keywords/pages/dps/login_dps.robot' does not exist.</msg>
+<msg time="2024-09-06T10:04:19.255811" level="ERROR">Error in file '/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/resourses/import.robot' on line 9: Resource file '../keywords/pages/b2c/login_b2c.robot' does not exist.</msg>
+<msg time="2024-09-06T10:04:19.257153" level="ERROR">Error in file '/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/resourses/import.robot' on line 12: Resource file 'locators/dps/login_dps.robot' does not exist.</msg>
+<msg time="2024-09-06T10:04:19.257261" level="ERROR">Error in file '/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/resourses/import.robot' on line 13: Resource file 'locators/b2c/login_b2c.robot' does not exist.</msg>
 </errors>
 </robot>
