@@ -1,11 +1,12 @@
-dps_errormessage_01:
-  expected_error_01: บัญชีผู้ใช้งาน หรือรหัสผ่านไม่ถูกต้อง\nกรุณาระบุข้อมูลใหม่
+AllSpeedy_DPS_001_ID_1:
+  expected_error_message: No active policy during authentication
 
-dps_errormessage_02:
-  expected_error_02: บัญชีผู้ใช้งาน หรือรหัสผ่านไม่ถูกต้อง\nกรุณาระบุข้อมูลใหม่
+AllSpeedy_DPS_001_ID_2:
+  expected_error_message: บัญชีผู้ใช้งาน หรือรหัสผ่านไม่ถูกต้อง\nกรุณาระบุข้อมูลใหม่
 
-b2c_errormessage_01:
-  expected_error_01: กรุณาระบุอีเมล์ให้ถูกต้อง
+
+AllSpeedy_B2C_001_ID_1:
+  expected_error_message: Email หรือ รหัสผ่านผิดพลาด
 
 
 menu_items:
@@ -13,6 +14,6 @@ menu_items:
 
 
 # menu_items:
-#   - ระบบบริหารจัดการการส่งพัสดุ
-#   - ระบบบริการลูกค้า All Speedy
-#   - ระบบจัดการงานขนส่งพัสดุ
+#   _ ระบบบริหารจัดการการส่งพัสดุ
+#   _ ระบบบริการลูกค้า All Speedy
+#   _ ระบบจัดการงานขนส่งพัสดุ

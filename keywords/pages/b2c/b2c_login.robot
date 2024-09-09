@@ -1,8 +1,8 @@
 *** Keywords ***
 Input Email
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    xpath=//input[@class='ant-input']
-    Input Text                       xpath=//input[@class='ant-input']    ${value}
+    Wait Until Element Is Visible    ${b2c_txtbox_email}
+    Input Text                       ${b2c_txtbox_email}    ${value}
 
 Input Password
     [Arguments]                      ${value}

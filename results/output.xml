@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-09-09T16:40:27.795671" rpa="false" schemaversion="5">
+<suite id="s1" name="Allspeedy B2C 001" source="/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/testcases/b2c/allspeedy_b2c_001.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Browser And Go To Allspeedy B2C Website" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-09T16:40:28.072177" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x12373d340&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-09T16:40:28.071962" elapsed="0.000242"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-09T16:40:28.072317" elapsed="0.000090"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-09T16:40:28.072496" elapsed="0.000073"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-09T16:40:28.072651" elapsed="0.000071"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-09T16:40:28.072795" elapsed="0.000082"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:28.073220" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-09T16:40:28.072986" elapsed="2.435835"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-09-09T16:40:30.509295" elapsed="0.000414"/>
+</kw>
+<status status="PASS" start="2024-09-09T16:40:28.071790" elapsed="2.438033"/>
+</kw>
+<kw name="Set Folder Result with date" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-09-09T16:40:30.510610" level="INFO">${date_YYYY_MM_DD} = 2024-09-09 16:40:30.510</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-09-09T16:40:30.510417" elapsed="0.000221"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-09-09T16:40:30.513224" level="INFO">${date_YYYY_MM_DD} = 2024-09-09</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-09-09T16:40:30.510755" elapsed="0.002494"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-09T16:40:30.513749" level="INFO">${FOlDER_RESULT} = ../results/2024-09-09</msg>
+<var>${FOlDER_RESULT}</var>
+<arg>../results/${date_YYYY_MM_DD}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-09T16:40:30.513402" elapsed="0.000367"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-09-09T16:40:30.514020" level="INFO">${FOlDER_RESULT} = ../results/2024-09-09</msg>
+<arg>${FOlDER_RESULT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-09-09T16:40:30.513876" elapsed="0.000170"/>
+</kw>
+<status status="PASS" start="2024-09-09T16:40:30.510160" elapsed="0.003933"/>
+</kw>
+<arg>Open Browser And Go To Allspeedy B2C Website</arg>
+<arg>AND</arg>
+<arg>Set Folder Result with date</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-09-09T16:40:28.071512" elapsed="2.442618"/>
+</kw>
+<test id="s1-t1" name="AllSpeedy_B2C_001_ID_1" line="9">
+<kw name="Open URL" owner="common">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:30.516868" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-09T16:40:30.516770" elapsed="1.391023"/>
+</kw>
+<arg>${B2C_UAT_URL}</arg>
+<status status="PASS" start="2024-09-09T16:40:30.516013" elapsed="1.410666"/>
+</kw>
+<kw name="Click Go Login Button" owner="b2c_landing_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_btn_business}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T16:40:31.932380" elapsed="0.494855"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:32.427957" level="INFO">Clicking element '//div[@id='rc-tabs-2-tab-business']'.</msg>
+<arg>${b2c_btn_business}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T16:40:32.427631" elapsed="0.672736"/>
+</kw>
+<status status="PASS" start="2024-09-09T16:40:31.930123" elapsed="1.170654"/>
+</kw>
+<kw name="Input Email" owner="b2c_login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_txtbox_email}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T16:40:33.103154" elapsed="0.456390"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:33.560574" level="INFO">Typing text 'out-sumitrawic@gosoft.co.th' into text field '//input[@id='emailBusiness']'.</msg>
+<arg>${b2c_txtbox_email}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T16:40:33.560145" elapsed="0.903435"/>
+</kw>
+<arg>${b2c_login_user_01['username']}</arg>
+<status status="PASS" start="2024-09-09T16:40:33.101650" elapsed="1.365461"/>
+</kw>
+<kw name="Input Password" owner="b2c_login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_txtbox_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T16:40:34.472136" elapsed="0.630670"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:35.106310" level="INFO">Typing text '22222222' into text field '//input[@id='passwordBusiness']'.</msg>
+<arg>${b2ctxtbox_password}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T16:40:35.104904" elapsed="0.792250"/>
+</kw>
+<arg>${b2c_login_user_01['password']}</arg>
+<status status="PASS" start="2024-09-09T16:40:34.469475" elapsed="1.429063"/>
+</kw>
+<kw name="Click Log On Button" owner="b2c_login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_btn_log_on}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T16:40:35.901111" elapsed="0.471052"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:36.372755" level="INFO">Clicking element '//*[@id="rc-tabs-2-panel-business"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b'.</msg>
+<arg>${b2c_btn_log_on}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-09T16:40:36.372494" elapsed="0.453159"/>
+</kw>
+<status status="PASS" start="2024-09-09T16:40:35.900036" elapsed="0.925723"/>
+</kw>
+<kw name="Verify Error Message" owner="dps_login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_error_message}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-09T16:40:36.827011" elapsed="0.861923"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:38.148616" level="INFO">Element '//div//span[text()='Email หรือ รหัสผ่านผิดพลาด']' contains text 'Email หรือ รหัสผ่านผิดพลาด'.</msg>
+<arg>${b2c_error_message}</arg>
+<arg>${expected_error}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-09-09T16:40:37.689471" elapsed="0.459405"/>
+</kw>
+<arg>${AllSpeedy_B2C_001_ID_1['expected_error_message']}</arg>
+<status status="PASS" start="2024-09-09T16:40:36.826118" elapsed="1.323133"/>
+</kw>
+<kw name="Verify Capture Screenshot" owner="dps_login">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-09-09T16:40:38.151287" level="INFO">${date_YYYY_MM_DD} = 2024-09-09 16:40:38.151</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-09-09T16:40:38.150705" elapsed="0.000614"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-09-09T16:40:38.152021" level="INFO">${date_YYYY_MM_DD} = 2024-09-09</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-09-09T16:40:38.151490" elapsed="0.000635"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-09T16:40:39.397233" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2024-09-09/AllSpeedy_B2C_001_ID_1/Login%20to%20the%20business%20customer%20system.%20Enter%20incorrect%20email.png"&gt;&lt;img src="2024-09-09/AllSpeedy_B2C_001_ID_1/Login%20to%20the%20business%20customer%20system.%20Enter%20incorrect%20email.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-09T16:40:38.152386" elapsed="1.245043"/>
+</kw>
+<arg>AllSpeedy_B2C_001_ID_1</arg>
+<arg>Login to the business customer system. Enter incorrect email</arg>
+<status status="PASS" start="2024-09-09T16:40:38.150124" elapsed="1.247805"/>
+</kw>
+<doc>[Login เข้าสู่ระบบ] Loginเข้าระบบประเภทลูกค้าธุรกิจ กรอกEmailไม่ถูกต้อง</doc>
+<tag>AllSpeedy_B2C_001_ID_1</tag>
+<status status="PASS" start="2024-09-09T16:40:30.514543" elapsed="8.883995"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-09T16:40:39.400123" elapsed="0.312230"/>
+</kw>
+<status status="PASS" start="2024-09-09T16:40:27.797036" elapsed="11.915566"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">AllSpeedy_B2C_001_ID_1</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Allspeedy B2C 001">Allspeedy B2C 001</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

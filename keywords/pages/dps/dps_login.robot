@@ -16,8 +16,8 @@ Click Log On Button
 
 Verify Error Message
     [Arguments]    ${expected_error}
-    Wait Until Element Is Visible    ${dps_error_message}    timeout=10s
-    Element Should Contain    ${dps_error_message}    ${expected_error}
+    Wait Until Element Is Visible    ${b2c_error_message}    timeout=10s
+    Element Should Contain    ${b2c_error_message}    ${expected_error}
 
 Verify Menu Displayed
     [Arguments]    ${menu_item}
@@ -25,7 +25,7 @@ Verify Menu Displayed
     Element Should Be Visible    ${dps_txthome}    ${menu_item}
  
 Verify Capture Screenshot
-    [Arguments]     ${name_cap}
+    [Arguments]     ${folder}    ${img_name}
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    Capture Page Screenshot     ../result/${FOlDER_RESULT}/${name_cap}_${date_YYYY_MM_DD}.png
+    Capture Page Screenshot     ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
