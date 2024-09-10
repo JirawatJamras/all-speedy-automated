@@ -15,5 +15,5 @@ AllSpeedy_B2C_001_ID_1
     b2c_login.Input Password                 ${b2c_login_user_01['password']}
     b2c_login.Click Log On Button
     Verify Error Message     ${AllSpeedy_B2C_001_ID_1['expected_error_message']}
-    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_1    Login to the business customer system. Enter incorrect email
+   common.Verify Capture Screenshot    AllSpeedy_B2C_001_ID_1    Login to the business customer system. Enter incorrect email
 

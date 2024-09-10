@@ -63,6 +63,10 @@ Set Folder Result with date
     ${FOlDER_RESULT}=    Set Variable    ../results/${date_YYYY_MM_DD}
     Set Global Variable    ${FOlDER_RESULT}
 
-
+Verify Capture Screenshot
+    [Arguments]     ${folder}    ${img_name}
+    ${date_YYYY_MM_DD}   Get Current Date
+    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
+    Capture Page Screenshot     ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
 
 

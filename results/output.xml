@@ -1,227 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-09-09T16:40:27.795671" rpa="false" schemaversion="5">
-<suite id="s1" name="Allspeedy B2C 001" source="/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/testcases/b2c/allspeedy_b2c_001.robot">
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-09-10T16:44:15.019914" rpa="false" schemaversion="5">
+<suite id="s1" name="Functionallspeedy Register 007" source="/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/testcases/register/functionallspeedy_register_007.robot">
 <kw name="Run Keywords" owner="BuiltIn" type="SETUP">
 <kw name="Open Browser And Go To Allspeedy B2C Website" owner="common">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-09-09T16:40:28.072177" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x12373d340&gt;</msg>
+<msg time="2024-09-10T16:44:15.204248" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x11063e300&gt;</msg>
 <var>${chrome_options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-09-09T16:40:28.071962" elapsed="0.000242"/>
+<status status="PASS" start="2024-09-10T16:44:15.204042" elapsed="0.000225"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-extensions</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-09-09T16:40:28.072317" elapsed="0.000090"/>
+<status status="PASS" start="2024-09-10T16:44:15.204343" elapsed="0.000060"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-gpu</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-09-09T16:40:28.072496" elapsed="0.000073"/>
+<status status="PASS" start="2024-09-10T16:44:15.204464" elapsed="0.000049"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-09-09T16:40:28.072651" elapsed="0.000071"/>
+<status status="PASS" start="2024-09-10T16:44:15.204565" elapsed="0.000042"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--window-size\=1920,1080</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-09-09T16:40:28.072795" elapsed="0.000082"/>
+<status status="PASS" start="2024-09-10T16:44:15.204654" elapsed="0.000055"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:28.073220" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<msg time="2024-09-10T16:44:15.204895" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
 <arg>about:blank</arg>
 <arg>Chrome</arg>
 <arg>options=${chrome_options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-09T16:40:28.072986" elapsed="2.435835"/>
+<status status="PASS" start="2024-09-10T16:44:15.204785" elapsed="1.878971"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.2</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-09-09T16:40:30.509295" elapsed="0.000414"/>
+<status status="PASS" start="2024-09-10T16:44:17.084386" elapsed="0.000434"/>
 </kw>
-<status status="PASS" start="2024-09-09T16:40:28.071790" elapsed="2.438033"/>
+<status status="PASS" start="2024-09-10T16:44:15.203929" elapsed="1.880997"/>
 </kw>
 <kw name="Set Folder Result with date" owner="common">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2024-09-09T16:40:30.510610" level="INFO">${date_YYYY_MM_DD} = 2024-09-09 16:40:30.510</msg>
+<msg time="2024-09-10T16:44:17.085899" level="INFO">${date_YYYY_MM_DD} = 2024-09-10 16:44:17.086</msg>
 <var>${date_YYYY_MM_DD}</var>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-09-09T16:40:30.510417" elapsed="0.000221"/>
+<status status="PASS" start="2024-09-10T16:44:17.085570" elapsed="0.000352"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2024-09-09T16:40:30.513224" level="INFO">${date_YYYY_MM_DD} = 2024-09-09</msg>
+<msg time="2024-09-10T16:44:17.090575" level="INFO">${date_YYYY_MM_DD} = 2024-09-10</msg>
 <var>${date_YYYY_MM_DD}</var>
 <arg>${date_YYYY_MM_DD}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-09-09T16:40:30.510755" elapsed="0.002494"/>
+<status status="PASS" start="2024-09-10T16:44:17.086022" elapsed="0.004582"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-09T16:40:30.513749" level="INFO">${FOlDER_RESULT} = ../results/2024-09-09</msg>
+<msg time="2024-09-10T16:44:17.090849" level="INFO">${FOlDER_RESULT} = ../results/2024-09-10</msg>
 <var>${FOlDER_RESULT}</var>
 <arg>../results/${date_YYYY_MM_DD}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-09T16:40:30.513402" elapsed="0.000367"/>
+<status status="PASS" start="2024-09-10T16:44:17.090731" elapsed="0.000130"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-09-09T16:40:30.514020" level="INFO">${FOlDER_RESULT} = ../results/2024-09-09</msg>
+<msg time="2024-09-10T16:44:17.091096" level="INFO">${FOlDER_RESULT} = ../results/2024-09-10</msg>
 <arg>${FOlDER_RESULT}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-09-09T16:40:30.513876" elapsed="0.000170"/>
+<status status="PASS" start="2024-09-10T16:44:17.090950" elapsed="0.000172"/>
 </kw>
-<status status="PASS" start="2024-09-09T16:40:30.510160" elapsed="0.003933"/>
+<status status="PASS" start="2024-09-10T16:44:17.085315" elapsed="0.005853"/>
 </kw>
 <arg>Open Browser And Go To Allspeedy B2C Website</arg>
 <arg>AND</arg>
 <arg>Set Folder Result with date</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-09T16:40:28.071512" elapsed="2.442618"/>
+<status status="PASS" start="2024-09-10T16:44:15.203732" elapsed="1.887528"/>
 </kw>
-<test id="s1-t1" name="AllSpeedy_B2C_001_ID_1" line="9">
+<test id="s1-t1" name="FunctionAllSpeedy_Register_007" line="9">
 <kw name="Open URL" owner="common">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:30.516868" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
+<msg time="2024-09-10T16:44:17.092923" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-09T16:40:30.516770" elapsed="1.391023"/>
+<status status="PASS" start="2024-09-10T16:44:17.092751" elapsed="1.711809"/>
 </kw>
 <arg>${B2C_UAT_URL}</arg>
-<status status="PASS" start="2024-09-09T16:40:30.516013" elapsed="1.410666"/>
+<status status="PASS" start="2024-09-10T16:44:17.092602" elapsed="1.712058"/>
 </kw>
-<kw name="Click Go Login Button" owner="b2c_landing_page">
+<kw name="Click Go business Tab" owner="register_landing_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${b2c_btn_business}</arg>
+<arg>${register_btn_business_tab}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-09T16:40:31.932380" elapsed="0.494855"/>
+<status status="PASS" start="2024-09-10T16:44:18.805169" elapsed="0.427941"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:32.427957" level="INFO">Clicking element '//div[@id='rc-tabs-2-tab-business']'.</msg>
-<arg>${b2c_btn_business}</arg>
+<msg time="2024-09-10T16:44:19.233470" level="INFO">Clicking element '//div[@id='rc-tabs-2-tab-business']'.</msg>
+<arg>${register_btn_business_tab}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-09T16:40:32.427631" elapsed="0.672736"/>
+<status status="PASS" start="2024-09-10T16:44:19.233296" elapsed="0.446526"/>
 </kw>
-<status status="PASS" start="2024-09-09T16:40:31.930123" elapsed="1.170654"/>
+<status status="PASS" start="2024-09-10T16:44:18.804902" elapsed="0.875005"/>
 </kw>
-<kw name="Input Email" owner="b2c_login">
+<kw name="Click Register On Button" owner="register">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${b2c_txtbox_email}</arg>
+<arg>${register_btn_business}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-09T16:40:33.103154" elapsed="0.456390"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:33.560574" level="INFO">Typing text 'out-sumitrawic@gosoft.co.th' into text field '//input[@id='emailBusiness']'.</msg>
-<arg>${b2c_txtbox_email}</arg>
-<arg>${value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-09T16:40:33.560145" elapsed="0.903435"/>
-</kw>
-<arg>${b2c_login_user_01['username']}</arg>
-<status status="PASS" start="2024-09-09T16:40:33.101650" elapsed="1.365461"/>
-</kw>
-<kw name="Input Password" owner="b2c_login">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${b2c_txtbox_password}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-09T16:40:34.472136" elapsed="0.630670"/>
-</kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:35.106310" level="INFO">Typing text '22222222' into text field '//input[@id='passwordBusiness']'.</msg>
-<arg>${b2ctxtbox_password}</arg>
-<arg>${value}</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-09T16:40:35.104904" elapsed="0.792250"/>
-</kw>
-<arg>${b2c_login_user_01['password']}</arg>
-<status status="PASS" start="2024-09-09T16:40:34.469475" elapsed="1.429063"/>
-</kw>
-<kw name="Click Log On Button" owner="b2c_login">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${b2c_btn_log_on}</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-09T16:40:35.901111" elapsed="0.471052"/>
+<status status="PASS" start="2024-09-10T16:44:19.680313" elapsed="0.419274"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:36.372755" level="INFO">Clicking element '//*[@id="rc-tabs-2-panel-business"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b'.</msg>
-<arg>${b2c_btn_log_on}</arg>
+<msg time="2024-09-10T16:44:20.099904" level="INFO">Clicking element '//a[@href='/business-register']//u[text()="ลงทะเบียนลูกค้าธุรกิจ"]'.</msg>
+<arg>${register_btn_business}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-09T16:40:36.372494" elapsed="0.453159"/>
+<status status="PASS" start="2024-09-10T16:44:20.099740" elapsed="0.432830"/>
 </kw>
-<status status="PASS" start="2024-09-09T16:40:35.900036" elapsed="0.925723"/>
+<status status="PASS" start="2024-09-10T16:44:19.680118" elapsed="0.852577"/>
 </kw>
-<kw name="Verify Error Message" owner="dps_login">
+<kw name="Verify PartnerType LegalEntity" owner="register">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${b2c_error_message}</arg>
+<arg>${partnertype_txt}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-09T16:40:36.827011" elapsed="0.861923"/>
+<status status="PASS" start="2024-09-10T16:44:20.533520" elapsed="0.419467"/>
 </kw>
-<kw name="Element Should Contain" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:38.148616" level="INFO">Element '//div//span[text()='Email หรือ รหัสผ่านผิดพลาด']' contains text 'Email หรือ รหัสผ่านผิดพลาด'.</msg>
-<arg>${b2c_error_message}</arg>
-<arg>${expected_error}</arg>
-<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
-<status status="PASS" start="2024-09-09T16:40:37.689471" elapsed="0.459405"/>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-10T16:44:21.372622" level="INFO">Element '//h5[text()="ประเภทคู่ค้า"]' is displayed.</msg>
+<arg>${partnertype_txt}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-10T16:44:20.953218" elapsed="0.419481"/>
 </kw>
-<arg>${AllSpeedy_B2C_001_ID_1['expected_error_message']}</arg>
-<status status="PASS" start="2024-09-09T16:40:36.826118" elapsed="1.323133"/>
+<kw name="Check Checkbox State" owner="register">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-09-10T16:44:21.795708" level="INFO">${checked} = None</msg>
+<var>${checked}</var>
+<arg>${checkbox_locator}</arg>
+<arg>checked</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-09-10T16:44:21.373055" elapsed="0.422682"/>
 </kw>
-<kw name="Verify Capture Screenshot" owner="dps_login">
+<return>
+<value>${checked} == 'true'</value>
+<status status="PASS" start="2024-09-10T16:44:21.795857" elapsed="0.000107"/>
+</return>
+<status status="PASS" start="2024-09-10T16:44:21.372878" elapsed="0.423183"/>
+</kw>
+<arg>${Menu_Checkbox_Partnertype['expected_txtbox'],['LegalEntitytxt']}</arg>
+<status status="PASS" start="2024-09-10T16:44:20.532926" elapsed="1.263166"/>
+</kw>
+<kw name="Verify Company Name Text Box" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${companyname_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-10T16:44:21.797273" elapsed="0.416998"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-10T16:44:22.632814" level="INFO">Element '//input[@placeholder='ชื่อบริษัท']' is displayed.</msg>
+<arg>${companyname_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-10T16:44:22.214475" elapsed="0.418447"/>
+</kw>
+<arg>${CompanyName_TextBox['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-10T16:44:21.796403" elapsed="0.836595"/>
+</kw>
+<kw name="Verify Capture Screenshot" owner="common">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2024-09-09T16:40:38.151287" level="INFO">${date_YYYY_MM_DD} = 2024-09-09 16:40:38.151</msg>
+<msg time="2024-09-10T16:44:22.633747" level="INFO">${date_YYYY_MM_DD} = 2024-09-10 16:44:22.634</msg>
 <var>${date_YYYY_MM_DD}</var>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-09-09T16:40:38.150705" elapsed="0.000614"/>
+<status status="PASS" start="2024-09-10T16:44:22.633582" elapsed="0.000179"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2024-09-09T16:40:38.152021" level="INFO">${date_YYYY_MM_DD} = 2024-09-09</msg>
+<msg time="2024-09-10T16:44:22.633995" level="INFO">${date_YYYY_MM_DD} = 2024-09-10</msg>
 <var>${date_YYYY_MM_DD}</var>
 <arg>${date_YYYY_MM_DD}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-09-09T16:40:38.151490" elapsed="0.000635"/>
+<status status="PASS" start="2024-09-10T16:44:22.633830" elapsed="0.000176"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-09T16:40:39.397233" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2024-09-09/AllSpeedy_B2C_001_ID_1/Login%20to%20the%20business%20customer%20system.%20Enter%20incorrect%20email.png"&gt;&lt;img src="2024-09-09/AllSpeedy_B2C_001_ID_1/Login%20to%20the%20business%20customer%20system.%20Enter%20incorrect%20email.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-10T16:44:23.054875" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2024-09-10/FunctionAllSpeedy_Register_007/Enter%20the%20correct%20URL.png"&gt;&lt;img src="2024-09-10/FunctionAllSpeedy_Register_007/Enter%20the%20correct%20URL.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-09T16:40:38.152386" elapsed="1.245043"/>
+<status status="PASS" start="2024-09-10T16:44:22.634111" elapsed="0.420829"/>
 </kw>
-<arg>AllSpeedy_B2C_001_ID_1</arg>
-<arg>Login to the business customer system. Enter incorrect email</arg>
-<status status="PASS" start="2024-09-09T16:40:38.150124" elapsed="1.247805"/>
+<arg>FunctionAllSpeedy_Register_007</arg>
+<arg>Enter the correct URL</arg>
+<status status="PASS" start="2024-09-10T16:44:22.633340" elapsed="0.421659"/>
 </kw>
-<doc>[Login เข้าสู่ระบบ] Loginเข้าระบบประเภทลูกค้าธุรกิจ กรอกEmailไม่ถูกต้อง</doc>
-<tag>AllSpeedy_B2C_001_ID_1</tag>
-<status status="PASS" start="2024-09-09T16:40:30.514543" elapsed="8.883995"/>
+<doc>[ขั้นตอนการเข้าใช้งานระบบ All Speed-D เพื่อลงทะเบียน สำหรับลูกค้าธุรกิจ] กรอก URL ถูกต้อง</doc>
+<tag>FunctionAllSpeedy_Register_007</tag>
+<status status="PASS" start="2024-09-10T16:44:17.091721" elapsed="5.963391"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-09T16:40:39.400123" elapsed="0.312230"/>
+<status status="PASS" start="2024-09-10T16:44:23.055676" elapsed="0.264578"/>
 </kw>
-<status status="PASS" start="2024-09-09T16:40:27.797036" elapsed="11.915566"/>
+<status status="PASS" start="2024-09-10T16:44:15.020445" elapsed="8.299861"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">AllSpeedy_B2C_001_ID_1</stat>
+<stat pass="1" fail="0" skip="0">FunctionAllSpeedy_Register_007</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Allspeedy B2C 001">Allspeedy B2C 001</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Functionallspeedy Register 007">Functionallspeedy Register 007</stat>
 </suite>
 </statistics>
 <errors>

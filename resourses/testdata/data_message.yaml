@@ -8,9 +8,17 @@ AllSpeedy_DPS_001_ID_2:
 AllSpeedy_B2C_001_ID_1:
   expected_error_message: Email หรือ รหัสผ่านผิดพลาด
 
+Menu_Checkbox_Partnertype:
+  expected_txtbox: ประเภทคู่ค้า
+  LegalEntitytxt: นิติบุคล
 
-menu_items:
-  txtmenu: หน้าหลัก
+CompanyName_TextBox:
+  expected_txtbox: ชื่อบริษัท
+
+TaxIdentification_TextBox:
+  expected_txtbox: เลขประจำตัวผู้เสียภาษี
+
+
 
 
 # menu_items:

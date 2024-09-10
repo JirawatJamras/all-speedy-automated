@@ -15,5 +15,5 @@ AllSpeedy_C2C_001_ID_1
     c2c_login.Input Password                 ${c2c_login_user_01['password']}
     c2c_login.Click Log On Button
     Verify Error Message     ${AllSpeedy_C2C_001_ID_1['expected_error_message']}
-    Verify Capture Screenshot    AllSpeedy_C2C_001_ID_1    Username entered incorrectly
+    common.Verify Capture Screenshot    AllSpeedy_C2C_001_ID_1    Username entered incorrectly
 

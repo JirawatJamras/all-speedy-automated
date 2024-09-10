@@ -24,8 +24,3 @@ Verify Menu Displayed
     Wait Until Element Is Visible    ${dps_txthome}    timeout=10s
     Element Should Be Visible    ${dps_txthome}    ${menu_item}
  
-Verify Capture Screenshot
-    [Arguments]     ${folder}    ${img_name}
-    ${date_YYYY_MM_DD}   Get Current Date
-    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    Capture Page Screenshot     ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
