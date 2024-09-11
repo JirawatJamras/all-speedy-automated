@@ -12,13 +12,35 @@ Menu_Checkbox_Partnertype:
   expected_txtbox: ประเภทคู่ค้า
   LegalEntitytxt: นิติบุคล
 
-CompanyName_TextBox:
+CompanyName:
   expected_txtbox: ชื่อบริษัท
 
-TaxIdentification_TextBox:
+TaxIdentification:
   expected_txtbox: เลขประจำตัวผู้เสียภาษี
 
+Address_addressInfo:
+  expected_txtbox: เลขที่,อาคาร,ชั้น,ซอย,ถนน
 
+Sub_districtDistrict:
+  expected_txtbox: ระบุไปรษณีย์
+
+Prefix_name:
+  expected_txtbox: เลือก..
+
+FirstName:
+  expected_txtbox: ชื่อ
+
+LastName:
+  expected_txtbox: นามสกุล
+
+Email:
+  expected_txtbox: E-mail
+
+MobileNo:
+  expected_txtbox: เบอร์โทรศัพท์
+
+MobileExt:
+  expected_txtbox: เบอร์ต่อ
 
 
 # menu_items:

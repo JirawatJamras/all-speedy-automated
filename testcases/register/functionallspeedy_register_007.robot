@@ -12,8 +12,6 @@ FunctionAllSpeedy_Register_007
     common.Open URL                           ${B2C_UAT_URL}
     register_landing_page.Click Go business Tab
     register.Click Register On Button
-    Verify PartnerType LegalEntity    ${Menu_Checkbox_Partnertype['expected_txtbox'],['LegalEntitytxt']}
-    Verify Company Name Text Box    ${CompanyName_TextBox['expected_txtbox']}
-    Verify Tax Identification Number Text Box    ${TaxIdentification_TextBox['expected_txtbox']}
+    Verify All Page Register
     common.Verify Capture Screenshot    FunctionAllSpeedy_Register_007    Enter the correct URL
 
