@@ -11,7 +11,7 @@ FunctionAllSpeedy_Register_007
     [Tags]                                    FunctionAllSpeedy_Register_007
     common.Open URL                           ${B2C_UAT_URL}
     register_landing_page.Click Go business Tab
+    Verify All Page login
     register.Click Register On Button
     Verify All Page Register
     common.Verify Capture Screenshot    FunctionAllSpeedy_Register_007    Enter the correct URL
-
