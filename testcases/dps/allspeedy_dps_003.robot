@@ -36,8 +36,8 @@ AllSpeedy-DPS-003-ID-9
     dps_login_page.Input Email    ${dps_login_user_03['username']}
     dps_login_page.Input Password    ${dps_login_user_03['password']}
     dps_login_page.Click Log On Button
-    # Click เมนูระบบจัดการงานขนส่งพัสดุ    #### หลังจากล็อคอินสำเร็จระบบ By Pass มาที่ระบบ DPS เลย จะไม่เจอหน้า Portal
-    dps_common.Select DPS Menu    ${dps_menu['Home_Page']}    ####หลังจากล็ิอคอินสำเร็จ ระบบ Navigate มาที่เมนู Scan จึงต้องบังคับมาเมนู Home Page ตาม Requirement
+    # Click เมนูระบบจัดการงานขนส่งพัสดุ    #### หลังจากล็อคอินสำเร็จระบบ By Pass มาที่ระบบ DPS เลย จะไม่เจอหน้า Portal ให้คลิกสเตปนี้ได้
+    dps_common.Select DPS Menu    ${dps_menu['Home_Page']}    ####เพิ่มสเตปนี้ขึ้นมาเพราะ หลังจากล็ิอคอินสำเร็จ ระบบ Navigate มาที่เมนู Scan จึงต้องบังคับมาเมนู Home Page ตาม Requirement
     dps_home_page.Verify Current Date
     common.Verify Capture Screenshot    AllSpeedy-DPS-003-ID-9    Verify Current Date
     dps_home_page.Verify Parcels Into The Warehouse
