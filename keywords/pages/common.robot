@@ -1,34 +1,33 @@
 *** Keywords ***
-Open Browser And Go To Allspeedy DPS Website   
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
-    Open Browser    about:blank    Chrome    options=${chrome_options}
-    SeleniumLibrary.Set Selenium Speed    0.2
+# Open Browser And Go To Allspeedy DPS Website   
+#     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+#     Call Method    ${chrome_options}    add_argument    --disable-extensions
+#     Call Method    ${chrome_options}    add_argument    --headless
+#     Call Method    ${chrome_options}    add_argument    --disable-gpu
+#     Call Method    ${chrome_options}    add_argument    --no-sandbox
+#     Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
+#     Open Browser    about:blank    Chrome    options=${chrome_options}
+#     SeleniumLibrary.Set Selenium Speed    0.2
 
-Open Browser And Go To Allspeedy B2C Website   
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
-    Open Browser    about:blank    Chrome    options=${chrome_options}
-    SeleniumLibrary.Set Selenium Speed    0.2
+# Open Browser And Go To Allspeedy B2C Website   
+#     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+#     Call Method    ${chrome_options}    add_argument    --disable-extensions
+#     Call Method    ${chrome_options}    add_argument    --headless
+#     Call Method    ${chrome_options}    add_argument    --disable-gpu
+#     Call Method    ${chrome_options}    add_argument    --no-sandbox
+#     Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
+#     Open Browser    about:blank    Chrome    options=${chrome_options}
+#     SeleniumLibrary.Set Selenium Speed    0.2
 
-Open Browser And Go To Allspeedy C2C Website   
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    Call Method    ${chrome_options}    add_argument    --disable-extensions
-    Call Method    ${chrome_options}    add_argument    --headless
-    Call Method    ${chrome_options}    add_argument    --disable-gpu
-    Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
-    Open Browser    about:blank    Chrome    options=${chrome_options}
-    SeleniumLibrary.Set Selenium Speed    0.2
-
+# Open Browser And Go To Allspeedy C2C Website   
+#     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+#     Call Method    ${chrome_options}    add_argument    --disable-extensions
+#     Call Method    ${chrome_options}    add_argument    --headless
+#     Call Method    ${chrome_options}    add_argument    --disable-gpu
+#     Call Method    ${chrome_options}    add_argument    --no-sandbox
+#     Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
+#     Open Browser    about:blank    Chrome    options=${chrome_options}
+#     SeleniumLibrary.Set Selenium Speed    0.2
 
 # Open Browser And Go To Allspeedy DPS Website
 #     Open Browser               ${DPS_UAT_URL}    Chrome    options=add_experimental_option("detach", True)
@@ -38,6 +37,15 @@ Open Browser And Go To Allspeedy C2C Website
 #     Open Browser               ${B2C_UAT_URL}    Chrome    options=add_experimental_option("detach", True)
 #     Maximize Browser Window
 
+Open Chrome Browser
+    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    --disable-extensions
+    Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --disable-gpu
+    Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
+    Open Browser    about:blank    Chrome    options=${chrome_options}
+    SeleniumLibrary.Set Selenium Speed    0.2
 
 Open URL
     [Arguments]    ${url}
@@ -56,7 +64,6 @@ Scroll Window To Horizontal
     [Arguments]           ${value}
     Execute JavaScript    window.scrollTo(${value},0)
 
-
 Set Folder Result with date
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
@@ -68,5 +75,3 @@ Verify Capture Screenshot
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
     Capture Page Screenshot     ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
-
-

@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
-Suite Setup       Open Browser And Go To Allspeedy DPS Website
+Suite Setup       Open Chrome Browser
 Suite Teardown    Close Browser
 Force Tags        AllSpeedy-DPS-003
 

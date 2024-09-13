@@ -1,6 +1,6 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
-Suite Setup       Run Keywords    Open Browser And Go To Allspeedy B2C Website
+Suite Setup       Run Keywords    Open Chrome Browser
                   ...    AND   Set Folder Result with date
 Suite Teardown    Close Browser
 
