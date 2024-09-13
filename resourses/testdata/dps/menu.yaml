@@ -1,0 +1,10 @@
+dps_menu:
+  Home_Page : homepage
+  Scan : scan
+  Pouch : pouch
+  Report : reportpage
+  Check_Notification : check-notifications
+  Waiting_Destroy : waiting-destroy
+  Upload_Route : upload-route
+  Check_Receiving_Cycle : check-receiving-cycle
+  History_Parcel : historyparcel
