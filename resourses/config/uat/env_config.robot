@@ -11,4 +11,5 @@ ${PMS_UAT_URL}    https://pms-uat.allspeedy.co.th/
 
 
 ####################### B2C UAT DATA #######################
-${B2C_UAT_URL}    https://www.allspeedy.co.th/
+${B2C_UAT_URL}    https://www-uat.allspeedy.co.th/auth/login
+${C2C_UAT_URL}    https://www-uat.allspeedy.co.th/auth/login

@@ -1,0 +1,7 @@
+AllSpeedy_DPS_001_ID_1:
+  expected_error_message: No active policy during authentication
+
+AllSpeedy_DPS_001_ID_2:
+  expected_error_message: บัญชีผู้ใช้งาน หรือรหัสผ่านไม่ถูกต้อง\nกรุณาระบุข้อมูลใหม่
+
+
