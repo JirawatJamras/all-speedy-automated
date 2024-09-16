@@ -1,12 +1,21 @@
 *** Keywords ***
 Select DPS Menu
     [Arguments]    ${tabname}
-    Wait Until Element Is Not Visible    ${dps_btn_log_on}    30s
-    Wait Until Element Is Visible    //a[@href='/${tabname}']
+    Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
+    Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
     Mouse Over    //a[@href='/${tabname}']
     Wait Until Element Is Visible    //a[@href='/${tabname}']
     Click Element    //a[@href='/${tabname}']
     Mouse Out    //a[@href='/${tabname}']
+    IF  '${tabname}' == 'homepage'
+        FOR  ${i}  IN RANGE  0  5
+        Reload Page
+        ${isvisible}    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}
+        Capture Page Screenshot
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+        END
+        Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
+    END
 
 Verify Parcels Into The Warehouse
     [Arguments]    ${test_scenario}
@@ -48,7 +57,7 @@ Re Format And Sum Number of Admission Task
     ${number1}=    Convert To Integer    ${number1}
     ${number2}=    Convert To Integer    ${number2}
     ${number3}=    Convert To Integer    ${number3}
-    ${sum_number}=    Set Variable    ${number1}    +    ${number2}    +    ${number3}
+    ${sum_number}=    Evaluate    ${number1} + ${number2} + ${number3}
     ${sum_number}=    Convert To String    ${sum_number}
     RETURN     ${sum_number}
 
@@ -59,7 +68,8 @@ Re Format And Sum Number of Export Work
     ${number3}=    Convert To Integer    ${number3}
     ${number4}=    Convert To Integer    ${number4}
     ${number5}=    Convert To Integer    ${number5}
-    ${sum_number}=    Set Variable    ${number1}    +    ${number2}    +    ${number3}    +    ${number4}    +    ${number5}
+    ${sum_number}=    Evaluate    ${number1} + ${number2} + ${number3}
+    ${sum_number}=    Evaluate    ${sum_number} + ${number4} + ${number5}
     ${sum_number}=    Convert To String    ${sum_number}
     RETURN     ${sum_number}
 
@@ -68,7 +78,7 @@ Re Format And Sum Number of Delivery Work
     ${number1}=    Convert To Integer    ${number1}
     ${number2}=    Convert To Integer    ${number2}
     ${number3}=    Convert To Integer    ${number3}
-    ${sum_number}=    Set Variable    ${number1}    +    ${number2}    +    ${number3}
+    ${sum_number}=    Evaluate    ${number1} + ${number2} + ${number3}
     ${sum_number}=    Convert To String    ${sum_number}
     RETURN     ${sum_number}
 
@@ -76,13 +86,12 @@ Re Format And Sum Number of In Warehouse Parcels
     [Arguments]    ${number1}    ${number2}
     ${number1}=    Convert To Integer    ${number1}
     ${number2}=    Convert To Integer    ${number2}
-    ${sum_number}=    Set Variable    ${number1}    +    ${number2}
+    ${sum_number}=    Evaluate    ${number1} + ${number2}
     ${sum_number}=    Convert To String    ${sum_number}
     RETURN     ${sum_number}
 
 Verify Current Date
-    Sleep    3s
-    Wait Until Element Is Visible    ${dps_txt_date}    180s
+    Wait Until Element Is Visible    ${dps_txt_date}    30s
     ${Web_Date}    Get Text    ${dps_txt_date}  
     ${Web_Date}    Split String And Select    ${Web_Date}    ${space}    3
     ${current_date}    Get Current DateTime Thai Format
@@ -157,6 +166,7 @@ Verify Sum number of Export Work
     ${sum_number_export_work}    Re Format And Sum Number of Export Work    ${cp_all_number}    ${j&t_number}    ${dhl_number}    ${flash_number}    ${kerry_number}
     Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_export_work}
     Set Suite Variable    ${sum_number_export_work}    ${sum_number_export_work}
+    Log    ${sum_number_export_work}
 
 Verify Delivery Work Of Store
     [Arguments]    ${value}
@@ -183,7 +193,9 @@ Verify Sum Number of Delivery Work
     ${sum_number_delivery_work}    Re Format And Sum Number of Delivery Work    ${in_warehouse_parcels_store_number}    ${in_warehouse_parcels_house_number}    ${in_warehouse_parcels_7_delivery_number}
     Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_delivery_work}
     Set Suite Variable    ${sum_number_delivery_work}    ${sum_number_delivery_work}
+    Log    ${sum_number_delivery_work}
 
 Verify Sum Number of In Warehouse Parcels
     ${sum_number_in_warehouse_parcels}    Re Format And Sum Number of In Warehouse Parcels    ${sum_number_export_work}    ${sum_number_delivery_work}
     Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_in_warehouse_parcels}
+    Log    ${sum_number_in_warehouse_parcels}
