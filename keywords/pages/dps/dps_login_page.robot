@@ -15,8 +15,9 @@ Click Log On Button
 
 Verify Error Message
     [Arguments]    ${expected_error}
-    Wait Until Element Is Visible    ${b2c_error_message}    timeout=10s
-    Element Should Contain    ${b2c_error_message}    ${expected_error}
+    Wait Until Element Is Visible    ${dps_error_message}    timeout=10s
+    Element Should Contain    ${dps_error_message}    ${expected_error}
+    
 
 Verify Menu Displayed
     [Arguments]    ${menu_item}

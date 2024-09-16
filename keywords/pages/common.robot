@@ -3,7 +3,7 @@ Open Chrome Browser
     [Arguments]    ${chrome}
     ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
     Call Method    ${chrome_options}    add_argument    --disable-extensions
-    #Call Method    ${chrome_options}    add_argument    --headless
+    Call Method    ${chrome_options}    add_argument    --headless
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
@@ -37,5 +37,5 @@ Verify Capture Screenshot
     [Arguments]    ${folder}    ${img_name}
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    Capture Page Screenshot   ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
-    Capture Fullpage Screenshot   ../results/${FOlDER_RESULT}/${folder}/${img_name}_fullpage1.png
+    Capture Page Screenshot    ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
+    Capture Fullpage Screenshot    ../results/${FOlDER_RESULT}/${folder}/${img_name}_fullpage1.png
