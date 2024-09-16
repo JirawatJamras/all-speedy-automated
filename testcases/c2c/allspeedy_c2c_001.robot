@@ -43,7 +43,7 @@ AllSpeedy_C2C_001_ID_3
 
 AllSpeedy_C2C_001_ID_5
     [Documentation]    [รูปแบบการล็อกอินเข้าใช้งานระบบ SPEED-D] Login เว็บ SPEED-D(Impacted by The Solution Changes) กรณี เข้าสู่ระบบลูกค้าทั่วไปด้วย E-mail
-    [Tags]    AllSpeedy_C2C_001_ID5    UAT    Medium    Regression
+    [Tags]    AllSpeedy_C2C_001_ID5    UAT    High    Regression
     common.Open URL    ${C2C_UAT_URL}
     c2c_login.Select Customer Tab
     c2c_login.Input Email    ${c2c_login_user_02['username']}
