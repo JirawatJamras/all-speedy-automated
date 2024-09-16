@@ -1,5 +1,7 @@
 *** Variables ***
-${c2c_btn_log_on}         //*[@id="rc-tabs-2-panel-business"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b
-${c2c_txtbox_email}    //input[@name='email']
-${c2c_txtbox_password}    //input[@name='password']
+${c2c_btn_log_on}         //*[@id="rc-tabs-2-panel-customer"]//button[@type='submit']
+${c2c_txtbox_email}       //input[@id='email']
+${c2c_txtbox_password}    //input[@id='password']
+
+${c2c_expected_email_txtbox}    //input[@placeholder='ระบุอีเมล์/เบอร์ ALL MEMBER']
 
