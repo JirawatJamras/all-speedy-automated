@@ -7,7 +7,7 @@ Suite Teardown    Close Browser
 *** Test Cases ***
 AllSpeedy_DPS_003_ID_9
     [Documentation]    [ตรวจสอบภาพรวมงานประจําวัน] ตรวจสอบหัวข้อ พัสดุเข้าคลัง (งานรับเข้า)
-    [Tags]    AllSpeedy_DPS_003    UAT    test1
+    [Tags]    AllSpeedy_DPS_003    UAT    Medium    Regression
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_03['username']}
@@ -19,4 +19,3 @@ AllSpeedy_DPS_003_ID_9
     common.Verify Capture Screenshot    AllSpeedy_DPS_003_ID_9    Verify Current Date
     dps_home_page.Verify Parcels Into The Warehouse   AllSpeedy_DPS_003_ID_9 
     common.Verify Capture Screenshot    AllSpeedy_DPS_003_ID_9    Verify Parcels Into The Warehouse
-
