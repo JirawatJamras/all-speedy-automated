@@ -1,0 +1,42 @@
+Menu_Checkbox_Partnertype:
+  expected_txtbox: ประเภทคู่ค้า
+  NaturalPerson: บุคคลธรรมดา
+CompanyName:
+  expected_txtbox: ชื่อบริษัท
+TaxIdentification:
+  expected_txtbox: เลขประจำตัวผู้เสียภาษี
+Address_addressInfo:
+  expected_txtbox: เลขที่,อาคาร,ชั้น,ซอย,ถนน
+Sub_districtDistrict:
+  expected_txtbox: ระบุไปรษณีย์
+Prefix_name:
+  expected_txtbox: เลือก..
+FirstName:
+  expected_txtbox: ชื่อ
+LastName:
+  expected_txtbox: นามสกุล
+Email:
+  expected_txtbox: E-mail
+MobileNo:
+  expected_txtbox: เบอร์โทรศัพท์
+MobileExt:
+  expected_txtbox: เบอร์ต่อ
+
+
+###################
+Form_firstName:
+  expected_txtbox: ชื่อ
+Form_lastName:
+  expected_txtbox: นามสกุล
+Form_idNumber:
+  expected_txtbox: เลขประจำตัวประชาชน
+Form_email:
+  expected_txtbox: E-mail
+Form_address_addressInfo:
+  expected_txtbox: เลขที่,อาคาร,ชั้น,ซอย,ถนน
+Form_address_full:
+  expected_txtbox: เลขที่,อาคาร,ชั้น,ซอย,ถนน
+Form_mobileNo:
+  expected_txtbox: เบอร์โทรศัพท์
+Form_mobileExt:
+  expected_txtbox: เบอร์ต่อ

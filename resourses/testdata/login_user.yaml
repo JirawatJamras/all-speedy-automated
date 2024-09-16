@@ -17,3 +17,8 @@ b2c_login_user_01:
 c2c_login_user_01:
   username: out-sumitrawic@gosoft.co.th
   password: 33333333
+
+c2c_login_user_02:
+  username: test1234@mailinator.com
+  password: Test1234*
+  name: Test Test
