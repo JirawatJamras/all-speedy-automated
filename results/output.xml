@@ -1,0 +1,620 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on darwin)" generated="2024-09-12T16:29:52.607103" rpa="false" schemaversion="5">
+<suite id="s1" name="Functionallspeedy Register 007" source="/Users/yffoaz/Downloads/Gitlab/all-speedy-automated/testcases/register/functionallspeedy_register_007.robot">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Browser And Go To Allspeedy B2C Website" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-09-12T16:29:52.796032" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x102808080&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.795858" elapsed="0.000196"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.796137" elapsed="0.000067"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.796267" elapsed="0.000048"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.796367" elapsed="0.000064"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.796481" elapsed="0.000064"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.796628" elapsed="0.000216"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:29:52.797033" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.796924" elapsed="2.264801"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-09-12T16:29:55.062216" elapsed="0.000270"/>
+</kw>
+<status status="PASS" start="2024-09-12T16:29:52.795746" elapsed="2.266807"/>
+</kw>
+<kw name="Set Folder Result with date" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-09-12T16:29:55.063041" level="INFO">${date_YYYY_MM_DD} = 2024-09-12 16:29:55.063</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-09-12T16:29:55.062930" elapsed="0.000125"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-09-12T16:29:55.064786" level="INFO">${date_YYYY_MM_DD} = 2024-09-12</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-09-12T16:29:55.063109" elapsed="0.001693"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-09-12T16:29:55.064965" level="INFO">${FOlDER_RESULT} = ../results/2024-09-12</msg>
+<var>${FOlDER_RESULT}</var>
+<arg>../results/${date_YYYY_MM_DD}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-09-12T16:29:55.064885" elapsed="0.000091"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-09-12T16:29:55.065137" level="INFO">${FOlDER_RESULT} = ../results/2024-09-12</msg>
+<arg>${FOlDER_RESULT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-09-12T16:29:55.065042" elapsed="0.000110"/>
+</kw>
+<status status="PASS" start="2024-09-12T16:29:55.062756" elapsed="0.002423"/>
+</kw>
+<arg>Open Browser And Go To Allspeedy B2C Website</arg>
+<arg>AND</arg>
+<arg>Set Folder Result with date</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-09-12T16:29:52.795558" elapsed="2.269641"/>
+</kw>
+<test id="s1-t1" name="FunctionAllSpeedy_Register_007" line="9">
+<kw name="Open URL" owner="common">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:29:55.066746" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-09-12T16:29:55.066694" elapsed="1.079896"/>
+</kw>
+<arg>${B2C_UAT_URL}</arg>
+<status status="PASS" start="2024-09-12T16:29:55.066503" elapsed="1.080181"/>
+</kw>
+<kw name="Click Go business Tab" owner="register_landing_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${register_btn_business_tab}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:56.147062" elapsed="0.421147"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:29:56.568562" level="INFO">Clicking element '//div[@id='rc-tabs-2-tab-business']'.</msg>
+<arg>${register_btn_business_tab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-12T16:29:56.568391" elapsed="0.496178"/>
+</kw>
+<status status="PASS" start="2024-09-12T16:29:56.146865" elapsed="0.917797"/>
+</kw>
+<kw name="Verify All Page login" owner="register">
+<kw name="Verify EmailBusiness TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${EmailBusiness_txt}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:57.065860" elapsed="0.417081"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:29:57.896462" level="INFO">Element '//input[@id='emailBusiness']' is displayed.</msg>
+<arg>${EmailBusiness_txt}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:57.483107" elapsed="0.413425"/>
+</kw>
+<arg>${EmailBusiness['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:29:57.065013" elapsed="0.831592"/>
+</kw>
+<kw name="Verify PasswordBusiness TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PasswordBusiness_txt}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:57.897285" elapsed="0.416001"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:29:58.728247" level="INFO">Element '//input[@id='passwordBusiness']' is displayed.</msg>
+<arg>${PasswordBusiness_txt}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:58.313450" elapsed="0.414872"/>
+</kw>
+<arg>${PasswordBusiness['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:29:57.896732" elapsed="0.831659"/>
+</kw>
+<status status="PASS" start="2024-09-12T16:29:57.064841" elapsed="1.663582"/>
+</kw>
+<kw name="Click Register On Button" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${register_btn_business}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:58.728766" elapsed="0.415691"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:29:59.145004" level="INFO">Clicking element '//a[@href='/business-register']//u[text()="ลงทะเบียนลูกค้าธุรกิจ"]'.</msg>
+<arg>${register_btn_business}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-12T16:29:59.144838" elapsed="0.428721"/>
+</kw>
+<status status="PASS" start="2024-09-12T16:29:58.728595" elapsed="0.845042"/>
+</kw>
+<kw name="Verify All Page Register" owner="register">
+<kw name="Verify PartnerType LegalEntity" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${partnertype_txt}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:59.574383" elapsed="0.414219"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:00.407046" level="INFO">Element '//h5[text()="ประเภทคู่ค้า"]' is displayed.</msg>
+<arg>${partnertype_txt}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:29:59.988767" elapsed="0.418358"/>
+</kw>
+<kw name="Check Checkbox State" owner="register">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:00.827379" level="INFO">${checked} = None</msg>
+<var>${checked}</var>
+<arg>${checkbox_locator}</arg>
+<arg>checked</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-09-12T16:30:00.407479" elapsed="0.419950"/>
+</kw>
+<return>
+<value>${checked} == 'true'</value>
+<status status="PASS" start="2024-09-12T16:30:00.827527" elapsed="0.000083"/>
+</return>
+<status status="PASS" start="2024-09-12T16:30:00.407299" elapsed="0.420412"/>
+</kw>
+<arg>${Menu_Checkbox_Partnertype['expected_txtbox'],['LegalEntitytxt']}</arg>
+<status status="PASS" start="2024-09-12T16:29:59.573960" elapsed="1.253782"/>
+</kw>
+<kw name="Verify Company Name TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${companyname_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:00.828449" elapsed="0.420221"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:01.665232" level="INFO">Element '//input[@placeholder='ชื่อบริษัท']' is displayed.</msg>
+<arg>${companyname_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:01.248833" elapsed="0.416466"/>
+</kw>
+<arg>${CompanyName['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:00.827874" elapsed="0.837487"/>
+</kw>
+<kw name="Verify Tax Identification Number TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${tax_identification_number}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:01.666030" elapsed="0.417728"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:02.500338" level="INFO">Element '//*[@id="idNumber"]' is displayed.</msg>
+<arg>${tax_identification_number}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:02.083919" elapsed="0.416486"/>
+</kw>
+<arg>${TaxIdentification['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:01.665491" elapsed="0.834979"/>
+</kw>
+<kw name="Verify Address Company TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${addresscompany_textbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:02.501133" elapsed="0.415307"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:03.330849" level="INFO">Element '//*[@id='address_addressInfo']' is displayed.</msg>
+<arg>${addresscompany_textbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:02.916595" elapsed="0.414339"/>
+</kw>
+<arg>${Address_addressInfo['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:02.500598" elapsed="0.830430"/>
+</kw>
+<kw name="Verify Address Full TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${addressfull_textbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:03.331748" elapsed="0.411115"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:04.160527" level="INFO">Element '//span[@class='ant-select-selection-placeholder' and text()='ระบุไปรษณีย์']' is displayed.</msg>
+<arg>${addressfull_textbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:03.743019" elapsed="0.417571"/>
+</kw>
+<arg>${Sub_districtDistrict['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:03.331183" elapsed="0.829471"/>
+</kw>
+<kw name="Verify Prefixname Dropdown" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Prefixname_dropdown}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:04.161328" elapsed="0.417343"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:04.991539" level="INFO">Element '//div[@class='ant-select-selector']' is displayed.</msg>
+<arg>${Prefixname_dropdown}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:04.578831" elapsed="0.412780"/>
+</kw>
+<arg>${Prefix_name['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:04.160776" elapsed="0.830912"/>
+</kw>
+<kw name="Verify FirstName TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FirstName_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:04.992368" elapsed="0.419647"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:05.829823" level="INFO">Element '//input[@id='firstName']' is displayed.</msg>
+<arg>${FirstName_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:05.412174" elapsed="0.417717"/>
+</kw>
+<arg>${FirstName['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:04.991826" elapsed="0.838134"/>
+</kw>
+<kw name="Verify LastName TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${LastName_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:05.830632" elapsed="0.415067"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:06.697350" level="INFO">Element '//input[@id='lastName']' is displayed.</msg>
+<arg>${LastName_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:06.245845" elapsed="0.451570"/>
+</kw>
+<arg>${LastName['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:05.830086" elapsed="0.867400"/>
+</kw>
+<kw name="Verify Email TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${email_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:06.698242" elapsed="0.414438"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:07.523878" level="INFO">Element '//input[@id='email']' is displayed.</msg>
+<arg>${email_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:07.112979" elapsed="0.410966"/>
+</kw>
+<arg>${Email['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:06.697605" elapsed="0.826411"/>
+</kw>
+<kw name="Verify MobileNo TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MobileNo_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:07.524681" elapsed="0.417934"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:08.355703" level="INFO">Element '//input[@id='mobileNo']' is displayed.</msg>
+<arg>${MobileNo_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:07.942773" elapsed="0.413000"/>
+</kw>
+<arg>${MobileNo['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:07.524140" elapsed="0.831705"/>
+</kw>
+<kw name="Verify MobileExt TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${MobileExt_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:08.356511" elapsed="0.415344"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:09.190142" level="INFO">Element '//input[@id='mobileExt']' is displayed.</msg>
+<arg>${MobileExt_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:08.772083" elapsed="0.418124"/>
+</kw>
+<arg>${MobileExt['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:08.355966" elapsed="0.834309"/>
+</kw>
+<kw name="Verify PartnerType NaturalPerson" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${partnertype_txt}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:09.191009" elapsed="0.413695"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:10.022334" level="INFO">Element '//h5[text()="ประเภทคู่ค้า"]' is displayed.</msg>
+<arg>${partnertype_txt}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:09.604876" elapsed="0.417528"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:10.022693" level="INFO">Clicking element '//label[span[text()='บุคคลธรรมดา']]'.</msg>
+<arg>${NaturalPerson_checkbox}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-12T16:30:10.022550" elapsed="0.489862"/>
+</kw>
+<kw name="Check Checkbox State" owner="register">
+<kw name="Get Element Attribute" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:10.928748" level="INFO">${checked} = None</msg>
+<var>${checked}</var>
+<arg>${checkbox_locator}</arg>
+<arg>checked</arg>
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<status status="PASS" start="2024-09-12T16:30:10.512787" elapsed="0.415989"/>
+</kw>
+<return>
+<value>${checked} == 'true'</value>
+<status status="PASS" start="2024-09-12T16:30:10.928836" elapsed="0.000037"/>
+</return>
+<status status="PASS" start="2024-09-12T16:30:10.512604" elapsed="0.416353"/>
+</kw>
+<arg>${Menu_Checkbox_Partnertype['expected_txtbox'],['NaturalPerson']}</arg>
+<status status="PASS" start="2024-09-12T16:30:09.190409" elapsed="1.738577"/>
+</kw>
+<kw name="Verify Prefixname Dropdown" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Prefixname_dropdown}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:10.929627" elapsed="0.412970"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:11.756075" level="INFO">Element '//div[@class='ant-select-selector']' is displayed.</msg>
+<arg>${Prefixname_dropdown}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:11.342752" elapsed="0.413418"/>
+</kw>
+<arg>${Prefix_name['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:10.929090" elapsed="0.827157"/>
+</kw>
+<kw name="Verify FormfirstName TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FormfirstName_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:11.756900" elapsed="0.419588"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:12.589027" level="INFO">Element '//div[@class='ant-form-item-control-input']//input[@id='Form_firstName']' is displayed.</msg>
+<arg>${FormfirstName_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:12.176641" elapsed="0.412458"/>
+</kw>
+<arg>${Form_firstName['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:11.756371" elapsed="0.832791"/>
+</kw>
+<kw name="Verify FormlastName TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FormlastName_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:12.589827" elapsed="0.418461"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:13.423492" level="INFO">Element '//input[@id='Form_lastName']' is displayed.</msg>
+<arg>${FormlastName_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:13.008444" elapsed="0.415117"/>
+</kw>
+<arg>${Form_lastName['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:12.589288" elapsed="0.834336"/>
+</kw>
+<kw name="Verify FormIdNumber TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${FormidNumber_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:13.424281" elapsed="0.418119"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:14.257822" level="INFO">Element '//input[@id='Form_idNumber']' is displayed.</msg>
+<arg>${FormidNumber_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:13.842555" elapsed="0.415344"/>
+</kw>
+<arg>${Form_idNumber['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:13.423742" elapsed="0.834231"/>
+</kw>
+<kw name="Verify FormEmail TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Formemail_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:14.258661" elapsed="0.419734"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:15.091872" level="INFO">Element '//input[@id='Form_email']' is displayed.</msg>
+<arg>${Formemail_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:14.678559" elapsed="0.413640"/>
+</kw>
+<arg>${Form_email['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:14.258107" elapsed="0.834159"/>
+</kw>
+<kw name="Verify FormAddressInfo TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Form_address_addressInfo_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:15.092913" elapsed="0.415284"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:15.921415" level="INFO">Element '//input[@id='Form_address_addressInfo']' is displayed.</msg>
+<arg>${Form_address_addressInfo_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:15.508360" elapsed="0.413125"/>
+</kw>
+<arg>${Form_address_addressInfo['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:15.092392" elapsed="0.829160"/>
+</kw>
+<kw name="Verify FormAddressFull TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Form_address_full_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:15.922209" elapsed="0.418602"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:16.753525" level="INFO">Element '//input[@id='Form_address_full']' is displayed.</msg>
+<arg>${Form_address_full_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:16.340970" elapsed="0.412627"/>
+</kw>
+<arg>${Form_address_full['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:15.921680" elapsed="0.831979"/>
+</kw>
+<kw name="Verify FormMobileNo TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Form_mobileNo_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:16.754315" elapsed="0.415473"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:17.582275" level="INFO">Element '//input[@id='Form_mobileNo']' is displayed.</msg>
+<arg>${Form_mobileNo_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:17.169929" elapsed="0.412412"/>
+</kw>
+<arg>${Form_mobileNo['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:16.753784" elapsed="0.828622"/>
+</kw>
+<kw name="Verify FormMobileExt TextBox" owner="register">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Form_mobileExt_txtbox}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:17.583050" elapsed="0.419026"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:18.419325" level="INFO">Element '//input[@id='Form_mobileExt']' is displayed.</msg>
+<arg>${Form_mobileExt_txtbox}</arg>
+<arg>${menu_txt}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-12T16:30:18.002228" elapsed="0.417167"/>
+</kw>
+<arg>${Form_mobileExt['expected_txtbox']}</arg>
+<status status="PASS" start="2024-09-12T16:30:17.582527" elapsed="0.836937"/>
+</kw>
+<status status="PASS" start="2024-09-12T16:29:59.573819" elapsed="18.845675"/>
+</kw>
+<kw name="Verify Capture Screenshot" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-09-12T16:30:18.419969" level="INFO">${date_YYYY_MM_DD} = 2024-09-12 16:30:18.420</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-09-12T16:30:18.419859" elapsed="0.000124"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-09-12T16:30:18.420194" level="INFO">${date_YYYY_MM_DD} = 2024-09-12</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-09-12T16:30:18.420049" elapsed="0.000154"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-12T16:30:18.984931" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="2024-09-12/FunctionAllSpeedy_Register_007/Enter%20the%20correct%20URL.png"&gt;&lt;img src="2024-09-12/FunctionAllSpeedy_Register_007/Enter%20the%20correct%20URL.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-12T16:30:18.420270" elapsed="0.564720"/>
+</kw>
+<arg>FunctionAllSpeedy_Register_007</arg>
+<arg>Enter the correct URL</arg>
+<status status="PASS" start="2024-09-12T16:30:18.419672" elapsed="0.565382"/>
+</kw>
+<doc>[ขั้นตอนการเข้าใช้งานระบบ All Speed-D เพื่อลงทะเบียน สำหรับลูกค้าธุรกิจ] กรอก URL ถูกต้อง</doc>
+<tag>FunctionAllSpeedy_Register_007</tag>
+<status status="PASS" start="2024-09-12T16:29:55.065547" elapsed="23.919609"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-09-12T16:30:18.985526" elapsed="0.269110"/>
+</kw>
+<status status="PASS" start="2024-09-12T16:29:52.607607" elapsed="26.647181"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">FunctionAllSpeedy_Register_007</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Functionallspeedy Register 007">Functionallspeedy Register 007</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
