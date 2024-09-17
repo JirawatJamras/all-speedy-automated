@@ -23,5 +23,3 @@ AllSpeedy_DPS_002-ID-2
    dps_login_page.Input Email                ${dps_login_user_02['username']}
    dps_login_page.Input Password             ${dps_login_user_02['password']}
    dps_login_page.Click Log On Button
-
-
