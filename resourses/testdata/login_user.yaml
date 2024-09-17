@@ -32,6 +32,10 @@ b2c_login_user_05:
   username: out-sumitrawic@gosoft.co.th
   password: 22222222
 
+b2c_login_user_005_ID_16:
+  username: idc@gmail.com
+  password: P@ssw0rd
+
 ###   C2C   ###
 c2c_login_user_01:
   username: out-sumitrawic@gosoft.co.th

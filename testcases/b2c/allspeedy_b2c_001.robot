@@ -26,11 +26,11 @@ AllSpeedy_B2C_001_ID_2
     Clear Email and Password Textbox
     b2c_login_page.Input Email                    ${b2c_login_user_02['username']}
     Verify Error Message B2C_001_ID_2     ${AllSpeedy_B2C_001_ID_2['expected_error_message']}
-    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_1    Login for business customers: If the email entered is not in English characters, numbers, special characters in the email format, or is not in a valid email format
+    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_2    email entered is not in English letters or not in email format
 
 
 AllSpeedy_B2C_001_ID_3
-    [Documentation]                           [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอกรหัสผ่านไม่ตรงตามที่ตั้งไว้
+    [Documentation]          [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอกรหัสผ่านไม่ตรงตามที่ตั้งไว้
     [Tags]    AllSpeedy_B2C_001_ID_3    UAT
     common.Open URL                           ${B2C_UAT_URL}
     b2c_landing_page.Click Go Login Button
@@ -38,10 +38,10 @@ AllSpeedy_B2C_001_ID_3
     b2c_login_page.Input Password                 ${b2c_login_user_03['password']}
     b2c_login_page.Click Log On Button
     Verify Error Message B2C_001_ID_3    ${AllSpeedy_B2C_001_ID_3['expected_error_message']}
-    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_3    The password you entered does not match the one on record. Please try again.
+    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_3    Password entered does not match the set password
 
 AllSpeedy_B2C_001_ID_4
-    [Documentation]                           [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอก Email และรหัสผ่าน ไม่มีอยู่ในระบบ
+    [Documentation]          [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอก Email และรหัสผ่าน ไม่มีอยู่ในระบบ
     [Tags]    AllSpeedy_B2C_001_ID_4    UAT
     common.Open URL                           ${B2C_UAT_URL}
     b2c_landing_page.Click Go Login Button
@@ -49,10 +49,10 @@ AllSpeedy_B2C_001_ID_4
     b2c_login_page.Input Password                 ${b2c_login_user_04['password']}
     b2c_login_page.Click Log On Button
     Verify Error Message B2C_001_ID_4    ${AllSpeedy_B2C_001_ID_4['expected_error_message']}
-    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_4    The email address and password you entered do not match our records. Please check your credentials and try again.
+    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_4    Email and password do not exist in the system
 
 AllSpeedy_B2C_001_ID_5
-    [Documentation]                           [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอก Email และรหัสผ่าน ไม่มีอยู่ในระบบ
+    [Documentation]          [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอก Email เป็นภาษาอังกฤษ ตัวเลข อักขระพิเศษ ในรูปแบบอีเมล และรหัสผ่านตรงตามที่ตั้งไว้ เช็คประเภทลูกค้าทั่วไป
     [Tags]    AllSpeedy_B2C_001_ID_5    UAT
     common.Open URL                           ${B2C_UAT_URL}
     b2c_landing_page.Click Go Login Button
@@ -60,4 +60,4 @@ AllSpeedy_B2C_001_ID_5
     b2c_login_page.Input Password                 ${b2c_login_user_05['password']}
     b2c_login_page.Click Log On Button
     Verify Error Message B2C_001_ID_5    ${AllSpeedy_B2C_001_ID_5['expected_error_message']}
-    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_5    The email address and password are correct, but the account type is not for business customers. Please verify your account type or contact support for assistance.
+    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_5    Business customer email entered is for a regular customer type
