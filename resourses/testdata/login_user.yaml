@@ -45,4 +45,3 @@ c2c_login_user_01:
 c2c_login_user_02:
   username: test1234@mailinator.com
   password: Test1234*
-  name: Test Test
