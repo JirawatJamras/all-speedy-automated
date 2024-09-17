@@ -1,20 +1,55 @@
 *** Keywords ***
 Input Email
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    ${c2c_txtbox_email}
-    Input Text                       ${c2c_txtbox_email}     ${value}
+    Wait Until Element Is Visible    ${c2c_txtbox_email_login_page}
+    Input Text                       ${c2c_txtbox_email_login_page}     ${value}
 
 Input Password
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    ${c2c_txtbox_password}
-    Input Text                       ${c2ctxtbox_password}    ${value}
+    Wait Until Element Is Visible    ${c2c_txtbox_password_login_page}
+    Input Text                       ${c2ctxtbox_password_login_page}    ${value}
 
 Click Log On Button
-    Wait Until Element Is Visible    ${c2c_btn_log_on}
-    Click Element                    ${c2c_btn_log_on}
+    Scroll Window To Vertical    0
+    Wait Until Element Is Visible    ${c2c_btn_log_on_login_page}
+    Click Element                    ${c2c_btn_log_on_login_page}
+
+Select Customer Tab
+    Wait Until Element Is Visible    ${c2c_tab_customer_login_page}
+    Click Element                    ${c2c_tab_customer_login_page}
+
+Clear Data Input
+    Clear Element Text    ${c2c_txtbox_email_login_page}
+    Sleep    1s
+    Clear Element Text    ${c2ctxtbox_password_login_page}
+    Sleep    1s
+
+Click Show Password
+    Wait Until Element Is Visible    ${c2c_icon_show_password_login_page}
+    Click Element    ${c2c_icon_show_password_login_page}
+
+Click Hide Password
+    Scroll Window To Vertical    0
+    Wait Until Element Is Visible    ${c2c_icon_hide_password_login_page}
+    Click Element    ${c2c_icon_hide_password_login_page}
 
 Verify Customer Email Txtbox
     [Arguments]    ${email}
-    Wait Until Element Is Visible    ${c2c_expected_email_txtbox}
-    ${expected_emailtxtbox} =    Get value    ${c2c_expected_email_txtbox}
-    Should Be Equal    ${email}    ${expected_emailtxtbox}
+    Wait Until Element Is Visible    ${c2c_expected_email_txtbox_login_page}
+    Element Should Be Visible    ${c2c_expected_email_txtbox_login_page}    ${email}
+
+Verify Email Error Message
+    [Arguments]    ${error_msg}
+    Wait Until Element Is Visible    ${c2c_errormsg_email_login_page}    
+    Element Should Contain    ${c2c_errormsg_email_login_page}    ${error_msg}
+
+Verify Password Error Message
+    [Arguments]    ${error_msg}
+    Wait Until Element Is Visible    ${c2c_errormsg_password_login_page}   
+    Element Should Contain    ${c2c_errormsg_password_login_page}    ${error_msg}
+
+Verify Show Password
+    Wait Until Element Is Visible    ${c2c_show_password_login_page}
+
+Verify Hide Password
+    Wait Until Element Is Visible    ${c2c_hide_password_login_page}
