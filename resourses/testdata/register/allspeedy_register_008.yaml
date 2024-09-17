@@ -1,9 +1,27 @@
 AllSpeedy_Register_008_ID_18:
   checkbox_partner_types: นิติบุคคล
   checkbox_partner_types_expected: นิติบุคคล
-  company_registration_prefix: หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)
-  company_registration_prefix_expected: หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)
+  company_title_name: หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)
+  company_title_name_expected: หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)
   company_name: company888
+  company_name_expected: company888
   id_number: 1234567891234
-  company_address: 991/1 ถนนพระรามที่ 1 
-  company_address_full: ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
+  id_number_expected: 1234567891234
+  company_address: 991/1 ถนนพระรามที่ 1
+  company_address_expected: 991/1 ถนนพระรามที่ 1 
+  search_company_address_full: ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
+  select_company_address_full:
+  company_address_full_expected: ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
+  title_name: นาง
+  title_name_expected: นาง
+  first_name: สปีดดี
+  first_name_expected: สปีดดี
+  last_name: ส่งของ
+  last_name_expected: ส่งของ
+  email: testregister.business@yopmail.com
+  email_expected: testregister.business@yopmail.com
+  mobile_no: 0981234567
+  mobile_no_expected: 0981234567
+  mobile_ext: 890
+  mobile_ext_expected: 890
+
