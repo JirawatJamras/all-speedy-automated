@@ -1,650 +1,749 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-09-17T14:40:14.349151" rpa="false" schemaversion="5">
-<suite id="s1" name="Allspeedy Register 008" source="D:\aaVasup\Allspeedy\Automate\all-speedy-automated\result\..\testcases\register\allspeedy_register_008.robot">
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-09-18T11:06:40.474417" rpa="false" schemaversion="5">
+<suite id="s1" name="Allspeedy Register 004" source="D:\aaVasup\Allspeedy\Automate\all-speedy-automated\result\..\testcases\register\allspeedy_register_004.robot">
 <kw name="Run Keywords" owner="BuiltIn" type="SETUP">
 <kw name="Open Chrome Browser" owner="common">
 <kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-09-17T14:40:15.317770" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x0000023EE2ACEAB0&gt;</msg>
+<msg time="2024-09-18T11:06:41.322936" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000001EDD0E631A0&gt;</msg>
 <var>${chrome_options}</var>
 <arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
 <arg>sys, selenium.webdriver</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-09-17T14:40:15.317770" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:06:41.322936" elapsed="0.000000"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--disable-gpu</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-09-17T14:40:15.317770" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:06:41.322936" elapsed="0.000968"/>
 </kw>
 <kw name="Call Method" owner="BuiltIn">
 <arg>${chrome_options}</arg>
 <arg>add_argument</arg>
 <arg>--no-sandbox</arg>
 <doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-09-17T14:40:15.318770" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:06:41.323904" elapsed="0.000000"/>
 </kw>
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:15.318770" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2024-09-18T11:06:41.323904" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<msg time="2024-09-18T11:06:41.769071" level="WARN">The chromedriver version (128.0.6613.86) detected in PATH at C:\chromedriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.58); currently, chromedriver 129.0.6668.58 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
 <arg>about:blank</arg>
 <arg>${chrome}</arg>
 <arg>options=${chrome_options}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-09-17T14:40:15.318770" elapsed="1.590051"/>
+<status status="PASS" start="2024-09-18T11:06:41.323904" elapsed="1.617320"/>
 </kw>
 <kw name="Set Selenium Speed" owner="SeleniumLibrary">
 <arg>0.2</arg>
 <doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-09-17T14:40:16.908821" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:06:42.941224" elapsed="0.001002"/>
 </kw>
 <arg>chrome</arg>
-<status status="PASS" start="2024-09-17T14:40:15.317770" elapsed="1.591051"/>
+<status status="PASS" start="2024-09-18T11:06:41.322936" elapsed="1.619290"/>
 </kw>
 <kw name="Set Folder Result with date" owner="common">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2024-09-17T14:40:16.909817" level="INFO">${date_YYYY_MM_DD} = 2024-09-17 14:40:16.910</msg>
+<msg time="2024-09-18T11:06:42.943227" level="INFO">${date_YYYY_MM_DD} = 2024-09-18 11:06:42.943</msg>
 <var>${date_YYYY_MM_DD}</var>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-09-17T14:40:16.909817" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:06:42.943227" elapsed="0.000000"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2024-09-17T14:40:16.912813" level="INFO">${date_YYYY_MM_DD} = 2024-09-17</msg>
+<msg time="2024-09-18T11:06:42.946255" level="INFO">${date_YYYY_MM_DD} = 2024-09-18</msg>
 <var>${date_YYYY_MM_DD}</var>
 <arg>${date_YYYY_MM_DD}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-09-17T14:40:16.910817" elapsed="0.001996"/>
+<status status="PASS" start="2024-09-18T11:06:42.943227" elapsed="0.003028"/>
 </kw>
 <kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-09-17T14:40:16.912813" level="INFO">${FOlDER_RESULT} = ../results/2024-09-17</msg>
+<msg time="2024-09-18T11:06:42.946255" level="INFO">${FOlDER_RESULT} = ../results/2024-09-18</msg>
 <var>${FOlDER_RESULT}</var>
 <arg>../results/${date_YYYY_MM_DD}</arg>
 <doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-09-17T14:40:16.912813" elapsed="0.000999"/>
+<status status="PASS" start="2024-09-18T11:06:42.946255" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-09-17T14:40:16.913812" level="INFO">${FOlDER_RESULT} = ../results/2024-09-17</msg>
+<msg time="2024-09-18T11:06:42.946255" level="INFO">${FOlDER_RESULT} = ../results/2024-09-18</msg>
 <arg>${FOlDER_RESULT}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-09-17T14:40:16.913812" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:06:42.946255" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-09-17T14:40:16.909817" elapsed="0.003995"/>
+<status status="PASS" start="2024-09-18T11:06:42.942226" elapsed="0.004029"/>
 </kw>
 <arg>Open Chrome Browser</arg>
 <arg>chrome</arg>
 <arg>AND</arg>
 <arg>Set Folder Result with date</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-09-17T14:40:15.316765" elapsed="1.597047"/>
+<status status="PASS" start="2024-09-18T11:06:41.321907" elapsed="1.625346"/>
 </kw>
-<test id="s1-t1" name="AllSpeedy_Register_008_ID_18" line="10">
+<test id="s1-t1" name="AllSpeedy_Register_004_ID_29" line="10">
 <kw name="Open URL" owner="common">
 <kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:16.919337" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
+<msg time="2024-09-18T11:06:42.951236" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-09-17T14:40:16.918345" elapsed="1.033251"/>
+<status status="PASS" start="2024-09-18T11:06:42.950258" elapsed="1.291078"/>
 </kw>
 <arg>${B2C_UAT_URL}</arg>
-<status status="PASS" start="2024-09-17T14:40:16.918345" elapsed="1.033251"/>
+<status status="PASS" start="2024-09-18T11:06:42.949252" elapsed="1.292084"/>
 </kw>
 <kw name="Click Go business Tab" owner="register_landing_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${register_btn_business_tab}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:17.952106" elapsed="0.827206"/>
+<status status="PASS" start="2024-09-18T11:06:44.242344" elapsed="0.840360"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:18.779312" level="INFO">Clicking element '//div[@id='rc-tabs-2-tab-business']'.</msg>
+<msg time="2024-09-18T11:06:45.083728" level="INFO">Clicking element '//div[@id='rc-tabs-2-tab-business']'.</msg>
 <arg>${register_btn_business_tab}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:18.779312" elapsed="0.472981"/>
+<status status="PASS" start="2024-09-18T11:06:45.083728" elapsed="0.488643"/>
 </kw>
-<status status="PASS" start="2024-09-17T14:40:17.952106" elapsed="1.300187"/>
+<status status="PASS" start="2024-09-18T11:06:44.241336" elapsed="1.331035"/>
 </kw>
 <kw name="Click Register On Button" owner="register">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${register_btn_business}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:19.252293" elapsed="0.425967"/>
+<status status="PASS" start="2024-09-18T11:06:45.573384" elapsed="0.449070"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:19.678260" level="INFO">Clicking element '//a[@href='/business-register']//u[text()="ลงทะเบียนลูกค้าธุรกิจ"]'.</msg>
+<msg time="2024-09-18T11:06:46.022454" level="INFO">Clicking element '//a[@href='/business-register']//u[text()="ลงทะเบียนลูกค้าธุรกิจ"]'.</msg>
 <arg>${register_btn_business}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:19.678260" elapsed="0.439445"/>
+<status status="PASS" start="2024-09-18T11:06:46.022454" elapsed="0.446483"/>
 </kw>
-<status status="PASS" start="2024-09-17T14:40:19.252293" elapsed="0.865412"/>
+<status status="PASS" start="2024-09-18T11:06:45.572371" elapsed="0.896566"/>
 </kw>
 <kw name="Click Checkbox Partner Types Legal" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//span[text()='${Partner_Types}']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:20.120220" elapsed="0.445251"/>
+<status status="PASS" start="2024-09-18T11:06:46.469944" elapsed="0.428548"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:20.565471" level="INFO">Clicking element '//span[text()='นิติบุคคล']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']'.</msg>
+<msg time="2024-09-18T11:06:46.898997" level="INFO">Clicking element '//span[text()='นิติบุคคล']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']'.</msg>
 <arg>//span[text()='${Partner_Types}']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:20.565471" elapsed="0.431894"/>
+<status status="PASS" start="2024-09-18T11:06:46.898492" elapsed="0.434245"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['checkbox_partner_types']}</arg>
-<status status="PASS" start="2024-09-17T14:40:20.118211" elapsed="0.879154"/>
+<arg>${AllSpeedy_Register_004_ID_29['checkbox_partner_types']}</arg>
+<status status="PASS" start="2024-09-18T11:06:46.468937" elapsed="0.863800"/>
 </kw>
 <kw name="Verify PartnerType LegalEntity" owner="register">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${partnertype_txt}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:20.998370" elapsed="0.416658"/>
+<status status="PASS" start="2024-09-18T11:06:47.334754" elapsed="0.464058"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:21.833832" level="INFO">Element '//h5[text()="ประเภทคู่ค้า"]' is displayed.</msg>
+<msg time="2024-09-18T11:06:48.215674" level="INFO">Element '//h5[text()="ประเภทคู่ค้า"]' is displayed.</msg>
 <arg>${partnertype_txt}</arg>
 <arg>${menu_txt}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:21.415028" elapsed="0.418804"/>
+<status status="PASS" start="2024-09-18T11:06:47.798812" elapsed="0.416862"/>
 </kw>
 <kw name="Check Checkbox State" owner="register">
 <kw name="Get Element Attribute" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:22.279187" level="INFO">${checked} = None</msg>
+<msg time="2024-09-18T11:06:48.640332" level="INFO">${checked} = None</msg>
 <var>${checked}</var>
 <arg>${checkbox_locator}</arg>
 <arg>checked</arg>
 <doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:21.835126" elapsed="0.444061"/>
+<status status="PASS" start="2024-09-18T11:06:48.215674" elapsed="0.424658"/>
 </kw>
 <return>
 <value>${checked} == 'true'</value>
-<status status="PASS" start="2024-09-17T14:40:22.279187" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:06:48.640332" elapsed="0.001083"/>
 </return>
-<status status="PASS" start="2024-09-17T14:40:21.834978" elapsed="0.444209"/>
+<status status="PASS" start="2024-09-18T11:06:48.215674" elapsed="0.425741"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['checkbox_partner_types_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:20.997365" elapsed="1.281822"/>
+<arg>${AllSpeedy_Register_004_ID_29['checkbox_partner_types_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:06:47.333755" elapsed="1.307660"/>
 </kw>
 <kw name="Select Company Title Name" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${register_dropdown_company_title_name_register_page}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:22.281206" elapsed="0.416774"/>
+<status status="PASS" start="2024-09-18T11:06:48.648417" elapsed="0.455541"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:22.699576" level="INFO">Clicking element '//span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@title='เลือก..']'.</msg>
+<msg time="2024-09-18T11:06:49.103958" level="INFO">Clicking element '//span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@title='เลือก..']'.</msg>
 <arg>${register_dropdown_company_title_name_register_page}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:22.698554" elapsed="0.465931"/>
+<status status="PASS" start="2024-09-18T11:06:49.103958" elapsed="0.506167"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//div[text()='${Title}'][@class='ant-select-item-option-content']</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:23.164485" elapsed="0.416894"/>
+<status status="PASS" start="2024-09-18T11:06:49.610125" elapsed="0.421313"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:23.581379" level="INFO">Clicking element '//div[text()='หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)'][@class='ant-select-item-option-content']'.</msg>
+<msg time="2024-09-18T11:06:50.033078" level="INFO">Clicking element '//div[text()='หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)'][@class='ant-select-item-option-content']'.</msg>
 <arg>//div[text()='${Title}'][@class='ant-select-item-option-content']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:23.581379" elapsed="0.452114"/>
+<status status="PASS" start="2024-09-18T11:06:50.032012" elapsed="0.468067"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['company_title_name']}</arg>
-<status status="PASS" start="2024-09-17T14:40:22.280208" elapsed="1.753285"/>
+<arg>${AllSpeedy_Register_004_ID_29['company_title_name']}</arg>
+<status status="PASS" start="2024-09-18T11:06:48.643418" elapsed="1.856661"/>
 </kw>
 <kw name="Verify Company Title Name" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${register_select_company_title_name_register_page}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:24.033493" elapsed="0.419417"/>
+<status status="PASS" start="2024-09-18T11:06:50.501538" elapsed="0.423332"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:24.868408" level="INFO">Element '//span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@class='ant-select-selection-item']' is displayed.</msg>
+<msg time="2024-09-18T11:06:51.357527" level="INFO">Element '//span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@class='ant-select-selection-item']' is displayed.</msg>
 <arg>${register_select_company_title_name_register_page}</arg>
 <arg>${Title}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:24.452910" elapsed="0.415498"/>
+<status status="PASS" start="2024-09-18T11:06:50.924870" elapsed="0.432657"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['company_title_name_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:24.033493" elapsed="0.835453"/>
+<arg>${AllSpeedy_Register_004_ID_29['company_title_name_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:06:50.500494" elapsed="0.857033"/>
 </kw>
 <kw name="Input Company Name" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:24.873963" elapsed="0.424727"/>
+<status status="PASS" start="2024-09-18T11:06:51.359533" elapsed="0.424090"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:25.298690" level="INFO">Typing text 'company888' into text field '//input[@id='companyName']'.</msg>
+<msg time="2024-09-18T11:06:51.784652" level="INFO">Typing text 'company888' into text field '//input[@id='companyName']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:25.298690" elapsed="0.723970"/>
+<status status="PASS" start="2024-09-18T11:06:51.783623" elapsed="0.754953"/>
 </kw>
 <arg>${register_textbox_company_name_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:24.873008" elapsed="1.149893"/>
+<status status="PASS" start="2024-09-18T11:06:51.358536" elapsed="1.180040"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['company_name']}</arg>
-<status status="PASS" start="2024-09-17T14:40:24.869978" elapsed="1.152923"/>
+<arg>${AllSpeedy_Register_004_ID_29['company_name']}</arg>
+<status status="PASS" start="2024-09-18T11:06:51.357527" elapsed="1.181049"/>
 </kw>
 <kw name="Verify Input Company Name" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:26.025923" elapsed="0.414262"/>
+<status status="PASS" start="2024-09-18T11:06:52.540082" elapsed="0.415185"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:26.865071" level="INFO">Element '//input[@id='companyName']' is displayed.</msg>
+<msg time="2024-09-18T11:06:53.392154" level="INFO">Element '//input[@id='companyName']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:26.440185" elapsed="0.424886"/>
+<status status="PASS" start="2024-09-18T11:06:52.955267" elapsed="0.436887"/>
 </kw>
 <arg>${register_textbox_company_name_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:26.024987" elapsed="0.840084"/>
+<status status="PASS" start="2024-09-18T11:06:52.540082" elapsed="0.852072"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['company_name_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:26.023406" elapsed="0.841665"/>
+<arg>${AllSpeedy_Register_004_ID_29['company_name_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:06:52.539043" elapsed="0.853111"/>
 </kw>
 <kw name="Input Id Number" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:26.866579" elapsed="0.416407"/>
+<status status="PASS" start="2024-09-18T11:06:53.394159" elapsed="0.420459"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:27.282986" level="INFO">Typing text '1234567891234' into text field '//input[@id='idNumber']'.</msg>
+<msg time="2024-09-18T11:06:53.814618" level="INFO">Typing text '1234567891234' into text field '//input[@id='idNumber']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:27.282986" elapsed="0.759792"/>
+<status status="PASS" start="2024-09-18T11:06:53.814618" elapsed="0.767704"/>
 </kw>
 <arg>${register_textbox_id_number_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:26.866579" elapsed="1.176199"/>
+<status status="PASS" start="2024-09-18T11:06:53.394159" elapsed="1.188163"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['id_number']}</arg>
-<status status="PASS" start="2024-09-17T14:40:26.865575" elapsed="1.177203"/>
+<arg>${AllSpeedy_Register_004_ID_29['id_number']}</arg>
+<status status="PASS" start="2024-09-18T11:06:53.393159" elapsed="1.189163"/>
 </kw>
 <kw name="Verify Input Id Number" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:28.044816" elapsed="0.416534"/>
+<status status="PASS" start="2024-09-18T11:06:54.584892" elapsed="0.419243"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:28.875565" level="INFO">Element '//input[@id='idNumber']' is displayed.</msg>
+<msg time="2024-09-18T11:06:55.419271" level="INFO">Element '//input[@id='idNumber']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:28.461350" elapsed="0.414215"/>
+<status status="PASS" start="2024-09-18T11:06:55.004660" elapsed="0.414611"/>
 </kw>
 <arg>${register_textbox_id_number_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:28.043293" elapsed="0.832272"/>
+<status status="PASS" start="2024-09-18T11:06:54.584892" elapsed="0.835392"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['id_number_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:28.043293" elapsed="0.832272"/>
+<arg>${AllSpeedy_Register_004_ID_29['id_number_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:06:54.582853" elapsed="0.837431"/>
 </kw>
 <kw name="Input Company Address" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:28.876572" elapsed="0.419328"/>
+<status status="PASS" start="2024-09-18T11:06:55.422286" elapsed="0.419792"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:29.296429" level="INFO">Typing text '991/1 ถนนพระรามที่ 1' into text field '//input[@id='companyAddress_addressInfo']'.</msg>
+<msg time="2024-09-18T11:06:55.842594" level="INFO">Typing text '991/1 ถนนพระรามที่ 1' into text field '//input[@id='companyAddress_addressInfo']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:29.295900" elapsed="0.798699"/>
+<status status="PASS" start="2024-09-18T11:06:55.842594" elapsed="0.788828"/>
 </kw>
 <arg>${register_textbox_company_address_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:28.876572" elapsed="1.218632"/>
+<status status="PASS" start="2024-09-18T11:06:55.422286" elapsed="1.209136"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['company_address']}</arg>
-<status status="PASS" start="2024-09-17T14:40:28.875565" elapsed="1.219639"/>
+<arg>${AllSpeedy_Register_004_ID_29['company_address']}</arg>
+<status status="PASS" start="2024-09-18T11:06:55.420284" elapsed="1.211645"/>
 </kw>
 <kw name="Verify Input Company Address" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:30.105178" elapsed="0.426043"/>
+<status status="PASS" start="2024-09-18T11:06:56.634941" elapsed="0.425861"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:30.947213" level="INFO">Element '//input[@id='companyAddress_addressInfo']' is displayed.</msg>
+<msg time="2024-09-18T11:06:57.485789" level="INFO">Element '//input[@id='companyAddress_addressInfo']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:30.531221" elapsed="0.415992"/>
+<status status="PASS" start="2024-09-18T11:06:57.060802" elapsed="0.424987"/>
 </kw>
 <arg>${register_textbox_company_address_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:30.103179" elapsed="0.844034"/>
+<status status="PASS" start="2024-09-18T11:06:56.634941" elapsed="0.850848"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['company_address_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:30.097160" elapsed="0.850053"/>
+<arg>${AllSpeedy_Register_004_ID_29['company_address_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:06:56.631929" elapsed="0.853860"/>
+</kw>
+<kw name="Input Company Address Full" owner="business_register_page">
+<kw name="Input Text Register" owner="business_register_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TextBox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T11:06:57.487798" elapsed="0.420633"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-09-18T11:06:57.908431" level="INFO">Typing text 'ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330' into text field '//input[@id='companyAddress_full']'.</msg>
+<arg>${TextBox}</arg>
+<arg>${Value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T11:06:57.908431" elapsed="1.129884"/>
+</kw>
+<arg>${register_textbox_company_address_full_register_page}</arg>
+<arg>${Value}</arg>
+<status status="PASS" start="2024-09-18T11:06:57.487798" elapsed="1.550517"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//div[text()='${Select}'][@class='ant-select-item-option-content']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T11:06:59.038315" elapsed="0.422361"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-09-18T11:06:59.461184" level="INFO">Clicking element '//div[text()='ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330'][@class='ant-select-item-option-content']'.</msg>
+<arg>//div[text()='${Select}'][@class='ant-select-item-option-content']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-09-18T11:06:59.460676" elapsed="0.455085"/>
+</kw>
+<arg>${AllSpeedy_Register_004_ID_29['search_company_address_full']}</arg>
+<arg>${AllSpeedy_Register_004_ID_29['select_company_address_full']}</arg>
+<status status="PASS" start="2024-09-18T11:06:57.485789" elapsed="2.429972"/>
+</kw>
+<kw name="Verify Input Company Address Full" owner="business_register_page">
+<kw name="Verify Input Text Box" owner="business_register_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${TextBox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T11:06:59.917134" elapsed="0.417563"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-09-18T11:07:00.754995" level="INFO">Element '//input[@id='companyAddress_full']' is displayed.</msg>
+<arg>${TextBox}</arg>
+<arg>${Value}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-09-18T11:07:00.334697" elapsed="0.420298"/>
+</kw>
+<arg>${register_textbox_company_address_full_register_page}</arg>
+<arg>${Value}</arg>
+<status status="PASS" start="2024-09-18T11:06:59.917134" elapsed="0.837861"/>
+</kw>
+<arg>${AllSpeedy_Register_004_ID_29['company_address_full_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:06:59.915761" elapsed="0.840250"/>
+</kw>
+<kw name="Verify Capture Screenshot" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-09-18T11:07:00.758041" level="INFO">${date_YYYY_MM_DD} = 2024-09-18 11:07:00.758</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-09-18T11:07:00.757044" elapsed="0.000997"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-09-18T11:07:00.759043" level="INFO">${date_YYYY_MM_DD} = 2024-09-18</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-09-18T11:07:00.758041" elapsed="0.001002"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-09-18T11:07:01.034620" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20general%20information%20success.png"&gt;&lt;img src="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20general%20information%20success.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-09-18T11:07:00.759043" elapsed="0.275577"/>
+</kw>
+<kw name="Capture Fullpage Screenshot" owner="CustomSeleniumLibrary">
+<msg time="2024-09-18T11:07:03.242010" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-18T11:07:06.307182" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;https://www-uat.allspeedy.co.th/business-register&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20general%20information%20success_fullpage1.png"&gt;&lt;img src="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20general%20information%20success_fullpage1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}_fullpage1.png</arg>
+<status status="PASS" start="2024-09-18T11:07:01.035614" elapsed="5.272996"/>
+</kw>
+<arg>AllSpeedy_Register_004_ID_29</arg>
+<arg>filled in general information success</arg>
+<status status="PASS" start="2024-09-18T11:07:00.757044" elapsed="5.551566"/>
+</kw>
+<kw name="Scroll Window To Vertical" owner="common">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-09-18T11:07:06.309614" level="INFO">Executing JavaScript:
+window.scrollTo(0,0)
+Without any arguments.</msg>
+<arg>window.scrollTo(0,${value})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-09-18T11:07:06.309614" elapsed="0.210914"/>
+</kw>
+<arg>0</arg>
+<status status="PASS" start="2024-09-18T11:07:06.309614" elapsed="0.210914"/>
 </kw>
 <kw name="Select Title Name" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${register_dropdown_title_name_register_page}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:30.948719" elapsed="0.420335"/>
+<status status="PASS" start="2024-09-18T11:07:06.521538" elapsed="0.420415"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:31.369562" level="INFO">Clicking element '//span[text()='คำนำหน้าชื่อ ']/../../..//span[@title='เลือก..']'.</msg>
+<msg time="2024-09-18T11:07:06.941953" level="INFO">Clicking element '//span[text()='คำนำหน้าชื่อ ']/../../..//span[@title='เลือก..']'.</msg>
 <arg>${register_dropdown_title_name_register_page}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:31.369054" elapsed="0.454948"/>
+<status status="PASS" start="2024-09-18T11:07:06.941953" elapsed="0.454230"/>
 </kw>
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>//div[text()='${Title}'][@class='ant-select-item-option-content']</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:31.824508" elapsed="0.417179"/>
+<status status="PASS" start="2024-09-18T11:07:07.396183" elapsed="0.420705"/>
 </kw>
 <kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:32.241687" level="INFO">Clicking element '//div[text()='นาง'][@class='ant-select-item-option-content']'.</msg>
+<msg time="2024-09-18T11:07:07.816888" level="INFO">Clicking element '//div[text()='นาง'][@class='ant-select-item-option-content']'.</msg>
 <arg>//div[text()='${Title}'][@class='ant-select-item-option-content']</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:32.241687" elapsed="0.479686"/>
+<status status="PASS" start="2024-09-18T11:07:07.816888" elapsed="0.448725"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['title_name']}</arg>
-<status status="PASS" start="2024-09-17T14:40:30.947715" elapsed="1.773658"/>
+<arg>${AllSpeedy_Register_004_ID_29['title_name']}</arg>
+<status status="PASS" start="2024-09-18T11:07:06.520528" elapsed="1.745085"/>
 </kw>
 <kw name="Verify Title Name" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${register_select_title_name_register_page}</arg>
 <arg>timeout=10s</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:32.723382" elapsed="0.417826"/>
+<status status="PASS" start="2024-09-18T11:07:08.266931" elapsed="0.445259"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:33.557225" level="INFO">Element '//span[text()='คำนำหน้าชื่อ ']/../../..//span[@class='ant-select-selection-item']' is displayed.</msg>
+<msg time="2024-09-18T11:07:09.151218" level="INFO">Element '//span[text()='คำนำหน้าชื่อ ']/../../..//span[@class='ant-select-selection-item']' is displayed.</msg>
 <arg>${register_select_title_name_register_page}</arg>
 <arg>${Title}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:33.141208" elapsed="0.416017"/>
+<status status="PASS" start="2024-09-18T11:07:08.713231" elapsed="0.437987"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['title_name_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:32.721373" elapsed="0.835852"/>
+<arg>${AllSpeedy_Register_004_ID_29['title_name_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:07:08.265613" elapsed="0.885605"/>
 </kw>
 <kw name="Input First Name" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:33.558733" elapsed="0.417117"/>
+<status status="PASS" start="2024-09-18T11:07:09.153226" elapsed="0.435831"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:33.975850" level="INFO">Typing text 'สปีดดี' into text field '//input[@id='firstName']'.</msg>
+<msg time="2024-09-18T11:07:09.589057" level="INFO">Typing text 'สปีดดี' into text field '//input[@id='firstName']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:33.975850" elapsed="0.689392"/>
+<status status="PASS" start="2024-09-18T11:07:09.589057" elapsed="0.706034"/>
 </kw>
 <arg>${register_textbox_first_name_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:33.558733" elapsed="1.106509"/>
+<status status="PASS" start="2024-09-18T11:07:09.153226" elapsed="1.141865"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['first_name']}</arg>
-<status status="PASS" start="2024-09-17T14:40:33.557729" elapsed="1.107513"/>
+<arg>${AllSpeedy_Register_004_ID_29['first_name']}</arg>
+<status status="PASS" start="2024-09-18T11:07:09.151218" elapsed="1.143873"/>
 </kw>
 <kw name="Verify Input First Name" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:34.666713" elapsed="0.415204"/>
+<status status="PASS" start="2024-09-18T11:07:10.297372" elapsed="0.439239"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:35.496774" level="INFO">Element '//input[@id='firstName']' is displayed.</msg>
+<msg time="2024-09-18T11:07:11.162695" level="INFO">Element '//input[@id='firstName']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:35.081917" elapsed="0.414857"/>
+<status status="PASS" start="2024-09-18T11:07:10.737123" elapsed="0.425572"/>
 </kw>
 <arg>${register_textbox_first_name_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:34.666713" elapsed="0.830061"/>
+<status status="PASS" start="2024-09-18T11:07:10.296868" elapsed="0.865827"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['first_name_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:34.665673" elapsed="0.831101"/>
+<arg>${AllSpeedy_Register_004_ID_29['first_name_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:07:10.295618" elapsed="0.867077"/>
 </kw>
 <kw name="Input Last Name" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:35.498779" elapsed="0.421523"/>
+<status status="PASS" start="2024-09-18T11:07:11.166465" elapsed="0.441266"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:35.920846" level="INFO">Typing text 'สปีดดี' into text field '//input[@id='lastName']'.</msg>
+<msg time="2024-09-18T11:07:11.607731" level="INFO">Typing text 'สปีดดี' into text field '//input[@id='lastName']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:35.920302" elapsed="0.684315"/>
+<status status="PASS" start="2024-09-18T11:07:11.607731" elapsed="0.767305"/>
 </kw>
 <arg>${register_textbox_last_name_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:35.498779" elapsed="1.105838"/>
+<status status="PASS" start="2024-09-18T11:07:11.165462" elapsed="1.209574"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['first_name']}</arg>
-<status status="PASS" start="2024-09-17T14:40:35.496774" elapsed="1.108348"/>
+<arg>${AllSpeedy_Register_004_ID_29['first_name']}</arg>
+<status status="PASS" start="2024-09-18T11:07:11.163452" elapsed="1.211584"/>
 </kw>
 <kw name="Verify Input Last Name" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:36.607127" elapsed="0.437754"/>
+<status status="PASS" start="2024-09-18T11:07:12.377036" elapsed="0.419835"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:37.462595" level="INFO">Element '//input[@id='lastName']' is displayed.</msg>
+<msg time="2024-09-18T11:07:13.233055" level="INFO">Element '//input[@id='lastName']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:37.044881" elapsed="0.417714"/>
+<status status="PASS" start="2024-09-18T11:07:12.797911" elapsed="0.435144"/>
 </kw>
 <arg>${register_textbox_last_name_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:36.606128" elapsed="0.856467"/>
+<status status="PASS" start="2024-09-18T11:07:12.377036" elapsed="0.856019"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['first_name_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:36.605122" elapsed="0.857473"/>
+<arg>${AllSpeedy_Register_004_ID_29['first_name_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:07:12.375036" elapsed="0.858019"/>
 </kw>
 <kw name="Input Email" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:37.463604" elapsed="0.416836"/>
+<status status="PASS" start="2024-09-18T11:07:13.235991" elapsed="0.426320"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:37.880947" level="INFO">Typing text 'testregister.business@yopmail.com' into text field '//input[@id='email']'.</msg>
+<msg time="2024-09-18T11:07:13.663378" level="INFO">Typing text 'testregister.business@yopmail.com' into text field '//input[@id='email']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:37.880440" elapsed="0.960758"/>
+<status status="PASS" start="2024-09-18T11:07:13.662311" elapsed="0.930545"/>
 </kw>
 <arg>${register_textbox_email_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:37.463604" elapsed="1.377594"/>
+<status status="PASS" start="2024-09-18T11:07:13.235991" elapsed="1.356865"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['email']}</arg>
-<status status="PASS" start="2024-09-17T14:40:37.462595" elapsed="1.378603"/>
+<arg>${AllSpeedy_Register_004_ID_29['email']}</arg>
+<status status="PASS" start="2024-09-18T11:07:13.233946" elapsed="1.358910"/>
 </kw>
 <kw name="Verify Input Email" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:38.843103" elapsed="0.415446"/>
+<status status="PASS" start="2024-09-18T11:07:14.594865" elapsed="0.416220"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:39.673015" level="INFO">Element '//input[@id='email']' is displayed.</msg>
+<msg time="2024-09-18T11:07:15.461405" level="INFO">Element '//input[@id='email']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:39.258549" elapsed="0.414466"/>
+<status status="PASS" start="2024-09-18T11:07:15.011668" elapsed="0.449737"/>
 </kw>
 <arg>${register_textbox_email_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:38.843103" elapsed="0.829912"/>
+<status status="PASS" start="2024-09-18T11:07:14.593861" elapsed="0.867544"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['email_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:38.842097" elapsed="0.830918"/>
+<arg>${AllSpeedy_Register_004_ID_29['email_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:07:14.592856" elapsed="0.868549"/>
 </kw>
 <kw name="Input Mobile No" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:39.675054" elapsed="0.422969"/>
+<status status="PASS" start="2024-09-18T11:07:15.463412" elapsed="0.417264"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:40.098023" level="INFO">Typing text '0981234567' into text field '//input[@id='mobileNo']'.</msg>
+<msg time="2024-09-18T11:07:15.882329" level="INFO">Typing text '0981234567' into text field '//input[@id='mobileNo']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:40.098023" elapsed="0.715375"/>
+<status status="PASS" start="2024-09-18T11:07:15.881258" elapsed="0.737307"/>
 </kw>
 <arg>${register_textbox_mobile_no_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:39.675054" elapsed="1.138344"/>
+<status status="PASS" start="2024-09-18T11:07:15.463412" elapsed="1.155153"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['mobile_no']}</arg>
-<status status="PASS" start="2024-09-17T14:40:39.674024" elapsed="1.139374"/>
+<arg>${AllSpeedy_Register_004_ID_29['mobile_no']}</arg>
+<status status="PASS" start="2024-09-18T11:07:15.462413" elapsed="1.156152"/>
 </kw>
 <kw name="Verify Input Mobile No" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:40.814925" elapsed="0.444905"/>
+<status status="PASS" start="2024-09-18T11:07:16.620074" elapsed="0.415477"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:41.672725" level="INFO">Element '//input[@id='mobileNo']' is displayed.</msg>
+<msg time="2024-09-18T11:07:17.456598" level="INFO">Element '//input[@id='mobileNo']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:41.259830" elapsed="0.412895"/>
+<status status="PASS" start="2024-09-18T11:07:17.035551" elapsed="0.421047"/>
 </kw>
 <arg>${register_textbox_mobile_no_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:40.814925" elapsed="0.857800"/>
+<status status="PASS" start="2024-09-18T11:07:16.620074" elapsed="0.836524"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['mobile_no_expected']}</arg>
-<status status="PASS" start="2024-09-17T14:40:40.813398" elapsed="0.859327"/>
+<arg>${AllSpeedy_Register_004_ID_29['mobile_no_expected']}</arg>
+<status status="PASS" start="2024-09-18T11:07:16.618565" elapsed="0.838033"/>
 </kw>
 <kw name="Input Mobile Ext" owner="business_register_page">
 <kw name="Input Text Register" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:41.673734" elapsed="0.422782"/>
+<status status="PASS" start="2024-09-18T11:07:17.458602" elapsed="0.438841"/>
 </kw>
 <kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:42.096516" level="INFO">Typing text '890' into text field '//input[@id='mobileExt']'.</msg>
+<msg time="2024-09-18T11:07:17.898468" level="INFO">Typing text '890' into text field '//input[@id='mobileExt']'.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-09-17T14:40:42.096516" elapsed="0.662639"/>
+<status status="PASS" start="2024-09-18T11:07:17.897443" elapsed="0.734599"/>
 </kw>
 <arg>${register_textbox_mobile_ext_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:41.673734" elapsed="1.085421"/>
+<status status="PASS" start="2024-09-18T11:07:17.457603" elapsed="1.174439"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['mobile_ext']}</arg>
-<status status="PASS" start="2024-09-17T14:40:41.672725" elapsed="1.086430"/>
+<arg>${AllSpeedy_Register_004_ID_29['mobile_ext']}</arg>
+<status status="PASS" start="2024-09-18T11:07:17.456598" elapsed="1.175444"/>
 </kw>
 <kw name="Verify Input Mobile Ext" owner="business_register_page">
 <kw name="Verify Input Text Box" owner="business_register_page">
 <kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
 <arg>${TextBox}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:42.760613" elapsed="0.413801"/>
+<status status="PASS" start="2024-09-18T11:07:18.634060" elapsed="0.415860"/>
 </kw>
 <kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:43.589889" level="INFO">Element '//input[@id='mobileExt']' is displayed.</msg>
+<msg time="2024-09-18T11:07:19.481228" level="INFO">Element '//input[@id='mobileExt']' is displayed.</msg>
 <arg>${TextBox}</arg>
 <arg>${Value}</arg>
 <doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-09-17T14:40:43.174414" elapsed="0.415475"/>
+<status status="PASS" start="2024-09-18T11:07:19.050156" elapsed="0.431072"/>
 </kw>
 <arg>${register_textbox_mobile_ext_register_page}</arg>
 <arg>${Value}</arg>
-<status status="PASS" start="2024-09-17T14:40:42.760613" elapsed="0.829276"/>
+<status status="PASS" start="2024-09-18T11:07:18.633049" elapsed="0.848179"/>
 </kw>
-<arg>${AllSpeedy_Register_008_ID_18['mobile_ext']}</arg>
-<status status="PASS" start="2024-09-17T14:40:42.759155" elapsed="0.830734"/>
+<arg>${AllSpeedy_Register_004_ID_29['mobile_ext']}</arg>
+<status status="PASS" start="2024-09-18T11:07:18.632042" elapsed="0.849186"/>
 </kw>
 <kw name="Verify Capture Screenshot" owner="common">
 <kw name="Get Current Date" owner="DateTime">
-<msg time="2024-09-17T14:40:43.590926" level="INFO">${date_YYYY_MM_DD} = 2024-09-17 14:40:43.591</msg>
+<msg time="2024-09-18T11:07:19.482774" level="INFO">${date_YYYY_MM_DD} = 2024-09-18 11:07:19.482</msg>
 <var>${date_YYYY_MM_DD}</var>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-09-17T14:40:43.590409" elapsed="0.000517"/>
+<status status="PASS" start="2024-09-18T11:07:19.481737" elapsed="0.001037"/>
 </kw>
 <kw name="Convert Date" owner="DateTime">
-<msg time="2024-09-17T14:40:43.590926" level="INFO">${date_YYYY_MM_DD} = 2024-09-17</msg>
+<msg time="2024-09-18T11:07:19.482774" level="INFO">${date_YYYY_MM_DD} = 2024-09-18</msg>
 <var>${date_YYYY_MM_DD}</var>
 <arg>${date_YYYY_MM_DD}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-09-17T14:40:43.590926" elapsed="0.000000"/>
+<status status="PASS" start="2024-09-18T11:07:19.482774" elapsed="0.000000"/>
 </kw>
 <kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-09-17T14:40:43.857387" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-09-17/AllSpeedy_Register_008_ID_18/filled%20in%20contact%20information%20success.png"&gt;&lt;img src="../results/2024-09-17/AllSpeedy_Register_008_ID_18/filled%20in%20contact%20information%20success.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-18T11:07:19.745754" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20contact%20information%20success.png"&gt;&lt;img src="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20contact%20information%20success.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-09-17T14:40:43.591444" elapsed="0.265943"/>
+<status status="PASS" start="2024-09-18T11:07:19.482774" elapsed="0.262980"/>
 </kw>
 <kw name="Capture Fullpage Screenshot" owner="CustomSeleniumLibrary">
-<msg time="2024-09-17T14:40:46.064780" level="INFO">Slept 2 seconds.</msg>
-<msg time="2024-09-17T14:40:49.129069" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;https://www-uat.allspeedy.co.th/business-register&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-09-17/AllSpeedy_Register_008_ID_18/filled%20in%20contact%20information%20success_fullpage1.png"&gt;&lt;img src="../results/2024-09-17/AllSpeedy_Register_008_ID_18/filled%20in%20contact%20information%20success_fullpage1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-09-18T11:07:21.954616" level="INFO">Slept 2 seconds.</msg>
+<msg time="2024-09-18T11:07:25.073508" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;https://www-uat.allspeedy.co.th/business-register&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20contact%20information%20success_fullpage1.png"&gt;&lt;img src="../results/2024-09-18/AllSpeedy_Register_004_ID_29/filled%20in%20contact%20information%20success_fullpage1.png" width="800px"&gt;&lt;/a&gt;</msg>
 <arg>../results/${FOlDER_RESULT}/${folder}/${img_name}_fullpage1.png</arg>
-<status status="PASS" start="2024-09-17T14:40:43.857387" elapsed="5.272198"/>
+<status status="PASS" start="2024-09-18T11:07:19.745754" elapsed="5.329750"/>
 </kw>
-<arg>AllSpeedy_Register_008_ID_18</arg>
+<arg>AllSpeedy_Register_004_ID_29</arg>
 <arg>filled in contact information success</arg>
-<status status="PASS" start="2024-09-17T14:40:43.590409" elapsed="5.539176"/>
+<status status="PASS" start="2024-09-18T11:07:19.481737" elapsed="5.593767"/>
 </kw>
 <doc>[ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกข้อมูลถูกต้องครบถ้วน</doc>
-<tag>AllSpeedy_Register_008</tag>
+<tag>AllSpeedy_Register_004</tag>
 <tag>Medium</tag>
 <tag>Regression</tag>
 <tag>UAT</tag>
-<status status="PASS" start="2024-09-17T14:40:16.913812" elapsed="32.216787"/>
+<status status="PASS" start="2024-09-18T11:06:42.947253" elapsed="42.129794"/>
 </test>
 <kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-09-17T14:40:49.131591" elapsed="2.382151"/>
+<status status="PASS" start="2024-09-18T11:07:25.082090" elapsed="2.326710"/>
 </kw>
-<status status="PASS" start="2024-09-17T14:40:14.351154" elapsed="37.162588"/>
+<status status="PASS" start="2024-09-18T11:06:40.476933" elapsed="46.931867"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">AllSpeedy_Register_008</stat>
+<stat pass="1" fail="0" skip="0">AllSpeedy_Register_004</stat>
 <stat pass="1" fail="0" skip="0">Medium</stat>
 <stat pass="1" fail="0" skip="0">Regression</stat>
 <stat pass="1" fail="0" skip="0">UAT</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Allspeedy Register 008">Allspeedy Register 008</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Allspeedy Register 004">Allspeedy Register 004</stat>
 </suite>
 </statistics>
 <errors>
+<msg time="2024-09-18T11:06:41.769071" level="WARN">The chromedriver version (128.0.6613.86) detected in PATH at C:\chromedriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.58); currently, chromedriver 129.0.6668.58 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
 </errors>
 </robot>

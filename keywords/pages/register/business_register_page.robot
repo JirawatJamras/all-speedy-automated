@@ -51,11 +51,11 @@ Verify Input Company Address
     Verify Input Text Box    ${register_textbox_company_address_register_page}    ${Value}     
 
 Input Company Address Full
-    [Arguments]    ${Value}  
+    [Arguments]    ${Value}    ${Select}
     Input Text Register    ${register_textbox_company_address_full_register_page}     ${Value}  
     #Select one in result search 
-    #Wait Until Element Is Visible    //div[text()='${AllSpeedy_Register_008_ID_18['select_company_address_full']}'][@class='ant-select-item-option-content'] 
-    #Click Element    //div[text()='${AllSpeedy_Register_008_ID_18['select_company_address_full']}'][@class='ant-select-item-option-content']
+    Wait Until Element Is Visible    //div[text()='${Select}'][@class='ant-select-item-option-content'] 
+    Click Element    //div[text()='${Select}'][@class='ant-select-item-option-content']
 
 Verify Input Company Address Full  
     [Arguments]    ${Value}  
