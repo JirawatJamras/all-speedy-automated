@@ -1,5 +1,6 @@
 *** Keywords ***
 Click Button To Add
+    sleep    4s
     Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
     Click Element        ${b2c_btn_add}
 
