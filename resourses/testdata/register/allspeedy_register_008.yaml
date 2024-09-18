@@ -1,9 +1,0 @@
-AllSpeedy_Register_008_ID_18:
-  checkbox_partner_types: นิติบุคคล
-  checkbox_partner_types_expected: นิติบุคคล
-  company_registration_prefix: หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)
-  company_registration_prefix_expected: หสน.(ห้างหุ้นส่วนสามัญนิติบุคคล)
-  company_name: company888
-  id_number: 1234567891234
-  company_address: 991/1 ถนนพระรามที่ 1 
-  company_address_full: ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
