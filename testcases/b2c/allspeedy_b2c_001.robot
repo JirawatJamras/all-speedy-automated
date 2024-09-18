@@ -12,7 +12,7 @@ AllSpeedy_B2C_001_ID_1
     b2c_landing_page.Click Go Login Button
     b2c_login_page.Click Log On Button
     Verify Error Message B2C_001_ID_1
-    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_1    Login for business customers: In case of not entering Email and Password
+    Verify Capture Screenshot    AllSpeedy_B2C_001_ID_1    Login for business customers In case of not entering Email and Password
 
 AllSpeedy_B2C_001_ID_2
     [Documentation]                           [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอก Email ไม่เป็นภาษาอังกฤษ ตัวเลข อักขระพิเศษ ในรูปแบบอีเมล และ ไม่ใช่ในรูปแบบอีเมล 
