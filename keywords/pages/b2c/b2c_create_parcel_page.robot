@@ -7,12 +7,16 @@ Verify Create Parcel Page
     Verify Close Pop-Up
     Click Element    ${close_noticonfirm_btn}
 
-Clcik Choose Favorites
+Click Choose Favorites
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
     Click Element    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=30s
     ${title_text}=    Get Text    ${favorites_defult_text}
     Should Be Equal    ${title_text}    ${AllSpeedy_B2C_005_ID_18['fav_defult']}
+
+Click Favorites Defult
+    Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
+    Click Element    ${select_favorites_btn}
 
 
 Input Special Letters
