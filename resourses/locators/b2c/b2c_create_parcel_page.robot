@@ -12,3 +12,4 @@ ${choose_favorites_btn}     //button[span[text()='เลือกจากรา
 ${favorites_defult_text}     //div[@class='ant-space-item']//span[contains(@class, 'ant-typography') and contains(@class, 'bg-amber-500')]
 ${search_favorites_txtbox}     //input[@placeholder='ค้นหา']
 
+${select_favorites_btn}     //button[contains(@class, 'ant-btn') and contains(@class, 'bg-green-500')]
