@@ -10,8 +10,7 @@ Input Password
     Input Text                       ${dps_txtbox_password}    ${value}
 
 Click Log On Button
-    Wait Until Element Is Visible    ${dps_btn_log_on}
-    Click Element                    ${dps_btn_log_on}
+    common.Click when ready    ${dps_btn_log_on}
 
 Verify Error Message
     [Arguments]    ${expected_error}

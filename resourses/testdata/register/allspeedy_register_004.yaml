@@ -1,3 +1,66 @@
+AllSpeedy_Register_004_ID_22 :
+  wrong_url :  https://www-uat.allspeedy22.co.th/auth/login
+
+AllSpeedy_Register_004_ID_23 :
+  emailBusiness:
+    expected: อีเมล
+  passwordBusiness:
+    expected: รหัสผ่าน
+  loginButton :
+    expected: เข้าสู่ระบบ
+  forgetPassword:
+    expected: ลืมรหัสผ่าน?
+  registerBusinessCustomersButton:
+    expected: ลงทะเบียนลูกค้าธุรกิจ
+  LegalEntitytxt: 
+    expected: นิติบุคคล
+  NormalPerson: 
+    expected: บุคคลธรรมดา
+  companyTitleName:
+    expected: คำนำหน้าประเภทจดทะเบียนบริษัท
+  CompanyName:
+    expected: ชื่อบริษัท
+  TaxIdentification:
+    expected: เลขประจำตัวผู้เสียภาษี
+  Address_addressInfo:
+    expected: ที่อยู่บริษัท 
+  Sub_districtDistrict:
+    expected: ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์
+  Prefix_name:
+    expected: คำนำหน้าชื่อ 
+  FirstName:
+    expected: ชื่อ (ผู้ติดต่อ) 
+  LastName:
+    expected: นามสกุล
+  Email:
+    expected: E-mail
+  MobileNo:
+    expected: เบอร์โทรศัพท์
+  MobileExt:
+    expected: ต่อ
+  Form_Prefix_name:
+    expected: คำนำหน้าชื่อ
+  Form_firstName:
+    expected: ชื่อ
+  Form_lastName:
+    expected: นามสกุล
+  Form_idNumber:
+    expected: เลขประจำตัวประชาชน
+  Form_email:
+    expected: E-mail
+  Form_address_addressInfo:
+    expected: ที่อยู่
+  Form_address_full:
+    expected: ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์
+  Form_mobileNo:
+    expected: เบอร์โทรศัพท์
+  Form_mobileExt:
+    expected: ต่อ
+  cencelButton:
+    expected: ยกเลิก
+  registerButton:
+    expected: ลงทะเบียน
+
 AllSpeedy_Register_004_ID_29:
   checkbox_partner_types: นิติบุคคล
   checkbox_partner_types_expected: นิติบุคคล
@@ -24,4 +87,3 @@ AllSpeedy_Register_004_ID_29:
   mobile_no_expected: 0981234567
   mobile_ext: 890
   mobile_ext_expected: 890
-

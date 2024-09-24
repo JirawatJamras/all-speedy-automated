@@ -19,6 +19,17 @@ Click Xpath By JavaScript
     Wait Until Page Contains Element    xpath=${path}
     Execute JavaScript                  document.evaluate("${path}", document.body, null, 9, null).singleNodeValue.click()
 
+Input when ready
+    [Arguments]    ${locator}    ${text}
+    Wait Until Element Is Visible    ${locator}    ${DEFAULT_TIMEOUT}
+    Input Text    ${locator}    ${text}
+    Sleep    2s
+
+Click when ready
+    [Arguments]   ${locator}
+    Wait Until Element Is Visible   ${locator}   ${DEFAULT_TIMEOUT}
+    Click Element    ${locator}
+
 Scroll Window To Vertical
     [Arguments]           ${value}
     Execute JavaScript    window.scrollTo(0,${value})
@@ -37,5 +48,4 @@ Verify Capture Screenshot
     [Arguments]    ${folder}    ${img_name}
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    Capture Page Screenshot    ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
-    Capture Fullpage Screenshot    ../results/${FOlDER_RESULT}/${folder}/${img_name}_fullpage1.png
+    Capture Page Screenshot   ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
