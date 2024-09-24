@@ -6,8 +6,8 @@ Suite Teardown    Close Browser
 
 
 *** Test Cases ***
-#เปลี่ยน ID หลังจากแก้ testcase
-AllSpeedy_Register_004_ID_29 
+
+AllSpeedy_Register_004_ID_29    #เปลี่ยน ID หลังจากแก้ testcase
     [Documentation]    [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกข้อมูลถูกต้องครบถ้วน                        
     [Tags]    AllSpeedy_Register_004    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
@@ -40,4 +40,15 @@ AllSpeedy_Register_004_ID_29
     business_register_page.Input Mobile Ext    ${AllSpeedy_Register_004_ID_29['mobile_ext']}
     business_register_page.Verify Input Mobile Ext    ${AllSpeedy_Register_004_ID_29['mobile_ext']}
     common.Verify Capture Screenshot    AllSpeedy_Register_004_ID_29    filled in contact information success
+
+AllSpeedy_Register_004_ID_23
+    [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] กรอก URL ถูกต้อง
+    [Tags]    AllSpeedy_Register_004    UAT    Low    Regression
+    common.Open URL    ${B2C_UAT_URL}
+    register_landing_page.Click Go business Tab
+    Verify All Page login
+    register.Click Register On Button
+    Verify All Page Register
+    common.Verify Capture Screenshot    AllSpeedy_Register_004_ID_23    Enter the correct URL
+    ### แก้ verify ใหม่ และแก้ไฟล์ yaml ด้วย
     

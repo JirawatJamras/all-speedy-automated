@@ -51,4 +51,5 @@ Resource                    locators/register/register_landing_page.robot
 
 Variables                   testdata/register/register_testdata.yaml
 Variables                   testdata/register/allspeedy_register.yaml
+Variables                   testdata/register/allspeedy_register_001.yaml
 Variables                   testdata/register/allspeedy_register_004.yaml
