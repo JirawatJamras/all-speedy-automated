@@ -10,5 +10,4 @@ Input Password
     Input Text                       ${b2ctxtbox_password}    ${value}
 
 Click Log On Button
-    Wait Until Element Is Visible    ${b2c_btn_log_on}
-    Click Element                    ${b2c_btn_log_on}
+    common.Click when ready    ${b2c_btn_log_on}

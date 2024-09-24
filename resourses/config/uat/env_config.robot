@@ -1,4 +1,6 @@
 *** Variables ***
+${DEFAULT_TIMEOUT}              30s
+
 ####################### DPS UAT DATA #######################
 ${DPS_UAT_URL}           https://dps-uat.allspeedy.co.th/
 ${DPS_PORTAL_UAT_URL}    https://dps-uat.allspeedy.co.th/portal

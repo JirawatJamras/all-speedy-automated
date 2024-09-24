@@ -10,9 +10,8 @@ Input Password
     Input Text                       ${c2ctxtbox_password}    ${value}
 
 Click Log On Button
-    Wait Until Element Is Visible    ${c2c_btn_log_on}
-    Click Element                    ${c2c_btn_log_on}
-
+    common.Click when ready    ${c2c_btn_log_on}
+    
 Verify Customer Email Txtbox
     [Arguments]    ${email}
     Wait Until Element Is Visible    ${c2c_expected_email_txtbox}
