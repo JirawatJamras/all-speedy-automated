@@ -2,7 +2,7 @@
 Resource          ../../resourses/import.robot
 Suite Setup       Run Keywords    Open Chrome Browser    chrome    #headlesschrome
                   ...    AND   Set Folder Result with date
-Suite Teardown    Close Browser
+#Suite Teardown    Close Browser
 
 
 *** Test Cases ***
@@ -26,6 +26,18 @@ AllSpeedy_Register_004_ID_23
     business_customers_register_page.Select Partner Type Radio Button    ${AllSpeedy_Register_004_ID_23.NormalPerson['expected']}
     business_customers_register_page.Verify Pre-Register Form For Normal Person Page    AllSpeedy_Register_004_ID_23
     common.Verify Capture Screenshot    AllSpeedy_Register_004_ID_23    Verify Pre-Register Form For Normal Person Page
+
+AllSpeedy_Register_004_ID_26
+    [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกอีเมล ไม่ถูกต้อง
+    [Tags]    AllSpeedy_Register_004    UAT    Medium    Regression    Pee
+    common.Open URL    ${B2C_UAT_URL}
+    general_customers_page.Select Business Customers Tab
+    business_customers_page.Click Register Business Customers Button
+    business_customers_register_page.Input Email    ${AllSpeedy_Register_004_ID_26['email_error_format']}
+    business_customers_register_page.Verify Register Email Errror Messages    ${AllSpeedy_Register_004_ID_26['email_error_msg']}
+    common.Clear Value Input Text    ${register_textbox_email_register_page}
+    business_customers_register_page.Input Email    ${AllSpeedy_Register_004_ID_26['email_error_th']}
+    business_customers_register_page.Verify Register Email Errror Messages    ${AllSpeedy_Register_004_ID_26['email_error_msg']}
 
 AllSpeedy_Register_004_ID_29    #เปลี่ยน ID หลังจากแก้ testcase
     [Documentation]    [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกข้อมูลถูกต้องครบถ้วน                        

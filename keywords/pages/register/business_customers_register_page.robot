@@ -17,7 +17,7 @@ Select Company Title Name
 Input Text Register
     [Arguments]    ${TextBox}    ${Value}
     Wait Until Element Is Visible    ${TextBox}
-    Input Text                       ${TextBox}    ${Value}   
+    Input Text    ${TextBox}    ${Value}
 
 Verify Input Text Box
     [Arguments]    ${TextBox}    ${Value}
@@ -88,7 +88,7 @@ Verify Input Last Name
 
 Input Email
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_email_register_page}     ${Value}  
+    Input Text Register    ${register_textbox_email_register_page}     ${Value}
 
 Verify Input Email
     [Arguments]    ${Value}  
@@ -257,3 +257,8 @@ Verify Register Business Customers Register Button
     [Arguments]    ${text}
     Wait Until Element Is Visible    ${register_btn_register_business_customers_register_page}    ${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_btn_register_business_customers_register_page}    ${text}
+
+Verify Register Email Errror Messages
+    [Arguments]    ${text}
+    Wait Until Element Is Visible    ${register_msg_error_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Element Should Contain    ${register_msg_error_business_customers_register_page}    ${text}

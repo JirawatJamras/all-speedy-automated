@@ -61,6 +61,11 @@ AllSpeedy_Register_004_ID_23 :
   registerButton:
     expected: ลงทะเบียน
 
+AllSpeedy_Register_004_ID_26:
+  email_error_format: test123.com
+  email_error_th: อีเมลล์
+  email_error_msg: กรุณากรอก E-mail ของคุณให้ถูกต้อง
+
 AllSpeedy_Register_004_ID_29:
   checkbox_partner_types: นิติบุคคล
   checkbox_partner_types_expected: นิติบุคคล
