@@ -61,6 +61,21 @@ AllSpeedy_Register_004_ID_23 :
   registerButton:
     expected: ลงทะเบียน
 
+AllSpeedy_Register_004_ID_25:
+  invaild_tax_identification_01:
+    input: 123456789
+    expected: กรุณากรอกเลขประจำตัวผู้เสียภาษีให้ถูกต้อง
+  invaild_tax_identification_02:
+    input: 1234567890123456
+  invaild_tax_identification_03:
+    input: abcdefghijklm
+
+AllSpeedy_Register_004_ID_28:
+  invalid_mobile_ext_01:
+    input: 1234567890123
+  invalid_mobile_ext_02:
+    input: abcdefghij
+
 AllSpeedy_Register_004_ID_29:
   checkbox_partner_types: นิติบุคคล
   checkbox_partner_types_expected: นิติบุคคล

@@ -1,21 +1,19 @@
 *** Variables ***
 ${register_dropdown_company_title_name_register_page}    //span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@title='เลือก..']
-${register_select_company_title_name_register_page}    //span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@class='ant-select-selection-item']
-
-${register_textbox_company_name_register_page}    //input[@id='companyName']
-${register_textbox_id_number_register_page}    //input[@id='idNumber']
-${register_textbox_company_address_register_page}    //input[@id='companyAddress_addressInfo']
-${register_textbox_company_address_full_register_page}    //input[@id='companyAddress_full']
-
 ${register_dropdown_title_name_register_page}    //span[text()='คำนำหน้าชื่อ ']/../../..//span[@title='เลือก..']
+
+${register_select_company_title_name_register_page}    //span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@class='ant-select-selection-item']
 ${register_select_title_name_register_page}    //span[text()='คำนำหน้าชื่อ ']/../../..//span[@class='ant-select-selection-item']
 
+${register_textbox_company_name_register_page}    //input[@id='companyName']
+${register_txtbox_tax_identification_number_register_page}    //input[@id='idNumber']
+${register_textbox_company_address_register_page}    //input[@id='companyAddress_addressInfo']
+${register_textbox_company_address_full_register_page}    //input[@id='companyAddress_full']
 ${register_textbox_first_name_register_page}    //input[@id='firstName']
 ${register_textbox_last_name_register_page}    //input[@id='lastName']
 ${register_textbox_email_register_page}    //input[@id='email']
 ${register_textbox_mobile_no_register_page}    //input[@id='mobileNo']
 ${register_textbox_mobile_ext_register_page}    //input[@id='mobileExt']
-
 
 ${register_txt_legal_entity_business_customers_register_page}    //input[@value='นิติบุคคล']/../../span[2]
 ${register_txt_normal_person_business_customers_register_page}    //input[@value='บุคคลธรรมดา']/../../span[2]
@@ -30,7 +28,6 @@ ${register_txt_lastname_business_customers_register_page}    //label[@for='lastN
 ${register_txt_email_business_customers_register_page}    //label[@for='email']/span
 ${register_txt_mobileNumber_business_customers_register_page}    //label[@for='mobileNo']/span
 ${register_txt_mobileExt_business_customers_register_page}    //label[@for='mobileExt']
-
 ${register_txt_form_prefix_name_business_customers_register_page}    //label[@for='Form_titleName']/span
 ${register_txt_form_firstName_business_customers_register_page}    //label[@for='Form_firstName']/span
 ${register_txt_form_lastname_business_customers_register_page}    //label[@for='Form_lastName']/span
@@ -43,3 +40,5 @@ ${register_txt_form_mobileExt_business_customers_register_page}    //label[@for=
 
 ${register_btn_cancel_business_customers_register_page}    //span[text()='ยกเลิก']/..
 ${register_btn_register_business_customers_register_page}    //b[text()='ลงทะเบียน']/..
+
+${register_msg_tax_identification_number_business_customers_register_page}    //div[@id='idNumber_help'][@role='alert']//div

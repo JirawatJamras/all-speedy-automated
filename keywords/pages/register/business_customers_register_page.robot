@@ -30,15 +30,27 @@ Input Company Name
 
 Verify Input Company Name
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_company_name_register_page}    ${Value}
+    Verify Input Text Box    ${register_textbox_company_name_register_page}    ${Value}  
 
-Input Id Number 
+Input Tax Identification Number 
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_id_number_register_page}    ${Value}  
+    Input Text Register    ${register_txtbox_tax_identification_number_register_page}    ${Value}  
 
-Verify Input Id Number 
+Verify Input Tax Identification Number 
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_id_number_register_page}    ${Value}   
+    Verify Input Text Box    ${register_txtbox_tax_identification_number_register_page}    ${Value}
+
+Verify Invalid Input Tax Identification Number
+    [Arguments]    ${Value}
+    Verify Input Text Box    ${register_msg_tax_identification_number_business_customers_register_page}    ${Value}
+
+Verify Maximum Tax Identification Number That Can Be Inputted
+    ${count_lenght_value}=    Get Value    ${register_txtbox_tax_identification_number_register_page}
+    Length Should Be    ${count_lenght_value}    13
+
+Verify Input Characters In Tax Identification Number Is Empty
+    ${value}=    Get Value    ${register_txtbox_tax_identification_number_register_page} 
+    Should Be Empty   ${value}
 
 Input Company Address 
     [Arguments]    ${Value}  
@@ -109,6 +121,15 @@ Input Mobile Ext
 Verify Input Mobile Ext
     [Arguments]    ${Value}  
     Verify Input Text Box    ${register_textbox_mobile_ext_register_page}    ${Value}
+
+Verify Maximum Input Mobile Ext That Can Be Inputted
+    ${count_lenght_value}=    Get Value    ${register_textbox_mobile_ext_register_page}
+    Length Should Be    ${count_lenght_value}    10
+
+Verify Input Characters In Mobile Ext Is Empty
+    ${value}=    Get Value    ${register_textbox_mobile_ext_register_page}
+    Should Be Empty   ${value}
+
 
 Verify Pre-Register Form For Legal Entity Page
     [Arguments]    ${testcase}
