@@ -52,3 +52,20 @@ AllSpeedy_C2C_001_ID_5
     c2c_login.Click Log On Button
     Verify Login Customer Success
     common.Verify Capture Screenshot    AllSpeedy_C2C_001_ID_5    Login Success
+
+#### new ####
+AllSpeedy_C2C_001
+    [Documentation]    Login เว็บ stg.711.jenosize.tech 
+    [Tags]    7web
+    common.Open URL    ${C2C_UAT_URL}
+    ### User is not All MEMBER ###
+    c2c_login_seven_page.Input Email    ${c2c_login_user_03['username']}
+    c2c_login_seven_page.Input Password    ${c2c_login_user_03['password']}
+    c2c_login_seven_page.Click Log in Button
+    c2c_landing_page.Verify Login Success    ${AllSpeedy_C2C_001_ID_6['Account_name']}
+    c2c_landing_page.Click Menu Seven Store
+    c2c_landing_page.Click Menu Shipping
+    c2c_landing_page.Verify Page Should not Redirect
+    c2c_landing_page.Click Menu Seven Store
+    c2c_landing_page.Click Menu Tracking
+    c2c_tracking_page.Verify Page Should Be Tracking Parcel Page
