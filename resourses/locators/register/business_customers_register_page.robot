@@ -42,3 +42,4 @@ ${register_btn_cancel_business_customers_register_page}    //span[text()='ยก
 ${register_btn_register_business_customers_register_page}    //b[text()='ลงทะเบียน']/..
 
 ${register_msg_tax_identification_number_business_customers_register_page}    //div[@id='idNumber_help'][@role='alert']//div
+${register_msg_error_business_customers_register_page}    //div[@id='email_help']/div
