@@ -49,3 +49,8 @@ Verify Capture Screenshot
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
     Capture Page Screenshot   ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
+
+Clear Value Input Text
+    [Arguments]    ${locator}
+    Wait Until Page Contains Element    ${locator}
+    Execute JavaScript    document.evaluate("${locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value = '';    
