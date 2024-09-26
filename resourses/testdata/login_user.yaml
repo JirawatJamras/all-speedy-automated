@@ -49,3 +49,7 @@ c2c_login_user_01:
 c2c_login_user_02:
   username: test1234@mailinator.com
   password: Test1234*
+
+c2c_login_user_03:
+  username: testregister@mailinator.com
+  password: Test1234*
