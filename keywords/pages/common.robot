@@ -41,14 +41,15 @@ Scroll Window To Horizontal
 Set Folder Result with date
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    ${FOlDER_RESULT}=    Set Variable    ${date_YYYY_MM_DD}
+    ${FOlDER_RESULT}=    Set Variable    ../results/${date_YYYY_MM_DD}
     Set Global Variable    ${FOlDER_RESULT}
 
 Verify Capture Screenshot
     [Arguments]    ${folder}    ${img_name}
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    Capture Page Screenshot   Filename=../results/${FOlDER_RESULT}/${folder}/${img_name}.png
+    Evaluate    os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)    modules=os
+    Capture Page Screenshot   ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
 
 Clear Value Input Text
     [Arguments]    ${locator}
