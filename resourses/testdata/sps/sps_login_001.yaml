@@ -1,0 +1,9 @@
+SPS_Login_001_04:
+  username: Test1234@mailinator.com
+  password: id1234567890
+  errormsg: No active policy during authentication
+
+SPS_Login_001_05:
+  username: kamolwanchu@cpall.store
+  password: id1234567
+  errormsg: xxxx
