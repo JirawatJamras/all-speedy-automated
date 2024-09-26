@@ -36,6 +36,7 @@ SPS_Login_001_03
 SPS_Login_001_04
     [Documentation]             [หน้า Login เข้าระบบหน้า Mobile Application] กรอก Username ไม่ถูกต้อง
     [Tags]    SPS_Login_001    UAT    Low    Regression
+    sps_landing_page.Click Login Button
     sps_login_page.Input Username    ${SPS_Login_001_04['username']}
     sps_login_page.Input Password    ${SPS_Login_001_04['password']}
     sps_login_page.Click Logon Button
