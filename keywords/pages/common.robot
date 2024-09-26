@@ -56,30 +56,28 @@ Clear Value Input Text
     Execute JavaScript    document.evaluate("${locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value = '';    
 
 ################### Mobile - Android ###################
-AllSpeedy Teardown
-    # Run keyword If Test Failed   Capture page screenshot
+Application Teardown
+    Run keyword If Test Failed   Capture page screenshot
     Close Application
 
-Open AllSpeedy Application
+Open AllSpeedy Application On Android App
     [Documentation]  Open application that already exist in mobile phone
-    Run Keyword If   '${PLATFORM_NAME}' == '${ANDROID_PLATFORM_NAME}'   Open AllSpeedy On Android App
-    Run Keyword If   '${PLATFORM_NAME}' == '${IOS_PLATFORM_NAME}'   Open AllSpeedy On IOS App
-
-Open AllSpeedy On Android App
     Open Application   ${REMOTE_URL}
       #...  deviceName=${DEVICE}
       ...  automationName=${AUTOMATION_ANDRIOD_NAME}
       ...  platformName=${ANDROID_PLATFORM_NAME}
-      ...  appPackage=${ANDROID_PACKAGE}
-      ...  appActivity=${ANDROID_ACTIVITY}
+      ...  appPackage=${ALLSPEEDY_ANDROID_PACKAGE}
+      ...  appActivity=${ALLSPEEDY_ANDROID_ACTIVITY}
       ...  autoGrantPermissions=true
-    
-Open AllSpeedy On IOS App
-    Open Application  ${REMOTE_URL}
-      ...  automationName=${AUTOMATION_IOS_NAME}
-    ...    deviceName=iPhone 15 Pro Max
-      ...  platformName=${IOS_PLATFORM_NAME}
-      ...  bundleId=${IOS_BUNDLE_ID}
+
+Open POS Online Application On Android App
+    [Documentation]  Open application that already exist in mobile phone
+    Open Application   ${REMOTE_URL}
+      #...  deviceName=${DEVICE}
+      ...  automationName=${AUTOMATION_ANDRIOD_NAME}
+      ...  platformName=${ANDROID_PLATFORM_NAME}
+      ...  appPackage=${POSONLINE_ANDROID_PACKAGE}
+      ...  appActivity=${POSONLINE_ANDROID_ACTIVITY}
       ...  autoGrantPermissions=true
 
 Click Back Button
