@@ -41,14 +41,14 @@ Scroll Window To Horizontal
 Set Folder Result with date
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    ${FOlDER_RESULT}=    Set Variable    ../results/${date_YYYY_MM_DD}
+    ${FOlDER_RESULT}=    Set Variable    ${date_YYYY_MM_DD}
     Set Global Variable    ${FOlDER_RESULT}
 
 Verify Capture Screenshot
     [Arguments]    ${folder}    ${img_name}
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    Capture Page Screenshot   ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
+    Capture Page Screenshot   Filename=../results/${FOlDER_RESULT}/${folder}/${img_name}.png
 
 Clear Value Input Text
     [Arguments]    ${locator}
@@ -57,8 +57,8 @@ Clear Value Input Text
 
 ################### Mobile - Android ###################
 Application Teardown
-    Run keyword If Test Failed   Capture page screenshot
-    Close Application
+    # Run keyword If Test Failed   Capture page screenshot
+    Close All Applications
 
 Open AllSpeedy Application On Android App
     [Documentation]  Open application that already exist in mobile phone
@@ -114,3 +114,8 @@ Find Element Horizontal
         Exit For Loop If    ${element_status}
     END
     Run keyword if    '${element_status}' == 'False'   Fail   Element not found
+
+Verify Text Of Element
+    [Arguments]    ${locator}    ${value}
+    ${locator}=  Replace String   ${locator}   {value}   ${value}
+    Wait Until Element Is Visible   ${locator}

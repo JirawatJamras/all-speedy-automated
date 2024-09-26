@@ -1,0 +1,13 @@
+SPS_Login_001_01:
+  errormesg:
+    expected: You need to enter login name
+
+SPS_Login_001_02:
+  password: id1234567890
+  errormesg:
+    expected: You need to enter login name
+
+SPS_Login_001_03:
+  username: kamolwanchu@cpall.store
+  errormesg:
+    expected: You need to enter a password
