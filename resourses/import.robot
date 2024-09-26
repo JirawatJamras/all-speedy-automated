@@ -52,13 +52,13 @@ Variables                   testdata/dps/allspeedy_dps_001.yaml
 Variables                   testdata/dps/allspeedy_dps_003.yaml
 
 ######################## REGISTER ########################
-Resource                    ../keywords/pages/register/general_customers_page.robot
-Resource                    ../keywords/pages/register/business_customers_page.robot
-Resource                    ../keywords/pages/register/business_customers_register_page.robot    
+Resource                    ../keywords/pages/register/register_general_customers_page.robot
+Resource                    ../keywords/pages/register/register_business_customers_page.robot
+Resource                    ../keywords/pages/register/register_business_customers_register_page.robot
 
-Resource                    locators/register/business_customers_page.robot
-Resource                    locators/register/general_customers_page.robot
-Resource                    locators/register/business_customers_register_page.robot
+Resource                    locators/register/register_business_customers_page.robot
+Resource                    locators/register/register_general_customers_page.robot
+Resource                    locators/register/register_business_customers_register_page.robot
 
 Variables                   testdata/register/allspeedy_register_001.yaml
 Variables                   testdata/register/allspeedy_register_004.yaml
