@@ -1,9 +1,9 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
-Suite Setup       Run Keywords    Open Chrome Browser    chrome    #headlesschrome
+Resource          ../../resourses/init_website.robot
+Suite Setup       Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Suite Teardown    Close Browser
-
 
 *** Test Cases ***
 

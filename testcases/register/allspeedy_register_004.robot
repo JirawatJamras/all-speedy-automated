@@ -1,9 +1,9 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
-Suite Setup       Run Keywords    Open Chrome Browser    chrome    #headlesschrome
+Resource          ../../resourses/init_website.robot
+Suite Setup       Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-#Suite Teardown    Close Browser
-
+Suite Teardown    Close Browser
 
 *** Test Cases ***
 AllSpeedy_Register_004_ID_22
@@ -15,7 +15,7 @@ AllSpeedy_Register_004_ID_22
 
 AllSpeedy_Register_004_ID_23
     [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] กรอก URL ถูกต้อง
-    [Tags]    AllSpeedy_Register_004    UAT    Low    Regression    Bix
+    [Tags]    AllSpeedy_Register_004    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     general_customers_page.Select Business Customers Tab
     business_customers_page.Verify Business Customers Tab Page    AllSpeedy_Register_004_ID_23
@@ -29,7 +29,7 @@ AllSpeedy_Register_004_ID_23
 
 AllSpeedy_Register_004_ID_25
     [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกข้อมูลเลขประจำตัวผู้เสียภาษีไม่ถูกต้อง
-    [Tags]    AllSpeedy_Register_004    UAT1    Low    Regression    Peach
+    [Tags]    AllSpeedy_Register_004    UAT1    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     general_customers_page.Select Business Customers Tab
     business_customers_page.Click Register Business Customers Button
@@ -47,7 +47,7 @@ AllSpeedy_Register_004_ID_25
 
 AllSpeedy_Register_004_ID_26
     [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกอีเมล ไม่ถูกต้อง
-    [Tags]    AllSpeedy_Register_004    UAT    Medium    Regression    Pee
+    [Tags]    AllSpeedy_Register_004    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     general_customers_page.Select Business Customers Tab
     business_customers_page.Click Register Business Customers Button
@@ -59,7 +59,7 @@ AllSpeedy_Register_004_ID_26
 
 AllSpeedy_Register_004_ID_28
     [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกเบอร์ต่อ (#ต่อ) ไม่ถูกต้อง
-    [Tags]    AllSpeedy_Register_004    UAT1    Low    Regression    Peach
+    [Tags]    AllSpeedy_Register_004    UAT1    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     general_customers_page.Select Business Customers Tab
     business_customers_page.Click Register Business Customers Button
