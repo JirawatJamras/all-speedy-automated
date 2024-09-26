@@ -58,8 +58,8 @@ Clear Value Input Text
 
 ################### Mobile - Android ###################
 Application Teardown
-    Run keyword If Test Failed   Capture page screenshot
-    Close Application
+    # Run keyword If Test Failed   Capture page screenshot
+    Close All Applications
 
 Open AllSpeedy Application On Android App
     [Documentation]  Open application that already exist in mobile phone

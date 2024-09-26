@@ -20,4 +20,11 @@ Verify Error Message When Input Wrong Username
 Verify CanNot Login When Input Wrong Username
     Wait Until Page Does Not Contain Element    ${sps_txt_loading_to_login_login_page}
     Wait Until Element Is Visible    ${sps_btn_logon_login_page}
-    
+
+Verify Error Message You Need To Enter Login Name
+    [Arguments]    ${value}
+    Verify Text Of Element    ${sps_txt_errormsg_need_enter_login_name_login_page}    ${value}
+
+Verify Error Message You Need To Enter A Password
+    [Arguments]    ${value}
+    Verify Text Of Element    ${sps_txt_errormsg_need_enter_login_name_login_page}    ${value}

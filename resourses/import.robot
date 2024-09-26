@@ -64,8 +64,10 @@ Variables                   testdata/register/allspeedy_register_001.yaml
 Variables                   testdata/register/allspeedy_register_004.yaml
 
 ######################## SPS ########################
+Resource                    ../keywords/pages/sps/sps_landing_page.robot
 Resource                    ../keywords/pages/sps/sps_login_page.robot
 
 Resource                    locators/sps/sps_login_page.robot
+Resource                    locators/sps/sps_landing_page.robot
 
 Variables                   testdata/sps/SPS_Login_001.yaml
