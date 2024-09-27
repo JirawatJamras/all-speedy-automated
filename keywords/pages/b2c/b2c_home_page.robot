@@ -28,8 +28,6 @@ Select Sub Menu Term Of Service
 
 Select Sub Menu Register Business Customer
     common.Click When Ready    ${b2c_mnu_register_business_customer_home_page}
-    
-
 
 Verify My Profile PageBusiness
     [Arguments]    ${name}
