@@ -31,7 +31,7 @@ B2C_TrackingParcelDelivery_006_01
 
 B2C_TrackingParcelDelivery_006_02
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ตรวจสอบการติดตามการจัดส่งพัสดุ กรอกค้นหา ชิ่อผู้รับพัสดุ ถูกต้อง
-    [Tags]  B2C_TrackingParcelDelivery_006_02    UAT    Medium    Regression
+    [Tags]  B2C_TrackingParcelDelivery_006_02    UAT1    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_005['username']}
