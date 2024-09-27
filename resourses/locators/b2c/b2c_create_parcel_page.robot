@@ -13,3 +13,7 @@ ${favorites_defult_text}     //div[@class='ant-space-item']//span[contains(@clas
 ${search_favorites_txtbox}     //input[@placeholder='ค้นหา']
 
 ${select_favorites_btn}     //button[contains(@class, 'ant-btn') and contains(@class, 'bg-green-500')]
+
+${favorites_title_text}    //div[@class='border-b border-b-blue-500 text-[#085390]']
+${favorites_accetp_btn}    //button[span[text()='เลือก']]
+${favorites_default_text}    //ul[@class="ant-list-items"]/li[1]/label/span[2]/div/div/div[2]/span

@@ -19,6 +19,7 @@ Resource                    locators/b2c/b2c_create_parcel_page.robot
 
 Variables                   testdata/b2c/b2c_testdata.yaml
 Variables                   testdata/b2c/allspeedy_b2c_001.yaml
+Variables                   testdata/b2c/allspeedy_b2c_003.yaml
 Variables                   testdata/b2c/allspeedy_b2c_005.yaml
 
 ######################## C2C ########################

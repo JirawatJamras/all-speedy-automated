@@ -42,6 +42,10 @@ b2c_login_user_005:
   username: idc@gmail.com
   password: P@ssw0rd
 
+b2c_login_user_idc:
+  username: idc@gmail.com
+  password: P@ssw0rd
+
 ######################## C2C ########################
 
 c2c_login_user_01:
