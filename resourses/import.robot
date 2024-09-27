@@ -10,16 +10,19 @@ Resource                    ../keywords/pages/b2c/b2c_login_page.robot
 Resource                    ../keywords/pages/b2c/b2c_home_page.robot
 Resource                    ../keywords/pages/b2c/b2c_bookingdelivery_page.robot
 Resource                    ../keywords/pages/b2c/b2c_create_parcel_page.robot
+Resource                    ../keywords/pages/b2c/b2c_tracking_parcel_delivery_page.robot
 
 Resource                    locators/b2c/b2c_landing_page.robot
 Resource                    locators/b2c/b2c_login_page.robot
 Resource                    locators/b2c/b2c_home_page.robot
 Resource                    locators/b2c/b2c_bookingdelivery_page.robot
 Resource                    locators/b2c/b2c_create_parcel_page.robot
+Resource                    locators/b2c/b2c_tracking_parcel_delivery_page.robot
 
 Variables                   testdata/b2c/b2c_testdata.yaml
 Variables                   testdata/b2c/allspeedy_b2c_001.yaml
 Variables                   testdata/b2c/allspeedy_b2c_005.yaml
+Variables                   testdata/b2c/b2c_tracking_parcel_delivery_006.yaml
 
 ######################## C2C ########################
 Resource                    ../keywords/pages/c2c/c2c_landing_page.robot
