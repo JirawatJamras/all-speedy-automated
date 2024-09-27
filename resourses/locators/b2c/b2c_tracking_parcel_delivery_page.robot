@@ -1,6 +1,4 @@
 *** Variables ***
-${b2c_mnu_tracking_parcel_delivery}    //div[@class='ant-space css-1hobygo ant-space-horizontal ant-space-align-center']//a[@href='/status-tracking' and text()='ติดตามการจัดส่งพัสดุ']
-
 ${b2c_txt_tracking parcel_delivery}    //h2
 ${b2c_txt_1parcel_search_results}    //div[@class='ant-card ant-card-bordered max-w-[1729px] hidden md:flex m-auto h-screen css-1hobygo']//div[@class='ant-row w-full css-1hobygo']
 ${b2c_txt_amount_of_parcel_search_results}    //span[contains(@class, 'ant-typography mb-2 md:mb-0 md:mr-4 css-1hobygo') and contains(text(), 'ผลการค้นหาทั้งหมด')]
