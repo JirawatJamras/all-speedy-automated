@@ -1,7 +1,4 @@
 *** Keywords ***
-Click Tracking Parcel Delivery Menu Button
-    Click When Ready    ${b2c_mnu_tracking_parcel_delivery}
-
 Verify Tracking Parcel Delivery Page
     Wait Until Element Is Visible    ${b2c_mnu_tracking_parcel_delivery}
     Element Should Be Visible    ${b2c_mnu_tracking_parcel_delivery}

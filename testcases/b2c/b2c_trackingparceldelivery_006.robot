@@ -8,13 +8,13 @@ Suite Teardown    Close Browser
 *** Test Cases ***
 B2C_TrackingParcelDelivery_006_01
     [Documentation]         [ตรวจสอบการติดตามการจัดส่งพัสดุ] ตรวจสอบการติดตามการจัดส่งพัสดุ กรอกค้นหา หมายเลข Tracking พัสดุ ถูกต้อง
-    [Tags]    B2C_TrackingParcelDelivery_006_01    UAT    High    Regression
+    [Tags]    B2C_TrackingParcelDelivery_006_01    UAT1    High    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_005['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_005['password']}
     b2c_login_page.Click Log On Button
-    b2c_tracking_parcel_delivery_page.Click Tracking Parcel Delivery Menu Button
+    b2c_home_page.Click Tracking Parcel Delivery Menu Button
     b2c_tracking_parcel_delivery_page.Verify Tracking Parcel Delivery Page
     common.Verify Capture Screenshot    B2C_TrackingParcelDelivery_006_01    Verify Tracking Parcel Delivery Page
     b2c_tracking_parcel_delivery_page.Input Search Parcel Data    ${B2C_Tracking_Parcel_Delivery_006_01.input1_parcel_number}
@@ -31,7 +31,7 @@ B2C_TrackingParcelDelivery_006_01
 
 B2C_TrackingParcelDelivery_006_02
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ตรวจสอบการติดตามการจัดส่งพัสดุ กรอกค้นหา ชิ่อผู้รับพัสดุ ถูกต้อง
-    [Tags]  B2C_TrackingParcelDelivery_006_02    UAT1    Medium    Regression
+    [Tags]  B2C_TrackingParcelDelivery_006_02    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_005['username']}

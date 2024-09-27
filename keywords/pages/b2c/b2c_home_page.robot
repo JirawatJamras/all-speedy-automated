@@ -12,3 +12,6 @@ Verify My Profile PageBusiness
 Click Button To Add
     Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
     Click Element        ${b2c_btn_add}
+
+Click Tracking Parcel Delivery Menu Button
+    Click When Ready    ${b2c_mnu_tracking_parcel_delivery}
