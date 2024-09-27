@@ -21,7 +21,7 @@ Resource                    locators/b2c/b2c_tracking_parcel_delivery_page.robot
 
 Variables                   testdata/b2c/b2c_testdata.yaml
 Variables                   testdata/b2c/allspeedy_b2c_001.yaml
-Variables                   testdata/b2c/allspeedy_b2c_003.yaml
+Variables                   testdata/b2c/b2c_addbooking_003.yaml
 Variables                   testdata/b2c/allspeedy_b2c_005.yaml
 Variables                   testdata/b2c/b2c_tracking_parcel_delivery_006.yaml
 
