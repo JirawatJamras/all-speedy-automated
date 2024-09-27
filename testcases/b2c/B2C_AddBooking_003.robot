@@ -61,8 +61,7 @@ B2C_AddBooking_003_03    #แก้
     # b2c_create_parcel_page.Input Favorites TextBox Nomal Letters Less Than 100 Characters    ${B2C_003_ID_6.text_search_en}
 
 B2C_AddBooking_003_09    #แก้
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ไม่ถูกต้อง
-กรอกค้นหาข้อมูลที่อยู่ ไม่เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- "
+    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ไม่ถูกต้อง กรอกค้นหาข้อมูลที่อยู่ ไม่เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- "
     [Tags]    B2C_AddBooking_003_01    UAT    Low    Relate    
     common.Open URL    ${B2C_UAT_URL}
     b2c_landing_page.Click Go Login Button
