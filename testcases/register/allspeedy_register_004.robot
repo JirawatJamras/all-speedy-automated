@@ -27,6 +27,13 @@ AllSpeedy_Register_004_ID_23
     register_business_customers_register_page.Verify Pre-Register Form For Normal Person Page    AllSpeedy_Register_004_ID_23
     common.Verify Capture Screenshot    AllSpeedy_Register_004_ID_23    Verify Pre-Register Form For Normal Person Page
 
+AllSpeedy_Register_004_ID_24
+    [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: ไม่กรอกข้อมูลใดๆ
+    [Tags]    AllSpeedy_Register_004    UAT    Low    Regression
+    common.Open URL    ${B2C_UAT_URL}
+    general_customers_page.Select Business Customers Tab
+    register.Click Register On Button
+
 AllSpeedy_Register_004_ID_25
     [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกข้อมูลเลขประจำตัวผู้เสียภาษีไม่ถูกต้อง
     [Tags]    AllSpeedy_Register_004    UAT1    Low    Regression
