@@ -1,0 +1,28 @@
+b2c_AddFavoriteItem_010_002:
+  favorite_name:    Test Test
+
+b2c_AddFavoriteItem_010_003:
+  favorite_name:
+    special_char:    hy$\
+    more_than_specified:    jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+  # errormsg:    ห้ามกรอกอักขระพิเศษ
+  errormsg:    กรุณาระบุชื่อรายการโปรดให้ถูกต้อง
+  specified_value:    50
+  
+b2c_AddFavoriteItem_010_004:
+  errormsg:    กรุณาระบุชื่อรายการโปรด
+
+b2c_AddFavoriteItem_010_005:
+  favorite_name:    Test Test
+
+b2c_AddFavoriteItem_010_006:
+  favorite_name:    Test Test
+  phone_no:    0656666789
+
+b2c_AddFavoriteItem_010_007:
+  favorite_name:    Test Test
+  phone_no:    
+    character:    Test
+    more_than_specified:    0123456789123
+    wrong_format:    59
+  errormsg:    กรุณาระบุเบอร์โทรศัพท์ให้ถูกต้อง

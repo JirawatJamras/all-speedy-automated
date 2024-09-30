@@ -1,0 +1,19 @@
+b2c_addbooking_003_ID_5:
+  favorites_title_text: เลือกจากรายการโปรด
+  favorites_default_text: ค่าเริ่มต้น
+
+b2c_addbooking_003_ID_3:
+  text_search_en: test
+  text_search_th_en: ทดสอบTest1234---///
+  text_no_data: No data
+
+b2c_addbooking_003_ID_4:
+  text_search_special: ()!@#$%^&*_+=?><|\,.;:'"}[]{
+  text_search_more_than_100_characters: abcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabcabc
+  text_no_data: No data
+  
+b2c_addbooking_003_ID_5:
+  verify_phone_sender: 0855297546
+  verify_name_sender: ฟี ลูฟี่
+  verify_address_sender: "89/1 อาพาทร์เมนต์ สุธิเเมนชั่น "
+  verify_postcode_sender: ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230

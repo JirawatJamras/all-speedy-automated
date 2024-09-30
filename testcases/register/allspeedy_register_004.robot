@@ -36,7 +36,7 @@ AllSpeedy_Register_004_ID_24
 
 AllSpeedy_Register_004_ID_25
     [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกข้อมูลเลขประจำตัวผู้เสียภาษีไม่ถูกต้อง
-    [Tags]    AllSpeedy_Register_004    UAT1    Low    Regression
+    [Tags]    AllSpeedy_Register_004    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     register_business_customers_page.Click Register Business Customers Button
@@ -66,7 +66,7 @@ AllSpeedy_Register_004_ID_26
 
 AllSpeedy_Register_004_ID_28
     [Documentation]          [ลงทะเบียน (Pre Register) ในส่วนของข้อมูลบริษัท (ข้อมูลทั่วไป) สำหรับลูกค้าธุรกิจ ] ขั้นตอนการระบุข้อมูลบริษัท (ข้อมูลทั่วไป) ประเภทคู่ค้า นิติบุคคล: กรอกเบอร์ต่อ (#ต่อ) ไม่ถูกต้อง
-    [Tags]    AllSpeedy_Register_004    UAT1    Low    Regression
+    [Tags]    AllSpeedy_Register_004    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     register_business_customers_page.Click Register Business Customers Button
