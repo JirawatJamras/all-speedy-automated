@@ -9,7 +9,7 @@ Test Teardown        Application Teardown
 
 SPS_Login_001_01
     [Documentation]             [หน้า Login เข้าระบบหน้า Mobile Application] ไม่กรอก Username และ Password
-    [Tags]    SPS_Login_001    UAT    Low    Regression
+    [Tags]    SPS_Login_001    UAT    Low    Regression    In_Review
     sps_landing_page.Click Login Button
     sps_login_page.Click Log On Button
     sps_login_page.Verify Error Message You Need To Enter Login Name    ${SPS_Login_001_01.errormesg['expected']}
@@ -17,7 +17,7 @@ SPS_Login_001_01
 
 SPS_Login_001_02
     [Documentation]             [หน้า Login เข้าระบบหน้า Mobile Application] ไม่กรอก Username
-    [Tags]    SPS_Login_001    UAT    Low    Regression
+    [Tags]    SPS_Login_001    UAT    Low    Regression    In_Review
     sps_landing_page.Click Login Button
     sps_login_page.Input Password    ${SPS_Login_001_02['password']}
     sps_login_page.Click Log On Button
@@ -26,7 +26,7 @@ SPS_Login_001_02
 
 SPS_Login_001_03
     [Documentation]             [หน้า Login เข้าระบบหน้า Mobile Application] ไม่กรอก Password
-    [Tags]    SPS_Login_001    UAT    Low    Regression
+    [Tags]    SPS_Login_001    UAT    Low    Regression    In_Review
     sps_landing_page.Click Login Button
     sps_login_page.Input Username    ${SPS_Login_001_03['username']}
     sps_login_page.Click Log On Button
@@ -35,7 +35,7 @@ SPS_Login_001_03
 
 SPS_Login_001_04
     [Documentation]             [หน้า Login เข้าระบบหน้า Mobile Application] กรอก Username ไม่ถูกต้อง
-    [Tags]    SPS_Login_001    UAT    Low    Regression
+    [Tags]    SPS_Login_001    UAT    Low    Regression    In_Review
     sps_landing_page.Click Login Button
     sps_login_page.Input Username    ${SPS_Login_001_04['username']}
     sps_login_page.Input Password    ${SPS_Login_001_04['password']}
@@ -45,7 +45,7 @@ SPS_Login_001_04
 
 SPS_Login_001_05
     [Documentation]             [หน้า Login เข้าระบบหน้า Mobile Application] กรอก Password ไม่ถูกต้อง
-    [Tags]    SPS_Login_001    UAT    Low    Regression
+    [Tags]    SPS_Login_001    UAT    Low    Regression    In_Review
     sps_landing_page.Click Login Button
     sps_login_page.Input Username    ${SPS_Login_001_05['username']}
     sps_login_page.Input Password    ${SPS_Login_001_05['password']}
