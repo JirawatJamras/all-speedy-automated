@@ -12,6 +12,7 @@ Input Password
 Click Log On Button
     Wait Until Element Is Visible    ${b2c_btn_log_on}
     Click Element                    ${b2c_btn_log_on}
+    Wait Until Element Is Visible    ${b2c_txt_profile}    timeout=10s
 
 Verify EmailBusiness ErrorMessage
     [Arguments]    ${error_txt}

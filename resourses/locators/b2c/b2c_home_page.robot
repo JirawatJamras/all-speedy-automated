@@ -13,6 +13,10 @@ ${b2c_mnu_register_business_customer_home_page}    //a[text()='ลงทะเ�
 
 ${b2c_btn_add}     //button[contains(@class, 'ant-btn') and span[text()='เพิ่ม']]
 
+${b2c_txt_profile}    //h2[text()='โปรไฟล์บริษัท']
+
+${b2c_cbo_parcel_delivery_service}    //ul[contains(@class,'ant-dropdown-menu')]
+
 
 
 

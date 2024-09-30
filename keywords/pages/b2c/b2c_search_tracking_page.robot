@@ -33,17 +33,14 @@ Click Search Type Selection Dropdown
     Click When Ready    ${b2c_cbo_search_type_selection}
 
 Select Search Type In Dropdown
-    [Arguments]    ${option}
-    Run Keyword If    '${option}' == 'ค้นหาด้วยหมายเลขพัสดุ'    Click When Ready    ${b2c_cbo_search_by_parcel_number}
-    Run Keyword If    '${option}' == 'ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ'    Click When Ready    ${b2c_cbo_search_by_name_or_phone}
+    [Arguments]    ${search_type}
+    Click When Ready    //div[text()='${search_type}']
+    
 
 Verify Error Message In Modal
-    [Arguments]    ${message}    ${path}
-    Wait Until Page Contains Element    ${path}    timeout=10s
-    Run Keyword If    '${message}' == 'กรุณาระบุหมายเลขพัสดุ'    Element Should Be Visible    ${path}
-    Run Keyword If    '${message}' == 'ระบุหมายเลขพัสดุไม่ถูกต้อง'    Element Should Be Visible    ${path}
-    Run Keyword If    '${message}' == 'ระบุหมายเลขพัสดุไม่ถูกต้อง'    Element Should Be Visible    ${path}
-    Run Keyword If    '${message}' == 'ระบุชื่อหรือเบอร์โทรศัพท์ไม่ถูกต้อง'    Element Should Be Visible    ${path}
+    [Arguments]    ${errormsg}
+    Wait Until Page Contains Element    //div[text()='${errormsg}']    timeout=10s
+    Element Should Be Visible    //div[text()='${errormsg}']
 
 Verify Search Results When Search More Than 10 Parcels
     [Arguments]    ${value}
@@ -52,12 +49,18 @@ Verify Search Results When Search More Than 10 Parcels
     Should Be Equal As Numbers    ${length}    10
     Element Should Be Visible    ${value}
 
-# Click Filter Button
-#     [Arguments]    ${filter}
-#     Click When Ready    ${b2c_btn_filter}
-#     Run Keyword If    '${filter}' == 'รับพัสดุเข้าระบบ'    Click When Ready    ${b2c_btn_receive_parcel_into_system_filter}
+Click Filter Button
+    Click When Ready    ${b2c_btn_open_filter} 
 
-# Verify Parcel Status
-#     [Arguments]    ${status}
-#     Wait Until Page Contains Element    ${status}    timeout=10s
-#     Run Keyword If    '${status}' == 'รับพัสดุเข้าระบบ'    Element Should Be Visible    ${b2c_txt_receive_parcel_into_system_status}
+Select Filter
+    [Arguments]    ${filter}
+    Click When Ready    //span[text()='${filter}']
+
+Verify Parcel Status
+    [Arguments]    ${status}
+    Wait Until Page Contains Element    ${b2c_txt_many_parcel_search_results}    timeout=10s
+    Element Should Be Visible    ${b2c_txt_parcel_status}//div[text()='${status}']
+
+Click Close Filter Button
+    Click When Ready    ${b2c_btn_close_filter}
+    

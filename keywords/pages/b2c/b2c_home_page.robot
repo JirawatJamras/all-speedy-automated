@@ -6,6 +6,7 @@ Click Parcel Delivery Service Menu
     Mouse Over    ${b2c_mnu_parcel_delivery_service_home_page}
 
 Select Sub Menu My Parcel
+    Wait Until Element Is Visible    ${b2c_cbo_parcel_delivery_service}
     common.Click When Ready    ${b2c_mnu_my_parcel_home_page}
 
 Select Sub Menu Call Car Pick Up
@@ -39,5 +40,5 @@ Click Button To Add
     Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
     Click Element        ${b2c_btn_add}
 
-Click Tracking Parcel Delivery Menu Button
+Click Tracking Parcel Delivery Menu
     common.Click When Ready    ${b2c_mnu_tracking_parcel_delivery}
