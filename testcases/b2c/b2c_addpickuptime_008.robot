@@ -9,7 +9,7 @@ Test Teardown    Close Browser
 
 B2C_AddPickupTime_008_001
     [Documentation]    [เพิ่มรายการรอบรถเข้ารับพัสดุ] กรณี กดปุ่ม "+ เพิ่ม"
-    [Tags]    B2C_AddPickupTime_008    UAT    Low     In_Review
+    [Tags]    B2C_AddPickupTime_008    UAT    High    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -45,7 +45,11 @@ B2C_AddPickupTime_008_001
     common.Verify Capture Screenshot    B2C_AddPickupTime_008_01    Verify Select Pickup Parcel Time Which Can Not One Time Select More Than 1 Type
     b2c_call_car_pick_up_parcel_page.Click Clear Pickup Parcel Time Button
     b2c_call_car_pick_up_parcel_page.Edit Pickup Parcel Time    ${B2C_AddPickupTime_008_01.pickupTime.edit['input']}
-
-
-
-
+    b2c_call_car_pick_up_parcel_page.Verify Can Not Edit Pickup Parcel Time    ${B2C_AddPickupTime_008_01.pickupTime.edit['input']}
+    common.Verify Capture Screenshot    B2C_AddPickupTime_008_01    Verify Can Not Edit Pickup Parcel Time
+    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${B2C_AddPickupTime_008_01.pickupTime.select['input']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
+    b2c_call_car_pick_up_parcel_page.Verify Saved Popup Is Visible
+    common.Verify Capture Screenshot    B2C_AddPickupTime_008_01    Verify Saved Popup Is Visible
+    b2c_call_car_pick_up_parcel_page.Verify Saved Information In Visible In List
+    common.Verify Capture Screenshot    B2C_AddPickupTime_008_01    Verify Saved Information In Visible In List

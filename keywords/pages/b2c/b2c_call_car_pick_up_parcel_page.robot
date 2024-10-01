@@ -1,6 +1,10 @@
 *** Keywords ***
 Click Add Button
-    common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}
+    FOR    ${i}    IN RANGE    0    5
+        common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_parcel_pickup_schedule}    timeout=2s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+    END
 
 Verify Popup Parcel Pickup Schedule
     Wait Until Element is Visible    ${b2c_txt_parcel_pickup_schedule}
@@ -33,9 +37,11 @@ Select Date Pickup Parcel Future Date
     common.Click When Ready    ${b2c_cbo_pickup_parcel_date_in_add_popup}
     ${haveActiveDate}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_b2n_active_date_in_add_popup}    timeout=2s
     IF  '${haveActiveDate}' == 'True'
+        ${selectedFutureDate}=    Get Element Attribute    (${b2c_b2n_active_date_in_add_popup})[1]    title
+        Set Suite Variable    ${selectedFutureDate}    ${selectedFutureDate}
         common.Click When Ready    (${b2c_b2n_active_date_in_add_popup})[1]
     ELSE
-        common.Click When Ready    //button[@class='ant-picker-header-next-btn']
+        common.Click When Ready    ${b2c_btn_next_months_calendar_in_add_popup}
         ${selectedFutureDate}=    Get Element Attribute    (${b2c_b2n_active_date_in_add_popup})[1]    title
         Set Suite Variable    ${selectedFutureDate}    ${selectedFutureDate}
         common.Click When Ready    (${b2c_b2n_active_date_in_add_popup})[1]
@@ -47,7 +53,11 @@ Verify Selected Date Pickup Parcel Future Date
     Should Be Equal    ${value}    ${selectedFutureDate}
 
 Select Date Pickup Parcel Previouse Date
-    common.Click When Ready    ${b2c_cbo_pickup_parcel_date_in_add_popup}
+    FOR    ${i}    IN RANGE    0    5
+        common.Click When Ready    ${b2c_cbo_pickup_parcel_date_in_add_popup}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_txt_parcel_pickup_schedule}    timeout=2s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+    END
     ${canClick}    Run Keyword And Return Status    common.Click When Ready    ${b2c_btn_previous_date_in_add_popup}
     Should Not Be True    ${canClick}
 
@@ -81,5 +91,22 @@ Edit Pickup Parcel Time
     common.Click When Ready    ${b2c_cdo_pickup_parcel_time_in_add_popup}
     ${caninput}=    Run Keyword And Return Status    Input Text    ${b2c_cdo_2_pickup_parcel_time_in_add_popup}    ${value}
     Should Not Be True    ${caninput}
+    common.Click When Ready    ${b2c_cdo_pickup_parcel_time_in_add_popup}
 
 Verify Can Not Edit Pickup Parcel Time
+    [Arguments]    ${value}
+    Wait Until Element Is Visible    ${b2c_txt_pickup_parcel_time_selected_value_in_add_popup}    timeout=${DEFAULT_TIMEOUT}
+    Element Should Not Contain    ${b2c_txt_pickup_parcel_time_selected_value_in_add_popup}    ${value}
+
+Click Save Button
+    common.Click When Ready    ${b2c_btn_save_in_add_popup}
+
+Verify Saved Popup Is Visible
+    Wait Until Element Is Visible    ${b2c_txt_complete_save_information_car_pickup_page}
+
+Verify Saved Information In Visible In List
+    Wait Until Element Is Visible    ${b2c_txt_h5_special_round_car_pickup_page}
+    Scroll Element Into View    ${b2c_txt_h5_special_round_car_pickup_page}
+    Log    ${selectedFutureDate}
+    Element Should Contain    (//h5[contains(text(),'${selectedFutureDate}')])[1]    ${selectedFutureDate}
+    
