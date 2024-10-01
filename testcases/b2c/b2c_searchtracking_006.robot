@@ -7,8 +7,10 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 B2C_SearchTracking_006_01
-    [Documentation]         [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ ถูกต้อง
-    [Tags]    B2C_SearchTracking_006_01    UAT    High    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ ถูกต้อง,
+    ...                กรอกค้นหาหมายเลขพัสดุ เป็นตัวอักษรภาษาอังกฤษ ตัวเลข และ ไม่เกิน 20 ตัวอักษร,
+    ...                กรอกค้นหาหมายเลขพัสดุ ครั้งละ 10 หมายเลข โดยในแต่ละหมายเลขเว้นวรรคเพื่อแยกจากกัน
+    [Tags]    B2C_SearchTracking_006    UAT    High    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -30,8 +32,9 @@ B2C_SearchTracking_006_01
     common.Verify Capture Screenshot    B2C_SearchTracking_006_01    Verify Parcel Search Results 10 Parcel Numbers
 
 B2C_SearchTracking_006_02
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ ถูกต้อง
-    [Tags]  B2C_SearchTracking_006_02    UAT    Medium    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ ถูกต้อง,
+    ...                กรอกค้นหา ชื่อผู้รับพัสดุ เป็นตัวอักษรภาษาไทย อังกฤษ และ ไม่เกิน 50 ตัวอักษร
+    [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -47,8 +50,9 @@ B2C_SearchTracking_006_02
     common.Verify Capture Screenshot    B2C_SearchTracking_006_02    Verify Parcel Search Results
 
 B2C_SearchTracking_006_03
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาเบอร์โทรศัพท์ ถูกต้อง
-    [Tags]  B2C_SearchTracking_006_03    UAT    Medium    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาเบอร์โทรศัพท์ ถูกต้อง,
+    ...                กรอกค้นหาเบอร์โทรศัพท์ เป็นตัวเลข และ ไม่เกิน 10 หลัก
+    [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -65,8 +69,8 @@ B2C_SearchTracking_006_03
 
 
 B2C_SearchTracking_006_04
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ไม่กรอกค้นหาหมายเลข Tracking พัสดุ"
-    [Tags]  B2C_SearchTracking_006_04    UAT    Low    Non-Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ไม่กรอกค้นหาหมายเลขพัสดุ
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -78,8 +82,9 @@ B2C_SearchTracking_006_04
     common.Verify Capture Screenshot    B2C_SearchTracking_006_04    Verify Error Message Parcel Number Not Inputted
 
 B2C_SearchTracking_006_05
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ ไม่เป็นตัวอักษรภาษาอังกฤษ ตัวเลข"
-    [Tags]  B2C_SearchTracking_006_05    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง,
+    ...                กรอกค้นหาหมายเลขพัสดุ ไม่เป็นตัวอักษรภาษาอังกฤษ ตัวเลข
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -93,8 +98,9 @@ B2C_SearchTracking_006_05
     common.Verify Capture Screenshot    B2C_SearchTracking_006_05    Verify Error Message Input Incorrect Parcel Number
 
 B2C_SearchTracking_006_06
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ เกิน 20 ตัวอักษร"
-    [Tags]  B2C_SearchTracking_006_06    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง,
+    ...                กรอกค้นหาหมายเลขพัสดุ เกิน 20 ตัวอักษร
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -108,8 +114,9 @@ B2C_SearchTracking_006_06
     common.Verify Capture Screenshot    B2C_SearchTracking_006_06    Verify Error Message Input Incorrect Parcel Number
 
 B2C_SearchTracking_006_07
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ เกินครั้งละ 10 หมายเลข
-    [Tags]  B2C_SearchTracking_006_07    UAT    Low    Non-Regression    In_Progress
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลขพัสดุ ถูกต้อง,
+    ...                กรอกค้นหาหมายเลขพัสดุ เกินครั้งละ 10 หมายเลข
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    Fail
     # The expected results are displayed 10 parcels but the website is displayed more than 10 parcels.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -124,8 +131,9 @@ B2C_SearchTracking_006_07
     common.Verify Capture Screenshot    B2C_SearchTracking_006_07    Verify Search Results When Search More Than 10 Parcels
 
 B2C_SearchTracking_006_08
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ ครั้งละ 10 หมายเลข โดยในแต่ละหมายเลขไม่เว้นวรรคเพื่อแยกจากกัน
-    [Tags]  B2C_SearchTracking_006_08    UAT    Low    Non-Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง,
+    ...                กรอกค้นหาหมายเลขพัสดุ ครั้งละ 10 หมายเลข โดยในแต่ละหมายเลขไม่เว้นวรรคเพื่อแยกจากกัน 
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -140,7 +148,7 @@ B2C_SearchTracking_006_08
 
 B2C_SearchTracking_006_09
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ไม่กรอกค้นหาชื่อและเบอร์โทรศัพท์ผู้รับพัสดุ
-    [Tags]  B2C_SearchTracking_006_09    UAT    Low    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -154,8 +162,9 @@ B2C_SearchTracking_006_09
     common.Verify Capture Screenshot    B2C_SearchTracking_006_09    Verify Error Message Name Or Phone Not Inputted    
 
 B2C_SearchTracking_006_10
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ ไม่เป็นตัวอักษรภาษาไทย อังกฤษ"
-    [Tags]  B2C_SearchTracking_006_10    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ ไม่ถูกต้อง,
+    ...                กรอกค้นหาชื่อผู้รับพัสดุ ไม่เป็นตัวอักษรภาษาไทย อังกฤษ
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -170,8 +179,9 @@ B2C_SearchTracking_006_10
     common.Verify Capture Screenshot    B2C_SearchTracking_006_10    Verify Error Message Input Incorrect Name Or Phone
 
 B2C_SearchTracking_006_11
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ เกิน 50 ตัวอักษร
-    [Tags]  B2C_SearchTracking_006_11    UAT    Low    Regression    In_Progress
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ ไม่ถูกต้อง,
+    ...                กรอกค้นหาชื่อผู้รับพัสดุ เกิน 50 ตัวอักษร
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    Fail
     # Expected result error message and website mismatch.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -187,8 +197,9 @@ B2C_SearchTracking_006_11
     common.Verify Capture Screenshot    B2C_SearchTracking_006_11    Verify Error Message Input Incorrect Name Or Phone
 
 B2C_SearchTracking_006_12
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกเบอร์โทรศัพท์ ไม่เป็นตัวเลข
-    [Tags]  B2C_SearchTracking_006_12    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง,
+    ...                กรอกเบอร์โทรศัพท์ ไม่เป็นตัวเลข
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -203,8 +214,9 @@ B2C_SearchTracking_006_12
     common.Verify Capture Screenshot    B2C_SearchTracking_006_12    Verify Error Message Input Incorrect Name Or Phone
 
 B2C_SearchTracking_006_13
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกเบอร์โทรศัพท์ เกิน 10 หลัก
-    [Tags]  B2C_SearchTracking_006_13    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง,
+    ...                กรอกเบอร์โทรศัพท์ เกิน 10 หลัก
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -219,8 +231,9 @@ B2C_SearchTracking_006_13
     common.Verify Capture Screenshot    B2C_SearchTracking_006_13    Verify Error Message Input Incorrect Name Or Phone
 
 B2C_SearchTracking_006_14
-    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] เลือกสถานะพัสดุ ถูกต้อง
-    [Tags]  B2C_SearchTracking_006_14    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] เลือกสถานะพัสดุ ถูกต้อง,
+    ...                เลือกสถานะพัสดุ 1 ตัวเลือก
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -239,7 +252,7 @@ B2C_SearchTracking_006_14
 
 B2C_SearchTracking_006_15
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ไม่เลือกเลือกสถานะพัสดุ
-    [Tags]  B2C_SearchTracking_006_15    UAT    Low    Non-Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
