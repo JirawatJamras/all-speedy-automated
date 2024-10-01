@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.9.6 on darwin)" generated="2024-10-01T13:25:37.692114" rpa="false" schemaversion="5">
+<suite id="s1" name="B2C Addbooking 003" source="/Users/perasu/Desktop/vasup/speedy/all-speedy-automated/testcases/b2c/b2c_addbooking_003.robot">
+<test id="s1-t1" name="B2C_AddBooking_003_14" line="246">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Chrome Browser" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-10-01T13:25:38.029353" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x104928fd0&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-10-01T13:25:38.029098" elapsed="0.000288"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-10-01T13:25:38.029614" elapsed="0.000137"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-10-01T13:25:38.029941" elapsed="0.000122"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-10-01T13:25:38.030247" elapsed="0.000117"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-10-01T13:25:38.030611" elapsed="0.000192"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-10-01T13:25:38.031299" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>${chrome}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-10-01T13:25:38.031047" elapsed="1.368432"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-10-01T13:25:39.400126" elapsed="0.000343"/>
+</kw>
+<arg>chrome</arg>
+<status status="PASS" start="2024-10-01T13:25:38.028713" elapsed="1.371845"/>
+</kw>
+<kw name="Set Folder Result with date" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-10-01T13:25:39.401905" level="INFO">${date_YYYY_MM_DD} = 2024-10-01 13:25:39.402</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-10-01T13:25:39.401681" elapsed="0.000253"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-10-01T13:25:39.404810" level="INFO">${date_YYYY_MM_DD} = 2024-10-01</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-10-01T13:25:39.402138" elapsed="0.002725"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-10-01T13:25:39.406242" level="INFO">${FOlDER_RESULT} = ../results/2024-10-01</msg>
+<var>${FOlDER_RESULT}</var>
+<arg>../results/${date_YYYY_MM_DD}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-10-01T13:25:39.405374" elapsed="0.000908"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-10-01T13:25:39.406890" level="INFO">${FOlDER_RESULT} = ../results/2024-10-01</msg>
+<arg>${FOlDER_RESULT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-10-01T13:25:39.406572" elapsed="0.000364"/>
+</kw>
+<status status="PASS" start="2024-10-01T13:25:39.400980" elapsed="0.006075"/>
+</kw>
+<arg>Open Chrome Browser</arg>
+<arg>chrome</arg>
+<arg>AND</arg>
+<arg>Set Folder Result with date</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-10-01T13:25:38.028226" elapsed="1.378884"/>
+</kw>
+<kw name="Open URL" owner="common">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-10-01T13:25:39.408107" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-10-01T13:25:39.407981" elapsed="1.201072"/>
+</kw>
+<arg>${B2C_UAT_URL}</arg>
+<status status="PASS" start="2024-10-01T13:25:39.407581" elapsed="1.201779"/>
+</kw>
+<kw name="Select Business Customers Tab" owner="register_general_customers_page">
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-01T13:25:40.611227" elapsed="0.436374"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-01T13:25:41.050352" level="INFO">Clicking element '//div[text()='ลูกค้าธุรกิจ'][@id='rc-tabs-2-tab-business']/..'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T13:25:41.049252" elapsed="0.559008"/>
+</kw>
+<arg>${register_btn_business_customers_tab_general_customers_page}</arg>
+<status status="PASS" start="2024-10-01T13:25:40.610594" elapsed="0.997804"/>
+</kw>
+<status status="PASS" start="2024-10-01T13:25:40.609993" elapsed="0.998465"/>
+</kw>
+<kw name="Input Email" owner="b2c_login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_txtbox_email}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-01T13:25:41.612183" elapsed="0.431612"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-01T13:25:42.047167" level="INFO">Typing text 'idc@gmail.com' into text field '//input[@id='emailBusiness']'.</msg>
+<arg>${b2c_txtbox_email}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T13:25:42.045695" elapsed="0.832274"/>
+</kw>
+<arg>${b2c_login_user_06['username']}</arg>
+<status status="PASS" start="2024-10-01T13:25:41.608823" elapsed="1.269900"/>
+</kw>
+<kw name="Input Password" owner="b2c_login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_txtbox_password}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-01T13:25:42.889139" elapsed="0.437094"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-10-01T13:25:43.329800" level="INFO">Typing text 'P@ssw0rd' into text field '//input[@id='passwordBusiness']'.</msg>
+<arg>${b2c_txtbox_password}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T13:25:43.328302" elapsed="0.718822"/>
+</kw>
+<arg>${b2c_login_user_06['password']}</arg>
+<status status="PASS" start="2024-10-01T13:25:42.880413" elapsed="1.166943"/>
+</kw>
+<kw name="Click Log On Button" owner="b2c_login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_btn_log_on}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-01T13:25:44.048717" elapsed="0.436569"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-10-01T13:25:44.488849" level="INFO">Clicking element '//*[@id="rc-tabs-2-panel-business"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b'.</msg>
+<arg>${b2c_btn_log_on}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-10-01T13:25:44.487436" elapsed="0.465577"/>
+</kw>
+<kw name="Wait Until Profile Page Loaded" owner="b2c_home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${b2c_txt_business_profile_title_home_page}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-10-01T13:25:44.954615" elapsed="1.264841"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-10-01T13:26:02.037647" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-34.png"&gt;&lt;img src="selenium-screenshot-34.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-10-01T13:26:02.038308" level="FAIL">Element '//span[text()='แก้ไข']/..' not visible after 15 seconds.</msg>
+<arg>${b2c_btn_edit_profile_info_home_page}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-10-01T13:25:46.220092" elapsed="15.827813">Element '//span[text()='แก้ไข']/..' not visible after 15 seconds.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-10-01T13:26:02.048541" elapsed="0.000064"/>
+</kw>
+<status status="FAIL" start="2024-10-01T13:25:44.953774" elapsed="17.095038">Element '//span[text()='แก้ไข']/..' not visible after 15 seconds.</status>
+</kw>
+<status status="FAIL" start="2024-10-01T13:25:44.048023" elapsed="18.000942">Element '//span[text()='แก้ไข']/..' not visible after 15 seconds.</status>
+</kw>
+<kw name="Click Book Parcel Delivery" owner="b2c_home_page">
+<status status="NOT RUN" start="2024-10-01T13:26:02.049569" elapsed="0.000053"/>
+</kw>
+<kw name="Click Button To Add" owner="b2c_bookingdelivery_page">
+<status status="NOT RUN" start="2024-10-01T13:26:02.050091" elapsed="0.000046"/>
+</kw>
+<kw name="Click Accept Terms of Service" owner="b2c_bookingdelivery_page">
+<status status="NOT RUN" start="2024-10-01T13:26:02.050572" elapsed="0.000046"/>
+</kw>
+<kw name="Click General Parcel" owner="b2c_bookingdelivery_page">
+<status status="NOT RUN" start="2024-10-01T13:26:02.051084" elapsed="0.000036"/>
+</kw>
+<kw name="Input Phone Sender" owner="b2c_create_parcel_page">
+<arg>${b2c_addbooking_003_ID_14['text_phone_sender']}</arg>
+<status status="NOT RUN" start="2024-10-01T13:26:02.051488" elapsed="0.000035"/>
+</kw>
+<kw name="Input Name Sender" owner="b2c_create_parcel_page">
+<arg>${b2c_addbooking_003_ID_14['text_name_sender']}</arg>
+<status status="NOT RUN" start="2024-10-01T13:26:02.051905" elapsed="0.000034"/>
+</kw>
+<kw name="Input Address Sender" owner="b2c_create_parcel_page">
+<arg>${b2c_addbooking_003_ID_14['text_address_sender']}</arg>
+<status status="NOT RUN" start="2024-10-01T13:26:02.052302" elapsed="0.000033"/>
+</kw>
+<kw name="Input Postcode Sender" owner="b2c_create_parcel_page">
+<arg>${b2c_addbooking_003_ID_14['text_postcode_sender_not_number']}</arg>
+<status status="NOT RUN" start="2024-10-01T13:26:02.052693" elapsed="0.000034"/>
+</kw>
+<kw name="Verify Postcode Sender Error Msg" owner="b2c_create_parcel_page">
+<arg>${b2c_addbooking_003_ID_14['text_error_msg_postcode_sender']}</arg>
+<status status="NOT RUN" start="2024-10-01T13:26:02.053109" elapsed="0.000034"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-10-01T13:26:02.053652" elapsed="0.279407"/>
+</kw>
+<doc>[Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกรหัสไปรษณีย์ ไม่ถูกต้อง กรอกรหัสไปรษณีย์ ไม่เป็นตัวเลข, เกิน 5 หลัก, ไม่กรอกรหัสไปรษณีย์</doc>
+<tag>B2C_AddBooking_003_14</tag>
+<tag>Low</tag>
+<tag>Regression</tag>
+<tag>Run</tag>
+<tag>UAT</tag>
+<status status="FAIL" start="2024-10-01T13:25:38.023941" elapsed="24.309375">Element '//span[text()='แก้ไข']/..' not visible after 15 seconds.</status>
+</test>
+<status status="FAIL" start="2024-10-01T13:25:37.693190" elapsed="24.640955"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">B2C_AddBooking_003_14</stat>
+<stat pass="0" fail="1" skip="0">Low</stat>
+<stat pass="0" fail="1" skip="0">Regression</stat>
+<stat pass="0" fail="1" skip="0">Run</stat>
+<stat pass="0" fail="1" skip="0">UAT</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="B2C Addbooking 003">B2C Addbooking 003</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-10-01T13:25:38.017980" level="ERROR">Error in file '/Users/perasu/Desktop/vasup/speedy/all-speedy-automated/resourses/init_website.robot' on line 9: Importing library '/Users/perasu/Desktop/vasup/speedy/all-speedy-automated/resourses/config/python/CustomSeleniumLibrary.py' failed: ModuleNotFoundError: No module named 'PIL'
+Traceback (most recent call last):
+  File "/Users/perasu/Desktop/vasup/speedy/all-speedy-automated/resourses/config/python/CustomSeleniumLibrary.py", line 6, in &lt;module&gt;
+    from PIL import Image
+PYTHONPATH:
+  /Users/perasu/Desktop/vasup/speedy/all-speedy-automated/resourses/config/python
+  /Users/perasu/Desktop/vasup/speedy/all-speedy-automated
+  /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python39.zip
+  /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9
+  /Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/lib-dynload
+  /Users/perasu/Desktop/vasup/speedy/venv/lib/python3.9/site-packages</msg>
+</errors>
+</robot>
