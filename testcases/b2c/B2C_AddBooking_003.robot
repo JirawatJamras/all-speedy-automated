@@ -8,7 +8,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 B2C_AddBooking_003_01
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรณี ตรวจสอบข้อมูล Term & Condition
-    [Tags]    B2C_AddBooking_003_01    UAT    Medium    
+    [Tags]    B2C_AddBooking_003_01    UAT    Medium    Regression
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email     ${b2c_login_user_06['username']}
@@ -30,7 +30,7 @@ B2C_AddBooking_003_01
 
 B2C_AddBooking_003_02
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรณี กดปุ่ม "เลือกจากรายการโปรด"
-    [Tags]    B2C_AddBooking_003_02    UAT    Medium
+    [Tags]    B2C_AddBooking_003_02    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -45,7 +45,7 @@ B2C_AddBooking_003_02
 
 B2C_AddBooking_003_03
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ถูกต้องกรอกค้นหาข้อมูลที่อยู่ เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- 
-    [Tags]    B2C_AddBooking_003_03    UAT    Medium    
+    [Tags]    B2C_AddBooking_003_03    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -61,7 +61,7 @@ B2C_AddBooking_003_03
 
 B2C_AddBooking_003_04
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ไม่ถูกต้อง กรอกค้นหาข้อมูลที่อยู่ ไม่เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- "
-    [Tags]    B2C_AddBooking_003_04    UAT    Low
+    [Tags]    B2C_AddBooking_003_04    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -80,7 +80,7 @@ B2C_AddBooking_003_04
 
 B2C_AddBooking_003_05
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรณี กดปุ่ม "เลือก"
-    [Tags]    B2C_AddBooking_003_05    UAT    Medium
+    [Tags]    B2C_AddBooking_003_05    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -97,7 +97,7 @@ B2C_AddBooking_003_05
 
 B2C_AddBooking_003_06
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรณี กดปุ่ม "ยกเลิก"
-    [Tags]    B2C_AddBooking_003_06    UAT    Low    
+    [Tags]    B2C_AddBooking_003_06    UAT    Low    Non-Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -114,7 +114,7 @@ B2C_AddBooking_003_06
 
 B2C_AddBooking_003_07
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกเบอร์โทรศัพท์ ถูกต้องกรอกเบอร์โทรศัพท์ เป็นตัวเลข
-    [Tags]    B2C_AddBooking_003_07    UAT    Low
+    [Tags]    B2C_AddBooking_003_07    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -129,7 +129,7 @@ B2C_AddBooking_003_07
 
 B2C_AddBooking_003_08
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง กรอกเบอร์โทรศัพท์ ไม่เป็นตัวเลข, เกิน 10 หลัก, ไม่กรอกเบอร์โทรศัพท์
-    [Tags]    B2C_AddBooking_003_08    UAT    Medium
+    [Tags]    B2C_AddBooking_003_08    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -149,7 +149,7 @@ B2C_AddBooking_003_08
 
 B2C_AddBooking_003_09
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกชื่อ ถูกต้อง กรอกชื่อ เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ
-    [Tags]    B2C_AddBooking_003_09    UAT    Low
+    [Tags]    B2C_AddBooking_003_09    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -165,7 +165,7 @@ B2C_AddBooking_003_09
 
 B2C_AddBooking_003_10
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกชื่อ ไม่ถูกต้อง กรอกชื่อ ไม่เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ, กรอกชื่อ เกิน 50 ตัวอักษร, ไม่กรอกชื่อ
-    [Tags]    B2C_AddBooking_003_10    UAT    Medium    
+    [Tags]    B2C_AddBooking_003_10    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -187,7 +187,7 @@ B2C_AddBooking_003_10
 
 B2C_AddBooking_003_11
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกที่อยู่ ถูกต้อง กรอกที่อยู่ เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข, ไม่เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddBooking_003_11    UAT    Low
+    [Tags]    B2C_AddBooking_003_11    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -204,7 +204,7 @@ B2C_AddBooking_003_11
 
 B2C_AddBooking_003_12
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกที่อยู่ ไม่ถูกต้อง กรอกที่อยู่ ไม่เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข,เกิน 50 ตัวอักษร, ไม่กรอกที่อยู่
-    [Tags]    B2C_AddBooking_003_12   UAT    Medium
+    [Tags]    B2C_AddBooking_003_12   UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
@@ -227,7 +227,7 @@ B2C_AddBooking_003_12
 
 B2C_AddBooking_003_13
     [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกรหัสไปรษณีย์ ถูกต้อง กรอกรหัสไปรษณีย์ เป็นตัวเลข, ไม่เกิน 5 หลัก 
-    [Tags]    B2C_AddBooking_003_11    UAT    Low    Run
+    [Tags]    B2C_AddBooking_003_11    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_06['username']}
