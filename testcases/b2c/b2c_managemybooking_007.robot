@@ -7,8 +7,10 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 B2C_SearchTracking_007_01
-    [Documentation]             [ตรวจสอบพัสดุของฉัน] ตรวจสอบ Tab "อยู่ระหว่างจัดส่ง"
-    [Tags]    B2C_SearchTracking_007_01    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบพัสดุของฉัน] ตรวจสอบพัสดุของฉัน,
+    ...                ตรวจสอบรายการพัสดุที่จัดส่ง,
+    ...                ตรวจสอบ Tab "อยู่ระหว่างจัดส่ง"
+    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -28,8 +30,9 @@ B2C_SearchTracking_007_01
     common.Verify Capture Screenshot    B2C_SearchTracking_007_01    Verify Parcels In Tab Is In Transit
 
 B2C_SearchTracking_007_02
-    [Documentation]             [ตรวจสอบพัสดุของฉัน] กรองข้อมูล Tab "อยู่ระหว่างจัดส่ง"
-    [Tags]    B2C_SearchTracking_007_02    UAT    Low    Regression    In_Review
+    [Documentation]    [ตรวจสอบพัสดุของฉัน] กรองข้อมูล Tab "อยู่ระหว่างจัดส่ง",
+    ...                กรณี กดปุ่มเปิดและปิด "ตัวกรอง"
+    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -45,8 +48,10 @@ B2C_SearchTracking_007_02
     common.Verify Capture Screenshot    B2C_SearchTracking_007_02    Verify Close Filter Form
 
 B2C_SearchTracking_007_03
-    [Documentation]             [ตรวจสอบพัสดุของฉัน] กรอกค้นหาหมายเลขพัสดุ ถูกต้อง
-    [Tags]    B2C_SearchTracking_007_03    UAT    Medium    Regression    In_Review
+    [Documentation]    [ตรวจสอบพัสดุของฉัน] กรอกค้นหาหมายเลขพัสดุ ถูกต้อง,
+    ...                กรอกค้นหาหมายเลขพัสดุ เป็นตัวอักษรภาษาอังกฤษ ตัวเลข และ ไม่เกิน 20 ตัวอักษร,
+    ...                ไม่กรอกค้นหาหมายเลขพัสดุ
+    [Tags]    B2C_SearchTracking_007    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -67,8 +72,8 @@ B2C_SearchTracking_007_03
     common.Verify Capture Screenshot    B2C_SearchTracking_007_03    Verify Search Results When Not Input Parcel Number
 
 B2C_SearchTracking_007_04
-    [Documentation]             [ตรวจสอบพัสดุของฉัน] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง
-    [Tags]    B2C_SearchTracking_007_04    UAT    Low    Regression    In_Progress
+    [Documentation]    [ตรวจสอบพัสดุของฉัน] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง
+    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Progress
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}

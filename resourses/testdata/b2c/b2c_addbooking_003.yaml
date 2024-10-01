@@ -62,3 +62,12 @@ b2c_addbooking_003_ID_13:
   text_name_sender: Test ทดสอบ
   text_address_sender: address ที่อยู่ 1234
   text_postcode_sender: '10200'
+
+b2c_addbooking_003_ID_14:
+  text_phone_sender: 0911111111
+  text_name_sender: Test ทดสอบ
+  text_address_sender: address ที่อยู่ 1234
+  text_postcode_sender_not_number: oneII
+  text_postcode_sender_more_than_5_digits: '1234567890'
+  text_error_msg_postcode_sender: กรุณาระบุรหัสไปรษณีย์ให้ถูกต้อง
+  text_error_msg_postcode_sender_is_empty: กรุณาระบุรหัสไปรษณีย์
