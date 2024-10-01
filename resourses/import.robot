@@ -6,6 +6,7 @@ Variables                   testdata/login_user.yaml
 
 ######################## B2C ########################
 Resource                    ../keywords/pages/b2c/b2c_login_page.robot
+Resource                    ../keywords/pages/b2c/b2c_forgot_password_page.robot
 Resource                    ../keywords/pages/b2c/b2c_home_page.robot
 Resource                    ../keywords/pages/b2c/b2c_bookingdelivery_page.robot
 Resource                    ../keywords/pages/b2c/b2c_create_parcel_page.robot
@@ -15,6 +16,7 @@ Resource                    ../keywords/pages/b2c/b2c_favorite_page.robot
 Resource                    ../keywords/pages/b2c/b2c_call_car_pick_up_parcel_page.robot
 
 Resource                    locators/b2c/b2c_login_page.robot
+Resource                    locators/b2c/b2c_forgot_password_page.robot
 Resource                    locators/b2c/b2c_home_page.robot
 Resource                    locators/b2c/b2c_bookingdelivery_page.robot
 Resource                    locators/b2c/b2c_create_parcel_page.robot
@@ -24,6 +26,7 @@ Resource                    locators/b2c/b2c_favorite_page.robot
 Resource                    locators/b2c/b2c_call_car_pick_up_parcel_page.robot
 
 Variables                   testdata/b2c/b2c_login_001.yaml
+Variables                   testdata/b2c/b2c_forgotpassword_002.yaml
 Variables                   testdata/b2c/b2c_addbooking_003.yaml
 Variables                   testdata/b2c/b2c_search_tracking_006.yaml
 Variables                   testdata/b2c/b2c_manage_my_booking_007.yaml
