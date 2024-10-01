@@ -53,3 +53,39 @@ B2C_AddPickupTime_008_001
     common.Verify Capture Screenshot    B2C_AddPickupTime_008_001    Verify Saved Popup Is Visible
     b2c_call_car_pick_up_parcel_page.Verify Saved Information In Visible In List
     common.Verify Capture Screenshot    B2C_AddPickupTime_008_001    Verify Saved Information In Visible In List
+
+B2C_AddPickupTime_008_004
+    [Documentation]    [เพิ่มรายการรอบรถเข้ารับพัสดุ] กรณี กดปุ่ม "ยกเลิก"
+    [Tags]    B2C_AddPickupTime_008    UAT    Low    Non-Regression    In_Review
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Click Add Button
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${B2C_AddPickupTime_008_004.parcelType['input']}
+    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
+    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${B2C_AddPickupTime_008_004.pickupTime['input']}
+    b2c_call_car_pick_up_parcel_page.Click Cancel Button On Parcel Pickup Schedule Popup
+    b2c_call_car_pick_up_parcel_page.Verify Asking Popup To Close Popup    ${B2C_AddPickupTime_008_004.askingPopup['expected']}
+    common.Verify Capture Screenshot    B2C_AddPickupTime_008_004    Verify Asking Popup To Close Popup
+
+B2C_AddPickupTime_008_005
+    [Documentation]    [เพิ่มรายการรอบรถเข้ารับพัสดุ] กรณี กดปุ่มปิด "X"
+    [Tags]    B2C_AddPickupTime_008    UAT    Low    Non-Regression    In_Review
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Click Add Button
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${B2C_AddPickupTime_008_005.parcelType['input']}
+    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
+    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${B2C_AddPickupTime_008_005.pickupTime['input']}
+    b2c_call_car_pick_up_parcel_page.Click X Button On Parcel Pickup Schedule Popup
+    b2c_call_car_pick_up_parcel_page.Verify Asking Popup To Close Popup    ${B2C_AddPickupTime_008_005.askingPopup['expected']}
+    common.Verify Capture Screenshot    B2C_AddPickupTime_008_005    Verify Asking Popup To Close Popup

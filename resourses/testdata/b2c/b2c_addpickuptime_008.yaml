@@ -17,3 +17,20 @@ B2C_AddPickupTime_008_001:
       input: ช่วงบ่าย 13:00 - 16:00
     edit:
       input: ช่วงบ่าย 22:00 - 23:00
+
+B2C_AddPickupTime_008_004:
+  parcelType:
+    input: พัสดุควบคุมอุณหภูมิ
+  pickupTime:
+    input: ช่วงบ่าย 13:00 - 16:00
+  askingPopup:
+    expected: ต้องการการปิด Pop-Up หรือไม่ ข้อมูลที่เปลี่ยนแปลงจะไม่บันทึก
+
+B2C_AddPickupTime_008_005:
+  parcelType:
+    input: พัสดุควบคุมอุณหภูมิ
+  pickupTime:
+    input: ช่วงบ่าย 13:00 - 16:00
+  askingPopup:
+    expected: ต้องการการปิด Pop-Up หรือไม่ ข้อมูลที่เปลี่ยนแปลงจะไม่บันทึก
+  

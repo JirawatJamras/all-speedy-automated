@@ -109,4 +109,16 @@ Verify Saved Information In Visible In List
     Scroll Element Into View    ${b2c_txt_h5_special_round_car_pickup_page}
     Log    ${selectedFutureDate}
     Element Should Contain    (//h5[contains(text(),'${selectedFutureDate}')])[1]    ${selectedFutureDate}
-    
+
+Click Cancel Button On Parcel Pickup Schedule Popup
+    common.Click When Ready    ${b2c_btn_cancel_in_add_popup}
+
+Verify Asking Popup To Close Popup
+    [Arguments]    ${text}
+    Wait Until Element Is Visible    ${b2c_txt_asking_to_close_popup_in_add_popup}    timeout=${DEFAULT_TIMEOUT}
+    Element Should Contain    ${b2c_txt_asking_to_close_popup_in_add_popup}    ${text}
+    Wait Until Element Is Visible    ${b2c_btn_cancel_in_asking_to_close_popup}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_confirm_in_asking_to_close_popup}
+
+Click X Button On Parcel Pickup Schedule Popup
+    common.Click When Ready    ${b2c_btn_x_in_add_popup}
