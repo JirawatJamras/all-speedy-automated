@@ -47,3 +47,6 @@ Wait Until Profile Page Loaded
     Wait Until Element Is Visible    ${b2c_txt_business_profile_title_home_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Contains Element    ${b2c_btn_edit_profile_info_home_page}    timeout=${DEFAULT_TIMEOUT}
     Sleep   3s
+
+Verify Login To Profile Page Correctly
+    Wait Until Profile Page Loaded
