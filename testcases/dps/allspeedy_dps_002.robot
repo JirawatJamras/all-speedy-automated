@@ -1,9 +1,9 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
-Suite Setup       Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup       Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Suite Teardown    Close Browser
+Test Teardown    Close Browser
 
 *** Test Cases ***
 AllSpeedy_DPS_002_ID_1
