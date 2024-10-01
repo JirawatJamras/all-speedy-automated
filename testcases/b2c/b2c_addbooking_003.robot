@@ -7,7 +7,7 @@ Test Teardown    Close Browser
 
 *** Test Cases ***
 B2C_AddBooking_003_01
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรณี ตรวจสอบข้อมูล Term & Condition
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรณี ตรวจสอบข้อมูล Term & Condition
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -29,7 +29,7 @@ B2C_AddBooking_003_01
     b2c_create_parcel_page.Verify Create Parcel Page
 
 B2C_AddBooking_003_02
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรณี กดปุ่ม "เลือกจากรายการโปรด"
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรณี กดปุ่ม "เลือกจากรายการโปรด"
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    In_Review 
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -44,7 +44,7 @@ B2C_AddBooking_003_02
     b2c_create_parcel_page.Verify Popup Favorites Sender 
 
 B2C_AddBooking_003_03
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ถูกต้องกรอกค้นหาข้อมูลที่อยู่ เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- 
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ถูกต้องกรอกค้นหาข้อมูลที่อยู่ เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- 
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -60,7 +60,7 @@ B2C_AddBooking_003_03
     b2c_create_parcel_page.Verify Favorites Show Item Lists
 
 B2C_AddBooking_003_04
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ไม่ถูกต้อง กรอกค้นหาข้อมูลที่อยู่ ไม่เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- "
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรอกค้นหาข้อมูลที่อยู่ ไม่ถูกต้อง กรอกค้นหาข้อมูลที่อยู่ ไม่เป็นตัวอักษรภาษาไทย อังกฤษ ตัวเลข และอักขระ /- "
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -79,7 +79,7 @@ B2C_AddBooking_003_04
     b2c_create_parcel_page.Verify Favorites Not Show Item Lists
 
 B2C_AddBooking_003_05
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรณี กดปุ่ม "เลือก"
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรณี กดปุ่ม "เลือก"
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -96,7 +96,7 @@ B2C_AddBooking_003_05
     b2c_create_parcel_page.Verify Choose From Favorites
 
 B2C_AddBooking_003_06
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรณี กดปุ่ม "ยกเลิก"
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรณี กดปุ่ม "ยกเลิก"
     [Tags]    B2C_AddBooking_003    UAT    Low    Non-Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -113,7 +113,7 @@ B2C_AddBooking_003_06
     b2c_create_parcel_page.Verify Not Choose From Favorites
 
 B2C_AddBooking_003_07
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกเบอร์โทรศัพท์ ถูกต้องกรอกเบอร์โทรศัพท์ เป็นตัวเลข
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกเบอร์โทรศัพท์ ถูกต้องกรอกเบอร์โทรศัพท์ เป็นตัวเลข
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -128,7 +128,7 @@ B2C_AddBooking_003_07
     b2c_create_parcel_page.Verify Phone Sender Value    ${b2c_addbooking_003_ID_7['text_phone_sender']}
 
 B2C_AddBooking_003_08
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง กรอกเบอร์โทรศัพท์ ไม่เป็นตัวเลข, เกิน 10 หลัก, ไม่กรอกเบอร์โทรศัพท์
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง กรอกเบอร์โทรศัพท์ ไม่เป็นตัวเลข, เกิน 10 หลัก, ไม่กรอกเบอร์โทรศัพท์
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -148,7 +148,7 @@ B2C_AddBooking_003_08
     #b2c_create_parcel_page.Verify Phone Sender Error Msg    ${b2c_addbooking_003_ID_8['text_error_msg_phone_sender']}  # Expected Result ไม่ตรงกับหน้าเว็บ
 
 B2C_AddBooking_003_09
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกชื่อ ถูกต้อง กรอกชื่อ เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกชื่อ ถูกต้อง กรอกชื่อ เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -164,7 +164,7 @@ B2C_AddBooking_003_09
     b2c_create_parcel_page.Verify Name Sender Value    ${b2c_addbooking_003_ID_9['text_name_sender']}
 
 B2C_AddBooking_003_10
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกชื่อ ไม่ถูกต้อง กรอกชื่อ ไม่เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ, กรอกชื่อ เกิน 50 ตัวอักษร, ไม่กรอกชื่อ
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกชื่อ ไม่ถูกต้อง กรอกชื่อ ไม่เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ, กรอกชื่อ เกิน 50 ตัวอักษร, ไม่กรอกชื่อ
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -186,7 +186,7 @@ B2C_AddBooking_003_10
     b2c_create_parcel_page.Verify Name Sender Error Msg    ${b2c_addbooking_003_ID_10['text_error_msg_name_sender_is_empty']}
 
 B2C_AddBooking_003_11
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกที่อยู่ ถูกต้อง กรอกที่อยู่ เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข, ไม่เกิน 50 ตัวอักษร
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกที่อยู่ ถูกต้อง กรอกที่อยู่ เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข, ไม่เกิน 50 ตัวอักษร
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -203,7 +203,7 @@ B2C_AddBooking_003_11
     b2c_create_parcel_page.Verify Address Sender Value    ${b2c_addbooking_003_ID_11['text_address_sender_en_th_num']}
 
 B2C_AddBooking_003_12
-    [Documentation]    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกที่อยู่ ไม่ถูกต้อง กรอกที่อยู่ ไม่เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข,เกิน 50 ตัวอักษร, ไม่กรอกที่อยู่
+    [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรอกที่อยู่ ไม่ถูกต้อง กรอกที่อยู่ ไม่เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข,เกิน 50 ตัวอักษร, ไม่กรอกที่อยู่
     [Tags]    B2C_AddBooking_003   UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
