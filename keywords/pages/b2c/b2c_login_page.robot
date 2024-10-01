@@ -1,7 +1,7 @@
 *** Keywords ***
 Input Email
     [Arguments]    ${value}
-    Wait Until Element Is Visible    ${b2c_txtbox_email}
+    Wait Until Element Is Visible    ${b2c_txtbox_email}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${b2c_txtbox_email}    ${value}
 
 Input Password

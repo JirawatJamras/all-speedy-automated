@@ -73,7 +73,7 @@ B2C_SearchTracking_007_03
 
 B2C_SearchTracking_007_04
     [Documentation]    [ตรวจสอบพัสดุของฉัน] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง
-    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Progress
+    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
