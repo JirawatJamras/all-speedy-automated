@@ -43,7 +43,7 @@ B2C_AddFavoriteItem_010_003
     [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อรายการโปรด ไม่ถูกต้อง
     ...                  กรอกชื่อรายการโปรด ไม่เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ ตัวเลข,
     ...                  กรอกชื่อรายการโปรด เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Failed
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website. The commented code is the actual result on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -65,12 +65,7 @@ B2C_AddFavoriteItem_010_003
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_03    Verify Can Not Input Favorite Name More Than Specified
 
 B2C_AddFavoriteItem_010_004
-    [Documentation]      [เพิ่มรายการโปรด] ไม่กรอกชื่อรายการโปรด,
-    ...                  ไม่กรอกชื่อ,
-    ...                  ไม่กรอกเบอร์โทรศัพท์,
-    ...                  ไม่กรอกชื่อผู้ส่งพัสดุ,
-    ...                  ไม่กรอกรายละเอียดที่อยู่,
-    ...                  ไม่กรอกรหัสไปรษณีย์
+    [Documentation]      [เพิ่มรายการโปรด] ไม่กรอกข้อมูล
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -133,7 +128,7 @@ B2C_AddFavoriteItem_010_007
     [Documentation]      [เพิ่มรายการโปรด] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง
     ...                  กรอกเบอร์โทรศัพท์ ไม่เป็นตัวเลข,
     ...                  กรอกเบอร์โทรศัพท์ เกิน 10 หลัก
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Failed
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -177,7 +172,7 @@ B2C_AddFavoriteItem_010_009
     [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อผู้ส่งพัสดุ ไม่ถูกต้อง
     ...                  กรอกชื่อผู้ส่งพัสดุ ไม่เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ,
     ...                  กรอกชื่อผู้ส่งพัสดุ เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Failed
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -223,7 +218,7 @@ B2C_AddFavoriteItem_010_011
     [Documentation]      [เพิ่มรายการโปรด] กรอกรายละเอียดที่อยู่ ไม่ถูกต้อง
     ...                  กรอกรายละเอียดที่อยู่ ไม่เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข อักขระ / -,
     ...                  กรอกรายละเอียดที่อยู่ เกิน 100 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Failed
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -272,7 +267,7 @@ B2C_AddFavoriteItem_010_013
     [Documentation]      [เพิ่มรายการโปรด] กรอกรหัสไปรษณีย์ ไม่ถูกต้อง 
     ...                  กรอกรหัสไปรษณีย์ ไม่เป็นตัวเลข,
     ...                  กรอกรหัสไปรษณีย์ เกิน 5 หลัก
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Failed
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -300,7 +295,7 @@ B2C_AddFavoriteItem_010_014
     ...                  เลือกรหัสไปรษณีย์ 1 ตัวเลือก,
     ...                  ไม่เลือกรหัสไปรษณีย์,
     ...                  เลือกรหัสไปรษณีย์เกิน 1 ตัวเลือก
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    InProgress    M
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -328,7 +323,7 @@ B2C_AddFavoriteItem_010_014
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_014    Displays The Latest Selected Postcode
 
 B2C_AddFavoriteItem_010_016
-    [Documentation]      [เพิ่มรายการโปรด] กรณี กดปุ่ม "ยกเลิก"
+    [Documentation]        [เพิ่มรายการโปรด] กรณี กดปุ่ม "ยกเลิก"
     [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
