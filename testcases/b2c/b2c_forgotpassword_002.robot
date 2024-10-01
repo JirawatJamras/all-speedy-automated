@@ -12,7 +12,7 @@ B2C_ForgotPassword_002_003
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Click Forgot Password Button
-    b2c_forgot_password_page.Input Email    ${B2C_ForgotPassword_002_03.email['input']}
+    b2c_forgot_password_page.Input Email    ${B2C_ForgotPassword_002_003.email['input']}
     b2c_forgot_password_page.Click Confirm Button
-    b2c_forgot_password_page.Verify Recover Password Popup    ${B2C_ForgotPassword_002_03}
+    b2c_forgot_password_page.Verify Recover Password Popup    ${B2C_ForgotPassword_002_003}
     common.Verify Capture Screenshot    B2C_ForgotPassword_002_003    Verify Recover Password Popup
