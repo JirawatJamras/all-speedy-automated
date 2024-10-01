@@ -11,6 +11,5 @@ ${b2c_txtbox_search_name_or_phone}    //span[text()='ค้นหาด้วย
 ${b2c_btn_search_parcel}    //button[contains(@class,'ant-btn css-1hobygo ant-btn-default ant-btn-color-default ant-btn-variant-outlined ant-btn-lg ant-btn-compact-item ant-btn-compact-last-item')]
 ${b2c_btn_remove_search_parcel}    //div[contains(@class,'ant-card ant-card-bordered max-w-')]//span[@class='ant-input-clear-icon']
 ${b2c_btn_open_filter}    //div[contains(@class,'ant-card ant-card-bordered max-w-')]//span[text()='ตัวกรอง']/..
-# ${b2c_btn_close_filter}    //div[contains(@class,'ant-card ant-card-bordered max-w-')]//button[contains(@class,'ant-btn css-1hobygo ant-btn-round ant-btn-default')]
 
 ${b2c_cbo_search_type_selection}    //div[@class='ant-select-selector']

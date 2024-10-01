@@ -109,7 +109,7 @@ B2C_SearchTracking_006_06
 
 B2C_SearchTracking_006_07
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ เกินครั้งละ 10 หมายเลข
-    [Tags]  B2C_SearchTracking_006_07    UAT    Low    Non-Regression    Failed
+    [Tags]  B2C_SearchTracking_006_07    UAT    Low    Non-Regression    In_Progress
     # The expected results are displayed 10 parcels but the website is displayed more than 10 parcels.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -171,7 +171,7 @@ B2C_SearchTracking_006_10
 
 B2C_SearchTracking_006_11
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ เกิน 50 ตัวอักษร
-    [Tags]  B2C_SearchTracking_006_11    UAT    Low    Regression    Failed
+    [Tags]  B2C_SearchTracking_006_11    UAT    Low    Regression    In_Progress
     # Expected result error message and website mismatch.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
