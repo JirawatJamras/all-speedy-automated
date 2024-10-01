@@ -1,0 +1,13 @@
+B2C_Login_001_02:
+  password:
+    input: P@ssw0rd
+  email:
+    errormsg:
+      expected: กรุณาระบุอีเมลล์
+
+B2C_Login_001_04:
+  email:
+    input: idc@gmail.com
+  password:
+    errormsg:
+      expected: กรุณาระบุรหัสผ่าน

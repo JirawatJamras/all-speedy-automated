@@ -40,7 +40,3 @@ Verify Close Pop-Up
 Click Temperature Controlled Parcel
     Wait Until Element Is Visible    ${parcel_type_chill_btn}   timeout=30s
     Click Element    ${parcel_type_chill_btn}
-
-Select Card Booking
-    Wait Until Element Is Visible    ${select_booking_card}   timeout=30s
-    Click Element    ${select_booking_card}
