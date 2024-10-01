@@ -51,9 +51,9 @@ AllSpeedy_B2C_001_ID_4
     Verify Error Message B2C_001_ID_4    ${AllSpeedy_B2C_001_ID_4['expected_error_message']}
     Verify Capture Screenshot    AllSpeedy_B2C_001_ID_4    Email and password do not exist in the system
 
-AllSpeedy_B2C_001_ID_5
-    [Documentation]          [Login เข้าสู่ระบบ] Login เข้าระบบประเภทลูกค้าธุรกิจ กรณีกรอก Email เป็นภาษาอังกฤษ ตัวเลข อักขระพิเศษ ในรูปแบบอีเมล และรหัสผ่านตรงตามที่ตั้งไว้ เช็คประเภทลูกค้าทั่วไป
-    [Tags]    AllSpeedy_B2C_001_ID_5    UAT
+B2C_Login_001_01
+    [Documentation]    [Login เข้าสู่ระบบ] กรอก E-mail ไม่ถูกต้อง กรณีกรอก E-mail ไม่เป็นภาษาอังกฤษ ตัวเลข อักขระพิเศษ ในรูปแบบอีเมล์ และกรณีกรอก E-mail เป็นภาษาอังกฤษ ตัวเลข อักขระพิเศษ ไม่ใช่ในรูปแบบอีเมล์
+    [Tags]    B2C_Login_001    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     b2c_landing_page.Click Go Login Button
     b2c_login_page.Input Email                    ${b2c_login_user_05['username']}

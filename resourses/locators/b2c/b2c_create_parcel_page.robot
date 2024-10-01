@@ -29,4 +29,18 @@ ${select_favorites_btn}     //button[contains(@class, 'ant-btn') and contains(@c
 ${phone_sender_txtbox}    //input[@id="create_parcel_form_sender_tel"]
 ${name_sender_txtbox}    //input[@id="create_parcel_form_sender_name"]
 ${address_sender_txtbox}    //textarea[@id="create_parcel_form_sender_address_info"]
-${postcode_sender_txtbox}    //input[@id="create_parcel_form_sender_address_full"]/../../span[2]
+${postcode_sender_txtbox}    //input[@id="create_parcel_form_sender_address_full"]
+
+${phone_sender_error_txt}    //input[@id="create_parcel_form_sender_tel"]/../../../../div[2]/div/div
+${name_sender_error_txt}    //input[@id="create_parcel_form_sender_name"]/../../../../div[2]/div/div
+${address_sender_error_txt}    //textarea[@id="create_parcel_form_sender_address_info"]/../../../../div[2]/div/div
+${postcode_sender_error_txt}    //input[@id="create_parcel_form_sender_address_full"]/../../../../../../div[2]/div/div
+
+${phone_sender_clear_btn}    //input[@id="create_parcel_form_sender_tel"]/../span/span
+${name_sender_clear_btn}    //input[@id="create_parcel_form_sender_name"]/../span/span
+${address_sender_clear_btn}    //textarea[@id="create_parcel_form_sender_address_info"]/../span/span[1]
+${postcode_sender_clear_btn}    //input[@id="create_parcel_form_sender_address_full"]/../../../span[2]
+
+
+
+${next_to_receiver_btn}    //div[@class="ant-space-item" and text()="ถัดไป"]/../../../button

@@ -1,9 +1,9 @@
-b2c_addbooking_003_ID_5:
+b2c_addbooking_003_ID_2:
   favorites_title_text: เลือกจากรายการโปรด
   favorites_default_text: ค่าเริ่มต้น
 
 b2c_addbooking_003_ID_3:
-  text_search_en: test
+  text_search_en: บริษัท NN0822249162
   text_search_th_en: ทดสอบTest1234---///
   text_no_data: No data
 
@@ -15,5 +15,50 @@ b2c_addbooking_003_ID_4:
 b2c_addbooking_003_ID_5:
   verify_phone_sender: 0855297546
   verify_name_sender: ฟี ลูฟี่
-  verify_address_sender: "89/1 อาพาทร์เมนต์ สุธิเเมนชั่น "
+  verify_address_sender: '89/1 อาพาทร์เมนต์ สุธิเเมนชั่น '
   verify_postcode_sender: ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
+
+b2c_addbooking_003_ID_6:
+  verify_phone_sender: 0855297546
+  verify_name_sender: ฟี ลูฟี่
+  verify_address_sender: '89/1 อาพาทร์เมนต์ สุธิเเมนชั่น '
+  verify_postcode_sender: ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
+
+b2c_addbooking_003_ID_7:
+  text_phone_sender: 0839699131
+
+b2c_addbooking_003_ID_8:
+  text_phone_sender_not_mobile_number: test$%^!@#
+  text_phone_sender_more_than_10_number: 091234567890123456789
+  text_error_msg_phone_sender: กรุณาระบุเบอร์โทรศัพท์ให้ถูกต้อง
+  text_error_msg_phone_sender_is_empty: กรุณาระบุเบอร์โทรศัพท์
+
+b2c_addbooking_003_ID_9:
+  text_phone_sender: 0911111111
+  text_name_sender: Test ทดสอบ
+
+b2c_addbooking_003_ID_10:
+  text_phone_sender: 0911111111
+  text_name_sender_not_en_th: ()!@#$%^&*_+=?><|\,.;:'"}[]{1234
+  text_name_sender_more_than_50_letters: testtesttesttesttesttesttesttesttesttesttesttesttesttesttest
+  text_error_msg_name_sender: กรุณาระบุชื่อให้ถูกต้อง
+  text_error_msg_name_sender_is_empty: กรุณาระบุชื่อ
+
+b2c_addbooking_003_ID_11:
+  text_phone_sender: 0911111111
+  text_name_sender: Test ทดสอบ
+  text_address_sender_en_th_num: address ที่อยู่ 1234
+
+b2c_addbooking_003_ID_12:
+  text_phone_sender: 0911111111
+  text_name_sender: Test ทดสอบ
+  text_error_msg_address_sender_is_empty: กรุณาระบุที่อยู่
+  text_address_sender_not_en_th: ()!@#$%^&*_+=?><|\,.;:'"}[]{1234
+  text_address_sender_more_than_50_letters: testtesttesttesttesttesttesttesttesttesttesttesttesttesttest
+  text_error_msg_address_sender: กรุณาระบุที่อยู่ให้ถูกต้อง
+
+b2c_addbooking_003_ID_13:
+  text_phone_sender: 0911111111
+  text_name_sender: Test ทดสอบ
+  text_address_sender: address ที่อยู่ 1234
+  text_postcode_sender: '10200'

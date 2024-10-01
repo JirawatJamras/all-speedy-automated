@@ -12,6 +12,13 @@ ${b2c_mnu_term_of_service_home_page}    //a[text()='เงื่อนไขก�
 ${b2c_mnu_register_business_customer_home_page}    //a[text()='ลงทะเบียนลูกค้าธุรกิจ']
 
 ${b2c_btn_add}     //button[contains(@class, 'ant-btn') and span[text()='เพิ่ม']]
+${b2c_btn_edit_profile_info_home_page}    //span[text()='แก้ไข']/..
+
+${b2c_txt_business_profile_title_home_page}    //h2[text()='โปรไฟล์บริษัท']
+
+${b2c_txt_profile}    //h2[text()='โปรไฟล์บริษัท']
+
+${b2c_cbo_parcel_delivery_service}    //ul[contains(@class,'ant-dropdown-menu')]
 
 
 

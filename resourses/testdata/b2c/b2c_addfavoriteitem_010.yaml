@@ -10,7 +10,12 @@ b2c_AddFavoriteItem_010_003:
   specified_value:    50
   
 b2c_AddFavoriteItem_010_004:
-  errormsg:    กรุณาระบุชื่อรายการโปรด
+  errormsg:    
+    favorite_name:    กรุณาระบุชื่อรายการโปรด
+    sender_phone:     กรุณาระบุเบอร์โทรศัพท์ให้ถูกต้อง
+    sender_name:      กรุณาระบุชื่อ
+    sender_address:   กรุณากรอกรายละเอียดที่อยู่
+    sender_postcode:  กรุณากรอกแขวง/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
 
 b2c_AddFavoriteItem_010_005:
   favorite_name:    Test Test
@@ -22,7 +27,77 @@ b2c_AddFavoriteItem_010_006:
 b2c_AddFavoriteItem_010_007:
   favorite_name:    Test Test
   phone_no:    
-    character:    Test
-    more_than_specified:    0123456789123
-    wrong_format:    59
+    character:    test
+    more_than_specified:    0987654321987
   errormsg:    กรุณาระบุเบอร์โทรศัพท์ให้ถูกต้อง
+
+b2c_AddFavoriteItem_010_008:
+  favorite_name:    Test Test
+  phone_no:    0656666789
+  sender_name:    Test Testtest
+
+b2c_AddFavoriteItem_010_009:
+  favorite_name:    Test Test
+  phone_no:    0656666789
+  sender_name:    
+    special_char:    hy$\
+    more_than_specified:    jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+  errormsg:    กรุณาระบุชื่อผู้ส่งพัสดุให้ถูกต้อง #ชื่อไม่ถูกต้อง ต้องเป็นตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น
+
+b2c_AddFavoriteItem_010_010:
+  favorite_name:    Test Test
+  sender_phone:    0656666789
+  sender_name:    Test Testtest
+  sender_address:  12/3 ตึก ABC
+
+b2c_AddFavoriteItem_010_011:
+  favorite_name:    Test Test
+  sender_phone:    0656666789
+  sender_name:    Test Testtest
+  sender_address:
+    special_char:    hy$^=
+    more_than_specified:    testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+  errormsg:    กรุณาระบุรายละเอียดที่อยู่ให้ถูกต้อง
+
+b2c_AddFavoriteItem_010_012:
+  favorite_name:    Test Test
+  sender_phone:    0656666789
+  sender_name:    Test Testtest
+  sender_address:  12/3 ตึก ABC
+  sender_postcode:    '10230'
+
+b2c_AddFavoriteItem_010_013:
+  favorite_name:    Test Test
+  sender_phone:    0656666789
+  sender_name:    Test Testtest
+  sender_address:  12/3 ตึก ABC
+  sender_postcode:
+    char:    abc
+    more_than_specified:    '1023000'
+  errormsg:    กรุณาระบุรหัสไปรษณีย์ให้ถูกต้อง
+
+b2c_AddFavoriteItem_010_014:
+  favorite_name:    Test Test
+  sender_phone:    0656666789
+  sender_name:    Test Testtest
+  sender_address:  12/3 ตึก ABC
+  sender_postcode:    '10230'
+  sender_address_full:
+      address01:    ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
+      address02:    นวลจันทร์ บึงกุ่ม กรุงเทพมหานคร 10230
+
+b2c_AddFavoriteItem_010_016:
+  favorite_name:    Test Test
+  sender_phone:    0656666789
+  sender_name:    Test Testtest
+  sender_address:  12/3 ตึก ABC
+  sender_postcode:    '10230'
+  sender_address_full:    ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
+
+b2c_AddFavoriteItem_010_017:
+  favorite_name:    Test Test
+  sender_phone:    0656666789
+  sender_name:    Test Testtest
+  sender_address:  12/3 ตึก ABC
+  sender_postcode:    '10230'
+  sender_address_full:    ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
