@@ -13,8 +13,8 @@ B2C_SearchTracking_006_01
     [Tags]    B2C_SearchTracking_006    UAT    High    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Verify Tracking Parcel Delivery Page
@@ -37,8 +37,8 @@ B2C_SearchTracking_006_02
     [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -55,8 +55,8 @@ B2C_SearchTracking_006_03
     [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -73,8 +73,8 @@ B2C_SearchTracking_006_04
     [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Parcel Button
@@ -87,8 +87,8 @@ B2C_SearchTracking_006_05
     [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Input Search Parcel Data    ระบุหมายเลขพัสดุ    ${ฺB2C_Search_Tracking_006_05.parcel_number}
@@ -103,8 +103,8 @@ B2C_SearchTracking_006_06
     [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Input Search Parcel Data    ระบุหมายเลขพัสดุ    ${ฺB2C_Search_Tracking_006_06.parcel_number}
@@ -120,8 +120,8 @@ B2C_SearchTracking_006_07
     # The expected results are displayed 10 parcels but the website is displayed more than 10 parcels.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Input Search Parcel Data    ระบุหมายเลขพัสดุ    ${B2C_Search_Tracking_006_07.parcel_number}
@@ -136,8 +136,8 @@ B2C_SearchTracking_006_08
     [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Input Search Parcel Data    ระบุหมายเลขพัสดุ    ${B2C_Search_Tracking_006_08.parcel_number}
@@ -151,8 +151,8 @@ B2C_SearchTracking_006_09
     [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -167,8 +167,8 @@ B2C_SearchTracking_006_10
     [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -185,8 +185,8 @@ B2C_SearchTracking_006_11
     # Expected result error message and website mismatch.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -202,8 +202,8 @@ B2C_SearchTracking_006_12
     [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -219,8 +219,8 @@ B2C_SearchTracking_006_13
     [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -236,8 +236,8 @@ B2C_SearchTracking_006_14
     [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown
@@ -255,8 +255,8 @@ B2C_SearchTracking_006_15
     [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
     b2c_search_tracking_page.Click Search Type Selection Dropdown

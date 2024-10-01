@@ -11,8 +11,8 @@ B2C_AddFavoriteItem_010_001
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -28,8 +28,8 @@ B2C_AddFavoriteItem_010_002
     [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -47,8 +47,8 @@ B2C_AddFavoriteItem_010_003
     ###The expected results do not match those on the website. The commented code is the actual result on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -69,8 +69,8 @@ B2C_AddFavoriteItem_010_004
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -90,8 +90,8 @@ B2C_AddFavoriteItem_010_005
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review    
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -112,8 +112,8 @@ B2C_AddFavoriteItem_010_006
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review    
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -132,8 +132,8 @@ B2C_AddFavoriteItem_010_007
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -155,8 +155,8 @@ B2C_AddFavoriteItem_010_008
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -176,8 +176,8 @@ B2C_AddFavoriteItem_010_009
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -200,8 +200,8 @@ B2C_AddFavoriteItem_010_010
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review    
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -222,8 +222,8 @@ B2C_AddFavoriteItem_010_011
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -247,8 +247,8 @@ B2C_AddFavoriteItem_010_012
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -271,8 +271,8 @@ B2C_AddFavoriteItem_010_013
     ###The expected results do not match those on the website.
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -298,8 +298,8 @@ B2C_AddFavoriteItem_010_014
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -327,8 +327,8 @@ B2C_AddFavoriteItem_010_016
     [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -349,8 +349,8 @@ B2C_AddFavoriteItem_010_017
     [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Non-Regression
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites

@@ -12,8 +12,8 @@ B2C_AddPickupTime_008_001
     [Tags]    B2C_AddPickupTime_008    UAT    High    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up

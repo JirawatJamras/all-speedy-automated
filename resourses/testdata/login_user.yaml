@@ -18,7 +18,7 @@ dps_login_user_04:
 
 ######################## B2C ########################
 
-b2c_login_user_06:
+b2c_login_user_01:
   username: idc@gmail.com
   password: P@ssw0rd
 

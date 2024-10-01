@@ -13,8 +13,8 @@ B2C_SearchTracking_007_01
     [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
@@ -35,8 +35,8 @@ B2C_SearchTracking_007_02
     [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
@@ -54,8 +54,8 @@ B2C_SearchTracking_007_03
     [Tags]    B2C_SearchTracking_007    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
@@ -79,8 +79,8 @@ B2C_SearchTracking_007_04
     # The expected result do not match the website.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
@@ -101,8 +101,8 @@ B2C_SearchTracking_007_05
     [Tags]    B2C_SearchTracking_007    UAT    Medium    Regression    In_Review
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
@@ -126,8 +126,8 @@ B2C_SearchTracking_007_06
     # The expected result do not match the website.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
@@ -149,8 +149,8 @@ B2C_SearchTracking_007_07
     # The website does not filter parcels that match the address inputted in address textbox.
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
