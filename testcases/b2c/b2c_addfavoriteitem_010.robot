@@ -65,8 +65,12 @@ B2C_AddFavoriteItem_010_003
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_03    Verify Can Not Input Favorite Name More Than Specified
 
 B2C_AddFavoriteItem_010_004
-    [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อรายการโปรด ไม่ถูกต้อง
-    ...                  ไม่กรอกชื่อรายการโปรด
+    [Documentation]      [เพิ่มรายการโปรด] ไม่กรอกชื่อรายการโปรด,
+    ...                  ไม่กรอกชื่อ,
+    ...                  ไม่กรอกเบอร์โทรศัพท์,
+    ...                  ไม่กรอกชื่อผู้ส่งพัสดุ,
+    ...                  ไม่กรอกรายละเอียดที่อยู่,
+    ...                  ไม่กรอกรหัสไปรษณีย์
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -296,7 +300,7 @@ B2C_AddFavoriteItem_010_014
     ...                  เลือกรหัสไปรษณีย์ 1 ตัวเลือก,
     ...                  ไม่เลือกรหัสไปรษณีย์,
     ...                  เลือกรหัสไปรษณีย์เกิน 1 ตัวเลือก
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    InProgress
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    InProgress    M
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
