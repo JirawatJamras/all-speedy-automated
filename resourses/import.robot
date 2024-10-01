@@ -28,7 +28,7 @@ Variables                   testdata/b2c/allspeedy_b2c_001.yaml
 Variables                   testdata/b2c/b2c_addbooking_003.yaml
 Variables                   testdata/b2c/allspeedy_b2c_005.yaml
 Variables                   testdata/b2c/b2c_search_tracking_006.yaml
-Variables                   testdata/b2c/b2c_manage_my_booking_page_007.robot
+Variables                   testdata/b2c/b2c_manage_my_booking_007.yaml
 Variables                   testdata/b2c/b2c_addfavoriteitem_010.yaml
 
 ######################## C2C ########################
