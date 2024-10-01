@@ -13,4 +13,5 @@ Verify This Site Can Not Be Reached Page
 
 Verify General Customers Tab Page
     [Arguments]    ${testcase}
+    Capture Page Screenshot
     ### TBC
