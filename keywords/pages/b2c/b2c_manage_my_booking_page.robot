@@ -26,7 +26,7 @@ Verify Parcels In Tab Is In Transit
     Should Be Equal As Strings    ${checked}    false
 
 Click Filter Button
-    Wait Until Element Is Visible    ${b2c_txt_my_parcel}
+    Wait Until Element Is Visible    ${b2c_btn_filter}    timeout=10s
     Click When Ready    ${b2c_btn_filter}
 
 Verify Open Filter Form 
@@ -49,12 +49,34 @@ Verify Input Parcel Number In Filter
     ${parcel_number}=    Get Value    ${b2c_txtbox_parcel_number}
     Textfield Should Contain    ${b2c_txtbox_parcel_number}    ${parcel_number}
 
-Verify Parcel Number Search Result   
+Verify Parcels In Search Result   
     Wait Until Element Is Visible    ${b2c_card_parcel_search_results}    timeout=10s
     Element Should Be Visible    ${b2c_card_parcel_search_results}
 
-Click Remove Parcel Number Search Button
+Click Remove Data In Search Button
     Click When Ready    ${b2c_btn_remove_search}
 
-Verify Input Incorrect Parcel Number Search Result
-    Element Should Not Be Visible    ${b2c_card_parcel_search_results}
+Verify Error Message In Modal
+    [Arguments]    ${errormsg}
+    Wait Until Page Contains Element    //div[text()='${errormsg}']    timeout=10s
+    Element Should Be Visible    //div[text()='${errormsg}']
+
+Input Name In Filter
+    [Arguments]    ${name}
+    Wait Until Element Is Visible    ${b2c_txtbox_name}    timeout=10s
+    Input When Ready    ${b2c_txtbox_name}    ${name}
+
+Verify Input Name In Filter
+    Wait Until Element Is Visible    ${b2c_txtbox_name}    timeout=10s
+    ${name}=    Get Value    ${b2c_txtbox_name}
+    Textfield Should Contain    ${b2c_txtbox_name}    ${name}
+
+Input Address In Filter
+    [Arguments]    ${address}
+    Wait Until Element Is Visible    ${b2c_txtbox_address}    timeout=10s
+    Input When Ready    ${b2c_txtbox_address}    ${address}
+
+Verify Input Address In Filter
+    Wait Until Element Is Visible    ${b2c_txtbox_address}    timeout=10s
+    ${address}=    Get Value    ${b2c_txtbox_address}
+    Textfield Should Contain    ${b2c_txtbox_address}    ${address}

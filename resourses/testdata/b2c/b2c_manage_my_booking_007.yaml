@@ -2,5 +2,17 @@
   parcel_number: SPBD240900006990
   
 ฺB2C_Manange_My_Booking_007_04:
-  input1_parcel_number: ฟหกไ240900006990
+  input1_parcel_number: ฟหกไ
   input2_parcel_number: SPBD240900006990123456
+  error_msg: กรุณาระบุหมายเลขพัสดุ ให้ถูกต้อง
+
+ฺB2C_Manange_My_Booking_007_05:
+  name: ไอดีซี o
+
+ฺB2C_Manange_My_Booking_007_06:
+  input1_name: 123456789
+  input2_name: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabc
+  error_msg: กรุณาระบุผู้รับพัสดุ ให้ถูกต้อง
+
+ฺB2C_Manange_My_Booking_007_07:
+  address: 39/228 ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230

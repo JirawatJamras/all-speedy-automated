@@ -15,6 +15,8 @@ ${b2c_txt_parcels_in_tab_is_in_transit}    //div[contains(@class,'ant-tabs-tabpa
 
 ${b2c_form_filter}    //form[@id='parcelList']
 
-${b2c_txtbox_parcel_number}    //input[@placeholder='ระบุข้อมูล' and @id='parcelList_parcelnumber']
+${b2c_txtbox_parcel_number}    //input[@id='parcelList_parcelnumber']
+${b2c_txtbox_name}    //input[@id='parcelList_nameparcel']
+${b2c_txtbox_address}    //input[@id='parcelList_address']
 
-${b2c_card_parcel_search_results}    //div[@class='ant-row w-full css-1hobygo']
+${b2c_card_parcel_search_results}    //div[contains(@class,'grid grid-cols-1')]
