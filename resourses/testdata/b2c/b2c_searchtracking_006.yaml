@@ -1,0 +1,63 @@
+B2C_SearchTracking_006_001:
+  parcel_number:
+    input1: SPBD241000000179
+    input2: SPBD241000000177 SPBD241000000170 SPBD241000000161 SPBD241000000181 SPBD241000000178 SPBD241000000176 SPBD241000000168 SPBD241000000164 SPBD241000000160 SPBD241000000157
+
+ฺB2C_SearchTracking_006_002:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  name: ไอดีซี o
+
+ฺB2C_SearchTracking_006_003:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  phone: 0839699131
+
+ฺB2C_SearchTracking_006_004:
+  error_msg: กรุณาระบุหมายเลขพัสดุ
+
+ฺB2C_SearchTracking_006_005:
+  parcel_number: วาสอัพ
+  error_msg: กรุณาระบุหมายเลขพัสดุ ให้ถูกต้อง
+
+ฺB2C_SearchTracking_006_006:
+  parcel_number: SPBD240900005010SPBD240900005010
+  error_msg: กรุณาระบุหมายเลขพัสดุ ให้ถูกต้อง
+
+B2C_SearchTracking_006_007:
+  parcel_number: SPBD240900102862 SPBD240900103005 SPBD240900102958 SPBD240900102861 SPBD240900102860 SPBD240900102859 SPBD240900102858 SPBD240900102857 SPBD240900102856 SPBD240900102855 SPBD240900102854
+
+B2C_SearchTracking_006_008:
+  parcel_number: SPBD240900003114SPBD240900005013SPBD240900005012SPBD240900005009SPBD240900005016SPBD240900005015SPBD240900005011SPBD240900005008SPBD240900004783SPBD240900004782
+  error_msg: กรุณาระบุหมายเลขพัสดุ ให้ถูกต้อง
+
+B2C_SearchTracking_006_009:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ  
+  error_msg: กรุณาระบุผู้ชื่อรับพัสดุ/เบอร์โทรศัพท์ ให้ถูกต้อง
+
+ฺB2C_SearchTracking_006_010:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  name: 123456789
+  error_msg: กรุณาระบุผู้รับพัสดุ ให้ถูกต้อง
+
+ฺB2C_SearchTracking_006_011:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  name: abcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcdeabcde
+  error_msg: กรุณาระบุผู้รับพัสดุ ให้ถูกต้อง
+
+ฺB2C_SearchTracking_006_012:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  phone: abcdeabcde
+  error_msg: กรุณาระบุผู้ชื่อรับพัสดุ/เบอร์โทรศัพท์ ให้ถูกต้อง
+
+ฺB2C_SearchTracking_006_013:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  phone: 09874563210
+  error_msg: กรุณาระบุผู้ชื่อรับพัสดุ/เบอร์โทรศัพท์ ให้ถูกต้อง
+
+ฺB2C_SearchTracking_006_014:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  name: ไอดีซี o
+  filter_status: รับพัสดุเข้าระบบ
+
+ฺB2C_SearchTracking_006_015:
+  search_type: ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ
+  name: ไอดีซี o
