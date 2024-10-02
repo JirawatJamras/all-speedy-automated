@@ -153,3 +153,6 @@ Delete The Lastest Parcel Pickup Schedule
     common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//span[@aria-label='delete']
     common.Click When Ready    //button[text()=' ยืนยัน']
     Wait Until Element Is Visible    //span[text()='ลบข้อมูลสำเร็จ']    timeout=${DEFAULT_TIMEOUT}
+
+Click Select Item On Parcel Pickup Schedule List
+    common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
