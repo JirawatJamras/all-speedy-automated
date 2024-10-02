@@ -8,7 +8,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 B2C_AddFavoriteItem_010_001
     [Documentation]      [เพิ่มรายการโปรด] กรณี กดปุ่ม "+ เพิ่ม"
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Pass
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
@@ -25,7 +25,7 @@ B2C_AddFavoriteItem_010_002
     [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อรายการโปรด ถูกต้อง
     ...                  กรอกชื่อรายการโปรด เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ ตัวเลข,
     ...                  กรอกชื่อรายการโปรด ไม่เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    Feedback
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
