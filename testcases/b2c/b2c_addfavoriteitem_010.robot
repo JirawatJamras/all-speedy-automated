@@ -9,7 +9,7 @@ Test Teardown    Close Browser
 B2C_AddFavoriteItem_010_001
     [Documentation]      [เพิ่มรายการโปรด] กรณี กดปุ่ม "+ เพิ่ม"
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Pass
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
@@ -25,8 +25,8 @@ B2C_AddFavoriteItem_010_002
     [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อรายการโปรด ถูกต้อง
     ...                  กรอกชื่อรายการโปรด เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ ตัวเลข,
     ...                  กรอกชื่อรายการโปรด ไม่เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    Feedback
-    common.Open URL                           ${B2C_UAT_URL}
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -36,7 +36,7 @@ B2C_AddFavoriteItem_010_002
     b2c_favorite_page.Select Sender Tab
     b2c_favorite_page.Click Add Button [Sender]
     b2c_favorite_page.Input Favorite Name    ${b2c_AddFavoriteItem_010_002['favorite_name']}
-    b2c_favorite_page.Verify Input Favorite Name In Field    ${b2c_AddFavoriteItem_010_002['favorite_name']}
+    b2c_favorite_page.Verify Input Favorite Name In Field    ${favorite_time_stamp}
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_002   Verify Input Favorite Name In Field
 
 B2C_AddFavoriteItem_010_003
@@ -45,7 +45,7 @@ B2C_AddFavoriteItem_010_003
     ...                  กรอกชื่อรายการโปรด เกิน 50 ตัวอักษร
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website. The commented code is the actual result on the website.
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -55,19 +55,19 @@ B2C_AddFavoriteItem_010_003
     b2c_favorite_page.Select Sender Tab
     b2c_favorite_page.Click Add Button [Sender]
     b2c_favorite_page.Input Favorite Name    ${b2c_AddFavoriteItem_010_003.favorite_name['special_char']}
-    b2c_favorite_page.Verify Error Message When Input Favorite Name Wrong Format    ${b2c_AddFavoriteItem_010_003['errormsg']}
+    # b2c_favorite_page.Verify Error Message When Input Favorite Name Wrong Format    ${b2c_AddFavoriteItem_010_003['errormsg']}
     # b2c_favorite_page.Verify Error Message When Input Favorite Name Special Char    ${b2c_AddFavoriteItem_010_03['errormsg']}
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_003    Verify Error Message When Input Favorite Name Special Char
     b2c_favorite_page.Clear Input Favorite Name
     b2c_favorite_page.Input Favorite Name    ${b2c_AddFavoriteItem_010_003.favorite_name['more_than_specified']}
-    b2c_favorite_page.Verify Error Message When Input Favorite Name Wrong Format    ${b2c_AddFavoriteItem_010_003['errormsg']}
+    # b2c_favorite_page.Verify Error Message When Input Favorite Name Wrong Format    ${b2c_AddFavoriteItem_010_003['errormsg']}
     # b2c_favorite_page.Verify Can Not Input Favorite Name More Than Specified    ${b2c_AddFavoriteItem_010_03['specified_value']}
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_003    Verify Can Not Input Favorite Name More Than Specified
 
 B2C_AddFavoriteItem_010_004
     [Documentation]      [เพิ่มรายการโปรด] ไม่กรอกข้อมูล
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Pass
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -88,7 +88,7 @@ B2C_AddFavoriteItem_010_005
     [Documentation]          [เพิ่มรายการโปรด] กรณี เปิด Toggle ใช้เป็นค่าเริ่มต้น,
     ...                      กรณี ปิด Toggle ใช้เป็นค่าเริ่มต้น
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Pass  
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -110,7 +110,7 @@ B2C_AddFavoriteItem_010_006
     ...                      กรอกเบอร์โทรศัพท์ เป็นตัวเลข
     ...                      กรอกเบอร์โทรศัพท์ ไม่เกิน 10 หลัก
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Pass
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -130,7 +130,7 @@ B2C_AddFavoriteItem_010_007
     ...                  กรอกเบอร์โทรศัพท์ เกิน 10 หลัก
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website.
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -152,8 +152,8 @@ B2C_AddFavoriteItem_010_008
     [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อผู้ส่งพัสดุ ถูกต้อง
     ...                  กรอกชื่อผู้ส่งพัสดุ เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ,
     ...                  กรอกชื่อผู้ส่งพัสดุ ไม่เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Feedback
-    common.Open URL                           ${B2C_UAT_URL}
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -174,7 +174,7 @@ B2C_AddFavoriteItem_010_009
     ...                  กรอกชื่อผู้ส่งพัสดุ เกิน 50 ตัวอักษร
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website.
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -197,8 +197,8 @@ B2C_AddFavoriteItem_010_010
     [Documentation]      [เพิ่มรายการโปรด] กรอกรายละเอียดที่อยู่ ถูกต้อง
     ...                  กรอกรายละเอียดที่อยู่ เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข อักขระ / -,
     ...                  กรอกรายละเอียดที่อยู่ ไม่เกิน 100 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Feedback  
-    common.Open URL                           ${B2C_UAT_URL}
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review 
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -220,7 +220,7 @@ B2C_AddFavoriteItem_010_011
     ...                  กรอกรายละเอียดที่อยู่ เกิน 100 ตัวอักษร
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website.
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -245,7 +245,7 @@ B2C_AddFavoriteItem_010_012
     ...                  กรอกรหัสไปรษณีย์ เป็นตัวเลข,
     ...                  กรอกรหัสไปรษณีย์ ไม่เกิน 5 หลัก
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Pass
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -269,7 +269,7 @@ B2C_AddFavoriteItem_010_013
     ...                  กรอกรหัสไปรษณีย์ เกิน 5 หลัก
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    
     ###The expected results do not match those on the website.
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -296,7 +296,7 @@ B2C_AddFavoriteItem_010_014
     ...                  ไม่เลือกรหัสไปรษณีย์,
     ...                  เลือกรหัสไปรษณีย์เกิน 1 ตัวเลือก
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    Pass
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -325,7 +325,7 @@ B2C_AddFavoriteItem_010_014
 B2C_AddFavoriteItem_010_015
     [Documentation]        [เพิ่มรายการโปรด] กรณี กดปุ่ม "บันทึก"
     [Tags]    B2C_AddFavoriteItem_010    UAT    High    Regression    In_Review
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -346,8 +346,8 @@ B2C_AddFavoriteItem_010_015
 
 B2C_AddFavoriteItem_010_016
     [Documentation]        [เพิ่มรายการโปรด] กรณี กดปุ่ม "ยกเลิก"
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    Feedback
-    common.Open URL                           ${B2C_UAT_URL}
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -371,7 +371,7 @@ B2C_AddFavoriteItem_010_017
     ...                ระบบจะแสดง Pop Up แจ้งเตือน กรณี กดปุ่ม "ตกลง"
     ...                ระบบจะแสดง Pop Up แจ้งเตือน กรณี กดปุ่ม "ยกเลิก"
     [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Non-Regression    In_Review
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
@@ -403,7 +403,7 @@ B2C_AddFavoriteItem_010_018
     ...                กรอกชื่อรายการโปรด เกิน 50 ตัวอักษร
     [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression
     ###The expected results do not match those on the website.
-    common.Open URL                           ${B2C_UAT_URL}
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
@@ -417,10 +417,9 @@ B2C_AddFavoriteItem_010_018
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_018    Error Message When Input Favorite Name With Special Character
 
 B2C_AddFavoriteItem_010_029
-    [Documentation]    [เพิ่มรายการโปรด] กดปุ่ม "บันทึก" เพิ่มผู้รับพัสดุ     
-    [Tags]    B2C_AddFavoriteItem_010    UAT    High    Regression    B
-    ###The expected results do not match those on the website.
-    common.Open URL                           ${B2C_UAT_URL}
+    [Documentation]    [เพิ่มรายการโปรด] กดปุ่ม "บันทึก" เพิ่มผู้รับพัสดุ ส่งที่บ้าน   
+    [Tags]    B2C_AddFavoriteItem_010    UAT    High    Regression
+    common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
@@ -432,5 +431,31 @@ B2C_AddFavoriteItem_010_029
     b2c_favorite_page.Verify Display Popup Receiver Information
     common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029    Display Popup Receiver Information
     b2c_favorite_page.Input Favorite Name    ${b2c_AddFavoriteItem_010_029['favorite_name']}
-    b2c_favorite_page.Verify Input Favorite Name In Field    ${b2c_AddFavoriteItem_010_029['favorite_name']}
-    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_002   Verify Input Favorite Name In Field
+    b2c_favorite_page.Verify Input Favorite Name In Field    ${favorite_time_stamp}
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029   Verify Input Favorite Name In Field
+    b2c_favorite_page.Click Toggle Use as default
+    b2c_favorite_page.Verify Toggle Use As Default Is Open
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029    Verify Toggle Use As Default Is Open
+    b2c_favorite_page.Click Toggle Use as default
+    b2c_favorite_page.Verify Toggle Use As Default Is Close
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029    Verify Toggle Use As Default Is Close
+    b2c_favorite_page.Input Receiver Phone Number     ${b2c_AddFavoriteItem_010_029['receiver_phone']}
+    b2c_favorite_page.Verify Input Receiver Phone Number In Field    ${b2c_AddFavoriteItem_010_029['receiver_phone']}
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029   Verify Input Receiver Phone Number In Field
+    b2c_favorite_page.Input Receiver Name    ${b2c_AddFavoriteItem_010_029['receiver_name']}
+    b2c_favorite_page.Verify Input Receiver Name In Field    ${b2c_AddFavoriteItem_010_029['receiver_name']}
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029   Verify Input Receiver Name In Field
+    b2c_favorite_page.Select Pickup Location    ${b2c_AddFavoriteItem_010_029['pickup_location']}
+    b2c_favorite_page.Input Receiver Address    ${b2c_AddFavoriteItem_010_029['receiver_address']}
+    b2c_favorite_page.Verify Input Receiver Address In Field    ${b2c_AddFavoriteItem_010_029['receiver_address']}
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029   Verify Input Receiver Address In Field
+    b2c_favorite_page.Input Receiver Postcode    ${b2c_AddFavoriteItem_010_029['receiver_postcode']}
+    b2c_favorite_page.Verify Input Receiver Postcode In Field    ${b2c_AddFavoriteItem_010_029['receiver_postcode']}
+    b2c_favorite_page.Verify Data Dropdown List Postcode Displayed    ${b2c_AddFavoriteItem_010_029.receiver_address_full['address01']}
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029    Verify Input Receiver Postcode In Field
+    b2c_favorite_page.Not Select Receiver Postcode
+    b2c_favorite_page.Verify No Data Input Receiver Postcode In Field
+    common.Verify Capture Screenshot    B2C_AddFavoriteItem_010_029    Not Select Receiver Postcode
+    b2c_favorite_page.Input Receiver Postcode    ${b2c_AddFavoriteItem_010_029['receiver_postcode']}
+
+

@@ -2,14 +2,8 @@
 Select Sender Tab
     Click When Ready    ${b2c_tab_sender_favorite_page}
 
-Select Receiver Tab
-    Click When Ready    ${b2c_tab_receiver_favorite_page}
-
 Click Add Button [Sender]
     Click When Ready    ${b2c_btn_add_sender_favorite_page}
-
-Click Add Button [Receiver]
-    Click When Ready    ${b2c_btn_add_receiver_favorite_page}
 
 Click Save Button
     Click When Ready    ${b2c_btn_save_info_favorite_page}
@@ -28,7 +22,10 @@ Click Confirm To Close Add Favorite Sender Popup
 
 Input Favorite Name
     [Arguments]    ${value}
-    Input When Ready    ${b2c_txtbox_favorite_name_favorite_page}    ${value}
+    ${time_stamp}=    Get Current Date    result_format=%m%d %H%M%S
+    ${favorite_time_stamp}=    Set Variable    ${value} ${time_stamp}
+    Set Suite Variable    ${favorite_time_stamp}
+    Input When Ready    ${b2c_txtbox_favorite_name_favorite_page}    ${favorite_time_stamp}
 
 Clear Input Favorite Name
     Click When Ready    ${b2c_btn_clear_sender_phone_favorite_page}
@@ -167,7 +164,6 @@ Verify Data Dropdown list Postcode Displayed
 
 Verify No Data Input Sender Postcode In Field
     ${value}=    Get value    ${b2c_txtbox_sender_postcode_favorite_page}
-    Log To console    ${value}
     Should Be Empty    ${value}
 
 Verify Not Display Unsaved Senders In Favorite Page
@@ -175,7 +171,7 @@ Verify Not Display Unsaved Senders In Favorite Page
     ${sender_address}=    Set Variable    ${expect['sender_address']} ${expect['sender_address_full']}
     FOR    ${index}    IN RANGE    1    6
         ${item}=    Set Variable    (${b2c_card_sender_favorite_page})[${index}]
-        ${favorite_name_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_favorite_name_card_favorite_page}    ${expect['favorite_name']}
+        ${favorite_name_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_favorite_name_card_favorite_page}    ${favorite_time_stamp}
         ${sender_name_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_sender_name_card_favorite_page}    ${expect['sender_name']}
         ${sender_phone_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_sender_phone_card_favorite_page}    ${expect['sender_phone']}
         ${sender_address_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_sender_address_favorite_page}    ${sender_address}
@@ -189,7 +185,7 @@ Verify Display Sender Card In Favorite Page
     ${sender_address}=    Set Variable    ${expect['sender_address']} ${expect['sender_address_full']}
     FOR    ${index}    IN RANGE    1    ${card_count} + 1
         ${item}=    Set Variable    (${b2c_card_sender_favorite_page})[${index}]
-        ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_favorite_name_card_favorite_page}    ${expect['favorite_name']}
+        ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_favorite_name_card_favorite_page}    ${favorite_time_stamp}
         ${sender_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_sender_name_card_favorite_page}    ${expect['sender_name']}
         ${sender_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_sender_phone_card_favorite_page}    ${expect['sender_phone']}
         ${sender_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_sender_address_favorite_page}    ${sender_address}
@@ -220,14 +216,11 @@ Verify Can Not Input Favorite Name More Than Specified
     ${length} =    Get Value    ${b2c_txtbox_favorite_name_favorite_page}
     Length Should Be    ${length}    ${specified}
 
-Verify Display Popup Receiver Information
-    Wait Until Element Is Visible    ${b2c_popup_receiver_favorite_page}    ${DEFAULT_TIMEOUT}
-
 Verify Display Add Favorite Sender Popup And Recent Data
     [Arguments]    ${data}
     Wait Until Element Is Visible    ${b2c_popup_sender_favorite_page}    ${DEFAULT_TIMEOUT}
     ${favorite_name}=    Get Value    ${b2c_txtbox_favorite_name_favorite_page}
-    Should Be Equal    ${favorite_name}    ${data['favorite_name']}
+    Should Be Equal    ${favorite_name}    ${favorite_time_stamp}
     ${sebder_phone}    Get Value    ${b2c_txtbox_sender_phone_favorite_page}
     Should Be Equal    ${sebder_phone}    ${data['sender_phone']}
     ${sender_name}=    Get Value    ${b2c_txtbox_sender_name_favorite_page}
@@ -236,5 +229,64 @@ Verify Display Add Favorite Sender Popup And Recent Data
     Should Be Equal    ${sender_address}    ${data['sender_address']}
     ${sender_address_full}=    Get Text    ${b2c_txt_sender_postcode_full_favorite_page}
     Should Be Equal    ${sender_address_full}    ${data['sender_address_full']}
+
+########## Receiver Tab ############
+
+Select Receiver Tab
+    Click When Ready    ${b2c_tab_receiver_favorite_page}
+
+Select Pickup Location
+    [Arguments]    ${value}
+    Run Keyword If    '${value}' == 'บ้าน'    Click When Ready    ${b2c_tab_send_home_favorite_page}
+    Run Keyword If    '${value}' == 'ร้าน'    Click When Ready    ${b2c_tab_send_store_favorite_page}
+
+Click Add Button [Receiver]
+    Click When Ready    ${b2c_btn_add_receiver_favorite_page}
+
+Input Receiver Phone Number
+    [Arguments]    ${value}
+    Input When Ready    ${b2c_txtbox_receiver_phone_favorite_page}    ${value}
+
+Input Receiver Name
+    [Arguments]    ${value}
+    Input When Ready    ${b2c_txtbox_receiver_name_favorite_page}    ${value}
+
+Input Receiver Address
+    [Arguments]    ${value}
+    Input When Ready    ${b2c_txtbox_receiver_address_favorite_page}    ${value}
+
+Input Receiver Postcode
+    [Arguments]    ${value}
+    Input When Ready    ${b2c_txtbox_receiver_postcode_favorite_page}    ${value}
+
+Not Select Receiver Postcode
+    Click Element    ${b2c_popup_receiver_favorite_page}
+
+Verify Input Receiver Phone Number In Field
+    [Arguments]    ${expect}
+    ${value}=    Get value    ${b2c_txtbox_receiver_phone_favorite_page}
+    Should Be Equal    ${expect}    ${value}
+
+Verify Input Receiver Name In Field
+    [Arguments]    ${expect}
+    ${value}=    Get value    ${b2c_txtbox_receiver_name_favorite_page}
+    Should Be Equal    ${expect}    ${value}
+
+Verify Input Receiver Address In Field
+    [Arguments]    ${expect}
+    ${value}=    Get value    ${b2c_txtbox_receiver_address_favorite_page}
+    Should Be Equal    ${expect}    ${value}
+
+Verify Input Receiver Postcode In Field
+    [Arguments]    ${expect}
+    ${value}=    Get value    ${b2c_txtbox_receiver_postcode_favorite_page}
+    Should Be Equal    ${expect}    ${value}
+
+Verify Display Popup Receiver Information
+    Wait Until Element Is Visible    ${b2c_popup_receiver_favorite_page}    ${DEFAULT_TIMEOUT}
+
+Verify No Data Input Receiver Postcode In Field
+    ${value}=    Get value    ${b2c_txtbox_receiver_postcode_favorite_page}
+    Should Be Empty    ${value}
 
  
