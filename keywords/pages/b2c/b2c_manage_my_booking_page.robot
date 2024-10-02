@@ -58,7 +58,7 @@ Click Remove Data In Search Button
 
 Verify Error Message In Modal
     [Arguments]    ${errormsg}
-    Wait Until Page Contains Element    //div[text()='${errormsg}']    timeout=10s
+    Wait Until Element Is Visible    //div[text()='${errormsg}']    timeout=10s
     Element Should Be Visible    //div[text()='${errormsg}']
 
 Input Name In Filter
