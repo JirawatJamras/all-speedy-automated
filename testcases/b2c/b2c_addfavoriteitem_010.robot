@@ -324,7 +324,7 @@ B2C_AddFavoriteItem_010_014
 
 B2C_AddFavoriteItem_010_016
     [Documentation]        [เพิ่มรายการโปรด] กรณี กดปุ่ม "ยกเลิก"
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review1
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    Feedback
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_06['username']}
