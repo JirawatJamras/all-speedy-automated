@@ -2,8 +2,14 @@
 Select Sender Tab
     Click When Ready    ${b2c_tab_sender_favorite_page}
 
-Click Add Button
-    Click When Ready    ${b2c_btn_add_favorite_page}
+Select Receiver Tab
+    Click When Ready    ${b2c_tab_receiver_favorite_page}
+
+Click Add Button [Sender]
+    Click When Ready    ${b2c_btn_add_sender_favorite_page}
+
+Click Add Button [Receiver]
+    Click When Ready    ${b2c_btn_add_receiver_favorite_page}
 
 Click Save Button
     Click When Ready    ${b2c_btn_save_info_favorite_page}
@@ -13,6 +19,12 @@ Click Cancel Button
 
 Click Close X Button
     Click When Ready    ${b2c_btn_close_x_favorite_page}
+
+Click Cancel To Close Add Favorite Sender Popup
+    Click When Ready    ${b2c_btn_cancel_close_x_favorite_page}
+
+Click Confirm To Close Add Favorite Sender Popup
+    Click When Ready    ${b2c_btn_confirm_close_x_favorite_page}
 
 Input Favorite Name
     [Arguments]    ${value}
@@ -55,7 +67,7 @@ Not Select Sender Postcode
 
 Select Sender Postcode
     [Arguments]    ${value}
-    ${locator}=  Replace String   ${b2c_list_sender_address_favorite_page}   {value}   ${value}
+    ${locator}=  Replace String   ${b2c_cbo_sender_address_favorite_page}   {value}   ${value}
     Click When Ready       ${locator}
 
 Click Toggle Use as default
@@ -149,9 +161,9 @@ Verify Error Message When Input Sender Postcode Wrong Format
     Wait Until Element Is Visible    ${b2c_msg_errormsg_sender_postcode_favorite_page}
     Element Should Contain    ${b2c_msg_errormsg_sender_postcode_favorite_page}    ${expect}
 
-Verify Data Dropdown List Postcode Displayed
+Verify Data Dropdown list Postcode Displayed
     [Arguments]    ${expect}
-    common.Verify text of element    ${b2c_list_sender_address_favorite_page}    ${expect}
+    common.Verify text of element    ${b2c_cbo_sender_address_favorite_page}    ${expect}
 
 Verify No Data Input Sender Postcode In Field
     ${value}=    Get value    ${b2c_txtbox_sender_postcode_favorite_page}
@@ -160,10 +172,31 @@ Verify No Data Input Sender Postcode In Field
 
 Verify Not Display Unsaved Senders In Favorite Page
     [Arguments]    ${expect}
-    ${locator}=  Replace String   ${b2c_txt_sender_name_card_favorite_page}   {value}   ${expect}
-    Page Should Not Contain Element    ${locator}
+    ${sender_address}=    Set Variable    ${expect['sender_address']} ${expect['sender_address_full']}
+    FOR    ${index}    IN RANGE    1    6
+        ${item}=    Set Variable    (${b2c_card_sender_favorite_page})[${index}]
+        ${favorite_name_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_favorite_name_card_favorite_page}    ${expect['favorite_name']}
+        ${sender_name_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_sender_name_card_favorite_page}    ${expect['sender_name']}
+        ${sender_phone_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_sender_phone_card_favorite_page}    ${expect['sender_phone']}
+        ${sender_address_status}=    Run Keyword And Return Status    Element Should not Contain    ${item}${b2c_txt_sender_address_favorite_page}    ${sender_address}
+        Exit For Loop If    not ${favorite_name_status} and not ${sender_name_status} and not ${sender_phone_status} and not ${sender_address_status}
+    END
 
-Verify User Confirm To close Add Favorite Sender Popup
+Verify Display Sender Card In Favorite Page
+    [Arguments]    ${expect}
+    Wait Until Element Is Visible    ${b2c_card_sender_favorite_page}
+    ${card_count}=    Get Element Count    ${b2c_card_sender_favorite_page}
+    ${sender_address}=    Set Variable    ${expect['sender_address']} ${expect['sender_address_full']}
+    FOR    ${index}    IN RANGE    1    ${card_count} + 1
+        ${item}=    Set Variable    (${b2c_card_sender_favorite_page})[${index}]
+        ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_favorite_name_card_favorite_page}    ${expect['favorite_name']}
+        ${sender_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_sender_name_card_favorite_page}    ${expect['sender_name']}
+        ${sender_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_sender_phone_card_favorite_page}    ${expect['sender_phone']}
+        ${sender_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${b2c_txt_sender_address_favorite_page}    ${sender_address}
+        Exit For Loop If    ${favorite_name_status} and ${sender_name_status} and ${sender_phone_status} and ${sender_address_status}
+    END
+
+Verify Display Notification Popup Confirm To Close
     Wait Until Element Is Visible    ${b2c_txt_close_popup_favorite_page}
     Page Should Contain Button    ${b2c_btn_cancel_close_x_favorite_page}
     Page Should Contain Button    ${b2c_btn_confirm_close_x_favorite_page}
@@ -186,3 +219,22 @@ Verify Can Not Input Favorite Name More Than Specified
     Wait Until Element Is Visible    ${b2c_txtbox_favorite_name_favorite_page}
     ${length} =    Get Value    ${b2c_txtbox_favorite_name_favorite_page}
     Length Should Be    ${length}    ${specified}
+
+Verify Display Popup Receiver Information
+    Wait Until Element Is Visible    ${b2c_popup_receiver_favorite_page}    ${DEFAULT_TIMEOUT}
+
+Verify Display Add Favorite Sender Popup And Recent Data
+    [Arguments]    ${data}
+    Wait Until Element Is Visible    ${b2c_popup_sender_favorite_page}    ${DEFAULT_TIMEOUT}
+    ${favorite_name}=    Get Value    ${b2c_txtbox_favorite_name_favorite_page}
+    Should Be Equal    ${favorite_name}    ${data['favorite_name']}
+    ${sebder_phone}    Get Value    ${b2c_txtbox_sender_phone_favorite_page}
+    Should Be Equal    ${sebder_phone}    ${data['sender_phone']}
+    ${sender_name}=    Get Value    ${b2c_txtbox_sender_name_favorite_page}
+    Should Be Equal    ${sender_name}    ${data['sender_name']}
+    ${sender_address}=    Get Value    ${b2c_txtbox_sender_address_favorite_page}
+    Should Be Equal    ${sender_address}    ${data['sender_address']}
+    ${sender_address_full}=    Get Text    ${b2c_txt_sender_postcode_full_favorite_page}
+    Should Be Equal    ${sender_address_full}    ${data['sender_address_full']}
+
+ 
