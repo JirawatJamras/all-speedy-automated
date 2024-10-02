@@ -23,7 +23,7 @@ B2C_AddPickupTime_008_001
     b2c_call_car_pick_up_parcel_page.Verify Unselected Parcel Type In Dropdown    ${B2C_AddPickupTime_008_001.parcelType.unselected['expected']}
     b2c_call_car_pick_up_parcel_page.Verify Unselected Date Pickup Parcel    ${B2C_AddPickupTime_008_001.pickupDate.unselected['expected']}
     b2c_call_car_pick_up_parcel_page.Verify Unselected Pickup Parcel Time    ${B2C_AddPickupTime_008_001.pickupTime.unselected['expected']}
-    common.Verify Capture Screenshot    B2C_AddPickupTime_008_001    Verify Popup Parcel Pickup Schedule And Car Round Name Dropdown Was Disabled And Parcel Type Is Defaul Value And Unselected Date Pickup Parcel And Pickup Parcel Time Show Defaul value
+    common.Verify Capture Screenshot    B2C_AddPickupTime_008_001    Verify Popup Parcel Pickup Schedule Is All Default Value
     b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
     b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown      ${B2C_AddPickupTime_008_001.parcelType.selectMoreThan1selection['input1']}
     b2c_call_car_pick_up_parcel_page.Verify Select Parcel Type In Dropdown    ${B2C_AddPickupTime_008_001.parcelType.selectMoreThan1selection['input1']}
