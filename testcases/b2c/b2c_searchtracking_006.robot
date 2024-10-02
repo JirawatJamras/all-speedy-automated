@@ -17,18 +17,18 @@ B2C_SearchTracking_006_001
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Verify Tracking Parcel Delivery Page
+    b2c_tracking_parcel_delivery_page.Verify Tracking Parcel Delivery Page
     common.Verify Capture Screenshot    B2C_SearchTracking_006_001    Verify Tracking Parcel Delivery Page
-    b2c_search_tracking_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_001.parcel_number['input1']}
+    b2c_tracking_parcel_delivery_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_001.parcel_number['input1']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_001    Verify Input Parcel Number
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Parcel Search Results
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Parcel Search Results
     common.Verify Capture Screenshot    B2C_SearchTracking_006_001    Verify Parcel Search Results
-    b2c_search_tracking_page.Click Remove Search Parcel Button
-    b2c_search_tracking_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_001.parcel_number['input2']}
+    b2c_tracking_parcel_delivery_page.Click Remove Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_001.parcel_number['input2']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_001    Verify Parcel Number Input Contains 10 Numbers With Spaces Between Each Number
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Parcel Search Results When Searching For More Than 1 Parcel
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Parcel Search Results When Searching For More Than 1 Parcel
     common.Verify Capture Screenshot    B2C_SearchTracking_006_001    Verify Parcel Search Results 10 Parcel Numbers
 
 B2C_SearchTracking_006_002
@@ -41,12 +41,12 @@ B2C_SearchTracking_006_002
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_002['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_002['name']}
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_002['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_002['name']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_002    Verify Input Receiver Name
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Parcel Search Results
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Parcel Search Results
     common.Verify Capture Screenshot    B2C_SearchTracking_006_002    Verify Parcel Search Results
 
 B2C_SearchTracking_006_003
@@ -59,12 +59,12 @@ B2C_SearchTracking_006_003
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_003['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_003['phone']}
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_003['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_003['phone']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_003    Verify Input Receiver Phone
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Parcel Search Results
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Parcel Search Results
     common.Verify Capture Screenshot    B2C_SearchTracking_006_003    Verify Parcel Search Results
 
 
@@ -77,8 +77,8 @@ B2C_SearchTracking_006_004
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_004['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_004['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_004    Verify Error Message Parcel Number Not Inputted
 
 B2C_SearchTracking_006_005
@@ -91,10 +91,10 @@ B2C_SearchTracking_006_005
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Input Parcel Number In Search Parcel    ${ฺB2C_SearchTracking_006_005['parcel_number']}
+    b2c_tracking_parcel_delivery_page.Input Parcel Number In Search Parcel    ${ฺB2C_SearchTracking_006_005['parcel_number']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_005    Verify Input Parcel Number
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_005['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_005['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_005    Verify Error Message When Input Parcel Number Is Not English Alphabets And Numbers
 
 B2C_SearchTracking_006_006
@@ -107,10 +107,10 @@ B2C_SearchTracking_006_006
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Input Parcel Number In Search Parcel    ${ฺB2C_SearchTracking_006_006['parcel_number']}
+    b2c_tracking_parcel_delivery_page.Input Parcel Number In Search Parcel    ${ฺB2C_SearchTracking_006_006['parcel_number']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_006    Verify Input Parcel Number
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_006['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_006['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_006    Verify Error Message When Input Parcel Number Exceed Specifies
 
 B2C_SearchTracking_006_007
@@ -124,10 +124,10 @@ B2C_SearchTracking_006_007
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_007['parcel_number']}
+    b2c_tracking_parcel_delivery_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_007['parcel_number']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_007    Verify Input Parcel Number
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Search Results When Search More Than 10 Parcels
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Search Results When Search More Than 10 Parcels
     common.Verify Capture Screenshot    B2C_SearchTracking_006_007    Verify Search Results When Search More Than 10 Parcels
 
 B2C_SearchTracking_006_008
@@ -140,10 +140,10 @@ B2C_SearchTracking_006_008
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_008['parcel_number']}
+    b2c_tracking_parcel_delivery_page.Input Parcel Number In Search Parcel    ${B2C_SearchTracking_006_008['parcel_number']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_008    Verify Input Parcel Number
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${B2C_SearchTracking_006_008['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${B2C_SearchTracking_006_008['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_008    Verify Search Results When Search More Than 10 Parcels Without Space Between Parcel Numbers
 
 B2C_SearchTracking_006_009
@@ -156,10 +156,10 @@ B2C_SearchTracking_006_009
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${B2C_SearchTracking_006_009['search_type']}
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${B2C_SearchTracking_006_009['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${B2C_SearchTracking_006_009['search_type']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${B2C_SearchTracking_006_009['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_009    Verify Error Message Name Or Phone Not Inputted    
 
 B2C_SearchTracking_006_010
@@ -173,11 +173,11 @@ B2C_SearchTracking_006_010
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_010['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_010['name']}
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_010['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_010['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_010['name']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_010['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_010    Verify Error Message When Input Name Is Not Alphabets
 
 B2C_SearchTracking_006_011
@@ -191,11 +191,11 @@ B2C_SearchTracking_006_011
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_011['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_011['name']}
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_011['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_011['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_011['name']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_011['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_011    Verify Error Message When Input Name Exceed Specifies
 
 B2C_SearchTracking_006_012
@@ -208,11 +208,11 @@ B2C_SearchTracking_006_012
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_012['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_012['phone']}
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_012['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_012['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_012['phone']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_012['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_012    Verify Error Message When Input Phone Is Not Numbers
 
 B2C_SearchTracking_006_013
@@ -225,11 +225,11 @@ B2C_SearchTracking_006_013
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_013['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_013['phone']}
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_013['error_msg']}
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_013['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_013['phone']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Verify Error Message In Modal    ${ฺB2C_SearchTracking_006_013['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_013    Verify Error Message When Input Phone Exceed Specifies
 
 B2C_SearchTracking_006_014
@@ -242,14 +242,14 @@ B2C_SearchTracking_006_014
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_014['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_014['name']}
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Click Filter Button
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_014['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_014['name']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Click Filter Button
     common.Verify Capture Screenshot    B2C_SearchTracking_006_014    Verify Filter Dropdown List Displayed When Filter Is Turned On
-    b2c_search_tracking_page.Select Filter    ${ฺB2C_SearchTracking_006_014['filter_status']}
-    b2c_search_tracking_page.Verify Parcel Status    ${ฺB2C_SearchTracking_006_014['filter_status']}
+    b2c_tracking_parcel_delivery_page.Select Filter    ${ฺB2C_SearchTracking_006_014['filter_status']}
+    b2c_tracking_parcel_delivery_page.Verify Parcel Status    ${ฺB2C_SearchTracking_006_014['filter_status']}
     common.Verify Capture Screenshot    B2C_SearchTracking_006_014    Verify Parcels Displayed When Filtering Parcel Status
 
 B2C_SearchTracking_006_015
@@ -261,10 +261,10 @@ B2C_SearchTracking_006_015
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Tracking Parcel Delivery Menu
-    b2c_search_tracking_page.Click Search Type Selection Dropdown
-    b2c_search_tracking_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_015['search_type']}
-    b2c_search_tracking_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_015['name']}
-    b2c_search_tracking_page.Click Search Parcel Button
-    b2c_search_tracking_page.Click Filter Button
-    b2c_search_tracking_page.Click Filter Button
+    b2c_tracking_parcel_delivery_page.Click Search Type Selection Dropdown
+    b2c_tracking_parcel_delivery_page.Select Search Type In Dropdown    ${ฺB2C_SearchTracking_006_015['search_type']}
+    b2c_tracking_parcel_delivery_page.Input Name Or Phone In Search Parcel    ${ฺB2C_SearchTracking_006_015['name']}
+    b2c_tracking_parcel_delivery_page.Click Search Parcel Button
+    b2c_tracking_parcel_delivery_page.Click Filter Button
+    b2c_tracking_parcel_delivery_page.Click Filter Button
     common.Verify Capture Screenshot    B2C_SearchTracking_006_015    Verify Parcel Status After Filter Is Turned Off

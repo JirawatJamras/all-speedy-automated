@@ -10,28 +10,31 @@ Resource                    ../keywords/pages/b2c/b2c_forgot_password_page.robot
 Resource                    ../keywords/pages/b2c/b2c_home_page.robot
 Resource                    ../keywords/pages/b2c/b2c_bookingdelivery_page.robot
 Resource                    ../keywords/pages/b2c/b2c_create_parcel_page.robot
-Resource                    ../keywords/pages/b2c/b2c_search_tracking_page.robot
-Resource                    ../keywords/pages/b2c/b2c_manage_my_booking_page.robot
-Resource                    ../keywords/pages/b2c/b2c_favorite_page.robot
+Resource                    ../keywords/pages/b2c/b2c_tracking_parcel_delivery_page.robot
+Resource                    ../keywords/pages/b2c/b2c_my_parcel_page.robot
 Resource                    ../keywords/pages/b2c/b2c_call_car_pick_up_parcel_page.robot
+Resource                    ../keywords/pages/b2c/b2c_favorite_page.robot
+Resource                    ../keywords/pages/b2c/b2c_return_business_page.robot
 
 Resource                    locators/b2c/b2c_login_page.robot
 Resource                    locators/b2c/b2c_forgot_password_page.robot
 Resource                    locators/b2c/b2c_home_page.robot
 Resource                    locators/b2c/b2c_bookingdelivery_page.robot
 Resource                    locators/b2c/b2c_create_parcel_page.robot
-Resource                    locators/b2c/b2c_search_tracking_page.robot
-Resource                    locators/b2c/b2c_manage_my_booking_page.robot
-Resource                    locators/b2c/b2c_favorite_page.robot
+Resource                    locators/b2c/b2c_tracking_parcel_delivery_page.robot
+Resource                    locators/b2c/b2c_my_parcel_page.robot
 Resource                    locators/b2c/b2c_call_car_pick_up_parcel_page.robot
+Resource                    locators/b2c/b2c_favorite_page.robot
+Resource                    locators/b2c/b2c_return_business_page.robot
+
 
 Variables                   testdata/b2c/b2c_login_001.yaml
 Variables                   testdata/b2c/b2c_forgotpassword_002.yaml
 Variables                   testdata/b2c/b2c_addbooking_003.yaml
 Variables                   testdata/b2c/b2c_searchtracking_006.yaml
 Variables                   testdata/b2c/b2c_managemybooking_007.yaml
-Variables                   testdata/b2c/b2c_addfavoriteitem_010.yaml
 Variables                   testdata/b2c/b2c_addpickuptime_008.yaml
+Variables                   testdata/b2c/b2c_addfavoriteitem_010.yaml
 
 ######################## C2C ########################
 Resource                    ../keywords/pages/c2c/c2c_landing_page.robot

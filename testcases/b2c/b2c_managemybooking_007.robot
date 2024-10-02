@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -18,15 +18,15 @@ B2C_SearchTracking_007_001
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
-    b2c_manage_my_booking_page.Verify My Parcel Page
+    b2c_my_parcel_page.Verify My Parcel Page
     common.Verify Capture Screenshot    B2C_SearchTracking_007_001    Verify My Parcel Page
-    b2c_manage_my_booking_page.Click Delivered Parcel Button
-    b2c_manage_my_booking_page.Verify Activate Delivered Parcel Button
+    b2c_my_parcel_page.Click Delivered Parcel Button
+    b2c_my_parcel_page.Verify Activate Delivered Parcel Button
     common.Verify Capture Screenshot    B2C_SearchTracking_007_001    Verify Activate Delivered Parcel Button
-    b2c_manage_my_booking_page.Click In Transit Button
-    b2c_manage_my_booking_page.Verify Activate In Transit Button
+    b2c_my_parcel_page.Click In Transit Button
+    b2c_my_parcel_page.Verify Activate In Transit Button
     common.Verify Capture Screenshot    B2C_SearchTracking_007_001    Verify Activate In Transit Button
-    b2c_manage_my_booking_page.Verify Parcels In Tab Is In Transit
+    b2c_my_parcel_page.Verify Parcels In Tab Is In Transit
     common.Verify Capture Screenshot    B2C_SearchTracking_007_001    Verify Parcels In Tab Is In Transit
 
 B2C_SearchTracking_007_002
@@ -40,11 +40,11 @@ B2C_SearchTracking_007_002
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
-    b2c_manage_my_booking_page.Click Filter Button
-    b2c_manage_my_booking_page.Verify Open Filter Form
+    b2c_my_parcel_page.Click Filter Button
+    b2c_my_parcel_page.Verify Open Filter Form
     common.Verify Capture Screenshot    B2C_SearchTracking_007_002    Verify Open Filter Form
-    b2c_manage_my_booking_page.Click Filter Button
-    b2c_manage_my_booking_page.Verify Close Filter Form
+    b2c_my_parcel_page.Click Filter Button
+    b2c_my_parcel_page.Verify Close Filter Form
     common.Verify Capture Screenshot    B2C_SearchTracking_007_002    Verify Close Filter Form
 
 B2C_SearchTracking_007_003
@@ -59,16 +59,16 @@ B2C_SearchTracking_007_003
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
-    b2c_manage_my_booking_page.Click Filter Button
-    b2c_manage_my_booking_page.Input Parcel Number In Filter    ${ฺB2C_Manange_My_Booking_007_003['parcel_number']}
-    b2c_manage_my_booking_page.Verify Input Parcel Number In Filter
+    b2c_my_parcel_page.Click Filter Button
+    b2c_my_parcel_page.Input Parcel Number In Filter    ${ฺB2C_Manange_My_Booking_007_003['parcel_number']}
+    b2c_my_parcel_page.Verify Input Parcel Number In Filter
     common.Verify Capture Screenshot    B2C_SearchTracking_007_003    Verify Input Parcel Number In Filter
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Parcels In Search Result
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Parcels In Search Result
     common.Verify Capture Screenshot    B2C_SearchTracking_007_003    Verify Search Results When Parcel Number Is Inputted Correctly
-    b2c_manage_my_booking_page.Click Remove Data In Search Button
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Parcels In Search Result
+    b2c_my_parcel_page.Click Remove Data In Search Button
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Parcels In Search Result
     common.Verify Capture Screenshot    B2C_SearchTracking_007_003    Verify Search Results When Not Input Parcel Number
 
 B2C_SearchTracking_007_004
@@ -84,14 +84,14 @@ B2C_SearchTracking_007_004
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
-    b2c_manage_my_booking_page.Click Filter Button
-    b2c_manage_my_booking_page.Input Parcel Number In Filter    ${ฺB2C_ManangeMyBooking_007_004.parcel_number['input1']}
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_004['error_msg']}
+    b2c_my_parcel_page.Click Filter Button
+    b2c_my_parcel_page.Input Parcel Number In Filter    ${ฺB2C_ManangeMyBooking_007_004.parcel_number['input1']}
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_004['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_007_004    Verify Search Result When Input Parcel Number Is Not English Alphabets And Numbers
-    b2c_manage_my_booking_page.Click Remove Data In Search Button
-    b2c_manage_my_booking_page.Input Parcel Number In Filter    ${ฺB2C_ManangeMyBooking_007_004.parcel_number['input2']}
-    b2c_manage_my_booking_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_004['error_msg']}
+    b2c_my_parcel_page.Click Remove Data In Search Button
+    b2c_my_parcel_page.Input Parcel Number In Filter    ${ฺB2C_ManangeMyBooking_007_004.parcel_number['input2']}
+    b2c_my_parcel_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_004['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_007_004    Verify Search Result When Input Parcel Number Exceed Specifies
 
 B2C_SearchTracking_007_005
@@ -106,16 +106,16 @@ B2C_SearchTracking_007_005
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
-    b2c_manage_my_booking_page.Click Filter Button
-    b2c_manage_my_booking_page.Input Name In Filter    ${ฺB2C_ManangeMyBooking_007_005['name']}
-    b2c_manage_my_booking_page.Verify Input Name In Filter
+    b2c_my_parcel_page.Click Filter Button
+    b2c_my_parcel_page.Input Name In Filter    ${ฺB2C_ManangeMyBooking_007_005['name']}
+    b2c_my_parcel_page.Verify Input Name In Filter
     common.Verify Capture Screenshot    B2C_SearchTracking_007_005    Verify Input Name In Filter
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Parcels In Search Result
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Parcels In Search Result
     common.Verify Capture Screenshot    B2C_SearchTracking_007_005    Verify Search Results When Name Is Inputted Correctly
-    b2c_manage_my_booking_page.Click Remove Data In Search Button
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Parcels In Search Result
+    b2c_my_parcel_page.Click Remove Data In Search Button
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Parcels In Search Result
     common.Verify Capture Screenshot    B2C_SearchTracking_007_005    Verify Search Results When Not Input Name
 
 B2C_SearchTracking_007_006
@@ -131,14 +131,14 @@ B2C_SearchTracking_007_006
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
-    b2c_manage_my_booking_page.Click Filter Button
-    b2c_manage_my_booking_page.Input Name In Filter    ${ฺB2C_ManangeMyBooking_007_006.name['input1']}
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_006['error_msg']}
+    b2c_my_parcel_page.Click Filter Button
+    b2c_my_parcel_page.Input Name In Filter    ${ฺB2C_ManangeMyBooking_007_006.name['input1']}
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_006['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_007_006    Verify Search Result When Input Name Is Not Alphabets
-    b2c_manage_my_booking_page.Click Remove Data In Search Button
-    b2c_manage_my_booking_page.Input Name In Filter    ${ฺB2C_ManangeMyBooking_007_006.name['input2']}
-    b2c_manage_my_booking_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_006['error_msg']}
+    b2c_my_parcel_page.Click Remove Data In Search Button
+    b2c_my_parcel_page.Input Name In Filter    ${ฺB2C_ManangeMyBooking_007_006.name['input2']}
+    b2c_my_parcel_page.Verify Error Message In Modal    ${ฺB2C_ManangeMyBooking_007_006['error_msg']}
     common.Verify Capture Screenshot    B2C_SearchTracking_007_006    Verify Search Result When Input Name Exceed Specifies
 
 B2C_SearchTracking_007_007
@@ -154,14 +154,14 @@ B2C_SearchTracking_007_007
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu My Parcel
-    b2c_manage_my_booking_page.Click Filter Button
-    b2c_manage_my_booking_page.Input Address In Filter    ${ฺB2C_ManangeMyBooking_007_007['address']}
-    b2c_manage_my_booking_page.Verify Input Address In Filter
+    b2c_my_parcel_page.Click Filter Button
+    b2c_my_parcel_page.Input Address In Filter    ${ฺB2C_ManangeMyBooking_007_007['address']}
+    b2c_my_parcel_page.Verify Input Address In Filter
     common.Verify Capture Screenshot    B2C_SearchTracking_007_007    Verify Input Address In Filter
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Parcels In Search Result
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Parcels In Search Result
     common.Verify Capture Screenshot    B2C_SearchTracking_007_007    Verify Search Results When Address Is Inputted Correctly
-    b2c_manage_my_booking_page.Click Remove Data In Search Button
-    b2c_manage_my_booking_page.Click Search Button
-    b2c_manage_my_booking_page.Verify Parcels In Search Result
+    b2c_my_parcel_page.Click Remove Data In Search Button
+    b2c_my_parcel_page.Click Search Button
+    b2c_my_parcel_page.Verify Parcels In Search Result
     common.Verify Capture Screenshot    B2C_SearchTracking_007_007    Verify Search Results When Not Input Address
