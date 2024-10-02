@@ -2,7 +2,7 @@
 Click Add Button
     FOR    ${i}    IN RANGE    0    5
         common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_parcel_pickup_schedule}    timeout=2s
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_parcel_pickup_schedule}    timeout=5s
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
     END
 
@@ -12,9 +12,11 @@ Verify Popup Parcel Pickup Schedule
 Verify Car Round Name Dropdown Was Disabled
     Element Should Be Disabled    ${b2c_cbo_car_round_name_call_car_pickup_page}
 
+Click Parcel Type Dropdown
+    common.Click When Ready      ${b2c_btn_basic_parcel_type_car_pickup_page}
+
 Select Parcel Type Dropdown
     [Arguments]    ${value}
-    common.Click When Ready      ${b2c_btn_basic_parcel_type_car_pickup_page}
     common.Click When Ready    //div[@class='rc-virtual-list-holder-inner']//div[@title='${value}']
 
 Verify Unselected Parcel Type In Dropdown
@@ -33,24 +35,21 @@ Verify Unselected Date Pickup Parcel
     ${placeholder}=    Get Element Attribute    ${b2c_btn_placeholder_date_pickup_in_add_popup}    placeholder
     Should Be Equal    ${placeholder}    ${value}
 
-Select Date Pickup Parcel Future Date
+Click Pickup Parcel Date Button
     common.Click When Ready    ${b2c_cbo_pickup_parcel_date_in_add_popup}
-    ${haveActiveDate}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_b2n_active_date_in_add_popup}    timeout=2s
-    IF  '${haveActiveDate}' == 'True'
-        ${selectedFutureDate}=    Get Element Attribute    (${b2c_b2n_active_date_in_add_popup})[1]    title
-        Set Suite Variable    ${selectedFutureDate}    ${selectedFutureDate}
-        common.Click When Ready    (${b2c_b2n_active_date_in_add_popup})[1]
-    ELSE
+
+Select Date Pickup Parcel Future Date
+    FOR    ${i}    IN RANGE    0    5
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   //td[@title='${newDate}']    timeout=2s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         common.Click When Ready    ${b2c_btn_next_months_calendar_in_add_popup}
-        ${selectedFutureDate}=    Get Element Attribute    (${b2c_b2n_active_date_in_add_popup})[1]    title
-        Set Suite Variable    ${selectedFutureDate}    ${selectedFutureDate}
-        common.Click When Ready    (${b2c_b2n_active_date_in_add_popup})[1]
     END
+    common.Click When Ready    //td[@title='${newDate}']
 
 Verify Selected Date Pickup Parcel Future Date
     Wait Until Element Is Visible    ${b2c_cbo_pickup_parcel_date_in_add_popup}    timeout=${DEFAULT_TIMEOUT}
     ${value}=    Get Element Attribute    ${b2c_cbo_pickup_parcel_date_in_add_popup}    value
-    Should Be Equal    ${value}    ${selectedFutureDate}
+    Should Be Equal    ${value}    ${newDate}
 
 Select Date Pickup Parcel Previouse Date
     FOR    ${i}    IN RANGE    0    5
@@ -67,9 +66,11 @@ Verify Date Pickup Parcel Can Not Be Select Previouse Date
     common.Click When Ready    ${b2c_txt_pickup_parcel_date_in_add_popup}
     Verify Unselected Date Pickup Parcel    ${value}
  
+Click Pickup Parcel Time Button
+    common.Click When Ready    ${b2c_cdo_pickup_parcel_time_in_add_popup}
+
 Select Pickup Parcel Time
     [Arguments]    ${value}
-    common.Click When Ready    ${b2c_cdo_pickup_parcel_time_in_add_popup}
     common.Click When Ready    //div[text()='${value}']
 
 Verify Selected Pickup Parcel Time
@@ -105,10 +106,9 @@ Verify Saved Popup Is Visible
     Wait Until Element Is Visible    ${b2c_txt_complete_save_information_car_pickup_page}
 
 Verify Saved Information In Visible In List
-    Wait Until Element Is Visible    ${b2c_txt_h5_special_round_car_pickup_page}
-    Scroll Element Into View    ${b2c_txt_h5_special_round_car_pickup_page}
-    Log    ${selectedFutureDate}
-    Element Should Contain    (//h5[contains(text(),'${selectedFutureDate}')])[1]    ${selectedFutureDate}
+    [Arguments]    ${data}
+    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    Element Should Contain    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    ${newDate}
 
 Click Cancel Button On Parcel Pickup Schedule Popup
     common.Click When Ready    ${b2c_btn_cancel_in_add_popup}
@@ -122,3 +122,34 @@ Verify Asking Popup To Close Popup
 
 Click X Button On Parcel Pickup Schedule Popup
     common.Click When Ready    ${b2c_btn_x_in_add_popup}
+
+Click Confirm To Close Parcel Pickup Schedule Popup Button
+    common.Click When Ready    ${b2c_btn_confirm_in_asking_to_close_popup}
+
+Verify Website Never Save Sender Information
+    [Arguments]    ${data}
+    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    Element Should Not Contain    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    ${newDate}
+
+Get The Highest Displayed Date And Set New Highest Date
+    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    ${titleName}=    Get Text    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//div[@class='ant-card-meta-title']//h5
+    ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
+    ${parts}=    Split String    ${highestDisplayedDate}    -
+    ${day}=    Set Variable    ${parts}[0]
+    ${month}=    Set Variable    ${parts}[1]
+    ${year}=    Set Variable    ${parts}[2]
+    ${day}=    Convert To Integer    ${day}
+    ${nextDay}=    Evaluate    ${day} + 1
+    ${day}    Convert To String    ${nextDay}
+    ${digit}=     Get Length    ${day}
+    IF    '${digit}' == '1'
+        ${day}=    Set Variable    0${day}
+    END
+    ${newDate}=    Set Variable    ${day}-${month}-${year}
+    Set Suite Variable    ${newDate}    ${newDate}
+
+Delete The Lastest Parcel Pickup Schedule
+    common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//span[@aria-label='delete']
+    common.Click When Ready    //button[text()=' ยืนยัน']
+    Wait Until Element Is Visible    //span[text()='ลบข้อมูลสำเร็จ']    timeout=${DEFAULT_TIMEOUT}
