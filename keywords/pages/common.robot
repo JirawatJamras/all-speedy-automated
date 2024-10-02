@@ -56,6 +56,17 @@ Clear Value Input Text
     Wait Until Page Contains Element    ${locator}
     Execute JavaScript    document.evaluate("${locator}", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.value = '';    
 
+Scroll Into View By Xpath
+    [Arguments]    ${xpath}    ${boolean}
+    Wait Until Page Contains Element    xpath=${xpath}    50
+    Execute JavaScript    dom:document.evaluate("${xpath}",document.body,null,9,null).singleNodeValue.scrollIntoView(${boolean})
+
+Split String And Select
+    [Arguments]    ${value}    ${separator}   ${index}
+    ${value} =    Split String    ${value}    ${separator}
+    ${value} =    Set Variable    ${value}[${index}]
+    RETURN    ${value}
+    
 ################### Mobile - Android ###################
 Application Teardown
     # Run keyword If Test Failed   Capture page screenshot
@@ -120,9 +131,3 @@ Verify text of element
     [Arguments]   ${locator}   ${value}
     ${locator}=  Replace String   ${locator}   {value}   ${value}
     Wait Until Element Is Visible   ${locator}    ${DEFAULT_TIMEOUT}
-
-Split String And Select
-    [Arguments]    ${value}    ${separator}   ${index}
-    ${value} =    Split String    ${value}    ${separator}
-    ${value} =    Set Variable    ${value}[${index}]
-    RETURN    ${value}

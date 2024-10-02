@@ -152,7 +152,38 @@ Get The Highest Displayed Date And Set New Highest Date
 Delete The Lastest Parcel Pickup Schedule
     common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//span[@aria-label='delete']
     common.Click When Ready    //button[text()=' ยืนยัน']
-    Wait Until Element Is Visible    //span[text()='ลบข้อมูลสำเร็จ']    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Click Select Item On Parcel Pickup Schedule List
     common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+
+Verify Information Detail Popup of Parcel Pickup Schedule
+    Wait Until Element Is Visible    ${b2c_txt_pickup_parcel_schedule_in_detail_popup}    timeout=${DEFAULT_TIMEOUT}
+
+Verify Information Detail Popup of Select Pickup Booking List
+    Wait Until Element Is Visible    ${b2c_txt_select_pickup_booking_list_in_detail_popup}    timeout=${DEFAULT_TIMEOUT}
+
+Verify Pickup Parcel Schedule Page
+    Wait Until Element Is Visible    ${b2c_txt_call_pickup_parcel_pickup_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_txt_pickup_parcel_schedule_pickup_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_add_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
+
+Click Open Filter
+    common.Click When Ready    ${b2c_btc_filter_pickup_page}
+   
+Click Close Filter
+    FOR    ${i}    IN RANGE    0    5
+        common.Click When Ready    ${b2c_btc_filter_pickup_page}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=2s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+    END
+
+Verify Open Filter Section
+    Wait Until Element Is Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_search_in_filter}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    timeout=${DEFAULT_TIMEOUT}
+
+Verify Close Filter Section
+    Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${b2c_btn_search_in_filter}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    timeout=${DEFAULT_TIMEOUT}

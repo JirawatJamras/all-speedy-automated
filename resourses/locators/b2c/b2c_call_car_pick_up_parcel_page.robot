@@ -10,6 +10,9 @@ ${b2c_btn_cancel_in_add_popup}    //span[text()='ยกเลิก']/..
 ${b2c_btn_cancel_in_asking_to_close_popup}    //button[text()=' ยกเลิก']
 ${b2c_btn_confirm_in_asking_to_close_popup}    //button[text()=' ยืนยัน']
 ${b2c_btn_x_in_add_popup}    //button[@aria-label='Close']
+${b2c_btn_save_in_detail_popup}    //span[text()='บันทึก']/..
+${b2c_btc_filter_pickup_page}    //span[text()='ตัวกรอง']/..
+${b2c_btn_search_in_filter}    //span[text()='ค้นหา']/..
 
 ${b2c_txt_parcel_pickup_schedule}    //span[text()='รอบรถเข้ารับพัสดุ']
 ${b2c_txt_pickup_parcel_date_in_add_popup}    //strong[text()='วันที่รถเข้ารับพัสดุ']
@@ -17,6 +20,12 @@ ${b2c_txt_pickup_parcel_time_selected_value_in_add_popup}    //strong[text()='�
 ${b2c_txt_complete_save_information_car_pickup_page}    //*[text()='บันทึกข้อมูลสำเร็จ']
 ${b2c_txt_h5_special_round_car_pickup_page}    //h5[contains(text(),'รอบพิเศษ')]
 ${b2c_txt_asking_to_close_popup_in_add_popup}    //h2[@id='swal2-title']
+${b2c_txt_pickup_parcel_schedule_in_detail_popup}    //h5[text()='รายการเรียกรถเข้ารับพัสดุ']
+${b2c_txt_select_pickup_booking_list_in_detail_popup}    //h5[text()='เลือกรายการบุ๊คกิ้งเข้ารอบพัสดุ']
+${b2c_txt_call_pickup_parcel_pickup_page}    //h2[text()='เรียกรถเข้ารับพัสดุ สาขาหลัก']
+${b2c_txt_pickup_parcel_schedule_pickup_page}    //h5[text()='รอบรถเข้ารับพัสดุ']
+${b2c_txt_pickup_date_in_filter}    //strong[text()='วันที่รถเข้ารับพัสดุ']
+${b2c_txt_delete_complete_pickup_page}    //span[text()='ลบข้อมูลสำเร็จ']
 
 ${b2c_cbo_car_round_name_call_car_pickup_page}    //strong[text()='ชื่อรอบรถ']/../../../..//input[@id='basic_pickupType']
 ${b2c_cbo_parcel_type_call_car_pickup_page}    //strong[text()='ประเภทพัสดุ']/../../../..//span[@class='ant-select-selection-item']
