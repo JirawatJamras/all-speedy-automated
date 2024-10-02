@@ -30,7 +30,7 @@ robot -v ENV:uat -i UAT  ../testcases/register/
 
 
 robot -v ENV:uat -i UAT1  ../testcases/register/
-robot -v ENV:uat -i test  ../testcases/
+robot -v ENV:uat -i In_Review  ../testcases/
 
 # Pabot
 -v คือ Environment                   #(\resources\config)
