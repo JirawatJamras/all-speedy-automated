@@ -2,11 +2,13 @@
 Verify Create Parcel Page
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${title_text}=    Get Text    ${title_create_parcel_page_txt}
-    Should Be Equal    ${title_text}    ${AllSpeedy_B2C_005_ID_1['title_text']}
+    Should Be Equal    ${title_text}    ${B2C_AddBooking_003_001['text_title']}
     ${step_name}=    Get Text    ${frist_step_name}
-    Should Be Equal    ${step_name}    ${AllSpeedy_B2C_005_ID_1['frist_step']}
+    Should Be Equal    ${step_name}    ${B2C_AddBooking_003_001['text_frist_step']}
+
+Click Close Paecel Page
     Click Element    ${close_noti_btn}
-    Verify Close Pop-Up
+    # Verify Close Pop-Up
     Click Element    ${close_noticonfirm_btn}
 
 Click Choose Favorites
@@ -14,7 +16,7 @@ Click Choose Favorites
     Click Element    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=30s
     ${title_text}=    Get Text    ${favorites_defult_text}
-    Should Be Equal    ${title_text}    ${AllSpeedy_B2C_005_ID_18['fav_defult']}
+    Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_default_text']}
 
 Click Favorites Defult
     Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
@@ -40,9 +42,9 @@ Input Text Exceeds 100 Characters
 Verify Popup Favorites Sender 
     Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=30s
     ${title_text}=    Get Text    ${favorites_title_text}
-    Should Be Equal    ${title_text}    ${b2c_addbooking_003_ID_2['favorites_title_text']}
+    Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_title_text']}
     ${default_text}=    Get Text    ${favorites_default_text}
-    Should Be Equal    ${default_text}    ${b2c_addbooking_003_ID_2['favorites_default_text']}
+    Should Be Equal    ${default_text}    ${B2C_AddBooking_003_002['favorites_default_text']}
 
 Input Favorites TextBox Nomal Letters Less Than 100 Characters
     [Arguments]    ${search_txt}
@@ -55,10 +57,10 @@ Verify Favorites Text In TextBox
     Should Be Equal    ${text}    ${search_txt}   
 
 Verify Favorites Show Item Lists   
-    Page Should Not Contain     ${b2c_addbooking_003_ID_3.text_no_data}
+    Page Should Not Contain     ${B2C_AddBooking_003_003['text_no_data']}
 
 Verify Favorites Not Show Item Lists   
-    Page Should Contain     ${b2c_addbooking_003_ID_4.text_no_data}
+    Page Should Contain     ${B2C_AddBooking_003_004['text_no_data']}
 
 Input Favorites TextBox Nomal Letters More Than 100 Characters
     [Arguments]    ${search_txt}
@@ -83,7 +85,7 @@ Verify Choose From Favorites
     Should Be Equal   ${name_text}    ${b2c_addbooking_003_ID_5['verify_name_sender']}
     ${address_text}=    Get Value    ${address_sender_txtbox}
     Should Be Equal    ${address_text}    ${b2c_addbooking_003_ID_5['verify_address_sender']}
-    ${postcode_text}=    Get Text    ${postcode_sender_txtbox}
+    ${postcode_text}=    Get Text    ${postcode_sender_text_in_txtbox}
     Should Be Equal    ${postcode_text}    ${b2c_addbooking_003_ID_5['verify_postcode_sender']}
 
 Verify Not Choose From Favorites
@@ -153,9 +155,21 @@ Input Postcode Sender
 
 Verify Postcode Sender Value
     [Arguments]    ${verify_postcode_sender_value}
-    Wait Until Element Is Visible    ${postcode_sender_txtbox}    timeout=10s
     ${postcode_sender_txt}=    Get Value    ${postcode_sender_txtbox}
     Should Be Equal    ${postcode_sender_txt}    ${verify_postcode_sender_value} 
+
+Verify Not Select Postcode Sender Value
+    ${postcode_sender_txt}=    Get Text    ${postcode_sender_not_select_text_in_txtbox}
+    Should Be Empty    ${postcode_sender_txt}
+
+Verify Select Postcode Sender Value
+    [Arguments]    ${verify_postcode_sender_value}
+    ${postcode_sender_txt}=    Get Text    ${postcode_sender_select_text_in_txtbox}
+    Should Be Equal    ${postcode_sender_txt}    ${verify_postcode_sender_value} 
+
+Click Postcode Sender Lists
+    [Arguments]    ${list}
+    Click Element    ${list}
 
 Verify Postcode Sender Error Msg
     [Arguments]    ${text_error_msg_postcode_sender}
@@ -163,9 +177,38 @@ Verify Postcode Sender Error Msg
     ${postcode_sender_error_msg}=    Get Text    ${postcode_sender_error_txt}
     Should Be Equal    ${postcode_sender_error_msg}    ${text_error_msg_postcode_sender}
 
-Click Clear Button
-    [Arguments]    ${clear_btn}
-    common.Click When Ready  ${clear_btn}
+Click Button
+    [Arguments]    ${btn}
+    Click Element    ${btn}
 
 Click Next To Receiver
     common.Click When Ready  ${next_to_receiver_btn}
+
+Click Add To Favorites
+    [Arguments]    ${btn}
+    Click Element    ${btn}
+
+Verify Favorites Icon Red Heart
+    [Arguments]    ${xpath}    ${status}
+    ${value}=    Get Value    ${xpath}
+    Should Be Equal    ${value}    ${status}   
+
+Verify Add To Favorites
+    [Arguments]    ${text_search}
+    Click Choose Favorites
+    Input Favorites TextBox Nomal Letters Less Than 100 Characters    ${text_search}
+    Verify Favorites Show Item Lists
+
+Verify Step In Create Parcel Popup
+    [Arguments]    ${title}    ${status}
+    ${title_text}=    Get Text    ${title_create_parcel_page_txt}
+    Should Be Equal    ${title_text}    ${title}
+    Page Should Contain Element    ${status}    
+
+Input Receiver 
+    [Arguments]    ${xpath}    ${value}
+    common.Input When Ready    ${xpath}    ${value}
+
+Click Postcode Receiver Lists
+    [Arguments]    ${list}
+    Click Element    ${list}
