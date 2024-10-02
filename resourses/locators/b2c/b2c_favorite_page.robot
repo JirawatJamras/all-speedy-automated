@@ -1,9 +1,11 @@
 *** Variables ***
-${b2c_popup_sender_favorite_page}    //div[@class='ant-modal-content']//div//div[text()='ข้อมูลผู้ส่งพัสดุ']
+${b2c_popup_sender_favorite_page}      //div[@class='ant-modal-content']//div//div[text()='ข้อมูลผู้ส่งพัสดุ']
 ${b2c_popup_receiver_favorite_page}    //div[@class='ant-modal-content']//div//div[text()='ข้อมูลผู้รับพัสดุ']
 
-${b2c_tab_sender_favorite_page}      //div[@role='tab' and text()='ผู้ส่งพัสดุ']
-${b2c_tab_receiver_favorite_page}    //div[@role='tab' and text()='ผู้รับพัสดุ']
+${b2c_tab_sender_favorite_page}        //div[@role='tab' and text()='ผู้ส่งพัสดุ']
+${b2c_tab_receiver_favorite_page}      //div[@role='tab' and text()='ผู้รับพัสดุ']
+${b2c_tab_send_home_favorite_page}     //div[@data-node-key='home']
+${b2c_tab_send_store_favorite_page}    //div[@data-node-key='store']
 
 ${b2c_cbo_sender_address_favorite_page}    //div[@class='ant-select-item-option-content' and contains(text(),'{value}')]
 
@@ -22,12 +24,17 @@ ${b2c_btn_cancel_favorite_page}                   //button//span[text()='ยก�
 ${b2c_btn_close_x_favorite_page}                  //button[@aria-label='Close']
 ${b2c_btn_cancel_close_x_favorite_page}           //button[contains(text(),'ยกเลิก')]
 ${b2c_btn_confirm_close_x_favorite_page}          //button[contains(text(),'ยืนยัน')]
+${b2c_btn_clear_sender_name_favorite_page}        //input[@id='favorite_form_sender_name']/../..//span//span[contains(@class, 'ant-input-clear-icon')]
 
-${b2c_txtbox_favorite_name_favorite_page}      //input[@id='favorite_form_name']
-${b2c_txtbox_sender_phone_favorite_page}       //input[@id='favorite_form_sender_tel']
-${b2c_txtbox_sender_name_favorite_page}        //input[@id='favorite_form_sender_name']
-${b2c_txtbox_sender_address_favorite_page}     //textarea[@id='favorite_form_sender_address_info']
-${b2c_txtbox_sender_postcode_favorite_page}    //input[@id='favorite_form_sender_address_full']
+${b2c_txtbox_favorite_name_favorite_page}       //input[@id='favorite_form_name']
+${b2c_txtbox_sender_phone_favorite_page}        //input[@id='favorite_form_sender_tel']
+${b2c_txtbox_sender_name_favorite_page}         //input[@id='favorite_form_sender_name']
+${b2c_txtbox_sender_address_favorite_page}      //textarea[@id='favorite_form_sender_address_info']
+${b2c_txtbox_sender_postcode_favorite_page}     //input[@id='favorite_form_sender_address_full']
+${b2c_txtbox_receiver_phone_favorite_page}      //input[@id='favorite_form_receiver_tel']
+${b2c_txtbox_receiver_name_favorite_page}       //input[@id='favorite_form_receiver_name']
+${b2c_txtbox_receiver_address_favorite_page}    //textarea[@id='favorite_form_receiver_address_info']
+${b2c_txtbox_receiver_postcode_favorite_page}     //input[@id='favorite_form_receiver_address_full']
 
 ${b2c_msg_errormsg_favorite_name_favorite_page}      //div[@id='favorite_form_name_help']//div[@class='ant-form-item-explain-error']
 ${b2c_msg_errormsg_sender_phone_favorite_page}       //div[@id='favorite_form_sender_tel_help']//div[@class='ant-form-item-explain-error']
