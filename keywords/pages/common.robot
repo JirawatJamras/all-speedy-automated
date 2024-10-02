@@ -120,3 +120,9 @@ Verify text of element
     [Arguments]   ${locator}   ${value}
     ${locator}=  Replace String   ${locator}   {value}   ${value}
     Wait Until Element Is Visible   ${locator}    ${DEFAULT_TIMEOUT}
+
+Split String And Select
+    [Arguments]    ${value}    ${separator}   ${index}
+    ${value} =    Split String    ${value}    ${separator}
+    ${value} =    Set Variable    ${value}[${index}]
+    RETURN    ${value}

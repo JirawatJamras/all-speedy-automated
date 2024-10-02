@@ -97,12 +97,6 @@ Verify Current Date
     ${current_date}    Get Current DateTime Thai Format
     Should Be Equal    ${Web_Date}    ${current_date}
 
-Split String And Select
-    [Arguments]    ${value}    ${separator}   ${index}
-    ${value} =    Split String    ${value}    ${separator}
-    ${value} =    Set Variable    ${value}[${index}]
-    RETURN    ${value}
-
 Get Current DateTime Thai Format
     ${current_date} =    Get Current Date    result_format=%d/%m/%Y
     ${day}    Split String And Select    ${current_date}    /    0

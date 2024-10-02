@@ -1,10 +1,10 @@
 b2c_AddFavoriteItem_010_002:
-  favorite_name:    Test Test
+  favorite_name:    Test ชื่อผู้ส่งไม่เกิน 50 ตัวอักษร
 
 b2c_AddFavoriteItem_010_003:
   favorite_name:
     special_char:    hy$\
-    more_than_specified:    jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+    more_than_specified:    testtesttesttesttesttesttesttesttesttesttesttesttest
   # errormsg:    ห้ามกรอกอักขระพิเศษ
   errormsg:    กรุณาระบุชื่อรายการโปรดให้ถูกต้อง
   specified_value:    50
@@ -41,14 +41,14 @@ b2c_AddFavoriteItem_010_009:
   phone_no:    0656666789
   sender_name:    
     special_char:    hy$\
-    more_than_specified:    jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+    more_than_specified:    testtesttesttesttesttesttesttesttesttesttesttesttest
   errormsg:    กรุณาระบุชื่อผู้ส่งพัสดุให้ถูกต้อง #ชื่อไม่ถูกต้อง ต้องเป็นตัวอักษรภาษาไทยหรือภาษาอังกฤษเท่านั้น
 
 b2c_AddFavoriteItem_010_010:
   favorite_name:    Test Test
   sender_phone:    0656666789
   sender_name:    Test Testtest
-  sender_address:  12/3 ตึก ABC
+  sender_address:  Siamscape Building, 215 Phaya Thai Rd
 
 b2c_AddFavoriteItem_010_011:
   favorite_name:    Test Test
@@ -56,41 +56,49 @@ b2c_AddFavoriteItem_010_011:
   sender_name:    Test Testtest
   sender_address:
     special_char:    hy$^=
-    more_than_specified:    testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+    more_than_specified:    testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesses
   errormsg:    กรุณาระบุรายละเอียดที่อยู่ให้ถูกต้อง
 
 b2c_AddFavoriteItem_010_012:
   favorite_name:    Test Test
   sender_phone:    0656666789
   sender_name:    Test Testtest
-  sender_address:  12/3 ตึก ABC
-  sender_postcode:    '10230'
+  sender_address:  Siamscape Building, 215 Phaya Thai Rd
+  sender_postcode:    '10330'
 
 b2c_AddFavoriteItem_010_013:
   favorite_name:    Test Test
   sender_phone:    0656666789
   sender_name:    Test Testtest
-  sender_address:  12/3 ตึก ABC
+  sender_address:  Siamscape Building, 215 Phaya Thai Rd
   sender_postcode:
     char:    abc
-    more_than_specified:    '1023000'
+    more_than_specified:    '1033000'
   errormsg:    กรุณาระบุรหัสไปรษณีย์ให้ถูกต้อง
 
 b2c_AddFavoriteItem_010_014:
   favorite_name:    Test Test
   sender_phone:    0656666789
   sender_name:    Test Testtest
-  sender_address:  12/3 ตึก ABC
-  sender_postcode:    '10230'
+  sender_address:  Siamscape Building, 215 Phaya Thai Rd
+  sender_postcode:    '10330'
   sender_address_full:
-      address01:    ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
-      address02:    นวลจันทร์ บึงกุ่ม กรุงเทพมหานคร 10230
+      address01:    ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
+      address02:    วังใหม่ ปทุมวัน กรุงเทพมหานคร 10330
+
+b2c_AddFavoriteItem_010_015:
+  favorite_name:    ทดสอบเพิ่มรายการโปรด
+  sender_phone:    0987654321
+  sender_name:    Test AddSender
+  sender_address:  Siamscape Building, 215 Phaya Thai Rd
+  sender_postcode:    '10330'
+  sender_address_full:    ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
 
 b2c_AddFavoriteItem_010_016:
   favorite_name:    Test Test
   sender_phone:    0656666789
   sender_name:    Test Testtest
-  sender_address:  12/3 ตึก ABC
+  sender_address:  Siamscape Building, 215 Phaya Thai Rd
   sender_postcode:    '10230'
   sender_address_full:    ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
 
@@ -98,6 +106,17 @@ b2c_AddFavoriteItem_010_017:
   favorite_name:    Test Test
   sender_phone:    0656666789
   sender_name:    Test Testtest
-  sender_address:  12/3 ตึก ABC
-  sender_postcode:    '10230'
-  sender_address_full:    ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
+  sender_address:  Siamscape Building, 215 Phaya Thai Rd
+  sender_postcode:    '10330'
+  sender_address_full:    วังใหม่ ปทุมวัน กรุงเทพมหานคร 10330
+
+
+b2c_AddFavoriteItem_010_018:
+  favorite_name:
+    special_char:    Test$^
+    more_than_specified:    TestTestTestTestTestTestTestTestTestTestTestTestTest
+  errormsg:    กรุณาระบุชื่อรายการโปรดให้ถูกต้อง
+
+b2c_AddFavoriteItem_010_029:
+  favorite_name:    ทดสอบ รายการโปรดผู้รับพัสดุ
+  receiver_phone:    0987654321

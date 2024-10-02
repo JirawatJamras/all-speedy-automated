@@ -11,8 +11,8 @@ B2C_AddBooking_003_01
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    Feedback
     common.Open URL                           ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email     ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email     ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -33,8 +33,8 @@ B2C_AddBooking_003_02
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    Feedback 
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -48,8 +48,8 @@ B2C_AddBooking_003_03
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    Feedback
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -64,8 +64,8 @@ B2C_AddBooking_003_04
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    Feedback
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -83,8 +83,8 @@ B2C_AddBooking_003_05
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression    Feedback
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -100,8 +100,8 @@ B2C_AddBooking_003_06
     [Tags]    B2C_AddBooking_003    UAT    Low    Non-Regression    Feedback
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -117,8 +117,8 @@ B2C_AddBooking_003_07
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    Feedback
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -132,8 +132,8 @@ B2C_AddBooking_003_08
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -152,8 +152,8 @@ B2C_AddBooking_003_09
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    Feedback
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -168,8 +168,8 @@ B2C_AddBooking_003_10
     [Tags]    B2C_AddBooking_003    UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -190,8 +190,8 @@ B2C_AddBooking_003_11
     [Tags]    B2C_AddBooking_003    UAT    Low    Regression    Feedback
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add
@@ -207,8 +207,8 @@ B2C_AddBooking_003_12
     [Tags]    B2C_AddBooking_003   UAT    Medium    Regression
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_06['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_06['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_bookingdelivery_page.Click Button To Add

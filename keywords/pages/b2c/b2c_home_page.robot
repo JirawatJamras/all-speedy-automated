@@ -3,7 +3,11 @@ Click Book Parcel Delivery
     common.Click When Ready    ${b2c_mnu_book_parcel_delivery_home_page}
 
 Click Parcel Delivery Service Menu
-    Mouse Over    ${b2c_mnu_parcel_delivery_service_home_page}
+    FOR    ${i}    IN RANGE    0    5
+        Mouse Over    ${b2c_mnu_parcel_delivery_service_home_page}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_cbo_parcel_delivery_service}    timeout=2s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+    END
 
 Select Sub Menu My Parcel
     Wait Until Element Is Visible    ${b2c_cbo_parcel_delivery_service}
@@ -47,3 +51,6 @@ Wait Until Profile Page Loaded
     Wait Until Element Is Visible    ${b2c_txt_business_profile_title_home_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Contains Element    ${b2c_btn_edit_profile_info_home_page}    timeout=${DEFAULT_TIMEOUT}
     Sleep   3s
+
+Verify Login To Profile Page Correctly
+    Wait Until Profile Page Loaded
