@@ -92,6 +92,16 @@ Open POS Online Application On Android App
       ...  appActivity=${POSONLINE_ANDROID_ACTIVITY}
       ...  autoGrantPermissions=true
 
+Open Chrome On Android Device
+    Open Application  ${REMOTE_URL}
+    ...    automationName=${AUTOMATION_ANDRIOD_NAME}
+    ...    platformName=${PLATFORM_NAME}
+    ...    platformVersion=${PLATFORM_VERSION}
+    ...    deviceName=${DEVICE_NAME}
+    ...    appPackage=${CHROME_ANDROID_PACKAGE}
+    ...    appActivity=${CHROME_ANDROID_ACTIVITY}
+    ...    autoGrantPermissions=true
+
 Click Back Button
     common.Click when ready    ${btn_back}
 

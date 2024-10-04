@@ -23,7 +23,7 @@ AllSpeedy_DPS_003_ID_9
 
 AllSpeedy_DPS_003_ID_10
     [Documentation]          [ตรวจสอบภาพรวมงานประจําวัน] ตรวจสอบหัวข้อ พัสดุภายในคลัง
-    [Tags]    AllSpeedy_DPS_003    UAT    Medium    Regression    Bix
+    [Tags]    AllSpeedy_DPS_003    UAT    Medium    Regression
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_04['username']}
