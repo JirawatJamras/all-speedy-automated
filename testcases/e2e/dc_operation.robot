@@ -6,7 +6,8 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Test Cases ***
-#### Inprogress step สุดท้าย ####
+#### ระบบเปลี่ยนเวลา cutoff ของรอบรถ 17.00 => 22.30 ####
+#### comment code ในส่วนของการยืนยันรอบรถใน dps ####
 DC Operation 002
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -35,16 +36,16 @@ DC Operation 002
     ##เลือกเวลาเข้ารับพัสดุ
     Click Element    //strong[text()='เวลารถเข้ารับพัสดุ']/../../../..//span[@class='ant-select-selection-item']
     Click Element    //div[@class='ant-select-item-option-content' and text()='ช่วงเช้า 09:00 - 12:00']
-    # Click Element    //button//span[text()='บันทึก']
-    Click Element    //button//span[text()='ยกเลิก']
-    Click Element    //button[text()=' ยืนยัน']
+    Click Element    //button//span[text()='บันทึก']
+    # Click Element    //button//span[text()='ยกเลิก']
+    # Click Element    //button[text()=' ยืนยัน']
     
     ## step 6 - 9
     Wait Until Element Is Not Visible    //div[@class='ant-modal-body']//img[@alt='my gif']    timeout=30s
     b2c_home_page.Click Book Parcel Delivery
     # Wait Until Element Is Not Visible    //div[@class='ant-modal-body']//img[@alt='my gif']    timeout=30s
     Sleep    10s
-    Wait Until Element Is Visible    //button//span[text()='เพิ่ม']    timeout=30s
+    Wait Until Element Is Visible    //button//span[text()='เพิ่ม']    timeout=50s
     Click Element    //button//span[text()='เพิ่ม']
     Wait Until Element Is Visible    //span[contains(text(),'ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ')]
     Click Element    //button//span[text()='ยอมรับเงื่อนไขการใช้บริการ']
@@ -105,6 +106,8 @@ DC Operation 002
     ## step 16-17
     ##TBC
     ## step 18-19
+
+    Open Chrome Browser    chrome
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email                testloginspeedyldap03@cpall.store
@@ -156,14 +159,7 @@ DC Operation 002
     # Reload Page
     # Sleep    10s
 
-    common.Open URL   ${B2C_UAT_URL}
-    Wait Until Element Is Visible    //div[text()='ลูกค้าธุรกิจ'][@id='rc-tabs-2-tab-business']/..    timeout=30s
-    Click Element    //div[text()='ลูกค้าธุรกิจ'][@id='rc-tabs-2-tab-business']/..
-    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-    Wait Until Element Is Not Visible    //img[@alt='my gif']    timeout=30s
+    Switch Window	MAIN
     b2c_home_page.Click Book Parcel Delivery
     Sleep    10s
     
-
