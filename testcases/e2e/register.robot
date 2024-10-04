@@ -10,7 +10,7 @@ ${profile_icon_btn}    //span[@aria-label='user' and @class='anticon anticon-use
 ${profile_business_btn}    //span[@class='ant-dropdown-menu-title-content']//span[text()='โปรไฟล์บริษัท']//..
 ${manage_users_tab}    //div[@data-node-key='2']//div[text()='จัดการผู้ใช้งาน']
 ${super_user_tab}    //div[@data-node-key='2']//div[text()='Super User']
-$${user_tab}    //div[@data-node-key='3']//div[text()='User']
+${user_tab}    //div[@data-node-key='3']//div[text()='User']
 ${add_user_btn}    //span[text()='เพิ่มผู้ใช้งาน']
 
 ${user_name_txtbox}    //label[@title='ชื่อ']//../..//input[@type='text']
@@ -23,6 +23,19 @@ ${user_position_txtbox}    //label[@title='ตำแหน่งงาน']//../
 ${manage_branch_tab}    //div[@data-node-key='3']//div[text()='จัดการสาขา']
 ${tracking_request_tab}    //div[@data-node-key='4']//div[text()='ติดตามรายการคำขอ']
 ${add_request_btn}    //span[text()='เพิ่มคำขอ']//..
+
+${company_information_first_tab}    //div[@data-node-key='1']//div[text()='ข้อมูลบริษัท' and @aria-controls='rc-tabs-1-panel-1']
+${company_information_second_tab}    //div[@data-node-key='1']//div[text()='ข้อมูลบริษัท' and @aria-controls='rc-tabs-0-panel-1']
+${service_information_tab}    //div[@data-node-key='2']//div[text()='ข้อมูลบริการ']
+${general_parcel_tab}    //div[@data-node-key='1']//div[text()='พัสดุทั่วไป']
+${temperature_controlled_parcel_tab}    //div[@data-node-key='2']//div[text()='พัสดุควบคุมอุณหภูมิ']
+${return_business_tab}    //div[@data-node-key='3']//div[text()='Return Business']
+${contact_and_bank_information_tab}    //div[@data-node-key='3']//div[text()='ข้อมูลผู้ติดต่อและข้อมูลธนาคาร']
+${supporting_documents_tab}    //div[@data-node-key='4']//div[text()='เอกสารประกอบ']
+${invoice_tab}    //div[@data-node-key='5']//div[text()='ใบแจ้งหนี้']
+${edit_btn}    //span[text()='แก้ไข']
+${mobile_no_txtbox}    //span[text()='เบอร์โทรศัพท์ ']//.//..//..//..//..//input
+${save_btn}    //span[text()='บันทึก']
 
 *** Keywords ***
 Click Profile Icon
@@ -99,7 +112,60 @@ Click Add Request
     Wait Until Element Is Visible    //li[@class='ant-dropdown-menu-item ant-dropdown-menu-item-only-child']//a[text()='${Value}']
     Click Element    //li[@class='ant-dropdown-menu-item ant-dropdown-menu-item-only-child']//a[text()='${Value}']
 
+Click Menu Service Information
+    Wait Until Element Is Visible    ${service_information_tab}
+    Click Element    ${service_information_tab}
+
+Click Menu General Parcel
+    Wait Until Element Is Visible    ${general_parcel_tab}
+    Click Element    ${general_parcel_tab}
+
+Click Menu Temperature Controlled Parcels
+    Wait Until Element Is Visible    ${temperature_controlled_parcel_tab}
+    Click Element    ${temperature_controlled_parcel_tab}
+
+Click Menu Return Business
+    Wait Until Element Is Visible    ${return_business_tab}
+    Click Element    ${return_business_tab}
+
+Click Menu Contact and Bank Information
+    Wait Until Element Is Visible    ${contact_and_bank_information_tab}
+    Click Element    ${contact_and_bank_information_tab}
+Click Menu Supporting Documents
+    Wait Until Element Is Visible    ${supporting_documents_tab}
+    Click Element    ${supporting_documents_tab}
+
+Click Menu Invoice
+    Wait Until Element Is Visible    ${invoice_tab}
+    Click Element    ${invoice_tab}
+
+Click Edit Button
+    Wait Until Element Is Visible    ${edit_btn}
+    Click Element    ${edit_btn}
+
+Edit Mobile No
+    [Arguments]    ${Value}
+    Wait Until Element Is Visible    ${mobile_no_txtbox}
+    Clear Element Text    ${mobile_no_txtbox}
+    Input Text    ${mobile_no_txtbox}    ${Value}
+
+Click Save Button
+    Wait Until Element Is Visible    ${save_btn}
+    Clear Element Text    ${save_btn}
+
+
 *** Test Cases ***
+E2E Register SC014
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    idc@gmail.com
+    b2c_login_page.Input Password    P@ssw0rd
+    b2c_login_page.Click Log On Button
+
+    #Register_014 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
+    #Step 1
+
+
 E2E Register SC023
     #Register_023 Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
     common.Open URL    ${B2C_UAT_URL}
@@ -142,7 +208,7 @@ E2E Register SC025
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_025 Customer : จัดการผู้ใช้งาน User
+    #Register_025 Customer : จัดการผู้ใช้งาน User
     #Step 1
     Click Profile Icon
     Click Profile Business
@@ -170,7 +236,7 @@ E2E Register SC026
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_026 Customer : จัดการสาขา
+    #Register_026 Customer : จัดการสาขา
     #Step 1
     Click Profile Icon
     Click Profile Business
@@ -187,7 +253,7 @@ E2E Register SC027
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_027 Customer : คำขอเพิ่ม Company Admin
+    #Register_027 Customer : คำขอเพิ่ม Company Admin
     #Step 1 ไม่แสดงหน้า คำขอ Company Admin 
     Click Profile Icon
     Click Profile Business
@@ -209,7 +275,7 @@ E2E Register SC028
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_028 Customer : คำขอเพิ่ม Company Admin
+    #Register_028 Customer : คำขอเพิ่ม Company Admin
     #Step 1 ไม่มีปุ่ม "ดำเนินการ"
     Click Profile Icon
     Click Profile Business
@@ -229,7 +295,7 @@ E2E Register SC029
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_029 Customer : คำขอแก้ไขข้อมูลที่อยู่บริษัท
+    #Register_029 Customer : คำขอแก้ไขข้อมูลที่อยู่บริษัท
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลที่อยู่บริษัท
     Click Profile Icon
     Click Profile Business
@@ -251,7 +317,7 @@ E2E Register SC030
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_030 Customer : คำขอแก้ไขข้อมูลผู้ติดต่อ
+    #Register_030 Customer : คำขอแก้ไขข้อมูลผู้ติดต่อ
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลผู้ติดต่อ
     Click Profile Icon
     Click Profile Business
@@ -273,7 +339,7 @@ E2E Register SC031
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_031 Customer : คำขอแก้ไขข้อมูลธนาคาร
+    #Register_031 Customer : คำขอแก้ไขข้อมูลธนาคาร
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลธนาคาร
     Click Profile Icon
     Click Profile Business
@@ -295,7 +361,7 @@ E2E Register SC032
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-#Register_032 Customer : คำขอแก้ไขข้อมูลบริการ
+    #Register_032 Customer : คำขอแก้ไขข้อมูลบริการ
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลบริการ
     Click Profile Icon
     Click Profile Business
@@ -310,3 +376,53 @@ E2E Register SC032
     #Step 7
     #Step 8           
 
+E2E Register SC047
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    idc@gmail.com
+    b2c_login_page.Input Password    P@ssw0rd
+    b2c_login_page.Click Log On Button
+
+    #Register_047 Customer : ตรวจสอบข้อมูลบริษัท
+    #Step 1 Company Admin : กดปุ่ม "โปรไฟล์บริษัท"
+    Click Profile Icon
+    Click Profile Business
+    #Step 2 กดแท็บ "แท็บข้อมูลบริการ" และ แท็บ "พัสดุทั่วไป"
+    Click Menu Service Information
+    Click Menu General Parcel
+    #Step 3 กดแท็บ "พัสดุควบคุมอุณหภูมิ"
+    Click Menu Temperature Controlled Parcels
+    #Step 4 กดแท็บ "Return Business"
+    Click Menu Return Business
+    #Step 5 กดแท็บ "ข้อมูลผู้ติดต่อและข้อมูลธนาคาร"
+    Click Menu Contact and Bank Information
+    #Step 6 กดแท็บ "เอกสารประกอบ"
+    Click Menu Supporting Documents
+    #Step 7 กดแท็บ "จัดการผู้ใช้งาน"
+    Click Menu Manage Users 
+    #Step 8 กดแท็บ "Super User"
+    Click Menu Super User 
+    #Step 9 กดแท็บ "User"
+    Click Menu User 
+    #Step 10 กดแท็บ "จัดการสาขา"
+    Click Menu Manage Branches  
+    #Step 11 กดแท็บ "ติดตามรายการคำขอ"
+    Click Menu Tracking Request List 
+    #Step 12 กดแท็บ "ใบแจ้งหนี้"
+    Click Menu Invoice
+
+E2E Register SC048
+    common.Open URL    ${B2C_UAT_URL}
+    #Register_048 Customer : แก้ไขโปรไฟล์ของฉัน
+    #Step 1 ชื่อ User (Company Admin) >โปรของฉัน
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    idc@gmail.com
+    b2c_login_page.Input Password    P@ssw0rd
+    b2c_login_page.Click Log On Button
+    Click Profile Icon
+    #Step 2 กดปุ่ม "แก้ไข"
+    Click Edit Button
+    #Step 3 แก้ไขเบอร์โทรศัพท์
+    Edit Mobile No    0871000000
+    #Step 4 กดปุ่ม "บันทึก"   ปุ่ม "บันทึก" ไม่มีแสดง
+    #Click Save Button
