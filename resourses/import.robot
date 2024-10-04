@@ -8,7 +8,7 @@ Variables                   testdata/login_user.yaml
 Resource                    ../keywords/pages/b2c/b2c_login_page.robot
 Resource                    ../keywords/pages/b2c/b2c_forgot_password_page.robot
 Resource                    ../keywords/pages/b2c/b2c_home_page.robot
-Resource                    ../keywords/pages/b2c/b2c_bookingdelivery_page.robot
+Resource                    ../keywords/pages/b2c/b2c_booking_delivery_page.robot
 Resource                    ../keywords/pages/b2c/b2c_create_parcel_page.robot
 Resource                    ../keywords/pages/b2c/b2c_tracking_parcel_delivery_page.robot
 Resource                    ../keywords/pages/b2c/b2c_my_parcel_page.robot
@@ -18,7 +18,7 @@ Resource                    ../keywords/pages/b2c/b2c_favorite_page.robot
 Resource                    locators/b2c/b2c_login_page.robot
 Resource                    locators/b2c/b2c_forgot_password_page.robot
 Resource                    locators/b2c/b2c_home_page.robot
-Resource                    locators/b2c/b2c_bookingdelivery_page.robot
+Resource                    locators/b2c/b2c_booking_delivery_page.robot
 Resource                    locators/b2c/b2c_create_parcel_page.robot
 Resource                    locators/b2c/b2c_tracking_parcel_delivery_page.robot
 Resource                    locators/b2c/b2c_my_parcel_page.robot
