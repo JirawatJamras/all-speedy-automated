@@ -168,7 +168,8 @@ Verify Select Postcode Sender Value
     Should Be Equal    ${postcode_sender_txt}    ${verify_postcode_sender_value} 
 
 Click Postcode Sender Lists
-    [Arguments]    ${list}
+    [Arguments]    ${name}
+    ${list}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
     Click Element    ${list}
 
 Verify Postcode Sender Error Msg

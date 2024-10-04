@@ -1,4 +1,7 @@
 *** Variables ***
+### booking page ###
+${txt_title_booking}    //div[contains(@class,'ant-layout')]//h2[contains(@class,'ant-typography')]
+
 ### term&con ###
 ${txt_term_and_condition}     //div[@class='ant-modal-title']//span[contains(@class,'ant-typography')]
 
@@ -26,6 +29,15 @@ ${txt_frist_step_name}    //form[@id='create_parcel_form']/div[2]/div[1]/div/div
 ${txt_close_popup}     //h2[@id='swal2-title']
 ${txt_favorites_title}    //div[text()='เลือกจากรายการโปรด']
 ${txt_favorites_search_no_data}    //div[contains(@class,'ant-radio-group')]//div[@class='ant-empty-description' and text()='No data']
+${txt_phone_sender}    //label[@for='create_parcel_form_sender_tel']/span
+${txt_name_sender}    //label[@for='create_parcel_form_sender_name']/span
+${txt_address_sender}    //label[@for='create_parcel_form_sender_address_info']/span
+${txt_postcode_sender}    //label[@for='create_parcel_form_sender_address_full']/span
+${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
+${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
+${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
+${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
+${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
 ${msg_error_name_sender}    //input[@id='create_parcel_form_sender_name']/../../../../div[2]/div/div

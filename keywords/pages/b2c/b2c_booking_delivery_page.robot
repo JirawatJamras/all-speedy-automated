@@ -1,54 +1,78 @@
 *** Keywords ***
+Verify Booking Page 
+    [Arguments]    ${txt_title}
+    Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
+    ${title}=    Get Text    ${txt_title_booking}    
+    Should Be Equal    ${title}    ${txt_title}
+
 Click Button To Add
     sleep    4s
     Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
     Click Element        ${b2c_btn_add}
 
 Verify Term & Condition 
-    [Arguments]    ${text}    ${text_accept}
-    Wait Until Element Is Visible    ${accept_termsservice_btn}    timeout=30s
-    Page Should Contain    ${text}
-    Verify Accept Terms of Service Button    ${text_accept}
+    [Arguments]    ${txt_term_and_condition}    ${text_accept}
+    Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
+    ${text}=    Get Text    ${txt_term_and_condition}
+    Should Be Equal    ${text}    ${text_accept}
 
-Verify Accept Terms of Service Button
-    [Arguments]    ${text_accept}
-    Wait Until Element Is Visible    ${accept_termsservice_btn}    timeout=30s
-    ${button_text}=    Get Text    ${accept_termsservice_btn}
-    Should Be Equal    ${button_text}    ${text_accept}
-
-Close Term & Condition Popup
-    Wait Until Element Is Visible    ${close_condition_popup}    timeout=10s
-    Click Element        ${close_condition_popup}
+# Close Term & Condition Popup
+#     Wait Until Element Is Visible    ${close_condition_popup}    timeout=10s
+#     Click Element        ${close_condition_popup}
 
 Click Accept Terms of Service
-    Wait Until Element Is Visible    ${accept_termsservice_btn}    timeout=30s
-    Click Element        ${accept_termsservice_btn}
+    Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
+    Click Element        ${btn_accept_terms_service}
 
 Verify Select Parcel Type
-    Wait Until Element Is Visible    ${parcel_type_dry_btn}    timeout=30s
-    Element Should Be Visible    ${parcel_type_dry_btn}
-    Element Should Be Visible    ${parcel_type_chill_btn}
+    Wait Until Element Is Visible    ${btn_parcel_type_dry}    timeout=30s
+    Element Should Be Visible    ${btn_parcel_type_dry}
+    Element Should Be Visible    ${btn_parcel_type_chill}
 
 Click General Parcel
     Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=30s
     Click Element    ${parcel_type_dry_btn}
     Wait Until Element Is Visible    ${close_noti_btn}   timeout=30s
 
+Click Temperature Controlled Parcel
+    Wait Until Element Is Visible    ${parcel_type_chill_btn}   timeout=30s
+    Click Element    ${parcel_type_chill_btn}
+    
 # Verify Close Pop-Up
 #     Wait Until Element Is Visible    ${close_noti_txt}    timeout=30s
 #     ${button_text}=    Get Text    ${close_noti_txt}
 #     Should Be Equal    ${button_text}    ${AllSpeedy_B2C_005_ID_1['closepopun_noti']}
 
-Click Temperature Controlled Parcel
-    Wait Until Element Is Visible    ${parcel_type_chill_btn}   timeout=30s
-    Click Element    ${parcel_type_chill_btn}
-
-Verify Create Parcel Page
+Verify Create Parcel Page Sender Step
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
-    ${title_text}=    Get Text    ${title_create_parcel_page_txt}
-    Should Be Equal    ${title_text}    ${B2C_AddBooking_003_001['text_title']}
-    ${step_name}=    Get Text    ${frist_step_name}
-    Should Be Equal    ${step_name}    ${B2C_AddBooking_003_001['text_frist_step']}
+    Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
+    ${title_text}=    Get Text    ${txt_title_create_parcel_page}
+    Should Be Equal    ${title_text}    ${E2E_Booking_002['text_title']}
+    ${text_phone}=    Get Text    ${txt_phone_sender}
+    Should Be Equal    ${text_phone}    ${E2E_Booking_002['text_phone_sender']}
+    ${text_name}=    Get Text    ${txt_name_sender}
+    Should Be Equal    ${text_name}    ${E2E_Booking_002['text_name_sender']}
+    ${text_address}=    Get Text    ${txt_address_sender}
+    Should Be Equal    ${text_address}    ${E2E_Booking_002['text_address_sender']}
+    ${text_postcode}=    Get Text    ${txt_postcode_sender}
+    Should Be Equal    ${text_postcode}    ${E2E_Booking_002['text_postcode_sender']}
+
+Verify Create Parcel Page Receiver Step
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
+    ${title_text}=    Get Text    ${txt_title_create_parcel_page}
+    Should Be Equal    ${title_text}    ${E2E_Booking_002['text_title']}
+    ${text_phone}=    Get Text    ${txt_phone_receiver}
+    Should Be Equal    ${text_phone}    ${E2E_Booking_002['text_phone_receiver']}
+    ${text_name}=    Get Text    ${txt_name_receiver}
+    Should Be Equal    ${text_name}    ${E2E_Booking_002['text_name_receiver']}
+    ${text_name}=    Get Text    ${txt_location_receiver}
+    Should Be Equal    ${text_name}    ${E2E_Booking_002['text_location_receiver']}
+    ${text_address}=    Get Text    ${txt_address_receiver}
+    Should Be Equal    ${text_address}    ${E2E_Booking_002['text_address_receiver']}
+    ${text_postcode}=    Get Text    ${txt_postcode_receiver}
+    Should Be Equal    ${text_postcode}    ${E2E_Booking_002['text_postcode_receiver']}
+
 
 Click Close Paecel Page
     Click Element    ${close_noti_btn}
@@ -145,13 +169,13 @@ Verify Not Choose From Favorites
 
 Input Phone Sender
     [Arguments]    ${input_phone_sender}
-    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=10s
-    Input Text    ${phone_sender_txtbox}    ${input_phone_sender}
+    Wait Until Element Is Visible    ${txtbox_phone_sender}    timeout=10s
+    Input Text    ${txtbox_phone_sender}    ${input_phone_sender}
 
 Verify Phone Sender Value
     [Arguments]    ${verify_phone_sender_value}
-    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=10s
-    ${phone_sender_txt}=    Get Value    ${phone_sender_txtbox}
+    Wait Until Element Is Visible    ${txtbox_phone_sender}    timeout=10s
+    ${phone_sender_txt}=    Get Value    ${txtbox_phone_sender}
     Should Be Equal    ${phone_sender_txt}    ${verify_phone_sender_value}  
 
 Verify Phone Sender Error Msg
@@ -162,13 +186,13 @@ Verify Phone Sender Error Msg
 
 Input Name Sender
     [Arguments]    ${input_name_sender}
-    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=10s
-    Input Text    ${name_sender_txtbox}    ${input_name_sender}
+    Wait Until Element Is Visible    ${txtbox_name_sender}    timeout=10s
+    Input Text    ${txtbox_name_sender}    ${input_name_sender}
 
 Verify Name Sender Value
     [Arguments]    ${verify_name_sender_value}
-    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=10s
-    ${name_sender_txt}=    Get Value    ${name_sender_txtbox}
+    Wait Until Element Is Visible    ${txtbox_name_sender}    timeout=10s
+    ${name_sender_txt}=    Get Value    ${txtbox_name_sender}
     Should Be Equal    ${name_sender_txt}    ${verify_name_sender_value} 
 
 Verify Name Sender Error Msg
@@ -179,12 +203,12 @@ Verify Name Sender Error Msg
 
 Input Address Sender
     [Arguments]    ${input_address_sender}
-    common.Input When Ready    ${address_sender_txtbox}    ${input_address_sender}
+    common.Input When Ready    ${txtbox_address_sender}    ${input_address_sender}
 
 Verify Address Sender Value
     [Arguments]    ${verify_address_sender_value}
-    Wait Until Element Is Visible    ${address_sender_txtbox}    timeout=10s
-    ${address_sender_txt}=    Get Value    ${address_sender_txtbox}
+    Wait Until Element Is Visible    ${txtbox_address_sender}    timeout=10s
+    ${address_sender_txt}=    Get Value    ${txtbox_address_sender}
     Should Be Equal    ${address_sender_txt}    ${verify_address_sender_value} 
 
 Verify Address Sender Error Msg
@@ -195,11 +219,11 @@ Verify Address Sender Error Msg
 
 Input Postcode Sender
     [Arguments]    ${input_postcode_sender}
-    common.Input When Ready    ${postcode_sender_txtbox}    ${input_postcode_sender}
+    common.Input When Ready    ${txtbox_postcode_sender}    ${input_postcode_sender}
 
 Verify Postcode Sender Value
-    [Arguments]    ${verify_postcode_sender_value}
-    ${postcode_sender_txt}=    Get Value    ${postcode_sender_txtbox}
+    [Arguments]    ${xpath}
+    ${value}=    Get Value    ${xpath}
     Should Be Equal    ${postcode_sender_txt}    ${verify_postcode_sender_value} 
 
 Verify Not Select Postcode Sender Value
@@ -207,12 +231,14 @@ Verify Not Select Postcode Sender Value
     Should Be Empty    ${postcode_sender_txt}
 
 Verify Select Postcode Sender Value
-    [Arguments]    ${verify_postcode_sender_value}
-    ${postcode_sender_txt}=    Get Text    ${postcode_sender_select_text_in_txtbox}
+    [Arguments]    ${name}
+    ${list}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
+    ${postcode_sender_txt}=    Get Text    ${txtbox_postcode_sender}
     Should Be Equal    ${postcode_sender_txt}    ${verify_postcode_sender_value} 
 
 Click Postcode Sender Lists
-    [Arguments]    ${list}
+    [Arguments]    ${name}
+    ${list}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
     Click Element    ${list}
 
 Verify Postcode Sender Error Msg
@@ -253,6 +279,41 @@ Input Receiver
     [Arguments]    ${xpath}    ${value}
     common.Input When Ready    ${xpath}    ${value}
 
+Input Phone Receiver
+    [Arguments]    ${input_phone_receiver}
+    common.Input When Ready    ${txtbox_phone_receiver}    ${input_phone_receiver}
+
+Input Name Receiver
+    [Arguments]    ${input_name_receiver}
+    common.Input When Ready    ${txtbox_name_receiver}    ${input_name_receiver}
+
+Input Address Receiver
+    [Arguments]    ${input_address_receiver}
+    common.Input When Ready    ${txtbox_address_receiver}    ${input_address_receiver}
+
+Input Postcode Receiver
+    [Arguments]    ${input_postcode_receiver}
+    common.Input When Ready    ${txtbox_postcode_receiver}    ${input_postcode_receiver}
+
 Click Postcode Receiver Lists
-    [Arguments]    ${list}
+    [Arguments]    ${name}
+    ${list}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
     Click Element    ${list}
+
+Verify Phone Receiver Value
+    [Arguments]    ${verify_phone_receiver_value}
+    Wait Until Element Is Visible    ${txtbox_phone_receiver}    timeout=10s
+    ${phone_receiver_txt}=    Get Value    ${txtbox_phone_receiver}
+    Should Be Equal    ${phone_receiver_txt}    ${verify_phone_receiver_value} 
+
+Verify Name Receiver Value
+    [Arguments]    ${verify_name_receiver_value}
+    Wait Until Element Is Visible    ${txtbox_name_receiver}    timeout=10s
+    ${name_receiver_txt}=    Get Value    ${txtbox_name_receiver}
+    Should Be Equal    ${name_receiver_txt}    ${verify_name_receiver_value} 
+
+Verify Address Receiver Value
+    [Arguments]    ${verify_address_receiver_value}
+    Wait Until Element Is Visible    ${txtbox_address_receiver}    timeout=10s
+    ${address_receiver_txt}=    Get Value    ${txtbox_address_receiver}
+    Should Be Equal    ${address_receiver_txt}    ${verify_address_receiver_value} 
