@@ -1,3 +1,5 @@
+
+
 B2C_AddBooking_003_001:
   term_and_con: ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่
   accept_term_and_con: ยอมรับเงื่อนไขการใช้บริการ
@@ -118,30 +120,3 @@ B2C_AddBooking_003_040:
   text_name_receiver: Test Test two
   text_address_receiver: address ที่อยู่ 2
   text_postcode_receiver: '22210'
-
-E2E_Booking_002:
-  text_title_booking: จองการจัดส่งพัสดุ สาขาหลัก
-  term_and_condition: ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 10 กันยายน 2024 (Version 2)
-  accept_term_and_con: ยอมรับเงื่อนไขการใช้บริการ
-  text_title: สร้างพัสดุ
-  text_phone_sender: เบอร์โทรศัพท์ *
-  text_name_sender: ชื่อ *
-  text_address_sender: รายละเอียดที่อยู่ *
-  text_postcode_sender: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *
-  text_frist_step: ข้อมูลผู้ส่งพัสดุ
-  sender_phone: 0911111111
-  sender_name: สมชาย สายเสมอ
-  sender_address: 48/698 
-  sender_postcode_5_digits: '10230'
-  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
-  text_phone_receiver: เบอร์โทรศัพท์ *
-  text_name_receiver: ชื่อ *
-  text_location_receiver: ข้อมูลสถานที่รับพัสดุ
-  text_address_receiver: รายละเอียดที่อยู่ *
-  text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *
-  receiver_phone: 0922222222
-  receiver_name: สมใจ ดีดีดี
-  receiver_address: 47 หมู่ 4
-  receiver_postcode_5_digits: '86110'
-  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  

@@ -34,8 +34,43 @@ Select Sub Menu Term Of Service
 Select Sub Menu Register Business Customer
     common.Click When Ready    ${b2c_mnu_register_business_customer_home_page}
 
+Verify My Profile Page
+    [Arguments]    ${company_profile}    ${sir_name}    ${company_name}    ${profile}    ${name}    ${phone}    ${email}    ${position}
+    Wait Until Element Is Visible    ${b2c_txt_company_profile}
+    ${actual_company_profile} =    Get Text    ${b2c_txt_company_profile}
+
+    ${b2c_txt_sir_name}=    Replace String    ${b2c_txt_sir_name}    {value}    ${sir_name}
+    ${actual_sir_name} =    Get Text      ${b2c_txt_sir_name}
+
+    ${b2c_txt_company_name}=    Replace String    ${b2c_txt_company_name}    {value}    ${company_name}
+    ${actual_company_name} =    Get Text     ${b2c_txt_company_name}  
+
+    ${actual_profile} =    Get Text     ${b2c_txt_profile}  
+
+    ${b2c_txt_name}=    Replace String    ${b2c_txt_name}    {value}    ${name}
+    ${actual_name} =    Get Text    ${b2c_txt_name}
+
+    ${b2c_txt_phone}=    Replace String    ${b2c_txt_phone}    {value}    ${phone}
+    ${actual_phone} =    Get Text    ${b2c_txt_phone}
+
+    ${b2c_txt_email}=    Replace String    ${b2c_txt_email}    {value}    ${email}
+    ${actual_email} =    Get Text    ${b2c_txt_email}
+
+    ${b2c_txt_position}=    Replace String    ${b2c_txt_position}    {value}    ${position}
+    ${actual_position} =    Get Text    ${b2c_txt_position}
+
+    Should Be Equal    ${company_profile}    ${actual_company_profile}
+    Should Be Equal    ${sir_name}    ${actual_sir_name}
+    Should Be Equal    ${company_name}    ${actual_company_name}    
+    Should Be Equal    ${profile}    ${actual_profile}
+    Should Be Equal    ${name}    ${actual_name}
+    Should Be Equal    ${phone}    ${actual_phone}
+    Should Be Equal    ${email}    ${actual_email}
+    Should Be Equal    ${position}    ${actual_position}
+
+
 Verify My Profile PageBusiness
-    [Arguments]    ${name}
+    [Arguments]    ${name} 
     Wait Until Element Is Visible    ${b2c_personal_information_txtbox}
     ${expected_emailtxtbox} =    Get value    ${b2c_personal_information_txtbox}
     Should Be Equal    ${name}    ${expected_emailtxtbox}

@@ -6,10 +6,9 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Test Cases ***
-
-E2E_Booking_S002
+Booking_S002
     [Documentation]    
-    [Tags]    E2E_Booking    UAT    Run
+    [Tags]    Booking    UAT    Run
     # Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -20,28 +19,28 @@ E2E_Booking_S002
     # กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
         # verify
-    b2c_booking_delivery_page.Verify Booking Page    ${E2E_Booking_002['text_title_booking']}
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Booking Page
+    b2c_booking_delivery_page.Verify Booking Page    ${Booking_S002['text_title_booking']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Booking Page
 
     # กดปุุ่่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
         # verify
-    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${E2E_Booking_002['term_and_condition']}
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Term & Condition
+    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking_S002['term_and_condition']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Term & Condition
 
 
     # กดปุุ่่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
         # verify   
     b2c_booking_delivery_page.Verify Select Parcel Type
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Select Parcel Type
+    common.Verify Capture Screenshot    Booking_S002    Verify Select Parcel Type
 
 
     # กดปุุ่่ม "พัสดุทั่วไป"
     b2c_booking_delivery_page.Click General Parcel
         # verify
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Create Parcel Page Sender Step
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Sender Step
 
     # "ขั้นตอนข้อมูลผู้ส่งพัสดุ
     # กรอกข้อมูล
@@ -49,11 +48,11 @@ E2E_Booking_S002
     # ชื่อ : สมชาย สายเสมอ
     # รายละเอียดที่อยู่ : 48/698 
     # แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ : ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
-    b2c_booking_delivery_page.Input Phone Sender    ${E2E_Booking_002['sender_phone']}
-    b2c_booking_delivery_page.Input Name Sender    ${E2E_Booking_002['sender_name']}    
-    b2c_booking_delivery_page.Input Address Sender    ${E2E_Booking_002['sender_address']}
-    b2c_booking_delivery_page.Input Postcode Sender    ${E2E_Booking_002['sender_postcode_5_digits']}
-    b2c_booking_delivery_page.Click Postcode Sender Lists    ${E2E_Booking_002['sender_postcode_full']}
+    b2c_booking_delivery_page.Input Phone Sender    ${Booking_S002['sender_phone']}
+    b2c_booking_delivery_page.Input Name Sender    ${Booking_S002['sender_name']}    
+    b2c_booking_delivery_page.Input Address Sender    ${Booking_S002['sender_address']}
+    b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S002['sender_postcode_5_digits']}
+    b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S002['sender_postcode_full']}
 
     # กด Check box ""ต้องการใช้ที่อยู่ผู้ส่งพัสดุเดียวกันทั้งบุ๊คกิ้ง"""
 
@@ -61,7 +60,7 @@ E2E_Booking_S002
     b2c_booking_delivery_page.Click Button  ${btn_next_to_receiver}
         # verify
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Receiver Step
 
     # "ขั้นตอนข้อมูลผู้รับพัสดุ
     # กรอกข้อมูล
@@ -70,12 +69,12 @@ E2E_Booking_S002
     # สถานที่รับพัสดุ : ส่งที่บ้าน
     # รายละเอียดที่อยู่ : 47 หมู่ 4
     # แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ : พ้อแดง หลังสวน ชุมพร 86110"
-    b2c_booking_delivery_page.Input Phone Receiver    ${E2E_Booking_002['receiver_phone']}
-    b2c_booking_delivery_page.Input Name Receiver    ${E2E_Booking_002['receiver_name']}
+    b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S002['receiver_phone']}
+    b2c_booking_delivery_page.Input Name Receiver    ${Booking_S002['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
-    b2c_booking_delivery_page.Input Address Receiver    ${E2E_Booking_002['receiver_address']}
-    b2c_booking_delivery_page.Input Postcode Receiver    ${E2E_Booking_002['receiver_postcode_5_digits']}
-    b2c_booking_delivery_page.Click Postcode Receiver Lists    ${E2E_Booking_002['receiver_postcode_full']}
+    b2c_booking_delivery_page.Input Address Receiver    ${Booking_S002['receiver_address']}
+    b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S002['receiver_postcode_5_digits']}
+    b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S002['receiver_postcode_full']}
 
     # กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Button  ${btn_save_draft}
@@ -95,7 +94,7 @@ E2E_Booking_S002
     Should Be Equal    ${receiver_address}    47 หมู่ 4
     ${receiver_postcode}=    Get Text    xpath=//*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div[1]/div[4]
     Should Be Equal    ${receiver_postcode}    พ้อแดง หลังสวน ชุมพร 86110
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel
 
     # กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     Wait Until Element Is Visible    xpath=//span[text()= 'ร่าง']/../../../../../../div[1]    timeout=10s
@@ -108,7 +107,7 @@ E2E_Booking_S002
     b2c_booking_delivery_page.Verify Address Sender Value    48/698
     ${postcode}=    Get Text    xpath=//input[@id='create_parcel_form_sender_address_full']/../../span[2]
     Should Be Equal    ${postcode}    ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Draft Paecel Sender
+    common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel Sender
 
     # กดปุ่ม "ถัดไป"
     Wait Until Element Is Visible    xpath=//div[@class='ant-space-item' and text()='ถัดไป']/../../../button    timeout=10s
@@ -119,7 +118,7 @@ E2E_Booking_S002
     b2c_booking_delivery_page.Verify Address Receiver Value    47 หมู่ 4
     ${postcode}=    Get Text    xpath=//input[@id='create_parcel_form_receiver_address_full']/../../span[2]
     Should Be Equal    ${postcode}    พ้อแดง หลังสวน ชุมพร 86110
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Draft Paecel Receiver
+    common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel Receiver
    
     # กดปุ่ม "ถัดไป"
     Wait Until Element Is Visible    xpath=//div[@class='ant-space-item' and text()='ถัดไป']/../../../button    timeout=10s
@@ -147,7 +146,7 @@ E2E_Booking_S002
     Should Be Equal    ${cod}    เก็บเงินปลายทาง
     ${remark}=    Get Text    xpath=//label[@title='หมายเหตุ']
     Should Be Equal    ${remark}    หมายเหตุ
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Paecel Detail
+    common.Verify Capture Screenshot    Booking_S002    Verify Paecel Detail
 
     # "ขั้นตอนรายละเอียดพัสดุ
     # กรอกข้อมูล
@@ -163,7 +162,7 @@ E2E_Booking_S002
     Should Be Equal    ${selected_coupon_and_code}    คูปองและโค้ดส่วนลดที่เลือก
     ${my_coupon_and_code}=    Get Text    xpath=//*[@id="create_parcel_form_promotion"]/div[2]/div/div[2]/div/div/span
     Should Be Equal    ${my_coupon_and_code}    คูปองและโค้ดส่วนลดของฉัน
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Promotion
+    common.Verify Capture Screenshot    Booking_S002    Verify Promotion
 
 
     # "ขั้นตอน Promotion
@@ -175,7 +174,7 @@ E2E_Booking_S002
 
     # กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
-    b2c_booking_delivery_page.Verify Booking Page    ${E2E_Booking_002['text_title_booking']}
+    b2c_booking_delivery_page.Verify Booking Page    ${Booking_S002['text_title_booking']}
 
     # กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     Wait Until Element Is Visible    xpath=//span[normalize-space()='${booking_id}']    timeout=10s
@@ -215,9 +214,9 @@ E2E_Booking_S002
 
     # กดปุ่ม "พิมพ์" ของ Web browser
 
-E2E_Booking_S003
+Booking_S003
     [Documentation]    
-    [Tags]    E2E_Booking    UAT
+    [Tags]    Booking    UAT
     # Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -228,26 +227,26 @@ E2E_Booking_S003
     # กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
         # verify
-    b2c_booking_delivery_page.Verify Booking Page    ${E2E_Booking_002['text_title_booking']}
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Booking Page
+    b2c_booking_delivery_page.Verify Booking Page    ${Booking_S002['text_title_booking']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Booking Page
 
     # กดปุุ่่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
         # verify
-    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${E2E_Booking_002['term_and_condition']}
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Term & Condition
+    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking_S002['term_and_condition']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Term & Condition
 
     # กดปุุ่่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
         # verify   
     b2c_booking_delivery_page.Verify Select Parcel Type
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Select Parcel Type
+    common.Verify Capture Screenshot    Booking_S002    Verify Select Parcel Type
 
     # กดปุุ่่ม "พัสดุทั่วไป"
     b2c_booking_delivery_page.Click General Parcel
         # verify
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
-    common.Verify Capture Screenshot    E2E_Booking_002    Verify Create Parcel Page Sender Step
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Sender Step
 
     # "ขั้นตอนข้อมูลผู้ส่งพัสดุ
     # กรอกข้อมูล
@@ -255,11 +254,11 @@ E2E_Booking_S003
     # ชื่อ : สมชาย สายเสมอ
     # รายละเอียดที่อยู่ : 48/698 
     # แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ : ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230"
-    b2c_booking_delivery_page.Input Phone Sender    ${E2E_Booking_002['sender_phone']}
-    b2c_booking_delivery_page.Input Name Sender    ${E2E_Booking_002['sender_name']}    
-    b2c_booking_delivery_page.Input Address Sender    ${E2E_Booking_002['sender_address']}
-    b2c_booking_delivery_page.Input Postcode Sender    ${E2E_Booking_002['sender_postcode_5_digits']}
-    b2c_booking_delivery_page.Click Postcode Sender Lists    ${E2E_Booking_002['sender_postcode_full']}
+    b2c_booking_delivery_page.Input Phone Sender    ${Booking_S002['sender_phone']}
+    b2c_booking_delivery_page.Input Name Sender    ${Booking_S002['sender_name']}    
+    b2c_booking_delivery_page.Input Address Sender    ${Booking_S002['sender_address']}
+    b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S002['sender_postcode_5_digits']}
+    b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S002['sender_postcode_full']}
 
     # กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Button  ${btn_save_draft}
@@ -319,3 +318,5 @@ E2E_Booking_S003
     # กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
 
     # กดปุ่ม "พิมพ์" ของ Web browser
+
+

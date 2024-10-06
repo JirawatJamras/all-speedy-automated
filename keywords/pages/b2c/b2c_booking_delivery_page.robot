@@ -25,9 +25,17 @@ Click Accept Terms of Service
     Click Element        ${btn_accept_terms_service}
 
 Verify Select Parcel Type
-    Wait Until Element Is Visible    ${btn_parcel_type_dry}    timeout=30s
+    Wait Until Element Is Enabled   ${btn_parcel_type_dry}    timeout=30s
     Element Should Be Visible    ${btn_parcel_type_dry}
     Element Should Be Visible    ${btn_parcel_type_chill}
+
+Select Parcel Type  
+    [Arguments]    ${parcel_type}
+    IF         '${parcel_type}' == 'พัสดุทั่วไป'
+        Click General Parcel
+    ELSE IF    '${parcel_type}' == 'พัสดุควบคุมอุณหภมิ'
+        Click Temperature Controlled Parcel
+    END
 
 Click General Parcel
     Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=30s
@@ -43,36 +51,86 @@ Click Temperature Controlled Parcel
 #     ${button_text}=    Get Text    ${close_noti_txt}
 #     Should Be Equal    ${button_text}    ${AllSpeedy_B2C_005_ID_1['closepopun_noti']}
 
+# Verify Create Parcel Page Sender Step
+#     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+#     Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
+#     ${title_text}=    Get Text    ${txt_title_create_parcel_page}
+#     Should Be Equal    ${title_text}    ${Booking_002['text_title']}
+#     ${text_phone}=    Get Text    ${txt_phone_sender}
+#     Should Be Equal    ${text_phone}    ${Booking_002['text_phone_sender']}
+#     ${text_name}=    Get Text    ${txt_name_sender}
+#     Should Be Equal    ${text_name}    ${Booking_002['text_name_sender']}
+#     ${text_address}=    Get Text    ${txt_address_sender}
+#     Should Be Equal    ${text_address}    ${Booking_002['text_address_sender']}
+#     ${text_postcode}=    Get Text    ${txt_postcode_sender}
+#     Should Be Equal    ${text_postcode}    ${Booking_002['text_postcode_sender']}
+
+
+# Verify Create Parcel Page Receiver Step
+#     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+#     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
+#     ${title_text}=    Get Text    ${txt_title_create_parcel_page}
+#     Should Be Equal    ${title_text}    ${Booking_002['text_title']}
+#     ${text_phone}=    Get Text    ${txt_phone_receiver}
+#     Should Be Equal    ${text_phone}    ${Booking_002['text_phone_receiver']}
+#     ${text_name}=    Get Text    ${txt_name_receiver}
+#     Should Be Equal    ${text_name}    ${Booking_002['text_name_receiver']}
+#     ${text_name}=    Get Text    ${txt_location_receiver}
+#     Should Be Equal    ${text_name}    ${Booking_002['text_location_receiver']}
+#     ${text_address}=    Get Text    ${txt_address_receiver}
+#     Should Be Equal    ${text_address}    ${Booking_002['text_address_receiver']}
+#     ${text_postcode}=    Get Text    ${txt_postcode_receiver}
+#     Should Be Equal    ${text_postcode}    ${Booking_002['text_postcode_receiver']}
+
+
 Verify Create Parcel Page Sender Step
+    [Arguments]    ${title}    ${parcel_sender_information}    ${phone_sender}    ${name_sender}    ${address_sender}    ${postcode_sender}  
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
-    ${title_text}=    Get Text    ${txt_title_create_parcel_page}
-    Should Be Equal    ${title_text}    ${E2E_Booking_002['text_title']}
-    ${text_phone}=    Get Text    ${txt_phone_sender}
-    Should Be Equal    ${text_phone}    ${E2E_Booking_002['text_phone_sender']}
-    ${text_name}=    Get Text    ${txt_name_sender}
-    Should Be Equal    ${text_name}    ${E2E_Booking_002['text_name_sender']}
-    ${text_address}=    Get Text    ${txt_address_sender}
-    Should Be Equal    ${text_address}    ${E2E_Booking_002['text_address_sender']}
-    ${text_postcode}=    Get Text    ${txt_postcode_sender}
-    Should Be Equal    ${text_postcode}    ${E2E_Booking_002['text_postcode_sender']}
+    ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
+    Should Be Equal    ${actual_text_title}    ${title}
+    ${actual_text_parcel_sender_information}=    Get Text    ${txt_parcel_sender_information}
+    Should Be Equal    ${actual_text_parcel_sender_information}    ${parcel_sender_information}
+    ${actual_text_phone}=    Get Text    ${txt_phone_sender}
+    Should Be Equal    ${actual_text_phone}    ${phone_sender}
+    ${actual_text_name_sender}=    Get Text    ${txt_name_sender}
+    Should Be Equal    ${actual_text_name_sender}    ${name_sender}
+    ${actual_text_address}=    Get Text    ${txt_address_sender}
+    Should Be Equal    ${actual_text_address}    ${address_sender}
+    ${actual_text_postcode}=    Get Text    ${txt_postcode_sender}
+    Should Be Equal    ${actual_text_postcode}    ${postcode_sender}
+
+Verify Draft Paecel Sender
+    [Arguments]   ${phone_sender}    ${name_sender}    ${address_sender}    ${full_postcode_sender}  
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
+    Should Be Equal    ${actual_text_phone_sender}    ${phone_sender}
+    ${actual_text_name_sender}=    Get Value    ${txtbox_name_sender}
+    Should Be Equal    ${actual_text_name_sender}    ${name_sender}
+    ${actual_text_address_sender}=    Get Value    ${txtbox_address_sender}
+    Should Be Equal    ${actual_text_address_sender}    ${address_sender}
+    ${actual_text_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
+    Should Be Equal    ${actual_text_full_postcode_sender}    ${full_postcode_sender}
+
 
 Verify Create Parcel Page Receiver Step
+    [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
-    ${title_text}=    Get Text    ${txt_title_create_parcel_page}
-    Should Be Equal    ${title_text}    ${E2E_Booking_002['text_title']}
-    ${text_phone}=    Get Text    ${txt_phone_receiver}
-    Should Be Equal    ${text_phone}    ${E2E_Booking_002['text_phone_receiver']}
-    ${text_name}=    Get Text    ${txt_name_receiver}
-    Should Be Equal    ${text_name}    ${E2E_Booking_002['text_name_receiver']}
-    ${text_name}=    Get Text    ${txt_location_receiver}
-    Should Be Equal    ${text_name}    ${E2E_Booking_002['text_location_receiver']}
-    ${text_address}=    Get Text    ${txt_address_receiver}
-    Should Be Equal    ${text_address}    ${E2E_Booking_002['text_address_receiver']}
-    ${text_postcode}=    Get Text    ${txt_postcode_receiver}
-    Should Be Equal    ${text_postcode}    ${E2E_Booking_002['text_postcode_receiver']}
-
+    ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
+    Should Be Equal    ${actual_text_title}    ${title}
+    ${actual_text_parcel_receiver_information}=    Get Text    ${txt_parcel_receiver_information}
+    Should Be Equal    ${actual_text_parcel_receiver_information}    ${parcel_receiver_information}
+    ${actual_text_phone}=    Get Text    ${txt_phone_receiver}
+    Should Be Equal    ${actual_text_phone}    ${phone_receiver}
+    ${actual_text_name}=    Get Text    ${txt_name_receiver}
+    Should Be Equal    ${actual_text_name}    ${name_receiver}
+    ${actual_text_name}=    Get Text    ${txt_location_receiver}
+    Should Be Equal    ${actual_text_name}    ${location_receiver}
+    ${actual_text_address}=    Get Text    ${txt_address_receiver}
+    Should Be Equal    ${actual_text_address}    ${address_receiver}
+    ${actual_text_postcode}=    Get Text    ${txt_postcode_receiver}
+    Should Be Equal    ${actual_text_postcode}    ${postcode_receiver}
 
 Click Close Paecel Page
     Click Element    ${close_noti_btn}
@@ -317,3 +375,10 @@ Verify Address Receiver Value
     Wait Until Element Is Visible    ${txtbox_address_receiver}    timeout=10s
     ${address_receiver_txt}=    Get Value    ${txtbox_address_receiver}
     Should Be Equal    ${address_receiver_txt}    ${verify_address_receiver_value} 
+
+
+Verify Full Post Code Value
+    [Arguments]    ${verify_full_post_code_receiver_value}
+    Wait Until Element Is Visible    ${txtbox_full_postcode_sender}    timeout=10s
+    ${full_post_code_receiver_txt}=    Get Text    ${txtbox_full_postcode_sender}
+    Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value} 

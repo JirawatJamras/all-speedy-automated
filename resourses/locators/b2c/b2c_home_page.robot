@@ -16,8 +16,14 @@ ${b2c_btn_edit_profile_info_home_page}    //span[text()='แก้ไข']/..
 
 ${b2c_txt_business_profile_title_home_page}    //h2[text()='โปรไฟล์บริษัท']
 
-${b2c_txt_profile}    //h2[text()='โปรไฟล์บริษัท']
-
+${b2c_txt_company_profile}    //h2[text()='โปรไฟล์บริษัท']
+${b2c_txt_sir_name}    //h1[@class='text-[30px] font-bold'][normalize-space()='{value}']
+${b2c_txt_company_name}    //h1[@class='text-[23px] font-bold'][normalize-space()='{value}']
+${b2c_txt_profile}     //div[@class='text-[25px] text-[#005390] font-semibold']
+${b2c_txt_name}     //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='{value}']
+${b2c_txt_phone}     //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='{value}']
+${b2c_txt_email}     //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='{value}']
+${b2c_txt_position}     //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='{value}']
 ${b2c_cbo_parcel_delivery_service}    //ul[contains(@class,'ant-dropdown-menu')]
 
 

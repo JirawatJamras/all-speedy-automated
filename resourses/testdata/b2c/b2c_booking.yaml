@@ -1,0 +1,45 @@
+Booking:
+  text_title_booking: จองการจัดส่งพัสดุ สาขาหลัก
+  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 7 ตุลาคม 2024 (Version 2)"
+  text_title: สร้างพัสดุ
+  text_parcel_sender_information: ข้อมูลผู้ส่งพัสดุ
+  text_phone_sender: เบอร์โทรศัพท์ *
+  text_name_sender: ชื่อ *
+  text_address_sender: รายละเอียดที่อยู่ *
+  text_postcode_sender: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *
+  text_parcel_receiver_information: ข้อมูลผู้รับพัสดุ
+  text_phone_receiver: เบอร์โทรศัพท์ *
+  text_name_receiver: ชื่อ *
+  text_location_receiver: ข้อมูลสถานที่รับพัสดุ
+  text_address_receiver: รายละเอียดที่อยู่ *
+  text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *
+  text_booking_list: รายการบุ๊คกิ้ง
+  text_draft_status:  ร่าง
+  text_sender:  'ผู้ส่ง :'
+  text_receiver:  'ผู้รับ :'
+
+Booking_S001:
+  company_profile: โปรไฟล์บริษัท
+  sir_name: คุณ ไอดีซี
+  company_name: Admin
+  profile: ข้อมูลส่วนตัว
+  name: ไอดีซี
+  phone: 0871000000
+  email: idc@gmail.com
+  position: หัวหน้าฝ่ายขาย
+
+Booking_S002:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  #img_heart_sender:  รูปหัวใจไม่มีสี 
+  img_sender_heart:  รูปหัวใจสีแดง
+  img_receiver_heart:  รูปหัวใจสีแดง

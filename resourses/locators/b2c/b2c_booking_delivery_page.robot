@@ -23,16 +23,20 @@ ${btn_add_sender_to_favorites}    //div[@id='create_parcel_form_sender_isDefault
 ${btn_next_to_receiver}    //div[@class='ant-space-item' and text()='ถัดไป']/../../../button
 ${btn_save_draft}    //span[contains(text(), 'บันทึกร่าง')]/../../button
 ${btn_add_receiver_to_favorites}    //div[@id='create_parcel_form_receiver_isDefault']//span[@class='anticon anticon-heart']
+${btn_next}    //div[@class='ant-space-item' and text()='ถัดไป']/../../../button
+
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']//div[text()='สร้างพัสดุ']
 ${txt_frist_step_name}    //form[@id='create_parcel_form']/div[2]/div[1]/div/div[3]/div
 ${txt_close_popup}     //h2[@id='swal2-title']
 ${txt_favorites_title}    //div[text()='เลือกจากรายการโปรด']
 ${txt_favorites_search_no_data}    //div[contains(@class,'ant-radio-group')]//div[@class='ant-empty-description' and text()='No data']
+${txt_parcel_sender_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'ข้อมูลผู้ส่งพัสดุ')]
 ${txt_phone_sender}    //label[@for='create_parcel_form_sender_tel']/span
 ${txt_name_sender}    //label[@for='create_parcel_form_sender_name']/span
 ${txt_address_sender}    //label[@for='create_parcel_form_sender_address_info']/span
 ${txt_postcode_sender}    //label[@for='create_parcel_form_sender_address_full']/span
+${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'ข้อมูลผู้รับพัสดุ')]
 ${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
 ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
 ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
@@ -51,13 +55,14 @@ ${txtbox_address_sender}    //textarea[@id='create_parcel_form_sender_address_in
 ${txtbox_postcode_sender}    //input[@id='create_parcel_form_sender_address_full']
 ${txtbox_postcode_sender_not_select_text}    //span[@class='ant-select-selection-placeholder']
 ${txtbox_postcode_sender_select_text_in}    //span[@class='ant-select-selection-item']
+${txtbox_full_postcode_sender}    //span[@class='ant-select-selection-item']
 ${txtbox_phone_receiver}    //input[@id='create_parcel_form_receiver_tel']
 ${txtbox_name_receiver}    //input[@id='create_parcel_form_receiver_name']
 ${txtbox_address_receiver}    //textarea[@id='create_parcel_form_receiver_address_info']
 ${txtbox_postcode_receiver}    //input[@id='create_parcel_form_receiver_address_full']
 ${txtbox_postcode_receiver_not_select_text}    //span[@class='ant-select-selection-placeholder']
 ${txtbox_postcode_receiver_select_text}    //span[@class='ant-select-selection-item']
-
+${txtbox_full_postcode_sender}    //span[@class='ant-select-selection-item']
 ${opt_default_favorites}    //span[contains(@class,'ant-typography bg-amber-500')]/../../../../..//input[@class='ant-radio-input']
 
 ${cbo_postcode_sender}    //div[@title='{value}']
