@@ -28,7 +28,7 @@ Booking_S001
 
 Booking_S002
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)    
-    [Tags]    Booking    UAT    Run
+    [Tags]    Booking    UAT
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -244,13 +244,7 @@ Booking_S002
 
 
 
-
-
-
-
-
-    
-Step 16
+Booking_S002_Step16
     [Tags]    Bix
     # Login
     common.Open URL    ${B2C_UAT_URL}
@@ -293,8 +287,7 @@ Step 16
 
 
 
-
-Booking_step17_18 
+Booking_S002_Step17-Step18 
     [Tags]    Bew
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -329,10 +322,9 @@ Booking_step17_18
 
 
 
-
 Booking_Test
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Booking    UAT    
+    [Tags]    Pee  
     # Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -349,5 +341,3 @@ Booking_Test
     ...    Booking DRY
     ...    1 รายการ
     ...    NaN บาท
-
-
