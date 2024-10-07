@@ -199,7 +199,14 @@ Booking_S002
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
-    b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking']}
+    #Expected
+    b2c_booking_delivery_page.Verify Booking Status
+    ...    ${booking_id}
+    ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    ...    ${Booking_S002['booking_name']}
+    ...    ${Booking_S002['booking_item']}
+    ...    ${Booking_S002['booking_price']}
+
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     Wait Until Element Is Visible    //span[normalize-space()='${booking_id}']    timeout=10s
@@ -332,22 +339,20 @@ Booking_step17_18
 
 Booking_Test
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Booking    UAT    
+    [Tags]    Booking    UAT
     # Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
-
-    Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410001215
-    
+    b2c_home_page.Click Book Parcel Delivery
     b2c_booking_delivery_page.Verify Booking Status
     ...    ${Booking['text_title_booking']}
-    ...    B2410001215    # ${booking_id}
-    ...    เลือกต้นทางจัดส่ง
-    ...    Booking DRY
-    ...    1 รายการ
-    ...    NaN บาท
+    ...    ${booking_id}
+    ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    ...    ${Booking_S002['booking_name']}
+    ...    ${Booking_S002['booking_item']}
+    ...    ${Booking_S002['booking_price']}
 
 

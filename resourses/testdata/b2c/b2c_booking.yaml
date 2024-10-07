@@ -59,4 +59,5 @@ Booking_S002:
   cod_fee_value: '0.00'
   total_price_amount: 0
   total_price_value: '0.00'
-
+  booking_item: 1 รายการ
+  booking_price:  NaN บาท
