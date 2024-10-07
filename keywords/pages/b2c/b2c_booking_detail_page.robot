@@ -84,6 +84,14 @@ Get Booking Time
     ${booking_time}=    Get Text    ${txt_booking_time}
     RETURN    ${booking_time}
 
+Get Booking Name
+    ${booking_name}=    Get Text    ${txt_booking_name}
+    RETURN    ${booking_name}
+
+Get Parcel ID
+    ${parcel_id}=    Get Text    ${txt_parcel_id}
+    RETURN    ${parcel_id}
+
 Click Booking With Status Select Shipping Origin
     [Arguments]    ${booking_id}
     Wait Until Element Is Visible    //span[normalize-space()='${booking_id}']    timeout=${DEFAULT_TIMEOUT}

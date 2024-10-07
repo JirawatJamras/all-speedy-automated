@@ -118,7 +118,7 @@ Booking_S002
     ${booking_id}    Get Booking ID
     ${booking_time}    Get Booking Time
     ${booking_name}    Get Booking Name
-    ${parcel_id}    Get Paecel ID
+    ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Click Button    ${b2c_crd_list_of_parcels}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
@@ -345,9 +345,7 @@ Booking_Test
     ...    ${Booking['text_title_booking']}
     ...    B2410001215    # ${booking_id}
     ...    เลือกต้นทางจัดส่ง
-    ...    B2410001215
     ...    Booking DRY
-    ...    B2410001215
     ...    1 รายการ
     ...    NaN บาท
 
