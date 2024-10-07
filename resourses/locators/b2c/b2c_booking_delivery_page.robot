@@ -42,6 +42,7 @@ ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
 ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
 ${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
+${txt_booking_id}    xpath=//strong[contains(text(), 'บุ๊คกิ้ง ID :')]/../../../div[2]
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
 ${msg_error_name_sender}    //input[@id='create_parcel_form_sender_name']/../../../../div[2]/div/div
