@@ -3,6 +3,8 @@ Booking:
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 7 ตุลาคม 2024 (Version 2)"
   text_title: สร้างพัสดุ
   text_title_booking_list: รายการบุ๊คกิ้ง 
+  text_title_parcel_list: รายการพัสดุ
+  text_title_booking_summary: สรุปรายการบุ๊คกิ้ง
   text_parcel_sender_information: ข้อมูลผู้ส่งพัสดุ
   text_phone_sender: เบอร์โทรศัพท์ *
   text_name_sender: ชื่อ *
@@ -19,6 +21,7 @@ Booking:
   text_sender:  'ผู้ส่ง :'
   text_receiver:  'ผู้รับ :'
   text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
+  text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
 
 Booking_S001:
   company_profile: โปรไฟล์บริษัท
@@ -48,4 +51,12 @@ Booking_S002:
   booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
+  discount_amount: '0'
+  discount_value: '0.00'
+  insurance_fee_amount: '0'
+  insurance_fee_value: '0.00'
+  cod_fee_amount: '0'
+  cod_fee_value: '0.00'
+  total_price_amount: 0
+  total_price_value: '0.00'
 

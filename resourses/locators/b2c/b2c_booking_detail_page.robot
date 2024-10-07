@@ -14,6 +14,13 @@ ${b2c_img_white_heart_front_receiver}    //body/div[@id='__next']/div[@class='an
 ${b2c_txt_receiver}    //div[contains(@class, 'ant-list-item')]//div[contains(@class, 'ant-card-body')]//strong[contains(text(),'ผู้รับ :')]
 ${b2c_txt_receiver_name}   //div[contains(@class, 'ant-list-item')]//div[contains(@class, 'ant-card-body')]//span[contains(text(),'{value}')]
 ${b2c_txt_receiver_phone}   //div[contains(@class, 'ant-list-item')]//div[contains(@class, 'ant-card-body')]/div/div[@class='ant-row css-10o2jwh' and contains(normalize-space(.), '{value}')]
+${b2c_txt_parcel_status_booking_detail_page}    //*[@class='hidden sm:inline']//span[text()='{value}']
+${b2c_txt_booking_id_booking_detail_page}    //strong[text()='บุ๊คกิ้ง ID :']/../../..//div[2]//span
+${b2c_txt_booking_name_booking_detail_page}    //strong[text()='ชื่อบุ๊คกิ้ง :']/../../..//div[4]//span
+${b2c_txt_booking_date_and_time_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='วันเวลาทำรายการ :']/../../..//div[2]//span
+${b2c_txt_shipping_origin_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='ต้นทางจัดส่ง :']/../../..//div[2]//span
+${b2c_txt_parcel_list_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='รายการพัสดุ']
+${b2_txt_booking_summary_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='สรุปรายการบุ๊คกิ้ง']
 
 #${b2c_ico_trash_red}   //body/div[@id='__next']/div[@class='ant-layout css-1hobygo']/div[@class='ant-layout css-1hobygo']/main[@class='ant-layout-content component_layoutContent__n_j3m css-1hobygo']/div[@class='hidden sm:inline']/div[@class='ant-card ant-card-bordered css-1hobygo']/div[@class='ant-card-body']/div[@class='ant-row css-1hobygo']/div[@class='ant-col w-[66%] css-1hobygo']/div[@class='ant-space css-1hobygo ant-space-vertical ant-space-gap-row-small ant-space-gap-col-small']/div[@class='ant-space-item']/div[@class='ant-card ant-card-bordered w-full max-w-[1200px] css-1hobygo']/div[@class='ant-card-body']/div[@class='ant-checkbox-group w-full flex justify-center css-1hobygo']/div[@class='ant-list ant-list-split ant-list-grid w-full css-1hobygo']/div[@class='ant-spin-nested-loading css-1hobygo']/div[@class='ant-spin-container']/div[@class='ant-row css-1hobygo']/div/div[@class='ant-col css-1hobygo']/div[@class='ant-list-item']/div[@class='ant-card ant-card-bordered ant-card-hoverable min-w-[400px] css-10o2jwh']/div[@class='ant-card-body']/div[2]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
