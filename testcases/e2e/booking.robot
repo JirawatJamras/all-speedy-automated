@@ -255,5 +255,34 @@ Step 16
     ...    07-10-2567 11:22
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
 
+Booking_step17_18 
+    [Tags]    Bew
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+
+    Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410001215
+    ## กดปุ่ม 'แก้ไขรายการ booking'
+    b2c_booking_detail_page.Click Edit Booking List
+    ## Verify
+    b2c_booking_detail_page.Verify Edit Booking List Popup    
+    ...    ${Booking_S002['parcel_type']}
+    ...    ${Booking_S002['booking_name']}
+    ...    ${Booking['text_shipping_origin_aria']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Edit Booking List Popup  
+
+    ## กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง
+    ## 1. Tap เลือกร้าน 7-11 ต้นทาง
+    b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S002['shipping_origin']}
+    ## 2. ค้นหาร้าน 15888
+    b2c_booking_detail_page.Search Shipping Store    ${Booking_S002['store_code']}
+    ## 3. กดปุ่ม "เลือกร้าน"
+    b2c_booking_detail_page.Click Select Store On Map
+    ## 4. กดปุ่ม "บันทึก"
+    b2c_booking_detail_page.Click Save Shipping Origin Aria
+
+    ## verify
 
 

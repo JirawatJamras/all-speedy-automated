@@ -18,6 +18,7 @@ Booking:
   text_draft_status:  ร่าง
   text_sender:  'ผู้ส่ง :'
   text_receiver:  'ผู้รับ :'
+  text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
 
 Booking_S001:
   company_profile: โปรไฟล์บริษัท
@@ -44,3 +45,7 @@ Booking_S002:
   #img_heart_sender:  รูปหัวใจไม่มีสี 
   img_sender_heart:  รูปหัวใจสีแดง
   img_receiver_heart:  รูปหัวใจสีแดง
+  booking_name:  Booking DRY
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+
