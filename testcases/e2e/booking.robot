@@ -300,7 +300,6 @@ Step 16
 
 
 
-
 Booking_step17_18 
     [Tags]    Bew
     common.Open URL    ${B2C_UAT_URL}
@@ -310,7 +309,7 @@ Booking_step17_18
     b2c_login_page.Click Log On Button
 
     Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410001215
-    ## กดปุ่ม 'แก้ไขรายการ booking'
+    Log    กดปุ่ม 'แก้ไขรายการ booking'
     b2c_booking_detail_page.Click Edit Booking List
     ## Verify
     b2c_booking_detail_page.Verify Edit Booking List Popup    
@@ -320,17 +319,50 @@ Booking_step17_18
     common.Verify Capture Screenshot    Booking_S002    Verify Edit Booking List Popup  
 
     ## กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง
-    ## 1. Tap เลือกร้าน 7-11 ต้นทาง
+    Log    Tap เลือกร้าน 7-11 ต้นทาง
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S002['shipping_origin']}
-    ## 2. ค้นหาร้าน 15888
+    Log    ค้นหาร้าน 15888
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S002['store_code']}
-    ## 3. กดปุ่ม "เลือกร้าน"
+    Log    กดปุ่ม "เลือกร้าน"
     b2c_booking_detail_page.Click Select Store On Map
-    ## 4. กดปุ่ม "บันทึก"
+    Log    กดปุ่ม "บันทึก"
     b2c_booking_detail_page.Click Save Shipping Origin Aria
 
     ## verify
+    ## รอจากของข้อ 14 16
 
+Booking_step19_20
+    [Tags]    Bew
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+
+    Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410001204
+
+    Log    กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    b2c_booking_detail_page.Click Print Parcel Label
+
+    ## Verify
+    b2c_booking_detail_page.Verify Parcel Label
+    ...    ${Booking.text_paper_size['size_a4']}
+    ...    ${Booking.text_paper_size['size_a5']}
+    ...    ${Booking.text_paper_size['size_8cm']}
+    ...    ${Booking_S002['receiver_postcode_5_digits']}
+    ...    ${Booking_S002['parcel_size']}
+    ...    ${Booking_S002['sender_name']}
+    ...    ${Booking_S002['sender_phone']}
+    ...    ${Booking_S002['sender_address']}
+    ...    ${Booking_S002['sender_postcode_full']}
+    ...    ${Booking_S002['receiver_name']}
+    ...    ${Booking_S002['receiver_phone']}
+    ...    ${Booking_S002['receiver_address']}
+    ...    ${Booking_S002['receiver_postcode_full']}
+    ...    ${Booking_S002['parcel_cod']}
+    ...    ${Booking_S002['parcel_insure']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Parcel Label
+    b2c_booking_detail_page.Click Print Label On Popup
 
 
 

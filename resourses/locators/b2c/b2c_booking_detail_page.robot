@@ -26,14 +26,31 @@ ${b2_txt_booking_summary_booking_detail_page}    //*[@class='hidden sm:inline']/
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 ${b2c_btn_print_the_parcel_payment_slip_disabled}   //button[@type='button' and contains(@class, 'ant-btn-primary') and contains(@class, 'bg-blue-800') and @disabled and span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']]
 
+
+
 ${b2c_img_loading}    //div[@role='dialog']//img
+
 ${b2c_btn_edit_booking_list}    //strong[text()='รายการบุ๊คกิ้ง']/../../..//button
 ${b2c_btn_select_store}    //button//b[text()='เลือกร้าน']
 ${b2c_btn_save_shipping_origin}    //button//span[text()='บันทึก']
+${b2c_btn_print_parcel_label}    //button//span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
+${b2c_btn_print_parcel_label_popup}    //div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../..//button//span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
+
 ${b2c_txt_edit_booking_list}    //div[@class='ant-modal-content']//div[text()='แก้ไขรายการบุ๊คกิ้ง']
 ${b2c_txt_parcel_type}    //form[@id='detail_form']//strong[contains(text(),'ประเภทพัสดุ')]/../../..
 ${b2c_txt_booking_name}    //form[@id='detail_form']//strong[contains(text(),'ชื่อบุ๊คกิ้ง')]/../../..//input
 ${b2c_txt_shipping_origin_aria}    //form[@id='detail_form']//strong[contains(text(),'เลือกพื้นที่ต้นทางการจัดส่ง')]
 ${b2c_txt_search_result_store}    //div[@aria-selected]//div[contains(text(),'{value}')]
+${b2c_txt_title_print_label}    //div[@class='ant-modal-content']//div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
+${b2c_txt_paper_size}    //span[text()='ขนาดกระดาษ']
+${b2c_txt_list_paper_size}    //div[contains(text(),'กระดาษ')]/../../..
+${b2c_txt_parcel_label_detail}    //div[contains(@id,'print')]
+
+${b2c_img_logo_speed_d}    //div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../../..//img
+${b2c_img_qr_code}    //div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../../..//canvas
+
+${b2c_cbo_paper_size}    //span[text()='ขนาดกระดาษ']/../..//span[@class='ant-select-selection-item']
+
 ${b2c_txtbox_search_store}    //span[text()='ค้นหาร้าน 7-eleven']/..//input
+
 ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
