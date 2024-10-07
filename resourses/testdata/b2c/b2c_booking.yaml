@@ -22,6 +22,10 @@ Booking:
   text_receiver:  'ผู้รับ :'
   text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
   text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
+  text_paper_size:
+    size_a4:  กระดาษ A4
+    size_a5:  กระดาษ A5
+    size_8cm:  กระดาษ หน้ากว้าง 8 ซม.
 
 Booking_S001:
   company_profile: โปรไฟล์บริษัท
@@ -59,4 +63,9 @@ Booking_S002:
   cod_fee_value: '0.00'
   total_price_amount: 0
   total_price_value: '0.00'
+  booking_item: 1 รายการ
+  booking_price:  NaN บาท
+  parcel_size:  ซอง A4
+  parcel_cod:  Non COD
+  parcel_insure:  ไม่มีการซื้อประกัน
 

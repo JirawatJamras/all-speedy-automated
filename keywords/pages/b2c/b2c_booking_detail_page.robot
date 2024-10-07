@@ -157,3 +157,29 @@ Verify Booking Detail Page
     ${acrual_txt_price_detail} =  Replace String    ${acrual_txt_price_detail}    \n    ${SPACE}
     Should Be Equal As Strings    ${acrual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
     common.Verify Capture Screenshot    B2C_AddBooking_002_001    Verify Booking Summary
+    
+Click Print Parcel Label
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    Click When Ready    ${b2c_btn_print_parcel_label}
+
+Verify Parcel Label
+    [Arguments]    ${size_a4}    ${size_a5}    ${size_8cm}    ${receiver_postcode}    ${parcel_size}    ${sender_name}    ${sender_phone}
+    ...    ${sender_address}    ${sender_postcode_full}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
+    ...    ${parcel_cod}    ${parcel_insure}
+    ${parcel_id}    Get Parcel ID
+    Wait Until Element Is Visible    ${b2c_txt_title_print_label}
+    Wait Until Element Is Visible    ${b2c_txt_paper_size}
+    Click When Ready    ${b2c_cbo_paper_size}
+    ${actual_list_paper_size}    Get Text    ${b2c_txt_list_paper_size}
+    ${actual_list_paper_size} =  Replace String    ${actual_list_paper_size}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_list_paper_size}    ${size_a4} ${size_a5} ${size_8cm}
+
+    Wait Until Element Is Visible    ${b2c_img_logo_speed_d}
+    Wait Until Element Is Visible    ${b2c_img_qr_code}
+    ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
+    ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_list_parcel_label_detail}    
+    ...    รหัสไปรษณีย์ปลายทาง ${receiver_postcode} A4 ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+
+Click Print Label On Popup
+    Click When Ready    ${b2c_btn_print_parcel_label_popup}

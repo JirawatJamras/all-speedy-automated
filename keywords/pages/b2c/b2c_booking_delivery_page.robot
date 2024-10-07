@@ -396,29 +396,33 @@ Verify Full Post Code Value
     Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value} 
 
 Verify Booking Status
-    [Arguments]    ${title_booking}    ${id}    ${status_booking}    ${id_booking}    ${name_booking}    ${date_booking}    ${item_booking}    ${price_booking}
-    Verify Booking Page    ${title_booking}
+    [Arguments]    ${id}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}
     
-    ${list}=    Replace String    xpath=//span[text()='{value}']    {value}    ${name}
-    Wait Until Element Is Visible    xpath=//span[text()='B2410001215']    timeout=30s
+    ${booking_id}=    Replace String    ${txt_booking_id_in_list}    {value}    ${id}
+    Wait Until Element Is Visible    ${booking_id}    timeout=30s
 
-    ${txt_status}=    Get Text    xpath=//span[text()='B2410001215']/../span[2]
+    ${booking_status}=    Replace String    ${txt_booking_status_in_list}    {value}    ${id}
+    ${txt_status}=    Get Text    ${booking_status}
     Should Be Equal    ${txt_status}    ${status_booking}
 
-    ${txt_id}=    Get Text    xpath=//span[text()='B2410001215']
+    ${txt_id}=    Get Text    ${booking_id}
     ${length}=    Get Length    ${txt_id}
     Should Be Equal As Integers    ${length}    11
     Should Start With    ${txt_id}    B
 
-    ${txt_name}=    Get Text    xpath=//span[text()='B2410001215']/../../../../div[2]/div/div/span
+    ${booking_name}=    Replace String    ${txt_booking_name_in_list}    {value}    ${id}
+    ${txt_name}=    Get Text    ${booking_name}
     Should Be Equal    ${txt_name}    ${name_booking}
 
-    ${txt_date_convert}    Verify Date Format   //span[text()='B2410001215']/../../../../div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/span
+    ${booking_date}=    Replace String    ${txt_booking_date_in_list}    {value}    ${id}
+    Verify Date Format   ${booking_date}
 
-    ${txt_item}=    Get Text    xpath=//span[text()='B2410001215']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[2]
+    ${booking_item}=    Replace String    ${txt_booking_item_in_list}    {value}    ${id}
+    ${txt_item}=    Get Text    ${booking_item} 
     Should Be Equal    ${txt_item}    ${item_booking}
 
-    ${txt_price}=    Get Text    xpath=//span[text()='B2410001215']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[4]
+    ${booking_price}=    Replace String    ${txt_booking_price_in_list}    {value}    ${id}
+    ${txt_price}=    Get Text    ${booking_price}
     Should Be Equal    ${txt_price}    ${price_booking}
 
 Verify Date Format 

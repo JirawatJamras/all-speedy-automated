@@ -42,10 +42,16 @@ ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
 ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
 ${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
-${txt_booking_id}    xpath=//strong[contains(text(), 'บุ๊คกิ้ง ID :')]/../../../div[2]
-${txt_booking_time}    xpath=//strong[contains(text(), 'วันเวลาทำรายการ :')]/../../../div[2]
-${txt_booking_name}    xpath=//strong[contains(text(), 'ชื่อบุ๊คกิ้ง :')]/../../../div[4]
-${txt_parcel_id}    xpath=//div[@class='ant-list-item']//div[@class='ant-card-head']//div[@class='ant-card-head-wrapper']//strong
+${txt_booking_id}    //strong[contains(text(), 'บุ๊คกิ้ง ID :')]/../../../div[2]
+${txt_booking_time}    //strong[contains(text(), 'วันเวลาทำรายการ :')]/../../../div[2]
+${txt_booking_name}    //strong[contains(text(), 'ชื่อบุ๊คกิ้ง :')]/../../../div[4]
+${txt_parcel_id}    //div[@class='ant-list-item']//div[@class='ant-card-head']//div[@class='ant-card-head-wrapper']//strong
+${txt_booking_id_in_list}    //span[text()='{value}']
+${txt_booking_status_in_list}    //span[text()='{value}']/../span[2]
+${txt_booking_name_in_list}    //span[text()='{value}']/../../../../div[2]/div/div/span
+${txt_booking_date_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/span
+${txt_booking_item_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[2]
+${txt_booking_price_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[4]
 
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
