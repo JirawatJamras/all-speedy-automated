@@ -247,6 +247,7 @@ Booking_S002
 
     # กดปุ่ม "พิมพ์" ของ Web browser
 
+    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
 
 
 

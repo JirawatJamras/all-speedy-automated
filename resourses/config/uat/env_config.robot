@@ -13,6 +13,7 @@ ${PMS_UAT_URL}                          https://pms-uat.allspeedy.co.th/
 
 ####################### B2C UAT DATA #######################
 ${B2C_UAT_URL}                          https://www-uat.allspeedy.co.th/auth/login
+${CPS_API_UAT_URL}                      https://cps-api-uat.allspeedy.co.th/v1
 ${C2C_UAT_URL}                          https://www-uat.allspeedy.co.th/auth/login
 
 ####################### SPS UAT DATA #######################

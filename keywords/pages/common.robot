@@ -66,7 +66,24 @@ Split String And Select
     ${value} =    Split String    ${value}    ${separator}
     ${value} =    Set Variable    ${value}[${index}]
     RETURN    ${value}
-    
+
+Get Access Token
+    Create Session    auth_session    ${CPS_API_UAT_URL}
+    &{auth_payload}    Create Dictionary    email=${b2c_login_user_01['username']}    password=${b2c_login_user_01['password']}
+    ${response}    POST On Session    auth_session    /users/b2c/login    json=${auth_payload}
+    Should Be Equal As Numbers    ${response.status_code}    200    Failed to authenticate and obtain token
+    ${access_token}    Get From Dictionary    ${response.json()}    token
+    RETURN    ${access_token}
+
+Delete API Booking By Booking ID
+    [Arguments]    ${booking_id}
+    ${access_token}=    Get Access Token
+    Create Session    allspeedy_api    ${CPS_API_UAT_URL}
+    &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
+    ${response}    DELETE On Session    allspeedy_api    /bookings/${booking_id}    headers=${headers}
+    Log To Console    ${response.status_code}
+    Log To Console    ${response.content}
+
 ################### Mobile - Android ###################
 Application Teardown
     # Run keyword If Test Failed   Capture page screenshot

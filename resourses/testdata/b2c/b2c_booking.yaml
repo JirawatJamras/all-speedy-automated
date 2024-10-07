@@ -64,7 +64,7 @@ Booking_S002:
   total_price_amount: 0
   total_price_value: '0.00'
   booking_item: 1 รายการ
-  booking_price:  NaN บาท
+  booking_price:  0.00บาท
   parcel_size:  ซอง A4
   parcel_cod:  Non COD
   parcel_insure:  ไม่มีการซื้อประกัน
