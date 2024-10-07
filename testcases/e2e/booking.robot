@@ -236,6 +236,13 @@ Booking_S002
 
 Step 16
     [Tags]    Bix
+       # Login
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+    Go to    https://www-uat.allspeedy.co.th/booking
 ###################################################################
 
     # Step No. 16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -247,3 +254,6 @@ Step 16
     ...    Booking DRY
     ...    07-10-2567 11:22
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
+
+
+
