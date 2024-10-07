@@ -106,7 +106,8 @@ Booking_S002
     ...    ${Booking_S002['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel
     #Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
-    ${booking_id}=    Get Text    ${txt_booking_id}
+    ${booking_id}    Get Booking ID
+    ${booking_time}    Get Booking Time
     b2c_booking_detail_page.Click Button    ${b2c_crd_list_of_parcels}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
@@ -125,13 +126,14 @@ Booking_S002
     #Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Button    ${btn_next}  
     #Expected
-    b2c_booking_delivery_page.Verify Phone Receiver Value    ${Booking_S002['receiver_phone']}
-    b2c_booking_delivery_page.Verify Name Receiver Value    ${Booking_S002['receiver_name']}
-    b2c_booking_delivery_page.Verify Address Receiver Value    ${Booking_S002['receiver_address']}
-    b2c_booking_delivery_page.Verify Full Post Code Value    ${Booking_S002['receiver_postcode_full']}
+    b2c_booking_delivery_page.Verify Draft Paecel Receiver
+    ...    ${Booking_S002['receiver_phone']}
+    ...    ${Booking_S002['receiver_name']}
+    ...    ${Booking_S002['receiver_address']}
+    ...    ${Booking_S002['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel Receiver
    
-    # กดปุ่ม "ถัดไป"
+    #Step No.11 กดปุ่ม "ถัดไป"
     Wait Until Element Is Visible    xpath=//div[@class='ant-space-item' and text()='ถัดไป']/../../../button    timeout=10s
     Click Element   xpath=//div[@class='ant-space-item' and text()='ถัดไป']/../../../button
     #Expected
@@ -159,13 +161,13 @@ Booking_S002
     Should Be Equal    ${remark}    หมายเหตุ
     common.Verify Capture Screenshot    Booking_S002    Verify Paecel Detail
 
-    # "ขั้นตอนรายละเอียดพัสดุ
+    #Step No.12 ขั้นตอนรายละเอียดพัสดุ
     # กรอกข้อมูล
     # เลือกขนาดพัสดุ : ซอง A4"
     Wait Until Element Is Visible    xpath=//strong[text()= 'A4']/../../../div[@class='ant-card-body']/../../../../../div[1]    timeout=10s
     Click Element   xpath=//strong[text()= 'A4']/../../../div[@class='ant-card-body']/../../../../../div[1]
 
-    # กดปุ่ม "ถัดไป"
+    #Step No.13 กดปุ่ม "ถัดไป"
     Wait Until Element Is Visible    xpath=//div[@class='ant-space-item' and text()='ถัดไป']/../../../button    timeout=10s
     Click Element   xpath=//div[@class='ant-space-item' and text()='ถัดไป']/../../../button
     #Expected
@@ -176,35 +178,37 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Promotion
 
 
-    # "ขั้นตอน Promotion
+    # Step No.14 ขั้นตอน Promotion
     # - ไม่เลือก Promotion
     
-    # กดปุ่ม ""จองเลขพัสดุ"""
+    # กดปุ่ม "จองเลขพัสดุ"
     Wait Until Element Is Visible    xpath=//span[contains(text(),'จองเลขพัสดุ')]    timeout=10s
     Click Element   xpath=//span[contains(text(),'จองเลขพัสดุ')]
+    #Expected
 
-    # กดเมนู "จองการจัดส่งพัสดุ"
+
+    #Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking']}
 
-    # กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
+    #Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     Wait Until Element Is Visible    xpath=//span[normalize-space()='${booking_id}']    timeout=10s
     Click Element   xpath=//span[normalize-space()='${booking_id}']
     Wait Until Element Is Visible    xpath=(//strong[contains(text(),'ผู้ส่ง :')])[1]    timeout=10s
     Click Element   xpath=(//strong[contains(text(),'ผู้ส่ง :')])[1]
 
-    # กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
+    #Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง" ** แก้ไข Step ผิด
     Wait Until Element Is Visible    xpath=//span[contains(text(),'แก้ไข')]    timeout=10s
     Click Element   xpath=//span[contains(text(),'แก้ไข')]
 
     Wait Until Element Is Visible    xpath=(//div[contains(text(),'ถัดไป')])[1]    timeout=10s
     Click Element   xpath=(//div[contains(text(),'ถัดไป')])[1]
 
-    # "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง
+    #Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง  ** แก้ไข Step
     # 1. Tap เลือกร้าน 7-11 ต้นทาง
     # 2. ค้นหาร้าน 15888
-    # 3. กดปุ่ม ""เลือกร้าน""
-    # 4. กดปุ่ม ""บันทึก"""
+    # 3. กดปุ่ม "เลือกร้าน"
+    # 4. กดปุ่ม "บันทึก"
     Wait Until Element Is Visible    xpath=(//div[contains(@data-node-key,'store')])[1]
     Click Element   xpath=(//div[contains(@data-node-key,'store')])[1]
     common.Input When Ready    xpath=//*[@id="create_parcel_form_receiver_placeType-panel-store"]/div[2]/div[1]/div/div[2]/div/div/span/input    15888
@@ -215,11 +219,11 @@ Booking_S002
     Wait Until Element Is Visible    xpath=//span[contains(text(),'บันทึกแก้ไข')]
     Click Element   xpath=//span[contains(text(),'บันทึกแก้ไข')]
 
-    # กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    #Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     Wait Until Element Is Visible    xpath=//*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[1]/button    timeout=10s
     Click Element   xpath=//*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[1]/button
 
-    # กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    #Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     Wait Until Element Is Visible    xpath=/html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button    timeout=10s
     Click Element   xpath=/html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button
 
@@ -232,14 +236,7 @@ Booking_S002
 
 Step 16
     [Tags]    Bix
-    # Login
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-    Go to    https://www-uat.allspeedy.co.th/booking
-    ###################################################################
+###################################################################
 
     # Step No. 16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    B2410001229

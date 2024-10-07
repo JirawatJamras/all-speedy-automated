@@ -112,6 +112,18 @@ Verify Draft Paecel Sender
     ${actual_text_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
     Should Be Equal    ${actual_text_full_postcode_sender}    ${full_postcode_sender}
 
+Verify Draft Paecel Receiver
+    [Arguments]   ${phone_receiver}    ${name_receiver}    ${address_receiver}    ${full_postcode_receiver}  
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
+    Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
+    ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
+    Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
+    ${actual_text_address_receiver}=    Get Value    ${txtbox_address_receiver}
+    Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
+    ${actual_text_full_postcode_receiver}=    Get Text    ${txtbox_full_postcode_receiver}
+    Should Be Equal    ${actual_text_full_postcode_receiver}    ${full_postcode_receiver}
+
 
 Verify Create Parcel Page Receiver Step
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}

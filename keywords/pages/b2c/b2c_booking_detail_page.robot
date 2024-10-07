@@ -73,3 +73,11 @@ Verify Booking Detail Page
     Should Be Equal    ${booking_name}    ${actaul_booking_name}
     ${actaul_booking_time}=    Get Text    //*[@class='hidden sm:inline']//strong[text()='วันเวลาทำรายการ :']/../../..//div[2]//span
     Should Be Equal    ${bookig_time}    ${actaul_booking_time}
+
+Get Booking ID
+    ${booking_id}=    Get Text    ${txt_booking_id}
+    RETURN    ${booking_id}
+
+Get Booking Time
+    ${booking_time}=    Get Text    ${txt_booking_time}
+    RETURN    ${booking_time}
