@@ -207,14 +207,15 @@ Booking_S002
     Wait Until Element Is Visible    (//strong[contains(text(),'ผู้ส่ง :')])[1]    timeout=10s
     Click Element   (//strong[contains(text(),'ผู้ส่ง :')])[1]
 
-    Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง" ** แก้ไข Step ผิด
+    Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง" - แก้ไข Step ผิด
     Wait Until Element Is Visible    //span[contains(text(),'แก้ไข')]    timeout=10s
     Click Element   //span[contains(text(),'แก้ไข')]
 
     Wait Until Element Is Visible    (//div[contains(text(),'ถัดไป')])[1]    timeout=10s
     Click Element   (//div[contains(text(),'ถัดไป')])[1]
 
-    Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง  ** แก้ไข Step
+    Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง" - แก้ไข Step
+
     # 1. Tap เลือกร้าน 7-11 ต้นทาง
     # 2. ค้นหาร้าน 15888
     # 3. กดปุ่ม "เลือกร้าน"
@@ -234,8 +235,8 @@ Booking_S002
     Click Element   //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[1]/button
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
-    Wait Until Element Is Visible    /html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button    timeout=10s
-    Click Element   /html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button
+    # Wait Until Element Is Visible    /html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button    timeout=10s
+    # Click Element   /html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button
 
     # กดปุ่ม "พิมพ์" ของ Web browser
 
