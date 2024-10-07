@@ -115,8 +115,10 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel
 
     Log    Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
-    # ${booking_id}    Get Booking ID
-    # ${booking_time}    Get Booking Time
+    ${booking_id}    Get Booking ID
+    ${booking_time}    Get Booking Time
+    ${booking_name}    Get Booking Name
+    ${parcel_id}    Get Paecel ID
     b2c_booking_detail_page.Click Button    ${b2c_crd_list_of_parcels}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
@@ -291,11 +293,6 @@ Step 16
 
 
 
-
-
-
-
-
 Booking_step17_18 
     [Tags]    Bew
     common.Open URL    ${B2C_UAT_URL}
@@ -325,5 +322,33 @@ Booking_step17_18
     b2c_booking_detail_page.Click Save Shipping Origin Aria
 
     ## verify
+
+
+
+
+
+
+
+Booking_Test
+    [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
+    [Tags]    Booking    UAT    
+    # Login
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+
+    Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410001215
+    
+    b2c_booking_delivery_page.Verify Booking Status
+    ...    ${Booking['text_title_booking']}
+    ...    B2410001215    # ${booking_id}
+    ...    เลือกต้นทางจัดส่ง
+    ...    B2410001215
+    ...    Booking DRY
+    ...    B2410001215
+    ...    1 รายการ
+    ...    NaN บาท
 
 

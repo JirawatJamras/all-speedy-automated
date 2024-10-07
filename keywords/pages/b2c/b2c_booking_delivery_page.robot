@@ -394,3 +394,35 @@ Verify Full Post Code Value
     Wait Until Element Is Visible    ${txtbox_full_postcode_sender}    timeout=10s
     ${full_post_code_receiver_txt}=    Get Text    ${txtbox_full_postcode_sender}
     Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value} 
+
+Verify Booking Status
+    [Arguments]    ${title_booking}    ${id}    ${status_booking}    ${id_booking}    ${name_booking}    ${date_booking}    ${item_booking}    ${price_booking}
+    Verify Booking Page    ${title_booking}
+    
+    ${list}=    Replace String    xpath=//span[text()='{value}']    {value}    ${name}
+    Wait Until Element Is Visible    xpath=//span[text()='B2410001215']    timeout=30s
+
+    ${txt_status}=    Get Text    xpath=//span[text()='B2410001215']/../span[2]
+    Should Be Equal    ${txt_status}    ${status_booking}
+
+    ${txt_id}=    Get Text    xpath=//span[text()='B2410001215']
+    ${length}=    Get Length    ${txt_id}
+    Should Be Equal As Integers    ${length}    11
+    Should Start With    ${txt_id}    B
+
+    ${txt_name}=    Get Text    xpath=//span[text()='B2410001215']/../../../../div[2]/div/div/span
+    Should Be Equal    ${txt_name}    ${name_booking}
+
+    ${txt_date_convert}    Verify Date Format   //span[text()='B2410001215']/../../../../div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/span
+
+    ${txt_item}=    Get Text    xpath=//span[text()='B2410001215']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[2]
+    Should Be Equal    ${txt_item}    ${item_booking}
+
+    ${txt_price}=    Get Text    xpath=//span[text()='B2410001215']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[4]
+    Should Be Equal    ${txt_price}    ${price_booking}
+
+Verify Date Format 
+    [Arguments]    ${locator}
+    ${actual_txt_date}=    Get Text    ${locator}
+    ${txt_date_convert}    Convert Date    ${actual_txt_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
+    Should Be Equal    ${actual_txt_date}    ${txt_date_convert}

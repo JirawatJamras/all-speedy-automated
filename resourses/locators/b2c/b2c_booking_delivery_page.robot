@@ -43,6 +43,10 @@ ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_inf
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
 ${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
 ${txt_booking_id}    xpath=//strong[contains(text(), 'บุ๊คกิ้ง ID :')]/../../../div[2]
+${txt_booking_time}    xpath=//strong[contains(text(), 'วันเวลาทำรายการ :')]/../../../div[2]
+${txt_booking_name}    xpath=//strong[contains(text(), 'ชื่อบุ๊คกิ้ง :')]/../../../div[4]
+${txt_parcel_id}    xpath=//div[@class='ant-list-item']//div[@class='ant-card-head']//div[@class='ant-card-head-wrapper']//strong
+
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
 ${msg_error_name_sender}    //input[@id='create_parcel_form_sender_name']/../../../../div[2]/div/div
@@ -63,7 +67,7 @@ ${txtbox_address_receiver}    //textarea[@id='create_parcel_form_receiver_addres
 ${txtbox_postcode_receiver}    //input[@id='create_parcel_form_receiver_address_full']
 ${txtbox_postcode_receiver_not_select_text}    //span[@class='ant-select-selection-placeholder']
 ${txtbox_postcode_receiver_select_text}    //span[@class='ant-select-selection-item']
-${txtbox_full_postcode_sender}    //span[@class='ant-select-selection-item']
+${txtbox_full_postcode_receiver}    //span[@class='ant-select-selection-item']
 ${opt_default_favorites}    //span[contains(@class,'ant-typography bg-amber-500')]/../../../../..//input[@class='ant-radio-input']
 
 ${cbo_postcode_sender}    //div[@title='{value}']
