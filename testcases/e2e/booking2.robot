@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S001
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Booking    UAT  
+    [Tags]    Booking    UAT
     # Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -28,7 +28,7 @@ Booking_S001
 
 Booking_S002_NEW
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)    
-    [Tags]    Booking    UAT   Run1   
+    [Tags]    Booking    UAT
     # Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -93,7 +93,7 @@ Booking_S002_NEW
     #Step No.8 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Button  ${btn_save_draft}
     #Expected
-    b2c_booking_list_page.Verify Booking list Page
+    b2c_booking_detail_page.Verify Booking list Page
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking_S002['img_sender_heart']}
@@ -106,7 +106,7 @@ Booking_S002_NEW
     ...    ${Booking_S002['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel
     #Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
-    b2c_booking_list_page.Click Button    ${b2c_crd_list_of_parcels}
+    b2c_booking_detail_page.Click Button    ${b2c_crd_list_of_parcels}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}

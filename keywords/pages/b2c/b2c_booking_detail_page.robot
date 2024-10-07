@@ -54,3 +54,22 @@ Verify Booking list Page
 
 
 
+
+
+
+
+Click Booking With Status Select Shipping Origin
+    [Arguments]    ${booking_id}
+    common.Click When Ready    xpath=//span[normalize-space()='${booking_id}']
+
+Verify Booking Detail Page
+    [Arguments]    ${title}    ${booking_id}    ${booking_name}    ${bookig_time}
+    Wait Until Element Is Visible    //*[@class='hidden sm:inline']//strong[text()='รายการบุ๊คกิ้ง']
+    ${actual_text_title}=    Get text    //*[@class='hidden sm:inline']//strong[text()='รายการบุ๊คกิ้ง']
+    Should Be Equal    ${title}    ${actual_text_title}
+    ${actaul_bookig_id}=    Get Text    //strong[text()='บุ๊คกิ้ง ID :']/../../..//div[2]//span
+    Should Be Equal    ${booking_id}    ${actaul_bookig_id}
+    ${actaul_booking_name}=    Get Text    //strong[text()='ชื่อบุ๊คกิ้ง :']/../../..//div[4]//span
+    Should Be Equal    ${booking_name}    ${actaul_booking_name}
+    ${actaul_booking_time}=    Get Text    //*[@class='hidden sm:inline']//strong[text()='วันเวลาทำรายการ :']/../../..//div[2]//span
+    Should Be Equal    ${bookig_time}    ${actaul_booking_time}

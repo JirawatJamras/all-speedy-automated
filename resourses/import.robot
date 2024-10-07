@@ -14,7 +14,7 @@ Resource                    ../keywords/pages/b2c/b2c_tracking_parcel_delivery_p
 Resource                    ../keywords/pages/b2c/b2c_my_parcel_page.robot
 Resource                    ../keywords/pages/b2c/b2c_call_car_pick_up_parcel_page.robot
 Resource                    ../keywords/pages/b2c/b2c_favorite_page.robot
-Resource                    ../keywords/pages/b2c/b2c_booking_list_page.robot
+Resource                    ../keywords/pages/b2c/b2c_booking_detail_page.robot
 
 Resource                    locators/b2c/b2c_login_page.robot
 Resource                    locators/b2c/b2c_forgot_password_page.robot
@@ -25,7 +25,7 @@ Resource                    locators/b2c/b2c_tracking_parcel_delivery_page.robot
 Resource                    locators/b2c/b2c_my_parcel_page.robot
 Resource                    locators/b2c/b2c_call_car_pick_up_parcel_page.robot
 Resource                    locators/b2c/b2c_favorite_page.robot
-Resource                    locators/b2c/b2c_booking_list_page.robot
+Resource                    locators/b2c/b2c_booking_detail_page.robot
 
 Variables                   testdata/b2c/b2c_login_001.yaml
 Variables                   testdata/b2c/b2c_forgotpassword_002.yaml
