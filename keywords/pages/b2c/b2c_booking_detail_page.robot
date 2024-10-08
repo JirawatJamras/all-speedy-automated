@@ -167,7 +167,7 @@ Click Print Parcel Label
     Click When Ready    ${b2c_btn_print_parcel_label}
 
 Verify Parcel Label
-    [Arguments]    ${size_a4}    ${size_a5}    ${size_8cm}    ${receiver_postcode}    ${parcel_size}    ${sender_name}    ${sender_phone}
+    [Arguments]    ${size_a4}    ${size_a5}    ${size_8cm}    ${receiver_postcode}    ${parcel_box}    ${parcel_size}    ${sender_name}    ${sender_phone}
     ...    ${sender_address}    ${sender_postcode_full}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
     ...    ${parcel_cod}    ${parcel_insure}
     ${parcel_id}    Get Parcel ID
@@ -183,7 +183,7 @@ Verify Parcel Label
     ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_parcel_label_detail}    
-    ...    รหัสไปรษณีย์ปลายทาง ${receiver_postcode} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    รหัสไปรษณีย์ปลายทาง ${receiver_postcode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
 
 Click Print Label On Popup
     Click When Ready    ${b2c_btn_print_parcel_label_popup}

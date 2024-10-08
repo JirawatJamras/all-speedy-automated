@@ -322,7 +322,7 @@ Booking_S002_Step16
 
 
 Booking_S002_Step17-Step18 
-    [Tags]    Bew
+    # [Tags]    Bew
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -375,6 +375,7 @@ Booking_step19_20
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
     ...    ${Booking_S002['receiver_postcode_5_digits']}
+    ...    ${Booking_S002['parcel_package_type']}
     ...    ${Booking_S002['parcel_size']}
     ...    ${Booking_S002['sender_name']}
     ...    ${Booking_S002['sender_phone']}
@@ -388,7 +389,6 @@ Booking_step19_20
     ...    ${Booking_S002['parcel_insure']}
     common.Verify Capture Screenshot    Booking_S002    Verify Parcel Label
     b2c_booking_detail_page.Click Print Label On Popup
-
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
 
 
