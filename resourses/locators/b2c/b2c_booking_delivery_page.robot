@@ -48,7 +48,7 @@ ${txt_postcode_sender}    //label[@for='create_parcel_form_sender_address_full']
 ${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'ข้อมูลผู้รับพัสดุ')]
 ${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
 ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
-${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']
+${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
 ${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
 ${txt_booking_id}    //strong[contains(text(), 'บุ๊คกิ้ง ID :')]/../../../div[2]
@@ -88,6 +88,7 @@ ${txtbox_postcode_receiver_not_select_text}    //span[@class='ant-select-selecti
 ${txtbox_postcode_receiver_select_text}    //span[@class='ant-select-selection-item']
 ${txtbox_full_postcode_receiver}    //span[@class='ant-select-selection-item']
 ${opt_default_favorites}    //span[contains(@class,'ant-typography bg-amber-500')]/../../../../..//input[@class='ant-radio-input']
+${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//textarea[@id='create_parcel_form_remark']
 
 ${cbo_postcode_sender}    //div[@title='{value}']
 ${cbo_postcode_receiver}    //div[@title='{value}']

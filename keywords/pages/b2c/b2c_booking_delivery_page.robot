@@ -33,6 +33,9 @@ Select Parcel Type
         Click Temperature Controlled Parcel
     END
 
+Select Send To Home Tab
+    Click When Ready    ${tab_send_to_home}
+
 Click General Parcel
     Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=30s
     Click Element    ${parcel_type_dry_btn}
@@ -491,3 +494,7 @@ Verify Create Parcel Page Detail Step
     Should Be Equal    ${actual_cod}    ${cod}
     ${actual_remark}=    Get Text    ${txt_remark}
     Should Be Equal    ${actual_remark}    ${remark}
+
+Input Parcel Remark
+    [Arguments]    ${value}
+    Input When Ready    ${txtbox_parcel_remark}    ${value}
