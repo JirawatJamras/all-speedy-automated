@@ -498,3 +498,15 @@ Verify Create Parcel Page Detail Step
 Input Parcel Remark
     [Arguments]    ${value}
     Input When Ready    ${txtbox_parcel_remark}    ${value}
+
+Input Promotion
+    [Arguments]    ${value}
+    Input When Ready    ${txtbox_promotion}    ${value}
+
+Click Use Code Button
+    Click When Ready    ${btn_use_code}
+
+# Verify Selected Coupon And Code
+#     ${actual_selected_code_detail}    Get Text    ${txt_selected_code_detail}
+
+#     Log to console    ${actual_selected_code_detail}

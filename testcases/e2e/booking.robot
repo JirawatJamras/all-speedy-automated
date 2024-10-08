@@ -153,17 +153,17 @@ Booking_S002
     b2c_booking_delivery_page.Click Next Button
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    ...    ${Booking_S002['parcel_detail_A4']}
-    ...    ${Booking_S002['parcel_detail_A3']}
-    ...    ${Booking_S002['parcel_detail_XS']}
-    ...    ${Booking_S002['parcel_detail_S']}
-    ...    ${Booking_S002['parcel_detail_M']}
-    ...    ${Booking_S002['parcel_detail_L']}
-    ...    ${Booking_S002['parcel_detail_XL']}
-    ...    ${Booking_S002['parcel_detail_XXL']}
-    ...    ${Booking_S002['parcel_detail_insure_amount']}
-    ...    ${Booking_S002['parcel_detail_cod']}
-    ...    ${Booking_S002['parcel_detail_remark']}
+    ...    ${Booking.general_parcel['parcel_detail_A4']}
+    ...    ${Booking.general_parcel['parcel_detail_A3']}
+    ...    ${Booking.general_parcel['parcel_detail_XS']}
+    ...    ${Booking.general_parcel['parcel_detail_S']}
+    ...    ${Booking.general_parcel['parcel_detail_M']}
+    ...    ${Booking.general_parcel['parcel_detail_L']}
+    ...    ${Booking.general_parcel['parcel_detail_XL']}
+    ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    ...    ${Booking['parcel_detail_insure_amount']}
+    ...    ${Booking['parcel_detail_cod']}
+    ...    ${Booking['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S002    Verify Paecel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ

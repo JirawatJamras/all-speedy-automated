@@ -33,6 +33,7 @@ ${btn_parcel_select_M}    //strong[text()= 'M']/../../../div[@class='ant-card-bo
 ${btn_parcel_select_L}    //strong[text()= 'L']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_XL}    //strong[text()= 'XL']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_XXL}    //strong[text()= 'XXL']/../../../div[@class='ant-card-body']
+${btn_use_code}    //button//span[text()='ใช้โค้ด']
 
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']//div[text()='สร้างพัสดุ']
@@ -66,6 +67,7 @@ ${txt_my_coupon_and_code}    (//*[@id="create_parcel_form_promotion"]//span//str
 ${txt_insure_amount}    //label[@title='จำนวนเงินซื้อประกัน']
 ${txt_cod}    //label[@title='เก็บเงินปลายทาง']
 ${txt_remark}    //label[@title='หมายเหตุ']
+${txt_selected_code_detail}    //span//strong[text()='คูปองและโค้ดส่วนลดที่เลือก']/../..
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
 ${msg_error_name_sender}    //input[@id='create_parcel_form_sender_name']/../../../../div[2]/div/div
@@ -89,6 +91,7 @@ ${txtbox_postcode_receiver_select_text}    //span[@class='ant-select-selection-i
 ${txtbox_full_postcode_receiver}    //span[@class='ant-select-selection-item']
 ${opt_default_favorites}    //span[contains(@class,'ant-typography bg-amber-500')]/../../../../..//input[@class='ant-radio-input']
 ${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//textarea[@id='create_parcel_form_remark']
+${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่วนลด']
 
 ${cbo_postcode_sender}    //div[@title='{value}']
 ${cbo_postcode_receiver}    //div[@title='{value}']
