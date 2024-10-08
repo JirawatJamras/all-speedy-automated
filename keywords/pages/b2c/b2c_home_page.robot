@@ -35,7 +35,8 @@ Select Sub Menu Register Business Customer
     common.Click When Ready    ${b2c_mnu_register_business_customer_home_page}
 
 Verify My Profile Page
-    [Arguments]    ${company_profile}    ${sir_name}    ${company_name}    ${profile}    ${name}    ${phone}    ${email}    ${position}
+    [Arguments]    ${company_profile}    ${profile}    ${profile_name}    ${profile_phone}    ${profile_email}    ${profile_position}    
+    ...    ${sir_name}    ${company_name}    ${name}    ${phone}    ${email}    ${position}
     Wait Until Element Is Visible    ${b2c_txt_company_profile}
     ${actual_company_profile} =    Get Text    ${b2c_txt_company_profile}
 
@@ -46,6 +47,10 @@ Verify My Profile Page
     ${actual_company_name} =    Get Text     ${b2c_txt_company_name}  
 
     ${actual_profile} =    Get Text     ${b2c_txt_profile}  
+    ${actual_profile_name} =    Get Text    ${b2c_txt_profile_name}
+    ${actual_profile_phone} =    Get Text    ${b2c_txt_profile_phone}
+    ${actual_profile_mail} =    Get Text    ${b2c_txt_profile_mail}
+    ${actual_profile_position} =    Get Text    ${b2c_txt_profile_position}
 
     ${b2c_txt_name}=    Replace String    ${b2c_txt_name}    {value}    ${name}
     ${actual_name} =    Get Text    ${b2c_txt_name}
@@ -60,9 +65,13 @@ Verify My Profile Page
     ${actual_position} =    Get Text    ${b2c_txt_position}
 
     Should Be Equal    ${company_profile}    ${actual_company_profile}
+    Should Be Equal    ${profile}    ${actual_profile}
+    Should Be Equal    ${profile_name}    ${actual_profile_name}
+    Should Be Equal    ${profile_phone}    ${actual_profile_phone}
+    Should Be Equal    ${profile_email}    ${actual_profile_mail}
+    Should Be Equal    ${profile_position}    ${actual_profile_position}
     Should Be Equal    ${sir_name}    ${actual_sir_name}
     Should Be Equal    ${company_name}    ${actual_company_name}    
-    Should Be Equal    ${profile}    ${actual_profile}
     Should Be Equal    ${name}    ${actual_name}
     Should Be Equal    ${phone}    ${actual_phone}
     Should Be Equal    ${email}    ${actual_email}
