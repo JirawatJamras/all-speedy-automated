@@ -99,7 +99,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify After Create Parcel Page Receiver Step
 
     Log    Step No.8 กดปุ่ม "บันทึกร่าง"
-    b2c_booking_delivery_page.Click Button  ${btn_save_draft}
+    b2c_booking_delivery_page.Click Save Button
     #Expected
     b2c_booking_detail_page.Verify Booking list Page
     ...    ${Booking['text_booking_list']}
@@ -119,7 +119,7 @@ Booking_S002
     ${booking_time}    Get Booking Time
     ${booking_name}    Get Booking Name
     ${parcel_id}    Get Parcel ID
-    b2c_booking_detail_page.Click Button    ${b2c_crd_list_of_parcels}
+    b2c_booking_detail_page.Select Draft Booking
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -187,7 +187,7 @@ Booking_S002
 
     Log    Step No.14 ขั้นตอน Promotion
     # - ไม่เลือก Promotion
-    b2c_booking_delivery_page.Click Parcel Booking
+    b2c_booking_delivery_page.Click Parcel Booking Button
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page

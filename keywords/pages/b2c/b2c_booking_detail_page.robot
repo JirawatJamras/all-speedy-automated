@@ -4,6 +4,9 @@ Click Button
     Wait Until Element Is Enabled    ${btn}    
     Click Element    ${btn}
 
+Select Draft Booking
+    common.Click When Ready    ${b2c_crd_list_of_parcels}
+
 Verify Booking list Page
     [Arguments]    ${booking_list}    ${status}    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}

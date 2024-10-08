@@ -317,6 +317,9 @@ Click Button
     [Arguments]    ${btn}
     Click Element    ${btn}
 
+Click Save Button
+    common.Click When Ready    ${btn_save_draft}
+
 Click Next Button
     common.Click When Ready    ${btn_next}
 
@@ -439,6 +442,6 @@ Verify Promotion Detail
     ${actual_my_coupon_and_code}=    Get Text    ${txt_my_coupon_and_code}
     Should Be Equal    ${my_coupon_and_code}    ${actual_my_coupon_and_code}
 
-Click Parcel Booking
+Click Parcel Booking Button
     Wait Until Element Is Visible    ${btn_parcel_booking}    timeout=${DEFAULT_TIMEOUT}
     Click Element   ${btn_parcel_booking}
