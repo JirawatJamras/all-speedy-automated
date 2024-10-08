@@ -96,7 +96,7 @@ Verify Create Parcel Page Sender Step
     ${actual_text_postcode}=    Get Text    ${txt_postcode_sender}
     Should Be Equal    ${actual_text_postcode}    ${postcode_sender}
 
-Verify Draft Paecel Sender
+Verify Draft Parcel Sender
     [Arguments]   ${phone_sender}    ${name_sender}    ${address_sender}    ${full_postcode_sender}  
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
@@ -324,8 +324,7 @@ Click Next Button
     common.Click When Ready    ${btn_next}
 
 Click Add To Favorites
-    [Arguments]    ${btn}
-    Click Element    ${btn}
+    common.Click When Ready    ${btn_add_receiver_to_favorites}
 
 Verify Favorites Icon Red Heart
     [Arguments]    ${xpath}    ${status}

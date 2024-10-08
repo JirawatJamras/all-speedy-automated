@@ -128,12 +128,12 @@ Booking_S002
     ...    ${Booking['text_name_sender']}
     ...    ${Booking['text_address_sender']}
     ...    ${Booking['text_postcode_sender']}
-    b2c_booking_delivery_page.Verify Draft Paecel Sender
+    b2c_booking_delivery_page.Verify Draft Parcel Sender
     ...    ${Booking_S002['sender_phone']}
     ...    ${Booking_S002['sender_name']}
     ...    ${Booking_S002['sender_address']}
     ...    ${Booking_S002['sender_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel Sender
+    common.Verify Capture Screenshot    Booking_S002    Verify Draft Parcel Sender
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  

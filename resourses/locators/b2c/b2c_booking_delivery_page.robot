@@ -48,7 +48,7 @@ ${txt_postcode_sender}    //label[@for='create_parcel_form_sender_address_full']
 ${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'ข้อมูลผู้รับพัสดุ')]
 ${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
 ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
-${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
+${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
 ${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
 ${txt_booking_id}    //strong[contains(text(), 'บุ๊คกิ้ง ID :')]/../../../div[2]
