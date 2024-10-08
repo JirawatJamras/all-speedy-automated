@@ -363,6 +363,7 @@ Booking_step19_20
     common.Verify Capture Screenshot    Booking_S002    Verify Parcel Label
     b2c_booking_detail_page.Click Print Label On Popup
 
+    common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
 
 
 
