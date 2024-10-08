@@ -299,9 +299,9 @@ Booking_S002
     ...    24.00
     ...    ${Booking_S002['store_code']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
+    common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
+    common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page After Set Origin Shipping
 
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
@@ -331,39 +331,4 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
 
 
-    # [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
-
-# Test
-#     [Tags]    Bix
-    # @{booking_time}    Create List    08-10-2567 09:51    08-10-2567 09:52
-    # ${actaul_booking_time}=    Set Variable    08-10-2567 09:52
-
-    # ${match_found}=    Set Variable    False
-    # FOR    ${time}    IN     @{booking_time}
-    #     ${time_convert}    Convert Date    ${actaul_booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
-    #     Should Be Equal    ${actaul_booking_time}   ${time_convert}
-    #     ${isequal}=    Run Keyword And Return Status    Should Be Equal    ${time}    ${actaul_booking_time}
-    #     Run Keyword IF  '${isequal}' == 'True'    Run Keywords    Set Suite Variable    ${match_found}    True
-    #     ...    AND    Exit For Loop
-    # END
-    # Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time list!
-    # Log to Console    ${booking_time}
-
-    # ${text1}=    Set Variable    15888
-
-# Test
-#     [Tags]    Bix
-#     Log    Login
-#     common.Open URL    ${B2C_UAT_URL}
-#     register_general_customers_page.Select Business Customers Tab
-#     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-#     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-#     b2c_login_page.Click Log On Button
-#     Go to    https://www-uat.allspeedy.co.th/booking/detail/B2410001452
-#     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-#     ${actaul_shipping_origin}=    Get Text    ${b2c_txt_shipping_origin_booking_detail_page}
-#     Should Contain    ${actaul_shipping_origin}    15888
-#     Log to console    ${actaul_shipping_origin}
-
-
-
+    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
