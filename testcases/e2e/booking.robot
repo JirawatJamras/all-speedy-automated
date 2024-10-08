@@ -136,7 +136,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel Sender
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
-    b2c_booking_delivery_page.Click Button    ${btn_next}  
+    b2c_booking_delivery_page.Click Next Button  
     #Expected
     b2c_booking_delivery_page.Verify Draft Paecel Receiver
     ...    ${Booking_S002['receiver_phone']}
@@ -146,8 +146,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel Receiver
    
     Log    Step No.11 กดปุ่ม "ถัดไป"
-    Wait Until Element Is Visible    //div[@class='ant-space-item' and text()='ถัดไป']/../../../button    timeout=10s
-    Click Element   //div[@class='ant-space-item' and text()='ถัดไป']/../../../button
+    b2c_booking_delivery_page.Click Next Button
     #Expected
     ${detail_A4}=    Get Text    //strong[text()= 'A4']/../../../div[@class='ant-card-body']
     Should Be Equal    ${detail_A4}    A4${\n}ซอง A4${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 51 ชม.
@@ -176,25 +175,20 @@ Booking_S002
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
     # กรอกข้อมูล
     # เลือกขนาดพัสดุ : ซอง A4"
-    Wait Until Element Is Visible    //strong[text()= 'A4']/../../../div[@class='ant-card-body']/../../../../../div[1]    timeout=10s
-    Click Element   //strong[text()= 'A4']/../../../div[@class='ant-card-body']/../../../../../div[1]
+    b2c_booking_delivery_page.Select Parcel Size    ${Booking_S002['parcel_size']}
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
-    Wait Until Element Is Visible    //div[@class='ant-space-item' and text()='ถัดไป']/../../../button    timeout=10s
-    Click Element   //div[@class='ant-space-item' and text()='ถัดไป']/../../../button
+    b2c_booking_delivery_page.Click Next Button 
     #Expected
-    ${selected_coupon_and_code}=    Get Text    //*[@id="create_parcel_form_promotion"]/div[2]/div/div[1]/div/div/span
-    Should Be Equal    ${selected_coupon_and_code}    คูปองและโค้ดส่วนลดที่เลือก
-    ${my_coupon_and_code}=    Get Text    //*[@id="create_parcel_form_promotion"]/div[2]/div/div[2]/div/div/span
-    Should Be Equal    ${my_coupon_and_code}    คูปองและโค้ดส่วนลดของฉัน
+    b2c_booking_delivery_page.Verify Promotion Detail
+    ...    ${Booking['text_selected_coupon_and_code']}
+    ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S002    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
     # - ไม่เลือก Promotion
-    
-    # กดปุ่ม "จองเลขพัสดุ"
-    Wait Until Element Is Visible    //span[contains(text(),'จองเลขพัสดุ')]    timeout=10s
-    Click Element   //span[contains(text(),'จองเลขพัสดุ')]
+    b2c_booking_delivery_page.Click Parcel Booking
+
     #Expected
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
@@ -240,91 +234,23 @@ Booking_S002
     ...    ${Booking_S002['total_price_value']}
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
 
-    # Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง" - แก้ไข Step ผิด
-    # Wait Until Element Is Visible    //span[contains(text(),'แก้ไข')]    timeout=10s
-    # Click Element   //span[contains(text(),'แก้ไข')]
-
-    # Wait Until Element Is Visible    (//div[contains(text(),'ถัดไป')])[1]    timeout=10s
-    # Click Element   (//div[contains(text(),'ถัดไป')])[1]
-
-    # Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง" - แก้ไข Step
-
-    # # 1. Tap เลือกร้าน 7-11 ต้นทาง
-    # # 2. ค้นหาร้าน 15888
-    # # 3. กดปุ่ม "เลือกร้าน"
-    # # 4. กดปุ่ม "บันทึก"
-    # Wait Until Element Is Visible    (//div[contains(@data-node-key,'store')])[1]
-    # Click Element   (//div[contains(@data-node-key,'store')])[1]
-    # common.Input When Ready    //*[@id="create_parcel_form_receiver_placeType-panel-store"]/div[2]/div[1]/div/div[2]/div/div/span/input    15888
-    # Wait Until Element Is Visible    //div[@class='ant-select-item-option-content'][contains(text(),'15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500')]
-    # Click Element   //div[@class='ant-select-item-option-content'][contains(text(),'15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500')]
-    # Wait Until Element Is Visible    //*[@id="create_parcel_form_receiver_placeType-panel-store"]/div[2]/div[1]/div/div[1]/div[3]/div[1]/div[2]/div/div[4]/div/div/div/div[1]/div[2]/div/div/div[2]/div[2]/div/div[2]/button
-    # Click Element    //*[@id="create_parcel_form_receiver_placeType-panel-store"]/div[2]/div[1]/div/div[1]/div[3]/div[1]/div[2]/div/div[4]/div/div/div/div[1]/div[2]/div/div/div[2]/div[2]/div/div[2]/button
-    # Wait Until Element Is Visible    //span[contains(text(),'บันทึกแก้ไข')]
-    # Click Element   //span[contains(text(),'บันทึกแก้ไข')]
-
-    # Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
-    # Wait Until Element Is Visible    //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[1]/button    timeout=10s
-    # Click Element   //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[1]/button
-
-    # Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
-    # # Wait Until Element Is Visible    /html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button    timeout=10s
-    # # Click Element   /html/body/div[17]/div/div[2]/div/div[1]/div/div[3]/div/button
-
-    # # กดปุ่ม "พิมพ์" ของ Web browser
-
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    ### ใช้สำหรับ Develop Automate script เมื่อเสร็จแล้วจะต้องลบออก
-    
-
-
-    
-
-Booking_S002_Step17-Step18 
-    # [Tags]    Bew
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-
-    Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410001215
-    Log    กดปุ่ม 'แก้ไขรายการ booking'
+    Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
-    ## Verify
-    b2c_booking_detail_page.Verify Edit Booking List Popup    
+        b2c_booking_detail_page.Verify Edit Booking List Popup    
     ...    ${Booking_S002['parcel_type']}
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    Booking_S002    Verify Edit Booking List Popup  
 
-    ## กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง
-    Log    Tap เลือกร้าน 7-11 ต้นทาง
+    Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S002['shipping_origin']}
-    Log    ค้นหาร้าน 15888
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S002['store_code']}
-    Log    กดปุ่ม "เลือกร้าน"
     b2c_booking_detail_page.Click Select Store On Map
-    Log    กดปุ่ม "บันทึก"
     b2c_booking_detail_page.Click Save Shipping Origin Aria
 
-    ## verify
-    ## รอจากของข้อ 14 16
+    ### Verify
 
-
-
-
-
-Booking_step19_20
-    [Tags]    Bew
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-
-    Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410001204
-
-    Log    กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
 
     ## Verify
@@ -346,26 +272,9 @@ Booking_step19_20
     ...    ${Booking_S002['parcel_cod']}
     ...    ${Booking_S002['parcel_insure']}
     common.Verify Capture Screenshot    Booking_S002    Verify Parcel Label
+
+    Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
 
-
-
-
-Booking_Test
-    [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Pee  
-    # Login
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-    b2c_home_page.Click Book Parcel Delivery
-    b2c_booking_delivery_page.Verify Booking Status
-    ...    ${Booking['text_title_booking']}
-    ...    ${booking_id}
-    ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S002['booking_name']}
-    ...    ${Booking_S002['booking_item']}
-    ...    ${Booking_S002['booking_price']}
+    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}

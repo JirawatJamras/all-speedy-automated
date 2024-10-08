@@ -20,6 +20,8 @@ Booking:
   text_draft_status:  ร่าง
   text_sender:  'ผู้ส่ง :'
   text_receiver:  'ผู้รับ :'
+  text_selected_coupon_and_code:  คูปองและโค้ดส่วนลดที่เลือก
+  text_my_coupon_and_code:  คูปองและโค้ดส่วนลดของฉัน
   text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
   text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
   text_paper_size:

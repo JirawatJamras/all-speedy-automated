@@ -317,8 +317,8 @@ Click Button
     [Arguments]    ${btn}
     Click Element    ${btn}
 
-Click Next To Receiver
-    common.Click When Ready  ${next_to_receiver_btn}
+Click Next Button
+    common.Click When Ready    ${btn_next}
 
 Click Add To Favorites
     [Arguments]    ${btn}
@@ -426,3 +426,18 @@ Verify Date Format
     ${actual_txt_date}=    Get Text    ${locator}
     ${txt_date_convert}    Convert Date    ${actual_txt_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
     Should Be Equal    ${actual_txt_date}    ${txt_date_convert}
+
+Select Parcel Size
+    [Arguments]    ${value}
+    ${btn_parcel_size}=  Replace String   ${btn_parcel_size}   {value}   ${value}
+    Click When Ready    ${btn_parcel_size}
+
+Verify Promotion Detail
+    ${selected_coupon_and_code}=    Get Text    ${txt_selected_coupon_and_code}
+    Should Be Equal    ${selected_coupon_and_code}    คูปองและโค้ดส่วนลดที่เลือก
+    ${my_coupon_and_code}=    Get Text    //*[@id="create_parcel_form_promotion"]/div[2]/div/div[2]/div/div/span
+    Should Be Equal    ${my_coupon_and_code}    คูปองและโค้ดส่วนลดของฉัน
+
+Click Parcel Booking
+    Wait Until Element Is Visible    ${btn_parcel_booking}    timeout=${DEFAULT_TIMEOUT}
+    Click Element   ${btn_parcel_booking}

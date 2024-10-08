@@ -20,11 +20,11 @@ ${btn_clear_name_sender}    //input[@id='create_parcel_form_sender_name']/../spa
 ${btn_clear_address_sender}    //textarea[@id='create_parcel_form_sender_address_info']/../span/span[1]
 ${btn_clear_postcode_sender}    //input[@id='create_parcel_form_sender_address_full']/../../../span[2]
 ${btn_add_sender_to_favorites}    //div[@id='create_parcel_form_sender_isDefault']//span[@class='anticon anticon-heart']
-${btn_next_to_receiver}    //div[@class='ant-space-item' and text()='ถัดไป']/../../../button
 ${btn_save_draft}    //span[contains(text(), 'บันทึกร่าง')]/../../button
 ${btn_add_receiver_to_favorites}    //div[@id='create_parcel_form_receiver_isDefault']//span[@class='anticon anticon-heart']
 ${btn_next}    //div[@class='ant-space-item' and text()='ถัดไป']/../../../button
-
+${btn_parcel_booking}    //span[contains(text(),'จองเลขพัสดุ')]
+${btn_parcel_size}    //*[@id="create_parcel_form"]//span//strong[text()='{value}']
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']//div[text()='สร้างพัสดุ']
 ${txt_frist_step_name}    //form[@id='create_parcel_form']/div[2]/div[1]/div/div[3]/div
@@ -52,6 +52,7 @@ ${txt_booking_name_in_list}    //span[text()='{value}']/../../../../div[2]/div/d
 ${txt_booking_date_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[1]/div[1]/div[1]/div[2]/span
 ${txt_booking_item_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[2]
 ${txt_booking_price_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[4]
+${txt_selected_coupon_and_code}    (//*[@id="create_parcel_form_promotion"]//span//strong)[1]
 
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
