@@ -16,10 +16,6 @@ Verify Term & Condition
     ${text}=    Get Text    ${txt_term_and_condition}
     Should Be Equal    ${text}    ${text_accept}
 
-# Close Term & Condition Popup
-#     Wait Until Element Is Visible    ${close_condition_popup}    timeout=10s
-#     Click Element        ${close_condition_popup}
-
 Click Accept Terms of Service
     Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
     Click Element        ${btn_accept_terms_service}

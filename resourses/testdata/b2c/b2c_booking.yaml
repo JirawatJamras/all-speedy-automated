@@ -1,6 +1,6 @@
 Booking:
   text_title_booking: จองการจัดส่งพัสดุ สาขาหลัก
-  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 7 ตุลาคม 2024 (Version 2)"
+  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 8 ตุลาคม 2024 (Version 2)"
   text_title: สร้างพัสดุ
   text_title_booking_list: รายการบุ๊คกิ้ง 
   text_title_parcel_list: รายการพัสดุ
@@ -49,6 +49,7 @@ Booking_S002:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_type_booking_detail: A4
   #img_heart_sender:  รูปหัวใจไม่มีสี 
   img_sender_heart:  รูปหัวใจสีแดง
   img_receiver_heart:  รูปหัวใจสีแดง

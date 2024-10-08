@@ -69,7 +69,7 @@ Search Shipping Store
     Click When Ready    ${search_result_store}
 
 Click Select Store On Map
-    Wait Until Element Is Visible    ${b2c_btn_select_store}
+    Wait Until Element Is Visible    ${b2c_btn_select_store}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${b2c_btn_select_store}
     Click When Ready    ${b2c_btn_select_store}
 
@@ -77,18 +77,22 @@ Click Save Shipping Origin Aria
     Click When Ready    ${b2c_btn_save_shipping_origin}
 
 Get Booking ID
+    Wait Until Element Is Visible    ${txt_booking_id}    timeout=${DEFAULT_TIMEOUT}
     ${booking_id}=    Get Text    ${txt_booking_id}
     RETURN    ${booking_id}
 
 Get Booking Time
+    Wait Until Element Is Visible    ${txt_booking_time}    timeout=${DEFAULT_TIMEOUT}
     ${booking_time}=    Get Text    ${txt_booking_time}
     RETURN    ${booking_time}
 
 Get Booking Name
+    Wait Until Element Is Visible    ${txt_booking_name}    timeout=${DEFAULT_TIMEOUT}
     ${booking_name}=    Get Text    ${txt_booking_name}
     RETURN    ${booking_name}
 
 Get Parcel ID
+    Wait Until Element Is Visible    ${txt_parcel_id}    timeout=${DEFAULT_TIMEOUT}
     ${parcel_id}=    Get Text    ${txt_parcel_id}
     RETURN    ${parcel_id}
 
@@ -104,7 +108,7 @@ Click Booking With Status Select Shipping Origin
 Verify Booking Detail Page
     [Arguments]    ${title}    ${booking_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
-    ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
+    ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    ${parcel_type}
     ...    ${booking_summary}    ${discount_amount}    ${discount_value}    ${insurance_fee_amount}    ${insurance_fee_value}
     ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}
     
@@ -131,7 +135,7 @@ Verify Booking Detail Page
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ราคา : -บาท ซื้อประกัน : - บาท COD : - บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : -บาท ซื้อประกัน : - บาท COD : - บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
@@ -145,7 +149,7 @@ Verify Booking Detail Page
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
-    Wait Until Page Contains Element    ${b2c_btn_print_the_parcel_payment_slip_disabled}
+    Wait Until Element Is Visible    ${b2c_btn_print_parcel_label}    timeout=${DEFAULT_TIMEOUT}
 
     Log    Booking Summary
     Wait Until Element Is Visible    ${b2_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}

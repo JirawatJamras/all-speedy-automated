@@ -33,7 +33,7 @@ ${b2c_img_loading}    //div[@role='dialog']//img
 ${b2c_btn_edit_booking_list}    //strong[text()='รายการบุ๊คกิ้ง']/../../..//button
 ${b2c_btn_select_store}    //button//b[text()='เลือกร้าน']
 ${b2c_btn_save_shipping_origin}    //button//span[text()='บันทึก']
-${b2c_btn_print_parcel_label}    //button//span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
+${b2c_btn_print_parcel_label}    //*[@class='hidden sm:inline']//button//span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
 ${b2c_btn_print_parcel_label_popup}    //div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../..//button//span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
 
 ${b2c_txt_edit_booking_list}    //div[@class='ant-modal-content']//div[text()='แก้ไขรายการบุ๊คกิ้ง']
