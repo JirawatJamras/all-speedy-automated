@@ -51,7 +51,6 @@ Booking_S002:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  parcel_type_booking_detail: A4
   #img_heart_sender:  รูปหัวใจไม่มีสี 
   img_sender_heart:  รูปหัวใจสีแดง
   img_receiver_heart:  รูปหัวใจสีแดง
@@ -72,4 +71,3 @@ Booking_S002:
   parcel_package_type:  ซอง
   parcel_cod:  Non COD
   parcel_insure:  ไม่มีการซื้อประกัน
-

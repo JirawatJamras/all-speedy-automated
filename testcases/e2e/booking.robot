@@ -221,7 +221,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
-    ...    ${Booking_S002['parcel_type_booking_detail']}
+    ...    ${Booking_S002['parcel_size']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S002['discount_amount']}
     ...    ${Booking_S002['discount_value']}
@@ -276,5 +276,5 @@ Booking_S002
     # Expected
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
 
-    
+
     [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
