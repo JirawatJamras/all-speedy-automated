@@ -391,7 +391,7 @@ Verify Full Post Code Value
     ${full_post_code_receiver_txt}=    Get Text    ${txtbox_full_postcode_sender}
     Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value} 
 
-Verify Booking Status
+Verify Created Booking On Booking Delivery Page
     [Arguments]    ${id}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}
     
     ${booking_id}=    Replace String    ${txt_booking_id_in_list}    {value}    ${id}

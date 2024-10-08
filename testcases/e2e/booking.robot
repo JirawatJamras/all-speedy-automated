@@ -201,12 +201,13 @@ Booking_S002
     ${booking_time}    Get Booking Time
     b2c_home_page.Click Book Parcel Delivery
     #Expected
-    b2c_booking_delivery_page.Verify Booking Status
+    b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking_S002['booking_item']}
     ...    ${Booking_S002['booking_price']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Created Booking On Booking Delivery Page
 
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -237,7 +238,7 @@ Booking_S002
     ...    ${Booking_S002['cod_fee_value']}
     ...    ${Booking_S002['total_price_amount']}
     ...    ${Booking_S002['total_price_value']}
-    common.Verify Capture Screenshot    B2C_AddBooking_002_001    Verify Booking Detail Page
+    common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
 
     # Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง" - แก้ไข Step ผิด
     # Wait Until Element Is Visible    //span[contains(text(),'แก้ไข')]    timeout=10s
