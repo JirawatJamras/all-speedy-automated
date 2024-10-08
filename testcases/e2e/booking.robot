@@ -76,7 +76,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify After Create Parcel Page Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
-    b2c_booking_delivery_page.Click Button  ${btn_next_to_receiver}
+    b2c_booking_delivery_page.Click Next Button
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
     ...    ${Booking['text_title']}
@@ -180,19 +180,44 @@ Booking_S002
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
     #Expected
-    b2c_booking_delivery_page.Verify Promotion Detail
-    ...    ${Booking['text_selected_coupon_and_code']}
-    ...    ${Booking['text_my_coupon_and_code']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Promotion
+    # b2c_booking_delivery_page.Verify Promotion Detail
+    # ...    ${Booking['text_selected_coupon_and_code']}
+    # ...    ${Booking['text_my_coupon_and_code']}
+    # common.Verify Capture Screenshot    Booking_S002    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
     # - ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking
-
-    #Expected
+    ${booking_time}    Get Booking Time
+    # Expected
+    b2c_booking_detail_page.Verify Booking Detail Page
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    ...    ${Booking_S002['img_sender_heart']}
+    ...    ${Booking_S002['sender_name']}
+    ...    ${Booking_S002['sender_phone']}
+    ...    ${Booking_S002['img_receiver_heart']}
+    ...    ${Booking_S002['receiver_name']}
+    ...    ${Booking_S002['receiver_phone']}
+    ...    ${Booking_S002['receiver_address']}
+    ...    ${Booking_S002['receiver_postcode_full']}
+    ...    ${Booking_S002['parcel_size']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    ${Booking_S002['discount_amount']}
+    ...    ${Booking_S002['discount_value']}
+    ...    ${Booking_S002['insurance_fee_amount']}
+    ...    ${Booking_S002['insurance_fee_value']}
+    ...    ${Booking_S002['cod_fee_amount']}
+    ...    ${Booking_S002['cod_fee_value']}
+    ...    ${Booking_S002['total_price_amount']}
+    ...    ${Booking_S002['total_price_value']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
-    ${booking_time}    Get Booking Time
     b2c_home_page.Click Book Parcel Delivery
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page

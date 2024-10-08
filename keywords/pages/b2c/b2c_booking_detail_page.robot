@@ -161,6 +161,7 @@ Verify Booking Detail Page
     ${acrual_txt_price_detail} =  Replace String    ${acrual_txt_price_detail}    \n    ${SPACE}
     Should Be Equal As Strings    ${acrual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
     common.Verify Capture Screenshot    B2C_AddBooking_002_001    Verify Booking Summary
+    common.Scroll Window To Vertical    0
     
 Click Print Parcel Label
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
