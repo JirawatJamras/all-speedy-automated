@@ -203,7 +203,6 @@ Booking_S002
     ...    ${Booking_S002['booking_price']}
     common.Verify Capture Screenshot    Booking_S002    Verify Created Booking On Booking Delivery Page
 
-
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Expected
@@ -222,7 +221,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
-    ...    ${Booking_S002['parcel_type_booking_detail']}
+    ...    ${Booking_S002['parcel_size']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S002['discount_amount']}
     ...    ${Booking_S002['discount_value']}
@@ -236,6 +235,7 @@ Booking_S002
 
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
+    # Expected
     b2c_booking_detail_page.Verify Edit Booking List Popup    
     ...    ${Booking_S002['parcel_type']}
     ...    ${Booking_S002['booking_name']}
@@ -247,13 +247,11 @@ Booking_S002
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S002['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
-
-    ### Verify
+    # Expected
 
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
-
-    ## Verify
+    # Expected
     b2c_booking_detail_page.Verify Parcel Label
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
@@ -275,6 +273,8 @@ Booking_S002
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
+    # Expected
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
+
 
     [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
