@@ -1,35 +1,13 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
 *** Test Cases ***
-Booking_S001
-    [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Booking    UAT
-    Log    Login
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-    b2c_home_page.Verify My Profile Page  
-    ...    ${Booking_S001['company_profile']}
-    ...    ${Booking_S001['sir_name']}
-    ...    ${Booking_S001['company_name']}
-    ...    ${Booking_S001['profile']}
-    ...    ${Booking_S001['name']}
-    ...    ${Booking_S001['phone']}
-    ...    ${Booking_S001['email']}
-    ...    ${Booking_S001['position']}
-    common.Verify Capture Screenshot    Booking_S001    Verify Home Page
-
-Booking_S002
-    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)    
-    [Tags]    Booking    UAT    Run
-    Log    Login
+Booking_S004
+    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -112,10 +90,6 @@ Booking_S002
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
-    ...    ${Booking.text_blank['parcel_size']}
-    ...    ${Booking.text_blank['discount_value']}
-    ...    ${Booking.text_blank['insurance_fee_value']}
-    ...    ${Booking.text_blank['cod_fee_value']}
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel
 
     Log    Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
