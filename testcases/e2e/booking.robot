@@ -276,50 +276,7 @@ Booking_S002
     
 
 
-
-
-Booking_S002_Step16
-    [Tags]    Bix
-    # Login
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-    Go to    https://www-uat.allspeedy.co.th/booking
-
-    # Step No. 16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
-    b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    B2410001229    #${booking_id}
-    # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
-    ...    ${Booking['text_title_booking_list']}
-    ...    B2410001229    #${booking_id}
-    ...    Booking DRY    #${booking_name}
-    ...    07-10-2567 11:22    #${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_draft_status']}    #${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S002['img_sender_heart']}
-    ...    ${Booking_S002['sender_name']}
-    ...    ${Booking_S002['sender_phone']}
-    ...    ${Booking_S002['img_receiver_heart']}
-    ...    ${Booking_S002['receiver_name']}
-    ...    ${Booking_S002['receiver_phone']}
-    ...    ${Booking_S002['receiver_address']}
-    ...    ${Booking_S002['receiver_postcode_full']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S002['discount_amount']}
-    ...    ${Booking_S002['discount_value']}
-    ...    ${Booking_S002['insurance_fee_amount']}
-    ...    ${Booking_S002['insurance_fee_value']}
-    ...    ${Booking_S002['cod_fee_amount']}
-    ...    ${Booking_S002['cod_fee_value']}
-    ...    ${Booking_S002['total_price_amount']}
-    ...    ${Booking_S002['total_price_value']}
-    common.Verify Capture Screenshot    B2C_AddBooking_002_001    Verify Booking Detail Page
-
-
-
-
+    
 
 Booking_S002_Step17-Step18 
     # [Tags]    Bew
