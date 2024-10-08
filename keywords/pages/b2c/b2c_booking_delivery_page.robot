@@ -395,8 +395,7 @@ Verify Full Post Code Value
     Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value} 
 
 Verify Created Booking On Booking Delivery Page
-    [Arguments]    ${booking_id}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}
-    
+    [Arguments]    ${booking_id}    ${booking_time}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}    
     ${booking_id_replace}=    Replace String    ${txt_booking_id_in_list}    {value}    ${booking_id}
     Wait Until Element Is Visible    ${booking_id_replace}    timeout=30s
 
@@ -411,7 +410,7 @@ Verify Created Booking On Booking Delivery Page
     Should Be Equal    ${txt_name}    ${name_booking}
 
     ${booking_date}=    Replace String    ${txt_booking_date_in_list}    {value}    ${booking_id}
-    Verify Date Format   ${booking_date}
+    Verify Date And Time With Time Distortion   ${booking_date}    ${booking_time}
 
     ${booking_item}=    Replace String    ${txt_booking_item_in_list}    {value}    ${booking_id}
     ${txt_item}=    Get Text    ${booking_item} 
@@ -434,13 +433,6 @@ Verify Booking Format And Value
     Should Be Equal    ${txt_id_index_1_to_5}     ${current_date}
     ${int_value}=    Convert To Integer    ${txt_id_index_5_to_11}
     Should Be Equal    ${txt_id}    ${value}
-
-
-Verify Date Format 
-    [Arguments]    ${locator}
-    ${actual_txt_date}=    Get Text    ${locator}
-    ${txt_date_convert}    Convert Date    ${actual_txt_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
-    Should Be Equal    ${actual_txt_date}    ${txt_date_convert}
 
 Select Parcel Size
     [Arguments]    ${value}

@@ -24,6 +24,7 @@ Booking:
   text_my_coupon_and_code:  คูปองและโค้ดส่วนลดของฉัน
   text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
   text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
+  text_parcel_status_waiting_entering: รอส่งพัสดุเข้าระบบ
   text_paper_size:
     size_a4:  กระดาษ A4
     size_a5:  กระดาษ A5
