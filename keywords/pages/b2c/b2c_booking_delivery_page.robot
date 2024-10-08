@@ -395,34 +395,46 @@ Verify Full Post Code Value
     Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value} 
 
 Verify Created Booking On Booking Delivery Page
-    [Arguments]    ${id}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}
+    [Arguments]    ${booking_id}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}
     
-    ${booking_id}=    Replace String    ${txt_booking_id_in_list}    {value}    ${id}
-    Wait Until Element Is Visible    ${booking_id}    timeout=30s
+    ${booking_id_replace}=    Replace String    ${txt_booking_id_in_list}    {value}    ${booking_id}
+    Wait Until Element Is Visible    ${booking_id_replace}    timeout=30s
 
-    ${booking_status}=    Replace String    ${txt_booking_status_in_list}    {value}    ${id}
-    ${txt_status}=    Get Text    ${booking_status}
+    ${booking_status_replace}=    Replace String    ${txt_booking_status_in_list}    {value}    ${booking_id}
+    ${txt_status}=    Get Text    ${booking_status_replace}
     Should Be Equal    ${txt_status}    ${status_booking}
 
-    ${txt_id}=    Get Text    ${booking_id}
-    ${length}=    Get Length    ${txt_id}
-    Should Be Equal As Integers    ${length}    11
-    Should Start With    ${txt_id}    B
+    Verify Booking Format And Value    ${booking_id_replace}    ${booking_id}
 
-    ${booking_name}=    Replace String    ${txt_booking_name_in_list}    {value}    ${id}
+    ${booking_name}=    Replace String    ${txt_booking_name_in_list}    {value}    ${booking_id}
     ${txt_name}=    Get Text    ${booking_name}
     Should Be Equal    ${txt_name}    ${name_booking}
 
-    ${booking_date}=    Replace String    ${txt_booking_date_in_list}    {value}    ${id}
+    ${booking_date}=    Replace String    ${txt_booking_date_in_list}    {value}    ${booking_id}
     Verify Date Format   ${booking_date}
 
-    ${booking_item}=    Replace String    ${txt_booking_item_in_list}    {value}    ${id}
+    ${booking_item}=    Replace String    ${txt_booking_item_in_list}    {value}    ${booking_id}
     ${txt_item}=    Get Text    ${booking_item} 
     Should Be Equal    ${txt_item}    ${item_booking}
 
-    ${booking_price}=    Replace String    ${txt_booking_price_in_list}    {value}    ${id}
+    ${booking_price}=    Replace String    ${txt_booking_price_in_list}    {value}    ${booking_id}
     ${txt_price}=    Get Text    ${booking_price}
     Should Be Equal    ${txt_price}    ${price_booking}
+
+Verify Booking Format And Value 
+    [Arguments]    ${locator}    ${value}
+    ${txt_id}=    Get Text    ${locator}
+    ${length}=    Get Length    ${txt_id}
+    Should Be Equal As Integers    ${length}    11
+    Should Start With    ${txt_id}    B
+    ${current_date}=    Get Current Date    result_format=%y%m
+    ${current_date_string}=    Convert To String    ${current_date}
+    ${txt_id_index_1_to_5}=    Get Substring    ${txt_id}    1    5
+    ${txt_id_index_5_to_11}=    Get Substring    ${txt_id}    5    11
+    Should Be Equal    ${txt_id_index_1_to_5}     ${current_date}
+    ${int_value}=    Convert To Integer    ${txt_id_index_5_to_11}
+    Should Be Equal    ${txt_id}    ${value}
+
 
 Verify Date Format 
     [Arguments]    ${locator}
@@ -445,3 +457,46 @@ Verify Promotion Detail
 Click Parcel Booking Button
     Wait Until Element Is Visible    ${btn_parcel_booking}    timeout=${DEFAULT_TIMEOUT}
     Click Element   ${btn_parcel_booking}
+    
+Verify Create Parcel Page Detail Step
+    [Arguments]    ${detail_A4}    ${detail_A3}    ${detail_XS}    ${detail_S}    ${detail_M}    ${detail_L}    ${detail_XL}    ${detail_XXL}    ${insure_amount}    ${cod}    ${remark}
+    
+    ${actual_detail_A4}=    Get Text    ${btn_parcel_select_A4} 
+    ${detail_A4_replace}=  Replace String   ${actual_detail_A4}   \n   ${SPACE}
+    Should Be Equal    ${detail_A4_replace}    ${detail_A4}
+    
+    ${actual_detail_A3}=    Get Text    ${btn_parcel_select_A3} 
+    ${detail_A3_replace}=  Replace String   ${actual_detail_A3}   \n   ${SPACE}
+    Should Be Equal    ${detail_A3_replace}    ${detail_A3}
+
+    ${actual_detail_XS}=    Get Text    ${btn_parcel_select_XS} 
+    ${detail_XS_replace}=  Replace String   ${actual_detail_XS}   \n   ${SPACE}
+    Should Be Equal    ${detail_XS_replace}    ${detail_XS}
+
+    ${actual_detail_S}=    Get Text    ${btn_parcel_select_S} 
+    ${detail_S_replace}=  Replace String   ${actual_detail_S}   \n   ${SPACE}
+    Should Be Equal    ${detail_S_replace}    ${detail_S}
+
+    ${actual_detail_M}=    Get Text    ${btn_parcel_select_M} 
+    ${detail_M_replace}=  Replace String   ${actual_detail_M}   \n   ${SPACE}
+    Should Be Equal    ${detail_M_replace}    ${detail_M}
+
+    ${actual_detail_L}=    Get Text    ${btn_parcel_select_L} 
+    ${detail_L_replace}=  Replace String   ${actual_detail_L}   \n   ${SPACE}
+    Should Be Equal    ${detail_L_replace}    ${detail_L}
+
+    ${actual_detail_XL}=    Get Text    ${btn_parcel_select_XL} 
+    ${detail_XL_replace}=  Replace String   ${actual_detail_XL}   \n   ${SPACE}
+    Should Be Equal    ${detail_XL_replace}    ${detail_XL}
+
+    ${actual_detail_XXL}=    Get Text    ${btn_parcel_select_XXL} 
+    ${detail_XXL_replace}=  Replace String   ${actual_detail_XXL}   \n   ${SPACE}
+    Should Be Equal    ${detail_XXL_replace}    ${detail_XXL}
+
+
+    ${actual_insure_amount}=    Get Text    ${txt_insure_amount}
+    Should Be Equal    ${actual_insure_amount}    ${insure_amount}
+    ${actual_cod}=    Get Text    ${txt_cod} 
+    Should Be Equal    ${actual_cod}    ${cod}
+    ${actual_remark}=    Get Text    ${txt_remark}
+    Should Be Equal    ${actual_remark}    ${remark}

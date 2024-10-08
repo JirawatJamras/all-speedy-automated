@@ -25,6 +25,15 @@ ${btn_add_receiver_to_favorites}    //div[@id='create_parcel_form_receiver_isDef
 ${btn_next}    //div[@class='ant-space-item' and text()='ถัดไป']/../../../button
 ${btn_parcel_booking}    //span[contains(text(),'จองเลขพัสดุ')]
 ${btn_parcel_size}    //*[@id="create_parcel_form"]//span//strong[text()='{value}']
+${btn_parcel_select_A4}    //strong[text()= 'A4']/../../../div[@class='ant-card-body']
+${btn_parcel_select_A3}    //strong[text()= 'A3']/../../../div[@class='ant-card-body']
+${btn_parcel_select_XS}    //strong[text()= 'XS']/../../../div[@class='ant-card-body']
+${btn_parcel_select_S}    //strong[text()= 'S']/../../../div[@class='ant-card-body']
+${btn_parcel_select_M}    //strong[text()= 'M']/../../../div[@class='ant-card-body']
+${btn_parcel_select_L}    //strong[text()= 'L']/../../../div[@class='ant-card-body']
+${btn_parcel_select_XL}    //strong[text()= 'XL']/../../../div[@class='ant-card-body']
+${btn_parcel_select_XXL}    //strong[text()= 'XXL']/../../../div[@class='ant-card-body']
+
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']//div[text()='สร้างพัสดุ']
 ${txt_frist_step_name}    //form[@id='create_parcel_form']/div[2]/div[1]/div/div[3]/div
@@ -54,7 +63,9 @@ ${txt_booking_item_in_list}    //span[text()='{value}']/../../../../div[2]/div[2
 ${txt_booking_price_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[4]
 ${txt_selected_coupon_and_code}    (//*[@id="create_parcel_form_promotion"]//span//strong)[1]
 ${txt_my_coupon_and_code}    (//*[@id="create_parcel_form_promotion"]//span//strong)[2]
-
+${txt_insure_amount}    //label[@title='จำนวนเงินซื้อประกัน']
+${txt_cod}    //label[@title='เก็บเงินปลายทาง']
+${txt_remark}    //label[@title='หมายเหตุ']
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
 ${msg_error_name_sender}    //input[@id='create_parcel_form_sender_name']/../../../../div[2]/div/div

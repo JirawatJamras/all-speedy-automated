@@ -148,28 +148,18 @@ Booking_S002
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    ${detail_A4}=    Get Text    //strong[text()= 'A4']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_A4}    A4${\n}ซอง A4${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 51 ชม.
-    ${detail_A3}=    Get Text    //strong[text()= 'A3']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_A3}    A3${\n}ซอง A3${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 72 ชม.
-    ${detail_XS}=    Get Text    //strong[text()= 'XS']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_XS}    XS${\n}กล่อง XS (เล็กพิเศษ)${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 40 ชม.
-    ${detail_S}=    Get Text    //strong[text()= 'S']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_S}    S${\n}กล่อง S (เล็ก)${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 60 ชม.
-    ${detail_M}=    Get Text    //strong[text()= 'M']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_M}    M${\n}กล่อง M (กลาง)${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 90 ชม.
-    ${detail_L}=    Get Text    //strong[text()= 'L']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_L}    L${\n}กล่อง L (ใหญ่)${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 120 ชม.
-    ${detail_XL}=    Get Text    //strong[text()= 'XL']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_XL}    XL${\n}กล่อง XL (ใหญ่มาก)${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 150 ชม.
-    ${detail_XXL}=    Get Text    //strong[text()= 'XXL']/../../../div[@class='ant-card-body']
-    Should Be Equal    ${detail_XXL}    XXL${\n}กล่อง XXL (ใหญ่พิเศษ)${\n}ขนาดวัดตามสายวัด${\n}กว้าง + ยาว + สูง ไม่เกิน 200 ชม.
-    ${insure_amount}=    Get Text    //label[@title='จำนวนเงินซื้อประกัน']
-    Should Be Equal    ${insure_amount}    จำนวนเงินซื้อประกัน
-    ${cod}=    Get Text    //label[@title='เก็บเงินปลายทาง']
-    Should Be Equal    ${cod}    เก็บเงินปลายทาง
-    ${remark}=    Get Text    //label[@title='หมายเหตุ']
-    Should Be Equal    ${remark}    หมายเหตุ
+    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
+    ...    ${Booking_S002['parcel_detail_A4']}
+    ...    ${Booking_S002['parcel_detail_A3']}
+    ...    ${Booking_S002['parcel_detail_XS']}
+    ...    ${Booking_S002['parcel_detail_S']}
+    ...    ${Booking_S002['parcel_detail_M']}
+    ...    ${Booking_S002['parcel_detail_L']}
+    ...    ${Booking_S002['parcel_detail_XL']}
+    ...    ${Booking_S002['parcel_detail_XXL']}
+    ...    ${Booking_S002['parcel_detail_insure_amount']}
+    ...    ${Booking_S002['parcel_detail_cod']}
+    ...    ${Booking_S002['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S002    Verify Paecel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
@@ -216,6 +206,7 @@ Booking_S002
     ...    ${Booking_S002['total_price_amount']}
     ...    ${Booking_S002['total_price_value']}
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
+
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
