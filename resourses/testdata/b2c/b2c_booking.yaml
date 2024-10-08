@@ -51,6 +51,9 @@ Booking:
     discount_value: '-'
     insurance_fee_value: '-'
     cod_fee_value: '-'
+  parcel_detail_insure_amount: จำนวนเงินซื้อประกัน
+  parcel_detail_cod: เก็บเงินปลายทาง
+  parcel_detail_remark: หมายเหตุ
 
 Booking_S001:
   company_profile: โปรไฟล์บริษัท
@@ -94,6 +97,8 @@ Booking_S002:
   parcel_package_type:  ซอง
   parcel_cod:  Non COD
   parcel_insure:  ไม่มีการซื้อประกัน
+
+  
 
 Booking_S003:
   parcel_type:  พัสดุทั่วไป

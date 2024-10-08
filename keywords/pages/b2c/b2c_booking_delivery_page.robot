@@ -155,6 +155,38 @@ Click Choose Favorites
     ${title_text}=    Get Text    ${favorites_defult_text}
     Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_default_text']}
 
+Click Choose Favorites Receiver
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    Click Element    ${choose_favorites_btn}
+   
+Verify Favorites Receiver PopUp
+    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}
+    ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${receiver_name}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${receiver_address}
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+
+Click Choose Favorites Receiver List
+    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}
+    ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${receiver_name}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${receiver_address}
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+    Click Element    ${selected_favorites_list}
+
+Verify Choose Receiver From Favorites
+    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}    ${receiver_postcode}
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    ${phone_text}=    Get Value    ${txtbox_phone_receiver}
+    Should Be Equal    ${phone_text}    ${receiver_phone}    
+    ${name_text}=    Get Value    ${txtbox_name_receiver}
+    Should Be Equal   ${name_text}    ${receiver_name}
+    ${address_text}=    Get Value    ${txtbox_address_receiver}
+    Should Be Equal    ${address_text}    ${receiver_address}
+    ${postcode_text}=    Get Text    ${txtbox_postcode_receiver_select_text}
+    Should Be Equal    ${postcode_text}    ${receiver_postcode}
+
+
 Click Favorites Defult
     Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
     Click Element    ${select_favorites_btn}
