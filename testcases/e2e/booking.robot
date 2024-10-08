@@ -76,7 +76,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify After Create Parcel Page Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
-    b2c_booking_delivery_page.Click Button  ${btn_next_to_receiver}
+    b2c_booking_delivery_page.Click Next Button 
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
     ...    ${Booking['text_title']}
@@ -236,7 +236,7 @@ Booking_S002
 
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
-        b2c_booking_detail_page.Verify Edit Booking List Popup    
+    b2c_booking_detail_page.Verify Edit Booking List Popup    
     ...    ${Booking_S002['parcel_type']}
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}

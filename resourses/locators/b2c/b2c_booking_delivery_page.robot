@@ -53,6 +53,7 @@ ${txt_booking_date_in_list}    //span[text()='{value}']/../../../../div[2]/div[2
 ${txt_booking_item_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[2]
 ${txt_booking_price_in_list}    //span[text()='{value}']/../../../../div[2]/div[2]/div[2]/div[2]/div/div/div[4]
 ${txt_selected_coupon_and_code}    (//*[@id="create_parcel_form_promotion"]//span//strong)[1]
+${txt_my_coupon_and_code}    (//*[@id="create_parcel_form_promotion"]//span//strong)[2]
 
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
