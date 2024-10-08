@@ -179,11 +179,11 @@ Booking_S002
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
-    #Expected
-    # b2c_booking_delivery_page.Verify Promotion Detail
-    # ...    ${Booking['text_selected_coupon_and_code']}
-    # ...    ${Booking['text_my_coupon_and_code']}
-    # common.Verify Capture Screenshot    Booking_S002    Verify Promotion
+    # Expected
+    b2c_booking_delivery_page.Verify Promotion Detail
+    ...    ${Booking['text_selected_coupon_and_code']}
+    ...    ${Booking['text_my_coupon_and_code']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
     # - ไม่เลือก Promotion
