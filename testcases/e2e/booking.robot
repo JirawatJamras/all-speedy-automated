@@ -333,7 +333,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_insure']}
-    ...    ${Booking.text_blank['parcel_detail_remark:']}
+    ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S002    Verify Parcel Label
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
