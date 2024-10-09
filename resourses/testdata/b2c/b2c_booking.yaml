@@ -61,8 +61,8 @@ Booking:
     receiver_postcode_full: '-'
     parcel_size: '-'
     price_value: '-'
-    insurance_fee_value: '-'
-    cod_fee_value: '-'
+    insure_amount_value: '-'
+    cod_value: '-'
     parcel_detail_remark: '-'
   text_default:
     discount_amount: '0'
