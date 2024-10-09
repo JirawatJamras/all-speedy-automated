@@ -76,11 +76,11 @@ Search Shipping Store
 
 Click Select Store On Map
     Wait Until Element Is Visible    ${b2c_btn_select_store}    timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    ${b2c_btn_select_store}
     Click When Ready    ${b2c_btn_select_store}
 
 Click Save Shipping Origin Aria
     Click When Ready    ${b2c_btn_save_shipping_origin}
+    Wait Until Element Is Not Visible    //*[@role='dialog']    timeout=${DEFAULT_TIMEOUT}
 
 Get Booking ID
     Wait Until Element Is Visible    ${txt_booking_id}    timeout=${DEFAULT_TIMEOUT}
@@ -241,7 +241,7 @@ Click Print Parcel Label
 Verify Parcel Label
     [Arguments]    ${size_a4}    ${size_a5}    ${size_8cm}    ${receiver_postcode}    ${parcel_box}    ${parcel_size}    ${sender_name}    ${sender_phone}
     ...    ${sender_address}    ${sender_postcode_full}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
-    ...    ${parcel_cod}    ${parcel_insure}
+    ...    ${parcel_cod}    ${parcel_insure}    ${parcel_detail_remark}
     ${parcel_id}    Get Parcel ID
     Wait Until Element Is Visible    ${b2c_txt_title_print_label}
     Wait Until Element Is Visible    ${b2c_txt_paper_size}

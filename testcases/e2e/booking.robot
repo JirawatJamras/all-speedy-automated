@@ -230,7 +230,7 @@ Booking_S002
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking_S002['booking_item']}
-    ...    ${Booking.text_default['booking_price']}
+    ...    ${Booking_S002['booking_price']}
     common.Verify Capture Screenshot    Booking_S002    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -331,8 +331,9 @@ Booking_S002
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
-    ...    ${Booking_S002['parcel_cod']}
-    ...    ${Booking_S002['parcel_insure']}
+    ...    ${Booking.label['parcel_cod']}
+    ...    ${Booking.label['parcel_insure']}
+    ...    ${Booking.text_blank['parcel_detail_remark:']}
     common.Verify Capture Screenshot    Booking_S002    Verify Parcel Label
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
