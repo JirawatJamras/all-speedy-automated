@@ -84,8 +84,81 @@ Booking_S004
     ...    ชั้น 1 Siamscape Building, 2/15 ถ.พญาไท
     #Expected
     b2c_booking_delivery_page.Verify Choose Receiver From Favorites
-    ...    Vasup Automate Test Receiver 
-    ...    0999999999
-    ...    ชั้น 1 Siamscape Building, 2/15 ถ.พญาไท
-    ...    ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Choose Receiver From Favorites
 
+    Log    Step No.9 กดปุ่ม "ถัดไป"
+    b2c_booking_delivery_page.Click Next Button
+    #Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
+    ...    ${Booking.general_parcel['parcel_detail_A4']}
+    ...    ${Booking.general_parcel['parcel_detail_A3']}
+    ...    ${Booking.general_parcel['parcel_detail_XS']}
+    ...    ${Booking.general_parcel['parcel_detail_S']}
+    ...    ${Booking.general_parcel['parcel_detail_M']}
+    ...    ${Booking.general_parcel['parcel_detail_L']}
+    ...    ${Booking.general_parcel['parcel_detail_XL']}
+    ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    ...    ${Booking['parcel_detail_insure_amount']}
+    ...    ${Booking['parcel_detail_cod']}
+    ...    ${Booking['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Detail Step
+
+    Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ กรอกข้อมูล ขนาดพัสดุ : กล่อง XS COD : 5,000.00"
+    b2c_booking_delivery_page.Select Parcel Size    ${Booking_S004['parcel_size']}
+    b2c_booking_delivery_page.Input COD    ${Booking_S004['parcel_cod']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Select Parcel Size And Input COD
+
+    Log    Step No.11 กดปุ่ม "บันทึกร่าง"
+    b2c_booking_delivery_page.Click Save Button
+    #Expected
+    b2c_booking_detail_page.Verify Booking list Page
+    ...    ${Booking['text_booking_list']}
+    ...    ${Booking['text_draft_status']}
+    ...    ${Booking_S004['img_sender_heart']}
+    ...    ${Booking_S004['sender_name']}
+    ...    ${Booking_S004['sender_phone']}
+    ...    ${Booking_S004['img_receiver_heart']}
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
+    ...    ${Booking_S004['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['insurance_fee_value']}
+    ...    ${Booking_S004['parcel_cod_verrify']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Draft Paecel
+
+
+
+Booking_Test
+    [Documentation]    
+    [Tags]    Booking    UAT    Run
+    Log    Login
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+
+    Go to    https://www-uat.allspeedy.co.th/booking/detail/B2410001653
+
+    b2c_booking_detail_page.Verify Booking list Page
+    ...    ${Booking['text_booking_list']}
+    ...    ${Booking['text_draft_status']}
+    ...    ${Booking_S004['img_sender_heart']}
+    ...    ${Booking_S004['sender_name']}
+    ...    ${Booking_S004['sender_phone']}
+    ...    ${Booking_S004['img_receiver_heart']}
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
+    ...    ${Booking_S004['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['insurance_fee_value']}
+    ...    ${Booking_S004['parcel_cod_verrify']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Draft Paecel

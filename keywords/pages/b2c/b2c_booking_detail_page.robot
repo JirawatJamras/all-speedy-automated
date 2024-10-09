@@ -10,7 +10,7 @@ Select Draft Booking
 Verify Booking list Page
     [Arguments]    ${booking_list}    ${status}    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    
-    ...    ${parcel_size}    ${discount_value}    ${insurance_fee_value}    ${cod_fee_value}
+    ...    ${parcel_size}    ${price_value}    ${insurance_fee_value}    ${cod_fee_value}
 
     ${receiver_address}=    Set Variable If    '${receiver_address}' == '-' and '${receiver_postcode_full}' == '-'    -    ${receiver_address} ${receiver_postcode_full}
     
@@ -19,7 +19,7 @@ Verify Booking list Page
 
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${discount_value}บาท ซื้อประกัน : ${insurance_fee_value} บาท COD : ${cod_fee_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${insurance_fee_value} บาท COD : ${cod_fee_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
 
     ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
     
@@ -127,7 +127,7 @@ Click Booking With Status Select Shipping Origin
 Verify Booking Detail Page
     [Arguments]    ${title}    ${booking_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
-    ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    ${parcel_type}
+    ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${insure_amount}    ${cod}    
     ...    ${booking_summary}    ${discount_amount}    ${discount_value}    ${insurance_fee_amount}    ${insurance_fee_value}
     ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}
     
@@ -153,7 +153,7 @@ Verify Booking Detail Page
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : -บาท ซื้อประกัน : - บาท COD : - บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price} ซื้อประกัน : ${insure_amount} COD : ${cod} พิมพ์ใบจ่ายหน้าพัสดุ -
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     

@@ -200,7 +200,7 @@ Verify Choose Receiver From Favorites
     ${postcode_text}=    Get Text    ${txtbox_postcode_receiver_select_text}
     Should Be Equal    ${postcode_text}    ${receiver_postcode}
 
-Click Favorites Defult
+Click Favorites Default
     Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
     Click Element    ${select_favorites_btn}
 
@@ -249,7 +249,7 @@ Input Favorites TextBox Nomal Letters More Than 100 Characters
     Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
-Click Favorites Defult List
+Click Favorites Default List
     Wait Until Element Is Visible    ${choose_default_favorites_btn}    timeout=30s
     Click Element    ${choose_default_favorites_btn}
 
@@ -371,7 +371,7 @@ Click Save Button
 Click Next Button
     common.Click When Ready    ${btn_next}
 
-Click Add To Favorites
+Click Add To Favorites In Receiver
     common.Click When Ready    ${btn_add_receiver_to_favorites}
 
 Verify Favorites Icon Red Heart
@@ -554,6 +554,13 @@ Click Use Code Button
 Input COD
     [Arguments]    ${value}
     Input When Ready    ${txtbox_cod}    ${value}
+    
+Input Insurance
+    [Arguments]    ${value}
+    Input When Ready    ${txtbox_insure_amount}    ${value}
+
+# Verify Selected Coupon And Code
+#     ${actual_selected_code_detail}    Get Text    ${txt_selected_code_detail}
 
 Verify Selected Coupon And Code
     [Arguments]    ${discount}    ${promotion_name}    ${parcel_size}    ${expired_date}    ${condition}    ${period}
@@ -561,3 +568,6 @@ Verify Selected Coupon And Code
     ${actual_selected_code_detail}=  Replace String   ${actual_selected_code_detail}   \n   ${SPACE}
     Should Be Equal As Strings    ${actual_selected_code_detail}
     ...    คูปองและโค้ดส่วนลดที่เลือก ${discount} ${promotion_name} ${parcel_size} หมดอายุ ${expired_date} เงื่อนไขการใช้คูปอง - ${condition} ระยะเวลา ${period} นำออก
+
+Click Add To Favorites In Sender
+    common.Click When Ready    ${btn_add_sender_to_favorites}

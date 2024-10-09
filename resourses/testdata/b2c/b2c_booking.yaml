@@ -60,7 +60,7 @@ Booking:
     receiver_postcode_5_digits: '-'
     receiver_postcode_full: '-'
     parcel_size: '-'
-    discount_value: '-'
+    price_value: '-'
     insurance_fee_value: '-'
     cod_fee_value: '-'
     parcel_detail_remark: '-'
@@ -190,6 +190,29 @@ Booking_S005:
   parcel_package_type:  กล่อง
   parcel_cod: 5000
   parcel_insure:  ไม่มีการซื้อประกัน
+
+Booking_S006:
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  booking_name:  Booking DRY
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  discount_amount: '0'
+  discount_value: '0.00'
+  insurance_fee_amount: '0'
+  insurance_fee_value: '0.00'
+  cod_fee_amount: '0'
+  cod_fee_value: '0.00'
+  total_price_amount: 0
+  total_price_value: '0.00'
+  booking_item: 1 รายการ
+  booking_price:  0.00บาท
+  parcel_size:  M
+  insurance_fee_value:  2,500
 
 Booking_S007:
   parcel_type:  พัสดุทั่วไป

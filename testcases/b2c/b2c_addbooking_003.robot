@@ -101,7 +101,7 @@ B2C_AddBooking_003_005
     b2c_bookingdelivery_page.Click Accept Terms of Service
     b2c_bookingdelivery_page.Click General Parcel
     b2c_create_parcel_page.Click Choose Favorites
-    b2c_create_parcel_page.Click Favorites Defult List
+    b2c_create_parcel_page.Click Favorites Default List
     b2c_create_parcel_page.Click Accept Favorites List
     b2c_create_parcel_page.Verify Choose From Favorites
     common.Verify Capture Screenshot  B2C_AddBooking_003_005  Verify Choose From Favorites
@@ -120,7 +120,7 @@ B2C_AddBooking_003_006
     b2c_bookingdelivery_page.Click Accept Terms of Service
     b2c_bookingdelivery_page.Click General Parcel
     b2c_create_parcel_page.Click Choose Favorites
-    b2c_create_parcel_page.Click Favorites Defult List
+    b2c_create_parcel_page.Click Favorites Default List
     b2c_create_parcel_page.Click Cancel Favorites List
     b2c_create_parcel_page.Verify Not Choose From Favorites
     common.Verify Capture Screenshot  B2C_AddBooking_003_006  Verify Not Choose From Favorites

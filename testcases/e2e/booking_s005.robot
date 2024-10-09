@@ -71,7 +71,7 @@ Booking_S005
     ...    ${Booking.text_blank['receiver_address']}
     ...    ${Booking.text_blank['receiver_postcode_full']}
     ...    ${Booking.text_blank['parcel_size']}
-    ...    ${Booking.text_blank['discount_value']}
+    ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['insurance_fee_value']}
     ...    ${Booking.text_blank['cod_fee_value']}
     common.Verify Capture Screenshot    Booking_S005    Verify Draft Paecel

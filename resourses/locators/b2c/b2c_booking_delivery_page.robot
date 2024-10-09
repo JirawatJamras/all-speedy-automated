@@ -94,6 +94,7 @@ ${opt_default_favorites}    //span[contains(@class,'ant-typography bg-amber-500'
 ${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//textarea[@id='create_parcel_form_remark']
 ${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่วนลด']
 ${txtbox_cod}    //input[@id='create_parcel_form_codValue']
+${txtbox_insure_amount}    //label[text()='จำนวนเงินซื้อประกัน']/../..//input[@id='create_parcel_form_insureAmount']
 
 ${cbo_postcode_sender}    //div[@title='{value}']
 ${cbo_postcode_receiver}    //div[@title='{value}']
