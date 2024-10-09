@@ -85,11 +85,10 @@ Booking_S004
     b2c_booking_delivery_page.Click Accept Favorites List
     #Expected
     b2c_booking_delivery_page.Verify Choose Receiver From Favorites
-    ...    ${Booking_S004['receiver_name']}
-    ...    ${Booking_S004['receiver_phone']}
-    ...    ${Booking_S004['receiver_address']}
-    ...    ${Booking_S004['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S004    Verify Choose Receiver From Favorites
+    ...    Vasup Automate Test Receiver 
+    ...    0999999999
+    ...    ชั้น 1 Siamscape Building, 2/15 ถ.พญาไท
+    ...    ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
 
     Log    Step No.9 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button

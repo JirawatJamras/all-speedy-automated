@@ -6,24 +6,15 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Variables ***
+#Profile
 ${profile_icon_btn}    //span[@aria-label='user' and @class='anticon anticon-user text-xl mr-2']
+${edit_btn}    //span[text()='แก้ไข']
+${mobile_no_txtbox}    //span[text()='เบอร์โทรศัพท์ ']//.//..//..//..//..//input
+${save_btn}    //span[text()='บันทึก']
+
+#Profile Business
 ${profile_business_btn}    //span[@class='ant-dropdown-menu-title-content']//span[text()='โปรไฟล์บริษัท']//..
-${manage_users_tab}    //div[@data-node-key='2']//div[text()='จัดการผู้ใช้งาน']
-${super_user_tab}    //div[@data-node-key='2']//div[text()='Super User']
-${user_tab}    //div[@data-node-key='3']//div[text()='User']
-${add_user_btn}    //span[text()='เพิ่มผู้ใช้งาน']
-
-${user_name_txtbox}    //label[@title='ชื่อ']//../..//input[@type='text']
-${user_last_name_txtbox}    //label[@title='นามสกุล']//../..//input[@type='text']
-${user_email_txtbox}    //label[@title='E-mail']//../..//input[@type='text']
-${user_mobile_no_txtbox}    //label[@title='เบอร์โทรศัพท์']//../..//input[@type='text']
-${user_mobile_ext_txtbox}    //label[@title='#ต่อ']//../..//input[@type='text']
-${user_position_txtbox}    //label[@title='ตำแหน่งงาน']//../..//input[@type='text']
-
-${manage_branch_tab}    //div[@data-node-key='3']//div[text()='จัดการสาขา']
-${tracking_request_tab}    //div[@data-node-key='4']//div[text()='ติดตามรายการคำขอ']
-${add_request_btn}    //span[text()='เพิ่มคำขอ']//..
-
+ #Company_information
 ${company_information_first_tab}    //div[@data-node-key='1']//div[text()='ข้อมูลบริษัท' and @aria-controls='rc-tabs-1-panel-1']
 ${company_information_second_tab}    //div[@data-node-key='1']//div[text()='ข้อมูลบริษัท' and @aria-controls='rc-tabs-0-panel-1']
 ${service_information_tab}    //div[@data-node-key='2']//div[text()='ข้อมูลบริการ']
@@ -32,10 +23,33 @@ ${temperature_controlled_parcel_tab}    //div[@data-node-key='2']//div[text()='�
 ${return_business_tab}    //div[@data-node-key='3']//div[text()='Return Business']
 ${contact_and_bank_information_tab}    //div[@data-node-key='3']//div[text()='ข้อมูลผู้ติดต่อและข้อมูลธนาคาร']
 ${supporting_documents_tab}    //div[@data-node-key='4']//div[text()='เอกสารประกอบ']
+
+ #Manage_users
+${manage_users_tab}    //div[@data-node-key='2']//div[text()='จัดการผู้ใช้งาน']
+${super_user_tab}    //div[@data-node-key='2']//div[text()='Super User']
+${user_tab}    //div[@data-node-key='3']//div[text()='User']
+${add_user_btn}    //span[text()='เพิ่มผู้ใช้งาน']
+  #Add User in Profile Business
+${user_name_txtbox}    //label[@title='ชื่อ']//../..//input[@type='text']
+${user_last_name_txtbox}    //label[@title='นามสกุล']//../..//input[@type='text']
+${user_email_txtbox}    //label[@title='E-mail']//../..//input[@type='text']
+${user_mobile_no_txtbox}    //label[@title='เบอร์โทรศัพท์']//../..//input[@type='text']
+${user_mobile_ext_txtbox}    //label[@title='#ต่อ']//../..//input[@type='text']
+${user_position_txtbox}    //label[@title='ตำแหน่งงาน']//../..//input[@type='text']
+
+#Manage_branch
+${manage_branch_tab}    //div[@data-node-key='3']//div[text()='จัดการสาขา']
+${tracking_request_tab}    //div[@data-node-key='4']//div[text()='ติดตามรายการคำขอ']
+${add_request_btn}    //span[text()='เพิ่มคำขอ']//..
+
+#Invoice
 ${invoice_tab}    //div[@data-node-key='5']//div[text()='ใบแจ้งหนี้']
-${edit_btn}    //span[text()='แก้ไข']
-${mobile_no_txtbox}    //span[text()='เบอร์โทรศัพท์ ']//.//..//..//..//..//input
-${save_btn}    //span[text()='บันทึก']
+
+#Full-Register 
+ #Company business tab
+${Company_business_title}    //div[@class='ant-steps-item-content']//div[text()='ข้อมูลบริษัท']
+${general_information_title}    //h4[text()='ข้อมูลทั่วไป']
+${individual_radio_btn}    //span[text()='บุคคลธรรมดา']//..//span[@class='ant-radio ant-wave-target ant-radio-checked']
 
 *** Keywords ***
 Click Profile Icon
@@ -153,19 +167,38 @@ Click Save Button
     Wait Until Element Is Visible    ${save_btn}
     Clear Element Text    ${save_btn}
 
+Verify Company information
+    Wait Until Element Is Visible    ${Company_business_title}
+    #Inprogress
 
 *** Test Cases ***
 E2E Register SC014
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    idc@gmail.com
-    b2c_login_page.Input Password    P@ssw0rd
-    b2c_login_page.Click Log On Button
-
     #Register_014 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
-    #Step 1
+    #Step 1 Open Url
+    common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
+    #Expected
+    Verify Company information
+    #Step 2 Click ปุ่ม "ถัดไป"
+    
+    #Step 3 เปิดใช้งานพัสดุทั่วไป
+    
+    #Step 4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
+    
+    #Step 5 กดปุ่ม "ยกเลิก"
 
+    #Step 6 กดปุ่ม "ตกลง" ที่ Popup
 
+    #Step 7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
+
+    #Step 8 กดปุ่ม "ถัดไป"
+
+    #Step 9 กดแท็บ "พัสดุควบคุมอุณหภูมิ" and กดแท็บ "Return Business"
+
+    #Step 10 กดปุ่ม "ถัดไป"
+
+    #Step 11 ระบุข้อมูลผู้ติดต่อ
+
+    #Step 12 กดปุ่ม "ถัดไป"
 E2E Register SC023
     #Register_023 Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
     common.Open URL    ${B2C_UAT_URL}
