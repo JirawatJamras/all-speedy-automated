@@ -160,16 +160,26 @@ Click Choose Favorites Receiver
 
 Verify Favorites Sender PopUp
     [Arguments]    ${sender_phone}    ${sender_name}    ${sender_address}    ${sender_postcode_full}
+    ${sender_postcode_full_list}=    Split String    ${sender_postcode_full}    ${SPACE}
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${sender_name}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${sender_phone}
-    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${sender_address} ${sender_postcode_full}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${sender_address}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_subdistrict}   ${sender_postcode_full_list[0]}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_district}   ${sender_postcode_full_list[1]}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_province}   ${sender_postcode_full_list[2]}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${sender_postcode_full_list[3]}
     Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
 
 Verify Favorites Receiver PopUp
-    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}
+    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}    ${receiver_postcode_full}
+    ${receiver_postcode_full_list}=    Split String    ${receiver_postcode_full}    ${SPACE}
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${receiver_name}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${receiver_address}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_subdistrict}   ${receiver_postcode_full_list[0]}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_district}   ${receiver_postcode_full_list[1]}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_province}   ${receiver_postcode_full_list[2]}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${receiver_postcode_full_list[3]}    
     Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
 
 Click Choose Favorites Receiver List

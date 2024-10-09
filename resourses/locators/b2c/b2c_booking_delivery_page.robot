@@ -34,7 +34,7 @@ ${btn_parcel_select_L}    //strong[text()= 'L']/../../../div[@class='ant-card-bo
 ${btn_parcel_select_XL}    //strong[text()= 'XL']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_XXL}    //strong[text()= 'XXL']/../../../div[@class='ant-card-body']
 ${btn_use_code}    //button//span[text()='ใช้โค้ด']
-${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}']/../../../../label
+${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
 
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']//div[text()='สร้างพัสดุ']
