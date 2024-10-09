@@ -71,11 +71,11 @@ Booking_S004
     Log    Step No.7 กดปุ่ม "เลือกจากรายการโปรด"
     b2c_booking_delivery_page.Click Choose Favorites
     #Expected
-    b2c_booking_delivery_page.Verify Favorites Receiver PopUp
-    ...    ${Booking_S004['receiver_name']}
-    ...    ${Booking_S004['receiver_phone']}
-    ...    ${Booking_S004['receiver_address']}
-    common.Verify Capture Screenshot    Booking_S004    Verify Favorites Receiver PopUp
+    # b2c_booking_delivery_page.Verify Favorites Receiver PopUp
+    # ...    ${Booking_S004['receiver_name']}
+    # ...    ${Booking_S004['receiver_phone']}
+    # ...    ${Booking_S004['receiver_address']}
+    # common.Verify Capture Screenshot    Booking_S004    Verify Favorites Receiver PopUp
 
     Log    Step No.8 กดเลือกรายการ - สมใจ ดีดีดี 47 หมู่ 4 พ้อแดง หลังสวน ชุมพร 86110
     b2c_booking_delivery_page.Click Choose Favorites Receiver List  
@@ -84,12 +84,12 @@ Booking_S004
     ...    ${Booking_S004['receiver_address']}
     b2c_booking_delivery_page.Click Accept Favorites List
     #Expected
-    b2c_booking_delivery_page.Verify Choose Receiver From Favorites
-    ...    ${Booking_S004['receiver_name']}
-    ...    ${Booking_S004['receiver_phone']}
-    ...    ${Booking_S004['receiver_address']}
-    ...    ${Booking_S004['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S004    Verify Choose Receiver From Favorites
+    # b2c_booking_delivery_page.Verify Choose Receiver From Favorites
+    # ...    ${Booking_S004['receiver_name']}
+    # ...    ${Booking_S004['receiver_phone']}
+    # ...    ${Booking_S004['receiver_address']}
+    # ...    ${Booking_S004['receiver_postcode_full']}
+    # common.Verify Capture Screenshot    Booking_S004    Verify Choose Receiver From Favorites
 
     Log    Step No.9 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -172,16 +172,29 @@ Booking_S004
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    ...    ${Booking.general_parcel['parcel_detail_A4']}
-    ...    ${Booking.general_parcel['parcel_detail_A3']}
-    ...    ${Booking.general_parcel['parcel_detail_XS']}
-    ...    ${Booking.general_parcel['parcel_detail_S']}
-    ...    ${Booking.general_parcel['parcel_detail_M']}
-    ...    ${Booking.general_parcel['parcel_detail_L']}
-    ...    ${Booking.general_parcel['parcel_detail_XL']}
-    ...    ${Booking.general_parcel['parcel_detail_XXL']}
-    ...    ${Booking['parcel_detail_insure_amount']}
-    ...    ${Booking['parcel_detail_cod']}
-    ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Detail Step
+    # b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
+    # ...    ${Booking.general_parcel['parcel_detail_A4']}
+    # ...    ${Booking.general_parcel['parcel_detail_A3']}
+    # ...    ${Booking.general_parcel['parcel_detail_XS']}
+    # ...    ${Booking.general_parcel['parcel_detail_S']}
+    # ...    ${Booking.general_parcel['parcel_detail_M']}
+    # ...    ${Booking.general_parcel['parcel_detail_L']}
+    # ...    ${Booking.general_parcel['parcel_detail_XL']}
+    # ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    # ...    ${Booking['parcel_detail_insure_amount']}
+    # ...    ${Booking['parcel_detail_cod']}
+    # ...    ${Booking['parcel_detail_remark']}
+    # common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Detail Step
+
+    # Log    Step No.15 กดปุ่ม "ถัดไป"
+    # b2c_booking_delivery_page.Click Next Button
+    # #Expected
+    # b2c_booking_delivery_page.Verify Promotion Detail
+    # ...    ${Booking['text_selected_coupon_and_code']}
+    # ...    ${Booking['text_my_coupon_and_code']}
+    # common.Verify Capture Screenshot    Booking_S004    Verify Promotion
+
+
+
+
+

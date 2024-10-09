@@ -208,7 +208,7 @@ Verify Booking Detail Page After Set Origin Shipping
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price} ซื้อประกัน : ${insure_value} COD : ${cod} พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
