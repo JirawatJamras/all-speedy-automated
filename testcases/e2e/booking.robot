@@ -13,7 +13,7 @@ Booking_S001
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     common.Verify Capture Screenshot    Booking_S001    Verify Login Page
-    
+
     Log    Step No.2 Login
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -174,8 +174,6 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
-    # กรอกข้อมูล
-    # เลือกขนาดพัสดุ : ซอง A4"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S002['parcel_size']}
     common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Parcel Detail Step 
 
