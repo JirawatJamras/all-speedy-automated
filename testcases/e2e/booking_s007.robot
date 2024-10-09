@@ -55,5 +55,15 @@ Booking_S007
     ...    ${Booking_S007['sender_name']}
     ...    ${Booking_S007['sender_address']}
     ...    ${Booking_S007['sender_postcode_full']}
+    common.Verify Capture Screenshot    Booking_S007    Verify Click Choose Favorites
 
+    Log    Step No.6 กดเลือกรายการ 
+    b2c_booking_delivery_page.Click Choose Favorites Sender List
+    ...    ${Booking_S007['sender_phone']}
+    ...    ${Booking_S007['sender_name']}
+    ...    ${Booking_S007['sender_address']}
+    ...    ${Booking_S007['sender_postcode_full']}
     
+    #Expected 
+
+
