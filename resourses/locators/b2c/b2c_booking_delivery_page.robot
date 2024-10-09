@@ -93,6 +93,7 @@ ${txtbox_full_postcode_receiver}    //span[@class='ant-select-selection-item']
 ${opt_default_favorites}    //span[contains(@class,'ant-typography bg-amber-500')]/../../../../..//input[@class='ant-radio-input']
 ${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//textarea[@id='create_parcel_form_remark']
 ${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่วนลด']
+${txtbox_cod}    //input[@id='create_parcel_form_codValue']
 
 ${cbo_postcode_sender}    //div[@title='{value}']
 ${cbo_postcode_receiver}    //div[@title='{value}']
@@ -102,6 +103,7 @@ ${value_add_receiver_to_favorites}    //div[@id='create_parcel_form_receiver_isD
 
 ${tab_send_to_home}    //div[@data-node-key='home']
 ${tab_send_to_store}    //div[@data-node-key='store']
+${tab_send_to_home_verify}    //div[@role='tab' and @aria-selected='true']//div[text()='ส่งที่บ้าน']
 
 ${status_active_sender}    //div[@step='1' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']
 ${status_active_receiver}    //div[@step='2' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']

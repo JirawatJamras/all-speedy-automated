@@ -173,9 +173,17 @@ Click Choose Favorites Receiver List
     Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
     Click Element    ${selected_favorites_list}
 
+Verify Choose Favorites Receiver List
+    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}
+    ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${receiver_name}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${receiver_address}
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+
 Verify Choose Receiver From Favorites
-    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}    ${receiver_postcode}
+    [Arguments]    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode} 
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${tab_send_to_home_verify}    timeout=30s
     ${phone_text}=    Get Value    ${txtbox_phone_receiver}
     Should Be Equal    ${phone_text}    ${receiver_phone}    
     ${name_text}=    Get Value    ${txtbox_name_receiver}
@@ -184,7 +192,7 @@ Verify Choose Receiver From Favorites
     Should Be Equal    ${address_text}    ${receiver_address}
     ${postcode_text}=    Get Text    ${txtbox_postcode_receiver_select_text}
     Should Be Equal    ${postcode_text}    ${receiver_postcode}
-
+    # เพิ่ม Verify หัวใจมีสี ไม่มีสี (น้อง Bew กำลัง Push code)
 
 Click Favorites Defult
     Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
@@ -536,6 +544,10 @@ Input Promotion
 
 Click Use Code Button
     Click When Ready    ${btn_use_code}
+
+Input COD
+    [Arguments]    ${value}
+    Input When Ready    ${txtbox_cod}    ${value}
 
 Verify Selected Coupon And Code
     [Arguments]    ${discount}    ${promotion_name}    ${parcel_size}    ${expired_date}    ${condition}    ${period}
