@@ -13,6 +13,7 @@ Booking_S001
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     common.Verify Capture Screenshot    Booking_S001    Verify Login Page
+    
     Log    Step No.2 Login
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}

@@ -186,8 +186,7 @@ Click Next To Receiver
     common.Click When Ready  ${next_to_receiver_btn}
 
 Click Add To Favorites
-    [Arguments]    ${btn}
-    Click Element    ${btn}
+    common.Click When Ready    ${add_to_favorites_btn}
 
 Verify Favorites Icon Red Heart
     [Arguments]    ${xpath}    ${status}

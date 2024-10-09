@@ -44,7 +44,7 @@ ${name_sender_clear_btn}    //input[@id="create_parcel_form_sender_name"]/../spa
 ${address_sender_clear_btn}    //textarea[@id="create_parcel_form_sender_address_info"]/../span/span[1]
 ${postcode_sender_clear_btn}    //input[@id="create_parcel_form_sender_address_full"]/../../../span[2]
 
-${add_to_favorites_btn}    //div[@id="create_parcel_form_sender_isDefault"]
+${add_to_favorites_btn}    //span[text()='เพิ่มเป็นรายการโปรด']
 ${favorites_value}    //div[@id="create_parcel_form_sender_isDefault"]
 
 ${next_to_receiver_btn}    //div[@class="ant-space-item" and text()="ถัดไป"]/../../../button

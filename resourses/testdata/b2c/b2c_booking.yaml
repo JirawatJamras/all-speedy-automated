@@ -6,7 +6,7 @@ Booking:
   text_profile_mail: E-mail
   text_profile_position: ตำแหน่งงาน
   text_title_booking: จองการจัดส่งพัสดุ สาขาหลัก
-  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 8 ตุลาคม 2024 (Version 2)"
+  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 9 ตุลาคม 2024 (Version 2)"
   text_title: สร้างพัสดุ
   text_title_booking_list: รายการบุ๊คกิ้ง 
   text_title_parcel_list: รายการพัสดุ
@@ -138,3 +138,40 @@ Booking_S003:
   parcel_detail_remark:  ระวังพัสดุเสียหาย
   promotion:  SPBH5B
 
+
+
+
+
+
+Booking_S005:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0638757776
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  #img_heart_sender:  รูปหัวใจไม่มีสี 
+  img_sender_heart:  รูปหัวใจไม่มีสี
+  img_receiver_heart:  รูปหัวใจไม่มีสี 
+  booking_name:  Booking DRY
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  discount_amount: '0'
+  discount_value: '0.00'
+  insurance_fee_amount: '0'
+  insurance_fee_value: '0.00'
+  cod_fee_amount: '0'
+  cod_fee_value: '0.00'
+  total_price_amount: 0
+  total_price_value: '0.00'
+  booking_item: 1 รายการ
+  booking_price:  0.00บาท
+  parcel_size:  A4
+  parcel_package_type:  ซอง
+  parcel_cod:  Non COD
+  parcel_insure:  ไม่มีการซื้อประกัน

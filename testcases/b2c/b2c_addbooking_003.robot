@@ -343,7 +343,7 @@ B2C_AddBooking_003_018
     b2c_create_parcel_page.Input Address Sender    ${B2C_AddBooking_003_015['text_address_sender']}
     b2c_create_parcel_page.Input Postcode Sender    ${B2C_AddBooking_003_015['text_postcode_sender']}
     b2c_create_parcel_page.Click Postcode Sender Lists    ${postcode_sender_select_in_lists}
-    b2c_create_parcel_page.Click Add To Favorites   ${add_to_favorites_btn}
+    b2c_create_parcel_page.Click Add To Favorites
 
 
 B2C_AddBooking_003_019
@@ -384,7 +384,7 @@ B2C_AddBooking_003_020
     b2c_create_parcel_page.Input Address Sender    ${B2C_AddBooking_003_020['text_address_sender']}
     b2c_create_parcel_page.Input Postcode Sender    ${B2C_AddBooking_003_020['text_postcode_sender']}
     b2c_create_parcel_page.Click Postcode Sender Lists    ${postcode_sender_select_in_lists}
-    b2c_create_parcel_page.Click Add To Favorites   ${add_to_favorites_btn}
+    b2c_create_parcel_page.Click Add To Favorites
     b2c_create_parcel_page.Verify Favorites Icon Red Heart   ${favorites_value}    ${B2C_AddBooking_003_020['text_add_to_favorites']}
     common.Verify Capture Screenshot  B2C_AddBooking_003_019  Verify Favorites Icon Red Heart
     b2c_create_parcel_page.Verify Add To Favorites    ${B2C_AddBooking_003_020['text_name_sender']}     
