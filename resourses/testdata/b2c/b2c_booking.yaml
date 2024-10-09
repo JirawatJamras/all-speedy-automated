@@ -146,8 +146,8 @@ Booking_S004:
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   parcel_size: XS
-  cod_fee_amount:  5000
-  cod_fee_value:  5,000.00
+  parcel_cod:  5000
+  parcel_cod_verify:  5,000.00
   #img_sender_heart: รูปหัวใจไม่มีสี
   img_sender_heart: รูปหัวใจสีแดง
   img_receiver_heart: รูปหัวใจสีแดง
