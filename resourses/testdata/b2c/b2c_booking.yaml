@@ -189,7 +189,8 @@ Booking_S005:
   parcel_size:  S
   parcel_package_type:  กล่อง
   parcel_cod: 5000
-  parcel_insure:  ไม่มีการซื้อประกัน
+  parcel_cod_verify: 5,000.00
+  parcel_detail_remark: ระวังพัสดุเสียหาย
 
 Booking_S006:
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
