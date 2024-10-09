@@ -5,16 +5,60 @@
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta content="Robot Framework 6.0.2 (Python 3.9.2 on win32)" name="Generator">
+<meta content="Robot Framework 7.0 (Python 3.12.3 on win32)" name="Generator">
 <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKcAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAAqAAAAAAAAAAAAAAAAAAAALIAAAD/AAAA4AAAANwAAADcAAAA3AAAANwAAADcAAAA3AAAANwAAADcAAAA4AAAAP8AAACxAAAAAAAAAKYAAAD/AAAAuwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAC/AAAA/wAAAKkAAAD6AAAAzAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN8AAAD/AAAA+gAAAMMAAAAAAAAAAgAAAGsAAABrAAAAawAAAGsAAABrAAAAawAAAGsAAABrAAAADAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAIsAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAANEAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAAAAAAAAMgAAADIAAAAyAAAAMgAAADIAAAAyAAAAMgAAADIAAAAFAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAADwAAAB8AAAAAAAAAGAAAABcAAAAAAAAAH8AAABKAAAAAAAAAAAAAAAAAAAA2gAAAP8AAAD6AAAAwwAAAAAAAADCAAAA/wAAACkAAADqAAAA4QAAAAAAAAD7AAAA/wAAALAAAAAGAAAAAAAAANoAAAD/AAAA+gAAAMMAAAAAAAAAIwAAAP4AAAD/AAAA/wAAAGAAAAAAAAAAAAAAAMkAAAD/AAAAigAAAAAAAADaAAAA/wAAAPoAAADDAAAAAAAAAAAAAAAIAAAAcAAAABkAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAAAAAAAA2gAAAP8AAAD7AAAAywAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAN4AAAD/AAAAqwAAAP8AAACvAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALIAAAD/AAAAsgAAAAAAAAC5AAAA/wAAAMoAAADAAAAAwAAAAMAAAADAAAAAwAAAAMAAAADAAAAAwAAAAMkAAAD/AAAAvAAAAAAAAAAAAAAAAAAAAKwAAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAA/wAAAP8AAAD/AAAArQAAAAAAAAAAwAMAAIABAAAf+AAAP/wAAD/8AAAgBAAAP/wAAD/8AAA//AAAJIwAADHEAAA//AAAP/wAAB/4AACAAQAAwAMAAA==">
-<style media="all" type="text/css">
+<style media="all">
+:root {
+    --text-color: black;
+    --background-color: white;
+    --primary-color: #ddd;
+    --secondary-color: #ccc;
+    --link-color: #15c;
+    --link-hover-color: #61c;
+    --highlight-color: #eee;
+    --target-color: #f9f9f9;
+    --pass-color: #97bd61;
+    --fail-color: #ce3e01;
+    --warn-color: #fed84f;
+    --pass-link-color: #098a09;
+    --warn-link-color: #927201;
+    --fail-link-color: #ce3e01;
+    --ascending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
+    --descending-icon: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        color-scheme: dark;
+    }
+}
+[data-theme="dark"] {
+    --text-color: #e2e1d7;
+    --background-color: #1c2227;
+    --primary-color: #26373b;
+    --secondary-color: #424f5a;
+    --link-color: #8cc4ff;
+    --link-hover-color: #bb86fc;
+    --highlight-color: #002b36;
+    --target-color: #1a252e;
+    --pass-link-color: #97bd61;
+    --warn-link-color: #fed84f;
+    --fail-link-color: #ff9b8f;
+    --ascending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAAfn5+////f/cqYgAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
+    --descending-icon: url(data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAJAgMAAACZCj6+AAAAAXNSR0IB2cksfwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAlQTFRFAAAA////fn5+K6jOaAAAAAN0Uk5TAP//RFDWIQAAACdJREFUeJxjYHBgYGAMYGBgDWFgEA1lAAOtVQwMXCsYGJgWADkNDAA78QP9oKr7vwAAAABJRU5ErkJggg==);
+}
 /* Generic and misc styles */
 body {
     font-family: Helvetica, sans-serif;
     font-size: 0.8em;
-    color: black;
+    color: black; /* Fallback value */
+    color: var(--text-color);
     padding: 6px;
-    background: white;
+    background: white; /* Fallback value */
+    background: var(--background-color);
+    margin-left: 15px;
+}
+body[theme-toggled] {
+    transition: background 0.3s, background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 table {
     table-layout: fixed;
@@ -29,20 +73,37 @@ br {
     mso-data-placement: same-cell; /* maintain line breaks in Excel */
 }
 hr {
-    background: #ccc;
+    background: #ccc; /* Fallback value */
+    background: var(--secondary-color);
     height: 1px;
     border: 0;
 }
 a, a:link, a:visited {
     text-decoration: none;
-    color: #15c;
+    color: #15c; /* Fallback value */
+    color: var(--link-color);
 }
 a > img {
-    border: 1px solid #15c !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-color: #15c !important; /* Fallback value */
+    border-color: var(--link-color) !important;
 }
 a:hover, a:active {
     text-decoration: underline;
-    color: #61c;
+    color: #61c; /* Fallback value */
+    color: var(--link-hover-color);
+}
+select {
+    background-color: white; /* Fallback value */
+    background-color: var(--background-color);
+    color: black; /* Fallback value */
+    color: var(--text-color);
+    border-width: 2px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
+    border-radius: 4px;
 }
 .parent-name {
     font-size: 0.7em;
@@ -55,7 +116,7 @@ a:hover, a:active {
 #header {
     width: 65em;
     height: 3em;
-    margin: 6px 0;
+    margin: 20px 0 6px 0;
 }
 h1 {
     float: left;
@@ -83,14 +144,17 @@ h2 {
 }
 /* Status text colors -- !important allows using them in links */
 .fail {
-    color: #ce3e01 !important;
+    color: #ce3e01 !important; /* Fallback value */
+    color: var(--fail-link-color) !important;
     font-weight: bold;
 }
 .pass {
-    color: #098a09 !important;
+    color: #098a09 !important; /* Fallback value */
+    color: var(--pass-link-color) !important;
 }
 .skip {
-    color: #927201 !important;
+    color: #927201 !important; /* Fallback value */
+    color: var(--warn-link-color) !important;
     font-weight: bold;
 }
 .label {
@@ -98,8 +162,10 @@ h2 {
     font-size: 0.75em;
     letter-spacing: 1px;
     white-space: nowrap;
-    color: black;
-    background-color: #ddd;
+    color: black; /* Fallback value */
+    color: var(--text-color);
+    background-color: #ddd; /* Fallback value */
+    background-color: var(--primary-color);
     border-radius: 3px;
 }
 .label.debug, .label.trace, .label.error, .label.keyword {
@@ -109,15 +175,18 @@ h2 {
     font-weight: bold;
 }
 .label.pass {
-    background-color: #97bd61;
+    background-color: #97bd61; /* Fallback value */
+    background-color: var(--pass-color);
     color: #000 !important;
 }
 .label.fail, .label.error {
-    background-color: #ce3e01;
+    background-color: #ce3e01; /* Fallback value */
+    background-color: var(--fail-color);
     color: #fff !important;
 }
 .label.skip, .label.warn {
-    background-color: #fed84f;
+    background-color: #fed84f; /* Fallback value */
+    background-color: var(--warn-color);
     color: #000 !important;
 }
 /* Top right header */
@@ -146,7 +215,8 @@ h2 {
     padding: 0.3em 0;
     font-size: 0.9em;
     border-bottom-left-radius: 4px;
-    background: #ddd;
+    background: #ddd; /* Fallback value */
+    background: var(--primary-color);
 }
 /* Statistics table */
 .statistics {
@@ -156,15 +226,20 @@ h2 {
     margin-bottom: 1em;
 }
 .statistics tr:hover {
-    background: #f4f4f4;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
     cursor: pointer;
 }
 .statistics th, .statistics td {
-    border: 1px solid #ccc;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
     padding: 0.1em 0.3em;
 }
 .statistics th {
-    background-color: #ddd;
+    background-color: #ddd; /* Fallback value */
+    background-color: var(--primary-color);
     padding: 0.2em 0.3em;
 }
 .statistics td {
@@ -200,27 +275,33 @@ th.stats-col-graph:hover {
 }
 /* Statistics graph */
 .graph, .empty-graph {
-    border: 1px solid #ccc;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
     width: auto;
     height: 7px;
     padding: 0;
-    background: #aaa;
 }
 .empty-graph {
-    background: #eee;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
 }
 .pass-bar, .fail-bar, .skip-bar {
     float: left;
     height: 100%;
 }
 .fail-bar {
-    background: #ce3e01;
+    background: #ce3e01; /* Fallback value */
+    background: var(--fail-color);
 }
 .pass-bar {
-    background: #97bd61;
+    background: #97bd61; /* Fallback value */
+    background: var(--pass-color);
 }
 .skip-bar {
-    background: #fed84f;
+    background: #fed84f; /* Fallback value */
+    background: var(--warn-color);
 }
 /* Tablesorter - adapted from provided Blue Skin */
 .tablesorter-header {
@@ -230,30 +311,84 @@ th.stats-col-graph:hover {
     cursor: pointer;
 }
 .tablesorter-header:hover {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--secondary-color);
 }
 .tablesorter-headerAsc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==);
-    background-color: #ccc !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlBWnFr3cnIr0WQOyBmvzp13CpxQAOw==); /* Fallback value */
+    background-image: var(--ascending-icon);
+    background-color: #ccc !important; /* Fallback value */
+    background-color: var(--secondary-color) !important;
 }
 .tablesorter-headerDesc {
-    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==);
-    background-color: #ccc !important;
+    background-image: url(data:image/gif;base64,R0lGODlhCwAJAKEAAAAAAH9/fwAAAAAAACH5BAEAAAIALAAAAAALAAkAAAIUlAWnBr3cnIr0WROyDmvzp13CpxQAOw==); /* Fallback value */
+    background-image: var(--descending-icon);
+    background-color: #ccc !important; /* Fallback value */
+    background-color: var(--secondary-color) !important;
 }
 .sorter-false {
     background-image: none;
     cursor: default;
 }
 .sorter-false:hover {
-    background-color: #ddd;
+    background-color: #ddd; /* Fallback value */
+    background-color: var(--primary-color);
+}
+#theme-toggle {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    width: 28px;
+    height: 28px;
+    border: none;
+    padding: 4px;
+    z-index: 1000;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    background: var(--highlight-color);
+}
+[data-theme="dark"] .dark-mode-icon,
+[data-theme="light"] .light-mode-icon {
+    display: none;
+}
+[data-theme="dark"] .light-mode-icon,
+[data-theme="light"] .dark-mode-icon {
+    display: block;
+}
+@keyframes highlight {
+    0% {
+        background: var(--primary-color)
+    }
+    100% {
+        background: var(--target-color);
+    }
+}
+:target {
+    background: var(--target-color);
+    transition: background 0.3s;
+    animation: highlight 4s;
 }
 </style>
-<style media="all" type="text/css">
+<style media="all">
 /* Icons are from Open Iconic <https://useiconic.com/open/>.
    Licensed under the MIT License. */
+:root {
+    --icon-filter: invert(0);
+    --icon-highlight: var(--secondary-color);
+    --elapsed-color: #666;
+}
+/* @media (prefers-color-scheme: dark) { */
+[data-theme="dark"] {
+    --icon-filter: invert(1);
+    --icon-highlight: #a39990;
+    --elapsed-color: #999;
+}
 /* Containers */
 .suite, .test, #errors {
-    border: 1px solid #ccc;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
+    border-width: 1px;
+    border-style: solid;
     padding: 0.3em 0.2em;
     margin: 0.2em 0;
 }
@@ -282,8 +417,10 @@ th.stats-col-graph:hover {
 }
 .element-header:hover {
     cursor: pointer;
-    background-color: #eee;
-    border-color: #ccc;
+    background-color: #eee; /* Fallback value */
+    background-color: var(--highlight-color);
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
 }
 .element-header-toggle {
     position: absolute;
@@ -293,10 +430,14 @@ th.stats-col-graph:hover {
     background-position: center;
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAQAAABKxSfDAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0JChSkZz20AAAAGklEQVQI12NgQAKMDKzInP8IDhOqMk4G7AAANQwBE427PYUAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2Mmg4di0yaC04eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAzKSIgLz4KPC9zdmc+), none;
+    filter: var(--icon-filter);
     height: 10px;
     width: 10px;
     background-size: 6px 6px;
-    border: 1px solid #ccc;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--icon-highlight);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 2px;
 }
 .closed > .element-header-toggle {
@@ -304,7 +445,8 @@ th.stats-col-graph:hover {
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0zIDB2M2gtM3YyaDN2M2gydi0zaDN2LTJoLTN2LTNoLTJ6IiAvPgo8L3N2Zz4=), none;
 }
 .element-header:hover > .element-header-toggle {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--icon-highlight);
 }
 .element-header-right:hover ~ .element-header-toggle {
     background-color: transparent;
@@ -324,23 +466,31 @@ th.stats-col-graph:hover {
 }
 .name {
     font-weight: bold;
+    white-space: pre-wrap;
+}
+.arg, .assign {
+    white-space: pre-wrap;
 }
 .elapsed {
     float: right;
-    color: #666;
+    color: #666; /* Fallback value */
+    color: var(--elapsed-color);
     padding-left: 1em;
 }
 .link {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAHlJREFUGJVtzrEJwmAQBtCn6ASuIKTIBhY2gmghBiJYB1udwk10B8FJbKMBcQFbtbkfJHrVwfu+4/idJR64Y9H7E3higj5O3S8Y44ApLnjhnXCNGhV2yNGggDJwiC02gavUbpDFvscRo4QdXOMKDHBufz3HLYKzNn4AbSkV3fncGQYAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik01Ljg4LjAzYy0uMTguMDEtLjM2LjAzLS41My4wOS0uMjcuMS0uNTMuMjUtLjc1LjQ3YS41LjUgMCAxIDAgLjY5LjY5Yy4xMS0uMTEuMjQtLjE3LjM4LS4yMi4zNS0uMTIuNzgtLjA3IDEuMDYuMjIuMzkuMzkuMzkgMS4wNCAwIDEuNDRsLTEuNSAxLjVjLS40NC40NC0uOC40OC0xLjA2LjQ3LS4yNi0uMDEtLjQxLS4xMy0uNDEtLjEzYS41LjUgMCAxIDAtLjUuODhzLjM0LjIyLjg0LjI1Yy41LjAzIDEuMi0uMTYgMS44MS0uNzhsMS41LTEuNWMuNzgtLjc4Ljc4LTIuMDQgMC0yLjgxLS4yOC0uMjgtLjYxLS40NS0uOTctLjUzLS4xOC0uMDQtLjM4LS4wNC0uNTYtLjAzem0tMiAyLjMxYy0uNS0uMDItMS4xOS4xNS0xLjc4Ljc1bC0xLjUgMS41Yy0uNzguNzgtLjc4IDIuMDQgMCAyLjgxLjU2LjU2IDEuMzYuNzIgMi4wNi40Ny4yNy0uMS41My0uMjUuNzUtLjQ3YS41LjUgMCAxIDAtLjY5LS42OWMtLjExLjExLS4yNC4xNy0uMzguMjItLjM1LjEyLS43OC4wNy0xLjA2LS4yMi0uMzktLjM5LS4zOS0xLjA0IDAtMS40NGwxLjUtMS41Yy40LS40Ljc1LS40NSAxLjAzLS40NC4yOC4wMS40Ny4wOS40Ny4wOWEuNS41IDAgMSAwIC40NC0uODhzLS4zNC0uMi0uODQtLjIyeiIKICAvPgo8L3N2Zz4=), none;
+    filter: var(--icon-filter);
 }
 .expand {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAADtJREFUGJVjYCACKDAwMByA0ljFDjAwMPxnYGB4ABVQgLL/Q+VQBB6gseGmIivCkERXhFUSWRFOSawAAEl7E3uv1iMcAAAAAElFTkSuQmCC);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0xLjUgMGwtMS41IDEuNSA0IDQgNC00LTEuNS0xLjUtMi41IDIuNS0yLjUtMi41eiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAxKSIgLz4KPC9zdmc+), none;
+    filter: var(--icon-filter);
 }
 .collapse {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAC5JREFUGJVjYCARNEAxTsn/UIyhCFkSQxG6ThQ+C5IpjWhG1yNb4YDFTdjEMAEACi8Q++9Y9TAAAAAASUVORK5CYII=);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik00IDBsLTQgNCAxLjUgMS41IDIuNS0yLjUgMi41IDIuNSAxLjUtMS41LTQtNHoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMSkiIC8+Cjwvc3ZnPg==), none;
+    filter: var(--icon-filter);
 }
 .expand, .collapse, .link {
     float: left;
@@ -352,7 +502,10 @@ th.stats-col-graph:hover {
     background-size: 8px 8px;
     background-repeat: no-repeat;
     background-position: center;
-    border: 1px solid #ccc;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--icon-highlight);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 2px;
 }
 .link {
@@ -362,7 +515,8 @@ th.stats-col-graph:hover {
     visibility: visible;
 }
 .expand:hover, .collapse:hover, .link:hover {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--icon-highlight);
 }
 /* Messages and errors */
 .messages .time, .messages .message {
@@ -403,11 +557,16 @@ th.stats-col-graph:hover {
 .message-row:hover .select-message div {
     background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAQAAAD8fJRsAAAAAmJLR0QA/4ePzL8AAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfeCR0MOzhWKZQOAAAASUlEQVQY032PsRHAIAwDX9BkicD+W8UMEqegAQJWKZ/+3sLZJhFGQEZzNaIa4ibh66En867VNaIeoP5WppNuIGoAlOm3g5VC1AdYeQv1BZPRSgAAAABJRU5ErkJggg==);
     background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiIHZpZXdCb3g9IjAgMCA4IDgiPgogIDxwYXRoIGQ9Ik0wIDB2MWg4di0xaC04em0wIDJ2MWg2di0xaC02em0wIDJ2MWg4di0xaC04em0wIDJ2MWg2di0xaC02eiIgLz4KPC9zdmc+), none;
-    border: 1px solid #ccc;
+    filter: var(--icon-filter);
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--icon-highlight);
+    border-width: 1px;
+    border-style: solid;
     border-radius: 2px;
 }
 .select-message:hover div {
-    background-color: #ccc;
+    background-color: #ccc; /* Fallback value */
+    background-color: var(--icon-highlight);
     cursor: pointer;
 }
 /* Message tables - these MUST NOT be combined together because otherwise
@@ -439,7 +598,7 @@ th.stats-col-graph:hover {
     cursor: default;
 }
 </style>
-<style media="print" type="text/css">
+<style media="print">
 body {
     background: white !important;
     padding: 0;
@@ -479,7 +638,7 @@ a:link, a:visited {
     background: #ddd !important;
 }
 </style>
-<style media="all" type="text/css">
+<style media="all">
 #javascript-disabled {
     width: 600px;
     margin: 100px auto 0 auto;
@@ -502,7 +661,7 @@ a:link, a:visited {
     font-style: italic;
 }
 </style>
-<style media="all" type="text/css">
+<style media="all">
 .doc > * {
     margin: 0.7em 1em 0.1em 1em;
     padding: 0;
@@ -514,14 +673,12 @@ a:link, a:visited {
     margin-top: 0.1em;
 }
 .doc table {
-    border: 1px solid #ccc;
     background: transparent;
     border-collapse: collapse;
     empty-cells: show;
     font-size: 0.9em;
 }
 .doc table th, .doc table td {
-    border: 1px solid #ccc;
     background: transparent;
     padding: 0.1em 0.3em;
     height: 1.2em;
@@ -531,24 +688,32 @@ a:link, a:visited {
     letter-spacing: 0.1em;
 }
 .doc pre {
+    border-radius: 2px;
     font-size: 1.1em;
     letter-spacing: 0.05em;
-    background: #f4f4f4;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
 }
 .doc code {
+    border-radius: 2px;
     padding: 0 0.2em;
     letter-spacing: 0.05em;
-    background: #eee;
+    background: #eee; /* Fallback value */
+    background: var(--highlight-color);
 }
 .doc li {
     list-style-position: inside;
     list-style-type: square;
 }
-.doc img {
-    border: 1px solid #ccc;
+.doc img, .doc table, .doc table th, .doc table td {
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc; /* Fallback value */
+    border-color: var(--secondary-color);
 }
 .doc hr {
-    background: #ccc;
+    background: #ccc; /* Fallback value */
+    background: var(--secondary-color);
     height: 1px;
     border: 0;
 }
@@ -560,6 +725,9 @@ function toggleSuite(suiteId) {
 }
 function toggleTest(testId) {
     toggleElement(testId, ['keyword']);
+    var test = window.testdata.findLoaded(testId);
+    if (test.status == "FAIL" || test.status == "SKIP")
+        expandFailed(test);
 }
 function toggleKeyword(kwId) {
     toggleElement(kwId, ['keyword']);
@@ -623,7 +791,7 @@ function loadAndExpandElementIds(ids) {
     }
 }
 function expandFailed(element) {
-    if (element.status == "FAIL") {
+    if (element.status == "FAIL" || (element.type == "test" && element.status == "SKIP")) {
         window.elementsToExpand = [element];
         window.expandDecider = function (e) {
             return e.status == "FAIL";
@@ -847,7 +1015,6 @@ window.model = (function () {
         suite.populateSuites = createIterablePopulator('Suite');
         suite.childrenNames = ['keyword', 'suite', 'test'];
         suite.callWhenChildrenReady = function (callable) { callable(); };
-        suite.message = data.message;
         suite.children = function () {
             return suite.keywords().concat(suite.tests()).concat(suite.suites());
         };
@@ -938,6 +1105,7 @@ window.model = (function () {
             name: data.name,
             doc: data.doc,
             status: data.status,
+            message: data.message,
             times: data.times,
             id: data.parent ? data.parent.id + '-' + data.id : data.id
         };
@@ -958,7 +1126,6 @@ window.model = (function () {
                 return test.keywords();
         };
         test.tags = data.tags;
-        test.message = data.message;
         test.matchesTagPattern = function (pattern) {
             return containsTagPattern(test.tags, pattern);
         };
@@ -969,13 +1136,12 @@ window.model = (function () {
     }
     function Keyword(data) {
         var kw = createModelObject(data);
-        var flatTypes = ['RETURN', 'BREAK', 'CONTINUE'];
         kw.libname = data.libname;
         kw.fullName = (kw.libname ? kw.libname + '.' : '') + kw.name;
         kw.type = data.type;
         kw.template = 'keywordTemplate';
         kw.arguments = data.args;
-        kw.assign = data.assign + (data.assign ? ' =' : '');
+        kw.assign = data.assign + (data.assign ? ' =  ' : '');
         kw.tags = data.tags;
         kw.timeout = data.timeout;
         kw.populateKeywords = createIterablePopulator('Keyword');
@@ -1354,8 +1520,9 @@ window.testdata = function () {
     var _statistics = null;
     var LEVELS = ['TRACE', 'DEBUG', 'INFO', 'WARN', 'ERROR', 'FAIL', 'SKIP'];
     var STATUSES = ['FAIL', 'PASS', 'SKIP', 'NOT RUN'];
-    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF', 'ELSE IF', 'ELSE', 'RETURN',
-                         'TRY', 'EXCEPT', 'FINALLY', 'WHILE', 'CONTINUE', 'BREAK'];
+    var KEYWORD_TYPES = ['KEYWORD', 'SETUP', 'TEARDOWN', 'FOR', 'ITERATION', 'IF',
+                         'ELSE IF', 'ELSE', 'RETURN', 'VAR', 'TRY', 'EXCEPT', 'FINALLY',
+                         'WHILE', 'CONTINUE', 'BREAK', 'ERROR'];
     function addElement(elem) {
         if (!elem.id)
             elem.id = uniqueId();
@@ -1398,6 +1565,7 @@ window.testdata = function () {
         return createKeyword(parent, element, strings, index - messages.length);
     }
     function createKeyword(parent, element, strings, index) {
+        var status = element[8];
         var kw = model.Keyword({
             parent: parent,
             type: KEYWORD_TYPES[element[0]],
@@ -1413,7 +1581,12 @@ window.testdata = function () {
                 this.doc = function () { return doc; };
                 return doc;
             },
-            status: parseStatus(element[8], strings),
+            status: parseStatus(status),
+            message: function () {
+                var msg = status.length == 4 ? strings.get(status[3]) : '';
+                this.message = function () { return msg; };
+                return msg;
+            },
             times: model.Times(times(element[8])),
             isChildrenLoaded: typeof(element[9]) !== 'number'
         });
@@ -1624,6 +1797,20 @@ window.testdata = function () {
 }();
 </script>
 <script type="text/javascript">
+const lightModeIcon = `
+<svg class="light-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+    viewBox="0 0 24 24" fill="var(--text-color)">
+    <rect fill="none" height="24" width="24" />
+    <path
+        d="M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0 c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2 c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1 C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06 c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41 l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41 c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36 c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z" />
+</svg>`
+const darkModeIcon = `
+<svg class="dark-mode-icon" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24"
+    viewBox="0 0 24 24" fill="var(--text-color)">
+    <rect fill="none" height="24" width="24" />
+    <path
+        d="M11.01,3.05C6.51,3.54,3,7.36,3,12c0,4.97,4.03,9,9,9c4.63,0,8.45-3.5,8.95-8c0.09-0.79-0.78-1.42-1.54-0.95 c-0.84,0.54-1.84,0.85-2.91,0.85c-2.98,0-5.4-2.42-5.4-5.4c0-1.06,0.31-2.06,0.84-2.89C12.39,3.94,11.9,2.98,11.01,3.05z" />
+</svg>`
 function removeJavaScriptDisabledWarning() {
     // Not using jQuery here for maximum speed
     document.getElementById('javascript-disabled').style.display = 'none';
@@ -1659,6 +1846,10 @@ function setTitle(suiteName, type) {
 function addHeader() {
     var generated = util.timestamp(window.output.generated);
     $.tmpl('<h1>${title}</h1>' +
+           '<button id=theme-toggle>' +
+             lightModeIcon +
+             darkModeIcon +
+           '</button>' +
            '<div id="generated">' +
              '<span>Generated<br>${generated}</span><br>' +
              '<span id="generated-ago">${ago} ago</span>' +
@@ -1670,6 +1861,7 @@ function addHeader() {
         ago: util.createGeneratedAgoString(generated),
         title: document.title
     }).appendTo($('#header'));
+    document.getElementById('theme-toggle')?.addEventListener('click', theme.onClick);
 }
 function addReportOrLogLink(myType) {
     var url;
@@ -1798,30 +1990,116 @@ function stopPropagation(event) {
     if (event.stopPropagation)
         event.stopPropagation();
 }
+const theme = function () {
+    const storageKey = 'theme-preference';
+    const urlParams = new URLSearchParams(window.location.search);
+    var storage;
+    var theme;
+    function init(givenStorage) {
+        storage = givenStorage;
+        theme = { value: getPreference() };
+        document.body.setAttribute('data-theme', theme.value);
+        reflectPreference();
+        window.matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', ({matches:isDark}) => {
+                theme.value = isDark ? 'dark' : 'light';
+                setPreference();
+            });
+        window.addEventListener('storage', ({key, newValue}) => {
+            if (key === storage.fullKey(storageKey)) {
+                theme.value = newValue === 'dark' ? 'dark' : 'light';
+                setPreference();
+            }
+        });
+    }
+    function getPreference() {
+        if (urlParams.has('theme')) {
+            var urlTheme = urlParams.get('theme') === 'dark' ? 'dark' : 'light';
+            storage.set(storageKey, urlTheme);
+            urlParams.delete('theme');
+            return urlTheme;
+        }
+        if (storage.get(storageKey))
+            return storage.get(storageKey) === 'dark' ? 'dark' : 'light';
+        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    function setPreference() {
+        storage.set(storageKey, theme.value);
+        reflectPreference();
+    }
+    function reflectPreference() {
+        document.body.setAttribute('data-theme', theme.value);
+        document.querySelector('#theme-toggle')?.setAttribute('aria-label', theme.value);
+        const event = new Event('theme-change', {value: theme.value});
+        document.dispatchEvent(event);
+    }
+    function onClick() {
+        theme.value = theme.value === 'light' ? 'dark' : 'light';
+        document.body.setAttribute('theme-toggled', "");
+        setPreference();
+    }
+    return {init: init, getPreference: getPreference, setPreference: setPreference,
+        reflectPreference: reflectPreference, onClick: onClick};
+}();
+</script>
+<script type="text/javascript">
+storage = function () {
+    var prefix = 'robot-framework-';
+    var storage;
+    function init(user) {
+        if (user)
+            prefix += user + '-';
+        storage = getStorage();
+    }
+    function getStorage() {
+        // Use localStorage if it's accessible, normal object otherwise.
+        // Inspired by https://stackoverflow.com/questions/11214404
+        try {
+            localStorage.setItem(prefix, prefix);
+            localStorage.removeItem(prefix);
+            return localStorage;
+        } catch (exception) {
+            return {};
+        }
+    }
+    function get(key, defaultValue) {
+        var value = storage[fullKey(key)];
+        if (typeof value === 'undefined')
+            return defaultValue;
+        return value;
+    }
+    function set(key, value) {
+        storage[fullKey(key)] = value;
+    }
+    function fullKey(key) {
+        return prefix + key;
+    }
+    return {init: init, get: get, set: set, fullKey: fullKey};
+}();
 </script>
 <script type="text/javascript">
 window.output = {};
 </script>
 <script type="text/javascript">
-window.output["suite"] = [1,2,3,0,[],[1,0,20294],[[4,5,6,0,[],[1,16,20277],[[7,8,9,0,[],[1,17,20275],[],[[10,0,11,[7,12,13],[1,482,19809],[[1,14,15,0,16,17,0,0,[1,483,1308],[[0,18,19,0,0,20,0,0,[1,483,1304],[[0,21,15,0,22,23,24,0,[1,483,0],[[483,2,25]]],[0,26,15,0,27,28,0,0,[1,483,1],[]],[0,26,15,0,27,29,0,0,[1,484,0],[]],[0,26,15,0,27,30,0,0,[1,484,0],[]],[0,26,15,0,27,31,0,0,[1,484,0],[]],[0,32,33,0,34,35,0,0,[1,484,1303],[[485,2,36]]],[0,37,33,0,38,39,0,0,[1,1787,0],[]]]],[0,40,19,0,0,0,0,0,[1,1788,3],[[0,41,42,0,43,0,44,0,[1,1788,0],[[1788,2,45]]],[0,46,42,0,47,48,44,0,[1,1788,2],[[1790,2,49]]],[0,50,15,0,51,52,53,0,[1,1790,0],[[1790,2,54]]],[0,55,15,0,56,53,0,0,[1,1791,0],[[1791,2,54]]]]]]],[0,57,15,0,58,59,0,0,[1,1791,1],[[1791,2,59]]],[0,60,19,0,0,61,0,0,[1,1792,1118],[[0,62,33,0,63,64,0,0,[1,1792,1118],[[1792,2,65]]]]],[0,66,67,0,0,0,0,0,[1,2911,916],[[0,68,19,0,0,69,0,0,[1,2911,916],[[0,70,33,0,71,72,0,0,[1,2912,450],[]],[0,73,33,0,74,75,0,0,[1,3362,465],[[3363,2,76]]]]]]],[0,77,19,0,0,78,0,0,[1,3827,452],[[0,41,42,0,43,0,44,0,[1,3828,0],[[3828,2,79]]],[0,46,42,0,47,48,44,0,[1,3828,0],[[3828,2,49]]],[0,21,15,0,22,80,0,0,[1,3829,0],[]],[0,81,33,0,82,83,0,0,[1,3829,450],[[4278,2,84]]]]],[0,57,15,0,58,85,0,0,[1,4279,0],[[4279,2,85]]],[0,86,87,0,0,88,0,0,[1,4280,1167],[[0,70,33,0,71,89,0,0,[1,4283,426],[]],[0,90,33,0,91,92,0,0,[1,4709,738],[[4709,2,93]]]]],[0,94,87,0,0,95,0,0,[1,5447,1122],[[0,70,33,0,71,96,0,0,[1,5450,436],[]],[0,90,33,0,91,97,0,0,[1,5886,683],[[5886,2,98]]]]],[0,99,87,0,0,0,0,0,[1,6569,5414],[[0,70,33,0,71,100,0,0,[1,6570,440],[]],[0,73,33,0,74,100,0,0,[1,7010,453],[[7010,2,101]]],[0,102,103,0,0,0,0,0,[1,7463,4520],[[0,70,33,0,71,104,0,0,[1,7463,1292],[]],[0,105,33,0,106,107,0,0,[1,8755,222],[]],[0,108,15,0,109,110,0,0,[1,8977,3006],[[11983,2,111]]]]]]],[0,112,103,0,0,113,0,0,[1,11984,5676],[[0,70,33,0,71,114,0,0,[1,12024,424],[]],[0,115,33,0,116,114,117,0,[1,12448,436],[[12884,2,118]]],[0,119,120,0,121,122,123,0,[1,12884,0],[[12884,2,124]]],[0,115,33,0,116,123,125,0,[1,12884,436],[[13320,2,126]]],[0,119,120,0,121,127,128,0,[1,13320,0],[[13320,2,129]]],[0,115,33,0,116,128,130,0,[1,13320,439],[[13759,2,131]]],[0,115,33,0,116,132,133,0,[1,13759,436],[[14195,2,134]]],[0,115,33,0,116,135,136,0,[1,14195,420],[[14615,2,137]]],[0,115,33,0,116,138,139,0,[1,14615,438],[[15053,2,140]]],[0,115,33,0,116,141,142,0,[1,15053,436],[[15489,2,143]]],[0,115,33,0,116,144,145,0,[1,15489,422],[[15911,2,146]]],[0,119,120,0,121,147,148,0,[1,15911,0],[[15911,2,149]]],[0,115,33,0,116,148,150,0,[1,15911,438],[[16349,2,151]]],[0,119,120,0,121,152,153,0,[1,16349,0],[[16349,2,154]]],[0,115,33,0,116,153,155,0,[1,16349,428],[[16777,2,156]]],[0,119,120,0,121,157,158,0,[1,16777,0],[[16777,2,159]]],[0,115,33,0,116,158,160,0,[1,16777,440],[[17217,2,161]]],[0,119,120,0,121,162,163,0,[1,17217,0],[[17217,2,164]]],[0,115,33,0,116,163,165,0,[1,17217,440],[[17657,2,166]]],[0,167,15,0,168,169,0,0,[1,17657,0],[]],[0,167,15,0,168,170,0,0,[1,17658,0],[]],[0,167,15,0,168,171,0,0,[1,17658,0],[]],[0,167,15,0,168,172,0,0,[1,17658,0],[]],[0,167,15,0,168,173,0,0,[1,17658,1],[]],[0,167,15,0,168,174,0,0,[1,17659,0],[]],[0,167,15,0,168,175,0,0,[1,17659,0],[]],[0,167,15,0,168,176,0,0,[1,17659,0],[]],[0,167,15,0,168,177,0,0,[1,17659,1],[]],[0,167,15,0,168,178,0,0,[1,17660,0],[]],[0,167,15,0,168,179,0,0,[1,17660,0],[]],[0,167,15,0,168,180,0,0,[1,17660,0],[]]]],[0,77,19,0,0,181,0,0,[1,17661,372],[[0,41,42,0,43,0,44,0,[1,17661,0],[[17661,2,182]]],[0,46,42,0,47,48,44,0,[1,17661,1],[[17662,2,49]]],[0,21,15,0,22,80,0,0,[1,17662,0],[]],[0,81,33,0,82,83,0,0,[1,17662,371],[[18033,2,183]]]]],[2,184,33,0,185,0,0,0,[1,18034,2257],[]]]]],[],[1,1,0,0]]],[],[],[1,1,0,0]]],[],[],[1,1,0,0]];
+window.output["suite"] = [1,2,3,0,[],[0,0,86966],[],[[4,0,5,[6,7,8],[0,1006,85957,9],[[1,10,11,0,12,13,0,0,[1,1011,1742],[[0,14,15,0,0,16,0,0,[1,1011,1734],[[0,17,11,0,18,19,20,0,[1,1012,0],[[1012,2,21]]],[0,22,11,0,23,24,0,0,[1,1012,0],[]],[0,22,11,0,23,25,0,0,[1,1012,1],[]],[0,22,11,0,23,26,0,0,[1,1013,0],[]],[0,27,28,0,29,30,0,0,[1,1013,1731],[[1013,2,31],[1596,3,33]]],[0,34,28,0,35,36,0,0,[1,2744,1],[]]]],[0,37,15,0,0,0,0,0,[1,2746,8],[[0,38,39,0,40,0,41,0,[1,2746,1],[[2747,2,42]]],[0,43,39,0,44,45,41,0,[1,2747,5],[[2751,2,46]]],[0,47,11,0,48,49,50,0,[1,2751,1],[[2752,2,51]]],[0,52,11,0,53,50,0,0,[1,2752,1],[[2752,2,51]]]]]]],[0,54,11,0,55,56,0,0,[1,2754,1],[[2755,2,56]]],[0,57,15,0,0,58,0,0,[1,2755,1390],[[0,59,28,0,60,61,0,0,[1,2758,1387],[[2758,2,62]]]]],[0,63,64,0,0,0,0,0,[1,4146,894],[[0,65,15,0,0,66,0,0,[1,4146,894],[[0,67,28,0,68,69,0,0,[1,4147,427],[]],[0,70,28,0,71,72,0,0,[1,4574,466],[[4574,2,73]]]]]]],[0,74,75,0,0,76,0,0,[1,5041,1193],[[0,67,28,0,68,77,0,0,[1,5047,429],[]],[0,78,28,0,79,80,0,0,[1,5477,758],[[5477,2,81]]]]],[0,82,75,0,0,83,0,0,[1,6234,1130],[[0,67,28,0,68,84,0,0,[1,6238,418],[]],[0,78,28,0,79,85,0,0,[1,6656,709],[[6656,2,86]]]]],[0,87,75,0,0,0,0,0,[1,7364,4942],[[0,67,28,0,68,88,0,0,[1,7365,436],[]],[0,70,28,0,71,88,0,0,[1,7802,462],[[7803,2,89]]],[0,90,91,0,0,0,0,0,[1,8264,4042],[[0,67,28,0,68,92,0,0,[1,8264,831],[]],[0,93,28,0,94,95,0,0,[1,9095,210],[]],[0,96,11,0,97,98,0,0,[1,9305,3001],[[12306,2,99]]]]]]],[0,54,11,0,55,100,0,0,[1,12307,0],[[12307,2,100]]],[0,101,91,0,0,0,0,0,[1,12308,864],[[0,65,15,0,0,102,0,0,[1,12308,864],[[0,67,28,0,68,69,0,0,[1,12308,423],[]],[0,70,28,0,71,72,0,0,[1,12731,441],[[12731,2,103]]]]]]],[0,104,105,0,0,106,0,0,[1,13179,21250],[[0,107,28,0,108,109,0,0,[1,13186,13784],[]],[0,67,28,0,68,110,0,0,[1,26971,7012],[]],[0,111,28,0,112,113,114,0,[1,33982,446],[[34428,2,115]]],[0,116,11,0,117,118,0,0,[1,34428,0],[]]]],[0,119,15,0,0,120,0,0,[1,34429,320],[[0,38,39,0,40,0,41,0,[1,34430,0],[[34430,2,121]]],[0,43,39,0,44,45,41,0,[1,34430,1],[[34431,2,46]]],[0,17,11,0,18,122,0,0,[1,34431,1],[]],[0,123,28,0,124,125,0,0,[1,34432,317],[[34749,2,126]]]]],[0,54,11,0,55,127,0,0,[1,34751,1],[[34752,2,127]]],[0,128,105,0,0,0,0,0,[1,34754,8741],[[0,96,11,0,97,129,0,0,[1,34755,4000],[[38755,2,130]]],[0,67,28,0,68,110,0,0,[1,38756,430],[]],[0,70,28,0,71,131,0,0,[1,39187,4308],[[39187,2,132]]]]],[0,133,105,0,0,134,0,0,[1,43495,4165],[[0,67,28,0,68,135,0,0,[1,43499,3722],[]],[0,111,28,0,112,136,137,0,[1,47220,438],[[47658,2,138]]],[0,116,11,0,117,139,0,0,[1,47659,1],[]]]],[0,119,15,0,0,140,0,0,[1,47662,323],[[0,38,39,0,40,0,41,0,[1,47663,1],[[47664,2,141]]],[0,43,39,0,44,45,41,0,[1,47664,1],[[47665,2,46]]],[0,17,11,0,18,122,0,0,[1,47666,2],[]],[0,123,28,0,124,125,0,0,[1,47667,317],[[47983,2,142]]]]],[0,54,11,0,55,143,0,0,[1,47985,0],[[47985,2,143]]],[0,144,105,0,0,0,0,0,[1,47985,884],[[0,67,28,0,68,135,0,0,[1,47985,423],[]],[0,70,28,0,71,145,0,0,[1,48408,461],[[48409,2,146]]]]],[0,147,105,0,0,0,0,0,[1,48870,26020],[[0,148,28,0,149,150,0,0,[1,48871,25124],[]],[0,151,28,0,152,153,0,0,[1,73996,459],[[74455,2,154]]],[0,151,28,0,152,155,0,0,[1,74455,435],[[74890,2,156]]]]],[0,119,15,0,0,157,0,0,[1,74891,334],[[0,38,39,0,40,0,41,0,[1,74893,1],[[74894,2,158]]],[0,43,39,0,44,45,41,0,[1,74895,0],[[74895,2,46]]],[0,17,11,0,18,122,0,0,[1,74896,1],[]],[0,123,28,0,124,125,0,0,[1,74899,326],[[75225,2,159]]]]],[0,54,11,0,55,160,0,0,[1,75226,0],[[75226,2,160]]],[0,161,105,0,0,162,0,0,[1,75227,3620],[[5,163,0,0,0,0,0,0,[1,75230,3616],[[0,164,105,0,0,0,0,0,[1,75230,3616],[[0,67,28,0,68,165,0,0,[1,75231,426],[]],[0,70,28,0,71,166,0,0,[1,75657,575],[[75657,2,167]]],[0,67,28,0,68,168,0,0,[1,76233,2613],[]]]]]],[6,169,0,0,0,0,0,0,[3,78847,0],[[0,170,105,0,0,0,0,0,[3,78847,0],[]]]]]],[0,171,105,0,0,172,0,0,[1,78849,3508],[[0,67,28,0,68,173,0,0,[1,78871,449],[]],[0,107,28,0,108,174,0,0,[1,79320,433],[]],[0,111,28,0,112,175,176,0,[1,79752,440],[[80193,2,177]]],[0,116,11,0,117,178,0,0,[1,80193,0],[]],[0,111,28,0,112,179,180,0,[1,80194,439],[[80633,2,181]]],[0,116,11,0,117,182,0,0,[1,80634,0],[]],[0,111,28,0,112,183,184,0,[1,80634,429],[[81063,2,185]]],[0,116,11,0,117,186,0,0,[1,81063,0],[]],[0,111,28,0,112,187,188,0,[1,81063,431],[[81495,2,189]]],[0,116,11,0,117,190,0,0,[1,81495,1],[]],[0,111,28,0,112,191,192,0,[1,81495,435],[[81930,2,193]]],[0,116,11,0,117,194,0,0,[1,81930,0],[]],[0,111,28,0,112,195,196,0,[1,81930,426],[[82356,2,197]]],[0,116,11,0,117,198,0,0,[1,82356,0],[]]]],[0,119,15,0,0,199,0,0,[1,82358,309],[[0,38,39,0,40,0,41,0,[1,82359,0],[[82359,2,200]]],[0,43,39,0,44,45,41,0,[1,82359,0],[[82359,2,46]]],[0,17,11,0,18,122,0,0,[1,82359,2],[]],[0,123,28,0,124,125,0,0,[1,82361,305],[[82666,2,201]]]]],[0,54,11,0,55,202,0,0,[1,82667,0],[[82667,2,202]]],[0,203,105,0,0,0,0,0,[1,82667,1802],[[0,67,28,0,68,204,0,0,[1,82667,428],[]],[0,70,28,0,71,205,0,0,[1,83096,852],[[83096,2,206]]],[0,67,28,0,68,207,0,0,[1,83947,522],[]]]],[0,208,0,0,0,0,0,0,[0,84474,0],[[84474,5,9]]],[2,209,28,0,210,0,0,0,[1,84475,2489],[]]]]],[],[1,0,1,0]];
 </script>
 <script type="text/javascript">
 window.output["strings"] = [];
 </script>
 <script type="text/javascript">
-window.output["strings"] = window.output["strings"].concat(["*","*Testcases","*C:\\Users\\Home-Few\\Documents\\GitHub\\all-speedy-automated\\testcases","*../testcases","*E2E","*C:\\Users\\Home-Few\\Documents\\GitHub\\all-speedy-automated\\testcases\\e2e","*../testcases/e2e","*Booking","*C:\\Users\\Home-Few\\Documents\\GitHub\\all-speedy-automated\\testcases\\e2e\\booking.robot","*../testcases/e2e/booking.robot","*Booking_S001","*<p>Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business\x3c/p>","*Review-Pass","*UAT","*Run Keywords","*BuiltIn","*<p>Executes all the given keywords in a sequence.\x3c/p>","*Open Chrome Browser, headlesschrome, AND, Set Folder Result with date","*Open Chrome Browser","*common","*headlesschrome","*Evaluate","*<p>Evaluates the given expression in Python and returns the result.\x3c/p>","*sys.modules['selenium.webdriver'].ChromeOptions(), sys, selenium.webdriver","*${chrome_options}","*${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000154229F8EB0&gt;","*Call Method","*<p>Calls the named method of the given object with the provided arguments.\x3c/p>","*${chrome_options}, add_argument, --disable-extensions","*${chrome_options}, add_argument, --disable-gpu","*${chrome_options}, add_argument, --no-sandbox","*${chrome_options}, add_argument, --window-size\\=1920,1080","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*about:blank, ${chrome}, options=${chrome_options}","*Opening browser 'headlesschrome' to base url 'about:blank'.","*Set Selenium Speed","*<p>Sets the delay that is waited after each Selenium command.\x3c/p>","*0.2","*Set Folder Result with date","*Get Current Date","*DateTime","*<p>Returns current local or UTC time with an optional increment.\x3c/p>","*${date_YYYY_MM_DD}","*${date_YYYY_MM_DD} = 2024-10-08 22:13:36.529","*Convert Date","*<p>Converts between supported `date formats`.\x3c/p>","*${date_YYYY_MM_DD}, result_format=%Y-%m-%d","*${date_YYYY_MM_DD} = 2024-10-08","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*../results/${date_YYYY_MM_DD}","*${FOlDER_RESULT}","*${FOlDER_RESULT} = ../results/2024-10-08","*Set Global Variable","*<p>Makes a variable available globally in all tests and suites.\x3c/p>","*Log","*<p>Logs the given message with the given level.\x3c/p>","*Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ","*Open URL","*${B2C_UAT_URL}","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${url}","*Opening url '<a href=\"https://www-uat.allspeedy.co.th/auth/login\">https://www-uat.allspeedy.co.th/auth/login\x3c/a>'","*Select Business Customers Tab","*register_general_customers_page","*Click When Ready","*${register_btn_business_customers_tab_general_customers_page}","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${locator}, ${DEFAULT_TIMEOUT}","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${locator}","*Clicking element '//div[text()='ลูกค้าธุรกิจ'][@id='rc-tabs-2-tab-business']/..'.","*Verify Capture Screenshot","*Booking_S001, Verify Login Page","*${date_YYYY_MM_DD} = 2024-10-08 22:13:38.569","*os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True), modules=os","*Capture Page Screenshot","*<p>Takes a screenshot of the current page and embeds it into a log file.\x3c/p>","*../results/${FOlDER_RESULT}/${folder}/${img_name}.png","eNqlzLEOwiAUQNFfISSO5b2iQwdgcHYwMXE1pNBXYgUCGPXvJf6Cw83djoLmjIJWjPrl2Jy2mm3UfM+NsmwtftFcCCi+PrdWQaI8DCMOOMExpXuIdLsgjnD1JSyfncRTohD7z5a8yJE6Ex7Eapn/dNgruLZqPiHmd1fBmi8h0jqt","*Step No.2 Login","*Input Email","*b2c_login_page","*${b2c_login_user_01['username']}","*${b2c_txtbox_email}, timeout=${DEFAULT_TIMEOUT}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${b2c_txtbox_email}, ${value}","*Typing text 'idc@gmail.com' into text field '//input[@id='emailBusiness']'.","*Input Password","*${b2c_login_user_01['password']}","*${b2c_txtbox_password}","*${b2c_txtbox_password}, ${value}","*Typing text 'P@ssw0rd' into text field '//input[@id='passwordBusiness']'.","*Click Log On Button","*${b2c_btn_log_on}","*Clicking element '//*[@id=\"rc-tabs-2-panel-business\"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b'.","*Wait Until Profile Page Loaded","*b2c_home_page","*${b2c_txt_business_profile_title_home_page}, timeout=${DEFAULT_TIMEOUT}","*Wait Until Page Contains Element","*<p>Waits until the element <code>locator\x3c/code> appears on the current page.\x3c/p>","*${b2c_btn_edit_profile_info_home_page}, timeout=${DEFAULT_TIMEOUT}","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*3s","*Slept 3 seconds","*Verify My Profile Page","eNpTqXbKz8/OzEuPVi9JrSiJT87PLUjMq4wvKMpPy8xJVY+t1VFQQVNDhFx8XmIufgUFGfl5+FXkJmbm4DcivzizJDM/D1VRfLCBgWG0enFmERZHQCVhvsSpAKcEFmdDZVIx3QvTg3AnAAWKg3s=","*${b2c_txt_company_profile}","*Get Text","*<p>Returns the text value of the element identified by <code>locator\x3c/code>.\x3c/p>","*${actual_company_profile}","*${actual_company_profile} = โปรไฟล์บริษัท","*Replace String","*String","*<p>Replaces <code>search_for\x3c/code> in the given <code>string\x3c/code> with <code>replace_with\x3c/code>.\x3c/p>","*${b2c_txt_sir_name}, {value}, ${sir_name}","*${b2c_txt_sir_name}","*${b2c_txt_sir_name} = //h1[@class='text-[30px] font-bold'][normalize-space()='คุณ ไอดีซี']","*${actual_sir_name}","*${actual_sir_name} = คุณ ไอดีซี","*${b2c_txt_company_name}, {value}, ${company_name}","*${b2c_txt_company_name}","*${b2c_txt_company_name} = //h1[@class='text-[23px] font-bold'][normalize-space()='Admin']","*${actual_company_name}","*${actual_company_name} = Admin","*${b2c_txt_profile}","*${actual_profile}","*${actual_profile} = ข้อมูลส่วนตัว","*${b2c_txt_profile_name}","*${actual_profile_name}","*${actual_profile_name} = ชื่อ","*${b2c_txt_profile_phone}","*${actual_profile_phone}","*${actual_profile_phone} = เบอร์โทรศัพท์","*${b2c_txt_profile_mail}","*${actual_profile_mail}","*${actual_profile_mail} = E-mail","*${b2c_txt_profile_position}","*${actual_profile_position}","*${actual_profile_position} = ตำแหน่งงาน","*${b2c_txt_name}, {value}, ${name}","*${b2c_txt_name}","*${b2c_txt_name} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='ไอดีซี']","*${actual_name}","*${actual_name} = ไอดีซี","*${b2c_txt_phone}, {value}, ${phone}","*${b2c_txt_phone}","*${b2c_txt_phone} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='0871000000']","*${actual_phone}","*${actual_phone} = 0871000000","*${b2c_txt_email}, {value}, ${email}","*${b2c_txt_email}","*${b2c_txt_email} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='idc@gmail.com']","*${actual_email}","*${actual_email} = idc@gmail.com","*${b2c_txt_position}, {value}, ${position}","*${b2c_txt_position}","*${b2c_txt_position} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='หัวหน้าฝ่ายขาย']","*${actual_position}","*${actual_position} = หัวหน้าฝ่ายขาย","*Should Be Equal","*<p>Fails if the given objects are unequal.\x3c/p>","*${company_profile}, ${actual_company_profile}","*${profile}, ${actual_profile}","*${profile_name}, ${actual_profile_name}","*${profile_phone}, ${actual_profile_phone}","*${profile_email}, ${actual_profile_mail}","*${profile_position}, ${actual_profile_position}","*${sir_name}, ${actual_sir_name}","*${company_name}, ${actual_company_name}","*${name}, ${actual_name}","*${phone}, ${actual_phone}","*${email}, ${actual_email}","*${position}, ${actual_position}","*Booking_S001, Verify Home Page","*${date_YYYY_MM_DD} = 2024-10-08 22:13:52.402","*\x3c/td>\x3c/tr><tr><td colspan=\"3\"><a href=\"../results/2024-10-08/Booking_S001/Verify%20Home%20Page.png\"><img src=\"../results/2024-10-08/Booking_S001/Verify%20Home%20Page.png\" width=\"800px\">\x3c/a>","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
+window.output["strings"] = window.output["strings"].concat(["*","*Booking S007","*D:\\aaVasup\\Allspeedy\\Automate\\all-speedy-automated\\report\\..\\testcases\\e2e\\booking_s007.robot","*../testcases/e2e/booking_s007.robot","*Booking_S007","*<p>ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน &gt; ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)\x3c/p>","*Booking","*Run","*UAT","*No keyword with name 'b2c_booking_delivery_page.' found. Did you mean:\n    b2c_booking_delivery_page.Input COD","*Run Keywords","*BuiltIn","*<p>Executes all the given keywords in a sequence.\x3c/p>","*Open Chrome Browser    chrome    AND    Set Folder Result with date","*Open Chrome Browser","*common","*chrome","*Evaluate","*<p>Evaluates the given expression in Python and returns the result.\x3c/p>","*sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver","*${chrome_options}","*${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000249247C25D0&gt;","*Call Method","*<p>Calls the named method of the given object with the provided arguments.\x3c/p>","*${chrome_options}    add_argument    --disable-gpu","*${chrome_options}    add_argument    --no-sandbox","*${chrome_options}    add_argument    --window-size\\=1920,1080","*Open Browser","*SeleniumLibrary","*<p>Opens a new browser instance to the optional <code>url\x3c/code>.\x3c/p>","*about:blank    ${chrome}    options=${chrome_options}","*Opening browser 'chrome' to base url 'about:blank'.","*s1-t1-k1-k1-k5","eNpVj7EOwjAMRH/lRkAQUUBRgQmxMDJ0ZCmNoZbaBKWGwt9jqEDt4MHW+e5dVhKKMoaaXOQHReg0HDxGySI1c2NtsjSpHcORUCHkwB7HXXZALthvTv3fwTJr2dvV4GToSaj5Wgp8EJw1OdS3XPhcEVqWEqI0/6DutQ+0/gLZ1Kzn4y2Ke4zkpXpNhw36ugTcIJLm1OSdml5C/Bl/dJMpmgCWjyx3D25UIkEZKqXocDrTf2vv1E/i6w2qv2o1","*Set Selenium Speed","*<p>Sets the delay that is waited after each Selenium command.\x3c/p>","*0.2","*Set Folder Result with date","*Get Current Date","*DateTime","*<p>Returns current local or UTC time with an optional increment.\x3c/p>","*${date_YYYY_MM_DD}","*${date_YYYY_MM_DD} = 2024-10-09 14:47:37.974","*Convert Date","*<p>Converts between supported `date formats`.\x3c/p>","*${date_YYYY_MM_DD}    result_format=%Y-%m-%d","*${date_YYYY_MM_DD} = 2024-10-09","*Set Variable","*<p>Returns the given values which can then be assigned to a variables.\x3c/p>","*../results/${date_YYYY_MM_DD}","*${FOlDER_RESULT}","*${FOlDER_RESULT} = ../results/2024-10-09","*Set Global Variable","*<p>Makes a variable available globally in all tests and suites.\x3c/p>","*Log","*<p>Logs the given message with the given level.\x3c/p>","*Login","*Open URL","*${B2C_UAT_URL}","*Go To","*<p>Navigates the current browser window to the provided <code>url\x3c/code>.\x3c/p>","*${url}","*Opening url '<a href=\"https://www-uat.allspeedy.co.th/auth/login\">https://www-uat.allspeedy.co.th/auth/login\x3c/a>'","*Select Business Customers Tab","*register_general_customers_page","*Click When Ready","*${register_btn_business_customers_tab_general_customers_page}","*Wait Until Element Is Visible","*<p>Waits until the element <code>locator\x3c/code> is visible.\x3c/p>","*${locator}    ${DEFAULT_TIMEOUT}","*Click Element","*<p>Click the element identified by <code>locator\x3c/code>.\x3c/p>","*${locator}","*Clicking element '//div[text()='ลูกค้าธุรกิจ'][@id='rc-tabs-2-tab-business']/..'.","*Input Email","*b2c_login_page","*${b2c_login_user_01['username']}","*${b2c_txtbox_email}    timeout=${DEFAULT_TIMEOUT}","*Input Text","*<p>Types the given <code>text\x3c/code> into the text field identified by <code>locator\x3c/code>.\x3c/p>","*${b2c_txtbox_email}    ${value}","*Typing text 'idc@gmail.com' into text field '//input[@id='emailBusiness']'.","*Input Password","*${b2c_login_user_01['password']}","*${b2c_txtbox_password}","*${b2c_txtbox_password}    ${value}","*Typing text 'P@ssw0rd' into text field '//input[@id='passwordBusiness']'.","*Click Log On Button","*${b2c_btn_log_on}","*Clicking element '//*[@id=\"rc-tabs-2-panel-business\"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b'.","*Wait Until Profile Page Loaded","*b2c_home_page","*${b2c_txt_business_profile_title_home_page}    timeout=${DEFAULT_TIMEOUT}","*Wait Until Page Contains Element","*<p>Waits until the element <code>locator\x3c/code> appears on the current page.\x3c/p>","*${b2c_btn_edit_profile_info_home_page}    timeout=${DEFAULT_TIMEOUT}","*Sleep","*<p>Pauses the test executed for the given time.\x3c/p>","*3s","*Slept 3 seconds.","*Step No.1 กดเมนู \"จองการจัดส่งพัสดุ\"","*Click Book Parcel Delivery","*${b2c_mnu_book_parcel_delivery_home_page}","*Clicking element '//div[@class='ant-space-item']//a[@href='/booking' and text()='จองการจัดส่งพัสดุ']'.","*Verify Booking Page","*b2c_booking_delivery_page","*${Booking['text_title_booking']}","*Wait Until Element Is Not Visible","*<p>Waits until the element <code>locator\x3c/code> is not visible.\x3c/p>","*${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}","*${b2c_btn_add}    timeout=30s","*Get Text","*<p>Returns the text value of the element identified by <code>locator\x3c/code>.\x3c/p>","*${txt_title_booking}","*${title}","*${title} = จองการจัดส่งพัสดุ สาขาหลัก","*Should Be Equal","*<p>Fails if the given objects are unequal.\x3c/p>","*${title}    ${txt_title}","*Verify Capture Screenshot","*Booking_S007    Verify Booking Page","*${date_YYYY_MM_DD} = 2024-10-09 14:48:09.657","*os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)    modules=os","*Capture Page Screenshot","*<p>Takes a screenshot of the current page and embeds it into a log file.\x3c/p>","*../results/${FOlDER_RESULT}/${folder}/${img_name}.png","eNqz0S9JsbPRLymyswHjFIXk/JzigsQ8WyVjJTubRIWMotQ0WyU9Pf2i1OLSnJJifSMDIxNdQwNdA0t9p/z87My89PhgAwNz/bDUosy0SlUjA6gokBWQmJ6qV5CXDjQoMzddobgomWKTFMozU0oybJUsDAwKKoDm6ifaAQAxPTxb","*Step No.2 กดปุ่ม \"+ เพิ่ม\"","*Click Button To Add","*4s","*Slept 4 seconds.","*${b2c_btn_add}","*Clicking element '//button[contains(@class, 'ant-btn') and span[text()='เพิ่ม']]'.","*Verify Term &amp; Condition","*${txt_term_and_condition}    ${Booking['text_term_and_condition']}","*${btn_accept_terms_service}    timeout=30s","*${txt_term_and_condition}","*${text}","*${text} = ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 9 ตุลาคม 2024 (Version 2)","*${text}    ${text_accept}","*Booking_S007    Verify Term &amp; Condition","*${date_YYYY_MM_DD} = 2024-10-09 14:48:22.890","eNqtzEsOwiAUheGtEJIOy72i8ZEAA12CxqkhhVLSFghg1N1LXIOD85/ZJ6AaJaBmJX4zZIhLSTpIuqVKaDJlO0rKGGRbnkstwJHv+g32eIJzjLMP7nFFPMDdZj9+Oo43m9d2Hd+3XmIwvvoYWAqugX51pOThbyJ5eVMnSY+I6d180OoL0cpAdQ==","*Step No.3 กดปุ่ม \"ยอมรับเงื่อนไขการใช้บริการ\"","*Click Accept Terms of Service","*${btn_accept_terms_service}","*Clicking element '//button[.//span[text()='ยอมรับเงื่อนไขการใช้บริการ']]'.","*Verify Select Parcel Type","*Wait Until Element Is Enabled","*<p>Waits until the element <code>locator\x3c/code> is enabled.\x3c/p>","*${btn_parcel_type_dry}    timeout=30s","*Element Should Be Visible","*<p>Verifies that the element identified by <code>locator\x3c/code> is visible.\x3c/p>","*${btn_parcel_type_dry}","*Element '//img[@alt='Dry']' is displayed.","*${btn_parcel_type_chill}","*Element '//img[@alt='Chill']' is displayed.","*Booking_S007    Verify Select Parcel Type","*${date_YYYY_MM_DD} = 2024-10-09 14:48:50.120","eNqtzEEKwjAQQNGrhIDLdsYqqJBk4QmEilsJ6bQNxjRMItrbGzyDiw9/9RSUwSgobNSvQbgl5GSjljtplBUz06hl2wJTfoWSocNu32yxwROcl+Xh43TvEQ9wI/bjuumwp0Cu1LlYdhTqXNdEbYpTBf1zEpnd30Tx9kOZtTwipk/1wZovM0dBjw==","*Step No.4 กดปุ่ม \"พัสดุทั่วไป\"","*Select Parcel Type","*${Booking_S007['parcel_type']}","*'${parcel_type}' == 'พัสดุทั่วไป'","*Click General Parcel","*${parcel_type_dry_btn}    timeout=30s","*${parcel_type_dry_btn}","*Clicking element '//img[@alt='Dry']'.","*${close_noti_btn}    timeout=30s","*'${parcel_type}' == 'พัสดุควบคุมอุณหภมิ'","*Click Temperature Controlled Parcel","*Verify Create Parcel Page Sender Step","eNpTqXbKz8/OzEuPVi9JrSiJL8ksyUlVj61VAAIVNLmCxKLk1Jz44tS8lNSi+My8tPyi3MSSzPw8XOoz8vNSocpxKMlLzCWgIjElpSi1uBi/ooL84pLk/BQkowBN0U7b","*${title_create_parcel_page_txt}    timeout=30s","*${status_active_sender}    timeout=30s","*${txt_title_create_parcel_page}","*${actual_text_title}","*${actual_text_title} = สร้างพัสดุ","*${actual_text_title}    ${title}","*${txt_parcel_sender_information}","*${actual_text_parcel_sender_information}","*${actual_text_parcel_sender_information} = ข้อมูลผู้ส่งพัสดุ","*${actual_text_parcel_sender_information}    ${parcel_sender_information}","*${txt_phone_sender}","*${actual_text_phone}","*${actual_text_phone} = เบอร์โทรศัพท์ *","*${actual_text_phone}    ${phone_sender}","*${txt_name_sender}","*${actual_text_name_sender}","*${actual_text_name_sender} = ชื่อ *","*${actual_text_name_sender}    ${name_sender}","*${txt_address_sender}","*${actual_text_address}","*${actual_text_address} = รายละเอียดที่อยู่ *","*${actual_text_address}    ${address_sender}","*${txt_postcode_sender}","*${actual_text_postcode}","*${actual_text_postcode} = แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *","*${actual_text_postcode}    ${postcode_sender}","*Booking_S007    Verify Create Parcel Page Sender Step","*${date_YYYY_MM_DD} = 2024-10-09 14:48:57.586","eNq1zUEKwjAQheGrhIDLdsYqqJBmoRcQCm4lNNM0GNMwiai3t+0dXDz43upXUKxWUFirdVb0U8jJxFbupFZGjExDK+samPIrlAwNNvtqixWe4DxNDx/dvUM8wI3YD99NgxcmU2jG1XBPYYVbfkfREi8olOoU3RzwTycy938riLe3ZWzlETF95h4Y/QPymUtD","*Step No.5 ขั้นตอนข้อมูลผู้รับพัสดุ กดปุ่ม \"เลือกจากรายการโปรด\"","*Click Choose Favorites","*${choose_favorites_btn}    timeout=30s","*${choose_favorites_btn}","*Clicking element '//button[span[text()='เลือกจากรายการโปรด']]'.","*${favorites_defult_text}    timeout=30s","*b2c_booking_delivery_page.","*Close Browser","*<p>Closes the current browser.\x3c/p>"]);
 </script>
 <script type="text/javascript">
-window.output["stats"] = [[{"elapsed":"00:00:20","fail":0,"label":"All Tests","pass":1,"skip":0}],[{"elapsed":"00:00:20","fail":0,"label":"Booking","pass":1,"skip":0},{"elapsed":"00:00:20","fail":0,"label":"Review-Pass","pass":1,"skip":0},{"elapsed":"00:00:20","fail":0,"label":"UAT","pass":1,"skip":0}],[{"elapsed":"00:00:20","fail":0,"id":"s1","label":"Testcases","name":"Testcases","pass":1,"skip":0},{"elapsed":"00:00:20","fail":0,"id":"s1-s1","label":"Testcases.E2E","name":"E2E","pass":1,"skip":0},{"elapsed":"00:00:20","fail":0,"id":"s1-s1-s1","label":"Testcases.E2E.Booking","name":"Booking","pass":1,"skip":0}]];
+window.output["stats"] = [[{"elapsed":"00:01:26","fail":1,"label":"All Tests","pass":0,"skip":0}],[{"elapsed":"00:01:26","fail":1,"label":"Booking","pass":0,"skip":0},{"elapsed":"00:01:26","fail":1,"label":"Run","pass":0,"skip":0},{"elapsed":"00:01:26","fail":1,"label":"UAT","pass":0,"skip":0}],[{"elapsed":"00:01:27","fail":1,"id":"s1","label":"Booking S007","name":"Booking S007","pass":0,"skip":0}]];
 </script>
 <script type="text/javascript">
-window.output["errors"] = [];
+window.output["errors"] = [[1596,3,33,32]];
 </script>
 <script type="text/javascript">
-window.output["baseMillis"] = 1728400414741;
+window.output["baseMillis"] = 1728460055227;
 </script>
 <script type="text/javascript">
-window.output["generated"] = 20311;
+window.output["generated"] = 87010;
 </script>
 <script type="text/javascript">
 window.output["expand_keywords"] = null;
@@ -1831,7 +2109,7 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
 </script>
 <title></title>
 </head>
-<body>
+<body data-theme="dark">
 <div id="javascript-disabled">
   <h1>Opening Robot Framework log failed</h1>
   <ul>
@@ -1841,12 +2119,13 @@ window.settings = {"defaultLevel":"INFO","minLevel":"INFO","reportURL":"report.h
   </ul>
 </div>
 <script type="text/javascript">removeJavaScriptDisabledWarning();</script>
-
 <div id="header"></div>
 <div id="statistics-container"></div>
 
 <script type="text/javascript">
 $(document).ready(function() {
+    storage.init();
+    theme.init(storage);
     try {
         var topsuite = window.testdata.suite();
     } catch (error) {
@@ -1854,6 +2133,7 @@ $(document).ready(function() {
         return;
     }
     initLayout(topsuite.name, 'Log');
+    theme.reflectPreference();
     addStatistics();
     addErrors();
     addExecutionLog(topsuite);
@@ -1894,25 +2174,6 @@ function drawErrorsRecursively(errors, target) {
         // Errors may have moved scroll position. Resetting location re-scrolls.
         if (window.location.hash)
             window.location.replace(window.location.hash);
-        highlightLinkTarget();
-    }
-}
-
-function highlightLinkTarget() {
-    if (window.location.hash) {
-        var target = $(window.location.hash);
-        highlight(target);
-    }
-}
-
-function highlight(element, color) {
-    if (color === undefined)
-        color = 242;
-    if (color < 255) {
-        element.css({'background-color': 'rgb('+color+','+color+','+color+')'});
-        setTimeout(function () { highlight(element, color+1); }, 300);
-    } else {
-        element.css({'background-color': ''});
     }
 }
 
@@ -1928,9 +2189,8 @@ function makeElementVisible(id) {
         util.map(ids, expandElementWithId);
         if (ids.length) {
             expandFailed(window.testdata.findLoaded(util.last(ids)));
-            window.location.hash = '';
             window.location.hash = id;
-            highlightLinkTarget();
+            document.getElementById(id).scrollIntoView();
         }
     });
 }
@@ -2128,8 +2388,9 @@ function addExecutionLog(main) {
       <div class="element-header-left" title="${type}  {{if name}}{{html fullName}}  {{/if}}[${status}]">
         <span class="elapsed" title="Elapsed time">${times.elapsedTime}</span>
         <span class="label ${status.toLowerCase()}">${type}</span>
-        <span>{{html assign}}</span>
+        <span class="assign">{{html assign}}</span>
         <span class="name"><span class="parent-name">{{html libname}}{{if libname}} . {{/if}}</span>{{html name}}</span>
+        &nbsp;
         <span class="arg">{{html arguments}}</span>
       </div>
       <div class="element-header-right" onclick="stopPropagation(event)">
@@ -2163,6 +2424,12 @@ function addExecutionLog(main) {
           <th>Start / End / Elapsed:</th>
           <td>${times.startTime} / ${times.endTime} / ${times.elapsedTime}</td>
         </tr>
+        {{if message()}}
+        <tr>
+          <th>Message:</th>
+          <td class="message">{{html message()}}</td>
+        </tr>
+        {{/if}}
       </table>
     </div>
   </div>
@@ -2185,6 +2452,7 @@ function addExecutionLog(main) {
   <div id="log-level-selector">
   Log level:
     <select onchange="logLevelSelected(this.options[selectedIndex].value)">
+      <option value="3">WARN</option>
       <option value="2">INFO</option>
       <option value="1">DEBUG</option>
       {{if showTrace()}}<option value="0">TRACE</option>{{/if}}

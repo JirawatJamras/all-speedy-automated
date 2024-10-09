@@ -98,7 +98,8 @@ Booking_S005
     common.Verify Capture Screenshot    Booking_S005    Verify Draft Parcel Sender
 
     Log    Step No.8 กดปุ่ม "ถัดไป"
-    b2c_booking_delivery_page.Click Next Button  
+    b2c_booking_delivery_page.Click Next Button
+    b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
     b2c_booking_delivery_page.Verify Draft Paecel Receiver
     ...    ${EMPTY}
@@ -135,9 +136,9 @@ Booking_S005
     common.Verify Capture Screenshot    Booking_S005    Verify Paecel Detail
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
-    # กรอกข้อมูล
-    # เลือกขนาดพัสดุ : ซอง A4"
-    b2c_booking_delivery_page.Select Parcel Size    ${Booking_S002['parcel_size']}
+    b2c_booking_delivery_page.Select Parcel Size    ${Booking_S005['parcel_size']}
+    b2c_booking_delivery_page.Input COD    ${Booking_S005['parcel_cod']}
+    b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S005['parcel_cod']}
 
 
     [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
