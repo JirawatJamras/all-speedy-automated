@@ -181,6 +181,9 @@ Booking_S005
     ...    ${Booking_S005['receiver_address']}
     ...    ${Booking_S005['receiver_postcode_full']}
     ...    ${Booking_S005['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
@@ -226,6 +229,9 @@ Booking_S005
     ...    ${Booking_S005['receiver_address']}
     ...    ${Booking_S005['receiver_postcode_full']}
     ...    ${Booking_S005['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
@@ -272,6 +278,9 @@ Booking_S005
     ...    ${Booking_S005['receiver_address']}
     ...    ${Booking_S005['receiver_postcode_full']}
     ...    ${Booking_S005['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
