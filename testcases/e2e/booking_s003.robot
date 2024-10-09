@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S003
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    Run
+    [Tags]    Booking    UAT    Run    BEW
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -61,10 +61,10 @@ Booking_S003
     b2c_booking_detail_page.Verify Booking list Page
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking_S003['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S003['sender_name']}
     ...    ${Booking_S003['sender_phone']}
-    ...    ${Booking_S003['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking.text_blank['receiver_name']}
     ...    ${Booking.text_blank['receiver_phone']}
     ...    ${Booking.text_blank['receiver_address']}
@@ -156,37 +156,43 @@ Booking_S003
     # SPBH5B
     b2c_booking_delivery_page.Input Promotion    ${Booking_S003['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
-    # b2c_booking_delivery_page.Verify Selected Coupon And Code
-    # Sleep    5s
-    # b2c_booking_delivery_page.Click Parcel Booking Button
-    # ${booking_time}    Get Booking Time
-    # # Expected
-    # b2c_booking_detail_page.Verify Booking Detail Page
-    # ...    ${Booking['text_title_booking_list']}
-    # ...    ${booking_id}
-    # ...    ${booking_name}
-    # ...    ${booking_time}
-    # ...    ${Booking['text_title_parcel_list']}
-    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    # ...    ${Booking_S002['img_sender_heart']}
-    # ...    ${Booking_S002['sender_name']}
-    # ...    ${Booking_S002['sender_phone']}
-    # ...    ${Booking_S002['img_receiver_heart']}
-    # ...    ${Booking_S002['receiver_name']}
-    # ...    ${Booking_S002['receiver_phone']}
-    # ...    ${Booking_S002['receiver_address']}
-    # ...    ${Booking_S002['receiver_postcode_full']}
-    # ...    ${Booking_S002['parcel_size']}
-    # ...    ${Booking['text_title_booking_summary']}
-    # ...    ${Booking_S002['discount_amount']}
-    # ...    ${Booking_S002['discount_value']}
-    # ...    ${Booking_S002['insurance_fee_amount']}
-    # ...    ${Booking_S002['insurance_fee_value']}
-    # ...    ${Booking_S002['cod_fee_amount']}
-    # ...    ${Booking_S002['cod_fee_value']}
-    # ...    ${Booking_S002['total_price_amount']}
-    # ...    ${Booking_S002['total_price_value']}
-    # common.Scroll Window To Vertical    500
-    # common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary After Booking Success
-    # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page After Booking Success
+    b2c_booking_delivery_page.Verify Selected Coupon And Code
+    ...    ${Booking_S003.promotion_detail['discount']}
+    ...    ${Booking_S003.promotion_detail['promotion_name']}
+    ...    ${Booking_S003.promotion_detail['parcel_size']}
+    ...    ${Booking_S003.promotion_detail['expired_date']}
+    ...    ${Booking_S003.promotion_detail['condition']}
+    ...    ${Booking_S003.promotion_detail['period']}
+
+    b2c_booking_delivery_page.Click Parcel Booking Button
+    ${booking_time}    Get Booking Time
+    # Expected
+    b2c_booking_detail_page.Verify Booking Detail Page
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S003['sender_name']}
+    ...    ${Booking_S003['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S003['receiver_name']}
+    ...    ${Booking_S003['receiver_phone']}
+    ...    ${Booking_S003['receiver_address']}
+    ...    ${Booking_S003['receiver_postcode_full']}
+    ...    ${Booking_S003['parcel_size']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    ${Booking_S003['discount_amount']}
+    ...    ${Booking_S003['discount_value']}
+    ...    ${Booking_S003['insurance_fee_amount']}
+    ...    ${Booking_S003['insurance_fee_value']}
+    ...    ${Booking_S003['cod_fee_amount']}
+    ...    ${Booking_S003['cod_fee_value']}
+    ...    ${Booking_S003['total_price_amount']}
+    ...    ${Booking_S003['total_price_value']}
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    Booking_S003    Verify Booking Summary After Booking Success
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    Booking_S003    Verify Booking Detail Page After Booking Success
