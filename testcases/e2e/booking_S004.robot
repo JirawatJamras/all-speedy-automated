@@ -35,7 +35,7 @@ Booking_S004
     common.Verify Capture Screenshot    Booking_S004    Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
-    b2c_booking_delivery_page.Select Parcel Type    ${Booking_S002['parcel_type']}
+    b2c_booking_delivery_page.Select Parcel Type    ${Booking_S004['parcel_type']}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -47,10 +47,10 @@ Booking_S004
     common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
-    b2c_booking_delivery_page.Input Phone Sender    ${Booking_S002['sender_phone']}
-    b2c_booking_delivery_page.Input Name Sender    ${Booking_S002['sender_name']}    
-    b2c_booking_delivery_page.Input Address Sender    ${Booking_S002['sender_address']}
-    b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S002['sender_postcode_5_digits']}
+    b2c_booking_delivery_page.Input Phone Sender    ${Booking_S004['sender_phone']}
+    b2c_booking_delivery_page.Input Name Sender    ${Booking_S004['sender_name']}    
+    b2c_booking_delivery_page.Input Address Sender    ${Booking_S004['sender_address']}
+    b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S004['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S002['sender_postcode_full']}
     #Expected
     common.Verify Capture Screenshot    Booking_S004    Verify After Create Parcel Page Sender Step
@@ -72,20 +72,102 @@ Booking_S004
     b2c_booking_delivery_page.Click Choose Favorites
     #Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp
-    ...    Vasup Automate Test Receiver 
-    ...    0999999999
-    ...    ชั้น 1 Siamscape Building, 2/15 ถ.พญาไท
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_address']}
     common.Verify Capture Screenshot    Booking_S004    Verify Favorites Receiver PopUp
 
     Log    Step No.8 กดเลือกรายการ - สมใจ ดีดีดี 47 หมู่ 4 พ้อแดง หลังสวน ชุมพร 86110
     b2c_booking_delivery_page.Click Choose Favorites Receiver List  
-    ...    Vasup Automate Test Receiver 
-    ...    0999999999
-    ...    ชั้น 1 Siamscape Building, 2/15 ถ.พญาไท
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_address']}
+    b2c_booking_delivery_page.Click Accept Favorites List
     #Expected
     b2c_booking_delivery_page.Verify Choose Receiver From Favorites
-    ...    Vasup Automate Test Receiver 
-    ...    0999999999
-    ...    ชั้น 1 Siamscape Building, 2/15 ถ.พญาไท
-    ...    ปทุมวัน ปทุมวัน กรุงเทพมหานคร 10330
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Choose Receiver From Favorites
 
+    Log    Step No.9 กดปุ่ม "ถัดไป"
+    b2c_booking_delivery_page.Click Next Button
+    #Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
+    ...    ${Booking.general_parcel['parcel_detail_A4']}
+    ...    ${Booking.general_parcel['parcel_detail_A3']}
+    ...    ${Booking.general_parcel['parcel_detail_XS']}
+    ...    ${Booking.general_parcel['parcel_detail_S']}
+    ...    ${Booking.general_parcel['parcel_detail_M']}
+    ...    ${Booking.general_parcel['parcel_detail_L']}
+    ...    ${Booking.general_parcel['parcel_detail_XL']}
+    ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    ...    ${Booking['parcel_detail_insure_amount']}
+    ...    ${Booking['parcel_detail_cod']}
+    ...    ${Booking['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Detail Step
+
+    Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ กรอกข้อมูล ขนาดพัสดุ : กล่อง XS COD : 5,000.00"
+    b2c_booking_delivery_page.Select Parcel Size    ${Booking_S004['parcel_size']}
+    b2c_booking_delivery_page.Input COD    ${Booking_S004['parcel_cod']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Select Parcel Size And Input COD
+
+    Log    Step No.11 กดปุ่ม "บันทึกร่าง"
+    b2c_booking_delivery_page.Click Save Button
+    #Expected
+    # b2c_booking_detail_page.Verify Booking list Page
+    # ...    ${Booking['text_booking_list']}
+    # ...    ${Booking['text_draft_status']}
+    # ...    ${Booking_S004['img_sender_heart']}
+    # ...    ${Booking_S004['sender_name']}
+    # ...    ${Booking_S004['sender_phone']}
+    # ...    ${Booking_S004['img_receiver_heart']}
+    # ...    ${Booking_S004['receiver_name']}
+    # ...    ${Booking_S004['receiver_phone']}
+    # ...    ${Booking_S004['receiver_address']}
+    # ...    ${Booking_S004['receiver_postcode_full']}
+    # ...    ${Booking_S004['parcel_size']}
+    # ...    ${Booking.text_blank['discount_value']}
+    # ...    ${Booking.text_blank['insurance_fee_value']}
+    # ...    ${Booking_S004['parcel_cod_verify']}
+    # common.Verify Capture Screenshot    Booking_S004    Verify Draft Paecel
+
+    Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
+    b2c_booking_detail_page.Select Draft Booking
+    #Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
+    ...    ${Booking['text_title']}
+    ...    ${Booking['text_parcel_sender_information']}
+    ...    ${Booking['text_phone_sender']}
+    ...    ${Booking['text_name_sender']}
+    ...    ${Booking['text_address_sender']}
+    ...    ${Booking['text_postcode_sender']}
+    b2c_booking_delivery_page.Verify Draft Parcel Sender
+    ...    ${Booking_S004['sender_phone']}
+    ...    ${Booking_S004['sender_name']}
+    ...    ${Booking_S004['sender_address']}
+    ...    ${Booking_S004['sender_postcode_full']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Draft Parcel Sender
+
+    Log    Step No.13 กดปุ่ม "ถัดไป"
+    b2c_booking_delivery_page.Click Next Button
+    b2c_booking_delivery_page.Select Send To Home Tab
+    #Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
+    ...    ${Booking['text_title']}
+    ...    ${Booking['text_parcel_receiver_information']}
+    ...    ${Booking['text_phone_receiver']}
+    ...    ${Booking['text_name_receiver']}
+    ...    ${Booking['text_location_receiver']}
+    ...    ${Booking['text_address_receiver']}
+    ...    ${Booking['text_postcode_receiver']}
+    b2c_booking_delivery_page.Verify Draft Paecel Receiver
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
+    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step
+
+    Log    Step No.14 กดปุ่ม "ถัดไป"
+    b2c_booking_delivery_page.Click Next Button

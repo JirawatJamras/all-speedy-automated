@@ -193,7 +193,6 @@ Verify Choose Receiver From Favorites
     Should Be Equal    ${address_text}    ${receiver_address}
     ${postcode_text}=    Get Text    ${txtbox_postcode_receiver_select_text}
     Should Be Equal    ${postcode_text}    ${receiver_postcode}
-    # เพิ่ม Verify หัวใจมีสี ไม่มีสี (น้อง Bew กำลัง Push code)
 
 Click Favorites Defult
     Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s

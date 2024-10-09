@@ -89,7 +89,7 @@ ${txtbox_address_receiver}    //textarea[@id='create_parcel_form_receiver_addres
 ${txtbox_postcode_receiver}    //input[@id='create_parcel_form_receiver_address_full']
 ${txtbox_postcode_receiver_not_select_text}    //span[@class='ant-select-selection-placeholder']
 ${txtbox_postcode_receiver_select_text}    //span[@class='ant-select-selection-item']
-${txtbox_full_postcode_receiver}    //span[@class='ant-select-selection-item']
+${txtbox_full_postcode_receiver}    //span[text()='แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ ']/../../..//div[@class='ant-select-selector']//span[1]
 ${opt_default_favorites}    //span[contains(@class,'ant-typography bg-amber-500')]/../../../../..//input[@class='ant-radio-input']
 ${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//textarea[@id='create_parcel_form_remark']
 ${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่วนลด']
