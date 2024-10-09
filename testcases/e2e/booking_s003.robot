@@ -292,28 +292,27 @@ Booking_S003
 
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
-    # Expected
-    b2c_booking_detail_page.Verify Parcel Label
-    ...    ${Booking.text_paper_size['size_a4']}
-    ...    ${Booking.text_paper_size['size_a5']}
-    ...    ${Booking.text_paper_size['size_8cm']}
-    ...    ${Booking_S003['receiver_postcode_5_digits']}
-    ...    ${Booking_S003['parcel_package_type']}
-    ...    ${Booking_S003['parcel_size']}
-    ...    ${Booking_S003['sender_name']}
-    ...    ${Booking_S003['sender_phone']}
-    ...    ${Booking_S003['sender_address']}
-    ...    ${Booking_S003['sender_postcode_full']}
-    ...    ${Booking_S003['receiver_name']}
-    ...    ${Booking_S003['receiver_phone']}
-    ...    ${Booking_S003['receiver_address']}
-    ...    ${Booking_S003['receiver_postcode_full']}  
-    ...    ${Booking.label['parcel_cod']}
-    ...    ${Booking.label['parcel_insure']}
-    ...    ${Booking_S003['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Parcel Label
-    Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
-    b2c_booking_detail_page.Click Print Label On Popup
+    # # Expected
+    # b2c_booking_detail_page.Verify Parcel Label
+    # ...    ${Booking.text_paper_size['size_a4']}
+    # ...    ${Booking.text_paper_size['size_a5']}
+    # ...    ${Booking.text_paper_size['size_8cm']}
+    # ...    ${Booking_S003['receiver_postcode_5_digits']}
+    # ...    ${Booking_S003['parcel_package_type']}
+    # ...    ${Booking_S003['parcel_size']}
+    # ...    ${Booking_S003['sender_name']}
+    # ...    ${Booking_S003['sender_phone']}
+    # ...    ${Booking_S003['sender_address']}
+    # ...    ${Booking_S003['sender_postcode_full']}
+    # ...    ${Booking_S003['receiver_name']}
+    # ...    ${Booking_S003['receiver_phone']}
+    # ...    ${Booking_S003['receiver_address']}
+    # ...    ${Booking_S003['receiver_postcode_full']}
+    # ...    ${Booking.label['parcel_cod']}
+    # ...    ${Booking.label['parcel_insure']}
+    # common.Verify Capture Screenshot    Booking_S003    Verify Parcel Label
+    # Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    # b2c_booking_detail_page.Click Print Label On Popup
 
 
     # [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ

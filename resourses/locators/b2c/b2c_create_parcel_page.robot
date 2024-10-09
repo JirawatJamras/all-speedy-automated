@@ -10,7 +10,7 @@ ${close_noticonfirm_btn}    //button[contains(@class, 'swal2-confirm') and conta
 ${close_noti_btn}     (//button[@type='button' and @aria-label='Close'])[2]
 
 ${choose_favorites_btn}     //button[span[text()='เลือกจากรายการโปรด']]
-${favorites_defult_text}     //div[@class='ant-space-item']//span[contains(@class, 'ant-typography') and contains(@class, 'bg-amber-500')]
+${favorites_defult_text}     //div[text()='เลือกจากรายการโปรด']
 ${search_favorites_txtbox}     //input[@placeholder='ค้นหา']
 
 ${select_favorites_btn}     //button[contains(@class, 'ant-btn') and contains(@class, 'bg-green-500')]

@@ -189,5 +189,13 @@ Booking_S005:
   parcel_size:  S
   parcel_package_type:  กล่อง
   parcel_cod: 5000
-  parcel_insure:  ไม่มีการซื้อประกัน
+  parcel_cod_verify: 5,000.00
+  parcel_detail_remark: ระวังพัสดุเสียหาย
 
+Booking_S007:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
