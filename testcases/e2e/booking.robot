@@ -110,10 +110,10 @@ Booking_S002
     b2c_booking_detail_page.Verify Booking list Page
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking_S002['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S002['sender_name']}
     ...    ${Booking_S002['sender_phone']}
-    ...    ${Booking_S002['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S002['receiver_name']}
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
@@ -197,24 +197,24 @@ Booking_S002
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S002['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S002['sender_name']}
     ...    ${Booking_S002['sender_phone']}
-    ...    ${Booking_S002['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S002['receiver_name']}
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S002['discount_amount']}
-    ...    ${Booking_S002['discount_value']}
-    ...    ${Booking_S002['insurance_fee_amount']}
-    ...    ${Booking_S002['insurance_fee_value']}
-    ...    ${Booking_S002['cod_fee_amount']}
-    ...    ${Booking_S002['cod_fee_value']}
-    ...    ${Booking_S002['total_price_amount']}
-    ...    ${Booking_S002['total_price_value']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
+    ...    ${Booking.text_default['total_price_amount']}
+    ...    ${Booking.text_default['total_price_value']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -230,7 +230,7 @@ Booking_S002
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking_S002['booking_item']}
-    ...    ${Booking_S002['booking_price']}
+    ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S002    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -243,24 +243,24 @@ Booking_S002
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S002['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S002['sender_name']}
     ...    ${Booking_S002['sender_phone']}
-    ...    ${Booking_S002['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S002['receiver_name']}
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S002['discount_amount']}
-    ...    ${Booking_S002['discount_value']}
-    ...    ${Booking_S002['insurance_fee_amount']}
-    ...    ${Booking_S002['insurance_fee_value']}
-    ...    ${Booking_S002['cod_fee_amount']}
-    ...    ${Booking_S002['cod_fee_value']}
-    ...    ${Booking_S002['total_price_amount']}
-    ...    ${Booking_S002['total_price_value']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
+    ...    ${Booking.text_default['total_price_amount']}
+    ...    ${Booking.text_default['total_price_value']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -289,22 +289,22 @@ Booking_S002
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking_S002['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S002['sender_name']}
     ...    ${Booking_S002['sender_phone']}
-    ...    ${Booking_S002['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S002['receiver_name']}
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S002['discount_amount']}
-    ...    ${Booking_S002['discount_value']}
-    ...    ${Booking_S002['insurance_fee_amount']}
-    ...    ${Booking_S002['insurance_fee_value']}
-    ...    ${Booking_S002['cod_fee_amount']}
-    ...    ${Booking_S002['cod_fee_value']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
     ...    1
     ...    24.00
     ...    ${Booking_S002['store_code']}

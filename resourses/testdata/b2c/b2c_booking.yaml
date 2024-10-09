@@ -63,6 +63,16 @@ Booking:
     discount_value: '-'
     insurance_fee_value: '-'
     cod_fee_value: '-'
+  text_default:
+    discount_amount: '0'
+    discount_value: '0.00'
+    insurance_fee_amount: '0'
+    insurance_fee_value: '0.00'
+    cod_fee_amount: '0'
+    cod_fee_value: '0.00'
+    total_price_amount: 0
+    total_price_value: '0.00'
+    booking_price:  0.00บาท
 
 Booking_S001:
   sir_name: คุณ ไอดีซี
@@ -84,22 +94,10 @@ Booking_S002:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  #img_heart_sender:  รูปหัวใจไม่มีสี 
-  img_sender_heart:  รูปหัวใจสีแดง
-  img_receiver_heart:  รูปหัวใจสีแดง
   booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
-  discount_amount: '0'
-  discount_value: '0.00'
-  insurance_fee_amount: '0'
-  insurance_fee_value: '0.00'
-  cod_fee_amount: '0'
-  cod_fee_value: '0.00'
-  total_price_amount: 0
-  total_price_value: '0.00'
   booking_item: 1 รายการ
-  booking_price:  0.00บาท
   parcel_size:  A4
   parcel_package_type:  ซอง
   parcel_cod:  Non COD
@@ -120,14 +118,6 @@ Booking_S003:
   booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
-  discount_amount: '0'
-  discount_value: '0.00'
-  insurance_fee_amount: '0'
-  insurance_fee_value: '0.00'
-  cod_fee_amount: '0'
-  cod_fee_value: '0.00'
-  total_price_amount: 0
-  total_price_value: '0.00'
   booking_item: 1 รายการ
   booking_price:  0.00บาท
   parcel_size:  A3
