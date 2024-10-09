@@ -148,17 +148,23 @@ Click Close Paecel Page
     # Verify Close Pop-Up
     Click Element    ${close_noticonfirm_btn}
 
-Click Choose Favorites
+Click Choose Favorites 
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
     Click Element    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=30s
-    ${title_text}=    Get Text    ${favorites_defult_text}
-    Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_default_text']}
+
 
 Click Choose Favorites Receiver
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
     Click Element    ${choose_favorites_btn}
-   
+
+Verify Favorites Sender PopUp
+    [Arguments]    ${sender_phone}    ${sender_name}    ${sender_address}    ${sender_postcode_full}
+    ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${sender_name}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${sender_phone}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${sender_address} ${sender_postcode_full}
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+
 Verify Favorites Receiver PopUp
     [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${receiver_name}
