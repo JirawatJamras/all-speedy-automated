@@ -537,7 +537,9 @@ Input Promotion
 Click Use Code Button
     Click When Ready    ${btn_use_code}
 
-# Verify Selected Coupon And Code
-#     ${actual_selected_code_detail}    Get Text    ${txt_selected_code_detail}
-
-#     Log to console    ${actual_selected_code_detail}
+Verify Selected Coupon And Code
+    [Arguments]    ${discount}    ${promotion_name}    ${parcel_size}    ${expired_date}    ${condition}    ${period}
+    ${actual_selected_code_detail}    Get Text    ${txt_selected_code_detail}
+    ${actual_selected_code_detail}=  Replace String   ${actual_selected_code_detail}   \n   ${SPACE}
+    Should Be Equal As Strings    ${actual_selected_code_detail}
+    ...    คูปองและโค้ดส่วนลดที่เลือก ${discount} ${promotion_name} ${parcel_size} หมดอายุ ${expired_date} เงื่อนไขการใช้คูปอง - ${condition} ระยะเวลา ${period} นำออก
