@@ -199,21 +199,18 @@ Booking_S006:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size:  M
+  insure_amount_value:  2,500
   booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
-  discount_amount: '0'
-  discount_value: '0.00'
-  insurance_fee_amount: '0'
-  insurance_fee_value: '0.00'
-  cod_fee_amount: '0'
-  cod_fee_value: '0.00'
-  total_price_amount: 0
-  total_price_value: '0.00'
   booking_item: 1 รายการ
   booking_price:  0.00บาท
-  parcel_size:  M
-  insurance_fee_value:  2,500
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount:  '1'
+  total_price_value:  '186.00'
+  price_value: '80'
 
 Booking_S007:
   parcel_type:  พัสดุทั่วไป

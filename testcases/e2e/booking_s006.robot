@@ -89,7 +89,7 @@ Booking_S006
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S006['sender_name']}
     ...    ${Booking_S006['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}  # Defect053
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}  # Actual result : ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S006['receiver_name']}
     ...    ${Booking_S006['receiver_phone']}
     ...    ${Booking_S006['receiver_address']}
@@ -153,7 +153,7 @@ Booking_S006
     # # เลือกขนาดพัสดุ : กล่อง M
     # # จำนวนเงินซื้อประกัน : 2,500.00
     # b2c_booking_delivery_page.Select Parcel Size    ${Booking_S006['parcel_size']}
-    # b2c_booking_delivery_page.Input Insurance    ${Booking_S006['insurance_fee_value']}
+    # b2c_booking_delivery_page.Input Insurance    ${Booking_S006['insure_amount_value']}
     # common.Verify Capture Screenshot    Booking_S006    Verify Create Parcel Page After Input Parcel Detail Step
 
     # Log    Step No.13 กดปุ่ม "ถัดไป"
@@ -186,17 +186,17 @@ Booking_S006
     # ...    ${Booking_S006['receiver_postcode_full']}
     # ...    ${Booking_S006['parcel_size']}
     # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking.text_blank['insure_amount_value']}
+    # ...    ${Booking_S006['insure_amount_value']}
     # ...    ${Booking.text_blank['cod_value']}
     # ...    ${Booking['text_title_booking_summary']}
     # ...    ${Booking.text_default['discount_amount']}
     # ...    ${Booking.text_default['price_value']}
-    # ...    ${Booking.text_default['insurance_fee_amount']}
-    # ...    ${Booking.text_default['insurance_fee_value']}
+    # ...    ${Booking_S006['insurance_fee_amount']}
+    # ...    ${Booking_S006['insurance_fee_value']}
     # ...    ${Booking.text_default['cod_fee_amount']}
     # ...    ${Booking.text_default['cod_fee_value']}
-    # ...    ${Booking.text_default['total_price_amount']}
-    # ...    ${Booking.text_default['total_price_value']}
+    # ...    ${Booking_S006['total_price_amount']}
+    # ...    ${Booking.text_default['total_price_value']}  # Actaul result : NaN
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary After Booking Success
     # common.Scroll Window To Vertical    0
@@ -211,7 +211,7 @@ Booking_S006
     # ...    ${Booking['text_parcel_status_select_shipping_origin']}
     # ...    ${Booking_S006['booking_name']}
     # ...    ${Booking_S006['booking_item']}
-    # ...    ${Booking.text_default['booking_price']}
+    # ...    ${Booking.text_default['booking_price']}  # Actaul result : NaN
     # common.Verify Capture Screenshot    Booking_S006    Verify Created Booking On Booking Delivery Page
 
     # Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -225,27 +225,107 @@ Booking_S006
     # ...    ${Booking['text_title_parcel_list']}
     # ...    ${Booking['text_parcel_status_select_shipping_origin']}
     # ...    ${Booking.img_is_favorite['img_sender_heart']}
-    # ...    ${Booking_S002['sender_name']}
-    # ...    ${Booking_S002['sender_phone']}
+    # ...    ${Booking_S006['sender_name']}
+    # ...    ${Booking_S006['sender_phone']}
     # ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    # ...    ${Booking_S002['receiver_name']}
-    # ...    ${Booking_S002['receiver_phone']}
-    # ...    ${Booking_S002['receiver_address']}
-    # ...    ${Booking_S002['receiver_postcode_full']}
-    # ...    ${Booking_S002['parcel_size']}
+    # ...    ${Booking_S006['receiver_name']}
+    # ...    ${Booking_S006['receiver_phone']}
+    # ...    ${Booking_S006['receiver_address']}
+    # ...    ${Booking_S006['receiver_postcode_full']}
+    # ...    ${Booking_S006['parcel_size']}
     # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking.text_blank['insure_amount_value']}
+    # ...    ${Booking_S006['insure_amount_value']}
     # ...    ${Booking.text_blank['cod_value']}
     # ...    ${Booking['text_title_booking_summary']}
     # ...    ${Booking.text_default['discount_amount']}
     # ...    ${Booking.text_default['price_value']}
-    # ...    ${Booking.text_default['insurance_fee_amount']}
-    # ...    ${Booking.text_default['insurance_fee_value']}
+    # ...    ${Booking_S006['insurance_fee_amount']}
+    # ...    ${Booking_S006['insurance_fee_value']}
     # ...    ${Booking.text_default['cod_fee_amount']}
     # ...    ${Booking.text_default['cod_fee_value']}
-    # ...    ${Booking.text_default['total_price_amount']}
-    # ...    ${Booking.text_default['total_price_value']}
+    # ...    ${Booking_S006['total_price_amount']}
+    # ...    ${Booking.text_default['total_price_value']}  # Actaul result : NaN
     # common.Scroll Window To Vertical    500
-    # common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
+    # common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary
     # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
+    # common.Verify Capture Screenshot    Booking_S006    Verify Booking Detail Page
+
+    # Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
+    # b2c_booking_detail_page.Click Edit Booking List
+    # # Expected
+    # b2c_booking_detail_page.Verify Edit Booking List Popup    
+    # ...    ${Booking_S006['parcel_type']}
+    # ...    ${Booking_S006['booking_name']}
+    # ...    ${Booking['text_shipping_origin_aria']}
+    # common.Verify Capture Screenshot    Booking_S006    Verify Edit Booking List Popup
+
+    # Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
+    # b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S006['shipping_origin']}
+    # b2c_booking_detail_page.Search Shipping Store    ${Booking_S006['store_code']}
+    # b2c_booking_detail_page.Click Select Store On Map
+    # b2c_booking_detail_page.Click Save Shipping Origin Aria
+    # ${booking_time}    Get Booking Time
+    # # Expected
+    # b2c_booking_detail_page.Verify Booking Detail Page After Set Origin Shipping
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_waiting_entering']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S006['sender_name']}
+    # ...    ${Booking_S006['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S006['receiver_name']}
+    # ...    ${Booking_S006['receiver_phone']}
+    # ...    ${Booking_S006['receiver_address']}
+    # ...    ${Booking_S006['receiver_postcode_full']}
+    # ...    ${Booking_S006['parcel_size']}
+    # ...    ${Booking_S006['price_value']}
+    # ...    ${Booking.text_blank['insure_amount_value']}
+    # ...    ${Booking.text_blank['cod_value']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking.text_default['discount_amount']}
+    # ...    ${Booking.text_default['discount_value']}
+    # ...    ${Booking_S006['insurance_fee_amount']}
+    # ...    ${Booking_S006['insurance_fee_value']}
+    # ...    ${Booking.text_default['cod_fee_amount']}
+    # ...    ${Booking.text_default['cod_fee_value']}
+    # ...    ${Booking_S006['total_price_amount']}
+    # ...    ${Booking_S006['total_price_value']}
+    # ...    ${Booking_S006['store_code']}
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary After Set Origin Shipping
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S006    Verify Booking Detail Page After Set Origin Shipping
+
+    # Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    # b2c_booking_detail_page.Click Print Parcel Label
+    # # Expected
+    # b2c_booking_detail_page.Verify Parcel Label
+    # ...    ${Booking.text_paper_size['size_a4']}
+    # ...    ${Booking.text_paper_size['size_a5']}
+    # ...    ${Booking.text_paper_size['size_8cm']}
+    # ...    ${Booking_S006['receiver_postcode_5_digits']}
+    # ...    ${Booking_S006['parcel_package_type']}
+    # ...    ${Booking_S006['parcel_size']}
+    # ...    ${Booking_S006['sender_name']}
+    # ...    ${Booking_S006['sender_phone']}
+    # ...    ${Booking_S006['sender_address']}
+    # ...    ${Booking_S006['sender_postcode_full']}
+    # ...    ${Booking_S006['receiver_name']}
+    # ...    ${Booking_S006['receiver_phone']}
+    # ...    ${Booking_S006['receiver_address']}
+    # ...    ${Booking_S006['receiver_postcode_full']}
+    # ...    ${Booking.label['parcel_cod']}
+    # ...    ${Booking.label['parcel_insure']}
+    # ...    ${Booking.text_blank['parcel_detail_remark']}
+    # common.Verify Capture Screenshot    Booking_S006    Verify Parcel Label
+
+    # Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    # b2c_booking_detail_page.Click Print Label On Popup
+    # # Expected
+    # common.Verify Capture Screenshot    Booking_S006    Verify Print Screen
+
+    # [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
