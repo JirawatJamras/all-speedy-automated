@@ -1,6 +1,7 @@
 *** Keywords ***
 Verify Booking Page 
     [Arguments]    ${txt_title}
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
     ${title}=    Get Text    ${txt_title_booking}    
     Should Be Equal    ${title}    ${txt_title}

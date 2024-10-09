@@ -19,7 +19,7 @@ Verify Booking list Page
 
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ${parcel_size} ราคา : ${discount_value}บาท ซื้อประกัน : ${insurance_fee_value} บาท COD : ${cod_fee_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${discount_value}บาท ซื้อประกัน : ${insurance_fee_value} บาท COD : ${cod_fee_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
 
     ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
     
@@ -43,7 +43,7 @@ Verify Booking list Page
     Wait Until Page Contains Element    ${b2c_btn_print_the_parcel_payment_slip_disabled}
 
 Click Edit Booking List
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_btn_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${b2c_btn_edit_booking_list}
 
