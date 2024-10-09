@@ -146,11 +146,12 @@ Booking_S004:
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   parcel_size: XS
-  parcel_cod:  5000
-  parcel_cod_verrify:  5,000.00
+  cod_fee_amount:  5000
+  cod_fee_value:  5,000.00
   #img_sender_heart: รูปหัวใจไม่มีสี
   img_sender_heart: รูปหัวใจสีแดง
   img_receiver_heart: รูปหัวใจสีแดง
+  booking_name:  Booking DRY
 
 Booking_S005:
   parcel_type:  พัสดุทั่วไป
