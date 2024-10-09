@@ -80,7 +80,7 @@ Booking_S002
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S002['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S002['sender_postcode_full']}
     #Expected
-    common.Verify Capture Screenshot    Booking_S002    Verify After Create Parcel Page Sender Step
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -103,7 +103,7 @@ Booking_S002
     b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S002['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S002['receiver_postcode_full']}
     #Expected
-    common.Verify Capture Screenshot    Booking_S002    Verify After Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Receiver Step
 
     Log    Step No.8 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
@@ -123,7 +123,7 @@ Booking_S002
     ...    ${Booking.text_blank['discount_value']}
     ...    ${Booking.text_blank['insurance_fee_value']}
     ...    ${Booking.text_blank['cod_fee_value']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S002    Verify Draft Parcel
 
     Log    Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -154,7 +154,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_name']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Draft Paecel Receiver
+    common.Verify Capture Screenshot    Booking_S002    Verify Draft Parcel Receiver
    
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -171,12 +171,13 @@ Booking_S002
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Paecel Detail
+    common.Verify Capture Screenshot    Booking_S002    Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
     # กรอกข้อมูล
     # เลือกขนาดพัสดุ : ซอง A4"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S002['parcel_size']}
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Parcel Detail Step 
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
