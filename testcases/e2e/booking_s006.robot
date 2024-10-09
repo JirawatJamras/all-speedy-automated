@@ -96,8 +96,8 @@ Booking_S006
     ...    ${Booking_S006['receiver_postcode_full']}
     ...    ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['insurance_fee_value']}
-    ...    ${Booking.text_blank['cod_fee_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking.text_blank['cod_value']}
     common.Verify Capture Screenshot    Booking_S006    Verify Draft Paecel
 
     # Log    Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
@@ -153,7 +153,7 @@ Booking_S006
     # # เลือกขนาดพัสดุ : กล่อง M
     # # จำนวนเงินซื้อประกัน : 2,500.00
     # b2c_booking_delivery_page.Select Parcel Size    ${Booking_S006['parcel_size']}
-    # b2c_booking_delivery_page.Input Insurance    ${Booking_S006['insure_amount_value']}
+    # b2c_booking_delivery_page.Input Insurance    ${Booking_S006['buy_insurance']}
     # common.Verify Capture Screenshot    Booking_S006    Verify Create Parcel Page After Input Parcel Detail Step
 
     # Log    Step No.13 กดปุ่ม "ถัดไป"
@@ -186,7 +186,7 @@ Booking_S006
     # ...    ${Booking_S006['receiver_postcode_full']}
     # ...    ${Booking_S006['parcel_size']}
     # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking_S006['insure_amount_value']}
+    # ...    ${Booking_S006['buy_insurance']}
     # ...    ${Booking.text_blank['cod_value']}
     # ...    ${Booking['text_title_booking_summary']}
     # ...    ${Booking.text_default['discount_amount']}
@@ -234,7 +234,7 @@ Booking_S006
     # ...    ${Booking_S006['receiver_postcode_full']}
     # ...    ${Booking_S006['parcel_size']}
     # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking_S006['insure_amount_value']}
+    # ...    ${Booking_S006['buy_insurance']}
     # ...    ${Booking.text_blank['cod_value']}
     # ...    ${Booking['text_title_booking_summary']}
     # ...    ${Booking.text_default['discount_amount']}
@@ -283,7 +283,7 @@ Booking_S006
     # ...    ${Booking_S006['receiver_postcode_full']}
     # ...    ${Booking_S006['parcel_size']}
     # ...    ${Booking_S006['price_value']}
-    # ...    ${Booking.text_blank['insure_amount_value']}
+    # ...    ${Booking.text_blank['buy_insurance']}
     # ...    ${Booking.text_blank['cod_value']}
     # ...    ${Booking['text_title_booking_summary']}
     # ...    ${Booking.text_default['discount_amount']}

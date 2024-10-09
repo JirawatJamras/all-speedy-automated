@@ -61,7 +61,7 @@ Booking:
     receiver_postcode_full: '-'
     parcel_size: '-'
     price_value: '-'
-    insure_amount_value: '-'
+    buy_insurance: '-'
     cod_value: '-'
     parcel_detail_remark: '-'
   text_default:
@@ -171,11 +171,12 @@ Booking_S005:
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   booking_name:  Booking DRY
-  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  shipping_origin: เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
   booking_item: 1 รายการ
-  parcel_size: A4
+  parcel_size: S
   parcel_package_type:  ซอง
+  price_value: 30    # 55.00
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
   parcel_detail_remark: ระวังพัสดุเสียหาย
@@ -189,8 +190,10 @@ Booking_S005:
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
   discount_value: '5.00'
+  cod_fee_amount: 1
+  cod_fee_value: 150.00
   total_price_amount:  '1'
-  total_price_value:  '43'
+  total_price_value:  '200.00'
 
 
 
@@ -206,7 +209,7 @@ Booking_S006:
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   parcel_size:  M
-  insure_amount_value:  2,500
+  buy_insurance:  2,500
   booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'

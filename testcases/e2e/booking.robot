@@ -121,7 +121,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     common.Verify Capture Screenshot    Booking_S002    Verify Draft Parcel
 
@@ -207,7 +207,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
@@ -256,7 +256,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
@@ -305,7 +305,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}

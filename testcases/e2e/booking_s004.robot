@@ -129,7 +129,7 @@ Booking_S004
     # ...    ${Booking_S004['receiver_postcode_full']}
     # ...    ${Booking_S004['parcel_size']}
     # ...    ${Booking.text_blank['discount_value']}
-    # ...    ${Booking.text_blank['insurance_fee_value']}
+    # ...    ${Booking.text_blank['buy_insurance']}
     # ...    ${Booking_S004['parcel_cod_verify']}
     # common.Verify Capture Screenshot    Booking_S004    Verify Draft Paecel
 
