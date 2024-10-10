@@ -10,7 +10,7 @@ B2C_SearchTracking_007_001
     [Documentation]    [ตรวจสอบพัสดุของฉัน] ตรวจสอบพัสดุของฉัน,
     ...                ตรวจสอบรายการพัสดุที่จัดส่ง,
     ...                ตรวจสอบ Tab "อยู่ระหว่างจัดส่ง"
-    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Review
+    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -32,7 +32,7 @@ B2C_SearchTracking_007_001
 B2C_SearchTracking_007_002
     [Documentation]    [ตรวจสอบพัสดุของฉัน] กรองข้อมูล Tab "อยู่ระหว่างจัดส่ง",
     ...                กรณี กดปุ่มเปิดและปิด "ตัวกรอง"
-    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    In_Review
+    [Tags]    B2C_SearchTracking_007    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -51,7 +51,7 @@ B2C_SearchTracking_007_003
     [Documentation]    [ตรวจสอบพัสดุของฉัน] กรอกค้นหาหมายเลขพัสดุ ถูกต้อง,
     ...                กรอกค้นหาหมายเลขพัสดุ เป็นตัวอักษรภาษาอังกฤษ ตัวเลข และ ไม่เกิน 20 ตัวอักษร,
     ...                ไม่กรอกค้นหาหมายเลขพัสดุ
-    [Tags]    B2C_SearchTracking_007    UAT    Medium    Regression    In_Review
+    [Tags]    B2C_SearchTracking_007    UAT    Medium    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -98,7 +98,7 @@ B2C_SearchTracking_007_005
     [Documentation]    [ตรวจสอบพัสดุของฉัน] กรอกค้นหาผู้รับพัสดุ ถูกต้อง
     ...                กรอกค้นหาผู้รับพัสดุ เป็นตัวอักษรภาษาไทย อังกฤษ และ ไม่เกิน 50 ตัวอักษร,
     ...                ไม่กรอกค้นหาผู้รับพัสดุ
-    [Tags]    B2C_SearchTracking_007    UAT    Medium    Regression    In_Review
+    [Tags]    B2C_SearchTracking_007    UAT    Medium    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}

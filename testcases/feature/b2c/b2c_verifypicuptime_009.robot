@@ -11,7 +11,7 @@ B2C_VerifyPicupTime_009_001
     [Documentation]    [ตรวจสอบ แก้ไข และลบรายการเรียกรถเข้ารับพัสดุ] กรณี ตรวจสอบรายการรอบรถเข้ารับพัสดุ
     ...                                                         , กรณี ตรวจสอบรายละเอียดรายการรอบรถเข้ารับพัสดุ
     ...                                                         , กรณี ตรวจสอบรายละเอียดรายการรอบรถเข้ารับพัสดุกรณี กดปุ่ม "บันทึก"
-    [Tags]    B2C_VerifyPicupTime_009    UAT    High    Regression    In_Review
+    [Tags]    B2C_VerifyPicupTime_009    UAT    High    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -36,7 +36,7 @@ B2C_VerifyPicupTime_009_001
 B2C_VerifyPicupTime_009_002
     [Documentation]    [ตรวจสอบ แก้ไข และลบรายการเรียกรถเข้ารับพัสดุ] กรองข้อมูลรายการรอบรถเข้ารับพัสดุกรณี กดปุ่ม "ตัวกรอง" เปิด
     ...                                                         , กรองข้อมูลรายการรอบรถเข้ารับพัสดุ กรณี กดปุ่ม "ตัวกรอง" ปิด
-    [Tags]    B2C_VerifyPicupTime_009    UAT    Low    Regression    In_Review
+    [Tags]    B2C_VerifyPicupTime_009    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}

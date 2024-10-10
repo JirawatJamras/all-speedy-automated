@@ -8,7 +8,7 @@ Test Teardown        Application Teardown
 *** Test Cases ***
 S001
     [Documentation]    Log-In เข้าใช้งานระบบ Mobile Application : All Speedy
-    [Tags]    UAT   In_Review
+    [Tags]    UAT   
     sps_landing_page.Click Login Button
 
     # Step 1 - กรอก Email & Password
@@ -63,7 +63,7 @@ S012
 
 S055
     [Documentation]    เมนู Drop off พัสดุ - KEX 
-    [Tags]    UAT    In_Review
+    [Tags]    UAT    
 
     # Login
     sps_landing_page.Click Login Button

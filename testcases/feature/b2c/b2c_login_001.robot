@@ -8,7 +8,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 B2C_Login_001_002
     [Documentation]    [Login เข้าสู่ระบบ] กรอก E-mail ไม่ถูกต้อง ไม่กรอก E-mail
-    [Tags]    B2C_Login_001    UAT    Low    UAT    Regression    In_Review
+    [Tags]    B2C_Login_001    UAT    Low    UAT    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Password    ${B2C_Login_001_002.password['input']}
@@ -18,7 +18,7 @@ B2C_Login_001_002
 
 B2C_Login_001_004
     [Documentation]    [Login เข้าสู่ระบบ] กรอกรหัสผ่าน ไม่ถูกต้อง ไม่กรอกรหัสผ่าน
-    [Tags]    B2C_Login_001    UAT    Low    UAT    Regression    In_Review
+    [Tags]    B2C_Login_001    UAT    Low    UAT    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${B2C_Login_001_004.email['input']}
@@ -28,7 +28,7 @@ B2C_Login_001_004
 
 B2C_Login_001_005
     [Documentation]    [Login เข้าสู่ระบบ] กรอก E-mail และรหัสผ่าน ถูกต้อง
-    [Tags]    B2C_Login_001    UAT    High    UAT    Regression    In_Review
+    [Tags]    B2C_Login_001    UAT    High    UAT    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}

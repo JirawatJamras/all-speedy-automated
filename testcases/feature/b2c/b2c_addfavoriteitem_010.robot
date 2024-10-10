@@ -25,7 +25,7 @@ B2C_AddFavoriteItem_010_002
     [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อรายการโปรด ถูกต้อง
     ...                  กรอกชื่อรายการโปรด เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ ตัวเลข,
     ...                  กรอกชื่อรายการโปรด ไม่เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -152,7 +152,7 @@ B2C_AddFavoriteItem_010_008
     [Documentation]      [เพิ่มรายการโปรด] กรอกชื่อผู้ส่งพัสดุ ถูกต้อง
     ...                  กรอกชื่อผู้ส่งพัสดุ เป็นตัวอักษร ภาษาไทย ภาษาอังกฤษ,
     ...                  กรอกชื่อผู้ส่งพัสดุ ไม่เกิน 50 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -197,7 +197,7 @@ B2C_AddFavoriteItem_010_010
     [Documentation]      [เพิ่มรายการโปรด] กรอกรายละเอียดที่อยู่ ถูกต้อง
     ...                  กรอกรายละเอียดที่อยู่ เป็นตัวอักษรภาษาไทย ภาษาอังกฤษ ตัวเลข อักขระ / -,
     ...                  กรอกรายละเอียดที่อยู่ ไม่เกิน 100 ตัวอักษร
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression    In_Review 
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Low    Regression     
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -324,7 +324,7 @@ B2C_AddFavoriteItem_010_014
 
 B2C_AddFavoriteItem_010_015
     [Documentation]        [เพิ่มรายการโปรด] กรณี กดปุ่ม "บันทึก"
-    [Tags]    B2C_AddFavoriteItem_010    UAT    High    Regression    In_Review
+    [Tags]    B2C_AddFavoriteItem_010    UAT    High    Regression    
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -346,7 +346,7 @@ B2C_AddFavoriteItem_010_015
 
 B2C_AddFavoriteItem_010_016
     [Documentation]        [เพิ่มรายการโปรด] กรณี กดปุ่ม "ยกเลิก"
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    In_Review
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -370,7 +370,7 @@ B2C_AddFavoriteItem_010_017
     [Documentation]    [เพิ่มรายการโปรด] กรณี กดปุ่มปิด "X"
     ...                ระบบจะแสดง Pop Up แจ้งเตือน กรณี กดปุ่ม "ตกลง"
     ...                ระบบจะแสดง Pop Up แจ้งเตือน กรณี กดปุ่ม "ยกเลิก"
-    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Non-Regression    In_Review
+    [Tags]    B2C_AddFavoriteItem_010    UAT    Medium    Non-Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}

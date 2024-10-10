@@ -8,7 +8,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 B2C_ForgotPassword_002_003
     [Documentation]    [ลืมรหัสผ่าน] กรอก E-mail ถูกต้อง กรอก E-mail เป็นภาษาอังกฤษ ตัวเลข อักขระพิเศษ ในรูปแบบอีเมล์
-    [Tags]    B2C_ForgotPassword_002    UAT    Medium    Regression    In_Review
+    [Tags]    B2C_ForgotPassword_002    UAT    Medium    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Click Forgot Password Button

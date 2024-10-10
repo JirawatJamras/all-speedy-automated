@@ -10,7 +10,7 @@ B2C_SearchTracking_006_001
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลข Tracking พัสดุ ถูกต้อง,
     ...                กรอกค้นหาหมายเลขพัสดุ เป็นตัวอักษรภาษาอังกฤษ ตัวเลข และ ไม่เกิน 20 ตัวอักษร,
     ...                กรอกค้นหาหมายเลขพัสดุ ครั้งละ 10 หมายเลข โดยในแต่ละหมายเลขเว้นวรรคเพื่อแยกจากกัน
-    [Tags]    B2C_SearchTracking_006    UAT    High    Regression    In_Review
+    [Tags]    B2C_SearchTracking_006    UAT    High    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -34,7 +34,7 @@ B2C_SearchTracking_006_001
 B2C_SearchTracking_006_002
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาชื่อผู้รับพัสดุ ถูกต้อง,
     ...                กรอกค้นหา ชื่อผู้รับพัสดุ เป็นตัวอักษรภาษาไทย อังกฤษ และ ไม่เกิน 50 ตัวอักษร
-    [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -52,7 +52,7 @@ B2C_SearchTracking_006_002
 B2C_SearchTracking_006_003
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาเบอร์โทรศัพท์ ถูกต้อง,
     ...                กรอกค้นหาเบอร์โทรศัพท์ เป็นตัวเลข และ ไม่เกิน 10 หลัก
-    [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Medium    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -70,7 +70,7 @@ B2C_SearchTracking_006_003
 
 B2C_SearchTracking_006_004
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ไม่กรอกค้นหาหมายเลขพัสดุ
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -84,7 +84,7 @@ B2C_SearchTracking_006_004
 B2C_SearchTracking_006_005
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง,
     ...                กรอกค้นหาหมายเลขพัสดุ ไม่เป็นตัวอักษรภาษาอังกฤษ ตัวเลข
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -100,7 +100,7 @@ B2C_SearchTracking_006_005
 B2C_SearchTracking_006_006
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง,
     ...                กรอกค้นหาหมายเลขพัสดุ เกิน 20 ตัวอักษร
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -133,7 +133,7 @@ B2C_SearchTracking_006_007
 B2C_SearchTracking_006_008
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกค้นหาหมายเลขพัสดุ ไม่ถูกต้อง,
     ...                กรอกค้นหาหมายเลขพัสดุ ครั้งละ 10 หมายเลข โดยในแต่ละหมายเลขไม่เว้นวรรคเพื่อแยกจากกัน 
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -201,7 +201,7 @@ B2C_SearchTracking_006_011
 B2C_SearchTracking_006_012
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง,
     ...                กรอกเบอร์โทรศัพท์ ไม่เป็นตัวเลข
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -218,7 +218,7 @@ B2C_SearchTracking_006_012
 B2C_SearchTracking_006_013
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] กรอกเบอร์โทรศัพท์ ไม่ถูกต้อง,
     ...                กรอกเบอร์โทรศัพท์ เกิน 10 หลัก
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -235,7 +235,7 @@ B2C_SearchTracking_006_013
 B2C_SearchTracking_006_014
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] เลือกสถานะพัสดุ ถูกต้อง,
     ...                เลือกสถานะพัสดุ 1 ตัวเลือก
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -254,7 +254,7 @@ B2C_SearchTracking_006_014
 
 B2C_SearchTracking_006_015
     [Documentation]    [ตรวจสอบการติดตามการจัดส่งพัสดุ] ไม่เลือกเลือกสถานะพัสดุ
-    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    In_Review
+    [Tags]  B2C_SearchTracking_006    UAT    Low    Non-Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}

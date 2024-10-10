@@ -12,12 +12,7 @@ Verify the installation by opening a Terminal (Mac/Linux) or Command Prompt (Win
 
 Install Robot Framework:
     - requirement.txt
-    - pip install pyyaml
-    - pip install robotframework
-    - pip install robotframework-seleniumlibrary
-    - pip install DateTime
-    
-CD D:\All-speedy-automated\report
+
 
 # all-speedy-automated
 -- Run for Mac OS --
@@ -27,11 +22,6 @@ python -m robot -v ENV:uat -i UAT  ../testcases/c2c/allspeedy_c2c_001.robot
 robot -v ENV:uat -i UAT  ../testcases/dps/
 robot -v ENV:uat -i UAT  ../testcases/c2c/
 robot -v ENV:uat -i UAT  ../testcases/register/
-
-
-robot -v ENV:uat -i UAT  ../testcases/register/
-robot -v ENV:uat -i Run  ../testcases/
-robot -v ENV:uat -i Review-Pass  ../testcases/
 
 
 # Pabot
@@ -45,5 +35,4 @@ python -m pabot --processes 3 -v ENV:uat -i UAT ../testcases/  |  tee output.txt
 Report
      - results : log.html
      - results : report.html
-
 

@@ -19,7 +19,7 @@ B2C_AddPickupTime_008_001
     ...                                         , "เลือกช่วงเวลาที่ต้องการให้รถเข้ารับพัสดุ ไม่ถูกต้อง เลือกช่วงเวลาที่ต้องการให้รถเข้ารับพัสดุเกิน 1 ตัวเลือก"
     ...                                         , กรณี แก้ไขช่วงเวลาที่ต้องการให้รถเข้ารับพัสดุ
     ...                                         , กรณี กดปุ่ม "บันทึก"
-    [Tags]    B2C_AddPickupTime_008    UAT    High    Regression    In_Review
+    [Tags]    B2C_AddPickupTime_008    UAT    High    Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -71,7 +71,7 @@ B2C_AddPickupTime_008_001
 
 B2C_AddPickupTime_008_004
     [Documentation]    [เพิ่มรายการรอบรถเข้ารับพัสดุ] กรณี กดปุ่ม "ยกเลิก"
-    [Tags]    B2C_AddPickupTime_008    UAT    Low    Non-Regression    In_Review
+    [Tags]    B2C_AddPickupTime_008    UAT    Low    Non-Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -93,7 +93,7 @@ B2C_AddPickupTime_008_004
 
 B2C_AddPickupTime_008_005
     [Documentation]    [เพิ่มรายการรอบรถเข้ารับพัสดุ] กรณี กดปุ่มปิด "X"
-    [Tags]    B2C_AddPickupTime_008    UAT    Low    Non-Regression    In_Review
+    [Tags]    B2C_AddPickupTime_008    UAT    Low    Non-Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -115,7 +115,7 @@ B2C_AddPickupTime_008_005
 
 B2C_AddPickupTime_008_006
     [Documentation]    [เพิ่มรายการรอบรถเข้ารับพัสดุ] ระบบจะแสดง Pop Up แจ้งเตือน "ต้องการการปิด Pop-Up หรือไม่ ข้อมูลที่กรอกจะไม่บันทึก" กรณี กดปุ่ม "ตกลง"
-    [Tags]    B2C_AddPickupTime_008    UAT   Low    Non-Regression    In_Review
+    [Tags]    B2C_AddPickupTime_008    UAT   Low    Non-Regression    
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
