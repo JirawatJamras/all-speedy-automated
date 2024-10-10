@@ -170,8 +170,8 @@ Verify Booking Detail Page
     Wait Until Element Is Visible    ${b2c_btn_print_parcel_label}    timeout=${DEFAULT_TIMEOUT}
 
     Log    Booking Summary
-    Wait Until Element Is Visible    ${b2_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_txt_title_booking_summary}=    Get Text    ${b2_txt_booking_summary_booking_detail_page}
+    Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
     Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
@@ -225,8 +225,8 @@ Verify Booking Detail Page After Set Origin Shipping
     Wait Until Element Is Visible    ${b2c_btn_print_parcel_label}    timeout=${DEFAULT_TIMEOUT}
 
     Log    Booking Summary
-    Wait Until Element Is Visible    ${b2_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_txt_title_booking_summary}=    Get Text    ${b2_txt_booking_summary_booking_detail_page}
+    Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
     Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
@@ -254,8 +254,10 @@ Verify Parcel Label
     Wait Until Element Is Visible    ${b2c_img_qr_code}
     ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_list_parcel_label_detail}    
+    Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
     ...    รหัสไปรษณีย์ปลายทาง ${receiver_postcode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
+    ...    รหัสไปรษณีย์ปลายทาง ${receiver_postcode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} หมายเหตุ ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
 
 Click Print Label On Popup
     Click When Ready    ${b2c_btn_print_parcel_label_popup}
@@ -272,3 +274,10 @@ Verify Date And Time With Time Distortion
         ...    AND    Exit For Loop
     END
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
+
+Verify Timestamp After Print Label
+    ${DD_MM}   Get Current Date
+    ${DD_MM}   Convert Date  ${DD_MM}       result_format=%d-%m
+    ${b2c_txt_timestamp_after_print_label} =    Replace String    ${b2c_txt_timestamp_after_print_label}    {value}    ${DD_MM}
+    Wait Until Element Is Visible    ${b2c_txt_timestamp_after_print_label}
+

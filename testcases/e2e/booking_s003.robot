@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -117,7 +117,7 @@ Booking_S003
     b2c_booking_delivery_page.Input Address Receiver    ${Booking_S003['receiver_address']}
     b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S003['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S003['receiver_postcode_full']}
-    b2c_booking_delivery_page.Click Add To Favorites
+    b2c_booking_delivery_page.Click Add To Favorites In Receiver
     #Expected
     common.Verify Capture Screenshot    Booking_S003    Verify After Create Parcel Page Receiver Step
 
@@ -263,65 +263,69 @@ Booking_S003
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S003['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
-    # ${booking_time}    Get Booking Time
+    ${booking_time}    Get Booking Time
     # Expected
-    # b2c_booking_detail_page.Verify Booking Detail Page After Set Origin Shipping
-    # ...    ${Booking['text_title_booking_list']}
-    # ...    ${booking_id}
-    # ...    ${booking_name}
-    # ...    ${booking_time}
-    # ...    ${Booking['text_title_parcel_list']}
-    # ...    ${Booking['text_parcel_status_waiting_entering']}
-    # ...    ${Booking.img_is_favorite['img_sender_heart']}
-    # ...    ${Booking_S003['sender_name']}
-    # ...    ${Booking_S003['sender_phone']}
-    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    # ...    ${Booking_S003['receiver_name']}
-    # ...    ${Booking_S003['receiver_phone']}
-    # ...    ${Booking_S003['receiver_address']}
-    # ...    ${Booking_S003['receiver_postcode_full']}
-    # ...    ${Booking_S003['parcel_size']}
-    # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking.text_blank['buy_insurance']}
-    # ...    ${Booking.text_blank['cod_value']}
-    # ...    ${Booking['text_title_booking_summary']}
-    # ...    ${Booking_S003['discount_amount']}
-    # ...    ${Booking_S003['discount_value']}
-    # ...    ${Booking.text_default['insurance_fee_amount']}
-    # ...    ${Booking.text_default['insurance_fee_value']}
-    # ...    ${Booking.text_default['cod_fee_amount']}
-    # ...    ${Booking.text_default['cod_fee_value']}
-    # ...    ${Booking_S003['total_price_amount']}
-    # ...    ${Booking_S003['total_price_value']}
-    # ...    ${Booking_S003['store_code']}
-    # common.Scroll Window To Vertical    500
-    # common.Verify Capture Screenshot    Booking_S003    Verify Booking Summary After Set Origin Shipping
-    # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    Booking_S003    Verify Booking Detail Page After Set Origin Shipping
+    b2c_booking_detail_page.Verify Booking Detail Page After Set Origin Shipping
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_waiting_entering']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S003['sender_name']}
+    ...    ${Booking_S003['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S003['receiver_name']}
+    ...    ${Booking_S003['receiver_phone']}
+    ...    ${Booking_S003['receiver_address']}
+    ...    ${Booking_S003['receiver_postcode_full']}
+    ...    ${Booking_S003['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    ${Booking_S003['discount_amount']}
+    ...    ${Booking_S003['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
+    ...    ${Booking_S003['total_price_amount']}
+    ...    ${Booking_S003['total_price_value']}
+    ...    ${Booking_S003['store_code']}
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    Booking_S003    Verify Booking Summary After Set Origin Shipping
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    Booking_S003    Verify Booking Detail Page After Set Origin Shipping
 
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # # Expected
-    # b2c_booking_detail_page.Verify Parcel Label
-    # ...    ${Booking.text_paper_size['size_a4']}
-    # ...    ${Booking.text_paper_size['size_a5']}
-    # ...    ${Booking.text_paper_size['size_8cm']}
-    # ...    ${Booking_S003['receiver_postcode_5_digits']}
-    # ...    ${Booking_S003['parcel_package_type']}
-    # ...    ${Booking_S003['parcel_size']}
-    # ...    ${Booking_S003['sender_name']}
-    # ...    ${Booking_S003['sender_phone']}
-    # ...    ${Booking_S003['sender_address']}
-    # ...    ${Booking_S003['sender_postcode_full']}
-    # ...    ${Booking_S003['receiver_name']}
-    # ...    ${Booking_S003['receiver_phone']}
-    # ...    ${Booking_S003['receiver_address']}
-    # ...    ${Booking_S003['receiver_postcode_full']}
-    # ...    ${Booking.label['parcel_cod']}
-    # ...    ${Booking.label['parcel_insure']}
-    # common.Verify Capture Screenshot    Booking_S003    Verify Parcel Label
-    # Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
-    # b2c_booking_detail_page.Click Print Label On Popup
+    b2c_booking_detail_page.Verify Parcel Label
+    ...    ${Booking.text_paper_size['size_a4']}
+    ...    ${Booking.text_paper_size['size_a5']}
+    ...    ${Booking.text_paper_size['size_8cm']}
+    ...    ${Booking_S003['receiver_postcode_5_digits']}
+    ...    ${Booking_S003['parcel_package_type']}
+    ...    ${Booking_S003['parcel_size']}
+    ...    ${Booking_S003['sender_name']}
+    ...    ${Booking_S003['sender_phone']}
+    ...    ${Booking_S003['sender_address']}
+    ...    ${Booking_S003['sender_postcode_full']}
+    ...    ${Booking_S003['receiver_name']}
+    ...    ${Booking_S003['receiver_phone']}
+    ...    ${Booking_S003['receiver_address']}
+    ...    ${Booking_S003['receiver_postcode_full']}
+    ...    ${Booking.label['parcel_cod']}
+    ...    ${Booking.label['parcel_insure']}
+    ...    ${Booking_S003['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S003    Verify Parcel Label
+    Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    b2c_booking_detail_page.Click Print Label On Popup
+    # Expected
+    b2c_booking_detail_page.Verify Timestamp After Print Label
+    common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
 
 
     # [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
