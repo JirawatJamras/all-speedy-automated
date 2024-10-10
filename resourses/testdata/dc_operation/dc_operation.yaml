@@ -1,0 +1,28 @@
+dc_operaion:
+  role:
+    dev:  Role Dev
+    admin:  แอดมินคลัง
+    toei:  toei test
+  title:
+    homepage:  ภาพรวมงานประจำวัน
+    Scan:  Scan
+    Pouch:  รายการ Pouch
+    Report:  รายการพัสดุแจ้งปัญหา
+    Check_Notification:  ตรวจสอบแจ้งเตือน
+    Waiting_Destroy:  พัสดุรอทำลาย
+    Upload_Route:  อัปโหลด Route
+    Check_Receiving_Cycle:  ตรวจสอบรอบการเข้ารับพัสดุ
+    History_Parcel:  รายการประวัติพัสดุทั้งหมด
+  dps_menu:
+    Home_Page:  homepage
+    Scan:  scan
+    Pouch:  pouch
+    Report:  reportpage
+    Check_Notification:  check-notifications
+    Waiting_Destroy:  waiting-destroy
+    Upload_Route:  upload-route
+    Check_Receiving_Cycle:  check-receiving-cycle
+    History_Parcel:  historyparcel
+  Check_Receiving_Cycle_Tab:
+    all_parcels_received:  รายการเข้ารับพัสดุทั้งหมด
+    inventory_confirm_list:  รายการรอคลังยืนยัน

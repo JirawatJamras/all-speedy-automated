@@ -57,14 +57,17 @@ Variables                   testdata/feature/c2c/allspeedy_c2c_001.yaml
 Resource                    ../keywords/pages/dps/dps_landing_page.robot
 Resource                    ../keywords/pages/dps/dps_login_page.robot
 Resource                    ../keywords/pages/dps/dps_home_page.robot
+Resource                    ../keywords/pages/dps/dps_check_receiving_cycle.robot
 
 Resource                    locators/dps/dps_landing_page.robot
 Resource                    locators/dps/dps_login_page.robot
 Resource                    locators/dps/dps_home_page.robot
+Resource                    locators/dps/dps_check_receiving_cycle.robot
 
 Variables                   testdata/feature/dps/dps_testdata.yaml
 Variables                   testdata/feature/dps/allspeedy_dps_001.yaml
 Variables                   testdata/feature/dps/allspeedy_dps_003.yaml
+Variables                   testdata/dc_operation/dc_operation.yaml
 
 ######################## REGISTER ########################
 Resource                    ../keywords/pages/register/register_general_customers_page.robot

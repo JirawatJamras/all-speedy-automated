@@ -193,3 +193,30 @@ Verify Sum Number of In Warehouse Parcels
     ${sum_number_in_warehouse_parcels}    Re Format And Sum Number of In Warehouse Parcels    ${sum_number_export_work}    ${sum_number_delivery_work}
     Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_in_warehouse_parcels}
     Log    ${sum_number_in_warehouse_parcels}
+
+Verify Page Title
+    [Arguments]    ${title}
+    ${dps_txt_page_title}=  Replace String   ${dps_txt_page_title}  {value}   ${title}
+    Wait Until Element Is Visible    ${dps_txt_page_title}
+
+Click Dropdown For Select role
+    Wait Until Element Is Visible    ${dps_img_icon_user}    timeout=${DEFAULT_TIMEOUT}
+    Click Element    ${dps_btn_dropdown_select_role}
+
+Select Role
+    [Arguments]    ${role}
+    ${dps_btn_role}=  Replace String   ${dps_btn_role}   {value}   ${role}
+    Wait Until Element Is Visible    ${dps_btn_role}    timeout=${DEFAULT_TIMEOUT}
+    Click Element    ${dps_btn_role}
+
+Verify Role Change In Profile
+    [Arguments]    ${role}
+    ${dps_txt_role_user}=  Replace String   ${dps_txt_role_user}   {value}   ${role}
+    Wait Until Element Is Visible    ${dps_img_icon_user}${dps_txt_role_user}    timeout=${DEFAULT_TIMEOUT}
+
+Verify Tab Selected
+    [Arguments]    ${name}
+    ${dps_tab_name}=  Replace String   ${dps_tab_name}   {value}   ${name}
+    Wait Until Element Is Visible    ${dps_tab_name}    timeout=${DEFAULT_TIMEOUT}
+    ${checked}    Get Element Attribute    ${dps_tab_name}    aria-selected
+    Should Be Equal As Strings    ${checked}    true
