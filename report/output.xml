@@ -1,668 +1,576 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-10-09T14:47:35.225094" rpa="false" schemaversion="5">
-<suite id="s1" name="Booking S007" source="D:\aaVasup\Allspeedy\Automate\all-speedy-automated\report\..\testcases\e2e\booking_s007.robot">
-<test id="s1-t1" name="Booking_S007" line="10">
-<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
-<kw name="Open Chrome Browser" owner="common">
-<kw name="Evaluate" owner="BuiltIn">
-<msg time="2024-10-09T14:47:36.238959" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000249247C25D0&gt;</msg>
-<var>${chrome_options}</var>
-<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
-<arg>sys, selenium.webdriver</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-09T14:47:36.238959" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--disable-gpu</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-10-09T14:47:36.238959" elapsed="0.000000"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--no-sandbox</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-10-09T14:47:36.238959" elapsed="0.001002"/>
-</kw>
-<kw name="Call Method" owner="BuiltIn">
-<arg>${chrome_options}</arg>
-<arg>add_argument</arg>
-<arg>--window-size\=1920,1080</arg>
-<doc>Calls the named method of the given object with the provided arguments.</doc>
-<status status="PASS" start="2024-10-09T14:47:36.239961" elapsed="0.000000"/>
-</kw>
-<kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:47:36.239961" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
-<msg time="2024-10-09T14:47:36.822887" level="WARN">The chromedriver version (128.0.6613.86) detected in PATH at C:\chromedriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.90); currently, chromedriver 129.0.6668.91 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
-<arg>about:blank</arg>
-<arg>${chrome}</arg>
-<arg>options=${chrome_options}</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2024-10-09T14:47:36.239961" elapsed="1.730594"/>
-</kw>
-<kw name="Set Selenium Speed" owner="SeleniumLibrary">
-<arg>0.2</arg>
-<doc>Sets the delay that is waited after each Selenium command.</doc>
-<status status="PASS" start="2024-10-09T14:47:37.970555" elapsed="0.001003"/>
-</kw>
-<arg>chrome</arg>
-<status status="PASS" start="2024-10-09T14:47:36.237956" elapsed="1.733602"/>
-</kw>
-<kw name="Set Folder Result with date" owner="common">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-10-09T14:47:37.973561" level="INFO">${date_YYYY_MM_DD} = 2024-10-09 14:47:37.974</msg>
-<var>${date_YYYY_MM_DD}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-10-09T14:47:37.972559" elapsed="0.001002"/>
-</kw>
-<kw name="Convert Date" owner="DateTime">
-<msg time="2024-10-09T14:47:37.978075" level="INFO">${date_YYYY_MM_DD} = 2024-10-09</msg>
-<var>${date_YYYY_MM_DD}</var>
-<arg>${date_YYYY_MM_DD}</arg>
-<arg>result_format=%Y-%m-%d</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-10-09T14:47:37.973561" elapsed="0.004514"/>
-</kw>
-<kw name="Set Variable" owner="BuiltIn">
-<msg time="2024-10-09T14:47:37.979084" level="INFO">${FOlDER_RESULT} = ../results/2024-10-09</msg>
-<var>${FOlDER_RESULT}</var>
-<arg>../results/${date_YYYY_MM_DD}</arg>
-<doc>Returns the given values which can then be assigned to a variables.</doc>
-<status status="PASS" start="2024-10-09T14:47:37.978075" elapsed="0.001009"/>
-</kw>
-<kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-10-09T14:47:37.979084" level="INFO">${FOlDER_RESULT} = ../results/2024-10-09</msg>
-<arg>${FOlDER_RESULT}</arg>
-<doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-10-09T14:47:37.979084" elapsed="0.000999"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:47:37.972559" elapsed="0.007524"/>
-</kw>
+<robot generator="Robot 6.0.2 (Python 3.9.2 on win32)" generated="20241010 22:17:02.870" rpa="false" schemaversion="3">
+<suite id="s1" name="Booking" source="C:\Users\Home-Few\Documents\GitHub\all-speedy-automated\testcases\booking">
+<suite id="s1-s1" name="Booking S001-S010" source="C:\Users\Home-Few\Documents\GitHub\all-speedy-automated\testcases\booking\booking_s001-s010.robot">
+<test id="s1-s1-t1" name="Booking_S001" line="9">
+<kw name="Run Keywords" library="BuiltIn" type="SETUP">
 <arg>Open Chrome Browser</arg>
 <arg>chrome</arg>
 <arg>AND</arg>
 <arg>Set Folder Result with date</arg>
 <doc>Executes all the given keywords in a sequence.</doc>
-<status status="PASS" start="2024-10-09T14:47:36.237956" elapsed="1.742127"/>
+<kw name="Open Chrome Browser" library="common">
+<arg>chrome</arg>
+<kw name="Evaluate" library="BuiltIn">
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<msg timestamp="20241010 22:17:03.431" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x000002701EC737C0&gt;</msg>
+<status status="PASS" starttime="20241010 22:17:03.431" endtime="20241010 22:17:03.431"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-09T14:47:37.982084" level="INFO">Login</msg>
-<arg>Login</arg>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241010 22:17:03.432" endtime="20241010 22:17:03.432"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241010 22:17:03.432" endtime="20241010 22:17:03.432"/>
+</kw>
+<kw name="Call Method" library="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" starttime="20241010 22:17:03.432" endtime="20241010 22:17:03.432"/>
+</kw>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${chrome}</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20241010 22:17:03.433" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20241010 22:17:03.432" endtime="20241010 22:17:04.693"/>
+</kw>
+<kw name="Set Selenium Speed" library="SeleniumLibrary">
+<arg>0.2</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" starttime="20241010 22:17:04.693" endtime="20241010 22:17:04.693"/>
+</kw>
+<status status="PASS" starttime="20241010 22:17:03.431" endtime="20241010 22:17:04.693"/>
+</kw>
+<kw name="Set Folder Result with date" library="common">
+<kw name="Get Current Date" library="DateTime">
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20241010 22:17:04.694" level="INFO">${date_YYYY_MM_DD} = 2024-10-10 22:17:04.694</msg>
+<status status="PASS" starttime="20241010 22:17:04.694" endtime="20241010 22:17:04.694"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20241010 22:17:04.696" level="INFO">${date_YYYY_MM_DD} = 2024-10-10</msg>
+<status status="PASS" starttime="20241010 22:17:04.694" endtime="20241010 22:17:04.696"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${FOlDER_RESULT}</var>
+<arg>../results/${date_YYYY_MM_DD}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20241010 22:17:04.696" level="INFO">${FOlDER_RESULT} = ../results/2024-10-10</msg>
+<status status="PASS" starttime="20241010 22:17:04.696" endtime="20241010 22:17:04.696"/>
+</kw>
+<kw name="Set Global Variable" library="BuiltIn">
+<arg>${FOlDER_RESULT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<msg timestamp="20241010 22:17:04.696" level="INFO">${FOlDER_RESULT} = ../results/2024-10-10</msg>
+<status status="PASS" starttime="20241010 22:17:04.696" endtime="20241010 22:17:04.696"/>
+</kw>
+<status status="PASS" starttime="20241010 22:17:04.693" endtime="20241010 22:17:04.696"/>
+</kw>
+<status status="PASS" starttime="20241010 22:17:03.431" endtime="20241010 22:17:04.696"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-09T14:47:37.981087" elapsed="0.000997"/>
+<msg timestamp="20241010 22:17:04.697" level="INFO">Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ</msg>
+<status status="PASS" starttime="20241010 22:17:04.697" endtime="20241010 22:17:04.697"/>
 </kw>
-<kw name="Open URL" owner="common">
-<kw name="Go To" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:47:37.985086" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
+<kw name="Open URL" library="common">
+<arg>${B2C_UAT_URL}</arg>
+<kw name="Go To" library="SeleniumLibrary">
 <arg>${url}</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<status status="PASS" start="2024-10-09T14:47:37.985086" elapsed="1.387381"/>
+<msg timestamp="20241010 22:17:04.698" level="INFO">Opening url 'https://www-uat.allspeedy.co.th/auth/login'</msg>
+<status status="PASS" starttime="20241010 22:17:04.697" endtime="20241010 22:17:05.874"/>
 </kw>
-<arg>${B2C_UAT_URL}</arg>
-<status status="PASS" start="2024-10-09T14:47:37.982084" elapsed="1.390383"/>
+<status status="PASS" starttime="20241010 22:17:04.697" endtime="20241010 22:17:05.874"/>
 </kw>
-<kw name="Select Business Customers Tab" owner="register_general_customers_page">
-<kw name="Click When Ready" owner="common">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Select Business Customers Tab" library="register_general_customers_page">
+<kw name="Click When Ready" library="common">
+<arg>${register_btn_business_customers_tab_general_customers_page}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <arg>${DEFAULT_TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:47:39.373981" elapsed="0.427093"/>
+<status status="PASS" starttime="20241010 22:17:05.876" endtime="20241010 22:17:06.741"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:47:39.801074" level="INFO">Clicking element '//div[text()='ลูกค้าธุรกิจ'][@id='rc-tabs-2-tab-business']/..'.</msg>
+<kw name="Click Element" library="SeleniumLibrary">
 <arg>${locator}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:47:39.801074" elapsed="0.465940"/>
+<msg timestamp="20241010 22:17:06.742" level="INFO">Clicking element '//div[text()='ลูกค้าธุรกิจ'][@id='rc-tabs-2-tab-business']/..'.</msg>
+<status status="PASS" starttime="20241010 22:17:06.741" endtime="20241010 22:17:07.213"/>
 </kw>
-<arg>${register_btn_business_customers_tab_general_customers_page}</arg>
-<status status="PASS" start="2024-10-09T14:47:39.372973" elapsed="0.894041"/>
+<status status="PASS" starttime="20241010 22:17:05.875" endtime="20241010 22:17:07.213"/>
 </kw>
-<status status="PASS" start="2024-10-09T14:47:39.372973" elapsed="0.894041"/>
+<status status="PASS" starttime="20241010 22:17:05.875" endtime="20241010 22:17:07.213"/>
 </kw>
-<kw name="Input Email" owner="b2c_login_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Verify Capture Screenshot" library="common">
+<arg>Booking_S001</arg>
+<arg>Verify Login Page</arg>
+<kw name="Get Current Date" library="DateTime">
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20241010 22:17:07.214" level="INFO">${date_YYYY_MM_DD} = 2024-10-10 22:17:07.214</msg>
+<status status="PASS" starttime="20241010 22:17:07.214" endtime="20241010 22:17:07.214"/>
+</kw>
+<kw name="Convert Date" library="DateTime">
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<msg timestamp="20241010 22:17:07.214" level="INFO">${date_YYYY_MM_DD} = 2024-10-10</msg>
+<status status="PASS" starttime="20241010 22:17:07.214" endtime="20241010 22:17:07.214"/>
+</kw>
+<kw name="Evaluate" library="BuiltIn">
+<arg>os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)</arg>
+<arg>modules=os</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" starttime="20241010 22:17:07.214" endtime="20241010 22:17:07.215"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20241010 22:17:07.696" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-10-10/Booking_S001/Verify%20Login%20Page.png"&gt;&lt;img src="../results/2024-10-10/Booking_S001/Verify%20Login%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241010 22:17:07.215" endtime="20241010 22:17:07.696"/>
+</kw>
+<status status="PASS" starttime="20241010 22:17:07.213" endtime="20241010 22:17:07.697"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>Step No.2 Login</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20241010 22:17:07.697" level="INFO">Step No.2 Login</msg>
+<status status="PASS" starttime="20241010 22:17:07.697" endtime="20241010 22:17:07.697"/>
+</kw>
+<kw name="Input Email" library="b2c_login_page">
+<arg>${b2c_login_user_01['username']}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${b2c_txtbox_email}</arg>
 <arg>timeout=${DEFAULT_TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:47:40.274030" elapsed="0.429006"/>
+<status status="PASS" starttime="20241010 22:17:07.702" endtime="20241010 22:17:08.134"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:47:40.703544" level="INFO">Typing text 'idc@gmail.com' into text field '//input[@id='emailBusiness']'.</msg>
+<kw name="Input Text" library="SeleniumLibrary">
 <arg>${b2c_txtbox_email}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:47:40.703544" elapsed="0.757955"/>
+<msg timestamp="20241010 22:17:08.134" level="INFO">Typing text 'idc@gmail.com' into text field '//input[@id='emailBusiness']'.</msg>
+<status status="PASS" starttime="20241010 22:17:08.134" endtime="20241010 22:17:08.893"/>
 </kw>
-<arg>${b2c_login_user_01['username']}</arg>
-<status status="PASS" start="2024-10-09T14:47:40.268023" elapsed="1.193476"/>
+<status status="PASS" starttime="20241010 22:17:07.697" endtime="20241010 22:17:08.893"/>
 </kw>
-<kw name="Input Password" owner="b2c_login_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Input Password" library="b2c_login_page">
+<arg>${b2c_login_user_01['password']}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${b2c_txtbox_password}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:47:41.464504" elapsed="0.418203"/>
+<status status="PASS" starttime="20241010 22:17:08.897" endtime="20241010 22:17:09.321"/>
 </kw>
-<kw name="Input Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:47:41.882707" level="INFO">Typing text 'P@ssw0rd' into text field '//input[@id='passwordBusiness']'.</msg>
+<kw name="Input Text" library="SeleniumLibrary">
 <arg>${b2c_txtbox_password}</arg>
 <arg>${value}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:47:41.882707" elapsed="0.708766"/>
+<msg timestamp="20241010 22:17:09.321" level="INFO">Typing text 'P@ssw0rd' into text field '//input[@id='passwordBusiness']'.</msg>
+<status status="PASS" starttime="20241010 22:17:09.321" endtime="20241010 22:17:10.003"/>
 </kw>
-<arg>${b2c_login_user_01['password']}</arg>
-<status status="PASS" start="2024-10-09T14:47:41.461499" elapsed="1.129974"/>
+<status status="PASS" starttime="20241010 22:17:08.894" endtime="20241010 22:17:10.003"/>
 </kw>
-<kw name="Click Log On Button" owner="b2c_login_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Click Log On Button" library="b2c_login_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${b2c_btn_log_on}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:47:42.592479" elapsed="0.435906"/>
+<status status="PASS" starttime="20241010 22:17:10.004" endtime="20241010 22:17:10.443"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:47:43.030407" level="INFO">Clicking element '//*[@id="rc-tabs-2-panel-business"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b'.</msg>
+<kw name="Click Element" library="SeleniumLibrary">
 <arg>${b2c_btn_log_on}</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:47:43.029404" elapsed="0.461859"/>
+<msg timestamp="20241010 22:17:10.443" level="INFO">Clicking element '//*[@id="rc-tabs-2-panel-business"]/div/div/form/div[3]/div/div/div/div/div[1]/div/button/b'.</msg>
+<status status="PASS" starttime="20241010 22:17:10.443" endtime="20241010 22:17:10.901"/>
 </kw>
-<kw name="Wait Until Profile Page Loaded" owner="b2c_home_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<kw name="Wait Until Profile Page Loaded" library="b2c_home_page">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${b2c_txt_business_profile_title_home_page}</arg>
 <arg>timeout=${DEFAULT_TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:47:43.491263" elapsed="0.830684"/>
+<status status="PASS" starttime="20241010 22:17:10.902" endtime="20241010 22:17:12.177"/>
 </kw>
-<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
 <arg>${b2c_btn_edit_profile_info_home_page}</arg>
 <arg>timeout=${DEFAULT_TIMEOUT}</arg>
 <doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" start="2024-10-09T14:47:44.321947" elapsed="0.210246"/>
+<status status="PASS" starttime="20241010 22:17:12.177" endtime="20241010 22:17:12.397"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-09T14:47:47.533141" level="INFO">Slept 3 seconds.</msg>
+<kw name="Sleep" library="BuiltIn">
 <arg>3s</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-09T14:47:44.532193" elapsed="3.000948"/>
+<msg timestamp="20241010 22:17:15.401" level="INFO">Slept 3 seconds</msg>
+<status status="PASS" starttime="20241010 22:17:12.397" endtime="20241010 22:17:15.401"/>
 </kw>
-<status status="PASS" start="2024-10-09T14:47:43.491263" elapsed="4.042248"/>
+<status status="PASS" starttime="20241010 22:17:10.901" endtime="20241010 22:17:15.401"/>
 </kw>
-<status status="PASS" start="2024-10-09T14:47:42.591473" elapsed="4.942038"/>
+<status status="PASS" starttime="20241010 22:17:10.004" endtime="20241010 22:17:15.401"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-09T14:47:47.534019" level="INFO">Step No.1 กดเมนู "จองการจัดส่งพัสดุ"</msg>
-<arg>Step No.1 กดเมนู "จองการจัดส่งพัสดุ"</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-09T14:47:47.534019" elapsed="0.000000"/>
+<kw name="Verify My Profile Page" library="b2c_home_page">
+<arg>${Booking['text_company_profile']}</arg>
+<arg>${Booking['text_profile']}</arg>
+<arg>${Booking['text_profile_name']}</arg>
+<arg>${Booking['text_profile_phone']}</arg>
+<arg>${Booking['text_profile_mail']}</arg>
+<arg>${Booking['text_profile_position']}</arg>
+<arg>${Booking_S001['sir_name']}</arg>
+<arg>${Booking_S001['company_name']}</arg>
+<arg>${Booking_S001['name']}</arg>
+<arg>${Booking_S001['phone']}</arg>
+<arg>${Booking_S001['email']}</arg>
+<arg>${Booking_S001['position']}</arg>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_company_profile}</var>
+<arg>${b2c_txt_company_profile}</arg>
+<arg>{value}</arg>
+<arg>${company_profile}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.444" level="INFO">${b2c_txt_company_profile} = //h2[text()='โปรไฟล์บริษัท']</msg>
+<status status="PASS" starttime="20241010 22:17:15.444" endtime="20241010 22:17:15.444"/>
 </kw>
-<kw name="Click Book Parcel Delivery" owner="b2c_home_page">
-<kw name="Click When Ready" owner="common">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${locator}</arg>
-<arg>${DEFAULT_TIMEOUT}</arg>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_profile}</var>
+<arg>${b2c_txt_profile}</arg>
+<arg>{value}</arg>
+<arg>${profile}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.444" level="INFO">${b2c_txt_profile} = //div[@class='text-[25px] text-[#005390] font-semibold']</msg>
+<status status="PASS" starttime="20241010 22:17:15.444" endtime="20241010 22:17:15.444"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_profile_name}</var>
+<arg>${b2c_txt_profile_name}</arg>
+<arg>{value}</arg>
+<arg>${profile_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.445" level="INFO">${b2c_txt_profile_name} = //h1[@class='font-semibold w-1/2 text-[25px]'][contains(text(),'ชื่อ')]</msg>
+<status status="PASS" starttime="20241010 22:17:15.445" endtime="20241010 22:17:15.445"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_profile_phone}</var>
+<arg>${b2c_txt_profile_phone}</arg>
+<arg>{value}</arg>
+<arg>${profile_phone}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.445" level="INFO">${b2c_txt_profile_phone} = //h1[@class='font-semibold w-1/2 text-[25px]'][contains(text(),'เบอร์โทรศัพท์')]</msg>
+<status status="PASS" starttime="20241010 22:17:15.445" endtime="20241010 22:17:15.445"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_profile_mail}</var>
+<arg>${b2c_txt_profile_mail}</arg>
+<arg>{value}</arg>
+<arg>${profile_email}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.445" level="INFO">${b2c_txt_profile_mail} = //h1[@class='font-semibold w-1/2 text-[25px]'][normalize-space()='E-mail']</msg>
+<status status="PASS" starttime="20241010 22:17:15.445" endtime="20241010 22:17:15.446"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_profile_position}</var>
+<arg>${b2c_txt_profile_position}</arg>
+<arg>{value}</arg>
+<arg>${profile_position}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.446" level="INFO">${b2c_txt_profile_position} = //h1[@class='font-semibold w-1/2 text-[25px]'][contains(text(),'ตำแหน่งงาน')]</msg>
+<status status="PASS" starttime="20241010 22:17:15.446" endtime="20241010 22:17:15.446"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_sir_name}</var>
+<arg>${b2c_txt_sir_name}</arg>
+<arg>{value}</arg>
+<arg>${sir_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.446" level="INFO">${b2c_txt_sir_name} = //h1[@class='text-[30px] font-bold'][normalize-space()='คุณ ไอดีซี']</msg>
+<status status="PASS" starttime="20241010 22:17:15.446" endtime="20241010 22:17:15.446"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_company_name}</var>
+<arg>${b2c_txt_company_name}</arg>
+<arg>{value}</arg>
+<arg>${company_name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.447" level="INFO">${b2c_txt_company_name} = //h1[@class='text-[23px] font-bold'][normalize-space()='Admin']</msg>
+<status status="PASS" starttime="20241010 22:17:15.446" endtime="20241010 22:17:15.447"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_name}</var>
+<arg>${b2c_txt_name}</arg>
+<arg>{value}</arg>
+<arg>${name}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.447" level="INFO">${b2c_txt_name} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='ไอดีซี']</msg>
+<status status="PASS" starttime="20241010 22:17:15.447" endtime="20241010 22:17:15.447"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_phone}</var>
+<arg>${b2c_txt_phone}</arg>
+<arg>{value}</arg>
+<arg>${phone}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.447" level="INFO">${b2c_txt_phone} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='0871000000']</msg>
+<status status="PASS" starttime="20241010 22:17:15.447" endtime="20241010 22:17:15.447"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_email}</var>
+<arg>${b2c_txt_email}</arg>
+<arg>{value}</arg>
+<arg>${email}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.448" level="INFO">${b2c_txt_email} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='idc@gmail.com']</msg>
+<status status="PASS" starttime="20241010 22:17:15.447" endtime="20241010 22:17:15.448"/>
+</kw>
+<kw name="Replace String" library="String">
+<var>${b2c_txt_position}</var>
+<arg>${b2c_txt_position}</arg>
+<arg>{value}</arg>
+<arg>${position}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<msg timestamp="20241010 22:17:15.448" level="INFO">${b2c_txt_position} = //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='หัวหน้าฝ่ายขาย']</msg>
+<status status="PASS" starttime="20241010 22:17:15.448" endtime="20241010 22:17:15.448"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${b2c_txt_company_profile}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:47:47.535025" elapsed="0.423115"/>
+<status status="PASS" starttime="20241010 22:17:15.449" endtime="20241010 22:17:15.890"/>
 </kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:47:47.958140" level="INFO">Clicking element '//div[@class='ant-space-item']//a[@href='/booking' and text()='จองการจัดส่งพัสดุ']'.</msg>
-<arg>${locator}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:47:47.958140" elapsed="0.440716"/>
-</kw>
-<arg>${b2c_mnu_book_parcel_delivery_home_page}</arg>
-<status status="PASS" start="2024-10-09T14:47:47.535025" elapsed="0.863831"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:47:47.535025" elapsed="0.863831"/>
-</kw>
-<kw name="Verify Booking Page" owner="b2c_booking_delivery_page">
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${b2c_img_loading}</arg>
-<arg>timeout=${DEFAULT_TIMEOUT}</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2024-10-09T14:47:48.413377" elapsed="13.784336"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${b2c_btn_add}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:02.197713" elapsed="7.011676"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:09.655046" level="INFO">${title} = จองการจัดส่งพัสดุ สาขาหลัก</msg>
-<var>${title}</var>
-<arg>${txt_title_booking}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_company_profile}</var>
+<arg>${b2c_txt_company_profile}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.209389" elapsed="0.445657"/>
+<msg timestamp="20241010 22:17:16.330" level="INFO">${actual_company_profile} = โปรไฟล์บริษัท</msg>
+<status status="PASS" starttime="20241010 22:17:15.890" endtime="20241010 22:17:16.330"/>
 </kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${title}</arg>
-<arg>${txt_title}</arg>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_sir_name}</var>
+<arg>${b2c_txt_sir_name}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:16.771" level="INFO">${actual_sir_name} = คุณ ไอดีซี</msg>
+<status status="PASS" starttime="20241010 22:17:16.330" endtime="20241010 22:17:16.771"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_company_name}</var>
+<arg>${b2c_txt_company_name}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:17.196" level="INFO">${actual_company_name} = Admin</msg>
+<status status="PASS" starttime="20241010 22:17:16.771" endtime="20241010 22:17:17.196"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_profile}</var>
+<arg>${b2c_txt_profile}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:17.625" level="INFO">${actual_profile} = ข้อมูลส่วนตัว</msg>
+<status status="PASS" starttime="20241010 22:17:17.196" endtime="20241010 22:17:17.625"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_profile_name}</var>
+<arg>${b2c_txt_profile_name}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:18.051" level="INFO">${actual_profile_name} = ชื่อ</msg>
+<status status="PASS" starttime="20241010 22:17:17.625" endtime="20241010 22:17:18.051"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_profile_phone}</var>
+<arg>${b2c_txt_profile_phone}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:18.493" level="INFO">${actual_profile_phone} = เบอร์โทรศัพท์</msg>
+<status status="PASS" starttime="20241010 22:17:18.051" endtime="20241010 22:17:18.493"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_profile_mail}</var>
+<arg>${b2c_txt_profile_mail}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:18.937" level="INFO">${actual_profile_mail} = E-mail</msg>
+<status status="PASS" starttime="20241010 22:17:18.493" endtime="20241010 22:17:18.937"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_profile_position}</var>
+<arg>${b2c_txt_profile_position}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:19.365" level="INFO">${actual_profile_position} = ตำแหน่งงาน</msg>
+<status status="PASS" starttime="20241010 22:17:18.937" endtime="20241010 22:17:19.365"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_name}</var>
+<arg>${b2c_txt_name}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:19.795" level="INFO">${actual_name} = ไอดีซี</msg>
+<status status="PASS" starttime="20241010 22:17:19.365" endtime="20241010 22:17:19.795"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_phone}</var>
+<arg>${b2c_txt_phone}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:20.221" level="INFO">${actual_phone} = 0871000000</msg>
+<status status="PASS" starttime="20241010 22:17:19.795" endtime="20241010 22:17:20.221"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_email}</var>
+<arg>${b2c_txt_email}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:20.658" level="INFO">${actual_email} = idc@gmail.com</msg>
+<status status="PASS" starttime="20241010 22:17:20.221" endtime="20241010 22:17:20.658"/>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${actual_position}</var>
+<arg>${b2c_txt_position}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20241010 22:17:21.094" level="INFO">${actual_position} = หัวหน้าฝ่ายขาย</msg>
+<status status="PASS" starttime="20241010 22:17:20.658" endtime="20241010 22:17:21.094"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${company_profile}</arg>
+<arg>${actual_company_profile}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.655046" elapsed="0.000000"/>
+<status status="PASS" starttime="20241010 22:17:21.094" endtime="20241010 22:17:21.094"/>
 </kw>
-<arg>${Booking['text_title_booking']}</arg>
-<status status="PASS" start="2024-10-09T14:47:48.405852" elapsed="21.250322"/>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${profile}</arg>
+<arg>${actual_profile}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.094" endtime="20241010 22:17:21.095"/>
 </kw>
-<kw name="Verify Capture Screenshot" owner="common">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-10-09T14:48:09.657215" level="INFO">${date_YYYY_MM_DD} = 2024-10-09 14:48:09.657</msg>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${profile_name}</arg>
+<arg>${actual_profile_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.095" endtime="20241010 22:17:21.095"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${profile_phone}</arg>
+<arg>${actual_profile_phone}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.095" endtime="20241010 22:17:21.095"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${profile_email}</arg>
+<arg>${actual_profile_mail}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.095" endtime="20241010 22:17:21.095"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${profile_position}</arg>
+<arg>${actual_profile_position}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.096" endtime="20241010 22:17:21.096"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${sir_name}</arg>
+<arg>${actual_sir_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.096" endtime="20241010 22:17:21.096"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${company_name}</arg>
+<arg>${actual_company_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.096" endtime="20241010 22:17:21.096"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${name}</arg>
+<arg>${actual_name}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.096" endtime="20241010 22:17:21.096"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${phone}</arg>
+<arg>${actual_phone}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.097" endtime="20241010 22:17:21.097"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${email}</arg>
+<arg>${actual_email}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.097" endtime="20241010 22:17:21.097"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${position}</arg>
+<arg>${actual_position}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20241010 22:17:21.098" endtime="20241010 22:17:21.098"/>
+</kw>
+<status status="PASS" starttime="20241010 22:17:15.402" endtime="20241010 22:17:21.098"/>
+</kw>
+<kw name="Verify Capture Screenshot" library="common">
+<arg>Booking_S001</arg>
+<arg>Verify Home Page</arg>
+<kw name="Get Current Date" library="DateTime">
 <var>${date_YYYY_MM_DD}</var>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.657215" elapsed="0.000000"/>
+<msg timestamp="20241010 22:17:21.099" level="INFO">${date_YYYY_MM_DD} = 2024-10-10 22:17:21.099</msg>
+<status status="PASS" starttime="20241010 22:17:21.099" endtime="20241010 22:17:21.099"/>
 </kw>
-<kw name="Convert Date" owner="DateTime">
-<msg time="2024-10-09T14:48:09.658219" level="INFO">${date_YYYY_MM_DD} = 2024-10-09</msg>
+<kw name="Convert Date" library="DateTime">
 <var>${date_YYYY_MM_DD}</var>
 <arg>${date_YYYY_MM_DD}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.657215" elapsed="0.001004"/>
+<msg timestamp="20241010 22:17:21.099" level="INFO">${date_YYYY_MM_DD} = 2024-10-10</msg>
+<status status="PASS" starttime="20241010 22:17:21.099" endtime="20241010 22:17:21.099"/>
 </kw>
-<kw name="Evaluate" owner="BuiltIn">
+<kw name="Evaluate" library="BuiltIn">
 <arg>os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)</arg>
 <arg>modules=os</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.658219" elapsed="0.000996"/>
+<status status="PASS" starttime="20241010 22:17:21.099" endtime="20241010 22:17:21.100"/>
 </kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:09.975874" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-10-09/Booking_S007/Verify%20Booking%20Page.png"&gt;&lt;img src="../results/2024-10-09/Booking_S007/Verify%20Booking%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
 <arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
 <doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.659215" elapsed="0.316659"/>
+<msg timestamp="20241010 22:17:21.474" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-10-10/Booking_S001/Verify%20Home%20Page.png"&gt;&lt;img src="../results/2024-10-10/Booking_S001/Verify%20Home%20Page.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20241010 22:17:21.100" endtime="20241010 22:17:21.474"/>
 </kw>
-<arg>Booking_S007</arg>
-<arg>Verify Booking Page</arg>
-<status status="PASS" start="2024-10-09T14:48:09.656271" elapsed="0.319603"/>
+<status status="PASS" starttime="20241010 22:17:21.098" endtime="20241010 22:17:21.474"/>
 </kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-09T14:48:09.978604" level="INFO">Step No.2 กดปุ่ม "+ เพิ่ม"</msg>
-<arg>Step No.2 กดปุ่ม "+ เพิ่ม"</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.977585" elapsed="0.001019"/>
-</kw>
-<kw name="Click Button To Add" owner="b2c_booking_delivery_page">
-<kw name="Sleep" owner="BuiltIn">
-<msg time="2024-10-09T14:48:13.981906" level="INFO">Slept 4 seconds.</msg>
-<arg>4s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="PASS" start="2024-10-09T14:48:09.981663" elapsed="4.000243"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${b2c_btn_add}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:13.982991" elapsed="0.429590"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:14.413610" level="INFO">Clicking element '//button[contains(@class, 'ant-btn') and span[text()='เพิ่ม']]'.</msg>
-<arg>${b2c_btn_add}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:14.413610" elapsed="4.308248"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:48:09.980664" elapsed="8.741194"/>
-</kw>
-<kw name="Verify Term &amp; Condition" owner="b2c_booking_delivery_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${btn_accept_terms_service}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:18.725897" elapsed="3.721533"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:22.884979" level="INFO">${text} = ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 9 ตุลาคม 2024 (Version 2)</msg>
-<var>${text}</var>
-<arg>${txt_term_and_condition}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:22.447430" elapsed="0.437549"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${text}</arg>
-<arg>${text_accept}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:22.886052" elapsed="0.000578"/>
-</kw>
-<arg>${txt_term_and_condition}</arg>
-<arg>${Booking['text_term_and_condition']}</arg>
-<status status="PASS" start="2024-10-09T14:48:18.721858" elapsed="4.164772"/>
-</kw>
-<kw name="Verify Capture Screenshot" owner="common">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-10-09T14:48:22.890696" level="INFO">${date_YYYY_MM_DD} = 2024-10-09 14:48:22.890</msg>
-<var>${date_YYYY_MM_DD}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-10-09T14:48:22.889700" elapsed="0.000996"/>
-</kw>
-<kw name="Convert Date" owner="DateTime">
-<msg time="2024-10-09T14:48:22.891706" level="INFO">${date_YYYY_MM_DD} = 2024-10-09</msg>
-<var>${date_YYYY_MM_DD}</var>
-<arg>${date_YYYY_MM_DD}</arg>
-<arg>result_format=%Y-%m-%d</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-10-09T14:48:22.890696" elapsed="0.001010"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<arg>os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)</arg>
-<arg>modules=os</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-09T14:48:22.892696" elapsed="0.001581"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:23.210454" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-10-09/Booking_S007/Verify%20Term%20%26%20Condition.png"&gt;&lt;img src="../results/2024-10-09/Booking_S007/Verify%20Term%20%26%20Condition.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-10-09T14:48:22.894277" elapsed="0.317178"/>
-</kw>
-<arg>Booking_S007</arg>
-<arg>Verify Term &amp; Condition</arg>
-<status status="PASS" start="2024-10-09T14:48:22.888652" elapsed="0.322803"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-09T14:48:23.211813" level="INFO">Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"</msg>
-<arg>Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-09T14:48:23.211813" elapsed="0.000000"/>
-</kw>
-<kw name="Click Accept Terms of Service" owner="b2c_booking_delivery_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${btn_accept_terms_service}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:23.212374" elapsed="0.422708"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:23.636095" level="INFO">Clicking element '//button[.//span[text()='ยอมรับเงื่อนไขการใช้บริการ']]'.</msg>
-<arg>${btn_accept_terms_service}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:23.635082" elapsed="0.461477"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:48:23.212374" elapsed="0.884185"/>
-</kw>
-<kw name="Verify Select Parcel Type" owner="b2c_booking_delivery_page">
-<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
-<arg>${btn_parcel_type_dry}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is enabled.</doc>
-<status status="PASS" start="2024-10-09T14:48:24.097974" elapsed="25.123959"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:49.681852" level="INFO">Element '//img[@alt='Dry']' is displayed.</msg>
-<arg>${btn_parcel_type_dry}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:49.222740" elapsed="0.459112"/>
-</kw>
-<kw name="Element Should Be Visible" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:50.116513" level="INFO">Element '//img[@alt='Chill']' is displayed.</msg>
-<arg>${btn_parcel_type_chill}</arg>
-<doc>Verifies that the element identified by ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:49.681852" elapsed="0.434661"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:48:24.096559" elapsed="26.019954"/>
-</kw>
-<kw name="Verify Capture Screenshot" owner="common">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-10-09T14:48:50.120535" level="INFO">${date_YYYY_MM_DD} = 2024-10-09 14:48:50.120</msg>
-<var>${date_YYYY_MM_DD}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-10-09T14:48:50.119542" elapsed="0.000993"/>
-</kw>
-<kw name="Convert Date" owner="DateTime">
-<msg time="2024-10-09T14:48:50.121575" level="INFO">${date_YYYY_MM_DD} = 2024-10-09</msg>
-<var>${date_YYYY_MM_DD}</var>
-<arg>${date_YYYY_MM_DD}</arg>
-<arg>result_format=%Y-%m-%d</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-10-09T14:48:50.121575" elapsed="0.000000"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<arg>os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)</arg>
-<arg>modules=os</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-09T14:48:50.123270" elapsed="0.000924"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:50.451692" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-10-09/Booking_S007/Verify%20Select%20Parcel%20Type.png"&gt;&lt;img src="../results/2024-10-09/Booking_S007/Verify%20Select%20Parcel%20Type.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-10-09T14:48:50.125708" elapsed="0.325984"/>
-</kw>
-<arg>Booking_S007</arg>
-<arg>Verify Select Parcel Type</arg>
-<status status="PASS" start="2024-10-09T14:48:50.117530" elapsed="0.334162"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-09T14:48:50.452691" level="INFO">Step No.4 กดปุ่ม "พัสดุทั่วไป"</msg>
-<arg>Step No.4 กดปุ่ม "พัสดุทั่วไป"</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-09T14:48:50.452691" elapsed="0.000000"/>
-</kw>
-<kw name="Select Parcel Type" owner="b2c_booking_delivery_page">
-<if>
-<branch type="IF" condition="'${parcel_type}' == 'พัสดุทั่วไป'">
-<kw name="Click General Parcel" owner="b2c_booking_delivery_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${parcel_type_dry_btn}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:50.458292" elapsed="0.425501"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:50.883793" level="INFO">Clicking element '//img[@alt='Dry']'.</msg>
-<arg>${parcel_type_dry_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:50.883793" elapsed="0.575446"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${close_noti_btn}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:51.460200" elapsed="2.613332"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:48:50.457293" elapsed="3.616239"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:48:50.457293" elapsed="3.616239"/>
-</branch>
-<branch type="ELSE IF" condition="'${parcel_type}' == 'พัสดุควบคุมอุณหภมิ'">
-<kw name="Click Temperature Controlled Parcel" owner="b2c_booking_delivery_page">
-<status status="NOT RUN" start="2024-10-09T14:48:54.074077" elapsed="0.000000"/>
-</kw>
-<status status="NOT RUN" start="2024-10-09T14:48:54.074077" elapsed="0.000000"/>
-</branch>
-<status status="PASS" start="2024-10-09T14:48:50.457293" elapsed="3.616784"/>
-</if>
-<arg>${Booking_S007['parcel_type']}</arg>
-<status status="PASS" start="2024-10-09T14:48:50.453723" elapsed="3.620354"/>
-</kw>
-<kw name="Verify Create Parcel Page Sender Step" owner="b2c_booking_delivery_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${title_create_parcel_page_txt}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:54.097992" elapsed="0.448619"/>
-</kw>
-<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
-<arg>${status_active_sender}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is not visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:54.546611" elapsed="0.432833"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:55.419796" level="INFO">${actual_text_title} = สร้างพัสดุ</msg>
-<var>${actual_text_title}</var>
-<arg>${txt_title_create_parcel_page}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:54.979444" elapsed="0.440352"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_text_title}</arg>
-<arg>${title}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:55.419796" elapsed="0.000000"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:55.860265" level="INFO">${actual_text_parcel_sender_information} = ข้อมูลผู้ส่งพัสดุ</msg>
-<var>${actual_text_parcel_sender_information}</var>
-<arg>${txt_parcel_sender_information}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:55.420837" elapsed="0.439428"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_text_parcel_sender_information}</arg>
-<arg>${parcel_sender_information}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:55.860801" elapsed="0.000000"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:56.290466" level="INFO">${actual_text_phone} = เบอร์โทรศัพท์ *</msg>
-<var>${actual_text_phone}</var>
-<arg>${txt_phone_sender}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:55.861346" elapsed="0.429120"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_text_phone}</arg>
-<arg>${phone_sender}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:56.290466" elapsed="0.000000"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:56.721693" level="INFO">${actual_text_name_sender} = ชื่อ *</msg>
-<var>${actual_text_name_sender}</var>
-<arg>${txt_name_sender}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:56.290466" elapsed="0.431227"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_text_name_sender}</arg>
-<arg>${name_sender}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:56.721693" elapsed="0.000504"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:57.156727" level="INFO">${actual_text_address} = รายละเอียดที่อยู่ *</msg>
-<var>${actual_text_address}</var>
-<arg>${txt_address_sender}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:56.722197" elapsed="0.434530"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_text_address}</arg>
-<arg>${address_sender}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.156727" elapsed="0.000000"/>
-</kw>
-<kw name="Get Text" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:57.582946" level="INFO">${actual_text_postcode} = แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *</msg>
-<var>${actual_text_postcode}</var>
-<arg>${txt_postcode_sender}</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.156727" elapsed="0.426219"/>
-</kw>
-<kw name="Should Be Equal" owner="BuiltIn">
-<arg>${actual_text_postcode}</arg>
-<arg>${postcode_sender}</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.583497" elapsed="0.000000"/>
-</kw>
-<arg>${Booking['text_title']}</arg>
-<arg>${Booking['text_parcel_sender_information']}</arg>
-<arg>${Booking['text_phone_sender']}</arg>
-<arg>${Booking['text_name_sender']}</arg>
-<arg>${Booking['text_address_sender']}</arg>
-<arg>${Booking['text_postcode_sender']}</arg>
-<status status="PASS" start="2024-10-09T14:48:54.075620" elapsed="3.507877"/>
-</kw>
-<kw name="Verify Capture Screenshot" owner="common">
-<kw name="Get Current Date" owner="DateTime">
-<msg time="2024-10-09T14:48:57.585542" level="INFO">${date_YYYY_MM_DD} = 2024-10-09 14:48:57.586</msg>
-<var>${date_YYYY_MM_DD}</var>
-<doc>Returns current local or UTC time with an optional increment.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.585542" elapsed="0.000000"/>
-</kw>
-<kw name="Convert Date" owner="DateTime">
-<msg time="2024-10-09T14:48:57.586087" level="INFO">${date_YYYY_MM_DD} = 2024-10-09</msg>
-<var>${date_YYYY_MM_DD}</var>
-<arg>${date_YYYY_MM_DD}</arg>
-<arg>result_format=%Y-%m-%d</arg>
-<doc>Converts between supported `date formats`.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.586087" elapsed="0.000000"/>
-</kw>
-<kw name="Evaluate" owner="BuiltIn">
-<arg>os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)</arg>
-<arg>modules=os</arg>
-<doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.586087" elapsed="0.002020"/>
-</kw>
-<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:57.893379" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-10-09/Booking_S007/Verify%20Create%20Parcel%20Page%20Sender%20Step.png"&gt;&lt;img src="../results/2024-10-09/Booking_S007/Verify%20Create%20Parcel%20Page%20Sender%20Step.png" width="800px"&gt;&lt;/a&gt;</msg>
-<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.588107" elapsed="0.305272"/>
-</kw>
-<arg>Booking_S007</arg>
-<arg>Verify Create Parcel Page Sender Step</arg>
-<status status="PASS" start="2024-10-09T14:48:57.584508" elapsed="0.308871"/>
-</kw>
-<kw name="Log" owner="BuiltIn">
-<msg time="2024-10-09T14:48:57.894403" level="INFO">Step No.5 ขั้นตอนข้อมูลผู้รับพัสดุ กดปุ่ม "เลือกจากรายการโปรด"</msg>
-<arg>Step No.5 ขั้นตอนข้อมูลผู้รับพัสดุ กดปุ่ม "เลือกจากรายการโปรด"</arg>
-<doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.894403" elapsed="0.000000"/>
-</kw>
-<kw name="Click Choose Favorites" owner="b2c_booking_delivery_page">
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${choose_favorites_btn}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:57.894403" elapsed="0.427680"/>
-</kw>
-<kw name="Click Element" owner="SeleniumLibrary">
-<msg time="2024-10-09T14:48:58.322632" level="INFO">Clicking element '//button[span[text()='เลือกจากรายการโปรด']]'.</msg>
-<arg>${choose_favorites_btn}</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="PASS" start="2024-10-09T14:48:58.322632" elapsed="0.851541"/>
-</kw>
-<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
-<arg>${favorites_defult_text}</arg>
-<arg>timeout=30s</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" start="2024-10-09T14:48:59.174173" elapsed="0.522355"/>
-</kw>
-<status status="PASS" start="2024-10-09T14:48:57.894403" elapsed="1.802125"/>
-</kw>
-<kw name="b2c_booking_delivery_page.">
-<msg time="2024-10-09T14:48:59.700607" level="FAIL">No keyword with name 'b2c_booking_delivery_page.' found. Did you mean:
-    b2c_booking_delivery_page.Input COD</msg>
-<status status="FAIL" start="2024-10-09T14:48:59.700607" elapsed="0.000000">No keyword with name 'b2c_booking_delivery_page.' found. Did you mean:
-    b2c_booking_delivery_page.Input COD</status>
-</kw>
-<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
 <doc>Closes the current browser.</doc>
-<status status="PASS" start="2024-10-09T14:48:59.701607" elapsed="2.489169"/>
+<status status="PASS" starttime="20241010 22:17:21.475" endtime="20241010 22:17:23.721"/>
 </kw>
-<doc>ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน &gt; ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)</doc>
+<doc>Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business</doc>
 <tag>Booking</tag>
-<tag>Run</tag>
+<tag>Review-Pass</tag>
 <tag>UAT</tag>
-<status status="FAIL" start="2024-10-09T14:47:36.233354" elapsed="85.957422">No keyword with name 'b2c_booking_delivery_page.' found. Did you mean:
-    b2c_booking_delivery_page.Input COD</status>
+<status status="PASS" starttime="20241010 22:17:03.430" endtime="20241010 22:17:23.722"/>
 </test>
-<status status="FAIL" start="2024-10-09T14:47:35.227174" elapsed="86.965602"/>
+<status status="PASS" starttime="20241010 22:17:02.886" endtime="20241010 22:17:23.723"/>
+</suite>
+<status status="PASS" starttime="20241010 22:17:02.872" endtime="20241010 22:17:23.725"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">Booking</stat>
-<stat pass="0" fail="1" skip="0">Run</stat>
-<stat pass="0" fail="1" skip="0">UAT</stat>
+<stat pass="1" fail="0" skip="0">Booking</stat>
+<stat pass="1" fail="0" skip="0">Review-Pass</stat>
+<stat pass="1" fail="0" skip="0">UAT</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Booking S007">Booking S007</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Booking">Booking</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Booking S001-S010">Booking.Booking S001-S010</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2024-10-09T14:47:36.822887" level="WARN">The chromedriver version (128.0.6613.86) detected in PATH at C:\chromedriver\chromedriver-win64\chromedriver.exe might not be compatible with the detected chrome version (129.0.6668.90); currently, chromedriver 129.0.6668.91 is recommended for chrome 129.*, so it is advised to delete the driver in PATH and retry</msg>
+<msg timestamp="20241010 22:17:03.100" level="ERROR">Error in file 'C:\Users\Home-Few\Documents\GitHub\all-speedy-automated\resourses\import.robot' on line 91: Processing variable file 'C:\Users\Home-Few\Documents\GitHub\all-speedy-automated\resourses\testdata\register\register.yaml' failed: YAML variable file must be a mapping, got None.</msg>
 </errors>
 </robot>

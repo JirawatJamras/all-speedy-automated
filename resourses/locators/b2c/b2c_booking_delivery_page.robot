@@ -1,11 +1,11 @@
 *** Variables ***
 ### booking page ###
-${txt_title_booking}    //div[contains(@class,'ant-layout')]//h2[contains(@class,'ant-typography')]
+${txt_title_booking}    //div[contains(@class,'ant-layout')]//h2[contains(@class,'ant-typography')][contains(text(), '{value}')]
 
 ### term&con ###
 ${txt_term_and_condition}     //div[@class='ant-modal-title']//span[contains(@class,'ant-typography')]
 
-${btn_accept_terms_service}     //button[.//span[text()='ยอมรับเงื่อนไขการใช้บริการ']]
+${btn_accept_terms_service}     //button[@class='ant-btn css-1hobygo ant-btn-default ant-btn-color-default ant-btn-variant-outlined bg-gradient-to-r from-blue-900 text-white to-blue-400 shadow-xl']
 ${btn_close_condition_popup}     (//button[@type='button' and @class='ant-modal-close'])[1]
 
 ### create a parcel ###
@@ -37,18 +37,18 @@ ${btn_use_code}    //button//span[text()='ใช้โค้ด']
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
 ${btn_choose_store}    //b[text()='{value}']/..
 
-
-${txt_title_create_parcel_page}     //div[@class='ant-modal-title']//div[text()='สร้างพัสดุ']
+${txt_title_create_parcel_page}     //div[@class='ant-modal-title']/div[@class='max-sm:border-b pb-2 border-blue-800 text-blue-800']
 ${txt_frist_step_name}    //form[@id='create_parcel_form']/div[2]/div[1]/div/div[3]/div
 ${txt_close_popup}     //h2[@id='swal2-title']
 ${txt_favorites_title}    //div[text()='เลือกจากรายการโปรด']
 ${txt_favorites_search_no_data}    //div[contains(@class,'ant-radio-group')]//div[@class='ant-empty-description' and text()='No data']
-${txt_parcel_sender_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'ข้อมูลผู้ส่งพัสดุ')]
+${txt_parcel_sender_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']////div[@class='ant-steps-item-title'][contains(text(),'{value}')]
+
 ${txt_phone_sender}    //label[@for='create_parcel_form_sender_tel']/span
 ${txt_name_sender}    //label[@for='create_parcel_form_sender_name']/span
 ${txt_address_sender}    //label[@for='create_parcel_form_sender_address_info']/span
 ${txt_postcode_sender}    //label[@for='create_parcel_form_sender_address_full']/span
-${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'ข้อมูลผู้รับพัสดุ')]
+${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'{value})]
 ${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
 ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
 ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span

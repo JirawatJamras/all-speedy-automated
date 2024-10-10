@@ -1,6 +1,7 @@
 *** Keywords ***
 Verify Booking Page 
     [Arguments]    ${txt_title}
+    ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${txt_title}  
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
     ${title}=    Get Text    ${txt_title_booking}    
@@ -51,38 +52,10 @@ Click Temperature Controlled Parcel
 #     ${button_text}=    Get Text    ${close_noti_txt}
 #     Should Be Equal    ${button_text}    ${AllSpeedy_B2C_005_ID_1['closepopun_noti']}
 
-# Verify Create Parcel Page Sender Step
-#     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
-#     Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
-#     ${title_text}=    Get Text    ${txt_title_create_parcel_page}
-#     Should Be Equal    ${title_text}    ${Booking_002['text_title']}
-#     ${text_phone}=    Get Text    ${txt_phone_sender}
-#     Should Be Equal    ${text_phone}    ${Booking_002['text_phone_sender']}
-#     ${text_name}=    Get Text    ${txt_name_sender}
-#     Should Be Equal    ${text_name}    ${Booking_002['text_name_sender']}
-#     ${text_address}=    Get Text    ${txt_address_sender}
-#     Should Be Equal    ${text_address}    ${Booking_002['text_address_sender']}
-#     ${text_postcode}=    Get Text    ${txt_postcode_sender}
-#     Should Be Equal    ${text_postcode}    ${Booking_002['text_postcode_sender']}
-
-# Verify Create Parcel Page Receiver Step
-#     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
-#     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
-#     ${title_text}=    Get Text    ${txt_title_create_parcel_page}
-#     Should Be Equal    ${title_text}    ${Booking_002['text_title']}
-#     ${text_phone}=    Get Text    ${txt_phone_receiver}
-#     Should Be Equal    ${text_phone}    ${Booking_002['text_phone_receiver']}
-#     ${text_name}=    Get Text    ${txt_name_receiver}
-#     Should Be Equal    ${text_name}    ${Booking_002['text_name_receiver']}
-#     ${text_name}=    Get Text    ${txt_location_receiver}
-#     Should Be Equal    ${text_name}    ${Booking_002['text_location_receiver']}
-#     ${text_address}=    Get Text    ${txt_address_receiver}
-#     Should Be Equal    ${text_address}    ${Booking_002['text_address_receiver']}
-#     ${text_postcode}=    Get Text    ${txt_postcode_receiver}
-#     Should Be Equal    ${text_postcode}    ${Booking_002['text_postcode_receiver']}
 
 Verify Create Parcel Page Sender Step
     [Arguments]    ${title}    ${parcel_sender_information}    ${phone_sender}    ${name_sender}    ${address_sender}    ${postcode_sender}  
+    ${txt_parcel_sender_information}=  Replace String   ${txt_parcel_sender_information}   {value}   ${parcel_sender_information}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
@@ -134,6 +107,7 @@ Verify Draft Parcel Receiver When Select 7-ELEVEN Store
 
 Verify Create Parcel Page Receiver Step
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
+    ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}

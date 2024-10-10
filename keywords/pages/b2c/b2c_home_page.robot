@@ -37,33 +37,31 @@ Select Sub Menu Register Business Customer
 Verify My Profile Page
     [Arguments]    ${company_profile}    ${profile}    ${profile_name}    ${profile_phone}    ${profile_email}    ${profile_position}    
     ...    ${sir_name}    ${company_name}    ${name}    ${phone}    ${email}    ${position}
+    ${b2c_txt_company_profile}=        Replace String    ${b2c_txt_company_profile}        {value}    ${company_profile}  
+    ${b2c_txt_profile}=                Replace String    ${b2c_txt_profile}                {value}    ${profile}  
+    ${b2c_txt_profile_name}=           Replace String    ${b2c_txt_profile_name}           {value}    ${profile_name}  
+    ${b2c_txt_profile_phone}=          Replace String    ${b2c_txt_profile_phone}          {value}    ${profile_phone}  
+    ${b2c_txt_profile_mail}=           Replace String    ${b2c_txt_profile_mail}           {value}    ${profile_email}  
+    ${b2c_txt_profile_position}=       Replace String    ${b2c_txt_profile_position}       {value}    ${profile_position}  
+    ${b2c_txt_sir_name}=               Replace String    ${b2c_txt_sir_name}               {value}    ${sir_name}
+    ${b2c_txt_company_name}=           Replace String    ${b2c_txt_company_name}           {value}    ${company_name}
+    ${b2c_txt_name}=                   Replace String    ${b2c_txt_name}                   {value}    ${name}
+    ${b2c_txt_phone}=                  Replace String    ${b2c_txt_phone}                  {value}    ${phone}
+    ${b2c_txt_email}=                  Replace String    ${b2c_txt_email}                  {value}    ${email}
+    ${b2c_txt_position}=               Replace String    ${b2c_txt_position}               {value}    ${position}
     Wait Until Element Is Visible    ${b2c_txt_company_profile}
     ${actual_company_profile} =    Get Text    ${b2c_txt_company_profile}
-
-    ${b2c_txt_sir_name}=    Replace String    ${b2c_txt_sir_name}    {value}    ${sir_name}
     ${actual_sir_name} =    Get Text      ${b2c_txt_sir_name}
-
-    ${b2c_txt_company_name}=    Replace String    ${b2c_txt_company_name}    {value}    ${company_name}
     ${actual_company_name} =    Get Text     ${b2c_txt_company_name}  
-
     ${actual_profile} =    Get Text     ${b2c_txt_profile}  
     ${actual_profile_name} =    Get Text    ${b2c_txt_profile_name}
     ${actual_profile_phone} =    Get Text    ${b2c_txt_profile_phone}
     ${actual_profile_mail} =    Get Text    ${b2c_txt_profile_mail}
     ${actual_profile_position} =    Get Text    ${b2c_txt_profile_position}
-
-    ${b2c_txt_name}=    Replace String    ${b2c_txt_name}    {value}    ${name}
     ${actual_name} =    Get Text    ${b2c_txt_name}
-
-    ${b2c_txt_phone}=    Replace String    ${b2c_txt_phone}    {value}    ${phone}
     ${actual_phone} =    Get Text    ${b2c_txt_phone}
-
-    ${b2c_txt_email}=    Replace String    ${b2c_txt_email}    {value}    ${email}
     ${actual_email} =    Get Text    ${b2c_txt_email}
-
-    ${b2c_txt_position}=    Replace String    ${b2c_txt_position}    {value}    ${position}
     ${actual_position} =    Get Text    ${b2c_txt_position}
-
     Should Be Equal    ${company_profile}    ${actual_company_profile}
     Should Be Equal    ${profile}    ${actual_profile}
     Should Be Equal    ${profile_name}    ${actual_profile_name}

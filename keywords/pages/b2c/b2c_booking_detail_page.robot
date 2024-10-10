@@ -12,12 +12,14 @@ Verify Booking list Page
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    
     ...    ${parcel_size}    ${price_value}    ${buy_insurance}    ${cod_value}
     ${receiver_address}=    Set Variable If    '${receiver_address}' == '-' and '${receiver_postcode_full}' == '-'    -    ${receiver_address} ${receiver_postcode_full}
+    ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${booking_list}
+    ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
+
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
-    ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
     ${actual_text_booking_list}=    Get Text    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels_status} =    Get Text    ${b2c_txt_list_of_parcels_status} 
     #Sender
@@ -173,10 +175,16 @@ Click Booking With Status Select Shipping Origin
 Verify Booking Detail Page
     [Arguments]    ${title}    ${booking_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
-    ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${insure_value}    ${cod}
+    ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    
+    ...    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${insure_value}    ${cod}
     ...    ${booking_summary}    ${discount_amount}    ${discount_value}    ${insurance_fee_amount}    ${insurance_fee_value}
     ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}    ${store_code}
     Log    Booking List
+    ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${title}
+    ${b2c_txt_parcel_list_booking_detail_page} =  Replace String    ${b2c_txt_parcel_list_booking_detail_page}    {value}    ${title_parcel_list}
+    ${b2c_txt_booking_summary_booking_detail_page} =  Replace String    ${b2c_txt_booking_summary_booking_detail_page}    {value}    ${booking_summary}
+
+
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
     ${actaul_bookig_id}=    Get Text    ${b2c_txt_booking_id_booking_detail_page}
