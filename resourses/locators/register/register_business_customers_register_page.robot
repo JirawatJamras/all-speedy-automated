@@ -1,5 +1,5 @@
 *** Variables ***
-${register_dropdown_company_title_name_register_page}    //span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@title='เลือก..']
+# ${register_dropdown_company_title_name_register_page}    //span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@title='เลือก..']
 ${register_dropdown_title_name_register_page}    //span[text()='คำนำหน้าชื่อ ']/../../..//span[@title='เลือก..']
 
 ${register_select_company_title_name_register_page}    //span[text()='คำนำหน้าประเภทจดทะเบียนบริษัท']/../../..//span[@class='ant-select-selection-item']
