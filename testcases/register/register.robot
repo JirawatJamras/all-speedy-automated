@@ -172,7 +172,9 @@ Verify Company information
     #Inprogress
 
 *** Test Cases ***
-E2E Register SC014
+
+
+Register_SC014
     #Register_014 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
     #Step 1 Open Url
     common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
@@ -199,7 +201,7 @@ E2E Register SC014
     #Step 11 ระบุข้อมูลผู้ติดต่อ
 
     #Step 12 กดปุ่ม "ถัดไป"
-E2E Register SC023
+Register_SC023
     #Register_023 Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -207,7 +209,7 @@ E2E Register SC023
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-E2E Register SC024
+Register_SC024
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
