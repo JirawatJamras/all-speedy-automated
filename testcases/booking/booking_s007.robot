@@ -63,7 +63,35 @@ Booking_S007
     ...    ${Booking_S007['sender_name']}
     ...    ${Booking_S007['sender_address']}
     ...    ${Booking_S007['sender_postcode_full']}
-    
     #Expected 
+    b2c_booking_delivery_page.Verify Choose Sender From Favorites
+    ...    ${Booking_S007['sender_phone']}
+    ...    ${Booking_S007['sender_name']}
+    ...    ${Booking_S007['sender_address']}
+    ...    ${Booking_S007['sender_postcode_full']}
+    #not finish
+    b2c_booking_delivery_page.Verify Favorites Icon Red Heart    
+    common.Verify Capture Screenshot    Booking_S007    Verify After Create Parcel Page Sender Step
+
+    Log    Step No.7 กดปุ่ม "บันทึกร่าง"
+    b2c_booking_delivery_page.Click Save Button
+    #Expected
+    b2c_booking_detail_page.Verify Booking list Page
+    ...    ${Booking['text_booking_list']}
+    ...    ${Booking['text_draft_status']}
+    ...    ${Booking_S005['img_sender_heart']}
+    ...    ${Booking_S005['sender_name']}
+    ...    ${Booking_S005['sender_phone']}
+    ...    ${Booking_S005['img_receiver_heart']}
+    ...    ${Booking.text_blank['receiver_name']}
+    ...    ${Booking.text_blank['receiver_phone']}
+    ...    ${Booking.text_blank['receiver_address']}
+    ...    ${Booking.text_blank['receiver_postcode_full']}
+    ...    ${Booking.text_blank['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['insurance_fee_value']}
+    ...    ${Booking.text_blank['cod_fee_value']}
+    common.Verify Capture Screenshot    Booking_S007    Verify Draft Paecel
+
 
 
