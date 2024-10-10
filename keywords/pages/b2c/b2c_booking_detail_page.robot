@@ -11,18 +11,13 @@ Verify Booking list Page
     [Arguments]    ${booking_list}    ${status}    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    
     ...    ${parcel_size}    ${price_value}    ${buy_insurance}    ${cod_value}
-
     ${receiver_address}=    Set Variable If    '${receiver_address}' == '-' and '${receiver_postcode_full}' == '-'    -    ${receiver_address} ${receiver_postcode_full}
-    
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
-
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
-
     ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
-    
     ${actual_text_booking_list}=    Get Text    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels_status} =    Get Text    ${b2c_txt_list_of_parcels_status} 
     #Sender
@@ -52,13 +47,11 @@ Verify Edit Booking List Popup
     Wait Until Element Is Visible    ${b2c_txt_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_parcel_type}    Get Text    ${b2c_txt_parcel_type}
     ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
-
     ${actual_text_booking_name}    Get Value    ${b2c_txt_booking_name}
-    Should Be Equal As Strings    ${actual_text_booking_name}    ${booking_name}
-
     ${actual_text_shipping_origin_aria}    Get Text    ${b2c_txt_shipping_origin_aria}
     Log To Console    ${actual_text_shipping_origin_aria}
+    Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
+    Should Be Equal As Strings    ${actual_text_booking_name}    ${booking_name}
     Should Be Equal As Strings    ${actual_text_shipping_origin_aria}    ${shipping_origin_aria}
 
 Select Shipping Origin Tab 
@@ -130,30 +123,29 @@ Verify Booking Detail Page
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${buy_insurance}    ${cod}    
     ...    ${booking_summary}    ${discount_amount}    ${discount_value}    ${insurance_fee_amount}    ${insurance_fee_value}
     ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}
-    
     Log    Booking List
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
-    Should Be Equal    ${title}    ${actual_text_title}
     ${actaul_bookig_id}=    Get Text    ${b2c_txt_booking_id_booking_detail_page}
-    Should Be Equal    ${booking_id}    ${actaul_bookig_id}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
-    Should Be Equal    ${booking_name}    ${actaul_booking_name}
     Verify Date And Time With Time Distortion    ${b2c_txt_booking_date_and_time_booking_detail_page}    ${bookig_time}
     ${actaul_shipping_origin}=    Get Text    ${b2c_txt_shipping_origin_booking_detail_page}
+    Should Be Equal    ${title}    ${actual_text_title}
+    Should Be Equal    ${booking_id}    ${actaul_bookig_id}
+    Should Be Equal    ${booking_name}    ${actaul_booking_name}
     Should Be Empty    ${actaul_shipping_origin}
 
     Log    Parcel List
     Wait Until Element Is Visible    ${b2c_txt_parcel_list_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_title_parcel_list}=    Get Text    ${b2c_txt_parcel_list_booking_detail_page}
-    Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actaul_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
-    Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
+    Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
@@ -170,45 +162,43 @@ Verify Booking Detail Page
     Wait Until Element Is Visible    ${b2c_btn_print_parcel_label}    timeout=${DEFAULT_TIMEOUT}
 
     Log    Booking Summary
-    Wait Until Element Is Visible    ${b2_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_txt_title_booking_summary}=    Get Text    ${b2_txt_booking_summary_booking_detail_page}
-    Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
+    Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
     Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
     ${acrual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
     ${acrual_txt_price_detail} =  Replace String    ${acrual_txt_price_detail}    \n    ${SPACE}
     Should Be Equal As Strings    ${acrual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
-    
+    Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
+
 Verify Booking Detail Page After Set Origin Shipping
     [Arguments]    ${title}    ${booking_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${insure_value}    ${cod}
     ...    ${booking_summary}    ${discount_amount}    ${discount_value}    ${insurance_fee_amount}    ${insurance_fee_value}
     ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}    ${store_code}
-    
     Log    Booking List
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
-    Should Be Equal    ${title}    ${actual_text_title}
     ${actaul_bookig_id}=    Get Text    ${b2c_txt_booking_id_booking_detail_page}
-    Should Be Equal    ${booking_id}    ${actaul_bookig_id}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
-    Should Be Equal    ${booking_name}    ${actaul_booking_name}
     Verify Date And Time With Time Distortion    ${b2c_txt_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${store_code}
-
+    Should Be Equal    ${title}    ${actual_text_title}
+    Should Be Equal    ${booking_id}    ${actaul_bookig_id}
+    Should Be Equal    ${booking_name}    ${actaul_booking_name}
     Log    Parcel List
     Wait Until Element Is Visible    ${b2c_txt_parcel_list_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_title_parcel_list}=    Get Text    ${b2c_txt_parcel_list_booking_detail_page}
-    Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actaul_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
-    Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
+    Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
@@ -223,17 +213,16 @@ Verify Booking Detail Page After Set Origin Shipping
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
     Wait Until Element Is Visible    ${b2c_btn_print_parcel_label}    timeout=${DEFAULT_TIMEOUT}
-
     Log    Booking Summary
-    Wait Until Element Is Visible    ${b2_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_txt_title_booking_summary}=    Get Text    ${b2_txt_booking_summary_booking_detail_page}
-    Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
+    Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
     Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
     ${acrual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
     ${acrual_txt_price_detail} =  Replace String    ${acrual_txt_price_detail}    \n    ${SPACE}
     Should Be Equal As Strings    ${acrual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
-    
+    Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
+
 Click Print Parcel Label
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Click When Ready    ${b2c_btn_print_parcel_label}
@@ -249,13 +238,14 @@ Verify Parcel Label
     ${actual_list_paper_size}    Get Text    ${b2c_txt_list_paper_size}
     ${actual_list_paper_size} =  Replace String    ${actual_list_paper_size}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_paper_size}    ${size_a4} ${size_a5} ${size_8cm}
-
     Wait Until Element Is Visible    ${b2c_img_logo_speed_d}
     Wait Until Element Is Visible    ${b2c_img_qr_code}
     ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_list_parcel_label_detail}    
+    Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
     ...    รหัสไปรษณีย์ปลายทาง ${receiver_postcode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
+    ...    รหัสไปรษณีย์ปลายทาง ${receiver_postcode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} หมายเหตุ ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
 
 Click Print Label On Popup
     Click When Ready    ${b2c_btn_print_parcel_label_popup}
@@ -272,3 +262,9 @@ Verify Date And Time With Time Distortion
         ...    AND    Exit For Loop
     END
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
+
+Verify Timestamp After Print Label
+    ${DD_MM}   Get Current Date
+    ${DD_MM}   Convert Date  ${DD_MM}       result_format=%d-%m
+    ${b2c_txt_timestamp_after_print_label} =    Replace String    ${b2c_txt_timestamp_after_print_label}    {value}    ${DD_MM}
+    Wait Until Element Is Visible    ${b2c_txt_timestamp_after_print_label}

@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -314,8 +314,8 @@ Booking_S002
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    1
-    ...    24.00
+    ...    ${Booking_S002['total_price_amount']}
+    ...    ${Booking_S002['total_price_value']}
     ...    ${Booking_S002['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary After Set Origin Shipping
@@ -348,6 +348,7 @@ Booking_S002
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
+    b2c_booking_detail_page.Verify Timestamp After Print Label
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
 
 
