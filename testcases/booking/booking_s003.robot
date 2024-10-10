@@ -197,6 +197,7 @@ Booking_S003
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking_S003['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S003    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -245,6 +246,7 @@ Booking_S003
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking_S003['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S003    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -266,7 +268,7 @@ Booking_S003
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page After Set Origin Shipping
+    b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${booking_name}
