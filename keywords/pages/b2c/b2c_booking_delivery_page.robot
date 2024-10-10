@@ -65,7 +65,6 @@ Click Temperature Controlled Parcel
 #     ${text_postcode}=    Get Text    ${txt_postcode_sender}
 #     Should Be Equal    ${text_postcode}    ${Booking_002['text_postcode_sender']}
 
-
 # Verify Create Parcel Page Receiver Step
 #     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
 #     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
@@ -81,7 +80,6 @@ Click Temperature Controlled Parcel
 #     Should Be Equal    ${text_address}    ${Booking_002['text_address_receiver']}
 #     ${text_postcode}=    Get Text    ${txt_postcode_receiver}
 #     Should Be Equal    ${text_postcode}    ${Booking_002['text_postcode_receiver']}
-
 
 Verify Create Parcel Page Sender Step
     [Arguments]    ${title}    ${parcel_sender_information}    ${phone_sender}    ${name_sender}    ${address_sender}    ${postcode_sender}  
@@ -112,7 +110,7 @@ Verify Draft Parcel Sender
     Should Be Equal    ${actual_text_address_sender}    ${address_sender}
     Should Be Equal    ${actual_text_full_postcode_sender}    ${full_postcode_sender}
 
-Verify Draft Paecel Receiver
+Verify Draft Parcel Receiver When Select Home
     [Arguments]   ${phone_receiver}    ${name_receiver}    ${address_receiver}    ${full_postcode_receiver}  
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
@@ -121,6 +119,19 @@ Verify Draft Paecel Receiver
     ${actual_text_full_postcode_receiver}=    Get Text    ${txtbox_full_postcode_receiver}
     Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
+    Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
+    Should Be Equal    ${actual_text_full_postcode_receiver}    ${full_postcode_receiver}
+
+Verify Draft Parcel Receiver When Select 7-ELEVEN Store
+    [Arguments]   ${phone_receiver}    ${name_receiver}    ${location_pickup_receiver}    ${store_address_receiver}  
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
+    ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
+    ${actual_text_address_receiver}=    Get Value    ${txtbox_address_receiver}
+    ${actual_text_full_postcode_receiver}=    Get Text    ${txtbox_full_postcode_receiver}
+    Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
+    Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
+    Should Be    ${tab_send_to_store}
     Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
     Should Be Equal    ${actual_text_full_postcode_receiver}    ${full_postcode_receiver}
 
@@ -152,7 +163,6 @@ Click Choose Favorites
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
     Click Element    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=30s
-
 
 Click Choose Favorites Receiver
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
@@ -244,7 +254,6 @@ Verify Choose Receiver From Favorites
 Click Favorites Default
     Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
     Click Element    ${select_favorites_btn}
-
 
 Input Special Letters
     [Arguments]    ${search_txt}
@@ -412,6 +421,9 @@ Click Save Button
 Click Next Button
     common.Click When Ready    ${btn_next}
 
+Click Add To Favorites In Sender
+    common.Click When Ready    ${btn_add_sender_to_favorites}
+
 Click Add To Favorites In Receiver
     common.Click When Ready    ${btn_add_receiver_to_favorites}
 
@@ -457,6 +469,20 @@ Click Postcode Receiver Lists
     ${list}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
     Click Element    ${list}
 
+Input Store Code Receiver
+    [Arguments]    ${input_store_receiver}
+    common.Input When Ready      ${txtbox_store_receiver}    ${input_store_receiver}
+
+Click Store Receiver Lists
+    [Arguments]    ${store}
+    ${list}=    Replace String    ${cbo_store_receiver}    {value}    ${store}
+    Click Element    ${list}
+
+Click Store On Map
+    [Arguments]    ${value}
+    ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${value}
+    common.Click When Ready    ${select_store}
+
 Verify Phone Receiver Value
     [Arguments]    ${verify_phone_receiver_value}
     Wait Until Element Is Visible    ${txtbox_phone_receiver}    timeout=10s
@@ -475,12 +501,16 @@ Verify Address Receiver Value
     ${address_receiver_txt}=    Get Value    ${txtbox_address_receiver}
     Should Be Equal    ${address_receiver_txt}    ${verify_address_receiver_value} 
 
-
 Verify Full Post Code Value
     [Arguments]    ${verify_full_post_code_receiver_value}
     Wait Until Element Is Visible    ${txtbox_full_postcode_sender}    timeout=10s
     ${full_post_code_receiver_txt}=    Get Text    ${txtbox_full_postcode_sender}
-    Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value} 
+    Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value}
+
+Verify Store Address Receiver
+    [Arguments]    ${store}
+    ${store_value}    Get Text    ${txt_store_address}
+    Should Be Equal    ${store_value}    ${store}
 
 Verify Created Booking On Booking Delivery Page
     [Arguments]    ${booking_id}    ${booking_time}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}    
@@ -593,6 +623,3 @@ Verify Selected Coupon And Code
     ${actual_selected_code_detail}=  Replace String   ${actual_selected_code_detail}   \n   ${SPACE}
     Should Be Equal As Strings    ${actual_selected_code_detail}
     ...    คูปองและโค้ดส่วนลดที่เลือก ${discount} ${promotion_name} ${parcel_size} หมดอายุ ${expired_date} เงื่อนไขการใช้คูปอง - ${condition} ระยะเวลา ${period} นำออก
-
-Click Add To Favorites In Sender
-    common.Click When Ready    ${btn_add_sender_to_favorites}

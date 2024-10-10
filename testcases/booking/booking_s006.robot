@@ -124,12 +124,12 @@ Booking_S006
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  
     #Expected
-    b2c_booking_delivery_page.Verify Draft Paecel Receiver
+    b2c_booking_delivery_page.Verify Draft Parcel Receiver When Select Home
     ...    ${Booking_S006['receiver_phone']}
     ...    ${Booking_S006['receiver_name']}
     ...    ${Booking_S006['receiver_address']}
     ...    ${Booking_S006['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S006    Verify Draft Paecel Receiver
+    common.Verify Capture Screenshot    Booking_S006    Verify Draft Parcel Receiver When Select Home
 
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button

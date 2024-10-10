@@ -162,12 +162,12 @@ Booking_S004
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    b2c_booking_delivery_page.Verify Draft Paecel Receiver
+    b2c_booking_delivery_page.Verify Draft Parcel Receiver When Select Home
     ...    ${Booking_S004['receiver_phone']}
     ...    ${Booking_S004['receiver_name']}
     ...    ${Booking_S004['receiver_address']}
     ...    ${Booking_S004['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S003    Verify Draft Parcel Receiver When Select Home
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button

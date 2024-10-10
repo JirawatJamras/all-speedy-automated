@@ -49,7 +49,6 @@ Resource                    locators/c2c/c2c_landing_page.robot
 Resource                    locators/c2c/c2c_login.robot
 Resource                    locators/c2c/c2c_profile_page.robot
 Resource                    locators/c2c/c2c_login_seven_page.robot
-Resource                    locators/c2c/c2c_tracking_page.robot
 
 Variables                   testdata/feature/c2c/c2c_testdata.yaml
 Variables                   testdata/feature/c2c/allspeedy_c2c_001.yaml

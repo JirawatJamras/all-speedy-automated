@@ -1,6 +1,6 @@
 **** Keywords ***
 Click Menu Seven Store
-    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}     10s
+    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}    timeout=10s
     common.Click when ready    ${c2c_mnu_seven_store_landing_page}
 
 Click Menu Shipping

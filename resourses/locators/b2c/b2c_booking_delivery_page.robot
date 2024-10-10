@@ -35,6 +35,7 @@ ${btn_parcel_select_XL}    //strong[text()= 'XL']/../../../div[@class='ant-card-
 ${btn_parcel_select_XXL}    //strong[text()= 'XXL']/../../../div[@class='ant-card-body']
 ${btn_use_code}    //button//span[text()='ใช้โค้ด']
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
+${btn_choose_store}    //b[text()='{value}']/..
 
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']//div[text()='สร้างพัสดุ']
@@ -69,6 +70,7 @@ ${txt_insure_amount}    //label[@title='จำนวนเงินซื้อ�
 ${txt_cod}    //label[@title='เก็บเงินปลายทาง']
 ${txt_remark}    //label[@title='หมายเหตุ']
 ${txt_selected_code_detail}    //span//strong[text()='คูปองและโค้ดส่วนลดที่เลือก']/../..
+${txt_store_address}    //textarea[@id='create_parcel_form_receiver_address_display']
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
 ${msg_error_name_sender}    //input[@id='create_parcel_form_sender_name']/../../../../div[2]/div/div
@@ -95,9 +97,11 @@ ${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//tex
 ${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่วนลด']
 ${txtbox_cod}    //input[@id='create_parcel_form_codValue']
 ${txtbox_insure_amount}    //label[text()='จำนวนเงินซื้อประกัน']/../..//input[@id='create_parcel_form_insureAmount']
+${txtbox_store_receiver}    //div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input']
 
 ${cbo_postcode_sender}    //div[@title='{value}']
 ${cbo_postcode_receiver}    //div[@title='{value}']
+${cbo_store_receiver}    //div[@title='{value}']
 
 ${value_add_sender_to_favorites}    //div[@id='create_parcel_form_sender_isDefault']
 ${value_add_receiver_to_favorites}    //div[@id='create_parcel_form_receiver_isDefault']
