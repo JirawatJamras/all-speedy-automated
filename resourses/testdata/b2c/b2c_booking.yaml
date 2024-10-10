@@ -6,7 +6,7 @@ Booking:
   text_profile_mail: E-mail
   text_profile_position: ตำแหน่งงาน
   text_title_booking: จองการจัดส่งพัสดุ สาขาหลัก
-  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 9 ตุลาคม 2024 (Version 2)"
+  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 10 ตุลาคม 2024 (Version 2)"
   text_title: สร้างพัสดุ
   text_title_booking_list: รายการบุ๊คกิ้ง 
   text_title_parcel_list: รายการพัสดุ
@@ -137,7 +137,7 @@ Booking_S003:
   discount_amount: '1'
   discount_value: '5.00'
   total_price_amount:  '1'
-  total_price_value:  '43'
+  total_price_value:  '43.00'
 
 
 Booking_S004:
