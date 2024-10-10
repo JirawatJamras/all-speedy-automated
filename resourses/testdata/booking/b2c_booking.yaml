@@ -140,7 +140,6 @@ Booking_S003:
   total_price_amount:  '1'
   total_price_value:  '43.00'
 
-
 Booking_S004:
   parcel_type:  พัสดุทั่วไป
   sender_phone: 0899999999
@@ -198,12 +197,6 @@ Booking_S005:
   total_price_amount:  '1'
   total_price_value:  '200.00'
 
-
-
-
-
-
-
 Booking_S006:
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   receiver_phone: 0890000002
@@ -253,9 +246,6 @@ Booking_S010:
   total_price_amount:  '1'
   total_price_value:  '20.00'
 
-
-
-
 Booking_S013:
   parcel_type:  พัสดุทั่วไป
   sender_phone: 0890000001
@@ -293,7 +283,6 @@ Booking_S013:
   total_price_amount:  '1'
   total_price_value:  '200.00'
 
-
 Booking_S019:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
   sender_phone: 0890000001
@@ -318,6 +307,19 @@ Booking_S019:
 
 Booking_S024:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
+  shipping_origin:  รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name:  Booking CHILLED
+  booking_item: 1 รายการ
+  booking_price:  Nanบาท
+  parcel_size:  S0
+  parcel_package_type:  กล่อง
+  total_price_amount:  '1'
+  total_price_value:  'NaN'
+  
+Booking_S030:
+  text_title_booking: จองการจัดส่งพัสดุ
+  parcel_type:  พัสดุทั่วไป
   sender_phone: 0890000001
   sender_name: สมชาย สายเสมอ
   sender_address: 48/698 
@@ -328,12 +330,40 @@ Booking_S024:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  shipping_origin:  รอบรถเข้ารับพัสดุ
-  store_code:  '15888'
-  booking_name:  Booking CHILLED
-  booking_item: 1 รายการ
-  booking_price:  Nanบาท
-  parcel_size:  S0
-  parcel_package_type:  กล่อง
+  parcel_size:  A4
   total_price_amount:  '1'
-  total_price_value:  'NaN'
+  total_price_value1:  'NaN'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  booking_price: 'NaN'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  price_value: '50.00'
+  total_price_value2:  '50.00'
+  parcel_package_type:  ซอง
+  
+  Booking_S034:
+  text_title_booking: จองการจัดส่งพัสดุ
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store: '01523'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_select_store: เลือกร้าน
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size:  A4
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  booking_price: 'NaN'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  price_value: '20.00'
+  total_price_value2:  '20.00'
+  parcel_package_type:  ซอง
