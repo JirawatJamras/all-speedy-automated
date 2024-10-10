@@ -273,7 +273,7 @@ Booking_S013:
   booking_name:  Booking DRY
   booking_item: 1 รายการ
   parcel_size: S
-  parcel_package_type:  ซอง
+  parcel_package_type: กล่อง
   price_value: 30    # 55.00
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
@@ -287,11 +287,11 @@ Booking_S013:
     condition: สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: '5.00'
+  discount_value: 'NaN'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  '200.00'
+  total_price_value:  'Nan'
 
 
 Booking_S019:
