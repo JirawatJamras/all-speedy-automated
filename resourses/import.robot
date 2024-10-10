@@ -70,14 +70,19 @@ Variables                   testdata/feature/dps/allspeedy_dps_003.yaml
 ######################## REGISTER ########################
 Resource                    ../keywords/pages/register/register_general_customers_page.robot
 Resource                    ../keywords/pages/register/register_business_customers_page.robot
-Resource                    ../keywords/pages/register/register_business_customers_register_page.robot
+Resource                    ../keywords/pages/register/register_business_customers_register_page.robot    #
+Resource                    ../keywords/pages/register/register_business_pre_register.robot
+Resource                    ../keywords/pages/register/register_business_full_register.robot
 
 Resource                    locators/register/register_business_customers_page.robot
 Resource                    locators/register/register_general_customers_page.robot
-Resource                    locators/register/register_business_customers_register_page.robot
+Resource                    locators/register/register_business_customers_register_page.robot    #
+Resource                    locators/register/register_business_pre_register.robot
+Resource                    locators/register/register_business_full_register.robot
 
-Variables                   testdata/feature/register/allspeedy_register_001.yaml
-Variables                   testdata/feature/register/allspeedy_register_004.yaml
+Variables                   testdata/feature/register/allspeedy_register_001.yaml    #
+Variables                   testdata/feature/register/allspeedy_register_004.yaml    #
+Variables                   testdata/register/register.yaml
 
 ######################## SPS ########################
 Resource                    ../keywords/pages/sps/sps_landing_page.robot
