@@ -104,6 +104,8 @@ Booking_S002:
   booking_item: 1 รายการ
   parcel_size:  A4
   parcel_package_type:  ซอง
+  total_price_amount:  '1'
+  total_price_value:  '24.00'    # 50.00
 
 Booking_S003:
   parcel_type:  พัสดุทั่วไป
