@@ -255,7 +255,7 @@ Booking_S010:
 
 
 Booking_S019:
-  parcel_type:  พัสดุควบคุมอุณหภมิ
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
   sender_phone: 0890000001
   sender_name: สมชาย สายเสมอ
   sender_address: 48/698 
@@ -277,7 +277,7 @@ Booking_S019:
   total_price_value:  'NaN'
 
 Booking_S024:
-  parcel_type:  พัสดุควบคุมอุณหภมิ
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
   sender_phone: 0890000001
   sender_name: สมชาย สายเสมอ
   sender_address: 48/698 

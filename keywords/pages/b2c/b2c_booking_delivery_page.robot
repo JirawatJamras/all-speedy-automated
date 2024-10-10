@@ -30,7 +30,7 @@ Select Parcel Type
     [Arguments]    ${parcel_type}
     IF         '${parcel_type}' == 'พัสดุทั่วไป'
         Click General Parcel
-    ELSE IF    '${parcel_type}' == 'พัสดุควบคุมอุณหภมิ'
+    ELSE IF    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'
         Click Temperature Controlled Parcel
     END
 
