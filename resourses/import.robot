@@ -72,12 +72,16 @@ Resource                    ../keywords/pages/register/register_business_custome
 Resource                    ../keywords/pages/register/register_business_customers_register_page.robot    #
 Resource                    ../keywords/pages/register/register_business_pre_register.robot
 Resource                    ../keywords/pages/register/register_business_full_register.robot
+Resource                    ../keywords/pages/register/register_business_profiles.robot
+Resource                    ../keywords/pages/register/register_business_profile_business.robot
 
 Resource                    locators/register/register_business_customers_page.robot
 Resource                    locators/register/register_general_customers_page.robot
 Resource                    locators/register/register_business_customers_register_page.robot    #
 Resource                    locators/register/register_business_pre_register.robot
 Resource                    locators/register/register_business_full_register.robot
+Resource                    locators/register/register_business_profiles.robot
+Resource                    locators/register/register_business_profile_business.robot
 
 Variables                   testdata/feature/register/allspeedy_register_001.yaml    #
 Variables                   testdata/feature/register/allspeedy_register_004.yaml    #
