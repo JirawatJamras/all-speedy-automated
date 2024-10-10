@@ -192,8 +192,8 @@ Booking_S005:
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
   discount_value: '5.00'
-  cod_fee_amount: 1
-  cod_fee_value: 150.00
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
   total_price_amount:  '1'
   total_price_value:  '200.00'
 

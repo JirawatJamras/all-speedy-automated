@@ -3,7 +3,7 @@ Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-# Test Teardown     Close Browser
+Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S005
@@ -258,7 +258,6 @@ Booking_S005
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    Booking_S005    Verify Edit Booking List Popup
 
-    ################################################### Inprogress ####################################################
     Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S005['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S005['store_code']}
@@ -329,4 +328,4 @@ Booking_S005
     common.Verify Capture Screenshot    Booking_S005    Verify Print Screen
 
 
-    # [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
+    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
