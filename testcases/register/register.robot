@@ -172,37 +172,134 @@ Verify Company information
     #Inprogress
 
 *** Test Cases ***
+Register_S001
+    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ   
+    [Tags]    Register    UAT
+    Log    Step No.1 กรอกข้อมูล
+    #Step1 เข้าสู่ระบบ
+    #Step2 Click tab ลูกค้าธุรกิจ
+    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    #Step4 กรอกข้อมูลลงทะเบียน
+    #Expected
+    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    #Step Click btn กดปุ่มลงทะเบียน
 
+Register_S002
+    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
+    [Tags]    Register    UAT
+    Log    Step No.1 กรอกข้อมูล
+    #Step1 เข้าสู่ระบบ
+    #Step2 Click tab ลูกค้าธุรกิจ
+    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    #Step4 กรอกข้อมูลลงทะเบียน
+    #Expected
+    Log    Step No.2 กดปุ่ม "ลงทะเบียน"
+    #Step Click btn ลงทะเบียน
+
+Register_S003
+    [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
+    [Tags]    Register    UAT
+    Log    Step No.1 กรอกข้อมูล
+    #Step1 เข้าสู่ระบบ
+    #Step2 Click tab ลูกค้าธุรกิจ
+    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    #Step4 กรอกข้อมูลลงทะเบียน
+    #Expected
+    Log    Step No.2 ยกเลิกลงทะเบียน
+    #Step Click btn ยกเลิก
+    Log    Step No.3 ตกลงยกเลิกลงทะเบียน
+    #Step Click btn ตกลง
+
+Register_S004
+    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
+    [Tags]    Register    UAT
+    Log    Step No.1 กรอกข้อมูล
+    #Step1 เข้าสู่ระบบ
+    #Step2 Click tab ลูกค้าธุรกิจ
+    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    #Step4 กรอกข้อมูลลงทะเบียน
+    #Expected
+    Log    Step No.2 กดปุ่ม "ลงทะเบียน"
+    #Step Click btn ลงทะเบียน
+
+Register_S005
+    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
+    [Tags]    Register    UAT
+    Log    Step No.1 กรอกข้อมูล
+    #Step1 เข้าสู่ระบบ
+    #Step2 Click tab ลูกค้าธุรกิจ
+    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    #Step4 กรอกข้อมูลลงทะเบียน
+    #Expected
+    Log    Step No.2 กดปุ่ม "ลงทะเบียน"
+    #Step Click btn ลงทะเบียน
+
+Register_S006
+    [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
+    [Tags]    Register    UAT
+    Log    Step No.1 กรอกข้อมูล
+    #Step1 เข้าสู่ระบบ
+    #Step2 Click tab ลูกค้าธุรกิจ
+    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    #Step4 กรอกข้อมูลลงทะเบียน
+    #Expected
+    Log    Step No.2 ยกเลิกลงทะเบียน
+    #Step Click btn ยกเลิก
+    Log    Step No.3 ตกลงยกเลิกลงทะเบียน
+    #Step Click btn ตกลง
 
 Register_SC014
-    #Register_014 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
-    #Step 1 Open Url
+    [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
+    Log    Step No.1    ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
     common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
     #Expected
     Verify Company information
-    #Step 2 Click ปุ่ม "ถัดไป"
-    
-    #Step 3 เปิดใช้งานพัสดุทั่วไป
-    
-    #Step 4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
-    
-    #Step 5 กดปุ่ม "ยกเลิก"
+    Log    Step No.2 Click btn "ถัดไป"
+    #Step1 Click tab พัสดุทั่วไป
+    #Expected
+    #Step2 Click tab พัสดุควบคุมอุณหภูมิ
+    #Expected
+    #Step3 Click tab Return Business
+    #Expected
+    Log    Step No.3 เปิดใช้งานพัสดุทั่วไป
+    #Expected
+    Log    Step No.4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
+    #Expected
+    Log    Step No.5 กดปุ่ม "ยกเลิก"
+    #Expected
+    Log    Step No.6 กดปุ่ม "ตกลง" ที่ Popup
+    #Expected
+    Log    Step No.7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
+    #Expected
+    Log    Step No.8 กดปุ่ม "ถัดไป"
+    #Expected
+    Log    Step No.9 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
+    #Step1 เปิดใช้งานพัสดุควบคุมอุณหภูมิ
+    #Expected
+    #Step2 เปิดใช้งาน Return Business
+    #Expected
+    Log    Step No.10 กดปุ่ม "ถัดไป"
+    #Expected
+    Log    Step No.11 ระบุข้อมูลผู้ติดต่อ และ ข้อมูลธนาคาร
+    #Step1 ระบุข้อมูลผู้ติดต่อ
+    #Expected
+    #Step2 ระบุข้อมูลธนาคาร
+    #Expected   
+    Log    Step No.12 กดปุ่ม "ถัดไป"
+    #Expected
+    Log    Step No.13 อัพโหลดเอกสารประกอบ
+    #Expected
+    Log    Step No.14 กดปุ่ม "ลงทะเบียน"
+    #Expected
+    Log    Step No.15 กด Link Full Register เดิม ที่ได้รับทาง E-mail
+    #Expected 
+    Log    Step No.16 กดปุ่ม "หมายเหตุการแก้ไข"
+    #Expected
+    Log    Step No.17 กดปุ่ม "x"
+    #Expected
 
-    #Step 6 กดปุ่ม "ตกลง" ที่ Popup
-
-    #Step 7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
-
-    #Step 8 กดปุ่ม "ถัดไป"
-
-    #Step 9 กดแท็บ "พัสดุควบคุมอุณหภูมิ" and กดแท็บ "Return Business"
-
-    #Step 10 กดปุ่ม "ถัดไป"
-
-    #Step 11 ระบุข้อมูลผู้ติดต่อ
-
-    #Step 12 กดปุ่ม "ถัดไป"
 Register_SC023
-    #Register_023 Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
+    [Documentation]    Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -215,7 +312,7 @@ Register_SC024
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
-    #Register_024 Customer : จัดการผู้ใช้งาน Super User
+    [Documentation]    Customer : จัดการผู้ใช้งาน Super User
     #Step 1
     Click Profile Icon
     Click Profile Business
@@ -236,14 +333,14 @@ Register_SC024
     #Step 7 ไม่มีปุ่มยกเลิก
     #Step 8 ไม่มีปุ่มย้อนกลับ
 
-E2E Register SC025
+Register_SC025
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_025 Customer : จัดการผู้ใช้งาน User
+    [Documentation]    Customer : จัดการผู้ใช้งาน User
     #Step 1
     Click Profile Icon
     Click Profile Business
@@ -264,14 +361,14 @@ E2E Register SC025
     #Step 7 ไม่มีปุ่ม "ยกเลิก"
     #Step 8 ไม่มีปุ่ม "ย้อนกลับ"
 
-E2E Register SC026
+Register_SC026
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_026 Customer : จัดการสาขา
+    [Documentation]    Customer : จัดการสาขา
     #Step 1
     Click Profile Icon
     Click Profile Business
@@ -281,14 +378,14 @@ E2E Register SC026
     #Step 3 ไม่มี Dropdown
     #Step 4 ไม่มี Dropdown ให้เลือก
 
-E2E Register SC027
+Register_SC027
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_027 Customer : คำขอเพิ่ม Company Admin
+    [Documentation]    Customer : คำขอเพิ่ม Company Admin
     #Step 1 ไม่แสดงหน้า คำขอ Company Admin 
     Click Profile Icon
     Click Profile Business
@@ -303,14 +400,14 @@ E2E Register SC027
     #Step 7
     #Step 8
 
-E2E Register SC028
+Register_SC028
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_028 Customer : คำขอเพิ่ม Company Admin
+    [Documentation]    Customer : คำขอเพิ่ม Company Admin
     #Step 1 ไม่มีปุ่ม "ดำเนินการ"
     Click Profile Icon
     Click Profile Business
@@ -323,14 +420,14 @@ E2E Register SC028
     #Step 7
     #Step 8
 
-E2E Register SC029
+Register_SC029
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_029 Customer : คำขอแก้ไขข้อมูลที่อยู่บริษัท
+    [Documentation]    Customer : คำขอแก้ไขข้อมูลที่อยู่บริษัท
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลที่อยู่บริษัท
     Click Profile Icon
     Click Profile Business
@@ -345,14 +442,14 @@ E2E Register SC029
     #Step 7
     #Step 8 
 
-E2E Register SC030
+Register_SC030
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_030 Customer : คำขอแก้ไขข้อมูลผู้ติดต่อ
+    [Documentation]    Customer : คำขอแก้ไขข้อมูลผู้ติดต่อ
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลผู้ติดต่อ
     Click Profile Icon
     Click Profile Business
@@ -367,14 +464,14 @@ E2E Register SC030
     #Step 7
     #Step 8 
 
-E2E Register SC031
+Register_SC031
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_031 Customer : คำขอแก้ไขข้อมูลธนาคาร
+    [Documentation]    Customer : คำขอแก้ไขข้อมูลธนาคาร
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลธนาคาร
     Click Profile Icon
     Click Profile Business
@@ -389,14 +486,14 @@ E2E Register SC031
     #Step 7
     #Step 8   
 
-E2E Register SC032
+Register_SC032
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_032 Customer : คำขอแก้ไขข้อมูลบริการ
+    [Documentation]    Customer : คำขอแก้ไขข้อมูลบริการ
     #Step 1 ไม่แสดงหน้า คำขอแก้ไขข้อมูลบริการ
     Click Profile Icon
     Click Profile Business
@@ -411,14 +508,14 @@ E2E Register SC032
     #Step 7
     #Step 8           
 
-E2E Register SC047
+Register_SC047
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Register_047 Customer : ตรวจสอบข้อมูลบริษัท
+    [Documentation]    Customer : ตรวจสอบข้อมูลบริษัท
     #Step 1 Company Admin : กดปุ่ม "โปรไฟล์บริษัท"
     Click Profile Icon
     Click Profile Business
@@ -446,9 +543,9 @@ E2E Register SC047
     #Step 12 กดแท็บ "ใบแจ้งหนี้"
     Click Menu Invoice
 
-E2E Register SC048
+Register_SC048
     common.Open URL    ${B2C_UAT_URL}
-    #Register_048 Customer : แก้ไขโปรไฟล์ของฉัน
+    [Documentation]    Customer : แก้ไขโปรไฟล์ของฉัน
     #Step 1 ชื่อ User (Company Admin) >โปรของฉัน
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com

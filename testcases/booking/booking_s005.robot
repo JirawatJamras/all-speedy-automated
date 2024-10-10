@@ -101,12 +101,12 @@ Booking_S005
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Draft Paecel Receiver
+    b2c_booking_delivery_page.Verify Draft Parcel Receiver When Select Home
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S005    Verify Draft Paecel Receiver
+    common.Verify Capture Screenshot    Booking_S005    Verify Draft Parcel Receiver When Select Home
 
     Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S005['receiver_phone']}

@@ -1,5 +1,5 @@
 *** Variables ***
-${c2c_mnu_seven_store_landing_page}    //span[text()='ร้านเซเว่น']
+${c2c_mnu_seven_store_landing_page}    //span[text()='ร้านเซเว่น']/..
 
 ${c2c_tab_service_landing_page}        //div[@class="submenu-box"]//h3//div[text()='บริการ']
 

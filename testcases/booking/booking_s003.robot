@@ -324,6 +324,7 @@ Booking_S003
     ...    ${Booking.label['parcel_insure']}
     ...    ${Booking_S003['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S003    Verify Parcel Label
+    
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected

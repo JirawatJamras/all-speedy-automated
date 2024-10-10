@@ -25,15 +25,11 @@ b2c_login_user_01:
 ######################## C2C ########################
 
 c2c_login_user_01:
-  username: out-sumitrawic@gosoft.co.th
-  password: 33333333
+  username: chayathit2593@gmail.com
+  password: test1234
 
 c2c_login_user_02:
-  username: test1234@mailinator.com
-  password: Test1234*
-
-c2c_login_user_03:
-  username: testregister@mailinator.com
-  password: Test1234*
+  username: ik.watcharakorn.toei@gmail.com
+  password: 0910408910
 
   ######################## SPS ########################

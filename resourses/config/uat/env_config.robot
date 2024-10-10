@@ -14,7 +14,7 @@ ${PMS_UAT_URL}                          https://pms-uat.allspeedy.co.th/
 ####################### B2C UAT DATA #######################
 ${B2C_UAT_URL}                          https://www-uat.allspeedy.co.th/auth/login
 ${CPS_API_UAT_URL}                      https://cps-api-uat.allspeedy.co.th/v1
-${C2C_UAT_URL}                          https://www-uat.allspeedy.co.th/auth/login
+${C2C_UAT_URL}                          https://web-stg.7eleven.co.th/
 
 ####################### SPS UAT DATA #######################
 ${REMOTE_URL}                           http://127.0.0.1:4723/wd/hub
