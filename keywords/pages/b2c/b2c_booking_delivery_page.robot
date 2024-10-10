@@ -88,28 +88,28 @@ Verify Create Parcel Page Sender Step
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
-    Should Be Equal    ${actual_text_title}    ${title}
     ${actual_text_parcel_sender_information}=    Get Text    ${txt_parcel_sender_information}
-    Should Be Equal    ${actual_text_parcel_sender_information}    ${parcel_sender_information}
     ${actual_text_phone}=    Get Text    ${txt_phone_sender}
-    Should Be Equal    ${actual_text_phone}    ${phone_sender}
     ${actual_text_name_sender}=    Get Text    ${txt_name_sender}
-    Should Be Equal    ${actual_text_name_sender}    ${name_sender}
     ${actual_text_address}=    Get Text    ${txt_address_sender}
-    Should Be Equal    ${actual_text_address}    ${address_sender}
     ${actual_text_postcode}=    Get Text    ${txt_postcode_sender}
+    Should Be Equal    ${actual_text_title}    ${title}
+    Should Be Equal    ${actual_text_parcel_sender_information}    ${parcel_sender_information}
+    Should Be Equal    ${actual_text_phone}    ${phone_sender}
+    Should Be Equal    ${actual_text_name_sender}    ${name_sender}
+    Should Be Equal    ${actual_text_address}    ${address_sender}
     Should Be Equal    ${actual_text_postcode}    ${postcode_sender}
 
 Verify Draft Parcel Sender
     [Arguments]   ${phone_sender}    ${name_sender}    ${address_sender}    ${full_postcode_sender}  
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
-    Should Be Equal    ${actual_text_phone_sender}    ${phone_sender}
     ${actual_text_name_sender}=    Get Value    ${txtbox_name_sender}
-    Should Be Equal    ${actual_text_name_sender}    ${name_sender}
     ${actual_text_address_sender}=    Get Value    ${txtbox_address_sender}
-    Should Be Equal    ${actual_text_address_sender}    ${address_sender}
     ${actual_text_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
+    Should Be Equal    ${actual_text_phone_sender}    ${phone_sender}
+    Should Be Equal    ${actual_text_name_sender}    ${name_sender}
+    Should Be Equal    ${actual_text_address_sender}    ${address_sender}
     Should Be Equal    ${actual_text_full_postcode_sender}    ${full_postcode_sender}
 
 Verify Draft Paecel Receiver
@@ -129,18 +129,18 @@ Verify Create Parcel Page Receiver Step
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
-    Should Be Equal    ${actual_text_title}    ${title}
     ${actual_text_parcel_receiver_information}=    Get Text    ${txt_parcel_receiver_information}
-    Should Be Equal    ${actual_text_parcel_receiver_information}    ${parcel_receiver_information}
     ${actual_text_phone}=    Get Text    ${txt_phone_receiver}
-    Should Be Equal    ${actual_text_phone}    ${phone_receiver}
     ${actual_text_name}=    Get Text    ${txt_name_receiver}
-    Should Be Equal    ${actual_text_name}    ${name_receiver}
     ${actual_text_name}=    Get Text    ${txt_location_receiver}
-    Should Be Equal    ${actual_text_name}    ${location_receiver}
     ${actual_text_address}=    Get Text    ${txt_address_receiver}
-    Should Be Equal    ${actual_text_address}    ${address_receiver}
     ${actual_text_postcode}=    Get Text    ${txt_postcode_receiver}
+    Should Be Equal    ${actual_text_title}    ${title}
+    Should Be Equal    ${actual_text_parcel_receiver_information}    ${parcel_receiver_information}
+    Should Be Equal    ${actual_text_phone}    ${phone_receiver}
+    Should Be Equal    ${actual_text_name}    ${name_receiver}
+    Should Be Equal    ${actual_text_name}    ${location_receiver}
+    Should Be Equal    ${actual_text_address}    ${address_receiver}
     Should Be Equal    ${actual_text_postcode}    ${postcode_receiver}
 
 Click Close Paecel Page
@@ -221,12 +221,12 @@ Verify Choose Receiver From Favorites
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
     Wait Until Element Is Visible    ${tab_send_to_home_verify}    timeout=30s
     ${phone_text}=    Get Value    ${txtbox_phone_receiver}
-    Should Be Equal    ${phone_text}    ${receiver_phone}    
     ${name_text}=    Get Value    ${txtbox_name_receiver}
-    Should Be Equal   ${name_text}    ${receiver_name}
     ${address_text}=    Get Value    ${txtbox_address_receiver}
-    Should Be Equal    ${address_text}    ${receiver_address}
     ${postcode_text}=    Get Text    ${txtbox_postcode_receiver_select_text}
+    Should Be Equal    ${phone_text}    ${receiver_phone}    
+    Should Be Equal   ${name_text}    ${receiver_name}
+    Should Be Equal    ${address_text}    ${receiver_address}
     Should Be Equal    ${postcode_text}    ${receiver_postcode}
 
 Click Favorites Default
@@ -253,8 +253,8 @@ Input Text Exceeds 100 Characters
 Verify Popup Favorites Sender 
     Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=30s
     ${title_text}=    Get Text    ${favorites_title_text}
-    Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_title_text']}
     ${default_text}=    Get Text    ${favorites_default_text}
+    Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_title_text']}
     Should Be Equal    ${default_text}    ${B2C_AddBooking_003_002['favorites_default_text']}
 
 Input Favorites TextBox Nomal Letters Less Than 100 Characters
@@ -291,12 +291,12 @@ Click Cancel Favorites List
 Verify Choose From Favorites
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
-    Should Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_5['verify_phone_sender']}    
     ${name_text}=    Get Value    ${name_sender_txtbox}
-    Should Be Equal   ${name_text}    ${b2c_addbooking_003_ID_5['verify_name_sender']}
     ${address_text}=    Get Value    ${address_sender_txtbox}
-    Should Be Equal    ${address_text}    ${b2c_addbooking_003_ID_5['verify_address_sender']}
     ${postcode_text}=    Get Text    ${postcode_sender_text_in_txtbox}
+    Should Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_5['verify_phone_sender']}    
+    Should Be Equal   ${name_text}    ${b2c_addbooking_003_ID_5['verify_name_sender']}
+    Should Be Equal    ${address_text}    ${b2c_addbooking_003_ID_5['verify_address_sender']}
     Should Be Equal    ${postcode_text}    ${b2c_addbooking_003_ID_5['verify_postcode_sender']}
 
 Verify Not Choose From Favorites
@@ -474,24 +474,18 @@ Verify Created Booking On Booking Delivery Page
     [Arguments]    ${booking_id}    ${booking_time}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}    
     ${booking_id_replace}=    Replace String    ${txt_booking_id_in_list}    {value}    ${booking_id}
     Wait Until Element Is Visible    ${booking_id_replace}    timeout=30s
-
     ${booking_status_replace}=    Replace String    ${txt_booking_status_in_list}    {value}    ${booking_id}
     ${txt_status}=    Get Text    ${booking_status_replace}
     Should Be Equal    ${txt_status}    ${status_booking}
-
     Verify Booking Format And Value    ${booking_id_replace}    ${booking_id}
-
     ${booking_name}=    Replace String    ${txt_booking_name_in_list}    {value}    ${booking_id}
     ${txt_name}=    Get Text    ${booking_name}
     Should Be Equal    ${txt_name}    ${name_booking}
-
     ${booking_date}=    Replace String    ${txt_booking_date_in_list}    {value}    ${booking_id}
     Verify Date And Time With Time Distortion   ${booking_date}    ${booking_time}
-
     ${booking_item}=    Replace String    ${txt_booking_item_in_list}    {value}    ${booking_id}
     ${txt_item}=    Get Text    ${booking_item} 
     Should Be Equal    ${txt_item}    ${item_booking}
-
     ${booking_price}=    Replace String    ${txt_booking_price_in_list}    {value}    ${booking_id}
     ${txt_price}=    Get Text    ${booking_price}
     Should Be Equal    ${txt_price}    ${price_booking}
@@ -518,8 +512,8 @@ Select Parcel Size
 Verify Promotion Detail
     [Arguments]    ${selected_coupon_and_code}    ${my_coupon_and_code}
     ${actual_selected_coupon_and_code}=    Get Text    ${txt_selected_coupon_and_code}
-    Should Be Equal    ${selected_coupon_and_code}    ${actual_selected_coupon_and_code}
     ${actual_my_coupon_and_code}=    Get Text    ${txt_my_coupon_and_code}
+    Should Be Equal    ${selected_coupon_and_code}    ${actual_selected_coupon_and_code}
     Should Be Equal    ${my_coupon_and_code}    ${actual_my_coupon_and_code}
 
 Click Parcel Booking Button
@@ -528,45 +522,35 @@ Click Parcel Booking Button
     
 Verify Create Parcel Page Detail Step
     [Arguments]    ${detail_A4}    ${detail_A3}    ${detail_XS}    ${detail_S}    ${detail_M}    ${detail_L}    ${detail_XL}    ${detail_XXL}    ${insure_amount}    ${cod}    ${remark}
-    
     ${actual_detail_A4}=    Get Text    ${btn_parcel_select_A4} 
     ${detail_A4_replace}=  Replace String   ${actual_detail_A4}   \n   ${SPACE}
-    Should Be Equal    ${detail_A4_replace}    ${detail_A4}
-    
     ${actual_detail_A3}=    Get Text    ${btn_parcel_select_A3} 
     ${detail_A3_replace}=  Replace String   ${actual_detail_A3}   \n   ${SPACE}
-    Should Be Equal    ${detail_A3_replace}    ${detail_A3}
-
     ${actual_detail_XS}=    Get Text    ${btn_parcel_select_XS} 
     ${detail_XS_replace}=  Replace String   ${actual_detail_XS}   \n   ${SPACE}
-    Should Be Equal    ${detail_XS_replace}    ${detail_XS}
-
     ${actual_detail_S}=    Get Text    ${btn_parcel_select_S} 
     ${detail_S_replace}=  Replace String   ${actual_detail_S}   \n   ${SPACE}
-    Should Be Equal    ${detail_S_replace}    ${detail_S}
-
     ${actual_detail_M}=    Get Text    ${btn_parcel_select_M} 
     ${detail_M_replace}=  Replace String   ${actual_detail_M}   \n   ${SPACE}
-    Should Be Equal    ${detail_M_replace}    ${detail_M}
-
     ${actual_detail_L}=    Get Text    ${btn_parcel_select_L} 
     ${detail_L_replace}=  Replace String   ${actual_detail_L}   \n   ${SPACE}
-    Should Be Equal    ${detail_L_replace}    ${detail_L}
-
     ${actual_detail_XL}=    Get Text    ${btn_parcel_select_XL} 
     ${detail_XL_replace}=  Replace String   ${actual_detail_XL}   \n   ${SPACE}
-    Should Be Equal    ${detail_XL_replace}    ${detail_XL}
-
     ${actual_detail_XXL}=    Get Text    ${btn_parcel_select_XXL} 
     ${detail_XXL_replace}=  Replace String   ${actual_detail_XXL}   \n   ${SPACE}
-    Should Be Equal    ${detail_XXL_replace}    ${detail_XXL}
-
-
     ${actual_insure_amount}=    Get Text    ${txt_insure_amount}
-    Should Be Equal    ${actual_insure_amount}    ${insure_amount}
     ${actual_cod}=    Get Text    ${txt_cod} 
-    Should Be Equal    ${actual_cod}    ${cod}
     ${actual_remark}=    Get Text    ${txt_remark}
+    Should Be Equal    ${detail_A4_replace}    ${detail_A4}
+    Should Be Equal    ${detail_A3_replace}    ${detail_A3}
+    Should Be Equal    ${detail_XS_replace}    ${detail_XS}
+    Should Be Equal    ${detail_S_replace}    ${detail_S}
+    Should Be Equal    ${detail_M_replace}    ${detail_M}
+    Should Be Equal    ${detail_L_replace}    ${detail_L}
+    Should Be Equal    ${detail_XL_replace}    ${detail_XL}
+    Should Be Equal    ${detail_XXL_replace}    ${detail_XXL}
+    Should Be Equal    ${actual_cod}    ${cod}
+    Should Be Equal    ${actual_insure_amount}    ${insure_amount}
     Should Be Equal    ${actual_remark}    ${remark}
 
 Input Parcel Remark
