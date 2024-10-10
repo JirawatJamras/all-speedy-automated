@@ -64,6 +64,7 @@ Booking:
     buy_insurance: '-'
     cod_value: '-'
     parcel_detail_remark: '-'
+    store_code: '-'
   text_default:
     discount_amount: '0'
     discount_value: '0.00'
