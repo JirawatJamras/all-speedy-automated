@@ -71,7 +71,7 @@ Booking_S010
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S010['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S010['receiver_name']}
-    # แก้ step ให้เป็นส่ง 7-11
+    ################ แก้ step ให้เป็นส่ง 7-11
     # b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
     # b2c_booking_delivery_page.Input Address Receiver    ${Booking_S010['receiver_address']}
     # b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S010['receiver_postcode_5_digits']}

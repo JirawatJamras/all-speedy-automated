@@ -502,7 +502,7 @@ Verify Created Booking On Booking Delivery Page
     ${txt_price}=    Get Text    ${booking_price}
     Should Be Equal    ${txt_price}    ${price_booking}
 
-Verify Booking Format And Value 
+Verify Booking Format And Value
     [Arguments]    ${locator}    ${value}
     ${txt_id}=    Get Text    ${locator}
     ${length}=    Get Length    ${txt_id}

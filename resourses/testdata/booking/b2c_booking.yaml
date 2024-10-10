@@ -98,9 +98,9 @@ Booking_S002:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
+  booking_name:  Booking DRY
   booking_item: 1 รายการ
   parcel_size:  A4
   parcel_package_type:  ซอง
@@ -119,9 +119,9 @@ Booking_S003:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
+  booking_name:  Booking DRY
   booking_item: 1 รายการ
   parcel_size:  A3
   parcel_package_type:  ซอง
@@ -172,9 +172,9 @@ Booking_S005:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  booking_name:  Booking DRY
   shipping_origin: เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
+  booking_name:  Booking DRY
   booking_item: 1 รายการ
   parcel_size: S
   parcel_package_type:  ซอง
@@ -212,10 +212,10 @@ Booking_S006:
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   parcel_size:  M
   buy_insurance:  2,500
-  booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
   booking_item: 1 รายการ
+  booking_name:  Booking DRY
   booking_price:  0.00บาท
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
@@ -243,16 +243,16 @@ Booking_S010:
   # receiver_address: 47 หมู่ 4
   # receiver_postcode_5_digits: '86110'
   # receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
+  booking_name:  Booking DRY
   booking_item: 1 รายการ
   parcel_size:  A4
   parcel_package_type:  ซอง
 
 
 Booking_S019:
-  parcel_type:  พัสดุทั่วไป
+  parcel_type:  พัสดุควบคุมอุณหภมิ
   sender_phone: 0890000001
   sender_name: สมชาย สายเสมอ
   sender_address: 48/698 
@@ -263,11 +263,12 @@ Booking_S019:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  booking_name:  Booking DRY
-  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  shipping_origin:  รอบรถเข้ารับพัสดุ
   store_code:  '15888'
+  booking_name:  Booking CHILLED
   booking_item: 1 รายการ
-  parcel_size:  A4
-  parcel_package_type:  ซอง
+  booking_price:  Nanบาท
+  parcel_size:  S0
+  parcel_package_type:  กล่อง
   total_price_amount:  '1'
-  total_price_value:  '24.00'    # 50.00
+  total_price_value:  'NaN'

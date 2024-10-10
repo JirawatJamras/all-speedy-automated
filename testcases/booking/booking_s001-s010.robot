@@ -282,6 +282,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Edit Booking List Popup  
 
     Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
+    # เลือกร้าน 7-11 ต้นทาง
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S002['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S002['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
