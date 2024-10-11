@@ -287,8 +287,6 @@ Booking_S012:
   total_price_amount:  '1'
   total_price_value:  '200.00'
 
-
-
 Booking_S013:
   parcel_type:  พัสดุทั่วไป
   sender_phone: 0890000001
@@ -348,9 +346,8 @@ Booking_S019:
   total_price_amount:  '1'
   total_price_value:  'NaN'
 
-
 Booking_S021:
-  parcel_type:  พัสดุควบคุมอุณหภมิ
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
   sender_phone: 0899999999
   sender_name: สมชาย สายเสมอ
   sender_address: 48/698 
@@ -378,6 +375,43 @@ Booking_S021:
   total_price_amount:  '1'
   total_price_value:  '400.00'
 
+Booking_S022:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin: เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size: S
+  parcel_package_type: กล่อง
+  price_value: 30    # 55.00
+  parcel_cod: 5000
+  parcel_cod_verify: 5,000.00
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value: 'NaN'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value:  'Nan'
+
 Booking_S024:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
   shipping_origin:  รอบรถเข้ารับพัสดุ
@@ -390,9 +424,8 @@ Booking_S024:
   total_price_amount:  '1'
   total_price_value:  'NaN'
   
-
 Booking_S026:
-  parcel_type:  พัสดุควบคุมอุณหภมิ
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
   sender_phone: 0899999999
   sender_name: สมชาย สายเสมอ
   sender_address: 48/698 
@@ -477,7 +510,7 @@ Booking_S030:
   # total_price_amount:  '1'
   # total_price_value:  '43.00'
   
-  Booking_S034:
+Booking_S034:
   text_title_booking: จองการจัดส่งพัสดุ
   parcel_type:  พัสดุทั่วไป
   sender_phone: 0890000001
