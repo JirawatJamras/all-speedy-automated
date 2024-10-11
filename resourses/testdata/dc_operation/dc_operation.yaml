@@ -26,3 +26,22 @@ dc_operaion:
   Check_Receiving_Cycle_Tab:
     all_parcels_received:  รายการเข้ารับพัสดุทั้งหมด
     inventory_confirm_list:  รายการรอคลังยืนยัน
+  button_export:  Export File
+  button_approve: approve
+  parcel_pickup_details:  รายละเอียดรอบเข้ารับพัสดุ
+  vehicle_type:  ประเภทที่ใช้
+
+dc_operaion_002:
+  receiving_cycle:
+    company_name:  บริษัท ไอดีซี พรีเมียร์ จำกัด 
+    branch:  สาขาหลัก
+    company_address:  200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
+    sub_district:  ปากเกร็ด
+    district:  ปากเกร็ด  #บางเขน เมืองนนทบุรี
+    province:  นนทบุรี 
+    postcode:  '11120'  #'11000'
+    receiving_time:  '09:00'
+    receiving_type:  รอบพิเศษ
+    courier: CPALL
+    number_of_parcel:  '0'  #'10'
+    status: รอยืนยัน

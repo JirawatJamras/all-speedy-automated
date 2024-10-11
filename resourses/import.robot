@@ -35,6 +35,7 @@ Variables                   testdata/feature/b2c/b2c_managemybooking_007.yaml
 Variables                   testdata/feature/b2c/b2c_addpickuptime_008.yaml
 Variables                   testdata/feature/b2c/b2c_addfavoriteitem_010.yaml
 Variables                   testdata/booking/b2c_booking.yaml
+Variables                   testdata/booking/call_car_pick_up.yaml
 
 
 ######################## C2C ########################

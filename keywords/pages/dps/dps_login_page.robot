@@ -1,12 +1,12 @@
 *** Keywords ***
 Input Email
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    ${dps_txtbox_username}
+    Wait Until Element Is Visible    ${dps_txtbox_username}    timeout=${DEFAULT_TIMEOUT}
     Input Text                       ${dps_txtbox_username}    ${value}
 
 Input Password
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    ${dps_txtbox_password}
+    Wait Until Element Is Visible    ${dps_txtbox_password}    timeout=${DEFAULT_TIMEOUT}
     Input Text                       ${dps_txtbox_password}    ${value}
 
 Click Log On Button
@@ -14,11 +14,11 @@ Click Log On Button
 
 Verify Error Message
     [Arguments]    ${expected_error}
-    Wait Until Element Is Visible    ${dps_error_message}    timeout=10s
+    Wait Until Element Is Visible    ${dps_error_message}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${dps_error_message}    ${expected_error}
     
 
 Verify Menu Displayed
     [Arguments]    ${menu_item}
-    Wait Until Element Is Visible    ${dps_txthome}    timeout=10s
+    Wait Until Element Is Visible    ${dps_txthome}    timeout=${DEFAULT_TIMEOUT}
     Element Should Be Visible    ${dps_txthome}    ${menu_item}

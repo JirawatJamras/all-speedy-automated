@@ -13,4 +13,5 @@ ${dps_txt_page_title}    //div[@class='ant-card-head-title']//strong[text()='{va
 ${dps_txt_role_user}    /../..//strong[text()='{value}']
 ${dps_btn_dropdown_select_role}    //span[@aria-label='down-circle']
 ${dps_btn_role}    //li[@role='menuitem']//button[text()='{value}']
+${dps_tab_name}    //div[@role='tab' and text()='{value}']
 ${dps_img_icon_user}    //span[@class='anticon anticon-user']

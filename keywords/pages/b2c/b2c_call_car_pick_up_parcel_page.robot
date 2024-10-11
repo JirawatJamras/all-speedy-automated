@@ -1,4 +1,10 @@
 *** Keywords ***
+Verify Call Car Pick Up Page
+    [Arguments]    ${title}
+    ${b2c_txt_call_pickup_parcel_pickup_page}=  Replace String   ${b2c_txt_call_pickup_parcel_pickup_page}   {value}   ${title}
+    Sleep    5s
+    Wait Until Element Is Visible    ${b2c_txt_call_pickup_parcel_pickup_page}    timeout=${DEFAULT_TIMEOUT}
+
 Click Add Button
     FOR    ${i}    IN RANGE    0    5
         common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}

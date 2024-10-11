@@ -6,25 +6,42 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Test Cases ***
-#### ระบบเปลี่ยนเวลา cutoff ของรอบรถ 17.00 => 22.30 ####
-#### comment code ในส่วนของการยืนยันรอบรถใน dps ####
 DC_Operation_002  
     [Tags]    DC_Operation    UAT
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    common.Verify Capture Screenshot    DC_Operation_002    Verify Login Page
 
     Log    Step No.2 เข้าสู่ระบบลูกค้าธุรกิจ
-    register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
+    b2c_home_page.Verify My Profile Page
+    ...    ${Booking['text_company_profile']}
+    ...    ${Booking['text_profile']}
+    ...    ${Booking['text_profile_name']}
+    ...    ${Booking['text_profile_phone']}
+    ...    ${Booking['text_profile_mail']}
+    ...    ${Booking['text_profile_position']}
+    ...    ${Booking_S001['sir_name']}
+    ...    ${Booking_S001['company_name']}
+    ...    ${Booking_S001['name']}
+    ...    ${Booking_S001['phone']}
+    ...    ${Booking_S001['email']}
+    ...    ${Booking_S001['position']}
+    common.Verify Capture Screenshot    DC_Operation_002   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Verify Call Car Pick Up Page    ${call_car_pick_up['text_call_car_pick_up']}
+    common.Verify Capture Screenshot    DC_Operation_002   Verify Call Car Pick Up Page
 
     Log    Step No.4 คลิกปุ่ม +เพิ่ม
     b2c_call_car_pick_up_parcel_page.Click Add Button
+    b2c_call_car_pick_up_parcel_page.Verify Popup Parcel Pickup Schedule
+    common.Verify Capture Screenshot    DC_Operation_002   Verify Parcel Pickup Schedule Popup
 
     Log    Step No.5 ระบุข้อมูล
     ##เลือกประเภทพัสดุ
@@ -117,6 +134,7 @@ DC_Operation_002
     ## step 16-17
     ##TBC
     
+    ### รอหลัง cut off time ###
     Log    Step No.18 เปิด URL DPS
     Open Chrome Browser    chrome
     common.Open URL    ${DPS_UAT_URL}
@@ -137,51 +155,65 @@ DC_Operation_002
 
     Log    Step No.21 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operaion.dps_menu['Check_Receiving_Cycle']}
-    dps_home_page.Verify Check Receiving Cycle Page    
+    # expected
+    dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
     ...    ${dc_operaion.title['Check_Receiving_Cycle']}
     ...    ${dc_operaion.Check_Receiving_Cycle_Tab['all_parcels_received']}
-        # TBC รอdata#
+    ...    ${dc_operaion_002.receiving_cycle['company_name']}
+    ...    ${dc_operaion_002.receiving_cycle['branch']}
+    ...    ${dc_operaion_002.receiving_cycle['company_address']}
+    ...    ${dc_operaion_002.receiving_cycle['sub_district']}
+    ...    ${dc_operaion_002.receiving_cycle['district']}
+    ...    ${dc_operaion_002.receiving_cycle['province']}
+    ...    ${dc_operaion_002.receiving_cycle['postcode']}
+    ...    ${dc_operaion_002.receiving_cycle['receiving_time']}
+    ...    ${dc_operaion_002.receiving_cycle['receiving_type']}
+    ...    ${dc_operaion_002.receiving_cycle['courier']}
+    ...    ${dc_operaion_002.receiving_cycle['number_of_parcel']}
+    ...    ${dc_operaion_002.receiving_cycle['status']}
     common.Verify Capture Screenshot    DC_Operation_002    Verify Check Receiving Cycle Page
 
     Log    Step No.22 คลิกแท็บ "รายการรอคลังยืนยัน"
-    Wait Until Element Is Visible    //div[@role='tab' and text()='รายการรอคลังยืนยัน']    timeout=30s
-    Click Element    //div[@role='tab' and text()='รายการรอคลังยืนยัน']
-    Wait Until Element Is Visible    //div[@aria-hidden='false']//tr[contains(@class,'ant-table-row ant-table-row-level-0')]
+    dps_check_receiving_cycle.Select Check Receiving Cycle Tab    ${dc_operaion.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
+    # expected
+    dps_check_receiving_cycle.Verify Inventory Confirm List Tab
+    ...    ${dc_operaion.title['Check_Receiving_Cycle']}
+    ...    ${dc_operaion.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
+    ...    ${dc_operaion_002.receiving_cycle['company_name']}
+    ...    ${dc_operaion_002.receiving_cycle['company_address']}
+    ...    ${dc_operaion_002.receiving_cycle['sub_district']}
+    ...    ${dc_operaion_002.receiving_cycle['district']}
+    ...    ${dc_operaion_002.receiving_cycle['province']}
+    ...    ${dc_operaion_002.receiving_cycle['postcode']}
+    ...    ${dc_operaion_002.receiving_cycle['receiving_time']}
+    ...    ${dc_operaion_002.receiving_cycle['receiving_type']}
+    ...    ${dc_operaion_002.receiving_cycle['courier']}
+    ...    ${dc_operaion_002.receiving_cycle['number_of_parcel']}
+    ...    ${dc_operaion_002.receiving_cycle['status']}
+    common.Verify Capture Screenshot    DC_Operation_002    Verify Inventory Confirm List Tab
 
-    # Log    Step No.23 คลิกไอคอนรูปดินสอ
-    ## เลือกรายการ
+    Log    Step No.23 คลิกปุ่ม Export
+    dps_check_receiving_cycle.Click Pencil Icon
+    # Expected
+    dps_check_receiving_cycle.Verify Parcel Pickup Details Popup
+    ...    ${dc_operaion['parcel_pickup_details']}
+    ...    ${dc_operaion['button_export']}
+    ...    ${dc_operaion['vehicle_type']}
+    ## เหลือ Verify รายละเอียด ##
+    common.Verify Capture Screenshot    DC_Operation_002    Verify Parcel Pickup Details Popup
+    Log    Step No.24 คลิกปุ่ม Export
+    dps_check_receiving_cycle.Click Button On Parcel Pickup Details Popup    ${dc_operaion['button_export']}
+    # expected
 
-    # ${receiving_count}=    Get Element Count    //div[@aria-hidden='false']//tr[contains(@class,'ant-table-row ant-table-row-level-0')]
-    # FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
-    #     ${item}=    Set Variable    (//div[@aria-hidden='false']//tr[contains(@class,'ant-table-row ant-table-row-level-0')])[${index}]
-    #     Scroll Element Into View    ${item}
-    #     ${name}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[text()]    บริษัท ไอดีซี พรีเมียร์ จำกัด
-    #     Log To console    ${name}
-    #     ${day}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[8]    05-10-2567
-    #     Log To console    ${day}
-    #     ${time}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[9]    09:00
-    #     Log To console    ${time}
-    #     Set Suite Variable    ${card}    (//div[@aria-hidden='false']//tr[contains(@class,'ant-table-row ant-table-row-level-0')])[${index}]//button
-    #     ${all_conditions}=    Evaluate    ${name} and ${day} and ${time}
-    #     Exit For Loop If    ${all_conditions}
-    # END
+    Log    Step No.25 คลิกปุ่ม อนุมัติ
+    dps_check_receiving_cycle.Click Button On Parcel Pickup Details Popup    ${dc_operaion['button_approve']}
+    # expected
 
-    # Click Element    ${card}
-    # Log    Step No.24 คลิกปุ่ม Export
-    # Wait Until Element Is Visible    //span[text()='รายละเอียดรอบเข้ารับพัสดุ']    timeout=30s
-    # Scroll Element Into View    //span[text()='รายละเอียดรอบเข้ารับพัสดุ']/../../..//button//span[text()='Export File']
-    # Click Element    //span[text()='รายละเอียดรอบเข้ารับพัสดุ']/../../..//button//span[text()='Export File']
-
-    # Log    Step No.25 คลิกปุ่ม อนุมัติ
-    # Click Element    //span[text()='รายละเอียดรอบเข้ารับพัสดุ']/../../..//button//span[text()='อนุมัติ']
-    # Reload Page
-    # Sleep    10s
-
-    # Log    Step No.26 กลับ Speed D เมนูเรียกรับ
+    Log    Step No.26 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     Switch Window	MAIN
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     Sleep    10s
 
     # Log    Step No.27 เลือกเมนู "จองการจัดส่งพัสดุ"
-     b2c_home_page.Click Book Parcel Delivery
+    b2c_home_page.Click Book Parcel Delivery

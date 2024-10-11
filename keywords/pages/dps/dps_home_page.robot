@@ -194,10 +194,23 @@ Verify Sum Number of In Warehouse Parcels
     Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_in_warehouse_parcels}
     Log    ${sum_number_in_warehouse_parcels}
 
+Set_Next_DAY
+    ${date_YYYY_MM_DD}   Get Current Date
+    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
+    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
+    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
+    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
+    ${day}    Convert To Integer    ${d}
+    ${day}    Evaluate    ${day} + 1
+    ${year}    Convert To Integer    ${y}
+    ${year}    Evaluate    ${y} + 543
+    ${nextDay}    Set Variable    ${day}-${m}-${year}
+    RETURN    ${nextDay}
+
 Verify Page Title
     [Arguments]    ${title}
     ${dps_txt_page_title}=  Replace String   ${dps_txt_page_title}  {value}   ${title}
-    Wait Until Element Is Visible    ${dps_txt_page_title}
+    Wait Until Element Is Visible    ${dps_txt_page_title}    timeout=${DEFAULT_TIMEOUT}
 
 Click Dropdown For Select role
     Wait Until Element Is Visible    ${dps_img_icon_user}    timeout=${DEFAULT_TIMEOUT}
