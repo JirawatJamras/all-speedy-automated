@@ -84,7 +84,7 @@ Booking_S034
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S034['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S034['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
-    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S034['receiver_store']}
+    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S034['receiver_store_code_5_digits']}
     b2c_booking_delivery_page.Click Store On Map    ${Booking_S034['receiver_select_store']}
     #Expected
     b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S034['receiver_store_address]}
@@ -316,7 +316,8 @@ Booking_S034
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
-    ...    ${Booking_S034['receiver_postcode_5_digits']}
+    ...    ${Booking.label['text_store_code']}
+    ...    ${Booking_S034['receiver_store_code_5_digits']}
     ...    ${Booking_S034['parcel_package_type']}
     ...    ${Booking_S034['parcel_size']}
     ...    ${Booking_S034['sender_name']}
@@ -329,7 +330,6 @@ Booking_S034
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
-    # รหัสร้าน 01523
     # Logo 7-11
     common.Verify Capture Screenshot    Booking_S034    Verify Parcel Label
 

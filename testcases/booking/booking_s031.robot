@@ -317,6 +317,7 @@ Booking_S031
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
+    ...    ${Booking.label['text_postcode']}
     ...    ${Booking_S031['receiver_postcode_5_digits']}
     ...    ${Booking_S031['parcel_package_type']}
     ...    ${Booking_S031['parcel_size']}
@@ -331,7 +332,6 @@ Booking_S031
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_insure']}
     ...    ${Booking_S031['parcel_detail_remark']}
-    # รหัสไปรษณีย์ปลายทาง 86110 
     # Logo บ้าน
     common.Verify Capture Screenshot    Booking_S031    Verify Parcel Label
 

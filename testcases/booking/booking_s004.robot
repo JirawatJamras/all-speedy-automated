@@ -342,6 +342,7 @@ Booking_S004
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
+    ...    ${Booking.label['text_postcode']}
     ...    ${Booking_S004['receiver_postcode_5_digits']}
     ...    ${Booking_S004['parcel_package_type']}
     ...    ${Booking_S004['parcel_size']}

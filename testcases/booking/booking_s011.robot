@@ -314,7 +314,8 @@ Booking_S011
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
-    ...    ${Booking_S011['receiver_postcode_5_digits']}
+    ...    ${Booking.label['text_postcode']}
+    ...    ${Booking_S011['receiver_store_code_5_digits']}
     ...    ${Booking_S011['parcel_package_type']}
     ...    ${Booking_S011['parcel_size']}
     ...    ${Booking_S011['sender_name']}
