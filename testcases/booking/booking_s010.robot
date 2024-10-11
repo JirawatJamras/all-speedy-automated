@@ -85,7 +85,7 @@ Booking_S010
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_Business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S010['sender_name']}
     ...    ${Booking_S010['sender_phone']}
