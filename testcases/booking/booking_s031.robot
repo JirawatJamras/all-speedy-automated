@@ -45,6 +45,11 @@ Booking_S031
     ...    ${Booking['text_name_sender']}
     ...    ${Booking['text_address_sender']}
     ...    ${Booking['text_postcode_sender']}
+    b2c_booking_delivery_page.Verify Data Sender
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S031    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนกรอกข้อมูลผู้ส่งพัสดุ
