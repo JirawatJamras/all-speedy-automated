@@ -103,12 +103,12 @@ Booking_S022
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Draft Paecel Receiver
+    b2c_booking_delivery_page.Verify Draft Parcel Receiver When Select Home
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S022    Verify Draft Paecel Receiver
+    common.Verify Capture Screenshot    Booking_S022    Verify Draft Parcel Receiver When Select Home
 
     Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S022['receiver_phone']}
@@ -195,7 +195,7 @@ Booking_S022
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    b2c_booking_delivery_page.Verify Draft Paecel Receiver
+    b2c_booking_delivery_page.Verify Draft Parcel Receiver When Select Home
     ...    ${Booking_S022['receiver_phone']}
     ...    ${Booking_S022['receiver_name']}
     ...    ${Booking_S022['receiver_address']}
