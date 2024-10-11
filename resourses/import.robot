@@ -89,7 +89,7 @@ Resource                    locators/register/register_business_profile_business
 
 Variables                   testdata/feature/register/allspeedy_register_001.yaml    #
 Variables                   testdata/feature/register/allspeedy_register_004.yaml    #
-#Variables                   testdata/register/register.yaml
+Variables                   testdata/register/register.yaml
 
 ######################## SPS ########################
 Resource                    ../keywords/pages/sps/sps_landing_page.robot
