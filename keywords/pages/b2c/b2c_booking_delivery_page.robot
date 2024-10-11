@@ -129,7 +129,7 @@ Verify Create Parcel Page Receiver Step When Select Home
     Should Be Equal    ${actual_text_postcode}    ${postcode_receiver}
 
 Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
-    [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
+    [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
