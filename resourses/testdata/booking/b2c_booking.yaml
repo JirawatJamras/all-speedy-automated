@@ -5,7 +5,8 @@ Booking:
   text_profile_phone: เบอร์โทรศัพท์        #check
   text_profile_mail: E-mail       #check
   text_profile_position: ตำแหน่งงาน       #check
-  text_title_booking: จองการจัดส่งพัสดุ สาขาหลัก       #check
+  text_title_booking_for_business_customer: จองการจัดส่งพัสดุ สาขาหลัก       #check
+  text_title_booking_for_general_customer: จองการจัดส่งพัสดุ
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 10 ตุลาคม 2024 (Version 2)"       #check
   text_title: สร้างพัสดุ       #check
   text_title_booking_list: รายการบุ๊คกิ้ง #check
@@ -526,7 +527,6 @@ Booking_S027:
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
 
 Booking_S030:
-  text_title_booking: จองการจัดส่งพัสดุ
   parcel_type:  พัสดุทั่วไป
   sender_phone: 0890000001
   sender_name: สมชาย สายเสมอ
@@ -583,9 +583,34 @@ Booking_S031:
   store_code:  '15888'
   price_value: '80.00'  
   parcel_package_type:  ซอง
+
+Booking_S032:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0899999999
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size:  M
+  buy_insurance:  2,500
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '186.00'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  price_value: '80.00'  
+  parcel_package_type:  กล่อง
   
 Booking_S034:
-  text_title_booking: จองการจัดส่งพัสดุ
   parcel_type:  พัสดุทั่วไป
   sender_phone: 0890000001
   sender_name: สมชาย สายเสมอ
@@ -596,7 +621,6 @@ Booking_S034:
   receiver_name: สมใจ ดีดีดี
   receiver_store_code_5_digits: '01523'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
-  # receiver_select_store: เลือกร้าน
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
   parcel_size:  A4
   total_price_amount:  '1'
@@ -621,7 +645,6 @@ Booking_S035:
   receiver_name: สมใจ ดีดีดี
   receiver_store_code_5_digits: '01523'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
-  receiver_select_store: เลือกร้าน
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
   parcel_size:  A3
   parcel_detail_remark:  ระวังพัสดุเสียหาย

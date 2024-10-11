@@ -19,7 +19,7 @@ Booking_S006
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     #Expected
-    b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking']}
+    b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking_for_business_customer']}
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Page
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
