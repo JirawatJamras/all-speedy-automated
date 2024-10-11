@@ -387,16 +387,16 @@ Booking_S022:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  shipping_origin: เลือกร้าน 7-11 ต้นทาง
+  shipping_origin: รอบรถเข้ารับพัสดุ
   store_code:  '15888'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
-  parcel_size: S
+  parcel_size: A1
   parcel_package_type: กล่อง
   price_value: 30    # 55.00
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
-  parcel_detail_remark: ระวังพัสดุเสียหาย
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
   promotion:  SPBH5B
   promotion_detail:
     discount:  5 บาท

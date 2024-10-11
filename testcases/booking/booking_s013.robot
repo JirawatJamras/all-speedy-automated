@@ -122,20 +122,19 @@ Booking_S013
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    ################ แก้ Verify Create Parcel Page Detail Step ของ พัสดุควบคุมอุณหภูมิ
-    # b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    # ...    ${Booking.general_parcel['parcel_detail_A4']}
-    # ...    ${Booking.general_parcel['parcel_detail_A3']}
-    # ...    ${Booking.general_parcel['parcel_detail_XS']}
-    # ...    ${Booking.general_parcel['parcel_detail_S']}
-    # ...    ${Booking.general_parcel['parcel_detail_M']}
-    # ...    ${Booking.general_parcel['parcel_detail_L']}
-    # ...    ${Booking.general_parcel['parcel_detail_XL']}
-    # ...    ${Booking.general_parcel['parcel_detail_XXL']}
-    # ...    ${Booking['parcel_detail_insure_amount']}
-    # ...    ${Booking['parcel_detail_cod']}
-    # ...    ${Booking['parcel_detail_remark']}
-    # common.Verify Capture Screenshot    Booking_S013    Verify Paecel Detail
+    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
+    ...    ${Booking.general_parcel['parcel_detail_A4']}
+    ...    ${Booking.general_parcel['parcel_detail_A3']}
+    ...    ${Booking.general_parcel['parcel_detail_XS']}
+    ...    ${Booking.general_parcel['parcel_detail_S']}
+    ...    ${Booking.general_parcel['parcel_detail_M']}
+    ...    ${Booking.general_parcel['parcel_detail_L']}
+    ...    ${Booking.general_parcel['parcel_detail_XL']}
+    ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    ...    ${Booking['parcel_detail_insure_amount']}
+    ...    ${Booking['parcel_detail_cod']}
+    ...    ${Booking['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S013    Verify Create Parcel Page Detail Step
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S013['parcel_size']}
@@ -193,11 +192,11 @@ Booking_S013
     ...    ${Booking_S013['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${BBooking_S013['cod_fee_amount']}
-    ...    ${BBooking_S013['cod_fee_value']}
-    ...    ${BBooking_S013['total_price_amount']}
-    ...    ${BBooking_S013['total_price_value']}
-    ...    ${Booking_S013['store_code']}
+    ...    ${Booking_S013['cod_fee_amount']}
+    ...    ${Booking_S013['cod_fee_value']}
+    ...    ${Booking_S013['total_price_amount']}
+    ...    ${Booking_S013['total_price_value']}
+    ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S013    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -243,10 +242,10 @@ Booking_S013
     ...    ${Booking_S013['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${BBooking_S013['cod_fee_amount']}
-    ...    ${BBooking_S013['cod_fee_value']}
-    ...    ${BBooking_S013['total_price_amount']}
-    ...    ${BBooking_S013['total_price_value']}
+    ...    ${Booking_S013['cod_fee_amount']}
+    ...    ${Booking_S013['cod_fee_value']}
+    ...    ${Booking_S013['total_price_amount']}
+    ...    ${Booking_S013['total_price_value']}
     ...    ${Booking_S013['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S013    Verify Booking Summary
@@ -295,10 +294,10 @@ Booking_S013
     ...    ${Booking_S013['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${BBooking_S013['cod_fee_amount']}
-    ...    ${BBooking_S013['cod_fee_value']}
-    ...    ${BBooking_S013['total_price_amount']}
-    ...    ${BBooking_S013['total_price_value']}
+    ...    ${Booking_S013['cod_fee_amount']}
+    ...    ${Booking_S013['cod_fee_value']}
+    ...    ${Booking_S013['total_price_amount']}
+    ...    ${Booking_S013['total_price_value']}
     ...    ${Booking_S013['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S013    Verify Booking Summary After Set Origin Shipping

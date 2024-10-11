@@ -178,7 +178,7 @@ Verify Booking Detail Page
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    
     ...    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${insure_value}    ${cod}
     ...    ${booking_summary}    ${discount_amount}    ${discount_value}    ${insurance_fee_amount}    ${insurance_fee_value}
-    ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}    ${store_code}
+    ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}    ${origin_shipping}
     Log    Booking List
     ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${title}
     ${b2c_txt_parcel_list_booking_detail_page} =  Replace String    ${b2c_txt_parcel_list_booking_detail_page}    {value}    ${title_parcel_list}
@@ -189,7 +189,7 @@ Verify Booking Detail Page
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
     Verify Date And Time With Time Distortion    ${b2c_txt_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${store_code}
+    Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
     Should Be Equal    ${title}    ${actual_text_title}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}

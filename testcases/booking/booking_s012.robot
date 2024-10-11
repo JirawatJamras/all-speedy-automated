@@ -228,6 +228,7 @@ Booking_S012
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S012    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -293,6 +294,7 @@ Booking_S012
     common.Verify Capture Screenshot    Booking_S012    Verify Edit Booking List Popup  
 
     Log    Step No.20 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
+    # เลือกร้าน 7-11 ต้นทาง
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S012['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S012['store_code']}
     b2c_booking_detail_page.Click Select Store On Map

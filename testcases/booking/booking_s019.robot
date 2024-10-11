@@ -237,7 +237,7 @@ Booking_S019
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S019['total_price_amount']}
     ...    ${Booking_S019['total_price_value']}
-    ...    ${Booking_S019['store_code']}
+    ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S019    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
