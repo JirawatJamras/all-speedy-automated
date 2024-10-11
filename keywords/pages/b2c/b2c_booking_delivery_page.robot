@@ -80,10 +80,21 @@ Verify Data Sender
     ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
     ${actual_text_name_sender}=    Get Value    ${txtbox_name_sender}
     ${actual_text_address_sender}=    Get Value    ${txtbox_address_sender}
-    ${actual_text_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
+    # ${actual_textbox_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
+    # ${actual_text_full_postcode_sender}=    Get Text    ${txt_full_postcode_sender}
     Should Be Equal    ${actual_text_phone_sender}    ${phone_sender}
     Should Be Equal    ${actual_text_name_sender}    ${name_sender}
     Should Be Equal    ${actual_text_address_sender}    ${address_sender}
+    Run Keyword If    '${full_postcode_sender}' == '${EMPTY}'    Verify full_postcode_sender Equal EMPTY    ${full_postcode_sender}
+    ...    ELSE    Verify full_postcode_sender Equal Text    ${full_postcode_sender}
+
+Verify full_postcode_sender Equal EMPTY
+    [Arguments]    ${full_postcode_sender}
+   ${actual_textbox_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
+    Should Be Equal    ${actual_textbox_full_postcode_sender}    ${full_postcode_sender}
+Verify full_postcode_sender Equal Text
+    [Arguments]    ${full_postcode_sender}
+    ${actual_text_full_postcode_sender}=    Get Text    ${txt_full_postcode_sender}
     Should Be Equal    ${actual_text_full_postcode_sender}    ${full_postcode_sender}
 
 Verify Data Receiver When Select Home
@@ -92,11 +103,24 @@ Verify Data Receiver When Select Home
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
     ${actual_text_address_receiver}=    Get Value    ${txtbox_address_receiver}
-    ${actual_text_full_postcode_receiver}=    Get Text    ${txtbox_full_postcode_receiver}
+    #${actual_text_full_postcode_receiver}=    Get Text    ${txt_full_postcode_receiver}
     Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
     Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
+    Run Keyword If    '${full_postcode_receiver}' == '${EMPTY}'    Verify full_postcode_senderVerify full_postcode_receiver        ${full_postcode_receiver}
+    ...    ELSE    Verify full_postcode_receiver Equal Text   ${full_postcode_receiver}
+
+Verify full_postcode_senderVerify full_postcode_receiver    
+    [Arguments]    ${full_postcode_receiver}
+   ${actual_textbox_full_postcode_receiver}=    Get Text    ${txtbox_full_postcode_receiver}
+    Should Be Equal    ${actual_textbox_full_postcode_receiver}    ${full_postcode_receiver}
+Verify full_postcode_receiver Equal Text
+    [Arguments]    ${full_postcode_receiver}
+    ${actual_text_full_postcode_receiver}=    Get Text    ${txt_full_postcode_receiver}
     Should Be Equal    ${actual_text_full_postcode_receiver}    ${full_postcode_receiver}
+
+
+
 
 Verify Data Receiver When Select 7-ELEVEN Store
     [Arguments]   ${phone_receiver}    ${name_receiver}    ${store_address_receiver}  
@@ -117,14 +141,14 @@ Verify Create Parcel Page Receiver Step When Select Home
     ${actual_text_parcel_receiver_information}=    Get Text    ${txt_parcel_receiver_information}
     ${actual_text_phone}=    Get Text    ${txt_phone_receiver}
     ${actual_text_name}=    Get Text    ${txt_name_receiver}
-    ${actual_text_name}=    Get Text    ${txt_location_receiver}
+    ${actual_text_location_receiver}=    Get Text    ${txt_location_receiver}
     ${actual_text_address}=    Get Text    ${txt_address_receiver}
     ${actual_text_postcode}=    Get Text    ${txt_postcode_receiver}
     Should Be Equal    ${actual_text_title}    ${title}
     Should Be Equal    ${actual_text_parcel_receiver_information}    ${parcel_receiver_information}
     Should Be Equal    ${actual_text_phone}    ${phone_receiver}
     Should Be Equal    ${actual_text_name}    ${name_receiver}
-    Should Be Equal    ${actual_text_name}    ${location_receiver}
+    Should Be Equal    ${actual_text_location_receiver}    ${location_receiver}
     Should Be Equal    ${actual_text_address}    ${address_receiver}
     Should Be Equal    ${actual_text_postcode}    ${postcode_receiver}
 

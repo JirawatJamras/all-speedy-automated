@@ -183,7 +183,7 @@ Verify Booking Detail Page
     ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${title}
     ${b2c_txt_parcel_list_booking_detail_page} =  Replace String    ${b2c_txt_parcel_list_booking_detail_page}    {value}    ${title_parcel_list}
     ${b2c_txt_booking_summary_booking_detail_page} =  Replace String    ${b2c_txt_booking_summary_booking_detail_page}    {value}    ${booking_summary}
-
+    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}

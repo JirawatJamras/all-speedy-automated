@@ -1,5 +1,5 @@
 *** Settings ***
-Library                     SeleniumLibrary
+Library                     SeleniumLibrary        run_on_failure=Capture Page Screenshot
 Library                     BuiltIn
 Library                     String
 Library                     Collections

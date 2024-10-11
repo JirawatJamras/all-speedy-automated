@@ -7,7 +7,8 @@ Booking:
   text_profile_position: ตำแหน่งงาน       #check
   text_title_booking_for_business_customer: จองการจัดส่งพัสดุ สาขาหลัก       #check
   text_title_booking_for_general_customer: จองการจัดส่งพัสดุ
-  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ 10 ตุลาคม 2024 (Version 2)"       #check
+  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ "
+  text_version: " (Version 2)"     #check
   text_title: สร้างพัสดุ       #check
   text_title_booking_list: รายการบุ๊คกิ้ง #check
   text_title_parcel_list: รายการพัสดุ   #check
@@ -58,6 +59,7 @@ Booking:
     size_a5:  กระดาษ A5
     size_8cm:  กระดาษ หน้ากว้าง 8 ซม.
   text_blank:
+    origin_shipping: ''
     text_business_customer_parcel_id_4_start_unit: '-'
     text_general_customer_parcel_id_4_start_unit: '-'
     receiver_name: '-'
@@ -111,6 +113,7 @@ Booking_S002:
   store_code:  '15888'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
+  booking_price: 0.00บาท
   parcel_size:  A4
   parcel_package_type:  ซอง
   total_price_amount:  '1'

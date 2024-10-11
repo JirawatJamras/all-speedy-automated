@@ -42,17 +42,19 @@ ${txt_frist_step_name}    //form[@id='create_parcel_form']/div[2]/div[1]/div/div
 ${txt_close_popup}     //h2[@id='swal2-title']
 ${txt_favorites_title}    //div[text()='เลือกจากรายการโปรด']
 ${txt_favorites_search_no_data}    //div[contains(@class,'ant-radio-group')]//div[@class='ant-empty-description' and text()='No data']
-${txt_parcel_sender_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']////div[@class='ant-steps-item-title'][contains(text(),'{value}')]
+${txt_parcel_sender_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'{value}')]
 
 ${txt_phone_sender}    //label[@for='create_parcel_form_sender_tel']/span
 ${txt_name_sender}    //label[@for='create_parcel_form_sender_name']/span
 ${txt_address_sender}    //label[@for='create_parcel_form_sender_address_info']/span
 ${txt_postcode_sender}    //label[@for='create_parcel_form_sender_address_full']/span
-${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'{value})]
+${txt_full_postcode_sender}    //span[@class='ant-select-selection-item']
+${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'{value}')]
 ${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
 ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
 ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
+${txt_full_postcode_receiver}    //span[@class='ant-select-selection-item']
 ${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
 ${txt_booking_id}    //strong[contains(text(), 'บุ๊คกิ้ง ID :')]/../../../div[2]
 ${txt_booking_time}    //strong[contains(text(), 'วันเวลาทำรายการ :')]/../../../div[2]
@@ -85,7 +87,7 @@ ${txtbox_address_sender}    //textarea[@id='create_parcel_form_sender_address_in
 ${txtbox_postcode_sender}    //input[@id='create_parcel_form_sender_address_full']
 ${txtbox_postcode_sender_not_select_text}    //span[@class='ant-select-selection-placeholder']
 ${txtbox_postcode_sender_select_text_in}    //span[@class='ant-select-selection-item']
-${txtbox_full_postcode_sender}    //span[@class='ant-select-selection-item']
+${txtbox_full_postcode_sender}    //input[@id='create_parcel_form_sender_address_full']
 ${txtbox_phone_receiver}    //input[@id='create_parcel_form_receiver_tel']
 ${txtbox_name_receiver}    //input[@id='create_parcel_form_receiver_name']
 ${txtbox_address_receiver}    //textarea[@id='create_parcel_form_receiver_address_info']

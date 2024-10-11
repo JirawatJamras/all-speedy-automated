@@ -2,12 +2,18 @@
 ################### Web Page ###################
 Open Chrome Browser
     [Arguments]    ${chrome}
-    ${chrome_options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
-    #Call Method    ${chrome_options}    add_argument    --disable-extensions
+    ${chrome_options}=    Evaluate     sys.modules['selenium.webdriver'].ChromeOptions()     sys, selenium.webdriver
+    Call Method    ${chrome_options}    add_argument    --disable-extensions
+    Call Method    ${chrome_options}    add_argument    --disable-infobars
     Call Method    ${chrome_options}    add_argument    --disable-gpu
+    Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
-    Open Browser    about:blank    ${chrome}    options=${chrome_options}
+    #Call Method    ${chrome_options}    add_argument    --headless\=old
+    IF  '${chrome}'=='headlesschrome'
+        Call Method     ${chrome_options}      add_argument    --headless\=old
+    END
+    Open Browser    about:blank    Chrome    options=${chrome_options}
     SeleniumLibrary.Set Selenium Speed    0.2
 
 Open URL
@@ -43,6 +49,31 @@ Set Folder Result with date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
     ${FOlDER_RESULT}=    Set Variable    ../results/${date_YYYY_MM_DD}
     Set Global Variable    ${FOlDER_RESULT}
+    Set Current Date in Thai
+
+Set Current Date in Thai
+    ${date}=    Get Current Date    result_format=%d
+    ${month}=    Get Current Date    result_format=%B
+    ${year}=    Get Current Date    result_format=%Y
+    ${thai_month}=    Convert Month To Thai    ${month}
+    ${current_date_thai}=    Set Variable    ${date} ${thai_month} ${year}
+    Set Global Variable    ${current_date_thai}
+
+Convert Month To Thai
+    [Arguments]    ${english_month}
+    ${thai_month}=    Run Keyword If    '${english_month}' == 'January'    Set Variable    มกราคม
+    ...    ELSE IF    '${english_month}' == 'February'    Set Variable    กุมภาพันธ์
+    ...    ELSE IF    '${english_month}' == 'March'    Set Variable    มีนาคม
+    ...    ELSE IF    '${english_month}' == 'April'    Set Variable    เมษายน
+    ...    ELSE IF    '${english_month}' == 'May'    Set Variable    พฤษภาคม
+    ...    ELSE IF    '${english_month}' == 'June'    Set Variable    มิถุนายน
+    ...    ELSE IF    '${english_month}' == 'July'    Set Variable    กรกฎาคม
+    ...    ELSE IF    '${english_month}' == 'August'    Set Variable    สิงหาคม
+    ...    ELSE IF    '${english_month}' == 'September'    Set Variable    กันยายน
+    ...    ELSE IF    '${english_month}' == 'October'    Set Variable    ตุลาคม
+    ...    ELSE IF    '${english_month}' == 'November'    Set Variable    พฤศจิกายน
+    ...    ELSE IF    '${english_month}' == 'December'    Set Variable    ธันวาคม
+    [Return]    ${thai_month}
 
 Verify Capture Screenshot
     [Arguments]    ${folder}    ${img_name}
