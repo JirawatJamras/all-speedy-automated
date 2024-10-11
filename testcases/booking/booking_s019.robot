@@ -163,7 +163,7 @@ Booking_S019
     Log    Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -171,7 +171,7 @@ Booking_S019
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    common.Verify Capture Screenshot    Booking_S019    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S019    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button

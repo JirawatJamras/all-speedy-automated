@@ -57,8 +57,9 @@ Booking_S012
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
+    b2c_booking_delivery_page.Select Send To 7-ELEVEN Store Tab
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -66,7 +67,8 @@ Booking_S012
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    common.Verify Capture Screenshot    Booking_S012    Verify Create Parcel Page Receiver Step
+    b2c_booking_delivery_page
+    common.Verify Capture Screenshot    Booking_S012    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 กดปุ่ม "เลือกจากรายการโปรด"
     b2c_booking_delivery_page.Click Choose Favorites
@@ -155,7 +157,7 @@ Booking_S012
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -168,7 +170,7 @@ Booking_S012
     ...    ${Booking_S012['receiver_name']}
     ...    ${Booking_S012['receiver_address']}
     ...    ${Booking_S012['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S012    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S012    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button

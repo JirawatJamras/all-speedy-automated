@@ -187,7 +187,7 @@ Booking_S022
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -200,7 +200,7 @@ Booking_S022
     ...    ${Booking_S022['receiver_name']}
     ...    ${Booking_S022['receiver_address']}
     ...    ${Booking_S022['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page Receiver Step When Select Home
 
    Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button

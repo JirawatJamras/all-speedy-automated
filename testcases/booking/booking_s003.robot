@@ -101,7 +101,7 @@ Booking_S003
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -109,7 +109,7 @@ Booking_S003
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S003['receiver_phone']}
@@ -289,7 +289,7 @@ Booking_S003
     ...    ${Booking_S003['receiver_postcode_full']}
     ...    ${Booking_S003['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S003['discount_amount']}
@@ -333,7 +333,7 @@ Booking_S003
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     b2c_booking_detail_page.Verify Timestamp After Print Label
-    common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
+    common.Verify Capture Screenshot    Booking_S003    Verify Print Screen
 
 
     [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ

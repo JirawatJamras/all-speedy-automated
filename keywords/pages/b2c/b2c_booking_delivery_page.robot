@@ -37,6 +37,9 @@ Select Parcel Type
 
 Select Send To Home Tab
     Click When Ready    ${tab_send_to_home}
+    
+Select Send To 7-ELEVEN Store Tab
+    Click When Ready    ${tab_send_to_store}
 
 Click General Parcel
     Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=30s
@@ -105,7 +108,7 @@ Verify Draft Parcel Receiver When Select 7-ELEVEN Store
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
     Should Be Equal    ${actual_text_store_receiver}    ${store_address_receiver}
 
-Verify Create Parcel Page Receiver Step
+Verify Create Parcel Page Receiver Step When Select Home When Select Home
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
@@ -124,6 +127,25 @@ Verify Create Parcel Page Receiver Step
     Should Be Equal    ${actual_text_name}    ${location_receiver}
     Should Be Equal    ${actual_text_address}    ${address_receiver}
     Should Be Equal    ${actual_text_postcode}    ${postcode_receiver}
+
+Verify Create Parcel Page Receiver Step When Select Home When Select 7-ELEVEN Store
+    [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
+    ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
+    ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
+    ${actual_text_parcel_receiver_information}=    Get Text    ${txt_parcel_receiver_information}
+    ${actual_text_phone}=    Get Text    ${txt_phone_receiver}
+    ${actual_text_name}=    Get Text    ${txt_name_receiver}
+    ${actual_text_name}=    Get Text    ${txt_location_receiver}
+    ${actual_text_address}=    Get Text    ${txt_address_receiver}
+    Should Be Equal    ${actual_text_title}    ${title}
+    Should Be Equal    ${actual_text_parcel_receiver_information}    ${parcel_receiver_information}
+    Should Be Equal    ${actual_text_phone}    ${phone_receiver}
+    Should Be Equal    ${actual_text_name}    ${name_receiver}
+    Should Be Equal    ${actual_text_name}    ${location_receiver}
+    Should Be Equal    ${actual_text_address}    ${address_receiver}
+    Element Should Be Visible    ${txtbox_store_receiver} 
 
 Click Close Paecel Page
     Click Element    ${close_noti_btn}
