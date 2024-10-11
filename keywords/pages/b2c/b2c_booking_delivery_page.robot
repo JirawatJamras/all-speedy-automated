@@ -74,7 +74,7 @@ Verify Create Parcel Page Sender Step
     Should Be Equal    ${actual_text_address}    ${address_sender}
     Should Be Equal    ${actual_text_postcode}    ${postcode_sender}
 
-Verify Draft Parcel Sender
+Verify Data Sender
     [Arguments]   ${phone_sender}    ${name_sender}    ${address_sender}    ${full_postcode_sender}  
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
