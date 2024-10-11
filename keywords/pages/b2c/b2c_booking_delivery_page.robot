@@ -108,7 +108,7 @@ Verify Data Receiver When Select 7-ELEVEN Store
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
     Should Be Equal    ${actual_text_store_receiver}    ${store_address_receiver}
 
-Verify Create Parcel Page Receiver Step When Select Home When Select Home
+Verify Create Parcel Page Receiver Step When Select Home
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
@@ -128,7 +128,7 @@ Verify Create Parcel Page Receiver Step When Select Home When Select Home
     Should Be Equal    ${actual_text_address}    ${address_receiver}
     Should Be Equal    ${actual_text_postcode}    ${postcode_receiver}
 
-Verify Create Parcel Page Receiver Step When Select Home When Select 7-ELEVEN Store
+Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
