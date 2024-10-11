@@ -182,7 +182,7 @@ Booking_S022
     ...    ${Booking_S022['sender_postcode_full']}
     common.Verify Capture Screenshot    Booking_S022    Verify Data Sender
 
-   Log    Step No.14 กดปุ่ม "ถัดไป"
+    Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
@@ -200,23 +200,6 @@ Booking_S022
     ...    ${Booking_S022['receiver_address']}
     ...    ${Booking_S022['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page Receiver Step When Select Home
-
-   Log    Step No.14 กดปุ่ม "ถัดไป"
-    b2c_booking_delivery_page.Click Next Button
-    #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    ...    ${Booking.general_parcel['parcel_detail_A4']}
-    ...    ${Booking.general_parcel['parcel_detail_A3']}
-    ...    ${Booking.general_parcel['parcel_detail_XS']}
-    ...    ${Booking.general_parcel['parcel_detail_S']}
-    ...    ${Booking.general_parcel['parcel_detail_M']}
-    ...    ${Booking.general_parcel['parcel_detail_L']}
-    ...    ${Booking.general_parcel['parcel_detail_XL']}
-    ...    ${Booking.general_parcel['parcel_detail_XXL']}
-    ...    ${Booking['parcel_detail_insure_amount']}
-    ...    ${Booking['parcel_detail_cod']}
-    ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page Detail Step
 
     Log    Step No.15 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -387,7 +370,7 @@ Booking_S022
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S022    Verify Parcel Label
 
-    Log    Step No.22 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.24 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     b2c_booking_detail_page.Verify Timestamp After Print Label
