@@ -519,16 +519,23 @@ Verify Booking ID Format And Value
 
 Verify Parcel ID Format And Value
     [Arguments]    ${locator}    ${4_start_unit}
-    Wait Until Element Is Visible    ${locator}    timeout=${DEFAULT_TIMEOUT}
-    ${pearcel_id}=    Get Text    ${locator}
-    ${length}=    Get Length    ${pearcel_id}
-    ${unit_1_to_4}=    Set Variable    ${pearcel_id}[0:4]
-    ${year_month}=    Get Current Date    result_format=%y%m
-    ${year_month_string}=    Convert To String    ${year_month}
-    ${unite_5_to_8}=    Set Variable    ${pearcel_id}[4:8]
-    Should Be Equal As Integers    ${length}    16
-    Should Be Equal As Strings    ${unit_1_to_4}    ${4_start_unit}
-    Should Be Equal    ${unite_5_to_8}     ${year_month_string}
+    ${isblank}=    Run Keyword And Return Status    Should Be Equal As Strings    ${4_start_unit}    -
+    IF    '${isblank}' == 'True'
+        Wait Until Element Is Visible    ${locator}    timeout=${DEFAULT_TIMEOUT}
+        ${pearcel_id}=    Get Text    ${locator}
+        Should Be Equal    ${pearcel_id}    ${4_start_unit}
+    ELSE
+        Wait Until Element Is Visible    ${locator}    timeout=${DEFAULT_TIMEOUT}
+        ${pearcel_id}=    Get Text    ${locator}
+        ${length}=    Get Length    ${pearcel_id}
+        ${unit_1_to_4}=    Set Variable    ${pearcel_id}[0:4]
+        ${year_month}=    Get Current Date    result_format=%y%m
+        ${year_month_string}=    Convert To String    ${year_month}
+        ${unite_5_to_8}=    Set Variable    ${pearcel_id}[4:8]
+        Should Be Equal As Integers    ${length}    16
+        Should Be Equal As Strings    ${unit_1_to_4}    ${4_start_unit}
+        Should Be Equal    ${unite_5_to_8}     ${year_month_string}
+    END
 
 Select Parcel Size
     [Arguments]    ${value}

@@ -59,9 +59,10 @@ Booking_S013
     Log    Step No.6 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     #Expected
-    b2c_booking_detail_page.Verify Booking list Page
+    b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
+    ...    ${Booking.text_blank['text_Business_customer_parcel_id_4_start_unit']}
     ...    ${Booking.img_not_favorite['img_sender_heart']}    # Actual Result is ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S013['sender_name']}
     ...    ${Booking_S013['sender_phone']}

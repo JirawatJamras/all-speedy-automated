@@ -7,21 +7,21 @@ Click Button
 Select Draft Booking
     common.Click When Ready    ${b2c_crd_list_of_parcels}
 
-Verify Booking list Page
-    [Arguments]    ${booking_list}    ${status}    ${img_heart_sender}    ${sender_name}    ${sender_phone}
+Verify Booking Detail Page After Draft
+    [Arguments]    ${booking_list}    ${status}    ${parcel_id}    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    
     ...    ${parcel_size}    ${price_value}    ${buy_insurance}    ${cod_value}
     ${receiver_address}=    Set Variable If    '${receiver_address}' == '-' and '${receiver_postcode_full}' == '-'    -    ${receiver_address} ${receiver_postcode_full}
     ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${booking_list}
     ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
-
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     ${actual_text_booking_list}=    Get Text    ${b2c_txt_booking_list}
-    ${actual_text_list_of_parcels_status} =    Get Text    ${b2c_txt_list_of_parcels_status} 
+    ${actual_text_list_of_parcels_status} =    Get Text    ${b2c_txt_list_of_parcels_status}
+    b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     #Sender
     Should Be Equal    ${actual_text_booking_list}   ${booking_list}
     Should Be Equal    ${actual_text_list_of_parcels_status}    ${status}
