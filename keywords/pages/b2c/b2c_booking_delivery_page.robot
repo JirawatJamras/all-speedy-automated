@@ -472,8 +472,7 @@ Click Store Receiver Lists
     Click Element    ${list}
 
 Click Store On Map
-    [Arguments]    ${value}
-    ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${value}
+    ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${Booking['text_select_store_on_map']}
     common.Click When Ready    ${select_store}
 
 Verify Phone Receiver Value

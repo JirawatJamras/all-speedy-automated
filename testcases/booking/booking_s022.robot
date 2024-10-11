@@ -144,7 +144,6 @@ Booking_S022
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S022['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page After Input Parcel Detail Step
 
-
     Log    Step No.12 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     #Expected
