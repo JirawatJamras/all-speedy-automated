@@ -103,12 +103,12 @@ Booking_S027
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Draft Parcel Receiver When Select Home
+    b2c_booking_delivery_page.Verify Data Receiver When Select Home
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S027    Verify Draft Parcel Receiver When Select Home
+    common.Verify Capture Screenshot    Booking_S027    Verify Data Receiver When Select Home
 
     Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     # ส่งร้าน 7-11

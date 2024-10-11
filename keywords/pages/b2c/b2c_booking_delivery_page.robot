@@ -86,7 +86,7 @@ Verify Draft Parcel Sender
     Should Be Equal    ${actual_text_address_sender}    ${address_sender}
     Should Be Equal    ${actual_text_full_postcode_sender}    ${full_postcode_sender}
 
-Verify Draft Parcel Receiver When Select Home
+Verify Data Receiver When Select Home
     [Arguments]   ${phone_receiver}    ${name_receiver}    ${address_receiver}    ${full_postcode_receiver}  
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
@@ -98,7 +98,7 @@ Verify Draft Parcel Receiver When Select Home
     Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
     Should Be Equal    ${actual_text_full_postcode_receiver}    ${full_postcode_receiver}
 
-Verify Draft Parcel Receiver When Select 7-ELEVEN Store
+Verify Data Receiver When Select 7-ELEVEN Store
     [Arguments]   ${phone_receiver}    ${name_receiver}    ${store_address_receiver}  
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
