@@ -103,6 +103,14 @@ Booking_S027
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home
+    ...    ${Booking['text_title']}
+    ...    ${Booking['text_parcel_receiver_information']}
+    ...    ${Booking['text_phone_receiver']}
+    ...    ${Booking['text_name_receiver']}
+    ...    ${Booking['text_location_receiver']}
+    ...    ${Booking['text_address_receiver']}
+    ...    ${Booking['text_postcode_receiver']}
     b2c_booking_delivery_page.Verify Data Receiver When Select Home
     ...    ${EMPTY}
     ...    ${EMPTY}
@@ -110,13 +118,37 @@ Booking_S027
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S027    Verify Data Receiver When Select Home
 
-    Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
-    # ส่งร้าน 7-11
+    Log    Step No.9 ขั้นตอนกรอกข้อมูลผู้รับพัสดุ
+    # สถานที่รับพัสดุ : ส่งร้าน 7-11
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S027['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S027['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
-    b2c_booking_delivery_page.Input Address Receiver    ${Booking_S027['receiver_address']}
-    b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S027['receiver_postcode_5_digits']}
-    b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S027['receiver_postcode_full']}
+    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S027['receiver_store']}
+    b2c_booking_delivery_page.Click Store On Map
     #Expected
-    common.Verify Capture Screenshot    Booking_S027    Verify After Create Parcel Page Receiver Step
+    b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S027['receiver_store_address]}
+    common.Verify Capture Screenshot    Booking_S027    Verify Create Parcel Page After Input Receiver Step
+
+    Log    Step No.10 กดปุ่ม "ถัดไป"
+    b2c_booking_delivery_page.Click Next Button
+    #Expected
+    ################ แก้ Verify Create Parcel Page Detail Step ของ พัสดุควบคุมอุณหภูมิ
+    # b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
+    # ...    ${Booking.general_parcel['parcel_detail_A4']}
+    # ...    ${Booking.general_parcel['parcel_detail_A3']}
+    # ...    ${Booking.general_parcel['parcel_detail_XS']}
+    # ...    ${Booking.general_parcel['parcel_detail_S']}
+    # ...    ${Booking.general_parcel['parcel_detail_M']}
+    # ...    ${Booking.general_parcel['parcel_detail_L']}
+    # ...    ${Booking.general_parcel['parcel_detail_XL']}
+    # ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    # ...    ${Booking['parcel_detail_insure_amount']}
+    # ...    ${Booking['parcel_detail_cod']}
+    # ...    ${Booking['parcel_detail_remark']}
+    # common.Verify Capture Screenshot    Booking_S027    Verify Paecel Detail
+
+    Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
+    b2c_booking_delivery_page.Select Parcel Size    ${Booking_S027['parcel_size']}
+    b2c_booking_delivery_page.Input COD    ${Booking_S027['parcel_cod']}
+    b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S027['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S027    Verify Create Parcel Page After Input Parcel Detail Step

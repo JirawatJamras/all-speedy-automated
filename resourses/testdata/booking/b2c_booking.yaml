@@ -22,6 +22,7 @@ Booking:
   text_location_receiver: ข้อมูลสถานที่รับพัสดุ      #check
   text_address_receiver: รายละเอียดที่อยู่ *     #check
   text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     #check
+  text_select_store_on_map: เลือกร้าน
   text_booking_list: รายการบุ๊คกิ้ง     #check
   text_draft_status: ร่าง     #check
   text_business_customer_parcel_id_4_start_unit: SPBC
@@ -518,6 +519,9 @@ Booking_S027:
   cod_fee_value: '150.00'
   total_price_amount:  '1'
   total_price_value:  'Nan'
+  receiver_store: '01523'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
 
 Booking_S030:
   text_title_booking: จองการจัดส่งพัสดุ
@@ -588,7 +592,7 @@ Booking_S034:
   receiver_name: สมใจ ดีดีดี
   receiver_store: '01523'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
-  receiver_select_store: เลือกร้าน
+  # receiver_select_store: เลือกร้าน
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
   parcel_size:  A4
   total_price_amount:  '1'

@@ -85,7 +85,7 @@ Booking_S034
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S034['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
     b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S034['receiver_store']}
-    b2c_booking_delivery_page.Click Store On Map    ${Booking_S034['receiver_select_store']}
+    b2c_booking_delivery_page.Click Store On Map
     #Expected
     b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S034['receiver_store_address]}
     common.Verify Capture Screenshot    Booking_S034    Verify Create Parcel Page After Input Receiver Step
