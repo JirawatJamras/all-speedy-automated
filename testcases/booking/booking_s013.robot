@@ -170,6 +170,7 @@ Booking_S013
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
+    ...    ${Booking['text_Business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -219,6 +220,7 @@ Booking_S013
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
+    ...    ${Booking['text_Business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -270,6 +272,7 @@ Booking_S013
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
+    ...    ${Booking['text_Business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -331,3 +334,28 @@ Booking_S013
 
 
     [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
+
+
+
+
+Test some part of Code
+    [Tags]     Run
+    Log    Login
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+
+    Go to    https://www-uat.allspeedy.co.th/booking/detail/B2410001934
+    Wait Until Element Is Visible    //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div/span/strong    timeout=${DEFAULT_TIMEOUT}
+    ${pearcel_id}=    Get Text    //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div/span/strong
+    ${length}=    Get Length    ${pearcel_id}
+    ${unit_1_to_4}=    Set Variable    ${pearcel_id}[0:4]
+    ${year_month}=    Get Current Date    result_format=%y%m
+    ${year_month_string}=    Convert To String    ${year_month}
+    ${unite_5_to_8}=    Set Variable    ${pearcel_id}[4:8]
+    Should Be Equal As Integers    ${length}    16
+    Should Be Equal As Strings    ${unit_1_to_4}    SPBD
+    Should Be Equal    ${unite_5_to_8}     ${year_month_string}
+    Should Be Equal    ${pearcel_id}    SPBD241000004578

@@ -173,7 +173,7 @@ Click Booking With Status Select Shipping Origin
 #     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
 
 Verify Booking Detail Page
-    [Arguments]    ${title}    ${booking_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
+    [Arguments]    ${title}    ${booking_id}    ${parcel_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    
     ...    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${insure_value}    ${cod}
@@ -184,16 +184,15 @@ Verify Booking Detail Page
     ${b2c_txt_parcel_list_booking_detail_page} =  Replace String    ${b2c_txt_parcel_list_booking_detail_page}    {value}    ${title_parcel_list}
     ${b2c_txt_booking_summary_booking_detail_page} =  Replace String    ${b2c_txt_booking_summary_booking_detail_page}    {value}    ${booking_summary}
 
-
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
-    ${actaul_bookig_id}=    Get Text    ${b2c_txt_booking_id_booking_detail_page}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
     Verify Date And Time With Time Distortion    ${b2c_txt_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${store_code}
     Should Be Equal    ${title}    ${actual_text_title}
-    Should Be Equal    ${booking_id}    ${actaul_bookig_id}
+    b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
+    b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     Should Be Equal    ${booking_name}    ${actaul_booking_name}
     Log    Parcel List
     Wait Until Element Is Visible    ${b2c_txt_parcel_list_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}

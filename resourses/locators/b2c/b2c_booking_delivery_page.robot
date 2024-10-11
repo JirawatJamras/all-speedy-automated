@@ -71,6 +71,7 @@ ${txt_cod}    //label[@title='เก็บเงินปลายทาง']
 ${txt_remark}    //label[@title='หมายเหตุ']
 ${txt_selected_code_detail}    //span//strong[text()='คูปองและโค้ดส่วนลดที่เลือก']/../..
 ${txt_store_address}    //textarea[@id='create_parcel_form_receiver_address_display']
+${booking_txt_parcel_id_booking_detail_page}    //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div/span/strong
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
 ${msg_error_name_sender}    //input[@id='create_parcel_form_sender_name']/../../../../div[2]/div/div

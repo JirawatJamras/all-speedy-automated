@@ -24,6 +24,8 @@ Booking:
   text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     #check
   text_booking_list: รายการบุ๊คกิ้ง     #check
   text_draft_status: ร่าง     #check
+  text_Business_customer_parcel_id_4_start_unit: SPBC
+  text_General_customer_parcel_id_4_start_unit: SPBD
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -54,6 +56,8 @@ Booking:
     size_a5:  กระดาษ A5
     size_8cm:  กระดาษ หน้ากว้าง 8 ซม.
   text_blank:
+    text_Business_customer_parcel_id_4_start_unit: '-'
+    text_General_customer_parcel_id_4_start_unit: '-'
     receiver_name: '-'
     receiver_phone: '-'
     receiver_address: '-'

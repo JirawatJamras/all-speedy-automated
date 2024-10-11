@@ -517,6 +517,19 @@ Verify Booking ID Format And Value
     ${int_value}=    Convert To Integer    ${txt_id_index_5_to_11}
     Should Be Equal    ${txt_id}    ${value}
 
+Verify Parcel ID Format And Value
+    [Arguments]    ${locator}    ${4_start_unit}
+    Wait Until Element Is Visible    ${locator}    timeout=${DEFAULT_TIMEOUT}
+    ${pearcel_id}=    Get Text    ${locator}
+    ${length}=    Get Length    ${pearcel_id}
+    ${unit_1_to_4}=    Set Variable    ${pearcel_id}[0:4]
+    ${year_month}=    Get Current Date    result_format=%y%m
+    ${year_month_string}=    Convert To String    ${year_month}
+    ${unite_5_to_8}=    Set Variable    ${pearcel_id}[4:8]
+    Should Be Equal As Integers    ${length}    16
+    Should Be Equal As Strings    ${unit_1_to_4}    ${4_start_unit}
+    Should Be Equal    ${unite_5_to_8}     ${year_month_string}
+
 Select Parcel Size
     [Arguments]    ${value}
     ${btn_parcel_size}=  Replace String   ${btn_parcel_size}   {value}   ${value}
