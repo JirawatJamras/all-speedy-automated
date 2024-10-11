@@ -7,7 +7,7 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S026
-    [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เลือกจากรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S2 (มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
+    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
     [Tags]    Booking    UAT
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
@@ -75,7 +75,7 @@ Booking_S026
     ...    ${Booking_S026['receiver_address']}
     common.Verify Capture Screenshot    Booking_S026    Verify Favorites Receiver PopUp
 
-    Log    Step No.8 กดเลือกรายการ - สมใจ ดีดีดี 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
+    Log    Step No.8 กดเลือกรายการ
     b2c_booking_delivery_page.Click Choose Favorites Receiver List  
     ...    ${Booking_S026['receiver_name']}
     ...    ${Booking_S026['receiver_phone']}
@@ -96,16 +96,16 @@ Booking_S026
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
-    ...    ${Booking_S026['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S026['sender_name']}
     ...    ${Booking_S026['sender_phone']}
-    ...    ${Booking_S026['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S026['receiver_name']}
     ...    ${Booking_S026['receiver_phone']}
     ...    ${Booking_S026['receiver_address']}
     ...    ${Booking_S026['receiver_postcode_full']}
     ...    ${Booking_S026['parcel_size']}
-    ...    ${Booking.text_blank['discount_value']}
+    ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S026['parcel_cod_verify']}
     common.Verify Capture Screenshot    Booking_S026    Verify Draft Paecel
@@ -144,7 +144,7 @@ Booking_S026
     ...    ${Booking_S026['receiver_name']}
     ...    ${Booking_S026['receiver_address']}
     ...    ${Booking_S026['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S026    Verify Create Parcel Page Receiver Step
 
     Log    Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -163,7 +163,7 @@ Booking_S026
     # ...    ${Booking['parcel_detail_remark']}
     # common.Verify Capture Screenshot    Booking_S026    Verify Create Parcel Page Detail Step
 
-    Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ กรอกข้อมูล ขนาดพัสดุ : กล่อง S2 COD : 5,000.00"
+    Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S026['parcel_size']}
     b2c_booking_delivery_page.Input COD    ${Booking_S026['parcel_cod']}
     common.Verify Capture Screenshot    Booking_S026    Verify Select Parcel Size And Input COD

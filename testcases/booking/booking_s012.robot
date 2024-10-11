@@ -77,7 +77,7 @@ Booking_S012
     ...    ${Booking_S012['receiver_address']}
     common.Verify Capture Screenshot    Booking_S012    Verify Favorites Receiver PopUp
 
-    Log    Step No.8 "กดเลือกรายการ สมใจ ดีดีดี 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150"
+    Log    Step No.8 "กดเลือกรายการ"
     b2c_booking_delivery_page.Click Choose Favorites Receiver List  
     ...    ${Booking_S012['receiver_name']}
     ...    ${Booking_S012['receiver_phone']}
@@ -108,7 +108,7 @@ Booking_S012
     ...    ${Booking['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S012    Verify Create Parcel Page Detail Step
 
-    Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ กรอกข้อมูล ขนาดพัสดุ : กล่อง XS COD : 5,000.00"
+    Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S012['parcel_size']}
     b2c_booking_delivery_page.Input COD    ${Booking_S012['parcel_cod']}
     common.Verify Capture Screenshot    Booking_S012    Verify Select Parcel Size And Input COD
@@ -120,16 +120,16 @@ Booking_S012
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
-    ...    ${Booking_S012['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S012['sender_name']}
     ...    ${Booking_S012['sender_phone']}
-    ...    ${Booking_S012['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S012['receiver_name']}
     ...    ${Booking_S012['receiver_phone']}
     ...    ${Booking_S012['receiver_address']}
     ...    ${Booking_S012['receiver_postcode_full']}
     ...    ${Booking_S012['parcel_size']}
-    ...    ${Booking.text_blank['discount_value']}
+    ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S012['parcel_cod_verify']}
     common.Verify Capture Screenshot    Booking_S012    Verify Draft Paecel
@@ -168,7 +168,7 @@ Booking_S012
     ...    ${Booking_S012['receiver_name']}
     ...    ${Booking_S012['receiver_address']}
     ...    ${Booking_S012['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S012    Verify Create Parcel Page Receiver Step
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
