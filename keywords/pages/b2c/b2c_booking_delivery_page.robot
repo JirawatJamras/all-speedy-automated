@@ -490,7 +490,7 @@ Verify Created Booking On Booking Delivery Page
     ${booking_status_replace}=    Replace String    ${txt_booking_status_in_list}    {value}    ${booking_id}
     ${txt_status}=    Get Text    ${booking_status_replace}
     Should Be Equal    ${txt_status}    ${status_booking}
-    Verify Booking Format And Value    ${booking_id_replace}    ${booking_id}
+    Verify Booking ID Format And Value    ${booking_id_replace}    ${booking_id}
     ${booking_name}=    Replace String    ${txt_booking_name_in_list}    {value}    ${booking_id}
     ${txt_name}=    Get Text    ${booking_name}
     Should Be Equal    ${txt_name}    ${name_booking}
@@ -503,7 +503,7 @@ Verify Created Booking On Booking Delivery Page
     ${txt_price}=    Get Text    ${booking_price}
     Should Be Equal    ${txt_price}    ${price_booking}
 
-Verify Booking Format And Value
+Verify Booking ID Format And Value
     [Arguments]    ${locator}    ${value}
     ${txt_id}=    Get Text    ${locator}
     ${length}=    Get Length    ${txt_id}
