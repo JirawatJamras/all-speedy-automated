@@ -71,7 +71,12 @@ Booking_S002
     ...    ${Booking['text_name_sender']}
     ...    ${Booking['text_address_sender']}
     ...    ${Booking['text_postcode_sender']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Sender Step
+    b2c_booking_delivery_page.Verify Data Sender
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S002['sender_phone']}
@@ -93,7 +98,12 @@ Booking_S002
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Receiver Step When Select Home
+    b2c_booking_delivery_page.Verify Data Receiver When Select Home  
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S002['receiver_phone']}
