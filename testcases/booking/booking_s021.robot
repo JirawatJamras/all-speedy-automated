@@ -75,7 +75,7 @@ Booking_S021
     ...    ${Booking_S021['receiver_address']}
     common.Verify Capture Screenshot    Booking_S021    Verify Favorites Receiver PopUp
 
-    Log    Step No.8 กดเลือกรายการ - สมใจ ดีดีดี 47 หมู่ 4 พ้อแดง หลังสวน ชุมพร 86110
+    Log    Step No.8 กดเลือกรายการ
     b2c_booking_delivery_page.Click Choose Favorites Receiver List  
     ...    ${Booking_S021['receiver_name']}
     ...    ${Booking_S021['receiver_phone']}
@@ -96,10 +96,10 @@ Booking_S021
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
-    ...    ${Booking_S021['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S021['sender_name']}
     ...    ${Booking_S021['sender_phone']}
-    ...    ${Booking_S021['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S021['receiver_name']}
     ...    ${Booking_S021['receiver_phone']}
     ...    ${Booking_S021['receiver_address']}
@@ -163,7 +163,7 @@ Booking_S021
     # ...    ${Booking['parcel_detail_remark']}
     # common.Verify Capture Screenshot    Booking_S021    Verify Create Parcel Page Detail Step
 
-    Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ กรอกข้อมูล ขนาดพัสดุ : กล่อง S2 COD : 5,000.00"
+    Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S021['parcel_size']}
     b2c_booking_delivery_page.Input COD    ${Booking_S021['parcel_cod']}
     common.Verify Capture Screenshot    Booking_S021    Verify Select Parcel Size And Input COD

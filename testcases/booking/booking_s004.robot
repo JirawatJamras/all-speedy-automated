@@ -77,7 +77,7 @@ Booking_S004
     # ...    ${Booking_S004['receiver_address']}
     # common.Verify Capture Screenshot    Booking_S004    Verify Favorites Receiver PopUp
 
-    Log    Step No.8 กดเลือกรายการ - สมใจ ดีดีดี 47 หมู่ 4 พ้อแดง หลังสวน ชุมพร 86110
+    Log    Step No.8 กดเลือกรายการ
     b2c_booking_delivery_page.Click Choose Favorites Receiver List  
     ...    ${Booking_S004['receiver_name']}
     ...    ${Booking_S004['receiver_phone']}
@@ -108,7 +108,7 @@ Booking_S004
     ...    ${Booking['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Detail Step
 
-    Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ กรอกข้อมูล ขนาดพัสดุ : กล่อง XS COD : 5,000.00"
+    Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S004['parcel_size']}
     b2c_booking_delivery_page.Input COD    ${Booking_S004['parcel_cod']}
     common.Verify Capture Screenshot    Booking_S004    Verify Select Parcel Size And Input COD
@@ -358,7 +358,7 @@ Booking_S004
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S004    Verify Parcel Label
 
-    Log    Step No.22 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.22 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     b2c_booking_detail_page.Verify Timestamp After Print Label
