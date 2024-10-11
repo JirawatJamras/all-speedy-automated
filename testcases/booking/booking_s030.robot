@@ -59,7 +59,7 @@ Booking_S030
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step   
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -67,7 +67,7 @@ Booking_S030
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    common.Verify Capture Screenshot    Booking_S030    Verify Create Parcel Page Receiver Step
+    common.Verify Capture Screenshot    Booking_S030    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 ขั้นตอนกรอกข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S030['receiver_phone']}
@@ -85,7 +85,7 @@ Booking_S030
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking.text_blank['text_general_customer_parcel_id_4_start_unit']}
     ...    ${Booking.img_is_favorite['img_sender_heart']}  # ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S030['sender_name']}
     ...    ${Booking_S030['sender_phone']}
@@ -114,22 +114,22 @@ Booking_S030
     ...    ${Booking['text_name_sender']}
     ...    ${Booking['text_address_sender']}
     ...    ${Booking['text_postcode_sender']}
-    b2c_booking_delivery_page.Verify Draft Parcel Sender
+    b2c_booking_delivery_page.Verify Data Sender
     ...    ${Booking_S030['sender_phone']}
     ...    ${Booking_S030['sender_name']}
     ...    ${Booking_S030['sender_address']}
     ...    ${Booking_S030['sender_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S030    Verify Draft Parcel Sender
+    common.Verify Capture Screenshot    Booking_S030    Verify Data Sender
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  
     #Expected
-    b2c_booking_delivery_page.Verify Draft Parcel Receiver When Select Home
+    b2c_booking_delivery_page.Verify Data Receiver When Select Home
     ...    ${Booking_S030['receiver_phone']}
     ...    ${Booking_S030['receiver_name']}
     ...    ${Booking_S030['receiver_address']}
     ...    ${Booking_S030['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S030    Verify Draft Parcel Receiver When Select Home
+    common.Verify Capture Screenshot    Booking_S030    Verify Data Receiver When Select Home
 
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -245,7 +245,7 @@ Booking_S030
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S030['total_price_amount']}
     ...    ${Booking_S030['total_price_value1']}
-    ...    ${EMPTY}  # ${Booking['store_code']}
+    ...    ${EMPTY}  # ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S030    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -324,6 +324,8 @@ Booking_S030
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
+    # รหัสไปรษณีย์ปลายทาง 86110 
+    # Logo บ้าน
     common.Verify Capture Screenshot    Booking_S030    Verify Parcel Label
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
