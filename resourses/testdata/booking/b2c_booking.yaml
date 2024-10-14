@@ -7,8 +7,8 @@ Booking:
   text_profile_position: ตำแหน่งงาน       #check
   text_title_booking_for_business_customer: จองการจัดส่งพัสดุ สาขาหลัก       #check
   text_title_booking_for_general_customer: จองการจัดส่งพัสดุ
-  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ "
-  text_version: " (Version 2)"     #check
+  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " #check
+  text_version: " (Version 2)"
   text_title: สร้างพัสดุ       #check
   text_title_booking_list: รายการบุ๊คกิ้ง #check
   text_title_parcel_list: รายการพัสดุ   #check
@@ -118,6 +118,7 @@ Booking_S002:
   parcel_package_type:  ซอง
   total_price_amount:  '1'
   total_price_value:  '24.00'    # 50.00
+
 
 Booking_S003:
   parcel_type:  พัสดุทั่วไป

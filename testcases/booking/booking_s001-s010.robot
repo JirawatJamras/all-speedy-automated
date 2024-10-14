@@ -6,6 +6,7 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headl
 #Test Teardown     Close Browser
 #[Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
 
+
 *** Test Cases ***
 Booking_S001
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
@@ -52,7 +53,7 @@ Booking_S002
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
     #Expected
-    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${current_date_thai}${Booking['text_version']}            
+    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${current_date_thai}${Booking['text_version']}
     common.Verify Capture Screenshot    Booking_S002    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
@@ -281,7 +282,7 @@ Booking_S002
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
-    ...    ${Booking_S002['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
     common.Scroll Window To Vertical    0
