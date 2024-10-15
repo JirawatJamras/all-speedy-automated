@@ -47,8 +47,8 @@ Booking_S002
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery    
     #Expected
-    b2c_booking_delivery_page.Verify Booking Page
-    common.Verify Capture Screenshot    Booking_S002    Verify Booking Page
+    b2c_booking_delivery_page.Verify Booking Page For Business Customer
+    common.Verify Capture Screenshot    Booking_S002    Verify Booking Page For Business Customer
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add    
