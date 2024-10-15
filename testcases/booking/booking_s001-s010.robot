@@ -89,7 +89,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
-    b2c_booking_delivery_page.Click Next Button    ${Booking['text_btn_next']}
+    b2c_booking_delivery_page.Click Next Button
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home 
     ...    ${Booking['text_title']}

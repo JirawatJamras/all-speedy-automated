@@ -70,8 +70,6 @@ Verify Create Parcel Page Sender Step
     ${actual_text_name_sender}=    Get Text    ${txt_name_sender}
     ${actual_text_address}=    Get Text    ${txt_address_sender}
     ${actual_text_postcode}=    Get Text    ${txt_postcode_sender}
-    Wait Until Element Is Visible    ${title}    timeout=30s
-    Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
     Should Be Equal    ${actual_text_title}    ${title}
     Should Be Equal    ${actual_text_parcel_sender_information}    ${parcel_sender_information}
     Should Be Equal    ${actual_text_phone}    ${phone_sender}
@@ -449,8 +447,7 @@ Click Save Button
     common.Click When Ready    ${btn_save_draft}
 
 Click Next Button
-    [Arguments]    ${txt_btn_next}
-    ${btn}=    Replace String    ${btn_next}    {value}    ${txt_btn_next}
+    ${btn}=    Replace String    ${btn_next}    {value}    ${Booking['text_btn_next']}
     common.Click When Ready    ${btn}
 
 Click Add To Favorites In Sender
