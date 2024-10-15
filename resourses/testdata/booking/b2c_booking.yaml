@@ -24,6 +24,7 @@ Booking:
   text_location_receiver: ข้อมูลสถานที่รับพัสดุ      #check
   text_address_receiver: รายละเอียดที่อยู่ *     #check
   text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     #check
+  text_postcode_receiver_1: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
   text_select_store_on_map: เลือกร้าน
   text_booking_list: รายการบุ๊คกิ้ง     #check
   text_draft_status: ร่าง     #check

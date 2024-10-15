@@ -59,6 +59,7 @@ Click Temperature Controlled Parcel
 Verify Create Parcel Page Sender Step
     [Arguments]    ${title}    ${parcel_sender_information}    ${phone_sender}    ${name_sender}    ${address_sender}    ${postcode_sender}  
     ${txt_parcel_sender_information}=  Replace String   ${txt_parcel_sender_information}   {value}   ${parcel_sender_information}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
@@ -75,7 +76,8 @@ Verify Create Parcel Page Sender Step
     Should Be Equal    ${actual_text_postcode}    ${postcode_sender}
 
 Verify Data Sender
-    [Arguments]   ${phone_sender}    ${name_sender}    ${address_sender}    ${full_postcode_sender}  
+    [Arguments]   ${phone_sender}    ${name_sender}    ${address_sender}    ${full_postcode_sender}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
     ${actual_text_name_sender}=    Get Value    ${txtbox_name_sender}
@@ -99,7 +101,7 @@ Verify full_postcode_sender Equal Text
 
 Verify Data Receiver When Select Home
     [Arguments]   ${phone_receiver}    ${name_receiver}    ${address_receiver}    ${full_postcode_receiver} 
-    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title ']}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
@@ -108,14 +110,15 @@ Verify Data Receiver When Select Home
     Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
     Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
-    Run Keyword If    '${full_postcode_receiver}' == '${EMPTY}'    Verify full_postcode_senderVerify full_postcode_receiver        ${full_postcode_receiver}
+    Run Keyword If    '${full_postcode_receiver}' == '${EMPTY}'    Verify full_postcode_senderVerify full_postcode_receiver    ${full_postcode_receiver}
     ...    ELSE    Verify full_postcode_receiver Equal Text   ${full_postcode_receiver}
 
 Verify full_postcode_senderVerify full_postcode_receiver    
     [Arguments]    ${full_postcode_receiver}
-    ${txtbox_full_postcode_receiver}=    Replace String    ${txtbox_full_postcode_receiver}    {value}    ${Booking['text_postcode_receiver']}
+    ${txtbox_full_postcode_receiver}=    Replace String    ${txtbox_full_postcode_receiver}    {value}    ${Booking['text_postcode_receiver_1']}
    ${actual_textbox_full_postcode_receiver}=    Get Text    ${txtbox_full_postcode_receiver}
     Should Be Equal    ${actual_textbox_full_postcode_receiver}    ${full_postcode_receiver}
+
 Verify full_postcode_receiver Equal Text
     [Arguments]    ${full_postcode_receiver}
     ${actual_text_full_postcode_receiver}=    Get Text    ${txt_full_postcode_receiver}
@@ -125,7 +128,8 @@ Verify full_postcode_receiver Equal Text
 
 
 Verify Data Receiver When Select 7-ELEVEN Store
-    [Arguments]   ${phone_receiver}    ${name_receiver}    ${store_address_receiver}  
+    [Arguments]   ${phone_receiver}    ${name_receiver}    ${store_address_receiver}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
@@ -137,6 +141,7 @@ Verify Data Receiver When Select 7-ELEVEN Store
 Verify Create Parcel Page Receiver Step When Select Home
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
@@ -157,6 +162,7 @@ Verify Create Parcel Page Receiver Step When Select Home
 Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
@@ -461,6 +467,7 @@ Verify Add To Favorites
 
 Verify Step In Create Parcel Popup
     [Arguments]    ${title}    ${status}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     ${title_text}=    Get Text    ${title_create_parcel_page_txt}
     Should Be Equal    ${title_text}    ${title}
     Page Should Contain Element    ${status}    
@@ -604,29 +611,29 @@ Click Parcel Booking Button
     
 Verify Create Parcel Page Detail Step
     [Arguments]    ${detail_A4}    ${detail_A3}    ${detail_XS}    ${detail_S}    ${detail_M}    ${detail_L}    ${detail_XL}    ${detail_XXL}    ${insure_amount}    ${cod}    ${remark}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_A4']}
-    ${actual_detail_A4}=    Get Text    ${btn_parcel_select_size}
+    ${btn_parcel_select_A4}=    Replace String    ${btn_parcel_select_A4}    {value}    ${Booking.general_parcel['parcel_A4']}
+    ${actual_detail_A4}=    Get Text    ${btn_parcel_select_A4}
     ${detail_A4_replace}=  Replace String   ${actual_detail_A4}   \n   ${SPACE}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_A3']}
-    ${actual_detail_A3}=    Get Text    ${btn_parcel_select_size} 
+    ${btn_parcel_select_A3}=    Replace String    ${btn_parcel_select_A3}    {value}    ${Booking.general_parcel['parcel_A3']}
+    ${actual_detail_A3}=    Get Text    ${btn_parcel_select_A3} 
     ${detail_A3_replace}=  Replace String   ${actual_detail_A3}   \n   ${SPACE}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_XS']}
-    ${actual_detail_XS}=    Get Text    ${btn_parcel_select_size}
+    ${btn_parcel_select_XS}=    Replace String    ${btn_parcel_select_XS}    {value}    ${Booking.general_parcel['parcel_XS']}
+    ${actual_detail_XS}=    Get Text    ${btn_parcel_select_XS}
     ${detail_XS_replace}=  Replace String   ${actual_detail_XS}   \n   ${SPACE}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_S']}
-    ${actual_detail_S}=    Get Text    ${btn_parcel_select_size} 
+    ${btn_parcel_select_S}=    Replace String    ${btn_parcel_select_S}    {value}    ${Booking.general_parcel['parcel_S']}
+    ${actual_detail_S}=    Get Text    ${btn_parcel_select_S} 
     ${detail_S_replace}=  Replace String   ${actual_detail_S}   \n   ${SPACE}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_M']}
-    ${actual_detail_M}=    Get Text    ${btn_parcel_select_size}
+    ${btn_parcel_select_M}=    Replace String    ${btn_parcel_select_M}    {value}    ${Booking.general_parcel['parcel_M']}
+    ${actual_detail_M}=    Get Text    ${btn_parcel_select_M}
     ${detail_M_replace}=  Replace String   ${actual_detail_M}   \n   ${SPACE}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_L']}
-    ${actual_detail_L}=    Get Text    ${btn_parcel_select_size}
+    ${btn_parcel_select_L}=    Replace String    ${btn_parcel_select_L}    {value}    ${Booking.general_parcel['parcel_L']}
+    ${actual_detail_L}=    Get Text    ${btn_parcel_select_L}
     ${detail_L_replace}=  Replace String   ${actual_detail_L}   \n   ${SPACE}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_XL']}
-    ${actual_detail_XL}=    Get Text    ${btn_parcel_select_size}
+    ${btn_parcel_select_XL}=    Replace String    ${btn_parcel_select_XL}    {value}    ${Booking.general_parcel['parcel_XL']}
+    ${actual_detail_XL}=    Get Text    ${btn_parcel_select_XL}
     ${detail_XL_replace}=  Replace String   ${actual_detail_XL}   \n   ${SPACE}
-    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_XXL']}
-    ${actual_detail_XXL}=    Get Text    ${btn_parcel_select_size}
+    ${btn_parcel_select_XXL}=    Replace String    ${btn_parcel_select_XXL}    {value}    ${Booking.general_parcel['parcel_XXL']}
+    ${actual_detail_XXL}=    Get Text    ${btn_parcel_select_XXL}
     ${detail_XXL_replace}=  Replace String   ${actual_detail_XXL}   \n   ${SPACE}
     ${txt_insure_amount}=    Replace String    ${txt_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
     ${actual_insure_amount}=    Get Text    ${txt_insure_amount}

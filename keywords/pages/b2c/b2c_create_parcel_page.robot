@@ -1,5 +1,6 @@
 *** Keywords ***
 Verify Create Parcel Page
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${title_text}=    Get Text    ${title_create_parcel_page_txt}
     Should Be Equal    ${title_text}    ${B2C_AddBooking_003_001['text_title']}
@@ -201,6 +202,7 @@ Verify Add To Favorites
 
 Verify Step In Create Parcel Popup
     [Arguments]    ${title}    ${status}
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
     ${title_text}=    Get Text    ${title_create_parcel_page_txt}
     Should Be Equal    ${title_text}    ${title}
     Page Should Contain Element    ${status}    

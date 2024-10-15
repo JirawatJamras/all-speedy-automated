@@ -25,14 +25,14 @@ ${btn_add_receiver_to_favorites}    //div[@id='create_parcel_form_receiver_isDef
 ${btn_next}    //div[@class='ant-space-item' and text()='{value}']/../../../button
 ${btn_parcel_booking}    //span[contains(text(),'{value}')]
 ${btn_parcel_size}    //*[@id="create_parcel_form"]//span//strong[text()='{value}']
-${btn_parcel_select_size}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
-# ${btn_parcel_select_A3}    //strong[text()= 'A3']/../../../div[@class='ant-card-body']
-# ${btn_parcel_select_XS}    //strong[text()= 'XS']/../../../div[@class='ant-card-body']
-# ${btn_parcel_select_S}    //strong[text()= 'S']/../../../div[@class='ant-card-body']
-# ${btn_parcel_select_M}    //strong[text()= 'M']/../../../div[@class='ant-card-body']
-# ${btn_parcel_select_L}    //strong[text()= 'L']/../../../div[@class='ant-card-body']
-# ${btn_parcel_select_XL}    //strong[text()= 'XL']/../../../div[@class='ant-card-body']
-# ${btn_parcel_select_XXL}    //strong[text()= 'XXL']/../../../div[@class='ant-card-body']
+${btn_parcel_select_A4}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_A3}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_XS}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_S}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_M}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_L}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_XL}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_XXL}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_use_code}    //button//span[text()='ใช้โค้ด']
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
 ${btn_choose_store}    //b[text()='{value}']/..
