@@ -457,7 +457,6 @@ Click Add To Favorites In Receiver
     common.Click When Ready    ${btn_add_receiver_to_favorites}
 
 Verify Favorites Icon Red Heart
-    
     ${value}=    Get Value    ${btn_add_sender_to_favorites}  
     Should Be Equal    ${value}    ${status}   
 
