@@ -1,6 +1,8 @@
 *** Keywords ***
 Click Book Parcel Delivery
-    common.Click When Ready    ${b2c_mnu_book_parcel_delivery_home_page}
+    [Arguments]    ${menu_booking}
+    ${btn} =  Replace String    ${b2c_mnu_book_parcel_delivery_home_page}    {value}    ${menu_booking}
+    common.Click When Ready    ${btn}
 
 Click Parcel Delivery Service Menu
     FOR    ${i}    IN RANGE    0    5

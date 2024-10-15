@@ -2,7 +2,6 @@
 ${OS}    Windows
 
 *** Keywords ***
-
 Input Email
     [Arguments]    ${value}
     Input when ready    ${c2c_txtbox_email_login_seven_page}    ${value}
@@ -14,4 +13,3 @@ Input Password
 Click Log in Button
     Scroll Window To Vertical    150
     common.Click when ready    ${c2c_btn_logIn_login_seven_page}
-
