@@ -3,6 +3,7 @@ Resource                    ../keywords/pages/common.robot
 # Resource                    config/${ENV}/env_config.robot
 Resource                    config/uat/env_config.robot
 Variables                   testdata/login_user.yaml
+Variables                   config/language/${LANG}.yaml
 
 ######################## B2C ########################
 Resource                    ../keywords/pages/b2c/b2c_login_page.robot

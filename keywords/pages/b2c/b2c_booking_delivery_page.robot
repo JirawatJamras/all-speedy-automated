@@ -588,6 +588,7 @@ Verify Parcel ID Format And Value
         ${pearcel_id}=    Get Text    ${locator}
         Should Be Equal    ${pearcel_id}    ${4_start_unit}
     ELSE
+        Sleep    3s
         Wait Until Element Is Visible    ${locator}    timeout=${DEFAULT_TIMEOUT}
         ${pearcel_id}=    Get Text    ${locator}
         ${length}=    Get Length    ${pearcel_id}

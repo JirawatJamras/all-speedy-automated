@@ -7,3 +7,5 @@ Library                     OperatingSystem
 Library                     RequestsLibrary
 Library                     DateTime
 Library                     config/python/CustomSeleniumLibrary.py
+*** Variables ***
+${LANG}                                 th

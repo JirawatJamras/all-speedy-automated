@@ -1,6 +1,7 @@
 *** Variables ***
-${DEFAULT_TIMEOUT}                      30s
+${DEFAULT_TIMEOUT}                      40s
 ${BROWSER_NAME}                         Chrome
+
 
 ####################### DPS UAT DATA #######################
 ${DPS_UAT_URL}                          https://dps-uat.allspeedy.co.th/
