@@ -4,58 +4,67 @@ Click Checkbox Partner Types Legal
     ${Checkbox Partner Types}=    Replace String    ${register_btn_partner_types}    {value}    ${Partner_Types}
     common.Click when ready     ${Checkbox Partner Types}
 
-Select Company Title Name   
+#Legal entity
+Select Company Title Name Legal Entity
     [Arguments]    ${Title}
-    common.Click when ready    ${register_dropdown_company_title_name}
-    ${Selected company title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
+    common.Click when ready    ${register_dropdown_company_title_name_legal_entity}
+    ${Selected company title name}=    Replace String    ${register_dropdown_choice_title_name_legal_entity}    {value}    ${Title}
     common.Click when ready    ${Selected company title name}
 
-Input Company Name 
+Input Company Name Legal Entity
     [Arguments]    ${Text}  
-    common.Input When Ready    ${register_txtbox_company_name}    ${Text} 
+    common.Input When Ready    ${register_txtbox_company_name_legal_entity}    ${Text} 
 
-Input Tax Identification Number 
+Input Tax Identification Number Legal Entity 
     [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_tax_identification_number}     ${Value}  
+    common.Input When Ready    ${register_txtbox_tax_identification_number_legal_entity}     ${Value}  
 
-Input Company Address 
+Input Company Address Legal Entity
     [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_company_address}    ${Value}  
+    common.Input When Ready    ${register_txtbox_company_address_legal_entity}    ${Value}  
 
-Input Company Address Full
+Input Company Address Full Legal Entity
     [Arguments]    ${Value}    ${Select}
-    common.Input When Ready    ${register_dropdown_company_address_full}     ${Value}  
+    common.Input When Ready    ${register_dropdown_company_address_full_legal_entity}     ${Value}  
     #Select one in result search 
-    ${Selected company address full}=    Replace String    ${register_dropdown_choice_company_address_full}    {value}    ${Select}
+    ${Selected company address full}=    Replace String    ${register_dropdown_choice_company_address_full_legal_entity}    {value}    ${Select}
     Scroll Element Into View    ${Selected company address full}
     common.Click when ready     ${Selected company address full}
 
-Select Title Name  
+Select Title Name Legal Entity
+    [Arguments]    ${Title}
+    common.Click when ready    ${register_dropdown_title_name_legal_entity}
+    ${Selected title name}=    Replace String    ${register_dropdown_choice_title_name_legal_entity}    {value}    ${Title}
+    common.Click when ready    ${Selected title name}
+
+Input First Name Legal Entity
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_first_name_legal_entity}     ${Value}
+
+Input Last Name Legal Entity
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_last_name_legal_entity}     ${Value}  
+
+Input Email Legal Entity
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_email_legal_entity}     ${Value}
+
+Input Mobile No Legal Entity
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_mobile_no_legal_entity}     ${Value}  
+
+Input Mobile Ext Legal Entity
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_mobile_ext_legal_entity}     ${Value}
+
+#general
+Select Title Name Individual
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_title_name}
     ${Selected title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
     common.Click when ready    ${Selected title name}
 
-Input First Name
-    [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_first_name}     ${Value}
-
-Input Last Name
-    [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_last_name}     ${Value}  
-
-Input Email
-    [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_email}     ${Value}
-
-Input Mobile No
-    [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_mobile_no}     ${Value}  
-
-Input Mobile Ext
-    [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_mobile_ext}     ${Value}
-
+#both    
 Click Confirm 
     [Arguments]    ${Value}
     ${Click confirm}=    Replace String    ${register_btn_confirm}     {value}    ${Value}
@@ -68,7 +77,9 @@ Click Cancel
 
 Verify Confirm Page
     [Arguments]    ${Text}
-    Should Be Equal    ${register_txt_success}    ${Text}
+    ${Register success text}=    Replace String    ${register_txt_success}     {value}    ${Text}
+    Wait Until Element Is Visible    ${Register success text}    ${DEFAULT_TIMEOUT}
+    Page Should Contain Element    ${Register success text}
 
 Verify Cancel Popup
     [Arguments]    ${Header}    ${Body}
@@ -81,7 +92,7 @@ Click Button Cancel Popup
     [Arguments]    ${Text}
     ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Text}
     common.Click when ready    ${Click button}
-    
+
 #old
 Select Partner Type Radio Button
     [Arguments]    ${type}

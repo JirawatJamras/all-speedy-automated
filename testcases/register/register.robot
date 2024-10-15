@@ -20,26 +20,26 @@ Register_S001
     register_business_customers_page.Click Text    ${Register['text menu register']}
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S001['checkbox_partner_types']}
-    register_business_pre_register.Select Company Title Name     ${Register_S001['company_title_name']}
-    register_business_pre_register.Input Company Name    ${Register_S001['company_name']}
-    register_business_pre_register.Input Tax Identification Number    ${Register_S001['id_number']}
-    register_business_pre_register.Input Company Address    ${Register_S001['company_address']}
-    register_business_pre_register.Input Company Address Full    ${Register_S001['search_company_address_full']}    ${Register_S001['select_company_address_full']}
+    register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S001['company_title_name']}
+    register_business_pre_register.Input Company Name Legal Entity    ${Register_S001['company_name']}
+    register_business_pre_register.Input Tax Identification Number Legal Entity    ${Register_S001['id_number']}
+    register_business_pre_register.Input Company Address Legal Entity    ${Register_S001['company_address']}
+    register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S001['search_company_address_full']}    ${Register_S001['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
     # common.Scroll Window To Vertical    0
-    register_business_pre_register.Select Title Name    ${Register_S001['title_name']}
-    register_business_pre_register.Input First Name    ${Register_S001['first_name']}
-    register_business_pre_register.Input Last Name    ${Register_S001['first_name']}
-    register_business_pre_register.Input Email    ${Register_S001['email']}
-    register_business_pre_register.Input Mobile No    ${Register_S001['mobile_no']}
-    register_business_pre_register.Input Mobile Ext    ${Register_S001['mobile_ext']}
+    register_business_pre_register.Select Title Name Legal Entity    ${Register_S001['title_name']}
+    register_business_pre_register.Input First Name Legal Entity    ${Register_S001['first_name']}
+    register_business_pre_register.Input Last Name Legal Entity    ${Register_S001['first_name']}
+    register_business_pre_register.Input Email Legal Entity    ${Register_S001['email']}
+    register_business_pre_register.Input Mobile No Legal Entity    ${Register_S001['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot    Register_S001    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
-    #register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
+    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
     #Expected
-    #register_business_pre_register.Verify Confirm Page    ${Register_S001['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
 
 Register_S002
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
@@ -53,11 +53,11 @@ Register_S002
     register_business_customers_page.Click Text    ${Register['text menu register']}
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S002['checkbox_partner_types']}
-    register_business_pre_register.Select Company Title Name     ${Register_S002['company_title_name']}
-    register_business_pre_register.Input Company Name    ${Register_S002['company_name']}
-    register_business_pre_register.Input Tax Identification Number    ${Register_S002['id_number']}
-    register_business_pre_register.Input Company Address    ${Register_S002['company_address']}
-    register_business_pre_register.Input Company Address Full    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
+    register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S002['company_title_name']}
+    register_business_pre_register.Input Company Name Legal Entity    ${Register_S002['company_name']}
+    register_business_pre_register.Input Tax Identification Number Legal Entity    ${Register_S002['id_number']}
+    register_business_pre_register.Input Company Address Legal Entity    ${Register_S002['company_address']}
+    register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
     # common.Scroll Window To Vertical    0
     register_business_pre_register.Select Title Name    ${Register_S002['title_name']}
@@ -70,9 +70,9 @@ Register_S002
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
-    #register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
+    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
     #Expected
-    #register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
 
 Register_S003
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
@@ -87,19 +87,19 @@ Register_S003
     register_business_customers_page.Click Text    ${Register['text menu register']}
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S003['checkbox_partner_types']}
-    register_business_pre_register.Select Company Title Name     ${Register_S003['company_title_name']}
-    register_business_pre_register.Input Company Name    ${Register_S003['company_name']}
-    register_business_pre_register.Input Tax Identification Number    ${Register_S003['id_number']}
-    register_business_pre_register.Input Company Address    ${Register_S003['company_address']}
-    register_business_pre_register.Input Company Address Full    ${Register_S003['search_company_address_full']}    ${Register_S002['select_company_address_full']}
+    register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S003['company_title_name']}
+    register_business_pre_register.Input Company Name Legal Entity    ${Register_S003['company_name']}
+    register_business_pre_register.Input Tax Identification Number Legal Entity    ${Register_S003['id_number']}
+    register_business_pre_register.Input Company Address Legal Entity    ${Register_S003['company_address']}
+    register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S003['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
     # common.Scroll Window To Vertical    0
-    register_business_pre_register.Select Title Name    ${Register_S003['title_name']}
-    register_business_pre_register.Input First Name    ${Register_S003['first_name']}
-    register_business_pre_register.Input Last Name    ${Register_S003['first_name']}
-    register_business_pre_register.Input Email    ${Register_S003['email']}
-    register_business_pre_register.Input Mobile No    ${Register_S003['mobile_no']}
-    register_business_pre_register.Input Mobile Ext    ${Register_S003['mobile_ext']}
+    register_business_pre_register.Select Title Name Legal Entity    ${Register_S003['title_name']}
+    register_business_pre_register.Input First Name Legal Entity    ${Register_S003['first_name']}
+    register_business_pre_register.Input Last Name Legal Entity    ${Register_S003['first_name']}
+    register_business_pre_register.Input Email Legal Entity    ${Register_S003['email']}
+    register_business_pre_register.Input Mobile No Legal Entity    ${Register_S003['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S003['mobile_ext']}
     common.Verify Capture Screenshot    Register_S003    filled in contact information success
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
@@ -122,9 +122,8 @@ Register_S004
     register_business_customers_page.Click Text    ${Register['text menu register']}
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S004['checkbox_partner_types']}
-    register_business_pre_register.Select Company Title Name     ${Register_S004['company_title_name']}
-    register_business_pre_register.Input Company Name    ${Register_S004['company_name']}
-    register_business_pre_register.Input Tax Identification Number    ${Register_S004['id_number']}
+    
+    
     register_business_pre_register.Input Company Address    ${Register_S004['company_address']}
     register_business_pre_register.Input Company Address Full    ${Register_S004['search_company_address_full']}    ${Register_S004['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
