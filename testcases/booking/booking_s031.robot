@@ -11,6 +11,7 @@ Booking_S031
     [Tags]    Booking    UAT
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
+    c2c_landing_page.Click Log In Button In Landing Page
     c2c_login.Input Email    ${c2c_login_user_01['username']}  # Expected result : ${c2c_login_user_02['username']}
     c2c_login.Input Password    ${c2c_login_user_01['password']}  # Expected result : ${c2c_login_user_02['password']}
     c2c_login.Click Log On Button
@@ -20,8 +21,8 @@ Booking_S031
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     # Expected
-    b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking_for_general_customer']}
-    common.Verify Capture Screenshot    Booking_S031    Verify Booking Page
+    b2c_booking_delivery_page.Verify Booking Page For General Customer 
+    common.Verify Capture Screenshot    Booking_S031    Verify Booking Page For General Customer
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add

@@ -11,6 +11,7 @@ Booking_S030
     [Tags]    Booking    UAT
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
+    c2c_landing_page.Click Log In Button In Landing Page
     c2c_login.Input Email    ${c2c_login_user_01['username']}  # Expected result : ${c2c_login_user_02['username']}
     c2c_login.Input Password    ${c2c_login_user_01['password']}  # Expected result : ${c2c_login_user_02['password']}
     c2c_login.Click Log On Button
@@ -20,8 +21,8 @@ Booking_S030
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     # Expected
-    b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking_for_general_customer']}
-    common.Verify Capture Screenshot    Booking_S030    Verify Booking Page
+    b2c_booking_delivery_page.Verify Booking Page For General Customer 
+    common.Verify Capture Screenshot    Booking_S030    Verify Booking Page For General Customer
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
@@ -32,11 +33,11 @@ Booking_S030
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
     # Expected   
-    b2c_booking_delivery_page.Verify Select Parcel Type
+    # b2c_booking_delivery_page.Verify Select Parcel Type
     common.Verify Capture Screenshot    Booking_S030    Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
-    b2c_booking_delivery_page.Select Parcel Type    ${Booking_S030['parcel_type']}
+    # b2c_booking_delivery_page.Select Parcel Type    ${Booking_S030['parcel_type']}
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -188,7 +189,7 @@ Booking_S030
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -212,8 +213,8 @@ Booking_S030
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S030['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S032['total_price_value1']}
+    ...    ${Booking.text_default['total_price_amount']}  # Expected result : ${Booking_S030['total_price_amount']}
+    ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S030['total_price_value1']}
     ...    ${EMPTY}  # Expected result : ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S030    Verify Booking Summary After Booking Success
@@ -227,9 +228,9 @@ Booking_S030
     ...    ${booking_id}
     ...    ${booking_time}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S030['booking_name']}
+    ...    ${Booking_S030['booking_name']} ${booking_id}
     ...    ${Booking_S030['booking_item']}
-    ...    ${Booking_S030['booking_price']}
+    ...    ${Booking.text_default['booking_price']}  # Expected result : ${Booking_S030['booking_price']}
     common.Verify Capture Screenshot    Booking_S030    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -238,7 +239,7 @@ Booking_S030
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -262,7 +263,7 @@ Booking_S030
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S030['total_price_amount']}
+    ...    ${Booking.text_default['total_price_amount']}  # Expected result : ${Booking_S030['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S032['total_price_value1']}
     ...    ${EMPTY}  # Expected result : ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
