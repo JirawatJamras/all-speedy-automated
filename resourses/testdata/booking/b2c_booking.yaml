@@ -8,6 +8,9 @@ Booking:
   text_profile_position: ตำแหน่งงาน       #check
   text_title_booking_for_business_customer: จองการจัดส่งพัสดุ สาขาหลัก       #check
   text_title_booking_for_general_customer: จองการจัดส่งพัสดุ
+  text_menu_booking: จองการจัดส่งพัสดุ
+  text_btn_add: เพิ่ม
+  text_btn_next: ถัดไป
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " #check
   text_version: " (Version 2)"
   text_title: สร้างพัสดุ       #check
@@ -23,6 +26,7 @@ Booking:
   text_phone_receiver: เบอร์โทรศัพท์ *   #check
   text_name_receiver: ชื่อ *    #check
   text_location_receiver: ข้อมูลสถานที่รับพัสดุ      #check
+  text_send_home: ส่งที่บ้าน
   text_address_receiver: รายละเอียดที่อยู่ *     #check
   text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     #check
   text_select_store_on_map: เลือกร้าน

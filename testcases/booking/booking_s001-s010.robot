@@ -45,13 +45,13 @@ Booking_S002
     b2c_login_page.Click Log On Button
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
-    b2c_home_page.Click Book Parcel Delivery
+    b2c_home_page.Click Book Parcel Delivery    ${Booking['text_menu_booking']}
     #Expected
-    b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking_for_business_customer']}
+    b2c_booking_delivery_page.Verify Booking Page    ${Booking['text_title_booking_for_business_customer']}    ${Booking['text_btn_add']}
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Page
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
-    b2c_booking_delivery_page.Click Button To Add
+    b2c_booking_delivery_page.Click Button To Add    ${Booking['text_btn_add']}
     #Expected
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${current_date_thai}${Booking['text_version']}
     common.Verify Capture Screenshot    Booking_S002    Verify Term & Condition
@@ -89,7 +89,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
-    b2c_booking_delivery_page.Click Next Button
+    b2c_booking_delivery_page.Click Next Button    ${Booking['text_btn_next']}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home 
     ...    ${Booking['text_title']}
