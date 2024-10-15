@@ -9,7 +9,7 @@ Open Chrome Browser
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --no-sandbox
     Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
-    Call Method    ${chrome_options}    add_argument    --headless\=old
+    # Call Method    ${chrome_options}    add_argument    --headless\=old
     IF  '${chrome}'=='headlesschrome'
         Call Method     ${chrome_options}      add_argument    --headless\=old
     END

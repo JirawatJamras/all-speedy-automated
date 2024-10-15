@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
 #Test Teardown     Close Browser
 #[Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
@@ -37,7 +37,7 @@ Booking_S001
 
 Booking_S002
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)    
-    [Tags]    Booking    UAT    Review
+    [Tags]    Booking    UAT    Run
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -205,7 +205,7 @@ Booking_S002
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -256,7 +256,7 @@ Booking_S002
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -308,7 +308,7 @@ Booking_S002
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -369,5 +369,3 @@ Booking_S002
     # Expected
     b2c_booking_detail_page.Verify Timestamp After Print Label
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen
-
-

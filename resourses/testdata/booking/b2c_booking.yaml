@@ -27,8 +27,8 @@ Booking:
   text_select_store_on_map: เลือกร้าน
   text_booking_list: รายการบุ๊คกิ้ง     #check
   text_draft_status: ร่าง     #check
-  text_business_customer_parcel_id_4_start_unit: SPBC
-  text_general_customer_parcel_id_4_start_unit: SPBD
+  text_business_customer_parcel_id_4_start_unit: SPBD
+  text_general_customer_parcel_id_4_start_unit: SPBC
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
