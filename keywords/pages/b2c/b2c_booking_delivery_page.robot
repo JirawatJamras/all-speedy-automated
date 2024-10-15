@@ -536,20 +536,20 @@ Verify Created Booking On Booking Delivery Page
     [Arguments]    ${booking_id}    ${booking_time}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}    
     ${booking_id_replace}=    Replace String    ${txt_booking_id_in_list}    {value}    ${booking_id}
     Wait Until Element Is Visible    ${booking_id_replace}    timeout=30s
+    Verify Booking ID Format And Value    ${booking_id_replace}    ${booking_id}
     ${booking_status_replace}=    Replace String    ${txt_booking_status_in_list}    {value}    ${booking_id}
     ${txt_status}=    Get Text    ${booking_status_replace}
-    Should Be Equal    ${txt_status}    ${status_booking}
-    Verify Booking ID Format And Value    ${booking_id_replace}    ${booking_id}
     ${booking_name}=    Replace String    ${txt_booking_name_in_list}    {value}    ${booking_id}
     ${txt_name}=    Get Text    ${booking_name}
-    Should Be Equal    ${txt_name}    ${name_booking}
     ${booking_date}=    Replace String    ${txt_booking_date_in_list}    {value}    ${booking_id}
     Verify Date And Time With Time Distortion   ${booking_date}    ${booking_time}
     ${booking_item}=    Replace String    ${txt_booking_item_in_list}    {value}    ${booking_id}
-    ${txt_item}=    Get Text    ${booking_item} 
-    Should Be Equal    ${txt_item}    ${item_booking}
+    ${txt_item}=    Get Text    ${booking_item}
     ${booking_price}=    Replace String    ${txt_booking_price_in_list}    {value}    ${booking_id}
-    ${txt_price}=    Get Text    ${booking_price}
+    ${txt_price}=    Get Text    ${booking_price}    
+    Should Be Equal    ${txt_status}    ${status_booking}
+    Should Be Equal    ${txt_name}    ${name_booking}
+    Should Be Equal    ${txt_item}    ${item_booking}
     Should Be Equal    ${txt_price}    ${price_booking}
 
 Verify Booking ID Format And Value

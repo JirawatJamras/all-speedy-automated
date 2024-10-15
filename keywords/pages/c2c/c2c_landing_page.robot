@@ -1,6 +1,10 @@
 **** Keywords ***
+Click Log In Button In Landing Page
+    ${login_button}=    Replace String    ${c2c_btn_login_landing_page}    {value}    ${Booking['text_login']}
+    common.Click when ready    ${login_button}
+
 Click Menu Seven Store
-    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}    timeout=10s
+    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}    timeout=30s
     common.Click when ready    ${c2c_mnu_seven_store_landing_page}
 
 Click Menu Shipping

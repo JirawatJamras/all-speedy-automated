@@ -1,4 +1,5 @@
 Booking:
+  text_login: เข้าสู่ระบบ
   text_company_profile: โปรไฟล์บริษัท         #check
   text_profile: ข้อมูลส่วนตัว           #check
   text_profile_name: ชื่อ       #check
@@ -26,6 +27,11 @@ Booking:
   text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     #check
   text_select_store_on_map: เลือกร้าน
   text_booking_list: รายการบุ๊คกิ้ง     #check
+  text_edit_booking_list: แก้ไขรายการบุ๊คกิ้ง
+  text_parcel_type: ประเภทพัสดุ
+  text_booking_name: ชื่อบุ๊คกิ้ง
+  text_search_store_on_map: ค้นหาร้าน 7-eleven
+  text_save: บันทึก
   text_draft_status: ร่าง     #check
   text_draft_save: บันทึกร่าง
   text_booking_id_label: 'บุ๊คกิ้ง ID :'
@@ -68,7 +74,10 @@ Booking:
   parcel_detail_insure_amount: จำนวนเงินซื้อประกัน
   parcel_detail_cod: เก็บเงินปลายทาง
   parcel_detail_remark: หมายเหตุ
+  text_print_parcel_label: พิมพ์ใบจ่ายหน้าพัสดุ
   text_paper_size:
+    paper_size: ขนาดกระดาษ
+    paper: กระดาษ
     size_a4:  กระดาษ A4
     size_a5:  กระดาษ A5
     size_8cm:  กระดาษ หน้ากว้าง 8 ซม.
@@ -559,7 +568,7 @@ Booking_S030:
   parcel_size:  A4
   total_price_amount:  '1'
   total_price_value1:  'NaN'
-  booking_name:  Booking DRY
+  booking_name:  รายการบุ๊กกิ๊ง  # Booking DRY
   booking_item: 1 รายการ
   booking_price: 'NaN'
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
