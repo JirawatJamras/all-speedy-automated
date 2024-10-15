@@ -4,7 +4,6 @@ Select Business Customers Tab
     Click Element    ${register_tab_business_customer} 
 
 Select General Customers Tab
-
     Wait Until Element Is Visible    ${register_tab_general_customer}    ${DEFAULT_TIMEOUT}
     Click Element    ${register_tab_general_customer}
 
