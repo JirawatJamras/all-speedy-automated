@@ -5,6 +5,13 @@ Click Checkbox Partner Types Legal
     common.Click when ready     ${Checkbox Partner Types}
 
 #Legal entity
+Set Juristic ID
+    ${currentdate}   Get Current Date
+    ${preid}   Convert Date  ${currentdate}       result_format=%y%m%d%H%M%S
+    ${prefix_number}=    Set Variable    0
+    ${JuristicID}=    Set Variable    ${prefix_number}${preid} 
+    Set Global Variable    ${JuristicID}
+
 Select Company Title Name Legal Entity
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_company_title_name_legal_entity}
@@ -102,8 +109,7 @@ Input Mobile Ext Individual
 
 #both    
 Click Confirm 
-    [Arguments]    ${Value}
-    ${Click confirm}=    Replace String    ${register_btn_confirm}     {value}    ${Value}
+    ${Click confirm}=    Replace String    ${register_btn_confirm}     {value}    ${Register['btn_confirm']}
     common.Click when ready    ${Click confirm}
      
 Click Cancel

@@ -1,5 +1,5 @@
 Register:
-  text menu register: ลงทะเบียนลูกค้าธุรกิจ
+  text_menu_register: ลงทะเบียนลูกค้าธุรกิจ
   txt_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
   btn_confirm: ลงทะเบียน
   btn_cancel: ยกเลิก
@@ -58,7 +58,7 @@ Register_S004:
   title_name: น.ส.
   first_name: วีวิกา
   last_name: ยั่งยืน
-  id_number: '1513763255099'
+  id_number: '1513763255099'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
   email: testregister.business004@yopmail.com
   individual_address: 456/22 หมู่บ้านสัมมากร
   search_individual_address_full: '10240'
@@ -71,7 +71,7 @@ Register_S005:
   title_name: น.ส.
   first_name: อัสมา
   last_name: รวมทอง
-  id_number: '0460823097311'
+  id_number: '0460823097311'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
   email: testregister.business005@yopmail.com
   individual_address: 145 หมู่บ้านชวนชม
   search_individual_address_full: '10240'
@@ -84,7 +84,7 @@ Register_S006:
   title_name: น.ส.
   first_name: อัสมา
   last_name: รวมทอง
-  id_number: '7311253028120'
+  id_number: '7311253028120'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
   email: testregister.business006@yopmail.com
   individual_address: 145 หมู่บ้านชวนชม
   search_individual_address_full: '10240'

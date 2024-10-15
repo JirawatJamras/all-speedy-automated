@@ -17,12 +17,13 @@ Register_S001
     #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
-    register_business_customers_page.Click Text    ${Register['text menu register']}
+    register_business_customers_page.Click Menu Register Business
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S001['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S001['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S001['company_name']}
-    register_business_pre_register.Input Tax Identification Number Legal Entity    ${Register_S001['id_number']}
+    register_business_pre_register.Set Juristic ID
+    register_business_pre_register.Input Tax Identification Number Legal Entity    ${JuristicID}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S001['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S001['search_company_address_full']}    ${Register_S001['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
@@ -37,9 +38,9 @@ Register_S001
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
-    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
+    register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page        ${Register['txt_register_success']}
 
 Register_S002
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
@@ -50,7 +51,7 @@ Register_S002
     #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
-    register_business_customers_page.Click Text    ${Register['text menu register']}
+    register_business_customers_page.Click Menu Register Business
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S002['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S002['company_title_name']}
@@ -84,7 +85,7 @@ Register_S003
     #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
-    register_business_customers_page.Click Text    ${Register['text menu register']}
+    register_business_customers_page.Click Menu Register Business
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S003['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S003['company_title_name']}
@@ -119,7 +120,7 @@ Register_S004
     #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
-    register_business_customers_page.Click Text    ${Register['text menu register']}
+    register_business_customers_page.Click Menu Register Business
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S004['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S004['title_name']}
@@ -148,7 +149,7 @@ Register_S005
     #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
-    register_business_customers_page.Click Text    ${Register['text menu register']}
+    register_business_customers_page.Click Menu Register Business
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S005['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S005['title_name']}
@@ -177,7 +178,7 @@ Register_S006
     #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
-    register_business_customers_page.Click Text    ${Register['text menu register']}
+    register_business_customers_page.Click Menu Register Business
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S006['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S006['title_name']}
