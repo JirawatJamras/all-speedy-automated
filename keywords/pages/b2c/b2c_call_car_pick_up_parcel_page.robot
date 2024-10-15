@@ -2,7 +2,7 @@
 Verify Call Car Pick Up Page
     [Arguments]    ${title}
     ${b2c_txt_call_pickup_parcel_pickup_page}=  Replace String   ${b2c_txt_call_pickup_parcel_pickup_page}   {value}   ${title}
-    Sleep    3s
+    Sleep    4s
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_txt_call_pickup_parcel_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
@@ -58,6 +58,7 @@ Verify Add Special Pickup Round Success
     ## เหลือ verify detail
     Wait Until Element Is Visible    ${b2c_txt_complete_save_pickup_round}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=40s
     Wait Until Element Is Visible    ${heading_card_special_round}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${heading_card_special_round}
 

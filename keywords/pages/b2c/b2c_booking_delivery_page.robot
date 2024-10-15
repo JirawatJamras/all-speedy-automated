@@ -1,7 +1,8 @@
 *** Keywords ***
 Verify Booking Page For Business Customer
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_business_customer']}  
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    Sleep    3s
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
     Wait Until Element Is Visible    ${btn_add}    timeout=30s
     ${title}=    Get Text    ${txt_title_booking}    
@@ -31,6 +32,7 @@ Click Accept Terms of Service
     Click Element        ${btn_accept_terms_service}
 
 Verify Select Parcel Type
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
     Wait Until Element Is Enabled   ${btn_parcel_type_dry}    timeout=30s
     Element Should Be Visible    ${btn_parcel_type_dry}
     Element Should Be Visible    ${btn_parcel_type_chill}
@@ -58,6 +60,17 @@ Click Temperature Controlled Parcel
     Wait Until Element Is Visible    ${parcel_type_chill_btn}   timeout=30s
     Click Element    ${parcel_type_chill_btn}
     
+Click Close X Popup
+    common.Click When Ready    ${btn_close_popup}
+    common.Click When Ready    ${btn_confirm_to_close_popup}
+
+Click Latest Booking Created
+    common.Click When Ready    ${btn_card_latest_booking}
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=40s
+
+Click Edit Booking Icon
+    common.Click When Ready   ${btn_edit_booking_icon}
+
 # Verify Close Pop-Up
 #     Wait Until Element Is Visible    ${close_noti_txt}    timeout=30s
 #     ${button_text}=    Get Text    ${close_noti_txt}

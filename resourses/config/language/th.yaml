@@ -116,3 +116,59 @@ Booking:
     parcel_insure:  ไม่มีการซื้อประกัน
     text_postcode: รหัสไปรษณีย์ปลายทาง
     text_store_code: รหัสร้าน
+
+call_car_pick_up:
+  text_call_car_pick_up:  เรียกรถเข้ารับพัสดุ สาขาหลัก
+  text_parcel_pickup_schedule:  รอบรถเข้ารับพัสดุ
+  text_car_round_name:  ชื่อรอบรถ
+  text_parcel_type:  ประเภทพัสดุ
+  text_parcel_pickup_date:  วันที่รถเข้ารับพัสดุ
+  text_parcel_pickup_time:  เวลารถเข้ารับพัสดุ
+  text_cut_off_time:  เวลา Cut Off รอบรถ
+  text_parcel_number:  จำนวนพัสดุ
+  button_save:  บันทึก
+  button_cancel:  ยกเลิก
+  car_round_name:
+    special:  รอบพิเศษ
+  parcel_type:
+    dry:  พัสดุทั่วไป (Dry)
+    chilled:  พัสดุควบคุมอุณหภูมิ
+  parcel_pickup_time:
+    morning:  ช่วงเช้า 09:00 - 12:00
+    afternoon:  ช่วงบ่าย 13:00 - 16:00
+  cut_off_time:  '15:00:00'
+  default:
+    parcel_number: 0 รายการ
+
+dc_operaion:
+  role:
+    dev:  Role Dev
+    admin:  แอดมินคลัง
+    toei:  toei test
+  title:
+    homepage:  ภาพรวมงานประจำวัน
+    Scan:  Scan
+    Pouch:  รายการ Pouch
+    Report:  รายการพัสดุแจ้งปัญหา
+    Check_Notification:  ตรวจสอบแจ้งเตือน
+    Waiting_Destroy:  พัสดุรอทำลาย
+    Upload_Route:  อัปโหลด Route
+    Check_Receiving_Cycle:  ตรวจสอบรอบการเข้ารับพัสดุ
+    History_Parcel:  รายการประวัติพัสดุทั้งหมด
+  dps_menu:
+    Home_Page:  homepage
+    Scan:  scan
+    Pouch:  pouch
+    Report:  reportpage
+    Check_Notification:  check-notifications
+    Waiting_Destroy:  waiting-destroy
+    Upload_Route:  upload-route
+    Check_Receiving_Cycle:  check-receiving-cycle
+    History_Parcel:  historyparcel
+  Check_Receiving_Cycle_Tab:
+    all_parcels_received:  รายการเข้ารับพัสดุทั้งหมด
+    inventory_confirm_list:  รายการรอคลังยืนยัน
+  button_export:  Export File
+  button_approve: approve
+  parcel_pickup_details:  รายละเอียดรอบเข้ารับพัสดุ
+  vehicle_type:  ประเภทที่ใช้

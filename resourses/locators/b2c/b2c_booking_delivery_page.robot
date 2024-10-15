@@ -36,6 +36,10 @@ ${btn_parcel_select_XXL}    //strong[text()= '{value}']/../../../div[@class='ant
 ${btn_use_code}    //button//span[text()='ใช้โค้ด']
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
 ${btn_choose_store}    //b[text()='{value}']/..
+${btn_close_popup}    //div[@class='ant-modal-header']/..//button//span[@aria-label='close']
+${btn_confirm_to_close_popup}    //button//span[@aria-label='check']
+${btn_card_latest_booking}    (//div[@class='ant-spin-container']//div[@class='ant-card-body'])[1]
+${btn_edit_booking_icon}    //*[@data-icon='pen-to-square']/../..
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']/div[@class='max-sm:border-b pb-2 border-blue-800 text-blue-800']
 ${txt_frist_step_name}    //form[@id='create_parcel_form']/div[2]/div[1]/div/div[3]/div
@@ -73,6 +77,7 @@ ${txt_cod}    //label[@title='{value}']
 ${txt_remark}    //label[@title='{value}']
 ${txt_selected_code_detail}    //span//strong[text()='คูปองและโค้ดส่วนลดที่เลือก']/../..
 ${txt_store_address}    //textarea[@id='create_parcel_form_receiver_address_display']
+${txt_edit_booking_popup}    //div[@class='ant-modal-content']//div[text()='{value}']
 ${booking_txt_parcel_id_booking_detail_page}    //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div/span/strong
 
 ${msg_error_phone_sender}    //input[@id='create_parcel_form_sender_tel']/../../../../div[2]/div/div
