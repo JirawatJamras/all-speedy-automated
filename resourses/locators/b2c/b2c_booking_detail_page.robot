@@ -16,8 +16,8 @@ ${b2c_txt_receiver}    //div[contains(@class, 'ant-list-item')]//div[contains(@c
 ${b2c_txt_receiver_name}   //div[contains(@class, 'ant-list-item')]//div[contains(@class, 'ant-card-body')]//span[contains(text(),'{value}')]
 ${b2c_txt_receiver_phone}   //div[contains(@class, 'ant-list-item')]//div[contains(@class, 'ant-card-body')]/div/div[@class='ant-row css-10o2jwh' and contains(normalize-space(.), '{value}')]
 ${b2c_txt_parcel_status_booking_detail_page}    //*[@class='hidden sm:inline']//span[text()='{value}']
-${b2c_txt_booking_id_booking_detail_page}    //strong[text()='บุ๊คกิ้ง ID :']/../../..//div[2]//span
-${b2c_txt_booking_name_booking_detail_page}    //strong[text()='ชื่อบุ๊คกิ้ง :']/../../..//div[4]//span
+${b2c_txt_booking_id_booking_detail_page}    //strong[text()='{value}']/../../..//div[2]//span
+${b2c_txt_booking_name_booking_detail_page}    //strong[text()='{value}']/../../..//div[4]//span
 ${b2c_txt_booking_date_and_time_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='วันเวลาทำรายการ :']/../../..//div[2]//span
 ${b2c_txt_shipping_origin_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='ต้นทางจัดส่ง :']/../../..//div[2]//span
 ${b2c_txt_parcel_list_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='{value}']

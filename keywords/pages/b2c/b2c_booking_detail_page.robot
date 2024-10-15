@@ -78,12 +78,14 @@ Click Save Shipping Origin Aria
     Wait Until Element Is Not Visible    //*[@role='dialog']    timeout=${DEFAULT_TIMEOUT}
 
 Get Booking ID
+    ${txt_booking_id}=    Replace String    ${txt_booking_id}    {value}    ${Booking['text_booking_id_label']}
     Wait Until Element Is Visible    ${txt_booking_id}    timeout=${DEFAULT_TIMEOUT}
     ${booking_id}=    Get Text    ${txt_booking_id}
     RETURN    ${booking_id}
 
 Get Booking Time
     @{booking_time}    Create List
+    ${txt_booking_time}=    Replace String    ${txt_booking_time}    {value}    ${Booking['text_booking_time_label']}
     Wait Until Element Is Visible    ${txt_booking_time}    timeout=${DEFAULT_TIMEOUT}
     ${booking_time_1}=    Get Text    ${txt_booking_time}
     ${part}=    Split String    ${booking_time_1}    ${SPACE}
@@ -101,6 +103,7 @@ Get Booking Time
     RETURN    ${booking_time}
 
 Get Booking Name
+    ${txt_booking_name}=    Replace String    ${txt_booking_name}    {value}    ${Booking['text_booking_name_label']}
     Wait Until Element Is Visible    ${txt_booking_name}    timeout=${DEFAULT_TIMEOUT}
     ${booking_name}=    Get Text    ${txt_booking_name}
     RETURN    ${booking_name}
@@ -183,6 +186,7 @@ Verify Booking Detail Page
     ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${title}
     ${b2c_txt_parcel_list_booking_detail_page} =  Replace String    ${b2c_txt_parcel_list_booking_detail_page}    {value}    ${title_parcel_list}
     ${b2c_txt_booking_summary_booking_detail_page} =  Replace String    ${b2c_txt_booking_summary_booking_detail_page}    {value}    ${booking_summary}
+    ${b2c_txt_booking_name_booking_detail_page}=    Replace String    ${b2c_txt_booking_name_booking_detail_page}    {value}    ${Booking['text_booking_name_label']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
@@ -191,6 +195,7 @@ Verify Booking Detail Page
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
     Should Be Equal    ${title}    ${actual_text_title}
+    ${b2c_txt_booking_id_booking_detail_page}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${Booking['text_booking_id_label']}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     Should Be Equal    ${booking_name}    ${actaul_booking_name}

@@ -98,7 +98,8 @@ Verify full_postcode_sender Equal Text
     Should Be Equal    ${actual_text_full_postcode_sender}    ${full_postcode_sender}
 
 Verify Data Receiver When Select Home
-    [Arguments]   ${phone_receiver}    ${name_receiver}    ${address_receiver}    ${full_postcode_receiver}  
+    [Arguments]   ${phone_receiver}    ${name_receiver}    ${address_receiver}    ${full_postcode_receiver} 
+    ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title ']}
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
@@ -112,6 +113,7 @@ Verify Data Receiver When Select Home
 
 Verify full_postcode_senderVerify full_postcode_receiver    
     [Arguments]    ${full_postcode_receiver}
+    ${txtbox_full_postcode_receiver}=    Replace String    ${txtbox_full_postcode_receiver}    {value}    ${Booking['text_postcode_receiver']}
    ${actual_textbox_full_postcode_receiver}=    Get Text    ${txtbox_full_postcode_receiver}
     Should Be Equal    ${actual_textbox_full_postcode_receiver}    ${full_postcode_receiver}
 Verify full_postcode_receiver Equal Text
@@ -433,9 +435,11 @@ Click Button
     Click Element    ${btn}
 
 Click Save Button
+    ${btn_save_draft}=    Replace String    ${btn_save_draft}    {value}    ${Booking['text_draft_save']}
     common.Click When Ready    ${btn_save_draft}
 
 Click Next Button
+    ${btn_next}=    Replace String    ${btn_next}    {value}    ${Booking['text_next']}
     common.Click When Ready    ${btn_next}
 
 Click Add To Favorites In Sender
@@ -595,29 +599,40 @@ Verify Promotion Detail
     Should Be Equal    ${my_coupon_and_code}    ${actual_my_coupon_and_code}
 
 Click Parcel Booking Button
-    Wait Until Element Is Visible    ${btn_parcel_booking}    timeout=${DEFAULT_TIMEOUT}
-    Click Element   ${btn_parcel_booking}
+    ${btn_parcel_booking}=   Replace String    ${btn_parcel_booking}    {value}    ${Booking['text_parcel_booking']}
+    common.Click When Ready    ${btn_parcel_booking}
     
 Verify Create Parcel Page Detail Step
     [Arguments]    ${detail_A4}    ${detail_A3}    ${detail_XS}    ${detail_S}    ${detail_M}    ${detail_L}    ${detail_XL}    ${detail_XXL}    ${insure_amount}    ${cod}    ${remark}
-    ${actual_detail_A4}=    Get Text    ${btn_parcel_select_A4} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_A4']}
+    ${actual_detail_A4}=    Get Text    ${btn_parcel_select_size}
     ${detail_A4_replace}=  Replace String   ${actual_detail_A4}   \n   ${SPACE}
-    ${actual_detail_A3}=    Get Text    ${btn_parcel_select_A3} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_A3']}
+    ${actual_detail_A3}=    Get Text    ${btn_parcel_select_size} 
     ${detail_A3_replace}=  Replace String   ${actual_detail_A3}   \n   ${SPACE}
-    ${actual_detail_XS}=    Get Text    ${btn_parcel_select_XS} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_XS']}
+    ${actual_detail_XS}=    Get Text    ${btn_parcel_select_size}
     ${detail_XS_replace}=  Replace String   ${actual_detail_XS}   \n   ${SPACE}
-    ${actual_detail_S}=    Get Text    ${btn_parcel_select_S} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_S']}
+    ${actual_detail_S}=    Get Text    ${btn_parcel_select_size} 
     ${detail_S_replace}=  Replace String   ${actual_detail_S}   \n   ${SPACE}
-    ${actual_detail_M}=    Get Text    ${btn_parcel_select_M} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_M']}
+    ${actual_detail_M}=    Get Text    ${btn_parcel_select_size}
     ${detail_M_replace}=  Replace String   ${actual_detail_M}   \n   ${SPACE}
-    ${actual_detail_L}=    Get Text    ${btn_parcel_select_L} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_L']}
+    ${actual_detail_L}=    Get Text    ${btn_parcel_select_size}
     ${detail_L_replace}=  Replace String   ${actual_detail_L}   \n   ${SPACE}
-    ${actual_detail_XL}=    Get Text    ${btn_parcel_select_XL} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_XL']}
+    ${actual_detail_XL}=    Get Text    ${btn_parcel_select_size}
     ${detail_XL_replace}=  Replace String   ${actual_detail_XL}   \n   ${SPACE}
-    ${actual_detail_XXL}=    Get Text    ${btn_parcel_select_XXL} 
+    ${btn_parcel_select_size}=    Replace String    ${btn_parcel_select_size}    {value}    ${Booking.general_parcel['parcel_XXL']}
+    ${actual_detail_XXL}=    Get Text    ${btn_parcel_select_size}
     ${detail_XXL_replace}=  Replace String   ${actual_detail_XXL}   \n   ${SPACE}
+    ${txt_insure_amount}=    Replace String    ${txt_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
     ${actual_insure_amount}=    Get Text    ${txt_insure_amount}
-    ${actual_cod}=    Get Text    ${txt_cod} 
+    ${txt_cod}=    Replace String    ${txt_cod}    {value}    ${Booking['parcel_detail_cod']}
+    ${actual_cod}=    Get Text    ${txt_cod}
+    ${txt_remark}=    Replace String    ${txt_remark}    {value}    ${Booking['parcel_detail_remark']}
     ${actual_remark}=    Get Text    ${txt_remark}
     Should Be Equal    ${detail_A4_replace}    ${detail_A4}
     Should Be Equal    ${detail_A3_replace}    ${detail_A3}

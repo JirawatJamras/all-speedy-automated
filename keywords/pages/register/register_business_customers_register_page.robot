@@ -1,9 +1,9 @@
 **** Keywords ***
-#old pre register
-# Click Checkbox Partner Types Legal
-#     [Arguments]    ${Partner_Types}
-#     Wait Until Element Is Visible    //span[text()='${Partner_Types}']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']
-#     Click Element    //span[text()='${Partner_Types}']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']
+# old pre register
+Click Checkbox Partner Types Legal
+    [Arguments]    ${Partner_Types}
+    Wait Until Element Is Visible    //span[text()='${Partner_Types}']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']
+    Click Element    //span[text()='${Partner_Types}']/../..//label[@class='ant-radio-wrapper ant-radio-wrapper-checked css-1x1kih3']
 
 # Select Partner Type Radio Button
 #     [Arguments]    ${type}

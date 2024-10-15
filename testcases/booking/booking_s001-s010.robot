@@ -99,7 +99,7 @@ Booking_S002
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
-    b2c_booking_delivery_page.Verify Data Receiver When Select Home  
+    b2c_booking_delivery_page.Verify Data Receiver When Select Home 
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
