@@ -232,6 +232,7 @@ Verify Booking Detail Page
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
+    ${b2c_btn_print_parcel_label}=    Replace String    ${b2c_btn_print_parcel_label}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_btn_print_parcel_label}    timeout=${DEFAULT_TIMEOUT}
     Log    Booking Summary
     Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
