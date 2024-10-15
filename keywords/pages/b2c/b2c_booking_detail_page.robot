@@ -104,12 +104,13 @@ Get Booking Time
     ${minute}=    Convert To Integer    ${minute}
     ${new_minute}=    Evaluate    ${minute} + 1
     ${new_minute}=    Convert To String    ${new_minute}
+    ${new_minute}=    Set Variable    ${new_minute.zfill(2)}
     ${new_time}=    Set Variable    ${part_time}[0]:${new_minute}
     ${booking_time_2}=    Set Variable    ${day}${SPACE}${new_time}
     Append To List    ${booking_time}    ${booking_time_1}
     Append To List    ${booking_time}    ${booking_time_2}
     RETURN    ${booking_time}
-
+    
 Get Booking Name
     ${txt_booking_name}=    Replace String    ${txt_booking_name}    {value}    ${Booking['text_booking_name_label']}
     Wait Until Element Is Visible    ${txt_booking_name}    timeout=${DEFAULT_TIMEOUT}

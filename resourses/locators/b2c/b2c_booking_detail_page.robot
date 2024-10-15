@@ -48,7 +48,7 @@ ${b2c_txt_title_print_label}    //div[@class='ant-modal-content']//div[text()='{
 ${b2c_txt_paper_size}    //span[text()='{value}']
 ${b2c_txt_list_paper_size}    //div[contains(text(),'{value}')]/../../..
 ${b2c_txt_parcel_label_detail}    //div[contains(@id,'print')]
-${b2c_txt_booking_id}    //span[normalize-space()='${value}']
+${b2c_txt_booking_id}    //span[normalize-space()='{value}']
 
 ${b2c_img_logo_speed_d}    //div[text()='{value}']/../../../..//img
 ${b2c_img_qr_code}    //div[text()='{value}']/../../../..//canvas
