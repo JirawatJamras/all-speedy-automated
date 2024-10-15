@@ -45,25 +45,14 @@ DC_Operation_002
 
     Log    Step No.5 ระบุข้อมูล
     ##เลือกประเภทพัสดุ
-    Click Element    //strong[text()='ประเภทพัสดุ']/../../../..//span[@class='ant-select-selection-item']
-    Click Element    //div[@class='ant-select-item-option-content' and text()='พัสดุทั่วไป (Dry)']
-    ##เลือกวันที่เข้ารับพัสดุ
-    ${date_YYYY_MM_DD}   Get Current Date
-    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y %H
-    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
-    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
-    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${day}    Convert To Integer    ${d}
-    ${day}    Evaluate    ${day} + 2
-    ${nextDay}    Set Variable    ${day}-${m}
-    Click Element    //strong[text()='วันที่รถเข้ารับพัสดุ']/../../../..//div[@class='ant-picker-input']
-    Click Element    //div[@class='ant-picker-body']//td[contains(@title,'${nextDay}')]
-    ##เลือกเวลาเข้ารับพัสดุ
-    Click Element    //strong[text()='เวลารถเข้ารับพัสดุ']/../../../..//span[@class='ant-select-selection-item']
-    Click Element    //div[@class='ant-select-item-option-content' and text()='ช่วงเช้า 09:00 - 12:00']
-    Click Element    //button//span[text()='บันทึก']
-    # Click Element    //button//span[text()='ยกเลิก']
-    # Click Element    //button[text()=' ยืนยัน']
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${call_car_pick_up.parcel_type['dry']}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${call_car_pick_up.parcel_pickup_time['morning']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button    ${call_car_pick_up['button_save']}
+    b2c_call_car_pick_up_parcel_page.Verify Add Special Pickup Round Success   ##TBC##
+    ...    ${call_car_pick_up.car_round_name['special']}
+    ...    ${dc_operaion_002['text_parcel_pickup_time']}
+    common.Verify Capture Screenshot    DC_Operation_002   Verify Add Special Pickup Round Success
     
     Log    Step No.6 เลือกเมนู "จองการจัดส่งพัสดุ"
     Wait Until Element Is Not Visible    //div[@class='ant-modal-body']//img[@alt='my gif']    timeout=30s

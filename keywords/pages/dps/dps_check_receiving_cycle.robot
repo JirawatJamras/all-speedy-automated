@@ -63,13 +63,13 @@ Verify Inventory Confirm List Tab
         ${status_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[14]    ${status}
         Log To console    ${index}
         ${all_conditions}=    Evaluate    ${name_status} and ${address_status} and ${sub_district_status} and ${district_status} and ${province_status} and ${postcode_status} and ${next_day_status} and ${receiving_time_status} and ${receiving_type_status} and ${courier_status} and ${number_of_parcel_status} and ${status_status}
-        Set Suite Variable    ${card}    ${item}//button
+        Set Suite Variable    ${card_inventory}    ${item}//button
         Log To console    ${all_conditions}
         Exit For Loop If    ${all_conditions}
     END
 
 Click Pencil Icon
-    Click When Ready    ${card}
+    Click When Ready    ${card_inventory}
 
 Verify Parcel Pickup Details Popup
     [Arguments]    ${parcel_pickup_details}    ${btn_export}   ${vehicle_type}

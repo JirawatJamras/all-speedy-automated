@@ -2,19 +2,66 @@
 Verify Call Car Pick Up Page
     [Arguments]    ${title}
     ${b2c_txt_call_pickup_parcel_pickup_page}=  Replace String   ${b2c_txt_call_pickup_parcel_pickup_page}   {value}   ${title}
-    Sleep    5s
+    Sleep    3s
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_txt_call_pickup_parcel_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Click Add Button
-    FOR    ${i}    IN RANGE    0    5
-        common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_parcel_pickup_schedule}    timeout=5s
-        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
-    END
+    common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}
 
 Verify Popup Parcel Pickup Schedule
-    Wait Until Element is Visible    ${b2c_txt_parcel_pickup_schedule}
+    [Arguments]    ${parcel_pickup_schedule}    ${car_round_name}    ${parcel_type}    ${parcel_pickup_date}    ${parcel_pickup_time}
+    ...    ${save_button}    ${cancel_button}
+    ${txt_parcel_pickup_schedule}=  Replace String   ${b2c_txt_parcel_pickup_schedule_in_add_popup}   {value}   ${parcel_pickup_schedule}
+    ${txt_car_round_name}=  Replace String   ${b2c_txt_car_round_name_in_add_popup}   {value}   ${car_round_name}
+    ${txt_parcel_type}=  Replace String   ${b2c_txt_parcel_type_in_add_popup}   {value}   ${parcel_type}
+    ${txt_parcel_pickup_date}=  Replace String    ${b2c_txt_parcel_pickup_date_in_add_popup}    {value}   ${parcel_pickup_date}
+    ${txt_parcel_pickup_time}=  Replace String    ${b2c_txt_parcel_pickup_time_in_add_popup}    {value}   ${parcel_pickup_time}
+    ${btn_save}=  Replace String    ${b2c_btn_save_in_add_popup}    {value}   ${save_button}
+    ${btn_cancel}=  Replace String    ${b2c_btn_cancel_in_add_popup}    {value}   ${cancel_button}
 
+    Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_car_round_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_parcel_type}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_parcel_pickup_date}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_parcel_pickup_time}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_save}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_cancel}    timeout=${DEFAULT_TIMEOUT}
+
+Select Parcel Type
+    [Arguments]    ${value}
+    ${selected_parcel_type}=  Replace String   ${b2c_cbo_parcel_type}   {value}   ${value}
+    common.Click When Ready    ${b2c_txtbox_parcel_type}
+    common.Click When Ready    ${selected_parcel_type}
+
+Select Parcel Pickup Date
+    ${nextDay}    dps_home_page.Set_Next_DAY
+    ${selected_parcel_pickup_date}=  Replace String   ${b2c_cbo_parcel_pickup_date}   {value}   ${nextDay}
+    common.Click When Ready    ${b2c_txtbox_parcel_pickup_date}
+    common.Click When Ready    ${selected_parcel_pickup_date}
+
+Select Parcel Pickup Time
+    [Arguments]    ${time}
+    ${selected_parcel_pickup_time}=  Replace String   ${b2c_cbo_parcel_pickup_time}   {value}   ${time}
+    common.Click When Ready    ${b2c_txtbox_parcel_pickup_time}
+    common.Click When Ready    ${selected_parcel_pickup_time}
+
+Click Save Button
+    [Arguments]    ${button}
+    ${save_button}=  Replace String   ${b2c_btn_save_in_add_popup}   {value}   ${button}
+    common.Click When Ready    ${save_button}
+
+Verify Add Special Pickup Round Success
+    [Arguments]    ${text_special}    ${text_pickup_time}
+    ${nextDay}    dps_home_page.Set_Next_DAY
+    ${heading_card_special_round}=  Replace String   ${b2c_txt_parcel_pickup_round}   {value}   ${text_special} ${nextDay} ${text_pickup_time}
+    ## เหลือ verify detail
+    Wait Until Element Is Visible    ${b2c_txt_complete_save_pickup_round}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${heading_card_special_round}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${heading_card_special_round}
+
+################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled
     Element Should Be Disabled    ${b2c_cbo_car_round_name_call_car_pickup_page}
 
@@ -104,9 +151,6 @@ Verify Can Not Edit Pickup Parcel Time
     [Arguments]    ${value}
     Wait Until Element Is Visible    ${b2c_txt_pickup_parcel_time_selected_value_in_add_popup}    timeout=${DEFAULT_TIMEOUT}
     Element Should Not Contain    ${b2c_txt_pickup_parcel_time_selected_value_in_add_popup}    ${value}
-
-Click Save Button
-    common.Click When Ready    ${b2c_btn_save_in_add_popup}
 
 Verify Saved Popup Is Visible
     Wait Until Element Is Visible    ${b2c_txt_complete_save_information_car_pickup_page}

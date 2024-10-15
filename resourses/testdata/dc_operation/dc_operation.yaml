@@ -32,6 +32,7 @@ dc_operaion:
   vehicle_type:  ประเภทที่ใช้
 
 dc_operaion_002:
+  text_parcel_pickup_time:  09:00:00 - 12:00 น.
   receiving_cycle:
     company_name:  บริษัท ไอดีซี พรีเมียร์ จำกัด 
     branch:  สาขาหลัก

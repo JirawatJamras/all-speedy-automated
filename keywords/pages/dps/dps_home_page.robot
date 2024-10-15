@@ -1,4 +1,28 @@
 *** Keywords ***
+Set_Next_DAY
+    ${date_YYYY_MM_DD}   Get Current Date
+    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
+    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
+    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
+    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
+    ${day}    Convert To Integer    ${d}
+    ${day}    Evaluate    ${day} + 1
+    ${year}    Convert To Integer    ${y}
+    ${year}    Evaluate    ${y} + 543
+    ${nextDay}    Set Variable    ${day}-${m}-${year}
+    RETURN    ${nextDay}
+
+Set_ToDAY
+    ${date_YYYY_MM_DD}   Get Current Date
+    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
+    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
+    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
+    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
+    ${year}    Convert To Integer    ${y}
+    ${year}    Evaluate    ${y} + 543
+    ${nextDay}    Set Variable    ${d}-${m}-${year}
+    RETURN    ${Today}
+
 Select DPS Menu
     [Arguments]    ${tabname}
     Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
@@ -193,19 +217,6 @@ Verify Sum Number of In Warehouse Parcels
     ${sum_number_in_warehouse_parcels}    Re Format And Sum Number of In Warehouse Parcels    ${sum_number_export_work}    ${sum_number_delivery_work}
     Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_in_warehouse_parcels}
     Log    ${sum_number_in_warehouse_parcels}
-
-Set_Next_DAY
-    ${date_YYYY_MM_DD}   Get Current Date
-    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
-    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
-    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
-    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${day}    Convert To Integer    ${d}
-    ${day}    Evaluate    ${day} + 1
-    ${year}    Convert To Integer    ${y}
-    ${year}    Evaluate    ${y} + 543
-    ${nextDay}    Set Variable    ${day}-${m}-${year}
-    RETURN    ${nextDay}
 
 Verify Page Title
     [Arguments]    ${title}
