@@ -42,8 +42,7 @@ Verify Booking Detail Page After Draft
 Click Edit Booking List
     # Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_btn_edit_booking_list}=    Replace String    ${b2c_btn_edit_booking_list}    {value}    ${Booking['text_booking_list']}
-    Wait Until Element Is Visible    ${b2c_btn_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
-    Click Element    ${b2c_btn_edit_booking_list}
+    common.Click When Ready    ${b2c_btn_edit_booking_list}
 
 Verify Edit Booking List Popup
     [Arguments]    ${parcel_type}    ${booking_name}    ${shipping_origin_aria}
@@ -82,7 +81,7 @@ Click Select Store On Map
 
 Click Save Shipping Origin Aria
     ${b2c_btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
-    Click When Ready    ${b2c_btn_save_shipping_origin}
+    common.Click When Ready    ${b2c_btn_save_shipping_origin}
     Wait Until Element Is Not Visible    ${b2c_dialog_create_parcel}    timeout=${DEFAULT_TIMEOUT}
 
 Get Booking ID
@@ -197,26 +196,31 @@ Verify Booking Detail Page
     ${b2c_txt_parcel_list_booking_detail_page} =  Replace String    ${b2c_txt_parcel_list_booking_detail_page}    {value}    ${title_parcel_list}
     ${b2c_txt_booking_summary_booking_detail_page} =  Replace String    ${b2c_txt_booking_summary_booking_detail_page}    {value}    ${booking_summary}
     ${b2c_txt_booking_name_booking_detail_page}=    Replace String    ${b2c_txt_booking_name_booking_detail_page}    {value}    ${Booking['text_booking_name_label']}
+    ${text_booking_date_and_time_booking_detail_page}=    Replace String    ${b2c_txt_booking_date_and_time_booking_detail_page}    {value}    ${Booking['text_booking_time_label']}
+    ${b2c_txt_shipping_origin_booking_detail_page}=    Replace String    ${b2c_txt_shipping_origin_booking_detail_page}    {value}    ${Booking['text_shipping_origin_aria']}
+    ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
+    ${b2c_txt_booking_id_booking_detail_page}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${Booking['text_booking_id_label']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
-    Verify Date And Time With Time Distortion    ${b2c_txt_booking_date_and_time_booking_detail_page}    ${bookig_time}
+    Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
-    Should Be Equal    ${title}    ${actual_text_title}
-    ${b2c_txt_booking_id_booking_detail_page}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${Booking['text_booking_id_label']}
+    Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
+    Sleep  5s
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
+    Should Be Equal    ${title}    ${actual_text_title}
     Should Be Equal    ${booking_name}    ${actaul_booking_name}
     Log    Parcel List
     Wait Until Element Is Visible    ${b2c_txt_parcel_list_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_title_parcel_list}=    Get Text    ${b2c_txt_parcel_list_booking_detail_page}
-    ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actaul_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
-    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
+    ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
+    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
     Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
@@ -242,6 +246,7 @@ Verify Booking Detail Page
     Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
     ${acrual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
     ${acrual_txt_price_detail} =  Replace String    ${acrual_txt_price_detail}    \n    ${SPACE}
+    # Wait Until Element Is Visible    xpath=(//div[@class='ant-card-body']//div[contains(@class,'border-t-2 border-dashed')])[1]    timeout=${DEFAULT_TIMEOUT}
     Should Be Equal As Strings    ${acrual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
 

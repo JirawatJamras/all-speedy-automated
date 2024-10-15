@@ -288,7 +288,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
-    
+
     Log    Step No.17 กดปุ่ม "แก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
     # Expected

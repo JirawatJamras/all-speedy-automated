@@ -18,8 +18,7 @@ Verify Booking Page For General Customer
 
 Click Button To Add
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
-    Wait Until Element Is Visible    ${btn_add}    timeout=30s
-    Click Element    ${btn_add}
+    common.Click When Ready    ${btn_add}
 
 Verify Term & Condition 
     [Arguments]    ${txt_term_and_condition}    ${text_accept}
@@ -28,8 +27,7 @@ Verify Term & Condition
     Should Be Equal    ${text}    ${text_accept}
 
 Click Accept Terms of Service
-    Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
-    Click Element        ${btn_accept_terms_service}
+    common.Click When Ready    ${btn_accept_terms_service}
 
 Verify Select Parcel Type
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
@@ -46,10 +44,10 @@ Select Parcel Type
     END
 
 Select Send To Home Tab
-    Click When Ready    ${tab_send_to_home}
+    common.Click When Ready    ${tab_send_to_home}
     
 Select Send To 7-ELEVEN Store Tab
-    Click When Ready    ${tab_send_to_store}
+    common.Click When Ready    ${tab_send_to_store}
 
 Click General Parcel
     Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=30s
@@ -75,7 +73,6 @@ Click Edit Booking Icon
 #     Wait Until Element Is Visible    ${close_noti_txt}    timeout=30s
 #     ${button_text}=    Get Text    ${close_noti_txt}
 #     Should Be Equal    ${button_text}    ${AllSpeedy_B2C_005_ID_1['closepopun_noti']}
-
 
 Verify Create Parcel Page Sender Step
     [Arguments]    ${title}    ${parcel_sender_information}    ${phone_sender}    ${name_sender}    ${address_sender}    ${postcode_sender}  
