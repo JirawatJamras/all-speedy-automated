@@ -8,7 +8,7 @@ Click Checkbox Partner Types Legal
 Select Company Title Name Legal Entity
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_company_title_name_legal_entity}
-    ${Selected company title name}=    Replace String    ${register_dropdown_choice_title_name_legal_entity}    {value}    ${Title}
+    ${Selected company title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
     common.Click when ready    ${Selected company title name}
 
 Input Company Name Legal Entity
@@ -34,7 +34,7 @@ Input Company Address Full Legal Entity
 Select Title Name Legal Entity
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_title_name_legal_entity}
-    ${Selected title name}=    Replace String    ${register_dropdown_choice_title_name_legal_entity}    {value}    ${Title}
+    ${Selected title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
     common.Click when ready    ${Selected title name}
 
 Input First Name Legal Entity
@@ -60,9 +60,45 @@ Input Mobile Ext Legal Entity
 #general
 Select Title Name Individual
     [Arguments]    ${Title}
-    common.Click when ready    ${register_dropdown_title_name}
+    common.Click when ready    ${register_dropdown_title_name_individual}
     ${Selected title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
     common.Click when ready    ${Selected title name}
+
+Input First Name Individual
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_first_name_individual}     ${Value}
+
+Input Last Name Individual
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_last_name_individual}     ${Value}
+
+Input National ID Individual
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_national_id_individual}    ${Value}
+
+Input Email Individual
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_email_individual}     ${Value}
+
+Input Address Individual
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_address_individual}    ${Value}  
+
+Input Address Full Individual
+    [Arguments]    ${Value}    ${Select}
+    common.Input When Ready    ${register_dropdown_address_full_individual}     ${Value}  
+    #Select one in result search 
+    ${Selected company address full}=    Replace String    ${register_dropdown_choice_address_full_individual}    {value}    ${Select}
+    Scroll Element Into View    ${Selected company address full}
+    common.Click when ready     ${Selected company address full}
+
+Input Mobile No Individual
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_mobile_no_individual}     ${Value}  
+
+Input Mobile Ext Individual
+    [Arguments]    ${Value}  
+    common.Input When Ready    ${register_txtbox_mobile_ext_individual}     ${Value}
 
 #both    
 Click Confirm 

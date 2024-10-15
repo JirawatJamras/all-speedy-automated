@@ -29,7 +29,7 @@ Register_S001
     # common.Scroll Window To Vertical    0
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S001['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S001['first_name']}
-    register_business_pre_register.Input Last Name Legal Entity    ${Register_S001['first_name']}
+    register_business_pre_register.Input Last Name Legal Entity    ${Register_S001['last_name']}
     register_business_pre_register.Input Email Legal Entity    ${Register_S001['email']}
     register_business_pre_register.Input Mobile No Legal Entity    ${Register_S001['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S001['mobile_ext']}
@@ -62,7 +62,7 @@ Register_S002
     # common.Scroll Window To Vertical    0
     register_business_pre_register.Select Title Name    ${Register_S002['title_name']}
     register_business_pre_register.Input First Name    ${Register_S002['first_name']}
-    register_business_pre_register.Input Last Name    ${Register_S002['first_name']}
+    register_business_pre_register.Input Last Name    ${Register_S002['last_name']}
     register_business_pre_register.Input Email    ${Register_S002['email']}
     register_business_pre_register.Input Mobile No    ${Register_S002['mobile_no']}
     register_business_pre_register.Input Mobile Ext    ${Register_S002['mobile_ext']}
@@ -96,7 +96,7 @@ Register_S003
     # common.Scroll Window To Vertical    0
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S003['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S003['first_name']}
-    register_business_pre_register.Input Last Name Legal Entity    ${Register_S003['first_name']}
+    register_business_pre_register.Input Last Name Legal Entity    ${Register_S003['last_name']}
     register_business_pre_register.Input Email Legal Entity    ${Register_S003['email']}
     register_business_pre_register.Input Mobile No Legal Entity    ${Register_S003['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S003['mobile_ext']}
@@ -107,7 +107,7 @@ Register_S003
     register_business_pre_register.Verify Cancel Popup    ${Register['txt_header_cancel']}    ${Register['txt_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
-    register_business_pre_register.Click Button Cancel popup    ${Register_S003['confirm_cancel_popup']}
+    register_business_pre_register.Click Button Cancel popup    ${Register['confirm_cancel_popup']}
 
 #In progress
 Register_S004
@@ -122,51 +122,82 @@ Register_S004
     register_business_customers_page.Click Text    ${Register['text menu register']}
     #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S004['checkbox_partner_types']}
-    
-    
-    register_business_pre_register.Input Company Address    ${Register_S004['company_address']}
-    register_business_pre_register.Input Company Address Full    ${Register_S004['search_company_address_full']}    ${Register_S004['select_company_address_full']}
-    # common.Verify Capture Screenshot    Register_S001    filled in general information success
-    # common.Scroll Window To Vertical    0
-    register_business_pre_register.Select Title Name    ${Register_S004['title_name']}
-    register_business_pre_register.Input First Name    ${Register_S004['first_name']}
-    register_business_pre_register.Input Last Name    ${Register_S004['first_name']}
-    register_business_pre_register.Input Email    ${Register_S004['email']}
-    register_business_pre_register.Input Mobile No    ${Register_S004['mobile_no']}
-    register_business_pre_register.Input Mobile Ext    ${Register_S004['mobile_ext']}
+    register_business_pre_register.Select Title Name Individual    ${Register_S004['title_name']}
+    register_business_pre_register.Input First Name Individual    ${Register_S004['first_name']}
+    register_business_pre_register.Input Last Name Individual    ${Register_S004['last_name']}
+    register_business_pre_register.Input National ID Individual    ${Register_S004['id_number']}
+    register_business_pre_register.Input Email Individual    ${Register_S004['email']}
+    register_business_pre_register.Input Address Individual    ${Register_S004['individual_address']}
+    register_business_pre_register.Input Address Full Individual    ${Register_S004['search_individual_address_full']}    ${Register_S004['select_individual_address_full']}
+    register_business_pre_register.Input Mobile No Individual    ${Register_S004['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Individual    ${Register_S004['mobile_ext']}
     common.Verify Capture Screenshot    Register_S004    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
-    #register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
+    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
     #Expected
-    #register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
 
 Register_S005
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
     [Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
+    common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
+    register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    register_business_customers_page.Click Text    ${Register['text menu register']}
     #Step4 กรอกข้อมูลลงทะเบียน
+    register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S005['checkbox_partner_types']}
+    register_business_pre_register.Select Title Name Individual    ${Register_S005['title_name']}
+    register_business_pre_register.Input First Name Individual    ${Register_S005['first_name']}
+    register_business_pre_register.Input Last Name Individual    ${Register_S005['last_name']}
+    register_business_pre_register.Input National ID Individual    ${Register_S005['id_number']}
+    register_business_pre_register.Input Email Individual    ${Register_S005['email']}
+    register_business_pre_register.Input Address Individual    ${Register_S005['individual_address']}
+    register_business_pre_register.Input Address Full Individual    ${Register_S005['search_individual_address_full']}    ${Register_S005['select_individual_address_full']}
+    register_business_pre_register.Input Mobile No Individual    ${Register_S005['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Individual    ${Register_S005['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S005    filled in contact information success   
+
+    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    #Step Click btn กดปุ่มลงทะเบียน
+    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
     #Expected
-    Log    Step No.2 กดปุ่ม "ลงทะเบียน"
-    #Step Click btn ลงทะเบียน
+    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
 
 Register_S006
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
     [Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
+    common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
+    register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
+    register_business_customers_page.Click Text    ${Register['text menu register']}
     #Step4 กรอกข้อมูลลงทะเบียน
-    #Expected
+    register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S006['checkbox_partner_types']}
+    register_business_pre_register.Select Title Name Individual    ${Register_S006['title_name']}
+    register_business_pre_register.Input First Name Individual    ${Register_S006['first_name']}
+    register_business_pre_register.Input Last Name Individual    ${Register_S006['last_name']}
+    register_business_pre_register.Input National ID Individual    ${Register_S006['id_number']}
+    register_business_pre_register.Input Email Individual    ${Register_S006['email']}
+    register_business_pre_register.Input Address Individual    ${Register_S005['individual_address']}
+    register_business_pre_register.Input Address Full Individual    ${Register_S006['search_individual_address_full']}    ${Register_S006['select_individual_address_full']}
+    register_business_pre_register.Input Mobile No Individual    ${Register_S006['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Individual    ${Register_S006['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S006    filled in contact information success
+
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
+    register_business_pre_register.Click Cancel   ${Register['btn_cancel']}
+    register_business_pre_register.Verify Cancel Popup    ${Register['txt_header_cancel']}    ${Register['txt_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
+    register_business_pre_register.Click Button Cancel popup    ${Register['confirm_cancel_popup']}
 
 Register_SC014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
