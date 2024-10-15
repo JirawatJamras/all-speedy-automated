@@ -1,43 +1,43 @@
 Booking:
   text_login: เข้าสู่ระบบ
-  text_company_profile: โปรไฟล์บริษัท         #check
-  text_profile: ข้อมูลส่วนตัว           #check
-  text_profile_name: ชื่อ       #check
-  text_profile_phone: เบอร์โทรศัพท์        #check
-  text_profile_mail: E-mail       #check
-  text_profile_position: ตำแหน่งงาน       #check
-  text_title_booking_for_business_customer: จองการจัดส่งพัสดุ สาขาหลัก       #check
+  text_company_profile: โปรไฟล์บริษัท         
+  text_profile: ข้อมูลส่วนตัว           
+  text_profile_name: ชื่อ       
+  text_profile_phone: เบอร์โทรศัพท์        
+  text_profile_mail: E-mail       
+  text_profile_position: ตำแหน่งงาน       
+  text_title_booking_for_business_customer: จองการจัดส่งพัสดุ สาขาหลัก       
   text_title_booking_for_general_customer: จองการจัดส่งพัสดุ
   text_menu_booking: จองการจัดส่งพัสดุ
   text_btn_add: เพิ่ม
   text_btn_next: ถัดไป
-  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " #check
+  text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " 
   text_version: " (Version 2)"
-  text_title: สร้างพัสดุ       #check
-  text_title_booking_list: รายการบุ๊คกิ้ง #check
-  text_title_parcel_list: รายการพัสดุ   #check
-  text_title_booking_summary: สรุปรายการบุ๊คกิ้ง     #check
-  text_parcel_sender_information: ข้อมูลผู้ส่งพัสดุ  #check
-  text_phone_sender: เบอร์โทรศัพท์ * #check
-  text_name_sender: ชื่อ *  #check
-  text_address_sender: รายละเอียดที่อยู่ *   #check
-  text_postcode_sender: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *    #check
-  text_parcel_receiver_information: ข้อมูลผู้รับพัสดุ    #check
-  text_phone_receiver: เบอร์โทรศัพท์ *   #check
-  text_name_receiver: ชื่อ *    #check
-  text_location_receiver: ข้อมูลสถานที่รับพัสดุ      #check
+  text_title: สร้างพัสดุ       
+  text_title_booking_list: รายการบุ๊คกิ้ง 
+  text_title_parcel_list: รายการพัสดุ   
+  text_title_booking_summary: สรุปรายการบุ๊คกิ้ง     
+  text_parcel_sender_information: ข้อมูลผู้ส่งพัสดุ  
+  text_phone_sender: เบอร์โทรศัพท์ * 
+  text_name_sender: ชื่อ *  
+  text_address_sender: รายละเอียดที่อยู่ *   
+  text_postcode_sender: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *    
+  text_parcel_receiver_information: ข้อมูลผู้รับพัสดุ    
+  text_phone_receiver: เบอร์โทรศัพท์ *   
+  text_name_receiver: ชื่อ *    
+  text_location_receiver: ข้อมูลสถานที่รับพัสดุ      
   text_send_home: ส่งที่บ้าน
-  text_address_receiver: รายละเอียดที่อยู่ *     #check
-  text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     #check
+  text_address_receiver: รายละเอียดที่อยู่ *     
+  text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     
   text_postcode_receiver_1: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
   text_select_store_on_map: เลือกร้าน
-  text_booking_list: รายการบุ๊คกิ้ง     #check
+  text_booking_list: รายการบุ๊คกิ้ง     
   text_edit_booking_list: แก้ไขรายการบุ๊คกิ้ง
   text_parcel_type: ประเภทพัสดุ
   text_booking_name: ชื่อบุ๊คกิ้ง
   text_search_store_on_map: ค้นหาร้าน 7-eleven
   text_save: บันทึก
-  text_draft_status: ร่าง     #check
+  text_draft_status: ร่าง     
   text_draft_save: บันทึกร่าง
   text_booking_id_label: 'บุ๊คกิ้ง ID :'
   text_booking_time_label: 'วันเวลาทำรายการ :'
