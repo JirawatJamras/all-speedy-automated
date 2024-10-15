@@ -12,47 +12,47 @@ Register_S001:
   checkbox_partner_types: นิติบุคคล
   company_title_name: บจ.(บริษัทจำกัด)
   company_name: บริษัท ไทยฟู๊ดส์ รอยัล กรุ๊ป จำกัด
-  id_number: 7439647708153    #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
+  id_number: '0125564022334'    #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
   company_address: 106/1 ซอย อ่อนนุช 70/1
-  search_company_address_full: 10250
+  search_company_address_full: '10250'
   select_company_address_full: ประเวศ ประเวศ กรุงเทพมหานคร 10250
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
   email: testregister.business001@yopmail.com
-  mobile_no: 0931234567
-  mobile_ext: 0000
+  mobile_no: '0931234567'
+  mobile_ext: '0000'
 
 
 Register_S002:
   checkbox_partner_types: นิติบุคคล
   company_title_name: บจ.(บริษัทจำกัด)
   company_name: บริษัท เอบีซี จำกัด
-  id_number: 4063155519960    #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
+  id_number: '4063155519960'    #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
   company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-  search_company_address_full: 11120
+  search_company_address_full: '11120'
   select_company_address_full: ปากเกร็ด ปากเกร็ด นนทบุรี 11120
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
   email: testregister.business002@yopmail.com
-  mobile_no: 0931234567
-  mobile_ext: 0000
+  mobile_no: '0931234567'
+  mobile_ext: '0000'
 
 Register_S003:
   checkbox_partner_types: นิติบุคคล
   company_title_name: บจ.(บริษัทจำกัด)
   company_name: บริษัท เอบีซี จำกัด
-  id_number: 4063155519960    #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
+  id_number: '4063155519960'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
   company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-  search_company_address_full: 11120
+  search_company_address_full: '11120'
   select_company_address_full: ปากเกร็ด ปากเกร็ด นนทบุรี 11120
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
   email: testregister.business002@yopmail.com
-  mobile_no: 0931234567
-  mobile_ext: 0000
+  mobile_no: '0931234567'
+  mobile_ext: '0000'
   confirm_cancel_popup: ตกลง
 
 Register_S004:
@@ -61,7 +61,7 @@ Register_S004:
   first_name: ชลธิชา
   last_name: อยู่ยง
   email: testregister.business002@yopmail.com
-  mobile_no: 0931234567
-  mobile_ext: 0000
+  mobile_no: '0931234567'
+  mobile_ext: '0000'
 
  

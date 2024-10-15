@@ -1,14 +1,14 @@
 *** Settings ***
 Resource          ../../resourses/import.robot
 Resource          ../../resourses/init_website.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S003
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT
+    [Tags]    Booking    UAT    Run
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -209,7 +209,7 @@ Booking_S003
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S003    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -259,7 +259,7 @@ Booking_S003
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
-    ...    ${Booking_S003['store_code']}
+    ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S003    Verify Booking Summary
     common.Scroll Window To Vertical    0

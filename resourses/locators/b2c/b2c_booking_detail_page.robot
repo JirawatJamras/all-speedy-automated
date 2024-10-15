@@ -33,27 +33,30 @@ ${b2c_btn_print_the_parcel_payment_slip_disabled}   //button[@type='button' and 
 
 ${b2c_img_loading}    //div[@role='dialog']//img
 
-${b2c_btn_edit_booking_list}    //strong[text()='รายการบุ๊คกิ้ง']/../../..//button
-${b2c_btn_select_store}    //button//b[text()='เลือกร้าน']
-${b2c_btn_save_shipping_origin}    //button//span[text()='บันทึก']
-${b2c_btn_print_parcel_label}    //*[@class='hidden sm:inline']//button//span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
-${b2c_btn_print_parcel_label_popup}    //div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../..//button//span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
+${b2c_btn_edit_booking_list}    //strong[text()='{value}']/../../..//button
+${b2c_btn_select_store}    //button//b[text()='{value}']
+${b2c_btn_save_shipping_origin}    //button//span[text()='{value}']
+${b2c_btn_print_parcel_label}    //*[@class='hidden sm:inline']//button//span[text()='{value}']
+${b2c_btn_print_parcel_label_popup}    //div[text()='{value}']/../../..//button//span[text()='{value}']
 
-${b2c_txt_edit_booking_list}    //div[@class='ant-modal-content']//div[text()='แก้ไขรายการบุ๊คกิ้ง']
-${b2c_txt_parcel_type}    //form[@id='detail_form']//strong[contains(text(),'ประเภทพัสดุ')]/../../..
-${b2c_txt_booking_name}    //form[@id='detail_form']//strong[contains(text(),'ชื่อบุ๊คกิ้ง')]/../../..//input
+${b2c_txt_edit_booking_list}    //div[@class='ant-modal-content']//div[text()='{value}']
+${b2c_txt_parcel_type}    //form[@id='detail_form']//strong[contains(text(),'{value}')]/../../..
+${b2c_txt_booking_name}    //form[@id='detail_form']//strong[contains(text(),'{value}')]/../../..//input
 ${b2c_txt_shipping_origin_aria}    //form[@id='detail_form']//strong[contains(text(),'เลือกพื้นที่ต้นทางการจัดส่ง')]
 ${b2c_txt_search_result_store}    //div[@aria-selected]//div[contains(text(),'{value}')]
-${b2c_txt_title_print_label}    //div[@class='ant-modal-content']//div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']
-${b2c_txt_paper_size}    //span[text()='ขนาดกระดาษ']
-${b2c_txt_list_paper_size}    //div[contains(text(),'กระดาษ')]/../../..
+${b2c_txt_title_print_label}    //div[@class='ant-modal-content']//div[text()='{value}']
+${b2c_txt_paper_size}    //span[text()='{value}']
+${b2c_txt_list_paper_size}    //div[contains(text(),'{value}')]/../../..
 ${b2c_txt_parcel_label_detail}    //div[contains(@id,'print')]
+${b2c_txt_booking_id}    //span[normalize-space()='${value}']
 
-${b2c_img_logo_speed_d}    //div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../../..//img
-${b2c_img_qr_code}    //div[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../../..//canvas
+${b2c_img_logo_speed_d}    //div[text()='{value}']/../../../..//img
+${b2c_img_qr_code}    //div[text()='{value}']/../../../..//canvas
 
-${b2c_cbo_paper_size}    //span[text()='ขนาดกระดาษ']/../..//span[@class='ant-select-selection-item']
+${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
-${b2c_txtbox_search_store}    //span[text()='ค้นหาร้าน 7-eleven']/..//input
+${b2c_txtbox_search_store}    //span[text()='{value}']/..//input
 
 ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
+
+${b2c_dialog_create_parcel}    //*[@role='dialog']

@@ -1,16 +1,18 @@
 *** Keywords ***
 Verify Booking Page 
-    [Arguments]    ${txt_title}
+    [Arguments]    ${txt_title}    ${txt_add}
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${txt_title}  
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
+    ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${txt_add}  
+    Wait Until Element Is Visible    ${btn_add}    timeout=30s
     ${title}=    Get Text    ${txt_title_booking}    
     Should Be Equal    ${title}    ${txt_title}
 
 Click Button To Add
-    sleep    4s
-    Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
-    Click Element        ${b2c_btn_add}
+    [Arguments]    ${txt_add}
+    ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${txt_add}  
+    Wait Until Element Is Visible    ${btn_add}    timeout=30s
+    Click Element    ${btn_add}
 
 Verify Term & Condition 
     [Arguments]    ${txt_term_and_condition}    ${text_accept}
@@ -68,6 +70,8 @@ Verify Create Parcel Page Sender Step
     ${actual_text_name_sender}=    Get Text    ${txt_name_sender}
     ${actual_text_address}=    Get Text    ${txt_address_sender}
     ${actual_text_postcode}=    Get Text    ${txt_postcode_sender}
+    Wait Until Element Is Visible    ${title}    timeout=30s
+    Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
     Should Be Equal    ${actual_text_title}    ${title}
     Should Be Equal    ${actual_text_parcel_sender_information}    ${parcel_sender_information}
     Should Be Equal    ${actual_text_phone}    ${phone_sender}
@@ -445,8 +449,9 @@ Click Save Button
     common.Click When Ready    ${btn_save_draft}
 
 Click Next Button
-    ${btn_next}=    Replace String    ${btn_next}    {value}    ${Booking['text_next']}
-    common.Click When Ready    ${btn_next}
+    [Arguments]    ${txt_btn_next}
+    ${btn}=    Replace String    ${btn_next}    {value}    ${txt_btn_next}
+    common.Click When Ready    ${btn}
 
 Click Add To Favorites In Sender
     common.Click When Ready    ${btn_add_sender_to_favorites}
@@ -543,20 +548,20 @@ Verify Created Booking On Booking Delivery Page
     [Arguments]    ${booking_id}    ${booking_time}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}    
     ${booking_id_replace}=    Replace String    ${txt_booking_id_in_list}    {value}    ${booking_id}
     Wait Until Element Is Visible    ${booking_id_replace}    timeout=30s
+    Verify Booking ID Format And Value    ${booking_id_replace}    ${booking_id}
     ${booking_status_replace}=    Replace String    ${txt_booking_status_in_list}    {value}    ${booking_id}
     ${txt_status}=    Get Text    ${booking_status_replace}
-    Should Be Equal    ${txt_status}    ${status_booking}
-    Verify Booking ID Format And Value    ${booking_id_replace}    ${booking_id}
     ${booking_name}=    Replace String    ${txt_booking_name_in_list}    {value}    ${booking_id}
     ${txt_name}=    Get Text    ${booking_name}
-    Should Be Equal    ${txt_name}    ${name_booking}
     ${booking_date}=    Replace String    ${txt_booking_date_in_list}    {value}    ${booking_id}
     Verify Date And Time With Time Distortion   ${booking_date}    ${booking_time}
     ${booking_item}=    Replace String    ${txt_booking_item_in_list}    {value}    ${booking_id}
-    ${txt_item}=    Get Text    ${booking_item} 
-    Should Be Equal    ${txt_item}    ${item_booking}
+    ${txt_item}=    Get Text    ${booking_item}
     ${booking_price}=    Replace String    ${txt_booking_price_in_list}    {value}    ${booking_id}
-    ${txt_price}=    Get Text    ${booking_price}
+    ${txt_price}=    Get Text    ${booking_price}    
+    Should Be Equal    ${txt_status}    ${status_booking}
+    Should Be Equal    ${txt_name}    ${name_booking}
+    Should Be Equal    ${txt_item}    ${item_booking}
     Should Be Equal    ${txt_price}    ${price_booking}
 
 Verify Booking ID Format And Value
