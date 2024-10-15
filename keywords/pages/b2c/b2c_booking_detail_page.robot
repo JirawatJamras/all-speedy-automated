@@ -41,8 +41,8 @@ Verify Booking Detail Page After Draft
 
 Click Edit Booking List
     # Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    ${edit_booking_list_button}=    Replace String    ${b2c_btn_edit_booking_list}    {value}    ${Booking['text_booking_list']}
-    Wait Until Element Is Visible    ${edit_booking_list_button}    timeout=${DEFAULT_TIMEOUT}
+    ${b2c_btn_edit_booking_list}=    Replace String    ${b2c_btn_edit_booking_list}    {value}    ${Booking['text_booking_list']}
+    Wait Until Element Is Visible    ${b2c_btn_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${b2c_btn_edit_booking_list}
 
 Verify Edit Booking List Popup
@@ -81,7 +81,7 @@ Click Select Store On Map
     Click When Ready    ${select_store_button}
 
 Click Save Shipping Origin Aria
-    ${save_shipping_origin_button} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
+    ${b2c_btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
     Click When Ready    ${b2c_btn_save_shipping_origin}
     Wait Until Element Is Not Visible    ${b2c_dialog_create_parcel}    timeout=${DEFAULT_TIMEOUT}
 
