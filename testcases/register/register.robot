@@ -213,11 +213,25 @@ Register_S014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
     Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
     #Step login email same input email in S004
-    common.Open URL    https://yopmail.com/
-    
-    common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
+    # common.Open URL    https://yopmail.com/
+    # ${email}=    Evaluate    "${Register_S004['email']}".split("@")[0]
+    # register_business_full_register.Login Yopmail    ${email}
+    #step get link for full-register
+    ${link_full_register}=    Set Variable    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
+    common.Open URL    ${link_full_register}
     #Expected
-    #register_business_full_register.Verify Company information
+    register_business_full_register.Verify Company information
+    ...    ${Register_S004['checkbox_partner_types']}
+    ...    ${Register_S004['title_name']}
+    ...    ${Register_S004['first_name']}
+    ...    ${Register_S004['last_name']}
+    ...    ${Register_S004['id_number']}
+    ...    ${Register_S004['email']}
+    ...    ${Register_S004['individual_address']}
+    ...    ${Register_S004['select_individual_address_full']}
+    ...    ${Register_S004['mobile_no']}
+    ...    ${Register_S004['mobile_ext']}
+    
     Log    Step No.2 Click btn "ถัดไป"
     #Step1 Click tab พัสดุทั่วไป
     #Expected

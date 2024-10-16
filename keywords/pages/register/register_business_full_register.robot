@@ -1,5 +1,8 @@
 *** Keywords ***
-Input Mail Yopmail
+Login Yopmail
+    [Arguments]    ${Text}
+    common.Input When Ready    ${register_txtbox_email_yopmail}   ${Text}
+    common.Click when ready    ${register_button_next_yopmail} 
 
 
 Verify Company information
