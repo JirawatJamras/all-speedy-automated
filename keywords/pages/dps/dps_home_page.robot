@@ -5,8 +5,9 @@ Set_Next_DAY
     ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
     ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
     ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${day}    Convert To Integer    ${d}
-    ${day}    Evaluate    ${day} + 1
+    ${day}    Evaluate    int(${d}) + 2
+    ${day}=    Convert To String    ${day}
+    ${day}=    Set Variable    ${day.zfill(2)}
     ${year}    Convert To Integer    ${y}
     ${year}    Evaluate    ${y} + 543
     ${nextDay}    Set Variable    ${day}-${m}-${year}
@@ -20,7 +21,7 @@ Set_ToDAY
     ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
     ${year}    Convert To Integer    ${y}
     ${year}    Evaluate    ${y} + 543
-    ${nextDay}    Set Variable    ${d}-${m}-${year}
+    ${Today}    Set Variable    ${d}-${m}-${year}
     RETURN    ${Today}
 
 Select DPS Menu
@@ -43,7 +44,7 @@ Select DPS Menu
 
 Verify Parcels Into The Warehouse
     [Arguments]    ${test_scenario}
-    Verify Parcels Into The Warehouse Store    ${${test_scenario}}.daily_work_overview.parcel_into_warehouse['store']}
+    Verify Parcels Into The Warehouse Store    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['store']}
     Verify Parcels Into The Warehouse House    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['house']}
     Verify Parcels Into The Warehouse Warehouse    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['warehouse']}
     Verify Admission Task    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['admission']}

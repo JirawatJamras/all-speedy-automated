@@ -1,5 +1,6 @@
 *** Variables ***
 ${b2c_crd_list_of_parcels}    //div[@class='ant-list ant-list-split ant-list-grid w-full css-1hobygo']//div[@class='ant-spin-nested-loading css-1hobygo']//div[@class='ant-spin-container']//div[@class='ant-row css-1hobygo']//div//div[@class='ant-card-body']
+${b2c_crd_list_of_pickup_schedule}    //div[@aria-hidden='false']//div[@class='ant-spin-container']//li[@class='ant-list-item']
 
 ${b2c_txt_booking_list}    //div[@class='ant-space css-1hobygo ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small']//strong[contains(text(),'{value}')]
 ${b2c_txt_list_of_parcels_status}    //div[contains(@class,'ant-list ant-list-split ant-list-grid w-full css-1hobygo')]//div[contains(@class,'ant-spin-nested-loading css-1hobygo')]//div[contains(@class,'ant-spin-container')]//div[contains(@class,'ant-row css-1hobygo')]//div//span[contains(@class,'ant-typography absolute w-[200px] h-8 pt-1 align-middle text-center right-2 top-0 rounded-br-md rounded-bl-md bg-[#fefe02] css-10o2jwh')][contains(text(),'{value}')]
@@ -43,6 +44,7 @@ ${b2c_btn_select_store}    //button//b[text()='{value}']
 ${b2c_btn_save_shipping_origin}    //span[text()='{value}']/..
 ${b2c_btn_print_parcel_label}    //*[@class='hidden sm:inline']//button//span[text()='{value}']
 ${b2c_btn_print_parcel_label_popup}    //div[text()='{value}']/../../..//button//span[text()='{value}']
+${b2c_btn_select_pickup_schedule}   //input[@class='ant-radio-input']/..
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 

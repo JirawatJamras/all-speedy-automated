@@ -44,6 +44,34 @@ Scroll Window To Horizontal
     [Arguments]           ${value}
     Execute JavaScript    window.scrollTo(${value},0)
 
+Set Next DAY
+    ${date_YYYY_MM_DD}   Get Current Date
+    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
+    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
+    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
+    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
+    ${day}    Evaluate    int(${d}) + 2
+    ${day}=    Convert To String    ${day}
+    ${day}=    Set Variable    ${day.zfill(2)}
+    ${year}    Convert To Integer    ${y}
+    ${year}    Evaluate    ${y} + 543
+    ${nextDay}    Set Variable    ${day}/${m}/${year}
+    RETURN    ${nextDay}
+
+Set Date Pattern
+    ${date_YYYY_MM_DD}   Get Current Date
+    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
+    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
+    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
+    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
+    ${day}    Evaluate    int(${d}) + 1
+    ${day}=    Convert To String    ${day}
+    ${day}=    Set Variable    ${day.zfill(2)}
+    ${year}    Convert To Integer    ${y}
+    ${year}    Evaluate    ${y} + 543
+    ${Today}    Set Variable    ${day}/${m}/${year}
+    RETURN    ${Today}
+
 Set Folder Result with date
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d

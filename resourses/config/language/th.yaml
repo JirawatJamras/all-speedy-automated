@@ -63,6 +63,17 @@ Booking:
     favorite:  เลือกรายการโปรด
     store:  เลือกร้าน 7-11 ต้นทาง
     car_pickup:  รอบรถเข้ารับพัสดุ
+  pickup_schedule:
+    special_car_pickup:  รอบรถพิเศษ
+    general_car_pickup:  รอบรถปกติ
+    pickup_date: 'วันที่รถเข้ารับพัสดุ :'
+    parcel_number:  'จำนวนพัสดุ :'
+    cut_off_time:  'เวลา Cut Off รอบรถ :'
+    price:  'ราคา :'
+    default:
+      parcel_number:  '0 รายการ'
+      cut_off_time:  '11:15:00'
+      price:  '0 บาท'
   general_parcel:
     parcel_A4: A4
     parcel_detail_A4: A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ชม.

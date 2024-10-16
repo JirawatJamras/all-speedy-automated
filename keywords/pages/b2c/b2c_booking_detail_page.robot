@@ -64,6 +64,33 @@ Select Pickup Schedule Tab
     ${tab_pickup_Schedule} =  Replace String    ${b2c_tab_pickup_Schedule}    {value}    ${Booking.tab_shipping_origin['car_pickup']}
     common.Click When Ready    ${tab_pickup_Schedule}
 
+Verify Display Pickup Schedule Data
+    [Arguments]    ${receiving_type}    ${pickup_date}    ${txt_parcel_number}    ${parcel_number}    ${txt_cut_off_time}    ${cut_off_time}
+    ...    ${txt_price}    ${price}
+    ${nextDay}    common.Set Next DAY
+    ${today}    common.Set Date Pattern
+    Wait Until Element Is Visible    ${b2c_crd_list_of_pickup_schedule}    timeout=60s
+    ${count}=    Get Element Count    ${b2c_crd_list_of_pickup_schedule}
+    FOR    ${index}    IN RANGE    1    ${count} + 1
+        ${item}=    Set Variable    (${b2c_crd_list_of_pickup_schedule})[${index}]
+        Scroll Element Into View    ${item}
+        Register Keyword To Run On Failure    NOTHING
+        ${actual_text}=    Get Text    ${item}
+        ${actual_text}=    Replace String    ${actual_text}    \n    ${SPACE}
+        Log To Console    ${actual_text}
+        ${card_text_list}=    Run Keyword And Return Status    Should Be Equal As Strings    ${actual_text}
+        ...    ${receiving_type} ${pickup_date} ${nextDay} ${txt_parcel_number} ${parcel_number} ${txt_cut_off_time} ${today} ${cut_off_time} ${txt_price} ${price}
+        Set Suite Variable    ${item}
+        Exit For Loop If    ${card_text_list}
+    END
+
+Select Parcel Pickup Schedule 
+    common.Click When Ready    ${item}${b2c_btn_select_pickup_schedule}
+
+Click Save Button In Edit Booking List Popup
+    ${b2c_btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
+    common.Click When Ready    ${b2c_btn_save_shipping_origin}   
+
 Select Shipping Origin Tab 
     [Arguments]    ${aria}
     ${tab_shipping_origin_aria} =  Replace String    ${b2c_tab_shipping_origin_aria}    {value}    ${aria}
