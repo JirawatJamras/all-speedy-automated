@@ -26,7 +26,8 @@ Booking_S002:
   parcel_size:  A4
   parcel_package_type:  ซอง
   total_price_amount:  '1'
-  total_price_value:  '24.00'    # 50.00
+  total_price_value1: 'NaN'
+  total_price_value2:  '24.00'    # 50.00
 
 
 Booking_S003:
