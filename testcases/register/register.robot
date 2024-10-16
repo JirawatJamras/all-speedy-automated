@@ -22,8 +22,8 @@ Register_S001
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S001['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S001['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S001['company_name']}
-    register_business_pre_register.Set Juristic ID
-    register_business_pre_register.Input Tax Identification Number Legal Entity    ${JuristicID}
+    register_business_pre_register.Set Juristic ID Legal Entity
+    register_business_pre_register.Input Juristic Identification Number Legal Entity    ${JuristicID}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S001['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S001['search_company_address_full']}    ${Register_S001['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
@@ -56,7 +56,8 @@ Register_S002
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S002['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S002['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S002['company_name']}
-    register_business_pre_register.Input Tax Identification Number Legal Entity    ${Register_S002['id_number']}
+    register_business_pre_register.Set Juristic ID Legal Entity
+    register_business_pre_register.Input Juristic Identification Number Legal Entity    ${JuristicID}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S002['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
@@ -71,7 +72,7 @@ Register_S002
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
-    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
+    register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
 
@@ -90,7 +91,8 @@ Register_S003
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S003['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S003['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S003['company_name']}
-    register_business_pre_register.Input Tax Identification Number Legal Entity    ${Register_S003['id_number']}
+    register_business_pre_register.Set Juristic ID Legal Entity
+    register_business_pre_register.Input Juristic Identification Number Legal Entity    ${JuristicID}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S003['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S003['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
@@ -104,11 +106,11 @@ Register_S003
     common.Verify Capture Screenshot    Register_S003    filled in contact information success
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
-    register_business_pre_register.Click Cancel   ${Register['btn_cancel']}
+    register_business_pre_register.Click Cancel
     register_business_pre_register.Verify Cancel Popup    ${Register['txt_header_cancel']}    ${Register['txt_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
-    register_business_pre_register.Click Button Cancel popup    ${Register['confirm_cancel_popup']}
+    register_business_pre_register.Click Button Confirm Cancel Popup
 
 #In progress
 Register_S004
@@ -126,7 +128,8 @@ Register_S004
     register_business_pre_register.Select Title Name Individual    ${Register_S004['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S004['first_name']}
     register_business_pre_register.Input Last Name Individual    ${Register_S004['last_name']}
-    register_business_pre_register.Input National ID Individual    ${Register_S004['id_number']}
+    register_business_pre_register.Set National ID Individual
+    register_business_pre_register.Input National ID Individual    ${NationalID}
     register_business_pre_register.Input Email Individual    ${Register_S004['email']}
     register_business_pre_register.Input Address Individual    ${Register_S004['individual_address']}
     register_business_pre_register.Input Address Full Individual    ${Register_S004['search_individual_address_full']}    ${Register_S004['select_individual_address_full']}
@@ -136,7 +139,7 @@ Register_S004
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
-    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
+    register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
 
@@ -155,7 +158,8 @@ Register_S005
     register_business_pre_register.Select Title Name Individual    ${Register_S005['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S005['first_name']}
     register_business_pre_register.Input Last Name Individual    ${Register_S005['last_name']}
-    register_business_pre_register.Input National ID Individual    ${Register_S005['id_number']}
+    register_business_pre_register.Set National ID Individual
+    register_business_pre_register.Input National ID Individual    ${NationalID}
     register_business_pre_register.Input Email Individual    ${Register_S005['email']}
     register_business_pre_register.Input Address Individual    ${Register_S005['individual_address']}
     register_business_pre_register.Input Address Full Individual    ${Register_S005['search_individual_address_full']}    ${Register_S005['select_individual_address_full']}
@@ -165,7 +169,7 @@ Register_S005
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
-    register_business_pre_register.Click Confirm    ${Register['btn_confirm']}
+    register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
 
@@ -184,7 +188,8 @@ Register_S006
     register_business_pre_register.Select Title Name Individual    ${Register_S006['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S006['first_name']}
     register_business_pre_register.Input Last Name Individual    ${Register_S006['last_name']}
-    register_business_pre_register.Input National ID Individual    ${Register_S006['id_number']}
+    register_business_pre_register.Set National ID Individual
+    register_business_pre_register.Input National ID Individual    ${NationalID}
     register_business_pre_register.Input Email Individual    ${Register_S006['email']}
     register_business_pre_register.Input Address Individual    ${Register_S005['individual_address']}
     register_business_pre_register.Input Address Full Individual    ${Register_S006['search_individual_address_full']}    ${Register_S006['select_individual_address_full']}
@@ -194,11 +199,11 @@ Register_S006
 
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
-    register_business_pre_register.Click Cancel   ${Register['btn_cancel']}
+    register_business_pre_register.Click Cancel
     register_business_pre_register.Verify Cancel Popup    ${Register['txt_header_cancel']}    ${Register['txt_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
-    register_business_pre_register.Click Button Cancel popup    ${Register['confirm_cancel_popup']}
+    register_business_pre_register.Click Button Confirm Cancel Popup
 
 Register_SC014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
