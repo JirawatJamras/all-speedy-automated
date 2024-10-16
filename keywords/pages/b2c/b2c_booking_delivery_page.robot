@@ -31,8 +31,8 @@ Click Accept Terms of Service
 Verify Select Parcel Type
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
     Wait Until Element Is Enabled   ${btn_parcel_type_dry}    timeout=30s
-    Element Should Be Visible    ${btn_parcel_type_dry}
-    Element Should Be Visible    ${btn_parcel_type_chill}
+    Wait Until Element Is Visible    ${btn_parcel_type_dry}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_parcel_type_chill}    timeout=${DEFAULT_TIMEOUT}
 
 Select Parcel Type  
     [Arguments]    ${parcel_type}
@@ -49,12 +49,12 @@ Select Send To 7-ELEVEN Store Tab
     common.Click When Ready    ${tab_send_to_store}
 
 Click General Parcel
-    Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=30s
+    Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=${DEFAULT_TIMEOUT}
     Click Element    ${parcel_type_dry_btn}
-    Wait Until Element Is Visible    ${close_noti_btn}   timeout=30s
+    Wait Until Element Is Visible    ${close_noti_btn}   timeout=${DEFAULT_TIMEOUT}
 
 Click Temperature Controlled Parcel
-    Wait Until Element Is Visible    ${parcel_type_chill_btn}   timeout=30s
+    Wait Until Element Is Visible    ${parcel_type_chill_btn}   timeout=${DEFAULT_TIMEOUT}
     Click Element    ${parcel_type_chill_btn}
     
 Click Close X Popup
