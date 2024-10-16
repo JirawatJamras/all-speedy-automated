@@ -1,14 +1,14 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S030 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT
+    [Tags]    Booking    UAT    Review
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
