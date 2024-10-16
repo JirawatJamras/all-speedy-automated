@@ -118,11 +118,11 @@ Input Mobile Ext Individual
 
 #both    
 Click Confirm 
-    ${Click confirm}=    Replace String    ${register_btn_confirm}     {value}    ${Register['btn_confirm']}
+    ${Click confirm}=    Replace String    ${register_btn_confirm}     {value}    ${Register.Pre_register['btn_confirm']}
     common.Click when ready    ${Click confirm}
      
 Click Cancel
-    ${Click cancel}=    Replace String    ${register_btn_cancel}     {value}    ${Register['btn_cancel']}
+    ${Click cancel}=    Replace String    ${register_btn_cancel}     {value}    ${Register.Pre_register['btn_cancel']}
     common.Click when ready    ${Click cancel}
 
 Verify Confirm Page
@@ -139,11 +139,11 @@ Verify Cancel Popup
     Element Should Be Visible    ${Body cancel popup}
 
 Click Button Confirm Cancel Popup
-    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register['confirm_cancel_popup']}
+    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register.Pre_register['confirm_cancel_popup']}
     common.Click when ready    ${Click button}
 
 Click Button Cancel Cancel Popup
-    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register['cancel_cancel_popup']}
+    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register.Pre_register['cancel_cancel_popup']}
     common.Click when ready    ${Click button}
 
 #old

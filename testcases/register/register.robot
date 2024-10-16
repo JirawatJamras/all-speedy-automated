@@ -44,7 +44,7 @@ Register_S001
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page        ${Register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
 
 Register_S002
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
@@ -78,7 +78,7 @@ Register_S002
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
 
 Register_S003
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
@@ -98,7 +98,7 @@ Register_S003
     register_business_pre_register.Set Juristic ID Legal Entity
     register_business_pre_register.Input Juristic Identification Number Legal Entity    ${JuristicID}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S003['company_address']}
-    register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S003['search_company_address_full']}    ${Register_S002['select_company_address_full']}
+    register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S003['search_company_address_full']}    ${Register_S003['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
     # common.Scroll Window To Vertical    0
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S003['title_name']}
@@ -111,7 +111,7 @@ Register_S003
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
     register_business_pre_register.Click Cancel
-    register_business_pre_register.Verify Cancel Popup    ${Register['txt_header_cancel']}    ${Register['txt_question_cancel']}
+    register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['txt_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup
@@ -145,7 +145,7 @@ Register_S004
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
 
 Register_S005
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
@@ -175,7 +175,7 @@ Register_S005
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
 
 Register_S006
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
@@ -204,7 +204,7 @@ Register_S006
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
     register_business_pre_register.Click Cancel
-    register_business_pre_register.Verify Cancel Popup    ${Register['txt_header_cancel']}    ${Register['txt_question_cancel']}
+    register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['txt_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup

@@ -6,5 +6,7 @@ Login Yopmail
 
 
 Verify Company information
+    [Arguments]    ${partner_types}    ${title_name}    ${first_name}    ${last_name}    ${id_number}    
+    ...    ${email}    ${individual_address}    ${select_individual_address_full}    ${mobile_no}    ${mobile_ext}
     Wait Until Element Is Visible    ${Company_business_title}
     #Inprogress

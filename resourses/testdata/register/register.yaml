@@ -1,12 +1,15 @@
 Register:
-  text_menu_register: ลงทะเบียนลูกค้าธุรกิจ
-  txt_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
-  btn_confirm: ลงทะเบียน
-  btn_cancel: ยกเลิก
-  txt_header_cancel: ยกเลิกการลงทะเบียน
-  txt_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
-  confirm_cancel_popup: ตกลง
-  cancel_cancel_popup: ยกเลิก
+  Pre_register:
+    text_menu_register: ลงทะเบียนลูกค้าธุรกิจ
+    txt_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
+    btn_confirm: ลงทะเบียน
+    btn_cancel: ยกเลิก
+    txt_header_cancel: ยกเลิกการลงทะเบียน
+    txt_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    confirm_cancel_popup: ตกลง
+    cancel_cancel_popup: ยกเลิก
+
+
 
 Register_S001:
   checkbox_partner_types: นิติบุคคล
