@@ -13,7 +13,7 @@ Open Chrome Browser
     IF  '${chrome}'=='headlesschrome'
         Call Method     ${chrome_options}      add_argument    --headless\=old
     END
-    Open Browser    about:blank    Chrome    options=${chrome_options}    options=add_experimental_option("detach", True)
+    Open Browser    about:blank    Chrome    options=${chrome_options}
     SeleniumLibrary.Set Selenium Speed    0.1
 
 Open URL
