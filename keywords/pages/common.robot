@@ -73,7 +73,7 @@ Convert Month To Thai
     ...    ELSE IF    '${english_month}' == 'October'    Set Variable    ตุลาคม
     ...    ELSE IF    '${english_month}' == 'November'    Set Variable    พฤศจิกายน
     ...    ELSE IF    '${english_month}' == 'December'    Set Variable    ธันวาคม
-    [Return]    ${thai_month}
+    RETURN    ${thai_month}
 
 Verify Capture Screenshot
     [Arguments]    ${folder}    ${img_name}
