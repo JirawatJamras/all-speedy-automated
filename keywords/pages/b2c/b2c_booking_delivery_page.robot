@@ -9,8 +9,8 @@ Verify Booking Page For Business Customer
 
 Verify Booking Page For General Customer 
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']}  
-    Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
     Wait Until Element Is Visible    ${btn_add}    timeout=30s
     ${title}=    Get Text    ${txt_title_booking}    
@@ -674,10 +674,14 @@ Input Parcel Remark
 
 Input Promotion
     [Arguments]    ${value}
-    Input When Ready    ${txtbox_promotion}    ${value}
+    common.Input When Ready    ${txtbox_promotion}    ${value}
 
 Click Use Code Button
     Click When Ready    ${btn_use_code}
+
+Click Use Coupon
+    ${btn_use_coupon}=    Replace String    ${btn_use_coupon}    {value}    ${Booking['text_use_coupon']}
+    common.Click When Ready    ${btn_use_coupon}
 
 Input COD
     [Arguments]    ${value}

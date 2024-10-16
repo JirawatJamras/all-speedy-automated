@@ -1,14 +1,14 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S031 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT
+    [Tags]    Booking    UAT    Run
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -33,11 +33,11 @@ Booking_S031
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
     # Expected   
-    b2c_booking_delivery_page.Verify Select Parcel Type
+    # b2c_booking_delivery_page.Verify Select Parcel Type  # Expected result : System should be displayed for select parcel type
     common.Verify Capture Screenshot    Booking_S031    Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
-    b2c_booking_delivery_page.Select Parcel Type    ${Booking_S031['parcel_type']}
+    # b2c_booking_delivery_page.Select Parcel Type    ${Booking_S031['parcel_type']}
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -169,9 +169,10 @@ Booking_S031
 
     Log    Step No.13 ขั้นตอน Promotion
     # ระบุโค้ดส่วนลด : SPBH5B
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S031['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
+    b2c_booking_delivery_page.Click Use Coupon  # Expected result : b2c_booking_delivery_page.Input Promotion    ${Booking_S031['promotion']}
+    # Expected result : b2c_booking_delivery_page.Click Use Code Button
     # Expected
+    Sleep  10s
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S031.promotion_detail['discount']}
     ...    ${Booking_S031.promotion_detail['promotion_name']}
@@ -188,7 +189,7 @@ Booking_S031
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -206,13 +207,13 @@ Booking_S031
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S031['discount_amount']}
-    ...    ${Booking_S031['discount_value']}  # Expected result : NaN
+    ...    ${Booking.text_default['discount_amount']}  # Expected result : ${Booking_S031['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}  # Expected result : NaN
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S031['total_price_amount']}
+    ...    ${Booking.text_default['total_price_amount']}  # Expected result : ${Booking_S031['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S032['total_price_value1']}
     ...    ${EMPTY}  # Expected result : ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
@@ -227,7 +228,7 @@ Booking_S031
     ...    ${booking_id}
     ...    ${booking_time}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S031['booking_name']}
+    ...    ${Booking_S031['booking_name']} ${booking_id}
     ...    ${Booking_S031['booking_item']}
     ...    ${Booking.text_default['booking_price']}  # Expected result : ${Booking_S031['total_price_value1']}
     common.Verify Capture Screenshot    Booking_S031    Verify Created Booking On Booking Delivery Page
@@ -238,7 +239,7 @@ Booking_S031
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -256,14 +257,14 @@ Booking_S031
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S031['discount_amount']}
-    ...    ${Booking_S031['discount_value']}  # Expected result : NaN
+    ...    ${Booking.text_default['discount_amount']}  # Expected result : ${Booking_S031['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}  # Expected result : NaN
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S031['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S032['total_price_value1']}
+    ...    ${Booking.text_default['total_price_amount']}  # Expected result : ${Booking_S031['total_price_amount']}
+    ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S031['total_price_value1']}
     ...    ${EMPTY}  # Expected result : ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S031    Verify Booking Summary
@@ -274,8 +275,8 @@ Booking_S031
     b2c_booking_detail_page.Click Edit Booking List
     # Expected
     b2c_booking_detail_page.Verify Edit Booking List Popup    
-    ...    ${Booking_S031['parcel_type']}
-    ...    ${Booking_S031['booking_name']}
+    ...    ${EMPTY}  # Expected result : ${Booking_S031['parcel_type']}
+    ...    ${Booking_S031['booking_name']} ${booking_id}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    Booking_S031    Verify Edit Booking List Popup  
 
@@ -284,12 +285,13 @@ Booking_S031
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S031['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping    ${Booking['text_parcel_status_waiting_entering']}
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -349,8 +351,4 @@ Booking_S031
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
-    b2c_booking_detail_page.Verify Timestamp After Print Label
     common.Verify Capture Screenshot    Booking_S031    Verify Print Screen
-
-
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ

@@ -14,7 +14,7 @@ Verify Booking Detail Page After Draft
     ${receiver_address}=    Set Variable If    '${receiver_address}' == '-' and '${receiver_postcode_full}' == '-'    -    ${receiver_address} ${receiver_postcode_full}
     ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${booking_list}
     ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
-    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
+    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
@@ -350,7 +350,7 @@ Wait Until Edit Complete Popup And Page Loading Success
     Wait Until Element Is Not Visible    ${b2c_txt_edit_complete}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    
+
 Wait Until Page Loaded After Select Origin Shipping
     [Arguments]    ${parcel_status}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}

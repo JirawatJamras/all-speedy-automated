@@ -275,7 +275,7 @@ Booking_S030
     b2c_booking_detail_page.Click Edit Booking List
     # Expected
     b2c_booking_detail_page.Verify Edit Booking List Popup    
-    ...    ${EMPTY}
+    ...    ${EMPTY}  # Expected result : ${Booking_S030['parcel_type']}
     ...    ${Booking_S030['booking_name']} ${booking_id}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    Booking_S030    Verify Edit Booking List Popup  
@@ -351,6 +351,5 @@ Booking_S030
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
-    Sleep  5s
     # Expected
     common.Verify Capture Screenshot    Booking_S030    Verify Print Screen
