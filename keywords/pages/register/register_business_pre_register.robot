@@ -5,10 +5,10 @@ Click Checkbox Partner Types Legal
     common.Click when ready     ${Checkbox Partner Types}
 
 #Legal entity
-Set Juristic ID
+Set Juristic ID Legal Entity
     ${currentdate}   Get Current Date
-    ${preid}   Convert Date  ${currentdate}       result_format=%y%m%d%H%M%S
-    ${prefix_number}=    Set Variable    0
+    ${preid}   Convert Date  ${currentdate}    result_format=%y%m%d%H%M%S
+    ${prefix_number}=    Evaluate    random.randint(0, 5)    random
     ${JuristicID}=    Set Variable    ${prefix_number}${preid} 
     Set Global Variable    ${JuristicID}
 
@@ -22,9 +22,9 @@ Input Company Name Legal Entity
     [Arguments]    ${Text}  
     common.Input When Ready    ${register_txtbox_company_name_legal_entity}    ${Text} 
 
-Input Tax Identification Number Legal Entity 
+Input Juristic Identification Number Legal Entity 
     [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_tax_identification_number_legal_entity}     ${Value}  
+    common.Input When Ready    ${register_txtbox_juristic_identification_number_legal_entity}     ${Value}  
 
 Input Company Address Legal Entity
     [Arguments]    ${Value}  
@@ -65,6 +65,13 @@ Input Mobile Ext Legal Entity
     common.Input When Ready    ${register_txtbox_mobile_ext_legal_entity}     ${Value}
 
 #general
+Set National ID Individual
+    ${currentdate}   Get Current Date
+    ${preid}   Convert Date  ${currentdate}    result_format=%y%m%d%H%M%S
+    ${prefix_number}=    Evaluate    random.randint(0, 5)    random
+    ${NationalID}=    Set Variable    ${prefix_number}${preid} 
+    Set Global Variable    ${NationalID}
+
 Select Title Name Individual
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_title_name_individual}
@@ -113,8 +120,7 @@ Click Confirm
     common.Click when ready    ${Click confirm}
      
 Click Cancel
-    [Arguments]    ${Value}
-    ${Click cancel}=    Replace String    ${register_btn_cancel}     {value}    ${Value}
+    ${Click cancel}=    Replace String    ${register_btn_cancel}     {value}    ${Register['btn_cancel']}
     common.Click when ready    ${Click cancel}
 
 Verify Confirm Page
@@ -130,9 +136,12 @@ Verify Cancel Popup
     ${Body cancel popup}=    Replace String    ${register_txt_body_cancel_popup}     {value}    ${Body}
     Element Should Be Visible    ${Body cancel popup}
 
-Click Button Cancel Popup
-    [Arguments]    ${Text}
-    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Text}
+Click Button Confirm Cancel Popup
+    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register['confirm_cancel_popup']}
+    common.Click when ready    ${Click button}
+
+Click Button Cancel Cancel Popup
+    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register['cancel_cancel_popup']}
     common.Click when ready    ${Click button}
 
 #old

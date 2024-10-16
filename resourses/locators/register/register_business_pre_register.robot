@@ -15,7 +15,7 @@ ${register_dropdown_choice_address_full_individual}    //div[text()='{value}'][@
 
 
 ${register_txtbox_company_name_legal_entity}    //input[@id='companyName']
-${register_txtbox_tax_identification_number_legal_entity}    //input[@id='idNumber']
+${register_txtbox_juristic_identification_number_legal_entity}    //input[@id='idNumber']
 ${register_txtbox_company_address_legal_entity}    //input[@id='companyAddress_addressInfo']
 ${register_txtbox_first_name_legal_entity}    //input[@id='firstName']
 ${register_txtbox_last_name_legal_entity}    //input[@id='lastName']
