@@ -1,18 +1,16 @@
 *** Keywords ***
 Input Email
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    ${c2c_txtbox_email_login_page}
-    Input Text                       ${c2c_txtbox_email_login_page}     ${value}
+    common.Input When Ready    ${c2c_txtbox_email_login_page}    ${value} 
 
 Input Password
     [Arguments]                      ${value}
-    Wait Until Element Is Visible    ${c2c_txtbox_password_login_page}
-    Input Text                       ${c2ctxtbox_password_login_page}    ${value}
+    common.Input When Ready    ${c2c_txtbox_password_login_page}    ${value} 
 
 Click Log On Button
-    Scroll Window To Vertical    0
-    Wait Until Element Is Visible    ${c2c_btn_log_on_login_page}
-    Click Element                    ${c2c_btn_log_on_login_page}
+    Scroll Window To Vertical    50
+    ${c2c_btn_log_on_login_page}=    Replace String    ${c2c_btn_log_on_login_page}    {value}   ${Booking['text_login']}
+    common.Click When Ready    ${c2c_btn_log_on_login_page}
 
 Select Customer Tab
     Wait Until Element Is Visible    ${c2c_tab_customer_login_page}

@@ -4,11 +4,11 @@ Click Log In Button In Landing Page
     common.Click when ready    ${login_button}
 
 Click Menu Seven Store
-    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}    timeout=30s
+    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}    timeout=${DEFAULT_TIMEOUT}
     common.Click when ready    ${c2c_mnu_seven_store_landing_page}
 
 Click Menu Shipping
-    Wait Until Element Is Visible    ${c2c_tab_service_landing_page}
+    Wait Until Element Is Visible    ${c2c_tab_service_landing_page}    timeout=${DEFAULT_TIMEOUT}
     common.Click when ready    ${c2c_btn_shipping_landing_page}
 
 Click Menu Tracking

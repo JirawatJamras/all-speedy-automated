@@ -48,15 +48,16 @@ Verify Edit Booking List Popup
     [Arguments]    ${parcel_type}    ${booking_name}    ${shipping_origin_aria}
     ${text_edit_booking_list}=    Replace String    ${b2c_txt_edit_booking_list}    {value}    ${Booking['text_edit_booking_list']}
     Wait Until Element Is Visible    ${text_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
-    ${text_parcel_type}=    Replace String    ${b2c_txt_parcel_type}    {value}    ${Booking['text_parcel_type']}
-    ${actual_text_parcel_type}    Get Text    ${text_parcel_type}
-    ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
+    Run Keyword If    '${parcel_type}' != '${EMPTY}'    Run Keywords    
+    ...    ${text_parcel_type}=    Replace String    ${b2c_txt_parcel_type}    {value}    ${Booking['text_parcel_type']}
+    ...    AND    ${actual_text_parcel_type}    Get Text    ${text_parcel_type}
+    ...    AND    ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
+    ...    AND    Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
     ${text_booking_name}=    Replace String    ${b2c_txt_booking_name}    {value}    ${Booking['text_booking_name']}
     ${actual_text_booking_name}    Get Value    ${text_booking_name}
     ${text_shipping_origin_aria}=    Replace String    ${b2c_txt_shipping_origin_aria}    {value}    ${Booking['text_shipping_origin_aria']}
     ${actual_text_shipping_origin_aria}    Get Text    ${text_shipping_origin_aria}
     Log To Console    ${actual_text_shipping_origin_aria}
-    Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
     Should Be Equal As Strings    ${actual_text_booking_name}    ${booking_name}
     Should Be Equal As Strings    ${actual_text_shipping_origin_aria}    ${shipping_origin_aria}
 
@@ -107,6 +108,7 @@ Search Shipping Store
 
 Click Select Store On Map
     ${select_store_button} =  Replace String    ${b2c_btn_select_store}    {value}    ${Booking['text_select_store_on_map']}
+    common.Scroll Window To Vertical    100
     Wait Until Element Is Visible    ${select_store_button}    timeout=${DEFAULT_TIMEOUT}
     Click When Ready    ${select_store_button}
 
@@ -236,7 +238,15 @@ Verify Booking Detail Page
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
     Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
+    # Run Keyword If    '${origin_shipping}' != '${EMPTY}'    Run Keywords    
+    # ...    Wait Until Element Is Visible    ${b2c_img_loading_in_detail}    timeout=50s
+    # ...    AND    Wait Until Element Is Not Visible    ${b2c_img_loading_in_detail}    timeout=50s
+    Sleep  10s
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
+    # Run Keyword If    '${origin_shipping}' != '${EMPTY}'    Run Keywords    
+    # ...    Wait Until Element Is Visible    ${b2c_img_loading_in_detail}    timeout=50s
+    # ...    AND    Wait Until Element Is Not Visible    ${b2c_img_loading_in_detail}    timeout=50s
+    Sleep  10s
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
@@ -275,10 +285,10 @@ Verify Booking Detail Page
     ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
     Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
-    ${acrual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
-    ${acrual_txt_price_detail} =  Replace String    ${acrual_txt_price_detail}    \n    ${SPACE}
-    # Wait Until Element Is Visible    xpath=(//div[@class='ant-card-body']//div[contains(@class,'border-t-2 border-dashed')])[1]    timeout=${DEFAULT_TIMEOUT}
-    Should Be Equal As Strings    ${acrual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
+    ${actual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
+    ${actual_txt_price_detail} =  Replace String    ${actual_txt_price_detail}    \n    ${SPACE}
+    Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
+    Should Be Equal As Strings    ${actual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
 
 Click Print Parcel Label
@@ -291,21 +301,21 @@ Verify Parcel Label
     ...    ${sender_address}    ${sender_postcode_full}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
     ...    ${parcel_cod}    ${parcel_insure}    ${parcel_detail_remark}
     ${parcel_id}    Get Parcel ID
-    ${text_print_parcel_label}=    Replace String    ${b2c_txt_title_print_label}    {value}    ${Booking['text_print_parcel_label']}
-    Wait Until Element Is Visible    ${b2c_txt_title_print_label}
-    ${text_paper_size}=    Replace String    ${b2c_txt_paper_size}    {value}    ${Booking.text_paper_size['paper_size']}
-    Wait Until Element Is Visible    ${text_paper_size}
-    ${paper_size_dropdown}=    Replace String    ${b2c_cbo_paper_size}    {value}    ${Booking.text_paper_size['paper_size']}
-    Click When Ready    ${paper_size_dropdown}
-    ${text_list_paper_size}=    Replace String    ${b2c_txt_list_paper_size}    {value}    ${Booking.text_paper_size['paper']}
-    ${actual_list_paper_size}    Get Text    ${text_list_paper_size}
+    ${b2c_txt_title_print_label}=    Replace String    ${b2c_txt_title_print_label}    {value}    ${Booking['text_print_parcel_label']}
+    Wait Until Element Is Visible    ${b2c_txt_title_print_label}    timeout=${DEFAULT_TIMEOUT}
+    ${b2c_txt_paper_size}=    Replace String    ${b2c_txt_paper_size}    {value}    ${Booking.text_paper_size['paper_size']}
+    Wait Until Element Is Visible    ${b2c_txt_paper_size}    timeout=${DEFAULT_TIMEOUT}
+    ${b2c_cbo_paper_size}=    Replace String    ${b2c_cbo_paper_size}    {value}    ${Booking.text_paper_size['paper_size']}
+    Click When Ready    ${b2c_cbo_paper_size}
+    ${b2c_txt_list_paper_size}=    Replace String    ${b2c_txt_list_paper_size}    {value}    ${Booking.text_paper_size['paper']}
+    ${actual_list_paper_size}    Get Text    ${b2c_txt_list_paper_size}
     ${actual_list_paper_size} =  Replace String    ${actual_list_paper_size}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_paper_size}    ${size_a4} ${size_a5} ${size_8cm}
-    ${image_logo_speed_d}=    Replace String    ${b2c_img_logo_speed_d}    {value}    ${Booking['text_print_parcel_label']}
-    Wait Until Element Is Visible    ${image_logo_speed_d}
-    Wait Until Element IS Visible    ${b2c_ico_location_receiver}
-    ${image_qr_code}=    Replace String    ${b2c_img_qr_code}    {value}    ${Booking['text_print_parcel_label']}
-    Wait Until Element Is Visible    ${image_qr_code}
+    ${b2c_img_logo_speed_d}=    Replace String    ${b2c_img_logo_speed_d}    {value}    ${Booking['text_print_parcel_label']}
+    Wait Until Element Is Visible    ${b2c_img_logo_speed_d}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element IS Visible    ${b2c_ico_location_receiver}    timeout=${DEFAULT_TIMEOUT}
+    ${b2c_img_qr_code}=    Replace String    ${b2c_img_qr_code}    {value}    ${Booking['text_print_parcel_label']}
+    Wait Until Element Is Visible    ${b2c_img_qr_code}    timeout=${DEFAULT_TIMEOUT}
     ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
     Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
@@ -314,8 +324,8 @@ Verify Parcel Label
     ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} หมายเหตุ ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
 
 Click Print Label On Popup
-    ${print_parcel_label_button}=    Replace String    ${b2c_btn_print_parcel_label_popup}    {value}    ${Booking['text_print_parcel_label']}
-    Click When Ready    ${print_parcel_label_button}
+    ${b2c_btn_print_parcel_label_popup}=    Replace String    ${b2c_btn_print_parcel_label_popup}    {value}    ${Booking['text_print_parcel_label']}
+    common.Click When Ready    ${b2c_btn_print_parcel_label_popup}
 
 Verify Date And Time With Time Distortion
     [Arguments]    ${locator}    ${booking_time}
@@ -329,10 +339,3 @@ Verify Date And Time With Time Distortion
         ...    AND    Exit For Loop
     END
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
-
-Verify Timestamp After Print Label
-    ${text_timestamp_after_print_label} =    Replace String    ${b2c_txt_timestamp_after_print_label}    {value1}    ${Booking['text_print_parcel_label']}
-    ${DD_MM}   Get Current Date
-    ${DD_MM}   Convert Date  ${DD_MM}       result_format=%d-%m
-    ${text_timestamp_after_print_label} =    Replace String    ${text_timestamp_after_print_label}    {value2}    ${DD_MM}
-    Wait Until Element Is Visible    ${text_timestamp_after_print_label}

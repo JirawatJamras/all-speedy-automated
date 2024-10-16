@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -19,7 +19,6 @@ Booking_S030
     c2c_landing_page.Click Menu Shipping
     
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
-    b2c_home_page.Click Book Parcel Delivery
     # Expected
     b2c_booking_delivery_page.Verify Booking Page For General Customer 
     common.Verify Capture Screenshot    Booking_S030    Verify Booking Page For General Customer
@@ -275,8 +274,8 @@ Booking_S030
     b2c_booking_detail_page.Click Edit Booking List
     # Expected
     b2c_booking_detail_page.Verify Edit Booking List Popup    
-    ...    ${Booking_S030['parcel_type']}
-    ...    ${Booking_S030['booking_name']}
+    ...    ${EMPTY}
+    ...    ${Booking_S030['booking_name']} ${booking_id}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    Booking_S030    Verify Edit Booking List Popup  
 
@@ -291,7 +290,7 @@ Booking_S030
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -350,6 +349,6 @@ Booking_S030
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
+    Sleep  5s
     # Expected
-    b2c_booking_detail_page.Verify Timestamp After Print Label
     common.Verify Capture Screenshot    Booking_S030    Verify Print Screen

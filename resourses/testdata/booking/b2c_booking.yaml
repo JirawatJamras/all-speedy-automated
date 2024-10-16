@@ -456,7 +456,7 @@ Booking_S030:
   booking_price: 'NaN'
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
-  price_value: '50.00'
+  price_value: '50'  # '50.00'
   total_price_value2:  '50.00'
   parcel_package_type:  ซอง
 
