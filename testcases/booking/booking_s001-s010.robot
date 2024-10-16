@@ -3,10 +3,9 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
-                  ...    AND   Set Folder Result with date
-#Test Teardown     Close Browser
-#[Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
-
+                  ...    AND    Set Folder Result with date
+Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+                  ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S001
@@ -201,6 +200,7 @@ Booking_S002
     Log    Step No.14 ขั้นตอน Promotion
     # - ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
+    b2c_booking_detail_page.Wait Until Edit Complete Popup And Page Loading Success
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page

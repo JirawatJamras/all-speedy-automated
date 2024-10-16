@@ -339,3 +339,17 @@ Verify Date And Time With Time Distortion
         ...    AND    Exit For Loop
     END
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
+
+Verify Timestamp After Print Label
+    ${text_timestamp_after_print_label} =    Replace String    ${b2c_txt_timestamp_after_print_label}    {value1}    ${Booking['text_print_parcel_label']}
+    ${DD_MM}   Get Current Date
+    ${DD_MM}   Convert Date  ${DD_MM}       result_format=%d-%m
+    ${text_timestamp_after_print_label} =    Replace String    ${text_timestamp_after_print_label}    {value2}    ${DD_MM}
+    Wait Until Element Is Visible    ${text_timestamp_after_print_label}
+
+Wait Until Edit Complete Popup And Page Loading Success
+    ${b2c_txt_edit_complete}=    Replace String    ${b2c_txt_edit_complete}    {value}    ${Booking['text_edit_complete']}
+    Wait Until Element Is Visible    ${b2c_txt_edit_complete}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${b2c_txt_edit_complete}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}

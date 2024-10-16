@@ -26,6 +26,7 @@ ${b2c_txt_paper_size}    //span[text()='{value}']
 ${b2c_txt_list_paper_size}    //div[contains(text(),'{value}')]/../../..
 ${b2c_txt_parcel_label_detail}    //div[contains(@id,'print')]
 ${b2c_txt_booking_id}    //span[normalize-space()='{value}']
+${b2c_txt_edit_complete}    //*[text()='{value}']
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 ${b2c_ico_location_receiver}    //div[contains(@class,'ant-col flex items-center')]

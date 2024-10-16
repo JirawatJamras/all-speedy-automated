@@ -30,6 +30,7 @@ Click Accept Terms of Service
     common.Click When Ready    ${btn_accept_terms_service}
 
 Verify Select Parcel Type
+    Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
     Wait Until Element Is Enabled   ${btn_parcel_type_dry}    timeout=30s
     Wait Until Element Is Visible    ${btn_parcel_type_dry}    timeout=${DEFAULT_TIMEOUT}
