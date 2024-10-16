@@ -8,6 +8,7 @@ Click Checkbox Partner Types Legal
 Set Juristic ID Legal Entity
     ${currentdate}   Get Current Date
     ${preid}   Convert Date  ${currentdate}    result_format=%y%m%d%H%M%S
+    Evaluate   random.seed()   random
     ${prefix_number}=    Evaluate    random.randint(0, 5)    random
     ${JuristicID}=    Set Variable    ${prefix_number}${preid} 
     Set Global Variable    ${JuristicID}
@@ -68,7 +69,8 @@ Input Mobile Ext Legal Entity
 Set National ID Individual
     ${currentdate}   Get Current Date
     ${preid}   Convert Date  ${currentdate}    result_format=%y%m%d%H%M%S
-    ${prefix_number}=    Evaluate    random.randint(0, 5)    random
+    Evaluate   random.seed()   random
+    ${prefix_number}=    Evaluate    random.randint(1, 8)    random
     ${NationalID}=    Set Variable    ${prefix_number}${preid} 
     Set Global Variable    ${NationalID}
 

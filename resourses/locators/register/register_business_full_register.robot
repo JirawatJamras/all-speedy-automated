@@ -1,4 +1,5 @@
 *** Variables ***
+${register_}    //input[@id='login']
 #Full-Register 
  #Company business tab
 ${Company_business_title}    //div[@class='ant-steps-item-content']//div[text()='ข้อมูลบริษัท']

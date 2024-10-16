@@ -8,6 +8,10 @@ Test Teardown     Close Browser
 *** Variables ***
 *** Keywords ***
 *** Test Cases ***
+
+# Register_testid
+#     register_business_pre_register.Set Juristic ID Legal Entity
+    
 Register_S001
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ   
     [Tags]    Register    UAT
@@ -205,12 +209,15 @@ Register_S006
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup
 
-Register_SC014
+Register_S014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
-    Log    Step No.1    ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+    Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+    #Step login email same input email in S004
+    common.Open URL    https://yopmail.com/
+    
     common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
     #Expected
-    register_business_full_register.Verify Company information
+    #register_business_full_register.Verify Company information
     Log    Step No.2 Click btn "ถัดไป"
     #Step1 Click tab พัสดุทั่วไป
     #Expected
@@ -255,7 +262,7 @@ Register_SC014
     Log    Step No.17 กดปุ่ม "x"
     #Expected
 
-Register_SC023
+Register_S023
     [Documentation]    Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -263,7 +270,7 @@ Register_SC023
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-Register_SC024
+Register_S024
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -290,7 +297,7 @@ Register_SC024
     #Step 7 ไม่มีปุ่มยกเลิก
     #Step 8 ไม่มีปุ่มย้อนกลับ
 
-Register_SC025
+Register_S025
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -318,7 +325,7 @@ Register_SC025
     #Step 7 ไม่มีปุ่ม "ยกเลิก"
     #Step 8 ไม่มีปุ่ม "ย้อนกลับ"
 
-Register_SC026
+Register_S026
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -335,7 +342,7 @@ Register_SC026
     #Step 3 ไม่มี Dropdown
     #Step 4 ไม่มี Dropdown ให้เลือก
 
-Register_SC027
+Register_S027
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -357,7 +364,7 @@ Register_SC027
     #Step 7
     #Step 8
 
-Register_SC028
+Register_S028
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -377,7 +384,7 @@ Register_SC028
     #Step 7
     #Step 8
 
-Register_SC029
+Register_S029
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -399,7 +406,7 @@ Register_SC029
     #Step 7
     #Step 8 
 
-Register_SC030
+Register_S030
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -421,7 +428,7 @@ Register_SC030
     #Step 7
     #Step 8 
 
-Register_SC031
+Register_S031
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -443,7 +450,7 @@ Register_SC031
     #Step 7
     #Step 8   
 
-Register_SC032
+Register_S032
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -465,7 +472,7 @@ Register_SC032
     #Step 7
     #Step 8           
 
-Register_SC047
+Register_S047
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    idc@gmail.com
@@ -500,7 +507,7 @@ Register_SC047
     #Step 12 กดแท็บ "ใบแจ้งหนี้"
     register_business_profile_business.Click Menu Invoice
 
-Register_SC048
+Register_S048
     common.Open URL    ${B2C_UAT_URL}
     [Documentation]    Customer : แก้ไขโปรไฟล์ของฉัน
     #Step 1 ชื่อ User (Company Admin) >โปรของฉัน
