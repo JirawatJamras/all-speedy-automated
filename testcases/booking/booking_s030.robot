@@ -19,6 +19,7 @@ Booking_S030
     c2c_landing_page.Click Menu Shipping
     
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
+    b2c_home_page.Click Book Parcel Delivery
     # Expected
     b2c_booking_delivery_page.Verify Booking Page For General Customer 
     common.Verify Capture Screenshot    Booking_S030    Verify Booking Page For General Customer
@@ -32,7 +33,7 @@ Booking_S030
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
     # Expected   
-    # b2c_booking_delivery_page.Verify Select Parcel Type
+    # b2c_booking_delivery_page.Verify Select Parcel Type  # Expected result : System should be displayed for select parcel type
     common.Verify Capture Screenshot    Booking_S030    Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
@@ -285,6 +286,7 @@ Booking_S030
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S030['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping    ${Booking['text_parcel_status_waiting_entering']}
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page

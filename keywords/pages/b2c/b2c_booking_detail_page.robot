@@ -238,19 +238,10 @@ Verify Booking Detail Page
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
     Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
-    # Run Keyword If    '${origin_shipping}' != '${EMPTY}'    Run Keywords    
-    # ...    Wait Until Element Is Visible    ${b2c_img_loading_in_detail}    timeout=50s
-    # ...    AND    Wait Until Element Is Not Visible    ${b2c_img_loading_in_detail}    timeout=50s
-    Sleep  10s
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    # Run Keyword If    '${origin_shipping}' != '${EMPTY}'    Run Keywords    
-    # ...    Wait Until Element Is Visible    ${b2c_img_loading_in_detail}    timeout=50s
-    # ...    AND    Wait Until Element Is Not Visible    ${b2c_img_loading_in_detail}    timeout=50s
-    Sleep  10s
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
-    Sleep  5s
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     Should Be Equal    ${title}    ${actual_text_title}
     Should Be Equal    ${booking_name}    ${actaul_booking_name}
@@ -340,16 +331,13 @@ Verify Date And Time With Time Distortion
     END
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
 
-Verify Timestamp After Print Label
-    ${text_timestamp_after_print_label} =    Replace String    ${b2c_txt_timestamp_after_print_label}    {value1}    ${Booking['text_print_parcel_label']}
-    ${DD_MM}   Get Current Date
-    ${DD_MM}   Convert Date  ${DD_MM}       result_format=%d-%m
-    ${text_timestamp_after_print_label} =    Replace String    ${text_timestamp_after_print_label}    {value2}    ${DD_MM}
-    Wait Until Element Is Visible    ${text_timestamp_after_print_label}
-
 Wait Until Edit Complete Popup And Page Loading Success
     ${b2c_txt_edit_complete}=    Replace String    ${b2c_txt_edit_complete}    {value}    ${Booking['text_edit_complete']}
     Wait Until Element Is Visible    ${b2c_txt_edit_complete}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${b2c_txt_edit_complete}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+Wait Until Page Loaded After Select Origin Shipping
+    [Arguments]    ${parcel_status}
+    ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
+    Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
