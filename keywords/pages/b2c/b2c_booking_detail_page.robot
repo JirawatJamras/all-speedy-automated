@@ -78,7 +78,6 @@ Verify Display Pickup Schedule Data
         Register Keyword To Run On Failure    NOTHING
         ${actual_text}=    Get Text    ${item}
         ${actual_text}=    Replace String    ${actual_text}    \n    ${SPACE}
-        Log To Console    ${actual_text}
         ${card_text_list}=    Run Keyword And Return Status    Should Be Equal As Strings    ${actual_text}
         ...    ${receiving_type} ${pickup_date} ${nextDay} ${txt_parcel_number} ${parcel_number} ${txt_cut_off_time} ${today} ${cut_off_time} ${txt_price} ${price}
         Set Suite Variable    ${item}
@@ -89,8 +88,22 @@ Select Parcel Pickup Schedule
     common.Click When Ready    ${item}${b2c_btn_select_pickup_schedule}
 
 Click Save Button In Edit Booking List Popup
-    ${b2c_btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
-    common.Click When Ready    ${b2c_btn_save_shipping_origin}   
+    ${btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
+    Scroll Element Into View    ${btn_save_shipping_origin}
+    common.Click When Ready    ${btn_save_shipping_origin}  
+
+Verify Complete Select Parcel Pickup Schedule And Save
+    [Arguments]    ${booking_time_label}    ${text_shipping_origin}    ${shipping_origin}
+    ${today}    dps_home_page.Set_ToDAY
+    ${text_booking_time_label}=    Replace String    ${b2c_txt_transaction_date}    {value}    ${booking_time_label}
+    ${txt_booking_time_label}=    Replace String    ${text_booking_time_label}    {value2}    ${today}
+
+    ${txt_shipping_origin}=    Replace String    ${b2c_txt_shipping_origin}    {value}    ${text_shipping_origin}
+    ${txt_shipping_origin}    Get Text    ${txt_shipping_origin}
+    ${txt_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
+    Reload Page
+    Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=30s
+    Should Be Equal As Strings    ${txt_shipping_origin}    ${text_shipping_origin} ${shipping_origin}
 
 Select Shipping Origin Tab 
     [Arguments]    ${aria}
@@ -342,3 +355,13 @@ Wait Until Page Loaded After Select Origin Shipping
     [Arguments]    ${parcel_status}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
+    
+Click Import File Button
+    ${btn_import_file}=    Replace String    ${b2c_btn_import_file_detail_page}    {value}    ${Booking['text_btn_import']}
+    common.Click When Ready    ${btn_import_file}
+
+Verify Display Import File Popup
+    ${btn_template_file}=    Replace String    ${b2c_btn_template_in_popup}    {value}    ${Booking['text_btn_template']}
+    Execute JavaScript    document.getElementById('${b2c_btn_import_file_in_popup}').removeAttribute('hidden');
+    Wait Until Element Is Visible    ${b2c_btn_import_file_in_popup}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_template_file}    timeout=${DEFAULT_TIMEOUT}

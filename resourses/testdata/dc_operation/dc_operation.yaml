@@ -1,6 +1,11 @@
+dc_operaion_001:
+  parcel_type:  พัสดุทั่วไป
+  booking_name:  Booking DRY
+
 dc_operaion_002:
   parcel_type:  พัสดุทั่วไป
   booking_name:  Booking DRY
+  shipping_origin:  บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
   receiving_cycle:
     company_name:  บริษัท ไอดีซี พรีเมียร์ จำกัด 
     branch:  สาขาหลัก

@@ -41,7 +41,10 @@ Booking:
   text_draft_save: บันทึกร่าง
   text_booking_id_label: 'บุ๊คกิ้ง ID :'
   text_booking_time_label: 'วันเวลาทำรายการ :'
+  text_shipping_origin:  'ต้นทางจัดส่ง :'
   text_booking_name_label: 'ชื่อบุ๊คกิ้ง :'
+  text_btn_import:  Import File
+  text_btn_template:  Template
   text_next: 'ถัดไป'
   text_parcel_booking: จองเลขพัสดุ
   text_edit_complete: แก้ไขสำเร็จ
