@@ -31,7 +31,6 @@ ${btn_choose_store}    //b[text()='{value}']/..
 ${btn_close_popup}    //div[@class='ant-modal-header']/..//button//span[@aria-label='close']
 ${btn_confirm_to_close_popup}    //button//span[@aria-label='check']
 ${btn_card_latest_booking}    (//div[@class='ant-spin-container']//div[@class='ant-card-body'])[1]
-${btn_edit_booking_icon}    //*[@data-icon='pen-to-square']/../..
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']/div[@class='max-sm:border-b pb-2 border-blue-800 text-blue-800']
 ${txt_parcel_sender_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'{value}')]

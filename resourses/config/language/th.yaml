@@ -59,6 +59,10 @@ Booking:
   text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
   text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
   text_parcel_status_waiting_entering: รอส่งพัสดุเข้าระบบ
+  tab_shipping_origin:
+    favorite:  เลือกรายการโปรด
+    store:  เลือกร้าน 7-11 ต้นทาง
+    car_pickup:  รอบรถเข้ารับพัสดุ
   general_parcel:
     parcel_A4: A4
     parcel_detail_A4: A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ชม.
@@ -136,6 +140,8 @@ call_car_pick_up:
   parcel_pickup_time:
     morning:  ช่วงเช้า 09:00 - 12:00
     afternoon:  ช่วงบ่าย 13:00 - 16:00
+  parcel_pickup_time_schedule:
+    morning:  09:00:00 - 12:00 น.
   cut_off_time:  '15:00:00'
   default:
     parcel_number: 0 รายการ

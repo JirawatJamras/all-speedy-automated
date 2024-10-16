@@ -47,8 +47,7 @@ Select Parcel Pickup Time
     common.Click When Ready    ${selected_parcel_pickup_time}
 
 Click Save Button
-    [Arguments]    ${button}
-    ${save_button}=  Replace String   ${b2c_btn_save_in_add_popup}   {value}   ${button}
+    ${save_button}=  Replace String   ${b2c_btn_save_in_add_popup}   {value}   ${call_car_pick_up['button_save']}
     common.Click When Ready    ${save_button}
 
 Verify Add Special Pickup Round Success

@@ -49,5 +49,6 @@ ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select
 ${b2c_txtbox_search_store}    //span[text()='{value}']/..//input
 
 ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
+${b2c_tab_pickup_Schedule}    //div[@role='tab']//div[text()='{value}']
 
 ${b2c_dialog_create_parcel}    //*[@role='dialog']

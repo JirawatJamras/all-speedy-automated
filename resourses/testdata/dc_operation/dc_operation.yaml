@@ -1,8 +1,6 @@
-dc_operaion_001:
-  text_parcel_pickup_time:  09:00:00 - 12:00 น.
-
 dc_operaion_002:
-  text_parcel_pickup_time:  09:00:00 - 12:00 น.
+  parcel_type:  พัสดุทั่วไป
+  booking_name:  Booking DRY
   receiving_cycle:
     company_name:  บริษัท ไอดีซี พรีเมียร์ จำกัด 
     branch:  สาขาหลัก

@@ -60,6 +60,10 @@ Verify Edit Booking List Popup
     Should Be Equal As Strings    ${actual_text_booking_name}    ${booking_name}
     Should Be Equal As Strings    ${actual_text_shipping_origin_aria}    ${shipping_origin_aria}
 
+Select Pickup Schedule Tab
+    ${tab_pickup_Schedule} =  Replace String    ${b2c_tab_pickup_Schedule}    {value}    ${Booking.tab_shipping_origin['car_pickup']}
+    common.Click When Ready    ${tab_pickup_Schedule}
+
 Select Shipping Origin Tab 
     [Arguments]    ${aria}
     ${tab_shipping_origin_aria} =  Replace String    ${b2c_tab_shipping_origin_aria}    {value}    ${aria}

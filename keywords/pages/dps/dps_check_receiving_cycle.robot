@@ -5,9 +5,9 @@ Verify Check Receiving Cycle Page
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
     ${next_day}    dps_home_page.Set_Next_DAY
-    ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycly_list}
+    ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
     FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
-        ${item}=    Set Variable    (${dps_txt_receiving_cycly_list})[${index}]
+        ${item}=    Set Variable    (${dps_txt_receiving_cycle_list})[${index}]
         Wait Until Element Is Visible    ${item}    timeout=${DEFAULT_TIMEOUT}
         Scroll Element Into View    ${item}
         Register Keyword To Run On Failure    NOTHING
@@ -43,9 +43,9 @@ Verify Inventory Confirm List Tab
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
     ${next_day}    dps_home_page.Set_Next_DAY
-    ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycly_list}
+    ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
     FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
-        ${item}=    Set Variable    (${dps_txt_receiving_cycly_list})[${index}]
+        ${item}=    Set Variable    (${dps_txt_receiving_cycle_list})[${index}]
         Wait Until Element Is Visible    ${item}    timeout=${DEFAULT_TIMEOUT}
         Scroll Element Into View    ${item}
         Register Keyword To Run On Failure    NOTHING
@@ -81,8 +81,12 @@ Verify Parcel Pickup Details Popup
     Wait Until Element Is Visible    ${dps_btn_parcel_pickup_details}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${dps_cbo_vehicle_type}    timeout=${DEFAULT_TIMEOUT}
 
-Click Button On Parcel Pickup Details Popup
-    [Arguments]    ${name}
-    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${name}
+Click Export Button On Parcel Pickup Details Popup
+    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operaion['button_export']}
+    Scroll Element Into View    ${dps_btn_parcel_pickup_details}
+    Click When Ready    ${dps_btn_parcel_pickup_details}
+
+Click Approve Button On Parcel Pickup Details Popup
+    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operaion['button_approve']}
     Scroll Element Into View    ${dps_btn_parcel_pickup_details}
     Click When Ready    ${dps_btn_parcel_pickup_details}

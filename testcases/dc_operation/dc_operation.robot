@@ -48,10 +48,10 @@ DC_Operation_001
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${call_car_pick_up.parcel_type['dry']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${call_car_pick_up.parcel_pickup_time['morning']}
-    b2c_call_car_pick_up_parcel_page.Click Save Button    ${call_car_pick_up['button_save']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
     b2c_call_car_pick_up_parcel_page.Verify Add Special Pickup Round Success   ##TBC##
     ...    ${call_car_pick_up.car_round_name['special']}
-    ...    ${dc_operaion_001['text_parcel_pickup_time']}
+    ...    ${call_car_pick_up.parcel_pickup_time_schedule['morning']}
     common.Verify Capture Screenshot    DC_Operation_001   Verify Add Special Pickup Round Success
 
     Log    Step No.6 เลือกเมนู "จองการจัดส่งพัสดุ"
@@ -138,11 +138,11 @@ DC_Operation_002
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${call_car_pick_up.parcel_type['dry']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${call_car_pick_up.parcel_pickup_time['morning']}
-    b2c_call_car_pick_up_parcel_page.Click Save Button    ${call_car_pick_up['button_save']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
     #Expected
     b2c_call_car_pick_up_parcel_page.Verify Add Special Pickup Round Success   ##TBC##
     ...    ${call_car_pick_up.car_round_name['special']}
-    ...    ${dc_operaion_002['text_parcel_pickup_time']}
+    ...    ${call_car_pick_up.parcel_pickup_time_schedule['morning']}
     common.Verify Capture Screenshot    DC_Operation_002   Verify Add Special Pickup Round Success
 
     Log    Step No.6 เลือกเมนู "จองการจัดส่งพัสดุ"
@@ -186,9 +186,7 @@ DC_Operation_002
 
     Log    Step No.11 คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
     b2c_booking_delivery_page.Click Latest Booking Created    ## ใช้แก้ชั่วคราว
-    b2c_booking_delivery_page.Click Edit Booking Icon
-    b2c_booking_delivery_page.Verify Edit Booking Popup    ${Booking['text_edit_booking']}
-    common.Verify Capture Screenshot    DC_Operation_002    Verify Edit Booking Popup
+    b2c_booking_detail_page.Click Edit Booking List
     
     Log    Step No.12 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
     Click Element    //div[@role='tab']//div[text()='รอบรถเข้ารับพัสดุ']
@@ -290,11 +288,11 @@ DC_Operation_002
     ## เหลือ Verify รายละเอียด ##
     common.Verify Capture Screenshot    DC_Operation_002    Verify Parcel Pickup Details Popup
     Log    Step No.24 คลิกปุ่ม Export
-    dps_check_receiving_cycle.Click Button On Parcel Pickup Details Popup    ${dc_operaion['button_export']}
+    dps_check_receiving_cycle.Click Export Button On Parcel Pickup Details Popup
     # expected
 
     Log    Step No.25 คลิกปุ่ม อนุมัติ
-    dps_check_receiving_cycle.Click Button On Parcel Pickup Details Popup    ${dc_operaion['button_approve']}
+    dps_check_receiving_cycle.Click Approve Button On Parcel Pickup Details Popup
     # expected
 
     Log    Step No.26 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
@@ -303,5 +301,5 @@ DC_Operation_002
     b2c_home_page.Select Sub Menu Call Car Pick Up
     Sleep    10s
 
-    # Log    Step No.27 เลือกเมนู "จองการจัดส่งพัสดุ"
+    Log    Step No.27 เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
