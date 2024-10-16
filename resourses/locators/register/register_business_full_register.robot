@@ -1,5 +1,6 @@
 *** Variables ***
-${register_}    //input[@id='login']
+${register_txtbox_email_yopmail}    //input[@id='login']
+${register_button_next_yopmail}    //div[@id='refreshbut']
 #Full-Register 
  #Company business tab
 ${Company_business_title}    //div[@class='ant-steps-item-content']//div[text()='ข้อมูลบริษัท']
