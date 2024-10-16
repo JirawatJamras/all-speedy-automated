@@ -5,7 +5,7 @@ Set_Next_DAY
     ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
     ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
     ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${day}    Evaluate    int(${d}) + 2
+    ${day}    Evaluate    int(${d}) + 1
     ${day}=    Convert To String    ${day}
     ${day}=    Set Variable    ${day.zfill(2)}
     ${year}    Convert To Integer    ${y}
@@ -24,6 +24,22 @@ Set_ToDAY
     ${Today}    Set Variable    ${d}-${m}-${year}
     RETURN    ${Today}
 
+Select Check Receiving Cycle Menu
+    ${tab_check_receiving_cycle}=  Replace String   ${dps_tab_dps_menu}   {value}   ${dc_operaion.dps_menu['Check_Receiving_Cycle']}
+    Wait Until Element Is Visible    ${tab_check_receiving_cycle}    timeout=30s
+    Mouse Over    ${tab_check_receiving_cycle}
+    Wait Until Element Is Visible    ${tab_check_receiving_cycle}
+    Click Element    ${tab_check_receiving_cycle}
+    Mouse Out    ${tab_check_receiving_cycle}
+    FOR  ${i}  IN RANGE  0  5
+        Reload Page
+        ${isvisible}    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}
+        Capture Page Screenshot
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+    END
+    Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
+
+#### OLD #####
 Select DPS Menu
     [Arguments]    ${tabname}
     Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s

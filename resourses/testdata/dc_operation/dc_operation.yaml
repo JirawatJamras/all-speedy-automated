@@ -18,4 +18,6 @@ dc_operaion_002:
     receiving_type:  รอบพิเศษ
     courier: CPALL
     number_of_parcel:  '0'  #'10'
-    status: รอยืนยัน
+    status: 
+      waiting:  รอยืนยัน
+      confirm:  ยืนยันแล้ว
