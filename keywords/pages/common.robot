@@ -140,8 +140,8 @@ Delete API Booking By Booking ID
     Create Session    allspeedy_api    ${CPS_API_UAT_URL}
     &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
     ${response}    DELETE On Session    allspeedy_api    /bookings/${booking_id}    headers=${headers}
-    Log To Console    ${response.status_code}
-    Log To Console    ${response.content}
+    Log    ${response.status_code}
+    Log    ${response.content}
 
 ################### Mobile - Android ###################
 Application Teardown

@@ -48,16 +48,17 @@ Verify Edit Booking List Popup
     [Arguments]    ${parcel_type}    ${booking_name}    ${shipping_origin_aria}
     ${text_edit_booking_list}=    Replace String    ${b2c_txt_edit_booking_list}    {value}    ${Booking['text_edit_booking_list']}
     Wait Until Element Is Visible    ${text_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${parcel_type}' != '${EMPTY}'    Run Keywords    
-    ...    ${text_parcel_type}=    Replace String    ${b2c_txt_parcel_type}    {value}    ${Booking['text_parcel_type']}
-    ...    AND    ${actual_text_parcel_type}    Get Text    ${text_parcel_type}
-    ...    AND    ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
-    ...    AND    Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
-    ${text_booking_name}=    Replace String    ${b2c_txt_booking_name}    {value}    ${Booking['text_booking_name']}
-    ${actual_text_booking_name}    Get Value    ${text_booking_name}
-    ${text_shipping_origin_aria}=    Replace String    ${b2c_txt_shipping_origin_aria}    {value}    ${Booking['text_shipping_origin_aria']}
-    ${actual_text_shipping_origin_aria}    Get Text    ${text_shipping_origin_aria}
-    Log To Console    ${actual_text_shipping_origin_aria}
+    IF    '${parcel_type}' != '${EMPTY}' 
+        ${b2c_txt_parcel_type}=    Replace String    ${b2c_txt_parcel_type}    {value}    ${Booking['text_parcel_type']}
+        ${actual_text_parcel_type}    Get Text    ${b2c_txt_parcel_type}
+        ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
+        Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
+    END
+    ${b2c_txt_booking_name}=    Replace String    ${b2c_txt_booking_name}    {value}    ${Booking['text_booking_name']}
+    ${actual_text_booking_name}    Get Value    ${b2c_txt_booking_name}
+    ${b2c_txt_shipping_origin_aria}=    Replace String    ${b2c_txt_shipping_origin_aria}    {value}    ${Booking['text_shipping_origin_aria']}
+    ${actual_text_shipping_origin_aria}    Get Text    ${b2c_txt_shipping_origin_aria}
+    Log    ${actual_text_shipping_origin_aria}
     Should Be Equal As Strings    ${actual_text_booking_name}    ${booking_name}
     Should Be Equal As Strings    ${actual_text_shipping_origin_aria}    ${shipping_origin_aria}
 
@@ -113,7 +114,7 @@ Select Shipping Origin Tab
 Search Shipping Store
     [Arguments]    ${code}
     ${textbox_search_store}=    Replace String    ${b2c_txtbox_search_store}    {value}    ${Booking['text_search_store_on_map']}
-    Wait Until Element Is Visible    ${textbox_search_store}
+    Wait Until Element Is Visible    ${textbox_search_store}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${textbox_search_store}
     Input When Ready    ${textbox_search_store}    ${code}
     ${search_result_store} =  Replace String    ${b2c_txt_search_result_store}    {value}    ${code}
@@ -344,16 +345,15 @@ Verify Date And Time With Time Distortion
     END
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
 
-Wait Until Edit Complete Popup And Page Loading Success
-    ${b2c_txt_edit_complete}=    Replace String    ${b2c_txt_edit_complete}    {value}    ${Booking['text_edit_complete']}
-    Wait Until Element Is Visible    ${b2c_txt_edit_complete}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${b2c_txt_edit_complete}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+Wait Until Loading Icon Success
+    Wait Until Element Is Visible    ${b2c_img_loading}    timeout=60s
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
 
 Wait Until Page Loaded After Select Origin Shipping
-    [Arguments]    ${parcel_status}
-    ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
+    Wait Until Element Is Visible    //div[@role='dialog']//div[@class='ant-modal-content']//img[@class='bg-transparent']    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    //div[@role='dialog']//div[@class='ant-modal-content']//img[@class='bg-transparent']    timeout=${DEFAULT_TIMEOUT}
+    Sleep   3s
+    ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${Booking['text_parcel_status_waiting_entering']}
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     
 Click Import File Button

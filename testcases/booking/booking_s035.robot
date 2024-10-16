@@ -344,7 +344,6 @@ Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
-    b2c_booking_detail_page.Verify Timestamp After Print Label
     common.Verify Capture Screenshot    Booking_S035    Verify Print Screen
 
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
+    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}

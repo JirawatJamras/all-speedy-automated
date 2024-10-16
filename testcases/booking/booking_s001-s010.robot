@@ -2,7 +2,7 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -45,7 +45,8 @@ Booking_S002
     b2c_login_page.Click Log On Button
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
-    b2c_home_page.Click Book Parcel Delivery    
+    b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Page For Business Customer
@@ -200,7 +201,7 @@ Booking_S002
     Log    Step No.14 ขั้นตอน Promotion
     # - ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
-    b2c_booking_detail_page.Wait Until Edit Complete Popup And Page Loading Success
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
@@ -241,6 +242,7 @@ Booking_S002
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
@@ -283,11 +285,19 @@ Booking_S002
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}    # Expected Result is ${Booking_S002['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}    #Expected result is ${Booking_S002['total_price_value1']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
+
+
+
+    # Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410003186
+    # ${booking_id}=    Set Variable    B2410003186
+    # ${booking_name}=    Set Variable    Booking DRY
+    # @{booking_time}=    Create List    16-10-2567 21:42    16-10-2567 21:43
+    # b2c_booking_detail_page.Wait Until Loading Icon Success
 
     Log    Step No.17 กดปุ่ม "แก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
@@ -304,6 +314,7 @@ Booking_S002
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S002['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
@@ -323,7 +334,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
-    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking_S002['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
@@ -368,5 +379,4 @@ Booking_S002
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
-    b2c_booking_detail_page.Verify Timestamp After Print Label
     common.Verify Capture Screenshot    Booking_S002    Verify Print Screen

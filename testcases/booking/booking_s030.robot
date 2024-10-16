@@ -286,7 +286,7 @@ Booking_S030
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S030['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
-    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping    ${Booking['text_parcel_status_waiting_entering']}
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page

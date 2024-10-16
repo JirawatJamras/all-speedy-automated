@@ -10,7 +10,7 @@ Booking_S002:
   parcel_type:  พัสดุทั่วไป
   sender_phone: '0890000001'
   sender_name: สมชาย สายเสมอ
-  sender_address: 48/698 
+  sender_address: 48/698
   sender_postcode_5_digits: '10230'
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   receiver_phone: '0890000002'
@@ -25,9 +25,10 @@ Booking_S002:
   booking_price: 0.00บาท
   parcel_size:  A4
   parcel_package_type:  ซอง
+  price_value: 50    # 50.00
   total_price_amount:  '1'
   total_price_value1: 'NaN'
-  total_price_value2:  '24.00'    # 50.00
+  total_price_value2:  '50.00'
 
 
 Booking_S003:

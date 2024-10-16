@@ -346,4 +346,4 @@ Booking_S005
     common.Verify Capture Screenshot    Booking_S005    Verify Print Screen
 
 
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}    # ใช้แค่ขณะ Develop Automate Testing เท่านั้น ***ต้องลบก่อนส่งมอบ
+    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}

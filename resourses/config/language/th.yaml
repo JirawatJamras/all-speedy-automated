@@ -48,6 +48,7 @@ Booking:
   text_next: 'ถัดไป'
   text_parcel_booking: จองเลขพัสดุ
   text_edit_complete: แก้ไขสำเร็จ
+  text_booking_parcel_complete: จองเลขพัสดุสำเร็จ
   text_business_customer_parcel_id_4_start_unit: SPBD
   text_general_customer_parcel_id_4_start_unit: SPBC
   img_is_favorite:
