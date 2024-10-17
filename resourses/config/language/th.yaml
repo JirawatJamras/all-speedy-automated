@@ -202,10 +202,9 @@ rm:
   text_full_register: Full-Register
   text_company_admin: Company Admin
   text_edit_company_information: เปลี่ยนแปลงข้อมูลบริษัท
+  text_mange_request: จัดการคำขอ
+  text_manage_customer_information: จัดการข้อมูลลูกค้า
   role:
     dev:  Role Dev
     admin:  แอดมินคลัง
     toei:  toei test
-  pms_menu:  
-    manage_customer_data:  จัดการข้อมูลลูกค้า
-    manage_request:  /usermanager/requests

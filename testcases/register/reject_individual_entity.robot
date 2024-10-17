@@ -51,11 +51,12 @@ Register_S011
     pms_login_page.Input Email    ${pms_login_user_01['username']}
     pms_login_page.Input Password    ${pms_login_user_01['password']}
     pms_login_page.Click Log On Button
-    Sleep    3s
-    common.Open URL    ${PMS_USER_MANAGER_UAT_URL}
-
+    pms_home_page.Select Role Admin
+    pms_home_page.Select Manage Customer Menu
+    pms_home_page.Select Manage Request Sub-Menu
+ 
     Log    Step No. 1 "RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ กำลังพิจารณา กดปุ่ม ดำเนินการ"
     pms_requests_page.Click Tab Pre-Register
-    # pms_requests_page.Click Tab Full-Register
-    # pms_requests_page.Click Tab Company Admin
-    # pms_requests_page.Click Tab Edit Company Information
+    # pms_requests_page.Select New Request With Considering Status
+    Sleep    5s
+   

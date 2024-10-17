@@ -1,6 +1,7 @@
 *** Keywords ***
 Select New Request With Considering Status
     [Arguments]    ${partner_type}    ${customer_name}
+    //div[text()='กำลังพิจารณา']/../..//div[contains(@class,'ant-row ant-row-center')]//img
 
 Click Tab Pre-Register
     ${pms_tab_in_request_page}=    Replace String    ${pms_tab_in_request_page}    {value}    ${rm['text_pre_register']}

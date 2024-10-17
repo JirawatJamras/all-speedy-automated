@@ -1,17 +1,24 @@
 *** Keywords ***
-Select role
-    [Arguments]    ${role}
+Select Role Admin
     Wait Until Element Is Visible    ${pms_img_icon_user}    timeout=${DEFAULT_TIMEOUT}
     common.Click When Ready    ${pms_cbo_select_role}
-    ${btn_role}=  Replace String   ${pms_btn_role}   {value}   ${role}
+    ${btn_role}=  Replace String   ${pms_btn_role}   {value}   ${rm.role['admin']}
     common.Click When Ready    ${btn_role}
 
-Select Sub Menu in Manage Customer Data Menu
+Select Manage Customer Menu
+    Select PMS Menu    ${rm['text_manage_customer_information']}
+
+Select Manage Request Sub-Menu
+    Select PMS Sub-Menu    ${rm['text_mange_request']}
+
+Select PMS Menu
     [Arguments]    ${menu}
-    ${tab_name}=  Replace String   ${pms_mnu_title}   {value}   ${rm.pms_menu['manage_customer_data']}
-    ${sub_menu}=  Replace String   ${pms_mnu_name}   {value}   ${menu}
-    Wait Until Element Is Visible    ${pms_img_manage_customer}    timeout=${DEFAULT_TIMEOUT}
-    Mouse Over    ${pms_img_manage_customer}
-    common.Click When Ready    ${tab_name}
-    Wait Until Element Is Visible    ${sub_menu}    timeout=${DEFAULT_TIMEOUT}
-    common.Click When Ready    ${sub_menu}
+    ${menu}=  Replace String   ${pms_mnu_title}   {value}   ${menu}
+    Wait Until Page Contains Element    ${menu}
+    Mouse Over    ${menu}
+    common.Click When Ready    ${menu}
+
+Select PMS Sub-Menu
+    [Arguments]    ${subMenu}
+    ${pms_sub_mnu}=    Replace String    ${pms_sub_mnu}    {value}    ${subMenu}
+    common.Click When Ready    ${pms_sub_mnu}
