@@ -6,11 +6,11 @@ ${BROWSER_NAME}                         Chrome
 ####################### DPS UAT DATA #######################
 ${DPS_UAT_URL}                          https://dps-uat.allspeedy.co.th/
 ${DPS_PORTAL_UAT_URL}                   https://dps-uat.allspeedy.co.th/portal
-${PMS_UAT_URL}                          https://pms-uat.allspeedy.co.th/
 ${DPS_Homepage_URL}                     https://dps-uat.allspeedy.co.th/homepage
 
 ####################### PMS UAT DATA #######################
 ${PMS_UAT_URL}                          https://pms-uat.allspeedy.co.th/
+${PMS_USER_MANAGER_UAT_URL}             https://pms-uat.allspeedy.co.th/usermanager/requests
 
 ####################### B2C UAT DATA #######################
 ${B2C_UAT_URL}                          https://www-uat.allspeedy.co.th/auth/login
