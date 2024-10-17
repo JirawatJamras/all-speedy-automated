@@ -65,5 +65,4 @@ Register_S011
     ...    ${Register_S004['mobile_no']}
     ...    ${Register_S004['mobile_ext']}
     ...    Wilaiwan Tanyidseng
-    Sleep    5s
    
