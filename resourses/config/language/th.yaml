@@ -205,6 +205,8 @@ rm:
   text_mange_request: จัดการคำขอ
   text_manage_customer_information: จัดการข้อมูลลูกค้า
   text_pending:  รอดำเนินการ
+  text_sale_information: ข้อมูล Sale
+  text_approve: อนุมัติ
   text_status:
     waiting_assign:  รอมอบหมาย
     confirm_link:  ยืนยันส่ง Link

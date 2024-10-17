@@ -40,4 +40,6 @@ Select Request With Considering Status
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {ext}    ${mobile_ext}
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {status}    ${rm.text_status['under_consideration']}
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {rm}    ${rm_name}
+    Wait Until Page Contains Element    ${pms_btn_assigned_list_in_request_page}
+    Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
     common.Click When Ready    ${pms_btn_assigned_list_in_request_page}

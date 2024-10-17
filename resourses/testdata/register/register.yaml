@@ -104,3 +104,6 @@ Register_S007:
   email: testregister.business001@yopmail.com
   mobile_no: '0931234567'
   mobile_ext: '0000'
+
+Register_S011:
+  saletel: '0800000000'

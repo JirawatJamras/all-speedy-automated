@@ -17,7 +17,9 @@ ${pms_txtbox_sale_name}    //input[@id='rmName']
 ${pms_txtbox_sale_phone}    //input[@id='saleTell']
 ${pms_txtbox_sale_email}    //input[@id='saleEmail']
 
+
 ${pms_btn_reject}    //b[text()='ปฏิเสธ']/..
+${pms_btn_approve}    //b[text()='{value}']/..
 
 ${pms_txt_request_detail_header}    //span[text()='{value}']
 ${pms_txt_company_titile_name}    //label[@for='companyTitleName']
@@ -38,3 +40,4 @@ ${pms_txt_sale_data_header}    //h1[contains(@class,'mb-2')]
 ${pms_txt_sale_name}    //label[@for='rmName']
 ${pms_txt_sale_phone}    //label[@for='saleTell']
 ${pms_txt_sale_email}    //label[@for='saleEmail']
+${pms_txt_sale_information}    //div[text()='{value}']
