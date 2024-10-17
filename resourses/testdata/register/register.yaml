@@ -1,6 +1,8 @@
 Register:
+  txt_menu_business: ลูกค้าธุรกิจ
+  txt_menu_general: ลูกค้าทั่วไป
   Pre_register:
-    text_menu_register: ลงทะเบียนลูกค้าธุรกิจ
+    txt_menu_register: ลงทะเบียนลูกค้าธุรกิจ
     txt_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
     btn_confirm: ลงทะเบียน
     btn_cancel: ยกเลิก
@@ -8,6 +10,8 @@ Register:
     txt_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
     confirm_cancel_popup: ตกลง
     cancel_cancel_popup: ยกเลิก
+  Full_register:
+    txt_link_register: ลงทะเบียนได้ที่ / Register at
 
 
 
@@ -22,8 +26,9 @@ Register_S001:
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
-  email: testregister.business001@yopmail.com
-  mobile_no: '0931234567'
+  email: businessregisterflow@gmail.com
+  password: Business1234@
+  mobile_no: '0000000000'
   mobile_ext: '0000'
 
 
@@ -38,7 +43,8 @@ Register_S002:
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
-  email: testregister.business002@yopmail.com
+  email: businessregisterflow@gmail.com
+  password: Business1234@
   mobile_no: '0000000000'
   mobile_ext: '0000'
 
@@ -53,7 +59,8 @@ Register_S003:
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
-  email: testregister.business003@yopmail.com
+  email: businessregisterflow@gmail.com
+  password: Business1234@
   mobile_no: '0931234567'
   mobile_ext: '0000'
 
@@ -63,7 +70,8 @@ Register_S004:
   first_name: วีวิกา
   last_name: ยั่งยืน
   id_number: '1513763255099'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
-  email: testregister.business004@yopmail.com
+  email: businessregisterflow@gmail.com
+  password: Business1234@
   individual_address: 456/22 หมู่บ้านสัมมากร
   search_individual_address_full: '10240'
   select_individual_address_full:  สะพานสูง สะพานสูง กรุงเทพมหานคร 10240
@@ -76,7 +84,8 @@ Register_S005:
   first_name: อัสมา
   last_name: รวมทอง
   #id_number: '0460823097311'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
-  email: testregister.business005@yopmail.com
+  email: businessregisterflow@gmail.com
+  password: Business1234@
   individual_address: 145 หมู่บ้านชวนชม
   search_individual_address_full: '10240'
   select_individual_address_full:  สะพานสูง สะพานสูง กรุงเทพมหานคร 10240
@@ -89,7 +98,8 @@ Register_S006:
   first_name: อัสมา
   last_name: รวมทอง
   #id_number: '7311253028120'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
-  email: testregister.business006@yopmail.com
+  email: businessregisterflow@gmail.com
+  password: Business1234@
   individual_address: 145 หมู่บ้านชวนชม
   search_individual_address_full: '10240'
   select_individual_address_full:  สะพานสูง สะพานสูง กรุงเทพมหานคร 10240
@@ -104,3 +114,5 @@ Register_S007:
   email: testregister.business001@yopmail.com
   mobile_no: '0931234567'
   mobile_ext: '0000'
+
+
