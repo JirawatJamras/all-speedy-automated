@@ -48,12 +48,22 @@ Verify Edit Booking List Popup
     [Arguments]    ${parcel_type}    ${booking_name}    ${shipping_origin_aria}
     ${text_edit_booking_list}=    Replace String    ${b2c_txt_edit_booking_list}    {value}    ${Booking['text_edit_booking_list']}
     Wait Until Element Is Visible    ${text_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
-    IF    '${parcel_type}' != '${EMPTY}' 
-        ${b2c_txt_parcel_type}=    Replace String    ${b2c_txt_parcel_type}    {value}    ${Booking['text_parcel_type']}
-        ${actual_text_parcel_type}    Get Text    ${b2c_txt_parcel_type}
-        ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
-        Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
-    END
+    ${b2c_txt_parcel_type}=    Replace String    ${b2c_txt_parcel_type}    {value}    ${Booking['text_parcel_type']}
+    ${actual_text_parcel_type}    Get Text    ${b2c_txt_parcel_type}
+    ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
+    ${b2c_txt_booking_name}=    Replace String    ${b2c_txt_booking_name}    {value}    ${Booking['text_booking_name']}
+    ${actual_text_booking_name}    Get Value    ${b2c_txt_booking_name}
+    ${b2c_txt_shipping_origin_aria}=    Replace String    ${b2c_txt_shipping_origin_aria}    {value}    ${Booking['text_shipping_origin_aria']}
+    ${actual_text_shipping_origin_aria}    Get Text    ${b2c_txt_shipping_origin_aria}
+    Log    ${actual_text_shipping_origin_aria}
+    Should Be Equal As Strings    ${actual_text_booking_name}    ${booking_name}
+    Should Be Equal As Strings    ${actual_text_shipping_origin_aria}    ${shipping_origin_aria}
+
+Verify Edit Booking List Popup For General Customer
+    [Arguments]    ${parcel_type}    ${booking_name}    ${shipping_origin_aria}
+    ${text_edit_booking_list}=    Replace String    ${b2c_txt_edit_booking_list}    {value}    ${Booking['text_edit_booking_list']}
+    Wait Until Element Is Visible    ${text_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_txt_booking_name}=    Replace String    ${b2c_txt_booking_name}    {value}    ${Booking['text_booking_name']}
     ${actual_text_booking_name}    Get Value    ${b2c_txt_booking_name}
     ${b2c_txt_shipping_origin_aria}=    Replace String    ${b2c_txt_shipping_origin_aria}    {value}    ${Booking['text_shipping_origin_aria']}

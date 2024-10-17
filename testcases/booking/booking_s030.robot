@@ -274,7 +274,7 @@ Booking_S030
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
     # Expected
-    b2c_booking_detail_page.Verify Edit Booking List Popup    
+    b2c_booking_detail_page.Verify Edit Booking List Popup For General Customer   
     ...    ${EMPTY}  # Expected result : ${Booking_S030['parcel_type']}
     ...    ${Booking_S030['booking_name']} ${booking_id}
     ...    ${Booking['text_shipping_origin_aria']}
