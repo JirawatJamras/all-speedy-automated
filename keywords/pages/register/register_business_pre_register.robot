@@ -34,9 +34,7 @@ Input Company Address Legal Entity
 Input Company Address Full Legal Entity
     [Arguments]    ${Value}    ${Select}
     common.Input When Ready    ${register_dropdown_company_address_full_legal_entity}     ${Value}  
-    #Select one in result search 
     ${Selected company address full}=    Replace String    ${register_dropdown_choice_company_address_full_legal_entity}    {value}    ${Select}
-    Scroll Element Into View    ${Selected company address full}
     common.Click when ready     ${Selected company address full}
 
 Select Title Name Legal Entity
