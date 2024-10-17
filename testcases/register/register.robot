@@ -6,15 +6,23 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Variables ***
-*** Keywords ***
-*** Test Cases ***
 
-# Register_testid
-#     register_business_pre_register.Set Juristic ID Legal Entity
-    
+
+*** Test Cases ***
+Approve Legal Entity
+    [Documentation]    E2E 32 Scenario
+    Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
+    Register_S001
+    #Register_S007   Bew
+    #Register_S009   Bew
+    #Register_S013   Ampere
+    #Register_S015   Ampere
+    #Register_S020
+    #Register_S022-49
+*** Keywords ***    
 Register_S001
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ   
-    [Tags]    Register    UAT
+    ##[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -48,7 +56,7 @@ Register_S001
 
 Register_S002
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
-    [Tags]    Register    UAT
+    #[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -82,7 +90,7 @@ Register_S002
 
 Register_S003
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
-    [Tags]    Register    UAT
+    #[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
@@ -116,10 +124,9 @@ Register_S003
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup
 
-#In progress
 Register_S004
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    [Tags]    Register    UAT
+    #[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -149,7 +156,7 @@ Register_S004
 
 Register_S005
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
-    [Tags]    Register    UAT
+    #[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -177,9 +184,10 @@ Register_S005
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
 
+
 Register_S006
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
-    [Tags]    Register    UAT
+    #[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -208,6 +216,11 @@ Register_S006
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup
+
+Register_S013
+    [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล 
+    Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+
 
 Register_S014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
