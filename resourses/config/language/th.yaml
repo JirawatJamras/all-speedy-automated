@@ -198,6 +198,7 @@ dc_operaion:
   vehicle_type:  ประเภทที่ใช้
 
 rm:
+  text_pre_register: Pre-Register
   role:
     dev:  Role Dev
     admin:  แอดมินคลัง

@@ -51,6 +51,11 @@ Register_S011
     pms_login_page.Input Email    ${pms_login_user_01['username']}
     pms_login_page.Input Password    ${pms_login_user_01['password']}
     pms_login_page.Click Log On Button
+    common.Open URL    ${PMS_USER_MANAGER_UAT_URL}
+
+    Log    Step No. 1  RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
+    pms_requests_page.Click Tab Pre-Register
+
 
 
 

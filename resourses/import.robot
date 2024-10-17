@@ -35,7 +35,7 @@ Variables                   testdata/feature/b2c/b2c_searchtracking_006.yaml
 Variables                   testdata/feature/b2c/b2c_managemybooking_007.yaml
 Variables                   testdata/feature/b2c/b2c_addpickuptime_008.yaml
 Variables                   testdata/feature/b2c/b2c_addfavoriteitem_010.yaml
-Variables                   testdata/booking/b2c_booking.yaml
+Variables                   testdata/booking/booking.yaml
 
 
 ######################## C2C ########################
@@ -95,10 +95,12 @@ Variables                   testdata/register/register.yaml
 Resource                    ../keywords/pages/pms/pms_landing_page.robot
 Resource                    ../keywords/pages/pms/pms_login_page.robot
 Resource                    ../keywords/pages/pms/pms_home_page.robot
+Resource                    ../keywords/pages/pms/pms_requests_page.robot
 
 Resource                    locators/pms/pms_landing_page.robot
 Resource                    locators/pms/pms_login_page.robot
 Resource                    locators/pms/pms_home_page.robot
+Resource                    locators/pms/pms_requests_page.robot
 
 ######################## SPS ########################
 Resource                    ../keywords/pages/sps/sps_landing_page.robot
