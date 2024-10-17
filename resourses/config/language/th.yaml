@@ -204,6 +204,12 @@ rm:
   text_edit_company_information: เปลี่ยนแปลงข้อมูลบริษัท
   text_mange_request: จัดการคำขอ
   text_manage_customer_information: จัดการข้อมูลลูกค้า
+  text_pending:  รอดำเนินการ
+  text_status:
+    waiting_assign:  รอมอบหมาย
+    confirm_link:  ยืนยันส่ง Link
+    under_consideration:  กำลังพิจารณา
+    reject:  ปฏิเสธ
   role:
     dev:  Role Dev
     admin:  แอดมินคลัง

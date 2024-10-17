@@ -49,7 +49,7 @@ Set Next DAY
     ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
     ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
     ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${day}    Evaluate    int(${d}) + 2
+    ${day}    Evaluate    int(${d}) + 1
     ${day}=    Convert To String    ${day}
     ${day}=    Set Variable    ${day.zfill(2)}
     ${year}    Convert To Integer    ${y}
@@ -60,11 +60,11 @@ Set Next DAY
 Set Date Pattern
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
-    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
+    ${day}    Split String And Select    ${date_YYYY_MM_DD}    -    0
     ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
     ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${day}    Evaluate    int(${d}) + 1
-    ${day}=    Convert To String    ${day}
+    # ${day}    Evaluate    int(${day}) + 1
+    # ${day}=    Convert To String    ${day}
     ${day}=    Set Variable    ${day.zfill(2)}
     ${year}    Convert To Integer    ${y}
     ${year}    Evaluate    ${y} + 543

@@ -96,3 +96,11 @@ Register_S006:
   mobile_no: '0931234567'
   mobile_ext: '0000'  
  
+Register_S007:
+  partner_types: นิติบุคคล
+  company_name: บริษัท ไทยฟู๊ดส์ รอยัล กรุ๊ป จำกัด
+  first_name: ชลธิชา
+  last_name: อยู่ยง
+  email: testregister.business001@yopmail.com
+  mobile_no: '0931234567'
+  mobile_ext: '0000'
