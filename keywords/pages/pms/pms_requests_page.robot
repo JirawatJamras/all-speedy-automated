@@ -28,6 +28,11 @@ Select Request With Status Waiting For Assign
     ${value4}=    Replace String    ${value3}    {tel}    ${mobile_no}
     ${value5}=    Replace String    ${value4}    {ext}    ${mobile_ext}
     ${value6}=    Replace String    ${value5}    {status}    ${status}
+    Wait Until Element Is Visible    ${value6}${pms_txt_request_num}
+    ${get_request_no}=    Get Text    ${value6}${pms_txt_request_num}
+    ${get_request_date}=    Get Text    ${value6}${pms_txt_request_date}
+    Set Suite Variable    ${get_request_no}
+    Set Suite Variable    ${get_request_date}
     common.Click When Ready    ${value6}
 
 Select Request With Considering Status
