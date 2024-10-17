@@ -12,17 +12,22 @@ Test Teardown     Close Browser
 Approve Legal Entity
     [Documentation]    E2E 32 Scenario
     Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
-    Register_S001
+    [Tags]    Register    UAT
+    #Register_S001
+    Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
     #Register_S007   Bew
+    Log    Scenario 9 RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)
     #Register_S009   Bew
-    #Register_S013   Ampere
+    Log    Scenario 13 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล
+    Register_S013
+    Log    Scenario 15 RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
     #Register_S015   Ampere
+    Log    Scenario 20 RM : การ Update Vendor Code ในข้อมูลลูกค้า
     #Register_S020
     #Register_S022-49
 *** Keywords ***    
 Register_S001
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ   
-    ##[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -74,12 +79,12 @@ Register_S002
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     # common.Verify Capture Screenshot    Register_S001    filled in general information success
     # common.Scroll Window To Vertical    0
-    register_business_pre_register.Select Title Name    ${Register_S002['title_name']}
-    register_business_pre_register.Input First Name    ${Register_S002['first_name']}
-    register_business_pre_register.Input Last Name    ${Register_S002['last_name']}
-    register_business_pre_register.Input Email    ${Register_S002['email']}
-    register_business_pre_register.Input Mobile No    ${Register_S002['mobile_no']}
-    register_business_pre_register.Input Mobile Ext    ${Register_S002['mobile_ext']}
+    register_business_pre_register.Select Title Name Legal Entity    ${Register_S002['title_name']}
+    register_business_pre_register.Input First Name Legal Entity    ${Register_S002['first_name']}
+    register_business_pre_register.Input Last Name Legal Entity    ${Register_S002['last_name']}
+    register_business_pre_register.Input Email Legal Entity    ${Register_S002['email']}
+    register_business_pre_register.Input Mobile No Legal Entity    ${Register_S002['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S002['mobile_ext']}
     common.Verify Capture Screenshot    Register_S002    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
@@ -220,7 +225,29 @@ Register_S006
 Register_S013
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล 
     Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+    #Step login email same input email in S001
 
+    # ${email}=    Evaluate    "${Register_S001['email']}".split("@")[0]
+    # register_business_full_register.Login Yopmail    ${email}
+    # #step get link for full-register
+ 
+    register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}
+    register_business_full_register.Get Link On Email
+    common.Open URL    ${link_full_register}
+    
+    #Expected
+    # register_business_full_register.Verify Company information
+    # ...    ${Register_S001['checkbox_partner_types']}
+    # ...    ${Register_S001['title_name']}
+    # ...    ${Register_S001['first_name']}
+    # ...    ${Register_S001['last_name']}
+    # ...    ${Register_S001['id_number']}
+    # ...    ${Register_S001['email']}
+    # ...    ${Register_S001['individual_address']}
+    # ...    ${Register_S001['select_individual_address_full']}
+    # ...    ${Register_S001['mobile_no']}
+    # ...    ${Register_S001['mobile_ext']}
+    
 
 Register_S014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
@@ -230,8 +257,10 @@ Register_S014
     # ${email}=    Evaluate    "${Register_S004['email']}".split("@")[0]
     # register_business_full_register.Login Yopmail    ${email}
     #step get link for full-register
-    ${link_full_register}=    Set Variable    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
-    common.Open URL    ${link_full_register}
+    #${link_full_register}=    Set Variable    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
+    #common.Open URL    ${link_full_register}
+    
+    
     #Expected
     register_business_full_register.Verify Company information
     ...    ${Register_S004['checkbox_partner_types']}

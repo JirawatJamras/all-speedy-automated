@@ -1,11 +1,11 @@
 **** Keywords ***
 Select Business Customers Tab
-    Wait Until Element Is Visible    ${register_tab_business_customer}     ${DEFAULT_TIMEOUT}
-    Click Element    ${register_tab_business_customer} 
+    ${Select_Tab}=    Replace String    ${register_tab_business_customer}    {value}    ${Register['txt_menu_business']}
+    common.Click when ready     ${Select_Tab} 
 
 Select General Customers Tab
-    Wait Until Element Is Visible    ${register_tab_general_customer}    ${DEFAULT_TIMEOUT}
-    Click Element    ${register_tab_general_customer}
+    ${Select_Tab}=    Replace String    ${register_tab_business_customer}    {value}    ${Register['txt_menu_general']}
+    common.Click when ready     ${Select_Tab} 
 
 #Old
 # Select Business Customers Tab
