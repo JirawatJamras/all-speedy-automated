@@ -36,7 +36,7 @@ Register_S004
     register_business_pre_register.Input Address Full Individual    ${Register_S004['search_individual_address_full']}    ${Register_S004['select_individual_address_full']}
     register_business_pre_register.Input Mobile No Individual    ${Register_S004['mobile_no']}
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S004['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S004    filled in contact information success   
+    common.Verify Capture Screenshot    Register_S011    Pre-Register Success
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
@@ -64,5 +64,12 @@ Register_S011
     ...    ${Register_S004['last_name']}
     ...    ${Register_S004['mobile_no']}
     ...    ${Register_S004['mobile_ext']}
-    ...    Wilaiwan Tanyidseng
-   
+    ...    Yada Deenok
+    #Expected
+    #
+
+    Log    Step No. 2 RM กรอกเบอร์โทรศัพท์
+    Input Mobile Number In Sale Information    ${Register_S011['saletel']}
+
+    Log    Step No. 3 กดปุ่ม "อนุมัติ"
+    pms_request_detail_page.Click Approve Button
