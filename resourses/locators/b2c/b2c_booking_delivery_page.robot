@@ -86,6 +86,7 @@ ${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่ว�
 ${txtbox_cod}    //input[@id='create_parcel_form_codValue']
 ${txtbox_insure_amount}    //label[text()='จำนวนเงินซื้อประกัน']/../..//input[@id='create_parcel_form_insureAmount']
 ${txtbox_store_receiver}    //div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input']
+${txtbox_store_receiver_value}    //div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input']/../../span[2]
 
 ${cbo_postcode_sender}    //div[@title='{value}']
 ${cbo_postcode_receiver}    //div[@title='{value}']

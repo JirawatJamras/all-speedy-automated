@@ -7,7 +7,7 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S004
-    [Documentation]    "ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)"
+    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
     [Tags]    Booking    UAT
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
@@ -85,6 +85,7 @@ Booking_S004
     ...    ${Booking_S004['receiver_name']}
     ...    ${Booking_S004['receiver_phone']}
     ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S004    Verify Favorites Receiver PopUp
 
     Log    Step No.8 กดเลือกรายการ
@@ -92,6 +93,7 @@ Booking_S004
     ...    ${Booking_S004['receiver_name']}
     ...    ${Booking_S004['receiver_phone']}
     ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
     b2c_booking_delivery_page.Click Accept Favorites List
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
@@ -103,8 +105,8 @@ Booking_S004
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
     b2c_booking_delivery_page.Verify Data Receiver When Select Home  
-    ...    ${Booking_S004['receiver_name']}
     ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_name']}
     ...    ${Booking_S004['receiver_address']}
     ...    ${Booking_S003['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S004    Verify Choose Receiver From Favorites
@@ -134,25 +136,29 @@ Booking_S004
     Log    Step No.11 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     #Expected
-    # b2c_booking_detail_page.Verify Booking Detail Page After Draft
-    # ...    ${Booking['text_booking_list']}
-    # ...    ${Booking['text_draft_status']}
-    # ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
-    # ...    ${Booking_S004['img_sender_heart']}
-    # ...    ${Booking_S004['sender_name']}
-    # ...    ${Booking_S004['sender_phone']}
-    # ...    ${Booking_S004['img_receiver_heart']}
-    # ...    ${Booking_S004['receiver_name']}
-    # ...    ${Booking_S004['receiver_phone']}
-    # ...    ${Booking_S004['receiver_address']}
-    # ...    ${Booking_S004['receiver_postcode_full']}
-    # ...    ${Booking_S004['parcel_size']}
-    # ...    ${Booking.text_blank['discount_value']}
-    # ...    ${Booking.text_blank['buy_insurance']}
-    # ...    ${Booking_S004['parcel_cod_verify']}
-    # common.Verify Capture Screenshot    Booking_S004    Verify Draft Paecel
+    b2c_booking_detail_page.Verify Booking Detail Page After Draft
+    ...    ${Booking['text_booking_list']}
+    ...    ${Booking['text_draft_status']}
+    ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S004['sender_name']}
+    ...    ${Booking_S004['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S004['receiver_name']}
+    ...    ${Booking_S004['receiver_phone']}
+    ...    ${Booking_S004['receiver_address']}
+    ...    ${Booking_S004['receiver_postcode_full']}
+    ...    ${Booking_S004['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking_S004['parcel_cod_check']}
+    common.Verify Capture Screenshot    Booking_S004    Verify Draft Paecel
 
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
+    ${booking_id}    Get Booking ID
+    ${booking_time}    Get Booking Time
+    ${booking_name}    Get Booking Name
+    ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Select Draft Booking
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
@@ -252,7 +258,6 @@ Booking_S004
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Detail Page After Booking Success
 
     Log    Step No.17 กดเมนู "จองการจัดส่งพัสดุ"
-    # - ไม่เลือก Promotion
     b2c_home_page.Click Book Parcel Delivery
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
@@ -382,5 +387,5 @@ Booking_S004
     common.Verify Capture Screenshot    Booking_S004    Verify Print Screen
 
 
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
+    # [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
 
