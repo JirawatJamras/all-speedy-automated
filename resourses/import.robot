@@ -96,11 +96,13 @@ Resource                    ../keywords/pages/pms/pms_landing_page.robot
 Resource                    ../keywords/pages/pms/pms_login_page.robot
 Resource                    ../keywords/pages/pms/pms_home_page.robot
 Resource                    ../keywords/pages/pms/pms_requests_page.robot
+Resource                    ../keywords/pages/pms/pms_request_detail_page.robot
 
 Resource                    locators/pms/pms_landing_page.robot
 Resource                    locators/pms/pms_login_page.robot
 Resource                    locators/pms/pms_home_page.robot
 Resource                    locators/pms/pms_requests_page.robot
+Resource                    locators/pms/pms_request_detail_page.robot
 
 ######################## SPS ########################
 Resource                    ../keywords/pages/sps/sps_landing_page.robot
