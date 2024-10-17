@@ -104,3 +104,20 @@ Register_S007:
   email: testregister.business001@yopmail.com
   mobile_no: '0931234567'
   mobile_ext: '0000'
+
+Register_S010:
+  company_title_name: บจ.(บริษัทจำกัด)
+  company_name: บริษัท ไทยฟู๊ดส์ รอยัล กรุ๊ป จำกัด
+  id_number: '2241017100316'
+  address: 106/1 ซอย อ่อนนุช 70/1
+  postcode: ประเวศ ประเวศ กรุงเทพมหานคร 10250
+  title_name: น.ส.
+  customer_first_name: ชลธิชา
+  customer_last_name: อยู่ยง
+  customer_email: testregister.business001@yopmail.com   # businessregisterflow@gmail.com
+  customer_phone: '0931234567'  # '0000000000'
+  customer_phone_extra: '0000'
+  link_full_register: https://www-uat.allspeedy.co.th/business-register/fullRegister/9402877258967172463
+  remark: ทดสอบปฎิเสธ
+  sale_name: Patidtar Parsittiwanit  # Yada Deenok
+  sale_email: Patidtarpar@allspeedy.co.th  # yadadee@cpall.co.th
