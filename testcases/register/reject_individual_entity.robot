@@ -57,6 +57,13 @@ Register_S011
  
     Log    Step No. 1 "RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ กำลังพิจารณา กดปุ่ม ดำเนินการ"
     pms_requests_page.Click Tab Pre-Register
-    # pms_requests_page.Select New Request With Considering Status
+    pms_requests_page.Select Request With Considering Status
+    ...    ${Register_S004['checkbox_partner_types']}
+    ...    ${Register_S004['first_name']}${SPACE}${Register_S004['last_name']}
+    ...    ${Register_S004['first_name']}
+    ...    ${Register_S004['last_name']}
+    ...    ${Register_S004['mobile_no']}
+    ...    ${Register_S004['mobile_ext']}
+    ...    Wilaiwan Tanyidseng
     Sleep    5s
    

@@ -1,8 +1,4 @@
 *** Keywords ***
-Select New Request With Considering Status
-    [Arguments]    ${partner_type}    ${customer_name}
-    //div[text()='กำลังพิจารณา']/../..//div[contains(@class,'ant-row ant-row-center')]//img
-
 Click Tab Pre-Register
     ${pms_tab_in_request_page}=    Replace String    ${pms_tab_in_request_page}    {value}    ${rm['text_pre_register']}
     common.Click When Ready    ${pms_tab_in_request_page}
@@ -34,3 +30,14 @@ Select Request With Status Waiting For Assign
     ${value6}=    Replace String    ${value5}    {status}    ${status}
     common.Click When Ready    ${value6}
 
+Select Request With Considering Status
+    [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
+    ...    ${mobile_no}    ${mobile_ext}    ${rm_name}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {types}    ${partner_types}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}   {company}    ${company_name}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {name}    ${contact_first_name} ${contact_last_name}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {tel}    ${mobile_no}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {ext}    ${mobile_ext}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {status}    ${rm.text_status['under_consideration']}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {rm}    ${rm_name}
+    common.Click When Ready    ${pms_btn_assigned_list_in_request_page}

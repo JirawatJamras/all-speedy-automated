@@ -101,9 +101,7 @@ Input Address Individual
 Input Address Full Individual
     [Arguments]    ${Value}    ${Select}
     common.Input When Ready    ${register_dropdown_address_full_individual}     ${Value}  
-    #Select one in result search 
     ${Selected company address full}=    Replace String    ${register_dropdown_choice_address_full_individual}    {value}    ${Select}
-    Scroll Element Into View    ${Selected company address full}
     common.Click when ready     ${Selected company address full}
 
 Input Mobile No Individual
