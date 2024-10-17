@@ -196,3 +196,12 @@ dc_operaion:
   button_approve: approve
   parcel_pickup_details:  รายละเอียดรอบเข้ารับพัสดุ
   vehicle_type:  ประเภทที่ใช้
+
+rm:
+  role:
+    dev:  Role Dev
+    admin:  แอดมินคลัง
+    toei:  toei test
+  pms_menu:  
+    manage_customer_data:  จัดการข้อมูลลูกค้า
+    manage_request:  /usermanager/requests
