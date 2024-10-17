@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -58,9 +58,10 @@ Booking_S011
     Log    Step No.6 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     #Expected
-    b2c_booking_detail_page.Verify Booking list Page
+    b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
+    ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S011['sender_name']}
     ...    ${Booking_S011['sender_phone']}
@@ -74,7 +75,6 @@ Booking_S011
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     common.Verify Capture Screenshot    Booking_S011    Verify Draft Paecel
-
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
     ${booking_time}    Get Booking Time
@@ -100,7 +100,7 @@ Booking_S011
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
+   b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -108,19 +108,26 @@ Booking_S011
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
     ...    ${Booking['text_postcode_receiver']}
+    b2c_booking_delivery_page.Verify Data Receiver When Select Home  
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S011    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S011['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S011['receiver_name']}
-    b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
-    # b2c_booking_delivery_page.Input Address Receiver    ${Booking_S011['receiver_address']}
-    # b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S011['receiver_postcode_5_digits']}
-    # b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S011['receiver_postcode_full']}
-    # b2c_booking_delivery_page.Click Add To Favorites In Receiver
+    b2c_booking_delivery_page.Select Send To 7-ELEVEN Store Tab
+    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S011['store_code']}
+    b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S011['store_address']}
+    b2c_booking_delivery_page.Click Store On Map
+    b2c_booking_delivery_page.Click Add To Favorites In Receiver
     #Expected
-    # 
-    # 
+    b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
+    ...    ${Booking_S011['receiver_phone']}
+    ...    ${Booking_S011['receiver_name']}
+    ...    ${Booking_S011['store_address']}
     common.Verify Capture Screenshot    Booking_S011    Verify After Create Parcel Page Receiver Step
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
@@ -158,6 +165,7 @@ Booking_S011
     # SPBH5B
     b2c_booking_delivery_page.Input Promotion    ${Booking_S011['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
+    # Expected
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S011.promotion_detail['discount']}
     ...    ${Booking_S011.promotion_detail['promotion_name']}

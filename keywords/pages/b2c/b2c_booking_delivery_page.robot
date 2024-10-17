@@ -146,7 +146,7 @@ Verify Data Receiver When Select 7-ELEVEN Store
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
-    ${actual_text_store_receiver}=    Get Text    ${txtbox_store_receiver}
+    ${actual_text_store_receiver}=    Get Text    ${txtbox_store_receiver_value}
     Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
     Should Be Equal    ${actual_text_store_receiver}    ${store_address_receiver}
@@ -182,13 +182,13 @@ Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     ${actual_text_parcel_receiver_information}=    Get Text    ${txt_parcel_receiver_information}
     ${actual_text_phone}=    Get Text    ${txt_phone_receiver}
     ${actual_text_name}=    Get Text    ${txt_name_receiver}
-    ${actual_text_name}=    Get Text    ${txt_location_receiver}
+    ${actual_text_location}=    Get Text    ${txt_location_receiver}
     ${actual_text_address}=    Get Text    ${txt_address_receiver}
     Should Be Equal    ${actual_text_title}    ${title}
     Should Be Equal    ${actual_text_parcel_receiver_information}    ${parcel_receiver_information}
     Should Be Equal    ${actual_text_phone}    ${phone_receiver}
     Should Be Equal    ${actual_text_name}    ${name_receiver}
-    Should Be Equal    ${actual_text_name}    ${location_receiver}
+    Should Be Equal    ${actual_text_location}    ${location_receiver}
     Should Be Equal    ${actual_text_address}    ${address_receiver}
     Element Should Be Visible    ${txtbox_store_receiver} 
 
