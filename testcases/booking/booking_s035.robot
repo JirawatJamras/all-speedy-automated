@@ -317,7 +317,7 @@ Booking_S035
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S035    Verify Booking Detail Page After Set Origin Shipping
 
-Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # Expected
     b2c_booking_detail_page.Verify Parcel Label

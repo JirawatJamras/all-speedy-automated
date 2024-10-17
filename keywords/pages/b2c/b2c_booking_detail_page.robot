@@ -188,59 +188,6 @@ Click Booking With Status Select Shipping Origin
     Wait Until Element Is Not Visible    ${b2c_dialog_create_parcel}    timeout=${DEFAULT_TIMEOUT}
     Scroll Window To Vertical    0
 
-############################ เตรียมลบ - แต่รอรันเช็คหลังจากระบบใช้ได้ก่อน
-# Verify Booking Detail Page
-#     [Arguments]    ${title}    ${booking_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
-#     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
-#     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${buy_insurance}    ${cod}    
-#     ...    ${booking_summary}    ${discount_amount}    ${discount_value}    ${insurance_fee_amount}    ${insurance_fee_value}
-#     ...    ${cod_fee_amount}    ${cod_fee_value}    ${total_price_amount}    ${total_price_value}
-#     Log    Booking List
-#     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
-#     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
-#     ${actaul_bookig_id}=    Get Text    ${b2c_txt_booking_id_booking_detail_page}
-#     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
-#     Verify Date And Time With Time Distortion    ${b2c_txt_booking_date_and_time_booking_detail_page}    ${bookig_time}
-#     ${actaul_shipping_origin}=    Get Text    ${b2c_txt_shipping_origin_booking_detail_page}
-#     Should Be Equal    ${title}    ${actual_text_title}
-#     Should Be Equal    ${booking_id}    ${actaul_bookig_id}
-#     Should Be Equal    ${booking_name}    ${actaul_booking_name}
-#     Should Be Empty    ${actaul_shipping_origin}
-#     Log    Parcel List
-#     Wait Until Element Is Visible    ${b2c_txt_parcel_list_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-#     ${actual_title_parcel_list}=    Get Text    ${b2c_txt_parcel_list_booking_detail_page}
-#     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
-#     ${actaul_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
-#     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
-#     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
-#     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-#     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
-#     Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
-#     Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
-#     #Sender Heart
-#     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
-#         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
-#     ELSE IF    '${img_heart_sender}' == 'รูปหัวใจสีแดง'
-#         Wait Until Page Contains Element    ${b2c_img_red_heart_front_sender}
-#     END
-#     #Receiver Heart
-#     IF         '${img_heart_receiver}' == 'รูปหัวใจไม่มีสี'
-#         Wait Until Page Contains Element    ${b2c_img_white_heart_front_receiver}  
-#     ELSE IF    '${img_heart_receiver}' == 'รูปหัวใจสีแดง'
-#         Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
-#     END
-#     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
-#     Wait Until Element Is Visible    ${b2c_btn_print_parcel_label}    timeout=${DEFAULT_TIMEOUT}
-#     Log    Booking Summary
-#     Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-#     ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
-#     Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
-#     Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
-#     ${acrual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
-#     ${acrual_txt_price_detail} =  Replace String    ${acrual_txt_price_detail}    \n    ${SPACE}
-#     Should Be Equal As Strings    ${acrual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
-#     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
-
 Verify Booking Detail Page
     [Arguments]    ${title}    ${booking_id}    ${parcel_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
@@ -360,8 +307,8 @@ Wait Until Loading Icon Success
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
 
 Wait Until Page Loaded After Select Origin Shipping
-    Wait Until Element Is Visible    //div[@role='dialog']//div[@class='ant-modal-content']//img[@class='bg-transparent']    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    //div[@role='dialog']//div[@class='ant-modal-content']//img[@class='bg-transparent']    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}
     Sleep   3s
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${Booking['text_parcel_status_waiting_entering']}
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}

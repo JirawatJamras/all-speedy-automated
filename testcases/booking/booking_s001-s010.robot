@@ -239,7 +239,6 @@ Booking_S002
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page After Booking Success
 
-
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
@@ -290,14 +289,6 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Detail Page
-
-
-
-    # Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410003186
-    # ${booking_id}=    Set Variable    B2410003186
-    # ${booking_name}=    Set Variable    Booking DRY
-    # @{booking_time}=    Create List    16-10-2567 21:42    16-10-2567 21:43
-    # b2c_booking_detail_page.Wait Until Loading Icon Success
 
     Log    Step No.17 กดปุ่ม "แก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
