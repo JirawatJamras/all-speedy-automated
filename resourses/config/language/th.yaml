@@ -199,6 +199,9 @@ dc_operaion:
 
 rm:
   text_pre_register: Pre-Register
+  text_full_register: Full-Register
+  text_company_admin: Company Admin
+  text_edit_company_information: เปลี่ยนแปลงข้อมูลบริษัท
   role:
     dev:  Role Dev
     admin:  แอดมินคลัง

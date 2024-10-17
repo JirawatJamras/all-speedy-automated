@@ -29,7 +29,6 @@ Input When Ready
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}    ${DEFAULT_TIMEOUT}
     Input Text    ${locator}    ${text}
-    Sleep    2s
 
 Click When Ready
     [Arguments]   ${locator}
