@@ -36,7 +36,7 @@ c2c_login_user_02:
   username: ik.watcharakorn.toei@gmail.com
   password: 0910408910
 
-######################## SPS ########################
+######################## PMS ########################
 
 pms_login_user_01:
   username: testloginspeedyldap03@cpall.store
