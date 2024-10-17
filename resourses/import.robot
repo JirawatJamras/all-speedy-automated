@@ -91,6 +91,13 @@ Variables                   testdata/feature/register/allspeedy_register_001.yam
 Variables                   testdata/feature/register/allspeedy_register_004.yaml    #
 Variables                   testdata/register/register.yaml
 
+######################## PMS ########################
+Resource                    ../keywords/pages/pms/pms_landing_page.robot
+Resource                    ../keywords/pages/pms/pms_login_page.robot
+
+Resource                    locators/pms/pms_landing_page.robot
+Resource                    locators/pms/pms_login_page.robot
+
 ######################## SPS ########################
 Resource                    ../keywords/pages/sps/sps_landing_page.robot
 Resource                    ../keywords/pages/sps/sps_login_page.robot
