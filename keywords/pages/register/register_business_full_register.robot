@@ -30,3 +30,6 @@ Verify Company information
     ...    ${email}    ${individual_address}    ${select_individual_address_full}    ${mobile_no}    ${mobile_ext}
     Wait Until Element Is Visible    ${Company_business_title}
     #Inprogress
+
+Verify Email That Have Received Link
+    common.Click when ready    ${register_button_inbox_gmail} 

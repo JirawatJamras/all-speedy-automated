@@ -143,3 +143,5 @@ register09
     ...    ${Register_S007['rm_name']}
     common.Verify Capture Screenshot    Register_S009    Verify Approve Success
     register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}
+    register_business_full_register.Verify Email That Have Received Link
+    common.Verify Capture Screenshot    Register_S009    Verify Email That Have Received Link
