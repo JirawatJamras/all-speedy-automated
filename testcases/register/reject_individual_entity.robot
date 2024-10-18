@@ -15,6 +15,21 @@ Reject Individual Entity
     # Register_S011
 
 *** Keywords ***
+Assign RM
+    Log    Login
+    common.Open URL    ${PMS_UAT_URL}
+    pms_landing_page.Click Go Login Button
+    pms_login_page.Input Email    ${pms_login_user_01['username']}
+    pms_login_page.Input Password    ${pms_login_user_01['password']}
+    pms_login_page.Click Log On Button
+    pms_home_page.Select Role Admin
+    pms_home_page.Select Manage Customer Menu
+    pms_home_page.Select Manage Request Sub-Menu
+
+    Log    Assign to RM 'Yada Deenok'
+    pms_requests_page.Select Pending Tab
+    pms_requests_page.Select Request With Status Waiting For Assign
+
 Register_S004
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
     Log    Step No.1 กรอกข้อมูล
@@ -45,15 +60,15 @@ Register_S004
 
 Register_S011
     [Documentation]    RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    Log    Login
-    common.Open URL    ${PMS_UAT_URL}
-    pms_landing_page.Click Go Login Button
-    pms_login_page.Input Email    ${pms_login_user_01['username']}
-    pms_login_page.Input Password    ${pms_login_user_01['password']}
-    pms_login_page.Click Log On Button
-    pms_home_page.Select Role Admin
-    pms_home_page.Select Manage Customer Menu
-    pms_home_page.Select Manage Request Sub-Menu
+    # Log    Login
+    # common.Open URL    ${PMS_UAT_URL}
+    # pms_landing_page.Click Go Login Button
+    # pms_login_page.Input Email    ${pms_login_user_01['username']}
+    # pms_login_page.Input Password    ${pms_login_user_01['password']}
+    # pms_login_page.Click Log On Button
+    # pms_home_page.Select Role Admin
+    # pms_home_page.Select Manage Customer Menu
+    # pms_home_page.Select Manage Request Sub-Menu
  
     Log    Step No. 1 "RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ กำลังพิจารณา กดปุ่ม ดำเนินการ"
     pms_requests_page.Click Tab Pre-Register

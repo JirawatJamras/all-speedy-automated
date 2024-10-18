@@ -1,6 +1,7 @@
 **** Keywords ***
 Select Business Customers Tab
     ${Select_Tab}=    Replace String    ${register_tab_business_customer}    {value}    ${Register['txt_menu_business']}
+    Wait Until Element Is Enabled    ${Select_Tab}     timeout=3s
     common.Click when ready     ${Select_Tab} 
 
 Select General Customers Tab

@@ -44,6 +44,7 @@ ${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizont
 ${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
 ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
 ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
+${txt_address_receiver_for_7_11_select}    //label[@for='create_parcel_form_receiver_address_display']/span
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
 ${txt_full_postcode_receiver}    //span[@class='ant-select-selection-item']
 ${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']

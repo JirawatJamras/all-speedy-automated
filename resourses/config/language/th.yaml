@@ -226,7 +226,6 @@ rm:
     dev: Role Dev
     admin: แอดมินคลัง
     toei: toei test
-  text_request_detail: รายละเอียดคำขอ
   text_partner_type: ประเภทนิติบุคคลหรือบุคคลธรรมดา
   text_company_title_name: คำนำหน้าประเภทจดทะเบียนบริษัท
   text_company_name: ชื่อบริษัท
@@ -244,7 +243,6 @@ rm:
   text_customer_phone_extra: '#ต่อ'
   text_link_full_register: 'Link : Full Register'
   text_remark: หมายเหตุ
-  text_sale_information: ข้อมูล Sale
   text_sale_name: ชื่อ
   text_sale_phone: เบอร์โทรศัพท์
   text_sale_email: E-mail
