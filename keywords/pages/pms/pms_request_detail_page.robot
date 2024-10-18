@@ -5,6 +5,7 @@ Verify Information On Request Details Page
     ...            ${customer_phone_extra}    ${remark}    ${sale_name}    ${sale_email}
     ${pms_txt_request_detail_header}=    Replace String    ${pms_txt_request_detail_header}    {value}    ${rm['text_request_detail']}
     Wait Until Element Is Visible    ${pms_txt_request_detail_header}    timeout=${DEFAULT_TIMEOUT}
+    Sleep    3s
     ${label_request_detail_header}=    Get Text    ${pms_txt_request_detail_header}
     ${label_company_title_name}=    Get Text    ${pms_txt_company_titile_name}
     ${value_company_title_name}=    Get Value    ${pms_txtbox_company_title_name}
@@ -78,7 +79,7 @@ Verify Request Detail Page With Status Waiting For Assign
 
     ${title}=    Replace String    ${pms_txt_request_detail_header}    {value}    ${rm['text_request_detail']} 
     ${text_list_in_detail_page}=    Replace String    ${pms_txt_in_request_detail_page}    {value}    ${rm['text_request_number']} 
-    Sleep    2s
+    Sleep    3s
     ${actual_text_list}=    Get Text    ${text_list_in_detail_page}
     ${actual_text_list}=    Replace String    ${actual_text_list}    \n    ${SPACE}
     Wait Until Element Is Visible    ${title}    timeout=${DEFAULT_TIMEOUT}
@@ -164,7 +165,4 @@ Click Save Button
     ${btn_save}=    Replace String    ${pms_btn_save}    {value}    ${rm['text_save']}
     Scroll Element Into View    ${btn_save}
     Click When Ready    ${btn_save}
-
-
-
 # Verify Request Detail Page After RM Approve

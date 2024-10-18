@@ -26,6 +26,7 @@ ${pms_btn_assign_rm}    //b[text()='{value}']/..
 ${pms_btn_assign_to_rm}    //td[text()='{value}']/..//button
 ${pms_btn_save}    //b[text()='{value}']/..
 
+${pms_txt_status_request_detail_page}    //div[@class='ant-card-head-title']//div[text()='{value}']
 ${pms_txt_request_detail_header}    //span[text()='{value}']
 ${pms_txt_customer_type}    //label[@for='customerType']
 ${pms_txt_company_titile_name}    //label[@for='companyTitleName']

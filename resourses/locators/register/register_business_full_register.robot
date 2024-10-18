@@ -8,7 +8,8 @@ ${register_txtbox_password_gmail}    //input[@type='password']
 ${register_btn_next_gmail}    //button//span[text()='Next']
 ${register_btn_inbox_gmail}    //tbody//tr//span[@email='support@allspeedy.co.th']//..//..//..//..
 ${register_link_register_gmail}    //span//a[@href='{value}']
-${register_txt_link_register_gmail}    //p[text()='{value} ']//span
+# ${register_txt_link_register_gmail}    //p[text()='{value} ']//span
+${register_txt_link_register_gmail}    //p[text()='{value} ']//span//a[@href='{link}']
 
 ${register_txt_title_full_register}    //div[@class='ant-steps-item ant-steps-item-process ant-steps-item-active']//div[text()='{value}']
 ${register_txt_header_full_register}    //*[text()='{value}'] 

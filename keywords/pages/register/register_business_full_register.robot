@@ -62,9 +62,10 @@ Verify Company information Legal Entity
     #Inprogress
 
 Verify Email That Have Received Link
-    common.Click when ready    ${register_btn_inbox_gmail}
-    ${link}=    Replace String    ${register_link_register_gmail}    {value}    ${rm_link_full_register}
-    Scroll Into View By Xpath    ${link}    TO
+    common.Click when ready    ${register_btn_inbox_gmail} 
+    ${Select_link}=    Replace String    ${register_txt_link_register_gmail}     {value}    ${Register.Full_register['txt_link_register']}
+    ${Select_link}=    Replace String    ${Select_link}     {link}    ${rm_link_full_register}
+    Scroll Into View By Xpath    ${Select_link}    true
     
 Input Mobile Company Legal Entity
     [Arguments]    ${Value}  
@@ -85,5 +86,3 @@ Click Cancel
 Click Save
     ${Click save}=    Replace String    ${register_btn_save_full_register}     {value}    ${Register.Full_register['btn_save']}
     common.Click when ready    ${Click save}
-
-    
