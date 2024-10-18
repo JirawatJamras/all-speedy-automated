@@ -62,3 +62,7 @@ Select Request With Confirm Sent Link Status
     Wait Until Page Contains Element    ${pms_btn_assigned_list_in_request_page}
     Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
     common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
+    
+Click Add New Customer
+    ${pms_btn_add_new_customer}=    Replace String    ${pms_btn_add_new_customer}    {value}    เพิ่มลูกค้าใหม่
+    common.Click When Ready    ${pms_btn_add_new_customer}

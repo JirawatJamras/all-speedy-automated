@@ -141,3 +141,23 @@ Register_S010:
 
 Register_S011:
   saletel: '0800000000'
+
+Register_S017:
+  company_data:
+    type_customer: นิติบุคคล
+    title_name_company: บจ.(บริษัทจำกัด)
+    name_company: บริษัท เซิร์ฟแคร์ โซลูชั่น (ไทยแลนด์) จำกัด
+    tax_identification_number: 1337007696347
+    mobile_company: '0000000000'
+    ext: 4117
+    address: 19/8 หมู่ที่ 8
+    postcode: 57170
+    postcode_full: เวียง เวียงป่าเป้า เชียงราย 57170
+    contact_data:
+      title_name: นาย
+      first_name: นพดล
+      last_name: คำเอี่ยม
+      email: noppadolkum@email.co
+      mobile_number: 0981111111
+      ext: ''
+  txt_btn_next: หน้าถัดไป
