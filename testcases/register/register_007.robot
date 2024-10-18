@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S007
     [Documentation]    RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register  
-    [Tags]    Register    UAT    Bew
+    [Tags]    Register    UAT    In_Review
     #Step1 
     register01
     register07

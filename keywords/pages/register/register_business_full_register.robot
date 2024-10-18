@@ -94,3 +94,50 @@ Click Confirm
     ${Click_confirm}=    Replace String    ${register_btn_confirm_full_register}     {value}    ${Register.Full_register['btn_confirm']}
     common.Click when ready    ${Click_confirm}
     
+Upload Certificate Business Registration
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_certificate_business_registration']}
+    Execute JavaScript    document.querySelector('input').style.display = 'block';
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+# Upload Copy File 20
+#     [Arguments]    ${file_path}
+#     ${file}    Normalize Path    ${file_path}
+#     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_file_20']}
+#     Execute JavaScript    document.querySelector('${btn_upload}').style.display = 'block';
+#     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+#     Choose File    ${btn_upload}    ${file}
+
+# Upload Copy ID Card
+#     [Arguments]    ${file_path}
+#     ${file}    Normalize Path    ${file_path}
+#     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_id_card']}
+#     Execute JavaScript    document.querySelector('input').style.display = 'block';
+#     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+#     Choose File    ${btn_upload}    ${file}
+
+# Upload Copy Of House Registration
+#     [Arguments]    ${file_path}
+#     ${file}    Normalize Path    ${file_path}
+#     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_of_house_registration']}
+#     Execute JavaScript    document.querySelector('input').style.display = 'block';
+#     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+#     Choose File    ${btn_upload}    ${file}
+
+# Upload Permission form for Deduction from Bank Account
+#     [Arguments]    ${file_path}
+#     ${file}    Normalize Path    ${file_path}
+#     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_permission_form']}
+#     Execute JavaScript    document.querySelector('input').style.display = 'block';
+#     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+#     Choose File    ${btn_upload}    ${file}
+
+# Upload Other File
+#     [Arguments]    ${file_path}
+#     ${file}    Normalize Path    ${file_path}
+#     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_other_file']}
+#     Execute JavaScript    document.querySelector('input').style.display = 'block';
+#     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+#     Choose File    ${btn_upload}    ${file}

@@ -35,5 +35,7 @@ ${register_txtbox_email_legal_entity_full_register}    //input[@id='email']
 ${register_txtbox_mobile_no_legal_entity_full_register}    //input[@id='mobileNo']
 ${register_txtbox_mobile_ext_legal_entity_full_register}    //input[@id='mobileExt']
 
+${register_btn_upload_full_register}    //*[contains(text(),'{value}')]/../../..//input
+
 
 

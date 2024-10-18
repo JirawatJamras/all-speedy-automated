@@ -18,6 +18,7 @@ Click Tab Edit Company Information
 Select Pending Tab
     ${pending}=  Replace String   ${pms_tab_in_request_page}   {value}   ${rm['text_pending']}
     common.Click When Ready    ${pending}
+    Sleep    2s
 
 Select Request With Status Waiting For Assign
     [Arguments]    ${partner_types}    ${company_name}    ${first_name}    ${last_name}
@@ -59,7 +60,7 @@ Select Request With Confirm Sent Link Status
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {ext}    ${mobile_ext}
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {status}    ${rm.text_status['confirm_link']}
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {rm}    ${rm_name}
-    Wait Until Page Contains Element    ${pms_btn_assigned_list_in_request_page}
+    Wait Until Element Is Visible    ${pms_btn_assigned_list_in_request_page}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
     common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
 

@@ -20,6 +20,12 @@ Register:
     txt_header_service_information: ข้อมูลบริการ
     txt_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
     txt_header_supporting_document: อัปโหลดเอกสารประกอบ
+    txt_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
+    txt_copy_file_20: สำเนาเอกสาร ภพ. 20
+    txt_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
+    txt_copy_of_house_registration: สำเนาทะเบียนบ้านของผู้มีอำนาจลงนาม
+    txt_permission_form: หนังสือยินยอมให้หักค่าธรรมเนียมการโอนผ่านบัญชีธนาคาร
+    txt_other_file: เอกสารอื่นๆ
     btn_next: ถัดไป
     btn_cancel: ยกเลิก
     btn_save: บันทึกร่าง

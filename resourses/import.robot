@@ -90,6 +90,7 @@ Resource                    locators/register/register_business_profile_business
 Variables                   testdata/feature/register/allspeedy_register_001.yaml    #
 Variables                   testdata/feature/register/allspeedy_register_004.yaml    #
 Variables                   testdata/register/register.yaml
+Resource                    testdata/test_upload_file/filepath.robot
 
 ######################## PMS ########################
 Resource                    ../keywords/pages/pms/pms_landing_page.robot
