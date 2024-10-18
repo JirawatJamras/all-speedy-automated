@@ -207,6 +207,8 @@ rm:
   text_pending: รอดำเนินการ
   text_sale_information: ข้อมูล Sale
   text_approve: อนุมัติ
+  text_assign_rm:  Assign RM
+  text_list_of_all_rm: รายชื่อ RM ทั้งหมด
   text_request_detail: รายละเอียดคำขอ
   text_request_number: 'เลขที่คำขอ :' 
   text_contact_name: 'ชื่อผู้ติดต่อ :'
@@ -225,9 +227,12 @@ rm:
     admin: แอดมินคลัง
     toei: toei test
   text_request_detail: รายละเอียดคำขอ
+  text_partner_type: ประเภทนิติบุคคลหรือบุคคลธรรมดา
   text_company_title_name: คำนำหน้าประเภทจดทะเบียนบริษัท
   text_company_name: ชื่อบริษัท
   text_id_number: เลขประจำตัวผู้เสียภาษี
+  text_mobile_company: เบอร์โทรศัพท์
+  text_mobile_company_extra: '#ต่อ'
   text_address: ที่อยู่บริษัท
   text_postcode: ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์
   text_contact_information: ข้อมูลผู้ติดต่อ
@@ -243,3 +248,6 @@ rm:
   text_sale_name: ชื่อ
   text_sale_phone: เบอร์โทรศัพท์
   text_sale_email: E-mail
+  text_rm_in_popup: RM
+  text_save: บันทึก
+  link_full_register: 'https://www-uat.allspeedy.co.th/business-register/fullRegister/'

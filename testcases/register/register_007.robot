@@ -10,46 +10,11 @@ Register_S007
     [Documentation]    RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register  
     [Tags]    Register    UAT    Bew
     #Step1 
-    # register01
+    register01
     register07
-
+    register09
 
 *** Keywords ***
-register07
-    #Step1 
-    common.Open URL    ${PMS_UAT_URL}
-    pms_landing_page.Click Go Login Button
-    pms_login_page.Input Email    ${pms_login_user_01['username']}
-    pms_login_page.Input Password    ${pms_login_user_01['password']}
-    pms_login_page.Click Log On Button
-    pms_home_page.Select Role Admin
-    pms_home_page.Select Manage Customer Menu
-    pms_home_page.Select Manage Request Sub-Menu
-    pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Status Waiting For Assign
-    ...    ${Register_S007['partner_types']}
-    ...    ${Register_S007['company_name']}
-    ...    ${Register_S007['first_name']}
-    ...    ${Register_S007['last_name']}
-    ...    ${Register_S007['mobile_no']}
-    ...    ${Register_S007['mobile_ext']}
-    ...    ${rm.text_status['waiting_assign']}
-    common.Verify Capture Screenshot    Register_S007    Verify Request Detail Page With Status Waiting For Assign
-    pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
-    ...    ${Register_S007['first_name']}
-    ...    ${Register_S007['last_name']}
-    ...    ${Register_S007['request_type']}
-    ...    ${Register_S007['reference_request']}
-    ...    ${Register_S007['partner_types']}
-    ...    ${Register_S007['company_title_name']}
-    ...    ${Register_S007['company_name']}
-    ...    ${Register_S007['company_address']}
-    ...    ${Register_S007['title_name']}
-    ...    ${Register_S007['first_name']}
-    ...    ${Register_S007['last_name']}
-    ...    ${Register_S007['email']}
-    Sleep    4s
-
 register01
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
@@ -74,10 +39,106 @@ register01
     register_business_pre_register.Input Email Legal Entity    ${Register_S001['email']}
     register_business_pre_register.Input Mobile No Legal Entity    ${Register_S001['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S001['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S001    filled in contact information success   
+    # common.Verify Capture Screenshot    Register_S001    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    # register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
+
+register07
+    #Step1 
+    common.Open URL    ${PMS_UAT_URL}
+    pms_landing_page.Click Go Login Button
+    pms_login_page.Input Email    ${pms_login_user_01['username']}
+    pms_login_page.Input Password    ${pms_login_user_01['password']}
+    pms_login_page.Click Log On Button
+    pms_home_page.Select Role Admin
+    pms_home_page.Select Manage Customer Menu
+    pms_home_page.Select Manage Request Sub-Menu
+    pms_requests_page.Select Pending Tab
+    pms_requests_page.Select Request With Status Waiting For Assign
+    ...    ${Register_S007['partner_types']}
+    ...    ${Register_S007['company_name']}
+    ...    ${Register_S007['first_name']}
+    ...    ${Register_S007['last_name']}
+    ...    ${Register_S007['mobile_no']}
+    ...    ${Register_S007['mobile_ext']}
+    pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
+    ...    ${Register_S007['first_name']}
+    ...    ${Register_S007['last_name']}
+    ...    ${Register_S007['request_type']}
+    ...    ${Register_S007['reference_request']}
+    ...    ${Register_S007['partner_types']}
+    ...    ${Register_S007['company_title_name']}
+    ...    ${Register_S007['company_name']}
+    ...    ${Register_S007['company_address']}
+    ...    ${Register_S007['company_address_full']}
+    ...    ${Register_S007['title_name']}
+    ...    ${Register_S007['first_name']}
+    ...    ${Register_S007['last_name']}
+    ...    ${Register_S007['email']}
+    ...    ${Register_S007['mobile_no']}
+    ...    ${Register_S007['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S007    Verify Request Detail Page With Status Waiting For Assign
+    pms_request_detail_page.Click Assign RM Button
+    pms_request_detail_page.Verify Assign RM Popup
+    common.Verify Capture Screenshot    Register_S007    Verify Assign RM Popup
+    pms_request_detail_page.Click Button To Assign RM    ${Register_S007['rm_name']}
+    pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
+    common.Verify Capture Screenshot    Register_S007    Verify Assign To RM 
+    pms_request_detail_page.Click Save Button
+    pms_requests_page.Verify Save Assign To RM Success
+    ...    ${Register_S007['partner_types']}
+    ...    ${Register_S007['company_name']}
+    ...    ${Register_S007['first_name']}
+    ...    ${Register_S007['last_name']}
+    ...    ${Register_S007['mobile_no']}
+    ...    ${Register_S007['mobile_ext']}
+    ...    ${Register_S007['rm_name']}
+    common.Verify Capture Screenshot    Register_S007    Verify Save Assign To RM Success
+
+register09
+    # common.Open URL    ${PMS_UAT_URL}
+    # pms_landing_page.Click Go Login Button
+    # pms_login_page.Input Email    ${pms_login_user_01['username']}
+    # pms_login_page.Input Password    ${pms_login_user_01['password']}
+    # pms_login_page.Click Log On Button
+    # pms_home_page.Select Role Admin
+    # pms_home_page.Select Manage Customer Menu
+    # pms_home_page.Select Manage Request Sub-Menu
+    pms_requests_page.Select Request With Considering Status
+    ...    ${Register_S008['partner_types']}
+    ...    ${Register_S008['company_name']}
+    ...    ${Register_S008['first_name']}
+    ...    ${Register_S008['last_name']}
+    ...    ${Register_S008['mobile_no']}
+    ...    ${Register_S008['mobile_ext']}
+    ...    ${Register_S008['rm_name']}
+    pms_request_detail_page.Verify Information On Request Details Page
+    ...    ${Register_S008['company_title_name']}
+    ...    ${Register_S008['company_name']}
+    ...    ${Register_S008['company_address']}
+    ...    ${Register_S008['company_address_full']}
+    ...    ${Register_S008['title_name']}
+    ...    ${Register_S008['first_name']}
+    ...    ${Register_S008['last_name']}
+    ...    ${Register_S008['email']}
+    ...    ${Register_S008['mobile_no']}
+    ...    ${Register_S008['mobile_ext']}
+    ...    ${Register_S008['remark']}
+    ...    ${Register_S008['rm_name']}
+    ...    ${Register_S008['sale_email']}
+    common.Verify Capture Screenshot    Register_S008    Verify Request Detail Page
+    pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S008['sale_phone']}
+    pms_request_detail_page.Click Approve Button
+    pms_requests_page.Verify Approve Success
+    ...    ${Register_S008['partner_types']}
+    ...    ${Register_S008['company_name']}
+    ...    ${Register_S008['first_name']}
+    ...    ${Register_S008['last_name']}
+    ...    ${Register_S008['mobile_no']}
+    ...    ${Register_S008['mobile_ext']}
+    ...    ${Register_S008['rm_name']}
+    common.Verify Capture Screenshot    Register_S008    Verify Approve Success

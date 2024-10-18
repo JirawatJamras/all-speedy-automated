@@ -11,7 +11,7 @@ Set Juristic ID Legal Entity
     Evaluate   random.seed()   random
     ${prefix_number}=    Evaluate    random.randint(0, 5)    random
     ${JuristicID}=    Set Variable    ${prefix_number}${preid} 
-    Set Global Variable    ${JuristicID}
+    Set Suite Variable    ${JuristicID}
 
 Select Company Title Name Legal Entity
     [Arguments]    ${Title}
