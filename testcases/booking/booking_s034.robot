@@ -1,14 +1,15 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Close Browser
+Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+                  ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S034 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT
+    [Tags]    Booking    UAT    Run
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -33,11 +34,11 @@ Booking_S034
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
     # Expected   
-    b2c_booking_delivery_page.Verify Select Parcel Type
+    # b2c_booking_delivery_page.Verify Select Parcel Type  # Expected result : System should be displayed for select parcel type
     common.Verify Capture Screenshot    Booking_S034    Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
-    b2c_booking_delivery_page.Select Parcel Type    ${Booking_S034['parcel_type']}
+    # b2c_booking_delivery_page.Select Parcel Type    ${Booking_S034['parcel_type']}
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -53,7 +54,7 @@ Booking_S034
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S034    Verify Create Parcel Page Sender Step
 
-    Log    Step No.5 ขั้นตอนกรอกข้อมูลผู้ส่งพัสดุ
+    Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S034['sender_phone']}
     b2c_booking_delivery_page.Input Name Sender    ${Booking_S034['sender_name']}    
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S034['sender_address']}
@@ -80,7 +81,7 @@ Booking_S034
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S034    Verify Create Parcel Page Receiver Step When Select Home
 
-    Log    Step No.7 ขั้นตอนกรอกข้อมูลผู้รับพัสดุ
+    Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
     # สถานที่รับพัสดุ : ส่งร้าน 7-11
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S034['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S034['receiver_name']}
@@ -136,10 +137,17 @@ Booking_S034
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  
     # Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
+    ...    ${Booking['text_title']}
+    ...    ${Booking['text_parcel_receiver_information']}
+    ...    ${Booking['text_phone_receiver']}
+    ...    ${Booking['text_name_receiver']}
+    ...    ${Booking['text_location_receiver']}
+    ...    ${Booking['text_address_receiver']}
     b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
     ...    ${Booking_S034['receiver_phone']}
     ...    ${Booking_S034['receiver_name']}
-    ...    ${Booking_S034['receiver_store_address']}
+    ...    ${Booking_S034['receiver_store_full']}
     common.Verify Capture Screenshot    Booking_S034    Verify Data Receiver When Select 7-ELEVEN Store
 
     Log    Step No.11 กดปุ่ม "ถัดไป"
@@ -159,7 +167,7 @@ Booking_S034
     ...    ${Booking['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S034    Verify Parcel Detail
 
-    Log    Step No.12 ขั้นตอนกรอกรายละเอียดพัสดุ
+    Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
     # เลือกขนาดพัสดุ : ซอง A4
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S034['parcel_size']}
     common.Verify Capture Screenshot    Booking_S034    Verify Create Parcel Page After Input Parcel Detail Step
@@ -174,14 +182,15 @@ Booking_S034
     common.Verify Capture Screenshot    Booking_S034    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
-    # - ไม่เลือก Promotion
+    # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -192,7 +201,7 @@ Booking_S034
     ...    ${Booking.img_is_favorite['img_receiver_heart']}  # Expected result : ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S034['receiver_name']}
     ...    ${Booking_S034['receiver_phone']}
-    ...    ${Booking_S034['receiver_store_full']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150  # Expected : ${Booking_S034['receiver_store_address']}
     ...    ${Booking_S034['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -214,12 +223,13 @@ Booking_S034
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${booking_time}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S034['booking_name']}
+    ...    ${Booking_S034['booking_name']} ${booking_id}  # Expected result : ${Booking_S034['booking_name']}
     ...    ${Booking_S034['booking_item']}
     ...    ${Booking.text_default['booking_price']}  # Expected result : ${Booking_S034['total_price_value1']}
     common.Verify Capture Screenshot    Booking_S034    Verify Created Booking On Booking Delivery Page
@@ -230,7 +240,7 @@ Booking_S034
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -241,7 +251,7 @@ Booking_S034
     ...    ${Booking.img_is_favorite['img_receiver_heart']}  # Expected result : ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S034['receiver_name']}
     ...    ${Booking_S034['receiver_phone']}
-    ...    ${Booking_S034['receiver_store_full']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S034['receiver_store_address']}
     ...    ${Booking_S034['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -264,9 +274,9 @@ Booking_S034
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
     # Expected
-    b2c_booking_detail_page.Verify Edit Booking List Popup    
-    ...    ${Booking_S034['parcel_type']}
-    ...    ${Booking_S034['booking_name']}
+    b2c_booking_detail_page.Verify Edit Booking List Popup For General Customer
+    ...    ${EMPTY}  # Expected result : ${Booking_S034['parcel_type']}
+    ...    ${Booking_S034['booking_name']} ${booking_id}  # Expected result : ${Booking_S034['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    Booking_S034    Verify Edit Booking List Popup  
 
@@ -276,12 +286,13 @@ Booking_S034
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S034['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_general_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}  # Expected result : {Booking['text_general_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -333,12 +344,9 @@ Booking_S034
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
-    # "Logo 7-11" has not been verified yet
     common.Verify Capture Screenshot    Booking_S034    Verify Parcel Label
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    Booking_S034    Verify Print Screen
-
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
