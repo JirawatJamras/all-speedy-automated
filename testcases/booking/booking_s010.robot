@@ -104,7 +104,7 @@ Booking_S010
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
-    ...    ${Booking_S010['receiver_store_address_2']}    # Expected is ${Booking_S010['receiver_store_address']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S010['receiver_store_address']}
     ...    ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -197,7 +197,7 @@ Booking_S010
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
-    ...    ${Booking_S010['receiver_store_address_2']}    # Expected is ${Booking_S010['receiver_store_address']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S010['receiver_store_address']}
     ...    ${Booking_S010['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -248,7 +248,7 @@ Booking_S010
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
-    ...    ${Booking_S010['receiver_store_address_2']}    # Expected is ${Booking_S010['receiver_store_address']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S010['receiver_store_address']}
     ...    ${Booking_S010['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -299,7 +299,7 @@ Booking_S010
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
-    ...    ${Booking_S010['receiver_store_address_2']}    # Expected is ${Booking_S010['receiver_store_address']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S010['receiver_store_address']}
     ...    ${Booking_S010['parcel_size']}
     ...    ${Booking_S010['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
