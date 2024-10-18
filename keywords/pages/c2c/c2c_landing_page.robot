@@ -10,8 +10,7 @@ Click Menu Seven Store
 Click Menu Shipping
     Wait Until Element Is Visible    ${c2c_tab_service_landing_page}    timeout=${DEFAULT_TIMEOUT}
     common.Click when ready    ${c2c_btn_shipping_landing_page}
-    Wait Until Element Is Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Page Contains Element    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
 
 Click Menu Tracking
     Wait Until Element Is Visible    ${c2c_tab_service_landing_page}

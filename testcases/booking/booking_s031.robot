@@ -1,14 +1,15 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Close Browser
+Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+                  ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S031 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    Run
+    [Tags]    Booking    UAT    In_Review
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -53,7 +54,7 @@ Booking_S031
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S031    Verify Create Parcel Page Sender Step
 
-    Log    Step No.5 ขั้นตอนกรอกข้อมูลผู้ส่งพัสดุ
+    Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S031['sender_phone']}
     b2c_booking_delivery_page.Input Name Sender    ${Booking_S031['sender_name']}    
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S031['sender_address']}
@@ -123,7 +124,7 @@ Booking_S031
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S031    Verify Create Parcel Page Receiver Step When Select Home
 
-    Log    Step No.9 ขั้นตอนกรอกข้อมูลผู้รับพัสดุ
+    Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S031['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S031['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
@@ -152,11 +153,11 @@ Booking_S031
     common.Verify Capture Screenshot    Booking_S031    Verify Parcel Detail
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
-    # กรอกข้อมูล
     # เลือกขนาดพัสดุ : ซอง A3
     # หมายเหตุ : ระวังพัสดุเสียหาย
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S031['parcel_size']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S031['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S031    Verify Create Parcel Page After Input Parcel Detail Step
 
     Log    Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
@@ -184,6 +185,7 @@ Booking_S031
 
     Log    Step No.14 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
@@ -223,12 +225,13 @@ Booking_S031
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${booking_time}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S031['booking_name']} ${booking_id}
+    ...    ${Booking_S031['booking_name']} ${booking_id}  # Expected result : ${Booking_S031['booking_name']}
     ...    ${Booking_S031['booking_item']}
     ...    ${Booking.text_default['booking_price']}  # Expected result : ${Booking_S031['total_price_value1']}
     common.Verify Capture Screenshot    Booking_S031    Verify Created Booking On Booking Delivery Page
@@ -274,9 +277,9 @@ Booking_S031
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
     # Expected
-    b2c_booking_detail_page.Verify Edit Booking List Popup    
+    b2c_booking_detail_page.Verify Edit Booking List Popup For General Customer    
     ...    ${EMPTY}  # Expected result : ${Booking_S031['parcel_type']}
-    ...    ${Booking_S031['booking_name']} ${booking_id}
+    ...    ${Booking_S031['booking_name']} ${booking_id}  # Expected result : ${Booking_S031['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    Booking_S031    Verify Edit Booking List Popup  
 
@@ -345,7 +348,6 @@ Booking_S031
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_insure']}
     ...    ${Booking_S031['parcel_detail_remark']}
-    # "Logo บ้าน" has not been verified yet
     common.Verify Capture Screenshot    Booking_S031    Verify Parcel Label
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
