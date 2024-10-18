@@ -9,11 +9,12 @@ Test Teardown     Close Browser
 
 
 *** Test Cases ***
-AReject Pre Register (Legal)
-    [Documentation]    E2E 2 Scenarios
+Reject Pre Register (Legal)
+    [Documentation]    E2E 1 Scenario
     [Tags]    Register    UAT
-    Log    Scenario 1 RM : ปฏิเสธ Pre-Register (ลูกค้านิติบุคคล)
-    # Register_S002
+    Log    Scenario 10 RM : ปฏิเสธ Pre-Register (ลูกค้านิติบุคคล)
+    Register_S002
+    # ขาด step assign RM รอ step 7
     Register_S010
 
 *** Keywords ***
@@ -36,10 +37,12 @@ Register_S002
     register_business_pre_register.Input Email Legal Entity   ${Register_S002['email']}
     register_business_pre_register.Input Mobile No Legal Entity   ${Register_S002['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity   ${Register_S002['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S002    filled in contact information success   
+    common.Verify Capture Screenshot    Register_S002    Filled In Contact Information Success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
+    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
+    common.Verify Capture Screenshot    Register_S002    Verify Confirm Page After Register Successful  
 
 Register_S010
     Log    Login
@@ -54,7 +57,15 @@ Register_S010
     pms_home_page.Select Manage Request Sub-Menu
 
     Log    Step No.1 RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
-    Go To    https://pms-uat.allspeedy.co.th/usermanager/requests/detail?id=9402877258967172463
+    pms_requests_page.Select Request With Considering Status  
+    ...    ${Register_S010['partner_types']}  
+    ...    ${Register_S010['company_name']}  
+    ...    ${Register_S010['customer_first_name']}
+    ...    ${Register_S010['customer_last_name']}
+    ...    ${Register_S010['customer_phone']}
+    ...    ${Register_S010['customer_phone_extra']}
+    ...    ${Register_S010['sale_name']}
+    # Expected
     pms_request_detail_page.Verify Information On Request Details Page
     ...    ${Register_S010['company_title_name']}
     ...    ${Register_S010['company_name']}
@@ -72,8 +83,53 @@ Register_S010
     ...    ${Register_S010['sale_name']}
     ...    ${EMPTY}
     ...    ${Register_S010['sale_email']}
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    Register_S010    Verify Information On Request Details Page
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    Register_S010    Verify Information On Request Details Page
+    common.Scroll Window To Vertical    1000
+    common.Verify Capture Screenshot    Register_S010    Verify Information On Request Details Page
+
     Log    Step No.2 RM ระบุเหตุผลในการปฎิเสธ "ทดสอบปฎิเสธ"
-    
+    pms_request_detail_page.Input Reject Reason    ${Register_S010['remark']}
+    # Expected
+    common.Verify Capture Screenshot    Register_S010    Verify Input Reject Reason
+
     Log    Step No.3 กดปุ่ม "ปฎิเสธ"
+    pms_request_detail_page.Click Reject Button
+    # Expected
+    pms_request_detail_page.Verify Reject Confirmation Popup
+    common.Verify Capture Screenshot    Register_S010    Verify Reject Confirmation Popup
+
     Log    Step No.4 กดปุ่ม "ยืนยัน"
+    pms_request_detail_page.Click Confirm Reject Button
+    pms_requests_page.Select Request With Rejected Status  
+    ...    ${Register_S010['partner_types']}  
+    ...    ${Register_S010['company_name']}  
+    ...    ${Register_S010['customer_first_name']}
+    ...    ${Register_S010['customer_last_name']}
+    ...    ${Register_S010['customer_phone']}
+    ...    ${Register_S010['customer_phone_extra']}
+    ...    ${Register_S010['sale_name']}
+    # Expected
+    pms_request_detail_page.Verify Information After Reject Request
+    ...    ${Register_S010['company_title_name']}
+    ...    ${Register_S010['company_name']}
+    ...    ${Register_S010['id_number']}
+    ...    ${Register_S010['address']}
+    ...    ${Register_S010['postcode']}
+    ...    ${Register_S010['title_name']}
+    ...    ${Register_S010['customer_first_name']}
+    ...    ${Register_S010['customer_last_name']}
+    ...    ${Register_S010['customer_email']}
+    ...    ${Register_S010['customer_phone']}
+    ...    ${Register_S010['customer_phone_extra']}
+    ...    ${EMPTY}
+    ...    ${Register_S010['remark']}
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    Register_S010    Verify Information After Reject Request
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    Register_S010    Verify Information After Reject Request
+    common.Scroll Window To Vertical    1000
+    common.Verify Capture Screenshot    Register_S010    Verify Information After Reject Request
 

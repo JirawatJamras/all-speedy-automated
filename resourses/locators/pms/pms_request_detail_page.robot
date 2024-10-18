@@ -20,11 +20,12 @@ ${pms_txtbox_sale_phone}    //input[@id='saleTell']
 ${pms_txtbox_sale_email}    //input[@id='saleEmail']
 ${pms_txtbox_search_rm_name}    //input[@id='rmName']
 
-${pms_btn_reject}    //b[text()='ปฏิเสธ']/..
+${pms_btn_reject}    //b[text()='{value}']/..
 ${pms_btn_approve}    //b[text()='{value}']/..
 ${pms_btn_assign_rm}    //b[text()='{value}']/..
 ${pms_btn_assign_to_rm}    //td[text()='{value}']/..//button
 ${pms_btn_save}    //b[text()='{value}']/..
+${pms_btn_confirm_reject}    //span[text()='{value}']/..
 
 ${pms_txt_status_request_detail_page}    //div[@class='ant-card-head-title']//div[text()='{value}']
 ${pms_txt_request_detail_header}    //span[text()='{value}']
@@ -55,3 +56,7 @@ ${pms_txt_title_assign_rm_popup}    //div[@class='ant-modal-title']//span[text()
 ${pms_txt_request_no_in_assign_rm_popup}    //tbody[@class='ant-table-tbody']//td[text()='{value}']
 ${pms_txt_all_rm_in_assign_rm_popup}    //span[text()='{value}']
 ${pms_txt_already_assign_to_rm_in_popup}    //th[text()='{value}']/../../..//td[text()='{rmname}']
+${pms_txt_reject_confirmation}    //div[@class='ant-modal-content']//span[text()='ยืนยันการปฏิเสธหรือไม่']
+${pms_txt_request_status}    //div[@class='ant-card-head']//h1[@class]/..//div[contains(@class,'ant-row ant-row-center')]
+
+${pms_popup_reject_confirmation}    //div[@class='ant-modal-content']

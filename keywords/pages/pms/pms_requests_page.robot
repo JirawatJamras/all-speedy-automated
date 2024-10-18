@@ -62,6 +62,20 @@ Select Request With Confirm Sent Link Status
     Wait Until Page Contains Element    ${pms_btn_assigned_list_in_request_page}
     Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
     common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
+
+Select Request With Rejected Status
+    [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
+    ...    ${mobile_no}    ${mobile_ext}    ${rm_name}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {types}    ${partner_types}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}   {company}    ${company_name}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {name}    ${contact_first_name} ${contact_last_name}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {tel}    ${mobile_no}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {ext}    ${mobile_ext}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {status}    ${rm.text_status['reject']}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {rm}    ${rm_name}
+    Wait Until Page Contains Element    ${pms_btn_assigned_list_in_request_page}
+    Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
+    common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
     
 Click Add New Customer
     ${pms_btn_add_new_customer}=    Replace String    ${pms_btn_add_new_customer}    {value}    เพิ่มลูกค้าใหม่
