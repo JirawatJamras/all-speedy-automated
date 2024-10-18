@@ -68,8 +68,8 @@ register07
     pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
     ...    ${Register_S001['first_name']}
     ...    ${Register_S001['last_name']}
-    ...    ${Register_S001['request_type']}
-    ...    ${Register_S001['reference_request']}
+    ...    ${Register_S007['request_type']}
+    ...    ${Register_S007['reference_request']}
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -85,8 +85,8 @@ register07
     pms_request_detail_page.Click Assign RM Button
     pms_request_detail_page.Verify Assign RM Popup
     common.Verify Capture Screenshot    Register_S007    Verify Assign RM Popup
-    pms_request_detail_page.Click Button To Assign RM    ${Register_S001['rm_name']}
-    pms_request_detail_page.Verify Assign To RM     ${Register_S001['rm_name']}
+    pms_request_detail_page.Click Button To Assign RM    ${Register_S007['rm_name']}
+    pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
     common.Verify Capture Screenshot    Register_S007    Verify Assign To RM 
     pms_request_detail_page.Click Save Button
     pms_requests_page.Verify Save Assign To RM Success
@@ -96,7 +96,7 @@ register07
     ...    ${Register_S001['last_name']}
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
-    ...    ${Register_S001['rm_name']}
+    ...    ${Register_S007['rm_name']}
     common.Verify Capture Screenshot    Register_S007    Verify Save Assign To RM Success
 
 register09
@@ -115,7 +115,7 @@ register09
     ...    ${Register_S001['last_name']}
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
-    ...    ${Register_S001['rm_name']}
+    ...    ${Register_S007['rm_name']}
     pms_request_detail_page.Verify Information On Request Details Page
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -127,11 +127,11 @@ register09
     ...    ${Register_S001['email']}
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
-    ...    ${Register_S001['remark']}
-    ...    ${Register_S001['rm_name']}
-    ...    ${Register_S001['sale_email']}
+    ...    ${Register_S007['remark']}
+    ...    ${Register_S007['rm_name']}
+    ...    ${Register_S009['sale_email']}
     common.Verify Capture Screenshot    Register_S009    Verify Request Detail Page
-    pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S001['sale_phone']}
+    pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S009['sale_phone']}
     pms_request_detail_page.Click Approve Button
     pms_requests_page.Verify Approve Success
     ...    ${Register_S001['checkbox_partner_types']}
@@ -140,5 +140,6 @@ register09
     ...    ${Register_S001['last_name']}
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
-    ...    ${Register_S001['rm_name']}
+    ...    ${Register_S007['rm_name']}
     common.Verify Capture Screenshot    Register_S009    Verify Approve Success
+    register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}

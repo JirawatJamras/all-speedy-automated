@@ -30,12 +30,6 @@ Register_S001:
   password: Business1234@
   mobile_no: '0000000000'
   mobile_ext: '0000'
-  request_type: Pre Register
-  reference_request: '-'
-  rm_name:  Yada Deenok
-  remark: ''
-  sale_email: yadadee@cpall.co.th
-  sale_phone: '0800000000'
 
 
 Register_S002:
@@ -111,6 +105,16 @@ Register_S006:
   select_individual_address_full:  สะพานสูง สะพานสูง กรุงเทพมหานคร 10240
   mobile_no: '0931234567'
   mobile_ext: '0000'  
+
+Register_S007:
+  request_type: Pre Register
+  reference_request: '-'
+  rm_name:  Yada Deenok
+  remark: ''
+
+Register_S009:
+  sale_email: yadadee@cpall.co.th
+  sale_phone: '0800000000'
 
 Register_S010:
   company_title_name: บจ.(บริษัทจำกัด)
