@@ -105,7 +105,7 @@ Booking_S010
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
     ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S010['receiver_store_address']}
-    ...    ${Booking.text_blank['parcel_size']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}

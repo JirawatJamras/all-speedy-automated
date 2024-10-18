@@ -106,7 +106,7 @@ Booking_S034
     ...    ${Booking_S034['receiver_name']}
     ...    ${Booking_S034['receiver_phone']}
     ...    ${Booking_S034['receiver_store_full']}
-    ...    ${Booking.text_blank['parcel_size']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}

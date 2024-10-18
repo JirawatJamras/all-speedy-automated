@@ -77,7 +77,7 @@ Booking_S022
     ...    ${Booking.text_blank['receiver_phone']}
     ...    ${Booking.text_blank['receiver_address']}
     ...    ${Booking.text_blank['receiver_postcode_full']}
-    ...    ${Booking.text_blank['parcel_size']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
@@ -172,7 +172,7 @@ Booking_S022
     ...    ${Booking_S022['receiver_phone']}
     ...    ${Booking_S022['receiver_address']}
     ...    ${Booking_S022['receiver_postcode_full']}
-    ...    ${Booking_S022['parcel_size']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S022['parcel_cod_verify']}

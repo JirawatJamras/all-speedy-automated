@@ -60,8 +60,9 @@ Booking_S003:
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
   discount_value: '5.00'
+  price_value: '80'
   total_price_amount:  '1'
-  total_price_value:  '43.00'
+  total_price_value:  '75.00'
 
 Booking_S004:
   parcel_type:  พัสดุทั่วไป
@@ -79,10 +80,21 @@ Booking_S004:
   store_code:  '15888'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
+  booking_price: '0.00บาท'
+  parcel_price: '50'
   parcel_size:  XS
-  parcel_package_type:  ซอง
+  parcel_package_type:  กล่อง
   parcel_cod: 5000
   parcel_cod_check: 5,000.00
+  cod_fee_amount: '1'
+  cod_fee_amount2: '0'
+  cod_fee_value: '150.00'
+  cod_fee_value2: '0.00'
+  total_price_amount:  '1'
+  total_price_amount2:  '0'
+  total_price_value:  '150.00'
+  total_price_value2:  '0.00'
+  total_price_value3:  '200.00'
   
 
 Booking_S005:

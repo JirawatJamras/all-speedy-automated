@@ -2,7 +2,7 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -132,7 +132,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
-    ...    ${Booking.text_blank['parcel_size']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}

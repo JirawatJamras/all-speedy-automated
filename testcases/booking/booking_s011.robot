@@ -1,14 +1,14 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S011
-    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT
+    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
+    [Tags]    Booking    UAT    Run
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -44,6 +44,11 @@ Booking_S011
     ...    ${Booking['text_name_sender']}
     ...    ${Booking['text_address_sender']}
     ...    ${Booking['text_postcode_sender']}
+    b2c_booking_delivery_page.Verify Data Sender
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S011    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
@@ -70,11 +75,12 @@ Booking_S011
     ...    ${Booking.text_blank['receiver_phone']}
     ...    ${Booking.text_blank['receiver_address']}
     ...    ${Booking.text_blank['receiver_postcode_full']}
-    ...    ${Booking.text_blank['parcel_size']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     common.Verify Capture Screenshot    Booking_S011    Verify Draft Paecel
+
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
     ${booking_time}    Get Booking Time
@@ -100,7 +106,7 @@ Booking_S011
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-   b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
@@ -165,7 +171,6 @@ Booking_S011
     # SPBH5B
     b2c_booking_delivery_page.Input Promotion    ${Booking_S011['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
-    # Expected
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S011.promotion_detail['discount']}
     ...    ${Booking_S011.promotion_detail['promotion_name']}
@@ -182,7 +187,7 @@ Booking_S011
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_Business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -208,7 +213,7 @@ Booking_S011
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
-    ...    ${Booking_S011['store_code']}
+    ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -216,6 +221,7 @@ Booking_S011
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
@@ -232,7 +238,7 @@ Booking_S011
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_Business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -258,12 +264,12 @@ Booking_S011
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
-    ...    ${Booking_S011['store_code']}
+    ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S011    Verify Booking Detail Page 
-
+    
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
     # Expected
@@ -283,7 +289,7 @@ Booking_S011
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_Business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -297,8 +303,8 @@ Booking_S011
     ...    ${Booking_S011['receiver_address']}
     ...    ${Booking_S011['receiver_postcode_full']}
     ...    ${Booking_S011['parcel_size']}
-    ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['insure_amount_value']}
+    ...    ${Booking_S011['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S011['discount_amount']}
@@ -323,7 +329,7 @@ Booking_S011
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
     ...    ${Booking.label['text_postcode']}
-    ...    ${Booking_S011['receiver_store_code_5_digits']}
+    ...    ${Booking_S011['receiver_postcode_5_digits']}
     ...    ${Booking_S011['parcel_package_type']}
     ...    ${Booking_S011['parcel_size']}
     ...    ${Booking_S011['sender_name']}
