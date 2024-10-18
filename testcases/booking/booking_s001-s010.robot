@@ -162,6 +162,14 @@ Booking_S002
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  
     #Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home 
+    ...    ${Booking['text_title']}
+    ...    ${Booking['text_parcel_receiver_information']}
+    ...    ${Booking['text_phone_receiver']}
+    ...    ${Booking['text_name_receiver']}
+    ...    ${Booking['text_location_receiver']}
+    ...    ${Booking['text_address_receiver']}
+    ...    ${Booking['text_postcode_receiver']}
     b2c_booking_delivery_page.Verify Data Receiver When Select Home
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_name']}
@@ -199,7 +207,7 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
-    # - ไม่เลือก Promotion
+    # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
