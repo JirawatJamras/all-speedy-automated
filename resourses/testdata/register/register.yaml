@@ -12,6 +12,18 @@ Register:
     cancel_cancel_popup: ยกเลิก
   Full_register:
     txt_link_register: ลงทะเบียนได้ที่ / Register at
+    txt_title_company_information: ข้อมูลบริษัท
+    txt_title_service_information: ข้อมูลบริการ
+    txt_title_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    txt_title_supporting_document: เอกสารประกอบ
+    txt_header_company_information: ข้อมูลทั่วไป
+    txt_header_service_information: ข้อมูลบริการ
+    txt_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    txt_header_supporting_document: อัปโหลดเอกสารประกอบ
+    btn_next: ถัดไป
+    btn_cancel: ยกเลิก
+    btn_save: บันทึกร่าง
+
 
 
 
@@ -136,6 +148,10 @@ Register_S010:
 
 Register_S011:
   saletel: '0800000000'
+
+Register_S013:
+  mobile_company: '0200000000'
+  mobile_company_ext: '1234'
 
 Register_S017:
   company_data:

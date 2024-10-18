@@ -30,7 +30,7 @@ Verify Information On Request Details Page
     ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
     ${value_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra} 
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
-    ${value_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder
+    ${rm_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder
     ${label_remark}=    Get Text    ${pms_txt_remark}
     ${value_remark}=    Get Text    ${pms_txtbox_remark}
     ${label_sale_data_header}=    Get Text    ${pms_txt_sale_data_header}
@@ -59,6 +59,7 @@ Verify Information On Request Details Page
     Should Be Equal As Strings    ${label_sale_name} ${value_sale_name}    ${rm['text_sale_name']} ${sale_name}
     Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_phone']} ${EMPTY}
     Should Be Equal As Strings    ${label_sale_email} ${value_sale_email}    ${rm['text_sale_email']} ${sale_email}
+    Set Suite Variable    ${rm_link_full_register}
 
 Input Mobile Number In Sale Information
     [Arguments]    ${value}
