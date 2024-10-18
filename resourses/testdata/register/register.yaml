@@ -23,7 +23,11 @@ Register:
     btn_next: ถัดไป
     btn_cancel: ยกเลิก
     btn_save: บันทึกร่าง
-
+    btn_confirm: ลงทะเบียน
+    txt_header_cancel: ยกเลิกการลงทะเบียน
+    txt_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    confirm_cancel_popup: ตกลง
+    cancel_cancel_popup: ยกเลิก
 
 
 

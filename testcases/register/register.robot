@@ -320,9 +320,8 @@ Register_S013
     Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
     register_business_full_register.Get Link On Email
     common.Open URL    ${link_full_register}
-    
+    #common.Open URL    ${rm_link_full_register}
     #Expected
-    #Inprogress
     register_business_full_register.Verify Company information Legal Entity
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
@@ -344,33 +343,52 @@ Register_S013
     register_business_full_register.Input Mobile Company Ext Legal Entity    ${Register_S013['mobile_company_ext']}
     
     Log    Step No.3 กดปุ่ม "ถัดไป"
-    #register_business_full_register.Click Next
-    Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
-
-    Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
-    #register_business_full_register.Click Save
-    Log    Step No.6 กดปุ่ม "ยกเลิก"
-    #register_business_full_register.Click Cancel
-    Log    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
+    register_business_full_register.Click Next
+    #Expected
+    #Inprogress
     
+    Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
+    
+    Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
+    register_business_full_register.Click Save
+
+    Log    Step No.6 กดปุ่ม "ยกเลิก"
+    register_business_full_register.Click Cancel
+    register_business_full_register.Verify Cancel Popup    ${Register.Pre_register['txt_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
+    
+    Log    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
+    register_business_full_register.Click Button Confirm Cancel Popup
+
     Log    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
-    #common.Open URL    ${link_full_register}
+    common.Open URL    ${link_full_register}
+    #Expected
+    #Inprogress
+    
     Log    Step No.9 กดปุ่ม "ถัดไป"
-    #register_business_full_register.Click Next 
+    register_business_full_register.Click Next
+    #Expected
+    #Inprogress
+        
     Log    Step No.10 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
 
     Log    Step No.11 กดปุ่ม "ถัดไป"
-    #register_business_full_register.Click Next 
+    register_business_full_register.Click Next
+    #Expected
+    #Inprogress
+        
     Log    Step No.12 ระบุข้อมูลผู้ติดต่อ
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
-    #register_business_full_register.Click Next 
+    register_business_full_register.Click Next
+
     Log    Step No.14 อัปโหลดเอกสารประกอบ
-
+    #Bew
     Log    Step No.15 กดปุ่ม "ลงทะเบียน"
+    #register_business_full_register.Click Confirm
 
+    #ต้องไปทำ S0015 ในส่วนที่ RM ต้อง Comment
     Log    Step No.16 กด Link Full Register เดิม ที่ได้รับทาง E-mail 
-    common.Open URL    ${link_full_register}
+    #common.Open URL    ${link_full_register}
     Log    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
 
     Log    Step No.18 กดปุ่ม "x"

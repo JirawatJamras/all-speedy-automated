@@ -1,8 +1,8 @@
 *** Keywords ***
 Click Checkbox Partner Types Legal
     [Arguments]    ${Partner_Types}
-    ${Checkbox Partner Types}=    Replace String    ${register_btn_partner_types}    {value}    ${Partner_Types}
-    common.Click when ready     ${Checkbox Partner Types}
+    ${Checkbox_Partner_Types}=    Replace String    ${register_btn_partner_types}    {value}    ${Partner_Types}
+    common.Click when ready     ${Checkbox_Partner_Types}
 
 #Legal entity
 Set Juristic ID Legal Entity
@@ -16,8 +16,8 @@ Set Juristic ID Legal Entity
 Select Company Title Name Legal Entity
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_company_title_name_legal_entity}
-    ${Selected company title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
-    common.Click when ready    ${Selected company title name}
+    ${Selected_company_title_name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
+    common.Click when ready    ${Selected_company_title_name}
 
 Input Company Name Legal Entity
     [Arguments]    ${Text}  
@@ -34,14 +34,14 @@ Input Company Address Legal Entity
 Input Company Address Full Legal Entity
     [Arguments]    ${Value}    ${Select}
     common.Input When Ready    ${register_dropdown_company_address_full_legal_entity}     ${Value}  
-    ${Selected company address full}=    Replace String    ${register_dropdown_choice_company_address_full_legal_entity}    {value}    ${Select}
-    common.Click when ready     ${Selected company address full}
+    ${Selected_company_address_full}=    Replace String    ${register_dropdown_choice_company_address_full_legal_entity}    {value}    ${Select}
+    common.Click when ready     ${Selected_company_address_full}
 
 Select Title Name Legal Entity
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_title_name_legal_entity}
-    ${Selected title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
-    common.Click when ready    ${Selected title name}
+    ${Selected_title_name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
+    common.Click when ready    ${Selected_title_name}
 
 Input First Name Legal Entity
     [Arguments]    ${Value}  
@@ -75,8 +75,8 @@ Set National ID Individual
 Select Title Name Individual
     [Arguments]    ${Title}
     common.Click when ready    ${register_dropdown_title_name_individual}
-    ${Selected title name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
-    common.Click when ready    ${Selected title name}
+    ${Selected_title_name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${Title}
+    common.Click when ready    ${Selected_title_name}
 
 Input First Name Individual
     [Arguments]    ${Value}  
@@ -101,8 +101,8 @@ Input Address Individual
 Input Address Full Individual
     [Arguments]    ${Value}    ${Select}
     common.Input When Ready    ${register_dropdown_address_full_individual}     ${Value}  
-    ${Selected company address full}=    Replace String    ${register_dropdown_choice_address_full_individual}    {value}    ${Select}
-    common.Click when ready     ${Selected company address full}
+    ${Selected_company_address_full}=    Replace String    ${register_dropdown_choice_address_full_individual}    {value}    ${Select}
+    common.Click when ready     ${Selected_company_address_full}
 
 Input Mobile No Individual
     [Arguments]    ${Value}  
@@ -114,33 +114,33 @@ Input Mobile Ext Individual
 
 #both    
 Click Confirm 
-    ${Click confirm}=    Replace String    ${register_btn_confirm}     {value}    ${Register.Pre_register['btn_confirm']}
-    common.Click when ready    ${Click confirm}
+    ${Click_confirm}=    Replace String    ${register_btn_confirm}     {value}    ${Register.Pre_register['btn_confirm']}
+    common.Click when ready    ${Click_confirm}
      
 Click Cancel
-    ${Click cancel}=    Replace String    ${register_btn_cancel}     {value}    ${Register.Pre_register['btn_cancel']}
-    common.Click when ready    ${Click cancel}
+    ${Click_cancel}=    Replace String    ${register_btn_cancel}     {value}    ${Register.Pre_register['btn_cancel']}
+    common.Click when ready    ${Click_cancel}
 
 Verify Confirm Page
     [Arguments]    ${Text}
-    ${Register success text}=    Replace String    ${register_txt_success}     {value}    ${Text}
-    Wait Until Element Is Visible    ${Register success text}    ${DEFAULT_TIMEOUT}
-    Page Should Contain Element    ${Register success text}
+    ${Register_success_text}=    Replace String    ${register_txt_success}     {value}    ${Text}
+    Wait Until Element Is Visible    ${Register_success_text}    ${DEFAULT_TIMEOUT}
+    Page Should Contain Element    ${Register_success_text}
 
 Verify Cancel Popup
     [Arguments]    ${Header}    ${Body}
-    ${Header cancel popup}=    Replace String    ${register_txt_header_cancel_popup}     {value}    ${Header}
-    Element Should Be Visible    ${Header cancel popup}
-    ${Body cancel popup}=    Replace String    ${register_txt_body_cancel_popup}     {value}    ${Body}
-    Element Should Be Visible    ${Body cancel popup}
+    ${Header_cancel_popup}=    Replace String    ${register_txt_header_cancel_popup}     {value}    ${Header}
+    Element Should Be Visible    ${Header_cancel_popup}
+    ${Body_cancel_popup}=    Replace String    ${register_txt_body_cancel_popup}     {value}    ${Body}
+    Element Should Be Visible    ${Body_cancel_popup}
 
 Click Button Confirm Cancel Popup
-    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register.Pre_register['confirm_cancel_popup']}
-    common.Click when ready    ${Click button}
+    ${Click_button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register.Pre_register['confirm_cancel_popup']}
+    common.Click when ready    ${Click_button}
 
 Click Button Cancel Cancel Popup
-    ${Click button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register.Pre_register['cancel_cancel_popup']}
-    common.Click when ready    ${Click button}
+    ${Click_button}=    Replace String    ${register_btn_cancel_popup}     {value}    ${Register.Pre_register['cancel_cancel_popup']}
+    common.Click when ready    ${Click_button}
 
 #old
 Select Partner Type Radio Button

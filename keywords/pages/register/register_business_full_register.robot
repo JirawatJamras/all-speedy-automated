@@ -14,7 +14,7 @@ Login mail
     common.Click when ready    ${register_btn_next_gmail}
 
 Get Link On Email
-    ${Select_link}=    Replace String    ${register_txt_link_register_gmail}     {value}    ${Register.Full_register['txt_link_register']}
+    ${Select_link}=    Replace String    ${register_link_register_gmail}     {value}    ${rm_link_full_register}
     Wait Until Element Is Visible    ${Select_link}   ${DEFAULT_TIMEOUT}
     ${link_full_register}=    Get Text    ${Select_link}
     Set Suite Variable    ${link_full_register}
@@ -59,8 +59,6 @@ Verify Company information Legal Entity
     Should Be Equal As Strings    ${txt_mobile_no}     ${mobile_no}
     Should Be Equal As Strings    ${txt_mobile_ext}     ${mobile_ext}
 
-    #Inprogress
-
 Verify Email That Have Received Link
     common.Click when ready    ${register_btn_inbox_gmail} 
     ${Select_link}=    Replace String    ${register_txt_link_register_gmail}     {value}    ${Register.Full_register['txt_link_register']}
@@ -76,13 +74,29 @@ Input Mobile Company Ext Legal Entity
     common.Input When Ready    ${register_txtbox_mobile_company_ext_legal_entity_full_register}     ${Value}
 
 Click Next 
-    ${Click next}=    Replace String    ${register_btn_next_full_register}     {value}    ${Register.Full_register['btn_next']}
-    common.Click when ready    ${Click next}
+    ${Click_next}=    Replace String    ${register_btn_next_full_register}     {value}    ${Register.Full_register['btn_next']}
+    common.Click when ready    ${Click_next}
     
 Click Cancel
-    ${Click cancel}=    Replace String    ${register_btn_cancel_full_register}     {value}    ${Register.Full_register['btn_cancel']}
-    common.Click when ready    ${Click cancel}
+    ${Click_cancel}=    Replace String    ${register_btn_cancel_full_register}     {value}    ${Register.Full_register['btn_cancel']}
+    common.Click when ready    ${Click_cancel}
 
 Click Save
     ${Click save}=    Replace String    ${register_btn_save_full_register}     {value}    ${Register.Full_register['btn_save']}
     common.Click when ready    ${Click save}
+
+Verify Cancel Popup
+    [Arguments]    ${Header}    ${Body}
+    ${Header_cancel_popup}=    Replace String    ${register_txt_header_cancel_popup_full_register}     {value}    ${Header}
+    Element Should Be Visible    ${Header_cancel_popup}
+    ${Body_cancel_popup}=    Replace String    ${register_txt_body_cancel_popup_full_register}     {value}    ${Body}
+    Element Should Be Visible    ${Body_cancel_popup} 
+
+Click Button Confirm Cancel Popup
+    ${Click_button}=    Replace String    ${register_btn_cancel_popup_full_register}     {value}    ${Register.Full_register['confirm_cancel_popup']}
+    common.Click when ready    ${Click_button}       
+
+Click Confirm
+    ${Click_confirm}=    Replace String    ${register_btn_confirm_full_register}     {value}    ${Register.Full_register['btn_confirm']}
+    common.Click when ready    ${Click_confirm}
+    
