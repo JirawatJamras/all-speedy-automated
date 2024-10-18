@@ -59,44 +59,44 @@ register07
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
     pms_requests_page.Select Request With Status Waiting For Assign
-    ...    ${Register_S007['partner_types']}
-    ...    ${Register_S007['company_name']}
-    ...    ${Register_S007['first_name']}
-    ...    ${Register_S007['last_name']}
-    ...    ${Register_S007['mobile_no']}
-    ...    ${Register_S007['mobile_ext']}
+    ...    ${Register_S001['partner_types']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
     pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
-    ...    ${Register_S007['first_name']}
-    ...    ${Register_S007['last_name']}
-    ...    ${Register_S007['request_type']}
-    ...    ${Register_S007['reference_request']}
-    ...    ${Register_S007['partner_types']}
-    ...    ${Register_S007['company_title_name']}
-    ...    ${Register_S007['company_name']}
-    ...    ${Register_S007['company_address']}
-    ...    ${Register_S007['company_address_full']}
-    ...    ${Register_S007['title_name']}
-    ...    ${Register_S007['first_name']}
-    ...    ${Register_S007['last_name']}
-    ...    ${Register_S007['email']}
-    ...    ${Register_S007['mobile_no']}
-    ...    ${Register_S007['mobile_ext']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['request_type']}
+    ...    ${Register_S001['reference_request']}
+    ...    ${Register_S001['partner_types']}
+    ...    ${Register_S001['company_title_name']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['company_address']}
+    ...    ${Register_S001['company_address_full']}
+    ...    ${Register_S001['title_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['email']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot    Register_S007    Verify Request Detail Page With Status Waiting For Assign
     pms_request_detail_page.Click Assign RM Button
     pms_request_detail_page.Verify Assign RM Popup
     common.Verify Capture Screenshot    Register_S007    Verify Assign RM Popup
-    pms_request_detail_page.Click Button To Assign RM    ${Register_S007['rm_name']}
-    pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
+    pms_request_detail_page.Click Button To Assign RM    ${Register_S001['rm_name']}
+    pms_request_detail_page.Verify Assign To RM     ${Register_S001['rm_name']}
     common.Verify Capture Screenshot    Register_S007    Verify Assign To RM 
     pms_request_detail_page.Click Save Button
     pms_requests_page.Verify Save Assign To RM Success
-    ...    ${Register_S007['partner_types']}
-    ...    ${Register_S007['company_name']}
-    ...    ${Register_S007['first_name']}
-    ...    ${Register_S007['last_name']}
-    ...    ${Register_S007['mobile_no']}
-    ...    ${Register_S007['mobile_ext']}
-    ...    ${Register_S007['rm_name']}
+    ...    ${Register_S001['partner_types']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
+    ...    ${Register_S001['rm_name']}
     common.Verify Capture Screenshot    Register_S007    Verify Save Assign To RM Success
 
 register09
@@ -109,36 +109,36 @@ register09
     # pms_home_page.Select Manage Customer Menu
     # pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Request With Considering Status
-    ...    ${Register_S008['partner_types']}
-    ...    ${Register_S008['company_name']}
-    ...    ${Register_S008['first_name']}
-    ...    ${Register_S008['last_name']}
-    ...    ${Register_S008['mobile_no']}
-    ...    ${Register_S008['mobile_ext']}
-    ...    ${Register_S008['rm_name']}
+    ...    ${Register_S001['partner_types']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
+    ...    ${Register_S001['rm_name']}
     pms_request_detail_page.Verify Information On Request Details Page
-    ...    ${Register_S008['company_title_name']}
-    ...    ${Register_S008['company_name']}
-    ...    ${Register_S008['company_address']}
-    ...    ${Register_S008['company_address_full']}
-    ...    ${Register_S008['title_name']}
-    ...    ${Register_S008['first_name']}
-    ...    ${Register_S008['last_name']}
-    ...    ${Register_S008['email']}
-    ...    ${Register_S008['mobile_no']}
-    ...    ${Register_S008['mobile_ext']}
-    ...    ${Register_S008['remark']}
-    ...    ${Register_S008['rm_name']}
-    ...    ${Register_S008['sale_email']}
-    common.Verify Capture Screenshot    Register_S008    Verify Request Detail Page
-    pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S008['sale_phone']}
+    ...    ${Register_S001['company_title_name']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['company_address']}
+    ...    ${Register_S001['company_address_full']}
+    ...    ${Register_S001['title_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['email']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
+    ...    ${Register_S001['remark']}
+    ...    ${Register_S001['rm_name']}
+    ...    ${Register_S001['sale_email']}
+    common.Verify Capture Screenshot    Register_S009    Verify Request Detail Page
+    pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S001['sale_phone']}
     pms_request_detail_page.Click Approve Button
     pms_requests_page.Verify Approve Success
-    ...    ${Register_S008['partner_types']}
-    ...    ${Register_S008['company_name']}
-    ...    ${Register_S008['first_name']}
-    ...    ${Register_S008['last_name']}
-    ...    ${Register_S008['mobile_no']}
-    ...    ${Register_S008['mobile_ext']}
-    ...    ${Register_S008['rm_name']}
-    common.Verify Capture Screenshot    Register_S008    Verify Approve Success
+    ...    ${Register_S001['partner_types']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
+    ...    ${Register_S001['rm_name']}
+    common.Verify Capture Screenshot    Register_S009    Verify Approve Success
