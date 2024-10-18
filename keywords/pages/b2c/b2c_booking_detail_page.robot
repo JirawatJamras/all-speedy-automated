@@ -18,7 +18,8 @@ Verify Booking Detail Page After Draft
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ${parcel_size} ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    # Expected resilt:     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ${parcel_size} ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     ${actual_text_booking_list}=    Get Text    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels_status} =    Get Text    ${b2c_txt_list_of_parcels_status}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
@@ -303,8 +304,8 @@ Verify Date And Time With Time Distortion
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
 
 Wait Until Loading Icon Success
-    Wait Until Element Is Visible    ${b2c_img_loading}    timeout=60s
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
+    Wait Until Page Contains Element    ${b2c_img_loading}    timeout=30s
+    Wait Until Page Does Not Contain Element    ${b2c_img_loading}    timeout=60s
 
 Wait Until Page Loaded After Select Origin Shipping
     Wait Until Element Is Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}

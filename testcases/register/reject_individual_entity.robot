@@ -9,10 +9,10 @@ Test Teardown     Close Browser
 Reject Individual Entity
     [Documentation]    E2E 4 Scenario
     [Tags]    Register    UAT    Run
-    # Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    # Register_S004
-    Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    Register_S011
+    Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
+    Register_S004
+    # Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
+    # Register_S011
 
 *** Keywords ***
 Register_S004
@@ -73,3 +73,13 @@ Register_S011
 
     Log    Step No. 3 กดปุ่ม "อนุมัติ"
     pms_request_detail_page.Click Approve Button
+    # Expected
+    pms_requests_page.Select Request With Confirm Sent Link Status
+    ...    ${Register_S004['checkbox_partner_types']}
+    ...    ${Register_S004['first_name']}${SPACE}${Register_S004['last_name']}
+    ...    ${Register_S004['first_name']}
+    ...    ${Register_S004['last_name']}
+    ...    ${Register_S004['mobile_no']}
+    ...    ${Register_S004['mobile_ext']}
+    ...    Yada Deenok
+    # pms_request_detail_page.Verify Request Detail Page After RM Approve

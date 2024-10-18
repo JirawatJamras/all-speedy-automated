@@ -16,6 +16,7 @@ Verify Booking Page For General Customer
 
 Click Button To Add
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
+    Wait Until Element Is Enabled    ${btn_add}    timeout=30s
     common.Click When Ready    ${btn_add}
 
 Verify Term & Condition 
@@ -47,13 +48,11 @@ Select Send To 7-ELEVEN Store Tab
     common.Click When Ready    ${tab_send_to_store}
 
 Click General Parcel
-    Wait Until Element Is Visible    ${parcel_type_dry_btn}   timeout=${DEFAULT_TIMEOUT}
-    Click Element    ${parcel_type_dry_btn}
+    common.Click When Ready    ${parcel_type_dry_btn}
     Wait Until Element Is Visible    ${close_noti_btn}   timeout=${DEFAULT_TIMEOUT}
 
 Click Temperature Controlled Parcel
-    Wait Until Element Is Visible    ${parcel_type_chill_btn}   timeout=${DEFAULT_TIMEOUT}
-    Click Element    ${parcel_type_chill_btn}
+    common.Click When Ready    ${parcel_type_chill_btn}
     
 Click Close X Popup
     common.Click When Ready    ${btn_close_popup}
@@ -193,18 +192,15 @@ Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     Element Should Be Visible    ${txtbox_store_receiver} 
 
 Click Close Paecel Page
-    Click Element    ${close_noti_btn}
-    # Verify Close Pop-Up
-    Click Element    ${close_noticonfirm_btn}
+    common.Click When Ready    ${close_noti_btn}
+    common.Click When Ready    ${close_noticonfirm_btn}
 
 Click Choose Favorites 
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
-    Click Element    ${choose_favorites_btn}
+    common.Click When Ready    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=30s
 
 Click Choose Favorites Receiver
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
-    Click Element    ${choose_favorites_btn}
+    common.Click When Ready    ${choose_favorites_btn}
 
 Verify Favorites Sender PopUp
     [Arguments]    ${sender_phone}    ${sender_name}    ${sender_address}    ${sender_postcode_full}
@@ -240,8 +236,7 @@ Click Choose Favorites Sender List
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_district}   ${sender_postcode_full_list[1]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_province}   ${sender_postcode_full_list[2]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${sender_postcode_full_list[3]}
-    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
-    Click Element    ${selected_favorites_list}
+    common.Click When Ready    ${selected_favorites_list}
 
 Click Choose Favorites Receiver List
     [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}    ${receiver_postcode_full}
@@ -253,8 +248,7 @@ Click Choose Favorites Receiver List
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_district}   ${receiver_postcode_full_list[1]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_province}   ${receiver_postcode_full_list[2]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${receiver_postcode_full_list[3]}    
-    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
-    Click Element    ${selected_favorites_list}
+    common.Click When Ready    ${selected_favorites_list}
 
 #Choose Favorites Sender List
 Verify Choose Sender From Favorites
@@ -290,8 +284,7 @@ Verify Choose Receiver From Favorites
     Should Be Equal    ${postcode_text}    ${receiver_postcode}
 
 Click Favorites Default
-    Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
-    Click Element    ${select_favorites_btn}
+    common.Click When Ready    ${select_favorites_btn}
 
 Input Special Letters
     [Arguments]    ${search_txt}
@@ -299,8 +292,7 @@ Input Special Letters
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Clear Search Favorites TextBox
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
-    Click Element    ${search_favorites_txtbox}
+    common.Click When Ready    ${search_favorites_txtbox}
     Clear Element Text    ${search_favorites_txtbox}
 
 Input Text Exceeds 100 Characters
@@ -338,14 +330,13 @@ Input Favorites TextBox Nomal Letters More Than 100 Characters
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Click Favorites Default List
-    Wait Until Element Is Visible    ${choose_default_favorites_btn}    timeout=30s
-    Click Element    ${choose_default_favorites_btn}
+    common.Click When Ready    ${choose_default_favorites_btn}
 
 Click Accept Favorites List
-    Click Element    ${accept_favorites_btn}
+    common.Click When Ready    ${accept_favorites_btn}
 
 Click Cancel Favorites List
-    Click Element    ${cancel_favorites_btn}
+    common.Click When Ready    ${cancel_favorites_btn}
 
 Verify Choose From Favorites
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
@@ -440,8 +431,8 @@ Verify Select Postcode Sender Value
 
 Click Postcode Sender Lists
     [Arguments]    ${name}
-    ${list}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
-    Click Element    ${list}
+    ${cbo_postcode_sender}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
+    common.Click When Ready    ${cbo_postcode_sender}
 
 Verify Postcode Sender Error Msg
     [Arguments]    ${text_error_msg_postcode_sender}
@@ -451,7 +442,7 @@ Verify Postcode Sender Error Msg
 
 Click Button
     [Arguments]    ${btn}
-    Click Element    ${btn}
+    common.Click When Ready    ${btn}
 
 Click Save Button
     ${btn_save_draft}=    Replace String    ${btn_save_draft}    {value}    ${Booking['text_draft_save']}
@@ -506,8 +497,8 @@ Input Postcode Receiver
 
 Click Postcode Receiver Lists
     [Arguments]    ${name}
-    ${list}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
-    Click Element    ${list}
+    ${cbo_postcode_sender}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
+    common.Click When Ready    ${cbo_postcode_sender}
 
 Input Store Code Receiver
     [Arguments]    ${input_store_receiver}
@@ -515,8 +506,8 @@ Input Store Code Receiver
 
 Click Store Receiver Lists
     [Arguments]    ${store}
-    ${list}=    Replace String    ${cbo_store_receiver}    {value}    ${store}
-    Click Element    ${list}
+    ${cbo_store_receiver}=    Replace String    ${cbo_store_receiver}    {value}    ${store}
+    common.Click When Ready    ${cbo_store_receiver}
 
 Click Store On Map
     ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${Booking['text_select_store_on_map']}

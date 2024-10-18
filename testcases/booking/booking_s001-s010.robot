@@ -2,10 +2,10 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
-                  ...    AND    Close Browser
+# Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+#                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S001
@@ -78,7 +78,7 @@ Booking_S002
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Sender Step
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S002['sender_phone']}
@@ -105,7 +105,7 @@ Booking_S002
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step When Select Home
+    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S002['receiver_phone']}

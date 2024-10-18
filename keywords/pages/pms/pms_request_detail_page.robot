@@ -127,3 +127,4 @@ Verify Request Detail Page With Status Waiting For Assign
     Should Be Equal As Strings    ${label_customer_last_name} ${input_customer_last_name}    นามสกุล ${customer_lastname}
     Should Be Equal As Strings    ${label_email} ${input_email}    E-mail ${email}
 
+# Verify Request Detail Page After RM Approve
