@@ -78,7 +78,7 @@ Verify Save Assign To RM Success
     ${txt_list}=    Replace String    ${txt_list}    {ext}    ${mobile_ext}
     ${txt_list}=    Replace String    ${txt_list}    {status}    ${rm.text_status['under_consideration']}
     ${txt_list}=    Replace String    ${txt_list}    {rm}    ${rm_name}
-    Wait Until Page Contains Element    ${txt_list}
+    Wait Until Page Contains Element    ${txt_list}        timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${txt_list}
     
 Verify Approve Success
