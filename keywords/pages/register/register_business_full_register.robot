@@ -1,10 +1,4 @@
 *** Keywords ***
-Login Yopmail
-    [Arguments]    ${Text}
-    common.Open URL    https://yopmail.com/
-    common.Input When Ready    ${register_txtbox_email_yopmail}   ${Text}
-    common.Click when ready    ${register_button_next_yopmail} 
-
 Login mail
     [Arguments]    ${Email}    ${Password}
     common.Open URL    https://mail.google.com/

@@ -1,8 +1,4 @@
 *** Variables ***
-${register_txtbox_email_yopmail}    //input[@id='login']
-${register_button_next_yopmail}    //div[@id='refreshbut']
-${register_txt_link_full_register}    //div[@id='mail']
-
 # Gmail
 ${register_txtbox_email_gmail}    //input[@type='email']
 ${register_txtbox_password_gmail}    //input[@type='password']
