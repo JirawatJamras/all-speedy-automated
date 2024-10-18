@@ -144,6 +144,7 @@ Booking:
     parcel_buy_insure: มีการซื้อประกัน
     text_postcode: รหัสไปรษณีย์ปลายทาง
     text_store_code: รหัสร้าน
+    text_destination_deparment_code: รหัสสาขาปลายทาง
 
 call_car_pick_up:
   text_call_car_pick_up: เรียกรถเข้ารับพัสดุ สาขาหลัก

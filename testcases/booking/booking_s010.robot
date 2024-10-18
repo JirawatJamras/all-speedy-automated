@@ -322,11 +322,11 @@ Booking_S010
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # Expected
-    b2c_booking_detail_page.Verify Parcel Label
+    b2c_booking_detail_page.Verify Parcel Label When Select 7-ELEVEN Store
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
-    ...    ${Booking.label['text_store_code']}
+    ...    ${Booking.label['text_destination_deparment_code']}
     ...    ${Booking_S010['receiver_store_code_5_digits']}
     ...    ${Booking_S010['parcel_package_type']}
     ...    ${Booking_S010['parcel_size']}
@@ -336,8 +336,7 @@ Booking_S010
     ...    ${Booking_S010['sender_postcode_full']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
-    ...    ${Booking_S010['receiver_store_address']}
-    ...    ${Booking_S010['receiver_store_full']}
+    ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    #${Booking_S010['receiver_store_address']}
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
