@@ -10,7 +10,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S001
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Booking    UAT    Review-Pass
+    [Tags]    Booking    UAT    Review_Pass
     Log    Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -20,6 +20,7 @@ Booking_S001
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
+    #Expected
     b2c_home_page.Verify My Profile Page
     ...    ${Booking['text_company_profile']}
     ...    ${Booking['text_profile']}
@@ -114,7 +115,6 @@ Booking_S002
     b2c_booking_delivery_page.Input Address Receiver    ${Booking_S002['receiver_address']}
     b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S002['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S002['receiver_postcode_full']}
-    #Expected
     common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Receiver Step
 
     Log    Step No.8 กดปุ่ม "บันทึกร่าง"
