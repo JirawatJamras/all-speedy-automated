@@ -11,15 +11,15 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Reject Pre Register (Legal)
     [Documentation]    E2E 1 Scenario
-    [Tags]    Register    UAT    BEW
-    Log    Scenario 10 RM : ปฏิเสธ Pre-Register (ลูกค้านิติบุคคล)
+    [Tags]    Register    UAT    In_Review
+    Log    Scenario 02 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
     Register_S002
     Assign RM
+    Log    Scenario 10 RM : ปฏิเสธ Pre-Register (ลูกค้านิติบุคคล)
     Register_S010
 
 *** Keywords ***
 Register_S002
-    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
     Log    Step No.1 กรอกข้อมูล
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab  
@@ -54,7 +54,7 @@ Assign RM
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Status Waiting For Assign [legal entity]
+    pms_requests_page.Select Request With Waiting For Assign Status  [legal entity]
     ...    ${Register_S002['checkbox_partner_types']}
     ...    ${Register_S002['company_name']}
     ...    ${Register_S002['first_name']}

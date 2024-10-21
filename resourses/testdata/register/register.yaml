@@ -134,7 +134,7 @@ Register_S005:
   individual_address: 145 หมู่บ้านชวนชม
   search_individual_address_full: '10240'
   select_individual_address_full:  สะพานสูง สะพานสูง กรุงเทพมหานคร 10240
-  mobile_no: '0931234567'
+  mobile_no: '0931234567'  #'0000000000'
   mobile_ext: '0000'
 
 Register_S006:
@@ -172,6 +172,12 @@ Register_S011:
   sale_email: yadadee@cpall.co.th
   sale_phone: '0800000000'
   remark: ''
+
+Register_S012:
+  rm_name:  Yada Deenok
+  sale_email: yadadee@cpall.co.th
+  sale_phone: '0800000000'
+  remark: ทดสอบปฎิเสธ
 
 Register_S013:
   mobile_company: '0200000000'

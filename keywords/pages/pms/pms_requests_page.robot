@@ -24,6 +24,10 @@ Click Add New Customer
     ${pms_btn_add_new_customer}=    Replace String    ${pms_btn_add_new_customer}    {value}    เพิ่มลูกค้าใหม่
     common.Click When Ready    ${pms_btn_add_new_customer}
 
+Click Assign RM Button
+    ${btn_assign_rm}=    Replace String    ${pms_btn_assign_rm_multi_tnx}    {value}    ${rm['text_assign_rm']}
+    common.Click When Ready    ${btn_assign_rm}
+
 Select Request
     [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
     ...    ${mobile_no}    ${mobile_ext}    ${rm_name}    ${status}
@@ -41,7 +45,18 @@ Select Request
     Wait Until Element Is Visible    ${pms_txtbox_customer_type}    timeout=${DEFAULT_TIMEOUT}
 
 ## legal entity
-Select Request With Status Waiting For Assign [legal entity]
+Select Checkbox Request With Waiting For Assign Status [legal entity]
+    [Arguments]    ${partner_types}    ${company_name}    ${first_name}    ${last_name}
+    ...    ${mobile_no}    ${mobile_ext}
+    ${value}=    Replace String    ${pms_btn_checkbox_request_request_page}    {types}    ${partner_types}
+    ${value2}=    Replace String    ${value}    {company}    ${company_name}
+    ${value3}=    Replace String    ${value2}    {name}    ${first_name} ${last_name}
+    ${value4}=    Replace String    ${value3}    {tel}    ${mobile_no}
+    ${value5}=    Replace String    ${value4}    {ext}    ${mobile_ext}
+    ${checkbox_list_in_request_page}=    Replace String    ${value5}    {status}    ${rm.text_status['waiting_assign']}
+    common.Click When Ready    ${checkbox_list_in_request_page}
+
+Select Request With Waiting For Assign Status  [legal entity]
     [Arguments]    ${partner_types}    ${company_name}    ${first_name}    ${last_name}
     ...    ${mobile_no}    ${mobile_ext}
     ${value}=    Replace String    ${pms_btn_list_in_request_page}    {types}    ${partner_types}
@@ -93,7 +108,17 @@ Verify Save Assign To RM Success
     Scroll Element Into View    ${txt_list}
 
 ## Individual
-Select Request With Status Waiting For Assign [Individual]
+Select Checkbox Request With Waiting For Assign Status [Individual]
+    [Arguments]    ${partner_types}    ${first_name}    ${last_name}    ${mobile_no}    ${mobile_ext}
+    ${value}=    Replace String    ${pms_btn_checkbox_request_request_page}    {types}    ${partner_types}
+    ${value2}=    Replace String    ${value}    {company}    ${first_name} ${last_name}
+    ${value3}=    Replace String    ${value2}    {name}    ${first_name} ${last_name}
+    ${value4}=    Replace String    ${value3}    {tel}    ${mobile_no}
+    ${value5}=    Replace String    ${value4}    {ext}    ${mobile_ext}
+    ${checkbox_list_in_request_page}=    Replace String    ${value5}    {status}    ${rm.text_status['waiting_assign']}
+    common.Click When Ready    ${checkbox_list_in_request_page}
+
+Select Request With Waiting For Assign Status [Individual]
     [Arguments]    ${partner_types}    ${first_name}    ${last_name}    ${mobile_no}    ${mobile_ext}
     ${value}=    Replace String    ${pms_btn_list_in_request_page}    {types}    ${partner_types}
     ${value2}=    Replace String    ${value}    {company}    ${first_name} ${last_name}
@@ -122,3 +147,10 @@ Select Request With Confirm Sent Link Status [Individual]
     ${company_name}=    Set Variable    ${contact_first_name} ${contact_last_name}
     Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
     ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['confirm_link']}
+
+Select Request With Rejected Status [Individual]
+    [Arguments]    ${partner_types}    ${contact_first_name}    ${contact_last_name}
+    ...    ${mobile_no}    ${mobile_ext}    ${rm_name}
+    ${company_name}=    Set Variable    ${contact_first_name} ${contact_last_name}
+    Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
+    ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['reject']}

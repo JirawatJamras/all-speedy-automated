@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Reject Individual Entity
     [Documentation]    E2E 4 Scenario
-    [Tags]    Register    UAT    
+    [Tags]    Register    UAT    In_Review
     Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
     Register_S004
     Assign RM
@@ -54,7 +54,7 @@ Assign RM
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Status Waiting For Assign [Individual]
+    pms_requests_page.Select Request With Waiting For Assign Status  [Individual]
     ...    ${Register_S004['checkbox_partner_types']}
     ...    ${Register_S004['first_name']}
     ...    ${Register_S004['last_name']}
@@ -131,6 +131,6 @@ Register_S011
     ...    ${Register_S011['sale_email']}
     ...    ${Register_S011['sale_phone']}
     common.Verify Capture Screenshot    Register_S011    Verify Approve Success Detail Page
-    register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}
+    register_business_full_register.Login mail    ${Register['email']}    ${Register['password']}
     register_business_full_register.Verify Email That Have Received Link
     common.Verify Capture Screenshot    Register_S011    Verify Email That Have Received Link
