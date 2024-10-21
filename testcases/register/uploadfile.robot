@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Upload
     [Documentation]    RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register  
-    [Tags]    Register    UAT    BEW
+    [Tags]    Register    UAT
     uploadfile
 
 *** Keywords ***

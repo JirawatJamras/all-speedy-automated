@@ -8,28 +8,14 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Reject Individual Entity
     [Documentation]    E2E 4 Scenario
-    [Tags]    Register    UAT    Run
+    [Tags]    Register    UAT    BEW
     Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    Register_S004
-    # Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    # Register_S011
+    # Register_S004
+    # Assign RM
+    Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
+    Register_S011
 
 *** Keywords ***
-Assign RM
-    Log    Login
-    common.Open URL    ${PMS_UAT_URL}
-    pms_landing_page.Click Go Login Button
-    pms_login_page.Input Email    ${pms_login_user_01['username']}
-    pms_login_page.Input Password    ${pms_login_user_01['password']}
-    pms_login_page.Click Log On Button
-    pms_home_page.Select Role Admin
-    pms_home_page.Select Manage Customer Menu
-    pms_home_page.Select Manage Request Sub-Menu
-
-    Log    Assign to RM 'Yada Deenok'
-    pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Status Waiting For Assign
-
 Register_S004
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
     Log    Step No.1 กรอกข้อมูล
@@ -58,43 +44,66 @@ Register_S004
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
 
+Assign RM
+    #Step1 
+    common.Open URL    ${PMS_UAT_URL}
+    pms_landing_page.Click Go Login Button
+    pms_login_page.Input Email    ${pms_login_user_01['username']}
+    pms_login_page.Input Password    ${pms_login_user_01['password']}
+    pms_login_page.Click Log On Button
+    pms_home_page.Select Role Admin
+    pms_home_page.Select Manage Customer Menu
+    pms_home_page.Select Manage Request Sub-Menu
+    pms_requests_page.Select Pending Tab
+    pms_requests_page.Select Request With Status Waiting For Assign [Individual]
+    ...    ${Register_S004['checkbox_partner_types']}
+    ...    ${Register_S004['first_name']}
+    ...    ${Register_S004['last_name']}
+    ...    ${Register_S004['mobile_no']}
+    ...    ${Register_S004['mobile_ext']}
+    pms_request_detail_page.Click Assign RM Button
+    pms_request_detail_page.Click Button To Assign RM    ${Register_S011['rm_name']}
+    pms_request_detail_page.Click Save Button
+
 Register_S011
     [Documentation]    RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    # Log    Login
-    # common.Open URL    ${PMS_UAT_URL}
-    # pms_landing_page.Click Go Login Button
-    # pms_login_page.Input Email    ${pms_login_user_01['username']}
-    # pms_login_page.Input Password    ${pms_login_user_01['password']}
-    # pms_login_page.Click Log On Button
-    # pms_home_page.Select Role Admin
-    # pms_home_page.Select Manage Customer Menu
-    # pms_home_page.Select Manage Request Sub-Menu
+    Log    Login
+    common.Open URL    ${PMS_UAT_URL}
+    pms_landing_page.Click Go Login Button
+    pms_login_page.Input Email    ${pms_login_user_01['username']}
+    pms_login_page.Input Password    ${pms_login_user_01['password']}
+    pms_login_page.Click Log On Button
+    pms_home_page.Select Role Admin
+    pms_home_page.Select Manage Customer Menu
+    pms_home_page.Select Manage Request Sub-Menu
  
     Log    Step No. 1 "RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ กำลังพิจารณา กดปุ่ม ดำเนินการ"
     pms_requests_page.Click Tab Pre-Register
-    pms_requests_page.Select Request With Considering Status
+    pms_requests_page.Select Request With Considering Status [Individual]
     ...    ${Register_S004['checkbox_partner_types']}
-    ...    ${Register_S004['first_name']}${SPACE}${Register_S004['last_name']}
     ...    ${Register_S004['first_name']}
     ...    ${Register_S004['last_name']}
     ...    ${Register_S004['mobile_no']}
     ...    ${Register_S004['mobile_ext']}
-    ...    Yada Deenok
+    ...    ${Register_S011['rm_name']}
     #Expected
-    #
-
-    Log    Step No. 2 RM กรอกเบอร์โทรศัพท์
-    Input Mobile Number In Sale Information    ${Register_S011['saletel']}
-
-    Log    Step No. 3 กดปุ่ม "อนุมัติ"
-    pms_request_detail_page.Click Approve Button
-    # Expected
-    pms_requests_page.Select Request With Confirm Sent Link Status
+    pms_request_detail_page.Verify Information On Request Details Page [Individual]
     ...    ${Register_S004['checkbox_partner_types']}
-    ...    ${Register_S004['first_name']}${SPACE}${Register_S004['last_name']}
-    ...    ${Register_S004['first_name']}
-    ...    ${Register_S004['last_name']}
-    ...    ${Register_S004['mobile_no']}
-    ...    ${Register_S004['mobile_ext']}
-    ...    Yada Deenok
-    # pms_request_detail_page.Verify Request Detail Page After RM Approve
+    ...    ${Register_S004['title_name']}
+    common.Verify Capture Screenshot    Register_S011    Verify Request Detail Page
+
+    # Log    Step No. 2 RM กรอกเบอร์โทรศัพท์
+    # Input Mobile Number In Sale Information    ${Register_S011['saletel']}
+
+    # Log    Step No. 3 กดปุ่ม "อนุมัติ"
+    # pms_request_detail_page.Click Approve Button
+    # # Expected
+    # pms_requests_page.Select Request With Confirm Sent Link Status
+    # ...    ${Register_S004['checkbox_partner_types']}
+    # ...    ${Register_S004['first_name']}${SPACE}${Register_S004['last_name']}
+    # ...    ${Register_S004['first_name']}
+    # ...    ${Register_S004['last_name']}
+    # ...    ${Register_S004['mobile_no']}
+    # ...    ${Register_S004['mobile_ext']}
+    # ...    Yada Deenok
+    # # pms_request_detail_page.Verify Request Detail Page After RM Approve

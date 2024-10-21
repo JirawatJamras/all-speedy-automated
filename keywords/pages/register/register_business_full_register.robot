@@ -158,11 +158,11 @@ Upload Other File
     Choose File    ${btn_upload}    ${file}
 
 Click Acceptance Terms of Service
-    ${click_checkbox}=    Replace String    ${register_checkbox_full_register}     {value}    ${Register.Full_register['txt_terms_of_service']}
+    ${click_checkbox}=    Replace String    ${register_btn_accept_terms_of_service_full_register}     {value}    ${Register.Full_register['txt_terms_of_service']}
     Scroll Element Into View    ${click_checkbox}
     Select Checkbox    ${click_checkbox}
 
 Click Acceptance Privacy Policy
-    ${click_checkbox}=    Replace String    ${register_checkbox_full_register}     {value}    ${Register.Full_register['txt_privacy_policy']}
+    ${click_checkbox}=    Replace String    ${register_btn_accept_privacy_policy_full_register}     {value}    ${Register.Full_register['txt_privacy_policy']}
     Scroll Element Into View    ${click_checkbox}
     Select Checkbox    ${click_checkbox}

@@ -58,7 +58,7 @@ register07
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Status Waiting For Assign
+    pms_requests_page.Select Request With Status Waiting For Assign [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['first_name']}
@@ -108,7 +108,7 @@ register09
     # pms_home_page.Select Role Admin
     # pms_home_page.Select Manage Customer Menu
     # pms_home_page.Select Manage Request Sub-Menu
-    pms_requests_page.Select Request With Considering Status
+    pms_requests_page.Select Request With Considering Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['first_name']}
@@ -116,7 +116,7 @@ register09
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
     ...    ${Register_S007['rm_name']}
-    pms_request_detail_page.Verify Information On Request Details Page
+    pms_request_detail_page.Verify Information On Request Details Page [legal entity]
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['company_address']}
