@@ -362,11 +362,12 @@ Register_S013
     #Expected
     #Inprogress
     #Tab พัสดุทั่วไป
-    register_business_full_register.Verify Service Information Page Tab General Parcel
-
+    register_business_full_register.Verify Service Information Page Tab Dry Parcel
     #Tab พัสดุควบคุมอุณหภูมิ
-
+    register_business_full_register.Verify Service Information Page Tab Chill Parcel
     #Tab Return Business
+    register_business_full_register.Verify Service Information Page Tab Return Business
+
     Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
     
     Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
