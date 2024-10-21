@@ -252,19 +252,6 @@ Click Choose Favorites Receiver List
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${receiver_postcode_full_list[3]}    
     common.Click When Ready    ${selected_favorites_list}
 
-#Choose Favorites Sender List
-Verify Choose Sender From Favorites
-    [Arguments]    ${sender_phone}    ${sender_name}    ${sender_address}    ${sender_postcode_full}
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
-    ${phone_text}=    Get Value    ${phone_sender_txtbox}
-    ${name_text}=    Get Value    ${name_sender_txtbox}
-    ${address_text}=    Get Value    ${address_sender_txtbox}
-    ${postcode_text}=    Get Text    ${postcode_sender_txtbox}
-    Should Be Equal    ${phone_text}    ${sender_phone}   
-    Should Be Equal    ${name_text}    ${sender_name} 
-    Should Be Equal    ${address_text}    ${sender_address}
-    Should Be Equal    ${postcode_text}    ${sender_postcode_full}
-
 Verify Choose Favorites Receiver List
     [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${receiver_name}
@@ -461,8 +448,7 @@ Click Add To Favorites In Receiver
     common.Click When Ready    ${btn_add_receiver_to_favorites}
 
 Verify Favorites Icon Red Heart
-    ${value}=    Get Value    ${btn_add_sender_to_favorites}  
-    Should Be Equal    ${value}    ${status}   
+    Wait Until Page Contains Element    ${btn_add_sender_to_favorites_is_red}
 
 Verify Add To Favorites
     [Arguments]    ${text_search}

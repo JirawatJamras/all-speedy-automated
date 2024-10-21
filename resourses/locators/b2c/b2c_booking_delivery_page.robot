@@ -12,6 +12,7 @@ ${btn_close_condition_popup}     (//button[@type='button' and @class='ant-modal-
 ${btn_parcel_type_dry}     //img[@alt='Dry']
 ${btn_parcel_type_chill}    //img[@alt='Chill']
 ${btn_add_sender_to_favorites}    //div[@id='create_parcel_form_sender_isDefault']//span[@class='anticon anticon-heart']
+${btn_add_sender_to_favorites_is_red}    //div[@id='create_parcel_form_sender_isDefault' and @value='true']
 ${btn_save_draft}    //span[contains(text(), '{value}')]/../../button
 ${btn_add_receiver_to_favorites}    //div[@id='create_parcel_form_receiver_isDefault']//span[@class='anticon anticon-heart']
 ${btn_next}    //div[@class='ant-space-item' and text()='{value}']/../../../button

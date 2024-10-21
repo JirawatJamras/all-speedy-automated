@@ -214,7 +214,7 @@ Booking_S004
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Detail Step
+    common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Detail Step 
 
     Log    Step No.15 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
