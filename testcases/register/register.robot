@@ -322,7 +322,7 @@ Register_S013
     common.Open URL    ${link_full_register}
     #common.Open URL    ${rm_link_full_register}
     #Expected
-    register_business_full_register.Verify Company information Legal Entity
+    register_business_full_register.Verify Company information Legal Entity Page
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -346,7 +346,12 @@ Register_S013
     register_business_full_register.Click Next
     #Expected
     #Inprogress
-    
+    register_business_full_register.Verify Service Information Page
+    #Tab พัสดุทั่วไป
+
+    #Tab พัสดุควบคุมอุณหภูมิ
+
+    #Tab Return Business
     Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
     
     Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ

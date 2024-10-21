@@ -13,7 +13,14 @@ Get Link On Email
     ${link_full_register}=    Get Text    ${Select_link}
     Set Suite Variable    ${link_full_register}
 
-Verify Company information Legal Entity
+Verify Email That Have Received Link
+    common.Click when ready    ${register_btn_inbox_gmail} 
+    ${Select_link}=    Replace String    ${register_txt_link_register_gmail}     {value}    ${Register.Full_register['txt_link_register']}
+    ${Select_link}=    Replace String    ${Select_link}     {link}    ${rm_link_full_register}
+    Scroll Into View By Xpath    ${Select_link}    true
+
+#Legal Entity
+Verify Company information Legal Entity Page
     [Arguments]    ${partner_types}    ${company_title_name}    ${company_name}    ${id_number}    
     ...    ${company_address}    ${select_company_address_full}    ${title_name}
     ...    ${first_name}    ${last_name}    ${email}    ${mobile_no}    ${mobile_ext}
@@ -53,12 +60,6 @@ Verify Company information Legal Entity
     Should Be Equal As Strings    ${txt_mobile_no}     ${mobile_no}
     Should Be Equal As Strings    ${txt_mobile_ext}     ${mobile_ext}
 
-Verify Email That Have Received Link
-    common.Click when ready    ${register_btn_inbox_gmail} 
-    ${Select_link}=    Replace String    ${register_txt_link_register_gmail}     {value}    ${Register.Full_register['txt_link_register']}
-    ${Select_link}=    Replace String    ${Select_link}     {link}    ${rm_link_full_register}
-    Scroll Into View By Xpath    ${Select_link}    true
-    
 Input Mobile Company Legal Entity
     [Arguments]    ${Value}  
     common.Input When Ready    ${register_txtbox_mobile_company_legal_entity_full_register}     ${Value}  
@@ -66,6 +67,14 @@ Input Mobile Company Legal Entity
 Input Mobile Company Ext Legal Entity
     [Arguments]    ${Value}  
     common.Input When Ready    ${register_txtbox_mobile_company_ext_legal_entity_full_register}     ${Value}
+
+#Both
+Verify Service Information Page
+    #Tab พัสดุทั่วไป
+
+    #Tab พัสดุควบคุมอุณหภูมิ
+
+    #Tab Return Business
 
 Click Next 
     ${Click_next}=    Replace String    ${register_btn_next_full_register}     {value}    ${Register.Full_register['btn_next']}
