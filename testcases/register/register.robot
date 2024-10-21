@@ -373,9 +373,10 @@ Register_S013
     register_business_full_register.Click Select Dry Parcel
     register_business_full_register.Select Add Service Cod Dry Parcel
     register_business_full_register.Select Add Service Insuaration Dry Parcel
-
+    # register_business_full_register.Select Type Product Dry Parcel    ${Register_S013['type_product']}
+    # register_business_full_register.Select Number By Day Dry Parcel    ${Register_S013['number_by_day']}
+    # register_business_full_register.Select Sale Channel Dry Parcel    ${Register_S013['sale_channel']}
     
-    #...    ${Register_S013['add_cod']}
 
     Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
     register_business_full_register.Click Save

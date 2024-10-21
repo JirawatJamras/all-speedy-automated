@@ -69,8 +69,71 @@ Input Mobile Company Ext Legal Entity
     [Arguments]    ${value}  
     common.Input When Ready    ${register_txtbox_mobile_company_ext_legal_entity_full_register}     ${value}
 
+#Uploadfile
+Upload Certificate Business Registration
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_certificate_business_registration']}
+    Execute JavaScript    Array.from(document.querySelectorAll('input[name="file"]')).forEach(el => el.style.display = 'block');
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+Upload Copy File 20
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_file_20']}
+    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+Upload Copy ID Card
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_id_card']}
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+Copy Of Bank Account
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_of_bank_account']}
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+Upload Copy Of House Registration
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_of_house_registration']}
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+Upload Permission form for Deduction from Bank Account
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_permission_form']}
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+Upload Other File
+    [Arguments]    ${file_path}
+    ${file}    Normalize Path    ${file_path}
+    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_other_file']}
+    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
+    Choose File    ${btn_upload}    ${file}
+
+Click Acceptance Terms of Service
+    ${click_checkbox}=    Replace String    ${register_btn_accept_terms_of_service_full_register}     {value}    ${Register.Full_register['txt_terms_of_service']}
+    Scroll Element Into View    ${click_checkbox}
+    Select Checkbox    ${click_checkbox}
+
+Click Acceptance Privacy Policy
+    ${click_checkbox}=    Replace String    ${register_btn_accept_privacy_policy_full_register}     {value}    ${Register.Full_register['txt_privacy_policy']}
+    Scroll Element Into View    ${click_checkbox}
+    Select Checkbox    ${click_checkbox}
+
+
 #Both
-#Tab พัสดุทั่วไป
+#Service Information
 Click Tab Dry Parcel
     ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['txt_tab_dry_parcel']}
     common.Click when ready    ${txt_tab}
@@ -97,10 +160,58 @@ Click Select Return Business
 
 Select Add Service Cod Dry Parcel
     common.Click when ready    ${register_btn_add_cod_dry_parcel}
-    
+
 Select Add Service Insuaration Dry Parcel
     common.Click when ready    ${register_btn_add_insurance_dry_parcel}
 
+Select Add Service Cod Chill Parcel
+    common.Click when ready    ${register_btn_add_cod_chill_parcel}
+
+Select Add Service Express Return Business
+    common.Click when ready    ${register_btn_add_express_return_business} 
+
+Select Add Service Insuaration Return Business
+    common.Click when ready    ${register_btn_add_insurance_return_business}   
+
+# Select Type Product Dry Parcel
+
+
+# Select Number By Day Dry Parcel
+
+
+# Select Sale Channel Dry Parcel
+
+# Select Vat Dry Parcel
+
+# Input Remark Dry Parcel
+
+
+
+# Select Type Product Chill Parcel
+
+
+# Select Number By Day Chill Parcel
+
+
+# Select Sale Channel Chill Parcel
+
+# Select Vat Chill Parcel
+
+# Input Remark Chill Parcel
+
+
+
+# Select Type Product Return Business
+
+
+# Select Number By Day Return Business
+
+
+# Select Sale Channel Return Business
+
+# Select Vat Return Business
+
+# Input Remark Return Business
 
 Verify Service Information Page Tab Dry Parcel  
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['txt_title_service_information']}
@@ -184,7 +295,7 @@ register_business_full_register.Verify Service Information Page Tab Return Busin
     Should Be Equal As Strings    ${label_remark}    ${Register.Full_register['txt_remark']}
 
 
-
+#All page
 Click Next 
     ${click_next}=    Replace String    ${register_btn_next_full_register}     {value}    ${Register.Full_register['btn_next']}
     common.Click when ready    ${click_next}
@@ -212,63 +323,3 @@ Click Confirm
     ${click_confirm}=    Replace String    ${register_btn_confirm_full_register}     {value}    ${Register.Full_register['btn_confirm']}
     common.Click when ready    ${click_confirm}
     
-Upload Certificate Business Registration
-    [Arguments]    ${file_path}
-    ${file}    Normalize Path    ${file_path}
-    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_certificate_business_registration']}
-    Execute JavaScript    Array.from(document.querySelectorAll('input[name="file"]')).forEach(el => el.style.display = 'block');
-    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
-    Choose File    ${btn_upload}    ${file}
-
-Upload Copy File 20
-    [Arguments]    ${file_path}
-    ${file}    Normalize Path    ${file_path}
-    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_file_20']}
-    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
-    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
-    Choose File    ${btn_upload}    ${file}
-
-Upload Copy ID Card
-    [Arguments]    ${file_path}
-    ${file}    Normalize Path    ${file_path}
-    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_id_card']}
-    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
-    Choose File    ${btn_upload}    ${file}
-
-Copy Of Bank Account
-    [Arguments]    ${file_path}
-    ${file}    Normalize Path    ${file_path}
-    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_of_bank_account']}
-    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
-    Choose File    ${btn_upload}    ${file}
-
-Upload Copy Of House Registration
-    [Arguments]    ${file_path}
-    ${file}    Normalize Path    ${file_path}
-    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_copy_of_house_registration']}
-    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
-    Choose File    ${btn_upload}    ${file}
-
-Upload Permission form for Deduction from Bank Account
-    [Arguments]    ${file_path}
-    ${file}    Normalize Path    ${file_path}
-    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_permission_form']}
-    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
-    Choose File    ${btn_upload}    ${file}
-
-Upload Other File
-    [Arguments]    ${file_path}
-    ${file}    Normalize Path    ${file_path}
-    ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['txt_other_file']}
-    Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
-    Choose File    ${btn_upload}    ${file}
-
-Click Acceptance Terms of Service
-    ${click_checkbox}=    Replace String    ${register_btn_accept_terms_of_service_full_register}     {value}    ${Register.Full_register['txt_terms_of_service']}
-    Scroll Element Into View    ${click_checkbox}
-    Select Checkbox    ${click_checkbox}
-
-Click Acceptance Privacy Policy
-    ${click_checkbox}=    Replace String    ${register_btn_accept_privacy_policy_full_register}     {value}    ${Register.Full_register['txt_privacy_policy']}
-    Scroll Element Into View    ${click_checkbox}
-    Select Checkbox    ${click_checkbox}
