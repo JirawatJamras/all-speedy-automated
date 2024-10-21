@@ -131,3 +131,6 @@ Register_S011
     ...    ${Register_S011['sale_email']}
     ...    ${Register_S011['sale_phone']}
     common.Verify Capture Screenshot    Register_S011    Verify Approve Success Detail Page
+    register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}
+    register_business_full_register.Verify Email That Have Received Link
+    common.Verify Capture Screenshot    Register_S011    Verify Email That Have Received Link
