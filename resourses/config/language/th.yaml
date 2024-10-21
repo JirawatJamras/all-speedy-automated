@@ -261,7 +261,6 @@ rm:
   text_sale_email: E-mail
   text_rm_in_popup: RM
   text_save: บันทึก
-  link_full_register: 'https://www-uat.allspeedy.co.th/business-register/fullRegister/'
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน

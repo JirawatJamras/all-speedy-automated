@@ -1,6 +1,8 @@
 Register:
   txt_menu_business: ลูกค้าธุรกิจ
   txt_menu_general: ลูกค้าทั่วไป
+  text_blank:
+    remark: ''
   Pre_register:
     txt_menu_register: ลงทะเบียนลูกค้าธุรกิจ
     txt_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
@@ -148,24 +150,10 @@ Register_S009:
   sale_phone: '0800000000'
 
 Register_S010:
-  partner_types: นิติบุคคล
-  company_title_name: บจ.(บริษัทจำกัด)
-  company_name: บริษัท เอบีซี จำกัด
-  id_number: '3241018105036'
-  address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-  postcode: ปากเกร็ด ปากเกร็ด นนทบุรี 11120
-  title_name: น.ส.
-  customer_first_name: ชลธิชา
-  customer_last_name: อยู่ยง
-  customer_email: businessregisterflow@gmail.com
-  customer_phone: '0000000000'
-  customer_phone_extra: '0000'
-  link_full_register: https://www-uat.allspeedy.co.th/business-register/fullRegister/14761592157962256992
-  remark: ทดสอบปฎิเสธ
-  sale_name: Yada Deenok
+  rm_name:  Yada Deenok
   sale_email: yadadee@cpall.co.th
-  request_type: Pre Register
-  reference_request: '-'
+  sale_phone: '0800000000'
+  remark: ทดสอบปฎิเสธ
 
 Register_S011:
   rm_name:  Yada Deenok

@@ -7,8 +7,8 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 Reject Individual Entity
-    [Documentation]    RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    [Tags]    Register    UAT    BEW
+    [Documentation]    E2E 4 Scenario
+    [Tags]    Register    UAT    
     Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
     Register_S004
     Assign RM
