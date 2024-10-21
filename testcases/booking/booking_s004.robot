@@ -81,7 +81,7 @@ Booking_S004
     common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
-    #เลือกจากรายการโปรด
+    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     # Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp
@@ -135,6 +135,7 @@ Booking_S004
     Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S004['parcel_size']}
     b2c_booking_delivery_page.Input COD    ${Booking_S004['parcel_cod']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S004    Verify Select Parcel Size And Input COD
 
     Log    Step No.11 กดปุ่ม "บันทึกร่าง"
