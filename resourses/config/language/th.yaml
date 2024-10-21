@@ -140,7 +140,7 @@ Booking:
     booking_price: 0.00บาท
   label:
     parcel_cod: Non COD
-    parcel_insure: ไม่มีการซื้อประกัน
+    parcel_not_buy_insure: ไม่มีการซื้อประกัน
     parcel_buy_insure: มีการซื้อประกัน
     text_postcode: รหัสไปรษณีย์ปลายทาง
     text_store_code: รหัสร้าน

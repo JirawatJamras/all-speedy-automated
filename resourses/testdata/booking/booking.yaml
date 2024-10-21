@@ -173,6 +173,7 @@ Booking_S007:
   parcel_insure: 2500
   parcel_insure_check: 2,500.00
   parcel_detail_remark:  ระวังพัสดุเสียหาย
+  price_value: '120'
   promotion:  SPBH5B
   promotion_detail:
     discount:  5 บาท
@@ -190,8 +191,12 @@ Booking_S007:
   cod_fee_value: '0.00'
   total_price_amount:  '1'
   total_price_value:  'NaN'
-  total_price_value2:  '101.00'
+  total_price_value2:  '200.00'
   store_code: '15888'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  
 
 Booking_S010:
   parcel_type:  พัสดุทั่วไป
