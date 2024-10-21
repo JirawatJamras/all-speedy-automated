@@ -2126,7 +2126,7 @@
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S002['sender_name']}</arg>
 <arg>${Booking_S002['sender_phone']}</arg>
@@ -3581,7 +3581,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -4796,7 +4796,7 @@ Without any arguments.</msg>
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -5298,7 +5298,7 @@ Without any arguments.</msg>
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -6415,7 +6415,7 @@ Without any arguments.</msg>
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S003['sender_name']}</arg>
 <arg>${Booking_S003['sender_phone']}</arg>
@@ -8325,7 +8325,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -8816,7 +8816,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -8908,7 +8908,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -10612,7 +10612,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -10696,7 +10696,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -10787,7 +10787,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -11936,7 +11936,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_not_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S005['sender_name']}</arg>
 <arg>${Booking_S005['sender_phone']}</arg>
@@ -13740,7 +13740,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -13821,7 +13821,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -13913,7 +13913,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -14847,7 +14847,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S006['sender_name']}</arg>
 <arg>${Booking_S006['sender_phone']}</arg>
@@ -15020,7 +15020,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -15101,7 +15101,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -15193,7 +15193,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -16469,7 +16469,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking_S005['img_sender_heart']}</arg>
 <arg>${Booking_S005['sender_name']}</arg>
 <arg>${Booking_S005['sender_phone']}</arg>
@@ -17584,7 +17584,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S010['sender_name']}</arg>
 <arg>${Booking_S010['sender_phone']}</arg>
@@ -17751,7 +17751,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -17832,7 +17832,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -17924,7 +17924,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -19187,7 +19187,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_Business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -19268,7 +19268,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_Business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -19360,7 +19360,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_Business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -20724,7 +20724,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S012['sender_name']}</arg>
 <arg>${Booking_S012['sender_phone']}</arg>
@@ -20860,7 +20860,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -20944,7 +20944,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -21035,7 +21035,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -22184,7 +22184,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_not_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S013['sender_name']}</arg>
 <arg>${Booking_S013['sender_phone']}</arg>
@@ -23216,7 +23216,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -23297,7 +23297,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -23389,7 +23389,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -25241,7 +25241,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_not_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S019['sender_name']}</arg>
 <arg>${Booking_S019['sender_phone']}</arg>
@@ -25640,7 +25640,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_not_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S019['sender_name']}</arg>
 <arg>${Booking_S019['sender_phone']}</arg>
@@ -25789,7 +25789,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -25870,7 +25870,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -27296,7 +27296,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S021['sender_name']}</arg>
 <arg>${Booking_S021['sender_phone']}</arg>
@@ -27433,7 +27433,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -27517,7 +27517,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -28683,7 +28683,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S022['sender_name']}</arg>
 <arg>${Booking_S022['sender_phone']}</arg>
@@ -29112,7 +29112,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S022['sender_name']}</arg>
 <arg>${Booking_S022['sender_phone']}</arg>
@@ -29260,7 +29260,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -29344,7 +29344,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -30431,7 +30431,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_not_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S024['sender_name']}</arg>
 <arg>${Booking_S024['sender_phone']}</arg>
@@ -30580,7 +30580,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -30661,7 +30661,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -31859,7 +31859,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S026['sender_name']}</arg>
 <arg>${Booking_S026['sender_phone']}</arg>
@@ -31995,7 +31995,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -32079,7 +32079,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -33245,7 +33245,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S027['sender_name']}</arg>
 <arg>${Booking_S027['sender_phone']}</arg>
@@ -33672,7 +33672,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S027['sender_name']}</arg>
 <arg>${Booking_S027['sender_phone']}</arg>
@@ -33821,7 +33821,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -33905,7 +33905,7 @@ COD : - บาท
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_business_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_dry_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -34810,7 +34810,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S030['sender_name']}</arg>
 <arg>${Booking_S030['sender_phone']}</arg>
@@ -34979,7 +34979,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -35060,7 +35060,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -35152,7 +35152,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -35656,7 +35656,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S031['sender_name']}</arg>
 <arg>${Booking_S031['sender_phone']}</arg>
@@ -35890,7 +35890,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -35971,7 +35971,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -36063,7 +36063,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -36647,7 +36647,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S032['sender_name']}</arg>
 <arg>${Booking_S032['sender_phone']}</arg>
@@ -36820,7 +36820,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -36901,7 +36901,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -36993,7 +36993,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -37571,7 +37571,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S034['sender_name']}</arg>
 <arg>${Booking_S034['sender_phone']}</arg>
@@ -37728,7 +37728,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -37808,7 +37808,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -37899,7 +37899,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -38411,7 +38411,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page After Draft" library="b2c_booking_detail_page">
 <arg>${Booking['text_booking_list']}</arg>
 <arg>${Booking['text_draft_status']}</arg>
-<arg>${Booking.text_blank['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${Booking.img_is_favorite['img_sender_heart']}</arg>
 <arg>${Booking_S035['sender_name']}</arg>
 <arg>${Booking_S035['sender_phone']}</arg>
@@ -38645,7 +38645,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -38724,7 +38724,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>
@@ -38815,7 +38815,7 @@ Variable '${booking_id}' not found. Did you mean:
 <kw name="Verify Booking Detail Page" library="b2c_booking_detail_page">
 <arg>${Booking['text_title_booking_list']}</arg>
 <arg>${booking_id}</arg>
-<arg>${Booking['text_general_customer_parcel_id_4_start_unit']}</arg>
+<arg>${Booking['text_chilled_parcel_id_4_start_unit']}</arg>
 <arg>${booking_name}</arg>
 <arg>${booking_time}</arg>
 <arg>${Booking['text_title_parcel_list']}</arg>

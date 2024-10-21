@@ -49,8 +49,8 @@ Booking:
   text_parcel_booking: จองเลขพัสดุ
   text_edit_complete: แก้ไขสำเร็จ
   text_booking_parcel_complete: จองเลขพัสดุสำเร็จ
-  text_business_customer_parcel_id_4_start_unit: SPBD
-  text_general_customer_parcel_id_4_start_unit: SPBC
+  text_dry_parcel_id_4_start_unit: SPBD
+  text_chilled_parcel_id_4_start_unit: SPBC
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -126,8 +126,8 @@ Booking:
     size_8cm:  กระดาษ หน้ากว้าง 8 ซม.
   text_blank:
     origin_shipping: ''
-    text_business_customer_parcel_id_4_start_unit: '-'
-    text_general_customer_parcel_id_4_start_unit: '-'
+    text_dry_parcel_id_4_start_unit: '-'
+    text_chilled_parcel_id_4_start_unit: '-'
     receiver_name: '-'
     receiver_phone: '-'
     receiver_address: '-'

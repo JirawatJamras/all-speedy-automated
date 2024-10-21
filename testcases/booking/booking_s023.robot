@@ -88,7 +88,7 @@ Booking_S023
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S023['sender_name']}
     ...    ${Booking_S023['sender_phone']}
@@ -101,7 +101,7 @@ Booking_S023
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S023    Verify Draft Paecel  # Peach comment : Parcel สะกดผิดครับ
+    common.Verify Capture Screenshot    Booking_S023    Verify Draft Parcel
 
     Log    Step No.8 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -189,7 +189,7 @@ Booking_S023
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -240,7 +240,7 @@ Booking_S023
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}

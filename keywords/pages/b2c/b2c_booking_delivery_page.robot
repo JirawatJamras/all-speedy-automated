@@ -439,7 +439,7 @@ Click Save Button
 
 Click Next Button
     ${btn}=    Replace String    ${btn_next}    {value}    ${Booking['text_btn_next']}
-    common.Click When Ready    ${btn}
+    common.Click Xpath By JavaScript    ${btn}
 
 Click Add To Favorites In Sender
     common.Click When Ready    ${btn_add_sender_to_favorites}

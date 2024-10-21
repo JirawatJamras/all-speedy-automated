@@ -66,7 +66,7 @@ Booking_S019
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
     ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S019['sender_name']}
     ...    ${Booking_S019['sender_phone']}
@@ -137,7 +137,7 @@ Booking_S019
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
     ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S019['sender_name']}
     ...    ${Booking_S019['sender_phone']}
@@ -228,7 +228,7 @@ Booking_S019
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -278,7 +278,7 @@ Booking_S019
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_business_customer_parcel_id_4_start_unit']}
+    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}

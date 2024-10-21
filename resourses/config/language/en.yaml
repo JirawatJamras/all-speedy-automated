@@ -44,8 +44,8 @@ Booking:
   text_booking_name_label: 'Booking Name:'
   text_next: 'Next'
   text_parcel_booking: Book Parcel Number
-  text_business_customer_parcel_id_4_start_unit: SPBD
-  text_general_customer_parcel_id_4_start_unit: SPBC
+  text_dry_parcel_id_4_start_unit: SPBD
+  text_chilled_parcel_id_4_start_unit: SPBC
   img_is_favorite:
     img_sender_heart:  Red Heart Icon
     img_receiver_heart:  Red Heart Icon
@@ -88,8 +88,8 @@ Booking:
     size_8cm:  8 cm Width Paper
   text_blank:
     origin_shipping: ''
-    text_business_customer_parcel_id_4_start_unit: '-'
-    text_general_customer_parcel_id_4_start_unit: '-'
+    text_dry_parcel_id_4_start_unit: '-'
+    text_chilled_parcel_id_4_start_unit: '-'
     receiver_name: '-'
     receiver_phone: '-'
     receiver_address: '-'

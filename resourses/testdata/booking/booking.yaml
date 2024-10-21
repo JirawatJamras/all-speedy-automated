@@ -441,7 +441,7 @@ Booking_S023:
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
-  booking_name:  Booking DRY
+  booking_name: Booking CHILLED
   booking_item: 1 รายการ
   booking_price: 0.00บาท
   parcel_size:  A2
