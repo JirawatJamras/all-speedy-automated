@@ -26,6 +26,7 @@ Register:
     txt_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
     txt_copy_file_20: สำเนาเอกสาร ภพ. 20
     txt_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
+    txt_copy_of_bank_account: สำเนาหน้าบัญชีธนาคาร
     txt_copy_of_house_registration: สำเนาทะเบียนบ้านของผู้มีอำนาจลงนาม
     txt_permission_form: หนังสือยินยอมให้หักค่าธรรมเนียมการโอนผ่านบัญชีธนาคาร
     txt_other_file: เอกสารอื่นๆ
@@ -35,6 +36,9 @@ Register:
     btn_confirm: ลงทะเบียน
     txt_header_cancel: ยกเลิกการลงทะเบียน
     txt_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    txt_accept: ยอมรับ
+    txt_terms_of_service: เงื่อนไขให้บริการ
+    txt_privacy_policy:  นโยบายความเป็นส่วนตัว
     confirm_cancel_popup: ตกลง
     cancel_cancel_popup: ยกเลิก
 

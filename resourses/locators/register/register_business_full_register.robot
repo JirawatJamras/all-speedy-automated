@@ -21,6 +21,7 @@ ${register_btn_cancel_full_register}    //button//span[text()='{value}']
 ${register_btn_save_full_register}    //button//span[text()='{value}']
 ${register_btn_cancel_popup_full_register}     //button[@type='button']//span[text()='{value}']
 ${register_btn_confirm_full_register}    //b[text()='{value}']
+${register_btn_upload_full_register}    //*[contains(text(),'{value}')]/../../..//input
 
 ${register_dropdown_company_title_name_legal_entity_full_register}    //input[@id='companyTitleName']//..//..//span[@class='ant-select-selection-item']
 ${register_dropdown_title_name_legal_entity_full_register}    //input[@id='titleName']//..//..//span[@class='ant-select-selection-item']
@@ -37,7 +38,6 @@ ${register_txtbox_email_legal_entity_full_register}    //input[@id='email']
 ${register_txtbox_mobile_no_legal_entity_full_register}    //input[@id='mobileNo']
 ${register_txtbox_mobile_ext_legal_entity_full_register}    //input[@id='mobileExt']
 
-${register_btn_upload_full_register}    //*[contains(text(),'{value}')]/../../..//input
-
+${register_checkbox_full_register}    //a[contains(text(),'{value}')]/../..//input
 
 
