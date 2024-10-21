@@ -19,6 +19,7 @@ Booking_S003
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    # Peach comment : เพิ่ม reload --> b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S003    Verify Booking Page For Business Customer
@@ -80,7 +81,7 @@ Booking_S003
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S003    Verify Draft Paecel  # Peach comment : Parcel สะกดผิดครับ
 
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -148,12 +149,13 @@ Booking_S003
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Paecel Detail
+    common.Verify Capture Screenshot    Booking_S003    Verify Paecel Detail  # Peach comment : Parcel สะกดผิดครับ
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
     # เลือกขนาดพัสดุ : ซอง A3
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S003['parcel_size']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S003['parcel_detail_remark']}
+    # Peach comment : เพิ่ม capture screen ครับ
 
     Log    Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
@@ -164,7 +166,7 @@ Booking_S003
     common.Verify Capture Screenshot    Booking_S003    Verify Promotion
 
     Log    Step No.13 ขั้นตอน Promotion
-    # SPBH5B
+    # ระบุโค้ดส่วนลด : SPBH5B
     b2c_booking_delivery_page.Input Promotion    ${Booking_S003['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     b2c_booking_delivery_page.Verify Selected Coupon And Code
@@ -178,6 +180,7 @@ Booking_S003
 
     Log    Step No.14 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
+    # Peach comment : เพิ่ม b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
@@ -280,6 +283,7 @@ Booking_S003
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S003['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    # Peach comment : เพิ่มตัวนี้เพื่อให้มันรอก่อนครับ เดี่ยวมันจะเก้ทค่าจากหน้าเว็บไม่ทัน b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
@@ -319,7 +323,7 @@ Booking_S003
 
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
-    # # Expected
+    # Expected
     b2c_booking_detail_page.Verify Parcel Label
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
