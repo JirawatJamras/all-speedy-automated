@@ -170,7 +170,6 @@ Booking_S030
     common.Verify Capture Screenshot    Booking_S030    Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
-    # เลือกขนาดพัสดุ : ซอง A4
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S030['parcel_size']}
     common.Verify Capture Screenshot    Booking_S030    Verify Create Parcel Page After Input Parcel Detail Step
 

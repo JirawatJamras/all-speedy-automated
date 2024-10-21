@@ -2,15 +2,18 @@
 Verify Booking Page For Business Customer
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_business_customer']}  
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
-    Wait Until Page Contains Element    ${txt_booking_card_skeliton}    timeout=5s
-    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeliton}    timeout=5s
+    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=5s
+    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=5s
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
     Wait Until Element Is Visible    ${btn_add}    timeout=${DEFAULT_TIMEOUT}
     ${title}=    Get Text    ${txt_title_booking}    
     Should Be Equal    ${title}    ${Booking['text_title_booking_for_business_customer']}
 
 Verify Booking Page For General Customer 
-    ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']}  
+    ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']} 
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
+    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=5s
+    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=5s
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
     Wait Until Element Is Visible    ${btn_add}    timeout=30s
     ${title}=    Get Text    ${txt_title_booking}    

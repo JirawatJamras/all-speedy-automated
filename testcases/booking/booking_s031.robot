@@ -153,8 +153,6 @@ Booking_S031
     common.Verify Capture Screenshot    Booking_S031    Verify Parcel Detail
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
-    # เลือกขนาดพัสดุ : ซอง A3
-    # หมายเหตุ : ระวังพัสดุเสียหาย
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S031['parcel_size']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S031['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S031    Verify Create Parcel Page After Input Parcel Detail Step
@@ -173,7 +171,6 @@ Booking_S031
     b2c_booking_delivery_page.Click Use Coupon  # Expected result : b2c_booking_delivery_page.Input Promotion    ${Booking_S031['promotion']}
     # Expected result : b2c_booking_delivery_page.Click Use Code Button
     # Expected
-    Sleep  10s
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S031.promotion_detail['discount']}
     ...    ${Booking_S031.promotion_detail['promotion_name']}
