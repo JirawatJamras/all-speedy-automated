@@ -1,9 +1,10 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Close Browser
+Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+                  ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S011
@@ -133,7 +134,7 @@ Booking_S011
     b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
     ...    ${Booking_S011['receiver_phone']}
     ...    ${Booking_S011['receiver_name']}
-    ...    ${Booking_S011['store_address']}
+    ...    ${Booking_S011['store_address_full']}
     common.Verify Capture Screenshot    Booking_S011    Verify After Create Parcel Page Receiver Step
 
     Log    Step No.10 กดปุ่ม "ถัดไป"

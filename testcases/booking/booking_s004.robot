@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S004
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT    Review_Pass
+    [Tags]    Booking    UAT    Review_Pass    Run
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -19,7 +19,7 @@ Booking_S004
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
-    # Peach comment : เพิ่ม reload --> b2c_booking_detail_page.Wait Until Loading Icon Success
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Page For Business Customer
@@ -157,7 +157,7 @@ Booking_S004
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S004['parcel_cod_check']}
-    common.Verify Capture Screenshot    Booking_S004    Verify Draft Paecel  # Peach comment : Parcel สะกดผิดครับ
+    common.Verify Capture Screenshot    Booking_S004    Verify Draft Parcel  
 
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -228,7 +228,7 @@ Booking_S004
     # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    # Peach comment : ไม่มี ${booking_time}    Get Booking Time
+    ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
@@ -330,7 +330,7 @@ Booking_S004
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S004['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
-    # Peach comment : เพิ่มตัวนี้เพื่อให้มันรอก่อนครับ เดี่ยวมันจะเก้ทค่าจากหน้าเว็บไม่ทัน b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
