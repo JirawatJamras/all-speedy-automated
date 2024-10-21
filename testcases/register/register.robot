@@ -360,7 +360,6 @@ Register_S013
     Log    Step No.3 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
-    #Inprogress
     #Tab พัสดุทั่วไป
     register_business_full_register.Verify Service Information Page Tab Dry Parcel
     #Tab พัสดุควบคุมอุณหภูมิ
@@ -369,7 +368,15 @@ Register_S013
     register_business_full_register.Verify Service Information Page Tab Return Business
 
     Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
+    #Inprogress
+    register_business_full_register.Click Tab Dry Parcel
+    register_business_full_register.Click Select Dry Parcel
+    register_business_full_register.Select Add Service Cod Dry Parcel
+    register_business_full_register.Select Add Service Insuaration Dry Parcel
+
     
+    #...    ${Register_S013['add_cod']}
+
     Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
     register_business_full_register.Click Save
 

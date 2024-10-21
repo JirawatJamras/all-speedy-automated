@@ -30,6 +30,7 @@ Register:
     txt_btn_add_service_cod: บริการเก็บเงินปลายทาง
     txt_btn_add_service_insurance: ประกันคุ้มครองพัสดุ
     txt_btn_add_service_express: บริการส่งด่วน
+    txt_btn_select_parcel: เลือก
     txt_service_usage_information_topic: ข้อมูลการใช้บริการ
     txt_type_product: 'ประเภทสินค้าหลักที่จัดส่ง *'
     txt_number_by_day: 'จำนวนการจัดส่งเฉลี่ยต่อวัน *'
@@ -182,6 +183,15 @@ Register_S012:
 Register_S013:
   mobile_company: '0200000000'
   mobile_company_ext: '1234'
+  dry_parcel:
+    add_cod: true
+    add_insuaration: true
+    type_product: เสื้อผ้า
+    number_by_day: 10-99 ชิ้น
+    sale_channel: LAZADA
+    vat:
+    remark:
+
 
 Register_S017:
   company_data:

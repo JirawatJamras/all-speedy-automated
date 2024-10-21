@@ -43,7 +43,18 @@ ${register_btn_confirm_full_register}    //b[text()='{value}']
 ${register_btn_upload_full_register}    //*[contains(text(),'{value}')]/../../..//input
 ${register_btn_accept_terms_of_service_full_register}    //a[contains(text(),'{value}')]/../..//input
 ${register_btn_accept_privacy_policy_full_register}    //a[contains(text(),'{value}')]/../..//input
+
 ${register_btn_add_service_full_register}    //div[@class='flex items-center gap-1']//span[text()='{value}']
+${register_btn_add_cod_dry_parcel}    //input[@id='parcelType_parcelDry_isCod']//..//..//span//div
+${register_btn_add_insurance_dry_parcel}    //input[@id='parcelType_parcelDry_isInsure']//..//..//span//div
+${register_btn_add_cod_chill_parcel}    //input[@id='parcelType_parcelChill_isCodOfTemp']//..//..//span//div
+${register_btn_add_express_return_business}    //input[@id='parcelType_parcelReturnBusiness_isExpressReturn']//..//..//span//div
+${register_btn_add_insurance_return_business}    //input[@id='parcelType_parcelReturnBusiness_isInsuReturn']//..//..//span//div
+
+
+${register_btn_select_dry_parcel}    //button[@id="parcelType_parcelDry_isActive"]//div[text()='{value}']
+${register_btn_select_chill_parcel}    //button[@id="parcelType_parcelChill_isActive"]//div[text()='{value}']
+${register_btn_select_return_business}    //button[@id="parcelType_parcelReturnBusiness_isActive"]//div[text()='{value}']
 
 ${register_dropdown_company_title_name_legal_entity_full_register}    //input[@id='companyTitleName']//..//..//span[@class='ant-select-selection-item']
 ${register_dropdown_title_name_legal_entity_full_register}    //input[@id='titleName']//..//..//span[@class='ant-select-selection-item']

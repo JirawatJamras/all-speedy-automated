@@ -71,18 +71,48 @@ Input Mobile Company Ext Legal Entity
 
 #Both
 #Tab พัสดุทั่วไป
+Click Tab Dry Parcel
+    ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['txt_tab_dry_parcel']}
+    common.Click when ready    ${txt_tab}
+
+Click Tab Chill Parcel
+    ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['txt_tab_chill_parcel']}
+    common.Click when ready    ${txt_tab}
+
+Click Tab Return Business
+    ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['txt_tab_return_business']}
+    common.Click when ready    ${txt_tab}
+
+Click Select Dry Parcel
+    ${button_select}=    Replace String    ${register_btn_select_dry_parcel}    {value}    ${Register.Full_register['txt_btn_select_parcel']}
+    common.Click when ready    ${button_select}
+
+Click Select Chill Parcel
+    ${button_select}=    Replace String    ${register_btn_select_chill_parcel}    {value}    ${Register.Full_register['txt_btn_select_parcel']}
+    common.Click when ready    ${button_select}
+
+Click Select Return Business
+    ${button_select}=    Replace String    ${register_btn_select_return_business}    {value}    ${Register.Full_register['txt_btn_select_parcel']}
+    common.Click when ready    ${button_select}
+
+Select Add Service Cod Dry Parcel
+    common.Click when ready    ${register_btn_add_cod_dry_parcel}
+    
+Select Add Service Insuaration Dry Parcel
+    common.Click when ready    ${register_btn_add_insurance_dry_parcel}
+
+
 Verify Service Information Page Tab Dry Parcel  
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['txt_title_service_information']}
-    ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['txt_tab_dry_parcel']}        
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_header_service_information']}
     
     Scroll Window To Vertical    0
-    Page Should Contain Element    ${txt_title}   
-    common.Click when ready    ${txt_tab}
+    Page Should Contain Element    ${txt_title}
+    Click Tab Dry Parcel   
     Page Should Contain Element    ${txt_header}
 
-    ${txt_add_cod}=    Replace String    ${register_btn_add_service_full_register}    {value}    ${Register.Full_register['txt_btn_add_service_cod']}
-    ${txt_add_insuaration}=    Replace String    ${register_btn_add_service_full_register}    {value}    ${Register.Full_register['txt_btn_add_service_insurance']}
+    ${txt_add_cod}=    Get Text    ${register_btn_add_cod_dry_parcel}
+    ${txt_add_insuaration}=    Get Text    ${register_btn_add_insurance_dry_parcel}
     ${txt_sub_topic}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_service_usage_information_topic']}
     ${label_type_product}=    Get Text    ${register_txt_type_product_general_dry_parcel}
     ${label_number_by_day}=    Get Text    ${register_txt_number_by_day_dry_parcel}
@@ -90,10 +120,9 @@ Verify Service Information Page Tab Dry Parcel
     ${label_vat}=    Get Text    ${register_txt_vat_dry_parcel}
     ${label_remark}=    Get Text   ${register_txt_remark_dry_parcel} 
 
-    Page Should Contain Element    ${txt_add_cod}
-    Page Should Contain Element    ${txt_add_insuaration}
+    Should Be Equal As Strings    ${txt_add_cod}    ${Register.Full_register['txt_btn_add_service_cod']}
+    Should Be Equal As Strings    ${txt_add_insuaration}    ${Register.Full_register['txt_btn_add_service_insurance']}
     Page Should Contain Element    ${txt_sub_topic}
-    
     Should Be Equal As Strings    ${label_type_product}    ${Register.Full_register['txt_type_product']}
     Should Be Equal As Strings    ${label_number_by_day}    ${Register.Full_register['txt_number_by_day']}
     Should Be Equal As Strings    ${label_sale_channel}    ${Register.Full_register['txt_sale_channel']}
@@ -101,14 +130,15 @@ Verify Service Information Page Tab Dry Parcel
     Should Be Equal As Strings    ${label_remark}    ${Register.Full_register['txt_remark']}
 
 Verify Service Information Page Tab Chill Parcel
-    ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['txt_tab_chill_parcel']}
+    ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['txt_title_service_information']}
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_header_service_information']}
      
     Scroll Window To Vertical    0 
-    common.Click when ready    ${txt_tab}
+    Page Should Contain Element    ${txt_title}
+    Click Tab Chill Parcel
     Page Should Contain Element    ${txt_header}
 
-    ${txt_add_cod}=    Replace String    ${register_btn_add_service_full_register}    {value}    ${Register.Full_register['txt_btn_add_service_cod']}
+    ${txt_add_cod}=    Get Text    ${register_btn_add_cod_chill_parcel}
     ${txt_sub_topic}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_service_usage_information_topic']}
     ${label_type_product}=    Get Text    ${register_txt_type_product_general_chill_parcel}
     ${label_number_by_day}=    Get Text    ${register_txt_number_by_day_chill_parcel}
@@ -116,9 +146,8 @@ Verify Service Information Page Tab Chill Parcel
     ${label_vat}=    Get Text    ${register_txt_vat_chill_parcel}
     ${label_remark}=    Get Text   ${register_txt_remark_chill_parcel} 
 
-    Page Should Contain Element    ${txt_add_cod}
-    Page Should Contain Element    ${txt_sub_topic}
-    
+    Should Be Equal As Strings    ${txt_add_cod}    ${Register.Full_register['txt_btn_add_service_cod']}
+    Page Should Contain Element    ${txt_sub_topic}     
     Should Be Equal As Strings    ${label_type_product}    ${Register.Full_register['txt_type_product']}
     Should Be Equal As Strings    ${label_number_by_day}    ${Register.Full_register['txt_number_by_day']}
     Should Be Equal As Strings    ${label_sale_channel}    ${Register.Full_register['txt_sale_channel']}
@@ -127,26 +156,27 @@ Verify Service Information Page Tab Chill Parcel
 
 
 register_business_full_register.Verify Service Information Page Tab Return Business
-    ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['txt_tab_return_business']}
+    ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['txt_title_service_information']}
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_header_service_information']}
      
     Scroll Window To Vertical    0
-    common.Click when ready    ${txt_tab}
+    Page Should Contain Element    ${txt_title}
+    Click Tab Return Business
     Page Should Contain Element    ${txt_header}
 
-    ${txt_add_express}=    Replace String    ${register_btn_add_service_full_register}    {value}    ${Register.Full_register['txt_btn_add_service_express']}
-    ${txt_add_insuaration}=    Replace String    ${register_btn_add_service_full_register}    {value}    ${Register.Full_register['txt_btn_add_service_insurance']}
+    ${txt_add_express}=    Get Text    ${register_btn_add_express_return_business}
+    ${txt_add_insuaration}=    Get Text    ${register_btn_add_insurance_return_business}
+    
     ${txt_sub_topic}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_service_usage_information_topic']}
     ${label_type_product}=    Get Text    ${register_txt_type_product_general_return_business}
     ${label_number_by_day}=    Get Text    ${register_txt_number_by_day_return_business}
     ${label_sale_channel}=    Get Text    ${register_txt_sale_channel_return_business}
     ${label_vat}=    Get Text    ${register_txt_vat_return_business}
-    ${label_remark}=    Get Text   ${register_txt_remark_return_business} 
+    ${label_remark}=    Get Text    ${register_txt_remark_return_business} 
 
-    Page Should Contain Element    ${txt_add_express}
-    Page Should Contain Element    ${txt_add_insuaration}
+    Should Be Equal As Strings    ${txt_add_express}    ${Register.Full_register['txt_btn_add_service_express']}
+    Should Be Equal As Strings    ${txt_add_insuaration}    ${Register.Full_register['txt_btn_add_service_insurance']}
     Page Should Contain Element    ${txt_sub_topic}
-    
     Should Be Equal As Strings    ${label_type_product}    ${Register.Full_register['txt_type_product']}
     Should Be Equal As Strings    ${label_number_by_day}    ${Register.Full_register['txt_number_by_day']}
     Should Be Equal As Strings    ${label_sale_channel}    ${Register.Full_register['txt_sale_channel']}
