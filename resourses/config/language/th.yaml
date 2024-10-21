@@ -133,6 +133,7 @@ Booking:
     receiver_address: '-'
     receiver_postcode_5_digits: '-'
     receiver_postcode_full: '-'
+    receiver_store_address: '-'
     parcel_size: '-'
     price_value: '-'
     buy_insurance: '-'

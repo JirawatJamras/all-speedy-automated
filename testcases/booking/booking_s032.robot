@@ -9,7 +9,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S032
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก M (มีประกัน เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Review_Pass
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page

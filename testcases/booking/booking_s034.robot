@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S034 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT    Run
+    [Tags]    Booking    UAT    In_Review
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -65,6 +65,7 @@ Booking_S034
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
+    b2c_booking_delivery_page.Select Send To Home Tab
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
@@ -82,21 +83,20 @@ Booking_S034
     common.Verify Capture Screenshot    Booking_S034    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
-    # สถานที่รับพัสดุ : ส่งร้าน 7-11
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S034['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S034['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
     b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S034['receiver_store_code_5_digits']}
-    b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S034['receiver_store_full']}
+    b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S034['receiver_store_address']}
     b2c_booking_delivery_page.Click Store On Map
     # Expected
-    b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S034['receiver_store_address]}
+    b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S034['receiver_store_full']}
     common.Verify Capture Screenshot    Booking_S034    Verify Create Parcel Page After Input Receiver Step
 
     Log    Step No.8 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page After Draft
+    b2c_booking_detail_page.Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}
@@ -106,7 +106,7 @@ Booking_S034
     ...    ${Booking.img_is_favorite['img_receiver_heart']}  # Expected result : ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S034['receiver_name']}
     ...    ${Booking_S034['receiver_phone']}
-    ...    ${Booking_S034['receiver_store_full']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150  # ${Booking_S034['receiver_store_address']}
     ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -168,8 +168,8 @@ Booking_S034
     common.Verify Capture Screenshot    Booking_S034    Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
-    # เลือกขนาดพัสดุ : ซอง A4
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S034['parcel_size']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S034    Verify Create Parcel Page After Input Parcel Detail Step
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
@@ -187,7 +187,7 @@ Booking_S034
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}  # Expected result : {Booking['text_chilled_parcel_id_4_start_unit']}
@@ -213,7 +213,7 @@ Booking_S034
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S034['total_price_amount']}
+    ...    ${Booking.text_default['total_price_amount']}  # Expected result : ${Booking_S034['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S034['total_price_value1']}
     ...    ${EMPTY}  # Expected result : ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
@@ -237,7 +237,7 @@ Booking_S034
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}  # Expected result : {Booking['text_chilled_parcel_id_4_start_unit']}
@@ -251,7 +251,7 @@ Booking_S034
     ...    ${Booking.img_is_favorite['img_receiver_heart']}  # Expected result : ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S034['receiver_name']}
     ...    ${Booking_S034['receiver_phone']}
-    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S034['receiver_store_address']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150  # Expected result : ${Booking_S034['receiver_store_address']}
     ...    ${Booking_S034['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -263,7 +263,7 @@ Booking_S034
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S034['total_price_amount']}
+    ...    ${Booking.text_default['total_price_amount']}  # Expected result : ${Booking_S034['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}  # Expected result : ${Booking_S034['total_price_value1']}
     ...    ${EMPTY}  # Expected result : ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
@@ -289,7 +289,7 @@ Booking_S034
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}  # Expected result : {Booking['text_chilled_parcel_id_4_start_unit']}
@@ -303,7 +303,7 @@ Booking_S034
     ...    ${Booking.img_is_favorite['img_receiver_heart']}  # Expected result : ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S034['receiver_name']}
     ...    ${Booking_S034['receiver_phone']}
-    ...    ${Booking_S034['receiver_store_full']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150  # Expected result : ${Booking_S034['receiver_store_full']}
     ...    ${Booking_S034['parcel_size']}
     ...    ${Booking_S034['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -326,11 +326,11 @@ Booking_S034
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # Expected
-    b2c_booking_detail_page.Verify Parcel Label
+    b2c_booking_detail_page.Verify Parcel Label When Select 7-ELEVEN Store
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
-    ...    ${Booking.label['text_store_code']}
+    ...    ${Booking.label['text_destination_deparment_code']}
     ...    ${Booking_S034['receiver_store_code_5_digits']}
     ...    ${Booking_S034['parcel_package_type']}
     ...    ${Booking_S034['parcel_size']}
@@ -340,7 +340,7 @@ Booking_S034
     ...    ${Booking_S034['sender_postcode_full']}
     ...    ${Booking_S034['receiver_name']}
     ...    ${Booking_S034['receiver_phone']}
-    ...    ${Booking_S034['receiver_store_full']}
+    ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150  # Expected result : ${Booking_S034['receiver_store_address']}
     ...    ${Booking.label['parcel_cod']}
     ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
