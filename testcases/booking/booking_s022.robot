@@ -136,16 +136,16 @@ Booking_S022
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    ################ แก้ Verify Create Parcel Page Detail Step ของ พัสดุควบคุมอุณหภูมิ
-    # b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    # ...    ${Booking.general_parcel['parcel_detail_A4']}
-    # ...    ${Booking.general_parcel['parcel_detail_A3']}
-    # ...    ${Booking.general_parcel['parcel_detail_XS']}
-    # ...    ${Booking.general_parcel['parcel_detail_S']}
-    # ...    ${Booking.general_parcel['parcel_detail_M']}
-    # ...    ${Booking.general_parcel['parcel_detail_L']}
-    # ...    ${Booking.general_parcel['parcel_detail_XL']}
-    # ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    ################ แก้ Verify Parcel Detail Page of Create Parcel [Dry Parcel] ของ พัสดุควบคุมอุณหภูมิ
+    # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
+    # ...    ${Booking.dry_parcel['parcel_detail_A4']}
+    # ...    ${Booking.dry_parcel['parcel_detail_A3']}
+    # ...    ${Booking.dry_parcel['parcel_detail_XS']}
+    # ...    ${Booking.dry_parcel['parcel_detail_S']}
+    # ...    ${Booking.dry_parcel['parcel_detail_M']}
+    # ...    ${Booking.dry_parcel['parcel_detail_L']}
+    # ...    ${Booking.dry_parcel['parcel_detail_XL']}
+    # ...    ${Booking.dry_parcel['parcel_detail_XXL']}
     # ...    ${Booking['parcel_detail_insure_amount']}
     # ...    ${Booking['parcel_detail_cod']}
     # ...    ${Booking['parcel_detail_remark']}
@@ -216,16 +216,16 @@ Booking_S022
     Log    Step No.15 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    ################ แก้ Verify Create Parcel Page Detail Step ของ พัสดุควบคุมอุณหภูมิ
-    # b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    # ...    ${Booking.general_parcel['parcel_detail_A4']}
-    # ...    ${Booking.general_parcel['parcel_detail_A3']}
-    # ...    ${Booking.general_parcel['parcel_detail_XS']}
-    # ...    ${Booking.general_parcel['parcel_detail_S']}
-    # ...    ${Booking.general_parcel['parcel_detail_M']}
-    # ...    ${Booking.general_parcel['parcel_detail_L']}
-    # ...    ${Booking.general_parcel['parcel_detail_XL']}
-    # ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    ################ แก้ Verify Parcel Detail Page of Create Parcel [Dry Parcel] ของ พัสดุควบคุมอุณหภูมิ
+    # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
+    # ...    ${Booking.dry_parcel['parcel_detail_A4']}
+    # ...    ${Booking.dry_parcel['parcel_detail_A3']}
+    # ...    ${Booking.dry_parcel['parcel_detail_XS']}
+    # ...    ${Booking.dry_parcel['parcel_detail_S']}
+    # ...    ${Booking.dry_parcel['parcel_detail_M']}
+    # ...    ${Booking.dry_parcel['parcel_detail_L']}
+    # ...    ${Booking.dry_parcel['parcel_detail_XL']}
+    # ...    ${Booking.dry_parcel['parcel_detail_XXL']}
     # ...    ${Booking['parcel_detail_insure_amount']}
     # ...    ${Booking['parcel_detail_cod']}
     # ...    ${Booking['parcel_detail_remark']}

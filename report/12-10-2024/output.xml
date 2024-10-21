@@ -3009,14 +3009,14 @@ COD : - บาท
 <status status="PASS" starttime="20241012 21:33:11.105" endtime="20241012 21:33:12.088"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -7635,14 +7635,14 @@ COD : - บาท
 <status status="PASS" starttime="20241012 21:36:22.474" endtime="20241012 21:36:23.450"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -10450,14 +10450,14 @@ COD : - บาท
 <status status="NOT RUN" starttime="20241012 21:38:24.822" endtime="20241012 21:38:24.822"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -10565,14 +10565,14 @@ COD : - บาท
 <status status="NOT RUN" starttime="20241012 21:38:24.827" endtime="20241012 21:38:24.827"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -13137,14 +13137,14 @@ COD : - บาท
 <status status="PASS" starttime="20241012 21:40:38.158" endtime="20241012 21:40:39.138"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -14951,14 +14951,14 @@ COD : - บาท
 <status status="NOT RUN" starttime="20241012 21:42:10.247" endtime="20241012 21:42:10.247"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -17686,14 +17686,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 21:45:09.849" endtime="20241012 21:45:09.849"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -19097,14 +19097,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 21:46:38.137" endtime="20241012 21:46:38.137"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -20677,14 +20677,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 21:48:12.633" endtime="20241012 21:48:12.633"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -20813,14 +20813,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 21:48:12.637" endtime="20241012 21:48:12.637"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -23117,14 +23117,14 @@ COD : - บาท
 <status status="NOT RUN" starttime="20241012 21:50:08.501" endtime="20241012 21:50:08.501"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -34914,14 +34914,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 22:01:16.351" endtime="20241012 22:01:16.351"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -35800,14 +35800,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 22:01:27.126" endtime="20241012 22:01:27.126"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -36751,14 +36751,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 22:01:35.581" endtime="20241012 22:01:35.581"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -37663,14 +37663,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 22:01:44.077" endtime="20241012 22:01:44.077"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>
@@ -38555,14 +38555,14 @@ Variable '${booking_id}' not found. Did you mean:
 <status status="NOT RUN" starttime="20241012 22:01:52.549" endtime="20241012 22:01:52.549"/>
 </kw>
 <kw name="Verify Create Parcel Page Detail Step" library="b2c_booking_delivery_page">
-<arg>${Booking.general_parcel['parcel_detail_A4']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_A3']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XS']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_S']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_M']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_L']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XL']}</arg>
-<arg>${Booking.general_parcel['parcel_detail_XXL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A4']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_A3']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XS']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_S']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_M']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_L']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XL']}</arg>
+<arg>${Booking.dry_parcel['parcel_detail_XXL']}</arg>
 <arg>${Booking['parcel_detail_insure_amount']}</arg>
 <arg>${Booking['parcel_detail_cod']}</arg>
 <arg>${Booking['parcel_detail_remark']}</arg>

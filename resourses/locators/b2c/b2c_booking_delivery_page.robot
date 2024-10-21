@@ -26,6 +26,11 @@ ${btn_parcel_select_M}    //strong[text()= '{value}']/../../../div[@class='ant-c
 ${btn_parcel_select_L}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_XL}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_XXL}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_S0}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_S1}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_S2}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_A1}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
+${btn_parcel_select_A2}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_use_code}    //button//span[text()='ใช้โค้ด']
 ${btn_use_coupon}    //div[contains(@class,'ant-row max-sm:hidden')]//span[text()='{value}']/..
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
@@ -87,7 +92,7 @@ ${txtbox_full_postcode_receiver}    //span[text()='{value} ']/../../..//div[@cla
 ${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//textarea[@id='create_parcel_form_remark']
 ${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่วนลด']
 ${txtbox_cod}    //input[@id='create_parcel_form_codValue']
-${txtbox_insure_amount}    //label[text()='จำนวนเงินซื้อประกัน']/../..//input[@id='create_parcel_form_insureAmount']
+${txtbox_insure_amount}    //label[text()='{value}']/../..//input[@id='create_parcel_form_insureAmount']
 ${txtbox_store_receiver}    //div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input']
 ${txtbox_store_receiver_value}    //div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input']/../../span[2]
 

@@ -80,7 +80,7 @@ Booking:
       parcel_number:  '0 รายการ'
       cut_off_time:  '11:15:00'
       price:  '0 บาท'
-  general_parcel:
+  dry_parcel:
     parcel_A4: A4
     parcel_detail_A4: A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ชม.
     parcel_A3: A3
@@ -103,6 +103,17 @@ Booking:
     parcel_XXL: XXL
     parcel_text_size_XXL: (ใหญ่พิเศษ)
     parcel_detail_XXL: XXL กล่อง XXL (ใหญ่พิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 200 ชม.
+  chilled_parcel:
+    parcel_S0: S0
+    parcel_detail_S0: S0 กล่อง S0 (S0) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 400 ชม.
+    parcel_S1: S1
+    parcel_detail_S1: S1 กล่อง S1 (S1) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 500 ชม.
+    parcel_S2: S2
+    parcel_detail_S2: S2 กล่อง S2 (S2) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 700 ชม.
+    parcel_A1: A1
+    parcel_detail_A1: A1 กล่อง A1 (A1) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 800 ชม.
+    parcel_A2: A2
+    parcel_detail_A2: A2 กล่อง A2 (A2) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 900 ชม.
   parcel_detail_insure_amount: จำนวนเงินซื้อประกัน
   parcel_detail_cod: เก็บเงินปลายทาง
   parcel_detail_remark: หมายเหตุ

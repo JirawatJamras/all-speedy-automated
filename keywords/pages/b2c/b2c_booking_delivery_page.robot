@@ -601,30 +601,30 @@ Click Parcel Booking Button
     ${btn_parcel_booking}=   Replace String    ${btn_parcel_booking}    {value}    ${Booking['text_parcel_booking']}
     common.Click When Ready    ${btn_parcel_booking}
     
-Verify Create Parcel Page Detail Step
+Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     [Arguments]    ${detail_A4}    ${detail_A3}    ${detail_XS}    ${detail_S}    ${detail_M}    ${detail_L}    ${detail_XL}    ${detail_XXL}    ${insure_amount}    ${cod}    ${remark}
-    ${btn_parcel_select_A4}=    Replace String    ${btn_parcel_select_A4}    {value}    ${Booking.general_parcel['parcel_A4']}
+    ${btn_parcel_select_A4}=    Replace String    ${btn_parcel_select_A4}    {value}    ${Booking.dry_parcel['parcel_A4']}
     ${actual_detail_A4}=    Get Text    ${btn_parcel_select_A4}
     ${detail_A4_replace}=  Replace String   ${actual_detail_A4}   \n   ${SPACE}
-    ${btn_parcel_select_A3}=    Replace String    ${btn_parcel_select_A3}    {value}    ${Booking.general_parcel['parcel_A3']}
+    ${btn_parcel_select_A3}=    Replace String    ${btn_parcel_select_A3}    {value}    ${Booking.dry_parcel['parcel_A3']}
     ${actual_detail_A3}=    Get Text    ${btn_parcel_select_A3} 
     ${detail_A3_replace}=  Replace String   ${actual_detail_A3}   \n   ${SPACE}
-    ${btn_parcel_select_XS}=    Replace String    ${btn_parcel_select_XS}    {value}    ${Booking.general_parcel['parcel_XS']}
+    ${btn_parcel_select_XS}=    Replace String    ${btn_parcel_select_XS}    {value}    ${Booking.dry_parcel['parcel_XS']}
     ${actual_detail_XS}=    Get Text    ${btn_parcel_select_XS}
     ${detail_XS_replace}=  Replace String   ${actual_detail_XS}   \n   ${SPACE}
-    ${btn_parcel_select_S}=    Replace String    ${btn_parcel_select_S}    {value}    ${Booking.general_parcel['parcel_S']}
+    ${btn_parcel_select_S}=    Replace String    ${btn_parcel_select_S}    {value}    ${Booking.dry_parcel['parcel_S']}
     ${actual_detail_S}=    Get Text    ${btn_parcel_select_S} 
     ${detail_S_replace}=  Replace String   ${actual_detail_S}   \n   ${SPACE}
-    ${btn_parcel_select_M}=    Replace String    ${btn_parcel_select_M}    {value}    ${Booking.general_parcel['parcel_M']}
+    ${btn_parcel_select_M}=    Replace String    ${btn_parcel_select_M}    {value}    ${Booking.dry_parcel['parcel_M']}
     ${actual_detail_M}=    Get Text    ${btn_parcel_select_M}
     ${detail_M_replace}=  Replace String   ${actual_detail_M}   \n   ${SPACE}
-    ${btn_parcel_select_L}=    Replace String    ${btn_parcel_select_L}    {value}    ${Booking.general_parcel['parcel_L']}
+    ${btn_parcel_select_L}=    Replace String    ${btn_parcel_select_L}    {value}    ${Booking.dry_parcel['parcel_L']}
     ${actual_detail_L}=    Get Text    ${btn_parcel_select_L}
     ${detail_L_replace}=  Replace String   ${actual_detail_L}   \n   ${SPACE}
-    ${btn_parcel_select_XL}=    Replace String    ${btn_parcel_select_XL}    {value}    ${Booking.general_parcel['parcel_XL']}
+    ${btn_parcel_select_XL}=    Replace String    ${btn_parcel_select_XL}    {value}    ${Booking.dry_parcel['parcel_XL']}
     ${actual_detail_XL}=    Get Text    ${btn_parcel_select_XL}
     ${detail_XL_replace}=  Replace String   ${actual_detail_XL}   \n   ${SPACE}
-    ${btn_parcel_select_XXL}=    Replace String    ${btn_parcel_select_XXL}    {value}    ${Booking.general_parcel['parcel_XXL']}
+    ${btn_parcel_select_XXL}=    Replace String    ${btn_parcel_select_XXL}    {value}    ${Booking.dry_parcel['parcel_XXL']}
     ${actual_detail_XXL}=    Get Text    ${btn_parcel_select_XXL}
     ${detail_XXL_replace}=  Replace String   ${actual_detail_XXL}   \n   ${SPACE}
     ${txt_insure_amount}=    Replace String    ${txt_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
@@ -641,6 +641,40 @@ Verify Create Parcel Page Detail Step
     Should Be Equal    ${detail_L_replace}    ${detail_L}
     Should Be Equal    ${detail_XL_replace}    ${detail_XL}
     Should Be Equal    ${detail_XXL_replace}    ${detail_XXL}
+    Should Be Equal    ${actual_cod}    ${cod}
+    Should Be Equal    ${actual_insure_amount}    ${insure_amount}
+    Should Be Equal    ${actual_remark}    ${remark}
+
+Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
+    [Arguments]    ${detail_S0}    ${detail_S1}    ${detail_S2}    ${detail_A1}    ${detail_A2}    ${insure_amount}    ${cod}    ${remark}
+    ${btn_parcel_select_S0}=    Replace String    ${btn_parcel_select_S0}    {value}    ${Booking.chilled_parcel['parcel_S0']}
+    ${actual_detail_S0}=    Get Text    ${btn_parcel_select_S0}
+    ${actual_detail_S0}=  Replace String   ${actual_detail_S0}   \n   ${SPACE}
+    ${btn_parcel_select_S1}=    Replace String    ${btn_parcel_select_S1}    {value}    ${Booking.chilled_parcel['parcel_S1']}
+    ${actual_detail_S1}=    Get Text    ${btn_parcel_select_S1}
+    ${actual_detail_S1}=  Replace String   ${actual_detail_S1}   \n   ${SPACE}
+    ${btn_parcel_select_S2}=    Replace String    ${btn_parcel_select_S2}    {value}    ${Booking.chilled_parcel['parcel_S2']}
+    ${actual_detail_S2}=    Get Text    ${btn_parcel_select_S2}
+    ${actual_detail_S2}=  Replace String   ${actual_detail_S2}   \n   ${SPACE}
+    ${btn_parcel_select_A1}=    Replace String    ${btn_parcel_select_A1}    {value}    ${Booking.chilled_parcel['parcel_A1']}
+    ${actual_detail_A1}=    Get Text    ${btn_parcel_select_A1}
+    ${actual_detail_A1}=  Replace String   ${actual_detail_A1}   \n   ${SPACE}
+    ${btn_parcel_select_A2}=    Replace String    ${btn_parcel_select_A2}    {value}    ${Booking.chilled_parcel['parcel_A2']}
+    ${actual_detail_A2}=    Get Text    ${btn_parcel_select_A2}
+    ${actual_detail_A2}=  Replace String   ${actual_detail_A2}   \n   ${SPACE}
+    ${txt_insure_amount}=    Replace String    ${txt_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    ${actual_insure_amount}=    Get Text    ${txt_insure_amount}
+    ${txt_cod}=    Replace String    ${txt_cod}    {value}    ${Booking['parcel_detail_cod']}
+    ${actual_cod}=    Get Text    ${txt_cod}
+    ${txt_remark}=    Replace String    ${txt_remark}    {value}    ${Booking['parcel_detail_remark']}
+    ${actual_remark}=    Get Text    ${txt_remark}
+    ${txtbox_insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    # Element Should Be Disabled    ${txtbox_insure_amount}    # This is a part of expected result script, but commented because of Defect083
+    Should Be Equal    ${actual_detail_S0}    ${detail_S0}
+    Should Be Equal    ${actual_detail_S1}    ${detail_S1}
+    Should Be Equal    ${actual_detail_S2}    ${detail_S2}
+    Should Be Equal    ${actual_detail_A1}    ${detail_A1}
+    Should Be Equal    ${actual_detail_A2}    ${detail_A2}
     Should Be Equal    ${actual_cod}    ${cod}
     Should Be Equal    ${actual_insure_amount}    ${insure_amount}
     Should Be Equal    ${actual_remark}    ${remark}
@@ -666,6 +700,7 @@ Input COD
     
 Input Insurance
     [Arguments]    ${value}
+    ${txtbox_insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
     Input When Ready    ${txtbox_insure_amount}    ${value}
 
 Verify Selected Coupon And Code

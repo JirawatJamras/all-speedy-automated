@@ -381,12 +381,12 @@ Verify Parcel Label
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
     ${parcel_text_size}=    Set Variable    ${EMPTY}
     IF    '${parcel_box}' == 'กล่อง'
-        Run Keyword If    '${parcel_size}' == 'XS'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_XS']}
-        Run Keyword If    '${parcel_size}' == 'S'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_S']}
-        Run Keyword If    '${parcel_size}' == 'M'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_M']}
-        Run Keyword If    '${parcel_size}' == 'L'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_L']}
-        Run Keyword If    '${parcel_size}' == 'XL'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_XL']}
-        Run Keyword If    '${parcel_size}' == 'XXL'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_XXL']}
+        Run Keyword If    '${parcel_size}' == 'XS'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XS']}
+        Run Keyword If    '${parcel_size}' == 'S'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_S']}
+        Run Keyword If    '${parcel_size}' == 'M'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_M']}
+        Run Keyword If    '${parcel_size}' == 'L'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_L']}
+        Run Keyword If    '${parcel_size}' == 'XL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XL']}
+        Run Keyword If    '${parcel_size}' == 'XXL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XXL']}
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
     ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
@@ -423,12 +423,12 @@ Verify Parcel Label When Select 7-ELEVEN Store
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
     ${parcel_text_size}=    Set Variable    ${EMPTY}
     IF    '${parcel_box}' == 'กล่อง'
-        Run Keyword If    '${parcel_size}' == 'XS'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_XS']}
-        Run Keyword If    '${parcel_size}' == 'S'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_S']}
-        Run Keyword If    '${parcel_size}' == 'M'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_M']}
-        Run Keyword If    '${parcel_size}' == 'L'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_L']}
-        Run Keyword If    '${parcel_size}' == 'XL'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_XL']}
-        Run Keyword If    '${parcel_size}' == 'XXL'    Set Suite Variable    ${parcel_text_size}    ${Booking.general_parcel['parcel_text_size_XXL']}
+        Run Keyword If    '${parcel_size}' == 'XS'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XS']}
+        Run Keyword If    '${parcel_size}' == 'S'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_S']}
+        Run Keyword If    '${parcel_size}' == 'M'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_M']}
+        Run Keyword If    '${parcel_size}' == 'L'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_L']}
+        Run Keyword If    '${parcel_size}' == 'XL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XL']}
+        Run Keyword If    '${parcel_size}' == 'XXL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XXL']}
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
     ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}

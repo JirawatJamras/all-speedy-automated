@@ -133,19 +133,19 @@ Booking_S013
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    ...    ${Booking.general_parcel['parcel_detail_A4']}
-    ...    ${Booking.general_parcel['parcel_detail_A3']}
-    ...    ${Booking.general_parcel['parcel_detail_XS']}
-    ...    ${Booking.general_parcel['parcel_detail_S']}
-    ...    ${Booking.general_parcel['parcel_detail_M']}
-    ...    ${Booking.general_parcel['parcel_detail_L']}
-    ...    ${Booking.general_parcel['parcel_detail_XL']}
-    ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
+    ...    ${Booking.dry_parcel['parcel_detail_A4']}
+    ...    ${Booking.dry_parcel['parcel_detail_A3']}
+    ...    ${Booking.dry_parcel['parcel_detail_XS']}
+    ...    ${Booking.dry_parcel['parcel_detail_S']}
+    ...    ${Booking.dry_parcel['parcel_detail_M']}
+    ...    ${Booking.dry_parcel['parcel_detail_L']}
+    ...    ${Booking.dry_parcel['parcel_detail_XL']}
+    ...    ${Booking.dry_parcel['parcel_detail_XXL']}
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S013    Verify Create Parcel Page Detail Step
+    common.Verify Capture Screenshot    Booking_S013    Verify Parcel Detail Page of Create Parcel [Dry Parcel]
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S013['parcel_size']}
