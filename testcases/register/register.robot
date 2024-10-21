@@ -234,7 +234,7 @@ Register_S007
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Waiting For Assign Status  [legal entity]
+    pms_requests_page.Select Request With Waiting For Assign Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['first_name']}
@@ -302,7 +302,7 @@ Register_S009
     common.Verify Capture Screenshot    Register_S009    Verify Request Detail Page
     pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S009['sale_phone']}
     pms_request_detail_page.Click Approve Button
-        pms_requests_page.Select Request With Confirm Sent Link Status [legal entity]
+    pms_requests_page.Select Request With Confirm Sent Link Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['first_name']}

@@ -56,7 +56,7 @@ Select Checkbox Request With Waiting For Assign Status [legal entity]
     ${checkbox_list_in_request_page}=    Replace String    ${value5}    {status}    ${rm.text_status['waiting_assign']}
     common.Click When Ready    ${checkbox_list_in_request_page}
 
-Select Request With Waiting For Assign Status  [legal entity]
+Select Request With Waiting For Assign Status [legal entity]
     [Arguments]    ${partner_types}    ${company_name}    ${first_name}    ${last_name}
     ...    ${mobile_no}    ${mobile_ext}
     ${value}=    Replace String    ${pms_btn_list_in_request_page}    {types}    ${partner_types}

@@ -58,7 +58,7 @@ register07
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Waiting For Assign Status  [legal entity]
+    pms_requests_page.Select Request With Waiting For Assign Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['first_name']}

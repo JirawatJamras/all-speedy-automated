@@ -55,7 +55,7 @@ Assign RM
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Request With Waiting For Assign Status  [Individual]
+    pms_requests_page.Select Request With Waiting For Assign Status [Individual]
     ...    ${Register_S005['checkbox_partner_types']}
     ...    ${Register_S005['first_name']}
     ...    ${Register_S005['last_name']}
