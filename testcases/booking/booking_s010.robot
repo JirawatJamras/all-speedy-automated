@@ -146,7 +146,7 @@ Booking_S010
     ...    ${Booking_S010['receiver_phone']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_store_full']}
-    common.Verify Capture Screenshot    Booking_S010    Verify Data Receiver When Select Home
+    common.Verify Capture Screenshot    Booking_S010    Verify Data Receiver When Select 7-ELEVEN Store
    
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
