@@ -27,6 +27,7 @@ Click Add New Customer
 Select Request
     [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
     ...    ${mobile_no}    ${mobile_ext}    ${rm_name}    ${status}
+    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {req_no}    ${get_request_no}
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {types}    ${partner_types}
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}   {company}    ${company_name}
     ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {name}    ${contact_first_name} ${contact_last_name}
@@ -37,6 +38,7 @@ Select Request
     Wait Until Element Is Visible    ${pms_btn_assigned_list_in_request_page}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
     common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
+    Wait Until Element Is Visible    ${pms_txtbox_customer_type}    timeout=${DEFAULT_TIMEOUT}
 
 ## legal entity
 Select Request With Status Waiting For Assign [legal entity]
@@ -70,19 +72,11 @@ Select Request With Confirm Sent Link Status [legal entity]
     Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
     ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['confirm_link']}
 
-Select Request With Rejected Status
+Select Request With Rejected Status [legal entity]  
     [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
     ...    ${mobile_no}    ${mobile_ext}    ${rm_name}
-    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {types}    ${partner_types}
-    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}   {company}    ${company_name}
-    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {name}    ${contact_first_name} ${contact_last_name}
-    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {tel}    ${mobile_no}
-    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {ext}    ${mobile_ext}
-    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {status}    ${rm.text_status['reject']}
-    ${pms_btn_assigned_list_in_request_page}=    Replace String    ${pms_btn_assigned_list_in_request_page}    {rm}    ${rm_name}
-    Wait Until Page Contains Element    ${pms_btn_assigned_list_in_request_page}
-    Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
-    common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
+    Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
+    ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['reject']}
 
 Verify Save Assign To RM Success
     [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
@@ -96,20 +90,6 @@ Verify Save Assign To RM Success
     ${txt_list}=    Replace String    ${txt_list}    {status}    ${rm.text_status['under_consideration']}
     ${txt_list}=    Replace String    ${txt_list}    {rm}    ${rm_name}
     Wait Until Page Contains Element    ${txt_list}        timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    ${txt_list}
-    
-Verify Approve Success
-    [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
-    ...    ${mobile_no}    ${mobile_ext}    ${rm_name}
-    ${txt_list}=    Replace String    ${pms_txt_assigned_list_in_request_page}    {request_no}    ${get_request_no}
-    ${txt_list}=    Replace String    ${txt_list}    {types}    ${partner_types}
-    ${txt_list}=    Replace String    ${txt_list}   {company}    ${company_name}
-    ${txt_list}=    Replace String    ${txt_list}    {name}    ${contact_first_name} ${contact_last_name}
-    ${txt_list}=    Replace String    ${txt_list}    {tel}    ${mobile_no}
-    ${txt_list}=    Replace String    ${txt_list}    {ext}    ${mobile_ext}
-    ${txt_list}=    Replace String    ${txt_list}    {status}    ${rm.text_status['confirm_link']}
-    ${txt_list}=    Replace String    ${txt_list}    {rm}    ${rm_name}
-    Wait Until Page Contains Element    ${txt_list}
     Scroll Element Into View    ${txt_list}
 
 ## Individual
@@ -136,3 +116,9 @@ Select Request With Considering Status [Individual]
     ${company_name}=    Set Variable    ${contact_first_name} ${contact_last_name}
     Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
     ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['under_consideration']}
+
+Select Request With Confirm Sent Link Status [Individual]
+    [Arguments]    ${partner_types}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}    ${mobile_ext}    ${rm_name}
+    ${company_name}=    Set Variable    ${contact_first_name} ${contact_last_name}
+    Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
+    ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['confirm_link']}

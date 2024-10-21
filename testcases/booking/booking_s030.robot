@@ -171,6 +171,7 @@ Booking_S030
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S030['parcel_size']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S030    Verify Create Parcel Page After Input Parcel Detail Step
 
     Log    Step No.13 กดปุ่ม "ถัดไป"

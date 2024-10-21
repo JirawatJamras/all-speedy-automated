@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S007
     [Documentation]    RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register  
-    [Tags]    Register    UAT    In_Review
+    [Tags]    Register    UAT    In_Review    007
     #Step1 
     register01
     register07
@@ -133,7 +133,7 @@ register09
     common.Verify Capture Screenshot    Register_S009    Verify Request Detail Page
     pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S009['sale_phone']}
     pms_request_detail_page.Click Approve Button
-    pms_requests_page.Verify Approve Success
+    pms_requests_page.Select Request With Confirm Sent Link Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['first_name']}
@@ -141,6 +141,21 @@ register09
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
     ...    ${Register_S007['rm_name']}
+    pms_request_detail_page.Verify Request Detail Page After RM Approve [legal entity]
+    ...    ${Register_S001['company_title_name']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['company_address']}
+    ...    ${Register_S001['select_company_address_full']}
+    ...    ${Register_S001['title_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['email']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
+    ...    ${Register_S007['remark']}
+    ...    ${Register_S007['rm_name']}
+    ...    ${Register_S009['sale_email']}
+    ...    ${Register_S009['sale_phone']}
     common.Verify Capture Screenshot    Register_S009    Verify Approve Success
     register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}
     register_business_full_register.Verify Email That Have Received Link

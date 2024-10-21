@@ -59,5 +59,6 @@ ${pms_txt_all_rm_in_assign_rm_popup}    //span[text()='{value}']
 ${pms_txt_already_assign_to_rm_in_popup}    //th[text()='{value}']/../../..//td[text()='{rmname}']
 ${pms_txt_reject_confirmation}    //div[@class='ant-modal-content']//span[text()='ยืนยันการปฏิเสธหรือไม่']
 ${pms_txt_request_status}    //div[@class='ant-card-head']//h1[@class]/..//div[contains(@class,'ant-row ant-row-center')]
+${pms_txt_status_detail_page}    //div[@class='ant-card-head-title']//div[text()='{value}']
 
 ${pms_popup_reject_confirmation}    //div[@class='ant-modal-content']

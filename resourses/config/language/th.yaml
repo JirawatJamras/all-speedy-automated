@@ -151,7 +151,7 @@ Booking:
     booking_price: 0.00บาท
   label:
     parcel_cod: Non COD
-    parcel_insure: ไม่มีการซื้อประกัน
+    parcel_not_buy_insure: ไม่มีการซื้อประกัน
     parcel_buy_insure: มีการซื้อประกัน
     text_postcode: รหัสไปรษณีย์ปลายทาง
     text_store_code: รหัสร้าน
@@ -250,12 +250,15 @@ rm:
   text_company_title_name: คำนำหน้าประเภทจดทะเบียนบริษัท
   text_company_name: ชื่อบริษัท
   text_id_number: เลขประจำตัวผู้เสียภาษี
+  text_id_card_number: เลขบัตรประชาชน
   text_mobile_company: เบอร์โทรศัพท์
   text_mobile_company_extra: '#ต่อ'
   text_address: ที่อยู่บริษัท
+  text_address_individual: ที่อยู่
   text_postcode: ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์
   text_contact_information: ข้อมูลผู้ติดต่อ
   text_title_name: คำนำหน้าชื่อ
+  text_first_last_name: ชื่อ-นามสกุล
   text_customer_first_name: ชื่อ (ผู้ติดต่อ)
   text_customer_last_name: นามสกุล
   text_customer_email: E-mail
@@ -265,10 +268,10 @@ rm:
   text_remark: หมายเหตุ
   text_sale_name: ชื่อ
   text_sale_phone: เบอร์โทรศัพท์
+  text_sale_mobile: เบอร์โทรศัพท์*
   text_sale_email: E-mail
   text_rm_in_popup: RM
   text_save: บันทึก
-  link_full_register: 'https://www-uat.allspeedy.co.th/business-register/fullRegister/'
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน
