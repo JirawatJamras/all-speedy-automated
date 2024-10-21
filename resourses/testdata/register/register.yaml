@@ -3,6 +3,8 @@ Register:
   txt_menu_general: ลูกค้าทั่วไป
   text_blank:
     remark: ''
+  email: businessregisterflow@gmail.com
+  password: Business1234@
   Pre_register:
     txt_menu_register: ลงทะเบียนลูกค้าธุรกิจ
     txt_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
@@ -22,9 +24,19 @@ Register:
     txt_header_service_information: ข้อมูลบริการ
     txt_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
     txt_header_supporting_document: อัปโหลดเอกสารประกอบ
-    txt_tab_general_parcel: พัสดุทั่วไป
-    txt_tab_temperature_controlled_parcel: พัสดุควบคุมอุณหภูมิ
+    txt_tab_dry_parcel: พัสดุทั่วไป
+    txt_tab_chill_parcel: พัสดุควบคุมอุณหภูมิ
     txt_tab_return_business: Return Business
+    txt_btn_add_service_cod: บริการเก็บเงินปลายทาง
+    txt_btn_add_service_insurance: ประกันคุ้มครองพัสดุ
+    txt_btn_add_service_express: บริการส่งด่วน
+    txt_service_usage_information_topic: ข้อมูลการใช้บริการ
+    txt_type_product: 'ประเภทสินค้าหลักที่จัดส่ง *'
+    txt_number_by_day: 'จำนวนการจัดส่งเฉลี่ยต่อวัน *'
+    txt_sale_channel: 'ช่องทางจำหน่าย *'
+    txt_vat: 'Vat ของสินค้า *'
+    txt_vat_chill: 'Vat ของสินค้า*'
+    txt_remark: หมายเหตุ
     txt_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
     txt_copy_file_20: สำเนาเอกสาร ภพ. 20
     txt_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
