@@ -13,6 +13,8 @@ ${register_txt_header_full_register}    //*[text()='{value}']
 ${register_txt_header_cancel_popup_full_register}    //div[@class='ant-modal-header']//span[text()='{value}']
 ${register_txt_body_cancel_popup_full_register}    //div[@class='ant-modal-body']//p[text()='{value}']
 
+${register_tab_parcel_type_full_register}    //div[@role='tab' and text()='{value}']
+
 ${register_btn_partner_types_full_register}    //span[@class='ant-radio ant-wave-target ant-radio-checked']//input
 ${register_btn_next_full_register}    //button//div[text()='{value}']
 ${register_btn_cancel_full_register}    //button//span[text()='{value}']

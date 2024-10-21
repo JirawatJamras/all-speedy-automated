@@ -20,6 +20,9 @@ Register:
     txt_header_service_information: ข้อมูลบริการ
     txt_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
     txt_header_supporting_document: อัปโหลดเอกสารประกอบ
+    txt_tab_general_parcel: พัสดุทั่วไป
+    txt_tab_temperature_controlled_parcel: พัสดุควบคุมอุณหภูมิ
+    txt_tab_return_business: Return Business
     txt_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
     txt_copy_file_20: สำเนาเอกสาร ภพ. 20
     txt_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม

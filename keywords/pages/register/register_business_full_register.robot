@@ -1,23 +1,23 @@
 *** Keywords ***
 Login mail
-    [Arguments]    ${Email}    ${Password}
+    [Arguments]    ${email}    ${password}
     common.Open URL    https://mail.google.com/
-    common.Input When Ready    ${register_txtbox_email_gmail}   ${Email}
+    common.Input When Ready    ${register_txtbox_email_gmail}   ${email}
     common.Click when ready    ${register_btn_next_gmail}
-    common.Input When Ready    ${register_txtbox_password_gmail}   ${Password}
+    common.Input When Ready    ${register_txtbox_password_gmail}   ${password}
     common.Click when ready    ${register_btn_next_gmail}
 
 Get Link On Email
-    ${Select_link}=    Replace String    ${register_link_register_gmail}     {value}    ${rm_link_full_register}
-    Wait Until Element Is Visible    ${Select_link}   ${DEFAULT_TIMEOUT}
-    ${link_full_register}=    Get Text    ${Select_link}
+    ${select_link}=    Replace String    ${register_link_register_gmail}     {value}    ${rm_link_full_register}
+    Wait Until Element Is Visible    ${select_link}   ${DEFAULT_TIMEOUT}
+    ${link_full_register}=    Get Text    ${select_link}
     Set Suite Variable    ${link_full_register}
 
 Verify Email That Have Received Link
     common.Click when ready    ${register_btn_inbox_gmail} 
-    ${Select_link}=    Replace String    ${register_txt_link_register_gmail}     {value}    ${Register.Full_register['txt_link_register']}
-    ${Select_link}=    Replace String    ${Select_link}     {link}    ${rm_link_full_register}
-    Scroll Into View By Xpath    ${Select_link}    true
+    ${select_link}=    Replace String    ${register_txt_link_register_gmail}     {value}    ${Register.Full_register['txt_link_register']}
+    ${select_link}=    Replace String    ${select_link}     {link}    ${rm_link_full_register}
+    Scroll Into View By Xpath    ${select_link}    true
 
 #Legal Entity
 Verify Company information Legal Entity Page
@@ -61,47 +61,50 @@ Verify Company information Legal Entity Page
     Should Be Equal As Strings    ${txt_mobile_ext}     ${mobile_ext}
 
 Input Mobile Company Legal Entity
-    [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_mobile_company_legal_entity_full_register}     ${Value}  
+    [Arguments]    ${value}  
+    common.Input When Ready    ${register_txtbox_mobile_company_legal_entity_full_register}     ${value}  
 
 Input Mobile Company Ext Legal Entity
-    [Arguments]    ${Value}  
-    common.Input When Ready    ${register_txtbox_mobile_company_ext_legal_entity_full_register}     ${Value}
+    [Arguments]    ${value}  
+    common.Input When Ready    ${register_txtbox_mobile_company_ext_legal_entity_full_register}     ${value}
 
 #Both
-#Verify Service Information Page
-    #Tab พัสดุทั่วไป
+#Tab พัสดุทั่วไป
+Verify Service Information Page Tab General Parcel
+    ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['txt_title_service_information']}
+    ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_header_service_information']}
+    ${txt_tab}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_header_service_information']}
+    
+    Page Should Contain Element    ${txt_title}   ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_header}   ${DEFAULT_TIMEOUT}
 
-    #Tab พัสดุควบคุมอุณหภูมิ
-
-    #Tab Return Business
 
 Click Next 
-    ${Click_next}=    Replace String    ${register_btn_next_full_register}     {value}    ${Register.Full_register['btn_next']}
-    common.Click when ready    ${Click_next}
+    ${click_next}=    Replace String    ${register_btn_next_full_register}     {value}    ${Register.Full_register['btn_next']}
+    common.Click when ready    ${click_next}
     
 Click Cancel
-    ${Click_cancel}=    Replace String    ${register_btn_cancel_full_register}     {value}    ${Register.Full_register['btn_cancel']}
-    common.Click when ready    ${Click_cancel}
+    ${click_cancel}=    Replace String    ${register_btn_cancel_full_register}     {value}    ${Register.Full_register['btn_cancel']}
+    common.Click when ready    ${click_cancel}
 
 Click Save
-    ${Click save}=    Replace String    ${register_btn_save_full_register}     {value}    ${Register.Full_register['btn_save']}
-    common.Click when ready    ${Click save}
+    ${click_save}=    Replace String    ${register_btn_save_full_register}     {value}    ${Register.Full_register['btn_save']}
+    common.Click when ready    ${click_save}
 
 Verify Cancel Popup
-    [Arguments]    ${Header}    ${Body}
-    ${Header_cancel_popup}=    Replace String    ${register_txt_header_cancel_popup_full_register}     {value}    ${Header}
-    Element Should Be Visible    ${Header_cancel_popup}
-    ${Body_cancel_popup}=    Replace String    ${register_txt_body_cancel_popup_full_register}     {value}    ${Body}
-    Element Should Be Visible    ${Body_cancel_popup} 
+    [Arguments]    ${header}    ${body}
+    ${header_cancel_popup}=    Replace String    ${register_txt_header_cancel_popup_full_register}     {value}    ${header}
+    Element Should Be Visible    ${header_cancel_popup}
+    ${body_cancel_popup}=    Replace String    ${register_txt_body_cancel_popup_full_register}     {value}    ${body}
+    Element Should Be Visible    ${body_cancel_popup} 
 
 Click Button Confirm Cancel Popup
-    ${Click_button}=    Replace String    ${register_btn_cancel_popup_full_register}     {value}    ${Register.Full_register['confirm_cancel_popup']}
-    common.Click when ready    ${Click_button}       
+    ${click_button}=    Replace String    ${register_btn_cancel_popup_full_register}     {value}    ${Register.Full_register['confirm_cancel_popup']}
+    common.Click when ready    ${click_button}       
 
 Click Confirm
-    ${Click_confirm}=    Replace String    ${register_btn_confirm_full_register}     {value}    ${Register.Full_register['btn_confirm']}
-    common.Click when ready    ${Click_confirm}
+    ${click_confirm}=    Replace String    ${register_btn_confirm_full_register}     {value}    ${Register.Full_register['btn_confirm']}
+    common.Click when ready    ${click_confirm}
     
 Upload Certificate Business Registration
     [Arguments]    ${file_path}

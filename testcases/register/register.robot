@@ -346,8 +346,8 @@ Register_S013
     register_business_full_register.Click Next
     #Expected
     #Inprogress
-    register_business_full_register.Verify Service Information Page
     #Tab พัสดุทั่วไป
+    register_business_full_register.Verify Service Information Page Tab General Parcel
 
     #Tab พัสดุควบคุมอุณหภูมิ
 
