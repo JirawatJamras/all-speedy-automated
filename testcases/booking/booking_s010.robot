@@ -98,10 +98,10 @@ Booking_S010
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_business_customer_parcel_id_4_start_unit']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}    #Expected Result is ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S010['sender_name']}
     ...    ${Booking_S010['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}    #Expected Result is ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
     ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S010['receiver_store_address']}
@@ -217,7 +217,6 @@ Booking_S010
     common.Verify Capture Screenshot    Booking_S010    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S010    Verify Booking Detail Page After Booking Success
-
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -340,7 +339,7 @@ Booking_S010
     ...    ${Booking_S010['receiver_phone']}
     ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    #${Booking_S010['receiver_store_address']}
     ...    ${Booking.label['parcel_cod']}
-    ...    ${Booking.label['parcel_insure']}
+    ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S010    Verify Parcel Label
 

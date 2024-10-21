@@ -340,7 +340,7 @@ Booking_S035
     ...    ${Booking_S035['receiver_phone']}
     ...    ${Booking_S035['receiver_store_full']}
     ...    ${Booking.label['parcel_cod']}
-    ...    ${Booking.label['parcel_insure']}
+    ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking_S035['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S035    Verify Parcel Label
 
