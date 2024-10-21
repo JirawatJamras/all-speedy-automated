@@ -172,10 +172,9 @@ Booking_S032
     common.Verify Capture Screenshot    Booking_S032    Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
-    # เลือกขนาดพัสดุ : กล่อง M
-    # จำนวนเงินซื้อประกัน : 2,500.00
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S032['parcel_size']}
     b2c_booking_delivery_page.Input Insurance    ${Booking_S032['buy_insurance1']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S032    Verify Create Parcel Page After Input Parcel Detail Step
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
