@@ -37,6 +37,7 @@ Select Request
     Wait Until Element Is Visible    ${pms_btn_assigned_list_in_request_page}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${pms_btn_assigned_list_in_request_page}
     common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
+    Wait Until Element Is Visible    ${pms_txtbox_customer_type}    timeout=${DEFAULT_TIMEOUT}
 
 ## legal entity
 Select Request With Status Waiting For Assign [legal entity]
@@ -136,3 +137,9 @@ Select Request With Considering Status [Individual]
     ${company_name}=    Set Variable    ${contact_first_name} ${contact_last_name}
     Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
     ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['under_consideration']}
+
+Select Request With Confirm Sent Link Status [Individual]
+    [Arguments]    ${partner_types}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}    ${mobile_ext}    ${rm_name}
+    ${company_name}=    Set Variable    ${contact_first_name} ${contact_last_name}
+    Select Request    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}    ${mobile_no}
+    ...    ${mobile_ext}    ${rm_name}    ${rm.text_status['confirm_link']}

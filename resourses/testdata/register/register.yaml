@@ -41,6 +41,8 @@ Register:
     txt_privacy_policy:  นโยบายความเป็นส่วนตัว
     confirm_cancel_popup: ตกลง
     cancel_cancel_popup: ยกเลิก
+    text_blank:
+      sale_phone: ''
 
 
 
@@ -98,13 +100,13 @@ Register_S004:
   title_name: น.ส.
   first_name: วีวิกา
   last_name: ยั่งยืน
-  id_number: '1513763255099'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
+  # id_number: '1513763255099'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
   email: businessregisterflow@gmail.com
   password: Business1234@
   individual_address: 456/22 หมู่บ้านสัมมากร
   search_individual_address_full: '10240'
   select_individual_address_full:  สะพานสูง สะพานสูง กรุงเทพมหานคร 10240
-  mobile_no: '0931234567'
+  mobile_no: '0000000000'
   mobile_ext: '0000'
 
 Register_S005:
@@ -166,8 +168,10 @@ Register_S010:
   reference_request: '-'
 
 Register_S011:
-  saletel: '0800000000'
   rm_name:  Yada Deenok
+  sale_email: yadadee@cpall.co.th
+  sale_phone: '0800000000'
+  remark: ''
 
 Register_S013:
   mobile_company: '0200000000'

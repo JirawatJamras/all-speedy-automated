@@ -239,12 +239,15 @@ rm:
   text_company_title_name: คำนำหน้าประเภทจดทะเบียนบริษัท
   text_company_name: ชื่อบริษัท
   text_id_number: เลขประจำตัวผู้เสียภาษี
+  text_id_card_number: เลขบัตรประชาชน
   text_mobile_company: เบอร์โทรศัพท์
   text_mobile_company_extra: '#ต่อ'
   text_address: ที่อยู่บริษัท
+  text_address_individual: ที่อยู่
   text_postcode: ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์
   text_contact_information: ข้อมูลผู้ติดต่อ
   text_title_name: คำนำหน้าชื่อ
+  text_first_last_name: ชื่อ-นามสกุล
   text_customer_first_name: ชื่อ (ผู้ติดต่อ)
   text_customer_last_name: นามสกุล
   text_customer_email: E-mail
@@ -254,6 +257,7 @@ rm:
   text_remark: หมายเหตุ
   text_sale_name: ชื่อ
   text_sale_phone: เบอร์โทรศัพท์
+  text_sale_mobile: เบอร์โทรศัพท์*
   text_sale_email: E-mail
   text_rm_in_popup: RM
   text_save: บันทึก
