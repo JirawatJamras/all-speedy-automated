@@ -69,7 +69,7 @@ Input Mobile Company Ext Legal Entity
     common.Input When Ready    ${register_txtbox_mobile_company_ext_legal_entity_full_register}     ${Value}
 
 #Both
-Verify Service Information Page
+#Verify Service Information Page
     #Tab พัสดุทั่วไป
 
     #Tab พัสดุควบคุมอุณหภูมิ
