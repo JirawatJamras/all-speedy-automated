@@ -8,13 +8,13 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Assign RM (Multiple tnx)
     [Documentation]    RM Lead : Assign RM ทีละหลายรายการในคำขอ Pre-Register
-    [Tags]    Register    UAT
-    # Log    Scenario 2 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ
-    # Register_S002
-    # Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    # Register_S004
-    # Log    Scenario 5 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
-    # Register_S005
+    [Tags]    Register    UAT    BEW
+    Log    Scenario 2 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ
+    Register_S002
+    Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
+    Register_S004
+    Log    Scenario 5 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
+    Register_S005
     Log    Scenario 8 RM Lead : Assign RM ทีละหลายรายการในคำขอ Pre-Register
     Register_S008
 
@@ -41,7 +41,7 @@ Register_S002
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
-    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S008    Pre Register 002 Success
 
 Register_S004
@@ -69,7 +69,7 @@ Register_S004
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S008    Pre Register 004 Success
 
 Register_S005
@@ -94,7 +94,7 @@ Register_S005
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
-    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page       ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S008    Pre Register 005 Success
 
 Register_S008
@@ -107,20 +107,20 @@ Register_S008
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
-    pms_requests_page.Select Checkbox Request With Waiting For Assign Status [legal entity]
+    pms_requests_page.Select Checkbox Request [legal entity]
     ...    ${Register_S002['checkbox_partner_types']}
     ...    ${Register_S002['company_name']}
     ...    ${Register_S002['first_name']}
     ...    ${Register_S002['last_name']}
     ...    ${Register_S002['mobile_no']}
     ...    ${Register_S002['mobile_ext']}
-    pms_requests_page.Select Checkbox Request With Waiting For Assign Status [Individual]
+    pms_requests_page.Select Checkbox Request [Individual]
     ...    ${Register_S004['checkbox_partner_types']}
     ...    ${Register_S004['first_name']}
     ...    ${Register_S004['last_name']}
     ...    ${Register_S004['mobile_no']}
     ...    ${Register_S004['mobile_ext']}
-    pms_requests_page.Select Checkbox Request With Waiting For Assign Status [Individual]
+    pms_requests_page.Select Checkbox Request [Individual]
     ...    ${Register_S005['checkbox_partner_types']}
     ...    ${Register_S005['first_name']}
     ...    ${Register_S005['last_name']}
@@ -128,6 +128,36 @@ Register_S008
     ...    ${Register_S005['mobile_ext']}
     common.Verify Capture Screenshot    Register_S008    Select Checkbox
     pms_requests_page.Click Assign RM Button
+    pms_requests_page.Verify Assign RM Popup
     common.Verify Capture Screenshot    Register_S008    Verify Assign RM Popup
-    Sleep    4s
+    pms_requests_page.Click Button To Assign RM    ${Register_S008['rm_name']}
+    pms_requests_page.Verify Already Assign To RM Popup    ${Register_S008['rm_name']}
+    common.Verify Capture Screenshot    Register_S008    Verify Already Assign To RM Popup
+    pms_requests_page.Click Save Button
+    Reload page
+    pms_requests_page.Verify Save Assign To RM Success [legal entity]
+    ...    ${Register_S002['checkbox_partner_types']}
+    ...    ${Register_S002['company_name']}
+    ...    ${Register_S002['first_name']}
+    ...    ${Register_S002['last_name']}
+    ...    ${Register_S002['mobile_no']}
+    ...    ${Register_S002['mobile_ext']}
+    ...    ${Register_S008['rm_name']}
+    common.Verify Capture Screenshot    Register_S008    Assign RM 002
+    pms_requests_page.Verify Save Assign To RM Success [Individual]
+    ...    ${Register_S004['checkbox_partner_types']}
+    ...    ${Register_S004['first_name']}
+    ...    ${Register_S004['last_name']}
+    ...    ${Register_S004['mobile_no']}
+    ...    ${Register_S004['mobile_ext']}
+    ...    ${Register_S008['rm_name']}
+    common.Verify Capture Screenshot    Register_S008    Assign RM 004
+    pms_requests_page.Verify Save Assign To RM Success [Individual]
+    ...    ${Register_S005['checkbox_partner_types']}
+    ...    ${Register_S005['first_name']}
+    ...    ${Register_S005['last_name']}
+    ...    ${Register_S005['mobile_no']}
+    ...    ${Register_S005['mobile_ext']}
+    ...    ${Register_S008['rm_name']}
+    common.Verify Capture Screenshot    Register_S008    Assign RM 005
 
