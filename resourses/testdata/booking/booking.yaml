@@ -191,11 +191,30 @@ Booking_S007:
   total_price_amount:  '1'
   total_price_value:  'NaN'
   total_price_value2:  '200.00'
+  total_price_value3:  '221.00'
   store_code: '15888'
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   booking_name:  Booking DRY
   booking_item: 1 รายการ
   
+Booking_S008:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size:  XL
+  parcel_package_type:  กล่อง
+  parcel_insure: 2500
+  parcel_insure_verify: 2,500.00
+  parcel_cod: 5000
+  parcel_cod_verify: 5,000.00
 
 Booking_S010:
   parcel_type:  พัสดุทั่วไป
@@ -265,20 +284,24 @@ Booking_S012:
   receiver_address2: 01523 ปากน้ำหลังสวน
   receiver_postcode: ปากน้ำ หลังสวน ชุมพร 86150
   receiver_address_and_postcode_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
+  receiver_store_code_5_digits: '01523'
   parcel_size: XS
+  price_value: 20
   parcel_cod:  5000
   parcel_cod_verify:  5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   img_sender_heart: รูปหัวใจไม่มีสี
   img_receiver_heart: รูปหัวใจสีแดง
   booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
   booking_item: 1 รายการ
-  parcel_package_type:  ซอง
+  parcel_package_type:  กล่อง
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  '200.00'
+  total_price_value:  '150.00'
+  total_price_value2:  '170.00'
 
 Booking_S013:
   parcel_type:  พัสดุทั่วไป
