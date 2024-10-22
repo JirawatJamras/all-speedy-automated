@@ -209,13 +209,21 @@ Register_S013:
   mobile_company: '0200000000'
   mobile_company_ext: '1234'
   dry_parcel:
-    add_cod: true
-    add_insuaration: true
     type_product: เสื้อผ้า
     number_by_day: 10-99 ชิ้น
     sale_channel: LAZADA
-    vat:
-    remark:
+    remark: ''
+  chill_parcel:
+    type_product: อาหารแห้ง
+    number_by_day: 10-99 ชิ้น
+    sale_channel: FACEBOOK
+    vat: ไม่มี Vat
+    remark: ''
+  return_business:
+    type_product: เสื้อผ้า
+    number_by_day: 10-99 ชิ้น
+    sale_channel: LAZADA
+    remark: ''        
 
 Register_S015:
   request_type: Full Register

@@ -151,14 +151,17 @@ Click Acceptance Privacy Policy
 #Both
  #Service Information
 Click Tab Dry Parcel
+    Scroll Window To Vertical    0 
     ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['text_tab_dry_parcel']}
     common.Click when ready    ${txt_tab}
 
 Click Tab Chill Parcel
+    Scroll Window To Vertical    0 
     ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['text_tab_chill_parcel']}
     common.Click when ready    ${txt_tab}
 
 Click Tab Return Business
+    Scroll Window To Vertical    0 
     ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['text_tab_return_business']}
     common.Click when ready    ${txt_tab}
 
@@ -189,45 +192,91 @@ Select Add Service Express Return Business
 Select Add Service Insuaration Return Business
     common.Click when ready    ${register_btn_add_insurance_return_business}   
 
-# Select Type Product Dry Parcel
+Select Type Product Dry Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_type_product_dry_parcel}
+    ${selected_type_product}=    Replace String    ${register_cbo_choice_checkbox}    {value}    ${value}
+    common.Click when ready     ${selected_type_product}
+
+Select Number By Day Dry Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_number_by_day_dry_parcel}
+    ${selected_number_by_day}=    Replace String    ${register_cbo_choice_select}     {value}    ${value}
+    common.Click when ready     ${selected_number_by_day}
+
+Select Sale Channel Dry Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_sale_channel_dry_parcel}
+    ${selected_sale_channel}=    Replace String    ${register_cbo_choice_checkbox}    {value}    ${value}
+    common.Click when ready     ${selected_sale_channel}
+
+Select Vat Dry Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_vat_dry_parcel}
+    ${selected_vat}=    Replace String    ${register_cbo_choice_select}     {value}    ${value}
+    common.Click when ready     ${selected_vat}
+
+Input Remark Dry Parcel
+   [Arguments]    ${value}
+   common.Input When Ready    ${register_txtbox_remark_dry_parcel}     ${value}
 
 
-# Select Number By Day Dry Parcel
+Select Type Product Chill Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_type_product_chill_parcel}
+    ${selected_type_product}=    Replace String    ${register_cbo_choice_checkbox}    {value}    ${value}
+    common.Click when ready     ${selected_type_product}
+
+Select Number By Day Chill Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_number_by_day_chill_parcel}
+    ${selected_number_by_day}=    Replace String    ${register_cbo_choice_select}     {value}    ${value}
+    common.Click when ready     ${selected_number_by_day}
+
+Select Sale Channel Chill Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_sale_channel_chill_parcel}
+    ${selected_sale_channel}=    Replace String    ${register_cbo_choice_checkbox}    {value}    ${value}
+    common.Click when ready     ${selected_sale_channel}
+
+Select Vat Chill Parcel
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_vat_chill_parcel}
+    ${selected_vat}=    Replace String    ${register_cbo_choice_select}     {value}    ${value}
+    common.Click when ready     ${selected_vat}
+
+Input Remark Chill Parcel
+   [Arguments]    ${value}
+   common.Input When Ready    ${register_txtbox_remark_chill_parcel}     ${value}
 
 
-# Select Sale Channel Dry Parcel
+Select Type Product Return Business
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_type_product_return_business} 
+    ${selected_type_product}=    Replace String    ${register_cbo_choice_checkbox}    {value}    ${value}
+    common.Click when ready     ${selected_type_product}
 
-# Select Vat Dry Parcel
+Select Number By Day Return Business
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_number_by_day_return_business}
+    ${selected_number_by_day}=    Replace String    ${register_cbo_choice_select}     {value}    ${value}
+    common.Click when ready     ${selected_number_by_day}
 
-# Input Remark Dry Parcel
+Select Sale Channel Return Business
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_sale_channel_return_business}
+    ${selected_sale_channel}=    Replace String    ${register_cbo_choice_checkbox}    {value}    ${value}
+    common.Click when ready     ${selected_sale_channel}
 
+Select Vat Return Business
+   [Arguments]    ${value}
+    common.Click when ready    ${register_cbo_vat_return_business}
+    ${selected_vat}=    Replace String    ${register_cbo_choice_select}     {value}    ${value}
+    common.Click when ready     ${selected_vat}
 
-
-# Select Type Product Chill Parcel
-
-
-# Select Number By Day Chill Parcel
-
-
-# Select Sale Channel Chill Parcel
-
-# Select Vat Chill Parcel
-
-# Input Remark Chill Parcel
-
-
-
-# Select Type Product Return Business
-
-
-# Select Number By Day Return Business
-
-
-# Select Sale Channel Return Business
-
-# Select Vat Return Business
-
-# Input Remark Return Business
+Input Remark Return Business
+   [Arguments]    ${value}
+   common.Input When Ready    ${register_txtbox_remark_return_business}     ${value}
 
 Verify Service Information Page Tab Dry Parcel  
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_service_information']}

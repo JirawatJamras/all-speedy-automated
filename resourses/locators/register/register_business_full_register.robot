@@ -76,6 +76,24 @@ ${register_cbo_company_title_name_full_register}    //input[@id='companyTitleNam
 ${register_cbo_title_name_full_register}    //input[@id='titleName']//..//..//span[@class='ant-select-selection-item']
 ${register_cbo_company_address_full_full_register}    //input[@id='companyAddress_full']//..//..//span[@class='ant-select-selection-item']
 
+${register_cbo_choice_checkbox}    //div[contains(@class,'ant-select-dropdown ant-tree-select-dropdown')]//span[@title='{value}']
+${register_cbo_choice_select}    //div[@aria-selected='false']//div[text()='{value}'][@class='ant-select-item-option-content']
+
+${register_cbo_type_product_dry_parcel}    //input[@id='parcelType_parcelDry_typeProduct']//..//..
+${register_cbo_number_by_day_dry_parcel}    //input[@id='parcelType_parcelDry_numberByDay']//..//..
+${register_cbo_sale_channel_dry_parcel}    //input[@id='parcelType_parcelDry_saleChannel']//..//..
+${register_cbo_vat_dry_parcel}    //input[@id='parcelType_parcelDry_isVat']//..//..
+
+${register_cbo_type_product_chill_parcel}    //input[@id='parcelType_parcelChill_typeProductControlTem']//..//..
+${register_cbo_number_by_day_chill_parcel}    //input[@id='parcelType_parcelChill_NumberByDayControlTem']//..//..
+${register_cbo_sale_channel_chill_parcel}    //input[@id='parcelType_parcelChill_salePathControlTem']//..//..
+${register_cbo_vat_chill_parcel}    //input[@id='parcelType_parcelChill_vatControlTem']//..//..
+
+${register_cbo_type_product_return_business}    //input[@id='parcelType_parcelReturnBusiness_typeProductReturn']//..//..
+${register_cbo_number_by_day_return_business}    //input[@id='parcelType_parcelReturnBusiness_NumberByDayReturn']//..//..
+${register_cbo_sale_channel_return_business}    //input[@id='parcelType_parcelReturnBusiness_salePathReturn']//..//..
+${register_cbo_vat_return_business}    //input[@id='parcelType_parcelReturnBusiness_vatReturn']//..//..
+
 ${register_txtbox_company_name_full_register}    //input[@id='companyName']
 ${register_txtbox_juristic_identification_number_full_register}    //input[@id='idNumber']
 ${register_txtbox_company_address_full_register}    //input[@id='companyAddress_addressInfo']
@@ -87,15 +105,10 @@ ${register_txtbox_email_full_register}    //input[@id='email']
 ${register_txtbox_mobile_no_full_register}    //input[@id='mobileNo']
 ${register_txtbox_mobile_ext_full_register}    //input[@id='mobileExt']
 
-${register_txtbox_type_product_dry_parcel}    //input[@id='parcelType_parcelDry_typeProduct']
-${register_txtbox_number_by_day_dry_parcel}    //input[@id='parcelType_parcelDry_numberByDay']
-${register_txtbox_sale_channel_dry_parcel}    //input[@id='parcelType_parcelDry_saleChannel']
-${register_txtbox_vat_dry_parcel}    //input[@id='parcelType_parcelDry_isVat']
-${register_txtbox_remark_dry_parcel}    //input[@id='parcelType_parcelDry_remark']
 
-${register_txtbox_type_product_general_chill_parcel}    //input[@id='parcelType_parcelDry_typeProductControlTem']
-${register_txtbox_number_by_day_chill_parcel}    //input[@id='parcelType_parcelDry_NumberByDayControlTem']
-${register_txtbox_sale_channel_chill_parcel}    //input[@id='parcelType_parcelDry_salePathControlTem']
-${register_txtbox_vat_chill_parcel}    //input[@id='parcelType_parcelDry_vatControlTem']
-${register_txtbox_remark_chill_parcel}    //input[@id='parcelType_parcelDry_notationControlTem']
+${register_txtbox_remark_dry_parcel}    //textarea[@id='parcelType_parcelDry_remark']
+
+${register_txtbox_remark_chill_parcel}    //textarea[@id='parcelType_parcelChill_notationControlTem']
+
+${register_txtbox_remark_return_business}    //textarea[@id='parcelType_parcelReturnBusiness_notationReturn']
 
