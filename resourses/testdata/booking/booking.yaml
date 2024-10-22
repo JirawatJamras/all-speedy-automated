@@ -345,6 +345,13 @@ Booking_S014:
   total_price_value1:  'Nan'
   total_price_value2:  '146.00'
 
+Booking_S018:
+  parcel_type: พัสดุควบคุมอุณหภูมิ
+  pickup_time:
+    input: ช่วงบ่าย 13:00 - 16:00
+    expected: 13:00 - 16:00
+  pickup_point: บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+
 Booking_S019:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
   sender_phone: 0890000001
