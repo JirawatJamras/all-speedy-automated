@@ -215,6 +215,21 @@ Booking_S008:
   parcel_insure_verify: 2,500.00
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
+  parcel_price_verify: '200'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value:  'NaN'
+  total_price_value2:  '456.00'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  booking_price: 'NaN บาท'
+  store_code: '15888'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  label:
+    parcel_cod: ยอดชำระ 5000 บาท
 
 Booking_S010:
   parcel_type:  พัสดุทั่วไป
