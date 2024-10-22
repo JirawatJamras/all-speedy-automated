@@ -460,8 +460,8 @@ Verify Date And Time With Time Distortion
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
 
 Wait Until Loading Icon Success
-    Wait Until Page Contains Element    ${b2c_img_loading}    timeout=30s
-    Wait Until Page Does Not Contain Element    ${b2c_img_loading}    timeout=60s
+    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${b2c_img_loading}    timeout=5s
+    Wait Until Page Does Not Contain Element    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
 
 Wait Until Page Loaded After Select Origin Shipping
     Wait Until Element Is Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}
