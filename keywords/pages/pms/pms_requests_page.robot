@@ -44,8 +44,10 @@ Select Request
     common.Click When Ready    ${pms_btn_assigned_list_in_request_page}
     Wait Until Element Is Visible    ${pms_txtbox_customer_type}    timeout=${DEFAULT_TIMEOUT}
 
+List
+
 ## legal entity
-Select Checkbox Request With Waiting For Assign Status [legal entity]
+Select Checkbox Request [legal entity]
     [Arguments]    ${partner_types}    ${company_name}    ${first_name}    ${last_name}
     ...    ${mobile_no}    ${mobile_ext}
     ${value}=    Replace String    ${pms_btn_checkbox_request_request_page}    {types}    ${partner_types}
@@ -54,6 +56,8 @@ Select Checkbox Request With Waiting For Assign Status [legal entity]
     ${value4}=    Replace String    ${value3}    {tel}    ${mobile_no}
     ${value5}=    Replace String    ${value4}    {ext}    ${mobile_ext}
     ${checkbox_list_in_request_page}=    Replace String    ${value5}    {status}    ${rm.text_status['waiting_assign']}
+    Wait Until Element Is Visible    ${checkbox_list_in_request_page}${pms_txt_request_num}    timeout=${DEFAULT_TIMEOUT}
+    ${request_no}=    Get Text    ${checkbox_list_in_request_page}${pms_txt_request_num}
     common.Click When Ready    ${checkbox_list_in_request_page}
 
 Select Request With Waiting For Assign Status [legal entity]
@@ -108,7 +112,7 @@ Verify Save Assign To RM Success
     Scroll Element Into View    ${txt_list}
 
 ## Individual
-Select Checkbox Request With Waiting For Assign Status [Individual]
+Select Checkbox Request [Individual]
     [Arguments]    ${partner_types}    ${first_name}    ${last_name}    ${mobile_no}    ${mobile_ext}
     ${value}=    Replace String    ${pms_btn_checkbox_request_request_page}    {types}    ${partner_types}
     ${value2}=    Replace String    ${value}    {company}    ${first_name} ${last_name}
@@ -116,6 +120,8 @@ Select Checkbox Request With Waiting For Assign Status [Individual]
     ${value4}=    Replace String    ${value3}    {tel}    ${mobile_no}
     ${value5}=    Replace String    ${value4}    {ext}    ${mobile_ext}
     ${checkbox_list_in_request_page}=    Replace String    ${value5}    {status}    ${rm.text_status['waiting_assign']}
+    Wait Until Element Is Visible    ${checkbox_list_in_request_page}${pms_txt_request_num}    timeout=${DEFAULT_TIMEOUT}
+    ${request_no}=    Get Text    ${checkbox_list_in_request_page}${pms_txt_request_num}
     common.Click When Ready    ${checkbox_list_in_request_page}
 
 Select Request With Waiting For Assign Status [Individual]

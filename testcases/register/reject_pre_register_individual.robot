@@ -42,7 +42,7 @@ Register_S005
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
-    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S005    Verify Confirm Page After Register Successful
 
 Assign RM

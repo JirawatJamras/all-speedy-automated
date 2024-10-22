@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S035 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    Run
+    [Tags]    Booking    UAT    Review_Pass
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -189,7 +189,7 @@ Booking_S035
     b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}  # Expected result : {Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}

@@ -57,7 +57,7 @@ Register_S001
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
 
 Register_S002
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
@@ -91,7 +91,7 @@ Register_S002
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
 
 Register_S003
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
@@ -157,7 +157,7 @@ Register_S004
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
 
 Register_S005
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
@@ -187,7 +187,7 @@ Register_S005
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
 
 
 Register_S006

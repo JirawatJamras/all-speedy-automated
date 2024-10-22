@@ -42,7 +42,7 @@ Register_S004
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
     #Expected
-    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['txt_register_success']}
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
 
 Assign RM
     common.Open URL    ${PMS_UAT_URL}
