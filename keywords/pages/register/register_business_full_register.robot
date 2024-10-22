@@ -266,7 +266,7 @@ Verify Service Information Page Tab Chill Parcel
     Should Be Equal As Strings    ${label_remark}    ${Register.Full_register['txt_remark']}
 
 
-register_business_full_register.Verify Service Information Page Tab Return Business
+Verify Service Information Page Tab Return Business
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['txt_title_service_information']}
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['txt_header_service_information']}
      

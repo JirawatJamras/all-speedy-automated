@@ -124,7 +124,7 @@ Click Cancel
 Verify Confirm Page
     [Arguments]    ${text}
     ${register_success_text}=    Replace String    ${register_txt_success}     {value}    ${text}
-    Wait Until Element Is Visible    ${register_success_text}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_success_text}    timeout=${DEFAULT_TIMEOUT}
     Page Should Contain Element    ${register_success_text}
 
 Verify Cancel Popup
@@ -255,116 +255,116 @@ Verify Partner Types Radio Button
 
 Verify Company Title Name
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_company_title_name_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_company_title_name_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_company_title_name_business_customers_register_page}    ${text}
 
 Verify Company Name
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_company_name_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_company_name_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_company_name_business_customers_register_page}    ${text}
 
 Verify Tax Identification Number 
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_tax_identification_number_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_tax_identification_number_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_tax_identification_number_business_customers_register_page}    ${text}
 
 Verify Company Address
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_company_address_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_company_address_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_company_address_business_customers_register_page}    ${text}
 
 Verify Company Address Full
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_company_address_full_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_company_address_full_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_company_address_full_business_customers_register_page}    ${text}
 
 Verify Prefixname Dropdown
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_prefix_name_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_prefix_name_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_prefix_name_business_customers_register_page}    ${text}
 
 Verify FirstName
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_firstname_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_firstname_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_firstname_business_customers_register_page}    ${text}
 
 Verify LastName
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_lastname_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_lastname_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_lastname_business_customers_register_page}    ${text}
 
 Verify Email
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_email_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_email_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_email_business_customers_register_page}    ${text}
 
 Verify MobileNo
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_mobileNumber_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_mobileNumber_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_mobileNumber_business_customers_register_page}    ${text}
 
 Verify MobileExt
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_mobileExt_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_mobileExt_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_mobileExt_business_customers_register_page}    ${text}
 
 Verify FormPrefixname Dropdown
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_prefix_name_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_prefix_name_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_prefix_name_business_customers_register_page}    ${text}
 
 Verify FormfirstName	
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_firstName_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_firstName_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_firstName_business_customers_register_page}    ${text}
 
 Verify FormlastName	
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_lastname_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_lastname_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_lastname_business_customers_register_page}    ${text}
 
 Verify FormIdNumber
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_idnumber_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_idnumber_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_idnumber_business_customers_register_page}    ${text}
 
 Verify FormEmail
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_email_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_email_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_email_business_customers_register_page}    ${text}
 
 Verify FormAddressInfo
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_company_address_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_company_address_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_company_address_business_customers_register_page}    ${text}
 
 Verify FormAddressFull
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_company_address_full_business_customers_register_page}        ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_company_address_full_business_customers_register_page}        timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_company_address_full_business_customers_register_page}        ${text}
 
 Verify FormMobileNo
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_mobile_number_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_mobile_number_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_mobile_number_business_customers_register_page}    ${text}
 
 Verify FormMobileExt
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_txt_form_mobileExt_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_txt_form_mobileExt_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_txt_form_mobileExt_business_customers_register_page}    ${text}
 
 Verify Cacel Business Customers Register Button
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_btn_cancel_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_btn_cancel_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_btn_cancel_business_customers_register_page}    ${text}
 
 Verify Register Business Customers Register Button
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_btn_register_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_btn_register_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_btn_register_business_customers_register_page}    ${text}
 
 Verify Register Email Errror Messages
     [Arguments]    ${text}
-    Wait Until Element Is Visible    ${register_msg_error_business_customers_register_page}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${register_msg_error_business_customers_register_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${register_msg_error_business_customers_register_page}    ${text}
    
