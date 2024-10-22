@@ -375,25 +375,40 @@ Register_S013
     register_business_full_register.Click Select Dry Parcel
     register_business_full_register.Select Add Service Cod Dry Parcel
     register_business_full_register.Select Add Service Insuaration Dry Parcel
-    # register_business_full_register.Select Type Product Dry Parcel    ${Register_S013['type_product']}
-    # register_business_full_register.Select Number By Day Dry Parcel    ${Register_S013['number_by_day']}
-    # register_business_full_register.Select Sale Channel Dry Parcel    ${Register_S013['sale_channel']}
-    
+    register_business_full_register.Select Type Product Dry Parcel    ${Register_S013.dry_parcel['type_product']}
+    register_business_full_register.Select Number By Day Dry Parcel    ${Register_S013.dry_parcel['number_by_day']}
+    register_business_full_register.Select Sale Channel Dry Parcel    ${Register_S013.dry_parcel['sale_channel']}
+    register_business_full_register.Input Remark Dry Parcel    ${Register_S013.dry_parcel['remark']}
 
     Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
     register_business_full_register.Click Save
 
     Log    Step No.6 กดปุ่ม "ยกเลิก"
     register_business_full_register.Click Cancel
-    register_business_full_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
+    register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     
     Log    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
     register_business_full_register.Click Button Confirm Cancel Popup
 
     Log    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
     common.Open URL    ${link_full_register}
-    #Expected
-    #Inprogress
+    #Expected    
+    register_business_full_register.Verify Company information Legal Entity Page
+    ...    ${Register_S001['checkbox_partner_types']}
+    ...    ${Register_S001['company_title_name']}
+    ...    ${Register_S001['company_name']}
+    ...    ${JuristicID}
+    # ...    ${Register_S001['id_number']}
+    ...    ${Register_S001['company_address']}
+    ...    ${Register_S001['select_company_address_full']}
+    ...    ${Register_S013['mobile_company']}
+    ...    ${Register_S013['mobile_company_ext']}
+    ...    ${Register_S001['title_name']} 
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['email']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}    
     
     Log    Step No.9 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
@@ -401,7 +416,24 @@ Register_S013
     #Inprogress
         
     Log    Step No.10 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
-
+    #Tab พัสดุควบคุมอุณหภูมิ
+    register_business_full_register.Click Tab Chill Parcel
+    register_business_full_register.Click Select Chill Parcel
+    register_business_full_register.Select Add Service Cod Chill Parcel
+    register_business_full_register.Select Type Product Chill Parcel    ${Register_S013.chill_parcel['type_product']}
+    register_business_full_register.Select Number By Day Chill Parcel    ${Register_S013.chill_parcel['number_by_day']}
+    register_business_full_register.Select Sale Channel Chill Parcel    ${Register_S013.chill_parcel['sale_channel']}
+    register_business_full_register.Input Remark Chill Parcel    ${Register_S013.chill_parcel['remark']}
+    #Tab Return Business
+    register_business_full_register.Click Tab Return Business
+    register_business_full_register.Click Select Return Business
+    register_business_full_register.Select Add Service Express Return Business
+    register_business_full_register.Select Add Service Insuaration Return Business
+    register_business_full_register.Select Type Product Return Business    ${Register_S013.return_business['type_product']}
+    register_business_full_register.Select Number By Day Return Business    ${Register_S013.return_business['number_by_day']}
+    register_business_full_register.Select Sale Channel Return Business    ${Register_S013.return_business['sale_channel']}
+    register_business_full_register.Input Remark Return Business    ${Register_S013.return_business['remark']}
+    
     Log    Step No.11 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
@@ -419,7 +451,25 @@ Register_S013
 
     #ต้องไปทำ S0015 ในส่วนที่ RM ต้อง Comment
     Log    Step No.16 กด Link Full Register เดิม ที่ได้รับทาง E-mail 
-    #common.Open URL    ${link_full_register}
+    common.Open URL    ${link_full_register}
+    #Expected    
+    register_business_full_register.Verify Company information Legal Entity Page
+    ...    ${Register_S001['checkbox_partner_types']}
+    ...    ${Register_S001['company_title_name']}
+    ...    ${Register_S001['company_name']}
+    ...    ${JuristicID}
+    # ...    ${Register_S001['id_number']}
+    ...    ${Register_S001['company_address']}
+    ...    ${Register_S001['select_company_address_full']}
+    ...    ${Register_S013['mobile_company']}
+    ...    ${Register_S013['mobile_company_ext']}
+    ...    ${Register_S001['title_name']} 
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['email']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}    
+    
     Log    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
 
     Log    Step No.18 กดปุ่ม "x"
