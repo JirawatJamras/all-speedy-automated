@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S004
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT    Review_Pass    Run
+    [Tags]    Booking    UAT    Review_Pass
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab

@@ -2,7 +2,6 @@
 Verify Call Car Pick Up Page
     [Arguments]    ${title}
     ${b2c_txt_call_pickup_parcel_pickup_page}=  Replace String   ${b2c_txt_call_pickup_parcel_pickup_page}   {value}   ${title}
-    Sleep    4s
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_txt_call_pickup_parcel_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
@@ -10,8 +9,8 @@ Click Add Button
     common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}
 
 Verify Popup Parcel Pickup Schedule
-    [Arguments]    ${parcel_pickup_schedule}    ${car_round_name}    ${parcel_type}    ${parcel_pickup_date}    ${parcel_pickup_time}
-    ...    ${save_button}    ${cancel_button}
+    [Arguments]    ${parcel_pickup_schedule}    ${car_round_name}    ${parcel_type}    ${parcel_pickup_date}
+    ...    ${parcel_pickup_time}    ${save_button}    ${cancel_button}
     ${txt_parcel_pickup_schedule}=  Replace String   ${b2c_txt_parcel_pickup_schedule_in_add_popup}   {value}   ${parcel_pickup_schedule}
     ${txt_car_round_name}=  Replace String   ${b2c_txt_car_round_name_in_add_popup}   {value}   ${car_round_name}
     ${txt_parcel_type}=  Replace String   ${b2c_txt_parcel_type_in_add_popup}   {value}   ${parcel_type}
@@ -237,3 +236,27 @@ Verify Close Filter Section
     Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${b2c_btn_search_in_filter}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    timeout=${DEFAULT_TIMEOUT}
+
+Verify Added New Car Pickup Schedule
+    [Arguments]    ${special_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
+    ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
+    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    ${actual_info_new_pickup_card}=    Get Text    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
+    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${special_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} 14:53:00 จำนวนพัสดุ: 0 รายการ ราคา: 0 บาท จุดรับพัสดุ: ${pickup_point}
+
+Get Cut Off Date From Value
+    [Arguments]    ${date}
+    ${parts}=    Split String    ${date}    -
+    ${day}=    Set Variable    ${parts}[0]
+    ${month}=    Set Variable    ${parts}[1]
+    ${year}=    Set Variable    ${parts}[2]
+    ${day}=    Convert To Integer    ${day}
+    ${nextDay}=    Evaluate    ${day} - 1
+    ${day}    Convert To String    ${nextDay}
+    ${digit}=     Get Length    ${day}
+    IF    '${digit}' == '1'
+        ${day}=    Set Variable    0${day}
+    END
+    ${cut_off_date}=    Set Variable    ${day}-${month}-${year}
+    RETURN    ${cut_off_date}

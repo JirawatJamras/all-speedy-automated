@@ -10,7 +10,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 
 Booking_S007
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Review_Pass
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -20,6 +20,7 @@ Booking_S007
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S007    Verify Booking Page For Business Customer
@@ -105,7 +106,7 @@ Booking_S007
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S007    Verify Draft Paecel  # Peach comment : Parcel สะกดผิดครับ
+    common.Verify Capture Screenshot    Booking_S007    Verify Draft Parcel
 
     Log    Step No.8 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -180,7 +181,6 @@ Booking_S007
     b2c_booking_delivery_page.Input Insurance    ${Booking_S007['parcel_insure']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S007['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S007    Verify Input Parcel Detail  
-    sleep    5s
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
@@ -197,9 +197,9 @@ Booking_S007
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S007.promotion_detail['discount']}
     ...    ${Booking_S007.promotion_detail['promotion_name']}
-    ...    ${Booking_S007.promotion_detail['parcel_size']}
+    ...    ${Booking_S007.promotion_detail['parcel_size']}    # Expected result : ทุกขนาด
     ...    ${Booking_S007.promotion_detail['expired_date']}
-    ...    ${Booking_S007.promotion_detail['condition']}
+    ...    ${Booking_S007.promotion_detail['condition']}    # Expected result : สำหรับลูกค้าที่เป็นกล่อง
     ...    ${Booking_S007.promotion_detail['period']}
     common.Verify Capture Screenshot    Booking_S007    Verify Selected Coupon And Code
 
@@ -339,7 +339,7 @@ Booking_S007
     ...    ${Booking_S007['cod_fee_amount']}
     ...    ${Booking_S007['cod_fee_value']}
     ...    ${Booking_S007['total_price_amount']}
-    ...    221.00    #Expect Result is ${Booking_S007['total_price_value2']}
+    ...    ${Booking_S007['total_price_value3']}    #Expect Result is ${Booking_S007['total_price_value2']}
     ...    ${Booking_S007['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S007    Verify Booking Summary After Set Origin Shipping

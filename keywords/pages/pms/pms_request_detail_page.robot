@@ -37,6 +37,7 @@ Verify Assign To RM
     ${rm_table}=    Replace String    ${pms_txt_already_assign_to_rm_in_popup}    {value}    ${rm['text_rm_in_popup']}
     ${rm_table_complete}=    Replace String    ${rm_table}    {rmname}    ${rm_name}
     Scroll Element Into View    ${rm_table_complete}
+    Wait Until Element Is Visible    ${rm_table_complete}    timeout=${DEFAULT_TIMEOUT}
 
 Click Save Button
     ${btn_save}=    Replace String    ${pms_btn_save}    {value}    ${rm['text_save']}
@@ -124,8 +125,8 @@ Verify Request Detail Page With Status Waiting For Assign
     Should Be Equal As Strings    ${label_customer_first_name} ${input_customer_first_name}    ${rm['text_customer_first_name']} ${customer_firstname}
     Should Be Equal As Strings    ${label_customer_last_name} ${input_customer_last_name}    ${rm['text_customer_last_name']} ${customer_lastname}
     Should Be Equal As Strings    ${label_email} ${input_email}    ${rm['text_customer_email']} ${email}
-    Should Be Equal As Strings    ${label_customer_phone} ${input_customer_phone}    ${rm['text_customer_phone']} ${mobile_no}
-    Should Be Equal As Strings    ${label_customer_phone_extra} ${input_customer_phone_extra}    ${rm['text_customer_phone_extra']} ${mobile_ext}
+    Should Be Equal As Strings    ${label_customer_phone} ${input_customer_phone}    ${rm['text_customer_mobile']} ${mobile_no}
+    Should Be Equal As Strings    ${label_customer_phone_extra} ${input_customer_phone_extra}    ${rm['text_customer_mobile_extra']} ${mobile_ext}
     Should Be Equal As Strings    ${label_link_full_register}    ${rm['text_link_full_register']}
     Should Be Equal As Strings    ${label_remark}    ${rm['text_remark']}
 
@@ -186,13 +187,13 @@ Verify Information On Request Details Page [legal entity]
     Should Be Equal As Strings    ${label_customer_first_name} ${value_first_name}    ${rm['text_customer_first_name']} ${customer_first_name}
     Should Be Equal As Strings    ${label_customer_last_name} ${value_last_name}    ${rm['text_customer_last_name']} ${customer_last_name}
     Should Be Equal As Strings    ${label_customer_email} ${value_customer_email}    ${rm['text_customer_email']} ${customer_email}
-    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_phone']} ${customer_phone}
-    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_phone_extra']} ${customer_phone_extra}
+    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_mobile']} ${customer_phone}
+    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_mobile_extra']} ${customer_phone_extra}
     Should Be Equal As Strings    ${label_link_full_register}    ${rm['text_link_full_register']}
     Should Be Equal As Strings    ${label_remark} ${value_remark}    ${rm['text_remark']} ${remark}
     Should Be Equal As Strings    ${label_sale_data_header}    ${rm['text_sale_information']}
     Should Be Equal As Strings    ${label_sale_name} ${value_sale_name}    ${rm['text_sale_name']} ${sale_name}
-    Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_phone']} ${EMPTY}
+    Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_mobile_legal']} ${EMPTY}
     Should Be Equal As Strings    ${label_sale_email} ${value_sale_email}    ${rm['text_sale_email']} ${sale_email}
 
 Verify Request Detail Page After RM Approve [legal entity]
@@ -251,13 +252,13 @@ Verify Request Detail Page After RM Approve [legal entity]
     Should Be Equal As Strings    ${label_customer_first_name} ${value_first_name}    ${rm['text_customer_first_name']} ${customer_first_name}
     Should Be Equal As Strings    ${label_customer_last_name} ${value_last_name}    ${rm['text_customer_last_name']} ${customer_last_name}
     Should Be Equal As Strings    ${label_customer_email} ${value_customer_email}    ${rm['text_customer_email']} ${customer_email}
-    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_phone']} ${customer_phone}
-    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_phone_extra']} ${customer_phone_extra}
+    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_mobile']} ${customer_phone}
+    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_mobile_extra']} ${customer_phone_extra}
     Should Be Equal As Strings    ${label_link_full_register}    ${rm['text_link_full_register']}
     Should Be Equal As Strings    ${label_remark} ${value_remark}    ${rm['text_remark']} ${remark}
     # Should Be Equal As Strings    ${label_sale_data_header}    ${rm['text_sale_information']}
     # Should Be Equal As Strings    ${label_sale_name} ${value_sale_name}    ${rm['text_sale_name']} ${sale_name}
-    # Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_phone']} ${EMPTY}
+    # Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_mobile_legal']} ${EMPTY}
     # Should Be Equal As Strings    ${label_sale_email} ${value_sale_email}    ${rm['text_sale_email']} ${sale_email}
     Set Suite Variable    ${rm_link_full_register}
 
@@ -317,8 +318,8 @@ Verify Information After Reject Request [legal entity]
     Should Be Equal As Strings    ${label_customer_first_name} ${value_first_name}    ${rm['text_customer_first_name']} ${customer_first_name}
     Should Be Equal As Strings    ${label_customer_last_name} ${value_last_name}    ${rm['text_customer_last_name']} ${customer_last_name}
     Should Be Equal As Strings    ${label_customer_email} ${value_customer_email}    ${rm['text_customer_email']} ${customer_email}
-    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_phone']} ${customer_phone}
-    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_phone_extra']} ${customer_phone_extra}
+    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_mobile']} ${customer_phone}
+    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_mobile_extra']} ${customer_phone_extra}
     Should Be Equal As Strings    ${label_link_full_register}    ${rm['text_link_full_register']}
     Should Be Equal As Strings    ${label_remark} ${value_remark}    ${rm['text_remark']} ${remark}
     # Should Be Equal As Strings    ${label_sale_data_header}    ${rm['text_sale_information']}
@@ -372,13 +373,13 @@ Verify Information On Request Details Page [Individual]
     Should Be Equal As Strings    ${label_address} ${value_address}    ${rm['text_address_individual']} ${address}
     Should Be Equal As Strings    ${label_postcode} ${value_postcode}    ${rm['text_postcode']} ${postcode}
     Should Be Equal As Strings    ${label_customer_email} ${value_customer_email}    ${rm['text_customer_email']} ${customer_email}
-    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_phone']} ${customer_phone}
-    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_phone_extra']} ${customer_phone_extra}
+    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_mobile']} ${customer_phone}
+    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_mobile_extra']} ${customer_phone_extra}
     Should Be Equal As Strings    ${label_link_full_register}    ${rm['text_link_full_register']}
     Should Be Equal As Strings    ${label_remark} ${value_remark}    ${rm['text_remark']} ${remark}
     Should Be Equal As Strings    ${label_sale_data_header}    ${rm['text_sale_information']}
     Should Be Equal As Strings    ${label_sale_name} ${value_sale_name}    ${rm['text_sale_name']} ${sale_name}
-    Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_mobile']} ${EMPTY}
+    Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_mobile_individual']} ${EMPTY}
     Should Be Equal As Strings    ${label_sale_email} ${value_sale_email}    ${rm['text_sale_email']} ${sale_email}
 
 Verify Request Detail Page After RM Approve [Individual]
@@ -427,8 +428,8 @@ Verify Request Detail Page After RM Approve [Individual]
     Should Be Equal As Strings    ${label_address} ${value_address}    ${rm['text_address_individual']} ${address}
     Should Be Equal As Strings    ${label_postcode} ${value_postcode}    ${rm['text_postcode']} ${postcode}
     Should Be Equal As Strings    ${label_customer_email} ${value_customer_email}    ${rm['text_customer_email']} ${customer_email}
-    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_phone']} ${customer_phone}
-    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_phone_extra']} ${customer_phone_extra}
+    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_mobile']} ${customer_phone}
+    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_mobile_extra']} ${customer_phone_extra}
     Should Be Equal As Strings    ${label_link_full_register}    ${rm['text_link_full_register']}
     Should Be Equal As Strings    ${label_remark} ${value_remark}    ${rm['text_remark']} ${remark}
     # Should Be Equal As Strings    ${label_sale_data_header}    ${rm['text_sale_information']}
@@ -483,8 +484,8 @@ Verify Information After Reject Request [Individual]
     Should Be Equal As Strings    ${label_address} ${value_address}    ${rm['text_address_individual']} ${address}
     Should Be Equal As Strings    ${label_postcode} ${value_postcode}    ${rm['text_postcode']} ${postcode}
     Should Be Equal As Strings    ${label_customer_email} ${value_customer_email}    ${rm['text_customer_email']} ${customer_email}
-    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_phone']} ${customer_phone}
-    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_phone_extra']} ${customer_phone_extra}
+    Should Be Equal As Strings    ${label_customer_phone} ${value_customer_phone}    ${rm['text_customer_mobile']} ${customer_phone}
+    Should Be Equal As Strings    ${label_customer_phone_extra} ${value_customer_phone_extra}    ${rm['text_customer_mobile_extra']} ${customer_phone_extra}
     Should Be Equal As Strings    ${label_link_full_register}    ${rm['text_link_full_register']}
     Should Be Equal As Strings    ${label_remark} ${value_remark}    ${rm['text_remark']} ${remark}
     # Should Be Equal As Strings    ${label_sale_data_header}    ${rm['text_sale_information']}

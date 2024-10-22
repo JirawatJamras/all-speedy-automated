@@ -89,7 +89,7 @@ register07
     pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
     common.Verify Capture Screenshot    Register_S007    Verify Assign To RM 
     pms_request_detail_page.Click Save Button
-    pms_requests_page.Verify Save Assign To RM Success
+    pms_requests_page.Verify Save Assign To RM Success [legal entity] 
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
     ...    ${Register_S001['first_name']}

@@ -263,16 +263,19 @@ rm:
   text_customer_first_name: ชื่อ (ผู้ติดต่อ)
   text_customer_last_name: นามสกุล
   text_customer_email: E-mail
-  text_customer_phone: เบอร์โทรศัพท์
-  text_customer_phone_extra: '#ต่อ'
+  text_customer_mobile: เบอร์โทรศัพท์
+  text_customer_mobile_extra: '#ต่อ'
   text_link_full_register: 'Link : Full Register'
   text_remark: หมายเหตุ
   text_sale_name: ชื่อ
-  text_sale_phone: เบอร์โทรศัพท์
-  text_sale_mobile: เบอร์โทรศัพท์*
+  text_sale_mobile_legal: เบอร์โทรศัพท์
+  text_sale_mobile_individual: เบอร์โทรศัพท์*
   text_sale_email: E-mail
   text_rm_in_popup: RM
   text_save: บันทึก
+  text_selected_list: รายการที่เลือก
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน
+  text_blank:
+    sale_mobile: ''
