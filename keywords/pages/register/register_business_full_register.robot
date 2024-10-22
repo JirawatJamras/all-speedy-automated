@@ -21,7 +21,7 @@ Verify Email That Have Received Link
 
 #Legal Entity
 Verify Company information Legal Entity Page
-    [Arguments]    ${partner_types}    ${company_title_name}    ${company_name}    ${id_number}    
+    [Arguments]    ${partner_type}    ${company_title_name}    ${company_name}    ${id_number}    
     ...    ${company_address}    ${select_company_address_full}    ${title_name}
     ...    ${first_name}    ${last_name}    ${email}    ${mobile_no}    ${mobile_ext}
     #หัวข้อข้อมูลบริษัท
@@ -30,44 +30,62 @@ Verify Company information Legal Entity Page
         
     Page Should Contain Element    ${txt_title}
     Wait Until Element Is Visible    ${txt_header}
+    ${label_partner_type}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_partner_type']}
+    ${txt_partner_type}=    Get Value    ${register_btn_partner_types_full_register}
+    ${label_company_title_name}=    Get Text    ${register_txt_company_title_name} 
+    ${txt_company_title_name}=    Get Text    ${register_cbo_company_title_name_full_register} 
+    ${label_company_name}=    Get Text    ${register_txt_company_name}
+    ${txt_company_name}=    Get Value    ${register_txtbox_company_name_full_register}
+    ${label_id_number}=    Get Text    ${register_txt_id_number}
+    ${txt_id_number}=    Get Value    ${register_txtbox_juristic_identification_number_full_register} 
+    ${label_company_address}=    Get Text    ${register_txt_company_address}
+    ${txt_company_address}=    Get Value    ${register_txtbox_company_address_full_register}
+    ${label_select_company_address_full}=    Get Text    ${register_txt_company_address_full}
+    ${txt_select_company_address_full}=    Get Text    ${register_cbo_company_address_full_full_register}
+    ${label_mobile_company}=    Get Text    ${register_txt_mobile_company}
+    ${txt_mobile_company}=     Get Value    ${register_txtbox_mobile_company_full_register}
+    ${label_mobile_company_ext}=    Get Text    ${register_txt_mobile_company_ext}
+    ${txt_mobile_company_ext}=     Get Value    ${register_txtbox_mobile_company_ext_full_register}
+    ${txt_sub_topic}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_contact_information']}
+    ${label_title_name}=    Get Text    ${register_txt_title_name}
+    ${txt_title_name}=    Get Text    ${register_cbo_title_name_full_register}
+    ${label_first_name}=    Get Text    ${register_txt_first_name}
+    ${txt_first_name}=    Get Value    ${register_txtbox_first_name_full_register}
+    ${label_last_name}=    Get Text    ${register_txt_last_name}
+    ${txt_last_name}=    Get Value    ${register_txtbox_last_name_full_register}
+    ${label_email}=    Get Text    ${register_txt_email}
+    ${txt_email}=    Get Value    ${register_txtbox_email_full_register}
+    ${label_mobile_no}=    Get Text    ${register_txt_mobile_no}
+    ${txt_mobile_no}=    Get Value    ${register_txtbox_mobile_no_full_register}
+    ${label_mobile_ext}=    Get Text    ${register_txt_mobile_ext}
+    ${txt_mobile_ext}=    Get Value    ${register_txtbox_mobile_ext_full_register}
 
-    ${txt_partner_types}=    Get Value    ${register_btn_partner_types_full_register}
-    ${txt_company_title_name}=    Get Text    ${register_cbo_company_title_name_legal_entity_full_register} 
-    ${txt_company_name}=    Get Value    ${register_txtbox_company_name_legal_entity_full_register}
-    ${txt_id_number}=    Get Value    ${register_txtbox_juristic_identification_number_legal_entity_full_register} 
-    ${txt_company_address}=    Get Value    ${register_txtbox_company_address_legal_entity_full_register}
-    ${txt_select_company_address_full}=    Get Text    ${register_cbo_company_address_full_legal_entity_full_register}
-    ${txt_mobile_company}=     Get Value    ${register_txtbox_mobile_company_legal_entity_full_register}
-    ${txt_mobile_company_ext}=     Get Value    ${register_txtbox_mobile_company_ext_legal_entity_full_register}
-    ${txt_title_name}=    Get Text    ${register_cbo_title_name_legal_entity_full_register}
-    ${txt_first_name}=    Get Value    ${register_txtbox_first_name_legal_entity_full_register}
-    ${txt_last_name}=    Get Value    ${register_txtbox_last_name_legal_entity_full_register}
-    ${txt_email}=    Get Value    ${register_txtbox_email_legal_entity_full_register}
-    ${txt_mobile_no}=    Get Value    ${register_txtbox_mobile_no_legal_entity_full_register}
-    ${txt_mobile_ext}=    Get Value    ${register_txtbox_mobile_ext_legal_entity_full_register}
-
-    Should Be Equal As Strings    ${txt_partner_types}     ${partner_types}
-    Should Be Equal As Strings    ${txt_company_title_name}     ${company_title_name}
-    Should Be Equal As Strings    ${txt_company_name}     ${company_name}
-    Should Be Equal As Strings    ${txt_id_number}     ${id_number}
-    Should Be Equal As Strings    ${txt_company_address}     ${company_address}
-    Should Be Equal As Strings    ${txt_select_company_address_full}     ${select_company_address_full}
+    Page Should Contain Element    ${label_partner_type}
+    Should Be Equal As Strings    ${txt_partner_type}    ${partner_type}
+    Should Be Equal As Strings    ${label_company_title_name} ${txt_company_title_name}    ${Register.Full_register['text_company_title_name']} ${company_title_name}
+    Should Be Equal As Strings    ${label_company_name} ${txt_company_name}    ${Register.Full_register['text_company_name']} ${company_name}
+    Should Be Equal As Strings    ${label_id_number} ${txt_id_number}    ${Register.Full_register['text_id_number']} ${id_number}
+    Should Be Equal As Strings    ${label_company_address} ${txt_company_address}    ${Register.Full_register['text_company_address']} ${company_address}
+    Should Be Equal As Strings    ${label_select_company_address_full} ${txt_select_company_address_full}    ${Register.Full_register['text_company_address_full']} ${select_company_address_full}
+    Should Be Equal As Strings    ${label_mobile_company}    ${Register.Full_register['text_mobile_company']}
     Should Be Empty    ${txt_mobile_company}
+    Should Be Equal As Strings    ${label_mobile_company_ext}    ${Register.Full_register['text_mobile_company_extra']}
     Should Be Empty    ${txt_mobile_company_ext}
-    Should Be Equal As Strings    ${txt_title_name}     ${title_name}
-    Should Be Equal As Strings    ${txt_first_name}     ${first_name}
-    Should Be Equal As Strings    ${txt_last_name}     ${last_name}
-    Should Be Equal As Strings    ${txt_email}     ${email}
-    Should Be Equal As Strings    ${txt_mobile_no}     ${mobile_no}
-    Should Be Equal As Strings    ${txt_mobile_ext}     ${mobile_ext}
+    Page Should Contain Element    ${txt_sub_topic}
+    Should Be Equal As Strings    ${label_title_name} ${txt_title_name}    ${Register.Full_register['text_title_name']} ${title_name}
+    Should Be Equal As Strings    ${label_first_name} ${txt_first_name}    ${Register.Full_register['text_first_name']} ${first_name}
+    Should Be Equal As Strings    ${label_last_name} ${txt_last_name}    ${Register.Full_register['text_last_name']} ${last_name}
+    Should Be Equal As Strings    ${label_email} ${txt_email}    ${Register.Full_register['text_email']} ${email}
+    Should Be Equal As Strings    ${label_mobile_no} ${txt_mobile_no}    ${Register.Full_register['text_mobile']} ${mobile_no}
+    Should Be Equal As Strings    ${label_mobile_ext} ${txt_mobile_ext}    ${Register.Full_register['text_mobile_extra']} ${mobile_ext}
 
 Input Mobile Company Legal Entity
     [Arguments]    ${value}  
-    common.Input When Ready    ${register_txtbox_mobile_company_legal_entity_full_register}     ${value}  
+    common.Input When Ready    ${register_txtbox_mobile_company_full_register}     ${value}  
 
 Input Mobile Company Ext Legal Entity
     [Arguments]    ${value}  
-    common.Input When Ready    ${register_txtbox_mobile_company_ext_legal_entity_full_register}     ${value}
+    common.Input When Ready    ${register_txtbox_mobile_company_ext_full_register}     ${value}
 
  #Uploadfile
 Upload Certificate Business Registration
