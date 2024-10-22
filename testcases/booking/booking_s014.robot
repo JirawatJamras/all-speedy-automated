@@ -19,6 +19,7 @@ Booking_S014
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S014    Verify Booking Page For Business Customer
@@ -45,6 +46,11 @@ Booking_S014
     ...    ${Booking['text_name_sender']}
     ...    ${Booking['text_address_sender']}
     ...    ${Booking['text_postcode_sender']}
+    b2c_booking_delivery_page.Verify Data Sender
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S014    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ

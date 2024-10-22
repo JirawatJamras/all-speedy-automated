@@ -172,14 +172,14 @@ Booking_S007
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S011    Verify Parcel Detail  
+    common.Verify Capture Screenshot    Booking_S007    Verify Parcel Detail  
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
     # เลือกขนาดพัสดุ : กล่อง L
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S007['parcel_size']}
     b2c_booking_delivery_page.Input Insurance    ${Booking_S007['parcel_insure']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S007['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S011    Verify Input Parcel Detail  
+    common.Verify Capture Screenshot    Booking_S007    Verify Input Parcel Detail  
     sleep    5s
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
