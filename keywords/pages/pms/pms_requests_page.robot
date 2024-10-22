@@ -16,7 +16,7 @@ Click Tab Edit Company Information
     common.Click When Ready    ${pms_tab_in_request_page}
 
 Select Pending Tab
-    ${pending}=  Replace String   ${pms_tab_in_request_page}   {value}   ${rm['text_pending']}
+    ${pending}=  Replace String   ${pms_subtab_in_request_page}   {value}   ${rm['text_pending']}
     common.Click When Ready    ${pending}
     @{legal_req_list}=    Create List
     Set Suite Variable    @{legal_req_list}
@@ -224,3 +224,23 @@ Verify Save Assign To RM Success [Individual]
         Wait Until Element Is Visible    ${txt_list_complete}        timeout=${DEFAULT_TIMEOUT}
         Scroll Element Into View    ${txt_list_complete}
     END
+
+#################### Full-Register ####################
+
+###### legal entity ######
+Select Request With Waiting For Confirm Status [legal entity]
+    [Arguments]    ${partner_types}    ${company_name}    ${first_name}    ${last_name}
+    ...    ${mobile_no}    ${mobile_ext}    ${rm_name}
+    ${value}=    Replace String    ${pms_btn_list_full_regis_request_page}    {types}    ${partner_types}
+    ${value}=    Replace String    ${value}    {company}    ${company_name}
+    ${value}=    Replace String    ${value}    {name}    ${first_name} ${last_name}
+    ${value}=    Replace String    ${value}    {tel}    ${mobile_no}
+    ${value}=    Replace String    ${value}    {ext}    ${mobile_ext}
+    ${value}=    Replace String    ${value}    {rm}    ${rm_name}
+    ${btn_list_in_request_page}=    Replace String    ${value}    {status}    ${rm.text_status['waiting_confirm']}
+    Wait Until Element Is Visible    ${btn_list_in_request_page}${pms_txt_request_num_full_regis}    timeout=${DEFAULT_TIMEOUT}
+    ${req_no_full_regis}=    Get Text    ${btn_list_in_request_page}${pms_txt_request_num_full_regis}
+    ${req_date_full_regis}=    Get Text    ${btn_list_in_request_page}${pms_txt_request_date_full_regis}
+    Set Suite Variable    ${req_no_full_regis}
+    Set Suite Variable    ${req_date_full_regis}
+    common.Click When Ready    ${btn_list_in_request_page}

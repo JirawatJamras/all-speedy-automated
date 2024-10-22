@@ -217,6 +217,8 @@ Register_S013:
     vat:
     remark:
 
+Register_S015:
+  request_type: Full Register
 
 Register_S017:
   company_data:

@@ -492,4 +492,4 @@ Verify Information After Reject Request [Individual]
     # Should Be Equal As Strings    ${label_sale_name} ${value_sale_name}    ${rm['text_sale_name']} ${sale_name}
     # Should Be Equal As Strings    ${label_sale_phone} ${value_sale_phone}    ${rm['text_sale_mobile']} ${sale_phone}
     # Should Be Equal As Strings    ${label_sale_email} ${value_sale_email}    ${rm['text_sale_email']} ${sale_email}
-    Set Suite Variable    ${rm_link_full_register} 
+    Set Suite Variable    ${rm_link_full_register}

@@ -229,6 +229,7 @@ rm:
   text_sale_information: ข้อมูล Sale
   text_reject: ปฏิเสธ
   text_approve: อนุมัติ
+  text_next_page: หน้าถัดไป
   text_assign_rm:  Assign RM
   text_list_of_all_rm: รายชื่อ RM ทั้งหมด
   text_request_detail: รายละเอียดคำขอ
@@ -244,6 +245,8 @@ rm:
     confirm_link: ยืนยันส่ง Link
     under_consideration: กำลังพิจารณา
     reject: ปฏิเสธ
+    waiting_review: รอตรวจสอบ
+    waiting_confirm: รอการยืนยัน
   role:
     dev: Role Dev
     admin: แอดมินคลัง
