@@ -103,6 +103,7 @@ ${cbo_store_receiver}    //div[@title='{value}']
 ${tab_send_to_home}    //div[@data-node-key='home']
 ${tab_send_to_store}    //div[@data-node-key='store']
 ${tab_send_to_home_verify}    //div[@role='tab' and @aria-selected='true']//div[text()='ส่งที่บ้าน']
+${tab_send_to_store_verify}    //div[@data-node-key='store']//div[@id='create_parcel_form_receiver_placeType-tab-store']
 
 ${status_active_sender}    //div[@step='1' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']
 ${status_active_receiver}    //div[@step='2' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']

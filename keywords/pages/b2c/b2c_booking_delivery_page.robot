@@ -9,10 +9,9 @@ Verify Booking Page For Business Customer
     Should Be Equal    ${title}    ${Booking['text_title_booking_for_business_customer']}
 
 Verify Booking Page For General Customer 
-    ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']} 
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=60s
-    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=5s
+    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=5s
     Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=5s
+    ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']}
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
     Wait Until Element Is Visible    ${btn_add}    timeout=30s
     ${title}=    Get Text    ${txt_title_booking}    
@@ -146,9 +145,11 @@ Verify Data Receiver When Select 7-ELEVEN Store
     Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
+    ${tab_send_to_store_verify}=    Get Element Attribute    ${tab_send_to_store_verify}    aria-selected
     ${actual_text_store_receiver}=    Get Text    ${txt_store_address}
     Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
+    Should Be Equal    ${tab_send_to_store_verify}    true
     Should Be Equal    ${actual_text_store_receiver}    ${store_address_receiver}
 
 Verify Create Parcel Page Receiver Step When Select Home

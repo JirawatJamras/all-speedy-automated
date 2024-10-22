@@ -27,6 +27,7 @@ Booking:
   text_name_receiver: ชื่อ *    
   text_location_receiver: ข้อมูลสถานที่รับพัสดุ      
   text_send_home: ส่งที่บ้าน
+  text_send_store: ส่งร้าน 7-11
   text_address_receiver: รายละเอียดที่อยู่ *     
   text_postcode_receiver: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *     
   text_postcode_receiver_1: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
