@@ -22,8 +22,8 @@ Verify Email That Have Received Link
 #Legal Entity
 Verify Company information Legal Entity Page
     [Arguments]    ${partner_type}    ${company_title_name}    ${company_name}    ${id_number}    
-    ...    ${company_address}    ${select_company_address_full}    ${title_name}
-    ...    ${first_name}    ${last_name}    ${email}    ${mobile_no}    ${mobile_ext}
+    ...    ${company_address}    ${select_company_address_full}    ${mobile_company}    ${mobile_company_ext}
+    ...    ${title_name}    ${first_name}    ${last_name}    ${email}    ${mobile_no}    ${mobile_ext}
     #หัวข้อข้อมูลบริษัท
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_company_information']}
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_company_information']}
@@ -67,10 +67,8 @@ Verify Company information Legal Entity Page
     Should Be Equal As Strings    ${label_id_number} ${txt_id_number}    ${Register.Full_register['text_id_number']} ${id_number}
     Should Be Equal As Strings    ${label_company_address} ${txt_company_address}    ${Register.Full_register['text_company_address']} ${company_address}
     Should Be Equal As Strings    ${label_select_company_address_full} ${txt_select_company_address_full}    ${Register.Full_register['text_company_address_full']} ${select_company_address_full}
-    Should Be Equal As Strings    ${label_mobile_company}    ${Register.Full_register['text_mobile_company']}
-    Should Be Empty    ${txt_mobile_company}
-    Should Be Equal As Strings    ${label_mobile_company_ext}    ${Register.Full_register['text_mobile_company_extra']}
-    Should Be Empty    ${txt_mobile_company_ext}
+    Should Be Equal As Strings    ${label_mobile_company} ${txt_mobile_company}    ${Register.Full_register['text_mobile_company']} ${txt_mobile_company}
+    Should Be Equal As Strings    ${label_mobile_company_ext} ${txt_mobile_company_ext}    ${Register.Full_register['text_mobile_company_extra']} ${txt_mobile_company_ext}
     Page Should Contain Element    ${txt_sub_topic}
     Should Be Equal As Strings    ${label_title_name} ${txt_title_name}    ${Register.Full_register['text_title_name']} ${title_name}
     Should Be Equal As Strings    ${label_first_name} ${txt_first_name}    ${Register.Full_register['text_first_name']} ${first_name}

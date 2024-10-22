@@ -345,6 +345,8 @@ Register_S013
     # ...    ${Register_S001['id_number']}
     ...    ${Register_S001['company_address']}
     ...    ${Register_S001['select_company_address_full']}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     ...    ${Register_S001['title_name']} 
     ...    ${Register_S001['first_name']}
     ...    ${Register_S001['last_name']}
