@@ -23,8 +23,31 @@ Register:
     text_header_company_information: ข้อมูลทั่วไป
     text_header_service_information: ข้อมูลบริการ
     text_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
-    #text
     text_header_supporting_document: อัปโหลดเอกสารประกอบ
+    
+    text_partner_type: ประเภทคู่ค้า
+    text_company_title_name: 'คำนำหน้าประเภทจดทะเบียนบริษัท *'
+    text_company_name: 'ชื่อบริษัท *'
+    text_id_number: 'เลขประจำตัวผู้เสียภาษี *'
+    text_company_address: 'ที่อยู่บริษัท *'
+    text_company_address_full: 'ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์ *'
+    text_mobile_company: 'เบอร์โทรศัพท์ *'
+    text_mobile_company_extra: '#ต่อ'
+    text_contact_information: ข้อมูลผู้ติดต่อ
+    text_title_name: 'คำนำหน้าชื่อ *'
+    text_first_name: 'ชื่อ (ผู้ติดต่อ) *'
+    text_last_name: 'นามสกุล *'
+    text_email: 'E-mail *'
+    text_mobile: 'เบอร์โทรศัพท์ *'
+    text_mobile_extra: '#ต่อ' 
+    text_customer_first_name: ชื่อ
+    text_customer_last_name: นามสกุล
+    text_id_card_number: เลขบัตรประชาชน
+    # text_customer_email: E-mail
+    # text_address_individual: ที่อยู่บริษัท
+    # text_customer_mobile: เบอร์โทรศัพท์
+    # text_customer_mobile_extra: '#ต่อ' 
+
     text_tab_dry_parcel: พัสดุทั่วไป
     text_tab_chill_parcel: พัสดุควบคุมอุณหภูมิ
     text_tab_return_business: Return Business
