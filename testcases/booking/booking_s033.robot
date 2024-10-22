@@ -9,7 +9,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S033
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Review_Pass
     Log    Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -162,15 +162,15 @@ Booking_S033
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Detail Step
-    ...    ${Booking.general_parcel['parcel_detail_A4']}
-    ...    ${Booking.general_parcel['parcel_detail_A3']}
-    ...    ${Booking.general_parcel['parcel_detail_XS']}
-    ...    ${Booking.general_parcel['parcel_detail_S']}
-    ...    ${Booking.general_parcel['parcel_detail_M']}
-    ...    ${Booking.general_parcel['parcel_detail_L']}
-    ...    ${Booking.general_parcel['parcel_detail_XL']}
-    ...    ${Booking.general_parcel['parcel_detail_XXL']}
+    b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
+    ...    ${Booking.dry_parcel['parcel_detail_A4']}
+    ...    ${Booking.dry_parcel['parcel_detail_A3']}
+    ...    ${Booking.dry_parcel['parcel_detail_XS']}
+    ...    ${Booking.dry_parcel['parcel_detail_S']}
+    ...    ${Booking.dry_parcel['parcel_detail_M']}
+    ...    ${Booking.dry_parcel['parcel_detail_L']}
+    ...    ${Booking.dry_parcel['parcel_detail_XL']}
+    ...    ${Booking.dry_parcel['parcel_detail_XXL']}
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
@@ -214,7 +214,7 @@ Booking_S033
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}  # Expected result : {Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
