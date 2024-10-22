@@ -1,59 +1,60 @@
 Register:
-  txt_menu_business: ลูกค้าธุรกิจ
-  txt_menu_general: ลูกค้าทั่วไป
+  text_menu_business: ลูกค้าธุรกิจ
+  text_menu_general: ลูกค้าทั่วไป
   text_blank:
     remark: ''
   email: businessregisterflow@gmail.com
   password: Business1234@
   Pre_register:
-    txt_menu_register: ลงทะเบียนลูกค้าธุรกิจ
-    txt_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
+    text_menu_register: ลงทะเบียนลูกค้าธุรกิจ
+    text_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
     btn_confirm: ลงทะเบียน
     btn_cancel: ยกเลิก
-    txt_header_cancel: ยกเลิกการลงทะเบียน
-    txt_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    text_header_cancel: ยกเลิกการลงทะเบียน
+    text_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
     confirm_cancel_popup: ตกลง
     cancel_cancel_popup: ยกเลิก
   Full_register:
-    txt_link_register: ลงทะเบียนได้ที่ / Register at
-    txt_title_company_information: ข้อมูลบริษัท
-    txt_title_service_information: ข้อมูลบริการ
-    txt_title_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
-    txt_title_supporting_document: เอกสารประกอบ
-    txt_header_company_information: ข้อมูลทั่วไป
-    txt_header_service_information: ข้อมูลบริการ
-    txt_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
-    txt_header_supporting_document: อัปโหลดเอกสารประกอบ
-    txt_tab_dry_parcel: พัสดุทั่วไป
-    txt_tab_chill_parcel: พัสดุควบคุมอุณหภูมิ
-    txt_tab_return_business: Return Business
-    txt_btn_add_service_cod: บริการเก็บเงินปลายทาง
-    txt_btn_add_service_insurance: ประกันคุ้มครองพัสดุ
-    txt_btn_add_service_express: บริการส่งด่วน
-    txt_btn_select_parcel: เลือก
-    txt_service_usage_information_topic: ข้อมูลการใช้บริการ
-    txt_type_product: 'ประเภทสินค้าหลักที่จัดส่ง *'
-    txt_number_by_day: 'จำนวนการจัดส่งเฉลี่ยต่อวัน *'
-    txt_sale_channel: 'ช่องทางจำหน่าย *'
-    txt_vat: 'Vat ของสินค้า *'
-    txt_vat_chill: 'Vat ของสินค้า*'
-    txt_remark: หมายเหตุ
-    txt_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
-    txt_copy_file_20: สำเนาเอกสาร ภพ. 20
-    txt_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
-    txt_copy_of_bank_account: สำเนาหน้าบัญชีธนาคาร
-    txt_copy_of_house_registration: สำเนาทะเบียนบ้านของผู้มีอำนาจลงนาม
-    txt_permission_form: หนังสือยินยอมให้หักค่าธรรมเนียมการโอนผ่านบัญชีธนาคาร
-    txt_other_file: เอกสารอื่นๆ
+    text_link_register: ลงทะเบียนได้ที่ / Register at
+    text_title_company_information: ข้อมูลบริษัท
+    text_title_service_information: ข้อมูลบริการ
+    text_title_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    text_title_supporting_document: เอกสารประกอบ
+    text_header_company_information: ข้อมูลทั่วไป
+    text_header_service_information: ข้อมูลบริการ
+    text_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    #text
+    text_header_supporting_document: อัปโหลดเอกสารประกอบ
+    text_tab_dry_parcel: พัสดุทั่วไป
+    text_tab_chill_parcel: พัสดุควบคุมอุณหภูมิ
+    text_tab_return_business: Return Business
+    text_btn_add_service_cod: บริการเก็บเงินปลายทาง
+    text_btn_add_service_insurance: ประกันคุ้มครองพัสดุ
+    text_btn_add_service_express: บริการส่งด่วน
+    text_btn_select_parcel: เลือก
+    text_service_usage_information_topic: ข้อมูลการใช้บริการ
+    text_type_product: 'ประเภทสินค้าหลักที่จัดส่ง *'
+    text_number_by_day: 'จำนวนการจัดส่งเฉลี่ยต่อวัน *'
+    text_sale_channel: 'ช่องทางจำหน่าย *'
+    text_vat: 'Vat ของสินค้า *'
+    text_vat_chill: 'Vat ของสินค้า*'
+    text_remark: หมายเหตุ
+    text_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
+    text_copy_file_20: สำเนาเอกสาร ภพ. 20
+    text_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
+    text_copy_of_bank_account: สำเนาหน้าบัญชีธนาคาร
+    text_copy_of_house_registration: สำเนาทะเบียนบ้านของผู้มีอำนาจลงนาม
+    text_permission_form: หนังสือยินยอมให้หักค่าธรรมเนียมการโอนผ่านบัญชีธนาคาร
+    text_other_file: เอกสารอื่นๆ
     btn_next: ถัดไป
     btn_cancel: ยกเลิก
     btn_save: บันทึกร่าง
     btn_confirm: ลงทะเบียน
-    txt_header_cancel: ยกเลิกการลงทะเบียน
-    txt_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
-    txt_accept: ยอมรับ
-    txt_terms_of_service: เงื่อนไขให้บริการ
-    txt_privacy_policy:  นโยบายความเป็นส่วนตัว
+    text_header_cancel: ยกเลิกการลงทะเบียน
+    text_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    text_accept: ยอมรับ
+    text_terms_of_service: เงื่อนไขให้บริการ
+    text_privacy_policy:  นโยบายความเป็นส่วนตัว
     confirm_cancel_popup: ตกลง
     cancel_cancel_popup: ยกเลิก
     text_blank:
@@ -211,4 +212,4 @@ Register_S017:
       email: noppadolkum@email.co
       mobile_number: 0981111111
       ext: ''
-  txt_btn_next: หน้าถัดไป
+  text_btn_next: หน้าถัดไป

@@ -27,11 +27,11 @@ Verify Input Text Box
 
 Input Company Name 
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_company_name_register_page}     ${Value}
+    Input Text Register    ${register_txtbox_company_name_register_page}     ${Value}
 
 Verify Input Company Name
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_company_name_register_page}    ${Value}  
+    Verify Input Text Box    ${register_txtbox_company_name_register_page}    ${Value}  
 
 Input Tax Identification Number 
     [Arguments]    ${Value}  
@@ -55,22 +55,22 @@ Verify Input Characters In Tax Identification Number Is Empty
 
 Input Company Address 
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_company_address_register_page}    ${Value}  
+    Input Text Register    ${register_txtbox_company_address_register_page}    ${Value}  
 
 Verify Input Company Address  
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_company_address_register_page}    ${Value}     
+    Verify Input Text Box    ${register_txtbox_company_address_register_page}    ${Value}     
 
 Input Company Address Full
     [Arguments]    ${Value}    ${Select}
-    Input Text Register    ${register_textbox_company_address_full_register_page}     ${Value}  
+    Input Text Register    ${register_txtbox_company_address_full_register_page}     ${Value}  
     #Select one in result search 
     Wait Until Element Is Visible    //div[text()='${Select}'][@class='ant-select-item-option-content'] 
     Click Element    //div[text()='${Select}'][@class='ant-select-item-option-content']
 
 Verify Input Company Address Full  
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_company_address_full_register_page}    ${Value}
+    Verify Input Text Box    ${register_txtbox_company_address_full_register_page}    ${Value}
 
 Select Title Name  
     [Arguments]    ${Title}
@@ -85,50 +85,50 @@ Verify Title Name
 
 Input First Name
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_first_name_register_page}     ${Value}
+    Input Text Register    ${register_txtbox_first_name_register_page}     ${Value}
 
 Verify Input First Name
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_first_name_register_page}    ${Value}
+    Verify Input Text Box    ${register_txtbox_first_name_register_page}    ${Value}
 
 Input Last Name
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_last_name_register_page}     ${Value}  
+    Input Text Register    ${register_txtbox_last_name_register_page}     ${Value}  
 
 Verify Input Last Name
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_last_name_register_page}    ${Value}  
+    Verify Input Text Box    ${register_txtbox_last_name_register_page}    ${Value}  
 
 Input Email
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_email_register_page}     ${Value}
+    Input Text Register    ${register_txtbox_email_register_page}     ${Value}
 
 Verify Input Email
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_email_register_page}    ${Value}
+    Verify Input Text Box    ${register_txtbox_email_register_page}    ${Value}
 
 Input Mobile No
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_mobile_no_register_page}     ${Value}  
+    Input Text Register    ${register_txtbox_mobile_no_register_page}     ${Value}  
 
 Verify Input Mobile No
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_mobile_no_register_page}    ${Value}
+    Verify Input Text Box    ${register_txtbox_mobile_no_register_page}    ${Value}
 
 Input Mobile Ext
     [Arguments]    ${Value}  
-    Input Text Register    ${register_textbox_mobile_ext_register_page}     ${Value}
+    Input Text Register    ${register_txtbox_mobile_ext_register_page}     ${Value}
 
 Verify Input Mobile Ext
     [Arguments]    ${Value}  
-    Verify Input Text Box    ${register_textbox_mobile_ext_register_page}    ${Value}
+    Verify Input Text Box    ${register_txtbox_mobile_ext_register_page}    ${Value}
 
 Verify Maximum Input Mobile Ext That Can Be Inputted
-    ${count_lenght_value}=    Get Value    ${register_textbox_mobile_ext_register_page}
+    ${count_lenght_value}=    Get Value    ${register_txtbox_mobile_ext_register_page}
     Length Should Be    ${count_lenght_value}    10
 
 Verify Input Characters In Mobile Ext Is Empty
-    ${value}=    Get Value    ${register_textbox_mobile_ext_register_page}
+    ${value}=    Get Value    ${register_txtbox_mobile_ext_register_page}
     Should Be Empty   ${value}
 
 

@@ -15,8 +15,8 @@ Set Juristic ID Legal Entity
 
 Select Company Title Name Legal Entity
     [Arguments]    ${title}
-    common.Click when ready    ${register_dropdown_company_title_name_legal_entity}
-    ${selected_company_title_name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${title}
+    common.Click when ready    ${register_cbo_company_title_name_legal_entity}
+    ${selected_company_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
     common.Click when ready    ${selected_company_title_name}
 
 Input Company Name Legal Entity
@@ -33,14 +33,14 @@ Input Company Address Legal Entity
 
 Input Company Address Full Legal Entity
     [Arguments]    ${value}    ${select}
-    common.Input When Ready    ${register_dropdown_company_address_full_legal_entity}     ${value}  
-    ${selected_company_address_full}=    Replace String    ${register_dropdown_choice_company_address_full_legal_entity}    {value}    ${select}
+    common.Input When Ready    ${register_cbo_company_address_full_legal_entity}     ${value}  
+    ${selected_company_address_full}=    Replace String    ${register_cbo_choice_company_address_full_legal_entity}    {value}    ${select}
     common.Click when ready     ${selected_company_address_full}
 
 Select Title Name Legal Entity
     [Arguments]    ${title}
-    common.Click when ready    ${register_dropdown_title_name_legal_entity}
-    ${selected_title_name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${title}
+    common.Click when ready    ${register_cbo_title_name_legal_entity}
+    ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
     common.Click when ready    ${selected_title_name}
 
 Input First Name Legal Entity
@@ -74,8 +74,8 @@ Set National ID Individual
 
 Select Title Name Individual
     [Arguments]    ${title}
-    common.Click when ready    ${register_dropdown_title_name_individual}
-    ${selected_title_name}=    Replace String    ${register_dropdown_choice_title_name}    {value}    ${title}
+    common.Click when ready    ${register_cbo_title_name_individual}
+    ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
     common.Click when ready    ${selected_title_name}
 
 Input First Name Individual
@@ -100,8 +100,8 @@ Input Address Individual
 
 Input Address Full Individual
     [Arguments]    ${value}    ${select}
-    common.Input When Ready    ${register_dropdown_address_full_individual}     ${value}  
-    ${selected_company_address_full}=    Replace String    ${register_dropdown_choice_address_full_individual}    {value}    ${select}
+    common.Input When Ready    ${register_cbo_address_full_individual}     ${value}  
+    ${selected_company_address_full}=    Replace String    ${register_cbo_choice_address_full_individual}    {value}    ${select}
     common.Click when ready     ${selected_company_address_full}
 
 Input Mobile No Individual

@@ -124,7 +124,7 @@ Register_S003
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
     register_business_pre_register.Click Cancel
-    register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['txt_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
+    register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup
@@ -217,7 +217,7 @@ Register_S006
     Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
     register_business_pre_register.Click Cancel
-    register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['txt_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
+    register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup
@@ -383,7 +383,7 @@ Register_S013
 
     Log    Step No.6 กดปุ่ม "ยกเลิก"
     register_business_full_register.Click Cancel
-    register_business_full_register.Verify Cancel Popup    ${Register.Pre_register['txt_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
+    register_business_full_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['txt_question_cancel']}
     
     Log    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
     register_business_full_register.Click Button Confirm Cancel Popup
