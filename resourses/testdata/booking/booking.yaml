@@ -136,6 +136,11 @@ Booking_S005:
   total_price_value2:  '200.00'
 
 Booking_S006:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0638757776
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   receiver_phone: 0890000002
   receiver_name: สมใจ ดีดีดี
@@ -143,7 +148,9 @@ Booking_S006:
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   parcel_size:  M
+  parcel_package_type:  กล่อง
   buy_insurance:  2,500
+  buy_insurance_verify: 2,500.00
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   store_code:  '15888'
   booking_item: 1 รายการ
@@ -152,7 +159,8 @@ Booking_S006:
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   total_price_amount:  '1'
-  total_price_value:  '186.00'
+  total_price_value1:  'NaN'
+  total_price_value2:  '186.00'
   price_value: '80'
 
 Booking_S007:
@@ -170,7 +178,7 @@ Booking_S007:
   parcel_size:  L
   parcel_package_type:  กล่อง
   parcel_insure: 2500
-  parcel_insure_check: 2,500.00
+  buy_insurance_verify: 2,500.00
   parcel_detail_remark:  ระวังพัสดุเสียหาย
   price_value: '120'
   promotion:  SPBH5B

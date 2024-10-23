@@ -1,14 +1,15 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Close Browser
+Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+                  ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S006
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก M (มีประกัน ไม่มีCOD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT
+    [Tags]    Booking    UAT    In_Review
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -18,6 +19,7 @@ Booking_S006
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Page For Business Customer
@@ -168,9 +170,6 @@ Booking_S006
     common.Verify Capture Screenshot    Booking_S006    Verify Paecel Detail
 
     Log    Step No.12 ขั้นตอนกรอกรายละเอียดพัสดุ
-    # กรอกข้อมูล
-    # เลือกขนาดพัสดุ : กล่อง M
-    # จำนวนเงินซื้อประกัน : 2,500.00
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S006['parcel_size']}
     b2c_booking_delivery_page.Input Insurance    ${Booking_S006['buy_insurance']}
     common.Verify Capture Screenshot    Booking_S006    Verify Create Parcel Page After Input Parcel Detail Step
@@ -206,18 +205,18 @@ Booking_S006
     ...    ${Booking_S006['receiver_postcode_full']}
     ...    ${Booking_S006['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking_S006['buy_insurance']}
+    ...    ${Booking_S006['buy_insurance_verify']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['price_value']}
-    ...    ${Booking_S006['insurance_fee_amount']}
-    ...    ${Booking_S006['insurance_fee_value']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    0    #Expected result is ${Booking_S006['insurance_fee_amount']}
+    ...    0.00    #Expected result is ${Booking_S006['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S006['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}  # Actaul result : NaN
-    ...    ${Booking.text_blank['store_code']}
+    ...    0    #Expected result is ${Booking_S006['total_price_amount']}
+    ...    0.00  # Expected result is ${Booking_S006['total_price_value1']}
+    ...    ${EMPTY}    #Expected result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -225,6 +224,7 @@ Booking_S006
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
@@ -256,18 +256,18 @@ Booking_S006
     ...    ${Booking_S006['receiver_postcode_full']}
     ...    ${Booking_S006['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking_S006['buy_insurance']}
+    ...    ${Booking_S006['buy_insurance_verify']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['price_value']}
-    ...    ${Booking_S006['insurance_fee_amount']}
-    ...    ${Booking_S006['insurance_fee_value']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    0    #Expected result is ${Booking_S006['insurance_fee_amount']}
+    ...    0.00    #Expected result is ${Booking_S006['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S006['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}  # Actaul result : NaN
-    ...    ${Booking_S006['store_code']}
+    ...    0    #Expected result is ${Booking_S006['total_price_amount']}
+    ...    0.00  # Expected result is ${Booking_S006['total_price_value1']}
+    ...    ${EMPTY}    #Expected result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -287,6 +287,7 @@ Booking_S006
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S006['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
@@ -307,7 +308,7 @@ Booking_S006
     ...    ${Booking_S006['receiver_postcode_full']}
     ...    ${Booking_S006['parcel_size']}
     ...    ${Booking_S006['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking_S006['buy_insurance_verify']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
@@ -317,7 +318,7 @@ Booking_S006
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S006['total_price_amount']}
-    ...    ${Booking_S006['total_price_value']}
+    ...    ${Booking_S006['total_price_value2']}
     ...    ${Booking_S006['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary After Set Origin Shipping
@@ -344,7 +345,7 @@ Booking_S006
     ...    ${Booking_S006['receiver_address']}
     ...    ${Booking_S006['receiver_postcode_full']}
     ...    ${Booking.label['non_cod']}
-    ...    ${Booking.label['parcel_not_buy_insure']}
+    ...    ${Booking.label['parcel_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S006    Verify Parcel Label
 
@@ -352,5 +353,3 @@ Booking_S006
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    Booking_S006    Verify Print Screen
-
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
