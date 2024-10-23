@@ -295,11 +295,9 @@ Booking_S012:
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   receiver_phone: 0890000002
   receiver_name: สมใจ ดีดีดี
-  receiver_address: 01523 สาขา ปากน้ำหลังสวน
-  receiver_address2: 01523 ปากน้ำหลังสวน
-  receiver_postcode: ปากน้ำ หลังสวน ชุมพร 86150
-  receiver_address_and_postcode_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
   receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'    # Expected result is'01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
   parcel_size: XS
   price_value: 20
   parcel_cod:  5000

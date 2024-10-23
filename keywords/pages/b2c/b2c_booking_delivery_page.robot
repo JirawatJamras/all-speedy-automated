@@ -228,6 +228,23 @@ Verify Favorites Receiver PopUp
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${receiver_postcode_full_list[3]}    
     Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
 
+Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
+    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_store_address}
+    ${receiver_store_address_split}=    Split String    ${receiver_store_address}    ${SPACE}
+    ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list_store}   {value_name}   ${receiver_name}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {store_address}   ${receiver_store_address[0]}  
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+
+Click Choose Favorites Receiver List When Address At 7-ELEVEN Store
+    [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_store_address}
+    ${receiver_store_address_split}=    Split String    ${receiver_store_address}    ${SPACE}
+    ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list_store}   {value_name}   ${receiver_name}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {store_address}   ${receiver_store_address[0]}  
+    common.Click When Ready    ${selected_favorites_list}
+
+
 Click Choose Favorites Sender List
     [Arguments]    ${sender_phone}    ${sender_name}    ${sender_address}    ${sender_postcode_full}
     ${sender_postcode_full_list}=    Split String    ${sender_postcode_full}    ${SPACE}
