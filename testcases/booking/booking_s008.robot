@@ -390,7 +390,7 @@ Booking_S008
     ...    ${Booking_S008['receiver_phone']}
     ...    ${Booking_S008['receiver_address']}
     ...    ${Booking_S008['receiver_postcode_full']}
-    ...    ${Booking_S008.label['parcel_cod']}
+    ...    ${Booking_S008['parcel_cod_verify_label']}
     ...    ${Booking.label['parcel_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S008    Verify Parcel Label

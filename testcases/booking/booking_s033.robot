@@ -362,7 +362,7 @@ Booking_S033
     ...    ${Booking_S033['receiver_phone']}
     ...    ${Booking_S033['receiver_address']}
     ...    ${Booking_S033['receiver_postcode_full']}
-    ...    ${Booking.label['parcel_cod']}
+    ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_buy_insure']}
     ...    ${Booking_S033['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S033    Verify Parcel Label

@@ -84,7 +84,8 @@ Booking_S004:
   parcel_size:  XS
   parcel_package_type:  กล่อง
   parcel_cod: 5000
-  parcel_cod_check: 5,000.00
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   cod_fee_amount: '1'
   cod_fee_amount2: '0'
   cod_fee_value: '150.00'
@@ -94,9 +95,6 @@ Booking_S004:
   total_price_value:  '150.00'
   total_price_value2:  '0.00'
   total_price_value3:  '200.00'
-  label:
-    parcel_cod: ยอดชำระ 5000 บาท
-  
 
 Booking_S005:
   parcel_type:  พัสดุทั่วไป
@@ -115,10 +113,11 @@ Booking_S005:
   booking_name:  Booking DRY
   booking_item: 1 รายการ
   parcel_size: S
-  parcel_package_type:  ซอง
-  price_value: 30    # 55.00
+  parcel_package_type:  กล่อง
+  price_value: 55.00
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
   promotion:  SPBH5B
   promotion_detail:
@@ -133,7 +132,8 @@ Booking_S005:
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  '200.00'
+  total_price_value1:  'NaN'
+  total_price_value2:  '200.00'
 
 Booking_S006:
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
@@ -215,6 +215,7 @@ Booking_S008:
   parcel_insure_verify: 2,500.00
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_price_verify: '200'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
@@ -228,8 +229,6 @@ Booking_S008:
   booking_price: 'NaN บาท'
   store_code: '15888'
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
-  label:
-    parcel_cod: ยอดชำระ 5000 บาท
 
 Booking_S010:
   parcel_type:  พัสดุทั่วไป

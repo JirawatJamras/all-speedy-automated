@@ -156,7 +156,7 @@ Booking_S004
     ...    ${Booking_S004['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S004['parcel_cod_check']}
+    ...    ${Booking_S004['parcel_cod_verify']}
     common.Verify Capture Screenshot    Booking_S004    Verify Draft Parcel  
 
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
@@ -249,7 +249,7 @@ Booking_S004
     ...    ${Booking_S004['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S004['parcel_cod_check']}
+    ...    ${Booking_S004['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
@@ -300,7 +300,7 @@ Booking_S004
     ...    ${Booking_S004['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S004['parcel_cod_check']}
+    ...    ${Booking_S004['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
@@ -352,7 +352,7 @@ Booking_S004
     ...    ${Booking_S004['parcel_size']}
     ...    ${Booking_S004['parcel_price']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S004['parcel_cod_check']}
+    ...    ${Booking_S004['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
@@ -387,7 +387,7 @@ Booking_S004
     ...    ${Booking_S004['receiver_phone']}
     ...    ${Booking_S004['receiver_address']}
     ...    ${Booking_S004['receiver_postcode_full']}
-    ...    ${Booking_S004.label['parcel_cod']}
+    ...    ${Booking_S004['parcel_cod_verify_label']}
     ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S004    Verify Parcel Label

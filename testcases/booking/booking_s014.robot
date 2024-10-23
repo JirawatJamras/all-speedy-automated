@@ -341,7 +341,7 @@ Booking_S014
     ...    ${Booking_S014['receiver_name']}
     ...    ${Booking_S014['receiver_phone']}
     ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    #${Booking_S014['receiver_store_address']}
-    ...    ${Booking.label['parcel_cod']}
+    ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S014    Verify Parcel Label

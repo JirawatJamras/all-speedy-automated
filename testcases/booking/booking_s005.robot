@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S005
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก S (ไม่มีประกัน มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    Run
+    [Tags]    Booking    UAT
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -166,6 +166,7 @@ Booking_S005
     common.Verify Capture Screenshot    Booking_S005    Verify Promotion
 
     Log    Step No.13 ขั้นตอน Promotion
+    # ระบุโค้ดส่วนลด : SPBH5B
     b2c_booking_delivery_page.Input Promotion    ${Booking_S005['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     #Expected
@@ -210,7 +211,7 @@ Booking_S005
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking.text_default['total_price_value']}    # Expected Result is ${Booking_S005['total_price_value1']}
     ...    ${EMPTY}    #Expected result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S005    Verify Booking Summary After Booking Success
@@ -261,7 +262,7 @@ Booking_S005
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking.text_default['total_price_value']}    # Expected Result is ${Booking_S005['total_price_value1']}
     ...    ${EMPTY}    #${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S005    Verify Booking Summary
@@ -302,9 +303,9 @@ Booking_S005
     ...    ${Booking_S005['receiver_address']}
     ...    ${Booking_S005['receiver_postcode_full']}
     ...    ${Booking_S005['parcel_size']}
-    ...    ${Booking_S005['price_value']}
+    ...    55    # Expected result is ${Booking_S005['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking_S005['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S005['discount_amount']}
     ...    ${Booking_S005['discount_value']}
@@ -313,7 +314,7 @@ Booking_S005
     ...    ${Booking_S005['cod_fee_amount']}
     ...    ${Booking_S005['cod_fee_value']}
     ...    ${Booking_S005['total_price_amount']}
-    ...    ${Booking_S005['total_price_value']}
+    ...    ${Booking_S005['total_price_value2']}
     ...    ${Booking_S005['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S005    Verify Booking Summary After Set Origin Shipping
@@ -339,9 +340,9 @@ Booking_S005
     ...    ${Booking_S005['receiver_phone']}
     ...    ${Booking_S005['receiver_address']}
     ...    ${Booking_S005['receiver_postcode_full']}
-    ...    ${Booking.label['parcel_cod']}
+    ...    ${Booking_S005['parcel_cod_verify_label']}
     ...    ${Booking.label['parcel_not_buy_insure']}
-    ...    ${Booking.text_blank['parcel_detail_remark:']}
+    ...    ${Booking_S005['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S005    Verify Parcel Label
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
