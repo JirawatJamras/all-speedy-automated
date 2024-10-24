@@ -135,3 +135,72 @@ Register_S011
     register_business_full_register.Login mail    ${Register['email']}    ${Register['password']}
     register_business_full_register.Verify Email That Have Received Link
     common.Verify Capture Screenshot    Register_S011    Verify Email That Have Received Link
+
+Register_S014
+    [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
+    Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+    #Step login email same input email in S004
+    # common.Open URL    https://yopmail.com/
+    # ${email}=    Evaluate    "${Register_S004['email']}".split("@")[0]
+    # register_business_full_register.Login Yopmail    ${email}
+    #step get link for full-register
+    #${link_full_register}=    Set Variable    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
+    #common.Open URL    ${link_full_register}
+    
+    
+    #Expected
+    register_business_full_register.Verify Company information
+    ...    ${Register_S004['checkbox_partner_types']}
+    ...    ${Register_S004['title_name']}
+    ...    ${Register_S004['first_name']}
+    ...    ${Register_S004['last_name']}
+    ...    ${Register_S004['id_number']}
+    ...    ${Register_S004['email']}
+    ...    ${Register_S004['individual_address']}
+    ...    ${Register_S004['select_individual_address_full']}
+    ...    ${Register_S004['mobile_no']}
+    ...    ${Register_S004['mobile_ext']}
+    
+    Log    Step No.2 Click btn "ถัดไป"
+    #Step1 Click tab พัสดุทั่วไป
+    #Expected
+    #Step2 Click tab พัสดุควบคุมอุณหภูมิ
+    #Expected
+    #Step3 Click tab Return Business
+    #Expected
+    Log    Step No.3 เปิดใช้งานพัสดุทั่วไป
+    #Expected
+    Log    Step No.4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
+    #Expected
+    Log    Step No.5 กดปุ่ม "ยกเลิก"
+    #Expected
+    Log    Step No.6 กดปุ่ม "ตกลง" ที่ Popup
+    #Expected
+    Log    Step No.7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
+    #Expected
+    Log    Step No.8 กดปุ่ม "ถัดไป"
+    #Expected
+    Log    Step No.9 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
+    #Step1 เปิดใช้งานพัสดุควบคุมอุณหภูมิ
+    #Expected
+    #Step2 เปิดใช้งาน Return Business
+    #Expected
+    Log    Step No.10 กดปุ่ม "ถัดไป"
+    #Expected
+    Log    Step No.11 ระบุข้อมูลผู้ติดต่อ และ ข้อมูลธนาคาร
+    #Step1 ระบุข้อมูลผู้ติดต่อ
+    #Expected
+    #Step2 ระบุข้อมูลธนาคาร
+    #Expected   
+    Log    Step No.12 กดปุ่ม "ถัดไป"
+    #Expected
+    Log    Step No.13 อัพโหลดเอกสารประกอบ
+    #Expected
+    Log    Step No.14 กดปุ่ม "ลงทะเบียน"
+    #Expected
+    Log    Step No.15 กด Link Full Register เดิม ที่ได้รับทาง E-mail
+    #Expected 
+    Log    Step No.16 กดปุ่ม "หมายเหตุการแก้ไข"
+    #Expected
+    Log    Step No.17 กดปุ่ม "x"
+    #Expected

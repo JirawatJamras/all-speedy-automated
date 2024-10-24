@@ -40,10 +40,10 @@ Register_S002
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S002['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S002['first_name']}
     register_business_pre_register.Input Last Name Legal Entity    ${Register_S002['last_name']}
-    register_business_pre_register.Input Email Legal Entity    ${Register_S002['email']}
-    register_business_pre_register.Input Mobile No Legal Entity    ${Register_S002['mobile_no']}
-    register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S002['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S002    filled in contact information success   
+    register_business_pre_register.Input Email Legal Entity   ${Register_S002['email']}
+    register_business_pre_register.Input Mobile No Legal Entity   ${Register_S002['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Legal Entity   ${Register_S002['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S002    Filled In Contact Information Success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
