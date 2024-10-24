@@ -74,7 +74,7 @@ Booking_S059
     Log    Step No. 2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Booking With Waiting For Entering Parcel To System    ${booking_id}
     # Expected
-        b2c_booking_detail_page.Verify Booking Detail Page
+    b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
@@ -112,7 +112,7 @@ Booking_S059
     Log    Step No. 3 กดปุ่ม "+ เพิ่ม"
     b2c_booking_detail_page.Click Add Button
     # Expected
-       b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
+    b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
     ...    ${Booking['text_phone_sender']}

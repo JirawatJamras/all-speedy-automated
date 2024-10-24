@@ -350,7 +350,3 @@ Booking_S011
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    Booking_S011    Verify Print Screen
-
-
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
-

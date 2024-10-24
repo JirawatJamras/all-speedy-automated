@@ -3,7 +3,8 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Close Browser
+Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+                  ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S022
@@ -216,20 +217,16 @@ Booking_S022
     Log    Step No.15 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    ################ แก้ Verify Parcel Detail Page of Create Parcel [Dry Parcel] ของ พัสดุควบคุมอุณหภูมิ
-    # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
-    # ...    ${Booking.dry_parcel['parcel_detail_A4']}
-    # ...    ${Booking.dry_parcel['parcel_detail_A3']}
-    # ...    ${Booking.dry_parcel['parcel_detail_XS']}
-    # ...    ${Booking.dry_parcel['parcel_detail_S']}
-    # ...    ${Booking.dry_parcel['parcel_detail_M']}
-    # ...    ${Booking.dry_parcel['parcel_detail_L']}
-    # ...    ${Booking.dry_parcel['parcel_detail_XL']}
-    # ...    ${Booking.dry_parcel['parcel_detail_XXL']}
-    # ...    ${Booking['parcel_detail_insure_amount']}
-    # ...    ${Booking['parcel_detail_cod']}
-    # ...    ${Booking['parcel_detail_remark']}
-    # common.Verify Capture Screenshot    Booking_S022    Verify Parcel Detail
+    b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
+    ...    ${Booking.chilled_parcel['parcel_detail_S0']}
+    ...    ${Booking.chilled_parcel['parcel_detail_S1']}
+    ...    ${Booking.chilled_parcel['parcel_detail_S2']}
+    ...    ${Booking.chilled_parcel['parcel_detail_A1']}
+    ...    ${Booking.chilled_parcel['parcel_detail_A2']}
+    ...    ${Booking['parcel_detail_insure_amount']}
+    ...    ${Booking['parcel_detail_cod']}
+    ...    ${Booking['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S022    Verify Parcel Detail
 
     Log    Step No.16 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
@@ -386,6 +383,3 @@ Booking_S022
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    Booking_S022    Verify Print Screen
-
-
-    [Teardown]    common.Delete API Booking By Booking ID    ${booking_id}
