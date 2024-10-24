@@ -37,12 +37,13 @@ Register_S004
     register_business_pre_register.Input Address Full Individual    ${Register_S004['search_individual_address_full']}    ${Register_S004['select_individual_address_full']}
     register_business_pre_register.Input Mobile No Individual    ${Register_S004['mobile_no']}
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S004['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S011    Pre-Register Success
+    common.Verify Capture Screenshot    Register_S004    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
+    common.Verify Capture Screenshot    Register_S004    Pre-Register Success
 
 Assign RM
     common.Open URL    ${PMS_UAT_URL}
