@@ -255,7 +255,6 @@ Booking_S012
     common.Verify Capture Screenshot    Booking_S012    Verify Booking Detail Page After Booking Success
 
     Log    Step No.17 กดเมนู "จองการจัดส่งพัสดุ"
-    # - ไม่เลือก Promotion
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected

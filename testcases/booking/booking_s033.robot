@@ -48,7 +48,7 @@ Booking_S033
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S033    Verify Create Parcel Page Sender Step
 
-    Log    Step No.4 ขั้นตอนข้อมูลผู้รับพัสดุ
+    Log    Step No.4 ขั้นตอนข้อมูลผู้ส่งพัสดุ
     # กดปุ่ม "เลือกจากรายการโปรด"
     b2c_booking_delivery_page.Click Choose Favorites
     #Expected

@@ -58,6 +58,7 @@ Booking_S021
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S021['sender_address']}
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S021['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S021['sender_postcode_full']}
+    common.Verify Capture Screenshot    Booking_S021    Verify Input Data Sender
     
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -84,6 +85,7 @@ Booking_S021
     ...    ${Booking_S021['receiver_name']}
     ...    ${Booking_S021['receiver_phone']}
     ...    ${Booking_S021['receiver_address']}
+    ...    ${Booking_S021['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S021    Verify Favorites Receiver PopUp
 
     Log    Step No.8 กดเลือกรายการ
@@ -91,11 +93,20 @@ Booking_S021
     ...    ${Booking_S021['receiver_name']}
     ...    ${Booking_S021['receiver_phone']}
     ...    ${Booking_S021['receiver_address']}
+    ...    ${Booking_S021['receiver_postcode_full']}
     b2c_booking_delivery_page.Click Accept Favorites List
     #Expected
-    b2c_booking_delivery_page.Verify Choose Receiver From Favorites
-    ...    ${Booking_S021['receiver_name']}
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
+    ...    ${Booking['text_title']}
+    ...    ${Booking['text_parcel_receiver_information']}
+    ...    ${Booking['text_phone_receiver']}
+    ...    ${Booking['text_name_receiver']}
+    ...    ${Booking['text_location_receiver']}
+    ...    ${Booking['text_address_receiver']}
+    ...    ${Booking['text_postcode_receiver']}
+    b2c_booking_delivery_page.Verify Data Receiver When Select Home  
     ...    ${Booking_S021['receiver_phone']}
+    ...    ${Booking_S021['receiver_name']}
     ...    ${Booking_S021['receiver_address']}
     ...    ${Booking_S021['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S021    Verify Choose Receiver From Favorites
@@ -106,7 +117,7 @@ Booking_S021
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S021['sender_name']}
     ...    ${Booking_S021['sender_phone']}
@@ -115,13 +126,17 @@ Booking_S021
     ...    ${Booking_S021['receiver_phone']}
     ...    ${Booking_S021['receiver_address']}
     ...    ${Booking_S021['receiver_postcode_full']}
-    ...    ${Booking_S021['parcel_size']}
+    ...    ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['discount_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S021['parcel_cod_verify']}
+    ...    ${Booking.text_blank['cod_value']}
     common.Verify Capture Screenshot    Booking_S021    Verify Draft Paecel
 
     Log    Step No.10 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
+    ${booking_id}    Get Booking ID
+    ${booking_time}    Get Booking Time
+    ${booking_name}    Get Booking Name
+    ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Select Draft Booking
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
