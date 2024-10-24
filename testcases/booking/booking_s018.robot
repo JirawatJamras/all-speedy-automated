@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Las
 *** Test Cases ***
 Booking_S018
     [Documentation]    สร้างรอบรถเข้ารับพัสดุ (รอบพิเศษ)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Review_Pass
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -45,6 +45,7 @@ Booking_S018
     b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
     b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
     b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S018    Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.3 กดปุ่ม "บันทึก"

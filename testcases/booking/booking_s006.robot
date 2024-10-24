@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S006
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก M (มีประกัน ไม่มีCOD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Feedback
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -20,25 +20,25 @@ Booking_S006
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Page For Business Customer
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${current_date_thai}${Booking['text_version']}
     common.Verify Capture Screenshot    Booking_S006    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
-    #Expected   
+    # Expected   
     b2c_booking_delivery_page.Verify Select Parcel Type
     common.Verify Capture Screenshot    Booking_S006    Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
     b2c_booking_delivery_page.Select Parcel Type    ${Booking_S006['parcel_type']}
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -60,12 +60,12 @@ Booking_S006
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S006['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S006['sender_postcode_full']}
     b2c_booking_delivery_page.Click Add To Favorites In Sender
-    #Expected
+    # Expected
     common.Verify Capture Screenshot    Booking_S006    Verify Create Parcel Page After Input Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -89,12 +89,12 @@ Booking_S006
     b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S006['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S006['receiver_postcode_full']}
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
-    #Expected
+    # Expected
     common.Verify Capture Screenshot    Booking_S006    Verify Create Parcel Page After Input Receiver Step
 
     Log    Step No.8 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
-    #Expected
+    # Expected
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
@@ -111,7 +111,7 @@ Booking_S006
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S006    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S006    Verify Draft Parcel
 
     Log    Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -119,7 +119,7 @@ Booking_S006
     ${booking_name}    Get Booking Name
     ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Select Draft Booking
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -136,7 +136,7 @@ Booking_S006
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -154,7 +154,7 @@ Booking_S006
 
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     ...    ${Booking.dry_parcel['parcel_detail_A4']}
     ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -167,11 +167,12 @@ Booking_S006
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S006    Verify Paecel Detail
+    common.Verify Capture Screenshot    Booking_S006    Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนกรอกรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S006['parcel_size']}
     b2c_booking_delivery_page.Input Insurance    ${Booking_S006['buy_insurance']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S006    Verify Create Parcel Page After Input Parcel Detail Step
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
@@ -183,7 +184,7 @@ Booking_S006
     common.Verify Capture Screenshot    Booking_S006    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
-    # - ไม่เลือก Promotion
+    # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     ${booking_time}    Get Booking Time
     # Expected
@@ -210,13 +211,13 @@ Booking_S006
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
-    ...    0    #Expected result is ${Booking_S006['insurance_fee_amount']}
-    ...    0.00    #Expected result is ${Booking_S006['insurance_fee_value']}
+    ...    0    # Expected result is ${Booking_S006['insurance_fee_amount']}
+    ...    0.00    # Expected result is ${Booking_S006['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    0    #Expected result is ${Booking_S006['total_price_amount']}
+    ...    0    # Expected result is ${Booking_S006['total_price_amount']}
     ...    0.00  # Expected result is ${Booking_S006['total_price_value1']}
-    ...    ${EMPTY}    #Expected result is ${Booking.text_blank['store_code']}
+    ...    ${EMPTY}    # Expected result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -225,7 +226,7 @@ Booking_S006
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${booking_time}
@@ -261,13 +262,13 @@ Booking_S006
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
-    ...    0    #Expected result is ${Booking_S006['insurance_fee_amount']}
-    ...    0.00    #Expected result is ${Booking_S006['insurance_fee_value']}
+    ...    0    # Expected result is ${Booking_S006['insurance_fee_amount']}
+    ...    0.00    # Expected result is ${Booking_S006['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    0    #Expected result is ${Booking_S006['total_price_amount']}
+    ...    0    # Expected result is ${Booking_S006['total_price_amount']}
     ...    0.00  # Expected result is ${Booking_S006['total_price_value1']}
-    ...    ${EMPTY}    #Expected result is ${Booking.text_blank['store_code']}
+    ...    ${EMPTY}    # Expected result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S006    Verify Booking Summary
     common.Scroll Window To Vertical    0

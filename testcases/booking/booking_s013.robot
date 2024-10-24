@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S013
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก S (ไม่มีประกัน มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Feedback
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -20,25 +20,25 @@ Booking_S013
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S013    Verify Booking Page For Business Customer
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${current_date_thai}${Booking['text_version']}
     common.Verify Capture Screenshot    Booking_S013    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
-    #Expected   
+    # Expected   
     b2c_booking_delivery_page.Verify Select Parcel Type
     common.Verify Capture Screenshot    Booking_S013    Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
     b2c_booking_delivery_page.Select Parcel Type    ${Booking_S013['parcel_type']}
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -60,12 +60,12 @@ Booking_S013
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S013['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S013['sender_postcode_full']}
     b2c_create_parcel_page.Click Add To Favorites
-    #Expected
+    # Expected
     common.Verify Capture Screenshot    Booking_S013    Verify After Create Parcel Page Sender Step
 
     Log    Step No.6 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
-    #Expected
+    # Expected
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
@@ -82,7 +82,7 @@ Booking_S013
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S013    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S013    Verify Draft Parcel
 
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -90,7 +90,7 @@ Booking_S013
     ${booking_name}    Get Booking Name
     ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Select Draft Booking
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -108,7 +108,7 @@ Booking_S013
     Log    Step No.8 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home 
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -137,7 +137,7 @@ Booking_S013
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     ...    ${Booking.dry_parcel['parcel_detail_A4']}
     ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -156,6 +156,7 @@ Booking_S013
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S013['parcel_size']}
     b2c_booking_delivery_page.Input COD    ${Booking_S013['parcel_cod']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S013['parcel_detail_remark']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S013    Verify Create Parcel Page After Input Parcel Detail Step
 
     Log    Step No.12 กดปุ่ม "ถัดไป"
@@ -170,7 +171,7 @@ Booking_S013
     # Log    Step No.13 ขั้นตอน Promotion
     # b2c_booking_delivery_page.Input Promotion    ${Booking_S013['promotion']}
     # b2c_booking_delivery_page.Click Use Code Button
-    # #Expected
+    # # Expected
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S013.promotion_detail['discount']}
     # ...    ${Booking_S013.promotion_detail['promotion_name']}
@@ -220,7 +221,7 @@ Booking_S013
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${booking_time}
