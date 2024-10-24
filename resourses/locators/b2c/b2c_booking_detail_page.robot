@@ -53,6 +53,7 @@ ${b2c_btn_select_pickup_schedule}   //input[@class='ant-radio-input']/..
 ${b2c_btn_import_file_detail_page}    //span[text()='{value}']/..
 ${b2c_btn_import_file_in_popup}  //input[@id='InputFile']/
 ${b2c_btn_template_in_popup}  //span[text()='{value}']/..
+${b3c_btn_add_parcel_in_booking_detail_page}    //span[text()='{value}']/..
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 

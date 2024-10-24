@@ -1,8 +1,7 @@
 *** Keywords ***
-Click Button
-    [Arguments]    ${btn}
-    Wait Until Element Is Enabled    ${btn}    
-    Click Element    ${btn}
+Click Add Button
+    ${b3c_btn_add_parcel_in_booking_detail_page}=    Replace String    ${b3c_btn_add_parcel_in_booking_detail_page}    {value}    ${Booking['text_btn_add']}
+    common.Click When Ready    ${b3c_btn_add_parcel_in_booking_detail_page}
 
 Select Draft Booking
     common.Click When Ready    ${b2c_crd_list_of_parcels}
@@ -212,6 +211,16 @@ Get Parcel ID
     RETURN    ${parcel_id}
 
 Click Booking With Status Select Shipping Origin
+    [Arguments]    ${booking_id}
+    ${booking_id}=    Replace String    ${b2c_txt_booking_id}    {value}    ${booking_id}
+    Wait Until Element Is Visible    ${booking_id}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${booking_id}
+    common.Click When Ready    ${booking_id}
+    Wait Until Element Is Visible    ${b2c_dialog_create_parcel}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${b2c_dialog_create_parcel}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Window To Vertical    0
+
+Click Booking With Waiting For Entering Parcel To System
     [Arguments]    ${booking_id}
     ${booking_id}=    Replace String    ${b2c_txt_booking_id}    {value}    ${booking_id}
     Wait Until Element Is Visible    ${booking_id}    timeout=${DEFAULT_TIMEOUT}
