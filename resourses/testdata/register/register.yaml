@@ -24,7 +24,6 @@ Register:
     text_header_service_information: ข้อมูลบริการ
     text_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
     text_header_supporting_document: อัปโหลดเอกสารประกอบ
-    
     text_partner_type: ประเภทคู่ค้า
     text_company_title_name: 'คำนำหน้าประเภทจดทะเบียนบริษัท *'
     text_company_name: 'ชื่อบริษัท *'
@@ -43,11 +42,6 @@ Register:
     text_customer_first_name: ชื่อ
     text_customer_last_name: นามสกุล
     text_id_card_number: เลขบัตรประชาชน
-    # text_customer_email: E-mail
-    # text_address_individual: ที่อยู่บริษัท
-    # text_customer_mobile: เบอร์โทรศัพท์
-    # text_customer_mobile_extra: '#ต่อ' 
-
     text_tab_dry_parcel: พัสดุทั่วไป
     text_tab_chill_parcel: พัสดุควบคุมอุณหภูมิ
     text_tab_return_business: Return Business
@@ -61,7 +55,23 @@ Register:
     text_sale_channel: 'ช่องทางจำหน่าย *'
     text_vat: 'Vat ของสินค้า *'
     text_vat_chill: 'Vat ของสินค้า*'
+    text_input_vat_default: 'ไม่มี Vat'
     text_remark: หมายเหตุ
+    text_input_remark_default: 'ระบุหมายเหตุ'
+    text_input_default: 'ระบุข้อมูล'
+    text_contact_information_topic: ข้อมูลผู้ติดต่อ
+    text_user_name: 'ชื่อผู้ติดต่อ *'
+    text_user_position: 'ตำแหน่ง *'
+    text_user_email: 'E-mail *'
+    text_user_phone: 'เบอร์โทรศัพท์ *'
+    text_user_phone_ex: '#ต่อ'
+    text_bank_information_topic: ข้อมูลธนาคาร
+    text_bank_id: 'ประเทศ *'
+    text_bank_name: 'ธนาคาร *'
+    text_bank_account_type: 'ประเภทบัญชี *'
+    text_bank_branch: 'สาขาธนาคาร *'
+    text_bank_account_name: 'ชื่อบัญชี *'
+    text_bank_account_no: 'เลขที่บัญชี *'
     text_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
     text_copy_file_20: สำเนาเอกสาร ภพ. 20
     text_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
@@ -71,6 +81,7 @@ Register:
     text_other_file: เอกสารอื่นๆ
     btn_next: ถัดไป
     btn_cancel: ยกเลิก
+    btn_remark: หมายเหตุการแก้ไข
     btn_save: บันทึกร่าง
     btn_confirm: ลงทะเบียน
     text_header_cancel: ยกเลิกการลงทะเบียน
@@ -80,6 +91,7 @@ Register:
     text_privacy_policy:  นโยบายความเป็นส่วนตัว
     confirm_cancel_popup: ตกลง
     cancel_cancel_popup: ยกเลิก
+    text_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
 
 
 
@@ -212,6 +224,7 @@ Register_S013:
     type_product: เสื้อผ้า
     number_by_day: 10-99 ชิ้น
     sale_channel: LAZADA
+    vat: ไม่มี Vat
     remark: ''
   chill_parcel:
     type_product: อาหารแห้ง
@@ -223,7 +236,21 @@ Register_S013:
     type_product: เสื้อผ้า
     number_by_day: 10-99 ชิ้น
     sale_channel: LAZADA
-    remark: ''        
+    vat: ไม่มี Vat
+    remark: '' 
+  contact:
+    user_name: นางสาวสมใจ อยู่ยง
+    user_position: บัญชี
+    user_email: businessregisterflow@gmail.com
+    user_phone: '020000000'
+    user_phone_ex: 1122
+  bank: 
+    bank_id: ไทย
+    bank_name: ธนาคารไทยพาณิชย์
+    bank_account_type: บัญชีออมทรัพย์
+    bank_branch: ปากเกร็ด
+    bank_account_name: บริษัท ไทยฟู๊ดส์ รอยัล กรุ๊ป จำกัด
+    bank_account_no: 1234567890
 
 Register_S015:
   request_type: Full Register

@@ -11,7 +11,8 @@ ${register_txt_link_register_gmail}    //p[text()='{value} ']//span//a[@href='{l
 
 # Full Register
 ${register_txt_title_full_register}    //div[@class='ant-steps-item ant-steps-item-process ant-steps-item-active']//div[text()='{value}']
-${register_txt_header_full_register}    //*[text()='{value}'] 
+${register_txt_header_full_register}    //*[text()='{value}']
+${register_txt_topic_full_register}    //*[contains(text(),'{value}')] 
 ${register_txt_header_cancel_popup_full_register}    //div[@class='ant-modal-header']//span[text()='{value}']
 ${register_txt_body_cancel_popup_full_register}    //div[@class='ant-modal-body']//p[text()='{value}']
 
@@ -48,11 +49,30 @@ ${register_txt_sale_channel_return_business}    //label[@for='parcelType_parcelR
 ${register_txt_vat_return_business}    //label[@for='parcelType_parcelReturnBusiness_vatReturn']//span
 ${register_txt_remark_return_business}    //label[@for='parcelType_parcelReturnBusiness_notationReturn']
 
+${register_txt_user_name}    //label[@for='users_0_name']//span
+${register_txt_user_position}    //label[@for='users_0_position']//span
+${register_txt_user_email}    //label[@for='users_0_email']//span
+${register_txt_user_phone}    //label[@for='users_0_phone']//span
+${register_txt_user_phone_ex}    //label[@for='users_0_phoneEX']
+
+${register_txt_bank_id}    //label[@for='bankId']//span
+${register_txt_bank_name}    //label[@for='bankName']//span
+${register_txt_bank_account_type}    //label[@for='bankAccountType']//span
+${register_txt_bank_branch}    //label[@for='bankBranch']//span
+${register_txt_bank_account_name}    //label[@for='bankAccountName']//span
+${register_txt_bank_account_no}    //label[@for='bankNo']//span
+
+${register_txt_term_and_privacy}    //div[@class="ant-space-item"]//label//span//a[text()='{value}']
+${register_txt_success_full_register}    //h1[text()='{value}']
+
 ${register_tab_parcel_type_full_register}    //div[@role='tab' and text()='{value}']//..
 
 ${register_btn_partner_types_full_register}    //span[@class='ant-radio ant-wave-target ant-radio-checked']//input
 ${register_btn_next_full_register}    //button//div[text()='{value}']
 ${register_btn_cancel_full_register}    //button//span[text()='{value}']
+${register_btn_remark_full_register}    //button//span[text()='{value}']
+${register_btn_close_remark_popup}    //span[@class='ant-modal-close-x']
+
 ${register_btn_save_full_register}    //button//span[text()='{value}']
 ${register_btn_cancel_popup_full_register}     //button[@type='button']//span[text()='{value}']
 ${register_btn_confirm_full_register}    //b[text()='{value}']
@@ -71,6 +91,8 @@ ${register_btn_add_insurance_return_business}    //input[@id='parcelType_parcelR
 ${register_btn_select_dry_parcel}    //button[@id="parcelType_parcelDry_isActive"]//div[text()='{value}']
 ${register_btn_select_chill_parcel}    //button[@id="parcelType_parcelChill_isActive"]//div[text()='{value}']
 ${register_btn_select_return_business}    //button[@id="parcelType_parcelReturnBusiness_isActive"]//div[text()='{value}']
+
+${register_btn_add_contact_info}    //span[text()='{value}']//..//..//button
 
 ${register_cbo_company_title_name_full_register}    //input[@id='companyTitleName']//..//..//span[@class='ant-select-selection-item']
 ${register_cbo_title_name_full_register}    //input[@id='titleName']//..//..//span[@class='ant-select-selection-item']
@@ -94,6 +116,8 @@ ${register_cbo_number_by_day_return_business}    //input[@id='parcelType_parcelR
 ${register_cbo_sale_channel_return_business}    //input[@id='parcelType_parcelReturnBusiness_salePathReturn']//..//..
 ${register_cbo_vat_return_business}    //input[@id='parcelType_parcelReturnBusiness_vatReturn']//..//..
 
+
+
 ${register_txtbox_company_name_full_register}    //input[@id='companyName']
 ${register_txtbox_juristic_identification_number_full_register}    //input[@id='idNumber']
 ${register_txtbox_company_address_full_register}    //input[@id='companyAddress_addressInfo']
@@ -105,10 +129,27 @@ ${register_txtbox_email_full_register}    //input[@id='email']
 ${register_txtbox_mobile_no_full_register}    //input[@id='mobileNo']
 ${register_txtbox_mobile_ext_full_register}    //input[@id='mobileExt']
 
-
+${register_txtbox_type_product_dry_parcel}    //input[@id='parcelType_parcelDry_typeProduct']//..//..//..//..//div[@class='ant-select-selection-overflow']
+${register_txtbox_sale_channel_dry_parcel}    //input[@id='parcelType_parcelDry_saleChannel']//..//..//..//..//div[@class='ant-select-selection-overflow']
 ${register_txtbox_remark_dry_parcel}    //textarea[@id='parcelType_parcelDry_remark']
 
+${register_txtbox_type_product_chill_parcel}    //input[@id='parcelType_parcelChill_typeProductControlTem']//..//..//..//..//div[@class='ant-select-selection-overflow']
+${register_txtbox_sale_channel_chill_parcel}    //input[@id='parcelType_parcelChill_salePathControlTem']//..//..//..//..//div[@class='ant-select-selection-overflow']
 ${register_txtbox_remark_chill_parcel}    //textarea[@id='parcelType_parcelChill_notationControlTem']
 
+${register_txtbox_type_product_return_business}    //input[@id='parcelType_parcelReturnBusiness_typeProductReturn']//..//..//..//..//div[@class='ant-select-selection-overflow']
+${register_txtbox_sale_channel_return_business}    //input[@id='parcelType_parcelReturnBusiness_salePathReturn']//..//..//..//..//div[@class='ant-select-selection-overflow']
 ${register_txtbox_remark_return_business}    //textarea[@id='parcelType_parcelReturnBusiness_notationReturn']
 
+${register_txtbox_user_name}    //input[@id='users_0_name']
+${register_txtbox_user_position}    //input[@id='users_0_position']
+${register_txtbox_user_email}    //input[@id='users_0_email']
+${register_txtbox_user_phone}    //input[@id='users_0_phone']
+${register_txtbox_user_phone_ex}    //input[@id='users_0_phoneEX']
+
+${register_cbo_bank_id}    //input[@id='bankId']//..//..
+${register_cbo_bank_name}    //input[@id='bankName']//..//..
+${register_cbo_bank_account_type}    //input[@id='bankAccountType']//..//..
+${register_txtbox_bank_branch}    //input[@id='bankBranch']
+${register_txtbox_bank_account_name}    //input[@id='bankAccountName']
+${register_txtbox_bank_account_no}    //input[@id='bankNo']
