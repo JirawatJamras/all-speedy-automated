@@ -20,10 +20,16 @@ Reject Pre Register (Legal)
 
 *** Keywords ***
 Register_S002
+    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
+    #[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
+    #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
+    #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
+    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
+    #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S002['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S002['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S002['company_name']}
@@ -34,15 +40,17 @@ Register_S002
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S002['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S002['first_name']}
     register_business_pre_register.Input Last Name Legal Entity    ${Register_S002['last_name']}
-    register_business_pre_register.Input Email Legal Entity   ${Register_S002['email']}
-    register_business_pre_register.Input Mobile No Legal Entity   ${Register_S002['mobile_no']}
-    register_business_pre_register.Input Mobile Ext Legal Entity   ${Register_S002['mobile_ext']}
-    # common.Verify Capture Screenshot    Register_S002    Filled In Contact Information Success   
+    register_business_pre_register.Input Email Legal Entity    ${Register_S002['email']}
+    register_business_pre_register.Input Mobile No Legal Entity    ${Register_S002['mobile_no']}
+    register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S002['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S002    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
+    #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
-    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
-    # common.Verify Capture Screenshot    Register_S002    Verify Confirm Page After Register Successful
+    #Expected
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
+    common.Verify Capture Screenshot    Register_S002    pre register success
 
 Assign RM
     common.Open URL    ${PMS_UAT_URL}

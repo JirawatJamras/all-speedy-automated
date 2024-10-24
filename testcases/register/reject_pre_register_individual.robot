@@ -21,6 +21,8 @@ Reject Pre Register (Individual)
 
 *** Keywords ***
 Register_S005
+    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
+    #[Tags]    Register    UAT
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -28,6 +30,7 @@ Register_S005
     register_general_customers_page.Select Business Customers Tab  
     #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
+    #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S005['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S005['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S005['first_name']}
@@ -39,11 +42,14 @@ Register_S005
     register_business_pre_register.Input Address Full Individual    ${Register_S005['search_individual_address_full']}    ${Register_S005['select_individual_address_full']}
     register_business_pre_register.Input Mobile No Individual    ${Register_S005['mobile_no']}
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S005['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S005    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
+    #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
-    register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
-    common.Verify Capture Screenshot    Register_S005    Verify Confirm Page After Register Successful
+    #Expected
+    register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
+    common.Verify Capture Screenshot    Register_S005    pre register success
 
 Assign RM
     common.Open URL    ${PMS_UAT_URL}
