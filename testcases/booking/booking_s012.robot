@@ -383,4 +383,3 @@ Booking_S012
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    Booking_S012    Verify Print Screen
-
