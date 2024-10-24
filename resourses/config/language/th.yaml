@@ -283,6 +283,54 @@ rm:
   text_rm_in_popup: RM
   text_save: บันทึก
   text_selected_list: รายการที่เลือก
+  full_regis:
+    text_step_company_info: ข้อมูลบริษัท
+    text_company_title: คำนำหน้าประเภทจดทะเบียนบริษัท *
+    text_company_name: ชื่อบริษัท *
+    text_id_number: เลขประจำตัวผู้เสียภาษี *
+    text_mobile_company: เบอร์โทรศัพท์ *
+    text_mobile_company_ext: '#ต่อ'
+    text_company_address: ที่อยู่บริษัท *
+    text_company_address_full: ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์ *
+    text_title_name: คำนำหน้าชื่อ *
+    text_first_name: ชื่อ * (ผู้ติดต่อ)
+    text_last_name: นามสกุล *
+    text_email: E-mail *
+    text_mobile_no: เบอร์โทรศัพท์ *
+    text_mobile_ext: '#ต่อ'
+    text_remark: 'ความเห็นการแก้ไข #1'
+    text_step_service_info: ข้อมูลบริการ
+    text_cod: บริการเก็บเงินปลายทาง
+    text_insure: ประกันคุ้มครองพัสดุ
+    text_express: บริการส่งด่วน
+    text_service_info: ข้อมูลการใช้บริการ
+    dry_parcel:
+      text_product_category: ประเภทสินค้าหลักที่จัดส่ง *
+      text_pieces_amount: จำนวนการจัดส่งเฉลี่ยต่อวัน *
+      text_sale_channel: ช่องทางจำหน่าย *
+      text_vat: Vat ของสินค้า *
+      text_dry_remark: หมายเหตุ
+    chill_parcel:
+      text_product_category: ประเภทสินค้าหลักที่จัดส่ง *
+      text_pieces_amount: จำนวนการจัดส่งเฉลี่ยต่อวัน *
+      text_sale_channel: ช่องทางจำหน่าย *
+      text_vat: Vat ของสินค้า *
+      text_chill_remark: หมายเหตุ
+    return_business:
+      text_product_category: ประเภทสินค้าหลักที่จัดส่ง *
+      text_pieces_amount: จำนวนการจัดส่งเฉลี่ยต่อวัน *
+      text_sale_channel: ช่องทางจำหน่าย *
+      text_vat: Vat ของสินค้า *
+      text_return_remark: หมายเหตุ
+    text_title_price_scheme: Price Scheme
+    text_title_condition: เงื่อนไขพิเศษ
+    text_one_mile: ยกเลิกค่าทำเนียม 1 Mile
+    text_cancel_return_fee: ยกเลิกค่าทำเนียมตีกลับ
+    text_rebate: ส่วนลด Rebate
+    text_parcel_pickup: รอบรถเข้ารับพัสดุ
+    text_pickup_schedule: 
+      not_determined: ยังไม่ได้กำหนด
+    text_remark_2: 'ความเห็นการแก้ไข #2'
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน

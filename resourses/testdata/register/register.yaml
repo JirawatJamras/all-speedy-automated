@@ -254,6 +254,25 @@ Register_S013:
 
 Register_S015:
   request_type: Full Register
+  dry_parcel:
+    selected_cod: 'false'  #'true'
+    selected_insure: 'false'  #'true'
+    branch: สาขาหลัก
+    address: ''  #106/1 ซอย อ่อนนุช 70/1 ประเวศ/ประเวศ/กรุงเทพมหานคร/10250
+    latitude_longitude: '0, 0'
+    price_scheme: ลูกค้าทั่วไป/Walk in/ลูกค้านอกเครือ
+    price_scheme_date: 29/10/2567
+  chill_parcel:
+    selected_cod: 'false'  #'true'
+    branch: สาขาหลัก
+    address: ''  #106/1 ซอย อ่อนนุช 70/1 ประเวศ/ประเวศ/กรุงเทพมหานคร/10250
+    latitude_longitude: '0, 0'
+  return_business:
+    selected_express: 'false'  #'true'
+    selected_insure: 'false'  #'true'
+    branch: สาขาหลัก
+    address: ''  #106/1 ซอย อ่อนนุช 70/1 ประเวศ/ประเวศ/กรุงเทพมหานคร/10250
+    latitude_longitude: '0, 0'
 
 Register_S017:
   company_data:
