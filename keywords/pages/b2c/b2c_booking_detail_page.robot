@@ -1,7 +1,7 @@
 *** Keywords ***
 Click Add Button
-    ${b3c_btn_add_parcel_in_booking_detail_page}=    Replace String    ${b3c_btn_add_parcel_in_booking_detail_page}    {value}    ${Booking['text_btn_add']}
-    common.Click When Ready    ${b3c_btn_add_parcel_in_booking_detail_page}
+    ${b2c_btn_add_parcel_in_booking_detail_page}=    Replace String    ${b2c_btn_add_parcel_in_booking_detail_page}    {value}    ${Booking['text_btn_add']}
+    common.Click When Ready    ${b2c_btn_add_parcel_in_booking_detail_page}
 
 Select Draft Booking
     common.Click When Ready    ${b2c_crd_list_of_parcels}
@@ -488,3 +488,30 @@ Verify Display Import File Popup
     Execute JavaScript    document.getElementById('${b2c_btn_import_file_in_popup}').removeAttribute('hidden');
     Wait Until Element Is Visible    ${b2c_btn_import_file_in_popup}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_template_file}    timeout=${DEFAULT_TIMEOUT}
+
+Verify Import File Popup
+    [Arguments]    ${btn_import}    ${btn_template}    ${txt_importTime}
+    ...    ${txt_fileName}    ${txt_importResult}    ${txt_fileImportError}
+    ${btn_template_file}=    Replace String    ${b2c_btn_template_in_popup}    {value}    ${btn_template}
+    ${b2c_txt_import_time}=    Replace String    ${b2c_txt_import_time}    {value}    ${txt_importTime}
+    ${b2c_txt_file_name}=    Replace String    ${b2c_txt_file_name}    {value}    ${txt_fileName}
+    ${b2c_txt_import_file_result}=    Replace String    ${b2c_txt_import_file_result}    {value}    ${txt_importResult}
+    ${b2c_txt_file_import_error}=    Replace String    ${b2c_txt_file_import_error}    {value}    ${txt_fileImportError}
+    Wait Until Page Contains Element    ${b2c_txt_import_file_in_popup}
+    Wait Until Element Is Visible    ${btn_template_file}   timeout=15s
+    Wait Until Element Is Visible    ${b2c_txt_import_time}    timeout=15s
+    Wait Until Element Is Visible    ${b2c_txt_file_name}    timeout=15s
+    Wait Until Element Is Visible    ${b2c_txt_import_file_result}    timeout=15s
+    Wait Until Element Is Visible    ${b2c_txt_file_import_error}    timeout=15s
+    ${actual_b2c_btn_import_file_in_popup}=    Get Text    ${b2c_txt_import_file_in_popup}
+    ${actual_btn_template_file}=    Get Text    ${btn_template_file}
+    ${actual_b2c_txt_import_time}=    Get Text    ${b2c_txt_import_time}
+    ${actual_b2c_txt_file_name}=    Get Text    ${b2c_txt_file_name}
+    ${actual_b2c_txt_import_file_result}=    Get Text    ${b2c_txt_import_file_result}
+    ${actual_b2c_txt_file_import_error}=    Get Text    ${b2c_txt_file_import_error}
+    Should Be Equal    ${actual_b2c_btn_import_file_in_popup}    ${btn_import}
+    Should Be Equal    ${actual_btn_template_file}    ${btn_template}
+    Should Be Equal    ${actual_b2c_txt_import_time}    ${txt_importTime}
+    Should Be Equal    ${actual_b2c_txt_file_name}    ${txt_fileName}
+    Should Be Equal    ${actual_b2c_txt_import_file_result}    ${txt_importResult}
+    Should Be Equal    ${actual_b2c_txt_file_import_error}    ${txt_fileImportError}

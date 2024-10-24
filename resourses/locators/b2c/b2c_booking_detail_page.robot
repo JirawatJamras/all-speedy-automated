@@ -29,6 +29,11 @@ ${b2c_txt_booking_id}    //span[normalize-space()='{value}']
 ${b2c_txt_edit_complete}    //*[text()='{value}']
 ${b2c_txt_transaction_date}    //strong[text()='{value}']/../../..//span[contains(text(),'{value2}')]
 ${b2c_txt_shipping_origin}    //strong[text()='{value}']/../../..
+${b2c_txt_import_time}    //th[@class='ant-table-cell' and text()='{value}']
+${b2c_txt_file_name}    //th[@class='ant-table-cell' and text()='{value}']
+${b2c_txt_import_file_result}    //th[@class='ant-table-cell' and text()='{value}']
+${b2c_txt_file_import_error}    //th[@class='ant-table-cell' and text()='{value}']
+${b2c_txt_import_file_in_popup}    (//label[@for='InputFile'])[2]
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 
@@ -53,7 +58,7 @@ ${b2c_btn_select_pickup_schedule}   //input[@class='ant-radio-input']/..
 ${b2c_btn_import_file_detail_page}    //span[text()='{value}']/..
 ${b2c_btn_import_file_in_popup}  //input[@id='InputFile']/
 ${b2c_btn_template_in_popup}  //span[text()='{value}']/..
-${b3c_btn_add_parcel_in_booking_detail_page}    //span[text()='{value}']/..
+${b2c_btn_add_parcel_in_booking_detail_page}    //span[text()='{value}']/..
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 

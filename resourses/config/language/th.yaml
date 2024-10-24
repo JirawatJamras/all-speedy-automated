@@ -45,7 +45,12 @@ Booking:
   text_shipping_origin:  'ต้นทางจัดส่ง :'
   text_booking_name_label: 'ชื่อบุ๊คกิ้ง :'
   text_btn_import:  Import File
+  text_import: Import
   text_btn_template:  Template
+  text_import_time: 'เวลานำเข้าไฟล์'
+  text_file_name: ชื่อไฟล์
+  text_import_result: ผลการนำเข้าไฟล์
+  text_file_import_error: ไฟล์ Import Error
   text_next: 'ถัดไป'
   text_parcel_booking: จองเลขพัสดุ
   text_edit_complete: แก้ไขสำเร็จ
