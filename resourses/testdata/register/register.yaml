@@ -334,6 +334,7 @@ Register_S015:
     address: ''  #106/1 ซอย อ่อนนุช 70/1
     address_full: ''  #ประเวศ/ประเวศ/กรุงเทพมหานคร/10250
     latitude_longitude: '0, 0'
+  remark_4:  แก้ไขเอกสารหน้าบัญชีธนาคาร
 
 Register_S017:
   company_data:

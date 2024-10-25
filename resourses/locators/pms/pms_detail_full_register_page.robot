@@ -93,7 +93,7 @@ ${pms_txtbox_branch_id_set_pickup_popup}    //input[@id='branchId']
 ${pms_txtbox_address_set_pickup_popup}    //input[@id='address_addressInfo']
 ${pms_txtbox_address_full_set_pickup_popup}    //input[@id='address_full']
 ${pms_txtbox_search_set_pickup_popup}    //span[text()='{value}']/..//input/..
-
+${pms_txtbox_remark}    //textarea[@id='remark{value}']
 ${pms_btn_next_page}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']
 ${pms_btn_select_chill_parcel}    //button[@id='parcelType_parcelChill_isActive']
