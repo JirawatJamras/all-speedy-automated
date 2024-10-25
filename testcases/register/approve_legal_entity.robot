@@ -63,7 +63,8 @@ Register_S001
 
 Register_S007
     [Documentation]    RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
-    #Step1 
+    #Step1
+    Log    Step No.1 RM Lead ได้รับคำขอที่มีสถานะ "รอมอบหมาย" กดปุ่ม "ดำเนินการ"
     common.Open URL    ${PMS_UAT_URL}
     pms_landing_page.Click Go Login Button
     pms_login_page.Input Email    ${pms_login_user_01['username']}
@@ -97,12 +98,18 @@ Register_S007
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot    Register_S007    Verify Request Detail Page With Status Waiting For Assign
+    
+    Log    Step No.2 RM Lead กดปุ่ม "Assign RM"
     pms_request_detail_page.Click Assign RM Button
     pms_request_detail_page.Verify Assign RM Popup
     common.Verify Capture Screenshot    Register_S007    Verify Assign RM Popup
+    
+    Log    Step No.3 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
     pms_request_detail_page.Click Button To Assign RM    ${Register_S007['rm_name']}
     pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
     common.Verify Capture Screenshot    Register_S007    Verify Assign To RM 
+    
+    Log    Step No.4 กดปุ่ม "บันทึก"
     pms_request_detail_page.Click Save Button
     pms_requests_page.Verify Save Assign To RM Success [legal entity] 
     ...    ${Register_S001['checkbox_partner_types']}
@@ -116,6 +123,7 @@ Register_S007
 
 Register_S009
     [Documentation]    RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)
+    Log    Step No.1 RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
     pms_requests_page.Select Request With Considering Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
@@ -139,6 +147,9 @@ Register_S009
     ...    ${Register_S007['rm_name']}
     ...    ${Register_S009['sale_email']}
     common.Verify Capture Screenshot    Register_S009    Verify Request Detail Page
+    
+    
+    Log    Step No.2 RM กรอกเบอร์โทรศัพท์ 
     pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S009['sale_phone']}
     pms_request_detail_page.Click Approve Button
     pms_requests_page.Select Request With Confirm Sent Link Status [legal entity]
@@ -165,6 +176,8 @@ Register_S009
     ...    ${Register_S009['sale_email']}
     ...    ${Register_S009['sale_phone']}
     common.Verify Capture Screenshot    Register_S009    Verify Approve Success
+    
+    Log    Step No.3 กดปุ่ม "อนุมัติ"
     register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}
     register_business_full_register.Verify Email That Have Received Link
     common.Verify Capture Screenshot    Register_S009    Verify Email That Have Received Link
@@ -370,7 +383,6 @@ Register_S013
     Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
     register_business_full_register.Get Link On Email
     common.Open URL    ${link_full_register}
-    #common.Open URL    ${rm_link_full_register}
     #Expected
     register_business_full_register.Verify Company information Legal Entity Page
     ...    ${Register_S001['checkbox_partner_types']}

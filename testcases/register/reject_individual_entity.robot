@@ -10,8 +10,8 @@ Reject Individual Entity
     [Documentation]    E2E 4 Scenario
     [Tags]    Register    UAT    In_Review
     Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    Register_S004
-    Assign RM
+    #Register_S004
+    #Assign RM
     Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
     Register_S011
 
@@ -66,16 +66,7 @@ Assign RM
     pms_request_detail_page.Click Save Button
 
 Register_S011
-    # Log    Login
-    # common.Open URL    ${PMS_UAT_URL}
-    # pms_landing_page.Click Go Login Button
-    # pms_login_page.Input Email    ${pms_login_user_01['username']}
-    # pms_login_page.Input Password    ${pms_login_user_01['password']}
-    # pms_login_page.Click Log On Button
-    # pms_home_page.Select Role Admin
-    # pms_home_page.Select Manage Customer Menu
-    # pms_home_page.Select Manage Request Sub-Menu
- 
+    [Documentation]    RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
     Log    Step No. 1 "RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ กำลังพิจารณา กดปุ่ม ดำเนินการ"
     pms_requests_page.Click Tab Pre-Register
     pms_requests_page.Select Request With Considering Status [Individual]
