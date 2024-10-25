@@ -961,3 +961,44 @@ Booking_S037:
   store_code: '15888'
   price_value: '70'  # Expected result : '70.00'
   parcel_package_type: กล่อง
+
+Booking_S047:
+  sender_favorite_card: 
+    favorite_name: รายการโปรดผู้ส่ง
+    sender_name: สมชาย สายเสมอ
+    sender_phone: '0890000001'
+    sender_address: '48/698'
+    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  edit_sender:
+    sender_favorite_name: บ้านต่างจังหวัด
+  add_sender_favorite:
+    favorite_name: บ้าน
+    sender_name: สมชาย สายเสมอ
+    sender_phone: '0890000001'
+    sender_address: '48/698'
+    sender_postcode_5_digits: '10230'
+    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_favorite_card: 
+    favorite_name: รายการโปรดผู้รับ
+    receiver_name: สมใจ ดีดีดี
+    receiver_phone: '0890000002'
+    receiver_location_pickup: ส่งที่บ้าน
+    receiver_address: '47 หมู่ 4'
+    receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  edit_receiver:
+    receiver_location_pickup: 'ส่งร้าน 7-11'
+    receiver_store_code_5_digits: '15888'
+    receiver_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    receiver_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
+  add_receiver_favorite:
+    favorite_name: บ้าน
+    sender_name: สมชาย สายเสมอ
+    sender_phone: '0890000001'
+    sender_address: '48/698'
+    sender_postcode_5_digits: '10230'
+    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  add_shipping_origin_area:
+    favorite_name: ร้าน 7-11 หน้าบ้าน
+    shipping_origin_store_code_5_digits: '15888'
+    shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'

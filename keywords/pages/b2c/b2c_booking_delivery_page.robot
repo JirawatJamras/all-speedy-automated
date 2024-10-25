@@ -109,6 +109,7 @@ Verify full_postcode_sender Equal EMPTY
     [Arguments]    ${full_postcode_sender}
    ${actual_textbox_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
     Should Be Equal    ${actual_textbox_full_postcode_sender}    ${full_postcode_sender}
+    
 Verify full_postcode_sender Equal Text
     [Arguments]    ${full_postcode_sender}
     ${actual_text_full_postcode_sender}=    Get Text    ${txt_full_postcode_sender}
