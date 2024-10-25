@@ -98,6 +98,7 @@ Register_S005
     common.Verify Capture Screenshot    Register_S008    Pre Register 005 Success
 
 Register_S008
+    Log    Step No.1 RM Lead ได้รับคำขอที่มีสถานะ "รอบมอบหมาย" คลิกที่แท็บรอดำเนินการเพื่อเลือกรายการคำขอที่ต้องการ กดปุ่ม "Assign RM" 
     common.Open URL    ${PMS_UAT_URL}
     pms_landing_page.Click Go Login Button
     pms_login_page.Input Email    ${pms_login_user_01['username']}
@@ -130,9 +131,13 @@ Register_S008
     pms_requests_page.Click Assign RM Button
     pms_requests_page.Verify Assign RM Popup
     common.Verify Capture Screenshot    Register_S008    Verify Assign RM Popup
+
+    Log    Step No.2 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
     pms_requests_page.Click Button To Assign RM    ${Register_S008['rm_name']}
     pms_requests_page.Verify Already Assign To RM Popup    ${Register_S008['rm_name']}
     common.Verify Capture Screenshot    Register_S008    Verify Already Assign To RM Popup
+
+    Log    Step No.3 กดปุ่ม "บันทึก"
     pms_requests_page.Click Save Button
     Reload page
     pms_requests_page.Verify Save Assign To RM Success [legal entity]

@@ -10,7 +10,7 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 Reject Pre Register (Individual)
-    [Documentation]    E2E 1 Scenario
+    [Documentation]    E2E 2 Scenario
     [Tags]    Register    UAT    In_Review
     Log    Scenario 05 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
     Register_S005

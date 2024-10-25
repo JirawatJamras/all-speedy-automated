@@ -7,13 +7,16 @@ Test Teardown     Close Browser
 
 *** Variables ***
 
-*** Keywords ***    
-
 *** Test Cases ***
-
+Approve Outbound
+    [Documentation]    RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
+    [Tags]    Register    UAT
+    Log    Scenario 17 RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
+    Register_S017
+    
+*** Keywords ***    
 Register_S017
     [Documentation]    RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
-    [Tags]    Register    UAT    Run
     Log    Login
     common.Open URL    ${PMS_UAT_URL}
     pms_landing_page.Click Go Login Button

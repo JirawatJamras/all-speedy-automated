@@ -11,8 +11,8 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Approve Legal Entity
     [Documentation]    E2E 32 Scenario
-    Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
     [Tags]    Register    UAT
+    Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
     #Register_S001
     Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
     #Register_S007

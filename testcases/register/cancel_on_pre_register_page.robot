@@ -9,13 +9,18 @@ Test Teardown     Close Browser
 
 
 *** Test Cases ***
-
+Cancel On Pre Register Page
+    [Documentation]    E2E 2 Scenario
+    [Tags]    Register    UAT
+    Log    Scenario 3 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
+    Register_S003
+    Log    Scenario 6 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
+    Register_S006
 
 *** Keywords ***
 Register_S003
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
     #[Tags]    Register    UAT
-    Log    Step No.1 กรอกข้อมูล
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
@@ -40,9 +45,11 @@ Register_S003
     register_business_pre_register.Input Mobile No Legal Entity    ${Register_S003['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S003['mobile_ext']}
     common.Verify Capture Screenshot    Register_S003    filled in contact information success
+    
     Log    Step No.2 ยกเลิกลงทะเบียน
     register_business_pre_register.Click Cancel
     register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
+    
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     register_business_pre_register.Click Button Confirm Cancel Popup
 
@@ -74,6 +81,7 @@ Register_S006
     #Step Click btn ยกเลิก
     register_business_pre_register.Click Cancel
     register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
+    
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup

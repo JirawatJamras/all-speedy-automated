@@ -10,7 +10,7 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 Reject Pre Register (Legal)
-    [Documentation]    E2E 1 Scenario
+    [Documentation]    E2E 2 Scenario
     [Tags]    Register    UAT    In_Review
     Log    Scenario 02 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
     Register_S002
@@ -74,17 +74,6 @@ Assign RM
     pms_request_detail_page.Click Save Button
 
 Register_S010
-    # Log    Login
-    # common.Open URL    ${PMS_UAT_URL}
-    # pms_landing_page.Click Go Login Button
-    # Wait Until Element Is Visible    ${pms_img_cpall_header}    timeout=${DEFAULT_TIMEOUT}
-    # pms_login_page.Input Email    ${pms_login_user_01['username']}
-    # pms_login_page.Input Password    ${pms_login_user_01['password']}
-    # pms_login_page.Click Log On Button
-    # pms_home_page.Select Role Admin
-    # pms_home_page.Select Manage Customer Menu
-    # pms_home_page.Select Manage Request Sub-Menu
-
     Log    Step No.1 RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
     pms_requests_page.Select Request With Considering Status [legal entity]
     ...    ${Register_S002['checkbox_partner_types']}  

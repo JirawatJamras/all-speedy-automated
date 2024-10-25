@@ -14,6 +14,12 @@ Reject Individual Entity
     #Assign RM
     Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
     Register_S011
+    Log    Scenario 14 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
+    Register_S014
+    Log    Scenario 16 RM : ปฎิเสธคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้าบุคคลธรรมดา)
+    Register_S016
+
+
 
 *** Keywords ***
 Register_S004
