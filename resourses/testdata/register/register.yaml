@@ -322,18 +322,37 @@ Register_S015:
   chill_parcel:
     selected_cod: 'false'  #'true'
     branch: สาขาหลัก
+    branch_id: '000000'
     address: ''  #106/1 ซอย อ่อนนุช 70/1
     address_full: ''  #ประเวศ/ประเวศ/กรุงเทพมหานคร/10250
     latitude_longitude: '0, 0'
     price_scheme: ลูกค้าในเครือ
     price_scheme_date: 29/10/2567
+    cod_scheme: COD Fee
+    cod_scheme_date: 29/10/2567
+    first_mile_start_date: 29/10/2567
+    first_mile_end_date: 09/11/2567
+    bounce_fee_start_date: 29/10/2567
+    bounce_fee_end_date: 09/11/2567
+    rebate_item: '500'
+    rebate_percen: '2'
+    rebate_item_2: '1000'
+    rebate_percen_2: '5'
+    parcel_type: พัสดุทั่วไป
+    pickup_day: ทั้งหมด
+    pickup_time: ช่วงเช้า 09:00 - 12:00
   return_business:
     selected_express: 'false'  #'true'
     selected_insure: 'false'  #'true'
     branch: สาขาหลัก
+    branch_id: '000000'
     address: ''  #106/1 ซอย อ่อนนุช 70/1
     address_full: ''  #ประเวศ/ประเวศ/กรุงเทพมหานคร/10250
     latitude_longitude: '0, 0'
+    price_scheme: ลูกค้าทั่วไป/Walk in/ลูกค้านอกเครือ
+    price_scheme_date: 29/10/2567
+    insure_scheme: Insurance Fee 1
+    insure_scheme_date: 29/10/2567
   remark_4:  แก้ไขเอกสารหน้าบัญชีธนาคาร
 
 Register_S017:

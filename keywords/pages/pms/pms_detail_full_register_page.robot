@@ -200,7 +200,7 @@ Input Set Pickup Point Popup
     common.Click When Ready    ${selected_pickup_time}
     common.Click When Ready    ${button_save}
 
-Verify Set Pickup Point
+Verify Input Set Pickup Point
     [Arguments]    ${branch}    ${address}    ${address_full}    ${latitude_longitude}    ${determined}
     ${text_parcel_pickup}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
     Scroll Element Into View    ${text_parcel_pickup}
@@ -278,13 +278,66 @@ Verify Chill Parcel Tab Full Register Detail Page
     Wait Until Element Is Visible    ${text_pickup_schedule}
 
 Input Information In The Chill Parcel Tab
-    [Arguments]    ${price_scheme}    ${price_scheme_date}
+    [Arguments]    ${price_scheme}    ${price_scheme_date}    ${cod_scheme}    ${cod_scheme_date}    ${first_mile_start_date}   
+    ...    ${first_mile_end_date}    ${bounce_fee_start_date}    ${bounce_fee_end_date}    ${rebate_item}
+    ...    ${rebate_percen}    ${rebate_item_2}    ${rebate_percen_2}
+    #### ใช้งานชั่วคราว ####
     common.Click When Ready    ${pms_btn_select_chill_parcel}
-    Sleep   4s
+    register_business_full_register.Select Add Service Cod Chill Parcel
 
+    ${price_scheme_day}    Format Input Date    ${price_scheme_date}
+    ${cod_scheme_day}    Format Input Date    ${cod_scheme_date}
+    ${first_mile_start_day}    Format Input Date    ${first_mile_start_date}
+    ${first_mile_end_day}    Format Input Date    ${first_mile_end_date}
+    ${bounce_fee_start_day}    Format Input Date    ${bounce_fee_start_date}
+    ${bounce_fee_end_day}    Format Input Date    ${bounce_fee_end_date}
 
+    ${select_price_scheme}=    Replace String    ${pms_cbo_price_scheme_chill_full_regis}    {value}    ${price_scheme}
+    ${select_price_scheme_date}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${price_scheme_day}
+    ${select_cod_scheme}=    Replace String    ${pms_cbo_cod_scheme_chill_full_regis}    {value}    ${cod_scheme}
+    ${select_cod_scheme_date}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${cod_scheme_day}
+    ${select_first_mile_start_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${first_mile_start_day}
+    ${select_first_mile_end_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${first_mile_end_day}
+    ${select_bounce_fee_start_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${bounce_fee_start_day}
+    ${select_bounce_fee_end_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${bounce_fee_end_day}
+    ${btn_rebate}=    Replace String    ${pms_btn_rebate_full_regis}    {value}    ${rm.full_regis['text_rebate']}
+    ${btn_add_parcel_pickup}=    Replace String    ${pms_btn_add_parcel_pickup_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
 
+    Wait Until Element Is Visible    ${pms_txtbox_price_scheme_chill_full_regis}
+    Scroll Element Into View    ${pms_txtbox_price_scheme_chill_full_regis}
 
+    ### price scheme ###
+    common.Click When Ready    ${pms_txtbox_price_scheme_chill_full_regis}
+    common.Click When Ready    ${select_price_scheme}
+    common.Click When Ready    ${pms_txtbox_price_scheme_date_chill_full_regis}
+    common.Click When Ready    ${select_price_scheme_date}
+
+    common.Click When Ready    ${pms_txtbox_cod_scheme_chill_full_regis}
+    common.Click When Ready    ${select_cod_scheme}
+    common.Click When Ready    ${pms_txtbox_cod_scheme_date_chill_full_regis}
+    common.Click When Ready    ${select_cod_scheme_date}
+
+    common.Click When Ready    ${pms_btn_first_mile_chill_full_regis}
+    common.Click When Ready    ${pms_txtbox_first_mile_start_date_chill_full_regis}
+    common.Click When Ready    ${select_first_mile_start_day}
+    common.Click When Ready    ${pms_txtbox_first_mile_end_date_chill_full_regis}
+    common.Click When Ready    ${select_first_mile_end_day}
+
+    common.Click When Ready    ${pms_btn_bounce_fee_chill_full_regis}
+    common.Click When Ready    ${pms_txtbox_bounce_fee_start_date_chill_full_regis}
+    common.Click When Ready    ${select_bounce_fee_start_day}
+    common.Click When Ready    ${pms_txtbox_bounce_fee_end_date_chill_full_regis}
+    common.Click When Ready    ${select_bounce_fee_end_day}
+
+    common.Click When Ready    ${btn_rebate}
+    common.Click When Ready    ${pms_btn_plus_rebate_chill_full_regis}
+    common.Input When Ready    ${pms_txtbox_rebate_item_chill_full_regis}    ${rebate_item}
+    common.Input When Ready    ${pms_txtbox_rebate_percen_chill_full_regis}    ${rebate_percen}
+    common.Click When Ready    ${pms_btn_plus_rebate_chill_full_regis}
+    common.Input When Ready    ${pms_txtbox_rebate_item_2_chill_full_regis}    ${rebate_item_2}
+    common.Input When Ready    ${pms_txtbox_rebate_percen_2_chill_full_regis}    ${rebate_percen_2}
+    Scroll Element Into View    ${btn_add_parcel_pickup}
+    common.Click When Ready    ${btn_add_parcel_pickup}
 
 Click Return Business Tab
     Scroll Window To Vertical    0

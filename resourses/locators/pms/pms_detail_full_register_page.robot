@@ -94,18 +94,34 @@ ${pms_txtbox_address_set_pickup_popup}    //input[@id='address_addressInfo']
 ${pms_txtbox_address_full_set_pickup_popup}    //input[@id='address_full']
 ${pms_txtbox_search_set_pickup_popup}    //span[text()='{value}']/..//input/..
 ${pms_txtbox_remark}    //textarea[@id='remark{value}']
+${pms_txtbox_price_scheme_chill_full_regis}    //input[@id='parcelType_parcelChill_priceScheme']/..
+${pms_txtbox_price_scheme_date_chill_full_regis}    //input[@id='parcelType_parcelChill_priceActiveDate']/..
+${pms_txtbox_cod_scheme_chill_full_regis}    //input[@id='parcelType_parcelChill_codScheme']/..
+${pms_txtbox_cod_scheme_date_chill_full_regis}    //input[@id='parcelType_parcelChill_codActiveDate']/..
+${pms_txtbox_first_mile_start_date_chill_full_regis}    //input[@id='parcelType_parcelChill_firstmileStartdate']/..
+${pms_txtbox_first_mile_end_date_chill_full_regis}    //input[@id='parcelType_parcelChill_firstmileEnddate']/..
+${pms_txtbox_bounce_fee_start_date_chill_full_regis}    //input[@id='parcelType_parcelChill_bounceFeeStartdate']/..
+${pms_txtbox_bounce_fee_end_date_chill_full_regis}    //input[@id='parcelType_parcelChill_bounceFeeEnddate']/..
+${pms_txtbox_rebate_item_chill_full_regis}    //input[@id='parcelType_parcelChill_itemTo_0']
+${pms_txtbox_rebate_percen_chill_full_regis}    //input[@id='parcelType_parcelChill_rebatePercen_0']
+${pms_txtbox_rebate_item_2_chill_full_regis}    //input[@id='parcelType_parcelChill_itemTo_1']
+${pms_txtbox_rebate_percen_2_chill_full_regis}    //input[@id='parcelType_parcelChill_rebatePercen_1']
+
 ${pms_btn_next_page}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']
 ${pms_btn_select_chill_parcel}    //button[@id='parcelType_parcelChill_isActive']
 ${pms_btn_select_return_business}    //button[@id='parcelType_parcelReturnBusiness_isActive']
 ${pms_btn_first_mile_full_regis}    //button[@id='parcelType_parcelDry_firstMile']
 ${pms_btn_bounce_fee_full_regis}    //button[@id='parcelType_parcelDry_bounceFee']
-${pms_btn_rebate_full_regis}    //span[text()='{value}']/..//button
-${pms_btn_plus_rebate_full_regis}    //th[@class='ant-table-cell']//button
+${pms_btn_rebate_full_regis}    //span[text()='{value}']/..//button[@aria-checked='false']
+${pms_btn_plus_rebate_full_regis}    //div[@id='parcelType_parcelDry_rebateItem']//button
 ${pms_btn_add_parcel_pickup_full_regis}    //*[text()='{value}']/../..//button
 ${pms_btn_add_pick_up_set_pickup_popup}    //div[@class='ant-modal-content']//thead[@class='ant-table-thead']//button
 ${pms_btn_save_set_pickup_popup}    //span[text()='{value}']/../..
 ${pms_btn_cancel_set_pickup_popup}    //b[text()='ยกเลิก']/..
+${pms_btn_first_mile_chill_full_regis}    //button[@id='parcelType_parcelChill_firstMile']
+${pms_btn_bounce_fee_chill_full_regis}    //button[@id='parcelType_parcelChill_bounceFee']
+${pms_btn_plus_rebate_chill_full_regis}    //div[@id='parcelType_parcelChill_rebateItem']//button
 
 ${pms_checkbox_dry_cod}    //input[@id='parcelType_parcelDry_isCod']
 ${pms_checkbox_dry_insure}    //input[@id='parcelType_parcelDry_isInsure']
@@ -124,3 +140,5 @@ ${pms_cbo_insure_scheme_full_regis}    //div[@id='parcelType_parcelDry_insureSch
 ${pms_cbo_parcel_type_set_pickup_popup}    //div[@class='rc-virtual-list']//div[text()='{value}']
 ${pms_cbo_pickup_date_set_pickup_popup}    //div[@class='ant-select-tree-list']//span[text()='{value}']
 ${pms_cbo_pickup_time_set_pickup_popup}    //div[@class='ant-select-tree-list']//span[text()='{value}']
+${pms_cbo_price_scheme_chill_full_regis}    //div[@id='parcelType_parcelChill_priceScheme_list']/..//div[text()='{value}']
+${pms_cbo_cod_scheme_chill_full_regis}    //div[@id='parcelType_parcelChill_codScheme_list']/..//div[text()='{value}']
