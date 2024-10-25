@@ -15,6 +15,15 @@ Verify Activate Delivered Parcel Button
 Click In Transit Button
     Click When Ready    ${b2c_btn_in_transit}
 
+Click Waiting For Pick Up
+    Click When Ready    ${b2c_btn_waiting_for_pick_up}
+
+Click Delivery Completed
+    Click When Ready    ${b2c_btn_delivery_completed}
+
+Click Other
+    Click When Ready    ${b2c_btn_other}
+
 Verify Activate In Transit Button
     Wait Until Element Is Visible    ${b2c_btn_in_transit}    timeout=10s
     ${checked}=    Get Element Attribute    ${b2c_btn_in_transit}    aria-selected

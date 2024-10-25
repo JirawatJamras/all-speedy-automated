@@ -3,10 +3,10 @@ ${b2c_txt_my_parcel}    //h2[text()='พัสดุของฉัน สาข
 
 ${b2c_btn_delivered_parcel}    //span[text()='รายการพัสดุที่จัดส่ง']/../..
 ${b2c_btn_received_parcel}    //div[@id='rc-tabs-5-tab-2']
-${b2c_btn_in_transit}    //div[text()='อยู่ระหว่างจัดส่ง']
-${b2c_btn_waiting_for_pick_up}    //div[@id='rc-tabs-4-tab-2']
-${b2c_btn_delivery_completed}    //div[@id='rc-tabs-4-tab-3']
-${b2c_btn_other}    //div[@id='rc-tabs-4-tab-4']
+${b2c_btn_in_transit}    //div[@id='rc-tabs-13-tab-1']
+${b2c_btn_waiting_for_pick_up}    //div[@id='rc-tabs-13-tab-2']
+${b2c_btn_delivery_completed}    //div[@id='rc-tabs-13-tab-3']
+${b2c_btn_other}    //div[@id='rc-tabs-13-tab-4']
 ${b2c_btn_filter}    //span[text()='ตัวกรอง']/..
 ${b2c_btn_search_filter}    //span[text()='ค้นหา']/..
 ${b2c_btn_remove_search}    //span[@class='ant-input-clear-icon']

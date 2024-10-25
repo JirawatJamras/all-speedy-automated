@@ -12,7 +12,8 @@ Input Name Or Phone In Search Parcel
     Input When Ready    ${b2c_txtbox_search_name_or_phone}    ${input}
 
 Click Search Parcel Button
-    Click When Ready    ${b2c_btn_search_parcel}
+    ${btn} =  Replace String    ${b2c_btn_search_parcel}    {value}    ${Booking['text_btn_search']}
+    Click When Ready    ${btn}
 
 Verify Parcel Search Results
     Wait Until Element Is Visible    ${b2c_txt_parcel_search_results}    timeout=10s

@@ -525,23 +525,32 @@ Booking_S019:
   total_price_value:  'NaN'
 
 Booking_S020:
-  parcel_type:  พัสดุควบคุมอุณหภูมิ
-  sender_phone: 0890000001
-  sender_name: สมชาย สายเสมอ
-  sender_address: 48/698 
-  sender_postcode_5_digits: '10230'
-  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
-  receiver_phone: 0890000002
-  receiver_name: สมใจ ดีดีดี
-  receiver_address: 47 หมู่ 4
-  receiver_postcode_5_digits: '86110'
-  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_type:  พัสดุควบคุมอุณหภูมิ    #
+  sender_phone: 0890000001    #
+  sender_name: สมชาย สายเสมอ    #
+  sender_address: 48/698     #
+  sender_postcode_5_digits: '10230'    #
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'    #
+  receiver_phone: 0890000002    #
+  receiver_name: สมใจ ดีดีดี    #
+  receiver_address: 47 หมู่ 4    #
+  receiver_postcode_5_digits: '86110'    #
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'    #
+  parcel_size:  S1    #
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน    #
+  promotion:  SPBH5B    #
+  promotion_detail:    #
+    discount:  5 บาท
+    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size:  กล่อง L (ใหญ่)  #ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition:  1.ลูกค้า B2C , C2C 2.ลูกค้าจะต้องส่งพัสดุขนาด ทุกขนาด  #สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   shipping_origin:  รอบรถเข้ารับพัสดุ
   store_code:  '15888'
   booking_name:  Booking CHILLED
   booking_item: 1 รายการ
   booking_price:  Nanบาท
-  parcel_size:  S0
   parcel_package_type:  กล่อง
   total_price_amount:  '1'
   total_price_value:  'NaN'
@@ -644,6 +653,36 @@ Booking_S024:
   total_price_amount:  '1'
   total_price_value:  'NaN'
   
+Booking_S025:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ    
+  sender_phone: 0890000001    
+  sender_name: สมชาย สายเสมอ    
+  sender_address: 48/698     
+  sender_postcode_5_digits: '10230'    
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'    
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '01523'
+  store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
+  store_address_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
+  parcel_size:  S1    
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน    
+  promotion:  SPBH5B    
+  promotion_detail:    
+    discount:  5 บาท
+    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size:  กล่อง L (ใหญ่)  #ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition:  1.ลูกค้า B2C , C2C 2.ลูกค้าจะต้องส่งพัสดุขนาด ทุกขนาด  #สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  booking_name:  Booking CHILLED
+  booking_item: 1 รายการ
+  booking_price:  Nanบาท
+  parcel_package_type:  กล่อง
+  total_price_amount:  '1'
+  total_price_value:  'NaN'
+
 Booking_S026:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
   sender_phone: 0899999999
@@ -984,6 +1023,9 @@ Booking_S037:
   price_value: '70'  # Expected result : '70.00'
   parcel_package_type: กล่อง
 
+Booking_S044:
+  tracking_number: 7110112189289
+
 Booking_S047:
   sender_favorite_card: 
     favorite_name: รายการโปรดผู้ส่ง
@@ -1027,10 +1069,20 @@ Booking_S047:
 
 Booking_S48:
   pickup_time:
-    input: ช่วงบ่าย 13:00 - 16:00
-    expected: 13:00 - 16:00
-  pickup_point: บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+    input: 'ช่วงบ่าย 13:00 - 16:00'
+    expected: '13:00 - 16:00'
+  pickup_point: 'บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
   add_new_pickup:
     parcel_type: พัสดุทั่วไป (Dry)
-    input: ช่วงเช้า 09:00 - 12:00 น.
-    expected: 09:00 - 12:00
+    input: 'ช่วงเช้า 09:00 - 12:00 น.'
+    expected: '09:00 - 12:00'
+
+Booking_S50:
+  old_return_business:
+    link_name: 'Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก'
+    phone: '0871000000'
+    name: 'ไอดีซี'
+    shipping_payer: บริษัทชำระค่าจัดส่ง
+    location_pickup: ส่งที่บ้าน
+    address: '200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์'
+    postcode: 'ปากเกร็ด ปากเกร็ด นนทบุรี 11120'

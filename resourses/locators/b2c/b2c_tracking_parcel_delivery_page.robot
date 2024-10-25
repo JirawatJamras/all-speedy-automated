@@ -6,7 +6,7 @@ ${b2c_txt_parcel_status}    //div[contains(@class,'ant-card ant-card-bordered ma
 ${b2c_txtbox_search_parcel_number}    //span[text()='ค้นหาด้วยหมายเลขพัสดุ']/../../..//input[@placeholder='ระบุหมายเลขพัสดุ']
 ${b2c_txtbox_search_name_or_phone}    //span[text()='ค้นหาด้วยชื่อ/เบอร์โทรผู้รับ']/../../..//input[@placeholder='ระบุชื่อหรือเบอร์โทรผู้รับ']
 
-${b2c_btn_search_parcel}    //button[contains(@class,'ant-btn-default')]//span[text()='ค้นหา']
+${b2c_btn_search_parcel}    //button[contains(@class,'ant-btn-default')]//span[text()='{value}']
 ${b2c_btn_remove_search_parcel}    //div[contains(@class,'ant-card ant-card-bordered max-w-')]//span[@class='ant-input-clear-icon']
 ${b2c_btn_open_filter}    //div[contains(@class,'ant-card ant-card-bordered max-w-')]//span[text()='ตัวกรอง']/..
 

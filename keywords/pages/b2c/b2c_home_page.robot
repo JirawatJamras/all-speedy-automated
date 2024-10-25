@@ -21,7 +21,8 @@ Select Sub Menu Favorites
     common.Click When Ready    ${b2c_mnu_favorites_home_page}
 
 Select Sub Menu Return Business
-    common.Click When Ready    ${b2c_mnu_return_business_home_page}
+    ${mnu_return_business_home_page}=    Replace String    ${mnu_return_business_home_page}    {value}    ${sub_menu['return_business']}
+    common.Click When Ready    ${mnu_return_business_home_page}
 
 Select Sub Menu Calculate Shipping Costs
     common.Click When Ready    ${b2c_mnu_calculate_shipping_cost_home_page}
@@ -88,7 +89,8 @@ Click Button To Add
     Click Element        ${b2c_btn_add}
 
 Click Tracking Parcel Delivery Menu
-    common.Click When Ready    ${b2c_mnu_tracking_parcel_delivery}
+    ${btn} =  Replace String    ${b2c_mnu_tracking_parcel_delivery}    {value}    ${Booking['text_menu_status_tracking']}
+    common.Click When Ready    ${btn}
 
 Wait Until Profile Page Loaded
     Wait Until Element Is Visible    ${b2c_txt_business_profile_title_home_page}    timeout=${DEFAULT_TIMEOUT}
