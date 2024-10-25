@@ -177,6 +177,7 @@ call_car_pick_up:
   button_cancel: ยกเลิก
   car_round_name:
     special: รอบพิเศษ
+    normal: รอบปกติ
   parcel_type:
     dry: พัสดุทั่วไป (Dry)
     chilled: พัสดุควบคุมอุณหภูมิ
@@ -187,7 +188,8 @@ call_car_pick_up:
     morning: 09:00:00 - 12:00 น.
   cut_off_time: '15:00:00'
   default:
-    parcel_number: 0 รายการ
+    parcel_number: '0'
+    price: '0.00'
 
 favorite:
   text_parcel_sender: ผู้ส่งพัสดุ

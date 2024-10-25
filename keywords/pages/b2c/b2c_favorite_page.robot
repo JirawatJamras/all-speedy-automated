@@ -158,12 +158,14 @@ Verify Display Receiver Card When Select Home
     ${txt_receiver_address_favorite_page}=    Replace String    ${txt_receiver_address_favorite_page}    {value}    ${favorite['text_address']}
     FOR    ${index}    IN RANGE    1    ${card_count} + 1
         ${item}=    Set Variable    (${card_favorite_page})[${index}]
+        Register Keyword To Run On Failure    NOTHING
         ${home_icon_staus}=    Run Keyword And Return Status    Element Should Contain    ${item}${img_home}
         ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_favorite_name_in_card_favorite_page}    ${favorite_name}
         ${receiver_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_name_card_favorite_page}    ${name}
         ${receiver_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_phone_card_favorite_page}    ${phone}
         ${receiver_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_address_favorite_page}    ${receiver_address}
-        Exit For Loop If    ${home_icon_staus} and ${favorite_name_status} and ${receiver_name_status} and ${receiver_phone_status} and ${receiver_address_status}
+        ${all_conditions}=    Evaluate    ${home_icon_staus} and ${favorite_name_status} and ${receiver_name_status} and ${receiver_phone_status} and ${receiver_address_status}
+        Exit For Loop If    ${all_conditions}
     END
 
 Verify Display Receiver Card When Select 7-ELEVEN Store
@@ -176,12 +178,14 @@ Verify Display Receiver Card When Select 7-ELEVEN Store
     ${txt_receiver_address_favorite_page}=    Replace String    ${txt_receiver_address_favorite_page}    {value}    ${favorite['text_address']}
     FOR    ${index}    IN RANGE    1    ${card_count} + 1
         ${item}=    Set Variable    (${card_favorite_page})[${index}]
+        Register Keyword To Run On Failure    NOTHING
         ${store_icon_staus}=    Run Keyword And Return Status    Element Should Contain    ${item}${img_store}
         ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_favorite_name_in_card_favorite_page}    ${favorite_name}
         ${receiver_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_name_card_favorite_page}    ${name}
         ${receiver_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_phone_card_favorite_page}    ${phone}
         ${receiver_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_address_favorite_page}    ${address}
-        Exit For Loop If    ${home_icon_staus} and ${favorite_name_status} and ${receiver_name_status} and ${receiver_phone_status} and ${receiver_address_status}
+        ${all_conditions}=    Evaluate    ${store_icon_staus} and ${favorite_name_status} and ${receiver_name_status} and ${receiver_phone_status} and ${receiver_address_status}
+        Exit For Loop If    ${all_conditions}
     END
 
 Click Receiver Card

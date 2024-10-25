@@ -53,6 +53,7 @@ Booking_S018
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
+    ...    ${Booking_S018['parcel_type']}
     ...    ${call_car_pick_up.car_round_name['special']}
     ...    ${newDate}
     ...    13:00:00 - 16:00    #${Booking_S018.pickup_time['expected']}

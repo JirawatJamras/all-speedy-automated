@@ -1024,3 +1024,13 @@ Booking_S047:
     shipping_origin_store_code_5_digits: '15888'
     shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
     shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
+
+Booking_S48:
+  pickup_time:
+    input: ช่วงบ่าย 13:00 - 16:00
+    expected: 13:00 - 16:00
+  pickup_point: บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+  add_new_pickup:
+    parcel_type: พัสดุทั่วไป (Dry)
+    input: ช่วงเช้า 09:00 - 12:00 น.
+    expected: 09:00 - 12:00
