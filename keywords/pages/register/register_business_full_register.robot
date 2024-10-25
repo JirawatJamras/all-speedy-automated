@@ -560,6 +560,10 @@ Verify Remark Popup
 Click Button Close Remark Popup
     common.Click when ready    ${register_btn_close_remark_popup}
 
+Verify Popup not Appear
+    ${header_remark_popup}=    Replace String    ${register_txt_header_remark_popup}     {value}    ${Register.Full_register['text_header_remark']}
+    Wait Until Element Is Not Visible    ${header_remark_popup}
+
 Click Save
     ${click_save}=    Replace String    ${register_btn_save_full_register}     {value}    ${Register.Full_register['btn_save']}
     common.Click when ready    ${click_save}

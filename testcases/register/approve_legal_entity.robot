@@ -360,9 +360,10 @@ Register_S13
     Log    Step No.18 กดปุ่ม "x"
     register_business_full_register.Click Button Close Remark Popup
     #Expected
-    #register_business_full_register.
-
-RM Return remark
+    register_business_full_register.Verify Popup not Appear
+    common.Verify Capture Screenshot    Register_S013    Verify popup not appear
+    
+#RM Return remark
 
 Register_S013
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล 
@@ -556,15 +557,18 @@ Register_S013
     
     Log    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
     register_business_full_register.Click Remark
-
+    #Expected
     register_business_full_register.Verify Remark Popup
     ...    remark_4=comment
+    common.Verify Capture Screenshot    Register_S013    Verify remark popup
+
     
     Log    Step No.18 กดปุ่ม "x"
     register_business_full_register.Click Button Close Remark Popup
     #Expected
     #Inprogress
-    #register_business_full_register.
+    #register_business_full_register.Verify Popup not Appear
+    common.Verify Capture Screenshot    Register_S013    Verify popup not appear
 
 Register_S023
     [Documentation]    Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
