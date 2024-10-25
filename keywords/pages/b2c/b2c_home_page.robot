@@ -21,7 +21,8 @@ Select Sub Menu Favorites
     common.Click When Ready    ${b2c_mnu_favorites_home_page}
 
 Select Sub Menu Return Business
-    common.Click When Ready    ${b2c_mnu_return_business_home_page}
+    ${mnu_return_business_home_page}=    Replace String    ${mnu_return_business_home_page}    {value}    ${sub_menu['return_business']}
+    common.Click When Ready    ${mnu_return_business_home_page}
 
 Select Sub Menu Calculate Shipping Costs
     common.Click When Ready    ${b2c_mnu_calculate_shipping_cost_home_page}
