@@ -35,6 +35,15 @@ ${pms_txt_return_pieces_amount_full_regis}    //label[@for='parcelType_parcelRet
 ${pms_txt_return_sale_channel_full_regis}    //label[@for='parcelType_parcelReturnBusiness_salePathReturn']
 ${pms_txt_return_vat_full_regis}    //label[@for='parcelType_parcelReturnBusiness_vatReturn']
 ${pms_txt_return_remark_full_regis}    //label[@for='parcelType_parcelReturnBusiness_notationReturn']
+${pms_txt_title_set_pickup_popup}    //div[@class='ant-modal-title']//span[text()='{value}']
+${pms_txt_branch_set_pickup_popup}    //label[@for='branchName']
+${pms_txt_branch_id_set_pickup_popup}    //label[@for='branchId']
+${pms_txt_ul_code_set_pickup_popup}    //label[@for='ulCode']
+${pms_txt_address_set_pickup_popup}    //label[@for='address_addressInfo']
+${pms_txt_address_full_set_pickup_popup}    //label[@for='address_full']
+${pms_txt_latitude_set_pickup_popup}    //label[@for='lat']
+${pms_txt_longitude_set_pickup_popup}    //label[@for='lng']
+${pms_txt_table_list_set_pickup_popup}    //thead[@class='ant-table-thead']//th[text()='{value}']
 
 ${pms_txtbox_customer_type_full_regis}    //input[@id='customerType']
 ${pms_txtbox_company_title_full_regis}    //input[@id='companyTitleName']/../..//span[text()]
@@ -67,11 +76,36 @@ ${pms_txtbox_return_vat_full_regis}    //label[@for='parcelType_parcelReturnBusi
 ${pms_txtbox_return_remark_full_regis}    //textarea[@id='parcelType_parcelReturnBusiness_notationReturn']
 ${pms_txtbox_price_scheme_full_regis}    //input[@id='parcelType_parcelDry_priceScheme']/..
 ${pms_txtbox_price_scheme_date_full_regis}    //input[@id='parcelType_parcelDry_priceActiveDate']/..
+${pms_txtbox_cod_scheme_full_regis}    //input[@id='parcelType_parcelDry_codScheme']/..
+${pms_txtbox_cod_scheme_date_full_regis}    //input[@id='parcelType_parcelDry_codActiveDate']/..
+${pms_txtbox_insure_scheme_full_regis}    //input[@id='parcelType_parcelDry_insureScheme']/..
+${pms_txtbox_insure_scheme_date_full_regis}    //input[@id='parcelType_parcelDry_insureActiveDate']/..
+${pms_txtbox_first_mile_start_date_full_regis}    //input[@id='parcelType_parcelDry_firstMileStartdate']/..
+${pms_txtbox_first_mile_end_date_full_regis}    //input[@id='parcelType_parcelDry_firstMileEnddate']/..
+${pms_txtbox_bounce_fee_start_date_full_regis}    //input[@id='parcelType_parcelDry_bounceFeeStartdate']/..
+${pms_txtbox_bounce_fee_end_date_full_regis}    //input[@id='parcelType_parcelDry_bounceFeeEnddate']/..
+${pms_txtbox_rebate_item_full_regis}    //input[@id='parcelType_parcelDry_itemTo_0']
+${pms_txtbox_rebate_percen_full_regis}    //input[@id='parcelType_parcelDry_rebatePercen_0']
+${pms_txtbox_rebate_item_2_full_regis}    //input[@id='parcelType_parcelDry_itemTo_1']
+${pms_txtbox_rebate_percen_2_full_regis}    //input[@id='parcelType_parcelDry_rebatePercen_1']
+${pms_txtbox_branch_set_pickup_popup}    //input[@id='branchName']
+${pms_txtbox_branch_id_set_pickup_popup}    //input[@id='branchId']
+${pms_txtbox_address_set_pickup_popup}    //input[@id='address_addressInfo']
+${pms_txtbox_address_full_set_pickup_popup}    //input[@id='address_full']
+${pms_txtbox_search_set_pickup_popup}    //span[text()='{value}']/..//input/..
 
 ${pms_btn_next_page}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']
 ${pms_btn_select_chill_parcel}    //button[@id='parcelType_parcelChill_isActive']
 ${pms_btn_select_return_business}    //button[@id='parcelType_parcelReturnBusiness_isActive']
+${pms_btn_first_mile_full_regis}    //button[@id='parcelType_parcelDry_firstMile']
+${pms_btn_bounce_fee_full_regis}    //button[@id='parcelType_parcelDry_bounceFee']
+${pms_btn_rebate_full_regis}    //span[text()='{value}']/..//button
+${pms_btn_plus_rebate_full_regis}    //th[@class='ant-table-cell']//button
+${pms_btn_add_parcel_pickup_full_regis}    //*[text()='{value}']/../..//button
+${pms_btn_add_pick_up_set_pickup_popup}    //div[@class='ant-modal-content']//thead[@class='ant-table-thead']//button
+${pms_btn_save_set_pickup_popup}    //span[text()='{value}']/../..
+${pms_btn_cancel_set_pickup_popup}    //b[text()='ยกเลิก']/..
 
 ${pms_checkbox_dry_cod}    //input[@id='parcelType_parcelDry_isCod']
 ${pms_checkbox_dry_insure}    //input[@id='parcelType_parcelDry_isInsure']
@@ -84,4 +118,9 @@ ${pms_tab_chill_parcel}    //div[@data-node-key='controlTem']//div[@role='tab']
 ${pms_tab_return_business}    //div[@data-node-key='return']//div[@role='tab']
 
 ${pms_cbo_price_scheme_full_regis}    //div[@id='parcelType_parcelDry_priceScheme_list']/..//div[text()='{value}']
-${pms_cbo_date_pick_full_regis}    //div[@class='ant-picker-date-panel']//td[@title='{value}']
+${pms_cbo_date_pick_full_regis}    //div[@class='ant-picker-dropdown css-ccdg5a ant-picker-dropdown-placement-topLeft']//div[@class='ant-picker-date-panel']//td[@title='{value}']
+${pms_cbo_cod_scheme_full_regis}    //div[@id='parcelType_parcelDry_codScheme_list']/..//div[text()='{value}']
+${pms_cbo_insure_scheme_full_regis}    //div[@id='parcelType_parcelDry_insureScheme_list']/..//div[text()='{value}']
+${pms_cbo_parcel_type_set_pickup_popup}    //div[@class='rc-virtual-list']//div[text()='{value}']
+${pms_cbo_pickup_date_set_pickup_popup}    //div[@class='ant-select-tree-list']//span[text()='{value}']
+${pms_cbo_pickup_time_set_pickup_popup}    //div[@class='ant-select-tree-list']//span[text()='{value}']

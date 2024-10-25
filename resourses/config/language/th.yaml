@@ -363,9 +363,22 @@ rm:
     text_cancel_return_fee: ยกเลิกค่าทำเนียมตีกลับ
     text_rebate: ส่วนลด Rebate
     text_parcel_pickup: รอบรถเข้ารับพัสดุ
+    text_title_pickup_point: จุดเรียกรถเข้ารับ
+    text_branch: สาขา *
+    text_branch_id: รหัสสาขา
+    text_ul_code: UL Code *
+    text_address: ที่อยู่ *
+    text_address_full: ตำบล/อำเภอ/จังหวัด/รหัสไปษณีย์ *
+    text_latitude: ละติจูด
+    text_longitude: ลองติดจูด
+    text_parcel_type: ประเภทพัสดุ
+    text_pickup_date: วันเรียกรถเข้ารถรับ
+    text_time: ช่วงเวลา
     text_pickup_schedule: 
       not_determined: ยังไม่ได้กำหนด
+      determined: กำหนดแล้ว
     text_remark_2: 'ความเห็นการแก้ไข #2'
+    latitude_longitude: '0, 0'
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน

@@ -10,7 +10,7 @@ Click Dry Parcel Tab
 
 Verify Dry Parcel Tab Full Register Detail Page
     [Arguments]    ${cod}    ${insure}    ${product_category}    ${pieces_amount}    ${sale_channel}    ${vat}    ${remark}
-    ...    ${branch}    ${address}    ${latitude_longitude}    ${pickup_schedule}
+    ...    ${branch}    ${address}    ${address_full}    ${latitude_longitude}    ${determined}
 
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_service_info']}
     ${service_info}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
@@ -67,9 +67,11 @@ Verify Dry Parcel Tab Full Register Detail Page
     Page Should Contain Element    ${title_parcel_pickup}
 
     ${text_branch}=    Replace String    ${pms_txt_parcel_pickup_table_full_regis}    {value}    ${branch}
-    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address}
+    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address} ${address_full}
     ${text_latitude_longitude}=    Replace String    ${text_address}    {value3}    ${latitude_longitude}
-    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${pickup_schedule}
+    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${determined}
+
+    Wait Until Element Is Visible    ${text_pickup_schedule}
 
 Format Input Date
     [Arguments]    ${date}
@@ -80,12 +82,29 @@ Format Input Date
     RETURN    ${d}
 
 Input Information In The Dry Parcel Tab
-    [Arguments]    ${price_scheme}    ${price_scheme_date}
-
+    [Arguments]    ${price_scheme}    ${price_scheme_date}    ${cod_scheme}    ${cod_scheme_date}    ${insure_scheme}    ${insure_scheme_date}
+    ...    ${first_mile_start_date}    ${first_mile_end_date}    ${bounce_fee_start_date}    ${bounce_fee_end_date}
+    ...    ${rebate_item}    ${rebate_percen}    ${rebate_item_2}    ${rebate_percen_2}
     ${price_scheme_day}    Format Input Date    ${price_scheme_date}
+    ${cod_scheme_day}    Format Input Date    ${cod_scheme_date}
+    ${insure_scheme_day}    Format Input Date    ${insure_scheme_date}
+    ${first_mile_start_day}    Format Input Date    ${first_mile_start_date}
+    ${first_mile_end_day}    Format Input Date    ${first_mile_end_date}
+    ${bounce_fee_start_day}    Format Input Date    ${bounce_fee_start_date}
+    ${bounce_fee_end_day}    Format Input Date    ${bounce_fee_end_date}
 
     ${select_price_scheme}=    Replace String    ${pms_cbo_price_scheme_full_regis}    {value}    ${price_scheme}
     ${select_price_scheme_date}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${price_scheme_day}
+    ${select_cod_scheme}=    Replace String    ${pms_cbo_cod_scheme_full_regis}    {value}    ${cod_scheme}
+    ${select_cod_scheme_date}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${cod_scheme_day}
+    ${select_insure_scheme}=    Replace String    ${pms_cbo_insure_scheme_full_regis}    {value}    ${insure_scheme}
+    ${select_insure_scheme_date}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${insure_scheme_day}
+    ${select_first_mile_start_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${first_mile_start_day}
+    ${select_first_mile_end_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${first_mile_end_day}
+    ${select_bounce_fee_start_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${bounce_fee_start_day}
+    ${select_bounce_fee_end_day}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${bounce_fee_end_day}
+    ${btn_rebate}=    Replace String    ${pms_btn_rebate_full_regis}    {value}    ${rm.full_regis['text_rebate']}
+    ${btn_add_parcel_pickup}=    Replace String    ${pms_btn_add_parcel_pickup_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
 
     Wait Until Element Is Visible    ${pms_txtbox_price_scheme_full_regis}
     Scroll Element Into View    ${pms_txtbox_price_scheme_full_regis}
@@ -93,13 +112,105 @@ Input Information In The Dry Parcel Tab
     ### price scheme ###
     common.Click When Ready    ${pms_txtbox_price_scheme_full_regis}
     common.Click When Ready    ${select_price_scheme}
-
     common.Click When Ready    ${pms_txtbox_price_scheme_date_full_regis}
     common.Click When Ready    ${select_price_scheme_date}
-    Sleep    4s
-    
 
+    common.Click When Ready    ${pms_txtbox_cod_scheme_full_regis}
+    common.Click When Ready    ${select_cod_scheme}
+    common.Click When Ready    ${pms_txtbox_cod_scheme_date_full_regis}
+    common.Click When Ready    ${select_cod_scheme_date}
 
+    common.Click When Ready    ${pms_txtbox_insure_scheme_full_regis}
+    common.Click When Ready    ${select_insure_scheme}
+    common.Click When Ready    ${pms_txtbox_insure_scheme_date_full_regis}
+    common.Click When Ready    ${select_insure_scheme_date}
+
+    common.Click When Ready    ${pms_btn_first_mile_full_regis}
+    common.Click When Ready    ${pms_txtbox_first_mile_start_date_full_regis}
+    common.Click When Ready    ${select_first_mile_start_day}
+    common.Click When Ready    ${pms_txtbox_first_mile_end_date_full_regis}
+    common.Click When Ready    ${select_first_mile_end_day}
+
+    common.Click When Ready    ${pms_btn_bounce_fee_full_regis}
+    common.Click When Ready    ${pms_txtbox_bounce_fee_start_date_full_regis}
+    common.Click When Ready    ${select_bounce_fee_start_day}
+    common.Click When Ready    ${pms_txtbox_bounce_fee_end_date_full_regis}
+    common.Click When Ready    ${select_bounce_fee_end_day}
+
+    common.Click When Ready    ${btn_rebate}
+    common.Click When Ready    ${pms_btn_plus_rebate_full_regis}
+    common.Input When Ready    ${pms_txtbox_rebate_item_full_regis}    ${rebate_item}
+    common.Input When Ready    ${pms_txtbox_rebate_percen_full_regis}    ${rebate_percen}
+    common.Click When Ready    ${pms_btn_plus_rebate_full_regis}
+    common.Input When Ready    ${pms_txtbox_rebate_item_2_full_regis}    ${rebate_item_2}
+    common.Input When Ready    ${pms_txtbox_rebate_percen_2_full_regis}    ${rebate_percen_2}
+    Scroll Element Into View    ${btn_add_parcel_pickup}
+    common.Click When Ready    ${btn_add_parcel_pickup}
+
+Verify Set Pickup Point Popup
+    [Arguments]    ${branch}    ${branch_id}    ${address}    ${address_full}
+    ${header}=    Replace String    ${pms_txt_title_set_pickup_popup}    {value}    ${rm.full_regis['text_title_pickup_point']}
+    ${title_parcel_type}=    Replace String    ${pms_txt_table_list_set_pickup_popup}    {value}    ${rm.full_regis['text_parcel_type']}
+    ${title_pickup_date}=    Replace String    ${pms_txt_table_list_set_pickup_popup}    {value}    ${rm.full_regis['text_pickup_date']}
+    ${title_time}=    Replace String    ${pms_txt_table_list_set_pickup_popup}    {value}    ${rm.full_regis['text_time']}
+    Wait Until Element Is Visible    ${header}    timeout=${DEFAULT_TIMEOUT}
+
+    ${label_branch}=    Get Text    ${pms_txt_branch_set_pickup_popup}
+    ${input_branch}=    Get Value    ${pms_txtbox_branch_set_pickup_popup}
+    ${label_branch_id}=    Get Text    ${pms_txt_branch_id_set_pickup_popup}
+    ${input_branch_id}=    Get Value    ${pms_txtbox_branch_id_set_pickup_popup}
+    ${label_ul_code}=    Get Text    ${pms_txt_ul_code_set_pickup_popup}
+    ${label_address}=    Get Text    ${pms_txt_address_set_pickup_popup}
+    ${input_address}=    Get Value    ${pms_txtbox_address_set_pickup_popup}
+    ${label_address_full}=    Get Text    ${pms_txt_address_full_set_pickup_popup}
+    ${input_address_full}=    Get Value    ${pms_txtbox_address_full_set_pickup_popup}
+    ${label_latitude}=    Get Text    ${pms_txt_latitude_set_pickup_popup}
+    ${label_longitude}=    Get Text    ${pms_txt_longitude_set_pickup_popup}
+
+    Should Be Equal As Strings    ${label_branch} ${input_branch}    ${rm.full_regis['text_branch']} ${branch}
+    Should Be Equal As Strings    ${label_branch_id} ${input_branch_id}    ${rm.full_regis['text_branch_id']} ${branch_id}
+    Should Be Equal As Strings    ${label_ul_code}    ${rm.full_regis['text_ul_code']}
+    Should Be Equal As Strings    ${label_address} ${input_address}    ${rm.full_regis['text_address']} ${address}
+    Should Be Equal As Strings    ${label_address_full} ${input_address_full}    ${rm.full_regis['text_address_full']} ${address_full}
+    Should Be Equal As Strings    ${label_latitude}    ${rm.full_regis['text_latitude']}
+    Should Be Equal As Strings    ${label_longitude}    ${rm.full_regis['text_longitude']}
+
+    Wait Until Element Is Visible    ${title_parcel_type}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${title_pickup_date}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${title_time}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${pms_btn_add_pick_up_set_pickup_popup}    timeout=${DEFAULT_TIMEOUT}
+
+Input Set Pickup Point Popup
+    [Arguments]    ${parcel_type}    ${pickup_day}    ${pickup_time}
+    ${txtbox_parcel_type}=    Replace String    ${pms_txtbox_search_set_pickup_popup}    {value}    ${rm.full_regis['text_parcel_type']}
+    ${selected_parcel_type}=    Replace String    ${pms_cbo_parcel_type_set_pickup_popup}    {value}    ${parcel_type}
+    ${txtbox_pickup_day}=    Replace String    ${pms_txtbox_search_set_pickup_popup}    {value}    ${rm.full_regis['text_pickup_date']}
+    ${selected_pickup_day}=    Replace String    ${pms_cbo_pickup_date_set_pickup_popup}    {value}    ${pickup_day}
+    ${txtbox_pickup_time}=    Replace String    ${pms_txtbox_search_set_pickup_popup}    {value}    ${rm.full_regis['text_time']}
+    ${selected_pickup_time}=    Replace String    ${pms_cbo_pickup_time_set_pickup_popup}    {value}    ${pickup_time}
+    # ${button_save}=    Replace String    ${pms_btn_save_set_pickup_popup}    {value}    ${rm['text_save']}
+    ${button_save}=    Replace String    ${pms_btn_cancel_set_pickup_popup}    {value}    ยกเลิก
+
+    common.Click When Ready    ${pms_btn_add_pick_up_set_pickup_popup}
+    common.Click When Ready    ${txtbox_parcel_type}
+    common.Click When Ready    ${selected_parcel_type}
+    common.Click When Ready    ${txtbox_pickup_day}
+    common.Click When Ready    ${selected_pickup_day}
+    common.Click When Ready    ${txtbox_pickup_time}
+    common.Click When Ready    ${selected_pickup_time}
+    common.Click When Ready    ${button_save}
+
+Verify Set Pickup Point
+    [Arguments]    ${branch}    ${address}    ${address_full}    ${latitude_longitude}    ${determined}
+    ${text_parcel_pickup}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
+    Scroll Element Into View    ${text_parcel_pickup}
+
+    ${text_branch}=    Replace String    ${pms_txt_parcel_pickup_table_full_regis}    {value}    ${branch}
+    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address} ${address_full}
+    ${text_latitude_longitude}=    Replace String    ${text_address}    {value3}    ${latitude_longitude}
+    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${determined}
+
+    Wait Until Element Is Visible    ${text_pickup_schedule}
 
 Click Chill Parcel Tab
     Scroll Window To Vertical    0
@@ -107,7 +218,7 @@ Click Chill Parcel Tab
 
 Verify Chill Parcel Tab Full Register Detail Page
     [Arguments]    ${cod}    ${product_category}    ${pieces_amount}    ${sale_channel}    ${vat}    ${remark}
-    ...    ${branch}    ${address}    ${latitude_longitude}    ${pickup_schedule}  
+    ...    ${branch}    ${address}    ${address_full}    ${latitude_longitude}    ${determined}  
 
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_service_info']}
     ${service_info}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
@@ -156,18 +267,24 @@ Verify Chill Parcel Tab Full Register Detail Page
     Page Should Contain Element    ${label_cancel_return_fee}
     Page Should Contain Element    ${label_rebate}
 
-    ${text_branch}=    Replace String    ${pms_txt_parcel_pickup_table_full_regis}    {value}    ${branch}
-    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address}
-    ${text_latitude_longitude}=    Replace String    ${text_address}    {value3}    ${latitude_longitude}
-    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${pickup_schedule}
-
     #### parcel pickup ####
     Page Should Contain Element    ${title_parcel_pickup}
 
     ${text_branch}=    Replace String    ${pms_txt_parcel_pickup_table_full_regis}    {value}    ${branch}
-    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address}
+    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address} ${address_full}
     ${text_latitude_longitude}=    Replace String    ${text_address}    {value3}    ${latitude_longitude}
-    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${pickup_schedule}
+    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    $${determined}
+
+    Wait Until Element Is Visible    ${text_pickup_schedule}
+
+Input Information In The Chill Parcel Tab
+    [Arguments]    ${price_scheme}    ${price_scheme_date}
+    common.Click When Ready    ${pms_btn_select_chill_parcel}
+    Sleep   4s
+
+
+
+
 
 Click Return Business Tab
     Scroll Window To Vertical    0
@@ -175,7 +292,7 @@ Click Return Business Tab
 
 Verify Return Business Tab Full Register Detail Page
     [Arguments]    ${express}    ${insure}    ${product_category}    ${pieces_amount}    ${sale_channel}    ${vat}    ${remark}
-    ...    ${branch}    ${address}    ${latitude_longitude}    ${pickup_schedule}
+    ...    ${branch}    ${address}    ${address_full}    ${address_full}    ${latitude_longitude}    ${determined}
 
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_service_info']}
     ${service_info}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
@@ -230,9 +347,10 @@ Verify Return Business Tab Full Register Detail Page
     Page Should Contain Element    ${title_parcel_pickup}
 
     ${text_branch}=    Replace String    ${pms_txt_parcel_pickup_table_full_regis}    {value}    ${branch}
-    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address}
+    ${text_address}=    Replace String    ${text_branch}    {value2}    ${address} ${address_full}
     ${text_latitude_longitude}=    Replace String    ${text_address}    {value3}    ${latitude_longitude}
-    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${pickup_schedule}
+    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${determined}
+    Wait Until Element Is Visible    ${text_pickup_schedule}
 
 ########## legal entity  ###########
 Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
