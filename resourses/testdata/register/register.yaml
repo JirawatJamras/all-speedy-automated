@@ -81,16 +81,23 @@ Register:
     text_other_file: เอกสารอื่นๆ
     btn_next: ถัดไป
     btn_cancel: ยกเลิก
-    btn_remark: หมายเหตุการแก้ไข
-    btn_save: บันทึกร่าง
-    btn_confirm: ลงทะเบียน
     text_header_cancel: ยกเลิกการลงทะเบียน
     text_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    confirm_cancel_popup: ตกลง
+    cancel_cancel_popup: ยกเลิก    
+    btn_remark: หมายเหตุการแก้ไข
+    text_header_remark: หมายเหตุการณ์แก้ไข
+    text_remark_page_1: 'หมายเหตุการณ์แก้ไข #1'
+    text_remark_page_2: 'หมายเหตุการณ์แก้ไข #2'
+    text_remark_page_3: 'หมายเหตุการณ์แก้ไข #3'
+    text_remark_page_4: 'หมายเหตุการณ์แก้ไข #4'
+    text_no_remark: '-'
+    btn_save: บันทึกร่าง
+    btn_confirm: ลงทะเบียน
     text_accept: ยอมรับ
     text_terms_of_service: เงื่อนไขให้บริการ
     text_privacy_policy:  นโยบายความเป็นส่วนตัว
-    confirm_cancel_popup: ตกลง
-    cancel_cancel_popup: ยกเลิก
+
     text_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
 
 
