@@ -39,9 +39,9 @@ Register:
     text_email: 'E-mail *'
     text_mobile: 'เบอร์โทรศัพท์ *'
     text_mobile_extra: '#ต่อ' 
-    text_customer_first_name: ชื่อ
-    text_customer_last_name: นามสกุล
-    text_id_card_number: เลขบัตรประชาชน
+    text_customer_first_name: 'ชื่อ *'
+    text_customer_last_name: 'นามสกุล *'
+    text_id_card_number: 'เลขประจำตัวประชาชน *'
     text_tab_dry_parcel: พัสดุทั่วไป
     text_tab_chill_parcel: พัสดุควบคุมอุณหภูมิ
     text_tab_return_business: Return Business
@@ -258,6 +258,39 @@ Register_S013:
     bank_branch: ปากเกร็ด
     bank_account_name: บริษัท ไทยฟู๊ดส์ รอยัล กรุ๊ป จำกัด
     bank_account_no: 1234567890
+
+Register_S014:
+  dry_parcel:
+    type_product: เสื้อผ้า
+    number_by_day: 10-99 ชิ้น
+    sale_channel: LAZADA
+    vat: ไม่มี Vat
+    remark: ''
+  chill_parcel:
+    type_product: อาหารแห้ง
+    number_by_day: 10-99 ชิ้น
+    sale_channel: FACEBOOK
+    vat: ไม่มี Vat
+    remark: ''
+  return_business:
+    type_product: เสื้อผ้า
+    number_by_day: 10-99 ชิ้น
+    sale_channel: LAZADA
+    vat: ไม่มี Vat
+    remark: '' 
+  contact:
+    user_name: นางสาววีวิกา ยั่งยืน
+    user_position: CEO
+    user_email: businessregisterflow@gmail.com
+    user_phone: '000000000'
+    user_phone_ex: ''
+  bank: 
+    bank_id: ไทย
+    bank_name: ธนาคารไทยพาณิชย์
+    bank_account_type: บัญชีออมทรัพย์
+    bank_branch: สะพานสูง
+    bank_account_name: นางสาววีวิกา ยั่งยืน
+    bank_account_no: 1234567899
 
 Register_S015:
   request_type: Full Register

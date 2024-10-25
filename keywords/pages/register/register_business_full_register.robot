@@ -20,7 +20,7 @@ Verify Email That Have Received Link
     Scroll Into View By Xpath    ${select_link}    true
 
 #Legal Entity
-Verify Company information Legal Entity Page
+Verify Company Information Legal Entity Page
     [Arguments]    ${partner_type}    ${company_title_name}    ${company_name}    ${id_number}    
     ...    ${company_address}    ${select_company_address_full}    ${mobile_company}    ${mobile_company_ext}
     ...    ${title_name}    ${first_name}    ${last_name}    ${email}    ${mobile_no}    ${mobile_ext}
@@ -85,26 +85,55 @@ Input Mobile Company Ext Legal Entity
     [Arguments]    ${value}  
     common.Input When Ready    ${register_txtbox_mobile_company_ext_full_register}     ${value}
 
+Verify Supporting Document Page Legal Entity
+    ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_supporting_document']} 
+    ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_supporting_document']}
+    ${txt_certificate_business_registration}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_certificate_business_registration']}
+    ${txt_copy_file_20}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_file_20']}
+    ${txt_copy_id_card}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_id_card']}
+    ${txt_copy_of_bank_account}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_bank_account']}
+    ${txt_copy_of_house_registration}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_house_registration']}
+    ${txt_permission_form}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_permission_form']}
+    ${txt_other_file}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_other_file']}
+    ${txt_terms_of_service}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_terms_of_service']}
+    ${txt_privacy_policy}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_privacy_policy']}
+
+    Page Should Contain Element    ${txt_title}
+    Page Should Contain Element    ${txt_header}
+    Page Should Contain Element    ${txt_certificate_business_registration}
+    Page Should Contain Element    ${txt_copy_file_20}
+    Page Should Contain Element    ${txt_copy_id_card}
+    Page Should Contain Element    ${txt_copy_of_bank_account}
+    Page Should Contain Element    ${txt_copy_of_house_registration}
+    Page Should Contain Element    ${txt_permission_form}
+    Page Should Contain Element    ${txt_other_file}
+    Page Should Contain Element    ${txt_terms_of_service}
+    Page Should Contain Element    ${txt_privacy_policy}
+
  #Uploadfile
+Cancel Block Input Upload
+    Execute JavaScript    Array.from(document.querySelectorAll('input[name="file"]')).forEach(el => el.style.display = 'block');
+    
 Upload Certificate Business Registration
     [Arguments]    ${file_path}
     ${file}    Normalize Path    ${file_path}
+    Cancel Block Input Upload
     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['text_certificate_business_registration']}
-    Execute JavaScript    Array.from(document.querySelectorAll('input[name="file"]')).forEach(el => el.style.display = 'block');
     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
     Choose File    ${btn_upload}    ${file}
 
 Upload Copy File 20
     [Arguments]    ${file_path}
     ${file}    Normalize Path    ${file_path}
+    Cancel Block Input Upload
     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['text_copy_file_20']}
-    Execute JavaScript    document.querySelector('input[type="file"]').style.display = 'block';
     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
     Choose File    ${btn_upload}    ${file}
 
 Upload Copy ID Card
     [Arguments]    ${file_path}
     ${file}    Normalize Path    ${file_path}
+    Cancel Block Input Upload
     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['text_copy_id_card']}
     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
     Choose File    ${btn_upload}    ${file}
@@ -112,6 +141,7 @@ Upload Copy ID Card
 Copy Of Bank Account
     [Arguments]    ${file_path}
     ${file}    Normalize Path    ${file_path}
+    Cancel Block Input Upload
     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['text_copy_of_bank_account']}
     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
     Choose File    ${btn_upload}    ${file}
@@ -119,6 +149,7 @@ Copy Of Bank Account
 Upload Copy Of House Registration
     [Arguments]    ${file_path}
     ${file}    Normalize Path    ${file_path}
+    Cancel Block Input Upload
     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['text_copy_of_house_registration']}
     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
     Choose File    ${btn_upload}    ${file}
@@ -126,6 +157,7 @@ Upload Copy Of House Registration
 Upload Permission form for Deduction from Bank Account
     [Arguments]    ${file_path}
     ${file}    Normalize Path    ${file_path}
+    Cancel Block Input Upload
     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['text_permission_form']}
     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
     Choose File    ${btn_upload}    ${file}
@@ -133,6 +165,7 @@ Upload Permission form for Deduction from Bank Account
 Upload Other File
     [Arguments]    ${file_path}
     ${file}    Normalize Path    ${file_path}
+    Cancel Block Input Upload
     ${btn_upload}=    Replace String    ${register_btn_upload_full_register}     {value}    ${Register.Full_register['text_other_file']}
     Wait Until Element Is Visible    ${btn_upload}    timeout=${DEFAULT_TIMEOUT}
     Choose File    ${btn_upload}    ${file}
@@ -146,6 +179,72 @@ Click Acceptance Privacy Policy
     ${click_checkbox}=    Replace String    ${register_btn_accept_privacy_policy_full_register}     {value}    ${Register.Full_register['text_privacy_policy']}
     Scroll Element Into View    ${click_checkbox}
     Select Checkbox    ${click_checkbox}
+
+#Individual
+Verify Company Information Individual Page
+    [Arguments]    ${partner_type}    ${title_name}    ${first_name}    ${last_name}    
+    ...    ${id_number}    ${email}    ${company_address}
+    ...    ${select_company_address_full}    ${mobile_no}    ${mobile_ext}
+    #หัวข้อข้อมูลบริษัท
+    ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_company_information']}
+    ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_company_information']}
+        
+    Page Should Contain Element    ${txt_title}
+    Wait Until Element Is Visible    ${txt_header}
+
+    ${label_partner_type}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_partner_type']}
+    ${txt_partner_type}=    Get Value    ${register_btn_partner_types_full_register}
+    ${label_title_name}=    Get Text    ${register_txt_title_name}
+    ${txt_title_name}=    Get Text    ${register_cbo_title_name_full_register}    
+    ${label_first_name}=    Get Text    ${register_txt_first_name}
+    ${txt_first_name}=    Get Value    ${register_txtbox_first_name_full_register}
+    ${label_last_name}=    Get Text    ${register_txt_last_name}
+    ${txt_last_name}=    Get Value    ${register_txtbox_last_name_full_register}   
+    ${label_id_number}=    Get Text    ${register_txt_id_number}
+    ${txt_id_number}=    Get Value    ${register_txtbox_juristic_identification_number_full_register}
+    ${label_email}=    Get Text    ${register_txt_email}
+    ${txt_email}=    Get Value    ${register_txtbox_email_full_register}   
+    ${label_company_address}=    Get Text    ${register_txt_company_address}
+    ${txt_company_address}=    Get Value    ${register_txtbox_company_address_full_register}
+    ${label_select_company_address_full}=    Get Text    ${register_txt_company_address_full}
+    ${txt_select_company_address_full}=    Get Text    ${register_cbo_company_address_full_full_register}
+    ${label_mobile_no}=    Get Text    ${register_txt_mobile_no}
+    ${txt_mobile_no}=    Get Value    ${register_txtbox_mobile_no_full_register}
+    ${label_mobile_ext}=    Get Text    ${register_txt_mobile_ext}
+    ${txt_mobile_ext}=    Get Value    ${register_txtbox_mobile_ext_full_register}
+
+    Page Should Contain Element    ${label_partner_type}
+    Should Be Equal As Strings    ${txt_partner_type}    ${partner_type}
+    Should Be Equal As Strings    ${label_title_name} ${txt_title_name}    ${Register.Full_register['text_title_name']} ${title_name}
+    Should Be Equal As Strings    ${label_first_name} ${txt_first_name}    ${Register.Full_register['text_customer_first_name']} ${first_name}
+    Should Be Equal As Strings    ${label_last_name} ${txt_last_name}    ${Register.Full_register['text_last_name']} ${last_name}
+    Should Be Equal As Strings    ${label_id_number} ${txt_id_number}    ${Register.Full_register['text_id_card_number']} ${id_number}
+    Should Be Equal As Strings    ${label_email} ${txt_email}    ${Register.Full_register['text_email']} ${email}   
+    Should Be Equal As Strings    ${label_company_address} ${txt_company_address}    ${Register.Full_register['text_company_address']} ${company_address}
+    Should Be Equal As Strings    ${label_select_company_address_full} ${txt_select_company_address_full}    ${Register.Full_register['text_company_address_full']} ${select_company_address_full}
+    Should Be Equal As Strings    ${label_mobile_no} ${txt_mobile_no}    ${Register.Full_register['text_mobile']} ${mobile_no}
+    Should Be Equal As Strings    ${label_mobile_ext} ${txt_mobile_ext}    ${Register.Full_register['text_mobile_extra']} ${mobile_ext}
+
+Verify Supporting Document Page Individual
+    ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_supporting_document']} 
+    ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_supporting_document']}
+    ${txt_copy_id_card}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_id_card']}
+    ${txt_copy_of_house_registration}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_house_registration']}
+    ${txt_copy_of_bank_account}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_bank_account']}
+    ${txt_permission_form}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_permission_form']}
+    ${txt_other_file}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_other_file']}
+    ${txt_terms_of_service}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_terms_of_service']}
+    ${txt_privacy_policy}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_privacy_policy']}
+
+    Page Should Contain Element    ${txt_title}
+    Page Should Contain Element    ${txt_header}
+    Page Should Contain Element    ${txt_copy_id_card}
+    Page Should Contain Element    ${txt_copy_of_house_registration}
+    Page Should Contain Element    ${txt_copy_of_bank_account}
+    Page Should Contain Element    ${txt_permission_form}
+    Page Should Contain Element    ${txt_other_file}
+    Page Should Contain Element    ${txt_terms_of_service}
+    Page Should Contain Element    ${txt_privacy_policy}
 
 
 #Both
@@ -471,30 +570,7 @@ Input Bank Account No
    [Arguments]    ${value}
    common.Input When Ready    ${register_txtbox_bank_account_no}     ${value}
 
-Verify Supporting Document Page
-    ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_supporting_document']} 
-    ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_supporting_document']}
-    ${txt_certificate_business_registration}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_certificate_business_registration']}
-    ${txt_copy_file_20}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_file_20']}
-    ${txt_copy_id_card}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_id_card']}
-    ${txt_copy_of_bank_account}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_bank_account']}
-    ${txt_copy_of_house_registration}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_house_registration']}
-    ${txt_permission_form}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_permission_form']}
-    ${txt_other_file}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_other_file']}
-    ${txt_terms_of_service}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_terms_of_service']}
-    ${txt_privacy_policy}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_privacy_policy']}
 
-    Page Should Contain Element    ${txt_title}
-    Page Should Contain Element    ${txt_header}
-    Page Should Contain Element    ${txt_certificate_business_registration}
-    Page Should Contain Element    ${txt_copy_file_20}
-    Page Should Contain Element    ${txt_copy_id_card}
-    Page Should Contain Element    ${txt_copy_of_bank_account}
-    Page Should Contain Element    ${txt_copy_of_house_registration}
-    Page Should Contain Element    ${txt_permission_form}
-    Page Should Contain Element    ${txt_other_file}
-    Page Should Contain Element    ${txt_terms_of_service}
-    Page Should Contain Element    ${txt_privacy_policy}
 
 
 
@@ -555,12 +631,10 @@ Verify Remark Popup
     Should Be Equal As Strings    ${label_remark_4} ${txt_remark_4}   ${Register.Full_register['text_remark_page_4']} ${remark_4}
 
 
-
-
 Click Button Close Remark Popup
     common.Click when ready    ${register_btn_close_remark_popup}
 
-Verify Popup not Appear
+Verify Popup Not Appear
     ${header_remark_popup}=    Replace String    ${register_txt_header_remark_popup}     {value}    ${Register.Full_register['text_header_remark']}
     Wait Until Element Is Not Visible    ${header_remark_popup}
 

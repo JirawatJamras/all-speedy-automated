@@ -191,7 +191,7 @@ Register_S13
     common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/5159665574078925243
     #Expected
     ${JuristicID}=    Set Variable    3241022174022
-    register_business_full_register.Verify Company information Legal Entity Page
+    register_business_full_register.Verify Company Information Legal Entity Page
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -252,7 +252,7 @@ Register_S13
     Log    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
     #common.Open URL    ${link_full_register}
     #Expected    
-    # register_business_full_register.Verify Company information Legal Entity Page
+    # register_business_full_register.Verify Company Information Legal Entity Page
     # ...    ${Register_S001['checkbox_partner_types']}
     # ...    ${Register_S001['company_title_name']}
     # ...    ${Register_S001['company_name']}
@@ -321,7 +321,7 @@ Register_S13
     Log    Step No.13 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
-    register_business_full_register.Verify Supporting Document Page
+    register_business_full_register.Verify Supporting Document Page Legal Entity
     common.Verify Capture Screenshot    Register_S013    Verify Supporting Document Page
 
 
@@ -347,7 +347,7 @@ Register_S13
     ${JuristicID2}=    Set Variable    5241022175555
     common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/240404338080107385
     #Expected    
-    register_business_full_register.Verify Company information Legal Entity Page
+    register_business_full_register.Verify Company Information Legal Entity Page
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -373,7 +373,7 @@ Register_S13
     Log    Step No.18 กดปุ่ม "x"
     register_business_full_register.Click Button Close Remark Popup
     #Expected
-    register_business_full_register.Verify Popup not Appear
+    register_business_full_register.Verify Popup Not Appear
     common.Verify Capture Screenshot    Register_S013    Verify popup not appear
     
 #RM Return remark
@@ -384,7 +384,7 @@ Register_S013
     register_business_full_register.Get Link On Email
     common.Open URL    ${link_full_register}
     #Expected
-    register_business_full_register.Verify Company information Legal Entity Page
+    register_business_full_register.Verify Company Information Legal Entity Page
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -422,7 +422,6 @@ Register_S013
     common.Verify Capture Screenshot    Register_S013     Verify Tab Return Business
 
     Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
-    #Inprogress
     register_business_full_register.Click Tab Dry Parcel
     register_business_full_register.Click Select Dry Parcel
     register_business_full_register.Select Add Service Cod Dry Parcel
@@ -439,16 +438,18 @@ Register_S013
 
     Log    Step No.6 กดปุ่ม "ยกเลิก"
     register_business_full_register.Click Cancel
+    #Expected
     register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     common.Verify Capture Screenshot    Register_S013    Cancel popup
 
     Log    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
     register_business_full_register.Click Button Confirm Cancel Popup
+    common.Verify Capture Screenshot    Register_S013    Exit link Full register
 
     Log    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
     common.Open URL    ${link_full_register}
     #Expected    
-    register_business_full_register.Verify Company information Legal Entity Page
+    register_business_full_register.Verify Company Information Legal Entity Page
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -507,11 +508,13 @@ Register_S013
     common.Verify Capture Screenshot    Register_S013    Verify Contact And Bank Information Page
         
     Log    Step No.12 ระบุข้อมูลผู้ติดต่อ
+    #Step1 ระบุข้อมูลผู้ติดต่อ
     register_business_full_register.Input User Name    ${Register_S013.contact['user_name']}
     register_business_full_register.Input User Position    ${Register_S013.contact['user_position']}
     register_business_full_register.Input User Email    ${Register_S013.contact['user_email']}
     register_business_full_register.Input User Phone    ${Register_S013.contact['user_phone']}
     register_business_full_register.Input User Phone Ex    ${Register_S013.contact['user_phone_ex']}
+    #Step2 ระบุข้อมูลธนาคาร
     register_business_full_register.Select Bank Id    ${Register_S013.bank['bank_id']}
     register_business_full_register.Select Bank Name    ${Register_S013.bank['bank_name']}
     register_business_full_register.Select Bank Accont Type    ${Register_S013.bank['bank_account_type']}
@@ -524,7 +527,7 @@ Register_S013
     Log    Step No.13 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
-    register_business_full_register.Verify Supporting Document Page
+    register_business_full_register.Verify Supporting Document Page Legal Entity
     common.Verify Capture Screenshot    Register_S013    Verify Supporting Document Page
 
     Log    Step No.14 อัปโหลดเอกสารประกอบ
@@ -549,7 +552,7 @@ Register_S013
     Log    Step No.16 กด Link Full Register เดิม ที่ได้รับทาง E-mail 
     common.Open URL    ${link_full_register}
     #Expected    
-    register_business_full_register.Verify Company information Legal Entity Page
+    register_business_full_register.Verify Company Information Legal Entity Page
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_title_name']}
     ...    ${Register_S001['company_name']}
@@ -578,8 +581,7 @@ Register_S013
     Log    Step No.18 กดปุ่ม "x"
     register_business_full_register.Click Button Close Remark Popup
     #Expected
-    #Inprogress
-    #register_business_full_register.Verify Popup not Appear
+    register_business_full_register.Verify Popup Not Appear
     common.Verify Capture Screenshot    Register_S013    Verify popup not appear
 
 Register_S023

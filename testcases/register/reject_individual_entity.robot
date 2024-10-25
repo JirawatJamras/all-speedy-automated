@@ -13,11 +13,11 @@ Reject Individual Entity
     #Register_S004
     #Assign RM
     Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    Register_S011
+    #Register_S011
     Log    Scenario 14 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
     Register_S014
     Log    Scenario 16 RM : ปฎิเสธคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้าบุคคลธรรมดา)
-    Register_S016
+    #Register_S016
 
 
 
@@ -136,68 +136,193 @@ Register_S011
 Register_S014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
     Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
-    #Step login email same input email in S004
-    # common.Open URL    https://yopmail.com/
-    # ${email}=    Evaluate    "${Register_S004['email']}".split("@")[0]
-    # register_business_full_register.Login Yopmail    ${email}
-    #step get link for full-register
-    #${link_full_register}=    Set Variable    https://www-uat.allspeedy.co.th/business-register/fullRegister/7142801012603045672
-    #common.Open URL    ${link_full_register}
-    
-    
+    # register_business_full_register.Get Link On Email
+    # common.Open URL    ${link_full_register}
+    common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
     #Expected
-    register_business_full_register.Verify Company information
+    ${NationalID}=    Set Variable    8241022180734
+    register_business_full_register.Verify Company Information Individual Page
     ...    ${Register_S004['checkbox_partner_types']}
     ...    ${Register_S004['title_name']}
     ...    ${Register_S004['first_name']}
     ...    ${Register_S004['last_name']}
-    ...    ${Register_S004['id_number']}
+    #...    ${Register_S004['id_number']}
+    ...    ${NationalID}
     ...    ${Register_S004['email']}
     ...    ${Register_S004['individual_address']}
     ...    ${Register_S004['select_individual_address_full']}
     ...    ${Register_S004['mobile_no']}
     ...    ${Register_S004['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S014    Verify Company Information
     
     Log    Step No.2 Click btn "ถัดไป"
-    #Step1 Click tab พัสดุทั่วไป
+    register_business_full_register.Click Next
     #Expected
-    #Step2 Click tab พัสดุควบคุมอุณหภูมิ
-    #Expected
-    #Step3 Click tab Return Business
-    #Expected
+    #Tab พัสดุทั่วไป
+    register_business_full_register.Verify Service Information Page Tab Dry Parcel
+    common.Verify Capture Screenshot    Register_S014    Tab Dry Parcel
+    #Tab พัสดุควบคุมอุณหภูมิ
+    register_business_full_register.Verify Service Information Page Tab Chill Parcel
+    common.Verify Capture Screenshot    Register_S014    Tab Chill Parcel
+    #Tab Return Business
+    register_business_full_register.Verify Service Information Page Tab Return Business
+    common.Verify Capture Screenshot    Register_S014    Tab Return Business
+
+
     Log    Step No.3 เปิดใช้งานพัสดุทั่วไป
-    #Expected
+    register_business_full_register.Click Tab Dry Parcel
+    register_business_full_register.Click Select Dry Parcel
+    register_business_full_register.Select Add Service Cod Dry Parcel
+    register_business_full_register.Select Add Service Insuaration Dry Parcel
+    register_business_full_register.Select Type Product Dry Parcel    ${Register_S014.dry_parcel['type_product']}
+    register_business_full_register.Select Number By Day Dry Parcel    ${Register_S014.dry_parcel['number_by_day']}
+    register_business_full_register.Select Sale Channel Dry Parcel    ${Register_S014.dry_parcel['sale_channel']}
+    register_business_full_register.Input Remark Dry Parcel    ${Register_S014.dry_parcel['remark']}
+    common.Verify Capture Screenshot    Register_S014    Enable Dry Parcel
+
+
     Log    Step No.4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
-    #Expected
+    # register_business_full_register.Click Save
+    # common.Verify Capture Screenshot    Register_S014    Save Draft
+
+
     Log    Step No.5 กดปุ่ม "ยกเลิก"
-    #Expected
+    # register_business_full_register.Click Cancel
+    # #Expected
+    # register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
+    # common.Verify Capture Screenshot    Register_S014    Cancel popup
+
+
     Log    Step No.6 กดปุ่ม "ตกลง" ที่ Popup
-    #Expected
+    # register_business_full_register.Click Button Confirm Cancel Popup
+    # common.Verify Capture Screenshot    Register_S014    Exit link Full register
+
     Log    Step No.7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
-    #Expected
+    # common.Open URL    ${link_full_register}
+    # common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
+    # #Expected
+    # register_business_full_register.Verify Company Information Individual Page
+    # ...    ${Register_S004['checkbox_partner_types']}
+    # ...    ${Register_S004['title_name']}
+    # ...    ${Register_S004['first_name']}
+    # ...    ${Register_S004['last_name']}
+    # #...    ${Register_S004['id_number']}
+    # ...    ${NationalID}
+    # ...    ${Register_S004['email']}
+    # ...    ${Register_S004['individual_address']}
+    # ...    ${Register_S004['select_individual_address_full']}
+    # ...    ${Register_S004['mobile_no']}
+    # ...    ${Register_S004['mobile_ext']}
+    # common.Verify Capture Screenshot    Register_S014    Verify Company Information
+
+
     Log    Step No.8 กดปุ่ม "ถัดไป"
+    # register_business_full_register.Click Next
     #Expected
+    # register_business_full_register.Verify Service Information Page Tab Dry Parcel
+    # ...    type_product=${Register_S014.dry_parcel['type_product']}
+    # ...    number_by_day=${Register_S014.dry_parcel['number_by_day']}
+    # ...    sale_channel=${Register_S014.dry_parcel['sale_channel']}
+    # ...    remark=${Register_S014.dry_parcel['remark']}
+    # common.Verify Capture Screenshot    Register_S014    Verify Dry Parcel
+
+
     Log    Step No.9 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
-    #Step1 เปิดใช้งานพัสดุควบคุมอุณหภูมิ
-    #Expected
-    #Step2 เปิดใช้งาน Return Business
-    #Expected
+    #Tab พัสดุควบคุมอุณหภูมิ
+    register_business_full_register.Click Tab Chill Parcel
+    register_business_full_register.Click Select Chill Parcel
+    register_business_full_register.Select Add Service Cod Chill Parcel
+    register_business_full_register.Select Type Product Chill Parcel    ${Register_S014.chill_parcel['type_product']}
+    register_business_full_register.Select Number By Day Chill Parcel    ${Register_S014.chill_parcel['number_by_day']}
+    register_business_full_register.Select Sale Channel Chill Parcel    ${Register_S014.chill_parcel['sale_channel']}
+    register_business_full_register.Input Remark Chill Parcel    ${Register_S014.chill_parcel['remark']}
+    common.Verify Capture Screenshot    Register_S014    Enable Chill Parcel
+
+    #Tab Return Business
+    register_business_full_register.Click Tab Return Business
+    register_business_full_register.Click Select Return Business
+    register_business_full_register.Select Add Service Express Return Business
+    register_business_full_register.Select Add Service Insuaration Return Business
+    register_business_full_register.Select Type Product Return Business    ${Register_S014.return_business['type_product']}
+    register_business_full_register.Select Number By Day Return Business    ${Register_S014.return_business['number_by_day']}
+    register_business_full_register.Select Sale Channel Return Business    ${Register_S014.return_business['sale_channel']}
+    register_business_full_register.Input Remark Return Business    ${Register_S014.return_business['remark']}
+    common.Verify Capture Screenshot    Register_S014    Enable Return Business
+
+
     Log    Step No.10 กดปุ่ม "ถัดไป"
+    register_business_full_register.Click Next
+    register_business_full_register.Click Add Contact Information
     #Expected
+    register_business_full_register.Verify Contact And Bank Information Page
+    common.Verify Capture Screenshot    Register_S014    Verify Contact And Bank Information Page
+
+
     Log    Step No.11 ระบุข้อมูลผู้ติดต่อ และ ข้อมูลธนาคาร
     #Step1 ระบุข้อมูลผู้ติดต่อ
-    #Expected
+    register_business_full_register.Input User Name    ${Register_S014.contact['user_name']}
+    register_business_full_register.Input User Position    ${Register_S014.contact['user_position']}
+    register_business_full_register.Input User Email    ${Register_S014.contact['user_email']}
+    register_business_full_register.Input User Phone    ${Register_S014.contact['user_phone']}
+    register_business_full_register.Input User Phone Ex    ${Register_S014.contact['user_phone_ex']}
     #Step2 ระบุข้อมูลธนาคาร
-    #Expected   
+    register_business_full_register.Select Bank Id    ${Register_S014.bank['bank_id']}
+    register_business_full_register.Select Bank Name    ${Register_S014.bank['bank_name']}
+    register_business_full_register.Select Bank Accont Type    ${Register_S014.bank['bank_account_type']}
+    register_business_full_register.Input Bank Branch    ${Register_S014.bank['bank_branch']}
+    register_business_full_register.Input Bank Account Name    ${Register_S014.bank['bank_account_name']}
+    register_business_full_register.Input Bank Account No    ${Register_S014.bank['bank_account_no']}
+    common.Verify Capture Screenshot    Register_S014    Verify Contact And Bank Information
+
     Log    Step No.12 กดปุ่ม "ถัดไป"
+    register_business_full_register.Click Next
     #Expected
+    register_business_full_register.Verify Supporting Document Page Individual
+    common.Verify Capture Screenshot    Register_S014    Verify Supporting Document Page
+
+
     Log    Step No.13 อัพโหลดเอกสารประกอบ
-    #Expected
+    register_business_full_register.Upload Copy ID Card    ${testpdf}
+    register_business_full_register.Upload Copy Of House Registration    ${testpdf}
+    register_business_full_register.Copy Of Bank Account    ${testpdf}
+    register_business_full_register.Upload Permission form for Deduction from Bank Account    ${testpdf}
+    register_business_full_register.Upload Other File    ${testpdf}
+    register_business_full_register.Click Acceptance Terms of Service
+    register_business_full_register.Click Acceptance Privacy Policy
+    common.Verify Capture Screenshot    Register_S014    Uploaded Supporting Document Page
+    
     Log    Step No.14 กดปุ่ม "ลงทะเบียน"
-    #Expected
+    #register_business_full_register.Click Confirm
+    #register_business_full_register.Verify Confirm Page    ${Register.Full_register['text_register_success']}
+    #common.Verify Capture Screenshot    Register_S014    Full register success
+
     Log    Step No.15 กด Link Full Register เดิม ที่ได้รับทาง E-mail
-    #Expected 
+    # common.Open URL    ${link_full_register}
+    # common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
+    # #Expected
+    # register_business_full_register.Verify Company Information Individual Page
+    # ...    ${Register_S004['checkbox_partner_types']}
+    # ...    ${Register_S004['title_name']}
+    # ...    ${Register_S004['first_name']}
+    # ...    ${Register_S004['last_name']}
+    # #...    ${Register_S004['id_number']}
+    # ...    ${NationalID}
+    # ...    ${Register_S004['email']}
+    # ...    ${Register_S004['individual_address']}
+    # ...    ${Register_S004['select_individual_address_full']}
+    # ...    ${Register_S004['mobile_no']}
+    # ...    ${Register_S004['mobile_ext']}
+    # common.Verify Capture Screenshot    Register_S014    Verify Company Information
+
     Log    Step No.16 กดปุ่ม "หมายเหตุการแก้ไข"
-    #Expected
+    # register_business_full_register.Click Remark
+    # #Expected
+    # register_business_full_register.Verify Remark Popup
+    # ...    remark_4=comment
+    # common.Verify Capture Screenshot    Register_S014    Verify remark popup
+
     Log    Step No.17 กดปุ่ม "x"
-    #Expected
+    # register_business_full_register.Click Button Close Remark Popup
+    # #Expected
+    # register_business_full_register.Verify Popup Not Appear
+    # common.Verify Capture Screenshot    Register_S014    Verify popup not appear
