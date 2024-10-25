@@ -30,7 +30,7 @@ Register_S15
     #Expected 4
     #pms_detail_full_register_page.Verify Supporting Document Page Legal Entity
     Log    Step No.12 ระบุความเห็นการแก้ไข #4 : แก้ไขเอกสารหน้าบัญชีธนาคาร
-    pms_detail_full_register_page.Input Remark    '4'    ${Register_S015['remark_4']}
+    pms_detail_full_register_page.Input Remark 4    ${Register_S015['remark_4']}
     Log    Step No.13 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
 

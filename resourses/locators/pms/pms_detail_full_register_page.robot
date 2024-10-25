@@ -93,7 +93,6 @@ ${pms_txtbox_branch_id_set_pickup_popup}    //input[@id='branchId']
 ${pms_txtbox_address_set_pickup_popup}    //input[@id='address_addressInfo']
 ${pms_txtbox_address_full_set_pickup_popup}    //input[@id='address_full']
 ${pms_txtbox_search_set_pickup_popup}    //span[text()='{value}']/..//input/..
-${pms_txtbox_remark}    //textarea[@id='remark{value}']
 ${pms_txtbox_price_scheme_chill_full_regis}    //input[@id='parcelType_parcelChill_priceScheme']/..
 ${pms_txtbox_price_scheme_date_chill_full_regis}    //input[@id='parcelType_parcelChill_priceActiveDate']/..
 ${pms_txtbox_cod_scheme_chill_full_regis}    //input[@id='parcelType_parcelChill_codScheme']/..
@@ -106,6 +105,7 @@ ${pms_txtbox_rebate_item_chill_full_regis}    //input[@id='parcelType_parcelChil
 ${pms_txtbox_rebate_percen_chill_full_regis}    //input[@id='parcelType_parcelChill_rebatePercen_0']
 ${pms_txtbox_rebate_item_2_chill_full_regis}    //input[@id='parcelType_parcelChill_itemTo_1']
 ${pms_txtbox_rebate_percen_2_chill_full_regis}    //input[@id='parcelType_parcelChill_rebatePercen_1']
+${pms_txtbox_remark4_full_regis}    //textarea[@id='remark4']
 
 ${pms_btn_next_page}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']

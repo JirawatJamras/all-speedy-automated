@@ -512,7 +512,6 @@ Verify Supporting Document Page Legal Entity
     Page Should Contain Element    ${txt_privacy_policy}
 
 
-Input Remark
-    [Arguments]    ${page_no}    ${value}
-    ${txtbox_remark}=    Replace String    ${pms_txtbox_remark}    {value}    ${page_no}
-    common.Input When Ready    ${txtbox_remark}    ${value}
+Input Remark 4
+    [Arguments]    ${value}
+    common.Input When Ready    ${pms_txtbox_remark4_full_regis}    ${value}
