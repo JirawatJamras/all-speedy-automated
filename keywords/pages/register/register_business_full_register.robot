@@ -525,6 +525,37 @@ Click Remark
     common.Click when ready    ${click_remark}
 
 Verify Remark Popup
+    [Arguments]     ${remark_1}=${Register.Full_register['text_no_remark']}    ${remark_2}=${Register.Full_register['text_no_remark']}
+    ...    ${remark_3}=${Register.Full_register['text_no_remark']}    ${remark_4}=${Register.Full_register['text_no_remark']}
+
+    ${header_remark_popup}=    Replace String    ${register_txt_header_remark_popup}     {value}    ${Register.Full_register['text_header_remark']}
+    Element Should Be Visible    ${header_remark_popup}
+    
+    ${header_1}=    Replace String    ${register_txt_in_remark_popup}     {value}    1
+    ${text_1}=    Replace String    ${register_txt_in_remark_popup}     {value}    2
+    ${header_2}=    Replace String    ${register_txt_in_remark_popup}     {value}    3
+    ${text_2}=    Replace String    ${register_txt_in_remark_popup}     {value}    4
+    ${header_3}=    Replace String    ${register_txt_in_remark_popup}     {value}    5
+    ${text_3}=    Replace String    ${register_txt_in_remark_popup}     {value}    6
+    ${header_4}=    Replace String    ${register_txt_in_remark_popup}     {value}    7
+    ${text_4}=    Replace String    ${register_txt_in_remark_popup}     {value}    8
+
+    ${label_remark_1}=    Get Text    ${header_1}
+    ${txt_remark_1}=    Get Text    ${text_1}
+    ${label_remark_2}=    Get Text    ${header_2}
+    ${txt_remark_2}=    Get Text    ${text_2}
+    ${label_remark_3}=    Get Text    ${header_3}
+    ${txt_remark_3}=    Get Text    ${text_3}
+    ${label_remark_4}=    Get Text    ${header_4}
+    ${txt_remark_4}=    Get Text    ${text_4}
+
+    Should Be Equal As Strings    ${label_remark_1} ${txt_remark_1}   ${Register.Full_register['text_remark_page_1']} ${remark_1}
+    Should Be Equal As Strings    ${label_remark_2} ${txt_remark_2}   ${Register.Full_register['text_remark_page_2']} ${remark_2}
+    Should Be Equal As Strings    ${label_remark_3} ${txt_remark_3}   ${Register.Full_register['text_remark_page_3']} ${remark_3}
+    Should Be Equal As Strings    ${label_remark_4} ${txt_remark_4}   ${Register.Full_register['text_remark_page_4']} ${remark_4}
+
+
+
 
 Click Button Close Remark Popup
     common.Click when ready    ${register_btn_close_remark_popup}

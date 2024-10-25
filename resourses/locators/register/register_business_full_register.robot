@@ -15,6 +15,8 @@ ${register_txt_header_full_register}    //*[text()='{value}']
 ${register_txt_topic_full_register}    //*[contains(text(),'{value}')] 
 ${register_txt_header_cancel_popup_full_register}    //div[@class='ant-modal-header']//span[text()='{value}']
 ${register_txt_body_cancel_popup_full_register}    //div[@class='ant-modal-body']//p[text()='{value}']
+${register_txt_header_remark_popup}    //div[@class='ant-modal-header']//span[text()='{value}']
+${register_txt_in_remark_popup}    (//div[@class="ant-modal-body"]//p)[{value}]
 
 ${register_txt_company_title_name}    //label[@for='companyTitleName']
 ${register_txt_company_name}    //label[@for='companyName']
@@ -64,6 +66,8 @@ ${register_txt_bank_account_no}    //label[@for='bankNo']//span
 
 ${register_txt_term_and_privacy}    //div[@class="ant-space-item"]//label//span//a[text()='{value}']
 ${register_txt_success_full_register}    //h1[text()='{value}']
+
+
 
 ${register_tab_parcel_type_full_register}    //div[@role='tab' and text()='{value}']//..
 

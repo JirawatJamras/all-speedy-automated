@@ -354,12 +354,16 @@ Register_S13
     Log    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
     register_business_full_register.Click Remark
 
-    #register_business_full_register.Verify Remark Popup
+    register_business_full_register.Verify Remark Popup
+    ...    remark_4=comment
     
     Log    Step No.18 กดปุ่ม "x"
     register_business_full_register.Click Button Close Remark Popup
     #Expected
     #register_business_full_register.
+
+RM Return remark
+
 Register_S013
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล 
     Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
@@ -551,8 +555,16 @@ Register_S013
     common.Verify Capture Screenshot    Register_S013    Verify Company Information
     
     Log    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
+    register_business_full_register.Click Remark
+
+    register_business_full_register.Verify Remark Popup
+    ...    remark_4=comment
     
     Log    Step No.18 กดปุ่ม "x"
+    register_business_full_register.Click Button Close Remark Popup
+    #Expected
+    #Inprogress
+    #register_business_full_register.
 
 Register_S023
     [Documentation]    Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
