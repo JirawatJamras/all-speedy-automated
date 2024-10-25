@@ -88,7 +88,8 @@ Click Button To Add
     Click Element        ${b2c_btn_add}
 
 Click Tracking Parcel Delivery Menu
-    common.Click When Ready    ${b2c_mnu_tracking_parcel_delivery}
+    ${btn} =  Replace String    ${b2c_mnu_tracking_parcel_delivery}    {value}    ${Booking['text_menu_status_tracking']}
+    common.Click When Ready    ${btn}
 
 Wait Until Profile Page Loaded
     Wait Until Element Is Visible    ${b2c_txt_business_profile_title_home_page}    timeout=${DEFAULT_TIMEOUT}

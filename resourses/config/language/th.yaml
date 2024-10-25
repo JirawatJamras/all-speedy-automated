@@ -9,6 +9,9 @@ Booking:
   text_title_booking_for_business_customer: จองการจัดส่งพัสดุ สาขาหลัก       
   text_title_booking_for_general_customer: จองการจัดส่งพัสดุ
   text_menu_booking: จองการจัดส่งพัสดุ
+  text_menu_status_tracking: ติดตามการจัดส่งพัสดุ
+  text_btn_search: ค้นหา
+  text_title_my_parcel: พัสดุของฉัน สาขาหลัก
   text_btn_add: เพิ่ม
   text_btn_next: ถัดไป
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " 

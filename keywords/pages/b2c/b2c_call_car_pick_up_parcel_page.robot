@@ -205,6 +205,14 @@ Get The Highest Displayed Date And Set New Highest Date
     ${newDate}=    Set Variable    ${day}-${month}-${year}
     Set Suite Variable    ${newDate}    ${newDate}
 
+Get The Highest Displayed Date And Set New Highest Date 2
+    # Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    # ${titleName}=    Get Text    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//div[@class='ant-card-meta-title']//h5
+    ${titleName}=    Set Variable    รอบปกติ 31-10-2567 16:00:00 - 19:00 น.    
+    ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
+    ${date} =    Add Time To Date    ${highestDisplayedDate}    1 days    date_format=%d-%m-%Y    result_format=%d-%m-%Y
+    Log    ${date}
+
 Delete The Lastest Parcel Pickup Schedule
     common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//span[@aria-label='delete']
     common.Click When Ready    //button[text()=' ยืนยัน']
