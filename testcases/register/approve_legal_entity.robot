@@ -13,14 +13,13 @@ Approve Legal Entity
     [Documentation]    E2E 32 Scenario
     [Tags]    Register    UAT
     Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
-    #Register_S001
+    Register_S001
     Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
-    #Register_S007
+    Register_S007
     Log    Scenario 9 RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)
-    #Register_S009
+    Register_S009
     Log    Scenario 13 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล
-    Register_S13
-    #Register_S013
+    Register_S013
     Log    Scenario 15 RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
     #Register_S015   Ampere
     Log    Scenario 20 RM : การ Update Vendor Code ในข้อมูลลูกค้า
@@ -543,9 +542,9 @@ Register_S013
     common.Verify Capture Screenshot    Register_S013    Uploaded Supporting Document Page
 
     Log    Step No.15 กดปุ่ม "ลงทะเบียน"
-    #register_business_full_register.Click Confirm
-    #register_business_full_register.Verify Confirm Page    ${Register.Full_register['text_register_success']}
-    #common.Verify Capture Screenshot    Register_S013    Full register success
+    register_business_full_register.Click Confirm
+    register_business_full_register.Verify Confirm Page    ${Register.Full_register['text_register_success']}
+    common.Verify Capture Screenshot    Register_S013    Full register success
 
 
     #ต้องไปทำ S0015 ในส่วนที่ RM ต้อง Comment

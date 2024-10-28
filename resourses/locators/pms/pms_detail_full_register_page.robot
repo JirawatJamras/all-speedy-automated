@@ -45,6 +45,7 @@ ${pms_txt_latitude_set_pickup_popup}    //label[@for='lat']
 ${pms_txt_longitude_set_pickup_popup}    //label[@for='lng']
 ${pms_txt_table_list_set_pickup_popup}    //thead[@class='ant-table-thead']//th[text()='{value}']
 
+
 ${pms_txtbox_customer_type_full_regis}    //input[@id='customerType']
 ${pms_txtbox_company_title_full_regis}    //input[@id='companyTitleName']/../..//span[text()]
 ${pms_txtbox_company_name_full_regis}    //input[@id='companyName']

@@ -10,10 +10,10 @@ Reject Individual Entity
     [Documentation]    E2E 4 Scenario
     [Tags]    Register    UAT    In_Review
     Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    #Register_S004
+    Register_S004
     #Assign RM
     Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    #Register_S011
+    Register_S011
     Log    Scenario 14 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
     Register_S014
     Log    Scenario 16 RM : ปฎิเสธคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้าบุคคลธรรมดา)
@@ -136,9 +136,9 @@ Register_S011
 Register_S014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
     Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
-    # register_business_full_register.Get Link On Email
-    # common.Open URL    ${link_full_register}
-    common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
+    register_business_full_register.Get Link On Email
+    common.Open URL    ${link_full_register}
+    #common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
     #Expected
     ${NationalID}=    Set Variable    8241022180734
     register_business_full_register.Verify Company Information Individual Page
@@ -182,49 +182,49 @@ Register_S014
 
 
     Log    Step No.4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
-    # register_business_full_register.Click Save
-    # common.Verify Capture Screenshot    Register_S014    Save Draft
+    register_business_full_register.Click Save
+    common.Verify Capture Screenshot    Register_S014    Save Draft
 
 
     Log    Step No.5 กดปุ่ม "ยกเลิก"
-    # register_business_full_register.Click Cancel
-    # #Expected
-    # register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
-    # common.Verify Capture Screenshot    Register_S014    Cancel popup
+    register_business_full_register.Click Cancel
+    #Expected
+    register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
+    common.Verify Capture Screenshot    Register_S014    Cancel popup
 
 
     Log    Step No.6 กดปุ่ม "ตกลง" ที่ Popup
-    # register_business_full_register.Click Button Confirm Cancel Popup
-    # common.Verify Capture Screenshot    Register_S014    Exit link Full register
+    register_business_full_register.Click Button Confirm Cancel Popup
+    common.Verify Capture Screenshot    Register_S014    Exit link Full register
 
     Log    Step No.7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
-    # common.Open URL    ${link_full_register}
+    common.Open URL    ${link_full_register}
     # common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
-    # #Expected
-    # register_business_full_register.Verify Company Information Individual Page
-    # ...    ${Register_S004['checkbox_partner_types']}
-    # ...    ${Register_S004['title_name']}
-    # ...    ${Register_S004['first_name']}
-    # ...    ${Register_S004['last_name']}
-    # #...    ${Register_S004['id_number']}
-    # ...    ${NationalID}
-    # ...    ${Register_S004['email']}
-    # ...    ${Register_S004['individual_address']}
-    # ...    ${Register_S004['select_individual_address_full']}
-    # ...    ${Register_S004['mobile_no']}
-    # ...    ${Register_S004['mobile_ext']}
-    # common.Verify Capture Screenshot    Register_S014    Verify Company Information
+    #Expected
+    register_business_full_register.Verify Company Information Individual Page
+    ...    ${Register_S004['checkbox_partner_types']}
+    ...    ${Register_S004['title_name']}
+    ...    ${Register_S004['first_name']}
+    ...    ${Register_S004['last_name']}
+    #...    ${Register_S004['id_number']}
+    ...    ${NationalID}
+    ...    ${Register_S004['email']}
+    ...    ${Register_S004['individual_address']}
+    ...    ${Register_S004['select_individual_address_full']}
+    ...    ${Register_S004['mobile_no']}
+    ...    ${Register_S004['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S014    Verify Company Information
 
 
     Log    Step No.8 กดปุ่ม "ถัดไป"
-    # register_business_full_register.Click Next
-    #Expected
-    # register_business_full_register.Verify Service Information Page Tab Dry Parcel
-    # ...    type_product=${Register_S014.dry_parcel['type_product']}
-    # ...    number_by_day=${Register_S014.dry_parcel['number_by_day']}
-    # ...    sale_channel=${Register_S014.dry_parcel['sale_channel']}
-    # ...    remark=${Register_S014.dry_parcel['remark']}
-    # common.Verify Capture Screenshot    Register_S014    Verify Dry Parcel
+    register_business_full_register.Click Next
+    Expected
+    register_business_full_register.Verify Service Information Page Tab Dry Parcel
+    ...    type_product=${Register_S014.dry_parcel['type_product']}
+    ...    number_by_day=${Register_S014.dry_parcel['number_by_day']}
+    ...    sale_channel=${Register_S014.dry_parcel['sale_channel']}
+    ...    remark=${Register_S014.dry_parcel['remark']}
+    common.Verify Capture Screenshot    Register_S014    Verify Dry Parcel
 
 
     Log    Step No.9 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
@@ -292,14 +292,14 @@ Register_S014
     common.Verify Capture Screenshot    Register_S014    Uploaded Supporting Document Page
     
     Log    Step No.14 กดปุ่ม "ลงทะเบียน"
-    #register_business_full_register.Click Confirm
-    #register_business_full_register.Verify Confirm Page    ${Register.Full_register['text_register_success']}
-    #common.Verify Capture Screenshot    Register_S014    Full register success
+    register_business_full_register.Click Confirm
+    register_business_full_register.Verify Confirm Page    ${Register.Full_register['text_register_success']}
+    common.Verify Capture Screenshot    Register_S014    Full register success
 
     Log    Step No.15 กด Link Full Register เดิม ที่ได้รับทาง E-mail
-    # common.Open URL    ${link_full_register}
+    common.Open URL    ${link_full_register}
     # common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
-    # #Expected
+    #Expected
     # register_business_full_register.Verify Company Information Individual Page
     # ...    ${Register_S004['checkbox_partner_types']}
     # ...    ${Register_S004['title_name']}

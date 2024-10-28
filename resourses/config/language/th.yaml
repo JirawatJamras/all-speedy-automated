@@ -331,6 +331,10 @@ rm:
   text_selected_list: รายการที่เลือก
   full_regis:
     text_step_company_info: ข้อมูลบริษัท
+    text_step_service_info: ข้อมูลบริการ
+    text_step_contact_and_bank_info: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    text_step_supporting_document: เอกสารประกอบ
+    text_header_supporting_document: อัปโหลดเอกสารประกอบ
     text_company_title: คำนำหน้าประเภทจดทะเบียนบริษัท *
     text_company_name: ชื่อบริษัท *
     text_id_number: เลขประจำตัวผู้เสียภาษี *
@@ -345,7 +349,6 @@ rm:
     text_mobile_no: เบอร์โทรศัพท์ *
     text_mobile_ext: '#ต่อ'
     text_remark: 'ความเห็นการแก้ไข #1'
-    text_step_service_info: ข้อมูลบริการ
     text_cod: บริการเก็บเงินปลายทาง
     text_insure: ประกันคุ้มครองพัสดุ
     text_express: บริการส่งด่วน
@@ -390,11 +393,19 @@ rm:
       determined: กำหนดแล้ว
     text_remark_2: 'ความเห็นการแก้ไข #2'
     latitude_longitude: '0, 0'
+    text_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
+    text_copy_file_20: สำเนาเอกสาร ภพ. 20
+    text_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
+    text_copy_of_bank_account: สำเนาหน้าบัญชีธนาคาร
+    text_copy_of_house_registration: สำเนาทะเบียนบ้านของผู้มีอำนาจลงนาม
+    text_permission_form: หนังสือยินยอมให้หักค่าธรรมเนียมการโอนผ่านบัญชีธนาคาร
+    text_other_file: เอกสารอื่นๆ  
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน
   text_blank:
     sale_mobile: ''
+
 
 return_business:
   button_add: เพิ่ม

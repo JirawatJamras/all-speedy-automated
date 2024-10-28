@@ -24,13 +24,16 @@ Register_S15
     pms_home_page.Select Role Admin
     common.Open URL    https://pms-uat.allspeedy.co.th/usermanager/requests/fullregister?id=9378293440714588815
     pms_detail_full_register_page.Click Next Page Button
-    pms_detail_full_register_page.Click Next Page Button       
+    pms_detail_full_register_page.Click Next Page Button
+    
     Log    Step No.11 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
     #Expected 4
-    #pms_detail_full_register_page.Verify Supporting Document Page Legal Entity
+    pms_detail_full_register_page.Verify Supporting Document Page Legal Entity
+
     Log    Step No.12 ระบุความเห็นการแก้ไข #4 : แก้ไขเอกสารหน้าบัญชีธนาคาร
     pms_detail_full_register_page.Input Remark 4    ${Register_S015['remark_4']}
+    
     Log    Step No.13 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
 

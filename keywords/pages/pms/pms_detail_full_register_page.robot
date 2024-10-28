@@ -487,17 +487,15 @@ Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
 
 
 Verify Supporting Document Page Legal Entity
-    # ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_supporting_document']} 
-    # ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_supporting_document']}
-    # ${txt_certificate_business_registration}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_certificate_business_registration']}
-    # ${txt_copy_file_20}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_file_20']}
-    # ${txt_copy_id_card}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_id_card']}
-    # ${txt_copy_of_bank_account}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_bank_account']}
-    # ${txt_copy_of_house_registration}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_copy_of_house_registration']}
-    # ${txt_permission_form}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_permission_form']}
-    # ${txt_other_file}=    Replace String    ${register_txt_topic_full_register}    {value}    ${Register.Full_register['text_other_file']}
-    # ${txt_terms_of_service}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_terms_of_service']}
-    # ${txt_privacy_policy}=    Replace String    ${register_txt_term_and_privacy}    {value}    ${Register.Full_register['text_privacy_policy']}
+    ${txt_title}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_supporting_document']} 
+    ${txt_header}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_supporting_document']}
+    ${txt_certificate_business_registration}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_certificate_business_registration']}
+    ${txt_copy_file_20}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_file_20']}
+    ${txt_copy_id_card}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_id_card']}
+    ${txt_copy_of_bank_account}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_of_bank_account']}
+    ${txt_copy_of_house_registration}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_of_house_registration']}
+    ${txt_permission_form}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_permission_form']}
+    ${txt_other_file}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_other_file']}
 
     Page Should Contain Element    ${txt_title}
     Page Should Contain Element    ${txt_header}
@@ -508,8 +506,6 @@ Verify Supporting Document Page Legal Entity
     Page Should Contain Element    ${txt_copy_of_house_registration}
     Page Should Contain Element    ${txt_permission_form}
     Page Should Contain Element    ${txt_other_file}
-    Page Should Contain Element    ${txt_terms_of_service}
-    Page Should Contain Element    ${txt_privacy_policy}
 
 
 Input Remark 4
