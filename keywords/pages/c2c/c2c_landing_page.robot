@@ -20,9 +20,9 @@ Click Menu Tracking
 
 Verify Login Success
     [Arguments]    ${account_name}
-    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}     10s
+    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}     timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${c2c_txt_accountname_landing_page}    ${account_name}
 
 Verify Page Should not Redirect
-    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}     10s
+    Wait Until Element Is Not Visible    ${c2c_img_loading_landing_page}     timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${c2c_txt_accountname_landing_page}

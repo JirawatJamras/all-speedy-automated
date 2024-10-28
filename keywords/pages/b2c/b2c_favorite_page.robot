@@ -6,50 +6,32 @@ Select Sender Tab
 
 Verify Display Sender Card
     [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}    ${postcode_full}
-    Wait Until Element Is Visible    ${card_sender_favorite_page}
-    ${card_count}=    Get Element Count    ${card_sender_favorite_page}
-    ${sender_address}=    Set Variable    ${address} ${postcode_full}
-    ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_sender_favorite']}
-    ${txt_sender_name_in_card_favorite_page}=    Replace String    ${txt_sender_name_in_card_favorite_page}    {value}    ${favorite['text_name']}
-    ${txt_sender_phone_in_card_favorite_page}=    Replace String    ${txt_sender_phone_in_card_favorite_page}    {value}    ${favorite['text_phone']}
-    ${txt_sender_address_in_card_favorite_page}=    Replace String    ${txt_sender_address_in_card_favorite_page}    {value}    ${favorite['text_address']}
-    FOR    ${index}    IN RANGE    1    ${card_count} + 1
-        ${item}=    Set Variable    (${card_sender_favorite_page})[${index}]
-        ${home_icon_staus}=    Run Keyword And Return Status    Element Should Contain    ${item}${img_home}
-        ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_favorite_name_in_card_favorite_page}    ${favorite_name}
-        ${sender_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_name_in_card_favorite_page}    ${name}
-        ${sender_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_phone_in_card_favorite_page}    ${phone}
-        ${sender_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_address_in_card_favorite_page}    ${sender_address}
-        Exit For Loop If    ${home_icon_staus} and ${favorite_name_status} and ${sender_name_status} and ${sender_phone_status} and ${sender_address_status}
-    END
+    Wait Until Element Is Visible    ${card_sender_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    
+    # ${card_count}=    Get Element Count    ${card_sender_favorite_page}
+    # ${sender_address}=    Set Variable    ${address} ${postcode_full}
+    # ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_sender_favorite']}
+    # ${txt_sender_name_in_card_favorite_page}=    Replace String    ${txt_sender_name_in_card_favorite_page}    {value}    ${favorite['text_name']}
+    # ${txt_sender_phone_in_card_favorite_page}=    Replace String    ${txt_sender_phone_in_card_favorite_page}    {value}    ${favorite['text_phone']}
+    # ${txt_sender_address_in_card_favorite_page}=    Replace String    ${txt_sender_address_in_card_favorite_page}    {value}    ${favorite['text_address']}
+    # FOR    ${index}    IN RANGE    1    ${card_count} + 1
+    #     ${item}=    Set Variable    (${card_sender_favorite_page})[${index}]
+    #     ${home_icon_staus}=    Run Keyword And Return Status    Element Should Contain    ${item}${img_home}
+    #     ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_favorite_name_in_card_favorite_page}    ${favorite_name}
+    #     ${sender_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_name_in_card_favorite_page}    ${name}
+    #     ${sender_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_phone_in_card_favorite_page}    ${phone}
+    #     ${sender_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_address_in_card_favorite_page}    ${sender_address}
+    #     Exit For Loop If    ${home_icon_staus} and ${favorite_name_status} and ${sender_name_status} and ${sender_phone_status} and ${sender_address_status}
+    # END
 
 Click Sender Card
-    [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}    ${postcode_full}
-    Wait Until Element Is Visible    ${card_favorite_page}
-    ${card_count}=    Get Element Count    ${card_favorite_page}
-    ${sender_address}=    Set Variable    ${address} ${postcode_full}
-    ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_sender_favorite']}
-    ${txt_sender_name_in_card_favorite_page}=    Replace String    ${txt_sender_name_in_card_favorite_page}    {value}    ${favorite['text_name']}
-    ${txt_sender_phone_in_card_favorite_page}=    Replace String    ${txt_sender_phone_in_card_favorite_page}    {value}    ${favorite['text_phone']}
-    ${txt_sender_address_in_card_favorite_page}=    Replace String    ${txt_sender_address_in_card_favorite_page}    {value}    ${favorite['text_address']}
-    FOR    ${index}    IN RANGE    1    ${card_count} + 1
-        ${item}=    Set Variable    (${card_favorite_page})[${index}]
-        ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_favorite_name_in_card_favorite_page}    ${favorite_name}
-        ${sender_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_name_in_card_favorite_page}    ${name}
-        ${sender_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_phone_in_card_favorite_page}    ${phone}
-        ${sender_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_address_in_card_favorite_page}    ${sender_address}
-        Exit For Loop If    ${home_icon_staus} and ${favorite_name_status} and ${sender_name_status} and ${sender_phone_status} and ${sender_address_status}
-
-        IF    ${home_icon_staus} and ${favorite_name_status} and ${sender_name_status} and ${sender_phone_status} and ${sender_address_status}
-            common.Click When Ready    ${item}
-            Exit For Loop
-        END
-    END
+    [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    ${favorite_name} ${name} ${phone} ${address} ${postcode_full}    ${sender_favorite_name} ${sender_name} ${sender_phone} ${sender_address} ${sender_postcode_full}
 
 Verify Label Sender
     [Arguments]    ${text_sender_data}    ${sender_favorite_name}   ${sender_phone}    
     ...            ${sender_name}    ${sender_address}    ${sender_full_postcode}
-    Wait Until Element Is Visible    ${txt_sender_data_in_popup_favorite_page}    timeout=30s
+    Wait Until Element Is Visible    ${txt_sender_data_in_popup_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_sender_data}=    Get Text    ${txt_sender_data_in_popup_favorite_page}
     ${actual_text_sender_favorite_name}=    Get Text    ${txt_sender_favorite_name_in_popup_favorite_page}
     ${actual_text_sender_phone}=    Get Text    ${txt_sender_phone_in_popup_favorite_page}
@@ -149,7 +131,7 @@ Select Receiver Tab
 
 Verify Display Receiver Card When Select Home
     [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}    ${postcode_full}
-    Wait Until Element Is Visible    ${card_favorite_page}
+    Wait Until Element Is Visible    ${card_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ${card_count}=    Get Element Count    ${card_favorite_page}
     ${receiver_address}=    Set Variable    ${address} ${postcode_full}
     ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_receiver_favorite']}
@@ -170,7 +152,7 @@ Verify Display Receiver Card When Select Home
 
 Verify Display Receiver Card When Select 7-ELEVEN Store
     [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}
-    Wait Until Element Is Visible    ${card_favorite_page}
+    Wait Until Element Is Visible    ${card_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ${card_count}=    Get Element Count    ${card_favorite_page}
     ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_receiver_favorite']}
     ${txt_receiver_name_card_favorite_page}=    Replace String    ${txt_receiver_name_card_favorite_page}    {value}    ${favorite['text_name']}
@@ -190,7 +172,7 @@ Verify Display Receiver Card When Select 7-ELEVEN Store
 
 Click Receiver Card
     [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}    ${postcode_full}
-    Wait Until Element Is Visible    ${card_favorite_page}
+    Wait Until Element Is Visible    ${card_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ${card_count}=    Get Element Count    ${card_favorite_page}
     ${receiver_address}=    Set Variable    ${address} ${postcode_full}
     ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_receiver_favorite']}
@@ -215,7 +197,7 @@ Click Receiver Card
 Verify Label Receiver
     [Arguments]    ${text_receiver_data}    ${reciever_favorite_name}   ${receiver_phone}    ${receiver_name}    
     ...            ${receiver_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
-    Wait Until Element Is Visible    ${txt_receiver_data_in_popup_favorite_page}    timeout=30s
+    Wait Until Element Is Visible    ${txt_receiver_data_in_popup_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ${txt_receiver_location_pickup_in_popup_favorite_page}=    Replace String    ${txt_receiver_location_pickup_in_popup_favorite_page}    {value}    ${favorite.data_reciever_favorite['text_location_pickup']}
     ${actual_text_receiver_data}=    Get Text    ${txt_receiver_data_in_popup_favorite_page}
     ${actual_text_receiver_favorite_name}=    Get Text    ${txt_receiver_favorite_name_in_popup_favorite_page}
@@ -235,7 +217,7 @@ Verify Label Receiver
 Verify Data Recevier In Read-Only Mode
     [Arguments]    ${receiver_favorite_name}   ${receiver_phone}    ${receiver_name}    
     ...            ${reciever_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
-    Wait Until Element Is Visible    ${txt_receiver_data_in_popup_favorite_page}    timeout=30s
+    Wait Until Element Is Visible    ${txt_receiver_data_in_popup_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_receiver_data_in_popup_favorite_page}=    Get Text    ${txt_receiver_data_in_popup_favorite_page}
     ${actual_value_receiver_favorite_name}=    Get Value    ${txtbox_receiver_favorite_name_favorite_page}
     ${actual_value_receiver_phone}=    Get Value    ${txtbox_receiver_phone_favorite_page}

@@ -253,7 +253,7 @@ Booking_S010:
   store_code:  '15888'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
-  booking_price: 0.00บาท
+  booking_price: 0.00 บาท
   parcel_size:  A4
   parcel_package_type:  ซอง
   price_value: 20
@@ -378,7 +378,7 @@ Booking_S014:
   store_code:  '15888'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
-  booking_price: 0.00บาท    # NaN บาท
+  booking_price: 0.00 บาท    # NaN บาท
   parcel_size: M
   buy_insurance:  '2,500'
   buy_insurance_verify: '2,500.00'

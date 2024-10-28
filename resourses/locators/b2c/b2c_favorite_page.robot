@@ -10,8 +10,7 @@ ${cbo_receiver_store}    //div[@title='{value}']
 ${cbo_receiver_postcode}    //div[@title='{value}']
 ${cbo_shipping_origin_store}    //div[@title='{value}']
 
-${card_favorite_page}    //div[contains(@class,'ant-card ant-card-bordered ant-card-hoverable')]
-
+${card_sender_favorite_page}    (//strong[text()='{favorite_name}']/../../..//*[@stroke='currentColor']/../../../../..//span[text()='{name}']/../..//span[text()='{phone}']/../../../..//span[text()='{address} ']/../../../../..)[1]
 ${btn_edit_data_favorite_page}    //span[text()='{value}']/..
 ${btn_save_edit_data_favorite_page}    //span[text()='{value}']/..
 ${btn_add_sender_favorite_page}    //div[contains(@id,'sender')]//span[text()='{value}']/..
