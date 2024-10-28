@@ -24,11 +24,13 @@ Click Button To Add
 
 Verify Term & Condition 
     [Arguments]    ${txt_term_and_condition}    ${text_accept}
+    ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
     Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
     ${text}=    Get Text    ${txt_term_and_condition}
     Should Be Equal    ${text}    ${text_accept}
 
 Click Accept Terms of Service
+    ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
     common.Click When Ready    ${btn_accept_terms_service}
 
 Verify Select Parcel Type

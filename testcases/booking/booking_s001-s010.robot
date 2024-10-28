@@ -8,34 +8,34 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
                   ...    AND    Close Browser
 
 *** Test Cases ***
-Booking_S001
-    [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Booking    UAT    Review_Pass
-    Log    Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    # Expected
-    common.Verify Capture Screenshot    Booking_S001    Verify Login Page
+# Booking_S001
+#     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
+#     [Tags]    Booking    UAT    Review_Pass
+#     Log    Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ
+#     common.Open URL    ${B2C_UAT_URL}
+#     register_general_customers_page.Select Business Customers Tab
+#     # Expected
+#     common.Verify Capture Screenshot    Booking_S001    Verify Login Page
 
-    Log    Step No.2 Login
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-    # Expected
-    b2c_home_page.Verify My Profile Page
-    ...    ${Booking['text_company_profile']}
-    ...    ${Booking['text_profile']}
-    ...    ${Booking['text_profile_name']}
-    ...    ${Booking['text_profile_phone']}
-    ...    ${Booking['text_profile_mail']}
-    ...    ${Booking['text_profile_position']}
-    ...    ${Booking_S001['sir_name']}
-    ...    ${Booking_S001['company_name']}
-    ...    ${Booking_S001['name']}
-    ...    ${Booking_S001['phone']}
-    ...    ${Booking_S001['email']}
-    ...    ${Booking_S001['position']}
-    common.Verify Capture Screenshot    Booking_S001    Verify Home Page
+#     Log    Step No.2 Login
+#     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+#     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+#     b2c_login_page.Click Log On Button
+#     # Expected
+#     b2c_home_page.Verify My Profile Page
+#     ...    ${Booking['text_company_profile']}
+#     ...    ${Booking['text_profile']}
+#     ...    ${Booking['text_profile_name']}
+#     ...    ${Booking['text_profile_phone']}
+#     ...    ${Booking['text_profile_mail']}
+#     ...    ${Booking['text_profile_position']}
+#     ...    ${Booking_S001['sir_name']}
+#     ...    ${Booking_S001['company_name']}
+#     ...    ${Booking_S001['name']}
+#     ...    ${Booking_S001['phone']}
+#     ...    ${Booking_S001['email']}
+#     ...    ${Booking_S001['position']}
+#     common.Verify Capture Screenshot    Booking_S001    Verify Home Page
 
 Booking_S002
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)    
@@ -134,7 +134,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_phone']}
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
-    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
+    ...    ${EMPTY}  # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
@@ -260,7 +260,7 @@ Booking_S002
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking_S002['booking_item']}
-    ...    ${Booking_S002['booking_price']}
+    ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S002    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"

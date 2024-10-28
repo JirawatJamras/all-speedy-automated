@@ -5,7 +5,7 @@ ${txt_title_booking}    //div[contains(@class,'ant-layout')]//h2[contains(@class
 ### term&con ###
 ${txt_term_and_condition}     //div[@class='ant-modal-title']//span[contains(@class,'ant-typography')]
 
-${btn_accept_terms_service}     //button[@class='ant-btn css-1hobygo ant-btn-default ant-btn-color-default ant-btn-variant-outlined bg-gradient-to-r from-blue-900 text-white to-blue-400 shadow-xl']
+${btn_accept_terms_service}     //span[text()='{value}']/..
 ${btn_close_condition_popup}     (//button[@type='button' and @class='ant-modal-close'])[1]
 
 ### create a parcel ###
@@ -41,20 +41,20 @@ ${btn_confirm_to_close_popup}    //button//span[@aria-label='check']
 ${btn_card_latest_booking}    (//div[@class='ant-spin-container']//div[@class='ant-card-body'])[1]
 
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']/div[@class='max-sm:border-b pb-2 border-blue-800 text-blue-800']
-${txt_parcel_sender_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'{value}')]
+${txt_parcel_sender_information}    (//div[contains(text(),'{value}')])[2]
 ${txt_phone_sender}    //label[@for='create_parcel_form_sender_tel']/span
 ${txt_name_sender}    //label[@for='create_parcel_form_sender_name']/span
 ${txt_address_sender}    //label[@for='create_parcel_form_sender_address_info']/span
 ${txt_postcode_sender}    //label[@for='create_parcel_form_sender_address_full']/span
 ${txt_full_postcode_sender}    //span[@class='ant-select-selection-item']
-${txt_parcel_receiver_information}    //div[@class='ant-steps ant-steps-horizontal Booking_stepsContainerDesktop__GbpI9 max-[680px]:hidden css-9920sk ant-steps-label-vertical']//div[@class='ant-steps-item-title'][contains(text(),'{value}')]
+${txt_parcel_receiver_information}    (//div[contains(text(),'{value}')])[2]
 ${txt_phone_receiver}    //label[@for='create_parcel_form_receiver_tel']/span
 ${txt_name_receiver}    //label[@for='create_parcel_form_receiver_name']/span
 ${txt_address_receiver}    //label[@for='create_parcel_form_receiver_address_info']/span
 ${txt_address_receiver_for_7_11_select}    //label[@for='create_parcel_form_receiver_address_display']/span
 ${txt_postcode_receiver}    //label[@for='create_parcel_form_receiver_address_full']/span
 ${txt_full_postcode_receiver}    //span[@class='ant-select-selection-item']
-${txt_location_receiver}    //div[@class='ant-space-item']//span[@class='ant-typography text-xl css-1hobygo']
+${txt_location_receiver}    //div[@class='ant-space-item']//span[contains(@class,'ant-typography text-xl')]
 ${txt_booking_id}    //strong[contains(text(), '{value}')]/../../../div[2]
 ${txt_booking_time}    //strong[contains(text(), '{value}')]/../../../div[2]
 ${txt_booking_name}    //strong[contains(text(), '{value}')]/../../../div[4]
