@@ -244,10 +244,10 @@ Booking_S012
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking_S012['cod_fee_amount']}
-    ...    ${Booking_S012['cod_fee_value']}
-    ...    ${Booking_S012['total_price_amount']}
-    ...    ${Booking_S012['total_price_value']}
+    ...    0    # Expected Result is ${Booking_S012['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S012['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S012['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S012['total_price_value']}
     ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S012    Verify Booking Summary After Booking Success

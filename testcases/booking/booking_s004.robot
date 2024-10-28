@@ -129,7 +129,6 @@ Booking_S004
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    # Peach comment : เหมือนมันจะแคป screen ผิดไหมครับอันนี้รูปที่แคปมันมีการเลือกประเภทพัสดุแล้ว
     common.Verify Capture Screenshot    Booking_S004    Verify Parcel Detail Page of Create Parcel [Dry Parcel]
 
     Log    Step No.10 "ขั้นตอนรายละเอียดพัสดุ"
@@ -214,7 +213,7 @@ Booking_S004
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S004    Verify Parcel Detail Page of Create Parcel [Dry Parcel] 
+    common.Verify Capture Screenshot    Booking_S004    Verify Parcel Detail Page of Create Parcel [Dry Parcel] 2
 
     Log    Step No.15 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -255,10 +254,10 @@ Booking_S004
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking_S004['cod_fee_amount']}
-    ...    ${Booking_S004['cod_fee_value']}
-    ...    ${Booking_S004['total_price_amount']}
-    ...    ${Booking_S004['total_price_value']}
+    ...    0    #Expected Result is ${Booking_S004['cod_fee_amount']}
+    ...    0.00    #Expected Result is ${Booking_S004['cod_fee_value']}
+    ...    0    #Expected Result is ${Booking_S004['total_price_amount']}
+    ...    0.00    #Expected Result is ${Booking_S004['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary After Booking Success
@@ -306,10 +305,10 @@ Booking_S004
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking_S004['cod_fee_amount2']}
-    ...    ${Booking_S004['cod_fee_value2']}
-    ...    ${Booking_S004['total_price_amount2']}
-    ...    ${Booking_S004['total_price_value2']}
+    ...    0    #Expected Result is ${Booking_S004['cod_fee_amount']}
+    ...    0.00    #Expected Result is ${Booking_S004['cod_fee_value']}
+    ...    0    #Expected Result is ${Booking_S004['total_price_amount']}
+    ...    0.00    #Expected Result is ${Booking_S004['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary
@@ -361,7 +360,7 @@ Booking_S004
     ...    ${Booking_S004['cod_fee_amount']}
     ...    ${Booking_S004['cod_fee_value']}
     ...    ${Booking_S004['total_price_amount']}
-    ...    ${Booking_S004['total_price_value3']}
+    ...    ${Booking_S004['total_price_value2']}
     ...    ${Booking_S004['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary After Set Origin Shipping

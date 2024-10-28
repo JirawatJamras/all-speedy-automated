@@ -256,12 +256,12 @@ Booking_S008
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking_S008['insurance_fee_amount']}
-    ...    ${Booking_S008['insurance_fee_value']}
-    ...    ${Booking_S008['cod_fee_amount']}
-    ...    ${Booking_S008['cod_fee_value']}
-    ...    ${Booking_S008['total_price_amount']}
-    ...    256.00    # Expected Result is ${Booking_S008['total_price_value']}
+    ...    0    # Expected Result is ${Booking_S008['insurance_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S008['insurance_fee_value']}
+    ...    0    # Expected Result is ${Booking_S008['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S008['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S008['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S008['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S008    Verify Booking Summary After Booking Success

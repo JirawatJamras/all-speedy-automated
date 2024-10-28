@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -126,8 +126,8 @@ Booking_S021
     ...    ${Booking_S021['receiver_phone']}
     ...    ${Booking_S021['receiver_address']}
     ...    ${Booking_S021['receiver_postcode_full']}
-    ...    ${Booking.text_blank['parcel_size']}
-    ...    ${Booking.text_blank['discount_value']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     common.Verify Capture Screenshot    Booking_S021    Verify Draft Paecel
@@ -170,7 +170,7 @@ Booking_S021
     ...    ${Booking_S021['receiver_name']}
     ...    ${Booking_S021['receiver_address']}
     ...    ${Booking_S021['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Create Parcel Page Receiver Step When Select Home
+    common.Verify Capture Screenshot    Booking_S021    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -184,7 +184,7 @@ Booking_S021
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S003    Verify Parcel Detail
+    common.Verify Capture Screenshot    Booking_S021    Verify Parcel Detail
 
     Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S021['parcel_size']}

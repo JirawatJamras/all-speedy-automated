@@ -11,12 +11,25 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 Booking_S015
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
     [Tags]    Booking    UAT    In_Review
-    Log    Login
+    Log    Prerequisite
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
+    b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
+    b2c_booking_delivery_page.Click Button To Add
+    b2c_booking_delivery_page.Click Accept Terms of Service
+    b2c_booking_delivery_page.Select Parcel Type    ${Booking_S013['parcel_type']}
+    b2c_booking_delivery_page.Input Phone Sender    ${Booking_S013['sender_phone']}
+    b2c_booking_delivery_page.Input Name Sender    ${Booking_S013['sender_name']}    
+    b2c_booking_delivery_page.Input Address Sender    ${Booking_S013['sender_address']}
+    b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S013['sender_postcode_5_digits']}
+    b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S013['sender_postcode_full']}
+    b2c_create_parcel_page.Click Add To Favorites
+    b2c_booking_delivery_page.Click Save Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -97,14 +110,14 @@ Booking_S015
     ...    ${Booking.img_is_favorite['img_sender_heart']}    # Expected Result is ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S015['sender_name']}
     ...    ${Booking_S015['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S015['receiver_name']}
-    ...    ${Booking_S015['receiver_phone']}
-    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S015['receiver_store_address']}
-    ...    ${Booking_S015['parcel_size']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.text_blank['receiver_name']}
+    ...    ${Booking.text_blank['receiver_phone']}
+    ...    ${Booking.text_blank['receiver_store_address']}
+    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S015['parcel_cod_verify']}
+    ...    ${Booking.text_blank['cod_value']}
     common.Verify Capture Screenshot    Booking_S015    Verify Draft Parcel
 
     Log    Step No.8 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
@@ -133,14 +146,16 @@ Booking_S015
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
     ...    ${Booking['text_phone_receiver']}
     ...    ${Booking['text_name_receiver']}
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
-    b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
+    ...    ${Booking['text_postcode_receiver']}
+    b2c_booking_delivery_page.Verify Data Receiver When Select Home  
+    ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}

@@ -311,7 +311,8 @@ Input Text Exceeds 100 Characters
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Verify Popup Favorites Sender 
-    Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=30s
+    ${favorites_accetp_btn}=    Replace String    ${favorites_accetp_btn}    {value}    ${Booking['text_btn_select']}
+    Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=30s 
     ${title_text}=    Get Text    ${favorites_title_text}
     ${default_text}=    Get Text    ${favorites_default_text}
     Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_title_text']}
@@ -342,6 +343,7 @@ Click Favorites Default List
     common.Click When Ready    ${choose_default_favorites_btn}
 
 Click Accept Favorites List
+    ${favorites_accetp_btn}=    Replace String    ${favorites_accetp_btn}    {value}    ${Booking['text_btn_select']}
     common.Click When Ready    ${favorites_accetp_btn}
 
 Click Cancel Favorites List

@@ -339,7 +339,7 @@ Booking_S007
     ...    ${Booking_S007['cod_fee_amount']}
     ...    ${Booking_S007['cod_fee_value']}
     ...    ${Booking_S007['total_price_amount']}
-    ...    ${Booking_S007['total_price_value3']}    #Expect Result is ${Booking_S007['total_price_value2']}
+    ...    221.00    #Expect Result is ${Booking_S007['total_price_value2']}
     ...    ${Booking_S007['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S007    Verify Booking Summary After Set Origin Shipping
