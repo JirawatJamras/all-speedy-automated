@@ -108,7 +108,7 @@ ${pms_txtbox_rebate_item_2_chill_full_regis}    //input[@id='parcelType_parcelCh
 ${pms_txtbox_rebate_percen_2_chill_full_regis}    //input[@id='parcelType_parcelChill_rebatePercen_1']
 ${pms_txtbox_remark4_full_regis}    //textarea[@id='remark4']
 
-${pms_btn_next_page}    //b[text()='{value}']/..
+${pms_btn_full_regis}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']
 ${pms_btn_select_chill_parcel}    //button[@id='parcelType_parcelChill_isActive']
 ${pms_btn_select_return_business}    //button[@id='parcelType_parcelReturnBusiness_isActive']
@@ -123,6 +123,7 @@ ${pms_btn_cancel_set_pickup_popup}    //b[text()='ยกเลิก']/..
 ${pms_btn_first_mile_chill_full_regis}    //button[@id='parcelType_parcelChill_firstMile']
 ${pms_btn_bounce_fee_chill_full_regis}    //button[@id='parcelType_parcelChill_bounceFee']
 ${pms_btn_plus_rebate_chill_full_regis}    //div[@id='parcelType_parcelChill_rebateItem']//button
+   
 
 ${pms_checkbox_dry_cod}    //input[@id='parcelType_parcelDry_isCod']
 ${pms_checkbox_dry_insure}    //input[@id='parcelType_parcelDry_isInsure']
