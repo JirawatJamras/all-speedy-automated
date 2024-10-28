@@ -47,7 +47,10 @@ ${pms_txt_table_list_set_pickup_popup}    //thead[@class='ant-table-thead']//th[
 ${pms_txt_bank_id_full_regis}    //label[@for='bankId']
 ${pms_txt_bank_name_full_regis}    //label[@for='bankName']
 ${pms_txt_bank_branch_full_regis}    //label[@for='bankBranch']
-
+${pms_txt_bank_account_name_full_regis}    //label[@for='bankAccountName']
+${pms_txt_bank_account_no_full_regis}    //label[@for='bankNo']
+${pms_txt_bank_account_type_full_regis}    //label[@for='bankAccountType']
+${pms_txt_list_contact_info_full_regis}    //tbody[@class='ant-table-tbody']
 
 ${pms_txtbox_customer_type_full_regis}    //input[@id='customerType']
 ${pms_txtbox_company_title_full_regis}    //input[@id='companyTitleName']/../..//span[text()]
@@ -117,6 +120,9 @@ ${pms_txtbox_insure_scheme_return_date_full_regis}    //input[@id='parcelType_pa
 ${pms_txtbox_bank_id_full_regis}    //input[@id='bankId']/../..
 ${pms_txtbox_bank_name_full_regis}    //input[@id='bankName']/../..
 ${pms_txtbox_bank_branch_full_regis}    //input[@id='bankBranch']
+${pms_txtbox_bank_account_name_full_regis}    //input[@id='bankAccountName']
+${pms_txtbox_bank_account_no_full_regis}    //input[@id='bankNo']
+${pms_txtbox_bank_account_type_full_regis}    //input[@id='bankAccountType']/../..
 
 ${pms_btn_full_regis}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']

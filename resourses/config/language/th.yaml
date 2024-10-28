@@ -20,6 +20,8 @@ Booking:
   text_title_my_parcel: พัสดุของฉัน สาขาหลัก
   text_btn_add: เพิ่ม
   text_btn_next: ถัดไป
+  text_btn_edit: แก้ไข
+  text_btn_save_edit: บันทึกแก้ไข
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " 
   text_version: " (Version 2)"
   text_accept_term_and_condition: 'ยอมรับเงื่อนไขการใช้บริการ'
@@ -335,6 +337,7 @@ rm:
     text_step_service_info: ข้อมูลบริการ
     text_step_contact_and_bank_info: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
     text_header_bank_info: ข้อมูลธนาคาร
+    text_header_contact_info: ข้อมูลผู้ติดต่อ
     text_step_supporting_document: เอกสารประกอบ
     text_header_supporting_document: อัปโหลดเอกสารประกอบ
     text_company_title: คำนำหน้าประเภทจดทะเบียนบริษัท *
@@ -406,6 +409,9 @@ rm:
       text_country: ประเทศ *
       text_bank: ธนาคาร *
       text_bank_branch: สาขาธนาคาร *
+      text_bank_account_name: ชื่อบัญชี *
+      text_bank_account_no: เลขที่บัญชี *
+      text_bank_account_type: ประเภทบัญชี *
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน

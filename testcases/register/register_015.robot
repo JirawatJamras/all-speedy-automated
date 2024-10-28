@@ -224,6 +224,9 @@ Register_S015
     ...    ${Register_S013.bank['bank_id']}
     ...    ${Register_S013.bank['bank_name']}
     ...    ${Register_S013.bank['bank_branch']}
+    ...    ${Register_S013.bank['bank_account_name']}
+    ...    ${Register_S013.bank['bank_account_no']}
+    ...    ${Register_S013.bank['bank_account_type']}
 
     Log    Step No.9 กดปุ่ม "เพิ่ม" ข้อมูลผู้ติดต่อ
     

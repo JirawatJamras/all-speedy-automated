@@ -517,10 +517,11 @@ Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
     Should Be Equal As Strings    ${label_remark}    ${rm.full_regis['text_remark']}
 
 Verify Request Detail Contact And Bank Information
-    [Arguments]    ${bank_id}    ${bank_name}    ${bank_branch}
+    [Arguments]    ${bank_id}    ${bank_name}    ${bank_branch}    ${bank_account_name}    ${bank_account_no}    ${bank_account_type}
     Scroll Window To Vertical    0
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_contact_and_bank_info']}
     ${title_bank_info}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm.full_regis['text_header_bank_info']}
+    ${title_contact_info}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm.full_regis['text_header_contact_info']}
     Page Should Contain Element    ${label_step}
 
     ${label_bank_id}=    Get Text    ${pms_txt_bank_id_full_regis}
@@ -529,13 +530,25 @@ Verify Request Detail Contact And Bank Information
     ${input_bank_name}=    Get Text    ${pms_txtbox_bank_name_full_regis}
     ${label_bank_branch}=    Get Text    ${pms_txt_bank_branch_full_regis}
     ${input_bank_branch}=    Get Value    ${pms_txtbox_bank_branch_full_regis}
-
+    ${label_bank_account_name}=    Get Text    ${pms_txt_bank_account_name_full_regis}
+    ${input_bank_account_name}=    Get Value    ${pms_txtbox_bank_account_name_full_regis}
+    ${label_bank_account_no}=    Get Text    ${pms_txt_bank_account_no_full_regis}
+    ${input_bank_account_no}=    Get Value    ${pms_txtbox_bank_account_no_full_regis}
+    ${label_bank_account_type}=    Get Text    ${pms_txt_bank_account_type_full_regis}
+    ${input_bank_account_type}=    Get Text    ${pms_txtbox_bank_name_full_regis}
+    ${actual_contact_info}=    Get Text    ${pms_txt_list_contact_info_full_regis}
 
     Wait Until Element Is Visible    ${title_bank_info}    timeout=${DEFAULT_TIMEOUT}
     Should Be Equal As Strings    ${label_bank_id} ${input_bank_id}    ${rm.full_regis.bank['text_country']} ${bank_id}
     Should Be Equal As Strings    ${label_bank_name} ${input_bank_name}    ${rm.full_regis.bank['text_bank']} ${bank_name}
     Should Be Equal As Strings    ${label_bank_branch} ${input_bank_branch}    ${rm.full_regis.bank['text_bank_branch']} ${bank_branch}
+    Should Be Equal As Strings    ${label_bank_account_name} ${input_bank_account_name}    ${rm.full_regis.bank['text_bank_account_name']} ${bank_account_name}
+    Should Be Equal As Strings    ${label_bank_account_no} ${input_bank_account_no}    ${rm.full_regis.bank['text_bank_account_no']} ${bank_account_no}
+    Should Be Equal As Strings    ${label_bank_account_type} ${input_bank_account_type}    ${rm.full_regis.bank['text_bank_account_type']} ${bank_account_type}
 
+    Wait Until Element Is Visible    ${title_contact_info}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${title_contact_info}
+    # Should Be Equal As Strings    ${actual_contact_info}
 
 Verify Supporting Document Page Legal Entity
     ${txt_title}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_supporting_document']} 

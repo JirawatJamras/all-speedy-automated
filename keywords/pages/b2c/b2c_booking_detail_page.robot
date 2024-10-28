@@ -183,6 +183,7 @@ Get Booking Time
     @{booking_time}    Create List
     ${txt_booking_time}=    Replace String    ${txt_booking_time}    {value}    ${Booking['text_booking_time_label']}
     Wait Until Element Is Visible    ${txt_booking_time}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=${DEFAULT_TIMEOUT}
     ${booking_time_1}=    Get Text    ${txt_booking_time}
     ${part}=    Split String    ${booking_time_1}    ${SPACE}
     ${day}=    Set Variable    ${part}[0]
@@ -515,3 +516,71 @@ Verify Import File Popup
     Should Be Equal    ${actual_b2c_txt_file_name}    ${txt_fileName}
     Should Be Equal    ${actual_b2c_txt_import_file_result}    ${txt_importResult}
     Should Be Equal    ${actual_b2c_txt_file_import_error}    ${txt_fileImportError}
+
+Click Parcel List With Waiting For Entering Parcel To System Status
+    ${crd_parcel_list}=    Replace String    ${b2c_crd_parcel_list}    {value}    ${booking['text_parcel_status_waiting_entering']}
+    common.Click When Ready    ${crd_parcel_list}
+
+Click Save Edit Data
+    ${btn_edit}=    Replace String    ${b2c_btn_save_edit_created_parcel}    {value}    ${booking['text_btn_save_edit']}
+    common.Click When Ready    ${btn_edit}
+
+Click Edit Data
+    ${btn_edit}=    Replace String    ${b2c_btn_edit_created_parcel}    {value}    ${booking['text_btn_edit']}
+    common.Click When Ready    ${btn_edit}
+
+Verify Can Edit Data Sender
+    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_phone}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_address}    timeout=${DEFAULT_TIMEOUT}
+    Mouse Over    ${b2c_txtbox_sender_postcode_edit}
+    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_postcode}    timeout=${DEFAULT_TIMEOUT}
+
+Edit Phone Sender
+    [Arguments]    ${input_phone_sender}
+    common.Click When Ready    ${b2c_btn_cleal_sender_phone}
+    Input Text    ${txtbox_phone_sender}    ${input_phone_sender}
+
+Edit Name Sender
+    [Arguments]    ${input_name_sender}
+    common.Click When Ready    ${b2c_btn_cleal_sender_name}
+    Input Text    ${txtbox_name_sender}    ${input_name_sender}
+
+Edit Address Sender
+    [Arguments]    ${input_address_sender}
+    common.Click When Ready    ${b2c_btn_cleal_sender_address}
+    Input Text    ${txtbox_address_sender}    ${input_address_sender}
+
+Edit Postcode Sender
+    [Arguments]    ${input_postcode_sender}
+    Mouse Over    ${b2c_txtbox_sender_postcode_edit}
+    common.Click When Ready    ${b2c_btn_cleal_sender_postcode}
+    Input Text    ${txtbox_postcode_sender}    ${input_postcode_sender}
+
+Verify Can Edit Data Receiver
+    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_phone}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_address}    timeout=${DEFAULT_TIMEOUT}
+    Mouse Over    ${b2c_txtbox_receiver_postcode_edit}
+    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_postcode}    timeout=${DEFAULT_TIMEOUT}
+
+Edit Phone Receiver
+    [Arguments]    ${input_phone_receiver}
+    common.Click When Ready    ${b2c_btn_cleal_receiver_phone}
+    common.Input When Ready    ${txtbox_phone_receiver}    ${input_phone_receiver}
+
+Edit Name Receiver
+    [Arguments]    ${input_name_receiver}
+    common.Click When Ready    ${b2c_btn_cleal_receiver_name}
+    common.Input When Ready    ${txtbox_name_receiver}    ${input_name_receiver}
+
+Edit Address Receiver
+    [Arguments]    ${input_address_receiver}
+    common.Click When Ready    ${b2c_btn_cleal_receiver_address}
+    common.Input When Ready    ${txtbox_address_receiver}    ${input_address_receiver}
+
+Edit Postcode Receiver
+    [Arguments]    ${input_postcode_receiver}
+    Mouse Over    ${b2c_txtbox_receiver_postcode_edit}
+    common.Click When Ready    ${b2c_btn_cleal_receiver_postcode}
+    common.Input When Ready    ${txtbox_postcode_receiver}    ${input_postcode_receiver}

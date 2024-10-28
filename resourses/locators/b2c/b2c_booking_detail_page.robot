@@ -1,6 +1,7 @@
 *** Variables ***
 ${b2c_crd_list_of_parcels}    //div[@class='hidden sm:inline']//div[contains(@class,'ant-card ant-card-bordered ant-card-hoverable')]//div[@class='ant-card-body']
 ${b2c_crd_list_of_pickup_schedule}    //div[@aria-hidden='false']//div[@class='ant-spin-container']//li[@class='ant-list-item']
+${b2c_crd_parcel_list}    //div[@class='ant-list-item']//span[text()='{value}']/../../../../..//div[@class='ant-card-body']
 
 ${b2c_txt_booking_list}    //div[@class='hidden sm:inline']//span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${b2c_txt_list_of_parcels_status}    //div[@class='hidden sm:inline']//span[contains(@class,'ant-typography') and contains(text(),'{value}')]
@@ -59,10 +60,22 @@ ${b2c_btn_import_file_detail_page}    //span[text()='{value}']/..
 ${b2c_btn_import_file_in_popup}  //input[@id='InputFile']/
 ${b2c_btn_template_in_popup}  //span[text()='{value}']/..
 ${b2c_btn_add_parcel_in_booking_detail_page}    //span[text()='{value}']/..
+${b2c_btn_edit_created_parcel}    //span[text()='{value}']/..
+${b2c_btn_save_edit_created_parcel}    //span[text()='{value}']/..
+${b2c_btn_cleal_sender_phone}    //input[@id='create_parcel_form_sender_tel']/..//span[@role='button']
+${b2c_btn_cleal_sender_name}    //input[@id='create_parcel_form_sender_name']/..//span[@role='button']
+${b2c_btn_cleal_sender_address}    //textarea[@id='create_parcel_form_sender_address_info']/..//span[@role='button']
+${b2c_btn_cleal_sender_postcode}    //input[@id='create_parcel_form_sender_address_full']/../../..//span[@class='ant-select-clear']
+${b2c_btn_cleal_receiver_phone}    //input[@id='create_parcel_form_receiver_tel']/..//span[@role='button']
+${b2c_btn_cleal_receiver_name}    //input[@id='create_parcel_form_receiver_name']/..//span[@role='button']
+${b2c_btn_cleal_receiver_address}    //textarea[@id='create_parcel_form_receiver_address_info']/..//span[@role='button']
+${b2c_btn_cleal_receiver_postcode}    //input[@id='create_parcel_form_receiver_address_full']/../../..//span[@class='ant-select-clear']
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
 ${b2c_txtbox_search_store}    //span[text()='{value}']/..//input
+${b2c_txtbox_sender_postcode_edit}    //input[@id='create_parcel_form_sender_address_full']/..
+${b2c_txtbox_receiver_postcode_edit}    //input[@id='create_parcel_form_receiver_address_full']/..
 
 ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
 ${b2c_tab_pickup_Schedule}    //div[@role='tab']//div[text()='{value}']
