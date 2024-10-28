@@ -334,6 +334,7 @@ rm:
     text_step_company_info: ข้อมูลบริษัท
     text_step_service_info: ข้อมูลบริการ
     text_step_contact_and_bank_info: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    text_header_bank_info: ข้อมูลธนาคาร
     text_step_supporting_document: เอกสารประกอบ
     text_header_supporting_document: อัปโหลดเอกสารประกอบ
     text_company_title: คำนำหน้าประเภทจดทะเบียนบริษัท *
@@ -401,6 +402,10 @@ rm:
     text_copy_of_house_registration: สำเนาทะเบียนบ้านของผู้มีอำนาจลงนาม
     text_permission_form: หนังสือยินยอมให้หักค่าธรรมเนียมการโอนผ่านบัญชีธนาคาร
     text_other_file: เอกสารอื่นๆ  
+    bank:
+      text_country: ประเทศ *
+      text_bank: ธนาคาร *
+      text_bank_branch: สาขาธนาคาร *
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน

@@ -9,8 +9,8 @@ Test Teardown     Close Browser
 Register_S015
     [Documentation]    RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
     [Tags]    Register    UAT    BEW
-    #Register_S015
-    Register_S15
+    Register_S015
+    # Register_S15
 
 
 
@@ -126,77 +126,93 @@ Register_S015
     common.Verify Capture Screenshot    Register_S015    Verify Return Business Tab Full Register Detail Page
 
     Log    Step No.3 ระบุข้อมูล แท็บพัสดุทั่วไป
-    pms_detail_full_register_page.Click Dry Parcel Tab
-    pms_detail_full_register_page.Input Information In The Dry Parcel Tab
-    ...    ${Register_S015.dry_parcel['price_scheme']}
-    ...    ${Register_S015.dry_parcel['price_scheme_date']}
-    ...    ${Register_S015.dry_parcel['cod_scheme']}
-    ...    ${Register_S015.dry_parcel['cod_scheme_date']}
-    ...    ${Register_S015.dry_parcel['insure_scheme']}
-    ...    ${Register_S015.dry_parcel['insure_scheme_date']}
-    ...    ${Register_S015.dry_parcel['first_mile_start_date']}
-    ...    ${Register_S015.dry_parcel['first_mile_end_date']}
-    ...    ${Register_S015.dry_parcel['bounce_fee_start_date']}
-    ...    ${Register_S015.dry_parcel['bounce_fee_end_date']}
-    ...    ${Register_S015.dry_parcel['rebate_item']}
-    ...    ${Register_S015.dry_parcel['rebate_percen']}
-    ...    ${Register_S015.dry_parcel['rebate_item_2']}
-    ...    ${Register_S015.dry_parcel['rebate_percen_2']}
-    pms_detail_full_register_page.Verify Set Pickup Point Popup
-    ...    ${Register_S015.dry_parcel['branch']}
-    ...    ${Register_S015.dry_parcel['branch_id']}
-    ...    ${Register_S015.dry_parcel['address']}
-    ...    ${Register_S015.dry_parcel['address_full']}
-    common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup
-
-    Log    Step No.4 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุทั่วไป
-    pms_detail_full_register_page.Input Set Pickup Point Popup
-    ...    ${Register_S015.dry_parcel['parcel_type']}
-    ...    ${Register_S015.dry_parcel['pickup_day']}
-    ...    ${Register_S015.dry_parcel['pickup_time']}
-    # pms_detail_full_register_page.Verify Input Set Pickup Point
+    # pms_detail_full_register_page.Click Dry Parcel Tab
+    # pms_detail_full_register_page.Input Information In The Dry Parcel Tab
+    # ...    ${Register_S015.dry_parcel['price_scheme']}
+    # ...    ${Register_S015.dry_parcel['price_scheme_date']}
+    # ...    ${Register_S015.dry_parcel['cod_scheme']}
+    # ...    ${Register_S015.dry_parcel['cod_scheme_date']}
+    # ...    ${Register_S015.dry_parcel['insure_scheme']}
+    # ...    ${Register_S015.dry_parcel['insure_scheme_date']}
+    # ...    ${Register_S015.dry_parcel['first_mile_start_date']}
+    # ...    ${Register_S015.dry_parcel['first_mile_end_date']}
+    # ...    ${Register_S015.dry_parcel['bounce_fee_start_date']}
+    # ...    ${Register_S015.dry_parcel['bounce_fee_end_date']}
+    # ...    ${Register_S015.dry_parcel['rebate_item']}
+    # ...    ${Register_S015.dry_parcel['rebate_percen']}
+    # ...    ${Register_S015.dry_parcel['rebate_item_2']}
+    # ...    ${Register_S015.dry_parcel['rebate_percen_2']}
+    # pms_detail_full_register_page.Verify Set Pickup Point Popup
     # ...    ${Register_S015.dry_parcel['branch']}
+    # ...    ${Register_S015.dry_parcel['branch_id']}
     # ...    ${Register_S015.dry_parcel['address']}
     # ...    ${Register_S015.dry_parcel['address_full']}
-    # ...    ${rm.full_regis['latitude_longitude']}
-    # ...    ${rm.full_regis.text_pickup_schedule['determined']}
-    common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup
+    # common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup Dry Parcel Tab
+
+    Log    Step No.4 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุทั่วไป
+    # pms_detail_full_register_page.Input Set Pickup Point Popup
+    # ...    ${Register_S015.dry_parcel['parcel_type']}
+    # ...    ${Register_S015.dry_parcel['pickup_day']}
+    # ...    ${Register_S015.dry_parcel['pickup_time']}
+    # # pms_detail_full_register_page.Verify Input Set Pickup Point
+    # # ...    ${Register_S015.dry_parcel['branch']}
+    # # ...    ${Register_S015.dry_parcel['address']}
+    # # ...    ${Register_S015.dry_parcel['address_full']}
+    # # ...    ${rm.full_regis['latitude_longitude']}
+    # # ...    ${rm.full_regis.text_pickup_schedule['determined']}
+    # common.Verify Capture Screenshot    Register_S015    Verify Pickup Schedule After Set Pickup Point [Dry Parcel Tab]
 
     Log    Step No.5 ระบุข้อมูล แท็บพัสดุควบคุมอุณหภูมิ
-    pms_detail_full_register_page.Click Chill Parcel Tab
-    pms_detail_full_register_page.Input Information In The Chill Parcel Tab
-    ...    ${Register_S015.chill_parcel['price_scheme']}
-    ...    ${Register_S015.chill_parcel['price_scheme_date']}
-    ...    ${Register_S015.chill_parcel['cod_scheme']}
-    ...    ${Register_S015.chill_parcel['cod_scheme_date']}
-    ...    ${Register_S015.chill_parcel['first_mile_start_date']}
-    ...    ${Register_S015.chill_parcel['first_mile_end_date']}
-    ...    ${Register_S015.chill_parcel['bounce_fee_start_date']}
-    ...    ${Register_S015.chill_parcel['bounce_fee_end_date']}
-    ...    ${Register_S015.chill_parcel['rebate_item']}
-    ...    ${Register_S015.chill_parcel['rebate_percen']}
-    ...    ${Register_S015.chill_parcel['rebate_item_2']}
-    ...    ${Register_S015.chill_parcel['rebate_percen_2']}
-    pms_detail_full_register_page.Verify Set Pickup Point Popup
-    ...    ${Register_S015.chill_parcel['branch']}
-    ...    ${Register_S015.chill_parcel['branch_id']}
-    ...    ${Register_S015.chill_parcel['address']}
-    ...    ${Register_S015.chill_parcel['address_full']}
-    common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup Chill Tab
-
-    Log    Step No.6 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุควบคุมอุณหภูมิ
-    pms_detail_full_register_page.Input Set Pickup Point Popup
-    ...    ${Register_S015.chill_parcel['parcel_type']}
-    ...    ${Register_S015.chill_parcel['pickup_day']}
-    ...    ${Register_S015.chill_parcel['pickup_time']}
-    # pms_detail_full_register_page.Verify Input Set Pickup Point
+    # pms_detail_full_register_page.Click Chill Parcel Tab
+    # pms_detail_full_register_page.Input Information In The Chill Parcel Tab
+    # ...    ${Register_S015.chill_parcel['price_scheme']}
+    # ...    ${Register_S015.chill_parcel['price_scheme_date']}
+    # ...    ${Register_S015.chill_parcel['cod_scheme']}
+    # ...    ${Register_S015.chill_parcel['cod_scheme_date']}
+    # ...    ${Register_S015.chill_parcel['first_mile_start_date']}
+    # ...    ${Register_S015.chill_parcel['first_mile_end_date']}
+    # ...    ${Register_S015.chill_parcel['bounce_fee_start_date']}
+    # ...    ${Register_S015.chill_parcel['bounce_fee_end_date']}
+    # ...    ${Register_S015.chill_parcel['rebate_item']}
+    # ...    ${Register_S015.chill_parcel['rebate_percen']}
+    # ...    ${Register_S015.chill_parcel['rebate_item_2']}
+    # ...    ${Register_S015.chill_parcel['rebate_percen_2']}
+    # pms_detail_full_register_page.Verify Set Pickup Point Popup
     # ...    ${Register_S015.chill_parcel['branch']}
+    # ...    ${Register_S015.chill_parcel['branch_id']}
     # ...    ${Register_S015.chill_parcel['address']}
     # ...    ${Register_S015.chill_parcel['address_full']}
-    # ...    ${rm.full_regis['latitude_longitude']}
-    # ...    ${rm.full_regis.text_pickup_schedule['determined']}
+    # common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup Chill Parcel Tab
+
+    Log    Step No.6 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุควบคุมอุณหภูมิ
+    # pms_detail_full_register_page.Input Set Pickup Point Popup
+    # ...    ${Register_S015.chill_parcel['parcel_type']}
+    # ...    ${Register_S015.chill_parcel['pickup_day']}
+    # ...    ${Register_S015.chill_parcel['pickup_time']}
+    # # pms_detail_full_register_page.Verify Input Set Pickup Point
+    # # ...    ${Register_S015.chill_parcel['branch']}
+    # # ...    ${Register_S015.chill_parcel['address']}
+    # # ...    ${Register_S015.chill_parcel['address_full']}
+    # # ...    ${rm.full_regis['latitude_longitude']}
+    # # ...    ${rm.full_regis.text_pickup_schedule['determined']}
+    # common.Verify Capture Screenshot    Register_S015    Verify Pickup Schedule After Set Pickup Point [Chill Parcel Tab]
 
     Log    Step No.7 ระบุข้อมูล แท็บ Return Business
-    pms_detail_full_register_page.Click Return Business Tab
+    # pms_detail_full_register_page.Click Return Business Tab
+    # pms_detail_full_register_page.Input Information In The Return Business Tab
+    # ...    ${Register_S015.return_business['price_scheme']}
+    # ...    ${Register_S015.return_business['price_scheme_date']}
+    # ...    ${Register_S015.return_business['insure_scheme']}
+    # ...    ${Register_S015.return_business['insure_scheme_date']}
+    # common.Verify Capture Screenshot    Register_S015    Verify Input Information In The Return Business Tab
+
+    Log    Step No.8 กดปุ่ม "หน้าถัดไป"
+    pms_detail_full_register_page.Click Next Page Button
+    pms_detail_full_register_page.Verify Request Detail Contact And Bank Information
+    ...    ${Register_S013.bank['bank_id']}
+    ...    ${Register_S013.bank['bank_name']}
+    ...    ${Register_S013.bank['bank_branch']}
+
+    Log    Step No.9 กดปุ่ม "เพิ่ม" ข้อมูลผู้ติดต่อ
     
 

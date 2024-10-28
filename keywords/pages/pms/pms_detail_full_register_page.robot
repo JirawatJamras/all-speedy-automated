@@ -13,15 +13,15 @@ Verify Dry Parcel Tab Full Register Detail Page
     ...    ${branch}    ${address}    ${address_full}    ${latitude_longitude}    ${determined}
 
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_service_info']}
-    ${service_info}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
-    ${price_scheme}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_price_scheme']}
-    ${title_cod}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_cod']}
-    ${title_insure}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_insure']}
-    ${title_condition}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_condition']}
-    ${label_one_mile}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_one_mile']}
-    ${label_cancel_return_fee}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_cancel_return_fee']}
-    ${label_rebate}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_rebate']}
-    ${title_parcel_pickup}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
+    ${service_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
+    ${price_scheme}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_price_scheme']}
+    ${title_cod}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_cod']}
+    ${title_insure}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_insure']}
+    ${title_condition}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_condition']}
+    ${label_one_mile}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_one_mile']}
+    ${label_cancel_return_fee}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_cancel_return_fee']}
+    ${label_rebate}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_rebate']}
+    ${title_parcel_pickup}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
     Page Should Contain Element    ${label_step}
 
     #### part 1 ####
@@ -202,7 +202,7 @@ Input Set Pickup Point Popup
 
 Verify Input Set Pickup Point
     [Arguments]    ${branch}    ${address}    ${address_full}    ${latitude_longitude}    ${determined}
-    ${text_parcel_pickup}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
+    ${text_parcel_pickup}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
     Scroll Element Into View    ${text_parcel_pickup}
 
     ${text_branch}=    Replace String    ${pms_txt_parcel_pickup_table_full_regis}    {value}    ${branch}
@@ -221,14 +221,14 @@ Verify Chill Parcel Tab Full Register Detail Page
     ...    ${branch}    ${address}    ${address_full}    ${latitude_longitude}    ${determined}  
 
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_service_info']}
-    ${service_info}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
-    ${price_scheme}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_price_scheme']}
-    ${title_cod}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_cod']}
-    ${title_condition}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_condition']}
-    ${label_one_mile}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_one_mile']}
-    ${label_cancel_return_fee}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_cancel_return_fee']}
-    ${label_rebate}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_rebate']}
-    ${title_parcel_pickup}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
+    ${service_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
+    ${price_scheme}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_price_scheme']}
+    ${title_cod}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_cod']}
+    ${title_condition}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_condition']}
+    ${label_one_mile}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_one_mile']}
+    ${label_cancel_return_fee}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_cancel_return_fee']}
+    ${label_rebate}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_rebate']}
+    ${title_parcel_pickup}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
     Page Should Contain Element    ${label_step}
 
     #### part 1 ####
@@ -273,7 +273,7 @@ Verify Chill Parcel Tab Full Register Detail Page
     ${text_branch}=    Replace String    ${pms_txt_parcel_pickup_table_full_regis}    {value}    ${branch}
     ${text_address}=    Replace String    ${text_branch}    {value2}    ${address} ${address_full}
     ${text_latitude_longitude}=    Replace String    ${text_address}    {value3}    ${latitude_longitude}
-    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    $${determined}
+    ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${determined}
 
     Wait Until Element Is Visible    ${text_pickup_schedule}
 
@@ -348,14 +348,14 @@ Verify Return Business Tab Full Register Detail Page
     ...    ${branch}    ${address}    ${address_full}    ${address_full}    ${latitude_longitude}    ${determined}
 
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_service_info']}
-    ${service_info}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
-    ${price_scheme}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_price_scheme']}
-    ${title_insure}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_insure']}
-    ${title_condition}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_condition']}
-    ${label_one_mile}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_one_mile']}
-    ${label_cancel_return_fee}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_cancel_return_fee']}
-    ${label_rebate}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_rebate']}
-    ${title_parcel_pickup}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
+    ${service_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_service_info']}
+    ${price_scheme}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_price_scheme']}
+    ${title_insure}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_insure']}
+    ${title_condition}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_title_condition']}
+    ${label_one_mile}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_one_mile']}
+    ${label_cancel_return_fee}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_cancel_return_fee']}
+    ${label_rebate}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_rebate']}
+    ${title_parcel_pickup}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_parcel_pickup']}
     Page Should Contain Element    ${label_step}
 
     #### part 1 ####
@@ -405,6 +405,37 @@ Verify Return Business Tab Full Register Detail Page
     ${text_pickup_schedule}=    Replace String    ${text_latitude_longitude}    {value4}    ${determined}
     Wait Until Element Is Visible    ${text_pickup_schedule}
 
+Input Information In The Return Business Tab
+    [Arguments]    ${price_scheme}    ${price_scheme_date}    ${insure_scheme}    ${insure_scheme_date}
+    #### ใช้งานชั่วคราว ####
+    common.Click When Ready    ${pms_btn_select_return_business}
+    common.Click When Ready    //input[@id='parcelType_parcelReturnBusiness_isExpressReturn']/..
+    common.Click When Ready    //input[@id='parcelType_parcelReturnBusiness_isInsuReturn']//..
+    #### ใช้งานชั่วคราว ####
+
+    ${price_scheme_day}    Format Input Date    ${price_scheme_date}
+    ${insure_scheme_day}    Format Input Date    ${insure_scheme_date}
+
+    ${select_price_scheme}=    Replace String    ${pms_cbo_price_scheme_return_full_regis}    {value}    ${price_scheme}
+    ${select_price_scheme_date}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${price_scheme_day}
+    ${select_insure_scheme}=    Replace String    ${pms_cbo_insure_scheme_return_full_regis}    {value}    ${insure_scheme}
+    ${select_insure_scheme_date}=    Replace String    ${pms_cbo_date_pick_full_regis}    {value}    ${insure_scheme_day}
+
+    Wait Until Element Is Visible    ${pms_txtbox_price_scheme_return_full_regis}
+    Scroll Element Into View    ${pms_txtbox_price_scheme_return_full_regis}
+
+    ### price scheme ###
+    common.Click When Ready    ${pms_txtbox_price_scheme_return_full_regis}
+    common.Click When Ready    ${select_price_scheme}
+    common.Click When Ready    ${pms_txtbox_price_scheme_date_return_full_regis}
+    common.Click When Ready    ${select_price_scheme_date}
+
+    common.Click When Ready    ${pms_txtbox_insure_scheme_return_full_regis}
+    common.Click When Ready    ${select_insure_scheme}
+    common.Click When Ready    ${pms_txtbox_insure_scheme_return_date_full_regis}
+    common.Click When Ready    ${select_insure_scheme_date}
+    Sleep    4s
+
 ########## legal entity  ###########
 Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
     [Arguments]    ${first_name}    ${last_name}    ${req_type}    ${customer_type}    ${company_title}    ${company_name}    ${mobile_company}
@@ -435,7 +466,7 @@ Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
 
     #### part 2 ####
     ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_company_info']}
-    ${text_contact_information}=    Replace String    ${pms_text_in_detail_full_regis}        {value}    ${rm['text_contact_information']}
+    ${text_contact_information}=    Replace String    ${pms_txt_in_detail_full_regis}        {value}    ${rm['text_contact_information']}
     Page Should Contain Element    ${label_step}
     Page Should Contain Element    ${text_contact_information}
 
@@ -485,17 +516,37 @@ Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
     Should Be Equal As Strings    ${label_mobile_ext} ${input_mobile_ext}    ${rm.full_regis['text_mobile_ext']} ${mobile_ext}
     Should Be Equal As Strings    ${label_remark}    ${rm.full_regis['text_remark']}
 
+Verify Request Detail Contact And Bank Information
+    [Arguments]    ${bank_id}    ${bank_name}    ${bank_branch}
+    Scroll Window To Vertical    0
+    ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_contact_and_bank_info']}
+    ${title_bank_info}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm.full_regis['text_header_bank_info']}
+    Page Should Contain Element    ${label_step}
+
+    ${label_bank_id}=    Get Text    ${pms_txt_bank_id_full_regis}
+    ${input_bank_id}=    Get Text    ${pms_txtbox_bank_id_full_regis}
+    ${label_bank_name}=    Get Text    ${pms_txt_bank_name_full_regis}
+    ${input_bank_name}=    Get Text    ${pms_txtbox_bank_name_full_regis}
+    ${label_bank_branch}=    Get Text    ${pms_txt_bank_branch_full_regis}
+    ${input_bank_branch}=    Get Value    ${pms_txtbox_bank_branch_full_regis}
+
+
+    Wait Until Element Is Visible    ${title_bank_info}    timeout=${DEFAULT_TIMEOUT}
+    Should Be Equal As Strings    ${label_bank_id} ${input_bank_id}    ${rm.full_regis.bank['text_country']} ${bank_id}
+    Should Be Equal As Strings    ${label_bank_name} ${input_bank_name}    ${rm.full_regis.bank['text_bank']} ${bank_name}
+    Should Be Equal As Strings    ${label_bank_branch} ${input_bank_branch}    ${rm.full_regis.bank['text_bank_branch']} ${bank_branch}
+
 
 Verify Supporting Document Page Legal Entity
-    ${txt_title}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_supporting_document']} 
-    ${txt_header}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_supporting_document']}
-    ${txt_certificate_business_registration}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_certificate_business_registration']}
-    ${txt_copy_file_20}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_file_20']}
-    ${txt_copy_id_card}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_id_card']}
-    ${txt_copy_of_bank_account}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_of_bank_account']}
-    ${txt_copy_of_house_registration}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_of_house_registration']}
-    ${txt_permission_form}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_permission_form']}
-    ${txt_other_file}=    Replace String    ${pms_text_in_detail_full_regis}    {value}    ${rm.full_regis['text_other_file']}
+    ${txt_title}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_supporting_document']} 
+    ${txt_header}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_supporting_document']}
+    ${txt_certificate_business_registration}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_certificate_business_registration']}
+    ${txt_copy_file_20}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_file_20']}
+    ${txt_copy_id_card}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_id_card']}
+    ${txt_copy_of_bank_account}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_of_bank_account']}
+    ${txt_copy_of_house_registration}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_copy_of_house_registration']}
+    ${txt_permission_form}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_permission_form']}
+    ${txt_other_file}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_other_file']}
 
     Page Should Contain Element    ${txt_title}
     Page Should Contain Element    ${txt_header}
@@ -508,6 +559,7 @@ Verify Supporting Document Page Legal Entity
     Page Should Contain Element    ${txt_other_file}
 
 
-Input Remark 4
-    [Arguments]    ${value}
-    common.Input When Ready    ${pms_txtbox_remark4_full_regis}    ${value}
+Input Remark
+    [Arguments]    ${page_no}    ${value}
+    ${txtbox_remark}=    Replace String    ${pms_txtbox_remark}    {value}    ${page_no}
+    common.Input When Ready    ${txtbox_remark}    ${value}

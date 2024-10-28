@@ -2,7 +2,7 @@
 ${pms_txt_title_detail}    //div[@class='ant-card-head-title']//span[text()='{value}']
 ${pms_txt_detail_full_regis}    //span[contains(text(),'{value}')]/..
 ${pms_txt_step_full_regis}    //div[@class='ant-steps-item ant-steps-item-process ant-steps-item-active']//div[text()='{value}']
-${pms_text_in_detail_full_regis}    //*[contains(text(),'{value}')]
+${pms_txt_in_detail_full_regis}    //*[contains(text(),'{value}')]
 ${pms_txt_customer_type_full_regis}    //label[@for='customerType']
 ${pms_txt_company_title_full_regis}    //label[@for='companyTitleName']
 ${pms_txt_company_name_full_regis}    //label[@for='companyName']
@@ -44,6 +44,9 @@ ${pms_txt_address_full_set_pickup_popup}    //label[@for='address_full']
 ${pms_txt_latitude_set_pickup_popup}    //label[@for='lat']
 ${pms_txt_longitude_set_pickup_popup}    //label[@for='lng']
 ${pms_txt_table_list_set_pickup_popup}    //thead[@class='ant-table-thead']//th[text()='{value}']
+${pms_txt_bank_id_full_regis}    //label[@for='bankId']
+${pms_txt_bank_name_full_regis}    //label[@for='bankName']
+${pms_txt_bank_branch_full_regis}    //label[@for='bankBranch']
 
 
 ${pms_txtbox_customer_type_full_regis}    //input[@id='customerType']
@@ -107,6 +110,13 @@ ${pms_txtbox_rebate_percen_chill_full_regis}    //input[@id='parcelType_parcelCh
 ${pms_txtbox_rebate_item_2_chill_full_regis}    //input[@id='parcelType_parcelChill_itemTo_1']
 ${pms_txtbox_rebate_percen_2_chill_full_regis}    //input[@id='parcelType_parcelChill_rebatePercen_1']
 ${pms_txtbox_remark4_full_regis}    //textarea[@id='remark4']
+${pms_txtbox_price_scheme_return_full_regis}    //input[@id='parcelType_parcelReturnBusiness_priceScheme']/..
+${pms_txtbox_price_scheme_date_return_full_regis}    //input[@id='parcelType_parcelReturnBusiness_priceActiveDate']/..
+${pms_txtbox_insure_scheme_return_full_regis}    //input[@id='parcelType_parcelReturnBusiness_insureScheme']/..
+${pms_txtbox_insure_scheme_return_date_full_regis}    //input[@id='parcelType_parcelReturnBusiness_insureActiveDate']/..
+${pms_txtbox_bank_id_full_regis}    //input[@id='bankId']/../..
+${pms_txtbox_bank_name_full_regis}    //input[@id='bankName']/../..
+${pms_txtbox_bank_branch_full_regis}    //input[@id='bankBranch']
 
 ${pms_btn_next_page}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']
@@ -143,3 +153,5 @@ ${pms_cbo_pickup_date_set_pickup_popup}    //div[@class='ant-select-tree-list']/
 ${pms_cbo_pickup_time_set_pickup_popup}    //div[@class='ant-select-tree-list']//span[text()='{value}']
 ${pms_cbo_price_scheme_chill_full_regis}    //div[@id='parcelType_parcelChill_priceScheme_list']/..//div[text()='{value}']
 ${pms_cbo_cod_scheme_chill_full_regis}    //div[@id='parcelType_parcelChill_codScheme_list']/..//div[text()='{value}']
+${pms_cbo_price_scheme_return_full_regis}    //div[@id='parcelType_parcelReturnBusiness_priceScheme_list']/..//div[text()='{value}']
+${pms_cbo_insure_scheme_return_full_regis}    //div[@id='parcelType_parcelReturnBusiness_insureScheme_list']/..//div[text()='{value}']
