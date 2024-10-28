@@ -254,6 +254,7 @@ Verify Booking Detail Page
     Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
+    Reload Page
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
@@ -319,6 +320,7 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
+    Reload Page
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}

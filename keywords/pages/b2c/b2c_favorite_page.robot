@@ -5,28 +5,59 @@ Select Sender Tab
     common.Click When Ready    ${tab_sender_favorite_page}
 
 Verify Display Sender Card
-    [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}    ${postcode_full}
+    [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {favorite_name}    ${sender_favorite_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {name}    ${sender_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {phone}    ${sender_phone}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {address}    ${sender_address} ${sender_postcode_full}
+    Wait Until Element Is Not Visible    ${card_skelton_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${card_sender_favorite_page}
     Wait Until Element Is Visible    ${card_sender_favorite_page}    timeout=${DEFAULT_TIMEOUT}
-    
-    # ${card_count}=    Get Element Count    ${card_sender_favorite_page}
-    # ${sender_address}=    Set Variable    ${address} ${postcode_full}
-    # ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_sender_favorite']}
-    # ${txt_sender_name_in_card_favorite_page}=    Replace String    ${txt_sender_name_in_card_favorite_page}    {value}    ${favorite['text_name']}
-    # ${txt_sender_phone_in_card_favorite_page}=    Replace String    ${txt_sender_phone_in_card_favorite_page}    {value}    ${favorite['text_phone']}
-    # ${txt_sender_address_in_card_favorite_page}=    Replace String    ${txt_sender_address_in_card_favorite_page}    {value}    ${favorite['text_address']}
-    # FOR    ${index}    IN RANGE    1    ${card_count} + 1
-    #     ${item}=    Set Variable    (${card_sender_favorite_page})[${index}]
-    #     ${home_icon_staus}=    Run Keyword And Return Status    Element Should Contain    ${item}${img_home}
-    #     ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_favorite_name_in_card_favorite_page}    ${favorite_name}
-    #     ${sender_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_name_in_card_favorite_page}    ${name}
-    #     ${sender_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_phone_in_card_favorite_page}    ${phone}
-    #     ${sender_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_sender_address_in_card_favorite_page}    ${sender_address}
-    #     Exit For Loop If    ${home_icon_staus} and ${favorite_name_status} and ${sender_name_status} and ${sender_phone_status} and ${sender_address_status}
-    # END
+    ${actual_sender_favorite}=    Get Text    ${card_sender_favorite_page}
+    ${actual_sender_favorite}=    Replace String    ${actual_sender_favorite}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ชื่อ : ${sender_name} เบอร์โทรศัพท์ : ${sender_phone} ที่อยู่ : ${sender_address} ${sender_postcode_full}
+
+Verify Display Sender Card After Edit Data
+    [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {favorite_name}    ${sender_favorite_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {name}    ${sender_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {phone}    ${sender_phone}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {address}    ${sender_address} ${sender_postcode_full}
+    Wait Until Element Is Not Visible    ${card_skelton_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${msg_successfully_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    ${update_favorite_successfully}=    Get Text    ${msg_successfully_favorite_page}
+    Should Be Equal    ${update_favorite_successfully}    ${favorite['text_updated_successfully']}
+    Wait Until Element Is Not Visible    ${msg_successfully_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${card_sender_favorite_page}
+    Wait Until Element Is Visible    ${card_sender_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_sender_favorite}=    Get Text    ${card_sender_favorite_page}
+    ${actual_sender_favorite}=    Replace String    ${actual_sender_favorite}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ชื่อ : ${sender_name} เบอร์โทรศัพท์ : ${sender_phone} ที่อยู่ : ${sender_address} ${sender_postcode_full}
+
+Verify Display Sender Card After Add New
+    [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {favorite_name}    ${sender_favorite_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {name}    ${sender_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {phone}    ${sender_phone}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {address}    ${sender_address} ${sender_postcode_full}
+    Wait Until Element Is Not Visible    ${card_skelton_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${msg_successfully_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    ${add_favorite_successfully}=    Get Text    ${msg_successfully_favorite_page}
+    Should Be Equal    ${add_favorite_successfully}    ${favorite['text_added_successfully']}
+    Wait Until Element Is Not Visible    ${msg_successfully_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${card_sender_favorite_page}
+    Wait Until Element Is Visible    ${card_sender_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_sender_favorite}=    Get Text    ${card_sender_favorite_page}
+    ${actual_sender_favorite}=    Replace String    ${actual_sender_favorite}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ชื่อ : ${sender_name} เบอร์โทรศัพท์ : ${sender_phone} ที่อยู่ : ${sender_address} ${sender_postcode_full}
 
 Click Sender Card
-    [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
-    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    ${favorite_name} ${name} ${phone} ${address} ${postcode_full}    ${sender_favorite_name} ${sender_name} ${sender_phone} ${sender_address} ${sender_postcode_full}
+   [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {favorite_name}    ${sender_favorite_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {name}    ${sender_name}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {phone}    ${sender_phone}
+    ${card_sender_favorite_page}=    Replace String    ${card_sender_favorite_page}    {address}    ${sender_address} ${sender_postcode_full}
+    common.Click When Ready    ${card_sender_favorite_page}
 
 Verify Label Sender
     [Arguments]    ${text_sender_data}    ${sender_favorite_name}   ${sender_phone}    
@@ -39,20 +70,20 @@ Verify Label Sender
     ${actual_text_sender_address}=    Get Text    ${txt_sender_address_in_popup_favorite_page}
     ${actual_text_sender_postcode}=    Get Text    ${txt_sender_postcode_in_popup_favorite_page}
     Should Be Equal    ${actual_text_sender_data}    ${text_sender_data}
-    Should Be Equal    ${actual_text_sender_favorite_name}    ${sender_favorite_name}
-    Should Be Equal    ${actual_text_sender_phone}    ${sender_phone}
-    Should Be Equal    ${actual_text_sender_name}    ${sender_name}
-    Should Be Equal    ${actual_text_sender_address}    ${sender_address}
-    Should Be Equal    ${actual_text_sender_postcode}    ${sender_full_postcode}
+    Should Be Equal    ${actual_text_sender_favorite_name}    ${sender_favorite_name} *
+    Should Be Equal    ${actual_text_sender_phone}    ${sender_phone} *
+    Should Be Equal    ${actual_text_sender_name}    ${sender_name} *
+    Should Be Equal    ${actual_text_sender_address}    ${sender_address} *
+    Should Be Equal    ${actual_text_sender_postcode}    ${sender_full_postcode} *
 
 Verify Data Sender In Read-Only Mode
-    [Arguments]    ${sender_favorite_name}   ${sender_phone}
-    ...            ${sender_name}    ${sender_address}    ${sender_full_postcode}
+    [Arguments]    ${sender_favorite_name}   ${sender_name}
+    ...            ${sender_phone}    ${sender_address}    ${sender_full_postcode}
     ${actual_value_sender_favorite_name}=    Get Value    ${txtbox_sender_favorite_name_favorite_page}
     ${actual_value_sender_phone}=    Get Value    ${txtbox_sender_phone_favorite_page}
     ${actual_value_sender_name}=    Get Value    ${txtbox_sender_name_favorite_page}
     ${actual_value_sender_address}=    Get Text    ${txtbox_sender_address_favorite_page}
-    ${actual_value_sender_full_postcode}=    Get Text    ${txtbox_sender_postcode_favorite_page}
+    ${actual_value_sender_full_postcode}=    Get Text    ${txtbox_sender_postcode_value_favorite_page}
     Should Be Equal    ${actual_value_sender_favorite_name}    ${sender_favorite_name}
     Element Should Be Disabled    ${txtbox_sender_favorite_name_favorite_page}
     Should Be Equal    ${actual_value_sender_phone}    ${sender_phone}
@@ -65,15 +96,15 @@ Verify Data Sender In Read-Only Mode
     Element Should Be Disabled    ${txtbox_sender_postcode_favorite_page}
 
 Verify Data Sender
-    [Arguments]    ${sender_favorite_name}   ${sender_phone}    
-    ...            ${sender_name}    ${sender_address}    ${sender_full_postcode}
-    ${actual_value_sender_favorite_name}=    Get Value    ${txtbox_favorite_name_favorite_page}
+    [Arguments]    ${sender_favorite_name}   ${sender_name}    
+    ...            ${sender_phone}    ${sender_address}    ${sender_full_postcode}
+    ${actual_value_sender_favorite_name}=    Get Value    ${txtbox_sender_favorite_name_favorite_page}
     ${actual_value_sender_phone}=    Get Value    ${txtbox_sender_phone_favorite_page}
     ${actual_value_sender_name}=    Get Value    ${txtbox_sender_name_favorite_page}
     ${actual_value_sender_address}=    Get Text    ${txtbox_sender_address_favorite_page}
-    ${actual_value_sender_full_postcode}=    Get Text    ${txtbox_sender_postcode_favorite_page}
+    ${actual_value_sender_full_postcode}=    Get Text    ${txtbox_sender_postcode_value_favorite_page}
     Should Be Equal    ${actual_value_sender_favorite_name}    ${sender_favorite_name}
-    Element Should Not Contain    ${txtbox_favorite_name_favorite_page}    disabled
+    Element Should Not Contain    ${txtbox_sender_favorite_name_favorite_page}    disabled
     Should Be Equal    ${actual_value_sender_phone}    ${sender_phone}
     Element Should Not Contain    ${txtbox_sender_phone_favorite_page}    disabled
     Should Be Equal    ${actual_value_sender_name}    ${sender_name}
@@ -87,6 +118,11 @@ Click Edit Button
     ${btn_edit_data_favorite_page}=    Replace String    ${btn_edit_data_favorite_page}    {value}    ${favorite['button_edit']}
     common.Click When Ready    ${btn_edit_data_favorite_page}
 
+Edit Sender Favorite Name
+    [Arguments]    ${value}
+    common.Click When Ready    ${btn_sender_clear_favorite_name_favorite_page}
+    common.Input When Ready    ${txtbox_sender_favorite_name_favorite_page}    ${value}
+
 Input Sender Favorite Name
     [Arguments]    ${value}
     common.Input When Ready    ${txtbox_sender_favorite_name_favorite_page}    ${value}
@@ -97,6 +133,7 @@ Click Save Edit Button
 
 Click Add Sender Button
     ${btn_add_sender_favorite_page}=    Replace String    ${btn_add_sender_favorite_page}    {value}    ${favorite['button_add']}
+    Scroll Element Into View    ${btn_add_sender_favorite_page}
     common.Click When Ready    ${btn_add_sender_favorite_page}
 
 Input Sender Phone Number
@@ -121,34 +158,27 @@ Select Sender Postcode List
     common.Click When Ready    ${cbo_sender_address_favorite_page}
 
 Click Save Button
-    ${btn_save_info_favorite_page}=    Replace String    ${btn_save_info_favorite_page}    {value}    ${favorite['button_save']}
-    common.Click When Ready    ${btn_save_info_favorite_page}
+    ${btn_save_data_favorite_page}=    Replace String    ${btn_save_data_favorite_page}    {value}    ${favorite['button_save']}
+    common.Click When Ready    ${btn_save_data_favorite_page}
 
 ########## Receiver Tab ############
 Select Receiver Tab
     ${tab_receiver_favorite_page}=    Replace String    ${tab_receiver_favorite_page}    {value}    ${favorite['text_parcel_receiver']}
+    Scroll Element Into View    ${tab_receiver_favorite_page}
     common.Click When Ready    ${tab_receiver_favorite_page}
 
 Verify Display Receiver Card When Select Home
-    [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}    ${postcode_full}
-    Wait Until Element Is Visible    ${card_favorite_page}    timeout=${DEFAULT_TIMEOUT}
-    ${card_count}=    Get Element Count    ${card_favorite_page}
-    ${receiver_address}=    Set Variable    ${address} ${postcode_full}
-    ${txt_favorite_name_in_card_favorite_page}=    Replace String    ${txt_favorite_name_in_card_favorite_page}    {value}    ${favorite['text_receiver_favorite']}
-    ${txt_receiver_name_card_favorite_page}=    Replace String    ${txt_receiver_name_card_favorite_page}    {value}    ${favorite['text_name']}
-    ${txt_receiver_phone_card_favorite_page}=    Replace String    ${txt_receiver_phone_card_favorite_page}    {value}    ${favorite['text_phone']}
-    ${txt_receiver_address_favorite_page}=    Replace String    ${txt_receiver_address_favorite_page}    {value}    ${favorite['text_address']}
-    FOR    ${index}    IN RANGE    1    ${card_count} + 1
-        ${item}=    Set Variable    (${card_favorite_page})[${index}]
-        Register Keyword To Run On Failure    NOTHING
-        ${home_icon_staus}=    Run Keyword And Return Status    Element Should Contain    ${item}${img_home}
-        ${favorite_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_favorite_name_in_card_favorite_page}    ${favorite_name}
-        ${receiver_name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_name_card_favorite_page}    ${name}
-        ${receiver_phone_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_phone_card_favorite_page}    ${phone}
-        ${receiver_address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}${txt_receiver_address_favorite_page}    ${receiver_address}
-        ${all_conditions}=    Evaluate    ${home_icon_staus} and ${favorite_name_status} and ${receiver_name_status} and ${receiver_phone_status} and ${receiver_address_status}
-        Exit For Loop If    ${all_conditions}
-    END
+    [Arguments]    ${receiver_favorite_name}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
+    ${card_receiver_send_home_favorite_page} =    Replace String    ${card_receiver_send_home_favorite_page}    {favorite_name}    ${receiver_favorite_name}
+    ${card_receiver_send_home_favorite_page}=    Replace String    ${card_receiver_send_home_favorite_page}    {name}    ${receiver_name}
+    ${card_receiver_send_home_favorite_page}=    Replace String    ${card_receiver_send_home_favorite_page}    {phone}    ${receiver_phone}
+    ${card_receiver_send_home_favorite_page}=    Replace String    ${card_receiver_send_home_favorite_page}    {address}    ${receiver_address} ${receiver_postcode_full}
+    Wait Until Element Is Not Visible    //ul[@class='ant-skeleton-paragraph']    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${card_receiver_send_home_favorite_page}
+    Wait Until Element Is Visible    ${card_receiver_send_home_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_receiver_favorite}=    Get Text    ${card_receiver_send_home_favorite_page}
+    ${actual_receiver_favorite}=    Replace String    ${actual_receiver_favorite}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_receiver_favorite}    ${receiver_favorite_name} ชื่อ : ${receiver_name} เบอร์โทรศัพท์ : ${receiver_phone} ที่อยู่ : ${receiver_address} ${receiver_postcode_full}
 
 Verify Display Receiver Card When Select 7-ELEVEN Store
     [Arguments]    ${favorite_name}    ${name}    ${phone}    ${address}

@@ -212,14 +212,14 @@ favorite:
   text_name: ชื่อ
   text_phone: เบอร์โทรศัพท์
   text_address: ที่อยู่
-  data_sender_favorite:
+  label_sender_favorite:
     text_data_sender: ข้อมูลผู้ส่งพัสดุ
     text_favorite_name: ชื่อรายการโปรด
     text_phone: เบอร์โทรศัพท์
     text_name: ชื่อ
     text_address: รายละเอียดที่อยู่
     text_postcode: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
-  data_reciever_favorite:
+  label_reciever_favorite:
     text_data_sender: ข้อมูลผู้รับพัสดุ
     text_favorite_name: ชื่อรายการโปรด
     text_phone: เบอร์โทรศัพท์
@@ -227,7 +227,7 @@ favorite:
     text_location_pickup: ข้อมูลสถานที่รับพัสดุ
     text_address: รายละเอียดที่อยู่
     text_postcode: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
-  data_shipping_origin_area:
+  label_shipping_origin_area:
     text_data_shipping_origin_area: ข้อมูลพื้นที่ต้นทางการจัดส่ง
     text_favorite_name: ชื่อรายการโปรด
     text_set_to_default: ใช้เป็นค่าเริ่มต้น
@@ -236,7 +236,10 @@ favorite:
   button_add: เพิ่ม
   button_save: บันทึก
   button_select_store: เลือกร้าน
-  text_search_store: ค้นหาร้าน 7-eleven
+  text_search_store: 'ค้นหาร้าน 7-eleven'
+  text_updated_successfully: อัพเดทรายการโปรดสำเร็จ
+  text_added_successfully: เพิ่มรายการโปรดสำเร็จ
+  text_input_postcode: ระบุไปรษณีย์
 
 dc_operaion:
   role:

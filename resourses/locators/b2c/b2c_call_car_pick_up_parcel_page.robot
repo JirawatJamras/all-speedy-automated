@@ -1,7 +1,7 @@
 *** Variables ***
 ${b2c_btn_add_call_car_pickup_page}    //button//span[@aria-label='plus-circle']
 ${btn_save_in_add_popup}    //button//span[contains(text(),'{value}')]
-${b2c_btn_cancel_in_add_popup}    //button//span[contains(text(),'{value}')]
+${btn_cancel_in_add_popup}    //button//span[contains(text(),'{value}')]
 
 ${b2c_txt_call_pickup_parcel_pickup_page}    //h2[contains(text(),'{value}')]
 ${b2c_txt_parcel_pickup_schedule}    //h5[contains(text(),'{value}')]
@@ -61,11 +61,11 @@ ${b2c_cbo_parcel_type_call_car_pickup_page}    //strong[text()='ประเภ�
 ${cbo_pickup_parcel_date_in_add_popup}    //strong[text()='{value}']/../../../..//input
 ${cbo_pickup_parcel_time_in_add_popup}    //strong[text()='{value}']/../../../..//input/../..
 ${b2c_cdo_2_pickup_parcel_time_in_add_popup}    //strong[text()='เวลารถเข้ารับพัสดุ']/../../../..//input
-${cbo_parcel_type}    //div[@class='rc-virtual-list-holder-inner']//div[@title='${value}']
+# ${cbo_parcel_type}    //div[@class='rc-virtual-list-holder-inner']//div[@title='${value}']
 ${cbo_time_pickup}    //div[text()='${value}']
 
 ${b2c_tbl_pickup_parcel_calendar_in_add_popup}    //*[contains(@class,'ant-picker-dropdown')]
-${tbl_pickup_parcel_calendar}    //td[@title='${newDate}']
+${tbl_pickup_parcel_calendar}    //td[@title='${value}']
 
 ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div
 

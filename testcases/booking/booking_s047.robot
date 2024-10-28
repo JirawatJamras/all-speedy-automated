@@ -22,13 +22,13 @@ Booking_S047
     b2c_home_page.Select Sub Menu Favorites
     b2c_favorite_page.Select Sender Tab
     # Expected
-    b2c_favorite_page.Verify Display Receiver Card When Select Home
+    b2c_favorite_page.Verify Display Sender Card
     ...    ${Booking_S047.sender_favorite_card['favorite_name']}
     ...    ${Booking_S047.sender_favorite_card['sender_name']}
     ...    ${Booking_S047.sender_favorite_card['sender_phone']}
     ...    ${Booking_S047.sender_favorite_card['sender_address']}
     ...    ${Booking_S047.sender_favorite_card['sender_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S047    Verify Display Receiver Card When Select Home
+    common.Verify Capture Screenshot    Booking_S047    Verify Display Sender Card
 
     Log    Step No.2 กดที่รายการโปรด
     b2c_favorite_page.Click Sender Card
@@ -39,12 +39,12 @@ Booking_S047
     ...    ${Booking_S047.sender_favorite_card['sender_postcode_full']}
     # Expected
     b2c_favorite_page.Verify Label Sender
-    ...    ${favorite.data_sender_favorite['text_data_sender']}
-    ...    ${favorite.data_sender_favorite['text_favorite_name']}
-    ...    ${favorite.data_sender_favorite['text_phone']}
-    ...    ${favorite.data_sender_favorite['text_name']}
-    ...    ${favorite.data_sender_favorite['text_address']}
-    ...    ${favorite.data_sender_favorite['text_postcode']}
+    ...    ${favorite.label_sender_favorite['text_data_sender']}
+    ...    ${favorite.label_sender_favorite['text_favorite_name']}
+    ...    ${favorite.label_sender_favorite['text_phone']}
+    ...    ${favorite.label_sender_favorite['text_name']}
+    ...    ${favorite.label_sender_favorite['text_address']}
+    ...    ${favorite.label_sender_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Sender In Read-Only Mode
     ...    ${Booking_S047.sender_favorite_card['favorite_name']}
     ...    ${Booking_S047.sender_favorite_card['sender_name']}
@@ -57,30 +57,30 @@ Booking_S047
     b2c_favorite_page.Click Edit Button
     # Expected
     b2c_favorite_page.Verify Label Sender
-    ...    ${favorite.data_sender_favorite['text_data_sender']}
-    ...    ${favorite.data_sender_favorite['text_favorite_name']}
-    ...    ${favorite.data_sender_favorite['text_phone']}
-    ...    ${favorite.data_sender_favorite['text_name']}
-    ...    ${favorite.data_sender_favorite['text_address']}
-    ...    ${favorite.data_sender_favorite['text_postcode']}
+    ...    ${favorite.label_sender_favorite['text_data_sender']}
+    ...    ${favorite.label_sender_favorite['text_favorite_name']}
+    ...    ${favorite.label_sender_favorite['text_phone']}
+    ...    ${favorite.label_sender_favorite['text_name']}
+    ...    ${favorite.label_sender_favorite['text_address']}
+    ...    ${favorite.label_sender_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Sender
-    ...    ${Booking_S047['favorite_name']}
-    ...    ${Booking_S047['sender_name']}
-    ...    ${Booking_S047['sender_phone']}
-    ...    ${Booking_S047['sender_address']}
-    ...    ${Booking_S047['sender_postcode_full']}
+    ...    ${Booking_S047.sender_favorite_card['favorite_name']}
+    ...    ${Booking_S047.sender_favorite_card['sender_name']}
+    ...    ${Booking_S047.sender_favorite_card['sender_phone']}
+    ...    ${Booking_S047.sender_favorite_card['sender_address']}
+    ...    ${Booking_S047.sender_favorite_card['sender_postcode_full']}
     common.Verify Capture Screenshot    Booking_S047    Verify Edit Data Sender
     
     Log    Step No.4 เเก้ไขรายการดังนี้
     # ชื่อรายการโปรด : บ้านต่างจังหวัด
-    b2c_favorite_page.Input Sender Favorite Name    ${Booking_S047.edit_sender['sender_favorite_name']}
+    b2c_favorite_page.Edit Sender Favorite Name    ${Booking_S047.edit_sender['sender_favorite_name']}
     # Expected
     common.Verify Capture Screenshot    Booking_S047    Verify Edit Favorite Name
 
     Log    Step No.5 กดปุ่ม "บันทึกเเก้ไข"
     b2c_favorite_page.Click Save Edit Button
     # Expected
-    b2c_favorite_page.Verify Display Receiver Card When Select Home
+    b2c_favorite_page.Verify Display Sender Card After Edit Data
     ...    ${Booking_S047.edit_sender['sender_favorite_name']}
     ...    ${Booking_S047.sender_favorite_card['sender_name']}
     ...    ${Booking_S047.sender_favorite_card['sender_phone']}
@@ -92,35 +92,35 @@ Booking_S047
     b2c_favorite_page.Click Add Sender Button
     # Expected
     b2c_favorite_page.Verify Label Sender
-    ...    ${favorite.data_sender_favorite['text_data_sender']}
-    ...    ${favorite.data_sender_favorite['text_favorite_name']}
-    ...    ${favorite.data_sender_favorite['text_phone']}
-    ...    ${favorite.data_sender_favorite['text_name']}
-    ...    ${favorite.data_sender_favorite['text_address']}
-    ...    ${favorite.data_sender_favorite['text_postcode']}
+    ...    ${favorite.label_sender_favorite['text_data_sender']}
+    ...    ${favorite.label_sender_favorite['text_favorite_name']}
+    ...    ${favorite.label_sender_favorite['text_phone']}
+    ...    ${favorite.label_sender_favorite['text_name']}
+    ...    ${favorite.label_sender_favorite['text_address']}
+    ...    ${favorite.label_sender_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Sender
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    ...    ${EMPTY}
+    ...    ${favorite['text_input_postcode']}
     common.Verify Capture Screenshot    Booking_S047    Verify Add Sender Favorite Popup
 
     Log    Step No.7 กรอกข้อมูลดังนี้
     b2c_favorite_page.Input Sender Favorite Name    ${Booking_S047.add_sender_favorite['favorite_name']}
-    b2c_favorite_page.Input Sender Phone Number    ${Booking_S047.add_sender_favorite['sender_name']}
-    b2c_favorite_page.Input Sender Name    ${Booking_S047.add_sender_favorite['sender_phone']}
+    b2c_favorite_page.Input Sender Phone Number    ${Booking_S047.add_sender_favorite['sender_phone']}
+    b2c_favorite_page.Input Sender Name    ${Booking_S047.add_sender_favorite['sender_name']}
     b2c_favorite_page.Input Sender Address    ${Booking_S047.add_sender_favorite['sender_address']}
     b2c_favorite_page.Input Sender Postcode    ${Booking_S047.add_sender_favorite['sender_postcode_5_digits']}
     b2c_favorite_page.Select Sender Postcode List    ${Booking_S047.add_sender_favorite['sender_postcode_full']}
     b2c_favorite_page.Click Save Button
     # Expected
-    b2c_favorite_page.Verify Display Sender Card
-    ...    ${Booking_S047.add_favorite['favorite_name']}
-    ...    ${Booking_S047.add_favorite['sender_name']}
-    ...    ${Booking_S047.add_favorite['sender_phone']}
-    ...    ${Booking_S047.add_favorite['sender_address']}
-    ...    ${Booking_S047.add_favorite['sender_postcode_full']}
+    b2c_favorite_page.Verify Display Sender Card After Add New
+    ...    ${Booking_S047.add_sender_favorite['favorite_name']}
+    ...    ${Booking_S047.add_sender_favorite['sender_name']}
+    ...    ${Booking_S047.add_sender_favorite['sender_phone']}
+    ...    ${Booking_S047.add_sender_favorite['sender_address']}
+    ...    ${Booking_S047.add_sender_favorite['sender_postcode_full']}
     common.Verify Capture Screenshot    Booking_S047    Verify Sender Card After Add Favorite Sender
 
     Log    Step No.8 กด Tap "ผู้รับพัสดุ"
@@ -143,13 +143,13 @@ Booking_S047
     ...    ${Booking_S047.receiver_favorite_card['receiver_postcode_full']}
     # Expected
     b2c_favorite_page.Verify Label Receiver
-    ...    ${favorite.data_reciever_favorite['text_data_sender']}
-    ...    ${favorite.data_reciever_favorite['text_favorite_name']}
-    ...    ${favorite.data_reciever_favorite['text_phone']}
-    ...    ${favorite.data_reciever_favorite['text_name']}
-    ...    ${favorite.data_reciever_favorite['text_location_pickup']}
-    ...    ${favorite.data_reciever_favorite['text_address']}
-    ...    ${favorite.data_reciever_favorite['text_postcode']}
+    ...    ${favorite.label_reciever_favorite['text_data_sender']}
+    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
+    ...    ${favorite.label_reciever_favorite['text_phone']}
+    ...    ${favorite.label_reciever_favorite['text_name']}
+    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
+    ...    ${favorite.label_reciever_favorite['text_address']}
+    ...    ${favorite.label_reciever_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Recevier In Read-Only Mode
     ...    ${Booking_S047.receiver_favorite_card['favorite_name']}
     ...    ${Booking_S047.receiver_favorite_card['receiver_name']}
@@ -163,13 +163,13 @@ Booking_S047
     b2c_favorite_page.Click Edit Button
     # Expected
     b2c_favorite_page.Verify Label Receiver
-    ...    ${favorite.data_reciever_favorite['text_data_sender']}
-    ...    ${favorite.data_reciever_favorite['text_favorite_name']}
-    ...    ${favorite.data_reciever_favorite['text_phone']}
-    ...    ${favorite.data_reciever_favorite['text_name']}
-    ...    ${favorite.data_reciever_favorite['text_location_pickup']}
-    ...    ${favorite.data_reciever_favorite['text_address']}
-    ...    ${favorite.data_reciever_favorite['text_postcode']}
+    ...    ${favorite.label_reciever_favorite['text_data_sender']}
+    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
+    ...    ${favorite.label_reciever_favorite['text_phone']}
+    ...    ${favorite.label_reciever_favorite['text_name']}
+    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
+    ...    ${favorite.label_reciever_favorite['text_address']}
+    ...    ${favorite.label_reciever_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Receiver
     ...    ${Booking_S047.receiver_favorite_card['favorite_name']}
     ...    ${Booking_S047.receiver_favorite_card['receiver_name']}
@@ -203,13 +203,13 @@ Booking_S047
     b2c_favorite_page.Click Add Receiver Button
     # Expected
     b2c_favorite_page.Verify Label Receiver
-    ...    ${favorite.data_reciever_favorite['text_data_sender']}
-    ...    ${favorite.data_reciever_favorite['text_favorite_name']}
-    ...    ${favorite.data_reciever_favorite['text_phone']}
-    ...    ${favorite.data_reciever_favorite['text_name']}
-    ...    ${favorite.data_reciever_favorite['text_location_pickup']}
-    ...    ${favorite.data_reciever_favorite['text_address']}
-    ...    ${favorite.data_reciever_favorite['text_postcode']}
+    ...    ${favorite.label_reciever_favorite['text_data_sender']}
+    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
+    ...    ${favorite.label_reciever_favorite['text_phone']}
+    ...    ${favorite.label_reciever_favorite['text_name']}
+    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
+    ...    ${favorite.label_reciever_favorite['text_address']}
+    ...    ${favorite.label_reciever_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Receiver
     ...    ${EMPTY}
     ...    ${EMPTY}
@@ -246,9 +246,9 @@ Booking_S047
     b2c_favorite_page.Click Add Shipping Origin Area Button
     # Expected
     b2c_favorite_page.Verify Label Shipping Origin Area
-    ...    ${favorite.data_shipping_origin_area['text_data_shipping_origin_area']}
-    ...    ${favorite.data_shipping_origin_area['text_favorite_name']}
-    ...    ${favorite.data_shipping_origin_area['text_set_to_default']}
+    ...    ${favorite.label_shipping_origin_area['text_label_shipping_origin_area']}
+    ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
+    ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
     b2c_favorite_page.Verify Data Shipping Origin Area
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S047    Verify Add Shipping Origin Area Popup

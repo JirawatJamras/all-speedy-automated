@@ -16,8 +16,8 @@ Verify Popup Parcel Pickup Schedule
     ${txt_parcel_type}=  Replace String   ${b2c_txt_parcel_type_in_add_popup}   {value}   ${parcel_type}
     ${txt_parcel_pickup_date}=  Replace String    ${b2c_txt_parcel_pickup_date_in_add_popup}    {value}   ${parcel_pickup_date}
     ${txt_parcel_pickup_time}=  Replace String    ${b2c_txt_parcel_pickup_time_in_add_popup}    {value}   ${parcel_pickup_time}
-    ${btn_save}=  Replace String    ${b2c_btn_save_in_add_popup}    {value}   ${save_button}
-    ${btn_cancel}=  Replace String    ${b2c_btn_cancel_in_add_popup}    {value}   ${cancel_button}
+    ${btn_save}=  Replace String    ${btn_save_in_add_popup}    {value}   ${save_button}
+    ${btn_cancel}=  Replace String    ${btn_cancel_in_add_popup}    {value}   ${cancel_button}
 
     Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_car_round_name}    timeout=${DEFAULT_TIMEOUT}
@@ -65,13 +65,13 @@ Verify Car Round Name Dropdown Was Disabled
     Element Should Be Disabled    ${b2c_cbo_car_round_name_call_car_pickup_page}
 
 Click Parcel Type Dropdown
-    ${btn_basic_parcel_type_car_pickup_page}=    Replace String    ${btn_basic_parcel_type_car_pickup_page}    ${call_car_pick_up['text_parcel_type']}
+    ${btn_basic_parcel_type_car_pickup_page}=    Replace String    ${btn_basic_parcel_type_car_pickup_page}    {value}    ${call_car_pick_up['text_parcel_type']}
     common.Click When Ready      ${btn_basic_parcel_type_car_pickup_page}
 
 Select Parcel Type Dropdown
     [Arguments]    ${parcel_type}
-    ${cbo_parcel_type}=    Replace String    ${cbo_parcel_type}    {value}    ${parcel_type}
-    common.Click When Ready    ${cbo_parcel_type}
+    ${b2c_cbo_parcel_type}=    Replace String    ${b2c_cbo_parcel_type}    {value}    ${parcel_type}
+    common.Click When Ready    ${b2c_cbo_parcel_type}
 
 Verify Unselected Parcel Type In Dropdown
     [Arguments]    ${value}
@@ -94,8 +94,10 @@ Click Pickup Parcel Date Button
     common.Click When Ready    ${cbo_pickup_parcel_date_in_add_popup}
 
 Select Date Pickup Parcel Future Date
+    ${tbl_pickup_parcel_calendar}=    Replace String    ${tbl_pickup_parcel_calendar}    {value}    ${newDate}
     FOR    ${i}    IN RANGE    0    5
         ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${tbl_pickup_parcel_calendar}    timeout=2s
+        Log    ${tbl_pickup_parcel_calendar}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         common.Click When Ready    ${btn_next_months_calendar_in_add_popup}
     END
