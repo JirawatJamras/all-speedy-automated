@@ -30,12 +30,24 @@ Register_S15
     pms_detail_full_register_page.Click Next Page Button
     #Expected 4
     pms_detail_full_register_page.Verify Supporting Document Page Legal Entity
-
+    common.Verify Capture Screenshot    Register_S015    Verify Supporting Document Page Legal Entity
+    
     Log    Step No.12 ระบุความเห็นการแก้ไข #4 : แก้ไขเอกสารหน้าบัญชีธนาคาร
     pms_detail_full_register_page.Input Remark 4    ${Register_S015['remark_4']}
-    
+
     Log    Step No.13 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
+    #Expected
+    #Inprogress
+    # pms_detail_full_register_page.Verify Officer Section Page
+    common.Verify Capture Screenshot    Register_S015    Verify Officer Section Page
+    
+
+    Log    Step No.14 ระบุข้อมูลรายละเอียดเพิ่มเติม
+
+
+    Log    Step No.15 กดปุ่ม "ส่งกลับแก้ไข"
+    #pms_detail_full_register_page.Click Return Button
 
 Register_S015
     common.Open URL    ${PMS_UAT_URL}

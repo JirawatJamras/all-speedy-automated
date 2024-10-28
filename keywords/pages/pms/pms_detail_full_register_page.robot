@@ -1,6 +1,6 @@
 *** Keywords ***
 Click Next Page Button
-    ${btn_next_page}=    Replace String    ${pms_btn_next_page}    {value}    ${rm['text_next_page']}
+    ${btn_next_page}=    Replace String    ${pms_btn_full_regis}    {value}    ${rm['text_next_page']}
     Scroll Element Into View    ${btn_next_page}
     common.Click When Ready    ${btn_next_page}
     
@@ -559,7 +559,15 @@ Verify Supporting Document Page Legal Entity
     Page Should Contain Element    ${txt_other_file}
 
 
-Input Remark
-    [Arguments]    ${page_no}    ${value}
-    ${txtbox_remark}=    Replace String    ${pms_txtbox_remark}    {value}    ${page_no}
-    common.Input When Ready    ${txtbox_remark}    ${value}
+Input Remark 4
+    [Arguments]    ${value}
+    common.Input When Ready    ${pms_txtbox_remark4_full_regis}    ${value}
+
+
+Click Return Button
+    ${btn_return}=    Replace String    ${pms_btn_full_regis}    {value}    ${rm.full_regis['text_return']}
+    Scroll Element Into View    ${btn_return}
+    common.Click When Ready    ${btn_return} 
+
+# Verify Officer Section Page
+#     [Arguments]
