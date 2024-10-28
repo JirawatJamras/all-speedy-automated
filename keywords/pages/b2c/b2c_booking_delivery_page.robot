@@ -342,7 +342,7 @@ Click Favorites Default List
     common.Click When Ready    ${choose_default_favorites_btn}
 
 Click Accept Favorites List
-    common.Click When Ready    ${accept_favorites_btn}
+    common.Click When Ready    ${favorites_accetp_btn}
 
 Click Cancel Favorites List
     common.Click When Ready    ${cancel_favorites_btn}
