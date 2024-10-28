@@ -415,6 +415,14 @@ rm:
       text_bank_account_name: ชื่อบัญชี *
       text_bank_account_no: เลขที่บัญชี *
       text_bank_account_type: ประเภทบัญชี *
+    text_other_file: เอกสารอื่นๆ 
+    text_return: ส่งกลับ
+    text_header_return_popup: ส่งกลับแก้ไข
+    text_remark_page_1: 'หมายเหตุการณ์แก้ไข #1'
+    text_remark_page_2: 'หมายเหตุการณ์แก้ไข #2'
+    text_remark_page_3: 'หมายเหตุการณ์แก้ไข #3'
+    text_remark_page_4: 'หมายเหตุการณ์แก้ไข #4'
+    text_confirm_popup: ยืนยัน
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
     text_confirm: ยืนยัน

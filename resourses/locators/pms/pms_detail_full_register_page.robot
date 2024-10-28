@@ -51,6 +51,11 @@ ${pms_txt_bank_account_name_full_regis}    //label[@for='bankAccountName']
 ${pms_txt_bank_account_no_full_regis}    //label[@for='bankNo']
 ${pms_txt_bank_account_type_full_regis}    //label[@for='bankAccountType']
 ${pms_txt_list_contact_info_full_regis}    //tbody[@class='ant-table-tbody']
+${pms_txt_header_popup_full_regis}    //span[text()='{value}']
+${pms_txt_remark1_return_popup}    //label[@for='remarkModal']
+${pms_txt_remark2_return_popup}    //label[@for='remarkModal2']
+${pms_txt_remark3_return_popup}    //label[@for='remarkModal3']
+${pms_txt_remark4_return_popup}    //label[@for='remarkModal4']
 
 ${pms_txtbox_customer_type_full_regis}    //input[@id='customerType']
 ${pms_txtbox_company_title_full_regis}    //input[@id='companyTitleName']/../..//span[text()]
@@ -123,6 +128,10 @@ ${pms_txtbox_bank_branch_full_regis}    //input[@id='bankBranch']
 ${pms_txtbox_bank_account_name_full_regis}    //input[@id='bankAccountName']
 ${pms_txtbox_bank_account_no_full_regis}    //input[@id='bankNo']
 ${pms_txtbox_bank_account_type_full_regis}    //input[@id='bankAccountType']/../..
+${pms_txtbox_remark1_return_popup}    ////textarea[@id='remarkModal']
+${pms_txtbox_remark2_return_popup}    ////textarea[@id='remarkModal2']
+${pms_txtbox_remark3_return_popup}    ////textarea[@id='remarkModal3']
+${pms_txtbox_remark4_return_popup}    ////textarea[@id='remarkModal4']
 
 ${pms_btn_full_regis}    //b[text()='{value}']/..
 ${pms_btn_select_dry_parcel}    //button[@id='parcelType_parcelDry_isActive']
@@ -139,6 +148,7 @@ ${pms_btn_cancel_set_pickup_popup}    //b[text()='ยกเลิก']/..
 ${pms_btn_first_mile_chill_full_regis}    //button[@id='parcelType_parcelChill_firstMile']
 ${pms_btn_bounce_fee_chill_full_regis}    //button[@id='parcelType_parcelChill_bounceFee']
 ${pms_btn_plus_rebate_chill_full_regis}    //div[@id='parcelType_parcelChill_rebateItem']//button
+
    
 
 ${pms_checkbox_dry_cod}    //input[@id='parcelType_parcelDry_isCod']

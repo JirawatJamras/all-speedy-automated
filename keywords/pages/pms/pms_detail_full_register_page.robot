@@ -579,8 +579,29 @@ Input Remark 4
 
 Click Return Button
     ${btn_return}=    Replace String    ${pms_btn_full_regis}    {value}    ${rm.full_regis['text_return']}
-    Scroll Element Into View    ${btn_return}
     common.Click When Ready    ${btn_return} 
+
+
+Verify Return Popup
+    [Arguments]    ${remark_1}=${EMPTY}    ${remark_2}=${EMPTY}    ${remark_3}=${EMPTY}    ${remark_4}=${EMPTY}
+    ${header_return_popup}=    Replace String    ${pms_txt_header_popup_full_regis}      {value}    ${rm.full_regis['text_header_return_popup']}
+    Element Should Be Visible    ${header_return_popup}
+
+    ${label_remark_1}=    Get Text    ${pms_txt_remark1_return_popup} 
+    ${txt_remark_1}=    Get Text    ${pms_txtbox_remark1_return_popup}
+    ${label_remark_2}=    Get Text    ${pms_txt_remark2_return_popup} 
+    ${txt_remark_2}=    Get Text    ${pms_txtbox_remark2_return_popup}
+    ${label_remark_3}=    Get Text    ${pms_txt_remark3_return_popup} 
+    ${txt_remark_3}=    Get Text    ${pms_txtbox_remark3_return_popup}
+    ${label_remark_4}=    Get Text    ${pms_txt_remark4_return_popup} 
+    ${txt_remark_4}=    Get Text    ${pms_txtbox_remark4_return_popup}
+ 
+    Should Be Equal As Strings    ${label_remark_1} ${txt_remark_1}    ${rm.full_regis['text_return']}
+    #Inprogress
+
+Click Confirm Button
+    ${btn_confirm}=    Replace String    ${pms_btn_full_regis}     {value}    ${rm.full_regis['text_confirm_popup']}
+    common.Click When Ready  ${btn_confirm}
 
 # Verify Officer Section Page
 #     [Arguments]

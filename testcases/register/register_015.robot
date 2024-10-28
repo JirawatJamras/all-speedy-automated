@@ -44,10 +44,18 @@ Register_S15
     
 
     Log    Step No.14 ระบุข้อมูลรายละเอียดเพิ่มเติม
-
+    
 
     Log    Step No.15 กดปุ่ม "ส่งกลับแก้ไข"
-    #pms_detail_full_register_page.Click Return Button
+    pms_detail_full_register_page.Click Return Button
+    pms_detail_full_register_page.Verify Return Popup    remark_4=${Register_S015['remark_4']}
+    common.Verify Capture Screenshot    Register_S015    Verify Return Popup
+
+
+    Log    Step No.16 กดปุ่ม "ยืนยัน" ที่ Popup ส่งกลับแก้ไข
+    #pms_detail_full_register_page.Click Confirm Button
+    #Expected
+
 
 Register_S015
     common.Open URL    ${PMS_UAT_URL}
