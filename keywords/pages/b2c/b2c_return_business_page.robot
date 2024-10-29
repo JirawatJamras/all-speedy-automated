@@ -20,6 +20,7 @@ Click Accept Terms of Service
     common.Click When Ready    ${btn_accept_terms_service}
 
 Click Accept Condition Button
+    Sleep    3s
     ${btn_accept_condition}=    Replace String    ${btn_accept_condition}    {value}    ${return_business['text_accept_condition']}
     common.Click Xpath By JavaScript    ${btn_accept_condition}
 
@@ -108,4 +109,27 @@ Select Send To 7-ELEVEN Store Tab
 
 Click Save Button
     ${btn_save}=    Replace String    ${btn_save_return_business}    {value}    ${return_business['button_save']}
-    common.Click When Ready    ${btn_save}    
+    common.Click When Ready    ${btn_save}
+
+Verify New Booking
+    [Arguments]    ${linkname}    ${name}    ${phone}    ${address}    ${postcode}
+    Reload Page
+    ${selected_card}=     Replace String    ${crd_booking_return_business}    {link_name}    ${linkname}
+    ${selected_card}=     Replace String    ${selected_card}    {name}    ${name}
+    ${selected_card}=     Replace String    ${selected_card}    {phone}    ${phone}
+    ${selected_card}=     Replace String    ${selected_card}    {address}    ${address} ${postcode}
+    #${selected_card}=     Replace String    ${crd_booking_return_business}    {postcode}    ${postcode}
+    Wait Until Element Is Visible    ${selected_card}    timeout=${DEFAULT_TIMEOUT}
+    Page Should Contain Element    ${selected_card}
+
+Click Booking Card
+    [Arguments]    ${linkname}    ${name}    ${phone}    ${address}    ${postcode}
+
+    ${selected_card}=     Replace String    ${crd_booking_return_business}    {link_name}    ${linkname}
+    ${selected_card}=     Replace String    ${selected_card}    {name}    ${name}
+    ${selected_card}=     Replace String    ${selected_card}    {phone}    ${phone}
+    ${selected_card}=     Replace String    ${selected_card}    {address}    ${address} ${postcode}
+
+    common.Click When Ready  ${selected_card}
+
+

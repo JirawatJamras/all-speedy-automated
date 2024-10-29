@@ -40,6 +40,7 @@ ${b2c_txt_value_import_file_name_}    //th[text()='{value}']/../../..//tr[1]//td
 ${b2c_txt_value_import_success}    //th[text()='{value}']/../../..//tr[1]//td[3]//div[contains(@class,'text-white')]
 ${b2c_txt_value_import_fail}   //th[text()='{value}']/../../..//tr[1]//td[3]//div[contains(@class,'text-red-500')]
 ${b2c_txt_value_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td[4]
+${b2c_txt_heading_booking_list}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 
@@ -79,12 +80,14 @@ ${b2c_btn_cleal_parcel_remark_postcode}    //textarea[@id='create_parcel_form_re
 ${b2c_btn_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td[4]//a
 ${b2c_btn_increase_cod_value}    //input[@id='create_parcel_form_codValue']/../..//span[@role='button' and @aria-label='Increase Value']
 ${b2c_btn_increase_insure_value}    //input[@id='create_parcel_form_insureAmount']/../..//span[@role='button' and @aria-label='Increase Value']
+${b2c_btn_confirm_phone_number}    //span[@aria-label='check']/../../..
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
 ${b2c_txtbox_search_store}    //span[text()='{value}']/..//input
 ${b2c_txtbox_sender_postcode_edit}    //input[@id='create_parcel_form_sender_address_full']/..
 ${b2c_txtbox_receiver_postcode_edit}    //input[@id='create_parcel_form_receiver_address_full']/..
+${b2c_txtbox_trigger_phone_number}    //input[@id='trigger_phoneNumber']
 
 ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
 ${b2c_tab_pickup_Schedule}    //div[@role='tab']//div[text()='{value}']
