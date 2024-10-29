@@ -21,7 +21,7 @@ python -m robot -v ENV:uat -i UAT  ../testcases/c2c/allspeedy_c2c_001.robot
 -- Run for Windows --
 robot -v ENV:uat -i UAT  ../testcases/dps/
 robot -v ENV:uat -i UAT  ../testcases/c2c/
-robot -v ENV:uat -i Few  ../testcases/booking
+robot -v ENV:uat -i Review_Pass  ../testcases/booking
 
 
 # Pabot
