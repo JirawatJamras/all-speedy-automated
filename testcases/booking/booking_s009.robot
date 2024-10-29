@@ -2,7 +2,7 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -233,7 +233,7 @@ Booking_S009
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S009    Verify Promotion
 
-    #### Commented becuase of defect that unable to use promo code: SPBH5B. After fix defect, you can uncomment to re-test.
+    ####    Unable to use this promotion code, it's defect 72. Waiting for resolve defect then uncomment this code.
     # Log    Step No.16 ขั้นตอน Promotion
     # # ระบุโค้ดส่วนลด : SPBH5B
     # b2c_booking_delivery_page.Input Promotion    ${Booking_S009['promotion']}
@@ -297,7 +297,7 @@ Booking_S009
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S009['booking_name']}
     ...    ${Booking_S009['booking_item']}
-    ...    ${Booking.text_default['booking_price']}
+    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S009    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.19 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"

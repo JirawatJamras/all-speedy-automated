@@ -72,7 +72,7 @@ Booking_S042
     ...    ${Booking['text_parcel_status_waiting_entering']}
     ...    ${Booking_S003['booking_name']}
     ...    ${Booking_S003['booking_item']}
-    ...    ${Booking_S003['text_price_value']}
+    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S042    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"

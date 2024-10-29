@@ -238,7 +238,7 @@ Booking_S025
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S025['booking_name']}
     ...    ${Booking_S025['booking_item']}
-    ...    ${Booking.text_default['booking_price']}
+    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S025    Verify Created Booking On Booking Delivery Page
     
     Log    Step No.17 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"

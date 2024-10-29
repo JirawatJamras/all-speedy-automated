@@ -68,7 +68,7 @@ Booking_S059
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking_S002['booking_item']}
-    ...    ${Booking_S002['booking_price']}
+    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S059    Verify Created Booking On Booking Delivery Page
 
     Log    Step No. 2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"

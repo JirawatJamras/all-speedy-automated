@@ -520,7 +520,7 @@ Booking_S017:
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'    # Expected result is'01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
   parcel_size: XXL
-  price_value: 20
+  price_value: 260
   buy_insurance:  '2,500'
   buy_insurance_verify: '2,500.00'
   parcel_cod:  '5000'
@@ -534,11 +534,16 @@ Booking_S017:
   store_code:  '15888'
   booking_item: 1 รายการ
   parcel_package_type: กล่อง
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  '150.00'
-  total_price_value2:  '170.00'
+  total_price_value1:  'NaN'
+  total_price_value2:  '511.00'
 
 Booking_S018:
   parcel_type: พัสดุควบคุมอุณหภูมิ

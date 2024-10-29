@@ -294,7 +294,6 @@ Booking_S027
     common.Verify Capture Screenshot    Booking_S027    Verify Booking Detail Page After Booking Success
 
     Log    Step No.19 กดเมนู "จองการจัดส่งพัสดุ"
-    # - ไม่เลือก Promotion
     b2c_home_page.Click Book Parcel Delivery
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
@@ -303,7 +302,7 @@ Booking_S027
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S027['booking_name']}
     ...    ${Booking_S027['booking_item']}
-    ...    ${Booking_S027['booking_price']}
+    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S027    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.20 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"

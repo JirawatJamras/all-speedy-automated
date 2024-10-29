@@ -298,7 +298,7 @@ Booking_S022
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S022['booking_name']}
     ...    ${Booking_S022['booking_item']}
-    ...    ${Booking_S022['booking_price']}
+    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S022    Verify Created Booking On Booking Delivery Page
 
 

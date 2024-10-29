@@ -179,7 +179,7 @@ Booking:
     cod_fee_value: '0.00'
     total_price_amount: 0
     total_price_value: '0.00'
-    booking_price: 0.00 บาท
+    booking_price: NaN บาท
   label:
     non_cod: Non COD
     parcel_not_buy_insure: ไม่มีการซื้อประกัน
