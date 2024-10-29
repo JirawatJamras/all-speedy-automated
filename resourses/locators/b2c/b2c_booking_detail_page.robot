@@ -75,7 +75,10 @@ ${b2c_btn_cleal_receiver_phone}    //input[@id='create_parcel_form_receiver_tel'
 ${b2c_btn_cleal_receiver_name}    //input[@id='create_parcel_form_receiver_name']/..//span[@role='button']
 ${b2c_btn_cleal_receiver_address}    //textarea[@id='create_parcel_form_receiver_address_info']/..//span[@role='button']
 ${b2c_btn_cleal_receiver_postcode}    //input[@id='create_parcel_form_receiver_address_full']/../../..//span[@class='ant-select-clear']
+${b2c_btn_cleal_parcel_remark_postcode}    //textarea[@id='create_parcel_form_remark']/..//span[@role='button']
 ${b2c_btn_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td[4]//a
+${b2c_btn_increase_cod_value}    //input[@id='create_parcel_form_codValue']/../..//span[@role='button' and @aria-label='Increase Value']
+${b2c_btn_increase_insure_value}    //input[@id='create_parcel_form_insureAmount']/../..//span[@role='button' and @aria-label='Increase Value']
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 

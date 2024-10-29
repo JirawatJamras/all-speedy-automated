@@ -61,6 +61,7 @@ Booking_S003:
   price_value: '80'
   total_price_amount:  '1'
   total_price_value:  '75.00'
+  text_price_value: 75.00 บาท  #80.00 บาท
 
 Booking_S004:
   parcel_type:  พัสดุทั่วไป
@@ -865,7 +866,8 @@ Booking_S031:
     condition: '1.ลูกค้าจะต้องเป็นสมาชิก All member 2.ลูกค้าจะต้องส่งพัสดุขนาด ทุกขนาด เฉพาะปลายทางบ้าน'  # Expected result : สำหรับลูกค้าที่เป็นกล่อง
     period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
   discount_amount: '1'
-  discount_value: '5.00'
+  discount_value1: NaN
+  discount_value2: '5.00'
   total_price_amount: '1'
   total_price_value1: 'NaN'
   total_price_value2: '75.00'
@@ -1065,7 +1067,6 @@ Booking_S037:
   parcel_package_type: กล่อง
 
 Booking_S042:
-  price_value: 75.00 บาท  #80.00 บาท
   sender_phone: '0656666666'
   sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก
   sender_address: 22/589
@@ -1076,6 +1077,21 @@ Booking_S042:
   receiver_address: 89 หมู่ 16
   receiver_postcode_5_digits: '86210'
   receiver_postcode_full: 'ดอนยาง ปะทิว ชุมพร 86210'
+  parcel_size:  L
+  parcel_package_type:  กล่อง
+  buy_insurance: 2,500
+  verify_buy_insurance: '2,500.00'
+  parcel_detail_remark:  ระวังพัสดุเสียหาย
+  price_value: '120'
+  discount_amount: '1'
+  discount_value: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount: '1'
+  total_price_value: '221.00'
+  not_use_code:
+    total_price_value: '226.00'
+  text_price_value: 75.00 บาท  #80.00 บาท
 
 Booking_S044:
   tracking_number: 7110112189289
@@ -1083,10 +1099,6 @@ Booking_S044:
 Booking_S047:
   sender_favorite_card: 
     favorite_name: รายการโปรดผู้ส่ง
-    sender_name: สมชาย สายเสมอ
-    sender_phone: '0890000001'
-    sender_address: '48/698'
-    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   edit_sender:
     sender_favorite_name: บ้านต่างจังหวัด
   add_sender_favorite:
@@ -1098,11 +1110,7 @@ Booking_S047:
     sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   receiver_favorite_card: 
     favorite_name: รายการโปรดผู้รับ
-    receiver_name: สมใจ ดีดีดี
-    receiver_phone: '0890000002'
     receiver_location_pickup: ส่งที่บ้าน
-    receiver_address: '47 หมู่ 4'
-    receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   edit_receiver:
     receiver_location_pickup: 'ส่งร้าน 7-11'
     receiver_store_code_5_digits: '15888'
@@ -1110,13 +1118,14 @@ Booking_S047:
     receiver_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
   add_receiver_favorite:
     favorite_name: บ้าน
-    sender_name: สมชาย สายเสมอ
-    sender_phone: '0890000001'
-    sender_address: '48/698'
-    sender_postcode_5_digits: '10230'
-    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+    receiver_name: สมชาย สายเสมอ
+    receiver_phone: '0890000001'
+    receiver_location_pickup: ส่งที่บ้าน
+    receiver_address: '48/698'
+    receiver_postcode_5_digits: '10230'
+    receiver_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   add_shipping_origin_area:
-    favorite_name: ร้าน 7-11 หน้าบ้าน
+    favorite_name: 'ร้าน 7-11 หน้าบ้าน'
     shipping_origin_store_code_5_digits: '15888'
     shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
     shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
@@ -1131,7 +1140,7 @@ Booking_S48:
     input: 'ช่วงเช้า 09:00 - 12:00 น.'
     expected: '09:00 - 12:00'
 
-Booking_S50:
+Booking_S050:
   old_return_business:
     link_name: 'Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก'
     phone: '0871000000'
@@ -1139,4 +1148,5 @@ Booking_S50:
     shipping_payer: บริษัทชำระค่าจัดส่ง
     location_pickup: ส่งที่บ้าน
     address: '200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์'
+    postcode_5_digits: '11120'
     postcode: 'ปากเกร็ด ปากเกร็ด นนทบุรี 11120'

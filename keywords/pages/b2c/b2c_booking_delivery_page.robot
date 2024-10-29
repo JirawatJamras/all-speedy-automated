@@ -23,11 +23,11 @@ Click Button To Add
     common.Click When Ready    ${btn_add}
 
 Verify Term & Condition 
-    [Arguments]    ${txt_term_and_condition}    ${text_accept}
+    [Arguments]    ${txt_term_and_condition}    ${header_term_and_condition}
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
     Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
-    ${text}=    Get Text    ${txt_term_and_condition}
-    Should Be Equal    ${text}    ${text_accept}
+    ${actual_term_and_condition}=    Get Text    ${txt_term_and_condition}
+    Should Be Equal    ${actual_term_and_condition}    ${actual_term_and_condition}
 
 Click Accept Terms of Service
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
@@ -667,6 +667,18 @@ Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     Should Be Equal    ${actual_insure_amount}    ${insure_amount}
     Should Be Equal    ${actual_remark}    ${remark}
 
+Verify Data Parcel
+    [Arguments]    ${insure}    ${cod}    ${remark}
+    ${insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+
+    ${actual_insure_amount}=    Get Value    ${insure_amount}
+    ${actual_cod}=    Get Value    ${txtbox_cod}
+    ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
+
+    Should Be Equal    ${actual_insure_amount}    ${insure}
+    Should Be Equal    ${actual_cod}    ${cod}
+    Should Be Equal    ${actual_remark}    ${remark}
+
 Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
     [Arguments]    ${detail_S0}    ${detail_S1}    ${detail_S2}    ${detail_A1}    ${detail_A2}    ${insure_amount}    ${cod}    ${remark}
     ${btn_parcel_select_S0}=    Replace String    ${btn_parcel_select_S0}    {value}    ${Booking.chilled_parcel['parcel_S0']}
@@ -716,6 +728,16 @@ Click Use Coupon
     ${btn_use_coupon}=    Replace String    ${btn_use_coupon}    {value}    ${Booking['text_use_coupon']}
     common.Click When Ready    ${btn_use_coupon}
 
+Click Take Out Coupon
+    ${take_out_coupon}=    Replace String    ${btn_take_out_coupon}    {value}    ${Booking['text_take_out']}
+    common.Click When Ready    ${take_out_coupon}
+
+Verify Not Select Coupon And Code
+    ${selected_coupon}=    Replace String    ${txt_selected_code_detail}    {value}    ${Booking['text_selected_coupon_and_code']}
+    ${actual_text}=    Get Text    ${selected_coupon}
+    ${actual_selected_code_detail}=  Replace String   ${actual_text}   \n   ${SPACE}
+    Should Be Equal As Strings    ${actual_selected_code_detail}    ${Booking['text_selected_coupon_and_code']} ${Booking['text_no_data']}
+
 Input COD
     [Arguments]    ${value}
     Input When Ready    ${txtbox_cod}    ${value}
@@ -727,7 +749,8 @@ Input Insurance
 
 Verify Selected Coupon And Code
     [Arguments]    ${discount}    ${promotion_name}    ${parcel_size}    ${expired_date}    ${condition}    ${period}
-    ${actual_selected_code_detail}    Get Text    ${txt_selected_code_detail}
-    ${actual_selected_code_detail}=  Replace String   ${actual_selected_code_detail}   \n   ${SPACE}
+    ${selected_coupon}=    Replace String    ${txt_selected_code_detail}    {value}    ${Booking['text_selected_coupon_and_code']}
+    ${selected_coupon}    Get Text    ${selected_coupon}
+    ${actual_selected_code_detail}=  Replace String   ${selected_coupon}   \n   ${SPACE}
     Should Be Equal As Strings    ${actual_selected_code_detail}
-    ...    คูปองและโค้ดส่วนลดที่เลือก ${discount} ${promotion_name} ${parcel_size} หมดอายุ ${expired_date} เงื่อนไขการใช้คูปอง - ${condition} ระยะเวลา ${period} นำออก
+    ...    ${Booking['text_selected_coupon_and_code']} ${discount} ${promotion_name} ${parcel_size} ${Booking['text_expire']} ${expired_date} ${Booking['text_condition']} - ${condition} ${Booking['text_period']} ${period} ${Booking['text_take_out']}
