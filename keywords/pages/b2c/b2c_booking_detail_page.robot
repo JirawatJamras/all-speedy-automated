@@ -598,6 +598,25 @@ Edit Postcode Receiver
     Mouse Over    ${b2c_txtbox_receiver_postcode_edit}
     common.Click When Ready    ${b2c_btn_cleal_receiver_postcode}
     common.Input When Ready    ${txtbox_postcode_receiver}    ${input_postcode_receiver}
+
+Verify Can Edit Data Parcel
+    ${insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    Mouse Over    ${txtbox_cod}
+    Wait Until Element Is Visible    ${b2c_btn_increase_cod_value}    timeout=${DEFAULT_TIMEOUT}
+    Mouse Over    ${insure_amount}
+    Wait Until Element Is Visible    ${b2c_btn_increase_insure_value}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_cleal_parcel_remark_postcode}    timeout=${DEFAULT_TIMEOUT}
+
+Edit Parcel Remark
+    [Arguments]    ${value}
+    common.Click When Ready    ${b2c_btn_cleal_parcel_remark_postcode}
+    Input When Ready    ${txtbox_parcel_remark}    ${value}
+
+Edit Insurance
+    [Arguments]    ${value}
+    ${txtbox_insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    Clear Element Text    ${txtbox_insure_amount}
+    Input When Ready    ${txtbox_insure_amount}    ${value}
     
 Verify Import Excel File Inspection Results
     [Arguments]    ${file_name}    ${import_success}    ${import_fail}
