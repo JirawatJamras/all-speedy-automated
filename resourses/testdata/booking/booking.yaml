@@ -862,7 +862,8 @@ Booking_S031:
     condition: '1.ลูกค้าจะต้องเป็นสมาชิก All member 2.ลูกค้าจะต้องส่งพัสดุขนาด ทุกขนาด เฉพาะปลายทางบ้าน'  # Expected result : สำหรับลูกค้าที่เป็นกล่อง
     period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
   discount_amount: '1'
-  discount_value: '5.00'
+  discount_value1: NaN
+  discount_value2: '5.00'
   total_price_amount: '1'
   total_price_value1: 'NaN'
   total_price_value2: '75.00'
@@ -1080,10 +1081,6 @@ Booking_S044:
 Booking_S047:
   sender_favorite_card: 
     favorite_name: รายการโปรดผู้ส่ง
-    sender_name: สมชาย สายเสมอ
-    sender_phone: '0890000001'
-    sender_address: '48/698'
-    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   edit_sender:
     sender_favorite_name: บ้านต่างจังหวัด
   add_sender_favorite:
@@ -1095,11 +1092,7 @@ Booking_S047:
     sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   receiver_favorite_card: 
     favorite_name: รายการโปรดผู้รับ
-    receiver_name: สมใจ ดีดีดี
-    receiver_phone: '0890000002'
     receiver_location_pickup: ส่งที่บ้าน
-    receiver_address: '47 หมู่ 4'
-    receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   edit_receiver:
     receiver_location_pickup: 'ส่งร้าน 7-11'
     receiver_store_code_5_digits: '15888'

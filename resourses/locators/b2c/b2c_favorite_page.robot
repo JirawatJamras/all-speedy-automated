@@ -18,7 +18,7 @@ ${cbo_shipping_origin_store}    //div[@title='{value}']
 ${card_sender_favorite_page}    (//strong[text()='{favorite_name}']/../../..//*[@stroke='currentColor']/../../../../..//span[text()='{name}']/../..//span[text()='{phone}']/../../../..//span[text()='{address} ']/../../../../..)[1]
 ${card_receiver_send_home_favorite_page}    (//div[@aria-hidden='false']//strong[text()='{favorite_name}']/../../..//*[@stroke='currentColor']/../../../../..//span[text()='{name}']/../..//span[text()='{phone}']/../../../..//span[text()='{address}']/../../../../..)[1]
 ${card_receiver_send_store_favorite_page}    (//div[@aria-hidden='false']//strong[text()='{favorite_name}']/../../..//*[@loading='lazy']/../../../../..//span[text()='{name}']/../..//span[text()='{phone}']/../../../..//span[text()='{address}']/../../../../..)[1]
-${card_skelton_favorite_page}    //ul[@class='ant-skeleton-paragraph']
+# ${card_skelton_favorite_page}    //ul[@class='ant-skeleton-paragraph']
 ${card_shipping_origin_favorite_page}    (//div[@aria-hidden='false']//strong[text()='{favorite_name}']/../../..//*[@loading='lazy']/../../../../..//span[text()='{address}']/../../../../..)[1]
 
 ${btn_edit_data_favorite_page}    //span[text()='{value}']/..

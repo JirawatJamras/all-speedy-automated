@@ -17,42 +17,24 @@ Booking_S042
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
-
-    # Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    
-    # Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
-
-    # Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
-
-    # Step No.4 กดปุ่ม "พัสดุทั่วไป"
     b2c_booking_delivery_page.Select Parcel Type    ${Booking_S003['parcel_type']}
-
-    # Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S003['sender_phone']}
     b2c_booking_delivery_page.Input Name Sender    ${Booking_S003['sender_name']}    
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S003['sender_address']}
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S003['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S003['sender_postcode_full']}
-
-    # Step No.6 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
-
-    # Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
     ${booking_time}    Get Booking Time
     ${booking_name}    Get Booking Name
     ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Select Draft Booking
-
-    # Step No.8 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
-
-    # Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S003['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S003['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
@@ -60,39 +42,19 @@ Booking_S042
     b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S003['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S003['receiver_postcode_full']}
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
-
-    # Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-
-    # Step No.11 ขั้นตอนรายละเอียดพัสดุ
-    # เลือกขนาดพัสดุ : ซอง A3
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S003['parcel_size']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S003['parcel_detail_remark']}
-
-    # Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
-
-    # Step No.13 ขั้นตอน Promotion
-    # ระบุโค้ดส่วนลด : SPBH5B
     b2c_booking_delivery_page.Input Promotion    ${Booking_S003['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
-
-    # Step No.14 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
-
-    # Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-
-    # Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
-    
-    # Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
-
-    # Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S003['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S003['store_code']}
     b2c_booking_detail_page.Click Select Store On Map

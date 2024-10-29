@@ -135,7 +135,7 @@ Click Save Edit Button
 
 Click Add Sender Button
     ${btn_add_sender_favorite_page}=    Replace String    ${btn_add_sender_favorite_page}    {value}    ${favorite['button_add']}
-    Scroll Element Into View    ${btn_add_sender_favorite_page}
+    common.Scroll Window To Vertical    0
     common.Click When Ready    ${btn_add_sender_favorite_page}
 
 Input Sender Phone Number
@@ -299,7 +299,7 @@ Verify Store Address Receiver
 
 Click Add Receiver Button
     ${btn_add_receiver_favorite_page}=    Replace String    ${btn_add_receiver_favorite_page}    {value}    ${favorite['button_add']}
-    Scroll Element Into View    ${btn_add_receiver_favorite_page}
+    common.Scroll Window To Vertical    0
     common.Click When Ready    ${btn_add_receiver_favorite_page}
 
 Input Receiver Favorite Name
@@ -338,7 +338,7 @@ Verify Shipping Origin Area Tab
 
 Click Add Shipping Origin Area Button
     ${btn_add_shipping_origin_area_favorite_page}=    Replace String    ${btn_add_shipping_origin_area_favorite_page}    {value}    ${favorite['button_add']}
-    Scroll Element Into View    ${btn_add_shipping_origin_area_favorite_page}
+    common.Scroll Window To Vertical    0
     common.Click When Ready    ${btn_add_shipping_origin_area_favorite_page}
 
 Verify Label Shipping Origin Area
