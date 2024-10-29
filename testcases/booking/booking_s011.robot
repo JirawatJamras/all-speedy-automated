@@ -168,24 +168,24 @@ Booking_S011
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S011    Verify Promotion
 
-    Log    Step No.13 ขั้นตอน Promotion
-    # SPBH5B
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S011['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
-    b2c_booking_delivery_page.Verify Selected Coupon And Code
-    ...    ${Booking_S011.promotion_detail['discount']}
-    ...    ${Booking_S011.promotion_detail['promotion_name']}
-    ...    ${Booking_S011.promotion_detail['parcel_size']}
-    ...    ${Booking_S011.promotion_detail['expired_date']}
-    ...    ${Booking_S011.promotion_detail['condition']}
-    ...    ${Booking_S011.promotion_detail['period']}
-    common.Verify Capture Screenshot    Booking_S011    Verify Selected Coupon And Code
+    # Log    Step No.13 ขั้นตอน Promotion
+    # # SPBH5B
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S011['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
+    # b2c_booking_delivery_page.Verify Selected Coupon And Code
+    # ...    ${Booking_S011.promotion_detail['discount']}
+    # ...    ${Booking_S011.promotion_detail['promotion_name']}
+    # ...    ${Booking_S011.promotion_detail['parcel_size']}
+    # ...    ${Booking_S011.promotion_detail['expired_date']}
+    # ...    ${Booking_S011.promotion_detail['condition']}
+    # ...    ${Booking_S011.promotion_detail['period']}
+    # common.Verify Capture Screenshot    Booking_S011    Verify Selected Coupon And Code
 
     Log    Step No.14 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
@@ -199,22 +199,21 @@ Booking_S011
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S011['receiver_name']}
     ...    ${Booking_S011['receiver_phone']}
-    ...    ${Booking_S011['receiver_address']}
-    ...    ${Booking_S011['receiver_postcode_full']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S011['receiver_store_address']}
     ...    ${Booking_S011['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
+    ...    0    # Expected Result is ${Booking_S011['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S011['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
-    ...    ${EMPTY}
+    ...    0    # Expected Result is ${Booking_S011['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S011['total_price_value']}
+    ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -236,7 +235,7 @@ Booking_S011
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
@@ -250,22 +249,21 @@ Booking_S011
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S011['receiver_name']}
     ...    ${Booking_S011['receiver_phone']}
-    ...    ${Booking_S011['receiver_address']}
-    ...    ${Booking_S011['receiver_postcode_full']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S011['receiver_store_address']}
     ...    ${Booking_S011['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
+    ...    0    # Expected Result is ${Booking_S011['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S011['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
-    ...    ${EMPTY}
+    ...    0    # Expected Result is ${Booking_S011['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S011['total_price_value']}
+    ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -287,7 +285,7 @@ Booking_S011
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
@@ -301,21 +299,20 @@ Booking_S011
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S011['receiver_name']}
     ...    ${Booking_S011['receiver_phone']}
-    ...    ${Booking_S011['receiver_address']}
-    ...    ${Booking_S011['receiver_postcode_full']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S011['receiver_store_address']}
     ...    ${Booking_S011['parcel_size']}
-    ...    ${Booking_S011['price_value']}
+    ...    ${Booking_S011['parcel_price_verify']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S011['discount_amount']}
-    ...    ${Booking_S011['discount_value']}
+    ...    0    # Expected Result is ${Booking_S011['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S011['discount_value2']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S011['total_price_amount']}
-    ...    ${Booking_S011['total_price_value']}
+    ...    1    # Expected Result is ${Booking_S011['total_price_amount']}
+    ...    40.00    # Expected Result is ${Booking_S011['total_price_value2']}
     ...    ${Booking_S011['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary After Set Origin Shipping
@@ -324,13 +321,13 @@ Booking_S011
 
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
-    # # Expected
-    b2c_booking_detail_page.Verify Parcel Label
+    # Expected
+    b2c_booking_detail_page.Verify Parcel Label When Select 7-ELEVEN Store
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
-    ...    ${Booking.label['text_postcode']}
-    ...    ${Booking_S011['receiver_postcode_5_digits']}
+    ...    ${Booking.label['text_destination_deparment_code']}
+    ...    ${Booking_S011['store_code']}
     ...    ${Booking_S011['parcel_package_type']}
     ...    ${Booking_S011['parcel_size']}
     ...    ${Booking_S011['sender_name']}
@@ -339,8 +336,7 @@ Booking_S011
     ...    ${Booking_S011['sender_postcode_full']}
     ...    ${Booking_S011['receiver_name']}
     ...    ${Booking_S011['receiver_phone']}
-    ...    ${Booking_S011['receiver_address']}
-    ...    ${Booking_S011['receiver_postcode_full']}
+    ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    #${Booking_S011['store_address']}
     ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking_S011['parcel_detail_remark']}

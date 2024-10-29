@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -84,8 +84,8 @@ Booking_S025
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S025['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S025['receiver_name']}
     b2c_booking_delivery_page.Select Send To 7-ELEVEN Store Tab
-    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S011['store_code']}
-    b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S011['store_address']}
+    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S025['store_code']}
+    b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S025['store_address']}
     b2c_booking_delivery_page.Click Store On Map
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     #Expected
@@ -143,7 +143,6 @@ Booking_S025
     ...    ${Booking['text_name_receiver']}
     ...    ${Booking['text_location_receiver']}
     ...    ${Booking['text_address_receiver']}
-    ...    ${Booking['text_postcode_receiver']}
     b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
     ...    ${Booking_S025['receiver_phone']}
     ...    ${Booking_S025['receiver_name']}

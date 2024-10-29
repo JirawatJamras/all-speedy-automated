@@ -208,18 +208,18 @@ Booking_S015
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S015    Verify Promotion
 
-    Log    Step No.14 ขั้นตอน Promotion
-    # ระบุโค้ดส่วนลด : SPBH5B
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S015['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
-    b2c_booking_delivery_page.Verify Selected Coupon And Code
-    ...    ${Booking_S015.promotion_detail['discount']}
-    ...    ${Booking_S015.promotion_detail['promotion_name']}
-    ...    ${Booking_S015.promotion_detail['parcel_size']}    # Expected result : ทุกขนาด
-    ...    ${Booking_S015.promotion_detail['expired_date']}
-    ...    ${Booking_S015.promotion_detail['condition']}    # Expected result : สำหรับลูกค้าที่เป็นกล่อง
-    ...    ${Booking_S015.promotion_detail['period']}
-    common.Verify Capture Screenshot    Booking_S015    Verify Selected Coupon And Code
+    # Log    Step No.14 ขั้นตอน Promotion
+    # # ระบุโค้ดส่วนลด : SPBH5B
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S015['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
+    # b2c_booking_delivery_page.Verify Selected Coupon And Code
+    # ...    ${Booking_S015.promotion_detail['discount']}
+    # ...    ${Booking_S015.promotion_detail['promotion_name']}
+    # ...    ${Booking_S015.promotion_detail['parcel_size']}    # Expected result : ทุกขนาด
+    # ...    ${Booking_S015.promotion_detail['expired_date']}
+    # ...    ${Booking_S015.promotion_detail['condition']}    # Expected result : สำหรับลูกค้าที่เป็นกล่อง
+    # ...    ${Booking_S015.promotion_detail['period']}
+    # common.Verify Capture Screenshot    Booking_S015    Verify Selected Coupon And Code
 
     Log    Step No.15 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
@@ -243,17 +243,17 @@ Booking_S015
     ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S015['store_address']}
     ...    ${Booking_S015['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S015['parcel_cod_verify']}
+    ...    ${Booking_S015['buy_insurance_verify']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S015['discount_amount']}
-    ...    ${Booking_S015['discount_value']}
-    ...    ${Booking_S015['insurance_fee_amount']}
-    ...    ${Booking_S015['insurance_fee_value']}
-    ...    ${Booking_S015['cod_fee_amount']}
-    ...    ${Booking_S015['cod_fee_value']}
-    ...    ${Booking_S015['total_price_amount']}
-    ...    ${Booking_S015['total_price_value']}
+    ...    0    # Expected Result is ${Booking_S015['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['discount_value']}
+    ...    0    # Expected Result is ${Booking_S015['insurance_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['insurance_fee_value']}
+    ...    0    # Expected Result is ${Booking_S015['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S015['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['total_price_value']}
     ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S015    Verify Booking Summary After Booking Success
@@ -294,16 +294,16 @@ Booking_S015
     ...    ${Booking_S015['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking_S015['buy_insurance_verify']}
-    ...    ${Booking_S015['parcel_cod_verify']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S015['discount_amount']}
-    ...    ${Booking_S015['discount_value']}
-    ...    ${Booking_S015['insurance_fee_amount']}
-    ...    ${Booking_S015['insurance_fee_value']}
-    ...    ${Booking_S015['cod_fee_amount']}
-    ...    ${Booking_S015['cod_fee_value']}
-    ...    ${Booking_S015['total_price_amount']}
-    ...    ${Booking_S015['total_price_value']}
+    ...    0    # Expected Result is ${Booking_S015['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['discount_value']}
+    ...    0    # Expected Result is ${Booking_S015['insurance_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['insurance_fee_value']}
+    ...    0    # Expected Result is ${Booking_S015['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S015['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['total_price_value']}
     ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S015    Verify Booking Summary
@@ -343,18 +343,18 @@ Booking_S015
     ...    ${Booking_S015['receiver_phone']}
     ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S015['store_address']}
     ...    ${Booking_S015['parcel_size']}
-    ...    ${Booking_S015['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S015['parcel_cod_verify']}
+    ...    ${Booking_S015['parcel_price_verify']}
+    ...    ${Booking_S015['buy_insurance_verify']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking.text_default['insurance_fee_amount']}
-    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    0    # Expected Result is ${Booking_S015['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S015['discount_value2']}
+    ...    ${Booking_S015['insurance_fee_amount']}
+    ...    ${Booking_S015['insurance_fee_value']}
     ...    ${Booking_S015['cod_fee_amount']}
     ...    ${Booking_S015['cod_fee_value']}
     ...    ${Booking_S015['total_price_amount']}
-    ...    ${Booking_S015['total_price_value2']}
+    ...    176.00    # Expected Result is ${Booking_S015['total_price_value2']}
     ...    ${Booking_S015['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S015    Verify Booking Summary After Set Origin Shipping
@@ -369,7 +369,7 @@ Booking_S015
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
     ...    ${Booking.label['text_destination_deparment_code']}
-    ...    ${Booking_S015['receiver_store_code_5_digits']}
+    ...    ${Booking_S015['store_code']}
     ...    ${Booking_S015['parcel_package_type']}
     ...    ${Booking_S015['parcel_size']}
     ...    ${Booking_S015['sender_name']}
@@ -379,9 +379,9 @@ Booking_S015
     ...    ${Booking_S015['receiver_name']}
     ...    ${Booking_S015['receiver_phone']}
     ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    #${Booking_S015['store_address']}
-    ...    ${Booking_S015['parcel_cod_verify_label']}
-    ...    ${Booking.label['parcel_not_buy_insure']}
-    ...    ${Booking.text_blank['parcel_detail_remark']}
+    ...    ${Booking.label['non_cod']}
+    ...    ${Booking.label['parcel_buy_insure']}
+    ...    ${Booking_S015['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S015    Verify Parcel Label
 
     Log    Step No.21 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"

@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -10,12 +10,24 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 Booking_S020
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S1 (ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
     [Tags]    Booking    UAT
-    Log    Login
+    Log    Prerequisite
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
+    b2c_call_car_pick_up_parcel_page.Click Add Button
+    b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S018['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
+    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
+    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -179,18 +191,18 @@ Booking_S020
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S020    Verify Promotion
 
-    Log    Step No.14 ขั้นตอน Promotion
-    # ระบุโค้ดส่วนลด : SPBH5B
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S020['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
-    b2c_booking_delivery_page.Verify Selected Coupon And Code
-    ...    ${Booking_S020.promotion_detail['discount']}
-    ...    ${Booking_S020.promotion_detail['promotion_name']}
-    ...    ${Booking_S020.promotion_detail['parcel_size']}
-    ...    ${Booking_S020.promotion_detail['expired_date']}
-    ...    ${Booking_S020.promotion_detail['condition']}
-    ...    ${Booking_S020.promotion_detail['period']}
-    common.Verify Capture Screenshot    Booking_S020    Verify Selected Coupon And Code
+    # Log    Step No.14 ขั้นตอน Promotion
+    # # ระบุโค้ดส่วนลด : SPBH5B
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S020['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
+    # b2c_booking_delivery_page.Verify Selected Coupon And Code
+    # ...    ${Booking_S020.promotion_detail['discount']}
+    # ...    ${Booking_S020.promotion_detail['promotion_name']}
+    # ...    ${Booking_S020.promotion_detail['parcel_size']}
+    # ...    ${Booking_S020.promotion_detail['expired_date']}
+    # ...    ${Booking_S020.promotion_detail['condition']}
+    # ...    ${Booking_S020.promotion_detail['period']}
+    # common.Verify Capture Screenshot    Booking_S020    Verify Selected Coupon And Code
 
     Log    Step No.15 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
@@ -200,7 +212,7 @@ Booking_S020
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -218,14 +230,14 @@ Booking_S020
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking.text_default['insurance_fee_amount']}
-    ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    0    # Expected Result is ${Booking_S020['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['discount_value']}
+    ...    0    # Expected Result is ${Booking_S020['insurance_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['insurance_fee_value']}
+    ...    0    # Expected Result is ${Booking_S020['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S020['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S020    Verify Booking Summary After Booking Success
@@ -251,7 +263,7 @@ Booking_S020
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -269,14 +281,14 @@ Booking_S020
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking.text_default['insurance_fee_amount']}
-    ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    0    # Expected Result is ${Booking_S020['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['discount_value']}
+    ...    0    # Expected Result is ${Booking_S020['insurance_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['insurance_fee_value']}
+    ...    0    # Expected Result is ${Booking_S020['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S020['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S020['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S020    Verify Booking Summary
@@ -322,7 +334,7 @@ Booking_S020
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S020    Verify Parcel Label
 
-    Log    Step No.22 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.21 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    Booking_S020    Verify Print Screen

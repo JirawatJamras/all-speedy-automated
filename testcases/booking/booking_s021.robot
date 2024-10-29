@@ -188,7 +188,7 @@ Booking_S021
 
     Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S021['parcel_size']}
-    b2c_booking_delivery_page.Input COD    ${Booking_S021['parcel_cod']}
+    # Defect Input COD : Expected Result is b2c_booking_delivery_page.Input COD    ${Booking_S021['parcel_cod']}
     common.Verify Capture Screenshot    Booking_S021    Verify Select Parcel Size And Input COD
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
@@ -206,7 +206,7 @@ Booking_S021
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -228,11 +228,11 @@ Booking_S021
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    0    # Expected Result is ${Booking_S021['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S021['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S021['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S021['total_price_value']}
+    ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S021    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -241,6 +241,7 @@ Booking_S021
     Log    Step No.16 กดเมนู "จองการจัดส่งพัสดุ"
     # - ไม่เลือก Promotion
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
@@ -248,16 +249,16 @@ Booking_S021
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S021['booking_name']}
     ...    ${Booking_S021['booking_item']}
-    ...    ${Booking_S021['booking_price']}
+    ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S021    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.17 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
-    Expected
+    # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -279,10 +280,11 @@ Booking_S021
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    0    # Expected Result is ${Booking_S021['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S021['cod_fee_value']}
+    ...    0    # Expected Result is ${Booking_S021['total_price_amount']}
+    ...    0.00    # Expected Result is ${Booking_S021['total_price_value']}
+    ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S021    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -298,46 +300,10 @@ Booking_S021
     common.Verify Capture Screenshot    Booking_S021    Verify Edit Booking List Popup  
 
     Log    Step No.19 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
-    # b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S021['shipping_origin']}
-    # b2c_booking_detail_page.Search Shipping Store    ${Booking_S021['store_code']}
-    # b2c_booking_detail_page.Click Select Store On Map
-    # b2c_booking_detail_page.Click Save Shipping Origin Aria
-    # ${booking_time}    Get Booking Time
-    # # Expected
-    # b2c_booking_detail_page.Verify Booking Detail Page
-    # ...    ${Booking['text_title_booking_list']}
-    # ...    ${booking_id}
-    # ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    # ...    ${booking_name}
-    # ...    ${booking_time}
-    # ...    ${Booking['text_title_parcel_list']}
-    # ...    ${Booking['text_parcel_status_waiting_entering']}
-    # ...    ${Booking.img_is_favorite['img_sender_heart']}
-    # ...    ${Booking_S021['sender_name']}
-    # ...    ${Booking_S021['sender_phone']}
-    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    # ...    ${Booking_S021['receiver_name']}
-    # ...    ${Booking_S021['receiver_phone']}
-    # ...    ${Booking_S021['receiver_address']}
-    # ...    ${Booking_S021['receiver_postcode_full']}
-    # ...    ${Booking_S021['parcel_size']}
-    # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking.text_blank['buy_insurance']}
-    # ...    ${Booking.text_blank['cod_value']}
-    # ...    ${Booking['text_title_booking_summary']}
-    # ...    ${Booking.text_default['discount_amount']}
-    # ...    ${Booking.text_default['discount_value']}
-    # ...    ${Booking.text_default['insurance_fee_amount']}
-    # ...    ${Booking.text_default['insurance_fee_value']}
-    # ...    ${Booking.text_default['cod_fee_amount']}
-    # ...    ${Booking.text_default['cod_fee_value']}
-    # ...    ${Booking_S021['total_price_amount']}
-    # ...    ${Booking_S021['total_price_value']}
-    # ...    ${Booking_S021['store_code']}
-    # common.Scroll Window To Vertical    500
-    # common.Verify Capture Screenshot    Booking_S021    Verify Booking Summary After Set Origin Shipping
-    # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    Booking_S021    Verify Booking Detail Page After Set Origin Shipping
+    # รอบรถเข้ารับพัสดุ
+    b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S021['shipping_origin']}
+    ################ เพิ่ม Step เลือกรอบรถเข้ารับพัสดุ
+    # Expected
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label

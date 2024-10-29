@@ -125,13 +125,13 @@ Booking_S016
     b2c_booking_delivery_page.Select Send To 7-ELEVEN Store Tab
     b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S016['receiver_store_code_5_digits']}
     b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S016['receiver_store_address']}
-    # b2c_booking_delivery_page.Click Store On Map
+    b2c_booking_delivery_page.Click Store On Map
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     #Expected
-    # b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
-    # ...    ${Booking_S016['receiver_phone']}
-    # ...    ${Booking_S016['receiver_name']}
-    # ...    ${Booking_S016['receiver_store_full']}
+    b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
+    ...    ${Booking_S016['receiver_phone']}
+    ...    ${Booking_S016['receiver_name']}
+    ...    ${Booking_S016['receiver_store_full']}
     common.Verify Capture Screenshot    Booking_S016    Verify After Create Parcel Page Receiver Step
 
     Log    Step No.9 กดปุ่ม "ถัดไป"
