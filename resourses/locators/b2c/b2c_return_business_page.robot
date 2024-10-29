@@ -30,3 +30,5 @@ ${opt_postcode_choice_return_business}    //span[text()='{value}']
 ${opt_owner_pay_return_business}    //span[text()='{value}']/..//input[@value='owner']//..
 
 ${tab_send_home_return_business}    //div[@data-node-key='home' and @class='ant-tabs-tab ant-tabs-tab-active']
+
+${crd_booking_return_business}    (//div[@class='ant-card-body']//*[contains(text(),'{link_name}')]//..//..//tbody//tr//span[contains(normalize-space(),'{name} {phone}')]//..//..//..//..//..//span[text()='{address}'])[1]

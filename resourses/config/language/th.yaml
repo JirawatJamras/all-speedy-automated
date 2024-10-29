@@ -458,6 +458,7 @@ rm:
 
 return_business:
   button_add: เพิ่ม
+  button_save: บันทึก
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " 
   text_version: " (Version 2)"
   text_accept_condition: ยอมรับเงื่อนไขการใช้บริการ
@@ -466,9 +467,9 @@ return_business:
     customer: ลูกค้าชำระค่าจัดส่ง
   link_return_business:
     text_link_return_business: Link Return Business
-    text_link_name: ชื่อ Link
-    text_phone: เบอร์โทรศัพท์
-    text_name: ชื่อ
+    text_link_name: 'ชื่อ Link *'
+    text_phone: 'เบอร์โทรศัพท์ *'
+    text_name: 'ชื่อ *'
     text_shipping_payer: ผู้ชำระค่าจัดส่ง
     text_location_pickup: สถานที่รับพัสดุ
     text_address: รายละเอียดที่อยู่

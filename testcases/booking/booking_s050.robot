@@ -32,7 +32,6 @@ Booking_S050
     common.Verify Capture Screenshot    Booking_S050    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
-    Sleep    1s
     b2c_return_business_page.Click Accept Condition Button
     # Expected
     b2c_return_business_page.Verify Label Link Return Business Popup
@@ -44,7 +43,7 @@ Booking_S050
     ...    ${return_business.link_return_business['text_location_pickup']}
     ...    ${return_business.link_return_business['text_address']}
     ...    ${return_business.link_return_business['text_postcode']}
-    Sleep    1s
+
     b2c_return_business_page.Verify Data Link Return Business Popup
     ...    ${Booking_S050.old_return_business['link_name']}  # Expected result : ${EMPTY}
     ...    ${Booking_S050.old_return_business['phone']}  # Expected result : ${EMPTY}
@@ -72,14 +71,24 @@ Booking_S050
     Log    Step No.5 กดปุ่ม "บันทึก"
     b2c_return_business_page.Click Save Button
     #Expected
-    #b2c_return_business_page.
+    b2c_return_business_page.Verify New Booking
+    ...    ${Booking_S050.old_return_business['link_name']}
+    ...    ${Booking_S050.old_return_business['name']}
+    ...    ${Booking_S050.old_return_business['phone']}
+    ...    ${Booking_S050.old_return_business['address']}
+    ...    ${Booking_S050.old_return_business['postcode']}
 
     Log    Step No.6 กดที่รายการ Link : Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก
-    #common.Click When Ready    //div[@class='ant-card-body']//*[contains(text(),'Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก')]//..//..//tbody//tr//span[contains(normalize-space(),'ไอดีซีไอดีซี 0871000000')]
+    b2c_return_business_page.Click Booking Card
+    ...    ${Booking_S050.old_return_business['link_name']}
+    ...    ${Booking_S050.old_return_business['name']}
+    ...    ${Booking_S050.old_return_business['phone']}
+    ...    ${Booking_S050.old_return_business['address']}
+    ...    ${Booking_S050.old_return_business['postcode']}    
     #Expected
 
     Log    Step No.7 กดปุ่ม "Download QR Code"
-
+    
     #Expected
 
     Log    Step No.8 กดปุ่ม "Copy Link"
