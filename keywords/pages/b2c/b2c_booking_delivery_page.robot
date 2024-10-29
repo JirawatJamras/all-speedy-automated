@@ -712,10 +712,6 @@ Input Promotion
 Click Use Code Button
     Click When Ready    ${btn_use_code}
 
-Click Use Coupon
-    ${btn_use_coupon}=    Replace String    ${btn_use_coupon}    {value}    ${Booking['text_use_coupon']}
-    common.Click When Ready    ${btn_use_coupon}
-
 Input COD
     [Arguments]    ${value}
     Input When Ready    ${txtbox_cod}    ${value}

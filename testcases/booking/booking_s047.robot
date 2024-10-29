@@ -3,13 +3,12 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
-                  ...    AND    Close Browser
+# Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S047
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
-    [Tags]    Booking    UAT    Run
+    [Tags]    Booking    UAT    In_Review
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -186,7 +185,7 @@ Booking_S047
     b2c_favorite_page.Select Store Receiver Lists    ${Booking_S047.edit_receiver['receiver_store_address']}
     b2c_favorite_page.Click Store On Map
     # Expected
-    b2c_favorite_page.Verify Store Address Receiver    15888 สาขา สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500  #Expected result : ${Booking_S047.edit_receiver['receiver_store_full_address']}
+    b2c_favorite_page.Verify Store Address Receiver    ${Booking_S047.edit_receiver['receiver_store_full_address']}
     common.Verify Capture Screenshot    Booking_S047    Verify Edit Data Receiver
 
     Log    Step No.12 กดปุ่ม "บันทึกเเก้ไข"
@@ -196,11 +195,12 @@ Booking_S047
     ...    ${Booking_S047.receiver_favorite_card['favorite_name']}
     ...    ${Booking_S047.receiver_favorite_card['receiver_name']}
     ...    ${Booking_S047.receiver_favorite_card['receiver_phone']}
-    ...    ${Booking_S047.edit_receiver['receiver_store_address']}
+    ...    15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 86110  # Expected result : ${Booking_S047.edit_receiver['receiver_store_address']}
     common.Verify Capture Screenshot    Booking_S047    Verify Data Receiver After Edit Location Pickup
 
     Log    Step No.13 กดปุ่ม "เพิ่ม"
     b2c_favorite_page.Click Add Receiver Button
+    b2c_favorite_page.Select Pickup Location    ${Booking_S047.add_receiver_favorite['receiver_location_pickup']}
     # Expected
     b2c_favorite_page.Verify Label Receiver
     ...    ${favorite.label_reciever_favorite['text_data_sender']}
@@ -216,16 +216,16 @@ Booking_S047
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    ...    ${EMPTY}
+    ...    ${favorite['text_input_postcode']}
     common.Verify Capture Screenshot    Booking_S047     Verify Add Receiver Favorite Popup
 
     Log    Step No.14 กรอกข้อมูลดังนี้
     b2c_favorite_page.Input Receiver Favorite Name    ${Booking_S047.add_receiver_favorite['favorite_name']}
-    b2c_favorite_page.Input Receiver Phone Number    ${Booking_S047.add_receiver_favorite['sender_name']}
-    b2c_favorite_page.Input Receiver Name    ${Booking_S047.add_receiver_favorite['sender_phone']}
-    b2c_favorite_page.Input Receiver Address    ${Booking_S047.add_receiver_favorite['sender_address']}
-    b2c_favorite_page.Input Receiver Postcode    ${Booking_S047.add_receiver_favorite['sender_postcode_5_digits']}
-    b2c_favorite_page.Select Receiver Postcode Lists    ${Booking_S047.add_receiver_favorite['sender_postcode_full']}
+    b2c_favorite_page.Input Receiver Phone Number    ${Booking_S047.add_receiver_favorite['receiver_phone']}
+    b2c_favorite_page.Input Receiver Name    ${Booking_S047.add_receiver_favorite['receiver_name']}
+    b2c_favorite_page.Input Receiver Address    ${Booking_S047.add_receiver_favorite['receiver_address']}
+    b2c_favorite_page.Input Receiver Postcode    ${Booking_S047.add_receiver_favorite['receiver_postcode_5_digits']}
+    b2c_favorite_page.Select Receiver Postcode Lists    ${Booking_S047.add_receiver_favorite['receiver_postcode_full']}
     b2c_favorite_page.Click Save Button
     # Expected
     b2c_favorite_page.Verify Display Receiver Card When Select Home
@@ -246,7 +246,7 @@ Booking_S047
     b2c_favorite_page.Click Add Shipping Origin Area Button
     # Expected
     b2c_favorite_page.Verify Label Shipping Origin Area
-    ...    ${favorite.label_shipping_origin_area['text_label_shipping_origin_area']}
+    ...    ${favorite.label_shipping_origin_area['text_data_shipping_origin_area']}
     ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
     ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
     b2c_favorite_page.Verify Data Shipping Origin Area
@@ -254,10 +254,14 @@ Booking_S047
     common.Verify Capture Screenshot    Booking_S047    Verify Add Shipping Origin Area Popup
 
     Log    Step No.17 กรอกข้อมูลดังนี้
-    b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${favorite.add_shipping_origin_area['favorite_name']}
+    b2c_favorite_page.Input Shipping Origin Area Favorite Name    ร้าน 711 หน้าบ้าน  # Expected result : ${Booking_S047.add_shipping_origin_area['favorite_name']}
     b2c_favorite_page.Input Store Code Shipping Origin Area    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_code_5_digits']}
     b2c_favorite_page.Select Store Shipping Origin Area Lists    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_address']}
     b2c_favorite_page.Click Store On Map
+    b2c_favorite_page.Click Save Button
     # Expected
+    b2c_favorite_page.Verify Display Shipping Origin Area Card
+    ...    ร้าน 711 หน้าบ้าน  # Expected result : ${favorite.add_shipping_origin_area['favorite_name']}
+    ...    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_address']}
     common.Verify Capture Screenshot    Booking_S047    Verify Shipping Origin Area Card After Added Information
 
