@@ -24,7 +24,7 @@ Booking_S002:
   booking_item: 1 รายการ
   parcel_size:  A4
   parcel_package_type:  ซอง
-  price_value: 50    # 50.00
+  price_value: 50.00
   total_price_amount:  '1'
   total_price_value1: 'NaN'
   total_price_value2:  '50.00'

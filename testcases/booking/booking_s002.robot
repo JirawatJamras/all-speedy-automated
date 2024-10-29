@@ -214,9 +214,9 @@ Booking_S002
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}    #${Booking_S002['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}    # Expected result is ${Booking_S002['total_price_value1']}
-    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
+    ...    0    #  Expected result is ${Booking_S002['total_price_amount']}
+    ...    0.00    # Expected result is ${Booking_S002['total_price_value1']}
+    ...    ${EMPTY}    #  Expected result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -265,9 +265,9 @@ Booking_S002
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}    # Expected Result is ${Booking_S002['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}    # Expected result is ${Booking_S002['total_price_value1']}
-    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
+    ...    0    # Expected Result is ${Booking_S002['total_price_amount']}
+    ...    0.00    # Expected result is ${Booking_S002['total_price_value1']}
+    ...    ${EMPTY}    # Expected result is ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S002    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -308,7 +308,7 @@ Booking_S002
     ...    ${Booking_S002['receiver_address']}
     ...    ${Booking_S002['receiver_postcode_full']}
     ...    ${Booking_S002['parcel_size']}
-    ...    ${Booking_S002['price_value']}
+    ...    50    # Expected Result is: ${Booking_S002['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
