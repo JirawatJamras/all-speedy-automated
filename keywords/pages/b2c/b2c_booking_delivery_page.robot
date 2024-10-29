@@ -236,7 +236,7 @@ Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
     ${receiver_store_address_split}=    Split String    ${receiver_store_address}    ${SPACE}
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list_store}   {value_name}   ${receiver_name}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
-    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {store_address}   ${receiver_store_address[0]}  
+    ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {store_address}   ${receiver_store_address_split[0]}  
     Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
 
 Click Choose Favorites Receiver List When Address At 7-ELEVEN Store
