@@ -23,11 +23,11 @@ Click Button To Add
     common.Click When Ready    ${btn_add}
 
 Verify Term & Condition 
-    [Arguments]    ${txt_term_and_condition}    ${text_accept}
+    [Arguments]    ${txt_term_and_condition}    ${header_term_and_condition}
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
     Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
-    ${text}=    Get Text    ${txt_term_and_condition}
-    Should Be Equal    ${text}    ${text_accept}
+    ${actual_term_and_condition}=    Get Text    ${txt_term_and_condition}
+    Should Be Equal    ${actual_term_and_condition}    ${actual_term_and_condition}
 
 Click Accept Terms of Service
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}

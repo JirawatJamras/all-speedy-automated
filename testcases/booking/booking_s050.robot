@@ -3,8 +3,9 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
-                  ...    AND    Close Browser
+# Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+#                   ...    AND    Close Browser
+Test Teardown    Close Browser
 
 *** Test Cases ***
 Booking_S050
@@ -31,6 +32,7 @@ Booking_S050
     common.Verify Capture Screenshot    Booking_S050    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
+    Sleep    1s
     b2c_return_business_page.Click Accept Condition Button
     # Expected
     b2c_return_business_page.Verify Label Link Return Business Popup
@@ -42,6 +44,7 @@ Booking_S050
     ...    ${return_business.link_return_business['text_location_pickup']}
     ...    ${return_business.link_return_business['text_address']}
     ...    ${return_business.link_return_business['text_postcode']}
+    Sleep    1s
     b2c_return_business_page.Verify Data Link Return Business Popup
     ...    ${Booking_S050.old_return_business['link_name']}  # Expected result : ${EMPTY}
     ...    ${Booking_S050.old_return_business['phone']}  # Expected result : ${EMPTY}
@@ -51,4 +54,36 @@ Booking_S050
     ...    ${Booking_S050.old_return_business['address']}  # Expected result : ${EMPTY}
     ...    ${Booking_S050.old_return_business['postcode']}  # Expected result : ${EMPTY}
     common.Verify Capture Screenshot    Booking_S050    Verify Link Return Business Popup
+
+    Log    step clear Input
+    b2c_return_business_page.Clear Input
+
+    Log    Step No.4 กรอกข้อมูล
+    b2c_return_business_page.Input Link Name    ${Booking_S050.old_return_business['link_name']}
+    b2c_return_business_page.Input Phone Receiver    ${Booking_S050.old_return_business['phone']}
+    b2c_return_business_page.Input Name Receiver    ${Booking_S050.old_return_business['name']}
+    b2c_return_business_page.Click Owner Pay    ${Booking_S050.old_return_business['shipping_payer']}
+    b2c_return_business_page.Select Send To Home Tab
+    b2c_return_business_page.Input Address Receiver    ${Booking_S050.old_return_business['address']}
+    b2c_return_business_page.Input Postcode Receiver    ${Booking_S050.old_return_business['postcode_5_digits']}
+    b2c_return_business_page.Click Postcode Receiver Lists    ${Booking_S050.old_return_business['postcode']}
+    common.Verify Capture Screenshot    Booking_S050    Verify fill information Success
+
+    Log    Step No.5 กดปุ่ม "บันทึก"
+    b2c_return_business_page.Click Save Button
+    #Expected
+    #b2c_return_business_page.
+
+    Log    Step No.6 กดที่รายการ Link : Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก
+    #common.Click When Ready    //div[@class='ant-card-body']//*[contains(text(),'Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก')]//..//..//tbody//tr//span[contains(normalize-space(),'ไอดีซีไอดีซี 0871000000')]
+    #Expected
+
+    Log    Step No.7 กดปุ่ม "Download QR Code"
+
+    #Expected
+
+    Log    Step No.8 กดปุ่ม "Copy Link"
+
+    #Expected
+
 
