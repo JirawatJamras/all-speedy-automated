@@ -70,6 +70,7 @@ Booking:
   text_booking_parcel_complete: จองเลขพัสดุสำเร็จ
   text_dry_parcel_id_4_start_unit: SPBD
   text_chilled_parcel_id_4_start_unit: SPBC
+  text_error_report: Error Report
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -176,6 +177,11 @@ Booking:
     text_postcode: รหัสไปรษณีย์ปลายทาง
     text_store_code: รหัสร้าน
     text_destination_deparment_code: รหัสสาขาปลายทาง
+  import_file:
+    dry_parcel_file_name: Excel Template พัสดุทั่วไป.xlsx
+    dry_parcel_import_success_amount: สำเร็จ 15
+    dry_parcel_import_fail_amount: ล้มเหลว 32
+
 
 call_car_pick_up:
   text_call_car_pick_up: เรียกรถเข้ารับพัสดุ สาขาหลัก
@@ -199,7 +205,7 @@ call_car_pick_up:
     afternoon: ช่วงบ่าย 13:00 - 16:00
   parcel_pickup_time_schedule:
     morning: 09:00:00 - 12:00 น.
-  cut_off_time: '15:00:00'
+  cut_off_time: '16:55:00'
   default:
     parcel_number: '0'
     price: '0.00'
@@ -416,7 +422,6 @@ rm:
       text_bank_account_name: ชื่อบัญชี *
       text_bank_account_no: เลขที่บัญชี *
       text_bank_account_type: ประเภทบัญชี *
-    text_other_file: เอกสารอื่นๆ 
     text_return: ส่งกลับ
     text_header_return_popup: ส่งกลับแก้ไข
     text_remark_page_1: 'หมายเหตุการณ์แก้ไข #1'

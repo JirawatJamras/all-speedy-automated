@@ -62,10 +62,10 @@ ${cbo_pickup_parcel_date_in_add_popup}    //strong[text()='{value}']/../../../..
 ${cbo_pickup_parcel_time_in_add_popup}    //strong[text()='{value}']/../../../..//input/../..
 ${b2c_cdo_2_pickup_parcel_time_in_add_popup}    //strong[text()='เวลารถเข้ารับพัสดุ']/../../../..//input
 # ${cbo_parcel_type}    //div[@class='rc-virtual-list-holder-inner']//div[@title='${value}']
-${cbo_time_pickup}    //div[text()='${value}']
+${cbo_time_pickup}    //div[text()='{value}']
 
 ${b2c_tbl_pickup_parcel_calendar_in_add_popup}    //*[contains(@class,'ant-picker-dropdown')]
-${tbl_pickup_parcel_calendar}    //td[@title='${value}']
+${tbl_pickup_parcel_calendar}    //td[@title='{value}']
 
 ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div
 

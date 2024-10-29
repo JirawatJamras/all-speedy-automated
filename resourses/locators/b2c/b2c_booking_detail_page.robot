@@ -35,6 +35,11 @@ ${b2c_txt_file_name}    //th[@class='ant-table-cell' and text()='{value}']
 ${b2c_txt_import_file_result}    //th[@class='ant-table-cell' and text()='{value}']
 ${b2c_txt_file_import_error}    //th[@class='ant-table-cell' and text()='{value}']
 ${b2c_txt_import_file_in_popup}    (//label[@for='InputFile'])[2]
+${b2c_txt_value_import_time}    //th[text()='{value}']/../../..//tr[1]//td[1]
+${b2c_txt_value_import_file_name_}    //th[text()='{value}']/../../..//tr[1]//td[2]
+${b2c_txt_value_import_success}    //th[text()='{value}']/../../..//tr[1]//td[3]//div[contains(@class,'text-white')]
+${b2c_txt_value_import_fail}   //th[text()='{value}']/../../..//tr[1]//td[3]//div[contains(@class,'text-red-500')]
+${b2c_txt_value_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td[4]
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 
@@ -57,7 +62,7 @@ ${b2c_btn_print_parcel_label}    //*[@class='hidden sm:inline']//button//span[te
 ${b2c_btn_print_parcel_label_popup}    //div[text()='{value}']/../../..//button//span[text()='{value}']
 ${b2c_btn_select_pickup_schedule}   //input[@class='ant-radio-input']/..
 ${b2c_btn_import_file_detail_page}    //span[text()='{value}']/..
-${b2c_btn_import_file_in_popup}  //input[@id='InputFile']/
+${b2c_btn_import_file_in_popup}  //input[@id='InputFile']
 ${b2c_btn_template_in_popup}  //span[text()='{value}']/..
 ${b2c_btn_add_parcel_in_booking_detail_page}    //span[text()='{value}']/..
 ${b2c_btn_edit_created_parcel}    //span[text()='{value}']/..
@@ -70,6 +75,7 @@ ${b2c_btn_cleal_receiver_phone}    //input[@id='create_parcel_form_receiver_tel'
 ${b2c_btn_cleal_receiver_name}    //input[@id='create_parcel_form_receiver_name']/..//span[@role='button']
 ${b2c_btn_cleal_receiver_address}    //textarea[@id='create_parcel_form_receiver_address_info']/..//span[@role='button']
 ${b2c_btn_cleal_receiver_postcode}    //input[@id='create_parcel_form_receiver_address_full']/../../..//span[@class='ant-select-clear']
+${b2c_btn_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td[4]//a
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
