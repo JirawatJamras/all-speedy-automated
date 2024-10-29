@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -235,6 +235,12 @@ Register_S015
     ...    ${Register_S013.bank['bank_account_name']}
     ...    ${Register_S013.bank['bank_account_no']}
     ...    ${Register_S013.bank['bank_account_type']}
+    ...    ${Register_S013.contact['user_name']}
+    ...    ${Register_S013.contact['user_position']}
+    ...    ${Register_S013.contact['user_email']}
+    ...    ${Register_S013.contact['user_phone']}
+    ...    ${Register_S013.contact['user_phone_ex']}
+    common.Verify Capture Screenshot    Register_S015    Verify Request Detail Contact And Bank Information
 
     Log    Step No.9 กดปุ่ม "เพิ่ม" ข้อมูลผู้ติดต่อ
     
