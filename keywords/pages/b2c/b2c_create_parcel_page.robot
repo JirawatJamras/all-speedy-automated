@@ -7,7 +7,7 @@ Verify Create Parcel Page
     ${step_name}=    Get Text    ${frist_step_name}
     Should Be Equal    ${step_name}    ${B2C_AddBooking_003_001['text_frist_step']}
 
-Click Close Paecel Page
+Click Close Parcel Page
     Click Element    ${close_noti_btn}
     # Verify Close Pop-Up
     Click Element    ${close_noticonfirm_btn}

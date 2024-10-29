@@ -558,9 +558,12 @@ Booking_S019:
   booking_item: 1 รายการ
   booking_price:  Nanบาท
   parcel_size:  S0
+  price_value: '190.00'
   parcel_package_type:  กล่อง
   total_price_amount:  '1'
-  total_price_value:  'NaN'
+  total_price_value1:  'NaN'
+  total_price_value2:  '190.00'
+  origin_shipping: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
 
 Booking_S020:
   parcel_type:  พัสดุควบคุมอุณหภูมิ    #

@@ -125,7 +125,7 @@ Booking_S026
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['parcel_cod_verify']}
-    common.Verify Capture Screenshot    Booking_S026    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S026    Verify Draft Parcel
 
     Log    Step No.10 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     b2c_booking_detail_page.Select Draft Booking

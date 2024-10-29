@@ -80,7 +80,7 @@ Booking_S011
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S011    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S011    Verify Draft Parcel
 
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -152,7 +152,7 @@ Booking_S011
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S011    Verify Paecel Detail
+    common.Verify Capture Screenshot    Booking_S011    Verify Parcel Detail
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
     # กรอกข้อมูล

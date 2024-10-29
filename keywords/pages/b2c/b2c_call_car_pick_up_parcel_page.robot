@@ -220,6 +220,11 @@ Delete The Lastest Parcel Pickup Schedule
     common.Click When Ready    //button[text()=' ยืนยัน']
     Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
+Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    Delete The Lastest Parcel Pickup Schedule
+    
 Click Select Item On Parcel Pickup Schedule List
     common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
 

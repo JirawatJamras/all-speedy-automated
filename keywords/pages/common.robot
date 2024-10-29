@@ -119,6 +119,11 @@ Scroll Into View By Xpath
     Wait Until Page Contains Element    xpath=${xpath}    50
     Execute JavaScript    dom:document.evaluate("${xpath}",document.body,null,9,null).singleNodeValue.scrollIntoView(${boolean})
 
+Scroll To vertical By Xpath
+    [Arguments]    ${xpath}    ${value}
+    Wait Until Page Contains Element    xpath=${xpath}
+    Execute JavaScript    document.evaluate("${xpath}",document.body,null,9,null).singleNodeValue.scrollTo(${value},0)
+
 Split String And Select
     [Arguments]    ${value}    ${separator}   ${index}
     ${value} =    Split String    ${value}    ${separator}

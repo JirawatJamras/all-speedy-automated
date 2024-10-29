@@ -16,6 +16,7 @@ Select Sub Menu My Parcel
 
 Select Sub Menu Call Car Pick Up
     common.Click When Ready    ${b2c_mnu_call_car_pick_up_home_page}
+    Mouse Out    ${b2c_mnu_parcel_delivery_service_home_page}
 
 Select Sub Menu Favorites
     common.Click When Ready    ${b2c_mnu_favorites_home_page}

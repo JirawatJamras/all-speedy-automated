@@ -399,6 +399,11 @@ Verify Parcel Label
         Run Keyword If    '${parcel_size}' == 'L'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_L']}
         Run Keyword If    '${parcel_size}' == 'XL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XL']}
         Run Keyword If    '${parcel_size}' == 'XXL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XXL']}
+        Run Keyword If    '${parcel_size}' == 'S0'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_S0']}
+        Run Keyword If    '${parcel_size}' == 'S1'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_S1']}
+        Run Keyword If    '${parcel_size}' == 'S2'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_S2']}
+        Run Keyword If    '${parcel_size}' == 'A1'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A1']}
+        Run Keyword If    '${parcel_size}' == 'A2'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A2']}
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
     ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
@@ -441,6 +446,11 @@ Verify Parcel Label When Select 7-ELEVEN Store
         Run Keyword If    '${parcel_size}' == 'L'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_L']}
         Run Keyword If    '${parcel_size}' == 'XL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XL']}
         Run Keyword If    '${parcel_size}' == 'XXL'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XXL']}
+        Run Keyword If    '${parcel_size}' == 'S0'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_S0']}
+        Run Keyword If    '${parcel_size}' == 'S1'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_S1']}
+        Run Keyword If    '${parcel_size}' == 'S2'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_S2']}
+        Run Keyword If    '${parcel_size}' == 'A1'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A1']}
+        Run Keyword If    '${parcel_size}' == 'A2'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A2']}
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
     ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
@@ -639,3 +649,9 @@ Verify Import Error File Name Format
     Should Be Equal    ${actual_text_subject_part}    ${Booking['text_error_report']}
     Should Be Equal    ${actual_text_date_part}    ${date_convert}
     Should Be Equal    ${actual_text_time_part}    ${time_convert}
+
+Select Booked Pickup Time From List
+    [Arguments]    ${date}
+    ${date}    Replace String    ${date}    -    /
+    common.Scroll Into View By Xpath    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input    true
+    common.Click Xpath By JavaScript    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input

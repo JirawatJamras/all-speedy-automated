@@ -196,7 +196,7 @@ Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     Should Be Equal    ${actual_text_address}    ${address_receiver}
     Element Should Be Visible    ${txtbox_store_receiver} 
 
-Click Close Paecel Page
+Click Close Parcel Page
     common.Click When Ready    ${close_noti_btn}
     common.Click When Ready    ${close_noticonfirm_btn}
 

@@ -25,13 +25,13 @@ B2C_AddBooking_003_001
     b2c_bookingdelivery_page.Click General Parcel
     b2c_create_parcel_page.Verify Create Parcel Page
     common.Verify Capture Screenshot  B2C_AddBooking_003_001  Verify Create Parcel Page Genaral Parcel
-    b2c_create_parcel_page.Click Close Paecel Page
+    b2c_create_parcel_page.Click Close Parcel Page
     b2c_bookingdelivery_page.Click Button To Add
     b2c_bookingdelivery_page.Click Accept Terms of Service
     b2c_bookingdelivery_page.Click Temperature Controlled Parcel
     b2c_create_parcel_page.Verify Create Parcel Page
     common.Verify Capture Screenshot  B2C_AddBooking_003_001  Verify Create Parcel Page Controlled Parcel
-    b2c_create_parcel_page.Click Close Paecel Page
+    b2c_create_parcel_page.Click Close Parcel Page
 
 B2C_AddBooking_003_002
     [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer]กรณี กดปุ่ม "เลือกจากรายการโปรด"
@@ -390,7 +390,7 @@ B2C_AddBooking_003_020
     b2c_create_parcel_page.Verify Add To Favorites    ${B2C_AddBooking_003_020['text_name_sender']}     
     common.Verify Capture Screenshot  B2C_AddBooking_003_019  Verify Add To Favorites
     #b2c_create_parcel_page.Click Button    ${save_draft_btn}
-    #b2c_create_parcel_page.Verify Save Draft Paecel    
+    #b2c_create_parcel_page.Verify Save Draft Parcel    
 
 B2C_AddBooking_003_040
     [Documentation]    [เพิ่มรายการ Booking ส่งพัสดุแบบ Business to Customer] กรณี กดปุ่ม "เพิ่มเป็นรายการโปรด" กรณี กดปุ่ม "บันทึกร่าง"

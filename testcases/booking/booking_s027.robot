@@ -82,7 +82,7 @@ Booking_S027
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S027    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S027    Verify Draft Parcel
 
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -150,7 +150,7 @@ Booking_S027
     # ...    ${Booking['parcel_detail_insure_amount']}
     # ...    ${Booking['parcel_detail_cod']}
     # ...    ${Booking['parcel_detail_remark']}
-    # common.Verify Capture Screenshot    Booking_S027    Verify Paecel Detail
+    # common.Verify Capture Screenshot    Booking_S027    Verify Parcel Detail
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S027['parcel_size']}
@@ -177,7 +177,7 @@ Booking_S027
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S027['parcel_cod_verify']}
-    common.Verify Capture Screenshot    Booking_S027    Verify Draft Paecel
+    common.Verify Capture Screenshot    Booking_S027    Verify Draft Parcel
 
     Log    Step No.13 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     b2c_booking_detail_page.Select Draft Booking

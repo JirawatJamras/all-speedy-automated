@@ -3,7 +3,7 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule
+Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
                   ...    AND    Close Browser
 
 *** Test Cases ***
