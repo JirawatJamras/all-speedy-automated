@@ -452,8 +452,6 @@ Verify Parcel Label When Select 7-ELEVEN Store
     ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} หมายเหตุ : ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
     END
     
-    
-
 Click Print Label On Popup
     ${b2c_btn_print_parcel_label_popup}=    Replace String    ${b2c_btn_print_parcel_label_popup}    {value}    ${Booking['text_print_parcel_label']}
     common.Click When Ready    ${b2c_btn_print_parcel_label_popup}
@@ -485,6 +483,20 @@ Wait Until Page Loaded After Select Origin Shipping
 Click Import File Button
     ${btn_import_file}=    Replace String    ${b2c_btn_import_file_detail_page}    {value}    ${Booking['text_btn_import']}
     common.Click When Ready    ${btn_import_file}
+
+Click Import Button
+    common.Click Xpath By JavaScript    ${b2c_btn_import_file_in_popup}
+
+Click Download Import Error File
+    ${b2c_btn_import_error_file}=    Replace String    ${b2c_btn_import_error_file}    {value}    ${Booking['text_import_time']}
+    common.Click When Ready    ${b2c_btn_import_error_file}
+
+Import Excel File Of Dry Parcel Template
+    [Arguments]    ${excel_file}
+    ${excel_file}   Normalize Path    ${excel_file}
+    Execute JavaScript    document.getElementById('InputFile').removeAttribute('hidden');
+    Wait Until Element is Visible    ${b2c_btn_import_file_in_popup}
+    Choose File    ${b2c_btn_import_file_in_popup}    ${excel_file}
 
 Verify Display Import File Popup
     ${btn_template_file}=    Replace String    ${b2c_btn_template_in_popup}    {value}    ${Booking['text_btn_template']}
@@ -586,3 +598,44 @@ Edit Postcode Receiver
     Mouse Over    ${b2c_txtbox_receiver_postcode_edit}
     common.Click When Ready    ${b2c_btn_cleal_receiver_postcode}
     common.Input When Ready    ${txtbox_postcode_receiver}    ${input_postcode_receiver}
+    
+Verify Import Excel File Inspection Results
+    [Arguments]    ${file_name}    ${import_success}    ${import_fail}
+    ${b2c_txt_value_import_time}=    Replace String    ${b2c_txt_value_import_time}    {value}    ${Booking['text_import_time']}
+    ${b2c_txt_value_import_file_name_}=    Replace String    ${b2c_txt_value_import_file_name_}    {value}    ${Booking['text_import_time']}
+    ${b2c_txt_value_import_success}=    Replace String    ${b2c_txt_value_import_success}    {value}    ${Booking['text_import_time']}
+    ${b2c_txt_value_import_fail}=    Replace String    ${b2c_txt_value_import_fail}    {value}    ${Booking['text_import_time']}
+    ${b2c_txt_value_import_error_file}=    Replace String    ${b2c_txt_value_import_error_file}    {value}    ${Booking['text_import_time']}
+    ${actual_file_name}=    Get Text    ${b2c_txt_value_import_file_name_}
+    ${actual_import_success}=    Get Text    ${b2c_txt_value_import_success}
+    ${actual_import_success}=  Replace String   ${actual_import_success}   \n   ${SPACE}
+    ${actual_import_fail}=    Get Text    ${b2c_txt_value_import_fail}
+    ${actual_import_fail}=  Replace String   ${actual_import_fail}   \n   ${SPACE}
+    Verify Date Format Of Import Excel File    ${b2c_txt_value_import_time}
+    Should Be Equal    ${actual_file_name}    ${file_name}
+    Should Be Equal    ${actual_import_success}    ${import_success}
+    Should Be Equal    ${actual_import_fail}    ${import_fail}
+    # Verify Import Error File Name Format   ${b2c_txt_value_import_error_file}    # Stuck at Defect108. Waiting for resolve.
+
+Verify Date Format Of Import Excel File
+    [Arguments]    ${locator}
+    Wait Until Element Is Visible    ${locator}
+    ${actual_import_time}=    Get Text    ${locator}
+    ${time_convert}    Convert Date    ${actual_import_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
+    Should Be Equal    ${actual_import_time}   ${time_convert}
+
+Verify Import Error File Name Format
+    [Arguments]    ${locator}
+    Wait Until Element Is Visible    ${locator}
+    ${actaul_import_error_file_name}=    Get Text    ${locator}
+    ${part}=    Split String    ${actaul_import_error_file_name}    ${SPACE}
+    ${actual_text_subject_part}=    Set Variable    ${part}[0]${SPACE}${part}[1]
+    ${actual_text_date_part}=    Set Variable    ${part}[2] 
+    ${actual_text_date_part}=    Remove String    ${actual_text_date_part}    (
+    ${actual_text_time_part}=    Set Variable    ${part}[3]
+    ${actual_text_time_part}=    Remove String    ${actual_text_time_part}    ).xlsx
+    ${date_convert}=    Convert Date    ${actual_text_date_part}    date_format=%y%m%d    result_format=%d%m%y
+    ${time_convert}=    Convert Date    ${actual_text_time_part}    date_format=%H:%M:%S    result_format=%H:%M
+    Should Be Equal    ${actual_text_subject_part}    ${Booking['text_error_report']}
+    Should Be Equal    ${actual_text_date_part}    ${date_convert}
+    Should Be Equal    ${actual_text_time_part}    ${time_convert}
