@@ -245,10 +245,10 @@ Booking_S009:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  price_value: 20
-  buy_insurance:  '2500'
+  price_value: 300
+  buy_insurance: 2500
   buy_insurance_verify: '2,500.00'
-  parcel_cod:  '5000'
+  parcel_cod: 5000
   parcel_cod_verify: '5,000.00'
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
@@ -267,14 +267,14 @@ Booking_S009:
     condition:  1.ลูกค้า B2C , C2C 2.ลูกค้าจะต้องส่งพัสดุขนาด ทุกขนาด  #สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: 'Nan'
+  discount_value: '5.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
   total_price_value1:  'NaN'
-  total_price_value2:  '170.00'
+  total_price_value2:  '561.00'
 
 Booking_S010:
   parcel_type:  พัสดุทั่วไป

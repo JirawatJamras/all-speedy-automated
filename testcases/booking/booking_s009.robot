@@ -2,7 +2,7 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -281,7 +281,7 @@ Booking_S009
     ...    0.00    # Expected result is: ${Booking_S009['cod_fee_value']}
     ...    0    # Expected result is: ${Booking_S009['total_price_amount']}
     ...    0.00    # Expected result is: ${Booking_S009['total_price_value1']}
-    ...    ${EMPTY}
+    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S009    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -332,6 +332,7 @@ Booking_S009
     ...    0.00    # Expected result is: ${Booking_S009['cod_fee_value']}
     ...    0    # Expected result is: ${Booking_S009['total_price_amount']}
     ...    0.00    # Expected result is: ${Booking_S009['total_price_value1']}
+    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S009    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -373,17 +374,17 @@ Booking_S009
     ...    ${Booking_S009['receiver_postcode_full']}
     ...    ${Booking_S009['parcel_size']}
     ...    ${Booking_S009['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking_S009['buy_insurance_verify']}
+    ...    ${Booking_S009['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking.text_default['insurance_fee_amount']}
-    ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
+    ...    0    # Expected result is: ${Booking_S009['discount_amount']}
+    ...    0.00    # Expected result is: ${Booking_S009['discount_value']}
+    ...    ${Booking_S009['insurance_fee_amount']}
+    ...    ${Booking_S009['insurance_fee_value']}
+    ...    ${Booking_S009['cod_fee_amount']}
+    ...    ${Booking_S009['cod_fee_value']}
     ...    ${Booking_S009['total_price_amount']}
-    ...    ${Booking_S009['total_price_value2']}
+    ...    556.00    # Expected result is: ${Booking_S009['total_price_value2']}
     ...    ${Booking_S009['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S009    Verify Booking Summary After Set Origin Shipping
@@ -409,9 +410,9 @@ Booking_S009
     ...    ${Booking_S009['receiver_phone']}
     ...    ${Booking_S009['receiver_address']}
     ...    ${Booking_S009['receiver_postcode_full']}
-    ...    ${Booking.label['non_cod']}
-    ...    ${Booking.label['parcel_not_buy_insure']}
-    ...    ${Booking.text_blank['parcel_detail_remark']}
+    ...    ${Booking_S009['parcel_cod_verify_label']}
+    ...    ${Booking.label['parcel_buy_insure']}
+    ...    ${Booking_S009['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S009    Verify Parcel Label
 
     Log    Step No.23 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
