@@ -31,7 +31,7 @@ Verify Term & Condition
 
 Click Accept Terms of Service
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
-    common.Click When Ready    ${btn_accept_terms_service}
+    common.Click Xpath By JavaScript    ${btn_accept_terms_service}
 
 Verify Select Parcel Type
     Wait Until Element Is Enabled   ${btn_parcel_type_dry}    timeout=30s
