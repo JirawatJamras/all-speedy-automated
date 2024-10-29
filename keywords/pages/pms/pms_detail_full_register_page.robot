@@ -596,12 +596,34 @@ Verify Return Popup
     ${label_remark_4}=    Get Text    ${pms_txt_remark4_return_popup} 
     ${txt_remark_4}=    Get Text    ${pms_txtbox_remark4_return_popup}
  
-    Should Be Equal As Strings    ${label_remark_1} ${txt_remark_1}    ${rm.full_regis['text_return']}
-    #Inprogress
+    Should Be Equal As Strings    ${label_remark_1} ${txt_remark_1}    ${rm.full_regis['text_remark_page_1']} ${remark_1}
+    Should Be Equal As Strings    ${label_remark_2} ${txt_remark_2}    ${rm.full_regis['text_remark_page_2']} ${remark_2}
+    Should Be Equal As Strings    ${label_remark_3} ${txt_remark_3}    ${rm.full_regis['text_remark_page_3']} ${remark_3}
+    Should Be Equal As Strings    ${label_remark_4} ${txt_remark_4}    ${rm.full_regis['text_remark_page_4']} ${remark_4}
+    
 
 Click Confirm Button
     ${btn_confirm}=    Replace String    ${pms_btn_full_regis}     {value}    ${rm.full_regis['text_confirm_popup']}
     common.Click When Ready  ${btn_confirm}
 
-# Verify Officer Section Page
-#     [Arguments]
+Verify Officer Section Page
+    #[Arguments]    ${}
+    #Inprogress
+    ${txt_title}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_officer_section']} 
+    ${txt_header_more_detail}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_more_detail']}
+    ${txt_header_sale_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_sale_info']}
+    ${txt_header_company_admin_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_company_admin_info']}
+    ${txt_header_contract}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_contract']}
+    
+    ${label_company_name}=    Get Text    ${pms_txt_company_name_full_regis}
+    ${txt_company_name}=    Get Value    ${pms_txtbox_company_name_full_regis}
+    
+        
+    Page Should Contain Element    ${txt_title}
+    Page Should Contain Element    ${txt_header_more_detail}
+    Should Be Equal As Strings    ${label_company_name} ${txt_company_name}    
+    Page Should Contain Element    ${txt_header_sale_info}
+
+    Page Should Contain Element    ${txt_header_company_admin_info}
+
+    Page Should Contain Element    ${txt_header_contract}

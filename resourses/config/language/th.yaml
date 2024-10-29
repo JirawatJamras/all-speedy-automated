@@ -346,10 +346,17 @@ rm:
     text_step_company_info: ข้อมูลบริษัท
     text_step_service_info: ข้อมูลบริการ
     text_step_contact_and_bank_info: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    text_step_supporting_document: เอกสารประกอบ
+    text_step_officer_section: ส่วนของเจ้าหน้าที่
     text_header_bank_info: ข้อมูลธนาคาร
     text_header_contact_info: ข้อมูลผู้ติดต่อ
-    text_step_supporting_document: เอกสารประกอบ
     text_header_supporting_document: อัปโหลดเอกสารประกอบ
+
+    text_header_more_detail: รายละเอียดเพิ่มเติม
+    text_header_sale_info: ข้อมูล Sale
+    text_header_company_admin_info: ข้อมูล Company Admin
+    text_header_contract: สัญญา
+
     text_company_title: คำนำหน้าประเภทจดทะเบียนบริษัท *
     text_company_name: ชื่อบริษัท *
     text_id_number: เลขประจำตัวผู้เสียภาษี *
@@ -424,10 +431,10 @@ rm:
       text_bank_account_type: ประเภทบัญชี *
     text_return: ส่งกลับ
     text_header_return_popup: ส่งกลับแก้ไข
-    text_remark_page_1: 'หมายเหตุการณ์แก้ไข #1'
-    text_remark_page_2: 'หมายเหตุการณ์แก้ไข #2'
-    text_remark_page_3: 'หมายเหตุการณ์แก้ไข #3'
-    text_remark_page_4: 'หมายเหตุการณ์แก้ไข #4'
+    text_remark_page_1: 'หมายเหตุการแก้ไข #1'
+    text_remark_page_2: 'หมายเหตุการแก้ไข #2'
+    text_remark_page_3: 'หมายเหตุการแก้ไข #3'
+    text_remark_page_4: 'หมายเหตุการแก้ไข #4'
     text_confirm_popup: ยืนยัน
   reject_confirmation:
     text_reject_confirmation: ยืนยันการปฏิเสธหรือไม่
