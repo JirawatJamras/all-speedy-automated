@@ -48,8 +48,13 @@ ${txtbox_address_delete}    //textarea[@id='return_address_info']//..//span[@rol
 
 ${txtbox_sender_phone_return_business}    //input[@id='create_parcel_form_sender_tel']
 ${txtbox_sender_name_return_business}    //input[@id='create_parcel_form_sender_name']
+${txtbox_sender_address_return_business}    //textarea[@id='create_parcel_form_sender_address_info']
+${txtbox_sender_postcode_return_business}    //input[@id='create_parcel_form_sender_address_full']
 
 ${btn_add_parcel_return_business}    //span[@aria-label='plus-circle']/../..
+${btn_select_address_return_business}    //div[@id='create_parcel_form_sender_address_full_list']/..//div[text()='{value}']
+${btn_select_parcel_size_return_business}    //div[@class='ant-list-item']//strong[contains(normalize-space(.), '{value}')]
+${btn_parcel_booking_return_business}    //span[text()='{value}']/..
 
 ${opt_postcode_choice_return_business}    //span[text()='{value}']
 ${opt_owner_pay_return_business}    //span[text()='{value}']/..//input[@value='owner']//..
@@ -57,3 +62,5 @@ ${opt_owner_pay_return_business}    //span[text()='{value}']/..//input[@value='o
 ${tab_send_home_return_business}    //div[@data-node-key='home' and @class='ant-tabs-tab ant-tabs-tab-active']
 
 ${crd_booking_return_business}    (//div[@class='ant-card-body']//*[contains(text(),'{link_name}')]//..//..//tbody//tr//span[contains(normalize-space(),'{name} {phone}')]//..//..//..//..//..//span[text()='{address}'])[1]
+
+${crd_parcel_return_business}    //span[text()='{value}']/../../../../..//div[@class='ant-card-body']

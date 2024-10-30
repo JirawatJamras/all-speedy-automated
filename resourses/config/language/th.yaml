@@ -518,3 +518,12 @@ return_business:
     parcel_text_size_XXL: (ใหญ่พิเศษ)
     parcel_detail_XXL: XXL กล่อง XXL (ใหญ่พิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 200 ชม.
     text_remark: หมายเหตุ
+    text_button_booking: จองเลขพัสดุ
+    text_sender: 'ผู้ส่ง :'
+    text_receiver: 'ผู้รับ :'
+    text_parcel_type: 'ประเภทพัสดุ :'
+    text_price: 'ราคา :'
+    text_buy_insure: 'ซื้อประกัน :'
+    text_select_cod: 'COD :'
+    text_print: 'พิมพ์ใบจ่ายหน้าพัสดุ -'
+    text_blank: ''

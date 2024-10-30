@@ -1178,3 +1178,12 @@ Booking_S050:
 Booking_S051:
     sender_phone: '0899999999'
     sender_name: สมชาย สายเสมอ
+    sender_address: '48/698'
+    sender_postcode: '10230'
+    sender_address_full: ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
+    size: A4
+    parcel_size: ซอง A4
+    parcel_status: รอส่งพัสดุเข้าระบบ  #เลือกต้นทางจัดส่ง
+    total_amount: '1'
+    booking_price: '30'  #NaN
+    cod: '0.00'

@@ -20,7 +20,7 @@ Booking_S051
 
 
     Log    Step No.1 กรอกเบอร์โทรศัพท์ เเละกดปุ่มยืนยัน
-    Go To    https://www-uat.allspeedy.co.th/return-business/email-link/2410005650
+    Go To    https://www-uat.allspeedy.co.th/return-business/email-link/2410005954
     b2c_return_business_page.Input Trigger Phone Number    ${Booking_S050.old_return_business['phone']}
     b2c_return_business_page.Click Confirm Button
     ${booking_id}    Get Booking ID
@@ -34,9 +34,9 @@ Booking_S051
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
-    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page
+    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page [Not Have Parcel List]
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page 2
+    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page [Not Have Parcel List] 2
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_return_business_page.Click Add Parcel Button
@@ -61,5 +61,37 @@ Booking_S051
     Log    Step No.3 กรอกข้อมูล การสร้างพัสดุ
     b2c_return_business_page.Input Sender Phone    ${Booking_S051['sender_phone']}
     b2c_return_business_page.Input Sender Name    ${Booking_S051['sender_name']}
+    b2c_return_business_page.Input Sender Address    ${Booking_S051['sender_address']}
+    b2c_return_business_page.Input Sender Postcode    ${Booking_S051['sender_postcode']}
+    b2c_return_business_page.Select Sender Address Full    ${Booking_S051['sender_address_full']}
+    b2c_return_business_page.Select Parcel Size    ${Booking_S051['parcel_size']}
     # Expected
     common.Verify Capture Screenshot    Booking_S051     Input Data For Create Parcel
+
+    Log    Step No.4 กดปุ่ม "จองเลขพัสดุ"
+    b2c_return_business_page.Click Parcel Booking Button
+    # Expected
+    b2c_return_business_page.Verify Booking Detail Page
+    ...    ${booking_id}
+    ...    ${booking_name}
+    ...    ${Booking_S051['parcel_status']}
+    ...    ${Booking_S051['sender_name']}
+    ...    ${Booking_S051['sender_phone']}
+    ...    ${Booking_S050.old_return_business['name']}
+    ...    ${Booking_S050.old_return_business['phone']}
+    ...    ${Booking_S050.old_return_business['address']}
+    ...    ${Booking_S050.old_return_business['postcode']}
+    ...    ${return_business.email_link['text_blank']}
+    # ...    ${Booking_S051['size']}
+    ...    ${Booking_S051['booking_price']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking_S051['cod']}
+    # ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_value']}
+    ...    ${Booking_S051['total_price_amount']}
+    ...    30.00
+    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page 
