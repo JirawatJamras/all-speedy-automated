@@ -23,6 +23,7 @@ Booking:
   text_btn_edit: แก้ไข
   text_btn_save_edit: บันทึกแก้ไข
   text_btn_select: เลือก
+  text_term_and_condition_date_set: 30 ตุลาคม 2024
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " 
   text_version: " (Version 2)"
   text_accept_term_and_condition: 'ยอมรับเงื่อนไขการใช้บริการ'
