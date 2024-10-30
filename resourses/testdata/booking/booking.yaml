@@ -951,7 +951,8 @@ Booking_S033:
     condition: '1.ลูกค้าจะต้องเป็นสมาชิก All member 2.ลูกค้าจะต้องส่งพัสดุขนาด ทุกขนาด เฉพาะปลายทางบ้าน'  # Expected result : สำหรับลูกค้าที่เป็นกล่อง
     period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
   discount_amount: '1'
-  discount_value: '5.00'  # Expected result : NaN
+  discount_value1: NaN
+  discount_value2: '5.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   total_price_amount: '1'
@@ -1005,13 +1006,14 @@ Booking_S035:
   promotion: 'SPBH5B'
   promotion_detail:
     discount: '25 %'
-    promotion_name: 'คูปองส่วนลดค่าส่งพัสดุ 25% สำหรับ SPEED-D size ทุกขนาด ปลายทางร้าน 7-Eleven'
+    promotion_name: 'คูปองส่วนลดค่าส่งพัสดุ 25% สำหรับ SPEED-D size ทุกขนาด ปลายทางร้าน 7-Eleven'  # Expected result : 'คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน'
     parcel_size: 'ซอง A3 (ซอง A3)'  # Expected result : ทุกขนาด
     expired_date: '30 ตุลาคม 2568'
     condition: '1.ลูกค้าจะต้องเป็นสมาชิก All member 2.ลูกค้าจะต้องส่งพัสดุขนาด ทุกขนาด เฉพาะปลายทางร้าน 7-Eleven เท่านั้น'  # Expected result : สำหรับลูกค้าที่เป็นกล่อง
     period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
   discount_amount: '1'
-  discount_value: '10.00'
+  discount_value1: NaN
+  discount_value2: '5.00'
   total_price_amount: '1'
   total_price_value1: 'NaN'
   total_price_value2: '30.00'
@@ -1151,14 +1153,15 @@ Booking_S047:
     shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
     shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
 
-Booking_S48:
+Booking_S048:
   pickup_time:
     input: 'ช่วงบ่าย 13:00 - 16:00'
     expected: '13:00 - 16:00'
+  parcel_number: '0 รายการ'
   pickup_point: 'บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
   add_new_pickup:
     parcel_type: พัสดุทั่วไป (Dry)
-    input: 'ช่วงเช้า 09:00 - 12:00 น.'
+    input: 'ช่วงเช้า 09:00 - 12:00'
     expected: '09:00 - 12:00'
 
 Booking_S050:

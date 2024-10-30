@@ -6,6 +6,7 @@ Verify Call Car Pick Up Page
     Wait Until Element Is Visible    ${b2c_txt_call_pickup_parcel_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Click Add Button
+    common.Scroll Window To Vertical    0
     common.Click When Ready    ${b2c_btn_add_call_car_pickup_page}
 
 Verify Popup Parcel Pickup Schedule
@@ -216,7 +217,10 @@ Get The Highest Displayed Date And Set New Highest Date 2
     Log    ${date}
 
 Delete The Lastest Parcel Pickup Schedule
-    common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//span[@aria-label='delete']
+    [Arguments]    ${current_date}    ${current_time}
+    ${btn_delete_car_round_car_pickup_page}=    Replace String    ${btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
+    ${btn_delete_car_round_car_pickup_page}=    Replace String    ${btn_delete_car_round_car_pickup_page}    {time}    ${current_time}
+    common.Click When Ready    ${btn_delete_car_round_car_pickup_page}
     common.Click When Ready    //button[text()=' ยืนยัน']
     Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
@@ -284,26 +288,43 @@ Get Cut Off Date From Value
     ${cut_off_date}=    Set Variable    ${day}-${month}-${year}
     RETURN    ${cut_off_date}
 
-Get Date Parcel Pickup
-    Wait Until Element Is Visible    ${card_frist_parcel_pickup_list}
-    ${titleName}=    Get Text    ${txt_parcel_pickup_schedule} 
-    ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
-    ${parts}=    Split String    ${highestDisplayedDate}    -
-    ${day}=    Set Variable    ${parts}[0]
-    ${month}=    Set Variable    ${parts}[1]
-    ${year}=    Set Variable    ${parts}[2]
-    ${day}=    Convert To Integer    ${day}
-    ${digit}=     Get Length    ${day}
-    IF    '${digit}' == '1'
-        ${day}=    Set Variable    0${day}
+Get Normal Parcel Pickup Date
+    Wait Until Element Is Visible    ${img_parcel_in_card}    timeout=${DEFAULT_TIMEOUT}
+    ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel_pickup_list}    {title}    ${call_car_pick_up.car_round_name['normal']}
+    ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {number_of_parcel}    ${Booking_S048['parcel_number']}
+    WHILE    True
+        ${elementVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${card_first_normal_parcel}    timeout=${DEFAULT_TIMEOUT}
+        IF    '${elementVisible}' == 'True'
+            Scroll Element Into View    ${card_first_normal_parcel}
+            ${txt_normal_parcel_pickup_schedule}=    Replace String    ${txt_normal_parcel_pickup_schedule}    {value}    ${call_car_pick_up.car_round_name['normal']}
+            ${titleName}=    Get Text    ${txt_normal_parcel_pickup_schedule} 
+            ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
+            ${parts}=    Split String    ${highestDisplayedDate}    -
+            ${day}=    Set Variable    ${parts}[0]
+            ${month}=    Set Variable    ${parts}[1]
+            ${year}=    Set Variable    ${parts}[2]
+            ${day}=    Convert To Integer    ${day}
+            ${day_str}=    Convert To String    ${day}
+            ${digit}=    Get Length    ${day_str}
+            IF    '${digit}' == '1'
+                ${day_str}=    Set Variable    0${day_str}
+            END
+            ${newDate}=    Set Variable    ${day_str}-${month}-${year}
+            RETURN    ${newDate}
+        ELSE
+            Scroll Element Into View    ${btn_next_page_car_pickup_page}
+            common.Click When Ready    ${btn_next_page_car_pickup_page}
+        END
     END
-    ${newDate}=    Set Variable    ${day}-${month}-${year}
-    RETURN   ${newDate}
 
 Verify Car Pickup Schedule Card
-    [Arguments]    ${special_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
+    [Arguments]    ${car_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
     ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
-    Wait Until Element Is Visible    ${card_frist_parcel_pickup_list}
-    ${actual_info_new_pickup_card}=    Get Text    ${card_frist_parcel_pickup_list}
+    Log   ${car_round}
+    ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel_pickup_list}    {title}    ${car_round}
+    ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {number_of_parcel}    ${Booking_S048['parcel_number']}
+    Scroll Element Into View    ${card_first_normal_parcel}
+    Wait Until Element Is Visible    ${card_first_normal_parcel}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_info_new_pickup_card}=    Get Text    ${card_first_normal_parcel}
     ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
-    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${special_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} ${call_car_pick_up['cut_off_time']} จำนวนพัสดุ: ${call_car_pick_up.default['parcel_number']} รายการ ราคา: 0 บาท จุดรับพัสดุ: ${pickup_point}
+    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${car_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} ${call_car_pick_up['cut_off_time']} จำนวนพัสดุ: ${Booking_S048['parcel_number']} ราคา: 0 บาท จุดรับพัสดุ: ${pickup_point}
