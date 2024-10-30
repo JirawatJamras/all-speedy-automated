@@ -604,14 +604,17 @@ Booking_S020:
   booking_name:  Booking CHILLED
   booking_item: 1 รายการ
   parcel_package_type:  กล่อง
+  price_value: 230
   discount_amount: '1'
   discount_value: 'NaN'
+  discount_value2: '5.00'
   insurance_fee_amount: '0'
   insurance_fee_value: '0.00'
   cod_fee_amount: '0'
   cod_fee_value: '0.00'
   total_price_amount:  '1'
   total_price_value:  'NaN'
+  total_price_value2:  '225.00'
 
 Booking_S021:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
@@ -633,6 +636,7 @@ Booking_S021:
   store_code:  '15888'
   booking_item: 1 รายการ
   parcel_package_type:  กล่อง
+  price_value: 250
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
@@ -727,11 +731,12 @@ Booking_S025:
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'    
   receiver_phone: '0890000002'
   receiver_name: สมใจ ดีดีดี
-  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  shipping_origin: รอบรถเข้ารับพัสดุ
   store_code:  '01523'
   store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
   store_address_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
   parcel_size:  S1    
+  price_value: 210
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน    
   promotion:  SPBH5B    
   promotion_detail:    
@@ -745,8 +750,13 @@ Booking_S025:
   booking_item: 1 รายการ
   booking_price:  Nanบาท
   parcel_package_type:  กล่อง
+  discount_amount: '1'
+  discount_value: 'NaN'
   total_price_amount:  '1'
   total_price_value:  'NaN'
+  total_price_value2:  '210.00'
+  origin_shipping: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
+
 
 Booking_S026:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
@@ -760,21 +770,24 @@ Booking_S026:
   receiver_store_code_5_digits: '01523'
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'    # Expected result is'01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
-  parcel_size: S2
+  parcel_size: S2   
+  price_value: 230
   parcel_cod:  5000
   parcel_cod_verify:  5,000.00
   #img_sender_heart: รูปหัวใจไม่มีสี
   img_sender_heart: รูปหัวใจสีแดง
   img_receiver_heart: รูปหัวใจสีแดง
   booking_name:  Booking CHILLED
-  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  shipping_origin: รอบรถเข้ารับพัสดุ
   store_code:  '15888'
   booking_item: 1 รายการ
-  parcel_package_type:  ซอง
+  parcel_package_type:  กล่อง
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  '380.00'
+  total_price_value:  'NaN'
+  total_price_value2:  '380.00'
+  origin_shipping: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
 
 Booking_S027:
   parcel_type:  พัสดุควบคุมอุณหภูมิ

@@ -3,19 +3,32 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    13:00:00 - 16:00  # Expected result : ${Booking_S048.add_new_pickup['expected']}
+                  ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S021
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S2 (มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT
-    Log    Login
+    [Tags]    Booking    UAT    Review_Pass
+    Log    Prerequisite
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
+    b2c_call_car_pick_up_parcel_page.Click Add Button
+    b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S018['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
+    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
+    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -302,8 +315,40 @@ Booking_S021
     Log    Step No.19 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
     # รอบรถเข้ารับพัสดุ
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S021['shipping_origin']}
-    ################ เพิ่ม Step เลือกรอบรถเข้ารับพัสดุ
+    b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
+    b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     # Expected
+    b2c_booking_detail_page.Verify Booking Detail Page
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_waiting_entering']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S021['sender_name']}
+    ...    ${Booking_S021['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S021['receiver_name']}
+    ...    ${Booking_S021['receiver_phone']}
+    ...    ${Booking_S021['receiver_address']}
+    ...    ${Booking_S021['receiver_postcode_full']}
+    ...    ${Booking_S021['parcel_size']}
+    ...    ${Booking_S021['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    0    # Expected Result is ${Booking_S021['discount_amount']}
+    ...    0.00    # Expected Result is ${Booking_S021['discount_value']}
+    ...    0    # Expected Result is ${Booking_S021['insurance_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S021['insurance_fee_value']}
+    ...    0    # Expected Result is ${Booking_S021['cod_fee_amount']}
+    ...    0.00    # Expected Result is ${Booking_S021['cod_fee_value']}
+    ...    ${Booking_S021['total_price_amount']}
+    ...    250.00    # Expected Result is ${Booking_S021['total_price_value2']}
+    ...    ${EMPTY}
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
