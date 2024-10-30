@@ -225,8 +225,9 @@ Delete The Lastest Parcel Pickup Schedule
     Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
+    [Arguments]    ${current_date}    ${current_time}
     common.Open URL    ${B2C_UAT_PICKUP_SCHEDULE_URL}
-    Delete The Lastest Parcel Pickup Schedule
+    Delete The Lastest Parcel Pickup Schedule    ${current_date}    ${current_time}
     
 Click Select Item On Parcel Pickup Schedule List
     common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
