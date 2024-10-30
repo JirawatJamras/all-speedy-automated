@@ -1203,3 +1203,6 @@ Booking_S051:
     total_amount: '1'
     booking_price: '30'  #NaN
     cod: '0.00'
+    store: '15888'
+    verify_booking_price: '30.00'
+    parcel_package_type:  ซอง

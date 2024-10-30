@@ -31,6 +31,7 @@ ${txt_sender_address_return_business}    //label[@for='create_parcel_form_sender
 ${txt_sender_address_full_return_business}    //label[@for='create_parcel_form_sender_address_full']
 ${txt_list_parcel_size_return_business}    //div[@class='ant-list-item']//strong[text()='{value}']/../..
 ${txt_remark_full_return_business}    //label[@for='create_parcel_form_remark']
+${txt_shipping_origin_aria_return_business}    //form[@id='detail_form']//strong[contains(text(),'{value}')]
 
 ${txt_address_return_business}    //label[@for='return_address_info']
 ${txt_postcode_return_business}    //label[@for='return_address_full']
@@ -40,7 +41,6 @@ ${txt_phone_in_popup}    //label[@for='trigger_tel']
 ${txt_name_in_popup}    //label[@for='trigger_name']
 ${txt_shipping_payer_in_popup}    //*[text()='{label}']//..//*[text()='{value}']
 ${txt_address_in_popup}    //label[@title='{value}']
-
 
 ${txtbox_link_name_return_business}    //input[@id='return_linkName']
 ${txtbox_phone_return_business}    //input[@id='return_tel']
@@ -62,12 +62,16 @@ ${txtbox_sender_phone_return_business}    //input[@id='create_parcel_form_sender
 ${txtbox_sender_name_return_business}    //input[@id='create_parcel_form_sender_name']
 ${txtbox_sender_address_return_business}    //textarea[@id='create_parcel_form_sender_address_info']
 ${txtbox_sender_postcode_return_business}    //input[@id='create_parcel_form_sender_address_full']
+${txtbox_shipping_origin_return_business}    //form[@id='detail_form']//input[@class='ant-select-selection-search-input']
 
 ${btn_add_parcel_return_business}    //span[@aria-label='plus-circle']/../..
 ${btn_select_address_return_business}    //div[@id='create_parcel_form_sender_address_full_list']/..//div[text()='{value}']
 ${btn_select_parcel_size_return_business}    //div[@class='ant-list-item']//strong[contains(normalize-space(.), '{value}')]
 ${btn_parcel_booking_return_business}    //span[text()='{value}']/..
 ${btn_edit_parcel_return_business}    //button[@id='edit-detail']
+${btn_save_shipping_return_business}    //span[text()='{value}']/..
+${btn_print_return_business}    //div[@class='ant-card-body']//button//span[text()='{value}']
+${btn_print_popup_return_business}    //div[text()='{value}']/../../..//button//span[text()='{value}']
 
 ${opt_postcode_choice_return_business}    //*[text()='{value}']
 ${opt_owner_pay_return_business}    //span[text()='{value}']/..//input[@value='owner']//..
@@ -79,3 +83,5 @@ ${crd_id_booking_return_business}    //.//..//..//..//..//..//*[text()='ID']//..
 ${crd_parcel_return_business}    //span[text()='{value}']/../../../../..//div[@class='ant-card-body']
 
 ${msg_popup_success}    //span[text()='{value}']
+
+${cbo_shipping_return_business}    //div[@class='ant-select-item-option-content' and contains(text(),'{value}')]

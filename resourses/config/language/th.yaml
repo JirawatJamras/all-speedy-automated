@@ -542,4 +542,6 @@ return_business:
     text_buy_insure: 'ซื้อประกัน :'
     text_select_cod: 'COD :'
     text_print: 'พิมพ์ใบจ่ายหน้าพัสดุ -'
-    text_blank: ''
+    text_save: บันทึก
+    text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
+    text_print_parcel_label: พิมพ์ใบจ่ายหน้าพัสดุ
