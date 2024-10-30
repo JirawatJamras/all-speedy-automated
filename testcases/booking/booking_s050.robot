@@ -57,7 +57,7 @@ Booking_S050
     ...    ${Booking_S050.old_return_business['postcode']}  # Expected result : ${EMPTY}
     common.Verify Capture Screenshot    Booking_S050    Verify Link Return Business Popup
     #Clear Input for Defect113
-    b2c_return_business_page.Clear Input
+    #b2c_return_business_page.Clear Input
 
     Log    Step No.4 กรอกข้อมูล
     b2c_return_business_page.Input Link Name    ${Booking_S050.new_return_business['link_name']}
