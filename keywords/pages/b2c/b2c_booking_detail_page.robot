@@ -674,24 +674,3 @@ Select Booked Pickup Time From List
     ${date}    Replace String    ${date}    -    /
     common.Scroll Into View By Xpath    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input    true
     common.Click Xpath By JavaScript    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input
-    
-Input Trigger Phone Number
-    [Arguments]    ${phone_number}
-    common.Input When Ready    ${b2c_txtbox_trigger_phone_number}    ${phone_number}
-
-Click Confirm Button
-    common.Click When Ready    ${b2c_btn_confirm_phone_number}
-
-Verify Booking Detail Page [Not Have Parcel List]
-    [Arguments]    ${booking_id}    ${booking_name}
-
-    ${txt_booking_list} =  Replace String    ${b2c_txt_heading_booking_list}    {value}    ${Booking['text_title_booking_list']}
-    ${txt_booking_id}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${Booking['text_booking_id_label']}
-    ${txt_booking_name}=    Replace String    ${b2c_txt_booking_name_booking_detail_page}    {value}    ${Booking['text_booking_name_label']}
-
-    ${actual_booking_id}=    Get Text    ${txt_booking_id}
-    ${actual_booking_name}=    Get Text    ${txt_booking_name}
-
-    Wait Until Element Is Visible    ${txt_booking_list}
-    Should Be Equal    ${actual_booking_id}    ${booking_id}
-    Should Be Equal    ${actual_booking_name}    ${booking_name}

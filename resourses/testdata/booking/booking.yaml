@@ -1175,4 +1175,6 @@ Booking_S050:
     postcode_5_digits: '11120'
     postcode: 'ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
 
-  Booking_S051:
+Booking_S051:
+    sender_phone: '0899999999'
+    sender_name: สมชาย สายเสมอ

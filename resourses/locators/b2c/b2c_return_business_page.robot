@@ -12,6 +12,26 @@ ${txt_name_return_business}    //label[@for='return_name']
 ${txt_shipping_payer_return_business}    //label[@for='return_paymentBy']
 ${txt_location_pickup_return_business}    //form[contains(@class,'ant-form ant-form-vertical')]//h5
 
+${txt_heading_booking_list}    //div[@class='ant-card-head-title']//strong[text()='{value}']
+${txt_heading_parcel_list_return_business}    //div[@class='ant-card-head-title']//strong[text()='{value}']
+${txt_heading_summary_booking_return_business}    //div[@class='ant-card-head-title']//strong[text()='{value}']
+${txt_booking_id_return_business}    //strong[text()='{value}']/../../..//div[2]//span
+${txt_booking_name_return_business}    //strong[text()='{value}']/../../..//div[4]//span
+${txt_booking_time_return_business}    //strong[text()='{value}']/../../..
+${txt_shipping_origin_return_business}    //strong[text()='{value}']
+${txt_discount_return_business}    //span[text()='{value}']/../..
+${txt_insure_return_business}    //span[text()='{value}']/../..
+${txt_cod_return_business}    //span[text()='{value}']/../..
+${txt_total_return_business}    //strong[text()='{value}']/../../..
+${txt_return_business_return_business}    //div[@class='ant-modal-title']//div['{value}']
+${txt_sender_info_return_business}    //form[@id='create_parcel_form']//span[text()='{value}']
+${txt_sender_phone_return_business}    //label[@for='create_parcel_form_sender_tel']
+${txt_sender_name_return_business}    //label[@for='create_parcel_form_sender_name']
+${txt_sender_address_return_business}    //label[@for='create_parcel_form_sender_address_info']
+${txt_sender_address_full_return_business}    //label[@for='create_parcel_form_sender_address_full']
+${txt_list_parcel_size_return_business}    //div[@class='ant-list-item']//strong[text()='{value}']/../..
+${txt_remark_full_return_business}    //label[@for='create_parcel_form_remark']
+
 ${txt_address_return_business}    //label[@for='return_address_info']
 ${txt_postcode_return_business}    //label[@for='return_address_full']
 
@@ -26,6 +46,10 @@ ${txtbox_phone_delete}    //input[@id='return_tel']//..//span[@role='button']
 ${txtbox_name_delete}    //input[@id='return_name']//..//span[@role='button']
 ${txtbox_address_delete}    //textarea[@id='return_address_info']//..//span[@role='button']
 
+${txtbox_sender_phone_return_business}    //input[@id='create_parcel_form_sender_tel']
+${txtbox_sender_name_return_business}    //input[@id='create_parcel_form_sender_name']
+
+${btn_add_parcel_return_business}    //span[@aria-label='plus-circle']/../..
 
 ${opt_postcode_choice_return_business}    //span[text()='{value}']
 ${opt_owner_pay_return_business}    //span[text()='{value}']/..//input[@value='owner']//..

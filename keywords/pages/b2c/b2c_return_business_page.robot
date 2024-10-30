@@ -140,4 +140,121 @@ Click Copy Link
 
 
 
+Input Trigger Phone Number
+    [Arguments]    ${phone_number}
+    common.Input When Ready    ${b2c_txtbox_trigger_phone_number}    ${phone_number}
+
+Click Confirm Button
+    common.Click When Ready    ${b2c_btn_confirm_phone_number}
+
+Verify Booking Detail Page [Not Have Parcel List]
+    [Arguments]    ${booking_id}    ${booking_name}    ${discount_value}    ${insurance_fee_value}    ${cod_fee_value}    
+    ...    ${total_price_amount}    ${total_price_value}
+
+    ${txt_booking_list} =  Replace String    ${txt_heading_booking_list}    {value}    ${return_business.email_link['text_title_booking_list']}
+    ${txt_booking_id}=    Replace String    ${txt_booking_id_return_business}    {value}    ${return_business.email_link['text_booking_id_label']}
+    ${txt_booking_name}=    Replace String    ${txt_booking_name_return_business}    {value}    ${return_business.email_link['text_booking_name_label']}
+    ${txt_booking_time}=    Replace String    ${txt_booking_time_return_business}    {value}    ${return_business.email_link['text_booking_time_label']}
+    ${txt_shipping_origin}=    Replace String    ${txt_shipping_origin_return_business}    {value}    ${return_business.email_link['text_shipping_origin']}
+    ${txt_parcel_list}=    Replace String    ${txt_heading_parcel_list_return_business}    {value}    ${return_business.email_link['text_title_parcel_list']}
+    ${txt_summary_booking}=    Replace String    ${txt_heading_summary_booking_return_business}    {value}    ${return_business.email_link['text_title_booking_summary']}
+    ${txt_discount}=    Replace String    ${txt_discount_return_business}    {value}    ${return_business.email_link['text_dixcount']}
+    ${txt_insure}=    Replace String    ${txt_insure_return_business}    {value}    ${return_business.email_link['text_insure']}
+    ${txt_cod}=    Replace String    ${txt_cod_return_business}    {value}    ${return_business.email_link['text_cod']}
+    ${txt_total}=    Replace String    ${txt_total_return_business}    {value}    ${return_business.email_link['text_total_price']}
+
+    ${actual_booking_id}=    Get Text    ${txt_booking_id}
+    ${actual_booking_name}=    Get Text    ${txt_booking_name}
+    ${actaul_booking_time}=    Get Text    ${txt_booking_time}
+    Scroll Element Into View    ${txt_total}
+    ${actual_discount}=    Get Text    ${txt_discount}
+    # ${actual_insure}=    Get Text    ${txt_insure}
+    # ${actual_cod}=    Get Text    ${txt_cod}
+    ${actual_total}=    Get Text    ${txt_total}
+
+    ${booking_time}    Split String And Select    ${actaul_booking_time}    \n    1
+    ${time_convert}    Convert Date    ${booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
+
+    Wait Until Element Is Visible    ${txt_booking_list}
+    Should Be Equal    ${actual_booking_id}    ${booking_id}
+    Should Be Equal    ${actual_booking_name}    ${booking_name}
+    Should Be Equal As Strings    ${booking_time}   ${time_convert}
+    Wait Until Element Is Visible    ${txt_shipping_origin}
+    Wait Until Element Is Visible    ${txt_parcel_list}
+    Should Be Equal    ${actual_discount}    ${return_business.email_link['text_dixcount']} ${discount_value}
+    # Should Be Equal    ${actual_insure}    ${Booking['text_insure']} ${insurance_fee_value}
+    # Should Be Equal    ${actual_cod}    ${Booking['text_cod']} ${cod_fee_value}
+    Should Be Equal    ${actual_total}    ${return_business.email_link['text_total_price']} ${total_price_amount} ${total_price_value}
+    common.Scroll Window To Vertical    0
+
+Click Add Parcel Button
+    common.Scroll Window To Vertical    0
+    common.Click When Ready    ${btn_add_parcel_return_business}
+
+Verify Create Parcel Popup
+    [Arguments]    ${sender_info}    ${text_phone}    ${text_name}    ${text_address}    ${text_address_full}
+    ...    ${parcel_detail_A4}    ${parcel_detail_A3}    ${parcel_detail_XS}    ${parcel_detail_S}    ${parcel_detail_M}
+    ...    ${parcel_detail_L}    ${parcel_detail_XL}    ${parcel_detail_XXL}    ${remark}
+    ${txt_title}=    Replace String    ${txt_return_business_return_business}    {value}    ${return_business.email_link['text_title']}
+    ${txt_sender_info}=    Replace String    ${txt_sender_info_return_business}    {value}    ${sender_info}
+    ${txt_parcel_A4}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_A4']}
+    ${txt_parcel_A3}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_A3']}
+    ${txt_parcel_XS}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_XS']}
+    ${txt_parcel_S}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_S']}
+    ${txt_parcel_M}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_M']}
+    ${txt_parcel_L}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_L']}
+    ${txt_parcel_XL}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_XL']}
+    ${txt_parcel_XXL}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_XXL']}
+
+    Wait Until Element Is Visible    ${txt_title}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_sender_info}
+
+    ${actual_sender_phone}=    Get Text    ${txt_sender_phone_return_business}
+    ${actual_sender_name}=    Get Text    ${txt_sender_name_return_business}
+    ${actual_sender_address}=    Get Text    ${txt_sender_address_return_business}
+    ${actual_sender_address_full}=    Get Text    ${txt_sender_address_full_return_business}
+    ${actual_remark}=    Get Text    ${txt_remark_full_return_business}
+    ${actual_parcel_A4}=    Get Text    ${txt_parcel_A4}
+    ${actual_parcel_A4}=    Replace String    ${actual_parcel_A4}    \n    ${SPACE}
+    ${actual_parcel_A3}=    Get Text    ${txt_parcel_A3}
+    ${actual_parcel_A3}=    Replace String    ${actual_parcel_A3}    \n    ${SPACE}
+    ${actual_parcel_XS}=    Get Text    ${txt_parcel_XS}
+    ${actual_parcel_XS}=    Replace String    ${actual_parcel_XS}    \n    ${SPACE}
+    ${actual_parcel_S}=    Get Text    ${txt_parcel_S}
+    ${actual_parcel_S}=    Replace String    ${actual_parcel_S}    \n    ${SPACE}
+    ${actual_parcel_M}=    Get Text    ${txt_parcel_M}
+    ${actual_parcel_M}=    Replace String    ${actual_parcel_M}    \n    ${SPACE}
+    ${actual_parcel_L}=    Get Text    ${txt_parcel_L}
+    ${actual_parcel_L}=    Replace String    ${actual_parcel_L}    \n    ${SPACE}
+    ${actual_parcel_XL}=    Get Text    ${txt_parcel_XL}
+    ${actual_parcel_XL}=    Replace String    ${actual_parcel_XL}    \n    ${SPACE}
+    ${actual_parcel_XXL}=    Get Text    ${txt_parcel_XXL}
+    ${actual_parcel_XXL}=    Replace String    ${actual_parcel_XXL}    \n    ${SPACE}
+
+    Should Be Equal    ${actual_sender_phone}    ${text_phone}
+    Should Be Equal    ${actual_sender_name}    ${text_name}
+    Should Be Equal    ${actual_sender_address}    ${text_address}
+    Should Be Equal    ${actual_sender_address_full}    ${text_address_full}
+    Should Be Equal    ${actual_parcel_A4}    ${parcel_detail_A4}
+    Should Be Equal    ${actual_parcel_A3}    ${parcel_detail_A3}
+    Should Be Equal    ${actual_parcel_XS}    ${parcel_detail_XS}
+    Should Be Equal    ${actual_parcel_S}    ${parcel_detail_S}
+    Should Be Equal    ${actual_parcel_M}    ${parcel_detail_M}
+    Should Be Equal    ${actual_parcel_L}    ${parcel_detail_L}
+    Should Be Equal    ${actual_parcel_XL}    ${parcel_detail_XL}
+    Should Be Equal    ${actual_parcel_XXL}    ${parcel_detail_XXL}
+    Should Be Equal    ${actual_remark}    ${remark}
+
+Input Sender Phone
+    [Arguments]    ${phone}
+    common.Input When Ready    ${txtbox_sender_phone_return_business}    ${phone}
+
+Input Sender Name
+    [Arguments]    ${name}
+    common.Input When Ready    ${txtbox_sender_name_return_business}    ${name}
+
+
+
+
+
 

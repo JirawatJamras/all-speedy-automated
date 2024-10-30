@@ -29,7 +29,7 @@ Booking:
   text_title: สร้างพัสดุ       
   text_title_booking_list: รายการบุ๊คกิ้ง 
   text_title_parcel_list: รายการพัสดุ   
-  text_title_booking_summary: สรุปรายการบุ๊คกิ้ง     
+  text_title_booking_summary: สรุปรายการบุ๊คกิ้ง
   text_parcel_sender_information: ข้อมูลผู้ส่งพัสดุ  
   text_phone_sender: เบอร์โทรศัพท์ * 
   text_name_sender: ชื่อ *  
@@ -476,3 +476,45 @@ return_business:
     text_location_pickup: สถานที่รับพัสดุ
     text_address: รายละเอียดที่อยู่
     text_postcode: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
+  email_link:
+    text_title: สร้างพัสดุ
+    text_title_booking_list: รายการบุ๊คกิ้ง
+    text_booking_id_label: 'บุ๊คกิ้ง ID :'
+    text_booking_time_label: 'วันเวลาทำรายการ :'
+    text_shipping_origin:  'ต้นทางจัดส่ง :'
+    text_booking_name_label: 'ชื่อบุ๊คกิ้ง :' 
+    text_title_parcel_list: รายการพัสดุ   
+    text_title_booking_summary: สรุปรายการบุ๊คกิ้ง
+    text_dixcount: รวมส่วนลด
+    text_insure: ค่าธรรมเนียมประกัน 
+    text_cod: ค่าธรรมเนียม COD    
+    text_total_price: ยอดสุทธิ  
+    text_parcel_sender_information: ข้อมูลผู้ส่งพัสดุ
+    text_phone: เบอร์โทรศัพท์
+    text_name: ชื่อ
+    text_address: รายละเอียดที่อยู่
+    text_address_full: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
+    text_parcel_detail: รายละเอียดพัสดุ
+    parcel_A4: A4
+    parcel_detail_A4: A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ชม.
+    parcel_A3: A3
+    parcel_detail_A3: A3 ซอง A3 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 72 ชม.
+    parcel_XS: XS
+    parcel_text_size_XS: (เล็กพิเศษ)
+    parcel_detail_XS: XS กล่อง XS (เล็กพิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 40 ชม.
+    parcel_S: S
+    parcel_text_size_S: (เล็ก)
+    parcel_detail_S: S กล่อง S (เล็ก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 60 ชม.
+    parcel_M: M
+    parcel_text_size_M: (กลาง)
+    parcel_detail_M: M กล่อง M (กลาง) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 90 ชม.
+    parcel_L: L
+    parcel_text_size_L: (ใหญ่)
+    parcel_detail_L: L กล่อง L (ใหญ่) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 120 ชม.
+    parcel_XL: XL
+    parcel_text_size_XL: (ใหญ่มาก)
+    parcel_detail_XL: XL กล่อง XL (ใหญ่มาก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 150 ชม.
+    parcel_XXL: XXL
+    parcel_text_size_XXL: (ใหญ่พิเศษ)
+    parcel_detail_XXL: XXL กล่อง XXL (ใหญ่พิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 200 ชม.
+    text_remark: หมายเหตุ
