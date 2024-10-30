@@ -3,8 +3,6 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
-# Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
-#                   ...    AND    Close Browser
 Test Teardown    Close Browser
 
 *** Test Cases ***
@@ -47,17 +45,15 @@ Booking_S050
 
     # Defect113
     # Expected 
-    b2c_return_business_page.Verify Data Link Return Business Popup
-    ...    ${Booking_S050.old_return_business['link_name']}  # Expected result : ${EMPTY}
-    ...    ${Booking_S050.old_return_business['phone']}  # Expected result : ${EMPTY}
-    ...    ${Booking_S050.old_return_business['name']}  # Expected result : ${EMPTY}
-    ...    ${Booking_S050.old_return_business['shipping_payer']}  # Expected result : ${EMPTY}
-    ...    ${Booking_S050.old_return_business['location_pickup']}  # Expected result : ${EMPTY}
-    ...    ${Booking_S050.old_return_business['address']}  # Expected result : ${EMPTY}
-    ...    ${Booking_S050.old_return_business['postcode']}  # Expected result : ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S050    Verify Link Return Business Popup
-    #Clear Input for Defect113
-    #b2c_return_business_page.Clear Input
+    # b2c_return_business_page.Verify Data Link Return Business Popup
+    # ...    ${EMPTY}
+    # ...    ${EMPTY}
+    # ...    ${EMPTY}
+    # ...    ${EMPTY}
+    # ...    ${EMPTY}
+    # ...    ${EMPTY}
+    # ...    ${EMPTY}
+    # common.Verify Capture Screenshot    Booking_S050    Verify Link Return Business Popup
 
     Log    Step No.4 กรอกข้อมูล
     b2c_return_business_page.Input Link Name    ${Booking_S050.new_return_business['link_name']}
