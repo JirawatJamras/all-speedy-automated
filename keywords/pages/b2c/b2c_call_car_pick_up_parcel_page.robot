@@ -270,7 +270,8 @@ Verify Close Filter Section
 Verify Added New Car Pickup Schedule
     [Arguments]    ${parcel_type}    ${special_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
     ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
-    Wait Until Element Is Visible    ${card_frist_parcel_pickup_list}
+    Wait Until Element Is Visible    ${card_frist_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    common.Scroll Window To Vertical    0
     ${actual_info_new_pickup_card}=    Get Text    ${card_frist_parcel_pickup_list}
     ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
     Run Keyword If    '${parcel_type}' == 'พัสดุทั่วไป (Dry)'    Element Should Be Visible   ${img_dry_parcel}
