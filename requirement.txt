@@ -13,3 +13,4 @@ robotframework-seleniumlibrary==6.3.0
 robotframework-seleniumtestability==2.1.0
 robotframework-stacktrace==0.4.1
 selenium==4.16.0
+clipboard==0.0.4

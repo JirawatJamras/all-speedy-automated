@@ -98,7 +98,8 @@ Booking_S051
     b2c_return_business_page.Verify Booking Detail Page
     ...    ${booking_id}
     ...    ${booking_name}
-    ...    ${Booking_S051['parcel_status']}
+    ...    ${Booking['text_parcel_status_waiting_entering']}
+    #...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S051['sender_name']}
     ...    ${Booking_S051['sender_phone']}
     ...    ${Booking_S050.new_return_business['name']}
@@ -116,7 +117,7 @@ Booking_S051
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking_S051['total_price_amount']}
+    ...    ${Booking_S051['total_amount']}
     ...    30.00
     common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page 
 
