@@ -88,11 +88,11 @@ Booking_S050
     #Expected
 
     Log    Step No.7 กดปุ่ม "Download QR Code"
-    
+    b2c_return_business_page.Click Download QR Code
     #Expected
 
     Log    Step No.8 กดปุ่ม "Copy Link"
-
+    b2c_return_business_page.Click Copy Link
     #Expected
 
 

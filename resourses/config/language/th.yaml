@@ -457,8 +457,10 @@ rm:
 
 
 return_business:
-  button_add: เพิ่ม
-  button_save: บันทึก
+  text_btn_add: เพิ่ม
+  text_btn_save: บันทึก
+  text_btn_download_qr: Download QR Code
+  text_btn_copy_link: Copy Link
   text_term_and_condition: "ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ " 
   text_version: " (Version 2)"
   text_accept_condition: ยอมรับเงื่อนไขการใช้บริการ

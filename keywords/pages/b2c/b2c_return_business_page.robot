@@ -6,7 +6,7 @@ Verify Return Business
     Should Be Equal    ${actual_header}    ${sub_menu['return_business']}
 
 Click Add Booking Button
-    ${btn_add_booking}=    Replace String    ${btn_add_booking}    {value}    ${return_business['button_add']}
+    ${btn_add_booking}=    Replace String    ${btn_add_booking}    {value}    ${return_business['text_btn_add']}
     common.Click When Ready    ${btn_add_booking}
 
 Verify Term & Condition 
@@ -108,7 +108,7 @@ Select Send To 7-ELEVEN Store Tab
     common.Click When Ready    ${tab_send_to_store}
 
 Click Save Button
-    ${btn_save}=    Replace String    ${btn_save_return_business}    {value}    ${return_business['button_save']}
+    ${btn_save}=    Replace String    ${btn_save_return_business}    {value}    ${return_business['text_btn_save']}
     common.Click When Ready    ${btn_save}
 
 Verify New Booking
@@ -118,7 +118,6 @@ Verify New Booking
     ${selected_card}=     Replace String    ${selected_card}    {name}    ${name}
     ${selected_card}=     Replace String    ${selected_card}    {phone}    ${phone}
     ${selected_card}=     Replace String    ${selected_card}    {address}    ${address} ${postcode}
-    #${selected_card}=     Replace String    ${crd_booking_return_business}    {postcode}    ${postcode}
     Wait Until Element Is Visible    ${selected_card}    timeout=${DEFAULT_TIMEOUT}
     Page Should Contain Element    ${selected_card}
 
@@ -129,7 +128,16 @@ Click Booking Card
     ${selected_card}=     Replace String    ${selected_card}    {name}    ${name}
     ${selected_card}=     Replace String    ${selected_card}    {phone}    ${phone}
     ${selected_card}=     Replace String    ${selected_card}    {address}    ${address} ${postcode}
+    common.Click When Ready    ${selected_card}
 
-    common.Click When Ready  ${selected_card}
+Click Download QR Code
+    ${btn_add_download_qr}=    Replace String    ${btn_popup_return_business}    {value}    ${return_business['text_btn_download_qr']}
+    common.Click When Ready    ${btn_add_download_qr}
+
+Click Copy Link
+    ${btn_add_copy_link}=    Replace String    ${btn_popup_return_business}    {value}    ${return_business['text_btn_copy_link']}
+    common.Click When Ready    ${btn_add_copy_link}   
+
+
 
 
