@@ -72,6 +72,7 @@ Booking:
   text_dry_parcel_id_4_start_unit: SPBD
   text_chilled_parcel_id_4_start_unit: SPBC
   text_error_report: Error Report
+  text_confirm_popup: ' ยืนยัน'
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -192,6 +193,8 @@ Booking:
     dry_parcel_file_name: Excel Template พัสดุทั่วไป.xlsx
     dry_parcel_import_success_amount: สำเร็จ 15
     dry_parcel_import_fail_amount: ล้มเหลว 32
+  origin_shipping:
+    idc_company_address: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
 
 
 call_car_pick_up:

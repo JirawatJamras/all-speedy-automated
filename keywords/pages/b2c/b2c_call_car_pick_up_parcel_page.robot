@@ -220,9 +220,12 @@ Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
     ${btn_delete_car_round_car_pickup_page}=    Replace String    ${btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
     ${btn_delete_car_round_car_pickup_page}=    Replace String    ${btn_delete_car_round_car_pickup_page}    {time}    ${current_time}
-    common.Click When Ready    ${btn_delete_car_round_car_pickup_page}
-    common.Click When Ready    //button[text()=' ยืนยัน']
-    Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
+    ${b2c_btn_confirm_in_asking_to_close_popup}=    Replace String    ${b2c_btn_confirm_in_asking_to_close_popup}    {value}    ${Booking['text_confirm_popup']}
+    Wait Until Element Is Visible    ${btn_delete_car_round_car_pickup_page}    timeout=10s
+    Click Element    ${btn_delete_car_round_car_pickup_page}
+    Wait Until Element Is Visible    ${b2c_btn_confirm_in_asking_to_close_popup}    timeout=3s
+    Click Element    ${b2c_btn_confirm_in_asking_to_close_popup}
+    Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=5s
 
 Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}

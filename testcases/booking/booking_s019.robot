@@ -267,7 +267,7 @@ Booking_S019
     ...    ${Booking.text_default['cod_fee_value']}
     ...    0    #  Expected Result is ${Booking_S019['total_price_amount']}
     ...    0.00    #  Expected Result is ${Booking_S019['total_price_value1']}
-    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S019    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -318,7 +318,7 @@ Booking_S019
     ...    ${Booking.text_default['cod_fee_value']}
     ...    0    # Expected Result is ${Booking_S019['total_price_amount']}
     ...    0.00    #  Expected Result is ${Booking_S019['total_price_value1']}
-    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S019    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -369,7 +369,7 @@ Booking_S019
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S019['total_price_amount']}
     ...    ${Booking_S019['total_price_value2']}
-    ...    ${Booking_S019['origin_shipping']}
+    ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S019    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0

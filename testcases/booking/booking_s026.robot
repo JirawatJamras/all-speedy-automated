@@ -268,7 +268,7 @@ Booking_S026
     ...    ${Booking.text_default['cod_fee_value']}    # Expected is ${Booking_S026['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}    # Expected is ${Booking_S026['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}    # Expected is ${Booking_S026['total_price_value']}
-    ...    ${EMPTY}    # Expected is ${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S026    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -318,7 +318,7 @@ Booking_S026
     ...    ${Booking.text_default['cod_fee_value']}    # Expected is ${Booking_S026['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}    # Expected is ${Booking_S026['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}    # Expected is ${Booking_S026['total_price_value']}
-    ...    ${EMPTY}    # Expected is${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S026    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -368,7 +368,7 @@ Booking_S026
     ...    ${Booking.text_default['cod_fee_value']}    # Expected is ${Booking_S026['cod_fee_value']}
     ...    1    # Expected is ${Booking_S026['total_price_amount']}
     ...    230.00    # Expected is ${Booking_S026['total_price_value2']}
-    ...    ${Booking_S026['origin_shipping']}
+    ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S026    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0
