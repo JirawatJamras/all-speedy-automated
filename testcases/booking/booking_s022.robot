@@ -1,24 +1,38 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
+                  ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S022
-    [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S0 (ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
+    [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A1 (มี COD เเละใส่หมายเหตุ)(บันทึกร่าง) - Promotion (มี)
     [Tags]    Booking    UAT
-    Log    Login
+    Log    Pre condition
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
+    b2c_call_car_pick_up_parcel_page.Click Add Button
+    b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S018['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
+    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
+    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
     common.Verify Capture Screenshot    Booking_S022    Verify Booking Page For Business Customer
@@ -69,8 +83,8 @@ Booking_S022
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}    # Expected Result is ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S022['sender_name']}
     ...    ${Booking_S022['sender_phone']}
     ...    ${Booking.img_not_favorite['img_receiver_heart']}
@@ -137,24 +151,21 @@ Booking_S022
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     #Expected
-    ################ แก้ Verify Parcel Detail Page of Create Parcel [Dry Parcel] ของ พัสดุควบคุมอุณหภูมิ
-    # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
-    # ...    ${Booking.dry_parcel['parcel_detail_A4']}
-    # ...    ${Booking.dry_parcel['parcel_detail_A3']}
-    # ...    ${Booking.dry_parcel['parcel_detail_XS']}
-    # ...    ${Booking.dry_parcel['parcel_detail_S']}
-    # ...    ${Booking.dry_parcel['parcel_detail_M']}
-    # ...    ${Booking.dry_parcel['parcel_detail_L']}
-    # ...    ${Booking.dry_parcel['parcel_detail_XL']}
-    # ...    ${Booking.dry_parcel['parcel_detail_XXL']}
-    # ...    ${Booking['parcel_detail_insure_amount']}
-    # ...    ${Booking['parcel_detail_cod']}
-    # ...    ${Booking['parcel_detail_remark']}
-    # common.Verify Capture Screenshot    Booking_S022    Verify Parcel Detail
+    b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
+    ...    ${Booking.chilled_parcel['parcel_detail_S0']}
+    ...    ${Booking.chilled_parcel['parcel_detail_S1']}
+    ...    ${Booking.chilled_parcel['parcel_detail_S2']}
+    ...    ${Booking.chilled_parcel['parcel_detail_A1']}
+    ...    ${Booking.chilled_parcel['parcel_detail_A2']}
+    ...    ${Booking['parcel_detail_insure_amount']}
+    ...    ${Booking['parcel_detail_cod']}
+    ...    ${Booking['parcel_detail_remark']}
+    common.Verify Capture Screenshot    Booking_S022    Verify Parcel Detail
 
     Log    Step No.11 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S022['parcel_size']}
-    b2c_booking_delivery_page.Input COD    ${Booking_S022['parcel_cod']}
+    # Defect118
+    # b2c_booking_delivery_page.Input COD    ${Booking_S022['parcel_cod']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S022['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page After Input Parcel Detail Step
 
@@ -164,11 +175,11 @@ Booking_S022
     b2c_booking_detail_page.Verify Booking Detail Page After Draft
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S022['sender_name']}
     ...    ${Booking_S022['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}    #${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S022['receiver_name']}
     ...    ${Booking_S022['receiver_phone']}
     ...    ${Booking_S022['receiver_address']}
@@ -176,7 +187,7 @@ Booking_S022
     ...    ${Booking_S022['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S022['parcel_cod_verify']}
+    ...    -    #${Booking_S022['parcel_cod_verify']}
     common.Verify Capture Screenshot    Booking_S022    Verify Draft Parcel
 
     Log    Step No.13 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
@@ -212,6 +223,7 @@ Booking_S022
     ...    ${Booking_S022['receiver_phone']}
     ...    ${Booking_S022['receiver_name']}
     ...    ${Booking_S022['receiver_address']}
+    ...    ${Booking_S022['receiver_postcode_full']}
     common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.15 กดปุ่ม "ถัดไป"
@@ -236,27 +248,29 @@ Booking_S022
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S022    Verify Promotion
 
-    Log    Step No.17 ขั้นตอน Promotion
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S022['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
-    #Expected
-    b2c_booking_delivery_page.Verify Selected Coupon And Code
-    ...    ${Booking_S022.promotion_detail['discount']}
-    ...    ${Booking_S022.promotion_detail['promotion_name']}
-    ...    ${Booking_S022.promotion_detail['parcel_size']}
-    ...    ${Booking_S022.promotion_detail['expired_date']}
-    ...    ${Booking_S022.promotion_detail['condition']}
-    ...    ${Booking_S022.promotion_detail['period']}
-    common.Verify Capture Screenshot    Booking_S022    Verify Selected Coupon And Code
+    ####    Unable to use this promotion code, it's defect 72. Waiting for resolve defect then uncomment this code.
+    # Log    Step No.17 ขั้นตอน Promotion
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S022['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
+    # #Expected
+    # b2c_booking_delivery_page.Verify Selected Coupon And Code
+    # ...    ${Booking_S022.promotion_detail['discount']}
+    # ...    ${Booking_S022.promotion_detail['promotion_name']}
+    # ...    ${Booking_S022.promotion_detail['parcel_size']}
+    # ...    ${Booking_S022.promotion_detail['expired_date']}
+    # ...    ${Booking_S022.promotion_detail['condition']}
+    # ...    ${Booking_S022.promotion_detail['period']}
+    # common.Verify Capture Screenshot    Booking_S022    Verify Selected Coupon And Code
 
     Log    Step No.18 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -264,7 +278,7 @@ Booking_S022
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S022['sender_name']}
     ...    ${Booking_S022['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}    #${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S022['receiver_name']}
     ...    ${Booking_S022['receiver_phone']}
     ...    ${Booking_S022['receiver_address']}
@@ -272,25 +286,25 @@ Booking_S022
     ...    ${Booking_S022['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S022['parcel_cod_verify']}
+    ...    -    #${Booking_S022['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S022['discount_amount']}
-    ...    ${Booking_S022['discount_value']}
+    ...    0    #${Booking_S022['discount_amount']}
+    ...    0.00    #${Booking_S022['discount_value1']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking_S022['cod_fee_amount']}
-    ...    ${Booking_S022['cod_fee_value']}
-    ...    ${Booking_S022['total_price_amount']}
-    ...    ${Booking_S022['total_price_value']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    0    #${Booking_S022['cod_fee_amount']}
+    ...    0.00    #${Booking_S022['cod_fee_value']}
+    ...    0    #${Booking_S022['total_price_amount']}
+    ...    0.00    #${Booking_S022['total_price_value1']}
+    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S022    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Booking_S022    Verify Booking Detail Page After Booking Success
 
     Log    Step No.19 กดเมนู "จองการจัดส่งพัสดุ"
-    # - ไม่เลือก Promotion
     b2c_home_page.Click Book Parcel Delivery
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
@@ -301,14 +315,13 @@ Booking_S022
     ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S022    Verify Created Booking On Booking Delivery Page
 
-
     Log    Step No.20 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
-    Expected
+    # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
     ...    ${booking_name}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
@@ -316,7 +329,7 @@ Booking_S022
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S022['sender_name']}
     ...    ${Booking_S022['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}    #${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S022['receiver_name']}
     ...    ${Booking_S022['receiver_phone']}
     ...    ${Booking_S022['receiver_address']}
@@ -324,17 +337,17 @@ Booking_S022
     ...    ${Booking_S022['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S022['parcel_cod_verify']}
+    ...    -    #${Booking_S022['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S022['discount_amount']}
-    ...    ${Booking_S022['discount_value']}
+    ...    0    #${Booking_S022['discount_amount']}
+    ...    0.00    #${Booking_S022['discount_value1']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking_S022['cod_fee_amount']}
-    ...    ${Booking_S022['cod_fee_value']}
-    ...    ${Booking_S022['total_price_amount']}
-    ...    ${Booking_S022['total_price_value']}
-    ...    ${Booking_S022['store_code']}
+    ...    0    #${Booking_S022['cod_fee_amount']}
+    ...    0.00    #${Booking_S022['cod_fee_value']}
+    ...    0    #${Booking_S022['total_price_amount']}
+    ...    0.00    #${Booking_S022['total_price_value1']}
+    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S022    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -352,8 +365,44 @@ Booking_S022
     Log    Step No.22 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
     # รอบรถเข้ารับพัสดุ
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S022['shipping_origin']}
-    ################ เพิ่ม Step เลือกรอบรถเข้ารับพัสดุ
+    b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
+    b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     # Expected
+    b2c_booking_detail_page.Verify Booking Detail Page
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_waiting_entering']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S022['sender_name']}
+    ...    ${Booking_S022['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}    #${Booking.img_not_favorite['img_receiver_heart']}    ...    ${Booking_S022['receiver_name']}
+    ...    ${Booking_S022['receiver_name']}
+    ...    ${Booking_S022['receiver_phone']}
+    ...    ${Booking_S022['receiver_address']}
+    ...    ${Booking_S022['receiver_postcode_full']}
+    ...    ${Booking_S022['parcel_size']}
+    ...    ${Booking_S022['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    0    #${Booking_S022['discount_amount']}
+    ...    0.00    #${Booking_S022['discount_value2']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    0    #${Booking_S022['cod_fee_amount']}
+    ...    0.00    #${Booking_S022['cod_fee_value']}
+    ...    ${Booking_S022['total_price_amount']}
+    ...    290.00    #${Booking_S022['total_price_value2']}
+    ...    ${Booking_S022['origin_shipping']}
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    Booking_S022    Verify Booking Summary After Set Origin Shipping
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    Booking_S022    Verify Booking Detail Page After Set Origin Shipping
 
     Log    Step No.23 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
@@ -374,7 +423,7 @@ Booking_S022
     ...    ${Booking_S022['receiver_phone']}
     ...    ${Booking_S022['receiver_address']}
     ...    ${Booking_S022['receiver_postcode_full']}
-    ...    ${Booking.label['non_cod']}
+    ...    ${Booking.label['non_cod']}    #${Booking_S022['parcel_cod_verify_label']}
     ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S022    Verify Parcel Label

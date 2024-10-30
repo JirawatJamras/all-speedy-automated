@@ -653,13 +653,14 @@ Booking_S022:
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   shipping_origin: รอบรถเข้ารับพัสดุ
   store_code:  '15888'
-  booking_name:  Booking DRY
+  booking_name: Booking CHILLED
   booking_item: 1 รายการ
   parcel_size: A1
   parcel_package_type: กล่อง
-  price_value: 30    # 55.00
+  price_value: 290
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
   promotion:  SPBH5B
   promotion_detail:
@@ -670,11 +671,14 @@ Booking_S022:
     condition: สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: 'NaN'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  'Nan'
+  total_price_value1:  'Nan'
+  total_price_value2: '445.00'
+  origin_shipping: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
 
 Booking_S023:
   parcel_type:  พัสดุควบคุมอุณหภูมิ

@@ -14,6 +14,7 @@ ${PMS_USER_MANAGER_UAT_URL}             https://pms-uat.allspeedy.co.th/usermana
 
 ####################### B2C UAT DATA #######################
 ${B2C_UAT_URL}                          https://www-uat.allspeedy.co.th/auth/login
+${B2C_UAT_PICKUP_SCHEDULE_URL}          https://www-uat.allspeedy.co.th/pickup-schedule/list
 ${CPS_API_UAT_URL}                      https://cps-api-uat.allspeedy.co.th/v1
 ${C2C_UAT_URL}                          https://web-stg.7eleven.co.th/
 
