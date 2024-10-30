@@ -226,7 +226,8 @@ Delete The Lastest Parcel Pickup Schedule
 
 Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
-    common.Open URL    ${B2C_UAT_PICKUP_SCHEDULE_URL}
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
     Delete The Lastest Parcel Pickup Schedule    ${current_date}    ${current_time}
     
 Click Select Item On Parcel Pickup Schedule List
