@@ -1165,8 +1165,8 @@ Booking_S047:
   add_shipping_origin_area:
     favorite_name: 'ร้าน 7-11 หน้าบ้าน'
     shipping_origin_store_code_5_digits: '15888'
-    shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
-    shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
+    shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 35110'
+    shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
 
 Booking_S048:
   pickup_time:
