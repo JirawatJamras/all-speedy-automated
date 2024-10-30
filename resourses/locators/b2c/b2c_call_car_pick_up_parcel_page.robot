@@ -15,6 +15,7 @@ ${b2c_txt_complete_save_pickup_round}    //div[@class='ant-message-notice-conten
 
 ${txt_booking_status}    //span[contains(@class,'ant-tag ant-tag-borderless')]//h5[contains(@class,'ant-typography')]
 ${txt_parcel_pickup_schedule}    (//div[contains(@class,'ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small')]//h5[contains(@class,'ant-typography')])[1]
+${txt_normal_parcel_pickup_schedule}    (//div[contains(@class,'ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small')]//h5[contains(text(),'{value}')])[1]
 ${txt_date_parcel_pickup}    //strong[text()='วันที่รถเข้ารับพัสดุ:']/../../..//span[contains(@class,'ant-typography') and text()='น.']
 ${txt_cut_off_time}    //strong[text()='เวลา Cut Off รอบรถ:']/../../..//span[contains(@class,'ant-typography') and text()='25-10-2567 16:55:00']
 ${txt_amount_of_parcel}    //strong[text()='จำนวนพัสดุ:']/../../..//span[contains(@class,'ant-typography') and text()=' รายการ']
@@ -31,6 +32,7 @@ ${b2c_cbo_parcel_pickup_time}    //div[@id='basic_time_list']/..//div[contains(t
 
 ${b2c_card_parcel_pickup_list}    //div[@class='ant-card-body']//div[@class='ant-card-meta w-full']
 ${card_frist_parcel_pickup_list}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+${card_first_normal_parcel_pickup_list}    (//h5[contains(text(),'{title}')]/../../../../..//span[contains(normalize-space(),'{number_of_parcel}')]/../../../../../../../../../..)[1]
 
 ################# OLD ###################
 ${btn_basic_parcel_type_car_pickup_page}    //strong[text()='{value}']/../../../..//input[@id='basic_parcelType']/../..
@@ -44,6 +46,8 @@ ${b2c_btn_x_in_add_popup}    //button[@aria-label='Close']
 ${b2c_btn_save_in_detail_popup}    //span[text()='บันทึก']/..
 ${b2c_btc_filter_pickup_page}    //span[text()='ตัวกรอง']/..
 ${b2c_btn_search_in_filter}    //span[text()='ค้นหา']/..
+${btn_delete_car_round_car_pickup_page}    (//*[@id="scrollableDiv"]//div[contains(@class,'ant-card ant-card-bordered')]//div[@class='ant-card-body']//h5[contains(text(),'{date} {time}')]/../../../..//span[contains(@class,'anticon anticon-delete')])[1]
+${btn_next_page_car_pickup_page}    //li[@title='Next Page']//button[@class='ant-pagination-item-link']
 
 ${b2c_txt_pickup_parcel_date_in_add_popup}    //strong[text()='วันที่รถเข้ารับพัสดุ']
 ${b2c_txt_pickup_parcel_time_selected_value_in_add_popup}    //strong[text()='เวลารถเข้ารับพัสดุ']/../../../..//span[@class='ant-select-selection-item']
@@ -70,4 +74,5 @@ ${tbl_pickup_parcel_calendar}    //td[@title='{value}']
 ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div
 
 ${img_dry_parcel}    //div[@class='ant-space-item']//*[@alt='parcel']
+${img_parcel_in_card}    (//div[@class='ant-card-body']//*[@alt='parcel'])[1]
 

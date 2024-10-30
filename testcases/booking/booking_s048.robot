@@ -3,13 +3,13 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule    ${newDate}    09:00:00 - 12:00  # Expected result : ${Booking_S048.add_new_pickup['expected']}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S048
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า เรียกรถเข้ารับพัสดุ (ตรวจสอบรอบรถปกติเเละเพิ่มรอบพิเศษ)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Review_Pass
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -20,13 +20,13 @@ Booking_S048
     Log    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
-    ${date}    Get Date Parcel Pickup
+    ${date}    Get Normal Parcel Pickup Date
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
     ...    ${call_car_pick_up.car_round_name['normal']}
     ...    ${date}
-    ...    16:00:00 - 19:00    #${Booking_S048.pickup_time['expected']}
-    ...    16:00:00 -19:00    #${Booking_S048.pickup_time['expected']}
+    ...    16:00:00 - 19:00    # Expected result : ${Booking_S048.pickup_time['expected']}
+    ...    16:00:00 -19:00    # Expected result : ${Booking_S048.pickup_time['expected']}
     ...    200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์ ปากเกร็ด ปากเกร็ด นนทบุรี 11120 กำลังจัดพัสดุ    #{Booking_S048['pickup_point']}
     common.Verify Capture Screenshot    Booking_S048    Verify Car Pickup Schedule Card
 
@@ -62,7 +62,7 @@ Booking_S048
     ...    ${Booking_S048.add_new_pickup['parcel_type']}
     ...    ${call_car_pick_up.car_round_name['special']}
     ...    ${newDate}
-    ...    13:00:00 - 16:00    # Expected result : ${Booking_S048.add_new_pickup['expected']}
-    ...    13:00:00 -16:00    # Expected result : ${Booking_S048.add_new_pickup['expected']}
+    ...    09:00:00 - 12:00  # Expected result : ${Booking_S048.add_new_pickup['expected']}
+    ...    09:00:00 -12:00  # Expected result : ${Booking_S048.add_new_pickup['expected']}
     ...    200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์ ปากเกร็ด ปากเกร็ด นนทบุรี 11120 กำลังจัดพัสดุ    # Expected result : {Booking_S048.add_new_pickup['pickup_point']}
     common.Verify Capture Screenshot    Booking_S048    Verify Added New Car Pickup Schedule
