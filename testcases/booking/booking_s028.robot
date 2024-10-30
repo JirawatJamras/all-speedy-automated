@@ -284,8 +284,44 @@ Booking_S028
     Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
     # รอบรถเข้ารับพัสดุ
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S028['shipping_origin']}
-    ################ เพิ่ม Step เลือกรอบรถเข้ารับพัสดุ
+    b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
+    b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     # Expected
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_waiting_entering']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S028['sender_name']}
+    ...    ${Booking_S028['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S028['receiver_name']}
+    ...    ${Booking_S028['receiver_phone']}
+    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S028['receiver_store_address']}
+    ...    ${Booking_S028['parcel_size']}
+    ...    ${Booking_S028['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
+    ...    ${Booking_S028['total_price_amount']}
+    ...    ${Booking_S028['total_price_value2']}
+    ...    ${Booking.origin_shipping['idc_company_address']}
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    Booking_S028    Verify Booking Summary After Set Origin Shipping
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    Booking_S028    Verify Booking Detail Page After Set Origin Shipping
+
 
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label

@@ -458,7 +458,7 @@ Click Button
 Click Save Button
     ${btn_save_draft}=    Replace String    ${btn_save_draft}    {value}    ${Booking['text_draft_save']}
     common.Click When Ready    ${btn_save_draft}
-    Sleep    3s
+    Sleep    5s
 
 Click Next Button
     ${btn}=    Replace String    ${btn_next}    {value}    ${Booking['text_btn_next']}
