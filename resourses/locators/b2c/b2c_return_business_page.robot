@@ -67,6 +67,7 @@ ${btn_add_parcel_return_business}    //span[@aria-label='plus-circle']/../..
 ${btn_select_address_return_business}    //div[@id='create_parcel_form_sender_address_full_list']/..//div[text()='{value}']
 ${btn_select_parcel_size_return_business}    //div[@class='ant-list-item']//strong[contains(normalize-space(.), '{value}')]
 ${btn_parcel_booking_return_business}    //span[text()='{value}']/..
+${btn_edit_parcel_return_business}    //button[@id='edit-detail']
 
 ${opt_postcode_choice_return_business}    //*[text()='{value}']
 ${opt_owner_pay_return_business}    //span[text()='{value}']/..//input[@value='owner']//..
