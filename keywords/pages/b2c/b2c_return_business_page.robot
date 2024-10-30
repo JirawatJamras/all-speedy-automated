@@ -166,8 +166,7 @@ Verify Booking Popup
     ${topic_list_of_bookings}=    Replace String    ${txt_topic_in_popup}    {value}    ${return_business['text_address']}
 
     Wait Until Element Is Visible    ${header_popup}    timeout=${DEFAULT_TIMEOUT}
-    # Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${link_name}
-    Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${BookingID}
+    Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${link_name}
     Wait Until Element Is Visible    ${topic_receiver_info}
     Should Be Equal As Strings    ${label_phone} ${txt_phone}    ${return_business['text_phone']} ${phone}
     Should Be Equal As Strings    ${label_name} ${txt_name}    ${return_business['text_name']} ${name}
