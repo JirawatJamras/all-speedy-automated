@@ -176,7 +176,7 @@ Booking_S016
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking_S016['parcel_insure_verify']}
     ...    ${Booking_S016['parcel_cod_verify']}
-    common.Verify Capture Screenshot    Booking_S016    Verify Draft Parcel  
+    common.Verify Capture Screenshot    Booking_S016    Verify Draft Parcel After Input Parcel Detail
 
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID

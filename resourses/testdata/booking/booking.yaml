@@ -793,9 +793,9 @@ Booking_S027:
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
   receiver_phone: 0890000002
   receiver_name: สมใจ ดีดีดี
-  receiver_address: 47 หมู่ 4
-  receiver_postcode_5_digits: '86110'
-  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'    # Expected result is'01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
   shipping_origin: รอบรถเข้ารับพัสดุ
   store_code:  '15888'
   booking_name:  Booking CHILLED
@@ -815,14 +815,13 @@ Booking_S027:
     condition: สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: 'NaN'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  'Nan'
-  receiver_store: '01523'
-  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
-  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
+  total_price_value1:  'Nan'
+  total_price_value2:  '415.00'
 
 Booking_S028:
   parcel_type:  พัสดุควบคุมอุณหภูมิ

@@ -96,7 +96,7 @@ Booking_S022
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S022    Verify Draft Parcel
+    common.Verify Capture Screenshot    Booking_S022    Verify Draft Parcel Sender
 
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -188,7 +188,7 @@ Booking_S022
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    -    #${Booking_S022['parcel_cod_verify']}
-    common.Verify Capture Screenshot    Booking_S022    Verify Draft Parcel
+    common.Verify Capture Screenshot    Booking_S022    Verify Draft Parcel After Input Parcel Detail
 
     Log    Step No.13 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     b2c_booking_detail_page.Select Draft Booking

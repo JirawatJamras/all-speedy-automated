@@ -91,7 +91,8 @@ Booking_S021
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S021    Verify Create Parcel Page Receiver Step When Select Home
 
-    Log    Step No.7 กดปุ่ม "เลือกจากรายการโปรด"
+    Log    Step No.7 กดปุ่ม ขั้นตอนข้อมูลผู้รับพัสดุ
+    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     #Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp
@@ -143,7 +144,7 @@ Booking_S021
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S021    Verify Draft Parcel
+    common.Verify Capture Screenshot    Booking_S021    Verify Draft Parcel Receiver
 
     Log    Step No.10 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID

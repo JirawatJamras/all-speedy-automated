@@ -94,7 +94,7 @@ Booking_S024
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S024    Verify Draft Parcel
+    common.Verify Capture Screenshot    Booking_S024    Verify Draft Parcel Sender
 
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -145,7 +145,8 @@ Booking_S024
     b2c_booking_delivery_page.Click Store On Map
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     #Expected
-    common.Verify Capture Screenshot    Booking_S024    Verify After Create Parcel Page Receiver Step
+    b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S024['receiver_store_full']}
+    common.Verify Capture Screenshot    Booking_S024    Verify Create Parcel Page After Input Receiver Step
 
     Log    Step No.10 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
@@ -165,7 +166,7 @@ Booking_S024
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S024    Verify Draft Parcel
+    common.Verify Capture Screenshot    Booking_S024    Verify Draft Parcel Receiver
 
     Log    Step No.11 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID

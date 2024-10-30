@@ -103,7 +103,7 @@ Booking_S034
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    Booking_S034    Verify Draft Parcel
+    common.Verify Capture Screenshot    Booking_S034    Verify Draft Parcel Receiver
 
     Log    Step No.8 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
