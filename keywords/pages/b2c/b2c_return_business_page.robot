@@ -27,7 +27,9 @@ Click Accept Condition Button
 Verify Label Link Return Business Popup
     [Arguments]    ${link_return_business}    ${link_name}    ${phone}    ${name}
     ...            ${shipping_payer}    ${location_pickup}    ${address}    ${postcode}
+    
     Wait Until Element Is Visible    ${txt_link_return_business_header}   timeout=${DEFAULT_TIMEOUT}
+    
     ${actual_link_return_business}=    Get Text    ${txt_link_return_business_header}
     ${actual_link_name}=    Get Text    ${txt_link_name_return_business}
     ${actual_phone}=    Get Text    ${txt_phone_return_business}
@@ -36,6 +38,7 @@ Verify Label Link Return Business Popup
     ${actual_location_pickup}=    Get Text    ${txt_location_pickup_return_business}
     ${actual_address}=    Get Text    ${txt_address_return_business}
     ${actual_postcode}=    Get Text    ${txt_postcode_return_business}
+    
     Should Be Equal    ${actual_link_return_business}    ${link_return_business}
     Should Be Equal    ${actual_link_name}    ${link_name}
     Should Be Equal    ${actual_phone}    ${phone}
@@ -48,8 +51,10 @@ Verify Label Link Return Business Popup
 Verify Data Link Return Business Popup
     [Arguments]    ${link_name}    ${phone}    ${name}    ${shipping_payer} 
     ...            ${location_pickup}    ${address}    ${postcode}
+    
     ${txtbox_postcode}=    Replace String    ${opt_postcode_choice_return_business}    {value}    ${postcode}
     ${actual_opt_owner_pay}=    Replace String    ${opt_owner_pay_return_business}    {value}    ${shipping_payer}
+    
     Run Keyword If    '${shipping_payer}' == 'บริษัทชำระค่าจัดส่ง'    
     ...    Element Should Be Visible    ${actual_opt_owner_pay}
     Run Keyword If    '${location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_send_home_return_business}
@@ -59,6 +64,7 @@ Verify Data Link Return Business Popup
     ${value_name}=    Get Value    ${txtbox_name_return_business}
     ${value_address}=    Get Text    ${txtbox_address_return_business}
     ${value_postcode}=    Get Text    ${txtbox_postcode}
+    
     Should Be Equal    ${value_link_name}    ${link_name}
     Should Be Equal    ${value_phone}    ${phone}
     Should Be Equal    ${value_name}    ${name}
@@ -70,6 +76,8 @@ Clear Input
     common.Click Xpath By JavaScript    ${txtbox_phone_delete}
     common.Click Xpath By JavaScript    ${txtbox_name_delete}
     common.Click Xpath By JavaScript    ${txtbox_address_delete}
+    Mouse Over    ${txtbox_postcode_return_business}
+    common.Click Xpath By JavaScript    ${txtbox_postcode_delete}
 
 Input Link Name 
     [Arguments]    ${input_link_name}
@@ -128,17 +136,73 @@ Click Booking Card
     ${selected_card}=     Replace String    ${selected_card}    {name}    ${name}
     ${selected_card}=     Replace String    ${selected_card}    {phone}    ${phone}
     ${selected_card}=     Replace String    ${selected_card}    {address}    ${address} ${postcode}
+    
+    ${id_path}=    Set Variable    (${selected_card}${crd_id_booking_return_business})[2]
+    ${booking_id}=    Get Text    ${id_path}
+    ${BookingID}=    Set Variable    ${booking_id}
+    Set Suite Variable    ${BookingID}
+    
     common.Click When Ready    ${selected_card}
 
-Click Download QR Code
+Verify Booking Popup
+    [Arguments]    ${link_name}    ${phone}    ${name}    ${shipping_payer}    ${location_pickup}    ${address}    ${postcode}
+
+    ${header_popup}=    Replace String    ${txt_topic_in_popup}    {value}    ${return_business['text_header_link_return_popup']}
+    ${label_link_name}=    Get Text    ${txt_link_name_in_popup}
+    ${txt_link_name}=    Get Element Attribute    ${txtbox_link_name_in_popup}    placeholder
+    ${topic_receiver_info}=    Replace String    ${txt_topic_in_popup}    {value}    ${return_business['text_receiver_info']}
+    ${label_phone}=    Get Text    ${txt_phone_in_popup}
+    ${txt_phone}=    Get Element Attribute    ${txtbox_phone_in_popup}    placeholder
+    ${label_name}=    Get Text    ${txt_name_in_popup}
+    ${txt_name}=    Get Element Attribute    ${txtbox_name_in_popup}    placeholder
+    ${topic_shipping_payer}=    Replace String    ${txt_topic_in_popup}    {value}    ${return_business['text_shipping_payer_popup']}
+    ${txt_shipping_payer}=    Replace String    ${txt_shipping_payer_in_popup}    {label}    ${return_business['text_shipping_payer_popup']}
+    ${txt_shipping_payer}=    Replace String    ${txt_shipping_payer}    {value}    ${shipping_payer}
+    ${topic_pickup_location}=    Replace String    ${txt_topic_in_popup}    {value}    ${return_business['text_pickup_location']}
+    ${txt_pickup_location}=    Replace String    ${txt_topic_in_popup}    {value}    ${location_pickup}
+    ${label_address}=    Replace String    ${txt_address_in_popup}    {value}    ${return_business['text_address']}
+    ${txt_address_path}=    Replace String    ${txtbox_address_in_popup}    {value}    ${return_business['text_address']}
+    ${txt_address}=    Get Text    ${txt_address_path}
+    ${topic_list_of_bookings}=    Replace String    ${txt_topic_in_popup}    {value}    ${return_business['text_address']}
+
+    Wait Until Element Is Visible    ${header_popup}    timeout=${DEFAULT_TIMEOUT}
+    # Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${link_name}
+    Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${BookingID}
+    Wait Until Element Is Visible    ${topic_receiver_info}
+    Should Be Equal As Strings    ${label_phone} ${txt_phone}    ${return_business['text_phone']} ${phone}
+    Should Be Equal As Strings    ${label_name} ${txt_name}    ${return_business['text_name']} ${name}
+    Wait Until Element Is Visible    ${topic_shipping_payer}
+    Wait Until Element Is Visible    ${txt_shipping_payer}
+    Wait Until Element Is Visible    ${topic_pickup_location}
+    Wait Until Element Is Visible    ${txt_pickup_location}
+    Wait Until Element Is Visible    ${label_address}
+    Should Be Equal As Strings    ${txt_address}    ${address} ${postcode}
+    Wait Until Element Is Visible    ${topic_list_of_bookings}
+
+
+
+Click Download QR Code Button
     ${btn_add_download_qr}=    Replace String    ${btn_popup_return_business}    {value}    ${return_business['text_btn_download_qr']}
     common.Click When Ready    ${btn_add_download_qr}
 
-Click Copy Link
+Verrify Download QR Code
+    [Arguments]    ${value}
+    ${popup_download_qr}=    Replace String    ${msg_popup_success}    {value}    ${value}
+    Wait Until Element Is Visible    ${popup_download_qr}    timeout=${DEFAULT_TIMEOUT}
+    Page Should Contain Element    ${popup_download_qr}
+
+Click Copy Link Button
     ${btn_add_copy_link}=    Replace String    ${btn_popup_return_business}    {value}    ${return_business['text_btn_copy_link']}
-    common.Click When Ready    ${btn_add_copy_link}   
+    common.Click When Ready    ${btn_add_copy_link}
 
-
+Verify Copy Link
+    [Arguments]    ${value}  
+    ${popup_copy_link}=    Replace String    ${msg_popup_success}    {value}    ${value}
+    Wait Until Element Is Visible    ${popup_copy_link}    timeout=${DEFAULT_TIMEOUT}
+    Page Should Contain Element    ${popup_copy_link}
+    ${Link_booking_return}=    Evaluate    __import__('clipboard').paste()    modules=clipboard
+    Should Be Equal    ${Link_booking_return}    ${return_business['text_link_booking']}${BookingID}
+    Set Suite Variable    ${Link_booking_return}
 
 Input Trigger Phone Number
     [Arguments]    ${phone_number}
