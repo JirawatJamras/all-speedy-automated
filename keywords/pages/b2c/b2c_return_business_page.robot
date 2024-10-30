@@ -166,8 +166,7 @@ Verify Booking Popup
     ${topic_list_of_bookings}=    Replace String    ${txt_topic_in_popup}    {value}    ${return_business['text_address']}
 
     Wait Until Element Is Visible    ${header_popup}    timeout=${DEFAULT_TIMEOUT}
-    # Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${link_name}
-    Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${BookingID}
+    Should Be Equal As Strings    ${label_link_name} ${txt_link_name}    ${return_business['text_link_name']} ${link_name}
     Wait Until Element Is Visible    ${topic_receiver_info}
     Should Be Equal As Strings    ${label_phone} ${txt_phone}    ${return_business['text_phone']} ${phone}
     Should Be Equal As Strings    ${label_name} ${txt_name}    ${return_business['text_name']} ${name}
@@ -317,6 +316,94 @@ Input Sender Name
     [Arguments]    ${name}
     common.Input When Ready    ${txtbox_sender_name_return_business}    ${name}
 
+Input Sender Address
+    [Arguments]    ${address}
+    common.Input When Ready    ${txtbox_sender_address_return_business}    ${address}
+
+Input Sender Postcode
+    [Arguments]    ${postcode}
+    common.Input When Ready    ${txtbox_sender_postcode_return_business}    ${postcode}
+
+Select Sender Address Full
+    [Arguments]    ${address_full}
+    ${select_address}=    Replace String    ${btn_select_address_return_business}    {value}    ${address_full}
+    common.Click When Ready    ${select_address}
+
+Select Parcel Size
+    [Arguments]    ${parcel_size}
+    ${selected_parcel_size}=    Replace String    ${btn_select_parcel_size_return_business}    {value}    ${parcel_size}
+    common.Click When Ready    ${selected_parcel_size}
+
+Click Parcel Booking Button
+    ${btn_booking}=    Replace String    ${btn_parcel_booking_return_business}    {value}    ${return_business.email_link['text_button_booking']}
+    common.Click When Ready    ${btn_booking}
+
+Verify Booking Detail Page
+    [Arguments]    ${booking_id}    ${booking_name}    ${parcel_status}    ${sender_name}    ${sender_phone}    ${receiver_name}
+    ...    ${receiver_phone}    ${receiver_address}    ${address_full}    ${parcel_type}    ${price}    ${insure_value}    ${cod}
+    ...    ${img_heart_sender}    ${img_heart_receiver}    ${discount_value}    ${insurance_fee_value}    ${cod_fee_value}    
+    ...    ${total_price_amount}    ${total_price_value}
+    ${txt_booking_list} =  Replace String    ${txt_heading_booking_list}    {value}    ${return_business.email_link['text_title_booking_list']}
+    ${txt_booking_id}=    Replace String    ${txt_booking_id_return_business}    {value}    ${return_business.email_link['text_booking_id_label']}
+    ${txt_booking_name}=    Replace String    ${txt_booking_name_return_business}    {value}    ${return_business.email_link['text_booking_name_label']}
+    ${txt_booking_time}=    Replace String    ${txt_booking_time_return_business}    {value}    ${return_business.email_link['text_booking_time_label']}
+    ${txt_shipping_origin}=    Replace String    ${txt_shipping_origin_return_business}    {value}    ${return_business.email_link['text_shipping_origin']}
+    ${txt_parcel_list}=    Replace String    ${txt_heading_parcel_list_return_business}    {value}    ${return_business.email_link['text_title_parcel_list']}
+    ${txt_summary_booking}=    Replace String    ${txt_heading_summary_booking_return_business}    {value}    ${return_business.email_link['text_title_booking_summary']}
+    ${txt_discount}=    Replace String    ${txt_discount_return_business}    {value}    ${return_business.email_link['text_dixcount']}
+    ${txt_insure}=    Replace String    ${txt_insure_return_business}    {value}    ${return_business.email_link['text_insure']}
+    ${txt_cod}=    Replace String    ${txt_cod_return_business}    {value}    ${return_business.email_link['text_cod']}
+    ${txt_total}=    Replace String    ${txt_total_return_business}    {value}    ${return_business.email_link['text_total_price']}
+
+    Log    Booking List
+    ${actual_booking_id}=    Get Text    ${txt_booking_id}
+    ${actual_booking_name}=    Get Text    ${txt_booking_name}
+    ${actaul_booking_time}=    Get Text    ${txt_booking_time}
+
+    ${booking_time}    Split String And Select    ${actaul_booking_time}    \n    1
+    ${time_convert}    Convert Date    ${booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
+
+    Wait Until Element Is Visible    ${txt_booking_list}
+    Should Be Equal    ${actual_booking_id}    ${booking_id}
+    Should Be Equal    ${actual_booking_name}    ${booking_name}
+    Should Be Equal As Strings    ${booking_time}   ${time_convert}
+    Wait Until Element Is Visible    ${txt_shipping_origin}
+
+    Log    Parcel List
+    Wait Until Element Is Visible    ${txt_parcel_list}
+    ${text_parcels}=    Replace String    ${crd_parcel_return_business}    {value}    ${parcel_status}
+    ${text_list_of_parcels}=    Get Text    ${text_parcels}
+    ${actual_text_list_of_parcels}=    Replace String    ${text_list_of_parcels}    \n    ${SPACE}
+    Log    ${actual_text_list_of_parcels}
+    # Should Be Equal As Strings    ${actual_text_list_of_parcels}
+    # ...    ${return_business.email_link['text_sender']} ${sender_name} (${sender_phone}) ${return_business.email_link['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${address_full} ${return_business.email_link['text_parcel_type']} ${parcel_type} ${return_business.email_link['text_price']} ${price}บาท ${return_business.email_link['text_buy_insure']} ${insure_value} บาท ${return_business.email_link['text_select_cod']} ${cod} บาท ${return_business.email_link['text_print']}
+    
+    #Sender Heart
+    IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
+        Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
+    ELSE IF    '${img_heart_sender}' == 'รูปหัวใจสีแดง'
+        Wait Until Page Contains Element    ${b2c_img_red_heart_front_sender}
+    END
+    #Receiver Heart
+    IF         '${img_heart_receiver}' == 'รูปหัวใจไม่มีสี'
+        Wait Until Page Contains Element    ${b2c_img_white_heart_front_receiver}  
+    ELSE IF    '${img_heart_receiver}' == 'รูปหัวใจสีแดง'
+        Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
+    END
+    Wait Until Element Is Enabled    ${b2c_ico_trash_red}
+
+    Log    Booking Summary
+    Scroll Element Into View    ${txt_total}
+    ${actual_discount}=    Get Text    ${txt_discount}
+    # ${actual_insure}=    Get Text    ${txt_insure}
+    # ${actual_cod}=    Get Text    ${txt_cod}
+    ${actual_total}=    Get Text    ${txt_total}
+
+    Should Be Equal    ${actual_discount}    ${return_business.email_link['text_dixcount']} ${discount_value}
+    # Should Be Equal    ${actua l_insure}    ${Booking['text_insure']} ${insurance_fee_value}
+    # Should Be Equal    ${actual_cod}    ${Booking['text_cod']} ${cod_fee_value}
+    Should Be Equal    ${actual_total}    ${return_business.email_link['text_total_price']} ${total_price_amount} ${total_price_value}
+    common.Scroll Window To Vertical    0
 
 
 
