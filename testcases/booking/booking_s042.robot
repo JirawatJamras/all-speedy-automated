@@ -336,7 +336,7 @@ Booking_S042
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    b2c_booking_delivery_page.Verify Data Parcel
+    b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${EMPTY}
     ...    ${Booking_S003['parcel_detail_remark']}
@@ -346,7 +346,7 @@ Booking_S042
     b2c_booking_detail_page.Click Edit Data
     # Expected
     b2c_booking_detail_page.Verify Can Edit Data Parcel
-    b2c_booking_delivery_page.Verify Data Parcel
+    b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${EMPTY}
     ...    ${Booking_S003['parcel_detail_remark']}
@@ -449,7 +449,7 @@ Booking_S042
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    b2c_booking_delivery_page.Verify Data Parcel
+    b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     ...    ${Booking_S042['buy_insurance']}
     ...    ${EMPTY}
     ...    ${Booking_S042['parcel_detail_remark']}

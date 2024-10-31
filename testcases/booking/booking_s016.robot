@@ -149,6 +149,10 @@ Booking_S016
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
+    b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
+    ...    0    # ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S016    Verify Parcel Detail
 
     Log    Step No.10 ขั้นตอนรายละเอียดพัสดุ
@@ -231,6 +235,10 @@ Booking_S016
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
+    b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
+    ...    ${Booking_S016['parcel_insure']}
+    ...    ${Booking_S016['parcel_cod']}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S016    Verify Parcel Detail Page of Create Parcel [Dry Parcel] 
 
     Log    Step No.15 กดปุ่ม "ถัดไป"

@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -165,7 +165,7 @@ Booking_S030
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    b2c_booking_delivery_page.Verify Data Parcel
+    b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     ...    0    # ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}

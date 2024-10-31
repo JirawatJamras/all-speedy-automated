@@ -221,6 +221,9 @@ Booking_S026
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
+    Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S026    Verify Parcel Detail Page of Create Parcel [Dry Parcel]
 
     Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ"

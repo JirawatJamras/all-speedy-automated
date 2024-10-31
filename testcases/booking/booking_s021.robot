@@ -198,6 +198,9 @@ Booking_S021
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
+    Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S021    Verify Parcel Detail
 
     Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ"

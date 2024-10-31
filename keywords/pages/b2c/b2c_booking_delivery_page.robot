@@ -668,16 +668,22 @@ Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     Should Be Equal    ${actual_insure_amount}    ${insure_amount}
     Should Be Equal    ${actual_remark}    ${remark}
 
-Verify Data Parcel
+Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     [Arguments]    ${insure}    ${cod}    ${remark}
     ${insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
-
     ${actual_insure_amount}=    Get Value    ${insure_amount}
     ${actual_cod}=    Get Value    ${txtbox_cod}
     ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
-
     Should Be Equal    ${actual_insure_amount}    ${insure}
     Should Be Equal    ${actual_cod}    ${cod}
+    Should Be Equal    ${actual_remark}    ${remark}
+
+Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
+    [Arguments]    ${cod}    ${remark}
+    ${actual_cod}=    Get Value    ${txtbox_cod}
+    ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
+    # Element Should Be Disabled    ${txtbox_insure_amount}    # This is a part of expected result script, but commented because of Defect083
+    # Should Be Equal    ${actual_cod}    ${cod}    #  This is a part of expected result script, but commented because of Defect118
     Should Be Equal    ${actual_remark}    ${remark}
 
 Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
@@ -704,7 +710,6 @@ Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
     ${txt_remark}=    Replace String    ${txt_remark}    {value}    ${Booking['parcel_detail_remark']}
     ${actual_remark}=    Get Text    ${txt_remark}
     ${txtbox_insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
-    # Element Should Be Disabled    ${txtbox_insure_amount}    # This is a part of expected result script, but commented because of Defect083
     Should Be Equal    ${actual_detail_S0}    ${detail_S0}
     Should Be Equal    ${actual_detail_S1}    ${detail_S1}
     Should Be Equal    ${actual_detail_S2}    ${detail_S2}
