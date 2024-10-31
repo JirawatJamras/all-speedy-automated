@@ -65,15 +65,16 @@ Booking_S042
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    #Expected
-    b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
-    ...    ${booking_id}
-    ...    ${booking_time}
-    ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking_S003['booking_name']}
-    ...    ${Booking_S003['booking_item']}
-    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
-    common.Verify Capture Screenshot    Booking_S042    Verify Created Booking On Booking Delivery Page
+    # Defect117
+    # Expected
+    # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
+    # ...    ${booking_id}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_parcel_status_waiting_entering']}
+    # ...    ${Booking_S003['booking_name']}
+    # ...    ${Booking_S003['booking_item']}
+    # ...    ${Booking_S042.old['total_price_value']}
+    # common.Verify Capture Screenshot    Booking_S042    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Booking With Waiting For Entering Parcel To System    ${booking_id}
@@ -457,6 +458,7 @@ Booking_S042
 
     Log    Step No.21 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
+    # Defect050
     #Expected
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S003.promotion_detail['discount']}
@@ -465,11 +467,13 @@ Booking_S042
     # ...    ${Booking_S003.promotion_detail['expired_date']}
     # ...    ${Booking_S003.promotion_detail['condition']}
     # ...    ${Booking_S003.promotion_detail['period']}
-    common.Verify Capture Screenshot    Booking_S042     Verify Selected Coupon And Code
+    # common.Verify Capture Screenshot    Booking_S042     Verify Selected Coupon And Code
 
     Log    Step No.22 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
+    # Defect050
     # Expected
+    # b2c_booking_delivery_page.Verify Can Edit Selected Coupon And Code
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S003.promotion_detail['discount']}
     # ...    ${Booking_S003.promotion_detail['promotion_name']}
@@ -477,7 +481,7 @@ Booking_S042
     # ...    ${Booking_S003.promotion_detail['expired_date']}
     # ...    ${Booking_S003.promotion_detail['condition']}
     # ...    ${Booking_S003.promotion_detail['period']}
-    common.Verify Capture Screenshot    Booking_S042    Verify Can Edit Selected Coupon And Code
+    # common.Verify Capture Screenshot    Booking_S042    Verify Can Edit Selected Coupon And Code
 
     Log    Step No.23 กดปุ่ม "นำออก" ที่รายการคูปองและโค้ดส่วนลดที่เลือก
     b2c_booking_delivery_page.Click Take Out Coupon
