@@ -4,13 +4,13 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S042
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - เเก้ไขรายการ
-    [Tags]    Booking    UAT    Review_Pass
+    [Tags]    Booking    UAT
     Log    Prerequisite S003
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -247,6 +247,7 @@ Booking_S042
     b2c_booking_detail_page.Edit Addres s Receiver    ${Booking_S042['receiver_address']}
     b2c_booking_detail_page.Edit Postcode Receiver    ${Booking_S042['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S042['receiver_postcode_full']}
+    # Expected
     common.Verify Capture Screenshot    Booking_S042    Verify Edit Data Receiver
 
     Log    Step No.11 กดปุ่ม "บันทึกเเก้ไข"

@@ -21,7 +21,7 @@ Booking_S048
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     ${date}    Get Normal Parcel Pickup Date
-    # Defect086 Defect107
+    # Defect086    Defect107
     # Expected
     # b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
     # ...    ${call_car_pick_up.car_round_name['normal']}
@@ -57,7 +57,7 @@ Booking_S048
 
     Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
-    # Defect086 Defect107 Issue016
+    # Defect086    Defect107    Issue016
     # Expected
     # b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
     # ...    ${Booking_S048.add_new_pickup['parcel_type']}

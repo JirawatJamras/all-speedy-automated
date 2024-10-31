@@ -3,14 +3,14 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
-Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
+Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S043
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - เเก้ไขรายการ
-    [Tags]    Booking    UAT    Review_Pass
+    [Tags]    Booking    UAT
     Log    Prerequisite S018
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -171,8 +171,8 @@ Booking_S043
 
     Log    Step No.5 แก้ไข ข้อมูลผู้ส่งพัสดุ
     sleep    1s
-    # Defect119
     b2c_booking_detail_page.Edit Phone Sender    ${Booking_S043['sender_phone']}
+    # Defect119
     # b2c_booking_detail_page.Edit Name Sender    ${Booking_S043['sender_name']}    
     b2c_booking_detail_page.Edit Address Sender    ${Booking_S043['sender_address']}
     b2c_booking_detail_page.Edit Postcode Sender    ${Booking_S043['sender_postcode_5_digits']}
@@ -280,8 +280,8 @@ Booking_S043
     b2c_booking_detail_page.Click Save Edit Data
     Reload Page
     ${booking_time}    Get Booking Time
-    # Expected
     # Defect048
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -312,10 +312,10 @@ Booking_S043
     # ...    ${Booking_S043['total_price_amount']}
     # ...    ${Booking_S043['total_price_value2']}
     # ...    ${Booking.origin_shipping['idc_company_address']}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S043    Verify Booking Summary After Edit Data Receiver
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S043    Verify Booking Detail Page After Edit Data Receiver
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    Booking_S043    Verify Booking Summary After Edit Data Receiver
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S043    Verify Booking Detail Page After Edit Data Receiver
 
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
@@ -389,8 +389,8 @@ Booking_S043
     b2c_booking_detail_page.Click Save Edit Data
     Reload Page
     ${booking_time}    Get Booking Time
-    # Expected
     # Defect048
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -421,10 +421,10 @@ Booking_S043
     # ...    ${Booking_S043['total_price_amount']}
     # ...    ${Booking_S043['total_price_value']}
     # ...    ${Booking.origin_shipping['idc_company_address']}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S042    Verify Booking Summary After Edit Data Parcel
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S042    Verify Booking Detail Page After Edit Data Parcel
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    Booking_S042    Verify Booking Summary After Edit Data Parcel
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S042    Verify Booking Detail Page After Edit Data Parcel
 
     Log    Step No.18 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
@@ -481,8 +481,8 @@ Booking_S043
 
     Log    Step No.21 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    # Expected
     # Defect050
+    # Expected
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S020.promotion_detail['discount']}
     # ...    ${Booking_S020.promotion_detail['promotion_name']}
@@ -490,12 +490,12 @@ Booking_S043
     # ...    ${Booking_S020.promotion_detail['expired_date']}
     # ...    ${Booking_S020.promotion_detail['condition']}
     # ...    ${Booking_S020.promotion_detail['period']}
-    common.Verify Capture Screenshot    Booking_S042     Verify Selected Coupon And Code
+    # common.Verify Capture Screenshot    Booking_S042     Verify Selected Coupon And Code
 
     Log    Step No.22 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
-    # Expected
     # Defect050
+    # Expected
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S003.promotion_detail['discount']}
     # ...    ${Booking_S003.promotion_detail['promotion_name']}
