@@ -136,20 +136,19 @@ Booking_S010
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  
-    # Defect080
-    # # Expected
-    # b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
-    # ...    ${Booking['text_title']}
-    # ...    ${Booking['text_parcel_receiver_information']}
-    # ...    ${Booking['text_phone_receiver']}
-    # ...    ${Booking['text_name_receiver']}
-    # ...    ${Booking['text_location_receiver']}
-    # ...    ${Booking['text_address_receiver']}
-    # b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
-    # ...    ${Booking_S010['receiver_phone']}
-    # ...    ${Booking_S010['receiver_name']}
-    # ...    ${Booking_S010['receiver_store_full']}
-    # common.Verify Capture Screenshot    Booking_S010    Verify Data Receiver When Select 7-ELEVEN Store
+    # Expected
+    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
+    ...    ${Booking['text_title']}
+    ...    ${Booking['text_parcel_receiver_information']}
+    ...    ${Booking['text_phone_receiver']}
+    ...    ${Booking['text_name_receiver']}
+    ...    ${Booking['text_location_receiver']}
+    ...    ${Booking['text_address_receiver']}
+    b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
+    ...    ${Booking_S010['receiver_phone']}
+    ...    ${Booking_S010['receiver_name']}
+    ...    ${Booking_S010['receiver_store_full']}
+    common.Verify Capture Screenshot    Booking_S010    Verify Data Receiver When Select 7-ELEVEN Store
    
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button

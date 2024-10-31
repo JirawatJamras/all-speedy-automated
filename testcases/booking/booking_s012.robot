@@ -65,7 +65,7 @@ Booking_S012
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -83,7 +83,7 @@ Booking_S012
 
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Click Choose Favorites
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
     ...    ${Booking_S012['receiver_phone']}
     ...    ${Booking_S012['receiver_name']}
@@ -96,7 +96,7 @@ Booking_S012
     ...    ${Booking_S012['receiver_name']}
     ...    ${Booking_S012['receiver_store_address']}
     b2c_booking_delivery_page.Click Accept Favorites List
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -112,7 +112,7 @@ Booking_S012
 
     Log    Step No.9 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     ...    ${Booking.dry_parcel['parcel_detail_A4']}
     ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -138,7 +138,7 @@ Booking_S012
 
     Log    Step No.11 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
-    #Expected
+    # Expected
     # Defect042
     # b2c_booking_detail_page.Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     # ...    ${Booking['text_booking_list']}
@@ -163,7 +163,7 @@ Booking_S012
     ${booking_name}    Get Booking Name
     ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Select Draft Booking
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -180,7 +180,7 @@ Booking_S012
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -196,7 +196,7 @@ Booking_S012
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     ...    ${Booking.dry_parcel['parcel_detail_A4']}
     ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -217,7 +217,7 @@ Booking_S012
 
     Log    Step No.15 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     # Defect045
     # b2c_booking_delivery_page.Verify Promotion Detail
     # ...    ${Booking['text_selected_coupon_and_code']}
@@ -227,8 +227,8 @@ Booking_S012
     Log    Step No.16 ขั้นตอน Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     ${booking_time}    Get Booking Time
-    #Expected
-    # Defect042 Defect048
+    # Expected
+    # Defect042    Defect048
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -266,7 +266,7 @@ Booking_S012
     Log    Step No.17 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    #Expected
+    # Expected
     # Defect047
     # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     # ...    ${booking_id}
@@ -280,7 +280,7 @@ Booking_S012
     Log    Step No.18 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Expected
-    # Defect042 Defect048
+    # Defect042    Defect048
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
