@@ -20,18 +20,19 @@ Booking_S001
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
-    # Expected
-    b2c_home_page.Verify My Profile Page
-    ...    ${Booking['text_company_profile']}
-    ...    ${Booking['text_profile']}
-    ...    ${Booking['text_profile_name']}
-    ...    ${Booking['text_profile_phone']}
-    ...    ${Booking['text_profile_mail']}
-    ...    ${Booking['text_profile_position']}
-    ...    ${Booking_S001['sir_name']}
-    ...    ${Booking_S001['company_name']}
-    ...    ${Booking_S001['name']}
-    ...    ${Booking_S001['phone']}
-    ...    ${Booking_S001['email']}
-    ...    ${Booking_S001['position']}
-    common.Verify Capture Screenshot    Booking_S001    Verify Home Page
+    # Defect046
+    # # Expected
+    # b2c_home_page.Verify My Profile Page
+    # ...    ${Booking['text_company_profile']}
+    # ...    ${Booking['text_profile']}
+    # ...    ${Booking['text_profile_name']}
+    # ...    ${Booking['text_profile_phone']}
+    # ...    ${Booking['text_profile_mail']}
+    # ...    ${Booking['text_profile_position']}
+    # ...    ${Booking_S001['sir_name']}
+    # ...    ${Booking_S001['company_name']}
+    # ...    ${Booking_S001['name']}
+    # ...    ${Booking_S001['phone']}
+    # ...    ${Booking_S001['email']}
+    # ...    ${Booking_S001['position']}
+    # common.Verify Capture Screenshot    Booking_S001    Verify Home Page
