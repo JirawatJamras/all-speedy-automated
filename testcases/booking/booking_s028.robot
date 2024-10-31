@@ -4,19 +4,32 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    13:00:00 - 16:00  # Expected result : ${Booking_S048.add_new_pickup['expected']}
+                  ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S028
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A2 (ไม่มีCOD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT
-    Log    Login
+    [Tags]    Booking    UAT    Review_Pass
+    Log    Pre condition
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
+    b2c_call_car_pick_up_parcel_page.Click Add Button
+    b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S018['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
+    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
+    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
+    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -342,7 +355,7 @@ Booking_S028
     ...    ${Booking_S028['receiver_phone']}
     ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    #${Booking_S028['receiver_store_address']}
     ...    ${Booking.label['non_cod']}
-    ...    ${Booking.label['parcel_buy_insure']}
+    ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    Booking_S028    Verify Parcel Label
 
