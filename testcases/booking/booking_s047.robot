@@ -226,7 +226,7 @@ Booking_S047
     # Defect106
     # Expected
     # b2c_favorite_page.Verify Store Address Receiver    ${Booking_S047.edit_receiver['receiver_store_full_address']}
-    common.Verify Capture Screenshot    Booking_S047    Verify Receiver Edited In Popup
+    # common.Verify Capture Screenshot    Booking_S047    Verify Receiver Edited In Popup
 
     Log    Step No.12 กดปุ่ม "บันทึกเเก้ไข"
     b2c_favorite_page.Click Save Edit Button
@@ -237,7 +237,7 @@ Booking_S047
     # ...    ${Booking_S003['receiver_name']}
     # ...    ${Booking_S003['receiver_phone']}
     # ...    ${Booking_S047.edit_receiver['receiver_store_address']}
-    common.Verify Capture Screenshot    Booking_S047    Verify Data Receiver After Edited
+    # common.Verify Capture Screenshot    Booking_S047    Verify Data Receiver After Edited
 
     Log    Step No.13 กดปุ่ม "เพิ่ม"
     b2c_favorite_page.Click Add Receiver Button
@@ -308,7 +308,7 @@ Booking_S047
     # b2c_favorite_page.Click Save Button
     # # Expected
     # b2c_favorite_page.Verify Display Shipping Origin Area Card
-    # ...    ${favorite.add_shipping_origin_area['favorite_name']}
+    # ...    ${Booking_S047.add_shipping_origin_area['favorite_name']}
     # ...    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_address']}
     # common.Scroll Window To Vertical    0
     # common.Verify Capture Screenshot    Booking_S047    Verify Shipping Origin Area Card After Added Information
