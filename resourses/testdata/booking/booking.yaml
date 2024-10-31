@@ -725,7 +725,7 @@ Booking_S024:
   receiver_name: สมใจ ดีดีดี
   receiver_store_code_5_digits: '01523'
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
-  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบล ปากน้ำ อำเภอ หลังสวน จังหวัด ชุมพร รหัสไปรษณีย์ 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
   shipping_origin:  รอบรถเข้ารับพัสดุ
   store_code:  '15888'
   booking_name: Booking CHILLED

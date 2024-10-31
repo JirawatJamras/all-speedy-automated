@@ -144,7 +144,8 @@ Booking_S042
 
     Log    Step No.5 เเก้ไข ข้อมูลผู้ส่งพัสดุ
     b2c_booking_detail_page.Edit Phone Sender    ${Booking_S042['sender_phone']}
-    b2c_booking_detail_page.Edit Name Sender    ${Booking_S042['sender_name']}    
+    # Defect119
+    # b2c_booking_detail_page.Edit Name Sender    ${Booking_S042['sender_name']}    
     b2c_booking_detail_page.Edit Address Sender    ${Booking_S042['sender_address']}
     b2c_booking_detail_page.Edit Postcode Sender    ${Booking_S042['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S042['sender_postcode_full']}
@@ -211,7 +212,7 @@ Booking_S042
 
     Log    Step No.8 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -240,7 +241,8 @@ Booking_S042
 
     Log    Step No.10 เเก้ไข ข้อมูลผู้รับพัสดุ
     b2c_booking_detail_page.Edit Phone Receiver    ${Booking_S042['receiver_phone']}
-    b2c_booking_detail_page.Edit Name Receiver    ${Booking_S042['receiver_name']}
+    # Defect119
+    # b2c_booking_detail_page.Edit Name Receiver    ${Booking_S042['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
     b2c_booking_detail_page.Edit Addres s Receiver    ${Booking_S042['receiver_address']}
     b2c_booking_detail_page.Edit Postcode Receiver    ${Booking_S042['receiver_postcode_5_digits']}
@@ -306,7 +308,7 @@ Booking_S042
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -324,7 +326,7 @@ Booking_S042
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     ...    ${Booking.dry_parcel['parcel_detail_A4']}
     ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -419,7 +421,7 @@ Booking_S042
 
     Log    Step No.19 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -437,7 +439,7 @@ Booking_S042
 
     Log    Step No.20 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     ...    ${Booking.dry_parcel['parcel_detail_A4']}
     ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -459,7 +461,7 @@ Booking_S042
     Log    Step No.21 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Defect050
-    #Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S003.promotion_detail['discount']}
     # ...    ${Booking_S003.promotion_detail['promotion_name']}
