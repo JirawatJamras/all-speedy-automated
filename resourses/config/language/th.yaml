@@ -222,7 +222,7 @@ call_car_pick_up:
     afternoon: 'ช่วงบ่าย 13:00 - 16:00'
   parcel_pickup_time_schedule:
     morning: 0'9:00:00 - 12:00 น.'
-  cut_off_time: '16:55:00'
+  cut_off_time: '12:38:00'
   default:
     parcel_number: '0'
     price: '0.00'
