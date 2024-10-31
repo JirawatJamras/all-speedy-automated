@@ -180,6 +180,9 @@ Booking_S028
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
+    Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
+    ...    ${EMPTY}
+    ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S028    Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
@@ -299,6 +302,7 @@ Booking_S028
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S028['shipping_origin']}
     b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    Reload Page
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
