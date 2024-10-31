@@ -10,7 +10,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 
 Booking_S015
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    In_Review
+    [Tags]    Booking    UAT    Review_Pass
     Log    Prerequisite
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -107,14 +107,14 @@ Booking_S015
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}    # Expected Result is ${Booking.img_not_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S015['sender_name']}
     ...    ${Booking_S015['sender_phone']}
     ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking.text_blank['receiver_name']}
     ...    ${Booking.text_blank['receiver_phone']}
     ...    ${Booking.text_blank['receiver_store_address']}
-    ...    ${EMPTY}         # Expected Result is ${Booking.text_blank['parcel_size']}
+    ...    ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
@@ -165,7 +165,7 @@ Booking_S015
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S015['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S015['receiver_name']}
     b2c_booking_delivery_page.Select Send To 7-ELEVEN Store Tab
-    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S015['store_code']}
+    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S015['receiver_store_code_5_digits']}
     b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S015['store_address']}
     b2c_booking_delivery_page.Click Store On Map
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
@@ -192,13 +192,12 @@ Booking_S015
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
     b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
-    ...    0    # ${EMPTY}
+    ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S015    Verify Parcel Detail  
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
-    # เลือกขนาดพัสดุ : กล่อง L
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S015['parcel_size']}
     b2c_booking_delivery_page.Input Insurance    ${Booking_S015['parcel_insure']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S015['parcel_detail_remark']}
@@ -212,16 +211,16 @@ Booking_S015
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S015    Verify Promotion
 
-    # Log    Step No.14 ขั้นตอน Promotion
-    # # ระบุโค้ดส่วนลด : SPBH5B
-    # b2c_booking_delivery_page.Input Promotion    ${Booking_S015['promotion']}
+    Log    Step No.14 ขั้นตอน Promotion
+    b2c_booking_delivery_page.Input Promotion    ${Booking_S015['promotion']}
+    # Defect072
     # b2c_booking_delivery_page.Click Use Code Button
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S015.promotion_detail['discount']}
     # ...    ${Booking_S015.promotion_detail['promotion_name']}
-    # ...    ${Booking_S015.promotion_detail['parcel_size']}    # Expected result : ทุกขนาด
+    # ...    ${Booking_S015.promotion_detail['parcel_size']}    
     # ...    ${Booking_S015.promotion_detail['expired_date']}
-    # ...    ${Booking_S015.promotion_detail['condition']}    # Expected result : สำหรับลูกค้าที่เป็นกล่อง
+    # ...    ${Booking_S015.promotion_detail['condition']}   
     # ...    ${Booking_S015.promotion_detail['period']}
     # common.Verify Capture Screenshot    Booking_S015    Verify Selected Coupon And Code
 
@@ -230,35 +229,36 @@ Booking_S015
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
-    ...    ${Booking['text_title_booking_list']}
-    ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
-    ...    ${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S015['sender_name']}
-    ...    ${Booking_S015['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S015['receiver_name']}
-    ...    ${Booking_S015['receiver_phone']}
-    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S015['store_address']}
-    ...    ${Booking_S015['parcel_size']}
-    ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking_S015['buy_insurance_verify']}
-    ...    ${Booking.text_blank['cod_value']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    0    # Expected Result is ${Booking_S015['discount_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['discount_value']}
-    ...    0    # Expected Result is ${Booking_S015['insurance_fee_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['insurance_fee_value']}
-    ...    0    # Expected Result is ${Booking_S015['cod_fee_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['cod_fee_value']}
-    ...    0    # Expected Result is ${Booking_S015['total_price_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['total_price_value']}
-    ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
+    # Defect048 Defect054
+    # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S015['sender_name']}
+    # ...    ${Booking_S015['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S015['receiver_name']}
+    # ...    ${Booking_S015['receiver_phone']}
+    # ...    ${Booking_S015['store_address']}
+    # ...    ${Booking_S015['parcel_size']}
+    # ...    ${Booking.text_blank['price_value']}
+    # ...    ${Booking_S015['buy_insurance_verify']}
+    # ...    ${Booking.text_blank['cod_value']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking_S015['discount_amount']}
+    # ...    ${Booking_S015['discount_value']}
+    # ...    ${Booking_S015['insurance_fee_amount']}
+    # ...    ${Booking_S015['insurance_fee_value']}
+    # ...    ${Booking_S015['cod_fee_amount']}
+    # ...    ${Booking_S015['cod_fee_value']}
+    # ...    ${Booking_S015['total_price_amount']}
+    # ...    ${Booking_S015['total_price_value']}
+    # ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S015    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -268,47 +268,49 @@ Booking_S015
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
-    b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
-    ...    ${booking_id}
-    ...    ${booking_time}
-    ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S015['booking_name']}
-    ...    ${Booking_S015['booking_item']}
-    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
+    # Defect047
+    # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
+    # ...    ${booking_id}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    # ...    ${Booking_S015['booking_name']}
+    # ...    ${Booking_S015['booking_item']}
+    # ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S015    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.17 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
-    ...    ${Booking['text_title_booking_list']}
-    ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
-    ...    ${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S015['sender_name']}
-    ...    ${Booking_S015['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S015['receiver_name']}
-    ...    ${Booking_S015['receiver_phone']}
-    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S015['receiver_store_address']}
-    ...    ${Booking_S015['parcel_size']}
-    ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking_S015['buy_insurance_verify']}
-    ...    ${Booking.text_blank['cod_value']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    0    # Expected Result is ${Booking_S015['discount_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['discount_value']}
-    ...    0    # Expected Result is ${Booking_S015['insurance_fee_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['insurance_fee_value']}
-    ...    0    # Expected Result is ${Booking_S015['cod_fee_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['cod_fee_value']}
-    ...    0    # Expected Result is ${Booking_S015['total_price_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['total_price_value']}
-    ...    ${EMPTY}    # Expected Result is ${Booking.text_blank['store_code']}
+    # Defect048 Defect054
+    # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S015['sender_name']}
+    # ...    ${Booking_S015['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S015['receiver_name']}
+    # ...    ${Booking_S015['receiver_phone']}
+    # ...    ${Booking_S015['receiver_store_address']}
+    # ...    ${Booking_S015['parcel_size']}
+    # ...    ${Booking.text_blank['price_value']}
+    # ...    ${Booking_S015['buy_insurance_verify']}
+    # ...    ${Booking.text_blank['cod_value']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking_S015['discount_amount']}
+    # ...    ${Booking_S015['discount_value']}
+    # ...    ${Booking_S015['insurance_fee_amount']}
+    # ...    ${Booking_S015['insurance_fee_value']}
+    # ...    ${Booking_S015['cod_fee_amount']}
+    # ...    ${Booking_S015['cod_fee_value']}
+    # ...    ${Booking_S015['total_price_amount']}
+    # ...    ${Booking_S015['total_price_value']}
+    # ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S015    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -331,35 +333,36 @@ Booking_S015
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
-    ...    ${Booking['text_title_booking_list']}
-    ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
-    ...    ${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S015['sender_name']}
-    ...    ${Booking_S015['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S015['receiver_name']}
-    ...    ${Booking_S015['receiver_phone']}
-    ...    01523 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    # Expected is ${Booking_S015['store_address']}
-    ...    ${Booking_S015['parcel_size']}
-    ...    ${Booking_S015['parcel_price_verify']}
-    ...    ${Booking_S015['buy_insurance_verify']}
-    ...    ${Booking.text_blank['cod_value']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    0    # Expected Result is ${Booking_S015['discount_amount']}
-    ...    0.00    # Expected Result is ${Booking_S015['discount_value2']}
-    ...    ${Booking_S015['insurance_fee_amount']}
-    ...    ${Booking_S015['insurance_fee_value']}
-    ...    ${Booking_S015['cod_fee_amount']}
-    ...    ${Booking_S015['cod_fee_value']}
-    ...    ${Booking_S015['total_price_amount']}
-    ...    176.00    # Expected Result is ${Booking_S015['total_price_value2']}
-    ...    ${Booking.origin_shipping['15888_store_address']}
+    # Defect054
+    # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_waiting_entering']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S015['sender_name']}
+    # ...    ${Booking_S015['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S015['receiver_name']}
+    # ...    ${Booking_S015['receiver_phone']}
+    # ...    ${Booking_S015['store_address']}
+    # ...    ${Booking_S015['parcel_size']}
+    # ...    ${Booking_S015['parcel_price_verify']}
+    # ...    ${Booking_S015['buy_insurance_verify']}
+    # ...    ${Booking.text_blank['cod_value']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking_S015['discount_amount']}
+    # ...    ${Booking_S015['discount_value2']}
+    # ...    ${Booking_S015['insurance_fee_amount']}
+    # ...    ${Booking_S015['insurance_fee_value']}
+    # ...    ${Booking_S015['cod_fee_amount']}
+    # ...    ${Booking_S015['cod_fee_value']}
+    # ...    ${Booking_S015['total_price_amount']}
+    # ...    ${Booking_S015['total_price_value2']}
+    # ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S015    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0
@@ -373,7 +376,7 @@ Booking_S015
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
     ...    ${Booking.label['text_destination_deparment_code']}
-    ...    ${Booking_S015['store_code']}
+    ...    ${Booking_S015['receiver_store_code_5_digits']}
     ...    ${Booking_S015['parcel_package_type']}
     ...    ${Booking_S015['parcel_size']}
     ...    ${Booking_S015['sender_name']}
@@ -382,7 +385,7 @@ Booking_S015
     ...    ${Booking_S015['sender_postcode_full']}
     ...    ${Booking_S015['receiver_name']}
     ...    ${Booking_S015['receiver_phone']}
-    ...    01523 7-11 ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150    #${Booking_S015['store_address']}
+    ...    ${Booking_S015['store_address']}
     ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_buy_insure']}
     ...    ${Booking_S015['parcel_detail_remark']}

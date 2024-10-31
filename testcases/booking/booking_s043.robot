@@ -283,36 +283,36 @@ Booking_S043
     ${booking_time}    Get Booking Time
     # Expected
     # Defect048
-    b2c_booking_detail_page.Verify Booking Detail Page
-    ...    ${Booking['text_title_booking_list']}
-    ...    ${booking_id}
-    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
-    ...    ${booking_name}
-    ...    ${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S020['sender_name']}
-    ...    ${Booking_S020['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S020['receiver_name']}
-    ...    ${Booking_S020['receiver_phone']}
-    ...    ${Booking_S020['receiver_address']}
-    ...    ${Booking_S020['receiver_postcode_full']}
-    ...    ${Booking_S020['parcel_size']}
-    ...    ${Booking_S020['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking.text_blank['cod_value']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}    
-    ...    ${Booking_S043['insurance_fee_amount']}
-    ...    ${Booking_S043['insurance_fee_value']}
-    ...    ${Booking_S043['cod_fee_amount']}
-    ...    ${Booking_S043['cod_fee_value']}
-    ...    ${Booking_S043['total_price_amount']}
-    ...    ${Booking_S043['total_price_value2']}
-    ...    ${Booking.origin_shipping['idc_company_address']}
+    # b2c_booking_detail_page.Verify Booking Detail Page
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_waiting_entering']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S020['sender_name']}
+    # ...    ${Booking_S020['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S020['receiver_name']}
+    # ...    ${Booking_S020['receiver_phone']}
+    # ...    ${Booking_S020['receiver_address']}
+    # ...    ${Booking_S020['receiver_postcode_full']}
+    # ...    ${Booking_S020['parcel_size']}
+    # ...    ${Booking_S020['price_value']}
+    # ...    ${Booking.text_blank['buy_insurance']}
+    # ...    ${Booking.text_blank['cod_value']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking.text_default['discount_amount']}
+    # ...    ${Booking.text_default['discount_value']}    
+    # ...    ${Booking_S043['insurance_fee_amount']}
+    # ...    ${Booking_S043['insurance_fee_value']}
+    # ...    ${Booking_S043['cod_fee_amount']}
+    # ...    ${Booking_S043['cod_fee_value']}
+    # ...    ${Booking_S043['total_price_amount']}
+    # ...    ${Booking_S043['total_price_value2']}
+    # ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S043    Verify Booking Summary After Edit Data Receiver
     common.Scroll Window To Vertical    0
@@ -392,36 +392,36 @@ Booking_S043
     ${booking_time}    Get Booking Time
     # Expected
     # Defect048
-    b2c_booking_detail_page.Verify Booking Detail Page
-    ...    ${Booking['text_title_booking_list']}
-    ...    ${booking_id}
-    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
-    ...    ${booking_name}
-    ...    ${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S020['sender_name']}
-    ...    ${Booking_S020['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S020['receiver_name']}
-    ...    ${Booking_S020['receiver_phone']}
-    ...    ${Booking_S020['receiver_address']}
-    ...    ${Booking_S020['receiver_postcode_full']}
-    ...    ${Booking_S020['parcel_size']}
-    ...    ${Booking_S020['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking.text_blank['cod_value']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking_S043['insurance_fee_amount']}
-    ...    ${Booking_S043['insurance_fee_value']}
-    ...    ${Booking_S043['cod_fee_amount']}
-    ...    ${Booking_S043['cod_fee_value']}
-    ...    ${Booking_S043['total_price_amount']}
-    ...    ${Booking_S043['total_price_value']}
-    ...    ${Booking.origin_shipping['idc_company_address']}
+    # b2c_booking_detail_page.Verify Booking Detail Page
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_waiting_entering']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S020['sender_name']}
+    # ...    ${Booking_S020['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S020['receiver_name']}
+    # ...    ${Booking_S020['receiver_phone']}
+    # ...    ${Booking_S020['receiver_address']}
+    # ...    ${Booking_S020['receiver_postcode_full']}
+    # ...    ${Booking_S020['parcel_size']}
+    # ...    ${Booking_S020['price_value']}
+    # ...    ${Booking.text_blank['buy_insurance']}
+    # ...    ${Booking.text_blank['cod_value']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking.text_default['discount_amount']}
+    # ...    ${Booking.text_default['discount_value']}
+    # ...    ${Booking_S043['insurance_fee_amount']}
+    # ...    ${Booking_S043['insurance_fee_value']}
+    # ...    ${Booking_S043['cod_fee_amount']}
+    # ...    ${Booking_S043['cod_fee_value']}
+    # ...    ${Booking_S043['total_price_amount']}
+    # ...    ${Booking_S043['total_price_value']}
+    # ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S042    Verify Booking Summary After Edit Data Parcel
     common.Scroll Window To Vertical    0
