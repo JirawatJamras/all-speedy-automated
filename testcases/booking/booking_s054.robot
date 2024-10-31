@@ -64,7 +64,7 @@ Booking_S054
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    # Defect084 Defect117
+    # Defect084    Defect117
     # Expected
     # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     # ...    ${booking_id}
@@ -77,7 +77,7 @@ Booking_S054
 
     Log    Step No.2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Booking With Waiting For Entering Parcel To System    ${booking_id}
-    # Defect054 Defect 084
+    # Defect054    Defect 084
     # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
@@ -144,7 +144,8 @@ Booking_S054
 
     Log    Step No.5 เเก้ไข ข้อมูลผู้ส่งพัสดุ
     b2c_booking_detail_page.Edit Phone Sender    ${Booking_S054['sender_phone']}
-    b2c_booking_detail_page.Edit Name Sender    ${Booking_S054['sender_name']}    
+    # Defect119
+    # b2c_booking_detail_page.Edit Name Sender    ${Booking_S054['sender_name']}    
     b2c_booking_detail_page.Edit Address Sender    ${Booking_S054['sender_address']}
     b2c_booking_detail_page.Edit Postcode Sender    ${Booking_S054['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S054['sender_postcode_full']}
@@ -241,7 +242,8 @@ Booking_S054
 
     Log    Step No.10 เเก้ไข ข้อมูลผู้รับพัสดุ
     b2c_booking_detail_page.Edit Phone Receiver    ${Booking_S054['receiver_phone']}
-    b2c_booking_detail_page.Edit Name Receiver    ${Booking_S054['receiver_name']}
+    # Defect119
+    # b2c_booking_detail_page.Edit Name Receiver    ${Booking_S054['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
     b2c_booking_detail_page.Edit Addres s Receiver    ${Booking_S054['receiver_address']}
     b2c_booking_detail_page.Edit Postcode Receiver    ${Booking_S054['receiver_postcode_5_digits']}
@@ -348,7 +350,7 @@ Booking_S054
 
     Log    Step No.15 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
-    # Defect055 Defect133
+    # Defect055    Defect133
     # Expected
     # b2c_booking_detail_page.Verify Can Edit Data Parcel
     # b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
