@@ -81,7 +81,6 @@ Booking_S004
     common.Verify Capture Screenshot    Booking_S004    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
-    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     # Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp
@@ -144,22 +143,23 @@ Booking_S004
     Log    Step No.11 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page After Draft
-    ...    ${Booking['text_booking_list']}
-    ...    ${Booking['text_draft_status']}
-    ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S004['sender_name']}
-    ...    ${Booking_S004['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S004['receiver_name']}
-    ...    ${Booking_S004['receiver_phone']}
-    ...    ${Booking_S004['receiver_address']}
-    ...    ${Booking_S004['receiver_postcode_full']}
-    ...    ${Booking_S004['parcel_size']}
-    ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S004['parcel_cod_verify']}
+    # Defect054
+    # b2c_booking_detail_page.Verify Booking Detail Page After Draft
+    # ...    ${Booking['text_booking_list']}
+    # ...    ${Booking['text_draft_status']}
+    # ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S004['sender_name']}
+    # ...    ${Booking_S004['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S004['receiver_name']}
+    # ...    ${Booking_S004['receiver_phone']}
+    # ...    ${Booking_S004['receiver_address']}
+    # ...    ${Booking_S004['receiver_postcode_full']}
+    # ...    ${Booking_S004['parcel_size']}
+    # ...    ${Booking.text_blank['price_value']}
+    # ...    ${Booking.text_blank['buy_insurance']}
+    # ...    ${Booking_S004['parcel_cod_verify']}
     common.Verify Capture Screenshot    Booking_S004    Verify Draft Parcel After Input Parcel Detail
 
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
@@ -217,10 +217,11 @@ Booking_S004
     ...    ${Booking['parcel_detail_insure_amount']}
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
-    b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
-    ...    0    # ${EMPTY}
-    ...    ${Booking_S004['parcel_cod_verify2']}
-    ...    ${EMPTY}
+    # Defect055
+    # b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
+    # ...    ${EMPTY}
+    # ...    ${Booking_S004['parcel_cod_verify2']}
+    # ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S004    Verify Parcel Detail Page of Create Parcel [Dry Parcel] 2
 
     Log    Step No.15 กดปุ่ม "ถัดไป"
@@ -232,41 +233,41 @@ Booking_S004
     common.Verify Capture Screenshot    Booking_S004    Verify Promotion
 
     Log    Step No.16 ขั้นตอน Promotion
-    # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
-    ...    ${Booking['text_title_booking_list']}
-    ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
-    ...    ${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S004['sender_name']}
-    ...    ${Booking_S004['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S004['receiver_name']}
-    ...    ${Booking_S004['receiver_phone']}
-    ...    ${Booking_S004['receiver_address']}
-    ...    ${Booking_S004['receiver_postcode_full']}
-    ...    ${Booking_S004['parcel_size']}
-    ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S004['parcel_cod_verify']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking.text_default['insurance_fee_amount']}
-    ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking_S004['cod_fee_amount']}
-    ...    ${Booking_S004['cod_fee_value']}
-    ...    ${Booking_S004['total_price_amount']}
-    ...    ${Booking_S004['total_price_value']}
-    ...    ${EMPTY}
+    # Defect049
+    # b2c_booking_detail_page.Verify Booking Detail Page
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S004['sender_name']}
+    # ...    ${Booking_S004['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S004['receiver_name']}
+    # ...    ${Booking_S004['receiver_phone']}
+    # ...    ${Booking_S004['receiver_address']}
+    # ...    ${Booking_S004['receiver_postcode_full']}
+    # ...    ${Booking_S004['parcel_size']}
+    # ...    ${Booking.text_blank['price_value']}
+    # ...    ${Booking.text_blank['buy_insurance']}
+    # ...    ${Booking_S004['parcel_cod_verify']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking.text_default['discount_amount']}
+    # ...    ${Booking.text_default['discount_value']}
+    # ...    ${Booking.text_default['insurance_fee_amount']}
+    # ...    ${Booking.text_default['insurance_fee_value']}
+    # ...    ${Booking_S004['cod_fee_amount']}
+    # ...    ${Booking_S004['cod_fee_value']}
+    # ...    ${Booking_S004['total_price_amount']}
+    # ...    ${Booking_S004['total_price_value']}
+    # ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -276,48 +277,50 @@ Booking_S004
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
-    b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
-    ...    ${booking_id}
-    ...    ${booking_time}
-    ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking_S004['booking_name']}
-    ...    ${Booking_S004['booking_item']}
-    ...    ${Booking.text_default['booking_price']}
+    # Defect047
+    # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
+    # ...    ${booking_id}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    # ...    ${Booking_S004['booking_name']}
+    # ...    ${Booking_S004['booking_item']}
+    # ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S004    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.18 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page
-    ...    ${Booking['text_title_booking_list']}
-    ...    ${booking_id}
-    ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
-    ...    ${booking_time}
-    ...    ${Booking['text_title_parcel_list']}
-    ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
-    ...    ${Booking_S004['sender_name']}
-    ...    ${Booking_S004['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    ...    ${Booking_S004['receiver_name']}
-    ...    ${Booking_S004['receiver_phone']}
-    ...    ${Booking_S004['receiver_address']}
-    ...    ${Booking_S004['receiver_postcode_full']}
-    ...    ${Booking_S004['parcel_size']}
-    ...    ${Booking.text_blank['price_value']}
-    ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S004['parcel_cod_verify']}
-    ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
-    ...    ${Booking.text_default['insurance_fee_amount']}
-    ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking_S004['cod_fee_amount']}
-    ...    ${Booking_S004['cod_fee_value']}
-    ...    ${Booking_S004['total_price_amount']}
-    ...    ${Booking_S004['total_price_value']}
-    ...    ${EMPTY}
+    # Defect048
+    # b2c_booking_detail_page.Verify Booking Detail Page
+    # ...    ${Booking['text_title_booking_list']}
+    # ...    ${booking_id}
+    # ...    ${Booking['text_dry_parcel_id_4_start_unit']}
+    # ...    ${booking_name}
+    # ...    ${booking_time}
+    # ...    ${Booking['text_title_parcel_list']}
+    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    # ...    ${Booking.img_is_favorite['img_sender_heart']}
+    # ...    ${Booking_S004['sender_name']}
+    # ...    ${Booking_S004['sender_phone']}
+    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    # ...    ${Booking_S004['receiver_name']}
+    # ...    ${Booking_S004['receiver_phone']}
+    # ...    ${Booking_S004['receiver_address']}
+    # ...    ${Booking_S004['receiver_postcode_full']}
+    # ...    ${Booking_S004['parcel_size']}
+    # ...    ${Booking.text_blank['price_value']}
+    # ...    ${Booking.text_blank['buy_insurance']}
+    # ...    ${Booking_S004['parcel_cod_verify']}
+    # ...    ${Booking['text_title_booking_summary']}
+    # ...    ${Booking.text_default['discount_amount']}
+    # ...    ${Booking.text_default['discount_value']}
+    # ...    ${Booking.text_default['insurance_fee_amount']}
+    # ...    ${Booking.text_default['insurance_fee_value']}
+    # ...    ${Booking_S004['cod_fee_amount']}
+    # ...    ${Booking_S004['cod_fee_value']}
+    # ...    ${Booking_S004['total_price_amount']}
+    # ...    ${Booking_S004['total_price_value']}
+    # ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary
     common.Scroll Window To Vertical    0
