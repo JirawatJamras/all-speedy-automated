@@ -130,7 +130,7 @@ Booking_S004
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
     b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
-    ...    0    # ${EMPTY}
+    ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S004    Verify Parcel Detail Page of Create Parcel [Dry Parcel]
@@ -219,7 +219,7 @@ Booking_S004
     ...    ${Booking['parcel_detail_remark']}
     b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     ...    0    # ${EMPTY}
-    ...    ${Booking_S004['parcel_cod']}
+    ...    ${Booking_S004['parcel_cod_verify2']}
     ...    ${EMPTY}
     common.Verify Capture Screenshot    Booking_S004    Verify Parcel Detail Page of Create Parcel [Dry Parcel] 2
 
@@ -262,10 +262,10 @@ Booking_S004
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    0    #Expected Result is ${Booking_S004['cod_fee_amount']}
-    ...    0.00    #Expected Result is ${Booking_S004['cod_fee_value']}
-    ...    0    #Expected Result is ${Booking_S004['total_price_amount']}
-    ...    0.00    #Expected Result is ${Booking_S004['total_price_value']}
+    ...    ${Booking_S004['cod_fee_amount']}
+    ...    ${Booking_S004['cod_fee_value']}
+    ...    ${Booking_S004['total_price_amount']}
+    ...    ${Booking_S004['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary After Booking Success
@@ -282,7 +282,7 @@ Booking_S004
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking_S004['booking_name']}
     ...    ${Booking_S004['booking_item']}
-    ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
+    ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    Booking_S004    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.18 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -313,10 +313,10 @@ Booking_S004
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    0    #Expected Result is ${Booking_S004['cod_fee_amount']}
-    ...    0.00    #Expected Result is ${Booking_S004['cod_fee_value']}
-    ...    0    #Expected Result is ${Booking_S004['total_price_amount']}
-    ...    0.00    #Expected Result is ${Booking_S004['total_price_value']}
+    ...    ${Booking_S004['cod_fee_amount']}
+    ...    ${Booking_S004['cod_fee_value']}
+    ...    ${Booking_S004['total_price_amount']}
+    ...    ${Booking_S004['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary
@@ -369,7 +369,7 @@ Booking_S004
     ...    ${Booking_S004['cod_fee_value']}
     ...    ${Booking_S004['total_price_amount']}
     ...    ${Booking_S004['total_price_value2']}
-    ...    ${Booking_S004['store_code']}
+    ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S004    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0

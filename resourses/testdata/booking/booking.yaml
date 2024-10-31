@@ -84,6 +84,7 @@ Booking_S004:
   parcel_package_type:  กล่อง
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
+  parcel_cod_verify2: 5,000
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
@@ -214,8 +215,10 @@ Booking_S008:
   parcel_package_type:  กล่อง
   parcel_insure: 2500
   parcel_insure_verify: 2,500.00
+  parcel_insure_verify2: 2,500
   parcel_cod: 5000
   parcel_cod_verify: 5,000.00
+  parcel_cod_verify2: 5,000
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_price_verify: '200'
   insurance_fee_amount: '1'

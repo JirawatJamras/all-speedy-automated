@@ -92,6 +92,7 @@ Booking:
   text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
   text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
   text_parcel_status_waiting_entering: รอส่งพัสดุเข้าระบบ
+  text_parcel_status_call_car: กำลังเรียกรถเข้ารับ  
   tab_shipping_origin:
     favorite:  เลือกรายการโปรด
     store:  เลือกร้าน 7-11 ต้นทาง
@@ -195,6 +196,7 @@ Booking:
     dry_parcel_import_fail_amount: ล้มเหลว 32
   origin_shipping:
     idc_company_address: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
+    15888_store_address: 15888 7-11 สาขาCP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500
 
 
 call_car_pick_up:
