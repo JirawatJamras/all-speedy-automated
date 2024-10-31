@@ -1,10 +1,9 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-
-Test Setup        Run Keywords    Open Chrome Browser    chrome   #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
-Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    13:00:00 - 16:00  # Expected result : ${Booking_S048.add_new_pickup['expected']}
+Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S048.add_new_pickup['expected']}
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
