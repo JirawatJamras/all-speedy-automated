@@ -682,8 +682,8 @@ Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
     [Arguments]    ${cod}    ${remark}
     ${actual_cod}=    Get Value    ${txtbox_cod}
     ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
-    # Element Should Be Disabled    ${txtbox_insure_amount}    # This is a part of expected result script, but commented because of Defect083
-    # Should Be Equal    ${actual_cod}    ${cod}    #  This is a part of expected result script, but commented because of Defect118
+    Element Should Be Disabled    ${txtbox_insure_amount}
+    Should Be Equal    ${actual_cod}    ${cod}
     Should Be Equal    ${actual_remark}    ${remark}
 
 Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
