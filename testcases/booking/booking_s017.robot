@@ -28,7 +28,7 @@ Booking_S017
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
     # Defect043
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     # common.Verify Capture Screenshot    Booking_S017    Verify Term & Condition
 
@@ -56,7 +56,6 @@ Booking_S017
     common.Verify Capture Screenshot    Booking_S017    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
-    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     #Expected
     b2c_booking_delivery_page.Verify Favorites Sender PopUp    
@@ -109,7 +108,6 @@ Booking_S017
     common.Verify Capture Screenshot    Booking_S017    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.8 ขั้นตอนข้อมูลผู้รับพัสดุ
-    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     #Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
@@ -141,7 +139,7 @@ Booking_S017
     Log    Step No.10 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     # Defect052    Defect076
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     # ...    ${Booking['text_booking_list']}
     # ...    ${Booking['text_draft_status']}
@@ -199,7 +197,7 @@ Booking_S017
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Defect055
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     # ...    ${Booking.dry_parcel['parcel_detail_A4']}
     # ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -239,7 +237,7 @@ Booking_S017
     # Defect072
     # b2c_booking_delivery_page.Input Promotion    ${Booking_S017['promotion']}
     # b2c_booking_delivery_page.Click Use Code Button
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S017.promotion_detail['discount']}
     # ...    ${Booking_S017.promotion_detail['promotion_name']}
@@ -254,7 +252,7 @@ Booking_S017
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Defect048    Defect063    Defect076
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -293,7 +291,7 @@ Booking_S017
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Defect047
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     # ...    ${booking_id}
     # ...    ${booking_time}
@@ -306,7 +304,7 @@ Booking_S017
     Log    Step No.19 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Defect048    Defect063    Defect076
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -358,7 +356,7 @@ Booking_S017
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Defect076    Defect101
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -396,7 +394,7 @@ Booking_S017
     Log    Step No.22 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # Defect077
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Parcel Label When Select 7-ELEVEN Store
     # ...    ${Booking.text_paper_size['size_a4']}
     # ...    ${Booking.text_paper_size['size_a5']}

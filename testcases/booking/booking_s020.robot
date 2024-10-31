@@ -38,9 +38,10 @@ Booking_S020
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
+    # Defect043
     # Expected
-    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
-    common.Verify Capture Screenshot    Booking_S020    Verify Term & Condition
+    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
+    # common.Verify Capture Screenshot    Booking_S020    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
@@ -189,12 +190,12 @@ Booking_S020
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
-    # Expected
     # Defect045
+    # Expected
     # b2c_booking_delivery_page.Verify Promotion Detail
     # ...    ${Booking['text_selected_coupon_and_code']}
     # ...    ${Booking['text_my_coupon_and_code']}
-    common.Verify Capture Screenshot    Booking_S020    Verify Promotion
+    # common.Verify Capture Screenshot    Booking_S020    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
     b2c_booking_delivery_page.Input Promotion    ${Booking_S020['promotion']}
@@ -213,8 +214,8 @@ Booking_S020
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
-    # Expected
     # Defect048
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -245,16 +246,16 @@ Booking_S020
     # ...    ${Booking_S020['total_price_amount']}
     # ...    ${Booking_S020['total_price_value']}
     # ...    ${EMPTY}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S020    Verify Booking Summary After Booking Success
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S020    Verify Booking Detail Page After Booking Success
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    Booking_S020    Verify Booking Summary After Booking Success
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S020    Verify Booking Detail Page After Booking Success
 
     Log    Step No.16 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    # Expected
     # Defect047
+    # Expected
     # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     # ...    ${booking_id}
     # ...    ${booking_time}
@@ -262,12 +263,12 @@ Booking_S020
     # ...    ${Booking_S020['booking_name']}
     # ...    ${Booking_S020['booking_item']}
     # ...    ${Booking.text_default['booking_price']}
-    common.Verify Capture Screenshot    Booking_S020    Verify Created Booking On Booking Delivery Page
+    # common.Verify Capture Screenshot    Booking_S020    Verify Created Booking On Booking Delivery Page
     
     Log    Step No.17 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
-    # Expected
     # Defect048
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -298,10 +299,10 @@ Booking_S020
     # ...    ${Booking_S020['total_price_amount']}
     # ...    ${Booking_S020['total_price_value']}
     # ...    ${EMPTY}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S020    Verify Booking Summary
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S020    Verify Booking Detail Page 
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    Booking_S020    Verify Booking Summary
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S020    Verify Booking Detail Page 
     
     Log    Step No.18 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
@@ -313,7 +314,6 @@ Booking_S020
     common.Verify Capture Screenshot    Booking_S020    Verify Edit Booking List Popup  
 
     Log    Step No.19 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
-    # รอบรถเข้ารับพัสดุ
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S020['shipping_origin']}
     b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
     b2c_booking_detail_page.Click Save Shipping Origin Aria

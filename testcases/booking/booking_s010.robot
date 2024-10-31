@@ -27,7 +27,7 @@ Booking_S010
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
     # Defect043
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     # common.Verify Capture Screenshot    Booking_S010    Verify Term & Condition
 
@@ -95,7 +95,7 @@ Booking_S010
     Log    Step No.8 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     #  Defect42    Defect052    Defect076
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     # ...    ${Booking['text_booking_list']}
     # ...    ${Booking['text_draft_status']}
@@ -153,7 +153,7 @@ Booking_S010
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Defect055
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     # ...    ${Booking.dry_parcel['parcel_detail_A4']}
     # ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -180,19 +180,18 @@ Booking_S010
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
     # Defect045
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Promotion Detail
     # ...    ${Booking['text_selected_coupon_and_code']}
     # ...    ${Booking['text_my_coupon_and_code']}
     # common.Verify Capture Screenshot    Booking_S010    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
-    # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Defect048   Defect063    Defect076
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -231,7 +230,7 @@ Booking_S010
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Defect047
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     # ...    ${booking_id}
     # ...    ${booking_time}
@@ -244,7 +243,7 @@ Booking_S010
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Defect048   Defect063    Defect076
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -289,7 +288,6 @@ Booking_S010
     common.Verify Capture Screenshot    Booking_S010    Verify Edit Booking List Popup  
 
     Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
-    # เลือกร้าน 7-11 ต้นทาง
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S010['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S010['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
@@ -297,7 +295,7 @@ Booking_S010
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Defect042    Defect076    Defect078    Defect101
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -335,7 +333,7 @@ Booking_S010
     Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # Defect077
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Parcel Label When Select 7-ELEVEN Store
     # ...    ${Booking.text_paper_size['size_a4']}
     # ...    ${Booking.text_paper_size['size_a5']}

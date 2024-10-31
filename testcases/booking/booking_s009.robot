@@ -25,9 +25,9 @@ Booking_S009
     common.Verify Capture Screenshot    Booking_S009    Verify Booking Page For Business Customer
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
-    b2c_booking_delivery_page.Click Button To Add    
+    b2c_booking_delivery_page.Click Button To Add
     # Defect043
-    # #Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     # common.Verify Capture Screenshot    Booking_S009    Verify Term & Condition
 
@@ -55,7 +55,6 @@ Booking_S009
     common.Verify Capture Screenshot    Booking_S009    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
-    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     #Expected
     b2c_booking_delivery_page.Verify Favorites Sender PopUp    
@@ -108,7 +107,6 @@ Booking_S009
     common.Verify Capture Screenshot    Booking_S009    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.8 ขั้นตอนข้อมูลผู้รับพัสดุ
-    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     # Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp
@@ -144,7 +142,7 @@ Booking_S009
     Log    Step No.10 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     # Defect052
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page After Draft
     # ...    ${Booking['text_booking_list']}
     # ...    ${Booking['text_draft_status']}
@@ -205,7 +203,7 @@ Booking_S009
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Defect055
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     # ...    ${Booking.dry_parcel['parcel_detail_A4']}
     # ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -242,7 +240,6 @@ Booking_S009
 
     Log    Step No.16 ขั้นตอน Promotion
     # Defect072
-    # ระบุโค้ดส่วนลด : SPBH5B
     # b2c_booking_delivery_page.Input Promotion    ${Booking_S009['promotion']}
     # b2c_booking_delivery_page.Click Use Code Button
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
@@ -259,7 +256,7 @@ Booking_S009
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Defect048    Defect063
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -312,7 +309,7 @@ Booking_S009
     Log    Step No.19 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Defect048    Defect063
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -351,7 +348,7 @@ Booking_S009
     Log    Step No.20 กดปุ่ม "แก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
     # Defect045
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Edit Booking List Popup    
     # ...    ${Booking_S009['parcel_type']}
     # ...    ${Booking_S009['booking_name']}
@@ -359,7 +356,6 @@ Booking_S009
     # common.Verify Capture Screenshot    Booking_S009    Verify Edit Booking List Popup  
 
     Log    Step No.21 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
-    # เลือกร้าน 7-11 ต้นทาง
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S009['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S009['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
@@ -367,7 +363,7 @@ Booking_S009
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Defect072    Defect101
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}

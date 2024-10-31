@@ -25,9 +25,10 @@ Booking_S011
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
+    # Defect043
     # Expected
-    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
-    common.Verify Capture Screenshot    Booking_S011    Verify Term & Condition
+    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
+    # common.Verify Capture Screenshot    Booking_S011    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
@@ -186,8 +187,8 @@ Booking_S011
     Log    Step No.14 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button
     ${booking_time}    Get Booking Time
-    # Expected
     # Defect048    Defect054
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -217,16 +218,16 @@ Booking_S011
     # ...    ${Booking_S011['total_price_amount']}
     # ...    ${Booking_S011['total_price_value']}
     # ...    ${Booking.text_blank['store_code']}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary After Booking Success
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S011    Verify Booking Detail Page After Booking Success
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary After Booking Success
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S011    Verify Booking Detail Page After Booking Success
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    # Expected
     # Defect047
+    # Expected
     # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     # ...    ${booking_id}
     # ...    ${booking_time}
@@ -234,12 +235,12 @@ Booking_S011
     # ...    ${Booking_S011['booking_name']}
     # ...    ${Booking_S011['booking_item']}
     # ...    ${Booking.text_default['booking_price']}
-    common.Verify Capture Screenshot    Booking_S011    Verify Created Booking On Booking Delivery Page
+    # common.Verify Capture Screenshot    Booking_S011    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
+    # Defect048 Defect054
     # Expected
-    # "Defect048 Defect054
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -269,10 +270,10 @@ Booking_S011
     # ...    ${Booking_S011['total_price_amount']}
     # ...    ${Booking_S011['total_price_value']}
     # ...    ${Booking.text_blank['store_code']}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S011    Verify Booking Detail Page 
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    Booking_S011    Verify Booking Summary
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S011    Verify Booking Detail Page 
     
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List

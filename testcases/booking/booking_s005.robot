@@ -27,7 +27,7 @@ Booking_S005
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
     # Defect043
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     # common.Verify Capture Screenshot    Booking_S005    Verify Term & Condition
 
@@ -67,7 +67,7 @@ Booking_S005
     Log    Step No.6 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
     # Defect51    Defect052
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page After Draft
     # ...    ${Booking['text_booking_list']}
     # ...    ${Booking['text_draft_status']}
@@ -139,7 +139,7 @@ Booking_S005
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Defect055
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
     # ...    ${Booking.dry_parcel['parcel_detail_A4']}
     # ...    ${Booking.dry_parcel['parcel_detail_A3']}
@@ -168,18 +168,17 @@ Booking_S005
     Log    Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
     # Defect045
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Promotion Detail
     # ...    ${Booking['text_selected_coupon_and_code']}
     # ...    ${Booking['text_my_coupon_and_code']}
     # common.Verify Capture Screenshot    Booking_S005    Verify Promotion
 
     Log    Step No.13 ขั้นตอน Promotion
-    # ระบุโค้ดส่วนลด : SPBH5B
     b2c_booking_delivery_page.Input Promotion    ${Booking_S005['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     # Defect050    Defect072
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Selected Coupon And Code
     # ...    ${Booking_S005.promotion_detail['discount']}
     # ...    ${Booking_S005.promotion_detail['promotion_name']}
@@ -194,7 +193,7 @@ Booking_S005
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Defect42    Defect048    Defect063
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -234,7 +233,7 @@ Booking_S005
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Defect047
-    # # Expected
+    # Expected
     # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     # ...    ${booking_id}
     # ...    ${booking_time}
@@ -247,7 +246,7 @@ Booking_S005
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Defect42    Defect048    Defect063
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
@@ -300,7 +299,7 @@ Booking_S005
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Defect042    Defect078    Defect101
-    # # Expected
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}
