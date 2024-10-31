@@ -6,7 +6,7 @@ sub_menu:
 
 Booking:
   text_login: เข้าสู่ระบบ
-  text_company_profile: โปรไฟล์บริษัท         
+  text_company_profile: โปรไฟล์ของฉัน         
   text_profile: ข้อมูลส่วนตัว           
   text_profile_name: ชื่อ       
   text_profile_phone: เบอร์โทรศัพท์        

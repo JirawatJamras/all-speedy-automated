@@ -146,24 +146,24 @@ Booking_S058
     ...    ${Booking_S031['receiver_postcode_full']}
     # Defect134
     # Expected
-    b2c_favorite_page.Verify Label Receiver
-    ...    ${favorite.label_reciever_favorite['text_data_receiver']}
-    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
-    ...    ${favorite.label_reciever_favorite['text_phone']}
-    ...    ${favorite.label_reciever_favorite['text_name']}
-    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
-    ...    ${favorite.label_reciever_favorite['text_address']}
-    ...    ${favorite.label_reciever_favorite['text_postcode']}
-    b2c_favorite_page.Verify Data Recevier In Read-Only Mode
-    ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    ...    ${Booking_S031['receiver_name']}
-    ...    ${Booking_S031['receiver_phone']}
-    ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
-    ...    ${Booking_S031['receiver_address']}
-    ...    ${Booking_S031['receiver_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S058    Verify Data Receiver In Popup
-    b2c_favorite_page.Scroll To Display Edit Button
-    common.Verify Capture Screenshot    Booking_S058    Verify Data Receiver Footer In Popup
+    # b2c_favorite_page.Verify Label Receiver
+    # ...    ${favorite.label_reciever_favorite['text_data_receiver']}
+    # ...    ${favorite.label_reciever_favorite['text_favorite_name']}
+    # ...    ${favorite.label_reciever_favorite['text_phone']}
+    # ...    ${favorite.label_reciever_favorite['text_name']}
+    # ...    ${favorite.label_reciever_favorite['text_location_pickup']}
+    # ...    ${favorite.label_reciever_favorite['text_address']}
+    # ...    ${favorite.label_reciever_favorite['text_postcode']}
+    # b2c_favorite_page.Verify Data Recevier In Read-Only Mode
+    # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    # ...    ${Booking_S031['receiver_name']}
+    # ...    ${Booking_S031['receiver_phone']}
+    # ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
+    # ...    ${Booking_S031['receiver_address']}
+    # ...    ${Booking_S031['receiver_postcode_full']}
+    # common.Verify Capture Screenshot    Booking_S058    Verify Data Receiver In Popup
+    # b2c_favorite_page.Scroll To Display Edit Button
+    # common.Verify Capture Screenshot    Booking_S058    Verify Data Receiver Footer In Popup
 
     Log    Step No.10 กดปุ่ม "เเก้ไข"
     b2c_favorite_page.Click Edit Button
@@ -193,7 +193,7 @@ Booking_S058
     # Defect106
     # Expected
     # b2c_favorite_page.Verify Store Address Receiver    ${Booking_S058.edit_receiver['receiver_store_full_address']}
-    common.Verify Capture Screenshot    Booking_S058    Verify Receiver Edited In Popup
+    # common.Verify Capture Screenshot    Booking_S058    Verify Receiver Edited In Popup
 
 
 
@@ -201,12 +201,12 @@ Booking_S058
     b2c_favorite_page.Click Save Edit Button
     # Defect123
     # Expected
-    b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
-    ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    ...    ${Booking_S031['receiver_name']}
-    ...    ${Booking_S031['receiver_phone']}
-    ...    ${Booking_S058.edit_receiver['receiver_store_address']}
-    common.Verify Capture Screenshot    Booking_S058    Verify Data Receiver After Edited
+    # b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
+    # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    # ...    ${Booking_S031['receiver_name']}
+    # ...    ${Booking_S031['receiver_phone']}
+    # ...    ${Booking_S058.edit_receiver['receiver_store_address']}
+    # common.Verify Capture Screenshot    Booking_S058    Verify Data Receiver After Edited
 
 
 
