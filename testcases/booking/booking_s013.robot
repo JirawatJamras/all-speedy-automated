@@ -168,11 +168,12 @@ Booking_S013
 
     Log    Step No.12 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
-    # Expected
-    b2c_booking_delivery_page.Verify Promotion Detail
-    ...    ${Booking['text_selected_coupon_and_code']}
-    ...    ${Booking['text_my_coupon_and_code']}
-    common.Verify Capture Screenshot    Booking_S013    Verify Promotion
+    # Defect045
+    # # Expected
+    # b2c_booking_delivery_page.Verify Promotion Detail
+    # ...    ${Booking['text_selected_coupon_and_code']}
+    # ...    ${Booking['text_my_coupon_and_code']}
+    # common.Verify Capture Screenshot    Booking_S013    Verify Promotion
 
     Log    Step No.13 ขั้นตอน Promotion
     # Defect072

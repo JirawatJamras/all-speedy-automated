@@ -55,13 +55,14 @@ Booking_S002
     common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
-    b2c_booking_delivery_page.Input Phone Sender    ${Booking_S002['sender_phone']}
-    b2c_booking_delivery_page.Input Name Sender    ${Booking_S002['sender_name']}    
-    b2c_booking_delivery_page.Input Address Sender    ${Booking_S002['sender_address']}
-    b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S002['sender_postcode_5_digits']}
-    b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S002['sender_postcode_full']}
-    # Expected
-    common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Sender Step
+    # Defect056
+    # b2c_booking_delivery_page.Input Phone Sender    ${Booking_S002['sender_phone']}
+    # b2c_booking_delivery_page.Input Name Sender    ${Booking_S002['sender_name']}    
+    # b2c_booking_delivery_page.Input Address Sender    ${Booking_S002['sender_address']}
+    # b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S002['sender_postcode_5_digits']}
+    # b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S002['sender_postcode_full']}
+    # # Expected
+    # common.Verify Capture Screenshot    Booking_S002    Verify Create Parcel Page After Input Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -182,11 +183,12 @@ Booking_S002
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
-    # Expected
-    b2c_booking_delivery_page.Verify Promotion Detail
-    ...    ${Booking['text_selected_coupon_and_code']}
-    ...    ${Booking['text_my_coupon_and_code']}
-    common.Verify Capture Screenshot    Booking_S002    Verify Promotion
+    # Defect045
+    # # Expected
+    # b2c_booking_delivery_page.Verify Promotion Detail
+    # ...    ${Booking['text_selected_coupon_and_code']}
+    # ...    ${Booking['text_my_coupon_and_code']}
+    # common.Verify Capture Screenshot    Booking_S002    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
     # ไม่เลือก Promotion

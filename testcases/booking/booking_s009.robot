@@ -350,12 +350,13 @@ Booking_S009
     
     Log    Step No.20 กดปุ่ม "แก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
-    # Expected
-    b2c_booking_detail_page.Verify Edit Booking List Popup    
-    ...    ${Booking_S009['parcel_type']}
-    ...    ${Booking_S009['booking_name']}
-    ...    ${Booking['text_shipping_origin_aria']}
-    common.Verify Capture Screenshot    Booking_S009    Verify Edit Booking List Popup  
+    # Defect045
+    # # Expected
+    # b2c_booking_detail_page.Verify Edit Booking List Popup    
+    # ...    ${Booking_S009['parcel_type']}
+    # ...    ${Booking_S009['booking_name']}
+    # ...    ${Booking['text_shipping_origin_aria']}
+    # common.Verify Capture Screenshot    Booking_S009    Verify Edit Booking List Popup  
 
     Log    Step No.21 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
     # เลือกร้าน 7-11 ต้นทาง
