@@ -10,7 +10,7 @@ Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Laste
 
 *** Test Cases ***
 Booking_S043
-    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - เเก้ไขรายการ
+    [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - เเก้ไขรายการ
     [Tags]    Booking    UAT    Review_Pass
     Log    Prerequisite S018
     common.Open URL    ${B2C_UAT_URL}

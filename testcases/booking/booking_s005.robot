@@ -321,7 +321,7 @@ Booking_S005
     ...    ${Booking_S005['cod_fee_value']}
     ...    ${Booking_S005['total_price_amount']}
     ...    ${Booking_S005['total_price_value2']}
-    ...    ${Booking_S005['store_code']}
+    ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S005    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0

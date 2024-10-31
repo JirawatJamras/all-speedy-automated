@@ -345,7 +345,7 @@ Booking_S020
     ...    0.00    # Expected Result is ${Booking_S020['cod_fee_value']}
     ...    ${Booking_S020['total_price_amount']}
     ...    230.00    # Expected Result is ${Booking_S020['total_price_value2']}
-    ...    ${EMPTY}
+    ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S020    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0

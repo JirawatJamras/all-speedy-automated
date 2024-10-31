@@ -519,7 +519,7 @@ Booking_S042
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S042['total_price_amount']}
     ...    ${Booking_S042.not_use_code['total_price_value']}
-    ...    ${Booking_S003['store_code']}
+    ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S042    Verify Booking Summary After Edit Coupon And Code
     common.Scroll Window To Vertical    0

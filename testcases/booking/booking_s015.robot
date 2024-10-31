@@ -359,7 +359,7 @@ Booking_S015
     ...    ${Booking_S015['cod_fee_value']}
     ...    ${Booking_S015['total_price_amount']}
     ...    176.00    # Expected Result is ${Booking_S015['total_price_value2']}
-    ...    ${Booking_S015['store_code']}
+    ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Booking_S015    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0

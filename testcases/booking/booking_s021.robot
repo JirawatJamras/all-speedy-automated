@@ -352,7 +352,7 @@ Booking_S021
     ...    0.00    # Expected Result is ${Booking_S021['cod_fee_value']}
     ...    ${Booking_S021['total_price_amount']}
     ...    250.00    # Expected Result is ${Booking_S021['total_price_value2']}
-    ...    ${EMPTY}
+    ...    ${Booking.origin_shipping['idc_company_address']}
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
