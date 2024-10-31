@@ -611,11 +611,9 @@ Edit Postcode Receiver
 
 Verify Can Edit Data Parcel
     ${insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
-    Mouse Over    ${txtbox_cod}
-    Wait Until Element Is Visible    ${b2c_btn_increase_cod_value}    timeout=${DEFAULT_TIMEOUT}
-    Mouse Over    ${insure_amount}
-    Wait Until Element Is Visible    ${b2c_btn_increase_insure_value}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_cleal_parcel_remark_postcode}    timeout=${DEFAULT_TIMEOUT}
+    Element Should Be Enabled    ${b2c_btn_increase_cod_value}
+    Element Should Be Enabled   ${b2c_btn_increase_insure_value}
+    Element Should Be Enabled    ${b2c_btn_cleal_parcel_remark_postcode}
 
 Edit Parcel Remark
     [Arguments]    ${value}

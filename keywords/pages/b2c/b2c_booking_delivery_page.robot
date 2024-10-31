@@ -734,6 +734,10 @@ Click Use Coupon
     ${btn_use_coupon}=    Replace String    ${btn_use_coupon}    {value}    ${Booking['text_use_coupon']}
     common.Click When Ready    ${btn_use_coupon}
 
+Verify Can Edit Selected Coupon And Code
+    ${take_out_coupon}=    Replace String    ${btn_take_out_coupon}    {value}    ${Booking['text_take_out']}
+    Element Should Be Enabled    ${take_out_coupon}
+
 Click Take Out Coupon
     ${take_out_coupon}=    Replace String    ${btn_take_out_coupon}    {value}    ${Booking['text_take_out']}
     common.Click When Ready    ${take_out_coupon}
