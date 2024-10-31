@@ -942,7 +942,7 @@ Booking_S032:
   total_price_amount: '1'
   total_price_value1: 'NaN'
   total_price_value2: '186.00'
-  booking_name: รายการบุ๊กกิ๊ง  # Expected result : Booking DRY
+  booking_name: Booking DRY
   booking_item: '1 รายการ'
   shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
   store_code: '15888'
@@ -981,7 +981,7 @@ Booking_S033:
   total_price_amount: '1'
   total_price_value1: 'NaN'
   total_price_value2: '221.00'
-  booking_name: 'รายการบุ๊กกิ๊ง' #Booking DRY
+  booking_name: Booking DRY
   booking_item: '1 รายการ'
   shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
   store_code: '15888'
