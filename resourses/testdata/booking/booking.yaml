@@ -1131,6 +1131,37 @@ Booking_S042:
     total_price_value: '226.00'
   text_price_value: 75.00 บาท  #80.00 บาท
 
+Booking_S043:
+  sender_phone: '0656666666'
+  sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก
+  sender_address: 22/589
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'จรเข้บัว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0892222222
+  receiver_name: สมใจ ทดสอบการเเก้ไข
+  receiver_address: 89 หมู่ 16
+  receiver_postcode_5_digits: '86210'
+  receiver_postcode_full: 'ดอนยาง ปะทิว ชุมพร 86210'
+  parcel_size:  S2
+  parcel_package_type:  กล่อง
+  buy_insurance: 2,500
+  verify_buy_insurance: '2,500.00'
+  parcel_detail_remark:  ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
+  price_value: '250'
+  discount_amount: '1'
+  discount_value: '5.00'
+  insurance_fee_amount: '0'
+  insurance_fee_value: '0.00'
+  cod_fee_amount: '0'
+  cod_fee_value: '0.00'
+  total_price_amount: '1'
+  total_price_value: '245.00'
+  total_price_value2: '225.00'
+  total_price_value3: '250.00'
+  not_use_code:
+    total_price_value: '226.00'
+  text_price_value: 75.00 บาท  #80.00 บาท
+
 Booking_S044:
   tracking_number: 7110112189289
 
