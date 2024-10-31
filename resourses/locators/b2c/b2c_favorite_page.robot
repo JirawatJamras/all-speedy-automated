@@ -19,6 +19,8 @@ ${card_receiver_send_home_favorite_page}    (//div[@aria-hidden='false']//strong
 ${card_receiver_send_store_favorite_page}    (//div[@aria-hidden='false']//strong[text()='{favorite_name}']/../../..//*[@loading='lazy']/../../../../..//span[text()='{name}']/../..//span[text()='{phone}']/../../../..//span[text()='{address}']/../../../../..)[1]
 ${card_skelton_favorite_page}    //ul[@class='ant-skeleton-paragraph']
 ${card_shipping_origin_favorite_page}    (//div[@aria-hidden='false']//strong[text()='{favorite_name}']/../../..//*[@loading='lazy']/../../../../..//span[text()='{address}']/../../../../..)[1]
+${card_body_shipping_origin_favorite_page}    //div[@aria-hidden='false']//div[contains(@class,'ant-card ant-card-bordered ant-card-hoverable css-1hobygo')]//div[@class='ant-card-body']
+${card_empty_shipping_origin_favorite_page}    //div[@aria-hidden='false']//div[@class='ant-list-empty-text']
 
 ${btn_edit_data_favorite_page}    //span[text()='{value}']/..
 ${btn_save_edit_data_favorite_page}    //span[text()='{value}']/..

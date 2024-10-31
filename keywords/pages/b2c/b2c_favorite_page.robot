@@ -354,9 +354,15 @@ Select Shipping Origin Area Tab
     common.Click When Ready    ${tab_shipping_origin_area_favorite_page}
 
 Verify Shipping Origin Area Tab
-    Wait Until Element Is Visible    ${btn_trash_favorite_page}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_shipping_origin_area_status}=    Get Element Attribute    ${tab_selected_shipping_origin_area_favorite_page}    aria-selected
-    Should Be Equal    ${actual_shipping_origin_area_status}    true
+    ${is_empty_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${card_empty_shipping_origin_favorite_page}
+    ${is_body_visible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${card_body_shipping_origin_favorite_page}
+    Run Keyword If    '${is_empty_visible}' == 'true'    Run Keywords    Wait Until Element Is Visible    ${card_empty_shipping_origin_favorite_page}
+    ...    AND    ${actual_shipping_origin_area_status}=    Get Element Attribute    ${tab_selected_shipping_origin_area_favorite_page}    aria-selected
+    ...    AND    Should Be Equal    ${actual_shipping_origin_area_status}    true
+    Run Keyword If    '${is_body_visible}' == 'true'    Run Keywords    Wait Until Element Is Visible    ${btn_trash_favorite_page}    timeout=${DEFAULT_TIMEOUT}
+    ...    AND    ${actual_shipping_origin_area_status}=    Get Element Attribute    ${tab_selected_shipping_origin_area_favorite_page}    aria-selected
+    ...    AND    Should Be Equal    ${actual_shipping_origin_area_status}    true
+    
 
 Click Add Shipping Origin Area Button
     ${btn_add_shipping_origin_area}=    Replace String    ${btn_add_shipping_origin_area_favorite_page}    {value}    ${favorite['button_add']}

@@ -872,12 +872,12 @@ Booking_S030:
   parcel_size: 'A4'
   total_price_amount: '1'
   total_price_value1: 'NaN'
-  booking_name: รายการบุ๊กกิ๊ง  # Expected result : Booking DRY
+  total_price_value2: '50.00'
+  booking_name: Booking DRY
   booking_item: '1 รายการ'
   shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
   store_code: '15888'
-  price_value: '50'  # Expected result : '50.00'
-  total_price_value2: '50.00'
+  price_value: '50.00'
   parcel_package_type: ซอง
 
 Booking_S031:
@@ -1165,7 +1165,7 @@ Booking_S047:
   add_shipping_origin_area:
     favorite_name: 'ร้าน 7-11 หน้าบ้าน'
     shipping_origin_store_code_5_digits: '15888'
-    shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 35110'
+    shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
     shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
 
 Booking_S048:

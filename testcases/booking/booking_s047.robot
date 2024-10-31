@@ -285,7 +285,7 @@ Booking_S047
     b2c_favorite_page.Verify Shipping Origin Area Tab
     common.Verify Capture Screenshot    Booking_S047    Verify Shipping Origin Area Tab
 
-    # Issue036
+    # Defect135
     # Log    Step No.16 กดปุ่ม "เพิ่ม"
     # b2c_favorite_page.Click Add Shipping Origin Area Button
     # # Expected

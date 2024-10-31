@@ -12,8 +12,8 @@ Booking_S029
     Log    Step No.1 Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
-    c2c_login.Input Email    ${c2c_login_user_01['username']}  # ${c2c_login_user_02['username']}
-    c2c_login.Input Password    ${c2c_login_user_01['password']}  # ${c2c_login_user_02['password']}
+    c2c_login.Input Email    ${c2c_login_user_01['username']}
+    c2c_login.Input Password    ${c2c_login_user_01['password']}
     c2c_login.Click Log On Button
     # Expected
     c2c_landing_page.Verify Login Success    ${c2c_login_user_01['username']}
