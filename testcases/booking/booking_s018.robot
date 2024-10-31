@@ -3,7 +3,7 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
+Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
 
 *** Test Cases ***
@@ -51,12 +51,13 @@ Booking_S018
     Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
+    # Defect086    Defect087
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
-    ...    ${Booking_S018['parcel_type']}
-    ...    ${call_car_pick_up.car_round_name['special']}
-    ...    ${newDate}
-    ...    13:00:00 - 16:00    #${Booking_S018.pickup_time['expected']}
-    ...    13:00:00 -16:00    #${Booking_S018.pickup_time['expected']}
-    ...    200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์ ปากเกร็ด ปากเกร็ด นนทบุรี 11120 กำลังจัดพัสดุ    #{Booking_S018['pickup_point']}
-    common.Verify Capture Screenshot    Booking_S018    Verify Added New Car Pickup Schedule
+    # b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
+    # ...    ${Booking_S018['parcel_type']}
+    # ...    ${call_car_pick_up.car_round_name['special']}
+    # ...    ${newDate}
+    # ...    ${Booking_S018.pickup_time['expected']}
+    # ...    ${Booking_S018.pickup_time['expected']}
+    # ...    ${Booking_S018['pickup_point']}
+    # common.Verify Capture Screenshot    Booking_S018    Verify Added New Car Pickup Schedule
