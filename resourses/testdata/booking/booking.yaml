@@ -1285,7 +1285,7 @@ Booking_S058:
     receiver_location_pickup: 'ส่งร้าน 7-11'
     receiver_store_code_5_digits: '15888'
     receiver_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
-    receiver_store_full_address: '15888 สาขา CP TOWER สีลม แขวงสีลม เขตบางรัก กรุงเทพมหานคร รหัสไปรษณีย์ 10500'    
+    receiver_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'    
   add_sender_favorite:
     favorite_name: บ้าน
     sender_name: สมชาย สายเสมอ
