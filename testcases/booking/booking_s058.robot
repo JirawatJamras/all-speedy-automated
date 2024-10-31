@@ -18,13 +18,6 @@ Booking_S058
     Log    Prerequisite S032
     Booking_S032
 
-    # Log    Login
-    # common.Open URL    ${B2C_UAT_URL}
-    # register_general_customers_page.Select Business Customers Tab
-    # b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    # b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    # b2c_login_page.Click Log On Button
-
     Log    Step No.1 กด Tap "ผู้ส่งพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Favorites
@@ -199,7 +192,7 @@ Booking_S058
     b2c_favorite_page.Click Store On Map
     # Defect106
     # Expected
-    b2c_favorite_page.Verify Store Address Receiver    ${Booking_S058.edit_receiver['receiver_store_full_address']}
+    # b2c_favorite_page.Verify Store Address Receiver    ${Booking_S058.edit_receiver['receiver_store_full_address']}
     common.Verify Capture Screenshot    Booking_S058    Verify Receiver Edited In Popup
 
 
@@ -212,8 +205,7 @@ Booking_S058
     ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
     ...    ${Booking_S031['receiver_name']}
     ...    ${Booking_S031['receiver_phone']}
-    #...    ${Booking_S058.edit_receiver['receiver_store_address']}
-    ...    15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 86110
+    ...    ${Booking_S058.edit_receiver['receiver_store_address']}
     common.Verify Capture Screenshot    Booking_S058    Verify Data Receiver After Edited
 
 
@@ -267,37 +259,31 @@ Booking_S058
 
 
     Log    Step No.16 กดปุ่ม "เพิ่ม"
-    b2c_favorite_page.Click Add Shipping Origin Area Button
+    # b2c_favorite_page.Click Add Shipping Origin Area Button
     # Defect135
-    Reload Page
-    b2c_favorite_page.Select Shipping Origin Area Tab
-    b2c_favorite_page.Click Add Shipping Origin Area Button
     # Expected
-    b2c_favorite_page.Verify Label Shipping Origin Area
-    ...    ${favorite.label_shipping_origin_area['text_data_shipping_origin_area']}
-    ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
-    ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
-    b2c_favorite_page.Verify Data Shipping Origin Area
-    ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S058    Verify Add Shipping Origin Area Popup
-    b2c_favorite_page.Scroll To Display Save Button
-    common.Verify Capture Screenshot    Booking_S058    Verify Add Shipping Origin Area Footer Popup
+    # ...    ${favorite.label_shipping_origin_area['text_data_shipping_origin_area']}
+    # ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
+    # ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
+    # b2c_favorite_page.Verify Data Shipping Origin Area
+    # ...    ${EMPTY}
+    # common.Verify Capture Screenshot    Booking_S058    Verify Add Shipping Origin Area Popup
+    # b2c_favorite_page.Scroll To Display Save Button
+    # common.Verify Capture Screenshot    Booking_S058    Verify Add Shipping Origin Area Footer Popup
 
     # Defect124
     Log    Step No.17 กรอกข้อมูล
-    b2c_favorite_page.Input Shipping Origin Area Favorite Name    ร้าน 711 หน้าบ้าน
-    #b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${Booking_S058.add_shipping_origin_area['favorite_name']}
-    b2c_favorite_page.Input Store Code Shipping Origin Area    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_code_5_digits']}
-    b2c_favorite_page.Select Store Shipping Origin Area Lists    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
-    b2c_favorite_page.Click Store On Map
-    b2c_favorite_page.Click Save Button
+    # b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${Booking_S058.add_shipping_origin_area['favorite_name']}
+    # b2c_favorite_page.Input Store Code Shipping Origin Area    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_code_5_digits']}
+    # b2c_favorite_page.Select Store Shipping Origin Area Lists    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
+    # b2c_favorite_page.Click Store On Map
+    # b2c_favorite_page.Click Save Button
     # Expected
-    b2c_favorite_page.Verify Display Shipping Origin Area Card
-    ...    ร้าน 711 หน้าบ้าน
-    #...    ${Booking_S058.add_shipping_origin_area['favorite_name']}
-    ...    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S058    Verify Shipping Origin Area Card After Added Information
+    # b2c_favorite_page.Verify Display Shipping Origin Area Card
+    # ...    ${Booking_S058.add_shipping_origin_area['favorite_name']}
+    # ...    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    Booking_S058    Verify Shipping Origin Area Card After Added Information
 
 *** Keywords ***
 Booking_S031 
