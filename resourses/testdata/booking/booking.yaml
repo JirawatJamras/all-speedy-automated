@@ -1247,9 +1247,9 @@ Booking_S051:
     sender_address_full: ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
     size: A4
     parcel_size: ซอง A4
-    parcel_status: รอส่งพัสดุเข้าระบบ  #เลือกต้นทางจัดส่ง
+    parcel_status: เลือกต้นทางจัดส่ง
     total_amount: '1'
-    booking_price: '30'  #NaN
+    booking_price: NaN
     cod: '0.00'
     store: '15888'
     verify_booking_price: '30.00'
@@ -1259,12 +1259,12 @@ Booking_S054:
   old:
     total_price_value: 80.00 บาท
   sender_phone: 0877777777
-  sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก #1
+  sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก 1
   sender_address: '22/589'
   sender_postcode_5_digits: '10230'
   sender_postcode_full: จรเข้บัว ลาดพร้าว กรุงเทพมหานคร 10230
   receiver_phone: 0892222222
-  receiver_name: สมใจ ทดสอบการเเก้ไข #3
+  receiver_name: สมใจ ทดสอบการเเก้ไข 3
   receiver_address: 89 หมู่ 16
   receiver_postcode_5_digits: '86210'
   receiver_postcode_full: 'ดอนยาง ปะทิว ชุมพร 86210'
