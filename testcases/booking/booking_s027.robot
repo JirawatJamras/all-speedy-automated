@@ -68,7 +68,6 @@ Booking_S027
     common.Verify Capture Screenshot    Booking_S027    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
-    # เพิ่มเป็นรายการโปรด
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S027['sender_phone']}
     b2c_booking_delivery_page.Input Name Sender    ${Booking_S027['sender_name']}    
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S027['sender_address']}
@@ -141,7 +140,6 @@ Booking_S027
     common.Verify Capture Screenshot    Booking_S027    Verify Data Receiver When Select Home
 
     Log    Step No.9 ขั้นตอนกรอกข้อมูลผู้รับพัสดุ
-    # สถานที่รับพัสดุ : ส่งร้าน 7-11
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S027['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S027['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
@@ -251,7 +249,6 @@ Booking_S027
 
     Log    Step No.16 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-
     # Defect045
     # Expected
     # b2c_booking_delivery_page.Verify Promotion Detail
@@ -374,7 +371,6 @@ Booking_S027
     common.Verify Capture Screenshot    Booking_S027    Verify Edit Booking List Popup  
 
     Log    Step No.22 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
-    # รอบรถเข้ารับพัสดุ
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S027['shipping_origin']}
     b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
     b2c_booking_detail_page.Click Save Shipping Origin Aria

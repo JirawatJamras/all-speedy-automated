@@ -64,7 +64,6 @@ Booking_S023
     common.Verify Capture Screenshot    Booking_S023    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
-    # เลือกจากรายการโปรด
     b2c_booking_delivery_page.Click Choose Favorites
     # Expected
     b2c_booking_delivery_page.Verify Favorites Sender PopUp    
@@ -203,7 +202,6 @@ Booking_S023
     # common.Verify Capture Screenshot    Booking_S023    Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
-    # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
@@ -307,7 +305,6 @@ Booking_S023
     common.Verify Capture Screenshot    Booking_S023    Verify Edit Booking List Popup  
 
     Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
-    # รอบรถเข้ารับพัสดุ
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S023['shipping_origin']}
     b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
     b2c_booking_detail_page.Click Save Shipping Origin Aria

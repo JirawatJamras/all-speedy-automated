@@ -313,7 +313,7 @@ Booking_S025
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     # Expected
-    # "Defect054 Defect126
+    # Defect054 Defect126
     # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     # ...    ${Booking['text_title_booking_list']}
     # ...    ${booking_id}

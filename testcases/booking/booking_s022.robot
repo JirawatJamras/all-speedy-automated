@@ -67,7 +67,6 @@ Booking_S022
     common.Verify Capture Screenshot    Booking_S022    Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
-    # เพิ่มเป็นรายการโปรด
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S022['sender_phone']}
     b2c_booking_delivery_page.Input Name Sender    ${Booking_S022['sender_name']}    
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S022['sender_address']}
@@ -258,8 +257,8 @@ Booking_S022
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    Booking_S022    Verify Promotion
 
-    ####    Unable to use this promotion code, it's defect 72. Waiting for resolve defect then uncomment this code.
-    # Log    Step No.17 ขั้นตอน Promotion
+    Log    Step No.17 ขั้นตอน Promotion
+    # Defect072
     # b2c_booking_delivery_page.Input Promotion    ${Booking_S022['promotion']}
     # b2c_booking_delivery_page.Click Use Code Button
     # # Expected
@@ -376,7 +375,6 @@ Booking_S022
     common.Verify Capture Screenshot    Booking_S022    Verify Edit Booking List Popup  
 
     Log    Step No.22 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
-    # รอบรถเข้ารับพัสดุ
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S022['shipping_origin']}
     b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
     b2c_booking_detail_page.Click Save Shipping Origin Aria
