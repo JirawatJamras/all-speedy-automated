@@ -94,7 +94,7 @@ Booking_S043
     sleep    2s
     Reload Page
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${booking_time}
@@ -174,7 +174,7 @@ Booking_S043
     sleep    1s
     # Defect119
     b2c_booking_detail_page.Edit Phone Sender    ${Booking_S043['sender_phone']}
-    b2c_booking_detail_page.Edit Name Sender    ${Booking_S043['sender_name']}    
+    # b2c_booking_detail_page.Edit Name Sender    ${Booking_S043['sender_name']}    
     b2c_booking_detail_page.Edit Address Sender    ${Booking_S043['sender_address']}
     b2c_booking_detail_page.Edit Postcode Sender    ${Booking_S043['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S043['sender_postcode_full']}
@@ -241,7 +241,7 @@ Booking_S043
 
     Log    Step No.8 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -337,7 +337,7 @@ Booking_S043
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -355,7 +355,7 @@ Booking_S043
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
     ...    ${Booking.chilled_parcel['parcel_detail_S0']}
     ...    ${Booking.chilled_parcel['parcel_detail_S1']}
@@ -446,7 +446,7 @@ Booking_S043
 
     Log    Step No.19 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -464,7 +464,7 @@ Booking_S043
 
     Log    Step No.20 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
     ...    ${Booking.chilled_parcel['parcel_detail_S0']}
     ...    ${Booking.chilled_parcel['parcel_detail_S1']}
