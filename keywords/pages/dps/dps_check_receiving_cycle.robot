@@ -32,7 +32,7 @@ Verify Check Receiving Cycle Page
     
 Select Waiting Inventory Confirm List Tab
     common.Scroll Window To Vertical    0
-    ${dps_tab_name}=  Replace String   ${dps_tab_name}   {value}   ${dc_operaion.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
+    ${dps_tab_name}=  Replace String   ${dps_tab_name}   {value}   ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
     Click When Ready    ${dps_tab_name}
 
 Verify Inventory Confirm List Tab
@@ -79,12 +79,12 @@ Verify Parcel Pickup Details Popup
     Wait Until Element Is Visible    ${dps_cbo_vehicle_type}    timeout=${DEFAULT_TIMEOUT}
 
 Click Export Button On Parcel Pickup Details Popup
-    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operaion['button_export']}
+    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_export']}
     Scroll Element Into View    ${dps_btn_parcel_pickup_details}
     Click When Ready    ${dps_btn_parcel_pickup_details}
 
 Click Approve Button On Parcel Pickup Details Popup
-    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operaion['button_approve']}
+    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_approve']}
     Scroll Element Into View    ${dps_btn_parcel_pickup_details}
     Click When Ready    ${dps_btn_parcel_pickup_details}
 

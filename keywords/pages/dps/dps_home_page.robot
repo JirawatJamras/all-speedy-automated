@@ -25,7 +25,7 @@ Set_ToDAY
     RETURN    ${Today}
 
 Select Check Receiving Cycle Menu
-    ${tab_check_receiving_cycle}=  Replace String   ${dps_tab_dps_menu}   {value}   ${dc_operaion.dps_menu['Check_Receiving_Cycle']}
+    ${tab_check_receiving_cycle}=  Replace String   ${dps_tab_dps_menu}   {value}   ${dc_operation.dps_menu['Check_Receiving_Cycle']}
     Wait Until Element Is Visible    ${tab_check_receiving_cycle}    timeout=30s
     Mouse Over    ${tab_check_receiving_cycle}
     Wait Until Element Is Visible    ${tab_check_receiving_cycle}
@@ -38,6 +38,9 @@ Select Check Receiving Cycle Menu
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
     END
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
+
+Select Warehouse dropdown List
+    ${cbo_selected_warehouse_list_home_page}=    Replace String    ${cbo_selected_warehouse_list_home_page}    {value}    ${}
 
 #### OLD #####
 Select DPS Menu

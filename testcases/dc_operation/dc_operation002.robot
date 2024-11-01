@@ -158,21 +158,21 @@ DC_Operation_002 [Part2]
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # expected
-    # dps_home_page.dps_login_page.Verify Homepage Title    ${dc_operaion['homepage']}
+    # dps_home_page.dps_login_page.Verify Homepage Title    ${dc_operation['homepage']}
     # common.Verify Capture Screenshot    DC_Operation_002    Verify Homepage Title
 
     Log    Step No.20 เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select role
-    dps_home_page.Select Role    ${dc_operaion.role['admin']}
-    dps_home_page.Verify Role Change In Profile    ${dc_operaion.role['admin']}
+    dps_home_page.Select Role    ${dc_operation.role['admin']}
+    dps_home_page.Verify Role Change In Profile    ${dc_operation.role['admin']}
     common.Verify Capture Screenshot    DC_Operation_002    Verify Role Change In Profile
 
     Log    Step No.21 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
-    dps_home_page.Select DPS Menu    ${dc_operaion.dps_menu['Check_Receiving_Cycle']}
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['Check_Receiving_Cycle']}
     # expected
     dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
-    ...    ${dc_operaion.title['Check_Receiving_Cycle']}
-    ...    ${dc_operaion.Check_Receiving_Cycle_Tab['all_parcels_received']}
+    ...    ${dc_operation.title['Check_Receiving_Cycle']}
+    ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
     ...    ${dc_operaion_002.receiving_cycle['company_name']}
     ...    ${dc_operaion_002.receiving_cycle['branch']}
     ...    ${dc_operaion_002.receiving_cycle['company_address']}
@@ -188,11 +188,11 @@ DC_Operation_002 [Part2]
     common.Verify Capture Screenshot    DC_Operation_002    Verify Check Receiving Cycle Page
 
     Log    Step No.22 คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle.Select Check Receiving Cycle Tab    ${dc_operaion.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
+    dps_check_receiving_cycle.Select Check Receiving Cycle Tab    ${dc_operation.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
     # expected
     dps_check_receiving_cycle.Verify Inventory Confirm List Tab
-    ...    ${dc_operaion.title['Check_Receiving_Cycle']}
-    ...    ${dc_operaion.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
+    ...    ${dc_operation.title['Check_Receiving_Cycle']}
+    ...    ${dc_operation.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
     ...    ${dc_operaion_002.receiving_cycle['company_name']}
     ...    ${dc_operaion_002.receiving_cycle['company_address']}
     ...    ${dc_operaion_002.receiving_cycle['sub_district']}
@@ -210,9 +210,9 @@ DC_Operation_002 [Part2]
     dps_check_receiving_cycle.Click Pencil Icon
     # Expected
     dps_check_receiving_cycle.Verify Parcel Pickup Details Popup
-    ...    ${dc_operaion['parcel_pickup_details']}
-    ...    ${dc_operaion['button_export']}
-    ...    ${dc_operaion['vehicle_type']}
+    ...    ${dc_operation['parcel_pickup_details']}
+    ...    ${dc_operation['button_export']}
+    ...    ${dc_operation['vehicle_type']}
     ## เหลือ Verify รายละเอียด ##
     common.Verify Capture Screenshot    DC_Operation_002    Verify Parcel Pickup Details Popup
     Log    Step No.24 คลิกปุ่ม Export

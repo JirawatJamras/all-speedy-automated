@@ -265,7 +265,7 @@ favorite:
   text_added_successfully: เพิ่มรายการโปรดสำเร็จ
   text_input_postcode: ระบุไปรษณีย์
 
-dc_operaion:
+dc_operation:
   role:
     dev: Role Dev
     admin: แอดมินคลัง
@@ -298,6 +298,9 @@ dc_operaion:
   button_approve: approve
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
   vehicle_type: ประเภทที่ใช้
+  selected_warehouse_list:
+    text_selected_warehouse_list: รายชื่อคลังที่เลือก
+    text_warehouse_DC_BB: คลัง DC BB
 
 rm:
   text_pre_register: Pre-Register
