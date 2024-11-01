@@ -36,14 +36,15 @@ Select Check Receiving Cycle Menu
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
 
 Select Warehouse List Button
-    ${btn_selected_warehouse_list}=    Replace String    ${btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
-    common.Click When Ready    ${btn_selected_warehouse_list}
+    ${dps_btn_selected_warehouse_list}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
+    common.Click When Ready    ${dps_btn_selected_warehouse_list}
 
 Select Warehouse List Dropdown
     [Arguments]    ${selected_warehouse}
-    ${cbo_selected_warehouse_list}=    Replace String    ${cbo_selected_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
-    ${warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${cbo_selected_warehouse_list}
-    Run Keyword If    '${warehouse_list_status}' == 'false'    common.Click When Ready    ${cbo_warehouse_list}
+    ${dps_cbo_selected_warehouse_list}=    Replace String    ${dps_cbo_selected_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
+    ${dps_warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_cbo_selected_warehouse_list}
+    Run Keyword If    '${dps_warehouse_list_status}' == 'false'    Run Keywords    ${dps_cbo_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
+    ...    AND    common.Click When Ready    ${dps_cbo_warehouse_list}
 
 #### OLD #####
 Select DPS Menu
