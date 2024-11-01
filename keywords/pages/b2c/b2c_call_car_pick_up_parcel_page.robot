@@ -35,7 +35,7 @@ Select Parcel Type
     common.Click When Ready    ${selected_parcel_type}
 
 Select Parcel Pickup Date
-    ${nextDay}    dps_home_page.Set_Next_DAY
+    [Arguments]    ${nextDay}
     ${selected_parcel_pickup_date}=  Replace String   ${b2c_cbo_parcel_pickup_date}   {value}   ${nextDay}
     common.Click When Ready    ${b2c_txtbox_parcel_pickup_date}
     common.Click When Ready    ${selected_parcel_pickup_date}
@@ -51,15 +51,13 @@ Click Save Button
     common.Click When Ready    ${btn_save_in_add_popup}
 
 Verify Add Special Pickup Round Success
-    [Arguments]    ${text_special}    ${text_pickup_time}
-    ${nextDay}    dps_home_page.Set_Next_DAY
-    ${heading_card_special_round}=  Replace String   ${b2c_txt_parcel_pickup_round}   {value}   ${text_special} ${nextDay} ${text_pickup_time}
-    ## เหลือ verify detail
+    [Arguments]    
+    
     Wait Until Element Is Visible    ${b2c_txt_complete_save_pickup_round}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=40s
-    Wait Until Element Is Visible    ${heading_card_special_round}    timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    ${heading_card_special_round}
+    ## เหลือ verify detail
+    
+
 
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled

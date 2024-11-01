@@ -1,23 +1,25 @@
-dc_operaion_001:
+dc_operation_001:
   parcel_type:  พัสดุทั่วไป
   booking_name:  Booking DRY
 
-dc_operaion_002:
-  parcel_type:  พัสดุทั่วไป
-  booking_name:  Booking DRY
-  shipping_origin:  บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
+dc_operation_002:
+  company_name: คุณ ไอดีซี
+  parcel_type: พัสดุทั่วไป (Dry)
+  booking_name: Booking DRY
+  parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
+  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120
   receiving_cycle:
-    company_name:  บริษัท ไอดีซี พรีเมียร์ จำกัด 
-    branch:  สาขาหลัก
-    company_address:  200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
-    sub_district:  ปากเกร็ด
-    district:  ปากเกร็ด  #บางเขน เมืองนนทบุรี
-    province:  นนทบุรี 
-    postcode:  '11120'  #'11000'
-    receiving_time:  '09:00'
-    receiving_type:  รอบพิเศษ
+    company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
+    branch: สาขาหลัก
+    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
+    sub_district: ปากเกร็ด
+    district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
+    province: นนทบุรี 
+    postcode: '11120'  #'11000'
+    receiving_time: '09:00'
+    receiving_type: รอบพิเศษ
     courier: CPALL
-    number_of_parcel:  '0'  #'10'
+    number_of_parcel: '0'  #'10'
     status: 
-      waiting:  รอยืนยัน
-      confirm:  ยืนยันแล้ว
+      waiting: รอยืนยัน
+      confirm: ยืนยันแล้ว

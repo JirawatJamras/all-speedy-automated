@@ -10,7 +10,7 @@ ${b2c_txt_car_round_name_in_add_popup}    //form[@id='basic']//strong[contains(t
 ${b2c_txt_parcel_type_in_add_popup}    //label[@for='basic_parcelType']//strong[contains(text(),'{value}')]
 ${b2c_txt_parcel_pickup_date_in_add_popup}    //label[@for='basic_date']//strong[contains(text(),'{value}')]
 ${b2c_txt_parcel_pickup_time_in_add_popup}    //label[@for='basic_time']//strong[contains(text(),'{value}')]
-${b2c_txt_parcel_pickup_round}    //h5[contains(text(),'{value}')]  #รอบพิเศษ 01-11-2567 09:00:00 - 12:00 น
+${b2c_txt_parcel_pickup_round}    //*[contains(text(),'{value}')]  #รอบพิเศษ 01-11-2567 09:00:00 - 12:00 น
 ${b2c_txt_complete_save_pickup_round}    //div[@class='ant-message-notice-content']
 
 ${txt_booking_status}    //span[contains(@class,'ant-tag ant-tag-borderless')]//h5[contains(@class,'ant-typography')]
@@ -75,4 +75,5 @@ ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDi
 
 ${img_dry_parcel}    //div[@class='ant-space-item']//*[@alt='parcel']
 ${img_parcel_in_card}    (//div[@class='ant-card-body']//*[@alt='parcel'])[1]
+
 

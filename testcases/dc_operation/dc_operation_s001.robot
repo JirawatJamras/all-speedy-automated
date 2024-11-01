@@ -73,7 +73,7 @@ DC_Operation_001 [Part1]
     common.Verify Capture Screenshot    DC_Operation_001    Verify Select Parcel Type
 
     Log    Step No.9 กดปุ่ม "พัสดุทั่วไป"
-    b2c_booking_delivery_page.Select Parcel Type    ${dc_operaion_001['parcel_type']}
+    b2c_booking_delivery_page.Select Parcel Type    ${dc_operation_001['parcel_type']}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -98,8 +98,8 @@ DC_Operation_001 [Part1]
     Sleep    5s
     b2c_booking_detail_page.Click Edit Booking List
     b2c_booking_detail_page.Verify Edit Booking List Popup    
-    ...    ${dc_operaion_001['parcel_type']}
-    ...    ${dc_operaion_001['booking_name']}
+    ...    ${dc_operation_001['parcel_type']}
+    ...    ${dc_operation_001['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    DC_Operation_001    Verify Edit Booking Popup
 
