@@ -14,6 +14,7 @@ Booking_S001
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     # Expected
+    Sleep    2s
     common.Verify Capture Screenshot    Booking_S001    Verify Login Page
 
     Log    Step No.2 Login
