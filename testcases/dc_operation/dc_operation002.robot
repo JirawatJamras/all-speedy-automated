@@ -147,29 +147,31 @@ DC_Operation_002 [Part1]
     ## step 16-17
     ##TBC
 
-DC_Operation_002 [Part2]    
+DC_Operation_002_part2  
     [Tags]    DC_Operation    UAT
     ### รอหลัง cut off time ###
     Log    Step No.18 เปิด URL DPS
     common.Open URL    ${DPS_UAT_URL}
-    Log    Step No.19 เข้าสู่ระบบ
+
+    Log    Step No.19_1 เข้าสู่ระบบ
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    # expected
-    # dps_home_page.dps_login_page.Verify Homepage Title    ${dc_operation['homepage']}
+    # Expected
+    # dps_home_page.dps_login_page.Verify Homepage Title    ${dc_operaion['homepage']}
     # common.Verify Capture Screenshot    DC_Operation_002    Verify Homepage Title
 
-    Log    Step No.20 เลือก role แอดมินคลัง
+    Log    Step No.19_2 เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select role
-    dps_home_page.Select Role    ${dc_operation.role['admin']}
-    dps_home_page.Verify Role Change In Profile    ${dc_operation.role['admin']}
+    dps_home_page.Select Role    ${dc_operaion.role['admin']}
+    # Expected
+    dps_home_page.Verify Role Change In Profile    ${dc_operaion.role['admin']}
     common.Verify Capture Screenshot    DC_Operation_002    Verify Role Change In Profile
 
-    Log    Step No.21 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['Check_Receiving_Cycle']}
-    # expected
+    Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
+    dps_home_page.Select DPS Menu    ${dc_operaion.dps_menu['Check_Receiving_Cycle']}
+    # Expected
     dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['Check_Receiving_Cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
@@ -187,9 +189,9 @@ DC_Operation_002 [Part2]
     ...    ${dc_operaion_002.receiving_cycle['status']}
     common.Verify Capture Screenshot    DC_Operation_002    Verify Check Receiving Cycle Page
 
-    Log    Step No.22 คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle.Select Check Receiving Cycle Tab    ${dc_operation.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
-    # expected
+    Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
+    dps_check_receiving_cycle.Select Check Receiving Cycle Tab    ${dc_operaion.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
+    # Expected
     dps_check_receiving_cycle.Verify Inventory Confirm List Tab
     ...    ${dc_operation.title['Check_Receiving_Cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
@@ -206,7 +208,7 @@ DC_Operation_002 [Part2]
     ...    ${dc_operaion_002.receiving_cycle['status']}
     common.Verify Capture Screenshot    DC_Operation_002    Verify Inventory Confirm List Tab
 
-    Log    Step No.23 คลิกปุ่ม Export
+    Log    Step No.22 คลิกปุ่ม Export
     dps_check_receiving_cycle.Click Pencil Icon
     # Expected
     dps_check_receiving_cycle.Verify Parcel Pickup Details Popup
@@ -215,19 +217,20 @@ DC_Operation_002 [Part2]
     ...    ${dc_operation['vehicle_type']}
     ## เหลือ Verify รายละเอียด ##
     common.Verify Capture Screenshot    DC_Operation_002    Verify Parcel Pickup Details Popup
-    Log    Step No.24 คลิกปุ่ม Export
+    
+    Log    Step No.23 คลิกปุ่ม Export
     dps_check_receiving_cycle.Click Export Button On Parcel Pickup Details Popup
-    # expected
+    # Expected
 
-    Log    Step No.25 คลิกปุ่ม อนุมัติ
+    Log    Step No.24 คลิกปุ่ม อนุมัติ
     dps_check_receiving_cycle.Click Approve Button On Parcel Pickup Details Popup
-    # expected
+    # Expected
 
-    Log    Step No.26 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
+    Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     Switch Window	MAIN
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     Sleep    10s
 
-    Log    Step No.27 เลือกเมนู "จองการจัดส่งพัสดุ"
+    Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery

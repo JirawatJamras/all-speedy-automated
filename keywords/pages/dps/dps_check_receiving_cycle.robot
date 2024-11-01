@@ -5,7 +5,8 @@ Verify Check Receiving Cycle Page
     Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
-    ${next_day}    dps_home_page.Set_Next_DAY
+
+    ${tomorrow}    dps_home_page.Set Tomorrow Date
     Wait Until Element Is Visible    ${dps_txt_receiving_cycle_list}    timeout=${DEFAULT_TIMEOUT}
     ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
     FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
@@ -38,10 +39,12 @@ Select Waiting Inventory Confirm List Tab
 Verify Inventory Confirm List Tab
     [Arguments]    ${title}    ${tab}    ${company_name}    ${address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ...        ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${status}
+    
     Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
-    ${next_day}    dps_home_page.Set_Next_DAY
+    
+    ${tomorrow}    dps_home_page.Set Tomorrow Date
     Wait Until Element Is Visible    ${dps_txt_receiving_cycle_list}    timeout=${DEFAULT_TIMEOUT}
     ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
     FOR    ${index}    IN RANGE    1    ${receiving_count} + 1

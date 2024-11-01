@@ -1,17 +1,13 @@
 *** Keywords ***
-Set_Next_DAY
-    ${date_YYYY_MM_DD}   Get Current Date
-    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
-    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
-    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
-    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${day}    Evaluate    int(${d}) + 1
-    ${day}=    Convert To String    ${day}
-    ${day}=    Set Variable    ${day.zfill(2)}
-    ${year}    Convert To Integer    ${y}
-    ${year}    Evaluate    ${y} + 543
-    ${nextDay}    Set Variable    ${day}-${m}-${year}
-    RETURN    ${nextDay}
+Set Tomorrow Date
+    ${today}=    Get Current Date    result_format=%Y-%m-%d
+    ${tomorrow_day}=    Add Time To Date    ${today}    1 days    result_format=%d-%m-%Y
+    ${day}    Split String And Select    ${tomorrow_day}    -    0
+    ${month}    Split String And Select    ${tomorrow_day}    -    1
+    ${year}    Split String And Select    ${tomorrow_day}    -    2
+    ${year_be}    Evaluate    int(${year}) + 543
+    ${tomorrow}    Set Variable    ${day}-${month}-${year_be}
+    RETURN    ${tomorrow}
 
 Set_ToDAY
     ${date_YYYY_MM_DD}   Get Current Date
@@ -245,6 +241,7 @@ Verify Page Title
 
 Click Dropdown For Select role
     Wait Until Element Is Visible    ${dps_img_icon_user}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${dps_btn_dropdown_select_role}
 
 Select Role
