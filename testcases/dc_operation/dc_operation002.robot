@@ -163,7 +163,7 @@ DC_Operation_002_part2
     # common.Verify Capture Screenshot    DC_Operation_002    Verify Homepage Title
 
     Log    Step No.19_2 เลือก role แอดมินคลัง
-    dps_home_page.Click Dropdown For Select role
+    dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operaion.role['admin']}
     # Expected
     dps_home_page.Verify Role Change In Profile    ${dc_operaion.role['admin']}

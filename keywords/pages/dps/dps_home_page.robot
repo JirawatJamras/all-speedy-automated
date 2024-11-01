@@ -35,8 +35,15 @@ Select Check Receiving Cycle Menu
     END
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
 
-Select Warehouse dropdown List
-    ${cbo_selected_warehouse_list_home_page}=    Replace String    ${cbo_selected_warehouse_list_home_page}    {value}    ${}
+Select Warehouse List Button
+    ${btn_selected_warehouse_list}=    Replace String    ${btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
+    common.Click When Ready    ${btn_selected_warehouse_list}
+
+Select Warehouse List Dropdown
+    [Arguments]    ${selected_warehouse}
+    ${cbo_selected_warehouse_list}=    Replace String    ${cbo_selected_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
+    ${warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${cbo_selected_warehouse_list}
+    Run Keyword If    '${warehouse_list_status}' == 'false'    common.Click When Ready    ${cbo_warehouse_list}
 
 #### OLD #####
 Select DPS Menu
@@ -239,10 +246,10 @@ Verify Page Title
     ${dps_txt_page_title}=  Replace String   ${dps_txt_page_title}  {value}   ${title}
     Wait Until Element Is Visible    ${dps_txt_page_title}    timeout=${DEFAULT_TIMEOUT}
 
-Click Dropdown For Select role
-    Wait Until Element Is Visible    ${dps_img_icon_user}    timeout=${DEFAULT_TIMEOUT}
+Click Dropdown For Select Role
+    Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
-    Click Element    ${dps_btn_dropdown_select_role}
+    common.Click When Ready    ${dps_btn_dropdown_select_role}
 
 Select Role
     [Arguments]    ${role}
