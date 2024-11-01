@@ -152,17 +152,17 @@ DC_Operation_s002 [Part2]
     dps_login_page.Click Log On Button
     # Expected
     # dps_home_page.dps_login_page.Verify Homepage Title    ${dc_operaion['homepage']}
-    # common.Verify Capture Screenshot    DC_Operation_s002    Verify Homepage Title
+    # common.Verify Capture Screenshot    DC_Operation_002    Verify Homepage Title
 
     Log    Step No.19_2 เลือก role แอดมินคลัง
-    dps_home_page.Click Dropdown For Select role
-    dps_home_page.Select Role    ${dc_operaion.role['admin']}
+    dps_home_page.Click Dropdown For Select Role
+    dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
-    dps_home_page.Verify Role Change In Profile    ${dc_operaion.role['admin']}
-    common.Verify Capture Screenshot    DC_Operation_s002    Verify Role Change In Profile
+    dps_home_page.Verify Role Change In Profile    ${dc_operation.role['admin']}
+    common.Verify Capture Screenshot    DC_Operation_002    Verify Role Change In Profile
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
-    dps_home_page.Select DPS Menu    ${dc_operaion.dps_menu['Check_Receiving_Cycle']}
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['Check_Receiving_Cycle']}
     # Expected
     dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['Check_Receiving_Cycle']}

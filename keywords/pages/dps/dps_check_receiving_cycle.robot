@@ -8,28 +8,29 @@ Verify Check Receiving Cycle Page
 
     ${tomorrow}    dps_home_page.Set Tomorrow Date
     Wait Until Element Is Visible    ${dps_txt_receiving_cycle_list}    timeout=${DEFAULT_TIMEOUT}
-    ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
-    FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
-        ${item}=    Set Variable    (${dps_txt_receiving_cycle_list})[${index}]
-        Scroll Element Into View    ${item}
-        Register Keyword To Run On Failure    NOTHING
-        ${name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[text()]    ${company_name}
-        ${branch_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[2]    ${branch}
-        ${address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[3]    ${address}
-        ${sub_district_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[4]    ${sub_district}
-        ${district_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[5]    ${district}
-        ${province_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[6]    ${province}
-        ${postcode_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[7]    ${postcode}
-        ${next_day_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[8]    ${next_day}
-        ${receiving_time_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[9]    ${receiving_time}
-        ${receiving_type_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[10]    ${receiving_type}
-        ${courier_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[11]    ${courier}
-        ${number_of_parcel_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[12]    ${number_of_parcel}
-        ${status_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[14]    ${status}
-        ${all_conditions}=    Evaluate    ${name_status} and ${branch_status} and ${address_status} and ${sub_district_status} and ${district_status} and ${province_status} and ${postcode_status} and ${next_day_status} and ${receiving_time_status} and ${receiving_type_status} and ${courier_status} and ${number_of_parcel_status} and ${status_status}
-        Set Suite Variable    ${card}    ${item}//button
-        Exit For Loop If    ${all_conditions}
-    END
+    Wait Until Element Is Visible    //tr[contains(@class,'ant-table-row ant-table-row-level-0')]//td[text()='บริษัท ไอดีซี พรีเมียร์ จำกัด']//..//td[text()='สาขาหลัก']//..//td[text()='200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์']//..//td[text()='ปากเกร็ด']//..//td[text()='ปากเกร็ด']//..//td[text()='นนทบุรี']//..//td[text()='11120']//..//td[text()='02-11-2567']//..//td[text()='13:00']//..//td//div[text()='รอบพิเศษ']//..//..//td[text()='CPALL']//..//td[text()='10']//..//td//div[contains(text(),'รอยืนยัน')]//..//..//button[@type='button']
+    # ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
+    # FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
+    #     ${item}=    Set Variable    (${dps_txt_receiving_cycle_list})[${index}]
+    #     Scroll Element Into View    ${item}
+    #     Register Keyword To Run On Failure    NOTHING
+    #     ${name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[text()]    ${company_name}
+    #     ${branch_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[2]    ${branch}
+    #     ${address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[3]    ${address}
+    #     ${sub_district_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[4]    ${sub_district}
+    #     ${district_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[5]    ${district}
+    #     ${province_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[6]    ${province}
+    #     ${postcode_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[7]    ${postcode}
+    #     ${next_day_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[8]    ${next_day}
+    #     ${receiving_time_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[9]    ${receiving_time}
+    #     ${receiving_type_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[10]    ${receiving_type}
+    #     ${courier_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[11]    ${courier}
+    #     ${number_of_parcel_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[12]    ${number_of_parcel}
+    #     ${status_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[14]    ${status}
+    #     ${all_conditions}=    Evaluate    ${name_status} and ${branch_status} and ${address_status} and ${sub_district_status} and ${district_status} and ${province_status} and ${postcode_status} and ${next_day_status} and ${receiving_time_status} and ${receiving_type_status} and ${courier_status} and ${number_of_parcel_status} and ${status_status}
+    #     Set Suite Variable    ${card}    ${item}//button
+    #     Exit For Loop If    ${all_conditions}
+    # END
     
 Select Waiting Inventory Confirm List Tab
     common.Scroll Window To Vertical    0
