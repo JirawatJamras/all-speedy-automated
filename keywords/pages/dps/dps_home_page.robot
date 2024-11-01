@@ -45,6 +45,24 @@ Select Warehouse List Dropdown
     ${dps_warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_cbo_selected_warehouse_list}
     Run Keyword If    '${dps_warehouse_list_status}' == 'false'    Run Keywords    ${dps_cbo_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
     ...    AND    common.Click When Ready    ${dps_cbo_warehouse_list}
+    Run Keyword If    '${dps_warehouse_list_status}' == 'true'    Run Keywords    ${dps_txt_daily_task_overview}=    Replace String    ${dps_txt_daily_task_overview_home_page}    {value}    ${dc_operation.title['homepage']}
+    ...    AND    Mouse Over    ${dps_txt_daily_task_overview}
+
+Verify Data In All Task Tab
+    [Arguments]    ${parcel_status}    ${parcel_number}    ${pouch_number}    ${transport}    
+    ...            ${sending_to}    ${incoming_from}    ${parcel_owner}    ${task_type}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task_home_page}    {parcel_status}    ${parcel_status}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {parcel_number}    ${parcel_number}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {pouch_number}    ${pouch_number}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {transport}    ${transport}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {sending_to}    ${sending_to}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {incoming_from}    ${incoming_from}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {task_type}    ${task_type}
+    Scroll Element Into View    ${dps_txt_list_first_daily_task}
+    ${actual_list_first_daily_task}=    Get Text    ${dps_txt_list_first_daily_task}
+    ${actual_list_first_daily_task}=    Replace String    ${actual_list_first_daily_task}    \n    ${SPACE}
+    Should Be Equal As Strings    ${actual_list_first_daily_task}    ${task_type} ${parcel_owner} ${incoming_from} ${sending_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
 
 #### OLD #####
 Select DPS Menu

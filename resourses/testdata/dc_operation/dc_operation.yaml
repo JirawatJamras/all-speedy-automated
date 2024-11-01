@@ -23,3 +23,14 @@ dc_operation_002:
     status: 
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว
+
+dc_operation_S012:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: speedy
+    incoming_from: home
+    sending_to: '-'
+    transport: CPALL
+    pouch_number: '-'
+    parcel_number: 'SPCD241000006135'
+    parcel_status: ร้านรับพัสดุเข้าระบบ
