@@ -6,7 +6,7 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Test Cases ***
-dc_operation_s005 
+DC_Operation_S005
     [Tags]    DC_Operation    UAT
     Log    Login
     common.Open URL    ${DPS_UAT_URL}

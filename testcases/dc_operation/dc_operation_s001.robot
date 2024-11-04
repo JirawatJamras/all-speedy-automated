@@ -6,12 +6,12 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Test Cases ***
-DC_Operation_001 [Part1] 
+DC_Operation_S001 [Part1] 
     [Tags]    DC_Operation    UAT
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Login Page
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Login Page
 
     Log    Step No.2 เข้าสู่ระบบลูกค้าธุรกิจ
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
@@ -30,18 +30,18 @@ DC_Operation_001 [Part1]
     ...    ${Booking_S001['phone']}
     ...    ${Booking_S001['email']}
     ...    ${Booking_S001['position']}
-    common.Verify Capture Screenshot    DC_Operation_001   Verify Home Page
+    common.Verify Capture Screenshot    DC_Operation_S001   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     b2c_call_car_pick_up_parcel_page.Verify Call Car Pick Up Page    ${call_car_pick_up['text_call_car_pick_up']}
-    common.Verify Capture Screenshot    DC_Operation_001   Verify Call Car Pick Up Page
+    common.Verify Capture Screenshot    DC_Operation_S001   Verify Call Car Pick Up Page
 
     Log    Step No.4 คลิกปุ่ม +เพิ่ม
     b2c_call_car_pick_up_parcel_page.Click Add Button
     b2c_call_car_pick_up_parcel_page.Verify Popup Parcel Pickup Schedule
-    common.Verify Capture Screenshot    DC_Operation_001   Verify Parcel Pickup Schedule Popup
+    common.Verify Capture Screenshot    DC_Operation_S001   Verify Parcel Pickup Schedule Popup
 
     Log    Step No.5 ระบุข้อมูล
     ##เลือกประเภทพัสดุ
@@ -52,28 +52,28 @@ DC_Operation_001 [Part1]
     b2c_call_car_pick_up_parcel_page.Verify Add Special Pickup Round Success   ##TBC##
     ...    ${call_car_pick_up.car_round_name['special']}
     ...    ${call_car_pick_up.parcel_pickup_time_schedule['morning']}
-    common.Verify Capture Screenshot    DC_Operation_001   Verify Add Special Pickup Round Success
+    common.Verify Capture Screenshot    DC_Operation_S001   Verify Add Special Pickup Round Success
 
     Log    Step No.6 เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery    
     #Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Booking Page
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Booking Page
     
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add    
     #Expected
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Term & Condition
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Term & Condition
 
     Log    Step No.8 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
     #Expected   
     b2c_booking_delivery_page.Verify Select Parcel Type
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Select Parcel Type
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Select Parcel Type
 
     Log    Step No.9 กดปุ่ม "พัสดุทั่วไป"
-    b2c_booking_delivery_page.Select Parcel Type    ${dc_operation_001['parcel_type']}
+    b2c_booking_delivery_page.Select Parcel Type    ${DC_Operation_S001['parcel_type']}
     #Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -87,7 +87,7 @@ DC_Operation_001 [Part1]
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Create Parcel Page Sender Step
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Create Parcel Page Sender Step
 
     Log    Step No.10 คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
@@ -98,10 +98,10 @@ DC_Operation_001 [Part1]
     Sleep    5s
     b2c_booking_detail_page.Click Edit Booking List
     b2c_booking_detail_page.Verify Edit Booking List Popup    
-    ...    ${dc_operation_001['parcel_type']}
-    ...    ${dc_operation_001['booking_name']}
+    ...    ${DC_Operation_S001['parcel_type']}
+    ...    ${DC_Operation_S001['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Edit Booking Popup
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Edit Booking Popup
 
     Log    Step No.12 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
     b2c_booking_detail_page.Select Pickup Schedule Tab
@@ -115,7 +115,7 @@ DC_Operation_001 [Part1]
     ...    ${booking.pickup_schedule.default['cut_off_time']}
     ...    ${booking.pickup_schedule['price']}
     ...    ${booking.pickup_schedule.default['price']}
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Display Pickup Schedule Data
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Display Pickup Schedule Data
 
     Log    Step No.13 เลือกรายการรอบรถที่สร้างไว้ใน Step 5 และกดปุ่มบันทึก
     b2c_booking_detail_page.Select Parcel Pickup Schedule
@@ -124,4 +124,4 @@ DC_Operation_001 [Part1]
     Log    Step No.14 คลิกปุ่ม Import File
     b2c_booking_detail_page.Click Import File Button
     b2c_booking_detail_page.Verify Display Import File Popup
-    common.Verify Capture Screenshot    DC_Operation_001    Verify Display Import File Popup
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Display Import File Popup

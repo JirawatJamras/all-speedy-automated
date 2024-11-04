@@ -27,14 +27,14 @@ DC_Operation_S012
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
     dps_home_page.Verify Data In All Task Tab
-    ...    ร้านรับพัสดุเข้าระบบ  # ${dc_operation_S012.data_in_all_task_tab['parcel_status']}
+    ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S012.data_in_all_task_tab['parcel_status']}
     ...    SPCD241000006135
-    ...    ${dc_operation_S012.data_in_all_task_tab['pouch_number']}
-    ...    CPALL  # ${dc_operation_S012.data_in_all_task_tab['transport']}
-    ...    ${dc_operation_S012.data_in_all_task_tab['export_to']}
-    ...    home  # ${dc_operation_S012.data_in_all_task_tab['import_from']}
-    ...    speedy  # ${dc_operation_S012.data_in_all_task_tab['parcel_owner']}
-    ...    ${dc_operation_S012.data_in_all_task_tab['task_type']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab['pouch_number']}
+    ...    CPALL  # ${DC_Operation_S012.data_in_all_task_tab['transport']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab['export_to']}
+    ...    home  # ${DC_Operation_S012.data_in_all_task_tab['import_from']}
+    ...    speedy  # ${DC_Operation_S012.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab['task_type']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    DC_Operation_S012    Verify Homepage
     common.Scroll Window To Vertical    500
@@ -44,12 +44,12 @@ DC_Operation_S012
     dps_home_page.Select Tab Import Task
     # Expected
     # dps_home_page.Verify Data In Import Task Tab
-    # ...    499  # ${dc_operation_S012.data_in_import_task_tab['number_of_scanned_items']}
-    # ...    499  # ${dc_operation_S012.data_in_import_task_tab['number_of_pieces']}
-    # ...    0  # ${dc_operation_S012.data_in_import_task_tab['number_of_pouch']}
-    # ...    speedy  # ${dc_operation_S012.data_in_import_task_tab['parcel_owner']}
-    # ...    CPALL  # ${dc_operation_S012.data_in_import_task_tab['transport']}
-    # ...    home  # ${dc_operation_S012.data_in_import_task_tab['import_from']}
+    # ...    499  # ${DC_Operation_S012.data_in_import_task_tab['number_of_scanned_items']}
+    # ...    499  # ${DC_Operation_S012.data_in_import_task_tab['number_of_pieces']}
+    # ...    0  # ${DC_Operation_S012.data_in_import_task_tab['number_of_pouch']}
+    # ...    speedy  # ${DC_Operation_S012.data_in_import_task_tab['parcel_owner']}
+    # ...    CPALL  # ${DC_Operation_S012.data_in_import_task_tab['transport']}
+    # ...    home  # ${DC_Operation_S012.data_in_import_task_tab['import_from']}
     common.Verify Capture Screenshot    DC_Operation_S012    Verify Import Task Tab
 
     Log    Step No.7 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DCBB
@@ -61,14 +61,14 @@ DC_Operation_S012
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
     dps_home_page.Verify Data In All Task T ab
-    ...    ร้านรับพัสดุเข้าระบบ  # ${dc_operation_S012.data_in_all_task_tab_after_scan['parcel_status']}
+    ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S012.data_in_all_task_tab_after_scan['parcel_status']}
     ...    SPCD241000006135
-    ...    ${dc_operation_S012.data_in_all_task_tab_after_scan['pouch_number']}
-    ...    CPALL  # ${dc_operation_S012.data_in_all_task_tab_after_scan['transport']}
-    ...    ${dc_operation_S012.data_in_all_task_tab_after_scan['export_to']}
-    ...    home  # ${dc_operation_S012.data_in_all_task_tab_after_scan['import_from']}
-    ...    speedy  # ${dc_operation_S012.data_in_all_task_tab_after_scan['parcel_owner']}
-    ...    ${dc_operation_S012.data_in_all_task_tab_after_scan['task_type']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab_after_scan['pouch_number']}
+    ...    CPALL  # ${DC_Operation_S012.data_in_all_task_tab_after_scan['transport']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab_after_scan['export_to']}
+    ...    home  # ${DC_Operation_S012.data_in_all_task_tab_after_scan['import_from']}
+    ...    speedy  # ${DC_Operation_S012.data_in_all_task_tab_after_scan['parcel_owner']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab_after_scan['task_type']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    DC_Operation_S012    Verify Homepage
     common.Scroll Window To Vertical    500

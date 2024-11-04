@@ -28,6 +28,22 @@ DC_Operation_S006
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+        dps_home_page.Verify Homepage
+    ...    ${dc_operation.breadcrumb['homepage']}
+    ...    ${dc_operation.title['homepage']}
+    dps_home_page.Verify Data In All Task Tab
+    ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S006.data_in_all_task_tab['parcel_status']}
+    ...    SPCD241000006135
+    ...    ${DC_Operation_S006.data_in_all_task_tab['pouch_number']}
+    ...    CPALL  # ${DC_Operation_S006.data_in_all_task_tab['transport']}
+    ...    ${DC_Operation_S006.data_in_all_task_tab['export_to']}
+    ...    home  # ${DC_Operation_S006.data_in_all_task_tab['import_from']}
+    ...    speedy  # ${DC_Operation_S006.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S006.data_in_all_task_tab['task_type']}
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Homepage
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Data In All Task Tab
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
@@ -39,3 +55,5 @@ DC_Operation_S006
     dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241100000140
     dps_scan_page.Click Search Button
     # Expected
+
+
