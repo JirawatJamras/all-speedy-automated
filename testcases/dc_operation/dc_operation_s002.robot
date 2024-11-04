@@ -166,7 +166,7 @@ DC_Operation_S002 [Part1]
 
     Log    Step No.17 ผ่านcut off time
 
-DC_Operation_S002 [Part2]    
+DC_Operation_s002_2 
     [Tags]    DC_Operation    UAT    PART2
     ### รอหลัง cut off time ###
     Log    Step No.18 เปิด URL DPS
@@ -179,17 +179,20 @@ DC_Operation_S002 [Part2]
     dps_login_page.Click Log On Button
     # Expected
     # dps_home_page.dps_login_page.Verify Homepage Title    ${dc_operaion['homepage']}
-    # common.Verify Capture Screenshot    DC_Operation_S002    Verify Homepage Title
+    common.Verify Capture Screenshot    DC_Operation_002    Verify Homepage Title
 
     Log    Step No.19_2 เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
     dps_home_page.Verify Role Change In Profile    ${dc_operation.role['admin']}
-    common.Verify Capture Screenshot    DC_Operation_S002    Verify Role Change In Profile
+    common.Verify Capture Screenshot    DC_Operation_002    Verify Role Change In Profile
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}
+    # Sleep    15s
+    # Open URL  https://dps-uat.allspeedy.co.th/check-receiving-cycle
+    
     # Expected
     dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -205,17 +208,17 @@ DC_Operation_S002 [Part2]
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
-    ...    ${DC_Operation_S002.receiving_cycle['status']}
+    ...    ${DC_Operation_S002.receiving_cycle.status['waiting']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Check Receiving Cycle Page
 
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle.Select Check Receiving Cycle Tab    ${dc_operaion.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
+    dps_check_receiving_cycle.Select Waiting Inventory Confirm List Tab   
     # Expected
     # Inprogress 
-    dps_check_receiving_cycle.Verify Inventory Confirm List Tab
+    dps_check_receiving_cycle.Verify Inventory Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
-    ...    ${dc_operation.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
-    ...    ${DC_Operation_S002.receiving_cycle['company_name']}
+    ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_name']}   
     ...    ${DC_Operation_S002.receiving_cycle['company_address']}
     ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
     ...    ${DC_Operation_S002.receiving_cycle['district']}
@@ -225,7 +228,7 @@ DC_Operation_S002 [Part2]
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
-    ...    ${DC_Operation_S002.receiving_cycle['status']}
+    ...    ${DC_Operation_S002.receiving_cycle.status['waiting']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Inventory Confirm List Tab
 
     Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
@@ -234,18 +237,20 @@ DC_Operation_S002 [Part2]
     # Inprogress
     dps_check_receiving_cycle.Verify Parcel Pickup Details Popup
     ...    ${dc_operation['parcel_pickup_details']}
-    ...    ${dc_operation['button_export']}
+
     ...    ${dc_operation['vehicle_type']}
+    ...    ${dc_operation['button_export']}
+    
     ## เหลือ Verify รายละเอียด ##
+
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Parcel Pickup Details Popup
     
     Log    Step No.23 คลิกปุ่ม Export
     dps_check_receiving_cycle.Click Export Button On Parcel Pickup Details Popup
     # Expected
-    # Inprogress
 
     Log    Step No.24 คลิกปุ่ม อนุมัติ
-    dps_check_receiving_cycle.Click Approve Button On Parcel Pickup Details Popup
+    # dps_check_receiving_cycle.Click Approve Button On Parcel Pickup Details Popup
     # Expected
     # Inprogress
 

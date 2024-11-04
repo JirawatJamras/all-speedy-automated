@@ -304,7 +304,7 @@ dc_operation:
   text_print_label: ยืนยัน/Print Label
   text_print_label_success: พิมพ์ Label เรียบร้อยแล้ว
   button_export: Export File
-  button_approve: approve
+  button_approve: อนุมัติ
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
   vehicle_type: ประเภทที่ใช้
   selected_warehouse_list:
