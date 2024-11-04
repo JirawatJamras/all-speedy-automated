@@ -31,3 +31,4 @@ Verify Navigate To Scan Page And Stay At Scan In Tab
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
     Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
 
+Verify Parcel Details

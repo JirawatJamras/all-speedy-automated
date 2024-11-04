@@ -126,20 +126,37 @@ Verify Data In Import Task Tab
     ${actual_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
     Should Be Equal    ${actual_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
 
-# Verify Data In Export Task Tab
-#     [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
-#     ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}    ${number_of_pieces}    ${number_of_pouch}
-#     ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['import_task']}
-#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task_home_page}    {number_of_scanned_items}    ${number_of_scanned_items}
-#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
-#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
-#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {parcel_owner}    ${parcel_owner}
-#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {transport}    ${transport}
-#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {import_from}    ${import_from}
-#     ${actual_tab_import_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
-#     Should Be Equal    ${actual_tab_import_task_status}    true
-#     ${actual_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
-#     Should Be Equal    ${actual_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
+Verify Label In Export Task Tab
+    [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
+    ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
+    ${actual_label_export_to}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[1]
+    ${actual_label_transport}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[2]
+    ${actual_label_parcel_owner}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[3]
+    ${actual_label_number_of_pouch}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[4]
+    ${actual_label_number_of_pieces}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[5]
+    ${actual_label_number_of_scanned_items}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[6]
+    Should Be Equal    ${actual_label_export_to}    ${export_to}
+    Should Be Equal    ${actual_label_transport}    ${transport}
+    Should Be Equal    ${actual_label_parcel_owner}    ${parcel_owner}
+    Should Be Equal    ${actual_label_number_of_pouch}    ${number_of_pouch}
+    Should Be Equal    ${actual_label_number_of_pieces}    ${number_of_pieces}
+    Should Be Equal    ${actual_label_number_of_scanned_items}    ${number_of_scanned_items}
+
+
+Verify Data In Export Task Tab
+    [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
+    ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
+    ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['export_task']}
+    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task_home_page}    {export_to}    ${export_to}
+    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {transport}    ${transport}
+    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pouch}    ${number_of_pouch}
+    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pieces}    ${number_of_pieces}
+    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_scanned_items}    ${number_of_scanned_items}
+    ${actual_tab_export_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
+    Should Be Equal    ${actual_tab_export_task_status}    true
+    ${actual_list_first_export_task}=    Get Text    ${dps_txt_list_first_export_task}
+    Should Be Equal    ${actual_list_first_export_task}    ${export_to} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
 
 Select DPS Menu
     [Arguments]    ${tabname}

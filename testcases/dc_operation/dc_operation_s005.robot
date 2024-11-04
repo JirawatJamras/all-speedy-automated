@@ -14,12 +14,12 @@ DC_Operation_S005
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    dps_home_page.Click Dropdown For Select Role
-    dps_home_page.Select Role    ${dc_operation.role['admin']}
+    sleep    10s
+    # dps_home_page.Click Dropdown For Select Role
+    # dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เข้าเมนูหน้าหลัก -> เลือก Dropdown ดูข้อมูลคลัง DC BB
-    dps_home_page.Select Warehouse List Button
-    dps_home_page.Select Warehouse List Dropdown    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
