@@ -127,7 +127,7 @@ Verify Data In Import Task Tab
     Should Be Equal    ${actual_tab_import_task_status}    true
     ${actual_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
     Should Be Equal    ${actual_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
-    
+
 Select DPS Menu
     [Arguments]    ${tabname}
     Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
@@ -328,6 +328,17 @@ Verify Page Title
     ${dps_txt_page_title}=  Replace String   ${dps_txt_page_title}  {value}   ${title}
     Wait Until Element Is Visible    ${dps_txt_page_title}    timeout=${DEFAULT_TIMEOUT}
 
+Click Dropdown For Select Role
+    Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
+    common.Click When Ready    ${dps_btn_dropdown_select_role}
+
+Select Role
+    [Arguments]    ${role}
+    ${dps_btn_role}=  Replace String   ${dps_btn_role}   {value}   ${role}
+    Wait Until Element Is Visible    ${dps_btn_role}    timeout=${DEFAULT_TIMEOUT}
+    Click Element    ${dps_btn_role}
+
 Verify Role Change In Profile
     [Arguments]    ${role}
     ${dps_txt_role_user}=  Replace String   ${dps_txt_role_user}   {value}   ${role}
@@ -343,3 +354,4 @@ Verify Tab Selected
 Wait Until Home Page Loaded
     Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
+
