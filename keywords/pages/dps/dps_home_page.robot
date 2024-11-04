@@ -62,6 +62,17 @@ Verify Data In All Task Tab
     ${actual_list_first_daily_task}=    Replace String    ${actual_list_first_daily_task}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_first_daily_task}    ${task_type} ${parcel_owner} ${incoming_from} ${sending_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
 
+Click Dropdown For Select Role
+    Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
+    common.Click When Ready    ${dps_btn_dropdown_select_role}
+
+Select Role
+    [Arguments]    ${role}
+    ${dps_btn_role}=  Replace String   ${dps_btn_role}   {value}   ${role}
+    Wait Until Element Is Visible    ${dps_btn_role}    timeout=${DEFAULT_TIMEOUT}
+    Click Element    ${dps_btn_role}
+
 Select Tab Incoming Task
     ${dps_tab_incoming_task}=    Replace String    ${dps_tab_incoming_task}    {value}    ${dc_operation.tab_daily_task['incoming_task']}
     common.Click When Ready    ${dps_tab_incoming_task}
