@@ -43,6 +43,7 @@ ${b2c_txt_value_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td
 ${b2c_txt_label_shipping_origin_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='{value}']
 ${b2c_txt_label_in_edit_popup_booking_list}    //form[@id='detail_form']//strong[text()='{value}']
 ${b2c_txt_pickup_schedule}    //div[text()='{round}']/..//p[contains(normalize-space(.), '{pickup_date}')]/..//p[contains(normalize-space(.), '{parcel_num}')]/../..//p[contains(normalize-space(.), '{cut_off_time}')]/..//p[contains(normalize-space(.), 'ราคา : 0 บาท')]/../../../../..//input/..
+${b2c_txt_parcel_list}    //div[@class='hidden sm:inline']//span[text()='{status}']/../..//strong[contains(text(),'{value}')]/../../../../../../../..
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 
@@ -56,6 +57,7 @@ ${b2c_img_qr_code}    //div[text()='{value}']/../../../..//canvas
 ${b2c_img_loading_in_detail_after_set_origin_shipping}    //div[@role='dialog']//div[@class='ant-modal-content']//img[@class='bg-transparent']
 ${b2c_img_logo_home}    //div[contains(@class,'ant-col flex items-center')]//*[@stroke='currentColor']
 ${b2c_img_logo_store}    //div[contains(@class,'ant-col flex items-center')]//*[@draggable='false' and @loading='lazy']
+${b2c_img_empty_data}    //div[@class='hidden sm:inline']//div[@class='ant-list-empty-text']//div[@class='ant-empty-image']
 
 ${b2c_btn_print_the_parcel_payment_slip_disabled}   //button[@type='button' and contains(@class, 'ant-btn-primary') and contains(@class, 'bg-blue-800') and @disabled and span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']]
 ${b2c_btn_edit_booking_list}    (//strong[text()='{value}']/../../..//button)[1]
@@ -83,6 +85,7 @@ ${b2c_btn_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td[4]//a
 ${b2c_btn_increase_cod_value}    //input[@id='create_parcel_form_codValue']/../..//span[@role='button' and @aria-label='Increase Value']
 ${b2c_btn_increase_insure_value}    //input[@id='create_parcel_form_insureAmount']/../..//span[@role='button' and @aria-label='Increase Value']
 ${b2c_btn_confirm_phone_number}    //span[@aria-label='check']/../../..
+${b2c_btn_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']//button
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 

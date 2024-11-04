@@ -6,7 +6,7 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Test Cases ***
-DC_Operation_S002 [Part1]    
+DC_Operation_s002_1   
     [Tags]    DC_Operation    UAT    PART1
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
@@ -139,7 +139,7 @@ DC_Operation_S002 [Part1]
     Log    Step No.13 เลือกรายการรอบรถที่สร้างไว้ใน Step 5 และกดปุ่มบันทึก
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
-    ${Booking_ID}    Get Booking ID
+    ${booking_id}    Get Booking ID
     # Expected
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
@@ -160,8 +160,10 @@ DC_Operation_S002 [Part1]
     Log    Step No.15 คลิกปุ่ม Import 
     Log    Step No.16 เลือกไฟล์ "Booking Dry Template Test DC"
     b2c_booking_detail_page.Import Excel File Of Dry Parcel Template    ${path_excel_booking_dry_template}
-    Sleep    4s
-    # b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    ...    ${Booking['text_parcel_status_waiting_entering']}
+    ...    ${call_car_pick_up['text_parcel_id_start_with']}
+    ...    ${DC_Operation_S002['parcel_number']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Import File Success
 
     Log    Step No.17 ผ่านcut off time

@@ -8,6 +8,7 @@ DC_Operation_S002:
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
   verify_pickup_time: '09:00:00 - 12:00 น.'
   shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+  parcel_number: '10'
   call_car_pick_up:
     car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ

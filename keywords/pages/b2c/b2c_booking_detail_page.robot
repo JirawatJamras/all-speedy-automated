@@ -135,7 +135,7 @@ Select Parcel Pickup Schedule
 Click Save Button In Edit Booking List Popup
     ${btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
     Scroll Element Into View    ${btn_save_shipping_origin}
-    common.Click When Ready    ${btn_save_shipping_origin}  
+    common.Click When Ready    ${btn_save_shipping_origin}
 
 Verify Complete Select Parcel Pickup Schedule And Save
     [Arguments]    ${today}    ${shipping_origin}
@@ -146,6 +146,7 @@ Verify Complete Select Parcel Pickup Schedule And Save
     ${txt_shipping_origin}=    Replace String    ${b2c_txt_shipping_origin}    {value}    ${booking['text_shipping_origin']}
     ${txt_shipping_origin}    Get Text    ${txt_shipping_origin}
     ${actual_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=30s
     Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${shipping_origin}
 
@@ -688,3 +689,21 @@ Verify Popup To Edit Booking List
     Wait Until Element Is VIsible    ${actual_text_parcel_type}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is VIsible    ${actual_text_booking_name}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is VIsible    ${actual_text_shipping_origin}    timeout=${DEFAULT_TIMEOUT}
+
+Verify Booking Detail Page After Import File
+    [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
+    ${actual_parcel_list_status}=    Replace String    ${b2c_txt_parcel_list}    {status}    ${status}
+    ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
+
+    Wait Until Element Is Visible    ${actual_parcel_list}    timeout=${DEFAULT_TIMEOUT}
+    ${page1}=    Get Element Count    ${actual_parcel_list}
+    common.Click When Ready    ${b2c_btn_next_page_parcel_list}
+    Wait Until Element Is Visible    ${actual_parcel_list}    timeout=${DEFAULT_TIMEOUT}
+    ${page2}=    Get Element Count    ${actual_parcel_list}
+    common.Click When Ready    ${b2c_btn_next_page_parcel_list}
+    Wait Until Element Is Visible    ${actual_parcel_list}    timeout=${DEFAULT_TIMEOUT}
+    ${page3}=    Get Element Count    ${actual_parcel_list}
+
+    ${page_total}=    Evaluate    ${page1} + ${page2} + ${page3}
+    Should Be Equal As Strings    ${page_total}    ${parcel_num}
+

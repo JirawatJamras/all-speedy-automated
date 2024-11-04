@@ -214,6 +214,7 @@ call_car_pick_up:
   text_pickup_location: 'จุดรับพัสดุ:'
   button_save: บันทึก
   button_cancel: ยกเลิก
+  text_parcel_id_start_with: 'SPBD'
   status:
     parcel_in_progress: กำลังจัดพัสดุ
   car_round_name:
