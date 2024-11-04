@@ -36,11 +36,9 @@ Select Check Receiving Cycle Menu
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
 
 Select Warehouse List Button
+    [Arguments]    ${selected_warehouse}
     ${dps_btn_selected_warehouse_list}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
     common.Click When Ready    ${dps_btn_selected_warehouse_list}
-
-Select Warehouse List Dropdown
-    [Arguments]    ${selected_warehouse}
     ${dps_cbo_selected_warehouse_list}=    Replace String    ${dps_cbo_selected_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
     ${dps_warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_cbo_selected_warehouse_list}
     Run Keyword If    '${dps_warehouse_list_status}' == 'false'    Run Keywords    ${dps_cbo_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
@@ -63,6 +61,9 @@ Verify Data In All Task Tab
     ${actual_list_first_daily_task}=    Get Text    ${dps_txt_list_first_daily_task}
     ${actual_list_first_daily_task}=    Replace String    ${actual_list_first_daily_task}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_first_daily_task}    ${task_type} ${parcel_owner} ${incoming_from} ${sending_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
+
+Select Incoming Task Tab
+    
 
 #### OLD #####
 Select DPS Menu

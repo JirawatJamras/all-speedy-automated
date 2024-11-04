@@ -19,8 +19,7 @@ DC_Operation_S012
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เลือก Dropdown ดูข้อมูลคลัง DC BB
-    dps_home_page.Select Warehouse List Button
-    dps_home_page.Select Warehouse List Dropdown    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
     dps_home_page.Verify Data In All Task Tab
     ...    ${dc_operation_S012.data_in_all_task_tab['parcel_status']}
@@ -32,3 +31,6 @@ DC_Operation_S012
     ...    ${dc_operation_S012.data_in_all_task_tab['parcel_owner']}
     ...    ${dc_operation_S012.data_in_all_task_tab['task_type']}
     common.Verify Capture Screenshot    DC_Operation_S012    Verify Data In All Task Tab
+
+    Log    Step No.2 เลือกแท็บงานรับเข้า
+
