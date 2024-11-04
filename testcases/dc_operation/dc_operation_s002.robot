@@ -21,7 +21,7 @@ DC_Operation_S002 [Part1]
     b2c_login_page.Click Log On Button
     # Expected
     b2c_home_page.Verify Company profile page
-    ...    ${dc_operation_002['company_name']}
+    ...    ${DC_Operation_S002['company_name']}
     common.Verify Capture Screenshot    DC_Operation_S002   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
@@ -46,16 +46,16 @@ DC_Operation_S002 [Part1]
     Log    Step No.5 ระบุข้อมูล
     ${tomorrow}    Set Tomorrow Date
     ${today}    Set Date Pattern
-    b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${dc_operation_002['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S002['parcel_pickup_time']}
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Add Special Pickup Round Success
     ...    ${call_car_pick_up.status['parcel_in_progress']}
-    ...    ${dc_operation_002.call_car_pick_up['receiving_type']}
+    ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
     ...    ${tomorrow}
-    ...    ${dc_operation_002['verify_pickup_time']}
+    ...    ${DC_Operation_S002['verify_pickup_time']}
     ...    ${call_car_pick_up['text_parcel_pickup_date']}
     ...    ${call_car_pick_up['text_cut_off_time']}
     ...    ${today}
@@ -64,11 +64,11 @@ DC_Operation_S002 [Part1]
     ...    ${call_car_pick_up['text_price']}
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${dc_operation_002.call_car_pick_up['company_address']}
-    ...    ${dc_operation_002.call_car_pick_up['sub_district']}
-    ...    ${dc_operation_002.call_car_pick_up['district']}
-    ...    ${dc_operation_002.call_car_pick_up['province']}
-    ...    ${dc_operation_002.call_car_pick_up['postcode']}
+    ...    ${DC_Operation_S002.call_car_pick_up['company_address']}
+    ...    ${DC_Operation_S002.call_car_pick_up['sub_district']}
+    ...    ${DC_Operation_S002.call_car_pick_up['district']}
+    ...    ${DC_Operation_S002.call_car_pick_up['province']}
+    ...    ${DC_Operation_S002.call_car_pick_up['postcode']}
     common.Verify Capture Screenshot    DC_Operation_S002   Verify Add Special Pickup Round Success
 
     Log    Step No.6 เลือกเมนู "จองการจัดส่งพัสดุ"
@@ -90,7 +90,7 @@ DC_Operation_S002 [Part1]
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Select Parcel Type
 
     Log    Step No.9 กดปุ่ม "พัสดุทั่วไป"
-    b2c_booking_delivery_page.Select Parcel Type    ${dc_operation_002['parcel_type']}
+    b2c_booking_delivery_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
@@ -129,7 +129,7 @@ DC_Operation_S002 [Part1]
     b2c_booking_detail_page.Select Pickup Schedule Tab
     # Expected
     b2c_booking_detail_page.Verify Display Pickup Schedule Data
-    ...    ${dc_operation_002.call_car_pick_up['car_type']}
+    ...    ${DC_Operation_S002.call_car_pick_up['car_type']}
     ...    ${tomorrow}
     ...    ${call_car_pick_up.default['parcel_number']}
     ...    ${today}
@@ -139,10 +139,11 @@ DC_Operation_S002 [Part1]
     Log    Step No.13 เลือกรายการรอบรถที่สร้างไว้ใน Step 5 และกดปุ่มบันทึก
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
+    ${Booking_ID}    Get Booking ID
     # Expected
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
-    ...    ${dc_operation_002['shipping_origin']}
+    ...    ${DC_Operation_S002['shipping_origin']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Complete Select Parcel Pickup Schedule And Save
 
     Log    Step No.14 คลิกปุ่ม Import File

@@ -674,7 +674,7 @@ Verify Booking List In Booking Detail Page
     ${actual_text_booking_name}=    Replace String    ${b2c_txt_booking_name_booking_detail_page}    {value}    ${text_booking_name}
     ${actual_text_booking_time}=    Replace String    ${b2c_txt_booking_date_and_time_booking_detail_page}    {value}    ${text_booking_time}
     ${actual_text_shipping_origin}=    Replace String    ${b2c_txt_label_shipping_origin_booking_detail_page}    {value}    ${text_shipping_origin}
-    Sleep    2s
+    Sleep    3s
     Wait Until Element Is VIsible    ${actual_text_booking_id}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is VIsible    ${actual_text_booking_name}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is VIsible    ${actual_text_booking_time}    timeout=${DEFAULT_TIMEOUT}
