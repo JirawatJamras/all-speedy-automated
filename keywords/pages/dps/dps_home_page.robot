@@ -76,17 +76,6 @@ Verify Data In All Task Tab
     ${actual_list_first_daily_task}=    Replace String    ${actual_list_first_daily_task}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_first_daily_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
 
-Click Dropdown For Select Role
-    Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
-    common.Click When Ready    ${dps_btn_dropdown_select_role}
-
-Select Role
-    [Arguments]    ${role}
-    ${dps_btn_role}=  Replace String   ${dps_btn_role}   {value}   ${role}
-    Wait Until Element Is Visible    ${dps_btn_role}    timeout=${DEFAULT_TIMEOUT}
-    Click Element    ${dps_btn_role}
-
 Select Tab In Home Page
     [Arguments]    ${tab}
     ${dps_tab_in_home_page}=    Replace String    ${dps_tab_in_home_page}    {value}    ${tab}
@@ -127,6 +116,21 @@ Verify Data In Import Task Tab
     Should Be Equal    ${actual_tab_import_task_status}    true
     ${actual_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
     Should Be Equal    ${actual_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
+
+# Verify Data In Export Task Tab
+#     [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
+#     ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}    ${number_of_pieces}    ${number_of_pouch}
+#     ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['import_task']}
+#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task_home_page}    {number_of_scanned_items}    ${number_of_scanned_items}
+#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
+#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
+#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {parcel_owner}    ${parcel_owner}
+#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {transport}    ${transport}
+#     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {import_from}    ${import_from}
+#     ${actual_tab_import_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
+#     Should Be Equal    ${actual_tab_import_task_status}    true
+#     ${actual_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
+#     Should Be Equal    ${actual_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
 
 Select DPS Menu
     [Arguments]    ${tabname}
