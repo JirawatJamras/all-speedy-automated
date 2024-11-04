@@ -23,14 +23,16 @@ DC_Operation_S012
     dps_home_page.Select Tab All Task
     # Expected
     dps_home_page.Verify Homepage
+    ...    ${dc_operation.breadcrumb['homepage']}
+    ...    ${dc_operation.title['homepage']}
     dps_home_page.Verify Data In All Task Tab
     ...    ร้านรับพัสดุเข้าระบบ  # ${dc_operation_S012.data_in_all_task_tab['parcel_status']}
     ...    SPCD241000006135
     ...    ${dc_operation_S012.data_in_all_task_tab['pouch_number']}
-    ...    ${dc_operation_S012.data_in_all_task_tab['transport']}
-    ...    ${dc_operation_S012.data_in_all_task_tab['sending_to']}
-    ...    ${dc_operation_S012.data_in_all_task_tab['incoming_from']}
-    ...    ${dc_operation_S012.data_in_all_task_tab['parcel_owner']}
+    ...    CPALL  # ${dc_operation_S012.data_in_all_task_tab['transport']}
+    ...    ${dc_operation_S012.data_in_all_task_tab['export_to']}
+    ...    home  # ${dc_operation_S012.data_in_all_task_tab['import_from']}
+    ...    speedy  # ${dc_operation_S012.data_in_all_task_tab['parcel_owner']}
     ...    ${dc_operation_S012.data_in_all_task_tab['task_type']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    DC_Operation_S012    Verify Homepage
@@ -39,5 +41,13 @@ DC_Operation_S012
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
+    # Expected
+    dps_home_page.Verify Data In Import Task Tab
+    ...    ${dc_operation_S012.data_in_import_task_tab['number_of_scanned_items']}
+    ...    ${dc_operation_S012.data_in_import_task_tab['number_of_pieces']}
+    ...    ${dc_operation_S012.data_in_import_task_tab['number_of_pouch']}
+    ...    ${dc_operation_S012.data_in_import_task_tab['parcel_owner']}
+    ...    ${dc_operation_S012.data_in_import_task_tab['transport']}
+    ...    ${dc_operation_S012.data_in_import_task_tab['import_from']}
     common.Verify Capture Screenshot    DC_Operation_S012    Verify Import Task Tab
 
