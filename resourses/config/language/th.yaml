@@ -272,14 +272,14 @@ dc_operation:
     toei: toei test
   title:
     homepage: ภาพรวมงานประจำวัน
-    Scan: Scan
-    Pouch: รายการ Pouch
-    Report: รายการพัสดุแจ้งปัญหา
-    Check_Notification: ตรวจสอบแจ้งเตือน
-    Waiting_Destroy: พัสดุรอทำลาย
-    Upload_Route: อัปโหลด Route
-    Check_Receiving_Cycle: ตรวจสอบรอบการเข้ารับพัสดุ
-    History_Parcel: รายการประวัติพัสดุทั้งหมด
+    scan: Scan
+    pouch: รายการ Pouch
+    report: รายการพัสดุแจ้งปัญหา
+    check_notification: ตรวจสอบแจ้งเตือน
+    waiting_destroy: พัสดุรอทำลาย
+    upload_route: อัปโหลด Route
+    check_receiving_cycle: ตรวจสอบรอบการเข้ารับพัสดุ
+    history_parcel: รายการประวัติพัสดุทั้งหมด
   breadcrumb:
     homepage: หน้าหลัก
   dps_menu:

@@ -165,7 +165,7 @@ DC_Operation_s002 [Part2]
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}
     # Expected
     dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
-    ...    ${dc_operation.title['Check_Receiving_Cycle']}
+    ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
     ...    ${dc_operation_002.receiving_cycle['company_name']}
     ...    ${dc_operation_002.receiving_cycle['branch']}
@@ -186,7 +186,7 @@ DC_Operation_s002 [Part2]
     # Expected
     # Inprogress 
     dps_check_receiving_cycle.Verify Inventory Confirm List Tab
-    ...    ${dc_operation.title['Check_Receiving_Cycle']}
+    ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
     ...    ${dc_operation_002.receiving_cycle['company_name']}
     ...    ${dc_operation_002.receiving_cycle['company_address']}
