@@ -297,6 +297,7 @@ dc_operation:
     waiting_inventory_confirm_list: รายการรอคลังยืนยัน
   text_save_success: บันทึกข้อมูลเรียบร้อย
   text_search: ค้นหา
+  text_print_label: ยืนยัน/Print Label
   button_export: Export File
   button_approve: approve
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
