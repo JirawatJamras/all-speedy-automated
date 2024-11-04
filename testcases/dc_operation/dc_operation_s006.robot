@@ -25,7 +25,7 @@ DC_Operation_S006
     # dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['Home_Page']}
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
 
@@ -34,7 +34,7 @@ DC_Operation_S006
     # Expected
 
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['Scan']}
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241100000140
     dps_scan_page.Click Search Button

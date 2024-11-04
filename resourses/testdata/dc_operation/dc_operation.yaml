@@ -32,7 +32,7 @@ dc_operation_S012:
     export_to: '-'
     transport: CP All
     pouch_number: '-'
-    parcel_size: 'กล่อง XL'
+    parcel_size: กล่อง XL
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
   data_in_import_task_tab:
     import_from: Home
@@ -41,4 +41,12 @@ dc_operation_S012:
     number_of_pouch: '-'
     number_of_pieces: '1'
     number_of_scanned_items: '1'
-    
+  data_in_all_task_tab_after_scan:
+    task_type: งานนำจ่าย
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: Store
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)

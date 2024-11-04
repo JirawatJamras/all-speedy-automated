@@ -162,7 +162,7 @@ DC_Operation_s002 [Part2]
     common.Verify Capture Screenshot    DC_Operation_002    Verify Role Change In Profile
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['Check_Receiving_Cycle']}
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}
     # Expected
     dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['Check_Receiving_Cycle']}

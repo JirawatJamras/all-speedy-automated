@@ -283,15 +283,15 @@ dc_operation:
   breadcrumb:
     homepage: หน้าหลัก
   dps_menu:
-    Home_Page: homepage
-    Scan: scan
-    Pouch: pouch
-    Report: reportpage
-    Check_Notification: check-notifications
-    Waiting_Destroy: waiting-destroy
-    Upload_Route: upload-route
-    Check_Receiving_Cycle: check-receiving-cycle
-    History_Parcel: historyparcel
+    homepage: homepage
+    scan: scan
+    pouch: pouch
+    report: reportpage
+    check_notification: check-notifications
+    waiting_destroy: waiting-destroy
+    upload_route: upload-route
+    check_receiving_cycle: check-receiving-cycle
+    history_parcel: historyparcel
   Check_Receiving_Cycle_Tab:
     all_parcels_received: รายการเข้ารับพัสดุทั้งหมด
     waiting_inventory_confirm_list: รายการรอคลังยืนยัน
