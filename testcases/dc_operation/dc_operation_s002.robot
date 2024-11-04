@@ -184,6 +184,7 @@ DC_Operation_s002 [Part2]
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle.Select Check Receiving Cycle Tab    ${dc_operaion.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
     # Expected
+    # Inprogress 
     dps_check_receiving_cycle.Verify Inventory Confirm List Tab
     ...    ${dc_operation.title['Check_Receiving_Cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['inventory_confirm_list']}
@@ -200,9 +201,10 @@ DC_Operation_s002 [Part2]
     ...    ${dc_operation_002.receiving_cycle['status']}
     common.Verify Capture Screenshot    DC_Operation_s002    Verify Inventory Confirm List Tab
 
-    Log    Step No.22 คลิกปุ่ม Export
+    Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
     dps_check_receiving_cycle.Click Pencil Icon
     # Expected
+    # Inprogress
     dps_check_receiving_cycle.Verify Parcel Pickup Details Popup
     ...    ${dc_operation['parcel_pickup_details']}
     ...    ${dc_operation['button_export']}
@@ -213,16 +215,22 @@ DC_Operation_s002 [Part2]
     Log    Step No.23 คลิกปุ่ม Export
     dps_check_receiving_cycle.Click Export Button On Parcel Pickup Details Popup
     # Expected
+    # Inprogress
 
     Log    Step No.24 คลิกปุ่ม อนุมัติ
     dps_check_receiving_cycle.Click Approve Button On Parcel Pickup Details Popup
     # Expected
+    # Inprogress
 
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     Switch Window	MAIN
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     Sleep    10s
+    # Expected
+    # Inprogress
 
     Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
+    # Expected
+    # Inprogress

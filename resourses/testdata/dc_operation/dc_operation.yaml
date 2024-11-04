@@ -16,10 +16,10 @@ dc_operation_002:
     district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
     province: นนทบุรี 
     postcode: '11120'  #'11000'
-    receiving_time: '09:00'
+    receiving_time: '09:00' #'13:00'
     receiving_type: รอบพิเศษ
     courier: CPALL
-    number_of_parcel: '0'  #'10'
+    number_of_parcel: '10'  #'0'
     status: 
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว

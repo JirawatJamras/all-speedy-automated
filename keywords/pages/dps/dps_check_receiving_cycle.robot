@@ -7,8 +7,25 @@ Verify Check Receiving Cycle Page
     dps_home_page.Verify Tab Selected    ${tab}
 
     ${tomorrow}    dps_home_page.Set Tomorrow Date
-    Wait Until Element Is Visible    ${dps_txt_receiving_cycle_list}    timeout=${DEFAULT_TIMEOUT}
+    #Wait Until Element Is Visible    ${dps_txt_receiving_cycle_list}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    //tr[contains(@class,'ant-table-row ant-table-row-level-0')]//td[text()='บริษัท ไอดีซี พรีเมียร์ จำกัด']//..//td[text()='สาขาหลัก']//..//td[text()='200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์']//..//td[text()='ปากเกร็ด']//..//td[text()='ปากเกร็ด']//..//td[text()='นนทบุรี']//..//td[text()='11120']//..//td[text()='02-11-2567']//..//td[text()='13:00']//..//td//div[text()='รอบพิเศษ']//..//..//td[text()='CPALL']//..//td[text()='10']//..//td//div[contains(text(),'รอยืนยัน')]//..//..//button[@type='button']
+    {row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {company_name}    ${company_name}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {branch}    ${branch}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {address}    ${address}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {sub_district}    ${sub_district}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {district}    ${district}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {province}    ${province}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {postcode}    ${postcode}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {tomorrow}    ${tomorrow}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {receiving_time}    ${receiving_time}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {receiving_type}    ${receiving_type}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {courier}    ${courier}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {number_of_parcel}    ${number_of_parcel}
+    ${dps_txt_list_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {status}    ${status}
+
+    Wait Until Element Is Visible    ${dps_txt_list_receiving_cycle}
+    Page Should Contain Element    ${dps_txt_list_receiving_cycle}
+    
     # ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
     # FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
     #     ${item}=    Set Variable    (${dps_txt_receiving_cycle_list})[${index}]
@@ -47,6 +64,8 @@ Verify Inventory Confirm List Tab
     
     ${tomorrow}    dps_home_page.Set Tomorrow Date
     Wait Until Element Is Visible    ${dps_txt_receiving_cycle_list}    timeout=${DEFAULT_TIMEOUT}
+
+    # Inprogress
     ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
     FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
         ${item}=    Set Variable    (${dps_txt_receiving_cycle_list})[${index}]
