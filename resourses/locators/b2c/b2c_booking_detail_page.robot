@@ -40,6 +40,9 @@ ${b2c_txt_value_import_file_name_}    //th[text()='{value}']/../../..//tr[1]//td
 ${b2c_txt_value_import_success}    //th[text()='{value}']/../../..//tr[1]//td[3]//div[contains(@class,'text-white')]
 ${b2c_txt_value_import_fail}   //th[text()='{value}']/../../..//tr[1]//td[3]//div[contains(@class,'text-red-500')]
 ${b2c_txt_value_import_error_file}    //th[text()='{value}']/../../..//tr[1]//td[4]
+${b2c_txt_label_shipping_origin_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='{value}']
+${b2c_txt_label_in_edit_popup_booking_list}    //form[@id='detail_form']//strong[text()='{value}']
+${b2c_txt_pickup_schedule}    //div[text()='{round}']/..//p[contains(normalize-space(.), '{pickup_date}')]/..//p[contains(normalize-space(.), '{parcel_num}')]/../..//p[contains(normalize-space(.), '{cut_off_time}')]/..//p[contains(normalize-space(.), 'ราคา : 0 บาท')]/../../../../..//input/..
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 

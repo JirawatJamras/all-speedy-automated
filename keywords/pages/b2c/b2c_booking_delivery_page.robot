@@ -60,12 +60,12 @@ Click Temperature Controlled Parcel
     common.Click When Ready    ${parcel_type_chill_btn}
     
 Click Close X Popup
-    common.Click When Ready    ${btn_close_popup}
+    ${close_popup}=    Replace String    ${btn_close_popup}    {value}    ${Booking['text_title']}
+    common.Click When Ready    ${close_popup}
     common.Click When Ready    ${btn_confirm_to_close_popup}
 
 Click Latest Booking Created
     common.Click When Ready    ${btn_card_latest_booking}
-    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=40s
 
 
 # Verify Close Pop-Up

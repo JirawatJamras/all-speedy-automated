@@ -23,7 +23,7 @@ Booking:
   text_btn_edit: แก้ไข
   text_btn_save_edit: บันทึกแก้ไข
   text_btn_select: เลือก
-  text_term_and_condition_date_set: '31 ตุลาคม 2024'
+  text_term_and_condition_date_set: '4 พฤศจิกายน 2024'
   text_term_and_condition: 'ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ '
   text_version: ' (Version 2)'
   text_accept_term_and_condition: 'ยอมรับเงื่อนไขการใช้บริการ'
@@ -93,6 +93,7 @@ Booking:
   text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
   text_parcel_status_waiting_entering: รอส่งพัสดุเข้าระบบ
   text_parcel_status_call_car: กำลังเรียกรถเข้ารับ  
+  text_parcel_type_label: 'ประเภทพัสดุ :'
   tab_shipping_origin:
     favorite:  เลือกรายการโปรด
     store:  'เลือกร้าน 7-11 ต้นทาง'
@@ -201,16 +202,20 @@ Booking:
 
 
 call_car_pick_up:
-  text_call_car_pick_up: เรียกรถเข้ารับพัสดุ สาขาหลัก
+  text_call_car_pick_up: เรียกรถเข้ารับพัสดุ
   text_parcel_pickup_schedule: รอบรถเข้ารับพัสดุ
   text_car_round_name: ชื่อรอบรถ
   text_parcel_type: ประเภทพัสดุ
-  text_parcel_pickup_date: วันที่รถเข้ารับพัสดุ
+  text_parcel_pickup_date: 'วันที่รถเข้ารับพัสดุ'
   text_parcel_pickup_time: เวลารถเข้ารับพัสดุ
-  text_cut_off_time: เวลา Cut Off รอบรถ
-  text_parcel_number: จำนวนพัสดุ
+  text_cut_off_time: 'เวลา Cut Off รอบรถ:'
+  text_parcel_number: 'จำนวนพัสดุ:'
+  text_price:  'ราคา:'
+  text_pickup_location: 'จุดรับพัสดุ:'
   button_save: บันทึก
   button_cancel: ยกเลิก
+  status:
+    parcel_in_progress: กำลังจัดพัสดุ
   car_round_name:
     special: รอบพิเศษ
     normal: รอบปกติ
@@ -222,10 +227,9 @@ call_car_pick_up:
     afternoon: 'ช่วงบ่าย 13:00 - 16:00'
   parcel_pickup_time_schedule:
     morning: 0'9:00:00 - 12:00 น.'
-  cut_off_time: '12:38:00'
   default:
-    parcel_number: '0'
-    price: '0.00'
+    parcel_number: '0 รายการ'
+    price: '0 บาท'
 
 favorite:
   text_parcel_sender: ผู้ส่งพัสดุ

@@ -109,26 +109,28 @@ Select Pickup Schedule Tab
     common.Click When Ready    ${tab_pickup_Schedule}
 
 Verify Display Pickup Schedule Data
-    [Arguments]    ${receiving_type}    ${pickup_date}    ${txt_parcel_number}    ${parcel_number}    ${txt_cut_off_time}    ${cut_off_time}
-    ...    ${txt_price}    ${price}
-    ${nextDay}    common.Set Next DAY
-    ${today}    common.Set Date Pattern
-    Wait Until Element Is Visible    ${b2c_crd_list_of_pickup_schedule}    timeout=60s
-    ${count}=    Get Element Count    ${b2c_crd_list_of_pickup_schedule}
-    FOR    ${index}    IN RANGE    1    ${count} + 1
-        ${item}=    Set Variable    (${b2c_crd_list_of_pickup_schedule})[${index}]
-        Scroll Element Into View    ${item}
-        Register Keyword To Run On Failure    NOTHING
-        ${actual_text}=    Get Text    ${item}
-        ${actual_text}=    Replace String    ${actual_text}    \n    ${SPACE}
-        ${card_text_list}=    Run Keyword And Return Status    Should Be Equal As Strings    ${actual_text}
-        ...    ${receiving_type} ${pickup_date} ${nextDay} ${txt_parcel_number} ${parcel_number} ${txt_cut_off_time} ${today} ${cut_off_time} ${txt_price} ${price}
-        Set Suite Variable    ${item}
-        Exit For Loop If    ${card_text_list}
-    END
+    [Arguments]   ${round}    ${tomorrow}    ${parcel_num}    ${today}    ${price}
+    ${day}    Split String And Select    ${tomorrow}    -    0
+    ${month}    Split String And Select    ${tomorrow}    -    1
+    ${year}    Split String And Select    ${tomorrow}    -    2
+    ${nextDay}    Set Variable    ${day}/${month}/${year}
+
+    ${day}    Split String And Select    ${today}    -    0
+    ${month}    Split String And Select    ${today}    -    1
+    ${year}    Split String And Select    ${today}    -    2
+    ${date}    Set Variable    ${day}/${month}/${year}
+
+    ${actual_round} =  Replace String    ${b2c_txt_pickup_schedule}    {round}    ${round}
+    ${actual_pickup_date} =  Replace String    ${actual_round}    {pickup_date}    ${Booking.pickup_schedule['pickup_date']} ${nextDay}
+    ${actual_parcel} =  Replace String    ${actual_pickup_date}    {parcel_num}    ${Booking.pickup_schedule['parcel_number']} ${parcel_num}
+    ${actual_cut_off_time} =  Replace String    ${actual_parcel}    {cut_off_time}    ${Booking.pickup_schedule['cut_off_time']} ${date}
+    ${actual_pickup_schedule_checkbox} =  Replace String    ${actual_cut_off_time}    {price}    ${Booking.pickup_schedule['price']} ${price}
+
+    Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    timeout=${DEFAULT_TIMEOUT}
+    Set Suite Variable    ${actual_pickup_schedule_checkbox}
 
 Select Parcel Pickup Schedule 
-    common.Click When Ready    ${item}${b2c_btn_select_pickup_schedule}
+    common.Click When Ready    ${actual_pickup_schedule_checkbox}
 
 Click Save Button In Edit Booking List Popup
     ${btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
@@ -136,17 +138,16 @@ Click Save Button In Edit Booking List Popup
     common.Click When Ready    ${btn_save_shipping_origin}  
 
 Verify Complete Select Parcel Pickup Schedule And Save
-    [Arguments]    ${booking_time_label}    ${text_shipping_origin}    ${shipping_origin}
-    ${today}    dps_home_page.Set_ToDAY
-    ${text_booking_time_label}=    Replace String    ${b2c_txt_transaction_date}    {value}    ${booking_time_label}
+    [Arguments]    ${today}    ${shipping_origin}
+    Sleep    3s
+    ${text_booking_time_label}=    Replace String    ${b2c_txt_transaction_date}    {value}    ${booking['text_booking_time_label']}
     ${txt_booking_time_label}=    Replace String    ${text_booking_time_label}    {value2}    ${today}
 
-    ${txt_shipping_origin}=    Replace String    ${b2c_txt_shipping_origin}    {value}    ${text_shipping_origin}
+    ${txt_shipping_origin}=    Replace String    ${b2c_txt_shipping_origin}    {value}    ${booking['text_shipping_origin']}
     ${txt_shipping_origin}    Get Text    ${txt_shipping_origin}
-    ${txt_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
-    Reload Page
+    ${actual_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
     Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=30s
-    Should Be Equal As Strings    ${txt_shipping_origin}    ${text_shipping_origin} ${shipping_origin}
+    Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${shipping_origin}
 
 Select Shipping Origin Tab 
     [Arguments]    ${aria}
@@ -508,12 +509,6 @@ Import Excel File Of Dry Parcel Template
     Wait Until Element is Visible    ${b2c_btn_import_file_in_popup}
     Choose File    ${b2c_btn_import_file_in_popup}    ${excel_file}
 
-Verify Display Import File Popup
-    ${btn_template_file}=    Replace String    ${b2c_btn_template_in_popup}    {value}    ${Booking['text_btn_template']}
-    Execute JavaScript    document.getElementById('${b2c_btn_import_file_in_popup}').removeAttribute('hidden');
-    Wait Until Element Is Visible    ${b2c_btn_import_file_in_popup}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${btn_template_file}    timeout=${DEFAULT_TIMEOUT}
-
 Verify Import File Popup
     [Arguments]    ${btn_import}    ${btn_template}    ${txt_importTime}
     ...    ${txt_fileName}    ${txt_importResult}    ${txt_fileImportError}
@@ -672,3 +667,24 @@ Select Booked Pickup Time From List
     ${date}    Replace String    ${date}    -    /
     common.Scroll Into View By Xpath    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input    true
     common.Click Xpath By JavaScript    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input
+
+Verify Booking List In Booking Detail Page
+    [Arguments]    ${text_booking_id}    ${text_booking_name}    ${text_booking_time}    ${text_shipping_origin}
+    ${actual_text_booking_id}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${text_booking_id}
+    ${actual_text_booking_name}=    Replace String    ${b2c_txt_booking_name_booking_detail_page}    {value}    ${text_booking_name}
+    ${actual_text_booking_time}=    Replace String    ${b2c_txt_booking_date_and_time_booking_detail_page}    {value}    ${text_booking_time}
+    ${actual_text_shipping_origin}=    Replace String    ${b2c_txt_label_shipping_origin_booking_detail_page}    {value}    ${text_shipping_origin}
+    Sleep    2s
+    Wait Until Element Is VIsible    ${actual_text_booking_id}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is VIsible    ${actual_text_booking_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is VIsible    ${actual_text_booking_time}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is VIsible    ${actual_text_shipping_origin}    timeout=${DEFAULT_TIMEOUT}
+
+Verify Popup To Edit Booking List
+    [Arguments]    ${parcel_type}    ${booking_name}    ${shipping_origin}
+    ${actual_text_parcel_type}=    Replace String    ${b2c_txt_label_in_edit_popup_booking_list}    {value}        ${parcel_type}
+    ${actual_text_booking_name}=    Replace String    ${b2c_txt_label_in_edit_popup_booking_list}    {value}        ${booking_name}
+    ${actual_text_shipping_origin}=    Replace String    ${b2c_txt_label_in_edit_popup_booking_list}    {value}        ${shipping_origin}
+    Wait Until Element Is VIsible    ${actual_text_parcel_type}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is VIsible    ${actual_text_booking_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is VIsible    ${actual_text_shipping_origin}    timeout=${DEFAULT_TIMEOUT}

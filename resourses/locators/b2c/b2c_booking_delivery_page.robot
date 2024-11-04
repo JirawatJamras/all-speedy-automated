@@ -37,7 +37,7 @@ ${btn_take_out_coupon}    //span[text()='{value}']/..
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
 ${btn_choose_favorites_list_store}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[contains(text(),'{store_address}')]/../../../../label
 ${btn_choose_store}    //b[text()='{value}']/..
-${btn_close_popup}    //div[@class='ant-modal-header']/..//button//span[@aria-label='close']
+${btn_close_popup}    //div[text()='{value}']/../../..//button//span[@aria-label='close']
 ${btn_confirm_to_close_popup}    //button//span[@aria-label='check']
 ${btn_card_latest_booking}    (//div[@class='ant-spin-container']//div[@class='ant-card-body'])[1]
 

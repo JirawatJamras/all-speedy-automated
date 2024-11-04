@@ -9,7 +9,7 @@ Set Tomorrow Date
     ${tomorrow}    Set Variable    ${day}-${month}-${year_be}
     RETURN    ${tomorrow}
 
-Set_ToDAY
+Set Date Pattern
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
     ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
