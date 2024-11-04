@@ -272,26 +272,26 @@ dc_operation:
     toei: toei test
   title:
     homepage: ภาพรวมงานประจำวัน
-    Scan: Scan
-    Pouch: รายการ Pouch
-    Report: รายการพัสดุแจ้งปัญหา
-    Check_Notification: ตรวจสอบแจ้งเตือน
-    Waiting_Destroy: พัสดุรอทำลาย
-    Upload_Route: อัปโหลด Route
-    Check_Receiving_Cycle: ตรวจสอบรอบการเข้ารับพัสดุ
-    History_Parcel: รายการประวัติพัสดุทั้งหมด
+    scan: Scan
+    pouch: รายการ Pouch
+    report: รายการพัสดุแจ้งปัญหา
+    check_notification: ตรวจสอบแจ้งเตือน
+    waiting_destroy: พัสดุรอทำลาย
+    upload_route: อัปโหลด Route
+    check_receiving_cycle: ตรวจสอบรอบการเข้ารับพัสดุ
+    history_parcel: รายการประวัติพัสดุทั้งหมด
   breadcrumb:
     homepage: หน้าหลัก
   dps_menu:
-    Home_Page: homepage
-    Scan: scan
-    Pouch: pouch
-    Report: reportpage
-    Check_Notification: check-notifications
-    Waiting_Destroy: waiting-destroy
-    Upload_Route: upload-route
-    Check_Receiving_Cycle: check-receiving-cycle
-    History_Parcel: historyparcel
+    homepage: homepage
+    scan: scan
+    pouch: pouch
+    report: reportpage
+    check_notification: check-notifications
+    waiting_destroy: waiting-destroy
+    upload_route: upload-route
+    check_receiving_cycle: check-receiving-cycle
+    history_parcel: historyparcel
   Check_Receiving_Cycle_Tab:
     all_parcels_received: รายการเข้ารับพัสดุทั้งหมด
     waiting_inventory_confirm_list: รายการรอคลังยืนยัน
