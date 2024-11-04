@@ -104,3 +104,11 @@ DC_Operation_S012:
     pouch_number: '-'
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
+  data_in_send_task_tab:
+    send_to: Store
+    store_code: '07004'
+    customer_type: 'B2C'
+    transport: CP All
+    number_of_pieces: '1'
+  filter:
+    parcel_status: พัสดุรอนำจ่ายโดยคลัง

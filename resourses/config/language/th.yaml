@@ -324,6 +324,24 @@ dc_operation:
     scan_out: Scan Out
     move_status: Move Status
     change_courier: Change Courier
+  label_all_task_tab:
+    task_type: ประเภทงาน
+    parcel_owner: Parcel Owner
+    import_from: งานรับเข้าจาก
+    export_to: ส่งออกไปยัง
+    transport: ผ่านขนส่ง
+    pouch_number: Pouch Number 
+    parcel_number: หมายเลขพัสดุ
+    parcel_status: สถานะพัสดุ
+  label_import_task_tab:
+    import_from: งานรับเข้าจาก
+    transport: ผ่านขนส่ง
+    parcel_owner: Parcel Owner
+    number_of_pouch: จำนวน Pouch
+    number_of_pieces: จำนวนชิ้น
+    number_of_scanned_items: รวมรายการที่ต้องการสแกน
+  button_filter: ตัวกรอง
+  button_search: ค้นหา
 
 rm:
   text_pre_register: Pre-Register

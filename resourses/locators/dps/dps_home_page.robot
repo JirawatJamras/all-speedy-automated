@@ -10,18 +10,33 @@ ${dps_txt_admission_task_number_home_page}  //div[@class='ant-col ant-col-5 css-
 ${dps_txt_parcels_in_warehouse_home_page}    //div[@class='ant-col ant-col-14 css-1x1kih3']
 ${dps_txt_daily_task_overview_home_page}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 ${dps_txt_breadcrumb_home_page}    //span[@class='ant-breadcrumb-link' and text()='{value}']
-${dps_txt_list_first_daily_task_home_page}    (//tbody[@class='ant-table-tbody']//h1[text()='{parcel_status}']/../../..//td[text()='{parcel_number}']/..//td[text()='{pouch_number}']/..//td[text()='{transport}']/..//td[text()='{export_to}']/..//td[text()='{import_from}']/..//td[text()='{parcel_owner}']/..//td[text()='{task_type}']/..)[1]
-${dps_txt_list_first_import_task_home_page}    (//tr[@aria-hidden='true']/..//tr[contains(@class,'ant-table-row')]//td[text()='{number_of_scanned_items}']/..//td[text()='{number_of_pieces}']/..//td[text()='{number_of_pouch}']/..//td[text()='{parcel_owner}']/..//td[text()='{transport}']/..//td[text()='{import_from}']/..)[1]
-# ${dps_txt_list_first_import_task_home_page}    //tr[@aria-hidden='true']/..//tr[contains(@class,'ant-table-row')]//td[text()='{number_of_pouch}']/..//td[text()='{parcel_owner}']/..//td[text()='{transport}']/..//td[text()='{import_from}']/..
+${dps_txt_list_first_all_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{task_type}']/..//td[text()='{parcel_owner}']/..//td[text()='{import_from}']/..//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{pouch_number}']/..//td[text()='{parcel_number}']/..//h1[contains(text(),'{parcel_status}')]/../../..)[1]
+${dps_txt_list_first_import_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{import_from}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[text()='{number_of_pouch}']/..//td[5]/..//td[6]/..)[1]
+${dps_txt_list_first_send_task_home_page}    (//tr[@aria-hidden='true']/..//td[text()='{number_of_scanned_items}']/..//td[text()='{number_of_pieces}']/..//td[text()='{number_of_pouch}']/..//td[text()='{transport}']/..//td[text()='{store_code}']/..//td[text()='{send_to}']/..)[1]
 ${dps_txt_list_first_export_task_home_page}    (//tr[@aria-hidden='true']/..//tr[contains(@class,'ant-table-row')]//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[text()='{number_of_pouch}']/..//td[text()='{number_of_pieces}']/..//td[text()='{number_of_scanned_items}']/..)[1]
-
-
 ${dps_txt_page_title}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 ${dps_txt_role_user}    /../..//strong[text()='{value}']
+${dps_txt_task_type_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[1]
+${dps_txt_parcel_owner_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[2]
+${dps_txt_import_from_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[3]
+${dps_txt_export_to_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[4]
+${dps_txt_transport_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[5]
+${dps_txt_pouch_number_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[6]
+${dps_txt_parcel_number_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[7]
+${dps_txt_parcel_type_in_all_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-1']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[8]
+${dps_txt_import_from_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[1]
+${dps_txt_transport_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[2]
+${dps_txt_parcel_owner_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[3]
+${dps_txt_number_of_pouch_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[4]
+${dps_txt_number_of_pieces_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[5]
+${dps_txt_number_of_scanned_items_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[6]
 
 ${dps_btn_dropdown_select_role}    //span[@aria-label='down-circle']
 ${dps_btn_role}    //li[@role='menuitem']//button[text()='{value}']
 ${dps_btn_selected_warehouse_list_home_page}    //div[text()='{value}']/../..
+${dps_btn_pagination_right_home_page}    //div[@aria-hidden='false']//span[@aria-label='right']/..
+${dps_btn_filter_home_page}    //div[@aria-hidden='false']//span[text()='{value}']/..
+${dps_btn_search_filter_home_page}    //div[text()='{value}']/..
 
 ${dps_tab_name}    //div[@role='tab' and text()='{value}']
 ${dps_tab_in_home_page}    //div[@class='ant-tabs-nav-list']//div[text()='{value}']   
@@ -31,3 +46,6 @@ ${dps_img_loading_screen_home_page}    //div[@role='dialog']
 
 ${dps_cbo_warehouse_list_home_page}    //li[@role='menuitem']/..//span[text()='{warehouse}']
 ${dps_cbo_selected_warehouse_list_home_page}    //span[contains(@class,'ant-checkbox-checked')]/..//span[text()='{warehouse}']
+${dps_cbo_parcel_status_home_page}    (//div[@title='พัสดุรอนำจ่ายโดยคลัง'])[1]
+
+${dps_txtbox_parcel_status}    //input[@type='search' and @id='status']

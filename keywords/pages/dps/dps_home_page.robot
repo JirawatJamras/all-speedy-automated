@@ -57,24 +57,73 @@ Verify Homepage
     ${actual_daily_task_overview}=    Get Text    ${dps_txt_daily_task_overview}
     Should Be Equal    ${actual_daily_task_overview}    ${head_title}
 
-Verify Data In All Task Tab
-    [Arguments]    ${parcel_status}    ${parcel_number}    ${pouch_number}    ${transport}    
-    ...            ${export_to}    ${import_from}    ${parcel_owner}    ${task_type}
+Verify Label In All Task Tab
+    [Arguments]    ${task_type}    ${parcel_owner}   ${import_from}    ${export_to}    
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
+    Wait Until Element Is Visible    ${dps_txt_task_type_in_all_task_tab_home_page}    timeout=${DEFAULT_TIMEOUT}
     ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['all_task']}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task_home_page}    {parcel_status}    ${parcel_status}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {parcel_number}    ${parcel_number}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {pouch_number}    ${pouch_number}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {transport}    ${transport}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {export_to}    ${export_to}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {import_from}    ${import_from}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {parcel_owner}    ${parcel_owner}
-    ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {task_type}    ${task_type}
-    Scroll Element Into View    ${dps_txt_list_first_daily_task}
     ${actual_tab_all_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
     Should Be Equal    ${actual_tab_all_task_status}    true
-    ${actual_list_first_daily_task}=    Get Text    ${dps_txt_list_first_daily_task}
+    ${actual_txt_task_type_in_all_task_tab}=    Get Text    ${dps_txt_task_type_in_all_task_tab_home_page}
+    ${actual_txt_parcel_owner_in_all_task_tab}=    Get Text    ${dps_txt_parcel_owner_in_all_task_tab_home_page}
+    ${actual_txt_import_from_in_all_task_tab}=    Get Text    ${dps_txt_import_from_in_all_task_tab_home_page}
+    ${actual_txt_export_to_in_all_task_tab}=    Get Text    ${dps_txt_export_to_in_all_task_tab_home_page}
+    ${actual_txt_transport_in_all_task_tab}=    Get Text    ${dps_txt_transport_in_all_task_tab_home_page}
+    ${actual_txt_pouch_number_in_all_task_tab}=    Get Text    ${dps_txt_pouch_number_in_all_task_tab_home_page}
+    ${actual_txt_parcel_number_in_all_task_tab}=    Get Text    ${dps_txt_parcel_number_in_all_task_tab_home_page}
+    ${actual_txt_parcel_type_in_all_task_tab}=    Get Text    ${dps_txt_parcel_type_in_all_task_tab_home_page}
+    Should Be Equal    ${actual_txt_task_type_in_all_task_tab}    ${task_type}
+    Should Be Equal    ${actual_txt_parcel_owner_in_all_task_tab}    ${parcel_owner}
+    Should Be Equal    ${actual_txt_import_from_in_all_task_tab}    ${import_from}
+    Should Be Equal    ${actual_txt_export_to_in_all_task_tab}    ${export_to}
+    Should Be Equal    ${actual_txt_transport_in_all_task_tab}    ${transport}
+    Should Be Equal    ${actual_txt_pouch_number_in_all_task_tab}    ${pouch_number}
+    Should Be Equal    ${actual_txt_parcel_number_in_all_task_tab}    ${parcel_number}
+    Should Be Equal    ${actual_txt_parcel_type_in_all_task_tab}    ${parcel_status}
+
+Verify Data In All Task Tab
+    [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {export_to}    ${export_to}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {transport}    ${transport}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {pouch_number}    ${pouch_number}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_number}    ${parcel_number}
+    ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_status}    ${parcel_status}
+    Scroll Element Into View    ${dps_txt_list_first_all_task}
+    ${actual_list_first_daily_task}=    Get Text    ${dps_txt_list_first_all_task}
     ${actual_list_first_daily_task}=    Replace String    ${actual_list_first_daily_task}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_first_daily_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
+
+Verify Data In All Task Tab (Loop To Find Each Row)
+    [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
+        ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['all_task']}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {export_to}    ${export_to}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {transport}    ${transport}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {pouch_number}    ${pouch_number}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_number}    ${parcel_number}
+        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_status}    ${parcel_status}
+        ${actual_tab_all_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
+            Should Be Equal    ${actual_tab_all_task_status}    true
+    WHILE    True
+        ${elementIsVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_txt_list_first_all_task}    timeout=${DEFAULT_TIMEOUT}
+        IF    '${elementIsVisible}' == 'True'
+            Scroll Element Into View    ${dps_txt_list_first_all_task}
+            ${actual_list_first_daily_task}=    Get Text    ${dps_txt_list_first_all_task}
+            ${actual_list_first_daily_task}=    Replace String    ${actual_list_first_daily_task}    \n    ${SPACE}
+            Should Be Equal As Strings    ${actual_list_first_daily_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
+            Exit For Loop
+        ELSE
+            Scroll Element Into View    ${dps_btn_pagination_right_home_page}
+            common.Click When Ready    ${dps_btn_pagination_right_home_page}
+        END
+    END    
 
 Click Dropdown For Select Role
     common.Click When Ready    ${dps_btn_dropdown_select_role}
@@ -110,19 +159,36 @@ Select Tab Hold Parcel
 
 Select Tab SLA Parcel
     Select Tab In Home Page    ${dc_operation.tab_daily_task['sla_parcel']}
-    
-Verify Data In Import Task Tab
-    [Arguments]    ${number_of_scanned_items}    ${number_of_pieces}    ${number_of_pouch}   
-    ...            ${parcel_owner}    ${transport}    ${import_from}
+
+Verify Label In Import Task Tab
+    [Arguments]    ${import_from}    ${transport}    ${parcel_owner}   
+    ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
+    Wait Until Element Is Visible    ${dps_txt_import_from_in_import_task_tab_home_page}    timeout=${DEFAULT_TIMEOUT}
     ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['import_task']}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task_home_page}    {number_of_scanned_items}    ${number_of_scanned_items}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {parcel_owner}    ${parcel_owner}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {transport}    ${transport}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {import_from}    ${import_from}
     ${actual_tab_import_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
     Should Be Equal    ${actual_tab_import_task_status}    true
+    ${actual_txt_import_from_in_import_task_tab}=    Get Text    ${dps_txt_import_from_in_import_task_tab_home_page}
+    ${actual_txt_transport_in_import_task_tab}=    Get Text    ${dps_txt_transport_in_import_task_tab_home_page}
+    ${actual_txt_parcel_owner_in_import_task_tab}=    Get Text    ${dps_txt_parcel_owner_in_import_task_tab_home_page}
+    ${actual_txt_number_of_pouch_in_import_task_tab}=    Get Text    ${dps_txt_number_of_pouch_in_import_task_tab_home_page}
+    ${actual_txt_number_of_pieces_in_import_task_tab}=    Get Text    ${dps_txt_number_of_pieces_in_import_task_tab_home_page}
+    ${actual_txt_number_of_scanned_items_in_import_task_tab}=    Get Text    ${dps_txt_number_of_scanned_items_in_import_task_tab_home_page}
+    Should Be Equal    ${actual_txt_import_from_in_import_task_tab}    ${import_from}
+    Should Be Equal    ${actual_txt_transport_in_import_task_tab}    ${transport}
+    Should Be Equal    ${actual_txt_parcel_owner_in_import_task_tab}    ${parcel_owner}
+    Should Be Equal    ${actual_txt_number_of_pouch_in_import_task_tab}    ${number_of_pouch}
+    Should Be Equal    ${actual_txt_number_of_pieces_in_import_task_tab}    ${number_of_pieces}
+    Should Be Equal    ${actual_txt_number_of_scanned_items_in_import_task_tab}    ${number_of_scanned_items}
+    
+Verify Data In Import Task Tab
+    [Arguments]    ${import_from}    ${transport}    ${parcel_owner}   
+    ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
+    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task_home_page}    {import_from}    ${import_from}
+    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {transport}    ${transport}
+    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
+    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
+    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_scanned_items}    ${number_of_scanned_items}
     ${actual_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
     Should Be Equal    ${actual_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
 
@@ -374,3 +440,31 @@ Wait Until Home Page Loaded
     Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=${DEFAULT_TIMEOUT}
 
+Verify Data In Send Task Tab
+    [Arguments]    ${number_of_scanned_items}    ${number_of_pieces}    ${number_of_pouch}   
+    ...            ${transport}    ${store_code}    ${send_to}
+    ${dps_tab_send_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['send_task']}
+    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task_home_page}    {number_of_scanned_items}    ${number_of_scanned_items}
+    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {number_of_pieces}    ${number_of_pieces}
+    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {number_of_pouch}    ${number_of_pouch}
+    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {transport}    ${transport}
+    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {store_code}    ${store_code}
+    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {send_to}    ${send_to}
+    Scroll Element Into View    ${dps_txt_list_first_send_task}
+    ${actual_tab_send_task_status}=    Get Element Attribute    ${dps_tab_send_task}    aria-selected
+    Should Be Equal    ${actual_tab_send_task_status}    true
+    ${actual_list_first_import_task}=    Get Text    ${dps_txt_list_first_send_task}
+    Should Be Equal    ${actual_list_first_import_task}    ${send_to} ${store_code} ${transport} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
+
+Select Filter Button
+    ${dps_btn_filter}=    Replace String    ${dps_btn_filter_home_page}    {value}    ${dc_operation['button_filter']}
+    Scroll Element Into View    ${dps_btn_filter}
+    common.Click When Ready    ${dps_btn_filter}
+
+Input Fiter Parcel Status
+    [Arguments]    ${parcel_status}
+    ${dps_cbo_parcel_status}=    Replace String    ${dps_cbo_parcel_status_home_page}    {value}    ${parcel_status}
+    ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_home_page}    {value}    ${dc_operation['button_search']}
+    common.Input When Ready    ${dps_txtbox_parcel_status}    ${parcel_status}
+    common.Click When Ready    ${dps_cbo_parcel_status}
+    common.Click When Ready    ${dps_btn_search_filter}
