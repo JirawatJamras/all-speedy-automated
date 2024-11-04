@@ -59,6 +59,24 @@ DC_Operation_S006:
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
 
+DC_Operation_S007:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '6'
+    number_of_scanned_items: '6'
+
 DC_Operation_S012:
   data_in_all_task_tab:
     task_type: งานรับเข้า

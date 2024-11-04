@@ -13,6 +13,7 @@ ${dps_txt_breadcrumb_home_page}    //span[@class='ant-breadcrumb-link' and text(
 ${dps_txt_list_first_daily_task_home_page}    (//tbody[@class='ant-table-tbody']//h1[text()='{parcel_status}']/../../..//td[text()='{parcel_number}']/..//td[text()='{pouch_number}']/..//td[text()='{transport}']/..//td[text()='{export_to}']/..//td[text()='{import_from}']/..//td[text()='{parcel_owner}']/..//td[text()='{task_type}']/..)[1]
 ${dps_txt_list_first_import_task_home_page}    (//tr[@aria-hidden='true']/..//tr[contains(@class,'ant-table-row')]//td[text()='{number_of_scanned_items}']/..//td[text()='{number_of_pieces}']/..//td[text()='{number_of_pouch}']/..//td[text()='{parcel_owner}']/..//td[text()='{transport}']/..//td[text()='{import_from}']/..)[1]
 # ${dps_txt_list_first_import_task_home_page}    //tr[@aria-hidden='true']/..//tr[contains(@class,'ant-table-row')]//td[text()='{number_of_pouch}']/..//td[text()='{parcel_owner}']/..//td[text()='{transport}']/..//td[text()='{import_from}']/..
+${dps_txt_list_first_export_task_home_page}    (//tr[@aria-hidden='true']/..//tr[contains(@class,'ant-table-row')]//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[text()='{number_of_pouch}']/..//td[text()='{number_of_pieces}']/..//td[text()='{number_of_scanned_items}']/..)[1]
 
 
 ${dps_txt_page_title}    //div[@class='ant-card-head-title']//strong[text()='{value}']
