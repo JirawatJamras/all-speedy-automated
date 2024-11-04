@@ -73,6 +73,29 @@ Select Role
     Wait Until Element Is Visible    ${dps_btn_role}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${dps_btn_role}
 
-Select Tab Incoming Task
-    ${dps_tab_incoming_task}=    Replace String    ${dps_tab_incoming_task}    {value}    ${dc_operation.tab_daily_task['incoming_task']}
-    common.Click When Ready    ${dps_tab_incoming_task}
+Select Tab In Home Page
+    [Arguments]    ${tab}
+    ${dps_tab_in_home_page}=    Replace String    ${dps_tab_in_home_page}    {value}    ${tab}
+    common.Click When Ready    ${dps_tab_in_home_page}
+
+Select Tab All Task
+    Select Tab In Home Page    ${dc_operation.tab_daily_task['all_task']}
+
+Select Tab Import Task
+    Select Tab In Home Page    ${dc_operation.tab_daily_task['import_task']}
+
+Select Tab Export Task
+    Select Tab In Home Page    ${dc_operation.tab_daily_task['export_task']}
+
+Select Tab Send Task
+    Select Tab In Home Page    ${dc_operation.tab_daily_task['send_task']}
+
+Select Tab Expedited Delivery Parcel
+    Select Tab In Home Page    ${dc_operation.tab_daily_task['expedited_delivery_parcel']}
+
+Select Tab Hold Parcel
+    Select Tab In Home Page    ${dc_operation.tab_daily_task['hold_parcel']}
+
+Select Tab SLA Parcel
+    Select Tab In Home Page    ${dc_operation.tab_daily_task['sla_parcel']}
+    

@@ -19,7 +19,7 @@ ${dps_btn_role}    //li[@role='menuitem']//button[text()='{value}']
 ${dps_btn_selected_warehouse_list_home_page}    //div[text()='{value}']/../..
 
 ${dps_tab_name}    //div[@role='tab' and text()='{value}']
-${dps_tab_incoming_task}    //div[@data-node-key='2']/div[text()='{value}']
+${dps_tab_in_home_page}    //div[@class='ant-tabs-nav-list']//div[text()='{value}']
 
 ${dps_img_icon_user}    //span[@class='anticon anticon-user']
 ${dps_img_loading_screen_home_page}    //*[@class='ant-modal-content']

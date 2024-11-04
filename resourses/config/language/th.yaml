@@ -301,6 +301,17 @@ dc_operation:
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_DC_BB: คลัง DC BB
+  tab_daily_task:
+    all_task: งานทั้งหมด
+    import_task: งานรับเข้า
+    export_task: งานส่งออก
+    send_task: งานนำจ่าย
+    expedited_delivery_parcel: พัสดุเร่งจัดส่ง
+    hold_parcel: พัสดุ Hold
+    sla_parcel: พัสดุเกิน SLA
+
+    
+
 
 rm:
   text_pre_register: Pre-Register
