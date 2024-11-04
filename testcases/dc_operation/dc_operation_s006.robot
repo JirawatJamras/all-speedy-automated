@@ -33,7 +33,7 @@ DC_Operation_S006
     # ...    ${dc_operation.title['homepage']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S006.data_in_all_task_tab['parcel_status']}
-    # ...    SPCD241000006138
+    # ...    SPCD241000006714
     # ...    ${DC_Operation_S006.data_in_all_task_tab['pouch_number']}
     # ...    CPALL  # ${DC_Operation_S006.data_in_all_task_tab['transport']}
     # ...    ${DC_Operation_S006.data_in_all_task_tab['export_to']}
@@ -60,7 +60,7 @@ DC_Operation_S006
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
-    dps_scan_page.Input Tracking Number [Scan In Page]    SPCD241000006138
+    dps_scan_page.Input Tracking Number [Scan In Page]    SPCD241000006714
     dps_scan_page.Click Search Button
     # Defect143
     # Expected
@@ -75,6 +75,7 @@ DC_Operation_S006
 
     Log    Step No.5 คลิกปุ่ม ยืนยัน/Print Label
     dps_parcel_detail_page.Click Print Label
+    Sleep    10s
     
     Log    Step No.6 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
