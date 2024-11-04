@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on darwin)" generated="2024-11-04T15:41:47.279157" rpa="false" schemaversion="5">
+<suite id="s1" name="Dc Operation S006" source="/Users/jirawat/Documents/AllSpeedy/Github/all-speedy-automated/report/../testcases/dc_operation/dc_operation_s006.robot">
+<test id="s1-t1" name="DC_Operation_S006" line="10">
+<kw name="Run Keywords" owner="BuiltIn" type="SETUP">
+<kw name="Open Chrome Browser" owner="common">
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2024-11-04T15:41:47.646063" level="INFO">${chrome_options} = &lt;selenium.webdriver.chrome.options.Options object at 0x107d37530&gt;</msg>
+<var>${chrome_options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys, selenium.webdriver</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.645930" elapsed="0.000154"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-extensions</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.646191" elapsed="0.000056"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-infobars</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.646343" elapsed="0.000058"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-gpu</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.646489" elapsed="0.000040"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--disable-dev-shm-usage</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.646705" elapsed="0.000114"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--no-sandbox</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.646946" elapsed="0.000052"/>
+</kw>
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--window-size\=1920,1080</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.647089" elapsed="0.000059"/>
+</kw>
+<if>
+<branch type="IF" condition="'${chrome}'=='headlesschrome'">
+<kw name="Call Method" owner="BuiltIn">
+<arg>${chrome_options}</arg>
+<arg>add_argument</arg>
+<arg>--headless\=old</arg>
+<doc>Calls the named method of the given object with the provided arguments.</doc>
+<status status="NOT RUN" start="2024-11-04T15:41:47.647340" elapsed="0.000009"/>
+</kw>
+<status status="NOT RUN" start="2024-11-04T15:41:47.647196" elapsed="0.000170"/>
+</branch>
+<status status="PASS" start="2024-11-04T15:41:47.647181" elapsed="0.000208"/>
+</if>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:41:47.647606" level="INFO">Opening browser 'Chrome' to base url 'about:blank'.</msg>
+<arg>about:blank</arg>
+<arg>Chrome</arg>
+<arg>options=${chrome_options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.647495" elapsed="1.321994"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>0.1</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.969940" elapsed="0.000194"/>
+</kw>
+<arg>chrome</arg>
+<status status="PASS" start="2024-11-04T15:41:47.645734" elapsed="1.324460"/>
+</kw>
+<kw name="Set Folder Result with date" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-11-04T15:41:48.970915" level="INFO">${date_YYYY_MM_DD} = 2024-11-04 15:41:48.971</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.970818" elapsed="0.000109"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-11-04T15:41:48.971932" level="INFO">${date_YYYY_MM_DD} = 2024-11-04</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.971024" elapsed="0.000919"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-04T15:41:48.972111" level="INFO">${FOlDER_RESULT} = ../results/2024-11-04</msg>
+<var>${FOlDER_RESULT}</var>
+<arg>../results/${date_YYYY_MM_DD}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.972045" elapsed="0.000074"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-04T15:41:48.972318" level="INFO">${FOlDER_RESULT} = ../results/2024-11-04</msg>
+<arg>${FOlDER_RESULT}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.972223" elapsed="0.000107"/>
+</kw>
+<kw name="Set Current Date in Thai" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-11-04T15:41:48.972643" level="INFO">${date} = 04</msg>
+<var>${date}</var>
+<arg>result_format=%d</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.972584" elapsed="0.000067"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-11-04T15:41:48.972788" level="INFO">${month} = November</msg>
+<var>${month}</var>
+<arg>result_format=%B</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.972741" elapsed="0.000055"/>
+</kw>
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-11-04T15:41:48.972931" level="INFO">${year} = 2024</msg>
+<var>${year}</var>
+<arg>result_format=%Y</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.972881" elapsed="0.000057"/>
+</kw>
+<kw name="Convert Month To Thai" owner="common">
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Set Variable" owner="BuiltIn">
+<arg>พฤศจิกายน</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.973605" elapsed="0.000037"/>
+</kw>
+<msg time="2024-11-04T15:41:48.973684" level="INFO">${thai_month} = พฤศจิกายน</msg>
+<var>${thai_month}</var>
+<arg>'${english_month}' == 'January'</arg>
+<arg>Set Variable</arg>
+<arg>มกราคม</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'February'</arg>
+<arg>Set Variable</arg>
+<arg>กุมภาพันธ์</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'March'</arg>
+<arg>Set Variable</arg>
+<arg>มีนาคม</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'April'</arg>
+<arg>Set Variable</arg>
+<arg>เมษายน</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'May'</arg>
+<arg>Set Variable</arg>
+<arg>พฤษภาคม</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'June'</arg>
+<arg>Set Variable</arg>
+<arg>มิถุนายน</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'July'</arg>
+<arg>Set Variable</arg>
+<arg>กรกฎาคม</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'August'</arg>
+<arg>Set Variable</arg>
+<arg>สิงหาคม</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'September'</arg>
+<arg>Set Variable</arg>
+<arg>กันยายน</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'October'</arg>
+<arg>Set Variable</arg>
+<arg>ตุลาคม</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'November'</arg>
+<arg>Set Variable</arg>
+<arg>พฤศจิกายน</arg>
+<arg>ELSE IF</arg>
+<arg>'${english_month}' == 'December'</arg>
+<arg>Set Variable</arg>
+<arg>ธันวาคม</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.973192" elapsed="0.000501"/>
+</kw>
+<return>
+<value>${thai_month}</value>
+<status status="PASS" start="2024-11-04T15:41:48.973808" elapsed="0.000094"/>
+</return>
+<msg time="2024-11-04T15:41:48.974028" level="INFO">${thai_month} = พฤศจิกายน</msg>
+<var>${thai_month}</var>
+<arg>${month}</arg>
+<status status="PASS" start="2024-11-04T15:41:48.973044" elapsed="0.001003"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-11-04T15:41:48.974298" level="INFO">${current_date_thai} = 04 พฤศจิกายน 2024</msg>
+<var>${current_date_thai}</var>
+<arg>${date} ${thai_month} ${year}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.974202" elapsed="0.000110"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-04T15:41:48.974803" level="INFO">${current_date_thai} = 04 พฤศจิกายน 2024</msg>
+<arg>${current_date_thai}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.974685" elapsed="0.000138"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:41:48.972439" elapsed="0.002419"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:41:48.970478" elapsed="0.004401"/>
+</kw>
+<arg>Open Chrome Browser</arg>
+<arg>chrome</arg>
+<arg>AND</arg>
+<arg>Set Folder Result with date</arg>
+<doc>Executes all the given keywords in a sequence.</doc>
+<status status="PASS" start="2024-11-04T15:41:47.645479" elapsed="1.329429"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-04T15:41:48.975113" level="INFO">Pre Condition</msg>
+<arg>Pre Condition</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.975072" elapsed="0.000056"/>
+</kw>
+<kw name="Open URL" owner="common">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:41:48.975533" level="INFO">Opening url 'https://dps-uat.allspeedy.co.th/'</msg>
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-11-04T15:41:48.975479" elapsed="0.880579"/>
+</kw>
+<arg>${DPS_UAT_URL}</arg>
+<status status="PASS" start="2024-11-04T15:41:48.975279" elapsed="0.880890"/>
+</kw>
+<kw name="Click Go Login Button" owner="dps_landing_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_btn_go_login}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:41:49.856871" elapsed="0.224706"/>
+</kw>
+<kw name="Click Xpath By JavaScript" owner="common">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=${path}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-04T15:41:50.082633" elapsed="0.110997"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:41:50.195824" level="INFO">Executing JavaScript:
+document.evaluate("//span[text()='เข้าสู่ระบบ']/../..//button", document.body, null, 9, null).singleNodeValue.click()
+Without any arguments.</msg>
+<arg>document.evaluate("${path}", document.body, null, 9, null).singleNodeValue.click()</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-11-04T15:41:50.194522" elapsed="0.882878"/>
+</kw>
+<arg>${dps_btn_go_login}</arg>
+<status status="PASS" start="2024-11-04T15:41:50.082091" elapsed="0.995429"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_txtbox_username}</arg>
+<arg>timeout=5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:41:51.078050" elapsed="0.539519"/>
+</kw>
+<msg time="2024-11-04T15:41:51.618216" level="INFO">${isvisible} = True</msg>
+<var>${isvisible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${dps_txtbox_username}</arg>
+<arg>timeout=5</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-11-04T15:41:51.077815" elapsed="0.540468"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${isvisible}' == 'False'</arg>
+<arg>Reload Page</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-04T15:41:51.619382" elapsed="0.000636"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:41:49.856490" elapsed="1.763674"/>
+</kw>
+<kw name="Input Email" owner="dps_login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_txtbox_username}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:41:51.636224" elapsed="0.232008"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:41:51.870119" level="INFO">Typing text 'testloginspeedyldap03@cpall.store' into text field '//input[@id='login']'.</msg>
+<arg>${dps_txtbox_username}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:41:51.869350" elapsed="0.424872"/>
+</kw>
+<arg>${dps_login_user_04['username']}</arg>
+<status status="PASS" start="2024-11-04T15:41:51.622668" elapsed="0.671705"/>
+</kw>
+<kw name="Input Password" owner="dps_login_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_txtbox_password}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:41:52.303774" elapsed="0.225663"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:41:52.530480" level="INFO">Typing text 'id711711711711' into text field '//input[@id='passwd']'.</msg>
+<arg>${dps_txtbox_password}</arg>
+<arg>${value}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:41:52.530077" elapsed="0.433164"/>
+</kw>
+<arg>${dps_login_user_04['password']}</arg>
+<status status="PASS" start="2024-11-04T15:41:52.294870" elapsed="0.668478"/>
+</kw>
+<kw name="Click Log On Button" owner="dps_login_page">
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:41:52.964201" elapsed="0.214473"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:41:53.180524" level="INFO">Clicking element '//a[@id='loginBtn']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:41:53.179812" elapsed="0.269913"/>
+</kw>
+<arg>${dps_btn_log_on}</arg>
+<status status="PASS" start="2024-11-04T15:41:52.963930" elapsed="0.486048"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:41:52.963668" elapsed="0.486402"/>
+</kw>
+<kw name="Wait Until Home Page Loaded" owner="dps_home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_img_loading_screen_home_page}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:41:53.450855" elapsed="2.105232"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${dps_img_loading_screen_home_page}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-11-04T15:41:55.556575" elapsed="11.358450"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:41:53.450467" elapsed="13.464738"/>
+</kw>
+<kw name="Click Dropdown For Select Role" owner="dps_home_page">
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:06.916808" elapsed="0.217155"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:07.134715" level="INFO">Clicking element '//span[@aria-label='down-circle']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:07.134418" elapsed="0.315573"/>
+</kw>
+<arg>${dps_btn_dropdown_select_role}</arg>
+<status status="PASS" start="2024-11-04T15:42:06.916498" elapsed="0.533580"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:42:06.916175" elapsed="0.533935"/>
+</kw>
+<kw name="Select Role" owner="dps_home_page">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-04T15:42:07.455774" level="INFO">${dps_btn_role} = //li[@role='menuitem']//button[text()='แอดมินคลัง']</msg>
+<var>${dps_btn_role}</var>
+<arg>${dps_btn_role}</arg>
+<arg>{value}</arg>
+<arg>${role}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-04T15:42:07.455667" elapsed="0.000122"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_btn_role}</arg>
+<arg>timeout=${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:07.455918" elapsed="0.216287"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:07.672881" level="INFO">Clicking element '//li[@role='menuitem']//button[text()='แอดมินคลัง']'.</msg>
+<arg>${dps_btn_role}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:07.672668" elapsed="0.241200"/>
+</kw>
+<arg>${dc_operation.role['admin']}</arg>
+<status status="PASS" start="2024-11-04T15:42:07.450389" elapsed="0.463684"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-04T15:42:07.914490" level="INFO">Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB</msg>
+<arg>Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-04T15:42:07.914365" elapsed="0.000153"/>
+</kw>
+<kw name="Select DPS Menu" owner="dps_home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@href='/${tabname}']</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:07.920419" elapsed="0.217861"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@href='/${tabname}']</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:08.138673" elapsed="0.216965"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:08.356412" level="INFO">Simulating Mouse Over on element '//a[@href='/homepage']'.</msg>
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:08.356075" elapsed="0.479029"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:08.835355" elapsed="0.212933"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:09.048797" level="INFO">Clicking element '//a[@href='/homepage']'.</msg>
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:09.048605" elapsed="0.239016"/>
+</kw>
+<kw name="Mouse Out" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:09.288194" level="INFO">Simulating Mouse Out on element '//a[@href='/homepage']'.</msg>
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Simulates moving the mouse away from the element ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:09.287966" elapsed="0.842579"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tabname}' == 'homepage'">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="PASS" start="2024-11-04T15:42:10.131344" elapsed="0.399839"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_img_loading_screen_home_page}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:10.531624" elapsed="0.213577"/>
+</kw>
+<msg time="2024-11-04T15:42:10.745328" level="INFO">${isvisible} = True</msg>
+<var>${isvisible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${dps_img_loading_screen_home_page}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-11-04T15:42:10.531440" elapsed="0.213902"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:10.951935" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-13.png"&gt;&lt;img src="selenium-screenshot-13.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-11-04T15:42:10.745579" elapsed="0.206438"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2024-11-04T15:42:10.952698" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2024-11-04T15:42:10.952639" elapsed="0.000142"/>
+</kw>
+<arg>'${isvisible}' == 'True'</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-04T15:42:10.952318" elapsed="0.000499"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-11-04T15:42:10.131177" elapsed="0.821671"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>5</value>
+<status status="PASS" start="2024-11-04T15:42:10.131045" elapsed="0.821848"/>
+</for>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${dps_img_loading_screen_home_page}</arg>
+<arg>timeout=240s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:10.953073" elapsed="10.473085"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:42:10.130798" elapsed="11.295611"/>
+</branch>
+<status status="PASS" start="2024-11-04T15:42:10.130748" elapsed="11.295817"/>
+</if>
+<arg>${dc_operation.dps_menu['homepage']}</arg>
+<status status="PASS" start="2024-11-04T15:42:07.914822" elapsed="13.511930"/>
+</kw>
+<kw name="Select Warehouse List Button" owner="dps_home_page">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-04T15:42:21.444620" level="INFO">${dps_btn_selected_warehouse_list} = //div[text()='รายชื่อคลังที่เลือก']/../..</msg>
+<var>${dps_btn_selected_warehouse_list}</var>
+<arg>${dps_btn_selected_warehouse_list_home_page}</arg>
+<arg>{value}</arg>
+<arg>${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-04T15:42:21.437784" elapsed="0.006880"/>
+</kw>
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:21.445458" elapsed="0.226258"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:21.673893" level="INFO">Clicking element '//div[text()='รายชื่อคลังที่เลือก']/../..'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:21.673275" elapsed="0.257421"/>
+</kw>
+<arg>${dps_btn_selected_warehouse_list}</arg>
+<status status="PASS" start="2024-11-04T15:42:21.445012" elapsed="0.485843"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2024-11-04T15:42:21.931528" level="INFO">${dps_cbo_selected_warehouse_list} = //span[contains(@class,'ant-checkbox-checked')]/..//span[text()='คลัง DC BB']</msg>
+<var>${dps_cbo_selected_warehouse_list}</var>
+<arg>${dps_cbo_selected_warehouse_list_home_page}</arg>
+<arg>{warehouse}</arg>
+<arg>${selected_warehouse}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-04T15:42:21.931220" elapsed="0.000341"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${dps_cbo_selected_warehouse_list}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:21.932212" elapsed="0.555292"/>
+</kw>
+<msg time="2024-11-04T15:42:22.487654" level="INFO">${dps_warehouse_list_status} = True</msg>
+<var>${dps_warehouse_list_status}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${dps_cbo_selected_warehouse_list}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2024-11-04T15:42:21.931907" elapsed="0.555763"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${dps_warehouse_list_status}' == 'false'</arg>
+<arg>Run Keywords</arg>
+<arg>${dps_cbo_warehouse_list}=</arg>
+<arg>Replace String</arg>
+<arg>${dps_cbo_warehouse_list_home_page}</arg>
+<arg>{warehouse}</arg>
+<arg>${selected_warehouse}</arg>
+<arg>AND</arg>
+<arg>common.Click When Ready</arg>
+<arg>${dps_cbo_warehouse_list}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-04T15:42:22.487975" elapsed="0.000199"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${dps_warehouse_list_status}' == 'true'</arg>
+<arg>Run Keywords</arg>
+<arg>${dps_txt_daily_task_overview}=</arg>
+<arg>Replace String</arg>
+<arg>${dps_txt_daily_task_overview_home_page}</arg>
+<arg>{value}</arg>
+<arg>${dc_operation.title['homepage']}</arg>
+<arg>AND</arg>
+<arg>Mouse Over</arg>
+<arg>${dps_txt_daily_task_overview}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-11-04T15:42:22.488332" elapsed="0.000073"/>
+</kw>
+<arg>${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}</arg>
+<status status="PASS" start="2024-11-04T15:42:21.427746" elapsed="1.060709"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-04T15:42:22.488680" level="INFO">Step No.2 เลือกแท็บงานรับเข้า</msg>
+<arg>Step No.2 เลือกแท็บงานรับเข้า</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-04T15:42:22.488615" elapsed="0.000088"/>
+</kw>
+<kw name="Select Tab Import Task" owner="dps_home_page">
+<kw name="Select Tab In Home Page" owner="dps_home_page">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-04T15:42:22.493796" level="INFO">${dps_tab_in_home_page} = //div[@class='ant-tabs-nav-list']//div[text()='งานรับเข้า']</msg>
+<var>${dps_tab_in_home_page}</var>
+<arg>${dps_tab_in_home_page}</arg>
+<arg>{value}</arg>
+<arg>${tab}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-04T15:42:22.493702" elapsed="0.000110"/>
+</kw>
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:22.494128" elapsed="0.221466"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:22.717416" level="INFO">Clicking element '//div[@class='ant-tabs-nav-list']//div[text()='งานรับเข้า']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:22.716612" elapsed="0.298528"/>
+</kw>
+<arg>${dps_tab_in_home_page}</arg>
+<status status="PASS" start="2024-11-04T15:42:22.493937" elapsed="0.521330"/>
+</kw>
+<arg>${dc_operation.tab_daily_task['import_task']}</arg>
+<status status="PASS" start="2024-11-04T15:42:22.489131" elapsed="0.526174"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:42:22.488914" elapsed="0.526417"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-04T15:42:23.015647" level="INFO">Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter</msg>
+<arg>Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-04T15:42:23.015560" elapsed="0.000111"/>
+</kw>
+<kw name="Select DPS Menu" owner="dps_home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@href='/${tabname}']</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:23.023091" elapsed="0.217872"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@href='/${tabname}']</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:23.241325" elapsed="0.215165"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:23.457186" level="INFO">Simulating Mouse Over on element '//a[@href='/scan']'.</msg>
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:23.456905" elapsed="0.478591"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:23.935878" elapsed="0.226050"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:24.164082" level="INFO">Clicking element '//a[@href='/scan']'.</msg>
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:24.163218" elapsed="0.251389"/>
+</kw>
+<kw name="Mouse Out" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:24.415133" level="INFO">Simulating Mouse Out on element '//a[@href='/scan']'.</msg>
+<arg>//a[@href='/${tabname}']</arg>
+<doc>Simulates moving the mouse away from the element ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:24.414959" elapsed="0.868956"/>
+</kw>
+<if>
+<branch type="IF" condition="'${tabname}' == 'homepage'">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Reload Page" owner="SeleniumLibrary">
+<doc>Simulates user reloading page.</doc>
+<status status="NOT RUN" start="2024-11-04T15:42:25.288773" elapsed="0.000722"/>
+</kw>
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<var>${isvisible}</var>
+<arg>Wait Until Element Is Visible</arg>
+<arg>${dps_img_loading_screen_home_page}</arg>
+<doc>Runs the given keyword with given arguments and returns the status as a Boolean value.</doc>
+<status status="NOT RUN" start="2024-11-04T15:42:25.290255" elapsed="0.000109"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="NOT RUN" start="2024-11-04T15:42:25.290845" elapsed="0.000048"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>'${isvisible}' == 'True'</arg>
+<arg>Exit For Loop</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="NOT RUN" start="2024-11-04T15:42:25.291440" elapsed="0.000028"/>
+</kw>
+<var name="${i}"/>
+<status status="NOT RUN" start="2024-11-04T15:42:25.286713" elapsed="0.004826"/>
+</iter>
+<var>${i}</var>
+<value>0</value>
+<value>5</value>
+<status status="NOT RUN" start="2024-11-04T15:42:25.285874" elapsed="0.005881"/>
+</for>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>${dps_img_loading_screen_home_page}</arg>
+<arg>timeout=240s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="NOT RUN" start="2024-11-04T15:42:25.292093" elapsed="0.000031"/>
+</kw>
+<status status="NOT RUN" start="2024-11-04T15:42:25.285302" elapsed="0.006868"/>
+</branch>
+<status status="PASS" start="2024-11-04T15:42:25.285114" elapsed="0.007100"/>
+</if>
+<arg>${dc_operation.dps_menu['scan']}</arg>
+<status status="PASS" start="2024-11-04T15:42:23.015911" elapsed="2.276496"/>
+</kw>
+<kw name="Select Scan In Tab" owner="dps_scan_page">
+<kw name="Select Tab In Scan Page" owner="dps_scan_page">
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:25.300859" elapsed="0.223867"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:25.526883" level="INFO">Clicking element '//div[@role='tab' and text()='Scan In']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:25.526091" elapsed="0.249083"/>
+</kw>
+<arg>//div[@role='tab' and text()='${tab}']</arg>
+<status status="PASS" start="2024-11-04T15:42:25.300628" elapsed="0.474826"/>
+</kw>
+<arg>${dc_operation.tab_scan['scan_in']}</arg>
+<status status="PASS" start="2024-11-04T15:42:25.293750" elapsed="0.481841"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:42:25.292970" elapsed="0.482719"/>
+</kw>
+<kw name="Input Tracking Number [Scan In Page]" owner="dps_scan_page">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${dps_txtbox_on_scan_in_page}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-11-04T15:42:25.777396" elapsed="0.350259"/>
+</kw>
+<kw name="Input When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:26.131092" elapsed="0.229259"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:26.363436" level="INFO">Typing text 'SPCD241000006689' into text field '(//input[@placeholder='Search...'])[1]'.</msg>
+<arg>${locator}</arg>
+<arg>${text}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:26.361691" elapsed="0.482972"/>
+</kw>
+<arg>${dps_txtbox_on_scan_in_page}</arg>
+<arg>${value}</arg>
+<status status="PASS" start="2024-11-04T15:42:26.129419" elapsed="0.715441"/>
+</kw>
+<arg>SPCD241000006689</arg>
+<status status="PASS" start="2024-11-04T15:42:25.776456" elapsed="1.068457"/>
+</kw>
+<kw name="Click Search Button" owner="dps_scan_page">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-04T15:42:26.853192" level="INFO">${dps_btn_search_scan_in_page} = //span[text()='ค้นหา']/../..//button</msg>
+<var>${dps_btn_search_scan_in_page}</var>
+<arg>${dps_btn_search_scan_in_page}</arg>
+<arg>{value}</arg>
+<arg>${dc_operation['text_search']}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-04T15:42:26.845729" elapsed="0.007492"/>
+</kw>
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:26.853774" elapsed="0.221758"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:27.077779" level="INFO">Clicking element '//span[text()='ค้นหา']/../..//button'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:27.076861" elapsed="0.264884"/>
+</kw>
+<arg>${dps_btn_search_scan_in_page}</arg>
+<status status="PASS" start="2024-11-04T15:42:26.853461" elapsed="0.488409"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:42:26.845305" elapsed="0.496604"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-04T15:42:27.342334" level="INFO">Step No.4 คลิกปุ่มตกลง</msg>
+<arg>Step No.4 คลิกปุ่มตกลง</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-04T15:42:27.342205" elapsed="0.000158"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-04T15:42:27.342590" level="INFO">Step No.5 คลิกปุ่ม ยืนยัน/Print Label</msg>
+<arg>Step No.5 คลิกปุ่ม ยืนยัน/Print Label</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-04T15:42:27.342526" elapsed="0.000085"/>
+</kw>
+<kw name="Click Print Label" owner="dps_parcel_detail_page">
+<kw name="Replace String" owner="String">
+<msg time="2024-11-04T15:42:27.348504" level="INFO">${dps_print_label_parcel_detail_page} = //span[text()=' ยืนยัน/Print Label']/..</msg>
+<var>${dps_print_label_parcel_detail_page}</var>
+<arg>${dps_print_label_parcel_detail_page}</arg>
+<arg>{value}</arg>
+<arg>${dc_operation['text_print_label']}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2024-11-04T15:42:27.343074" elapsed="0.005453"/>
+</kw>
+<kw name="Scroll Into View By Xpath" owner="common">
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=${xpath}</arg>
+<arg>50</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-04T15:42:27.349357" elapsed="2.402821"/>
+</kw>
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:29.752717" level="INFO">Executing JavaScript:
+dom:document.evaluate("//span[text()=' ยืนยัน/Print Label']/..",document.body,null,9,null).singleNodeValue.scrollIntoView(true)
+Without any arguments.</msg>
+<arg>dom:document.evaluate("${xpath}",document.body,null,9,null).singleNodeValue.scrollIntoView(${boolean})</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2024-11-04T15:42:29.752418" elapsed="0.182161"/>
+</kw>
+<arg>${dps_print_label_parcel_detail_page}</arg>
+<arg>true</arg>
+<status status="PASS" start="2024-11-04T15:42:27.348717" elapsed="2.586028"/>
+</kw>
+<kw name="Click When Ready" owner="common">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<arg>${DEFAULT_TIMEOUT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-04T15:42:29.935327" elapsed="0.219343"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:30.155444" level="INFO">Clicking element '//span[text()=' ยืนยัน/Print Label']/..'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.155169" elapsed="0.248424"/>
+</kw>
+<arg>${dps_print_label_parcel_detail_page}</arg>
+<status status="PASS" start="2024-11-04T15:42:29.934987" elapsed="0.468946"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:42:27.342830" elapsed="3.061158"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-04T15:42:30.404438" level="INFO">Step No.6 คลิกปุ่มพิมพ์</msg>
+<arg>Step No.6 คลิกปุ่มพิมพ์</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.404313" elapsed="0.000165"/>
+</kw>
+<kw name="Click ESC On Keyboard" owner="dps_parcel_detail_page">
+<kw name="Press Key" owner="SeleniumLibrary">
+<arg>xpath=//body</arg>
+<arg>ESC</arg>
+<doc>Simulates user pressing key on element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.405060" elapsed="0.238648"/>
+</kw>
+<status status="PASS" start="2024-11-04T15:42:30.404752" elapsed="0.239235"/>
+</kw>
+<kw name="Verify Capture Screenshot" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2024-11-04T15:42:30.645062" level="INFO">${date_YYYY_MM_DD} = 2024-11-04 15:42:30.645</msg>
+<var>${date_YYYY_MM_DD}</var>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.644901" elapsed="0.000188"/>
+</kw>
+<kw name="Convert Date" owner="DateTime">
+<msg time="2024-11-04T15:42:30.645460" level="INFO">${date_YYYY_MM_DD} = 2024-11-04</msg>
+<var>${date_YYYY_MM_DD}</var>
+<arg>${date_YYYY_MM_DD}</arg>
+<arg>result_format=%Y-%m-%d</arg>
+<doc>Converts between supported `date formats`.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.645266" elapsed="0.000210"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)</arg>
+<arg>modules=os</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.645647" elapsed="0.002283"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-11-04T15:42:30.859038" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../results/2024-11-04/DC_Operation_S006/Verify%20Popup%20Print%20Label%20Success.png"&gt;&lt;img src="../results/2024-11-04/DC_Operation_S006/Verify%20Popup%20Print%20Label%20Success.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>../results/${FOlDER_RESULT}/${folder}/${img_name}.png</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.648327" elapsed="0.210784"/>
+</kw>
+<arg>DC_Operation_S006</arg>
+<arg>Verify Popup Print Label Success</arg>
+<status status="PASS" start="2024-11-04T15:42:30.644422" elapsed="0.214760"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-04T15:42:30.859502" elapsed="0.164251"/>
+</kw>
+<doc>ลูกค้า B (เรียกรถเข้ารับพัสดุ) --&gt; พัสดุ Dry ปลายทางร้าน ส่งโดย CP All สร้าง Pouch (ไม่ข้ามภาค)</doc>
+<tag>DC_Operation</tag>
+<tag>UAT</tag>
+<status status="PASS" start="2024-11-04T15:41:47.633745" elapsed="43.390093"/>
+</test>
+<status status="PASS" start="2024-11-04T15:41:47.279674" elapsed="43.744439"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">DC_Operation</stat>
+<stat pass="1" fail="0" skip="0">UAT</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Dc Operation S006">Dc Operation S006</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
