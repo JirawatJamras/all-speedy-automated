@@ -33,7 +33,7 @@ DC_Operation_S006
     # ...    ${dc_operation.title['homepage']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S006.data_in_all_task_tab['parcel_status']}
-    # ...    SPCD241000006689
+    # ...    SPCD241000006138
     # ...    ${DC_Operation_S006.data_in_all_task_tab['pouch_number']}
     # ...    CPALL  # ${DC_Operation_S006.data_in_all_task_tab['transport']}
     # ...    ${DC_Operation_S006.data_in_all_task_tab['export_to']}
@@ -60,26 +60,37 @@ DC_Operation_S006
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
-    dps_scan_page.Input Tracking Number [Scan In Page]    SPCD241000006689
+    dps_scan_page.Input Tracking Number [Scan In Page]    SPCD241000006138
     dps_scan_page.Click Search Button
-    # Expected
     # Defect143
-
+    # Expected
+    # Verify Create Pouch Destination DCSB Popup    # Unable to test this step becuase of website is not display 'Create pouch destination: DCSB' popup
+    # common.Verify Capture Screenshot    DC_Operation_S006    Verify Create Pouch Destination DCSB Popup
+    
     Log    Step No.4 คลิกปุ่มตกลง
-    # Defect143
-    # คลิกปุ่มตกลง
+    # Defect143    
+    # Click Accept    # Unable to test this step becuase of website is not display 'Create pouch destination: DCSB' popup
     # Expected
+    #
 
     Log    Step No.5 คลิกปุ่ม ยืนยัน/Print Label
     dps_parcel_detail_page.Click Print Label
     
     Log    Step No.6 คลิกปุ่มพิมพ์
+    # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     dps_parcel_detail_page.Click ESC On Keyboard
-    # Expected
     # Defect142
-    #
-    common.Verify Capture Screenshot    DC_Operation_S006    Verify Popup Print Label Success
+    # Expected
+    dps_parcel_detail_page.Verify Print Label Success Popup
+    ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Print Label Success Popup
 
+    Log    Step No.7 คลิกที่ Pop up
+    # Defect145    Unable to click on popup, but anable to click on close button (X) to close popup.
+    dps_parcel_detail_page.Click Close Print Label Success Popup
+    # Expected
+    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Navigate To Scan Page And Stay At Scan In Tab
 
 
 

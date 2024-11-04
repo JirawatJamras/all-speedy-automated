@@ -302,6 +302,7 @@ dc_operation:
   text_save_success: บันทึกข้อมูลเรียบร้อย
   text_search: ค้นหา
   text_print_label: ยืนยัน/Print Label
+  text_print_label_success: พิมพ์ Label เรียบร้อยแล้ว
   button_export: Export File
   button_approve: approve
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
