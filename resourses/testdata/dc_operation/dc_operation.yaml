@@ -32,5 +32,4 @@ dc_operation_S012:
     sending_to: '-'
     transport: CPALL
     pouch_number: '-'
-    parcel_number: 'SPCD241000006135'
-    parcel_status: ร้านรับพัสดุเข้าระบบ
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ

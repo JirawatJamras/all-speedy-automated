@@ -280,6 +280,8 @@ dc_operation:
     Upload_Route: อัปโหลด Route
     Check_Receiving_Cycle: ตรวจสอบรอบการเข้ารับพัสดุ
     History_Parcel: รายการประวัติพัสดุทั้งหมด
+  breadcrumb:
+    homepage: หน้าหลัก
   dps_menu:
     Home_Page: homepage
     Scan: scan
@@ -309,9 +311,6 @@ dc_operation:
     expedited_delivery_parcel: พัสดุเร่งจัดส่ง
     hold_parcel: พัสดุ Hold
     sla_parcel: พัสดุเกิน SLA
-
-    
-
 
 rm:
   text_pre_register: Pre-Register

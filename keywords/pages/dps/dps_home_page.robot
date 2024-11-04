@@ -46,9 +46,16 @@ Select Warehouse List Button
     Run Keyword If    '${dps_warehouse_list_status}' == 'true'    Run Keywords    ${dps_txt_daily_task_overview}=    Replace String    ${dps_txt_daily_task_overview_home_page}    {value}    ${dc_operation.title['homepage']}
     ...    AND    Mouse Over    ${dps_txt_daily_task_overview}
 
+Verify Homepage
+    ${dps_txt_breadcrumb}=    Replace String    ${dps_txt_breadcrumb_home_page}    {value}    ${dc_operation.breadcrumb['homepage']}
+    ${dps_txt_daily_task_overview}=    Replace String    ${dps_txt_daily_task_overview_home_page}    {value}    ${dc_operation.title['homepage']}
+    Wait Until Element Is Visible    ${dps_txt_breadcrumb}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_txt_daily_task_overview}    timeout=${DEFAULT_TIMEOUT}
+
 Verify Data In All Task Tab
     [Arguments]    ${parcel_status}    ${parcel_number}    ${pouch_number}    ${transport}    
     ...            ${sending_to}    ${incoming_from}    ${parcel_owner}    ${task_type}
+    ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['all_task']}
     ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task_home_page}    {parcel_status}    ${parcel_status}
     ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {parcel_number}    ${parcel_number}
     ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {pouch_number}    ${pouch_number}
@@ -58,6 +65,8 @@ Verify Data In All Task Tab
     ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {parcel_owner}    ${parcel_owner}
     ${dps_txt_list_first_daily_task}=    Replace String    ${dps_txt_list_first_daily_task}    {task_type}    ${task_type}
     Scroll Element Into View    ${dps_txt_list_first_daily_task}
+    ${actual_tab_all_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
+    Should Be Equal    ${actual_tab_all_task_status}    true
     ${actual_list_first_daily_task}=    Get Text    ${dps_txt_list_first_daily_task}
     ${actual_list_first_daily_task}=    Replace String    ${actual_list_first_daily_task}    \n    ${SPACE}
     Should Be Equal As Strings    ${actual_list_first_daily_task}    ${task_type} ${parcel_owner} ${incoming_from} ${sending_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
