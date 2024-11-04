@@ -1,13 +1,13 @@
 *** Keywords ***
 Input Email
-    [Arguments]                      ${value}
+    [Arguments]    ${value}
     Wait Until Element Is Visible    ${dps_txtbox_username}    timeout=${DEFAULT_TIMEOUT}
-    Input Text                       ${dps_txtbox_username}    ${value}
+    Input Text    ${dps_txtbox_username}    ${value}
 
 Input Password
-    [Arguments]                      ${value}
+    [Arguments]    ${value}
     Wait Until Element Is Visible    ${dps_txtbox_password}    timeout=${DEFAULT_TIMEOUT}
-    Input Text                       ${dps_txtbox_password}    ${value}
+    Input Text    ${dps_txtbox_password}    ${value}
 
 Click Log On Button
     common.Click when ready    ${dps_btn_log_on}

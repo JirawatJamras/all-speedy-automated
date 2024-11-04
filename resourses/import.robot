@@ -61,11 +61,13 @@ Resource                    ../keywords/pages/dps/dps_landing_page.robot
 Resource                    ../keywords/pages/dps/dps_login_page.robot
 Resource                    ../keywords/pages/dps/dps_home_page.robot
 Resource                    ../keywords/pages/dps/dps_check_receiving_cycle.robot
+Resource                    ../keywords/pages/dps/dps_scan_page.robot
 
 Resource                    locators/dps/dps_landing_page.robot
 Resource                    locators/dps/dps_login_page.robot
 Resource                    locators/dps/dps_home_page.robot
 Resource                    locators/dps/dps_check_receiving_cycle.robot
+Resource                    locators/dps/dps_scan_page.robot
 
 Variables                   testdata/feature/dps/dps_testdata.yaml
 Variables                   testdata/feature/dps/allspeedy_dps_001.yaml

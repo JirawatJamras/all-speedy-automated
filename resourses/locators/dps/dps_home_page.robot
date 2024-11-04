@@ -24,7 +24,7 @@ ${dps_tab_name}    //div[@role='tab' and text()='{value}']
 ${dps_tab_in_home_page}    //div[@class='ant-tabs-nav-list']//div[text()='{value}']   
 
 ${dps_img_icon_user}    //span[@class='anticon anticon-user']
-${dps_img_loading_screen_home_page}    //*[@class='ant-modal-content']
+${dps_img_loading_screen_home_page}    //div[@role='dialog']
 
 ${dps_cbo_warehouse_list_home_page}    //li[@role='menuitem']/..//span[text()='{warehouse}']
 ${dps_cbo_selected_warehouse_list_home_page}    //span[contains(@class,'ant-checkbox-checked')]/..//span[text()='{warehouse}']

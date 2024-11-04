@@ -296,6 +296,7 @@ dc_operation:
     all_parcels_received: รายการเข้ารับพัสดุทั้งหมด
     waiting_inventory_confirm_list: รายการรอคลังยืนยัน
   text_save_success: บันทึกข้อมูลเรียบร้อย
+  text_search: ค้นหา
   button_export: Export File
   button_approve: approve
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
@@ -311,6 +312,11 @@ dc_operation:
     expedited_delivery_parcel: พัสดุเร่งจัดส่ง
     hold_parcel: พัสดุ Hold
     sla_parcel: พัสดุเกิน SLA
+  tab_scan:
+    scan_in: Scan In
+    scan_out: Scan Out
+    move_status: Move Status
+    change_courier: Change Courier
 
 rm:
   text_pre_register: Pre-Register
