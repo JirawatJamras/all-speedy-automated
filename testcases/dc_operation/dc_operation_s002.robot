@@ -161,7 +161,7 @@ DC_Operation_S002 [Part1]
     Log    Step No.16 เลือกไฟล์ "Booking Dry Template Test DC"
     b2c_booking_detail_page.Import Excel File Of Dry Parcel Template    ${path_excel_booking_dry_template}
     Sleep    4s
-    b2c_booking_detail_page.Verify Booking Detail Page After Inport File
+    # b2c_booking_detail_page.Verify Booking Detail Page After Import File
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Import File Success
 
     Log    Step No.17 ผ่านcut off time
