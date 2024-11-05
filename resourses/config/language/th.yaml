@@ -342,6 +342,13 @@ dc_operation:
     number_of_pouch: จำนวน Pouch
     number_of_pieces: จำนวนชิ้น
     number_of_scanned_items: รวมรายการที่ต้องการสแกน
+  label_export_task_tab:
+    export_to: ส่งออกไปยัง
+    transport: ผ่านขนส่ง
+    parcel_owner: Parcel Owner
+    number_of_pouch: จำนวน Pouch
+    number_of_pieces: จำนวนชิ้น
+    number_of_scanned_items: รวมรายการที่ต้องการสแกน
   label_send_task_tab:
     send_to: นำจ่ายไปยัง
     store_code: รหัสร้านสาขา
@@ -377,6 +384,13 @@ dc_operation:
     warehouse_source: คลังต้นทาง
     send_parcel_to: ส่งพัสดุไปยัง
     route: Route
+  scan_in_title_label_detail:
+    route_title: Route
+    store_title: Store
+    customer_title: Customer
+    phone_title: Phone
+    pounch_number_title: Pounch Number
+    wh_title: WH
 
 rm:
   text_pre_register: Pre-Register

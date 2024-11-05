@@ -30,7 +30,7 @@ DC_Operation_S007
     dps_home_page.Verify Data In All Task Tab
     ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S007.data_in_all_task_tab['parcel_status']}
     ...    SPCD241000006135
-    ...    ${DC_Operation_S006.data_in_all_task_tab['pouch_number']}
+    ...    ${DC_Operation_S007.data_in_all_task_tab['pouch_number']}
     ...    CPALL  # ${DC_Operation_S007.data_in_all_task_tab['transport']}
     ...    ${DC_Operation_S007.data_in_all_task_tab['export_to']}
     ...    home  # ${DC_Operation_S007.data_in_all_task_tab['import_from']}
@@ -86,21 +86,42 @@ DC_Operation_S007
     ...    STORE (07004)    # Expected Result is ${DC_Operation_S007.scan_in_data_paecel_detail['send_parcel_to']}
     ...    4629    # Expected Result is ${DC_Operation_S007.scan_in_data_paecel_detail['route']}
     dps_scan_page.Verify Title Label Parcel In Scan Page
-    ...    ROUTE
-    ...    STORE
-    ...    CUSTOMER
-    ...    PHONE
-    ...    POUCH NO.
-    ...    WH
+    ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_label_detail['route_title']}
+    ...    STORE    # Expected Result is ${dc_operation.scan_in_title_label_detail['store_title']}
+    ...    CUSTOMER    # Expected Result is ${dc_operation.scan_in_title_label_detail['customer_title']}
+    ...    PHONE    # Expected Result is ${dc_operation.scan_in_title_label_detail['phone_title']}
+    ...    POUCH NO.    # Expected Result is ${dc_operation.scan_in_title_label_detail['pounch_number_title']}
+    ...    WH    # Expected Result is ${dc_operation.scan_in_title_label_detail['wh_title']}
     dps_scan_page.Verify Data Label Parcel In Scan Page
-    ...    4629
-    ...    07004 (กล่อง M)
-    ...    ทดสอบพัสดุ In area
-    ...    0900987355
-    ...    -
-    ...    undefined undefined - -- DC BB
-    ...    รูปดาว
-
+    ...    4629    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['route']}
+    ...    07004 (กล่อง M)     # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['store']}
+    ...    ทดสอบพัสดุ In area    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['customer']}
+    ...    0900987355    # Expected Result is (เบอร์โทรที่ระบุในไฟล์ Excel Template ขั้นตอน Booking)
+    ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_paecel_detail['pouch_number']}
+    ...    undefined undefined - -- DC BB    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['wh']}
+    ...    รูปดาว    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['symbol']}
+    dps_scan_page.Verify Title Sender In Scan Page
+    ...    ${dc_operation.label_sender_scan_in_tab['title']}
+    ...    ${dc_operation.label_sender_scan_in_tab['name']}
+    ...    ${dc_operation.label_sender_scan_in_tab['phone']}
+    ...    ${dc_operation.label_sender_scan_in_tab['shipping_origin']}
+    ...    ${dc_operation.label_sender_scan_in_tab['address']}
+    dps_scan_page.Verify Data Sender In Scan Page
+    ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['name']}
+    ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['phone']}
+    ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['shipping_origin']}
+    ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['address']}
+    dps_scan_page.Verify Title Receiver In Scan Page
+    ...    ${dc_operation.label_receiver_scan_in_tab['title']}
+    ...    ${dc_operation.label_receiver_scan_in_tab['name']}
+    ...    ${dc_operation.label_receiver_scan_in_tab['phone']}
+    ...    ${dc_operation.label_receiver_scan_in_tab['shipping_destination']}
+    ...    ${dc_operation.label_receiver_scan_in_tab['address']}
+    dps_scan_page.Verify Data Recevier In Scan Page
+    ...    ${DC_Operation_S007.receiver_data_in_scan_in_tab['name']}
+    ...    ${DC_Operation_S007.receiver_data_in_scan_in_tab['phone']}
+    ...    ${DC_Operation_S007.receiver_data_in_scan_in_tab['shipping_destination']}
+    ...    ${DC_Operation_S007.receiver_data_in_scan_in_tab['address']}
 
     Log    Step No.4
 
@@ -116,14 +137,13 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Tab Export Task
     # Expected
-    sleep    3s
     dps_home_page.Verify Label In Export Task Tab
-    ...    ส่งออกไปยัง
-    ...    ผ่านขนส่ง
-    ...    Parcel Owner
-    ...    จำนวน Pouch
-    ...    จำนวนชิ้น
-    ...    รวมรายการที่ต้องการสแกน
+    ...    ${dc_operation.label_export_task_tab['export_to']}
+    ...    ${dc_operation.label_export_task_tab['transport']}
+    ...    ${dc_operation.label_export_task_tab['parcel_owner']}
+    ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
+    ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
+    ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
     dps_home_page.Verify Data In Export Task Tab
     ...    DCBB  # ${DC_Operation_S007.data_in_import_task_tab['import_from']}
     ...    CPALL  # ${DC_Operation_S007.data_in_import_task_tab['transport']}
