@@ -72,6 +72,7 @@ DC_Operation_S006:
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
 
+
 DC_Operation_S007:
   data_in_all_task_tab:
     task_type: งานรับเข้า
@@ -89,6 +90,19 @@ DC_Operation_S007:
     number_of_pouch: '-'
     number_of_pieces: '6'
     number_of_scanned_items: '6'
+  scan_in_data_paecel_detail:
+    parcel_id: SPBD241100000140
+    customer_id: 2400563
+    parcel_size: 150 ซม. กล่อง XL
+    warehouse_crossdock: -
+    warehouse_destination: DCBB
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: CP ALL
+    pouch_number: -
+    receiving_date: 01-11-2567 14:06:18
+    warehouse_source: -
+    send_parcel_to: Store (15888)
+    route: ''
 
 DC_Operation_S012:
   data_in_all_task_tab:

@@ -213,12 +213,12 @@ Verify Label In Export Task Tab
     ${dps_tab_export_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['export_task']}
     ${actual_tab_export_task_status}=    Get Element Attribute    ${dps_tab_export_task}    aria-selected
     Should Be Equal    ${actual_tab_export_task_status}    true
-    ${actual_label_export_to}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[1]
-    ${actual_label_transport}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[2]
-    ${actual_label_parcel_owner}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[3]
-    ${actual_label_number_of_pouch}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[4]
-    ${actual_label_number_of_pieces}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[5]
-    ${actual_label_number_of_scanned_items}=    Get Text    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[6]
+    ${actual_label_export_to}=    Get Text    ${dps_txt_export_to_in_export_task_tab_home_page}
+    ${actual_label_transport}=    Get Text    ${dps_txt_transport_in_export_task_tab_home_page}
+    ${actual_label_parcel_owner}=    Get Text    ${dps_txt_parcel_owner_in_export_task_tab_home_page}
+    ${actual_label_number_of_pouch}=    Get Text    ${dps_txt_number_of_pouch_in_export_task_tab_home_page}
+    ${actual_label_number_of_pieces}=    Get Text    ${dps_txt_number_of_pieces_in_export_task_tab_home_page}
+    ${actual_label_number_of_scanned_items}=    Get Text    ${dps_txt_number_of_scanned_items_in_export_task_tab_home_page}
     Should Be Equal    ${actual_label_export_to}    ${export_to}
     Should Be Equal    ${actual_label_transport}    ${transport}
     Should Be Equal    ${actual_label_parcel_owner}    ${parcel_owner}

@@ -36,6 +36,12 @@ ${dps_txt_transport_in_send_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-4
 ${dps_txt_number_of_pouch_in_send_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-4']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[4]
 ${dps_txt_number_of_pieces_in_send_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-4']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[5]
 ${dps_txt_number_of_scanned_items_in_send_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-4']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[6]
+${dps_txt_export_to_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[1]
+${dps_txt_transport_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[2]
+${dps_txt_parcel_owner_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[3]
+${dps_txt_number_of_pouch_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[4]
+${dps_txt_number_of_pieces_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[5]
+${dps_txt_number_of_scanned_items_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[6]
 
 ${dps_btn_dropdown_select_role}    //span[@aria-label='down-circle']
 ${dps_btn_role}    //li[@role='menuitem']//button[text()='{value}']
