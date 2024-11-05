@@ -526,8 +526,51 @@ Input Information In The Return Business Tab
 
 ############# Contact And Bank Information Page #############
 Click Add Contact Information
-    ${add_button}=    Replace String    ${pms_btn_add_contact_info}    ${rm.full_regis['text_button_add']}
+    ${add_button}=    Replace String    ${pms_btn_add_contact_info}    {value}    ${rm.full_regis['text_button_add']}
     common.Click When Ready    ${add_button}
+
+Verify Click Add Contact Information Second
+    [Arguments]    ${label_name}    ${label_position}    ${label_email}    ${label_mobile}    ${label_mobile_ext}
+    ${txtbox_name}=    Get Element Attribute    ${pms_txtbox_contactName_2_full_regis}    placeholder
+    ${txtbox_position}=    Get Element Attribute    ${pms_txtbox_contactPosition_2_full_regis}    placeholder
+    ${txtbox_email}=    Get Element Attribute    ${pms_txtbox_contactEmail_2_full_regis}    placeholder
+    ${txtbox_mobile}=    Get Element Attribute    ${pms_txtbox_contactMobileNo_2_full_regis}    placeholder
+    ${txtbox_mobile_ext}=    Get Element Attribute    ${pms_txtbox_contactMobileExt_2_full_regis}    placeholder
+    ${button_pencil}=    Replace String    ${pms_btn_edit_contact}    {value}    ${pms_txtbox_contactName_2_full_regis}
+    ${button_delete}=    Replace String    ${pms_btn_delete_contact}    {value}    ${pms_txtbox_contactName_2_full_regis}
+    
+    Should Be Equal As Strings    ${txtbox_name}    ${label_name}
+    Should Be Equal As Strings    ${txtbox_position}    ${label_position}
+    Should Be Equal As Strings    ${txtbox_email}    ${label_email}
+    Should Be Equal As Strings    ${txtbox_mobile}    ${label_mobile}
+    Should Be Equal As Strings    ${txtbox_mobile_ext}    ${label_mobile_ext}
+
+    Element Should Be Visible    ${button_pencil}
+    Element Should Be Visible    ${button_delete}
+
+Input Contact Name Second
+    [Arguments]    ${value}
+    common.Input When Ready  ${pms_txtbox_contactName_2_full_regis}  ${value}
+
+Input Contact Position Second
+    [Arguments]    ${value}
+    common.Input When Ready  ${pms_txtbox_contactPosition_2_full_regis}  ${value}
+
+Input Contact Email Second
+    [Arguments]    ${value}
+    common.Input When Ready  ${pms_txtbox_contactEmail_2_full_regis}  ${value}    
+
+Input Contact Mobile No Second
+    [Arguments]    ${value}
+    common.Input When Ready  ${pms_txtbox_contactMobileNo_2_full_regis}  ${value}    
+
+Input Contact Mobile Ext Second
+    [Arguments]    ${value}
+    common.Input When Ready  ${pms_txtbox_contactMobileExt_2_full_regis}  ${value}
+
+Click Pencil Carry Out Contact Second
+    ${button_pencil}=    Replace String    ${pms_btn_edit_contact}    {value}    ${pms_txtbox_contactName_2_full_regis}
+    common.Click When Ready  ${button_pencil}
 
 Verify Request Detail Contact And Bank Information
     [Arguments]    ${bank_id}    ${bank_name}    ${bank_branch}    ${bank_account_name}    ${bank_account_no}    ${bank_account_type}
@@ -553,6 +596,9 @@ Verify Request Detail Contact And Bank Information
     ${actual_contact_heading}=    Get Text    ${pms_txt_list_contact_heading_full_regis}
     ${actual_contact_info}=    Get Text    ${pms_txt_list_contact_info_full_regis}
     ${title_remark}=    Get Text    ${pms_txt_remark3_full_regis}
+    # Inprogress verify contact
+    # ${button_pencil}=    Replace String    ${pms_btn_edit_contact}    {value}    ${pms_txtbox_contactName_2_full_regis}
+    # ${button_delete}=    Replace String    ${pms_btn_delete_contact}    {value}    ${pms_txtbox_contactName_2_full_regis}
 
     Wait Until Element Is Visible    ${title_bank_info}    timeout=${DEFAULT_TIMEOUT}
     Should Be Equal As Strings    ${label_bank_id} ${input_bank_id}    ${rm.full_regis.bank['text_country']} ${bank_id}
@@ -564,10 +610,13 @@ Verify Request Detail Contact And Bank Information
 
     Wait Until Element Is Visible    ${title_contact_info}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${title_contact_info}
+    # Element Should Be Visible    ${button_pencil}
+    # Element Should Be Visible    ${button_delete}
     # Should Be Equal As Strings    ${actual_contact_heading}    ${user_name} ${user_position} ${user_email} ${user_phone} ${user_phone_ex}
     # Should Be Equal As Strings    ${actual_contact_info}    ${user_name} ${user_position} ${user_email} ${user_phone} ${user_phone_ex}
     # Should Be Equal As Strings    ${title_remark}   ${rm.full_regis['text_remark_3']}
-
+    
+    
 
 ############# Supporting Document Page #############
 #Legal Entity

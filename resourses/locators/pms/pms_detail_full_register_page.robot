@@ -137,6 +137,12 @@ ${pms_txtbox_bank_account_name_full_regis}    //input[@id='bankAccountName']
 ${pms_txtbox_bank_account_no_full_regis}    //input[@id='bankNo']
 ${pms_txtbox_bank_account_type_full_regis}    //input[@id='bankAccountType']/../..
 
+${pms_txtbox_contactName_2_full_regis}    //input[@name='contactName_2']
+${pms_txtbox_contactPosition_2_full_regis}    //input[@name='contactPosition_2']
+${pms_txtbox_contactEmail_2_full_regis}    //input[@name='contactEmail_2']
+${pms_txtbox_contactMobileNo_2_full_regis}    //input[@name='contactMobileNo_2']
+${pms_txtbox_contactMobileExt_2_full_regis}    //input[@name='contactMobileExt_2']
+
 ${pms_txtbox_date_active_full_regis}    //input[@id='dateActiveNo']
 
 
@@ -161,7 +167,8 @@ ${pms_btn_first_mile_chill_full_regis}    //button[@id='parcelType_parcelChill_f
 ${pms_btn_bounce_fee_chill_full_regis}    //button[@id='parcelType_parcelChill_bounceFee']
 ${pms_btn_plus_rebate_chill_full_regis}    //div[@id='parcelType_parcelChill_rebateItem']//button
 ${pms_btn_add_contact_info}    //button//span[text()='{value}']
-   
+${pms_btn_edit_contact}    {value}//..//..//..//..//..//..//..//button//img[@alt='edit-icon']
+${pms_btn_delete_contact}    {value}//..//..//..//..//..//..//..//button//img[@alt='trash-icon']
 
 ${pms_checkbox_dry_cod}    //input[@id='parcelType_parcelDry_isCod']
 ${pms_checkbox_dry_insure}    //input[@id='parcelType_parcelDry_isInsure']

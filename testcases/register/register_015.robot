@@ -32,43 +32,74 @@ Register_S15
     Log    Step No.9 กดปุ่ม "เพิ่ม" ข้อมูลผู้ติดต่อ
     pms_detail_full_register_page.Click Add Contact Information
     # Expected
-
+    pms_detail_full_register_page.Verify Click Add Contact Information Second
+    ...    ${rm.full_regis.contact['text_contact_name']}
+    ...    ${rm.full_regis.contact['text_position']}
+    ...    ${rm.full_regis.contact['text_email']}
+    ...    ${rm.full_regis.contact['text_mobile']}
+    ...    ${rm.full_regis.contact['text_mobile_ext']}
+    common.Verify Capture Screenshot    Register_S015    Verify Click Add Contact Information Second
     
     Log    Step No.10 ระบุข้อมูลผู้ติดต่อ
-    pms_detail_full_register_page.
-
+    pms_detail_full_register_page.Input Contact Name Second    ${Register_S015.contact['name']}
+    pms_detail_full_register_page.Input Contact Position Second    ${Register_S015.contact['position']}
+    pms_detail_full_register_page.Input Contact Email Second    ${Register_S015.contact['email']}
+    pms_detail_full_register_page.Input Contact Mobile No Second    ${Register_S015.contact['mobile_no']}
+    pms_detail_full_register_page.Input Contact Mobile Ext Second    ${Register_S015.contact['mobile_ext']}
+    pms_detail_full_register_page.Click Pencil Carry Out Contact Second
     # Expected
+    # Inprogress  
+    pms_detail_full_register_page.Verify Request Detail Contact And Bank Information
+    ...    ${Register_S013.bank['bank_id']}
+    ...    ${Register_S013.bank['bank_name']}
+    ...    ${Register_S013.bank['bank_branch']}
+    ...    ${Register_S013.bank['bank_account_name']}
+    ...    ${Register_S013.bank['bank_account_no']}
+    ...    ${Register_S013.bank['bank_account_type']}
+    ...    ${Register_S013.contact['user_name']}
+    ...    ${Register_S013.contact['user_position']}
+    ...    ${Register_S013.contact['user_email']}
+    ...    ${Register_S013.contact['user_phone']}
+    ...    ${Register_S013.contact['user_phone_ex']}
+    # Inprogress
+    # pms_detail_full_register_page.Verify Input Contact Second
+    # ...    ${Register_S015.contact['name']}
+    # ...    ${Register_S015.contact['position']}
+    # ...    ${Register_S015.contact['email']}
+    # ...    ${Register_S015.contact['mobile_no']}
+    # ...    ${Register_S015.contact['mobile_ext']}
+    common.Verify Capture Screenshot    Register_S015    Verify Input Contact Second
     
 
-    Log    Step No.11 กดปุ่ม "หน้าถัดไป"
-    pms_detail_full_register_page.Click Next Page Button
-    #Expected 4
-    pms_detail_full_register_page.Verify Supporting Document Page Legal Entity
-    common.Verify Capture Screenshot    Register_S015    Verify Supporting Document Page Legal Entity
+    # Log    Step No.11 กดปุ่ม "หน้าถัดไป"
+    # pms_detail_full_register_page.Click Next Page Button
+    # #Expected 4
+    # pms_detail_full_register_page.Verify Supporting Document Page Legal Entity
+    # common.Verify Capture Screenshot    Register_S015    Verify Supporting Document Page Legal Entity
     
-    Log    Step No.12 ระบุความเห็นการแก้ไข #4 : แก้ไขเอกสารหน้าบัญชีธนาคาร
-    pms_detail_full_register_page.Input Remark 4    ${Register_S015['remark_4']}
+    # Log    Step No.12 ระบุความเห็นการแก้ไข #4 : แก้ไขเอกสารหน้าบัญชีธนาคาร
+    # pms_detail_full_register_page.Input Remark 4    ${Register_S015['remark_4']}
 
-    Log    Step No.13 กดปุ่ม "หน้าถัดไป"
-    pms_detail_full_register_page.Click Next Page Button
-    #Expected
-    #Inprogress
-    # pms_detail_full_register_page.Verify Officer Section Page
-    common.Verify Capture Screenshot    Register_S015    Verify Officer Section Page
-    
-
-    Log    Step No.14 ระบุข้อมูลรายละเอียดเพิ่มเติม
+    # Log    Step No.13 กดปุ่ม "หน้าถัดไป"
+    # pms_detail_full_register_page.Click Next Page Button
+    # #Expected
+    # #Inprogress
+    # # pms_detail_full_register_page.Verify Officer Section Page
+    # common.Verify Capture Screenshot    Register_S015    Verify Officer Section Page
     
 
-    Log    Step No.15 กดปุ่ม "ส่งกลับแก้ไข"
-    pms_detail_full_register_page.Click Return Button
-    pms_detail_full_register_page.Verify Return Popup    remark_4=${Register_S015['remark_4']}
-    common.Verify Capture Screenshot    Register_S015    Verify Return Popup
+    # Log    Step No.14 ระบุข้อมูลรายละเอียดเพิ่มเติม
+    
+
+    # Log    Step No.15 กดปุ่ม "ส่งกลับแก้ไข"
+    # pms_detail_full_register_page.Click Return Button
+    # pms_detail_full_register_page.Verify Return Popup    remark_4=${Register_S015['remark_4']}
+    # common.Verify Capture Screenshot    Register_S015    Verify Return Popup
 
 
-    Log    Step No.16 กดปุ่ม "ยืนยัน" ที่ Popup ส่งกลับแก้ไข
-    #pms_detail_full_register_page.Click Confirm Button
-    #Expected
+    # Log    Step No.16 กดปุ่ม "ยืนยัน" ที่ Popup ส่งกลับแก้ไข
+    # #pms_detail_full_register_page.Click Confirm Button
+    # #Expected
 
 
 Register_S015
