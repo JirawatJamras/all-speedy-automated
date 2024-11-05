@@ -363,6 +363,20 @@ dc_operation:
     phone: เบอร์โทรศัพท์ผู้รับ
     shipping_origin: ปลายทางจัดส่งพัสดุ
     address: รายละเอียดที่อยู่
+  scan_in_title_paecel_detail:
+    title: รายละเอียดพัสดุ
+    parcel_id: หมายเลขพัสดุ
+    customer_id: Customer ID
+    parcel_size: ขนาดพัสดุ
+    warehouse_crossdock: คลัง Crossdock
+    warehouse_destination: คลังปลายทาง
+    parcel_status: สถานะพัสดุ
+    courier: Courier
+    pouch_number: Pouch Number
+    receiving_date: วันที่เข้ารับพัสดุ
+    warehouse_source: คลังต้นทาง
+    send_parcel_to: ส่งพัสดุไปยัง
+    route: Route
 
 rm:
   text_pre_register: Pre-Register
