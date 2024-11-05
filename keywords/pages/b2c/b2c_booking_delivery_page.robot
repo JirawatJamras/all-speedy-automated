@@ -764,3 +764,10 @@ Verify Selected Coupon And Code
     ${actual_selected_code_detail}=  Replace String   ${selected_coupon}   \n   ${SPACE}
     Should Be Equal As Strings    ${actual_selected_code_detail}
     ...    ${Booking['text_selected_coupon_and_code']} ${discount} ${promotion_name} ${parcel_size} ${Booking['text_expire']} ${expired_date} ${Booking['text_condition']} - ${condition} ${Booking['text_period']} ${period} ${Booking['text_take_out']}
+
+Verify Booking Status After Cutt Off Time
+    [Arguments]    ${booking_id}
+    ${actual_booking_id}=    Replace String    ${txt_booking_status}    {id}    ${booking_id}
+    ${actual_booking_status}=    Replace String    ${actual_booking_id}    {status}    ${booking_id}
+    Wait Until Element Is Visible    ${actual_booking_status}
+    Scroll Element Into View    ${actual_booking_status}

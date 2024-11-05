@@ -18,6 +18,12 @@ ${B2C_UAT_PICKUP_SCHEDULE_URL}          https://www-uat.allspeedy.co.th/pickup-s
 ${CPS_API_UAT_URL}                      https://cps-api-uat.allspeedy.co.th/v1
 ${C2C_UAT_URL}                          https://web-stg.7eleven.co.th/
 
+####################### MongoDB ############################
+${DB_URI}           mongodb+srv://admin:PRgxr23TZeubWeQP@all-speedy-db-uat.devnv.mongodb.net/
+${DATABASE_NAME}    distcenterdb
+${COLLECTION}       dc-cut-off-times
+${QUERY}            Y    #status
+
 ####################### SPS UAT DATA #######################
 ${REMOTE_URL}                           http://127.0.0.1:4723/wd/hub
 ${PLATFORM_NAME}                        android

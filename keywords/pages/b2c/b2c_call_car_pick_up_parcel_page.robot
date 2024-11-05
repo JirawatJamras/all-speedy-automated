@@ -50,7 +50,7 @@ Click Save Button
     ${btn_save_in_add_popup}=  Replace String   ${btn_save_in_add_popup}   {value}   ${call_car_pick_up['button_save']}
     common.Click When Ready    ${btn_save_in_add_popup}
 
-Verify Add Special Pickup Round Success
+Verify Parcel Pickup Status
     [Arguments]    ${status}    ${round}    ${tomorrow}    ${pickup_time}    ${text_pickup_date}    ${text_cut_off_time}    ${today}
     ...    ${text_parcel_number}    ${parcel_num}    ${text_price}    ${price_value}    ${text_pickup_location}    ${company_address}
     ...    ${sub_district}    ${district}    ${province}    ${postcode}
@@ -70,7 +70,6 @@ Verify Add Special Pickup Round Success
     Wait Until Element Is Visible    ${b2c_txt_complete_save_pickup_round}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
-
 
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled

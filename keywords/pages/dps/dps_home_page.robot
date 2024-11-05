@@ -1,4 +1,23 @@
 *** Keywords ***
+Set Cut Off Time
+    [Arguments]    ${uri}    ${name}    ${collection}    ${query}
+    ${time}=    Get Current Date    result_format=%H:%M
+    connect_to_mongodb    ${uri}    ${name}    ${collection}
+    ${QUERY}    Create Dictionary    status=${query}
+    ${update}    Create Dictionary    cutOff=${time}
+    ${update_with_set}    Create Dictionary    $set=${update}
+    update_document    ${QUERY}    ${update}
+    disconnect
+
+Reet Cut Off Time
+    [Arguments]    ${uri}    ${name}    ${collection}    ${query}    ${time}
+    connect_to_mongodb    ${uri}    ${name}    ${collection}
+    ${QUERY}    Create Dictionary    status=${query}
+    ${update}    Create Dictionary    cutOff=${time}
+    ${update_with_set}    Create Dictionary    $set=${update}
+    update_document    ${QUERY}    ${update}
+    disconnect
+
 Set Tomorrow Date
     ${today}=    Get Current Date    result_format=%Y-%m-%d
     ${tomorrow_day}=    Add Time To Date    ${today}    1 days    result_format=%d-%m-%Y

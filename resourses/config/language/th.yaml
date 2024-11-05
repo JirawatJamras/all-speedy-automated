@@ -93,6 +93,7 @@ Booking:
   text_parcel_status_select_shipping_origin: เลือกต้นทางจัดส่ง 
   text_parcel_status_waiting_entering: รอส่งพัสดุเข้าระบบ
   text_parcel_status_call_car: กำลังเรียกรถเข้ารับ  
+  text_waiting_confirm_parcel_pickup: รอยืนยันรอบรถเข้ารับพัสดุ
   text_parcel_type_label: 'ประเภทพัสดุ :'
   tab_shipping_origin:
     favorite:  เลือกรายการโปรด
@@ -217,6 +218,7 @@ call_car_pick_up:
   text_parcel_id_start_with: 'SPBD'
   status:
     parcel_in_progress: กำลังจัดพัสดุ
+    arrange_car: กำลังจัดรถ
   car_round_name:
     special: รอบพิเศษ
     normal: รอบปกติ
