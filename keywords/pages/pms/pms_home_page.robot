@@ -11,6 +11,9 @@ Select Manage Customer Menu
 Select Manage Request Sub-Menu
     Select PMS Sub-Menu    ${rm['text_mange_request']}
 
+Select Customer Information Sub-Menu
+    Select PMS Sub-Menu    ${rm['text_customer_information']}
+
 Select PMS Menu
     [Arguments]    ${menu}
     ${menu}=  Replace String   ${pms_mnu_title}   {value}   ${menu}

@@ -160,7 +160,7 @@ ${pms_btn_cancel_set_pickup_popup}    //b[text()='ยกเลิก']/..
 ${pms_btn_first_mile_chill_full_regis}    //button[@id='parcelType_parcelChill_firstMile']
 ${pms_btn_bounce_fee_chill_full_regis}    //button[@id='parcelType_parcelChill_bounceFee']
 ${pms_btn_plus_rebate_chill_full_regis}    //div[@id='parcelType_parcelChill_rebateItem']//button
-
+${pms_btn_add_contact_info}    //button//span[text()='{value}']
    
 
 ${pms_checkbox_dry_cod}    //input[@id='parcelType_parcelDry_isCod']

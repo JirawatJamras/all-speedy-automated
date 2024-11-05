@@ -21,7 +21,7 @@ Approve Legal Entity
     Log    Scenario 13 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล
     Register_S013
     Log    Scenario 15 RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
-    #Register_S015   Ampere
+    #Register_S015   
     Log    Scenario 20 RM : การ Update Vendor Code ในข้อมูลลูกค้า
     #Register_S020
     #Register_S022-49
@@ -73,6 +73,7 @@ Register_S007
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Manage Request Sub-Menu
     pms_requests_page.Select Pending Tab
+
     pms_requests_page.Select Request With Waiting For Assign Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
@@ -583,6 +584,12 @@ Register_S013
     register_business_full_register.Verify Popup Not Appear
     common.Verify Capture Screenshot    Register_S013    Verify popup not appear
 
+Register_S020
+    [Documentation]    RM : การ Update Vendor Code ในข้อมูลลูกค้า
+    common.Open URL    
+    pms_home_page.Select Manage Customer Menu
+    pms_home_page.Select Customer Information Sub-Menu
+    
 Register_S023
     [Documentation]    Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
     common.Open URL    ${B2C_UAT_URL}
