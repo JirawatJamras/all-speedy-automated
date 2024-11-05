@@ -1,9 +1,96 @@
 *** Keywords ***
+############# All #############
 Click Next Page Button
     ${btn_next_page}=    Replace String    ${pms_btn_full_regis}    {value}    ${rm['text_next_page']}
     Scroll Element Into View    ${btn_next_page}
     common.Click When Ready    ${btn_next_page}
+
+
+############# Company Information #############
+########## legal entity  ###########
+Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
+    [Arguments]    ${first_name}    ${last_name}    ${req_type}    ${customer_type}    ${company_title}    ${company_name}    ${mobile_company}
+    ...    ${mobile_company_ext}    ${company_address}    ${company_address_full}    ${title_name}    ${email}    ${mobile_no}    ${mobile_ext}
+
+    ${title}=    Replace String    ${pms_txt_title_detail}    {value}    ${rm['text_request_detail']}
+    Wait Until Element Is Visible    ${title}   timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${pms_txtbox_customer_type_full_regis}   timeout=${DEFAULT_TIMEOUT}
     
+
+    #### part 1 ####
+    ${label_req_no}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_request_number']}
+    ${label_contact_name}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_contact_name']}
+    ${label_req_date}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_request_date']}
+    ${label_req_type}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_request_type']}
+    ${label_req_ref}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_reference_request']}
+
+    ${label_req_no}=    Get Text    ${label_req_no}
+    ${label_contact_name}=    Get Text    ${label_contact_name}
+    ${label_req_date}=    Get Text    ${label_req_date}
+    ${label_req_type}=    Get Text    ${label_req_type}
+    ${label_req_ref}=    Get Text    ${label_req_ref}
+
+    # Should Be Equal As Strings    ${label_req_no}    ${rm['text_request_number']} ${req_no_full_regis}
+    Should Be Equal As Strings    ${label_contact_name}    ${rm['text_contact_name']} ${first_name} ${last_name}
+    # Should Be Equal As Strings    ${label_req_date}   ${rm['text_request_date']} ${req_date_full_regis}
+    Should Be Equal As Strings    ${label_req_type}    ${rm['text_request_type']} ${req_type}
+    # Should Be Equal As Strings    ${label_req_ref}   ${rm['text_reference_request']} ${get_request_no}
+
+    #### part 2 ####
+    ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_company_info']}
+    ${text_contact_information}=    Replace String    ${pms_txt_in_detail_full_regis}        {value}    ${rm['text_contact_information']}
+    Page Should Contain Element    ${label_step}
+    Page Should Contain Element    ${text_contact_information}
+
+    ${label_customer_type}=    Get Text    ${pms_txt_customer_type_full_regis}
+    ${input_customer_type}=    Get Value    ${pms_txtbox_customer_type_full_regis}
+    ${label_company_title}=    Get Text    ${pms_txt_company_title_full_regis}
+    ${input_company_title}=    Get Text    ${pms_txtbox_company_title_full_regis}
+    ${label_company_name}=    Get Text    ${pms_txt_company_name_full_regis}
+    ${input_company_name}=    Get Value    ${pms_txtbox_company_name_full_regis}
+    ${label_id_number}=    Get Text    ${pms_txt_id_number_full_regis}
+    ${input_id_number}=    Get Value    ${pms_txtbox_id_number_full_regis}
+    ${label_mobile_company}=    Get Text    ${pms_txt_company_mobile_full_regis}
+    ${input_mobile_company}=    Get Value    ${pms_txtbox_company_mobile_full_regis}
+    ${label_mobile_company_ext}=    Get Text    ${pms_txt_company_mobile_ext_full_regis}
+    ${input_mobile_company_ext}=    Get Value    ${pms_txtbox_company_mobile_ext_full_regis}
+    ${label_company_address}=    Get Text    ${pms_txt_company_address_full_regis}
+    ${input_company_address}=    Get Value    ${pms_txtbox_company_address_full_regis}
+    ${label_company_address_full}=    Get Text    ${pms_txt_company_address_full_full_regis}
+    ${input_company_address_full}=    Get Text    ${pms_txtbox_company_address_full_full_regis}
+    ${label_title_name}=    Get Text    ${pms_txt_title_name_full_regis}
+    ${input_title_name}=    Get Text    ${pms_txtbox_title_name_full_regis}
+    ${label_first_name}=    Get Text    ${pms_txt_first_name_full_regis}
+    ${input_first_name}=    Get Value    ${pms_txtbox_first_name_full_regis}
+    ${label_last_name}=    Get Text    ${pms_txt_last_name_full_regis}
+    ${input_last_name}=    Get Value    ${pms_txtbox_last_name_full_regis}
+    ${label_email}=    Get Text    ${pms_txt_email_full_regis}
+    ${input_email}=    Get Value    ${pms_txtbox_email_full_regis}
+    ${label_mobile_no}=    Get Text    ${pms_txt_mobile_no_full_regis}
+    ${input_mobile_no}=    Get Value    ${pms_txtbox_mobile_no_full_regis}
+    ${label_mobile_ext}=    Get Text    ${pms_txt_mobile_ext_full_regis}
+    ${input_mobile_ext}=    Get Value    ${pms_txtbox_mobile_ext_full_regis}
+    ${label_remark}=    Get Text    ${pms_txt_remark_full_regis}
+
+    Should Be Equal As Strings    ${label_customer_type} ${input_customer_type}    ${rm['text_customer_type']} ${customer_type}
+    Should Be Equal As Strings    ${label_company_title} ${input_company_title}    ${rm.full_regis['text_company_title']} ${company_title}
+    Should Be Equal As Strings    ${label_company_name} ${input_company_name}    ${rm.full_regis['text_company_name']} ${company_name}
+    # Should Be Equal As Strings    ${label_id_number} ${input_id_number}    ${rm.full_regis['text_id_number']} ${JuristicID}
+    # Should Be Equal As Strings    ${label_mobile_company} ${input_mobile_company}    ${rm.full_regis['text_mobile_company']} ${mobile_company}
+    # Should Be Equal As Strings    ${label_mobile_company_ext} ${input_mobile_company_ext}    ${rm.full_regis['text_mobile_company_ext']} ${mobile_company_ext}
+    Should Be Equal As Strings    ${label_company_address} ${input_company_address}    ${rm.full_regis['text_company_address']} ${company_address}
+    Should Be Equal As Strings    ${label_company_address_full} ${input_company_address_full}    ${rm.full_regis['text_company_address_full']} ${company_address_full}
+    Should Be Equal As Strings    ${label_title_name} ${input_title_name}    ${rm.full_regis['text_title_name']} ${title_name}
+    Should Be Equal As Strings    ${label_first_name} ${input_first_name}    ${rm.full_regis['text_first_name']} ${first_name}
+    Should Be Equal As Strings    ${label_last_name} ${input_last_name}    ${rm.full_regis['text_last_name']} ${last_name}
+    Should Be Equal As Strings    ${label_email} ${input_email}    ${rm.full_regis['text_email']} ${email}
+    Should Be Equal As Strings    ${label_mobile_no} ${input_mobile_no}    ${rm.full_regis['text_mobile_no']} ${mobile_no}
+    Should Be Equal As Strings    ${label_mobile_ext} ${input_mobile_ext}    ${rm.full_regis['text_mobile_ext']} ${mobile_ext}
+    Should Be Equal As Strings    ${label_remark}    ${rm.full_regis['text_remark']}
+
+
+############# Service Information #############
+
 Click Dry Parcel Tab
     Scroll Window To Vertical    0
     common.Click When Ready    ${pms_tab_dry_parcel}
@@ -435,6 +522,13 @@ Input Information In The Return Business Tab
     common.Click When Ready    ${pms_txtbox_insure_scheme_return_date_full_regis}
     common.Click When Ready    ${select_insure_scheme_date}
 
+
+
+############# Contact And Bank Information Page #############
+Click Add Contact Information
+    ${add_button}=    Replace String    ${pms_btn_add_contact_info}    ${rm.full_regis['text_button_add']}
+    common.Click When Ready    ${add_button}
+
 Verify Request Detail Contact And Bank Information
     [Arguments]    ${bank_id}    ${bank_name}    ${bank_branch}    ${bank_account_name}    ${bank_account_no}    ${bank_account_type}
     ...    ${user_name}    ${user_position}    ${user_email}    ${user_phone}    ${user_phone_ex}
@@ -475,86 +569,8 @@ Verify Request Detail Contact And Bank Information
     # Should Be Equal As Strings    ${title_remark}   ${rm.full_regis['text_remark_3']}
 
 
-########## legal entity  ###########
-Verify Full Register Detail Page With Waiting For Confirm Status [legal entity]
-    [Arguments]    ${first_name}    ${last_name}    ${req_type}    ${customer_type}    ${company_title}    ${company_name}    ${mobile_company}
-    ...    ${mobile_company_ext}    ${company_address}    ${company_address_full}    ${title_name}    ${email}    ${mobile_no}    ${mobile_ext}
-
-    ${title}=    Replace String    ${pms_txt_title_detail}    {value}    ${rm['text_request_detail']}
-    Wait Until Element Is Visible    ${title}   timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${pms_txtbox_customer_type_full_regis}   timeout=${DEFAULT_TIMEOUT}
-
-    #### part 1 ####
-    ${label_req_no}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_request_number']}
-    ${label_contact_name}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_contact_name']}
-    ${label_req_date}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_request_date']}
-    ${label_req_type}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_request_type']}
-    ${label_req_ref}=    Replace String    ${pms_txt_detail_full_regis}    {value}    ${rm['text_reference_request']}
-
-    ${label_req_no}=    Get Text    ${label_req_no}
-    ${label_contact_name}=    Get Text    ${label_contact_name}
-    ${label_req_date}=    Get Text    ${label_req_date}
-    ${label_req_type}=    Get Text    ${label_req_type}
-    ${label_req_ref}=    Get Text    ${label_req_ref}
-
-    Should Be Equal As Strings    ${label_req_no}    ${rm['text_request_number']} ${req_no_full_regis}
-    Should Be Equal As Strings    ${label_contact_name}    ${rm['text_contact_name']} ${first_name} ${last_name}
-    Should Be Equal As Strings    ${label_req_date}   ${rm['text_request_date']} ${req_date_full_regis}
-    Should Be Equal As Strings    ${label_req_type}    ${rm['text_request_type']} ${req_type}
-    # Should Be Equal As Strings    ${label_req_ref}   ${rm['text_reference_request']} ${get_request_no}
-
-    #### part 2 ####
-    ${label_step}=    Replace String    ${pms_txt_step_full_regis}    {value}    ${rm.full_regis['text_step_company_info']}
-    ${text_contact_information}=    Replace String    ${pms_txt_in_detail_full_regis}        {value}    ${rm['text_contact_information']}
-    Page Should Contain Element    ${label_step}
-    Page Should Contain Element    ${text_contact_information}
-
-    ${label_customer_type}=    Get Text    ${pms_txt_customer_type_full_regis}
-    ${input_customer_type}=    Get Value    ${pms_txtbox_customer_type_full_regis}
-    ${label_company_title}=    Get Text    ${pms_txt_company_title_full_regis}
-    ${input_company_title}=    Get Text    ${pms_txtbox_company_title_full_regis}
-    ${label_company_name}=    Get Text    ${pms_txt_company_name_full_regis}
-    ${input_company_name}=    Get Value    ${pms_txtbox_company_name_full_regis}
-    ${label_id_number}=    Get Text    ${pms_txt_id_number_full_regis}
-    ${input_id_number}=    Get Value    ${pms_txtbox_id_number_full_regis}
-    ${label_mobile_company}=    Get Text    ${pms_txt_company_mobile_full_regis}
-    ${input_mobile_company}=    Get Value    ${pms_txtbox_company_mobile_full_regis}
-    ${label_mobile_company_ext}=    Get Text    ${pms_txt_company_mobile_ext_full_regis}
-    ${input_mobile_company_ext}=    Get Value    ${pms_txtbox_company_mobile_ext_full_regis}
-    ${label_company_address}=    Get Text    ${pms_txt_company_address_full_regis}
-    ${input_company_address}=    Get Value    ${pms_txtbox_company_address_full_regis}
-    ${label_company_address_full}=    Get Text    ${pms_txt_company_address_full_full_regis}
-    ${input_company_address_full}=    Get Text    ${pms_txtbox_company_address_full_full_regis}
-    ${label_title_name}=    Get Text    ${pms_txt_title_name_full_regis}
-    ${input_title_name}=    Get Text    ${pms_txtbox_title_name_full_regis}
-    ${label_first_name}=    Get Text    ${pms_txt_first_name_full_regis}
-    ${input_first_name}=    Get Value    ${pms_txtbox_first_name_full_regis}
-    ${label_last_name}=    Get Text    ${pms_txt_last_name_full_regis}
-    ${input_last_name}=    Get Value    ${pms_txtbox_last_name_full_regis}
-    ${label_email}=    Get Text    ${pms_txt_email_full_regis}
-    ${input_email}=    Get Value    ${pms_txtbox_email_full_regis}
-    ${label_mobile_no}=    Get Text    ${pms_txt_mobile_no_full_regis}
-    ${input_mobile_no}=    Get Value    ${pms_txtbox_mobile_no_full_regis}
-    ${label_mobile_ext}=    Get Text    ${pms_txt_mobile_ext_full_regis}
-    ${input_mobile_ext}=    Get Value    ${pms_txtbox_mobile_ext_full_regis}
-    ${label_remark}=    Get Text    ${pms_txt_remark_full_regis}
-
-    Should Be Equal As Strings    ${label_customer_type} ${input_customer_type}    ${rm['text_customer_type']} ${customer_type}
-    Should Be Equal As Strings    ${label_company_title} ${input_company_title}    ${rm.full_regis['text_company_title']} ${company_title}
-    Should Be Equal As Strings    ${label_company_name} ${input_company_name}    ${rm.full_regis['text_company_name']} ${company_name}
-    # Should Be Equal As Strings    ${label_id_number} ${input_id_number}    ${rm.full_regis['text_id_number']} ${JuristicID}
-    # Should Be Equal As Strings    ${label_mobile_company} ${input_mobile_company}    ${rm.full_regis['text_mobile_company']} ${mobile_company}
-    # Should Be Equal As Strings    ${label_mobile_company_ext} ${input_mobile_company_ext}    ${rm.full_regis['text_mobile_company_ext']} ${mobile_company_ext}
-    Should Be Equal As Strings    ${label_company_address} ${input_company_address}    ${rm.full_regis['text_company_address']} ${company_address}
-    Should Be Equal As Strings    ${label_company_address_full} ${input_company_address_full}    ${rm.full_regis['text_company_address_full']} ${company_address_full}
-    Should Be Equal As Strings    ${label_title_name} ${input_title_name}    ${rm.full_regis['text_title_name']} ${title_name}
-    Should Be Equal As Strings    ${label_first_name} ${input_first_name}    ${rm.full_regis['text_first_name']} ${first_name}
-    Should Be Equal As Strings    ${label_last_name} ${input_last_name}    ${rm.full_regis['text_last_name']} ${last_name}
-    Should Be Equal As Strings    ${label_email} ${input_email}    ${rm.full_regis['text_email']} ${email}
-    Should Be Equal As Strings    ${label_mobile_no} ${input_mobile_no}    ${rm.full_regis['text_mobile_no']} ${mobile_no}
-    Should Be Equal As Strings    ${label_mobile_ext} ${input_mobile_ext}    ${rm.full_regis['text_mobile_ext']} ${mobile_ext}
-    Should Be Equal As Strings    ${label_remark}    ${rm.full_regis['text_remark']}
-
+############# Supporting Document Page #############
+#Legal Entity
 Verify Supporting Document Page Legal Entity
     ${txt_title}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_supporting_document']} 
     ${txt_header}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_supporting_document']}
@@ -576,10 +592,38 @@ Verify Supporting Document Page Legal Entity
     Page Should Contain Element    ${txt_permission_form}
     Page Should Contain Element    ${txt_other_file}
 
-
 Input Remark 4
     [Arguments]    ${value}
     common.Input When Ready    ${pms_txtbox_remark4_full_regis}    ${value}
+
+
+
+
+
+
+############# Officer Section Page #############
+
+Verify Officer Section Page
+    #[Arguments]    ${}
+    #Inprogress
+    ${txt_title}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_officer_section']} 
+    ${txt_header_more_detail}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_more_detail']}
+    ${txt_header_sale_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_sale_info']}
+    ${txt_header_company_admin_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_company_admin_info']}
+    ${txt_header_contract}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_contract']}
+    
+    ${label_company_name}=    Get Text    ${pms_txt_company_name_full_regis}
+    ${txt_company_name}=    Get Value    ${pms_txtbox_company_name_full_regis}
+    
+        
+    Page Should Contain Element    ${txt_title}
+    Page Should Contain Element    ${txt_header_more_detail}
+    Should Be Equal As Strings    ${label_company_name} ${txt_company_name}    
+    Page Should Contain Element    ${txt_header_sale_info}
+
+    Page Should Contain Element    ${txt_header_company_admin_info}
+
+    Page Should Contain Element    ${txt_header_contract}
 
 
 Click Return Button
@@ -610,25 +654,3 @@ Verify Return Popup
 Click Confirm Button
     ${btn_confirm}=    Replace String    ${pms_btn_full_regis}     {value}    ${rm.full_regis['text_confirm_popup']}
     common.Click When Ready  ${btn_confirm}
-
-Verify Officer Section Page
-    #[Arguments]    ${}
-    #Inprogress
-    ${txt_title}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_step_officer_section']} 
-    ${txt_header_more_detail}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_more_detail']}
-    ${txt_header_sale_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_sale_info']}
-    ${txt_header_company_admin_info}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_company_admin_info']}
-    ${txt_header_contract}=    Replace String    ${pms_txt_in_detail_full_regis}    {value}    ${rm.full_regis['text_header_contract']}
-    
-    ${label_company_name}=    Get Text    ${pms_txt_company_name_full_regis}
-    ${txt_company_name}=    Get Value    ${pms_txtbox_company_name_full_regis}
-    
-        
-    Page Should Contain Element    ${txt_title}
-    Page Should Contain Element    ${txt_header_more_detail}
-    Should Be Equal As Strings    ${label_company_name} ${txt_company_name}    
-    Page Should Contain Element    ${txt_header_sale_info}
-
-    Page Should Contain Element    ${txt_header_company_admin_info}
-
-    Page Should Contain Element    ${txt_header_contract}
