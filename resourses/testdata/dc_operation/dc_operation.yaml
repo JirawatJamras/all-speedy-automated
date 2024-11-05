@@ -141,6 +141,11 @@ DC_Operation_S012:
     parcel_status: พัสดุรอนำจ่ายโดยคลัง
   sender_data_in_scan_in_tab:
     name: คุณ b
-    phone: 0959494989
+    phone: '0959494989'
     shipping_origin: บริษัท TecheX
-    address: 74 ลำพยา เมืองนครปฐม นครปฐม 73000
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุ In area
+    phone: '0900987354'
+    shipping_destination: ร้าน
+    address: '07004 สาขา เรวดี (ตลาดเปรมสุข) ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'

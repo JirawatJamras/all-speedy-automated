@@ -496,11 +496,17 @@ Click Search Button On Filter
     ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_home_page}    {value}    ${dc_operation['button_search']}
     common.Click When Ready    ${dps_btn_search_filter}
 
-Input Fiter Parcel Status
-    [Arguments]    ${task_type}    ${parcel_status}
+Fiter Task Type [All Task Tab]
+    [Arguments]    ${task_type}
     ${dps_cbo_task_type}=    Replace String    ${dps_cbo_task_type_home_page}    {value}    ${task_type}
+    common.Input When Ready    ${dps_txtbox_task_type_home_page}    ${task_type}
+    common.Click When Ready    ${dps_cbo_task_type}
+    Click Search Button On Filter
+
+Fiter Parcel Status [All Task Tab]
+    [Arguments]    ${parcel_status}
     ${dps_cbo_parcel_status}=    Replace String    ${dps_cbo_parcel_status_home_page}    {value}    ${parcel_status}
-    common.Input When Ready    ${dps_txtbox_parcel_status}    ${parcel_status}
+    common.Input When Ready    ${dps_txtbox_parcel_status_home_page}    ${parcel_status}
     common.Click When Ready    ${dps_cbo_parcel_status}
     Click Search Button On Filter
 

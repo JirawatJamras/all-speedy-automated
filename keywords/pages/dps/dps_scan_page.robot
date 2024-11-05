@@ -31,51 +31,6 @@ Verify Navigate To Scan Page And Stay At Scan In Tab
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
     Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
 
-Verify Label Sender
-    [Arguments]    ${sender_title}    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
-    ${actual_txt_label_sender_title_in_scan_in}=    Get Text    ${dps_txt_label_sender_title_in_scan_in_scan_page}
-    ${actual_txt_label_sender_name_in_scan_in}=    Get Text    ${dps_txt_label_sender_name_in_scan_in_scan_page}
-    ${actual_txt_label_sender_phone_in_scan_in}=    Get Text    ${dps_txt_label_sender_phone_in_scan_in_scan_page}
-    ${actual_txt_label_shipping_origin_in_scan_in}=    Get Text    ${dps_txt_label_shipping_origin_in_scan_in_scan_page}
-    ${actual_txt_label_sender_address_in_scan_in}=    Get Text    ${dps_txt_label_sender_address_in_scan_in_scan_page}
-    Should Be Equal    ${actual_txt_label_sender_title_in_scan_in}    ${sender_title}
-    Should Be Equal    ${actual_txt_label_sender_name_in_scan_in}    ${sender_name}
-    Should Be Equal    ${actual_txt_label_sender_phone_in_scan_in}    ${sender_phone}
-    Should Be Equal    ${actual_txt_label_shipping_origin_in_scan_in}    ${shipping_origin}
-    Should Be Equal    ${actual_txt_label_sender_address_in_scan_in}    ${sender_address}
-
-Verify Data Sender
-    [Arguments]    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
-    ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in_scan_page}    {label_sender_name}    ${dc_operation.label_sender_scan_in_tab['name']}
-    ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in}    {value_sender_name}    ${sender_name}
-    ${dps_txt_value_sender_phone_in_scan_in}=    Replace String    ${dps_txt_value_sender_phone_in_scan_in_scan_page}    {label_sender_phone}    ${dc_operation.label_sender_scan_in_tab['phone']}
-    ${dps_txt_value_sender_phone_in_scan_in}=    Replace String    ${dps_txt_value_sender_phone_in_scan_in}    {value_sender_phone}    ${sender_phone}
-    ${dps_txt_value_shipping_origin_in_scan_in}=    Replace String    ${dps_txt_value_shipping_origin_in_scan_in_scan_page}    {label_shipping_origin}    ${dc_operation.label_sender_scan_in_tab['shipping_origin']}
-    ${dps_txt_value_shipping_origin_in_scan_in}=    Replace String    ${dps_txt_value_shipping_origin_in_scan_in}    {value_shipping_origin}    ${shipping_origin}
-    ${dps_txt_value_sender_address_in_scan_in}=    Replace String    ${dps_txt_value_sender_address_in_scan_in_scan_page}    {label_sender_address}    ${dc_operation.label_sender_scan_in_tab['address']}
-    ${dps_txt_value_sender_address_in_scan_in}=    Replace String    ${dps_txt_value_sender_address_in_scan_in}    {value_sender_address}    ${sender_address}
-    ${actual_txt_value_sender_name_in_scan_in}=    Get Text    ${dps_txt_value_sender_name_in_scan_in}
-    ${actual_txt_value_sender_phone_in_scan_in}=    Get Text    ${dps_txt_value_sender_phone_in_scan_in}
-    ${actual_txt_value_shipping_origin_in_scan_in}=    Get Text    ${dps_txt_value_shipping_origin_in_scan_in}
-    ${actual_txt_value_sender_address_in_scan_in}=    Get Text    ${dps_txt_value_sender_address_in_scan_in}
-    Should Be Equal    ${actual_txt_value_sender_name_in_scan_in}    ${sender_name}
-    Should Be Equal    ${actual_txt_value_sender_phone_in_scan_in}    ${sender_phone}
-    Should Be Equal    ${actual_txt_value_shipping_origin_in_scan_in}    ${shipping_origin}
-    Should Be Equal    ${actual_txt_value_sender_address_in_scan_in}    ${sender_address}
-
-Verify Label Receiver
-    [Arguments]    ${receiver_title}    ${receiver_name}    ${receiver_phone}    ${shipping_origin}    ${receiver_address}
-    ${actual_txt_label_receiver_title_in_scan_in}=    Get Text    ${dps_txt_label_receiver_title_in_scan_in_scan_page}
-    ${actual_txt_label_receiver_name_in_scan_in}=    Get Text    ${dps_txt_label_receiver_name_in_scan_in_scan_page}
-    ${actual_txt_label_receiver_phone_in_scan_in}=    Get Text    ${dps_txt_label_receiver_phone_in_scan_in_scan_page}
-    ${actual_txt_label_shipping_origin_in_scan_in}=    Get Text    ${dps_txt_label_shipping_origin_in_scan_in_scan_page}
-    ${actual_txt_label_receiver_address_in_scan_in}=    Get Text    ${dps_txt_label_receiver_address_in_scan_in_scan_page}
-    Should Be Equal    ${actual_txt_label_receiver_title_in_scan_in}    ${receiver_title}
-    Should Be Equal    ${actual_txt_label_receiver_name_in_scan_in}    ${receiver_name}
-    Should Be Equal    ${actual_txt_label_receiver_phone_in_scan_in}    ${receiver_phone}
-    Should Be Equal    ${actual_txt_label_shipping_origin_in_scan_in}    ${shipping_origin}
-    Should Be Equal    ${actual_txt_label_receiver_address_in_scan_in}    ${receiver_address}
-
 Verify Title Parcel Details In Scan Page
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
     ...            ${parcel_size}    ${warehouse_crossdock}    ${warehouse_destination}
@@ -121,7 +76,6 @@ Verify Title Parcel Details In Scan Page
     Should Be Equal    ${actual_txt_title_warehouse_source}    ${warehouse_source}
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_txt_title_route}    ${route}
-
 
 Verify Data Parcel Details In Scan Page
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
@@ -196,3 +150,67 @@ Verify Data Label Parcel In Scan Page
     Should Be Equal    ${actual_txt_value_label_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_value_label_wh}    ${wh}
     # verify symbol
+
+Verify Title Sender In Scan Page
+    [Arguments]    ${sender_title}    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
+    ${actual_txt_label_sender_title_in_scan_in}=    Get Text    ${dps_txt_label_sender_title_in_scan_in_scan_page}
+    ${actual_txt_label_sender_name_in_scan_in}=    Get Text    ${dps_txt_label_sender_name_in_scan_in_scan_page}
+    ${actual_txt_label_sender_phone_in_scan_in}=    Get Text    ${dps_txt_label_sender_phone_in_scan_in_scan_page}
+    ${actual_txt_label_shipping_origin_in_scan_in}=    Get Text    ${dps_txt_label_shipping_origin_in_scan_in_scan_page}
+    ${actual_txt_label_sender_address_in_scan_in}=    Get Text    ${dps_txt_label_sender_address_in_scan_in_scan_page}
+    Should Be Equal    ${actual_txt_label_sender_title_in_scan_in}    ${sender_title}
+    Should Be Equal    ${actual_txt_label_sender_name_in_scan_in}    ${sender_name}
+    Should Be Equal    ${actual_txt_label_sender_phone_in_scan_in}    ${sender_phone}
+    Should Be Equal    ${actual_txt_label_shipping_origin_in_scan_in}    ${shipping_origin}
+    Should Be Equal    ${actual_txt_label_sender_address_in_scan_in}    ${sender_address}
+
+Verify Data Sender In Scan Page
+    [Arguments]    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
+    ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in_scan_page}    {label_sender_name}    ${dc_operation.label_sender_scan_in_tab['name']}
+    ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in}    {value_sender_name}    ${sender_name}
+    ${dps_txt_value_sender_phone_in_scan_in}=    Replace String    ${dps_txt_value_sender_phone_in_scan_in_scan_page}    {label_sender_phone}    ${dc_operation.label_sender_scan_in_tab['phone']}
+    ${dps_txt_value_sender_phone_in_scan_in}=    Replace String    ${dps_txt_value_sender_phone_in_scan_in}    {value_sender_phone}    ${sender_phone}
+    ${dps_txt_value_shipping_origin_in_scan_in}=    Replace String    ${dps_txt_value_shipping_origin_in_scan_in_scan_page}    {label_shipping_origin}    ${dc_operation.label_sender_scan_in_tab['shipping_origin']}
+    ${dps_txt_value_shipping_origin_in_scan_in}=    Replace String    ${dps_txt_value_shipping_origin_in_scan_in}    {value_shipping_origin}    ${shipping_origin}
+    ${dps_txt_value_sender_address_in_scan_in}=    Replace String    ${dps_txt_value_sender_address_in_scan_in_scan_page}    {label_sender_address}    ${dc_operation.label_sender_scan_in_tab['address']}
+    ${dps_txt_value_sender_address_in_scan_in}=    Replace String    ${dps_txt_value_sender_address_in_scan_in}    {value_sender_address}    ${sender_address}
+    ${actual_txt_value_sender_name_in_scan_in}=    Get Text    ${dps_txt_value_sender_name_in_scan_in}
+    ${actual_txt_value_sender_phone_in_scan_in}=    Get Text    ${dps_txt_value_sender_phone_in_scan_in}
+    ${actual_txt_value_shipping_origin_in_scan_in}=    Get Text    ${dps_txt_value_shipping_origin_in_scan_in}
+    ${actual_txt_value_sender_address_in_scan_in}=    Get Text    ${dps_txt_value_sender_address_in_scan_in}
+    Should Be Equal    ${actual_txt_value_sender_name_in_scan_in}    ${sender_name}
+    Should Be Equal    ${actual_txt_value_sender_phone_in_scan_in}    ${sender_phone}
+    Should Be Equal    ${actual_txt_value_shipping_origin_in_scan_in}    ${shipping_origin}
+    Should Be Equal    ${actual_txt_value_sender_address_in_scan_in}    ${sender_address}
+
+Verify Title Receiver In Scan Page
+    [Arguments]    ${receiver_title}    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
+    ${actual_txt_label_receiver_title_in_scan_in}=    Get Text    ${dps_txt_label_receiver_title_in_scan_in_scan_page}
+    ${actual_txt_label_receiver_name_in_scan_in}=    Get Text    ${dps_txt_label_receiver_name_in_scan_in_scan_page}
+    ${actual_txt_label_receiver_phone_in_scan_in}=    Get Text    ${dps_txt_label_receiver_phone_in_scan_in_scan_page}
+    ${actual_txt_label_shipping_destination_in_scan_in}=    Get Text    ${dps_txt_label_shipping_destination_in_scan_in_scan_page}
+    ${actual_txt_label_receiver_address_in_scan_in}=    Get Text    ${dps_txt_label_receiver_address_in_scan_in_scan_page}
+    Should Be Equal    ${actual_txt_label_receiver_title_in_scan_in}    ${receiver_title}
+    Should Be Equal    ${actual_txt_label_receiver_name_in_scan_in}    ${receiver_name}
+    Should Be Equal    ${actual_txt_label_receiver_phone_in_scan_in}    ${receiver_phone}
+    Should Be Equal    ${actual_txt_label_shipping_destination_in_scan_in}    ${shipping_destination}
+    Should Be Equal    ${actual_txt_label_receiver_address_in_scan_in}    ${receiver_address}
+
+Verify Data Recevier In Scan Page
+    [Arguments]    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
+    ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in_scan_page}    {label_receiver_name}    ${dc_operation.label_receiver_scan_in_tab['name']}
+    ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in}    {value_receiver_name}    ${receiver_name}
+    ${dps_txt_value_receiver_phone_in_scan_in}=    Replace String    ${dps_txt_value_receiver_phone_in_scan_in_scan_page}    {label_receiver_phone}    ${dc_operation.label_receiver_scan_in_tab['phone']}
+    ${dps_txt_value_receiver_phone_in_scan_in}=    Replace String    ${dps_txt_value_receiver_phone_in_scan_in}    {value_receiver_phone}    ${receiver_phone}
+    ${dps_txt_value_shipping_destination_in_scan_in}=    Replace String    ${dps_txt_value_shipping_destination_in_scan_in_scan_page}    {label_shipping_destination}    ${dc_operation.label_receiver_scan_in_tab['shipping_destination']}
+    ${dps_txt_value_shipping_destination_in_scan_in}=    Replace String    ${dps_txt_value_shipping_destination_in_scan_in}    {value_shipping_destination}    ${shipping_destination}
+    ${dps_txt_value_receiver_address_in_scan_in}=    Replace String    ${dps_txt_value_receiver_address_in_scan_in_scan_page}    {label_receiver_address}    ${dc_operation.label_receiver_scan_in_tab['address']}
+    ${dps_txt_value_receiver_address_in_scan_in}=    Replace String    ${dps_txt_value_receiver_address_in_scan_in}    {value_receiver_address}    ${receiver_address}
+    ${actual_txt_value_receiver_name_in_scan_in}=    Get Text    ${dps_txt_value_receiver_name_in_scan_in}
+    ${actual_txt_value_receiver_phone_in_scan_in}=    Get Text    ${dps_txt_value_receiver_phone_in_scan_in}
+    ${actual_txt_value_shipping_destination_in_scan_in}=    Get Text    ${dps_txt_value_shipping_destination_in_scan_in}
+    ${actual_txt_value_receiver_address_in_scan_in}=    Get Text    ${dps_txt_value_receiver_address_in_scan_in}
+    Should Be Equal    ${actual_txt_value_receiver_name_in_scan_in}    ${receiver_name}
+    Should Be Equal    ${actual_txt_value_receiver_phone_in_scan_in}    ${receiver_phone}
+    Should Be Equal    ${actual_txt_value_shipping_destination_in_scan_in}    ${shipping_destination}
+    Should Be Equal    ${actual_txt_value_receiver_address_in_scan_in}    ${receiver_address}

@@ -361,7 +361,7 @@ dc_operation:
     title: ผู้รับ
     name: ชื่อผู้รับ
     phone: เบอร์โทรศัพท์ผู้รับ
-    shipping_origin: ปลายทางจัดส่งพัสดุ
+    shipping_destination: ปลายทางจัดส่งพัสดุ
     address: รายละเอียดที่อยู่
   scan_in_title_paecel_detail:
     title: รายละเอียดพัสดุ
