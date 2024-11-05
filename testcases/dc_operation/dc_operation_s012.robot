@@ -15,7 +15,7 @@ DC_Operation_S012
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    dps_home_page.Wait Until Home Page Loaded
+    dps_home_page.Wait Until Page Loaded
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 

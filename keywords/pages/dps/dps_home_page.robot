@@ -250,11 +250,11 @@ Select DPS Menu
     IF  '${tabname}' == 'homepage'
         FOR  ${i}  IN RANGE  0  5
         Reload Page
-        ${isvisible}    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_img_loading_screen_home_page}
+        ${isvisible}    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_img_loading_page}
         Capture Page Screenshot
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         END
-        Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
+        Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=240s
     END
 
 Verify Parcels Into The Warehouse
@@ -493,13 +493,20 @@ Select Filter Button
     Scroll Element Into View    ${dps_btn_filter}
     common.Click When Ready    ${dps_btn_filter}
 
+Click Search Button On Filter
+    ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_home_page}    {value}    ${dc_operation['button_search']}
+    common.Click When Ready    ${dps_btn_search_filter}
+
 Input Fiter Parcel Status
     [Arguments]    ${task_type}    ${parcel_status}
     ${dps_cbo_task_type}=    Replace String    ${dps_cbo_task_type_home_page}    {value}    ${task_type}
     ${dps_cbo_parcel_status}=    Replace String    ${dps_cbo_parcel_status_home_page}    {value}    ${parcel_status}
-    ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_home_page}    {value}    ${dc_operation['button_search']}
-    common.Input When Ready    ${dps_txtbox_task_type_home_page}    ${task_type}
-    common.Click When Ready    ${dps_cbo_task_type}
-    common.Input When Ready    ${dps_txtbox_parcel_status_home_page}    ${parcel_status}
+    common.Input When Ready    ${dps_txtbox_parcel_status}    ${parcel_status}
     common.Click When Ready    ${dps_cbo_parcel_status}
-    common.Click When Ready    ${dps_btn_search_filter}
+    Click Search Button On Filter
+
+Filter Data By Parcel Number [All Task Tab]
+    [Arguments]    ${parcel_cod}
+    Select Filter Button
+    common.Input When Ready    //input[@id='parcelNumber']    ${parcel_cod}
+    Click Search Button On Filter
