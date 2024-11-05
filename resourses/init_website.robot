@@ -5,6 +5,7 @@ Library                     String
 Library                     Collections
 Library                     OperatingSystem
 Library                     RequestsLibrary
+Library                     JSONLibrary
 Library                     DateTime
 Library                     config/python/CustomSeleniumLibrary.py
 Library                     config/python/MongoDBLibrary.py
