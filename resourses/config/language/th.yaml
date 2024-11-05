@@ -342,8 +342,27 @@ dc_operation:
     number_of_pouch: จำนวน Pouch
     number_of_pieces: จำนวนชิ้น
     number_of_scanned_items: รวมรายการที่ต้องการสแกน
+  label_send_task_tab:
+    send_to: นำจ่ายไปยัง
+    store_code: รหัสร้านสาขา
+    transport: ผ่านขนส่ง
+    number_of_pouch: จำนวน Pouch
+    number_of_pieces: จำนวนชิ้น
+    number_of_scanned_items: รวมรายการที่ต้องการสแกน
   button_filter: ตัวกรอง
   button_search: ค้นหา
+  label_sender_scan_in_tab:
+    title: ผู้ส่ง
+    name: ชื่อผู้ส่ง
+    phone: เบอร์โทรศัพท์ผู้ส่ง
+    shipping_origin: ต้นทางจัดส่งพัสดุ
+    address: รายละเอียดที่อยู่
+  label_receiver_scan_in_tab:
+    title: ผู้รับ
+    name: ชื่อผู้รับ
+    phone: เบอร์โทรศัพท์ผู้รับ
+    shipping_origin: ปลายทางจัดส่งพัสดุ
+    address: รายละเอียดที่อยู่
 
 rm:
   text_pre_register: Pre-Register

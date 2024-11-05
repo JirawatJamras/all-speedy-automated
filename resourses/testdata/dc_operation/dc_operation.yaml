@@ -111,4 +111,10 @@ DC_Operation_S012:
     transport: CP All
     number_of_pieces: '1'
   filter:
+    task_type: งานนำจ่าย
     parcel_status: พัสดุรอนำจ่ายโดยคลัง
+  sender_data_in_scan_in_tab:
+    name: คุณ b
+    phone: 0959494989
+    shipping_origin: บริษัท TecheX
+    address: 74 ลำพยา เมืองนครปฐม นครปฐม 73000
