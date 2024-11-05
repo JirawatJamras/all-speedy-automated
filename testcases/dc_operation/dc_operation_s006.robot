@@ -11,10 +11,11 @@ DC_Operation_S006
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางร้าน ส่งโดย CP All สร้าง Pouch (ไม่ข้ามภาค)
     [Tags]    DC_Operation    UAT
     Log    Pre Condition
-    #
     # รอ Operation_S002
-    #
-    #
+
+    ${ParcelsData}    Get Parcels And Sender Names    B2411000294
+    ${parcel_code}    Get Parcel Codes By Sender Name    ${ParcelsData}    คุณ g
+
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_04['username']}
@@ -94,7 +95,31 @@ DC_Operation_S006
     common.Verify Capture Screenshot    DC_Operation_S006    Verify Navigate To Scan Page And Stay At Scan In Tab
 
 
+    Log    Step No.8 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
+    # Expected
 
+    Log    Step No. 9 เลือกแท็บงานส่งออก
+    dps_home_page.Select Tab Export Task
+    # Expected
+
+    Log    Step No. 10 เข้าเมนู Scan และ เลือกแท็บ Scan out
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
+    Select Scan Out Tab
+    # Expected
+
+    Log    Step No.11 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
+    dps_scan_page.Input Tracking Number [Scan In Page]    SPCD241000006714
+    dps_scan_page.Click Search Button
+    # Expected
+
+    Log    Step No.12 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
+    # Expected
+
+    Log    Step No.13 คลิกที่ไอคอนรูปดินสอ
+    
 
 
 

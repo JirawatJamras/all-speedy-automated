@@ -119,6 +119,35 @@ Delete API Booking By Booking ID
     Log    ${response.status_code}
     Log    ${response.content}
 
+Get Parcels And Sender Names
+    [Documentation]    Retrieve parcels' codes and sender's names from the API response
+    [Arguments]    ${booking_id}
+    Create Session    api_session    https://cps-api-uat.allspeedy.co.th/v1/bookings/${booking_id}
+    ${response} =    GET On Session    api_session    /
+    ${status_code} =    Convert To Integer    ${response.status_code}
+    Should Be Equal As Integers    ${status_code}    200    API request failed
+    ${json_response} =    Convert String To Json    ${response.content}
+    ${ParcelsData} =    Create List
+
+    FOR    ${item}    IN    @{json_response['data']}
+        FOR    ${parcel}    IN    @{item['parcels']}
+            ${parcel_code} =    Get From Dictionary    ${parcel}    code
+            ${sender_name} =    Get From Dictionary    ${parcel['sender']}    name
+            ${parcel_entry} =    Create List    ${parcel_code}    ${sender_name}
+            Append To List    ${ParcelsData}    ${parcel_entry}
+        END
+    END
+    RETURN    ${ParcelsData}
+
+Get Parcel Codes By Sender Name
+    [Arguments]    ${ParcelsData}    ${sender_name}
+    FOR    ${item}    IN    @{ParcelsData}
+        ${current_parcel_code} =    Get From List    ${item}    0
+        ${current_sender} =    Get From List    ${item}    1
+        Run Keyword If    '${current_sender}' == '${sender_name}'    Set Suite Variable    ${filtered_parcels_matched_with_sender_name}    ${current_parcel_code}
+    END
+    RETURN    ${filtered_parcels_matched_with_sender_name}
+  
 ################### Mobile - Android ###################
 Application Teardown
     # Run keyword If Test Failed   Capture page screenshot
