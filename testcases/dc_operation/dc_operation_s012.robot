@@ -76,7 +76,7 @@ DC_Operation_S012
     dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241100001156
     dps_scan_page.Click Search Button
     dps_home_page.Wait Until Page Loaded
-    # Defect155    Defect156
+    # Defect155    Defect156    Defect157    Defect159
     # Expected
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.label_sender_scan_in_tab['title']}

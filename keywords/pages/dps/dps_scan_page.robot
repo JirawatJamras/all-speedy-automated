@@ -151,7 +151,7 @@ Verify Data Label Parcel In Scan Page
     Should Be Equal    ${actual_txt_value_label_wh}    ${wh}
     # verify symbol
 
-Verify Title Sender In Scan Page
+Verify Title Sender In Scan Page  # chnage xpath from index to replace value instead
     [Arguments]    ${sender_title}    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
     ${actual_txt_label_sender_title_in_scan_in}=    Get Text    ${dps_txt_label_sender_title_in_scan_in_scan_page}
     ${actual_txt_label_sender_name_in_scan_in}=    Get Text    ${dps_txt_label_sender_name_in_scan_in_scan_page}
@@ -183,7 +183,7 @@ Verify Data Sender In Scan Page
     Should Be Equal    ${actual_txt_value_shipping_origin_in_scan_in}    ${shipping_origin}
     Should Be Equal    ${actual_txt_value_sender_address_in_scan_in}    ${sender_address}
 
-Verify Title Receiver In Scan Page
+Verify Title Receiver In Scan Page  # chnage xpath from index to replace value instead
     [Arguments]    ${receiver_title}    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
     ${actual_txt_label_receiver_title_in_scan_in}=    Get Text    ${dps_txt_label_receiver_title_in_scan_in_scan_page}
     ${actual_txt_label_receiver_name_in_scan_in}=    Get Text    ${dps_txt_label_receiver_name_in_scan_in_scan_page}
