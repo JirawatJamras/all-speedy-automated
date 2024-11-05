@@ -71,6 +71,26 @@ Verify Parcel Pickup Status
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
 
+Verify Parcel Pickup Status After Cut Off Time
+    [Arguments]    ${status}    ${round}    ${tomorrow}    ${pickup_time}    ${text_pickup_date}    ${text_cut_off_time}    ${today}
+    ...    ${text_parcel_number}    ${parcel_num}    ${text_price}    ${price_value}    ${text_pickup_location}    ${company_address}
+    ...    ${sub_district}    ${district}    ${province}    ${postcode}
+    ${actual_status}=  Replace String   ${b2c_txt_parcel_pickup_round}    {status}    ${status}
+    ${label_pickup_round}=  Replace String   ${actual_status}    {round}    ${round} ${tomorrow} ${pickup_time}
+    ${label_pickup_date}=  Replace String   ${label_pickup_round}    {pickupdate}    ${text_pickup_date} 
+    ${value_pickup_date}=  Replace String   ${label_pickup_date}    {value}    ${tomorrow}
+    ${label_cut_off}=  Replace String   ${b2c_txt_cutoff_pickup_round}    {cutoff}    ${text_cut_off_time}
+    ${value_cut_off}=  Replace String   ${label_cut_off}    {cutoff_value}    ${today}
+    ${label_parcel}=  Replace String   ${value_cut_off}    {parcel}    ${text_parcel_number}
+    ${value_parcel}=  Replace String   ${label_parcel}    {value}    ${parcel_num}
+    ${label_price}=  Replace String   ${b2c_txt_location_pickup}    {price}    ${text_price}
+    ${value_price}=  Replace String   ${label_price}    {price_value}    ${price_value}
+    ${label_location}=  Replace String   ${value_price}    {location}    ${text_pickup_location}
+    ${value_location}=  Replace String   ${label_location}    {location_value}    ${company_address} ${sub_district} ${district} ${province} ${postcode}
+
+    Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
+
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled
     Element Should Be Disabled    ${b2c_cbo_car_round_name_call_car_pickup_page}

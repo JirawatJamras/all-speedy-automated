@@ -4,9 +4,10 @@ Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
+                  ...    AND    Reset Cut Off Time
 
 *** Test Cases ***
-DC_Operation_s002_1   
+DC_Operation_s002
     [Tags]    DC_Operation    UAT    PART1
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
@@ -190,7 +191,7 @@ DC_Operation_s002_1
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status
+    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
     ...    ${call_car_pick_up.status['arrange_car']}
     ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
     ...    ${tomorrow}
@@ -221,14 +222,16 @@ DC_Operation_s002_1
     dps_login_page.Click Log On Button
     # Expected
     dps_home_page.Verify Homepage
-    common.Verify Capture Screenshot    DC_Operation_002    Verify Homepage Title
+    ...    ${dc_operation.breadcrumb['homepage']}
+    ...    ${dc_operation.title['homepage']}
+    common.Verify Capture Screenshot    DC_Operation_S002    Verify Homepage Title
 
     Log    Step No.19_2 เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
     dps_home_page.Verify Role Change In Profile    ${dc_operation.role['admin']}
-    common.Verify Capture Screenshot    DC_Operation_002    Verify Role Change In Profile
+    common.Verify Capture Screenshot    DC_Operation_S002    Verify Role Change In Profile
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
@@ -269,10 +272,9 @@ DC_Operation_s002_1
     ...    ${DC_Operation_S002.receiving_cycle.status['waiting']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Inventory Confirm List Tab
 
-    # Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
-    # dps_check_receiving_cycle.Click Pencil Icon
-    # # Expected
-    # # Inprogress
+    Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
+    dps_check_receiving_cycle.Click Pencil Icon
+    # Expected
     # dps_check_receiving_cycle.Verify Parcel Pickup Details Popup
     # ...    ${dc_operation['parcel_pickup_details']}
 
@@ -281,7 +283,7 @@ DC_Operation_s002_1
     
     # ## เหลือ Verify รายละเอียด ##
 
-    # common.Verify Capture Screenshot    DC_Operation_S002    Verify Parcel Pickup Details Popup
+    common.Verify Capture Screenshot    DC_Operation_S002    Verify Parcel Pickup Details Popup
     
     # Log    Step No.23 คลิกปุ่ม Export
     # dps_check_receiving_cycle.Click Export Button On Parcel Pickup Details Popup
@@ -304,11 +306,3 @@ DC_Operation_s002_1
     # b2c_home_page.Click Book Parcel Delivery
     # # Expected
     # # Inprogress
-
-    #reset
-    dps_home_page.Reset Cut Off Time
-    ...    ${DB_URI}
-    ...    ${DATABASE_NAME}
-    ...    ${COLLECTION}
-    ...    ${QUERY}
-    ...    23:59
