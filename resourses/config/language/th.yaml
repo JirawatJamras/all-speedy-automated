@@ -372,7 +372,7 @@ dc_operation:
     phone: เบอร์โทรศัพท์ผู้รับ
     shipping_destination: ปลายทางจัดส่งพัสดุ
     address: รายละเอียดที่อยู่
-  scan_in_title_paecel_detail:
+  scan_in_title_parcel_detail: 
     title: รายละเอียดพัสดุ
     parcel_id: หมายเลขพัสดุ
     customer_id: Customer ID
