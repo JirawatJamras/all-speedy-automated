@@ -2,6 +2,7 @@
 Set Cut Off Time
     [Arguments]    ${uri}    ${name}    ${collection}    ${query}
     ${time}=    Get Current Date    result_format=%H:%M
+    Set Suite Variable    ${cut_off_time}    ${time}
     connect_to_mongodb    ${uri}    ${name}    ${collection}
     ${QUERY}    Create Dictionary    status=${query}
     ${update}    Create Dictionary    cutOff=${time}
