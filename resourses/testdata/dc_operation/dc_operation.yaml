@@ -144,6 +144,16 @@ DC_Operation_S007:
     phone: ''
     shipping_destination: ร้าน (15888)
     address: 'เขตสีลม แขวงบางรัก กรุงเทพมหานคร 10500'
+  scan_out_waiting_scan:
+    title: รายการพัสดุที่รอ Scan Out
+    parcel_id: ''
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    receiving_date: ''
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
 
 DC_Operation_S012:
   data_in_all_task_tab:

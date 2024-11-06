@@ -404,6 +404,16 @@ dc_operation:
     phone: เบอร์โทรศัพท์ผู้รับ
     shipping_destination: ปลายทางจัดส่งพัสดุ
     address: รายละเอียดที่อยู่
+  scan_out_title_waiting_scan:
+    title: รายการพัสดุที่รอ Scan Out
+    parcel_id: หมายเลขพัสดุ
+    pouch_number: Pouch Number
+    receive_parcel_from: งานรับเข้าจาก
+    transport: ผ่านขนส่ง
+    parcel_owner: Parcel Owner
+    parcel_size: ขนาดพัสดุ
+    receiving_date: วันที่อัปเดตล่าสุด 
+    parcel_status: สถานะพัสดุ
 
 rm:
   text_pre_register: Pre-Register
