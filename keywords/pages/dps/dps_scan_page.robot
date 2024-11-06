@@ -16,59 +16,61 @@ Select Move Status Tab
 Select Change Courier Tab
     Select Tab In Scan Page    ${dc_operation.tab_scan['change_courier']}
 
-Input Tracking Number [Scan In Page]
+#################################### Scan In ##########################################
+
+Input Tracking Number [Scan In Page]    # Scan In
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_in_page}
     common.Input When Ready    ${dps_txtbox_on_scan_in_page}    ${value}
 
-Input Pouch Number [Scan Out Page]
+Input Pouch Number [Scan Out Page]    # Scan Out
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
 
 
-Click Search Button [Scan In Page]
+Click Search Button [Scan In Page]    # Scan In
     ${dps_btn_search_scan_in_page}=    Replace String    ${dps_btn_search_scan_in_page}    {value}    ${dc_operation['text_search']}
     common.Click When Ready    ${dps_btn_search_scan_in_page}
 
-Click Search Button [Scan Out Page]
+Click Search Button [Scan Out Page]    # Scan Out
     ${dps_btn_search_scan_out_page}=    Replace String    ${dps_btn_search_scan_out_page}    {value}    ${dc_operation['text_search']}
     common.Click When Ready    ${dps_btn_search_scan_out_page}
 
-Click Confirm Scan Out Button
+Click Confirm Scan Out Button    # Scan Out
     ${dps_btn_confirm_scan_out_scan_out_page}=    Replace String    ${dps_btn_confirm_scan_out_scan_out_page}    {value}    ${dc_operation['text_confirm_scan_out']}
     common.Click When Ready    ${dps_btn_confirm_scan_out_scan_out_page}
 
-Click Confirm Button On Popup Asking To Scan Out
+Click Confirm Button On Popup Asking To Scan Out    # Scan Out
     ${dps_btn_confirm_on_asking_confirm_scan_out_popup}=    Replace String    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    {value}    ${dc_operation['text_confirm']}
     common.Click When Ready    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}
 
-Click Popup Save Data Success
+Click Popup Save Data Success    # Scan Out
     ${dps_txt_save_data_success}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
     common.Click When Ready    ${dps_txt_save_data_success}
 
-Click Waiting Delivery List Button
+Click Waiting Delivery List Button    # Scan Out
     ${dps_btn_waiting_delivery_list_scan_out_page}=    Replace String    ${dps_btn_waiting_delivery_list_scan_out_page}    {value}    ${dc_operation['text_waiting_delivery_list']}
     common.Scroll Into View By Xpath    ${dps_btn_waiting_delivery_list_scan_out_page}    true
     common.Click When Ready    ${dps_btn_waiting_delivery_list_scan_out_page}
 
-Click Print Button By Data
+Click Print Button By Data     # Scan Out
     [Arguments]    ${export_to}    ${deliver}    ${parcel_amount}    ${pouch_amount}    ${total_parcel_pouch}
     common.Click When Ready    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='${export_to}']/..//td[text()='${deliver}']/..//td[text()='${parcel_amount}'][1]/..//td[text()='${pouch_amount}']/..//td[text()='${total_parcel_pouch}'][2]/..//td[@title='พิมพ์'])[1]
 
-Verify Navigate To Scan Page And Stay At Scan In Tab
+Verify Navigate To Scan Page And Stay At Scan In Tab      # Scan In
     ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
     ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_in']}
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
     Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
 
-Verify Navigate To Scan Page And Stay At Scan Out Tab
+Verify Navigate To Scan Page And Stay At Scan Out Tab     # Scan Out
     ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
     ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_out']}
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
     Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
 
-Verify Title Parcel Details In Scan Page Store Destination
+Verify Title Parcel Details In Scan Page Store Destination    # Scan In
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
     ...            ${parcel_size}    ${warehouse_crossdock}    ${warehouse_destination}
     ...            ${parcel_status}    ${courier}    ${pouch_number}
@@ -114,7 +116,7 @@ Verify Title Parcel Details In Scan Page Store Destination
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_txt_title_route}    ${route}
 
-Verify Data Parcel Details In Scan Page Store Destination
+Verify Data Parcel Details In Scan Page Store Destination    # Scan In
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
     ...            ${warehouse_crossdock}    ${warehouse_destination}    ${parcel_status}
     ...            ${courier}    ${pouch_number}    ${receiving_date}
@@ -158,7 +160,7 @@ Verify Data Parcel Details In Scan Page Store Destination
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_value_route}    ${route}
 
-Verify Title Label Parcel In Scan Page Store Destination
+Verify Title Label Parcel In Scan Page Store Destination    # Scan In
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}
     ${actual_txt_title_label_route}=    Get Text    ${dps_txt_title_label_route}
@@ -174,7 +176,7 @@ Verify Title Label Parcel In Scan Page Store Destination
     Should Be Equal    ${actual_txt_title_label_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_title_label_wh}    ${wh}
 
-Verify Data Label Parcel In Scan Page Store Destination
+Verify Data Label Parcel In Scan Page Store Destination    # Scan In
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}    ${symbol}
     ${actual_txt_value_label_route}=    Get Text    ${dps_txt_value_label_route}
@@ -196,7 +198,7 @@ Verify Data Label Parcel In Scan Page Store Destination
     Wait Until Page Contains Element    ${dps_img_label_circle_symbol_in_scan_page}
     END
 
-Verify Title Sender In Scan Page
+Verify Title Sender In Scan Page    # Scan In-Out
     [Arguments]    ${sender_title}    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
     ${dps_txt_label_sender_title_in_scan_in}=    Replace String    ${dps_txt_label_sender_title_in_scan_in_scan_page}    {label_sender_title}    ${sender_title}
     ${dps_txt_label_sender_name_in_scan_in}=    Replace String    ${dps_txt_label_sender_name_in_scan_in_scan_page}    {label_sender_name}    ${sender_name}
@@ -214,7 +216,7 @@ Verify Title Sender In Scan Page
     Should Be Equal    ${actual_txt_label_shipping_origin_in_scan_in}    ${shipping_origin}
     Should Be Equal    ${actual_txt_label_sender_address_in_scan_in}    ${sender_address}
 
-Verify Data Sender In Scan Page 
+Verify Data Sender In Scan Page    # Scan In-Out
     [Arguments]    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
     ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in_scan_page}    {label_sender_name}    ${dc_operation.scan_in_title_sender_detail['name']}
     ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in}    {value_sender_name}    ${sender_name}
@@ -233,7 +235,7 @@ Verify Data Sender In Scan Page
     Should Be Equal    ${actual_txt_value_shipping_origin_in_scan_in}    ${shipping_origin}
     Should Be Equal    ${actual_txt_value_sender_address_in_scan_in}    ${sender_address}
 
-Verify Title Receiver In Scan Page
+Verify Title Receiver In Scan Page    # Scan In-Out
     [Arguments]    ${receiver_title}    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
     ${dps_txt_label_receiver_title_in_scan_in}=    Replace String    ${dps_txt_label_receiver_title_in_scan_in_scan_page}    {label_receiver_title}    ${receiver_title}
     ${dps_txt_label_receiver_name_in_scan_in}=    Replace String    ${dps_txt_label_receiver_name_in_scan_in_scan_page}    {label_receiver_name}    ${receiver_name}
@@ -251,7 +253,7 @@ Verify Title Receiver In Scan Page
     Should Be Equal    ${actual_txt_label_shipping_destination_in_scan_in}    ${shipping_destination}
     Should Be Equal    ${actual_txt_label_receiver_address_in_scan_in}    ${receiver_address}
 
-Verify Data Recevier In Scan Page
+Verify Data Recevier In Scan Page    # Scan In-Out
     [Arguments]    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
     ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in_scan_page}    {label_receiver_name}    ${dc_operation.scan_in_title_receiver_detail['name']}
     ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in}    {value_receiver_name}    ${receiver_name}
@@ -269,3 +271,5 @@ Verify Data Recevier In Scan Page
     Should Be Equal    ${actual_txt_value_receiver_phone_in_scan_in}    ${receiver_phone}
     Should Be Equal    ${actual_txt_value_shipping_destination_in_scan_in}    ${shipping_destination}
     Should Be Equal    ${actual_txt_value_receiver_address_in_scan_in}    ${receiver_address}
+
+
