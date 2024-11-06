@@ -190,6 +190,11 @@ Verify Data Label Parcel In Scan Page Store Destination
     Should Be Equal    ${actual_txt_value_label_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_value_label_wh}    ${wh}
     # verify symbol
+    IF         '${symbol}' == 'รูปดาว'
+    Wait Until Page Contains Element    ${dps_img_label_star_symbol_in_scan_page}     
+    ELSE IF    '${symbol}' == 'รูปวงกลม'
+    Wait Until Page Contains Element    ${dps_img_label_circle_symbol_in_scan_page}
+    END
 
 Verify Title Sender In Scan Page
     [Arguments]    ${sender_title}    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}

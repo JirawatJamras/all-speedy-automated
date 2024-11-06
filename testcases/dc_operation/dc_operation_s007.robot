@@ -57,7 +57,7 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    SPCD241000008174
-    dps_scan_page.Click Search Button
+    dps_scan_page.Click Search Button [Scan In Page]
     dps_home_page.Wait Until Page Loaded
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page Store Destination
@@ -103,22 +103,22 @@ DC_Operation_S007
     ...    DC BB - -- DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['wh']}
     ...    รูปดาว    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['symbol']}
     dps_scan_page.Verify Title Sender In Scan Page
-    ...    ${dc_operation.label_sender_scan_in_tab['title']}
-    ...    ${dc_operation.label_sender_scan_in_tab['name']}
-    ...    ${dc_operation.label_sender_scan_in_tab['phone']}
-    ...    ${dc_operation.label_sender_scan_in_tab['shipping_origin']}
-    ...    ${dc_operation.label_sender_scan_in_tab['address']}
+    ...    ${dc_operation.scan_in_title_sender_detail['title']}
+    ...    ${dc_operation.scan_in_title_sender_detail['name']}
+    ...    ${dc_operation.scan_in_title_sender_detail['phone']}
+    ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
+    ...    ${dc_operation.scan_in_title_sender_detail['address']}
     dps_scan_page.Verify Data Sender In Scan Page
     ...    fee    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['name']}
     ...    0988797374    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['phone']}
-    ...    สาขา ตลาดบางบัวทอง จุด 2 (13462)    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['shipping_origin']}
+    ...     สาขา ตลาดบางบัวทอง จุด 2 (13462)    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['shipping_origin']}
     ...    11 คลองเตย คลองเตย กรุงเทพมหานคร 10110    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['address']}
     dps_scan_page.Verify Title Receiver In Scan Page
-    ...    ${dc_operation.label_receiver_scan_in_tab['title']}
-    ...    ${dc_operation.label_receiver_scan_in_tab['name']}
-    ...    ${dc_operation.label_receiver_scan_in_tab['phone']}
-    ...    ${dc_operation.label_receiver_scan_in_tab['shipping_destination']}
-    ...    ${dc_operation.label_receiver_scan_in_tab['address']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['title']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['name']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['address']}
     dps_scan_page.Verify Data Recevier In Scan Page
     ...    feee    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['name']}
     ...    0988797374    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['phone']}
