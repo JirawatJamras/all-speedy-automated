@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_s002
-    [Tags]    DC_Operation    UAT    PART1
+    [Tags]    DC_Operation    UAT
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
