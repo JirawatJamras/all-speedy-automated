@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_S001
-    [Tags]    DC_Operation    UAT    test
+    [Tags]    DC_Operation    UAT
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -214,7 +214,7 @@ DC_Operation_S001
     Open Chrome Browser    chrome    #headlesschrome    #chrome
     common.Open URL    ${DPS_UAT_URL}
 
-    Log    Step No.19_1 เข้าสู่ระบบ
+    Log    Step No.19 เข้าสู่ระบบ
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
@@ -225,7 +225,7 @@ DC_Operation_S001
     ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    DC_Operation_S001    Verify Homepage Title
 
-    Log    Step No.19_2 เลือก role แอดมินคลัง
+    Log    Step No.20 เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
