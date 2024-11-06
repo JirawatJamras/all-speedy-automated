@@ -47,6 +47,15 @@ Click Popup Save Data Success
     ${dps_txt_save_data_success}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
     common.Click When Ready    ${dps_txt_save_data_success}
 
+Click Waiting Delivery List Button
+    ${dps_btn_waiting_delivery_list_scan_out_page}=    Replace String    ${dps_btn_waiting_delivery_list_scan_out_page}    {value}    ${dc_operation['text_waiting_delivery_list']}
+    common.Scroll Into View By Xpath    ${dps_btn_waiting_delivery_list_scan_out_page}    true
+    common.Click When Ready    ${dps_btn_waiting_delivery_list_scan_out_page}
+
+Click Print Button By Data
+    [Arguments]    ${export_to}    ${deliver}    ${parcel_amount}    ${pouch_amount}    ${total_parcel_pouch}
+    common.Click When Ready    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='${export_to}']/..//td[text()='${deliver}']/..//td[text()='${parcel_amount}'][1]/..//td[text()='${pouch_amount}']/..//td[text()='${total_parcel_pouch}'][2]/..//td[@title='พิมพ์'])[1]
+
 Verify Navigate To Scan Page And Stay At Scan In Tab
     ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
     ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_in']}

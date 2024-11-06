@@ -7,6 +7,7 @@ ${dps_btn_search_scan_out_page}    (//span[text()='{value}']/../..//button)[2]
 ${dps_btn_scan_in_tab_is_active_scan_page}    //div[text()='{value}' and @aria-selected='true']
 ${dps_btn_confirm_scan_out_scan_out_page}    //span[text()='{value}']/../..//button
 ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    //div[@class='ant-modal-content']//span[text()='{value}']/..
+${dps_btn_waiting_delivery_list_scan_out_page}    //span[text()='{value}']/..
 
 ${dps_txt_scan_header_ion_scan_page}    //div[@class='ant-card-head-wrapper']//span[text()='{value}']
 ${dps_txt_title_parcel_detail}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']
