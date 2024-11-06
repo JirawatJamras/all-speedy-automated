@@ -36,6 +36,7 @@ ${dps_txt_value_parcel_size2}    //input[@type='number' and contains(@class,'ant
 ${dps_txt_value_parcel_size3}    //input[@type='number' and contains(@class,'ant-input')]/../../input
 ${dps_txt_value_warehouse_crossdock}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_warehouse_destination}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/div/div/span[2]
+${dps_txt_arrow_warehouse_destination}    /../../span[@class='ant-select-arrow']
 ${dps_txt_value_parcel_status}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_courier}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/div/div/span[2]
 ${dps_txt_value_pouch_number}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
@@ -56,13 +57,13 @@ ${dps_txt_label_shipping_origin_in_scan_in_scan_page}    //div[@aria-hidden='fal
 ${dps_txt_label_sender_address_in_scan_in_scan_page}    (//div[@aria-hidden='false']//strong[text()='{label_sender_address}'])[1]
 ${dps_txt_value_sender_name_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_name}']/../../..//span[text()='{value_sender_name}']
 ${dps_txt_value_sender_phone_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_phone}']/../../..//span[text()='{value_sender_phone}']
-${dps_txt_value_shipping_origin_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_shipping_origin}']/../../..//span[text()='{value_shipping_origin}']
+${dps_txt_value_shipping_origin_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_shipping_origin}']/../../..//span[contains(text(),'{value_shipping_origin}')]
 ${dps_txt_value_sender_address_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_address}']/../../..//span[contains(normalize-space(.), '{value_sender_address}')]
 
 ${dps_txt_label_receiver_title_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_receiver_title}']
 ${dps_txt_label_receiver_name_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_receiver_name}']
 ${dps_txt_label_receiver_phone_in_scan_in_scan_page}   //div[@aria-hidden='false']//strong[text()='{label_receiver_phone}']
-${dps_txt_label_shipping_destination_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_shipping_destination}']
+${dps_txt_label_shipping_destination_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[contains(text(),'{label_shipping_destination}')]
 ${dps_txt_label_receiver_address_in_scan_in_scan_page}    (//div[@aria-hidden='false']//strong[text()='{label_receiver_address}'])[2]
 ${dps_txt_value_receiver_name_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_receiver_name}']/../../..//span[text()='{value_receiver_name}']
 ${dps_txt_value_receiver_phone_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_receiver_phone}']/../../..//span[text()='{value_receiver_phone}']

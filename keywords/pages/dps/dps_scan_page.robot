@@ -149,6 +149,7 @@ Verify Data Parcel Details In Scan Page Store Destination
     Should Be Equal    ${actual_value_parcel_size}    ${parcel_size}
     Should Be Equal    ${actual_value_warehouse_crossdock}    ${warehouse_crossdock}
     Should Be Equal    ${actual_value_warehouse_destination}    ${warehouse_destination}
+    Element Should Be Visible    ${dps_txt_value_warehouse_destination}${dps_txt_arrow_warehouse_destination}
     Should Be Equal    ${actual_value_parcel_status}    ${parcel_status}
     Should Be Equal    ${actual_value_courier}    ${courier}
     Should Be Equal    ${actual_value_pouch_number}    ${pouch_number}

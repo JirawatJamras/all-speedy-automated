@@ -143,7 +143,7 @@ DC_Operation_S013
     dps_scan_page.Verify Data Sender In Scan Page
     ...    คุณ a  # ${DC_Operation_S013.sender_data_in_scan_in_tab['name']}
     ...    0633906216  # ${DC_Operation_S013.sender_data_in_scan_in_tab['phone']}
-    ...    ${SPACE}สาขา คุณาลัย-บางใหญ่ (07465)  # ${DC_Operation_S013.sender_data_in_scan_in_tab['shipping_origin']}
+    ...    สาขา คุณาลัย-บางใหญ่ (07465)  # ${DC_Operation_S013.sender_data_in_scan_in_tab['shipping_origin']}
     ...    74 ลำพยา เมืองนครปฐม นครปฐม 73000  # ${DC_Operation_S013.sender_data_in_scan_in_tab['address']}
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
