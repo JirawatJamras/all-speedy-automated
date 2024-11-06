@@ -31,8 +31,10 @@ Register_S017
     Log    Step No.1 RM กดปุ่ม "เพิ่มลูกค้าใหม่"
     pms_requests_page.Click Tab Full-Register
     pms_requests_page.Click Add New Customer
-    #Expected Result
-    # pms_full_register_page.Verify Full Register Status    ร่าง
+    # Expected
+    # Inprogress
+    pms_full_register_page.Verify Full Register Status    ${rm.text_status['non']}
+    
 
     Log    Step No.2 ระบุข้อมูลลูกค้าใหม่
     pms_full_register_page.Select Type Customer    ${Register_S017.company_data['type_customer']}
@@ -52,7 +54,7 @@ Register_S017
 
     Log    Step No.3 กดปุ่ม"หน้าถัดไป"
     pms_full_register_page.Click Button Next
-    #Expected Result
+    # Expected
 
     Log    Step No.4 ระบุข้อมูล
     pms_full_register_page.Click Tab Dry Parcel

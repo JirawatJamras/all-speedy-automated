@@ -5,6 +5,7 @@ Register:
     remark: ''
   email: businessregisterflow@gmail.com
   password: Business1234@
+  password_allspeedy: P@ssw0rd
   Pre_register:
     text_menu_register: ลงทะเบียนลูกค้าธุรกิจ
     text_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
@@ -353,6 +354,12 @@ Register_S015:
     price_scheme_date: 29/10/2567
     insure_scheme: Insurance Fee 1
     insure_scheme_date: 29/10/2567
+  contact:
+    name: นางสาวสมปอง อยู่ประชา
+    position: พนักงานขาย
+    email: sompong@mail.co
+    mobile_no: '020000000'
+    mobile_ext: '1133'
   remark_4:  แก้ไขเอกสารหน้าบัญชีธนาคาร
 
 Register_S017:

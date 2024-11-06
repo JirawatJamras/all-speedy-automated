@@ -401,6 +401,7 @@ rm:
   text_edit_company_information: เปลี่ยนแปลงข้อมูลบริษัท
   text_mange_request: จัดการคำขอ
   text_manage_customer_information: จัดการข้อมูลลูกค้า
+  text_customer_information: ข้อมูลลูกค้า
   text_pending: รอดำเนินการ
   text_sale_information: ข้อมูล Sale
   text_reject: ปฏิเสธ
@@ -423,6 +424,8 @@ rm:
     reject: ปฏิเสธ
     waiting_review: รอตรวจสอบ
     waiting_confirm: รอการยืนยัน
+    non: '-'
+    
   role:
     dev: Role Dev
     admin: แอดมินคลัง
@@ -489,6 +492,7 @@ rm:
     text_insure: ประกันคุ้มครองพัสดุ
     text_express: บริการส่งด่วน
     text_service_info: ข้อมูลการใช้บริการ
+      
     dry_parcel:
       text_product_category: ประเภทสินค้าหลักที่จัดส่ง *
       text_pieces_amount: จำนวนการจัดส่งเฉลี่ยต่อวัน *
@@ -528,6 +532,7 @@ rm:
       not_determined: ยังไม่ได้กำหนด
       determined: กำหนดแล้ว
     latitude_longitude: '0, 0'
+    text_button_add: เพิ่ม
     text_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
     text_copy_file_20: สำเนาเอกสาร ภพ. 20
     text_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
@@ -544,6 +549,12 @@ rm:
       text_bank_account_type: ประเภทบัญชี *
     contact:
       text_contact_name: ชื่อผู้ติดต่อ
+      text_position: ตำแหน่ง
+      text_email: email
+      text_mobile: เบอร์โทรศัพท์
+      text_mobile_ext: '#ต่อ'
+      
+
     text_return: ส่งกลับ
     text_header_return_popup: ส่งกลับแก้ไข
     text_remark_page_1: 'หมายเหตุการแก้ไข #1'

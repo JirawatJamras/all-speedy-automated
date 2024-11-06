@@ -13,18 +13,20 @@ Approve Legal Entity
     [Documentation]    E2E 32 Scenario
     [Tags]    Register    UAT
     Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
-    Register_S001
+    # Register_S001
     Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
-    Register_S007
+    # Register_S007
     Log    Scenario 9 RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)
-    Register_S009
+    # Register_S009
     Log    Scenario 13 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล
-    Register_S013
+    # Register_S013
     Log    Scenario 15 RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
     #Register_S015   
     Log    Scenario 20 RM : การ Update Vendor Code ในข้อมูลลูกค้า
     #Register_S020
-    #Register_S022-49
+    Register_S022
+    #Register_S023
+    #Register_S024-49
 
 *** Keywords ***    
 Register_S001
@@ -589,13 +591,34 @@ Register_S020
     common.Open URL    
     pms_home_page.Select Manage Customer Menu
     pms_home_page.Select Customer Information Sub-Menu
-    
+
+Register_S022
+    [Documentation]    Customer : สร้างรหัสผ่านเข้าใช้งานระบบ
+    register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}   
+
+    Log    Step No.1 กด Link ที่ได้รับจาก Welcome E-mail
+    register_business_full_register.Get Link Create Password
+    Open URL  ${LinkCreatePassword}
+    # Expected
+    common.Click When Ready  //button//b[text()='ยืนยันตัวตน']
+    # register_business_full_register.Verify Create Password Page
+    Log    Step No.2 ระบุรหัสผ่านสำหรับเข้าใช้งานระบบ : P@ssw0rd ให้ตรงกันทั้ง 2 ช่อง
+
+
+
+    Log    Step No.3 กดปุ่ม "ยืนยัน"
+
+
+    Log    Step No.4 กดปุ่ม "เข้าสู่ระบบ"
+
+
+
 Register_S023
     [Documentation]    Customer : การ Login เข้าใช้งานระบบสำหรับลูกค้าธุรกิจ
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    idc@gmail.com
-    b2c_login_page.Input Password    P@ssw0rd
+    b2c_login_page.Input Email      ${Register['email']}
+    b2c_login_page.Input Password      ${Register['password_allspeedy']}
     b2c_login_page.Click Log On Button
 
 Register_S024
