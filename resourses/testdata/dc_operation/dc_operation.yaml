@@ -168,3 +168,19 @@ DC_Operation_S012:
     phone: '0900987354'
     shipping_destination: ร้าน
     address: '07004 สาขา เรวดี (ตลาดเปรมสุข) ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'
+
+DC_Operation_S019: 
+  company_name: คุณ ไอดีซี
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
+  verify_pickup_time: '09:00:00 - 12:00 น.'
+  parcel_number: '6'
+  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+  call_car_pick_up:
+    car_type: รอบรถพิเศษ
+    receiving_type: รอบพิเศษ
+    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
+    sub_district: ปากเกร็ด
+    district: ปากเกร็ด
+    province: นนทบุรี 
+    postcode: '11120'

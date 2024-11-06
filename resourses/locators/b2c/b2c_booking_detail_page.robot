@@ -98,3 +98,5 @@ ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
 ${b2c_tab_pickup_Schedule}    //div[@role='tab']//div[text()='{value}']
 
 ${b2c_dialog_create_parcel}    //*[@role='dialog']
+
+${b2c_img_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']

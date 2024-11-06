@@ -694,6 +694,15 @@ Verify Booking Detail Page After Import File
     [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
     ${actual_parcel_list_status}=    Replace String    ${b2c_txt_parcel_list}    {status}    ${status}
     ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
+    ${count_card}=    Set Variable    0
+    # FOR    ${index}    IN RANGE    100
+    #     ${boolean}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
+    #     Wait Until Element Is Visible    ${actual_parcel_list}    timeout=${DEFAULT_TIMEOUT}
+    #     ${count_new_card}=    Get Element Count    ${actual_parcel_list}
+    #     ${count_card}=    Evaluate    ${count_card} + ${count_new_card}
+    #     common.Click When Ready    ${b2c_btn_next_page_parcel_list}
+    #     Exit For Loop If    ${boolean} == True
+    # END
 
     Wait Until Element Is Visible    ${actual_parcel_list}    timeout=${DEFAULT_TIMEOUT}
     ${page1}=    Get Element Count    ${actual_parcel_list}

@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_S001
-    [Tags]    DC_Operation    UAT    test
+    [Tags]    DC_Operation    UAT
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -165,7 +165,7 @@ DC_Operation_S001
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page After Import File
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${call_car_pick_up['text_parcel_id_start_with']}
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    DC_Operation_S001    Verify Import File Success
 
@@ -179,7 +179,7 @@ DC_Operation_S001
     Reload Page
     b2c_booking_detail_page.Verify Booking Detail Page After Import File
     ...    ${Booking['text_parcel_status_waiting_entering']}    #${Booking['text_waiting_confirm_parcel_pickup']}
-    ...    ${call_car_pick_up['text_parcel_id_start_with']}
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    DC_Operation_S001    Verify Parcel Status After Cut Off Time
     b2c_home_page.Click Book Parcel Delivery    

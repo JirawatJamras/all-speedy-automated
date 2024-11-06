@@ -4,3 +4,4 @@ ${test}                                 ${EXECDIR}/../resourses/testdata/test_up
 ${path_excel_dry_parcel}                ${EXECDIR}/../resourses/testdata/excel_file/Excel Template พัสดุทั่วไป.xlsx
 ${path_excel_error_report}               ${EXECDIR}/../resourses/testdata/excel_file/Error Report (FIX).xlsx.xlsx
 ${path_excel_booking_dry_template}      ${EXECDIR}/../resourses/testdata/excel_file/Booking Dry Template Test DC.xlsx
+${path_excel_booking_chilled_template}      ${EXECDIR}/../resourses/testdata/excel_file/Booking Chilled Template Test DC.xlsx

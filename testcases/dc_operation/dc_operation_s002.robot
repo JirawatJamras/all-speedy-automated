@@ -164,7 +164,7 @@ DC_Operation_s002
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page After Import File
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${call_car_pick_up['text_parcel_id_start_with']}
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002['parcel_number']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Import File Success
 
@@ -178,7 +178,7 @@ DC_Operation_s002
     Reload Page
     b2c_booking_detail_page.Verify Booking Detail Page After Import File
     ...    ${Booking['text_parcel_status_waiting_entering']}    #${Booking['text_waiting_confirm_parcel_pickup']}
-    ...    ${call_car_pick_up['text_parcel_id_start_with']}
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002['parcel_number']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Parcel Status After Cut Off Time
     b2c_home_page.Click Book Parcel Delivery    
@@ -236,7 +236,7 @@ DC_Operation_s002
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
     # Expected
-    dps_check_receiving_cycle.Verify Check Receiving Cycle Page    
+    dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
     ...    ${DC_Operation_S002.receiving_cycle['company_name']}
@@ -254,9 +254,9 @@ DC_Operation_s002
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Check Receiving Cycle Page
 
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle.Select Waiting Inventory Confirm List Tab   
+    dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
     # Expected
-    dps_check_receiving_cycle.Verify Inventory Confirm List Tab 
+    dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
     ...    ${DC_Operation_S002.receiving_cycle['company_name']}   
@@ -273,9 +273,9 @@ DC_Operation_s002
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Inventory Confirm List Tab
 
     Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
-    dps_check_receiving_cycle.Click Pencil Icon
+    dps_check_receiving_cycle_page.Click Pencil Icon
     # Expected
-    # dps_check_receiving_cycle.Verify Parcel Pickup Details Popup
+    # dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
     # ...    ${dc_operation['parcel_pickup_details']}
 
     # ...    ${dc_operation['vehicle_type']}
@@ -286,11 +286,11 @@ DC_Operation_s002
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Parcel Pickup Details Popup
     
     # Log    Step No.23 คลิกปุ่ม Export
-    # dps_check_receiving_cycle.Click Export Button On Parcel Pickup Details Popup
+    # dps_check_receiving_cycle_page.Click Export Button On Parcel Pickup Details Popup
     # # Expected
 
     # Log    Step No.24 คลิกปุ่ม อนุมัติ
-    # # dps_check_receiving_cycle.Click Approve Button On Parcel Pickup Details Popup
+    # # dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
     # # Expected
     # # Inprogress
 
