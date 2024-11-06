@@ -238,6 +238,8 @@ DC_Operation_S013:
     number_of_pieces: '1'
     number_of_scanned_items: '1'
   parcel_detail_in_scan_in_tab:
+    tracking: SPBD241100000493
+    receiving_date: 04-11-2567 10:39:14
     customer_id: '2400563'
     parcel_size: '120 ซม. กล่อง L'
     warehouse_crossdock: '-'

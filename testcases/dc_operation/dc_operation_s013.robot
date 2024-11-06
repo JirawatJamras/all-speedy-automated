@@ -35,7 +35,7 @@ DC_Operation_S013
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     dps_home_page.Select Tab All Task
-    dps_home_page.Filter Data By Parcel Number [All Task Tab]    SPBD241100000493
+    dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
     # Defect138    Defect141
     # Expected
     dps_home_page.Verify Homepage
@@ -57,7 +57,7 @@ DC_Operation_S013
     ...    DC BB    #for run same tracking# ${DC_Operation_S013.data_in_all_task_tab['export_to']}
     ...    CPALL  # ${DC_Operation_S013.data_in_all_task_tab['transport']}
     ...    ${DC_Operation_S013.data_in_all_task_tab['pouch_number']}
-    ...    SPBD241100000493
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
     ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง  # ${DC_Operation_S013.data_in_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    DC_Operation_S013    Verify Homepage
@@ -87,28 +87,29 @@ DC_Operation_S013
     Log    Step No.21 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
-    dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241100000493
+    dps_scan_page.Input Tracking Number [Scan In Page]    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
     dps_scan_page.Click Search Button[Scan In Page]
     dps_home_page.Wait Until Page Loaded
     # Defect158    Defect159    Defect160    Defect161    Defect162
     # Expected    
     # Inprogress
-#    dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
-#     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-#     #...    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']} # Defect162
-#     #...    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']} # Defect162
-#     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
-#     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-#     #...    ${dc_operation.scan_in_title_parcel_detail['route']}   # Defect162
+   dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
+    ...    ${dc_operation.scan_in_title_parcel_detail['title']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']} # Defect162
+    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']} # Defect162
+    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['route']}   # Defect162
+
 #     dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
-#     ...    SPBD241100000493
+#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
 #     ...    B2C0002400563  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['customer_id']}
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_size']}
 #     #...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_crossdock']} # Defect162
@@ -116,7 +117,7 @@ DC_Operation_S013
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_status']}
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['courier']}
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
-#     ...    04-11-2567 10:39:14  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
+#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
 #     ...    DC BB  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_source']}
 #     ...    HOME (11120)  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['send_parcel_to']}
 #     #...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['route']} # Defect162
@@ -175,8 +176,29 @@ DC_Operation_S013
     Log    Step No.24 คลิกที่ Pop up
     dps_scan_page.Click Close Popup Print Scan In Success
     # Expected
-    
-    Log    Step No.25
+    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
+
+
+    Log    Step No.25 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+
+    Log    Step No.26 เลือกแท็บงานส่งออก
+
+    Log    Step No.27 เข้าเมนู Scan และ เลือกแท็บ Scan out
+
+    Log    Step No.28 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
+
+    Log    Step No.29 กดปุ่ม ยืนยัน Scan Out
+
+    Log    Step No.30 กดปุ่ม ยืนยัน
+
+    Log    Step No.31 คลิกที่ Pop up
+
+    Log    Step No.32 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
+
+    Log    Step No.33 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+
+    Log    Step No.34 กดปุ่ม พิมพ์
+
 
 
 
