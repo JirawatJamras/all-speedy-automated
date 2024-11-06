@@ -7,6 +7,13 @@ Login mail
     common.Input When Ready    ${register_txtbox_password_gmail}   ${password}
     common.Click when ready    ${register_btn_next_gmail}
 
+Get Link Create Password
+    common.Click when ready    ${register_btn_inbox_gmail}
+    ${LinkCreatePassword}=    Get Element Attribute    ${register_link_create_password}     href
+    Set Suite Variable    ${LinkCreatePassword}
+
+#Verify Create Password Page
+
 Get Link On Email
     ${select_link}=    Replace String    ${register_link_register_gmail}     {value}    ${rm_link_full_register}
     Wait Until Element Is Visible    ${select_link}   ${DEFAULT_TIMEOUT}
