@@ -63,3 +63,5 @@ ${dps_cbo_task_type_home_page}    //div[@title='{value}']
 
 ${dps_txtbox_parcel_status_home_page}    //input[@type='search' and @id='status']
 ${dps_txtbox_task_type_home_page}    //input[@type='search' and @id='typeAll']
+
+${dps_txtbox_parcel_number_home_page}    //input[@id='parcelNumber']

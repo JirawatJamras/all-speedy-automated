@@ -514,5 +514,5 @@ Fiter Parcel Status [All Task Tab]
 Filter Data By Parcel Number [All Task Tab]
     [Arguments]    ${parcel_cod}
     Select Filter Button
-    common.Input When Ready    //input[@id='parcelNumber']    ${parcel_cod}
+    common.Input When Ready    ${dps_txtbox_parcel_number_home_page}    ${parcel_cod}
     Click Search Button On Filter

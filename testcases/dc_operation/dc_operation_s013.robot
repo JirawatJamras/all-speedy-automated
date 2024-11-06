@@ -35,6 +35,7 @@ DC_Operation_S013
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     dps_home_page.Select Tab All Task
+    dps_home_page.Filter Data By Parcel Number [All Task Tab]    SPBD241100000493
     # Defect138    Defect141
     # Expected
     dps_home_page.Verify Homepage
@@ -50,14 +51,14 @@ DC_Operation_S013
     ...    ${dc_operation.label_all_task_tab['parcel_number']}
     ...    ${dc_operation.label_all_task_tab['parcel_status']}
     dps_home_page.Verify Data In All Task Tab
-    ...    ${DC_Operation_S013.data_in_all_task_tab['task_type']}
+    ...    งานส่งออก    #for run same tracking# ${DC_Operation_S013.data_in_all_task_tab['task_type']}
     ...    speedy  # ${DC_Operation_S013.data_in_all_task_tab['parcel_owner']}
-    ...    home  # ${DC_Operation_S013.data_in_all_task_tab['import_from']}
-    ...    ${DC_Operation_S013.data_in_all_task_tab['export_to']}
+    ...    -  # ${DC_Operation_S013.data_in_all_task_tab['import_from']}
+    ...    DC BB    #for run same tracking# ${DC_Operation_S013.data_in_all_task_tab['export_to']}
     ...    CPALL  # ${DC_Operation_S013.data_in_all_task_tab['transport']}
     ...    ${DC_Operation_S013.data_in_all_task_tab['pouch_number']}
-    ...    SPCD241000006135
-    ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S013.data_in_all_task_tab['parcel_status']}
+    ...    SPBD241100000493
+    ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง  # ${DC_Operation_S013.data_in_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    DC_Operation_S013    Verify Homepage
     common.Scroll Window To Vertical    500

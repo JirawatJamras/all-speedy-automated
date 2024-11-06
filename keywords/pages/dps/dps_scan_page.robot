@@ -1,6 +1,6 @@
 *** Keywords ***
 #################################### All ##########################################
-Verify Title Sender In Scan Page    # Scan In-Out
+Verify Title Sender In Scan Page
     [Arguments]    ${sender_title}    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
     ${dps_txt_label_sender_title_in_scan_in}=    Replace String    ${dps_txt_label_sender_title_in_scan_in_scan_page}    {label_sender_title}    ${sender_title}
     ${dps_txt_label_sender_name_in_scan_in}=    Replace String    ${dps_txt_label_sender_name_in_scan_in_scan_page}    {label_sender_name}    ${sender_name}
@@ -18,7 +18,7 @@ Verify Title Sender In Scan Page    # Scan In-Out
     Should Be Equal    ${actual_txt_label_shipping_origin_in_scan_in}    ${shipping_origin}
     Should Be Equal    ${actual_txt_label_sender_address_in_scan_in}    ${sender_address}
 
-Verify Data Sender In Scan Page    # Scan In-Out
+Verify Data Sender In Scan Page
     [Arguments]    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
     ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in_scan_page}    {label_sender_name}    ${dc_operation.scan_in_title_sender_detail['name']}
     ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in}    {value_sender_name}    ${sender_name}
@@ -37,7 +37,7 @@ Verify Data Sender In Scan Page    # Scan In-Out
     Should Be Equal    ${actual_txt_value_shipping_origin_in_scan_in}    ${shipping_origin}
     Should Be Equal    ${actual_txt_value_sender_address_in_scan_in}    ${sender_address}
 
-Verify Title Receiver In Scan Page    # Scan In-Out
+Verify Title Receiver In Scan Page
     [Arguments]    ${receiver_title}    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
     ${dps_txt_label_receiver_title_in_scan_in}=    Replace String    ${dps_txt_label_receiver_title_in_scan_in_scan_page}    {label_receiver_title}    ${receiver_title}
     ${dps_txt_label_receiver_name_in_scan_in}=    Replace String    ${dps_txt_label_receiver_name_in_scan_in_scan_page}    {label_receiver_name}    ${receiver_name}
@@ -55,7 +55,7 @@ Verify Title Receiver In Scan Page    # Scan In-Out
     Should Be Equal    ${actual_txt_label_shipping_destination_in_scan_in}    ${shipping_destination}
     Should Be Equal    ${actual_txt_label_receiver_address_in_scan_in}    ${receiver_address}
 
-Verify Data Recevier In Scan Page    # Scan In-Out
+Verify Data Recevier In Scan Page
     [Arguments]    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
     ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in_scan_page}    {label_receiver_name}    ${dc_operation.scan_in_title_receiver_detail['name']}
     ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in}    {value_receiver_name}    ${receiver_name}
@@ -89,16 +89,16 @@ Select Tab In Scan Page
 Select Scan In Tab
     Select Tab In Scan Page    ${dc_operation.tab_scan['scan_in']}
 
-Input Tracking Number [Scan In Page]    # Scan In
+Input Tracking Number [Scan In Page]
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_in_page}
     common.Input When Ready    ${dps_txtbox_on_scan_in_page}    ${value}
 
-Click Search Button [Scan In Page]    # Scan In
+Click Search Button [Scan In Page]
     ${dps_btn_search_scan_in_page}=    Replace String    ${dps_btn_search_scan_in_page}    {value}    ${dc_operation['text_search']}
     common.Click When Ready    ${dps_btn_search_scan_in_page}
 
-Verify Navigate To Scan Page And Stay At Scan In Tab      # Scan In
+Verify Navigate To Scan Page And Stay At Scan In Tab
     ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
     ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_in']}
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
@@ -106,7 +106,7 @@ Verify Navigate To Scan Page And Stay At Scan In Tab      # Scan In
 
     #################### Home Destination ####################
     # Inprogress
-# Verify Title Parcel Details In Scan Page Home Destination    # Scan In
+# Verify Title Parcel Details In Scan Page Home Destination
 #     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
 #     ...            ${parcel_size}    ${warehouse_crossdock}    ${warehouse_destination}
 #     ...            ${parcel_status}    ${courier}    ${pouch_number}
@@ -152,7 +152,7 @@ Verify Navigate To Scan Page And Stay At Scan In Tab      # Scan In
 #     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
 #     Should Be Equal    ${actual_txt_title_route}    ${route}
 
-# Verify Data Parcel Details In Scan Page Home Destination    # Scan In
+# Verify Data Parcel Details In Scan Page Home Destination
 #     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
 #     ...            ${warehouse_crossdock}    ${warehouse_destination}    ${parcel_status}
 #     ...            ${courier}    ${pouch_number}    ${receiving_date}
@@ -196,7 +196,7 @@ Verify Navigate To Scan Page And Stay At Scan In Tab      # Scan In
 #     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
 #     Should Be Equal    ${actual_value_route}    ${route}
 
-# Verify Title Label Parcel In Scan Page Home Destination    # Scan In
+# Verify Title Label Parcel In Scan Page Home Destination
 #     [Arguments]    ${route}    ${store}    ${customer}
 #     ...            ${phone}    ${pouch_number}    ${wh}
 #     ${actual_txt_title_label_route}=    Get Text    ${dps_txt_title_label_route}
@@ -212,7 +212,7 @@ Verify Navigate To Scan Page And Stay At Scan In Tab      # Scan In
 #     Should Be Equal    ${actual_txt_title_label_pouch_number}    ${pouch_number}
 #     Should Be Equal    ${actual_txt_title_label_wh}    ${wh}
 
-# Verify Data Label Parcel In Scan Page Home Destination    # Scan In
+# Verify Data Label Parcel In Scan Page Home Destination
 #     [Arguments]    ${route}    ${store}    ${customer}
 #     ...            ${phone}    ${pouch_number}    ${wh}    ${symbol}
 #     ${actual_txt_value_label_route}=    Get Text    ${dps_txt_value_label_route}
@@ -238,7 +238,7 @@ Verify Navigate To Scan Page And Stay At Scan In Tab      # Scan In
 
 
     #################### Store Destination ####################
-Verify Title Parcel Details In Scan Page Store Destination    # Scan In
+Verify Title Parcel Details In Scan Page Store Destination
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
     ...            ${parcel_size}    ${warehouse_crossdock}    ${warehouse_destination}
     ...            ${parcel_status}    ${courier}    ${pouch_number}
@@ -284,7 +284,7 @@ Verify Title Parcel Details In Scan Page Store Destination    # Scan In
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_txt_title_route}    ${route}
 
-Verify Data Parcel Details In Scan Page Store Destination    # Scan In
+Verify Data Parcel Details In Scan Page Store Destination
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
     ...            ${warehouse_crossdock}    ${warehouse_destination}    ${parcel_status}
     ...            ${courier}    ${pouch_number}    ${receiving_date}
@@ -328,7 +328,7 @@ Verify Data Parcel Details In Scan Page Store Destination    # Scan In
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_value_route}    ${route}
 
-Verify Title Label Parcel In Scan Page Store Destination    # Scan In
+Verify Title Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}
     ${actual_txt_title_label_route}=    Get Text    ${dps_txt_title_label_route}
@@ -344,7 +344,7 @@ Verify Title Label Parcel In Scan Page Store Destination    # Scan In
     Should Be Equal    ${actual_txt_title_label_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_title_label_wh}    ${wh}
 
-Verify Data Label Parcel In Scan Page Store Destination    # Scan In
+Verify Data Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}    ${symbol}
     ${actual_txt_value_label_route}=    Get Text    ${dps_txt_value_label_route}
