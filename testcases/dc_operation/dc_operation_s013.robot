@@ -92,7 +92,7 @@ DC_Operation_S013
     # Defect158    Defect159    Defect160    Defect161    Defect162
     # Expected    
     # Inprogress
-#    dps_scan_page.Verify Title Parcel Details In Scan Page
+#    dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
 #     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
 #     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
 #     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -106,8 +106,8 @@ DC_Operation_S013
 #     ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
 #     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
 #     #...    ${dc_operation.scan_in_title_parcel_detail['route']}   # Defect162
-#     dps_scan_page.Verify Data Parcel Details In Scan Page
-#     ...    SPBD241100000492
+#     dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+#     ...    SPBD241100000493
 #     ...    B2C0002400563  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['customer_id']}
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_size']}
 #     #...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_crossdock']} # Defect162
@@ -115,18 +115,18 @@ DC_Operation_S013
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_status']}
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['courier']}
 #     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
-#     ...    04-11-2567 10:39:07  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
+#     ...    04-11-2567 10:39:14  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
 #     ...    DC BB  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_source']}
 #     ...    HOME (11120)  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['send_parcel_to']}
 #     #...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['route']} # Defect162
-#     dps_scan_page.Verify Title Label Parcel In Scan Page [Store to Home]
+#     dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination
 #     ...    COURIER    # ${dc_operation.scan_in_title_label_detail['courier']}
 #     ...    ZIPCODE    #${dc_operation.scan_in_title_label_detail['zipcode']}
 #     ...    CUSTOMER    #${dc_operation.scan_in_title_label_detail['customer']}
 #     ...    PHONE    #${dc_operation.scan_in_title_label_detail['phone']}
 #     #...    ${dc_operation.scan_in_title_label_detail['size']}
 
-#     dps_scan_page.Verify Data Label Parcel In Scan Page [Store to Home]
+#     dps_scan_page.Verify Data Label Parcel In Scan Page Home Destination
 #     ...    FLS  # ${DC_Operation_S013.label_detail_in_scan_in_tab['courier']}
 #     ...    11120 (กล่อง L)    #${DC_Operation_S013.label_detail_in_scan_in_tab['zipcode']}
 #     ...    นนทบุรี  # ${DC_Operation_S013.label_detail_in_scan_in_tab['province']}
@@ -160,20 +160,21 @@ DC_Operation_S013
     common.Verify Capture Screenshot    DC_Operation_S013    Verify Sender Data In Scan In
 
     Log    Step No.22 คลิกปุ่ม ยืนยัน/Print Label
-    # dps_parcel_detail_page.Click Print Label
+    dps_parcel_detail_page.Click Print Label
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # dps_parcel_detail_page.Click ESC On Keyboard
+    dps_parcel_detail_page.Click ESC On Keyboard
     # Defect142
     # Expected
-    # dps_parcel_detail_page.Verify Print Label Success Popup
-    # ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
+    dps_parcel_detail_page.Verify Print Label Success Popup
+    ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    DC_Operation_S012    Verify Print Label Success Popup
 
-    Log    Step No.24
-
-
+    Log    Step No.24 คลิกที่ Pop up
+    dps_scan_page.Click Close Popup Print Scan In Success
+    # Expected
+    
     Log    Step No.25
 
 
