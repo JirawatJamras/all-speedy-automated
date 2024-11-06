@@ -309,6 +309,7 @@ dc_operation:
   text_print_label_success: พิมพ์ Label เรียบร้อยแล้ว
   text_confirm_scan_out: ยืนยัน Scan Out
   text_confirm: ยืนยัน
+  text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
   button_export: Export File
   button_approve: อนุมัติ
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
@@ -316,6 +317,7 @@ dc_operation:
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_DC_BB: คลัง DC BB
+    text_warehouse_DC_SB: คลัง DC SB
   tab_daily_task:
     all_task: งานทั้งหมด
     import_task: งานรับเข้า
