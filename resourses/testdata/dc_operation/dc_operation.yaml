@@ -89,6 +89,13 @@ DC_Operation_S007:
     number_of_pouch: '-'
     number_of_pieces: '6'
     number_of_scanned_items: '6'
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '1'
+    number_of_scanned_items: '1'
   scan_in_data_paecel_detail:
     parcel_id: 'SPBD241100000140'
     customer_id: '2400563'

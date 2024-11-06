@@ -53,7 +53,13 @@ Verify Navigate To Scan Page And Stay At Scan In Tab
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
     Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
 
-Verify Title Parcel Details In Scan Page
+Verify Navigate To Scan Page And Stay At Scan Out Tab
+    ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
+    ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_out']}
+    Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
+    Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
+
+Verify Title Parcel Details In Scan Page Store Destination
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
     ...            ${parcel_size}    ${warehouse_crossdock}    ${warehouse_destination}
     ...            ${parcel_status}    ${courier}    ${pouch_number}
@@ -99,19 +105,21 @@ Verify Title Parcel Details In Scan Page
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_txt_title_route}    ${route}
 
-Verify Data Parcel Details In Scan Page
+Verify Data Parcel Details In Scan Page Store Destination
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
     ...            ${warehouse_crossdock}    ${warehouse_destination}    ${parcel_status}
     ...            ${courier}    ${pouch_number}    ${receiving_date}
     ...            ${warehouse_source}    ${send_parcel_to}    ${route}
-    ${dps_txt_value_parcel_id}=    Replace String    ${dps_txt_value_parcel_id}    {value}    ${parcel_id}
-    ${dps_txt_value_customer_id}=    Replace String    ${dps_txt_value_customer_id}    {value}    ${customer_id}
-    ${dps_txt_value_warehouse_crossdock}=    Replace String    ${dps_txt_value_warehouse_crossdock}    {value}    ${warehouse_crossdock}
-    ${dps_txt_value_parcel_status}=    Replace String    ${dps_txt_value_parcel_status}    {value}    ${parcel_status}
-    ${dps_txt_value_pouch_number}=    Replace String    ${dps_txt_value_pouch_number}    {value}    ${pouch_number}
-    ${dps_txt_value_receiving_date}=    Replace String    ${dps_txt_value_receiving_date}    {value}    ${receiving_date}
-    ${dps_txt_value_warehouse_source}=    Replace String    ${dps_txt_value_warehouse_source}    {value}    ${warehouse_source}
-    ${dps_txt_value_send_parcel_to}=    Replace String    ${dps_txt_value_send_parcel_to}    {value}    ${send_parcel_to}
+    ${dps_txt_value_parcel_id}=    Replace String    ${dps_txt_value_parcel_id}    {value}    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
+    ${dps_txt_value_customer_id}=    Replace String    ${dps_txt_value_customer_id}    {value}    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
+    ${dps_txt_value_warehouse_crossdock}=    Replace String    ${dps_txt_value_warehouse_crossdock}    {value}    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']}
+    ${dps_txt_value_warehouse_destination}=    Replace String    ${dps_txt_value_warehouse_destination}    {value}    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']}
+    ${dps_txt_value_parcel_status}=    Replace String    ${dps_txt_value_parcel_status}    {value}    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
+    ${dps_txt_value_courier}=    Replace String    ${dps_txt_value_courier}    {value}    ${dc_operation.scan_in_title_parcel_detail['courier']}
+    ${dps_txt_value_pouch_number}=    Replace String    ${dps_txt_value_pouch_number}    {value}    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
+    ${dps_txt_value_receiving_date}=    Replace String    ${dps_txt_value_receiving_date}    {value}    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
+    ${dps_txt_value_warehouse_source}=    Replace String    ${dps_txt_value_warehouse_source}    {value}    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    ${dps_txt_value_send_parcel_to}=    Replace String    ${dps_txt_value_send_parcel_to}    {value}    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ${actual_value_parcel_id}=    Get Text    ${dps_txt_value_parcel_id}
     ${actual_value_customer_id}=    Get Text    ${dps_txt_value_customer_id}
     ${actual_value_parcel_size1}=    Get Value    ${dps_txt_value_parcel_size1}
@@ -140,7 +148,7 @@ Verify Data Parcel Details In Scan Page
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_value_route}    ${route}
 
-Verify Title Label Parcel In Scan Page
+Verify Title Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}
     ${actual_txt_title_label_route}=    Get Text    ${dps_txt_title_label_route}
@@ -156,7 +164,7 @@ Verify Title Label Parcel In Scan Page
     Should Be Equal    ${actual_txt_title_label_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_title_label_wh}    ${wh}
 
-Verify Data Label Parcel In Scan Page
+Verify Data Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}    ${symbol}
     ${actual_txt_value_label_route}=    Get Text    ${dps_txt_value_label_route}
@@ -191,7 +199,7 @@ Verify Title Sender In Scan Page
     Should Be Equal    ${actual_txt_label_shipping_origin_in_scan_in}    ${shipping_origin}
     Should Be Equal    ${actual_txt_label_sender_address_in_scan_in}    ${sender_address}
 
-Verify Data Sender In Scan Page
+Verify Data Sender In Scan Page 
     [Arguments]    ${sender_name}    ${sender_phone}    ${shipping_origin}    ${sender_address}
     ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in_scan_page}    {label_sender_name}    ${dc_operation.scan_in_title_sender_detail['name']}
     ${dps_txt_value_sender_name_in_scan_in}=    Replace String    ${dps_txt_value_sender_name_in_scan_in}    {value_sender_name}    ${sender_name}

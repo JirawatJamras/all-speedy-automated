@@ -376,12 +376,12 @@ dc_operation:
     send_parcel_to: ส่งพัสดุไปยัง
     route: Route
   scan_in_title_label_detail:
-    route_title: Route
-    store_title: Store
-    customer_title: Customer
-    phone_title: Phone
-    pounch_number_title: Pounch Number
-    wh_title: WH
+    route: Route
+    store: Store
+    customer: Customer
+    phone: Phone
+    pounch_number: Pounch Number
+    wh: WH
   scan_in_title_sender_detail:
     title: ผู้ส่ง
     name: ชื่อผู้ส่ง
@@ -555,7 +555,7 @@ rm:
       text_mobile: เบอร์โทรศัพท์
       text_mobile_ext: '#ต่อ'
       
-
+ 
     text_return: ส่งกลับ
     text_header_return_popup: ส่งกลับแก้ไข
     text_remark_page_1: 'หมายเหตุการแก้ไข #1'
