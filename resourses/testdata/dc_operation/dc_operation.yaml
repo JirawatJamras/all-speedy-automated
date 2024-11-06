@@ -193,6 +193,53 @@ DC_Operation_S012:
     shipping_destination: ร้าน
     address: '07004 สาขา เรวดี (ตลาดเปรมสุข) ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'
 
+DC_Operation_S013:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: store
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: ร้านรับพัสดุ (คุณาลัย - บางใหญ่)
+  data_in_import_task_tab:
+    import_from: store
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '1'
+    number_of_scanned_items: '1'
+  parcel_detail_in_scan_in_tab:
+    customer_id: '2400563'
+    parcel_size: '120 ซม. กล่อง L'
+    warehouse_crossdock: '-'
+    warehouse_destination: ''
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    warehouse_source: DCBB
+    send_parcel_to: 'Home (11120)'
+    route: ''
+  label_detail_in_scan_in_tab:
+    courier: 'FSH'
+    zipcode: '11120'
+    province: 'นนทบุรี'
+    customer: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    size: L
+
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0633906216'
+    shipping_origin: ร้าน (07465)
+    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ต.ปากเกร็ด อ.ปากเกร็ด จ.นนทบุรี 11120'
+
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
     customer_id: '2400563'
@@ -220,6 +267,7 @@ DC_Operation_S016:
     phone: '0900987354'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ต.ปากเกร็ด อ.ปากเกร็ด จ.นนทบุรี 11120'
+
 
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี

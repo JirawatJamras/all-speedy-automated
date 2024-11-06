@@ -9,6 +9,10 @@ Input Password
     Wait Until Element Is Visible    ${dps_txtbox_password}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${dps_txtbox_password}    ${value}
 
+Verify Login Page
+    Wait Until Element Is Visible    ${dps_txtbox_username}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_txtbox_password}    timeout=${DEFAULT_TIMEOUT}
+
 Click Log On Button
     common.Click when ready    ${dps_btn_log_on}
 
