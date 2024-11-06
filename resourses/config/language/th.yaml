@@ -307,6 +307,8 @@ dc_operation:
   text_search: ค้นหา
   text_print_label: ยืนยัน/Print Label
   text_print_label_success: พิมพ์ Label เรียบร้อยแล้ว
+  text_confirm_scan_out: ยืนยัน Scan Out
+  text_confirm: ยืนยัน
   button_export: Export File
   button_approve: อนุมัติ
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ

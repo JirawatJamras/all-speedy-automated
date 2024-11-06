@@ -63,15 +63,14 @@ DC_Operation_S006:
     number_of_pieces: '7'
     number_of_scanned_items: '7'
   data_in_all_task_tab_after_scan:
-    task_type: งานนำจ่าย
+    task_type: งานส่งออก
     parcel_owner: Speedy
     import_from: Home
     export_to: Store
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง XL
-    parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
-
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
 
 DC_Operation_S007:
   data_in_all_task_tab:
