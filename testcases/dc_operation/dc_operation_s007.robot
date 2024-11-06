@@ -101,22 +101,22 @@ DC_Operation_S007
     # ...    undefined undefined - -- DC BB    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['wh']}
     # ...    รูปดาว    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['symbol']}
     # dps_scan_page.Verify Title Sender In Scan Page
-    # ...    ${dc_operation.label_sender_scan_in_tab['title']}
-    # ...    ${dc_operation.label_sender_scan_in_tab['name']}
-    # ...    ${dc_operation.label_sender_scan_in_tab['phone']}
-    # ...    ${dc_operation.label_sender_scan_in_tab['shipping_origin']}
-    # ...    ${dc_operation.label_sender_scan_in_tab['address']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['title']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['name']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['address']}
     # dps_scan_page.Verify Data Sender In Scan Page
     # ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['name']}
     # ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['phone']}
     # ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['shipping_origin']}
     # ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['address']}
     # dps_scan_page.Verify Title Receiver In Scan Page
-    # ...    ${dc_operation.label_receiver_scan_in_tab['title']}
-    # ...    ${dc_operation.label_receiver_scan_in_tab['name']}
-    # ...    ${dc_operation.label_receiver_scan_in_tab['phone']}
-    # ...    ${dc_operation.label_receiver_scan_in_tab['shipping_destination']}
-    # ...    ${dc_operation.label_receiver_scan_in_tab['address']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['name']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
     # dps_scan_page.Verify Data Recevier In Scan Page
     # ...    ${DC_Operation_S007.receiver_data_in_scan_in_tab['name']}
     # ...    ${DC_Operation_S007.receiver_data_in_scan_in_tab['phone']}

@@ -122,7 +122,6 @@ DC_Operation_S007:
     shipping_destination: ร้าน (15888)
     address: 'เขตสีลม แขวงบางรัก กรุงเทพมหานคร 10500'
 
-
 DC_Operation_S012:
   data_in_all_task_tab:
     task_type: งานรับเข้า
@@ -158,6 +157,25 @@ DC_Operation_S012:
   filter:
     task_type: งานนำจ่าย
     parcel_status: พัสดุรอนำจ่ายโดยคลัง
+  parcel_detail_in_scan_in_tab:
+    customer_id: '2400563'
+    parcel_size: '90 ซม. กล่อง M'
+    warehouse_crossdock: '-'
+    warehouse_destination: DCBB
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: CP All
+    pouch_number: '-'
+    warehouse_source: DCBB
+    send_parcel_to: 'Store (07004)'
+    route: ''
+  label_detail_in_scan_in_tab:
+    route: ''
+    store_code: '07004'
+    customer: ทดสอบพัสดุ In area
+    phone: '0900987354'
+    pouch_number: '-'
+    wh: 'DCBB - DCBB'
+    symbol: รูปวงกลม
   sender_data_in_scan_in_tab:
     name: คุณ b
     phone: '0959494989'
@@ -168,6 +186,34 @@ DC_Operation_S012:
     phone: '0900987354'
     shipping_destination: ร้าน
     address: '07004 สาขา เรวดี (ตลาดเปรมสุข) ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'
+
+DC_Operation_S016:
+  parcel_detail_in_scan_in_tab:
+    customer_id: '2400563'
+    parcel_size: '120 ซม. กล่อง L'
+    warehouse_crossdock: '-'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    warehouse_source: DCBB
+    send_parcel_to: 'Home (11120)'
+  label_detail_in_scan_in_tab:
+    courier: FSH
+    postcode: '11120'
+    province: นนทบุรี
+    customer: ทดสอบพัสดุCourier
+    phone: '0900987354'
+    parcel_size: L
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0959494989'
+    shipping_origin: 'บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
+    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0900987354'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ต.ปากเกร็ด อ.ปากเกร็ด จ.นนทบุรี 11120'
 
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี
