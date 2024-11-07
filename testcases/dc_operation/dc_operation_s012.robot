@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S012
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางร้าน ส่งโดย CP All (in area)
-    [Tags]    DC_Operation    UAT    Review_Pass
+    [Tags]    DC_Operation    UAT    In_Review
     Log    Login
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
