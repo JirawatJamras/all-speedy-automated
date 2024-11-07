@@ -468,10 +468,3 @@ Verify Section Waiting List To Scan Out [Scan Out Page]
     ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M    result_format=%d/%m/%Y %H:%M
     Should Be Equal    ${actual_parcel_status}    ${parcel_status}
     Should Be Equal    ${actual_update_date}    ${date_convert}
-
-    
-    # //td[text()='${parcel_number}']/..//td//div[text()='${pouch_number}']/../..//td[text()='${import_from}']/..//td[text()='${deliver}']/..//td[text()='${parcel_owner}']/..//td[text()='${parcel_size}']/..//td[contains(text(),'${update_date}')]
-    # //td[text()='${parcel_number}']/..//td//div[text()='${pouch_number}']/../..//td[text()='${import_from}']/..//td[text()='${deliver}']/..//td[text()='${parcel_owner}']/..//td[text()='${parcel_size}']/..//td[7]
-    # //td[text()='SPBD241100002407']/..//td//div[text()='-']/../..//td[text()='คลัง DC BB']/..//td[text()='CP ALL']/..//td[text()='Speedy']/..//td[text()='กล่อง L']/..//td[7]
-    # //td[text()='SPBD241100002407']/..//td//div[text()='-']/../..//td[text()='คลัง DC BB']/..//td[text()='CP ALL']/..//td[text()='Speedy']/..//td[text()='กล่อง L']/..//td[contains(text(),'07/11/2567')]/..//h1[text()='พัสดุรอ Scan out ไปคลัง']
-    
