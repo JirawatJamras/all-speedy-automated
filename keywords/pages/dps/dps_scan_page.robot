@@ -468,3 +468,9 @@ Verify Section Waiting List To Scan Out [Scan Out Page]
     ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M    result_format=%d/%m/%Y %H:%M
     Should Be Equal    ${actual_parcel_status}    ${parcel_status}
     Should Be Equal    ${actual_update_date}    ${date_convert}
+
+Verify Close Pouch Before Scan Out Warning Popup
+    [Arguments]    ${text}
+    ${dps_txt_close_pouch_first_warning_popup}=    Replace String    ${dps_txt_close_pouch_first_warning_popup}    {value}    ${text}
+    Wait Until Element Is Visible    ${dps_txt_close_pouch_first_warning_popup}    timeout=10s
+    

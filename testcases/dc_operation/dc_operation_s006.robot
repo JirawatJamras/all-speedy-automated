@@ -156,13 +156,25 @@ DC_Operation_S006
     common.Verify Capture Screenshot    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.11 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    SPCD241000006731
+    dps_scan_page.Input Pouch Number [Scan Out Page]    SPBD241100002442
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
+    ...    เลขพัสดุนี้อยู่ในถุงแล้ว ไม่สามารถ Scan รายชิ้นได้ (scan ทั้ง ถุง)    #${dc_operation['text_please_close_pouch_before_scan_out']}
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
 
     Log    Step No.12 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
     # Expected
+    dps_pouch_page.Verify Pouch In Pouch Page
+    ...    P112473971
+    ...    -
+    ...    DC SB
+    ...    1
+    ...    On
+    ...    07-11-2567
+    ...    ไอคอนรูปดินสอ
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Pouch In Pouch Page
 
     Log    Step No.13 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    P102416833
