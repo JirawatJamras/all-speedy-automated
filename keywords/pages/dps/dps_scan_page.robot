@@ -399,9 +399,17 @@ Click Confirm Scan Out Button    # Scan Out
     ${dps_btn_confirm_scan_out_scan_out_page}=    Replace String    ${dps_btn_confirm_scan_out_scan_out_page}    {value}    ${dc_operation['text_confirm_scan_out']}
     common.Click When Ready    ${dps_btn_confirm_scan_out_scan_out_page}
 
+Verify Popup Confirm Scan Out 
+    ${txt_popup}=    Replace String    ${dps_txt_popup_scan_out}    {value}    ${dc_operation.scan_out['text_popup_confirm']}
+    Element Should Be Visible    ${txt_popup}
+
 Click Confirm Button On Popup Asking To Scan Out    # Scan Out
-    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}=    Replace String    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    {value}    ${dc_operation['text_confirm']}
-    common.Click When Ready    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}
+    ${button_confirm}=    Replace String    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    {value}    ${dc_operation['text_confirm']}
+    common.Click When Ready    ${button_confirm}
+
+Verify Popup Save Data Success
+    ${txt_popup}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
+    Element Should Be Visible    ${txt_popup}
 
 Click Popup Save Data Success    # Scan Out
     ${dps_txt_save_data_success}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
@@ -413,8 +421,15 @@ Click Waiting Delivery List Button    # Scan Out
     common.Click When Ready    ${dps_btn_waiting_delivery_list_scan_out_page}
 
 Click Print Button By Data     # Scan Out
-    [Arguments]    ${export_to}    ${deliver}    ${parcel_amount}    ${pouch_amount}    ${total_parcel_pouch}
-    common.Click When Ready    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='${export_to}']/..//td[text()='${deliver}']/..//td[text()='${parcel_amount}'][1]/..//td[text()='${pouch_amount}']/..//td[text()='${total_parcel_pouch}'][2]/..//td[@title='พิมพ์'])[1]
+    [Arguments]    ${export_to}    ${deliver}    ${parcel_amount}    
+    ...    ${pouch_amount}    ${total_parcel_pouch}
+    ${btn_print}=    Replace String    ${dps_btn_print_scan_out}    {export_to}    ${export_to}
+    ${btn_print}=    Replace String    ${btn_print}    {deliver}    ${deliver}
+    ${btn_print}=    Replace String    ${btn_print}    {parcel_amount}    ${parcel_amount}
+    ${btn_print}=    Replace String    ${btn_print}    {pouch_amount}    ${pouch_amount}
+    ${btn_print}=    Replace String    ${btn_print}    {total_parcel_pouch}    ${total_parcel_pouch}
+    ${btn_print}=    Replace String    ${btn_print}    ${dc_operation['text_print']}
+    common.Click When Ready    ${btn_print}
 
 Input Pouch Number [Scan Out Page]    # Scan Out
     [Arguments]    ${value}
@@ -475,3 +490,8 @@ Verify Value List Scan Out
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_date}    ${date}
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_status}    ${parcel_status}
     Element Should Be Visible    ${dps_txt_value_scan_out}
+Filter Data By Parcel Number [Waiting Scan Out]
+    [Arguments]    ${parcel_cod}
+    Select Filter Button
+    common.Input When Ready    ${dps_txtbox_parcel_code_scan_out_page}    ${parcel_cod}
+    Click Search Button On Filter

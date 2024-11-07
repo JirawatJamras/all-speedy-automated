@@ -311,6 +311,7 @@ dc_operation:
     waiting_inventory_confirm_list: รายการรอคลังยืนยัน
   text_save_success: บันทึกข้อมูลเรียบร้อย
   text_search: ค้นหา
+  text_print: พิมพ์
   text_print_label: ยืนยัน/Print Label
   text_print_label_success: พิมพ์ Label เรียบร้อยแล้ว
   text_confirm_scan_out: ยืนยัน Scan Out
@@ -439,6 +440,9 @@ dc_operation:
     parcel_size: ขนาดพัสดุ
     date: วันที่อัปเดตล่าสุด 
     parcel_status: สถานะพัสดุ
+  scan_out:  
+    text_popup_confirm: 'ยืนยันการ Scan Out ใช่หรือไม่'
+
 
 rm:
   text_pre_register: Pre-Register

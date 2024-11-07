@@ -258,8 +258,8 @@ DC_Operation_S013:
     number_of_pieces: '1'
     number_of_scanned_items: '1'
   parcel_detail_in_scan_in_tab:
-    tracking: SPBD241100000493
-    receiving_date: 04-11-2567 10:39:14
+    tracking: SPBD241100000487
+    receiving_date: 04-11-2567
     customer_id: 'B2C0002400563'    #'2400563'
     parcel_size: '120 ซม. กล่อง L'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
@@ -267,7 +267,6 @@ DC_Operation_S013:
     pouch_number: '-'
     warehouse_source: DCBB
     send_parcel_to: 'Home (11120)'
-
   label_detail_in_scan_in_tab:
     courier: 'FSH'
     zipcode: '11120'
@@ -275,7 +274,6 @@ DC_Operation_S013:
     customer: ทดสอบพัสดุCourier
     phone: '0971971445'
     size: L
-
   sender_data_in_scan_in_tab:
     name: คุณ a
     phone: '0633906216'
@@ -287,6 +285,25 @@ DC_Operation_S013:
     phone: '0971971445'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+
+  scan_out_waiting_scan:
+    tracking: SPBD241100000487
+    pouch_number: '-'
+    warehouse_source: คลัง DC BB
+    courier: Flash
+    parcel_owner: Speedy
+    parcel_size: 'กล่อง L'
+    update_date: 07/11/2567
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+
+  scan_out_print:
+    export_to: home
+    deliver: Flash
+    parcel_amount: 1
+    pouch_amount: '-'
+    total_parcel_pouch: 1
+
+
 
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
