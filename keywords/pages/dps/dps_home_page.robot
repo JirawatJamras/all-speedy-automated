@@ -3,6 +3,7 @@ Set Cut Off Time
     [Arguments]    ${uri}    ${name}    ${collection}    ${query}
     ${time}=    Get Current Date    result_format=%H:%M
     Set Suite Variable    ${cut_off_time}    ${time}
+    Log To Console    ${time}
     connect_to_mongodb    ${uri}    ${name}    ${collection}
     ${QUERY}    Create Dictionary    status=${query}
     ${update}    Create Dictionary    cutOff=${time}
@@ -28,7 +29,7 @@ Set Tomorrow Date
     ${tomorrow}    Set Variable    ${day}-${month}-${year_be}
     RETURN    ${tomorrow}
 
-Set Date Pattern
+Set Today
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
     ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
@@ -38,6 +39,14 @@ Set Date Pattern
     ${year}    Evaluate    ${y} + 543
     ${Today}    Set Variable    ${d}-${m}-${year}
     RETURN    ${Today}
+
+Set Date Pattern
+    [Arguments]    ${day}
+    ${d}    Split String And Select    ${day}    -    0
+    ${m}    Split String And Select    ${day}    -    1
+    ${y}    Split String And Select    ${day}    -    2
+    ${date}    Set Variable    ${d}/${m}/${y}
+    RETURN    ${date}
 
 Select Check Receiving Cycle Menu
     ${tab_check_receiving_cycle}=  Replace String   ${dps_tab_dps_menu}   {value}   ${dc_operation.dps_menu['Check_Receiving_Cycle']}

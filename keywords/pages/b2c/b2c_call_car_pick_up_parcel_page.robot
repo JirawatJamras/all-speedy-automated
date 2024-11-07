@@ -71,31 +71,47 @@ Verify Parcel Pickup Status
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
 
+Search Parcel Pickup By Date
+    [Arguments]    ${start_date}    ${end_date}
+        ${button_filter}=  Replace String   ${b2c_btn_filter_pickup_round}    {value}    ${call_car_pick_up['button_filter']}
+        ${button_search}=  Replace String   ${btn_btn_search_pickup_round}    {value}    ${call_car_pick_up['button_search']}
+        Scroll Element Into View    ${button_filter}
+        common.Click When Ready    ${button_filter}
+        common.Input When Ready    ${input_parcel_pickup_date}    ${start_date}
+        common.Input When Ready    ${input_parcel_pickup_end_date}    ${end_date}
+        common.Click When Ready    ${button_search}
+
 Verify Parcel Pickup Status After Cut Off Time
-    [Arguments]    ${status}    ${round}    ${tomorrow}    ${pickup_time}    ${text_pickup_date}    ${text_cut_off_time}    ${today}
-    ...    ${text_parcel_number}    ${parcel_num}    ${text_price}    ${price_value}    ${text_pickup_location}    ${company_address}
-    ...    ${sub_district}    ${district}    ${province}    ${postcode}
-    ${label_pickup_round}=  Replace String   ${b2c_txt_parcel_pickup_round}    {round}    ${round} ${tomorrow} ${pickup_time}
-    ${label_pickup_date}=  Replace String   ${label_pickup_round}    {pickupdate}    ${text_pickup_date} 
-    ${value_pickup_date}=  Replace String   ${label_pickup_date}    {value}    ${tomorrow}
-    ${label_cut_off}=  Replace String   ${b2c_txt_cutoff_pickup_round}    {cutoff}    ${text_cut_off_time}
-    ${value_cut_off}=  Replace String   ${label_cut_off}    {cutoff_value}    ${today}
-    ${label_parcel}=  Replace String   ${value_cut_off}    {parcel}    ${text_parcel_number}
-    ${value_parcel}=  Replace String   ${label_parcel}    {value}    ${parcel_num}
-    ${label_price}=  Replace String   ${b2c_txt_location_pickup}    {price}    ${text_price}
-    ${value_price}=  Replace String   ${label_price}    {price_value}    ${price_value}
-    ${label_location}=  Replace String   ${value_price}    {location}    ${text_pickup_location}
-    ${value_location}=  Replace String   ${label_location}    {location_value}    ${company_address} ${sub_district} ${district} ${province} ${postcode}
-    ${number}=    Get Element Count    ${value_pickup_date}${value_parcel}${value_location}
-    ${card_car_round}=    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
-    Log To Console    ${card_car_round}
-    Log To Console    ${number}
-    # Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    # FOR    ${index}    IN RANGE    6
-    #     ${status}    ${element}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=60s
-    #     Exit For Loop If    '${element}' != 'NONE'    
-    #     Reload Page
-    # END
+    [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}
+    ${button_confirm}=  Replace String   ${btn_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
+    ${actual_status}=  Replace String   ${b2c_txt_status_and_id_pickup_round}    {status}    ${status}
+    ${actual_status_and_id}=  Replace String   ${actual_status}    {booking_id}    ${booking_id}
+    ${next_day}    Set Date Pattern    ${tomorrow}
+    ${day}    Set Date Pattern    ${today}
+    Register Keyword To Run On Failure    NOTHING
+    ${status_2}=    Set Variable    False
+
+    WHILE    '${status_2}' == 'False'
+        Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+        Search Parcel Pickup By Date    ${day}    ${next_day}
+        Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+        ${number}=    Get Element Count    ${b2c_card_parcel_pickup_list}
+        FOR    ${index}    IN RANGE    1    ${number}+1
+            common.Click When Ready    (${b2c_card_parcel_pickup_list})[${index}]
+            ${status}    ${element}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${actual_status_and_id}
+            ${status_2}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_status_and_id}
+            Exit For Loop If    '${status}' == 'PASS'    
+            common.Click When Ready    ${b2c_btn_x_in_add_popup}
+            common.Click When Ready    ${button_confirm}
+        END
+        Scroll Element Into View    ${b2c_btn_next_page_pickup_round}
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        Run Keyword If    '${status}' == 'FAIL'    Run Keywords    Wait Until Element Is Visible    ${b2c_btn_next_page_pickup_round}    timeout=5s
+        ...    AND    Should Be Equal As Strings    ${nextpage}    true
+        ...    AND    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        Exit For Loop If    '${status_2}' == 'True'
+        Reload Page
+    END
 
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled

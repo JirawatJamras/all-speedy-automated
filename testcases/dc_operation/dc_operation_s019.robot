@@ -47,7 +47,7 @@ DC_Operation_S019
 
     Log    Step No.5 ระบุข้อมูล
     ${tomorrow}    Set Tomorrow Date
-    ${today}    Set Date Pattern
+    ${today}    Set Today
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${DC_Operation_S019['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S019['parcel_pickup_time']}
@@ -193,23 +193,11 @@ DC_Operation_S019
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
-    ...    ${call_car_pick_up.status['parcel_in_progress']}
-    ...    ${DC_Operation_S019.call_car_pick_up['receiving_type']}
+    ...    ${call_car_pick_up.status['arrange_car']}
     ...    ${tomorrow}
-    ...    ${DC_Operation_S019['verify_pickup_time']}
-    ...    ${call_car_pick_up['text_parcel_pickup_date']}
-    ...    ${call_car_pick_up['text_cut_off_time']}
     ...    ${today}
-    ...    ${call_car_pick_up['text_parcel_number']}
-    ...    ${DC_Operation_S019['parcel_number']}
-    ...    ${call_car_pick_up['text_price']}
-    ...    ${call_car_pick_up.default['price']}
-    ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${DC_Operation_S019.call_car_pick_up['company_address']}
-    ...    ${DC_Operation_S019.call_car_pick_up['sub_district']}
-    ...    ${DC_Operation_S019.call_car_pick_up['district']}
-    ...    ${DC_Operation_S019.call_car_pick_up['province']}
-    ...    ${DC_Operation_S019.call_car_pick_up['postcode']}
+    ...    ${booking_id}
+    common.Verify Capture Screenshot    DC_Operation_S019    Verify Parcel Pickup Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
     Open Chrome Browser    chrome    #headlesschrome    #chrome

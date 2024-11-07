@@ -217,6 +217,9 @@ call_car_pick_up:
   text_pickup_location: 'จุดรับพัสดุ:'
   button_save: บันทึก
   button_cancel: ยกเลิก
+  button_confirm: ยืนยัน
+  button_filter: ตัวกรอง
+  button_search: ค้นหา
   text_parcel_id_start_with:
     dry: 'SPBD'
     chilled: 'SPBC'

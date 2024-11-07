@@ -1,5 +1,10 @@
 *** Variables ***
 ${b2c_btn_add_call_car_pickup_page}    //button//span[@aria-label='plus-circle']
+${b2c_btn_x_in_add_popup}    //button[@aria-label='Close']
+${b2c_btn_next_page_pickup_round}    //span[@class='anticon anticon-right']/..
+${b2c_btn_filter_pickup_round}    //span[text()='{value}']/..
+${btn_btn_confirm_close_popup}    //button//span[contains(text(),'{value}')]
+${btn_btn_search_pickup_round}    //span[text()='{value}']/..
 ${btn_save_in_add_popup}    //button//span[contains(text(),'{value}')]
 ${btn_cancel_in_add_popup}    //button//span[contains(text(),'{value}')]
 
@@ -14,6 +19,7 @@ ${b2c_txt_parcel_pickup_round}    //*[text()='{round}']/../../../..//strong[cont
 ${b2c_txt_cutoff_pickup_round}    //strong[text()='{cutoff}']/../../..//span[contains(text(),'{cutoff_value}')]/../../../../..//strong[contains(text(),'{parcel}')]/../../..//span[contains(normalize-space(),'{value}')]/../../../../..
 ${b2c_txt_location_pickup}    //strong[text()='{price}']/../../..//span[contains(normalize-space(),'{price_value}')]/../../../../..//strong[text()='{location}']/../../..//span[text()='{location_value}']
 ${b2c_txt_complete_save_pickup_round}    //div[@class='ant-message-notice-content']
+${b2c_txt_status_and_id_pickup_round}    //span[text()='{status}']/../../../../../../../..//strong[text()='{booking_id}']
 
 ${txt_booking_status}    //span[contains(@class,'ant-tag ant-tag-borderless')]//h5[contains(@class,'ant-typography')]
 ${txt_parcel_pickup_schedule}    (//div[contains(@class,'ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small')]//h5[contains(@class,'ant-typography')])[1]
@@ -32,10 +38,12 @@ ${b2c_cbo_parcel_type}    //div[@id='basic_parcelType_list']/..//div[contains(te
 ${b2c_cbo_parcel_pickup_date}    //div[@class='ant-picker-body']//td[@title='{value}']
 ${b2c_cbo_parcel_pickup_time}    //div[@id='basic_time_list']/..//div[contains(text(),'{value}')]
 
+${b2c_next_page_pickup_round}   //span[@class='anticon anticon-right']/../..
 ${b2c_card_parcel_pickup_list}    //div[@class='ant-card-body']//div[@class='ant-card-meta w-full']
 ${card_frist_parcel_pickup_list}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
 ${card_first_normal_parcel_pickup_list}    (//h5[contains(text(),'{title}')]/../../../../..//span[contains(normalize-space(),'{number_of_parcel}')]/../../../../../../../../../..)[1]
-
+${input_parcel_pickup_date}    //input[@id='parcelList_receivedDate']
+${input_parcel_pickup_end_date}    (//input[@id='parcelList_receivedDate']/../..//input)[2]
 ################# OLD ###################
 ${btn_basic_parcel_type_car_pickup_page}    //strong[text()='{value}']/../../../..//input[@id='basic_parcelType']/../..
 ${b2c_btn_placeholder_date_pickup_in_add_popup}    //*[@class='ant-modal-content']//strong[text()='วันที่รถเข้ารับพัสดุ']/../../../..//input
@@ -44,7 +52,6 @@ ${b2c_b2n_active_date_in_add_popup}    //td[@class='ant-picker-cell ant-picker-c
 ${btn_next_months_calendar_in_add_popup}    //button[@class='ant-picker-header-next-btn']
 ${b2c_btn_cancel_in_asking_to_close_popup}    //button[text()=' ยกเลิก']
 ${b2c_btn_confirm_in_asking_to_close_popup}    //button[text()='{value}']
-${b2c_btn_x_in_add_popup}    //button[@aria-label='Close']
 ${b2c_btn_save_in_detail_popup}    //span[text()='บันทึก']/..
 ${b2c_btc_filter_pickup_page}    //span[text()='ตัวกรอง']/..
 ${b2c_btn_search_in_filter}    //span[text()='ค้นหา']/..
