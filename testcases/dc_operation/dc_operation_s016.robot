@@ -17,6 +17,7 @@ DC_Operation_S016
     dps_login_page.Click Log On Button
     dps_home_page.Wait Until Page Loaded
     dps_home_page.Click Dropdown For Select Role
+    dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.16-1 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
