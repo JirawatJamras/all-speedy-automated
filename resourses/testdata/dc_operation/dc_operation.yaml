@@ -218,7 +218,7 @@ DC_Operation_S012:
     route: ''
   label_detail_in_scan_in_tab:
     route: ''
-    store_code: '07004'
+    store_code: '07004 (กล่อง M)'
     customer: ทดสอบพัสดุ In area
     phone: '0900987354'
     pouch_number: '-'
@@ -227,13 +227,13 @@ DC_Operation_S012:
   sender_data_in_scan_in_tab:
     name: คุณ b
     phone: '0959494989'
-    shipping_origin: บริษัท TecheX
-    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+    shipping_origin: 'บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
+    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุ In area
     phone: '0900987354'
-    shipping_destination: ร้าน
-    address: '07004 สาขา เรวดี (ตลาดเปรมสุข) ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'
+    shipping_destination: 'ร้าน (07004)'
+    address: 'ต.ตลาดขวัญ อ.เมืองนนทบุรี จ.นนทบุรี 11000'
 
 DC_Operation_S013:
   data_in_all_task_tab:
@@ -314,14 +314,16 @@ DC_Operation_S016:
     value_parcel_size: '45'
     text_parcel_size: กล่อง S
     courier: CP All
+    destination_warehourse: DC SB
   edit_courier_in_scan_in_tab:
     route: ''
     zipcode: '11120'
     customer: ทดสอบพัสดุCourier
-    phone: '0971971445'
+    phone: '0900987354'
     pouch_number: '-'
     wh: 'DCBB - DCBB'
     symbol: รูปวงกลม
+    symbol_after_changing_warehourse: รูปดาว
 
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี

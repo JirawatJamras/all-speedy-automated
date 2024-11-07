@@ -399,7 +399,7 @@ dc_operation:
     store: STORE
     customer: CUSTOMER
     phone: PHONE
-    pouch_number: Pouch Number
+    pouch_number: POUCH
     wh: WH
     courier: COURIER
     zipcode: ZIPCODE
