@@ -24,17 +24,15 @@ ${dps_txt_title_receiving_date}   //span[contains(@class,'ant-typography')]//str
 ${dps_txt_title_warehouse_source}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_send_parcel_to}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_route}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
-${dps_txt_title_label_route}    //div[@class='mt-5']/div[1]/span[1]
-${dps_txt_title_label_store}    //div[@class='mt-5']/div[2]/span[1]
-${dps_txt_title_label_customer}    //div[@class='mt-5']/div[3]/span[1]
-${dps_txt_title_label_phone}    //div[@class='mt-5']/div[4]/span[1]
-${dps_txt_title_label_pouch_number}    //div[@class='mt-5']/div[5]/span[1]
-${dps_txt_title_label_wh}    //div[@class='mt-5']/div[6]/span[1]
-
 ${dps_txt_label_scan_in}    //div[@class='']//span[text()='{value}']
 ${dps_txt_label_size_scan_in}    //div[@class='']//span[contains(normalize-space(), '{value}')]
 
 
+${dps_txt_value_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and td[7]='{value_date}' and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]
+${dps_txt_label_title_scan_out}    //tr[th[1]='{title_pouch_number}' and th[2]='{title_parcel_id}' and th[3]='{title_import_from}' and th[4]='{title_transport}' and th[5]='{title_parcel_owner}' and th[6]='{title_parcel_size}' and th[7]='{title_date}' and th[8]='{title_parcel_status}' ]
+
+
+${dps_txt_title_label}    //div[@class='']//span[text()='{value}']
 ${dps_txt_value_parcel_id}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_customer_id}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_parcel_size1}    //input[@type='number' and contains(@class,'ant-input')]
@@ -50,12 +48,9 @@ ${dps_txt_value_receiving_date}    //span[contains(@class,'ant-typography')]//st
 ${dps_txt_value_warehouse_source}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_send_parcel_to}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_route}    (//div[@class="ant-form-item-control-input-content"]//input)[2]
-${dps_txt_value_label_route}    //div[@class='mt-5']/div[1]/span[2]
 ${dps_txt_value_label_store}    //div[@class='mt-5']/div[2]/span[2]
-${dps_txt_value_label_customer}    //div[@class='mt-5']/div[3]/span[2]
-${dps_txt_value_label_phone}    //div[@class='mt-5']/div[4]/span[2]
-${dps_txt_value_label_pouch_number}    //div[@class='mt-5']/div[5]/span[2]
 ${dps_txt_value_label_wh}    //div[@class='mt-5']/div[6]/span[2]
+${dps_txt_value_label}    //div[@class='']//span[text()='{value}']
 ${dps_txt_label_sender_title_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_title}']
 ${dps_txt_label_sender_name_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_name}']
 ${dps_txt_label_sender_phone_in_scan_in_scan_page}   //div[@aria-hidden='false']//strong[text()='{label_sender_phone}']
@@ -65,6 +60,8 @@ ${dps_txt_value_sender_name_in_scan_in_scan_page}    //div[@aria-hidden='false']
 ${dps_txt_value_sender_phone_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_phone}']/../../..//span[text()='{value_sender_phone}']
 ${dps_txt_value_shipping_origin_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_shipping_origin}']/../../..//span[contains(text(),'{value_shipping_origin}')]
 ${dps_txt_value_sender_address_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_address}']/../../..//span[contains(normalize-space(.), '{value_sender_address}')]
+${dps_txt_title_parcel_waiting_scan_out_in_scan_page}    //strong[text()='{value}']
+
 ${dps_txt_label_receiver_title_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_receiver_title}']
 ${dps_txt_label_receiver_name_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_receiver_name}']
 ${dps_txt_label_receiver_phone_in_scan_in_scan_page}   //div[@aria-hidden='false']//strong[text()='{label_receiver_phone}']

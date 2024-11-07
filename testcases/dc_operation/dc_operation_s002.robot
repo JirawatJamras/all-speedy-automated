@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_s002
-    [Tags]    DC_Operation    UAT    test
+    [Tags]    DC_Operation    UAT
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -237,6 +237,7 @@ DC_Operation_s002
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
+    ...    ${today}
     ...    ${DC_Operation_S002.receiving_cycle.status['waiting']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Check Receiving Cycle Page
 
@@ -284,9 +285,23 @@ DC_Operation_s002
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Click Export Button
 
     Log    Step No.24 คลิกปุ่ม อนุมัติ
-    # dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
+    dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
     # Expected
-    # Inprogress
+    dps_check_receiving_cycle_page.Verify Pickup Schedule Change Status To Confirme
+    ...    ${DC_Operation_S002.receiving_cycle['company_name']}
+    ...    ${DC_Operation_S002.receiving_cycle['branch']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['province']}
+    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['courier']}
+    ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
+    ...    ${today}
+    ...    ${DC_Operation_S002.receiving_cycle.status['confirm']}
+    common.Verify Capture Screenshot    DC_Operation_S002    Verify Pickup Schedule Change Status To Confirme
 
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     # Switch Window	MAIN

@@ -337,6 +337,7 @@ dc_operation:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_DC_BB: คลัง DC BB
     text_warehouse_DC_SB: คลัง DC SB
+    text_warehouse_DC_MC: คลัง DC MC
   tab_daily_task:
     all_task: งานทั้งหมด
     import_task: งานรับเข้า
@@ -428,6 +429,15 @@ dc_operation:
     parcel_owner: Parcel Owner
     parcel_size: ขนาดพัสดุ
     receiving_date: วันที่อัปเดตล่าสุด 
+    parcel_status: สถานะพัสดุ
+  scan_out_title:
+    pouch_number: Pouch Number
+    parcel_id: หมายเลขพัสดุ
+    receive_parcel_from: งานรับเข้าจาก
+    transport: ขนส่งที่ต้องเข้ารับ
+    parcel_owner: Parcel Owner
+    parcel_size: ขนาดพัสดุ
+    date: วันที่อัปเดตล่าสุด 
     parcel_status: สถานะพัสดุ
 
 rm:

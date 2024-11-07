@@ -11,7 +11,7 @@ DC_Operation_S001:
     company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
     sub_district: ปากเกร็ด
     district: ปากเกร็ด
-    province: นนทบุรี 
+    province: นนทบุรี  
     postcode: '11120'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
@@ -22,14 +22,13 @@ DC_Operation_S001:
     province: นนทบุรี 
     postcode: '11120'  #'11000'
     receiving_time: '09:00' #'13:00'
+    car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
     courier: CPALL
     number_of_parcel: '10'  #'0'
     status: 
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว
-  warehouse: 
-    dcmc: คลัง DC MC
 
 DC_Operation_S002:
   company_name: คุณ ไอดีซี
@@ -301,11 +300,11 @@ DC_Operation_S016:
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: FSH
-    postcode: '11120'
+    zipcode: '11120'
     province: นนทบุรี
     customer: ทดสอบพัสดุCourier
     phone: '0900987354'
-    parcel_size: L
+    size: L
   sender_data_in_scan_in_tab:
     name: คุณ a
     phone: '0959494989'

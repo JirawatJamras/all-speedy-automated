@@ -341,34 +341,34 @@ Verify Data Parcel Details In Scan Page Store Destination
 Verify Title Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}
+    ${dps_txt_title_label_route}=    Replace String    ${dps_txt_title_label}    {value}    ${route}
+    ${dps_txt_title_label_store}=    Replace String    ${dps_txt_title_label}    {value}    ${store}
+    ${dps_txt_title_label_customer}=    Replace String    ${dps_txt_title_label}    {value}    ${customer}
+    ${dps_txt_title_label_phone}=    Replace String    ${dps_txt_title_label}    {value}    ${phone}
+    ${dps_txt_title_label_pouch_number}=    Replace String    ${dps_txt_title_label}    {value}    ${pouch_number}
+    ${dps_txt_title_label_wh}=    Replace String    ${dps_txt_title_label}    {value}    ${wh}
     Wait Until Element Is Visible    ${dps_txt_title_label_route}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_txt_title_label_route}=    Get Text    ${dps_txt_title_label_route}
-    ${actual_txt_title_label_store}=    Get Text    ${dps_txt_title_label_store}
-    ${actual_txt_title_label_customer}=    Get Text    ${dps_txt_title_label_customer}
-    ${actual_txt_title_label_phone}=    Get Text    ${dps_txt_title_label_phone}
-    ${actual_txt_title_label_pouch_number}=    Get Text    ${dps_txt_title_label_pouch_number}
-    ${actual_txt_title_label_wh}=    Get Text    ${dps_txt_title_label_wh}
-    Should Be Equal    ${actual_txt_title_label_route}    ${route}
-    Should Be Equal    ${actual_txt_title_label_store}    ${store}
-    Should Be Equal    ${actual_txt_title_label_customer}    ${customer}
-    Should Be Equal    ${actual_txt_title_label_phone}    ${phone}
-    Should Be Equal    ${actual_txt_title_label_pouch_number}    ${pouch_number}
-    Should Be Equal    ${actual_txt_title_label_wh}    ${wh}
+    Element Should Be Visible    ${dps_txt_title_label_route}
+    Element Should Be Visible    ${dps_txt_title_label_store}
+    Element Should Be Visible    ${dps_txt_title_label_customer}
+    Element Should Be Visible    ${dps_txt_title_label_phone}
+    Element Should Be Visible    ${dps_txt_title_label_pouch_number}
+    Element Should Be Visible    ${dps_txt_title_label_wh}
 
 Verify Data Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}    ${symbol}
-    ${actual_txt_value_label_route}=    Get Text    ${dps_txt_value_label_route}
+    ${dps_txt_value_label_route}=    Replace String    ${dps_txt_value_label}    {value}    ${route}
+    ${dps_txt_value_label_customer}=    Replace String    ${dps_txt_value_label}    {value}    ${customer}
+    ${dps_txt_value_label_phone}=    Replace String    ${dps_txt_value_label}    {value}    ${phone}
+    ${dps_txt_value_label_pouch_number}=    Replace String    ${dps_txt_value_label}    {value}    ${pouch_number}
     ${actual_txt_value_label_store}=    Get Text    ${dps_txt_value_label_store}
-    ${actual_txt_value_label_customer}=    Get Text    ${dps_txt_value_label_customer}
-    ${actual_txt_value_label_phone}=    Get Text    ${dps_txt_value_label_phone}
-    ${actual_txt_value_label_pouch_number}=    Get Text    ${dps_txt_value_label_pouch_number}
     ${actual_txt_value_label_wh}=    Get Text    ${dps_txt_value_label_wh}
-    Should Be Equal    ${actual_txt_value_label_route}    ${route}
+    Element Should Be Visible    ${dps_txt_value_label_route}
+    Element Should Be Visible    ${dps_txt_value_label_customer}
+    Element Should Be Visible    ${dps_txt_value_label_phone}
+    Element Should Be Visible    ${dps_txt_value_label_pouch_number}
     Should Be Equal    ${actual_txt_value_label_store}    ${store}
-    Should Be Equal    ${actual_txt_value_label_customer}    ${customer}
-    Should Be Equal    ${actual_txt_value_label_phone}    ${phone}
-    Should Be Equal    ${actual_txt_value_label_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_value_label_wh}    ${wh}
     # verify symbol
     IF         '${symbol}' == 'รูปดาว'
@@ -449,3 +449,29 @@ Verify Close Pouch Before Scan Out Warning Popup
     [Arguments]    ${text}
     ${dps_txt_close_pouch_first_warning_popup}=    Replace String    ${dps_txt_close_pouch_first_warning_popup}    {value}    ${text}
     Wait Until Element Is Visible    ${dps_txt_close_pouch_first_warning_popup}    timeout=10s
+
+Verify Label Scan Out
+    [Arguments]    ${pouch_number}    ${parcel_id}    ${import_from}    ${transport}
+    ...            ${parcel_owner}    ${parcel_size}    ${date}    ${parcel_status}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_pouch_number}    ${pouch_number}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_parcel_id}    ${parcel_id}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_import_from}    ${import_from}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_transport}    ${transport}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_parcel_owner}    ${parcel_owner}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_parcel_size}    ${parcel_size}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_date}    ${date}
+    ${dps_txt_label_title_scan_out}=    Replace String    ${dps_txt_label_title_scan_out}    {title_parcel_status}    ${parcel_status}
+    Element Should Be Visible    ${dps_txt_label_title_scan_out}
+
+Verify Value List Scan Out
+    [Arguments]    ${pouch_number}    ${parcel_id}    ${import_from}    ${transport}
+    ...            ${parcel_owner}    ${parcel_size}    ${date}    ${parcel_status}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_pouch_number}    ${pouch_number}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_id}    ${parcel_id}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_import_from}    ${import_from}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_transport}    ${transport}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_owner}    ${parcel_owner}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_size}    ${parcel_size}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_date}    ${date}
+    ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_status}    ${parcel_status}
+    Element Should Be Visible    ${dps_txt_value_scan_out}
