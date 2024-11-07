@@ -384,16 +384,16 @@ dc_operation:
     send_parcel_to: ส่งพัสดุไปยัง
     route: Route
   scan_in_title_label_detail:
-    route: Route
-    store: Store
-    customer: Customer
-    phone: Phone
+    route: ROUTE
+    store: STORE
+    customer: CUSTOMER
+    phone: PHONE
     pouch_number: Pouch Number
     wh: WH
-    courier: Courier
-    zipcode: Zipcode
-    province: province
-    size: Size
+    courier: COURIER
+    zipcode: ZIPCODE
+    province: PROVINCE
+    size: SIZE
   scan_in_title_sender_detail:
     title: ผู้ส่ง
     name: ชื่อผู้ส่ง
