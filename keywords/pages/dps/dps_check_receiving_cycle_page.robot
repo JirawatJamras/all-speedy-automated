@@ -38,11 +38,12 @@ Verify Check Receiving Cycle Page
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {receiving_type}    ${receiving_type}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {courier}    ${courier}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {number_of_parcel}    ${number_of_parcel}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
-    Scroll Element Into View    ${row_receiving_cycle}
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}   
+    Scroll Element Into View    ${row_receiving_cycle}
     # Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
 
 Select All Parcels Received List Tab

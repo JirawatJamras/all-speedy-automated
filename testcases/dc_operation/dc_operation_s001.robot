@@ -227,9 +227,68 @@ DC_Operation_S001
     common.Verify Capture Screenshot    DC_Operation_S001    Verify Check Parcel Pickup Schedule
 
     Log    Step No.22 คลิก Dropdown เลือกคลัง เป็น "คลัง DC MC"
-    dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation_S001.warehouse['dcmc']}
+    dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation.selected_warehouse_list['text_warehouse_DC_MC']}
     # Expected
     dps_check_receiving_cycle_page.Verify Pickup Schedule Of DC MC Warehouse
     ...    ${DC_Operation_S001.receiving_cycle['company_name']}
     ...    ${DC_Operation_S001.receiving_cycle['branch']}
     common.Verify Capture Screenshot    DC_Operation_S001    Verify Pickup Schedule Of DC MC Warehouse
+
+    Log    Step No.23 คลิก Dropdown เลือกคลัง เป็น "คลัง DC BB"
+    dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    # Expected
+    dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
+    ...    ${dc_operation.title['check_receiving_cycle']}
+    ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
+    ...    ${DC_Operation_S001.receiving_cycle['company_name']}
+    ...    ${DC_Operation_S001.receiving_cycle['branch']}
+    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['province']}
+    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
+    ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
+    ...    ${DC_Operation_S001.receiving_cycle['courier']}
+    ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
+    ...    ${today}
+    ...    ${DC_Operation_S001.receiving_cycle.status['waiting']}
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Check Receiving Cycle Page
+
+    Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
+    dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
+    # Expected
+    dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
+    ...    ${dc_operation.title['check_receiving_cycle']}
+    ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
+    ...    ${DC_Operation_S001.receiving_cycle['company_name']}   
+    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['province']}
+    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
+    ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
+    ...    ${DC_Operation_S001.receiving_cycle['courier']}
+    ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
+    ...    ${today}
+    ...    ${DC_Operation_S001.receiving_cycle.status['waiting']}
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Inventory Confirm List Tab
+
+    Log    Step No.25 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
+    dps_check_receiving_cycle_page.Click Pencil Icon  ${booking_id}
+    # Expected
+    dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
+    ...    ${DC_Operation_S001.receiving_cycle['company_name']} 
+    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['province']}
+    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    ...    ${tomorrow}
+    ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
+    ...    ${DC_Operation_S001.receiving_cycle['car_type']}
+    ...    ${DC_Operation_S001.receiving_cycle['courier']}
+    ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
+    ...    ${DC_Operation_S001.receiving_cycle.status['waiting']}
+    common.Verify Capture Screenshot    DC_Operation_S001    Verify Parcel Pickup Details Popup

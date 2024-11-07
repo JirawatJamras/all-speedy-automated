@@ -336,6 +336,7 @@ dc_operation:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_DC_BB: คลัง DC BB
     text_warehouse_DC_SB: คลัง DC SB
+    text_warehouse_DC_MC: คลัง DC MC
   tab_daily_task:
     all_task: งานทั้งหมด
     import_task: งานรับเข้า
