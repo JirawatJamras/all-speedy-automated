@@ -432,13 +432,7 @@ Verify Section Waiting List To Scan Out [Scan Out Page]
     ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
     ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
     ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {update_date}    ${update_date}
-    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
-    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
-    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
-    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
-    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
-    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
-    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {update_date}    ${update_date}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {parcel_status}    ${parcel_status}
     ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
     ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
     ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
@@ -447,10 +441,8 @@ Verify Section Waiting List To Scan Out [Scan Out Page]
     ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
     common.Scroll Into View By Xpath    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    true
     Wait Until Element Is Visible    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}
-    ${actual_parcel_status}=    Get Text    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}
     ${actual_update_date}=    Get Text    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}
     ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M    result_format=%d/%m/%Y %H:%M
-    Should Be Equal    ${actual_parcel_status}    ${parcel_status}
     Should Be Equal    ${actual_update_date}    ${date_convert}
 
 Verify Close Pouch Before Scan Out Warning Popup

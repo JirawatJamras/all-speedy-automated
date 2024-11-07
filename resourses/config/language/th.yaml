@@ -317,6 +317,7 @@ dc_operation:
   text_confirm: ยืนยัน
   text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
   text_please_close_pouch_before_scan_out: ปิด Pouch ของพัสดุก่อน Scan out
+  icon_pencil: ไอคอนรูปดินสอ
   button_export: Export File
   button_approve: อนุมัติ
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ

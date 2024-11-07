@@ -141,12 +141,12 @@ DC_Operation_S006
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    SPBD241100002407
-    ...    ${DC_Operation_S006.scan_out_waiting_scan['pouch_number']}
+    ...    SPBD241100002442
+    ...    P112473971
     ...    คลัง DC BB    #${DC_Operation_S006.scan_out_waiting_scan['receive_parcel_from']}
     ...    CP ALL    #${DC_Operation_S006.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S006.scan_out_waiting_scan['parcel_owner']}
-    ...    กล่อง L	    #${DC_Operation_S006.scan_out_waiting_scan['parcel_size']}
+    ...    กล่อง XL    #${DC_Operation_S006.scan_out_waiting_scan['parcel_size']}
     ...    07/11/2567
     ...    พัสดุรอ Scan out ไปคลัง DC SB    #${DC_Operation_S006.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
@@ -168,12 +168,12 @@ DC_Operation_S006
     # Expected
     dps_pouch_page.Verify Pouch In Pouch Page
     ...    P112473971
-    ...    -
-    ...    DC SB
-    ...    1
-    ...    On
+    ...    ${DC_Operation_S006.data_in_pouch['inventory_crossdock']}
+    ...    DC SB    #${DC_Operation_S006.data_in_pouch['destination_inventory']}
+    ...    ${DC_Operation_S006.data_in_pouch['parcel_amount']}
+    ...    ${DC_Operation_S006.data_in_pouch['status']}
     ...    07-11-2567
-    ...    ไอคอนรูปดินสอ
+    ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    DC_Operation_S006    Verify Pouch In Pouch Page
 
     Log    Step No.13 คลิกที่ไอคอนรูปดินสอ

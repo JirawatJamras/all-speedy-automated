@@ -97,12 +97,18 @@ DC_Operation_S006:
     number_of_pieces: '-'
     number_of_scanned_items: '1'
   scan_out_waiting_scan:
-    pouch_number: '-'
     receive_parcel_from: Home
     transport: CP All
     parcel_owner: Speedy
-    parcel_size: กล่อง XL
+    parcel_size: ซอง A4
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_pouch:
+    inventory_crossdock: '-'
+    destination_inventory: DC SC
+    parcel_amount: '1'
+    status: 'On'
+    
+
 
 DC_Operation_S007:
   data_in_all_task_tab:
