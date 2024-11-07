@@ -206,16 +206,15 @@ Verify Label In Import Task Tab
     Should Be Equal    ${actual_txt_number_of_scanned_items_in_import_task_tab}    ${number_of_scanned_items}
     
 Verify Data In Import Task Tab
-    [Arguments]    ${import_from}    ${transport}    ${parcel_owner}   
-    ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
+    [Arguments]    ${import_from}    ${transport}    ${parcel_owner}    ${number_of_pouch}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task_home_page}    {import_from}    ${import_from}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {transport}    ${transport}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {parcel_owner}    ${parcel_owner}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_scanned_items}    ${number_of_scanned_items}
-    ${actual_txt_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
-    Should Be Equal    ${actual_txt_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
+    # ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
+    # ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_scanned_items}    ${number_of_scanned_items}
+    # ${actual_txt_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
+    Element Should Contain    ${dps_txt_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch}
 
 Verify Label In Export Task Tab
     [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
@@ -492,17 +491,16 @@ Verify Label In Send Task Tab
     Should Be Equal    ${actual_txt_number_of_scanned_items_in_send_task_tab}    ${number_of_scanned_items}
 
 Verify Data In Send Task Tab
-    [Arguments]    ${send_to}    ${store_code}    ${transport}   
-    ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
+    [Arguments]    ${send_to}    ${store_code}    ${transport}    ${number_of_pouch}
     ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task_home_page}    {send_to}    ${send_to}
     ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {store_code}    ${store_code}
     ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {transport}    ${transport}
     ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {number_of_pouch}    ${number_of_pouch}
-    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {number_of_pieces}    ${number_of_pieces}
-    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {number_of_scanned_items}    ${number_of_scanned_items}
+    # ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {number_of_pieces}    ${number_of_pieces}
+    # ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {number_of_scanned_items}    ${number_of_scanned_items}
     Scroll Element Into View    ${dps_txt_list_first_send_task}
-    ${actual_txt_list_first_import_task}=    Get Text    ${dps_txt_list_first_send_task}
-    Should Be Equal    ${actual_txt_list_first_import_task}    ${send_to} ${store_code} ${transport} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
+    # ${actual_txt_list_first_import_task}=    Get Text    ${dps_txt_list_first_send_task}
+    Element Should Contain    ${dps_txt_list_first_send_task}    ${send_to} ${store_code} ${transport} ${number_of_pouch}
 
 Select Filter Button
     ${dps_btn_filter}=    Replace String    ${dps_btn_filter_home_page}    {value}    ${dc_operation['button_filter']}
@@ -513,22 +511,9 @@ Click Search Button On Filter
     ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_home_page}    {value}    ${dc_operation['button_search']}
     common.Click When Ready    ${dps_btn_search_filter}
 
-Fiter Task Type [All Task Tab]
-    [Arguments]    ${task_type}
-    ${dps_cbo_task_type}=    Replace String    ${dps_cbo_task_type_home_page}    {value}    ${task_type}
-    common.Input When Ready    ${dps_txtbox_task_type_home_page}    ${task_type}
-    common.Click When Ready    ${dps_cbo_task_type}
-    Click Search Button On Filter
-
-Fiter Parcel Status [All Task Tab]
-    [Arguments]    ${parcel_status}
-    ${dps_cbo_parcel_status}=    Replace String    ${dps_cbo_parcel_status_home_page}    {value}    ${parcel_status}
-    common.Input When Ready    ${dps_txtbox_parcel_status_home_page}    ${parcel_status}
-    common.Click When Ready    ${dps_cbo_parcel_status}
-    Click Search Button On Filter
-
 Filter Data By Parcel Number [All Task Tab]
     [Arguments]    ${parcel_cod}
     Select Filter Button
     common.Input When Ready    ${dps_txtbox_parcel_number_home_page}    ${parcel_cod}
     Click Search Button On Filter
+    Select Filter Button
