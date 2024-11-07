@@ -245,6 +245,13 @@ Verify Data In Export Task Tab
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pouch}    ${number_of_pouch}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pieces}    ${number_of_pieces}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_scanned_items}    ${number_of_scanned_items}
+    FOR   ${i}    IN RANGE    0    10
+        ${isvisible}=    Run Keyword And Return Status    Page Should Contain Element    ${dps_txt_list_first_export_task}
+        Exit For Loop If    '${isvisible}' == 'True'
+        common.Scroll Into View By Xpath    ${dps_btn_next_page_export_task}    true
+        common.Click When Ready    ${dps_btn_next_page_export_task}
+    END
+    common.Scroll Into View By Xpath    ${dps_txt_list_first_export_task}    true
     ${actual_txt_list_first_export_task}=    Get Text    ${dps_txt_list_first_export_task}
     Should Be Equal    ${actual_txt_list_first_export_task}    ${export_to} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
 

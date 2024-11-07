@@ -114,19 +114,46 @@ DC_Operation_S006
     ...    SPCD241000006731
     ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S006.data_in_all_task_tab_after_scan['parcel_status']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    DC_Operation_S006    Verify Homepage
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Data In All Task Tab 1
     Sleep    1s
     common.Scroll Window To Vertical    1000
-    common.Verify Capture Screenshot    DC_Operation_S006    Verify Data In All Task Tab
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Data In All Task Tab 2
 
     Log    Step No. 9 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    dps_home_page.Verify Data In Export Task Tab
+    ...    DCSB    #${DC_Operation_S006.data_in_export_task_tab['export_to']}
+    ...    CPALL    #${DC_Operation_S006.data_in_export_task_tab['transport']}
+    ...    speedy    #${DC_Operation_S006.data_in_export_task_tab['parcel_owner']}
+    ...    0    #${DC_Operation_S006.data_in_export_task_tab['number_of_pouch']}
+    ...    8    #${DC_Operation_S006.data_in_export_task_tab['number_of_pieces']}
+    ...    8    #${DC_Operation_S006.data_in_export_task_tab['number_of_scanned_items']}
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Data In Export Task Tab 1
+    Sleep    1s
+    common.Scroll Window To Vertical    1000
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Data In Export Task Tab 2
 
     Log    Step No. 10 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
+    dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
+    ...    SPBD241100002407
+    ...    ${DC_Operation_S006.scan_out_waiting_scan['pouch_number']}
+    ...    คลัง DC BB    #${DC_Operation_S006.scan_out_waiting_scan['receive_parcel_from']}
+    ...    CP ALL    #${DC_Operation_S006.scan_out_waiting_scan['transport']}
+    ...    ${DC_Operation_S006.scan_out_waiting_scan['parcel_owner']}
+    ...    กล่อง L	    #${DC_Operation_S006.scan_out_waiting_scan['parcel_size']}
+    ...    07/11/2567
+    ...    พัสดุรอ Scan out ไปคลัง DC SB    #${DC_Operation_S006.scan_out_waiting_scan['parcel_status']}
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 1
+    Sleep    1s
+    common.Scroll Window To Vertical    1000
+    common.Verify Capture Screenshot    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.11 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    SPCD241000006731
@@ -228,6 +255,3 @@ DC_Operation_S006
     Log    Step No.34 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
-
-    
-

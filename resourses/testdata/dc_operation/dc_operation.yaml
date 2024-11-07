@@ -83,9 +83,23 @@ DC_Operation_S006:
     task_type: งานส่งออก
     parcel_owner: Speedy
     import_from: Home
-    export_to: Store
+    export_to: คลัง DCSB
     transport: CP All
     pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '1'
+    number_of_pieces: '-'
+    number_of_scanned_items: '1'
+  scan_out_waiting_scan:
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
 

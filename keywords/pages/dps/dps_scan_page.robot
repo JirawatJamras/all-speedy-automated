@@ -436,3 +436,42 @@ Input Pouch Number [Scan Out Page]    # Scan Out
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
+
+Verify Section Waiting List To Scan Out [Scan Out Page]
+    [Arguments]    ${parcel_number}    ${pouch_number}    ${import_from}
+    ...    ${deliver}    ${parcel_owner}    ${parcel_size}    
+    ...    ${update_date}    ${parcel_status}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
+    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    {update_date}    ${update_date}
+    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
+    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
+    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
+    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
+    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
+    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}    {update_date}    ${update_date}
+    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
+    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
+    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
+    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
+    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
+    common.Scroll Into View By Xpath    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    true
+    Wait Until Element Is Visible    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}
+    ${actual_parcel_status}=    Get Text    ${dps_txt_parecl_stauts_of_wiating_list_to_scan_out_in_scan_out_page}
+    ${actual_update_date}=    Get Text    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}
+    ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M    result_format=%d/%m/%Y %H:%M
+    Should Be Equal    ${actual_parcel_status}    ${parcel_status}
+    Should Be Equal    ${actual_update_date}    ${date_convert}
+
+    
+    # //td[text()='${parcel_number}']/..//td//div[text()='${pouch_number}']/../..//td[text()='${import_from}']/..//td[text()='${deliver}']/..//td[text()='${parcel_owner}']/..//td[text()='${parcel_size}']/..//td[contains(text(),'${update_date}')]
+    # //td[text()='${parcel_number}']/..//td//div[text()='${pouch_number}']/../..//td[text()='${import_from}']/..//td[text()='${deliver}']/..//td[text()='${parcel_owner}']/..//td[text()='${parcel_size}']/..//td[7]
+    # //td[text()='SPBD241100002407']/..//td//div[text()='-']/../..//td[text()='คลัง DC BB']/..//td[text()='CP ALL']/..//td[text()='Speedy']/..//td[text()='กล่อง L']/..//td[7]
+    # //td[text()='SPBD241100002407']/..//td//div[text()='-']/../..//td[text()='คลัง DC BB']/..//td[text()='CP ALL']/..//td[text()='Speedy']/..//td[text()='กล่อง L']/..//td[contains(text(),'07/11/2567')]/..//h1[text()='พัสดุรอ Scan out ไปคลัง']
+    

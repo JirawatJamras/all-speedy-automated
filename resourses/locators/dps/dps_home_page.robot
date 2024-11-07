@@ -49,6 +49,7 @@ ${dps_btn_selected_warehouse_list_home_page}    //div[text()='{value}']/../..
 ${dps_btn_pagination_right_home_page}    //div[@aria-hidden='false']//span[@aria-label='right']/..
 ${dps_btn_filter_home_page}    //div[@aria-hidden='false']//span[text()='{value}']/..
 ${dps_btn_search_filter_home_page}    //div[text()='{value}']/..
+${dps_btn_next_page_export_task}    //div[@class='ant-tabs-tabpane ant-tabs-tabpane-active']//span[@aria-label='right']/..
 
 ${dps_tab_name}    //div[@role='tab' and text()='{value}']
 ${dps_tab_in_home_page}    //div[@class='ant-tabs-nav-list']//div[text()='{value}']   
