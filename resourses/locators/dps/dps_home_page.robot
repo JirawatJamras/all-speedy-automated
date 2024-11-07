@@ -42,6 +42,7 @@ ${dps_txt_parcel_owner_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-pan
 ${dps_txt_number_of_pouch_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[4]
 ${dps_txt_number_of_pieces_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[5]
 ${dps_txt_number_of_scanned_items_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[6]
+${dps_txt_dropdown_warehouse_tab_home_page}    //span[@aria-label='down']/../..//div[@class='ant-space-item' and text()]
 
 ${dps_btn_dropdown_select_role}    //span[@aria-label='down-circle']
 ${dps_btn_role}    //li[@role='menuitem']//button[text()='{value}']
