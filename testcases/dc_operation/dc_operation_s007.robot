@@ -92,7 +92,7 @@ DC_Operation_S007
     ...    STORE    # Expected Result is ${dc_operation.scan_in_title_label_detail['store']}
     ...    CUSTOMER    # Expected Result is ${dc_operation.scan_in_title_label_detail['customer']}
     ...    PHONE    # Expected Result is ${dc_operation.scan_in_title_label_detail['phone']}
-    ...    POUCH NO.    # Expected Result is ${dc_operation.scan_in_title_label_detail['pounch_number']}
+    ...    POUCH NO.    # Expected Result is ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    WH    # Expected Result is ${dc_operation.scan_in_title_label_detail['wh']}
     dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
     ...    0060    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['route']}

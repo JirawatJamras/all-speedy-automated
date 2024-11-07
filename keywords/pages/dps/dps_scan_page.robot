@@ -104,6 +104,31 @@ Verify Navigate To Scan Page And Stay At Scan In Tab
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
     Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
 
+Clear Input Parcel Size In Scan Page
+    FOR    ${i}    IN    0    5
+        Press Key    ${dps_txt_value_parcel_size1}    BACKSPACE
+    END
+
+Input Parcel Size In Scan Page
+    [Arguments]    ${parcel_size}
+    common.Input When Ready    ${dps_txt_value_parcel_size1}    ${parcel_size}
+    ${dps_txt_title_parcel_size}=    Replace String    ${dps_txt_title_parcel_size}    {value}    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
+    common.Click When Ready  ${dps_txt_title_parcel_size}
+
+Verify Parcel Size Edited
+    [Arguments]    ${parcel_size}
+    ${actual_txt_value_parcel_size}=    Get Value    ${dps_txt_value_parcel_size3}
+    Should Be Equal    ${actual_txt_value_parcel_size}    ${parcel_size}
+
+Click Courier In Scan Page
+    ${dps_txt_value_courier}=    Replace String    ${dps_txt_value_courier}    {value}    ${dc_operation.scan_in_title_parcel_detail['courier']}
+    common.Click When Ready    ${dps_txt_value_courier}
+
+Select Courier In Dropdown In Scan Page
+    [Arguments]    ${courier}
+    ${dps_cbo_courier_in}=    Replace String    ${dps_cbo_courier_in_scan_page}    {value}    ${courier}
+    common.Click When Ready    ${dps_cbo_courier_in}
+
     #################### Home Destination ####################
     # Inprogress
 Verify Title Parcel Details In Scan Page Home Destination
@@ -242,49 +267,49 @@ Verify Title Parcel Details In Scan Page Home Destination
     #################### Store Destination ####################
 Verify Title Parcel Details In Scan Page Store Destination
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
-    ...            ${parcel_size}    ${warehouse_crossdock}    ${warehouse_destination}
+    ...            ${parcel_size}    
     ...            ${parcel_status}    ${courier}    ${pouch_number}
     ...            ${receiving_date}    ${warehouse_source}    ${send_parcel_to}
-    ...            ${route}
+    
     ${dps_txt_title_parcel_detail}=    Replace String    ${dps_txt_title_parcel_detail}    {value}    ${title}
     ${dps_txt_title_parcel_id}=    Replace String    ${dps_txt_title_parcel_id}    {value}    ${parcel_id}
     ${dps_txt_title_customer_id}=    Replace String    ${dps_txt_title_customer_id}    {value}    ${customer_id}
     ${dps_txt_title_parcel_size}=    Replace String    ${dps_txt_title_parcel_size}    {value}    ${parcel_size}
-    ${dps_txt_title_warehouse_crossdock}=    Replace String    ${dps_txt_title_warehouse_crossdock}    {value}    ${warehouse_crossdock}
-    ${dps_txt_title_warehouse_destination}=    Replace String    ${dps_txt_title_warehouse_destination}    {value}    ${warehouse_destination}
+    # ${dps_txt_title_warehouse_crossdock}=    Replace String    ${dps_txt_title_warehouse_crossdock}    {value}    ${warehouse_crossdock}
+    # ${dps_txt_title_warehouse_destination}=    Replace String    ${dps_txt_title_warehouse_destination}    {value}    ${warehouse_destination}
     ${dps_txt_title_parcel_status}=    Replace String    ${dps_txt_title_parcel_status}    {value}    ${parcel_status}
     ${dps_txt_title_courier}=    Replace String    ${dps_txt_title_courier}    {value}    ${courier}
     ${dps_txt_title_pouch_number}=    Replace String    ${dps_txt_title_pouch_number}    {value}    ${pouch_number}
     ${dps_txt_title_receiving_date}=    Replace String    ${dps_txt_title_receiving_date}    {value}    ${receiving_date}
     ${dps_txt_title_warehouse_source}=    Replace String    ${dps_txt_title_warehouse_source}    {value}    ${warehouse_source}
     ${dps_txt_title_send_parcel_to}=    Replace String    ${dps_txt_title_send_parcel_to}    {value}    ${send_parcel_to}
-    ${dps_txt_title_route}=    Replace String    ${dps_txt_title_route}    {value}    ${route}
+    # ${dps_txt_title_route}=    Replace String    ${dps_txt_title_route}    {value}    ${route}
     ${actual_txt_title_parcel_detail_}=    Get Text    ${dps_txt_title_parcel_detail}
     ${actual_txt_title_parcel_id}=    Get Text    ${dps_txt_title_parcel_id}
     ${actual_txt_title_customer_id}=    Get Text    ${dps_txt_title_customer_id}
     ${actual_txt_title_parcel_size}=    Get Text    ${dps_txt_title_parcel_size} 
-    ${actual_txt_title_warehouse_crossdock}=    Get Text    ${dps_txt_title_warehouse_crossdock}
-    ${actual_txt_title_warehouse_destination}=    Get Text    ${dps_txt_title_warehouse_destination}
+    # ${actual_txt_title_warehouse_crossdock}=    Get Text    ${dps_txt_title_warehouse_crossdock}
+    # ${actual_txt_title_warehouse_destination}=    Get Text    ${dps_txt_title_warehouse_destination}
     ${actual_txt_title_parcel_status}=    Get Text    ${dps_txt_title_parcel_status}
     ${actual_txt_title_courier}=    Get Text    ${dps_txt_title_courier}
     ${actual_txt_title_pouch_number}=    Get Text    ${dps_txt_title_pouch_number}
     ${actual_txt_title_receiving_date}=    Get Text    ${dps_txt_title_receiving_date} 
     ${actual_txt_title_warehouse_source}=    Get Text    ${dps_txt_title_warehouse_source}
     ${actual_txt_title_send_parcel_to}=    Get Text    ${dps_txt_title_send_parcel_to}
-    ${actual_txt_title_route}=    Get Text    ${dps_txt_title_route}
+    # ${actual_txt_title_route}=    Get Text    ${dps_txt_title_route}
     Should Be Equal    ${actual_txt_title_parcel_detail_}    ${title}
     Should Be Equal    ${actual_txt_title_parcel_id}    ${parcel_id}
     Should Be Equal    ${actual_txt_title_customer_id}    ${customer_id}
     Should Be Equal    ${actual_txt_title_parcel_size}    ${parcel_size}
-    Should Be Equal    ${actual_txt_title_warehouse_crossdock}    ${warehouse_crossdock}
-    Should Be Equal    ${actual_txt_title_warehouse_destination}    ${warehouse_destination}
+    # Should Be Equal    ${actual_txt_title_warehouse_crossdock}    ${warehouse_crossdock}
+    # Should Be Equal    ${actual_txt_title_warehouse_destination}    ${warehouse_destination}
     Should Be Equal    ${actual_txt_title_parcel_status}    ${parcel_status}
     Should Be Equal    ${actual_txt_title_courier}    ${courier}
     Should Be Equal    ${actual_txt_title_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_title_receiving_date}    ${receiving_date}
     Should Be Equal    ${actual_txt_title_warehouse_source}    ${warehouse_source}
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
-    Should Be Equal    ${actual_txt_title_route}    ${route}
+    # Should Be Equal    ${actual_txt_title_route}    ${route}
 
 Verify Data Parcel Details In Scan Page Store Destination
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
@@ -363,9 +388,9 @@ Verify Data Label Parcel In Scan Page Store Destination
     Should Be Equal    ${actual_txt_value_label_wh}    ${wh}
     # verify symbol
     IF         '${symbol}' == 'รูปดาว'
-    Wait Until Page Contains Element    ${dps_img_label_star_symbol_in_scan_page}     
+        Wait Until Page Contains Element    ${dps_img_label_star_symbol_in_scan_page}     
     ELSE IF    '${symbol}' == 'รูปวงกลม'
-    Wait Until Page Contains Element    ${dps_img_label_circle_symbol_in_scan_page}
+        Wait Until Page Contains Element    ${dps_img_label_circle_symbol_in_scan_page}
     END
 
 Click Close Popup Print Scan In Success
@@ -411,5 +436,3 @@ Input Pouch Number [Scan Out Page]    # Scan Out
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
-
-

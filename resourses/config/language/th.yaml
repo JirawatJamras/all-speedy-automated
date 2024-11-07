@@ -385,13 +385,12 @@ dc_operation:
     store: Store
     customer: Customer
     phone: Phone
-    pounch_number: Pounch Number
+    pouch_number: Pouch Number
     wh: WH
     courier: Courier
     zipcode: Zipcode
     province: province
     size: Size
-
   scan_in_title_sender_detail:
     title: ผู้ส่ง
     name: ชื่อผู้ส่ง

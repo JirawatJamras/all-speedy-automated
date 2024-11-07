@@ -296,7 +296,18 @@ DC_Operation_S016:
     phone: '0900987354'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ต.ปากเกร็ด อ.ปากเกร็ด จ.นนทบุรี 11120'
-
+  edit_parcel_detail_in_scan_in_tab:
+    value_parcel_size: '45'
+    text_parcel_size: กล่อง S
+    courier: CP All
+  edit_courier_in_scan_in_tab:
+    route: ''
+    zipcode: '11120'
+    customer: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    pouch_number: '-'
+    wh: 'DCBB - DCBB'
+    symbol: รูปวงกลม
 
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี

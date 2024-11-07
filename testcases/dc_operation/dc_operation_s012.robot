@@ -73,7 +73,7 @@ DC_Operation_S012
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ b" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
-    dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241100001156
+    dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241000009482
     dps_scan_page.Click Search Button
     dps_home_page.Wait Until Page Loaded
     # Defect155    Defect156    Defect157    Defect158    Defect159    Defect165    Defect168
