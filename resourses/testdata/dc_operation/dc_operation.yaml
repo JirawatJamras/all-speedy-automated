@@ -295,11 +295,11 @@ DC_Operation_S016:
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: FSH
-    postcode: '11120'
+    zipcode: '11120'
     province: นนทบุรี
     customer: ทดสอบพัสดุCourier
     phone: '0900987354'
-    parcel_size: L
+    size: L
   sender_data_in_scan_in_tab:
     name: คุณ a
     phone: '0959494989'

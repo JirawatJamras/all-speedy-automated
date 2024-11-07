@@ -347,12 +347,13 @@ Verify Title Label Parcel In Scan Page Store Destination
     ${dps_txt_title_label_phone}=    Replace String    ${dps_txt_title_label}    {value}    ${phone}
     ${dps_txt_title_label_pouch_number}=    Replace String    ${dps_txt_title_label}    {value}    ${pouch_number}
     ${dps_txt_title_label_wh}=    Replace String    ${dps_txt_title_label}    {value}    ${wh}
-    Element Should Be Visible   ${dps_txt_title_label_route}
-    Element Should Be Visible  ${dps_txt_title_label_store}
-    Element Should Be Visible  ${dps_txt_title_label_customer}
-    Element Should Be Visible  ${dps_txt_title_label_phone}
-    Element Should Be Visible  ${dps_txt_title_label_pouch_number}
-    Element Should Be Visible  ${dps_txt_title_label_wh}
+    Wait Until Element Is Visible    ${dps_txt_title_label_route}    timeout=${DEFAULT_TIMEOUT}
+    Element Should Be Visible    ${dps_txt_title_label_route}
+    Element Should Be Visible    ${dps_txt_title_label_store}
+    Element Should Be Visible    ${dps_txt_title_label_customer}
+    Element Should Be Visible    ${dps_txt_title_label_phone}
+    Element Should Be Visible    ${dps_txt_title_label_pouch_number}
+    Element Should Be Visible    ${dps_txt_title_label_wh}
 
 Verify Data Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
