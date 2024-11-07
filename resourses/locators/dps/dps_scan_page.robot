@@ -32,7 +32,8 @@ ${dps_txt_title_label_pouch_number}    //div[@class='mt-5']/div[5]/span[1]
 ${dps_txt_title_label_wh}    //div[@class='mt-5']/div[6]/span[1]
 
 ${dps_txt_label_scan_in}    //div[@class='']//span[text()='{value}']
-  
+${dps_txt_label_size_scan_in}    //div[@class='']//span[contains(normalize-space(), '{value}')]
+
 
 ${dps_txt_value_parcel_id}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_customer_id}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span

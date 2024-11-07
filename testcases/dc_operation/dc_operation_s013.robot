@@ -174,9 +174,11 @@ DC_Operation_S013
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
 
+    Log    Step No. check timelline
+    # Waiting Step
 
     Log    Step No.25 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
-
+    
     Log    Step No.26 เลือกแท็บงานส่งออก
 
     Log    Step No.27 เข้าเมนู Scan และ เลือกแท็บ Scan out

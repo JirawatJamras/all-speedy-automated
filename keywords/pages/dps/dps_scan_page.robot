@@ -226,8 +226,8 @@ Verify Data Label Parcel In Scan Page Home Destination
 
     ${value_courier}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${courier}
     ${value_zipcode}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${zipcode} 
-    ${value_size}=    Replace String    ${dps_txt_label_scan_in}    {value}    (กล่อง ${size})
-    # ${value_size}=    Replace String    ${dps_txt_label_scan_in}    {value}    (${label_size}: ${size})
+    ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(กล่อง ${size})
+    # ${value_size}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${SPACE}(${label_size}: ${size})
     ${value_customer}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${customer}
     ${value_phone}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${phone}
 
@@ -235,6 +235,7 @@ Verify Data Label Parcel In Scan Page Home Destination
     Element Should Be Visible    ${value_zipcode}
     Element Should Be Visible    ${value_customer}
     Element Should Be Visible    ${value_phone}
+    Element Should Be Visible    ${value_size}
 
 
     #################### Store Destination ####################
