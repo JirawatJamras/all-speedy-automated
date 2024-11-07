@@ -319,6 +319,17 @@ dc_operation:
   button_export: Export File
   button_approve: อนุมัติ
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
+  text_company: ชื่อบริษัท
+  text_company_address: ที่อยู่บริษัท
+  text_sub_district: ตำบล/เขต
+  text_district: อำเภอ/แขวง
+  text_province: จังหวัด
+  text_postcode: รหัสไปรษณีย์
+  pickup_date: วันที่เข้ารับพัสดุ
+  text_receiving_type: ประเภทการเข้ารับ
+  text_courier: Courier
+  text_number_of_parcel: จำนวนพัสดุ
+  text_status: สถานะ
   vehicle_type: ประเภทที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก

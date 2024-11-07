@@ -34,7 +34,7 @@ Select Waiting Inventory Confirm List Tab
 
 Verify Inventory Confirm List Tab
     [Arguments]    ${title}    ${tab}    ${company_name}    ${address}    ${sub_district}    ${district}    ${province}    ${postcode}
-    ...        ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${status}
+    ...        ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
     Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
@@ -51,6 +51,7 @@ Verify Inventory Confirm List Tab
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {receiving_type}    ${receiving_type}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {courier}    ${courier}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {number_of_parcel}    ${number_of_parcel}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
     Scroll Element Into View    ${row_receiving_cycle}
@@ -59,17 +60,69 @@ Verify Inventory Confirm List Tab
     Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
  
 Click Pencil Icon
-    Click When Ready    ${card_inventory}
+    [Arguments]    ${bookig_id}
+    ${button_filter}=    Replace String    ${dps_btn_filter_parcel_pickup_details}    {value}    ${dc_operation['button_filter']}
+    ${button_search}=    Replace String    ${dps_btn_search_parcel_pickup}    {value}    ${dc_operation['button_search']}
+    common.Click When Ready    ${button_filter}
+    common.Click When Ready    ${dps_update_date_parcel_pickup}
+    common.Click When Ready    ${dps_btn_today_parcel_pickup}
+    common.Click When Ready    ${button_search}
+    common.Click When Ready    ${button_filter}
+    ${card_count}=    Get Element Count    ${card_inventory}
+    Log To Console    ${card_count}
+    FOR    ${index}    IN RANGE    1    ${card_count}+1
+        Scroll Element Into View    (${card_inventory})[${index}]
+        
+        common.Click When Ready    (${card_inventory})[${index}]
+        ${element}    Run Keyword And Return Status    Wait Until Element Is Visible    //td[text()='B2411000571']
+        Exit For Loop If    '${element}' == 'True'
+        common.Click When Ready    ${dps_btn_close_parcel_pickup_details}
+    END
 
 Verify Parcel Pickup Details Popup
-    [Arguments]    ${parcel_pickup_details}   ${vehicle_type}    ${btn_export}
-    ${dps_txt_parcel_pickup_detail}=  Replace String   ${dps_txt_parcel_pickup_detail}   {value}   ${parcel_pickup_details}
-    ${dps_cbo_vehicle_type}=  Replace String   ${dps_cbo_vehicle_type}   {value}   ${vehicle_type}
-    ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${btn_export}
-    # Inprogress
-    Wait Until Element Is Visible    ${dps_txt_parcel_pickup_detail}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${dps_cbo_vehicle_type}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${dps_btn_parcel_pickup_details}    timeout=${DEFAULT_TIMEOUT}
+    [Arguments]    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}
+    ...    ${pickup_date}    ${receiving_time}    ${receiving_type}    ${courier}    ${parcel_num}    ${status}
+    ${label_parcel_pickup_detail}=  Replace String   ${dps_txt_parcel_pickup_detail}   {value}   ${dc_operation['parcel_pickup_details']}
+    ${label_comapny}=  Replace String   ${dps_txt_company_parcel_pickup_detail}   {text_company}    ${dc_operation['text_company']}
+    ${actual_comapny}=  Replace String   ${label_comapny}   {company_name}    ${company_name}
+    ${label_address}=  Replace String   ${dps_txt_company_address_parcel_pickup_detail}   {text_address}    ${dc_operation['text_company_address']}
+    ${actual_address}=  Replace String   ${label_address}   {company_address}    ${company_address}
+    ${label_sub_district}=  Replace String   ${dps_txt_sub_district_parcel_pickup_detail}   {text_sub_district}    ${dc_operation['text_sub_district']}
+    ${actual_sub_district}=  Replace String   ${label_sub_district}   {sub_district}    ${district}
+    ${label_district}=  Replace String   ${dps_txt_district_parcel_pickup_detail}   {text_district}    ${dc_operation['text_district']}
+    ${actual_district}=  Replace String   ${label_district}   {district}    ${district}
+    ${label_province}=  Replace String   ${dps_txt_province_parcel_pickup_detail}   {text_province}    ${dc_operation['text_province']}
+    ${actual_province}=  Replace String   ${label_province}   {province}    ${province}
+    ${label_postcode}=  Replace String   ${dps_txt_postcode_parcel_pickup_detail}   {text_postcode}    ${dc_operation['text_postcode']}
+    ${actual_postcode}=  Replace String   ${label_postcode}   {postcode}    ${postcode}
+    ${label_pickup_date}=  Replace String   ${dps_txt_pickup_date_parcel_pickup_detail}   {text_pickup}    ${dc_operation['pickup_date']}
+    ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}    08-11-2024 ${receiving_time}
+    # ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}    ${pickup_date} ${receiving_time}
+    ${label_receiving_type}=  Replace String   ${dps_txt_receiving_type_parcel_pickup_detail}   {text_receiving_type}    ${dc_operation['text_receiving_type']}
+    ${actual_receiving_type}=  Replace String   ${label_receiving_type}   {receiving_type}    ${receiving_type}
+    ${label_courier}=  Replace String   ${dps_txt_courier_parcel_pickup_detail}   {text_courier}    ${dc_operation['text_courier']}
+    ${actual_courier}=  Replace String   ${label_courier}   {courier}    ${courier}
+    ${label_parcel_num}=  Replace String   ${dps_txt_parcel_num_parcel_pickup_detail}   {text_parcel_num}    ${dc_operation['text_number_of_parcel']}
+    ${actual_parcel_num}=  Replace String   ${label_parcel_num}   {parcel_num}    ${parcel_num}
+    ${label_status}=  Replace String   ${dps_txt_status_parcel_pickup_detail}   {text_status}    ${dc_operation['text_status']}
+    ${actual_status}=  Replace String   ${label_status}   {status}    ${status}
+    ${cbo_vehicle_type}=  Replace String   ${dps_cbo_vehicle_type}   {value}   ${dc_operation['vehicle_type']}
+    ${button_export}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_export']}
+
+    Wait Until Element Is Visible    ${label_parcel_pickup_detail}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_comapny}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_address}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_sub_district}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_district}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_province}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_postcode}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_pickup_date}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_receiving_type}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_courier}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_parcel_num}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_status}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${cbo_vehicle_type}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${button_export}    timeout=${DEFAULT_TIMEOUT}
     
 
 Click Export Button On Parcel Pickup Details Popup
@@ -81,37 +134,3 @@ Click Approve Button On Parcel Pickup Details Popup
     ${dps_btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_approve']}
     Scroll Element Into View    ${dps_btn_parcel_pickup_details}
     Click When Ready    ${dps_btn_parcel_pickup_details}
-
-Verify parcel pickup schedule change status to confirm
-    [Arguments]    ${title}    ${tab}    ${company_name}    ${branch}    ${address}    ${sub_district}    ${district}    ${province}
-    ...    ${postcode}    ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${status}
-    Reload Page
-    Scroll Window To Vertical    0
-    Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    dps_home_page.Verify Page Title    ${title}
-    dps_home_page.Verify Tab Selected    ${tab}
-    ${next_day}    dps_home_page.Set_Next_DAY
-    ${today}    dps_home_page.Set_ToDAY
-    Wait Until Element Is Visible    ${dps_txt_receiving_cycle_list}    timeout=${DEFAULT_TIMEOUT}
-    ${receiving_count}=    Get Element Count    ${dps_txt_receiving_cycle_list}
-    FOR    ${index}    IN RANGE    1    ${receiving_count} + 1
-        ${item}=    Set Variable    (${dps_txt_receiving_cycle_list})[${index}]
-        Scroll Element Into View    ${item}
-        Register Keyword To Run On Failure    NOTHING
-        ${name_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[text()]    ${company_name}
-        ${branch_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[2]    ${branch}
-        ${address_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[3]    ${address}
-        ${sub_district_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[4]    ${sub_district}
-        ${district_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[5]    ${district}
-        ${province_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[6]    ${province}
-        ${postcode_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[7]    ${postcode}
-        ${next_day_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[8]    ${next_day}
-        ${receiving_time_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[9]    ${receiving_time}
-        ${receiving_type_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[10]    ${receiving_type}
-        ${courier_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[11]    ${courier}
-        ${number_of_parcel_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[12]    ${number_of_parcel}
-        ${update_date}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[13]    ${today}
-        ${status_status}=    Run Keyword And Return Status    Element Should Contain    ${item}//td[14]    ${status}
-        ${all_conditions}=    Evaluate    ${name_status} and ${branch_status} and ${address_status} and ${sub_district_status} and ${district_status} and ${province_status} and ${postcode_status} and ${next_day_status} and ${receiving_time_status} and ${receiving_type_status} and ${courier_status} and ${number_of_parcel_status} and ${update_date} and ${status_status}
-        Exit For Loop If    ${all_conditions}
-    END

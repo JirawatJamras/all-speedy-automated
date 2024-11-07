@@ -256,32 +256,39 @@ DC_Operation_s002
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
+    ...    ${today}
     ...    ${DC_Operation_S002.receiving_cycle.status['waiting']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Inventory Confirm List Tab
 
     Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
-    dps_check_receiving_cycle_page.Click Pencil Icon
+    dps_check_receiving_cycle_page.Click Pencil Icon    ${booking_id}
     # Expected
-    # dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
-    # ...    ${dc_operation['parcel_pickup_details']}
-
-    # ...    ${dc_operation['vehicle_type']}
-    # ...    ${dc_operation['button_export']}
-    
-    # ## เหลือ Verify รายละเอียด ##
-    Sleep    3s
+    dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
+    ...    ${DC_Operation_S002.receiving_cycle['company_name']} 
+    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['province']}
+    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
+    ...    ${tomorrow}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
+    ...    ${DC_Operation_S002.receiving_cycle['car_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['courier']}
+    ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
+    ...    ${DC_Operation_S002.receiving_cycle.status['waiting']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Parcel Pickup Details Popup
     
-    # Log    Step No.23 คลิกปุ่ม Export
-    # dps_check_receiving_cycle_page.Click Export Button On Parcel Pickup Details Popup
-    # # Expected
+    Log    Step No.23 คลิกปุ่ม Export
+    dps_check_receiving_cycle_page.Click Export Button On Parcel Pickup Details Popup
+    # Expected
+    common.Verify Capture Screenshot    DC_Operation_S002    Verify Click Export Button
 
-    # Log    Step No.24 คลิกปุ่ม อนุมัติ
-    # # dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
-    # # Expected
-    # # Inprogress
+    Log    Step No.24 คลิกปุ่ม อนุมัติ
+    # dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
+    # Expected
+    # Inprogress
 
-    # Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
+    Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     # Switch Window	MAIN
     # b2c_home_page.Click Parcel Delivery Service Menu
     # b2c_home_page.Select Sub Menu Call Car Pick Up
@@ -289,7 +296,7 @@ DC_Operation_s002
     # # Expected
     # # Inprogress
 
-    # Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
+    Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
     # b2c_home_page.Click Book Parcel Delivery
     # # Expected
     # # Inprogress
