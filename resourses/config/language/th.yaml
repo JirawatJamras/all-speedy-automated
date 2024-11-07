@@ -320,6 +320,17 @@ dc_operation:
   button_export: Export File
   button_approve: อนุมัติ
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
+  text_company: ชื่อบริษัท
+  text_company_address: ที่อยู่บริษัท
+  text_sub_district: ตำบล/เขต
+  text_district: อำเภอ/แขวง
+  text_province: จังหวัด
+  text_postcode: รหัสไปรษณีย์
+  pickup_date: วันที่เข้ารับพัสดุ
+  text_receiving_type: ประเภทการเข้ารับ
+  text_courier: Courier
+  text_number_of_parcel: จำนวนพัสดุ
+  text_status: สถานะ
   vehicle_type: ประเภทที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
@@ -385,16 +396,16 @@ dc_operation:
     send_parcel_to: ส่งพัสดุไปยัง
     route: Route
   scan_in_title_label_detail:
-    route: Route
-    store: Store
-    customer: Customer
-    phone: Phone
-    pouch_number: Pouch Number
+    route: ROUTE
+    store: STORE
+    customer: CUSTOMER
+    phone: PHONE
+    pouch_number: POUCH
     wh: WH
-    courier: Courier
-    zipcode: Zipcode
-    province: province
-    size: Size
+    courier: COURIER
+    zipcode: ZIPCODE
+    province: PROVINCE
+    size: SIZE
   scan_in_title_sender_detail:
     title: ผู้ส่ง
     name: ชื่อผู้ส่ง

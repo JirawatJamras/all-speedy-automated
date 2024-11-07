@@ -54,10 +54,11 @@ DC_Operation_S002:
     district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
     province: นนทบุรี 
     postcode: '11120'  #'11000'
-    receiving_time: '09:00' #'13:00'
+    receiving_time: '09:00'
+    car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
     courier: CPALL
-    number_of_parcel: '10'  #'0'
+    number_of_parcel: '10'
     status: 
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว
@@ -217,7 +218,7 @@ DC_Operation_S012:
     route: ''
   label_detail_in_scan_in_tab:
     route: ''
-    store_code: '07004'
+    store_code: '07004 (กล่อง M)'
     customer: ทดสอบพัสดุ In area
     phone: '0900987354'
     pouch_number: '-'
@@ -226,13 +227,13 @@ DC_Operation_S012:
   sender_data_in_scan_in_tab:
     name: คุณ b
     phone: '0959494989'
-    shipping_origin: บริษัท TecheX
-    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+    shipping_origin: 'บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
+    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุ In area
     phone: '0900987354'
-    shipping_destination: ร้าน
-    address: '07004 สาขา เรวดี (ตลาดเปรมสุข) ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'
+    shipping_destination: 'ร้าน (07004)'
+    address: 'ต.ตลาดขวัญ อ.เมืองนนทบุรี จ.นนทบุรี 11000'
 
 DC_Operation_S013:
   data_in_all_task_tab:
@@ -254,16 +255,14 @@ DC_Operation_S013:
   parcel_detail_in_scan_in_tab:
     tracking: SPBD241100000493
     receiving_date: 04-11-2567 10:39:14
-    customer_id: '2400563'
+    customer_id: 'B2C0002400563'    #'2400563'
     parcel_size: '120 ซม. กล่อง L'
-    warehouse_crossdock: '-'
-    warehouse_destination: ''
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
     pouch_number: '-'
     warehouse_source: DCBB
     send_parcel_to: 'Home (11120)'
-    route: ''
+
   label_detail_in_scan_in_tab:
     courier: 'FSH'
     zipcode: '11120'
@@ -275,13 +274,14 @@ DC_Operation_S013:
   sender_data_in_scan_in_tab:
     name: คุณ a
     phone: '0633906216'
-    shipping_origin: ร้าน (07465)
-    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
+    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุCourier
     phone: '0971971445'
     shipping_destination: บ้าน
-    address: '554 หมู่ 3 ต.ปากเกร็ด อ.ปากเกร็ด จ.นนทบุรี 11120'
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
 
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
@@ -314,14 +314,16 @@ DC_Operation_S016:
     value_parcel_size: '45'
     text_parcel_size: กล่อง S
     courier: CP All
+    destination_warehourse: DC SB
   edit_courier_in_scan_in_tab:
     route: ''
     zipcode: '11120'
     customer: ทดสอบพัสดุCourier
-    phone: '0971971445'
+    phone: '0900987354'
     pouch_number: '-'
     wh: 'DCBB - DCBB'
     symbol: รูปวงกลม
+    symbol_after_changing_warehourse: รูปดาว
 
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี

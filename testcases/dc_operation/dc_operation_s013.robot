@@ -90,7 +90,7 @@ DC_Operation_S013
     dps_scan_page.Input Tracking Number [Scan In Page]    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
     dps_scan_page.Click Search Button[Scan In Page]
     dps_home_page.Wait Until Page Loaded
-    # Defect158    Defect159    Defect160    Defect161    Defect162
+    # Defect158    Defect159    Defect160
     # Expected    
     # Inprogress
    dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
@@ -98,43 +98,38 @@ DC_Operation_S013
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']} # Defect162
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']} # Defect162
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
     ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
     ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['route']}   # Defect162
 
-#     dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
-#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
-#     ...    B2C0002400563  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['customer_id']}
-#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_size']}
-#     #...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_crossdock']} # Defect162
-#     #...    DCBB  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_destination']} # Defect162
-#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_status']}
-#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['courier']}
-#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
-#     ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
-#     ...    DC BB  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_source']}
-#     ...    HOME (11120)  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['send_parcel_to']}
-#     #...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['route']} # Defect162
-#     dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination
-#     ...    COURIER    # ${dc_operation.scan_in_title_label_detail['courier']}
-#     ...    ZIPCODE    #${dc_operation.scan_in_title_label_detail['zipcode']}
-#     ...    CUSTOMER    #${dc_operation.scan_in_title_label_detail['customer']}
-#     ...    PHONE    #${dc_operation.scan_in_title_label_detail['phone']}
-#     #...    ${dc_operation.scan_in_title_label_detail['size']}
+    dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['customer_id']}
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_size']}
+    ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง  # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_status']}
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['courier']}
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
+    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_source']}
+    ...    HOME (11120)    # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['send_parcel_to']}
 
-#     dps_scan_page.Verify Data Label Parcel In Scan Page Home Destination
-#     ...    FLS  # ${DC_Operation_S013.label_detail_in_scan_in_tab['courier']}
-#     ...    11120 (กล่อง L)    #${DC_Operation_S013.label_detail_in_scan_in_tab['zipcode']}
-#     ...    นนทบุรี  # ${DC_Operation_S013.label_detail_in_scan_in_tab['province']}
-#     ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['customer']}
-#     ...    0971971445  # ${DC_Operation_S013.label_detail_in_scan_in_tab['phone']}
-#     #...    ${DC_Operation_S013.label_detail_in_scan_in_tab['size']}
+    dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination
+    ...    ${dc_operation.scan_in_title_label_detail['courier']}
+    ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
+    ...    ${dc_operation.scan_in_title_label_detail['customer']}
+    ...    ${dc_operation.scan_in_title_label_detail['phone']}
+
+
+    dps_scan_page.Verify Data Label Parcel In Scan Page Home Destination
+    ...    FLS  # ${DC_Operation_S013.label_detail_in_scan_in_tab['courier']}
+    ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['zipcode']} 
+    ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['customer']}
+    ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['phone']}
+    ...    ${dc_operation.scan_in_title_label_detail['size']}    
+    ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['size']}
 
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
@@ -142,11 +137,12 @@ DC_Operation_S013
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
+
     dps_scan_page.Verify Data Sender In Scan Page
-    ...    คุณ a  # ${DC_Operation_S013.sender_data_in_scan_in_tab['name']}
-    ...    0633906216  # ${DC_Operation_S013.sender_data_in_scan_in_tab['phone']}
-    ...    สาขา คุณาลัย-บางใหญ่ (07465)  # ${DC_Operation_S013.sender_data_in_scan_in_tab['shipping_origin']}
-    ...    74 ลำพยา เมืองนครปฐม นครปฐม 73000  # ${DC_Operation_S013.sender_data_in_scan_in_tab['address']}
+    ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['name']}
+    ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['phone']}
+    ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['shipping_origin']}
+    ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['address']}
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
@@ -154,10 +150,10 @@ DC_Operation_S013
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
     dps_scan_page.Verify Data Recevier In Scan Page
-    ...    ทดสอบพัสดุCourier  # ${DC_Operation_S013.receiver_data_in_scan_in_tab['name']}
-    ...    0971971445  # ${DC_Operation_S013.receiver_data_in_scan_in_tab['phone']}
-    ...    บ้าน  # ${DC_Operation_S013.receiver_data_in_scan_in_tab['shipping_destination']}
-    ...    554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120  # ${DC_Operation_S013.receiver_data_in_scan_in_tab['address']}
+    ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['name']}
+    ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['phone']}
+    ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['shipping_destination']}
+    ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    DC_Operation_S013    Verify Sender Data In Scan In
 
@@ -178,9 +174,11 @@ DC_Operation_S013
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
 
+    Log    Step No. check timelline
+    # Waiting Step
 
     Log    Step No.25 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
-
+    
     Log    Step No.26 เลือกแท็บงานส่งออก
 
     Log    Step No.27 เข้าเมนู Scan และ เลือกแท็บ Scan out
