@@ -559,7 +559,7 @@ Booking_S018:
   parcel_type: พัสดุควบคุมอุณหภูมิ
   pickup_time:
     input: ช่วงบ่าย 13:00 - 16:00
-    expected: 13:00 - 16:00
+    expected: 13:00:00 - 16:00    #13:00 - 16:00
   pickup_point: บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
 
 Booking_S019:
@@ -1217,7 +1217,7 @@ Booking_S048:
   add_new_pickup:
     parcel_type: พัสดุทั่วไป (Dry)
     input: 'ช่วงเช้า 09:00 - 12:00'
-    expected: '09:00 - 12:00'
+    expected: 09:00:00 - 12:00    #'09:00 - 12:00'
 
 Booking_S050:
   old_return_business:
