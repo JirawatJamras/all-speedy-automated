@@ -1172,9 +1172,6 @@ Booking_S043:
     total_price_value: '226.00'
   text_price_value: 80.00 บาท
 
-Booking_S044:
-  tracking_number: 7110112189289
-
 Booking_S047:
   sender_favorite_card: 
     favorite_name: รายการโปรดผู้ส่ง
