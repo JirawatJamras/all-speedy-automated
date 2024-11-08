@@ -87,42 +87,42 @@ DC_Operation_S014
     Log    Step No.20 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
 
 
-    Log    Step No.21
+    Log    Step No.21 คลิกปุ่ม ยืนยัน/Print Label
 
 
-    Log    Step No.22
+    Log    Step No.22 คลิกปุ่มพิมพ์
 
 
-    Log    Step No.23
+    Log    Step No.23 คลิกที่ x Pop up
 
 
-    Log    Step No.24
+    Log    Step No.24 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
 
 
-    Log    Step No.25
+    Log    Step No.25 เลือกแท็บงานส่งออก
 
 
-    Log    Step No.26
+    Log    Step No.26 เข้าเมนู Scan และเลือกแท็บ Scan Out
 
 
-    Log    Step No.27
+    Log    Step No.27 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
 
 
-    Log    Step No.28
+    Log    Step No.28 กดปุ่ม ยืนยัน Scan Out
 
 
-    Log    Step No.29
+    Log    Step No.29 กดปุ่ม ยืนยัน
 
 
-    Log    Step No.30
+    Log    Step No.30 คลิกที่ Pop up
 
 
-    Log    Step No.31
+    Log    Step No.31 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
 
 
-    Log    Step No.32
+    Log    Step No.32 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
 
 
-    Log    Step No.33
+    Log    Step No.33 กดปุ่ม พิมพ์
 
 
