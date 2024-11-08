@@ -129,6 +129,7 @@ Verify Parcel Pickup Status After Cut Off Time
         ...    AND    Search Parcel Pickup By Date    ${day}    ${next_day}
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled
