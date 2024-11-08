@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S058
     [Documentation]    ลูกค้า All Member - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
-    [Tags]    Booking    UAT    
+    [Tags]    Booking    UAT    Fail
 
     Log    Prerequisite S031
     Booking_S031 
