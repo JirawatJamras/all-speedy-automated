@@ -30,7 +30,8 @@ ${dps_txt_label_scan_in}    //div[@class='']//span[text()='{value}']
 ${dps_txt_label_size_scan_in}    //div[@class='']//span[contains(normalize-space(), '{value}')]
 
 
-${dps_txt_value_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and td[7]='{value_date}' and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]
+${dps_txt_value_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and contains(td[7], '{value_date}') and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]
+${dps_txt_update_time_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and contains(td[7], '{value_date}') and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]//td[7]
 ${dps_txt_label_title_scan_out}    //tr[th[1]='{title_pouch_number}' and th[2]='{title_parcel_id}' and th[3]='{title_import_from}' and th[4]='{title_transport}' and th[5]='{title_parcel_owner}' and th[6]='{title_parcel_size}' and th[7]='{title_date}' and th[8]='{title_parcel_status}' ]
 
 

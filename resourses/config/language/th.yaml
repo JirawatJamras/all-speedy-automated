@@ -442,6 +442,11 @@ dc_operation:
     parcel_status: สถานะพัสดุ
   scan_out:  
     text_popup_confirm: 'ยืนยันการ Scan Out ใช่หรือไม่'
+  label_delivery_list:
+    export_to: ส่งออกไปยัง
+    transport: ผ่านขนส่ง
+    parcel_number: จำนวนพัสดุ
+    pouch_number: จำนวน Pouch
 
 
 rm:

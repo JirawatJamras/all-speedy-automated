@@ -489,9 +489,30 @@ Verify Value List Scan Out
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_size}    ${parcel_size}
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_date}    ${date}
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_status}    ${parcel_status}
+
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_pouch_number}    ${pouch_number}
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_id}    ${parcel_id}
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_import_from}    ${import_from}
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_transport}    ${transport}
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_owner}    ${parcel_owner}
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_size}    ${parcel_size}
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_date}    ${date}
+    ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_status}    ${parcel_status}
+    
+    ${actual_update_date}=    Get Text    ${dps_txt_update_time_scan_out}
+    ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%Y-%m-%d %H:%M:%S    result_format=%Y-%m-%d %H:%M:%S
+    Should Be Equal    ${actual_update_date}    ${date_convert}
     Element Should Be Visible    ${dps_txt_value_scan_out}
+    
+
+
+
 Filter Data By Parcel Number [Waiting Scan Out]
     [Arguments]    ${parcel_cod}
     Select Filter Button
     common.Input When Ready    ${dps_txtbox_parcel_code_scan_out_page}    ${parcel_cod}
     Click Search Button On Filter
+
+Verify Label Delivery List
+    [Arguments]    ${pouch_number}    ${parcel_id}    ${import_from}    ${transport}
+    ...            ${parcel_owner}    ${parcel_size}    ${date}    ${parcel_status}

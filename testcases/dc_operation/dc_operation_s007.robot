@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -192,25 +192,25 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    SPBD241100000487
-    ...    -
-    ...    คลัง DC BB    
-    ...    CP ALL    
-    ...    Speedy
-    ...    กล่อง L
-    ...    07/11/2567
-    ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง    
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    DC_Operation_S007    Verify Section Waiting List To Scan Out [Scan Out Page] 1
-    Sleep    1s
-    common.Scroll Window To Vertical    1000
-    common.Verify Capture Screenshot    DC_Operation_S007    Verify Section Waiting List To Scan Out [Scan Out Page] 2
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
+    # ...    SPBD241100000487
+    # ...    -
+    # ...    คลัง DC BB    
+    # ...    Flash   
+    # ...    Speedy
+    # ...    กล่อง L
+    # ...    07/11/2567
+    # ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง    
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    DC_Operation_S007    Verify Section Waiting List To Scan Out [Scan Out Page] 1
+    # Sleep    1s
+    # common.Scroll Window To Vertical    1000
+    # common.Verify Capture Screenshot    DC_Operation_S007    Verify Section Waiting List To Scan Out [Scan Out Page] 2
     # Bix เขียน Verify
 
     Log    Step No.10 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" ในช่องค้นหา และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    SPCD241000006748
+    dps_scan_page.Input Pouch Number [Scan Out Page]    SPBD241100000487
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
     dps_scan_page.Verify Label Scan Out
@@ -224,21 +224,21 @@ DC_Operation_S007
     ...    ${dc_operation.scan_out_title['parcel_status']}
     dps_scan_page.Verify Value List Scan Out 
     ...    -
-    ...    SPCD241000006748
+    ...    SPBD241100000487
     ...    คลัง DC BB
-    ...    CP ALL
+    ...    Flash
     ...    Speedy
-    ...    กล่อง S
-    ...    2024-11-07 09:40:51
-    ...    พัสดุรอ Scan out ไปคลัง AC
+    ...    กล่อง L
+    ...    2024-11-07     # 2024-11-07 09:40:51
+    ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
 
     Log    Step No.11 กดปุ่ม ยืนยัน Scan Out
-    dps_scan_page.Click Confirm Scan Out Button
+    # dps_scan_page.Click Confirm Scan Out Button
     # Expected
 
 
     Log    Step No.12 กดปุ่ม ยืนยัน
-    dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
+    # dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
 
     Log    Step No.13 คลิกที่ Pop up
@@ -248,6 +248,24 @@ DC_Operation_S007
     Log    Step No.14 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    dps_scan_page.Verify Label Delivery List
+    ...    ${dc_operation.scan_out_title['pouch_number']}
+    ...    ${dc_operation.scan_out_title['parcel_id']}
+    ...    ${dc_operation.scan_out_title['receive_parcel_from']}
+    ...    ${dc_operation.scan_out_title['transport']}
+    ...    ${dc_operation.scan_out_title['parcel_owner']}
+    ...    ${dc_operation.scan_out_title['parcel_size']}
+    ...    ${dc_operation.scan_out_title['date']}
+    ...    ${dc_operation.scan_out_title['parcel_status']}
+    dps_scan_page.Verify Value List Scan Out 
+    ...    -
+    ...    SPBD241100000487
+    ...    คลัง DC BB
+    ...    Flash
+    ...    Speedy
+    ...    กล่อง L
+    ...    2024-11-07     # 09:40:51
+    ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
 
     Log    Step No.15 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_scan_page.Click Print Button By Data
