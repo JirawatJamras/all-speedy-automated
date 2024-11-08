@@ -10,7 +10,7 @@ Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Laste
 *** Test Cases ***
 Booking_S027
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A1 (มี COD เเละใส่หมายเหตุ)(บันทึกร่าง) - Promotion (มี)
-    [Tags]    Booking    UAT    Pass_With_Condition
+    [Tags]    Booking    UAT    Fail
     Log    Pre condition
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -258,17 +258,17 @@ Booking_S027
 
     Log    Step No.17 ขั้นตอน Promotion
     # Defect072
-    # b2c_booking_delivery_page.Input Promotion    ${Booking_S027['promotion']}
-    # b2c_booking_delivery_page.Click Use Code Button
+    b2c_booking_delivery_page.Input Promotion    ${Booking_S027['promotion']}
+    b2c_booking_delivery_page.Click Use Code Button
     # # Expected
-    # b2c_booking_delivery_page.Verify Selected Coupon And Code
-    # ...    ${Booking_S027.promotion_detail['discount']}
-    # ...    ${Booking_S027.promotion_detail['promotion_name']}
-    # ...    ${Booking_S027.promotion_detail['parcel_size']}
-    # ...    ${Booking_S027.promotion_detail['expired_date']}
-    # ...    ${Booking_S027.promotion_detail['condition']}
-    # ...    ${Booking_S027.promotion_detail['period']}
-    # common.Verify Capture Screenshot    booking    Booking_S027    Verify Selected Coupon And Code
+    b2c_booking_delivery_page.Verify Selected Coupon And Code
+    ...    ${Booking_S027.promotion_detail['discount']}
+    ...    ${Booking_S027.promotion_detail['promotion_name']}
+    ...    ${Booking_S027.promotion_detail['parcel_size']}
+    ...    ${Booking_S027.promotion_detail['expired_date']}
+    ...    ${Booking_S027.promotion_detail['condition']}
+    ...    ${Booking_S027.promotion_detail['period']}
+    common.Verify Capture Screenshot    booking    Booking_S027    Verify Selected Coupon And Code
 
     Log    Step No.18 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button

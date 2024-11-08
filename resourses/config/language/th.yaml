@@ -452,7 +452,31 @@ dc_operation:
     confirm: ยืนยันแล้ว
     waiting: รอยืนยัน
     canceled: ยกเลิก
-
+  label_parcel_details_in_warehouse:
+    timeline: Timeline
+    parcel_detail: รายละเอียดพัสดุ
+    tracking_number: 'Tracking Number '
+    parcel_status: สถานะของพัสดุ
+    customer_type: ประเภทลูกค้า
+    pouch_number: Pouch Number
+    parcel_size: ขนาดพัสดุ
+    route: Route
+    check_in_date: วันที่รับพัสดุเข้าระบบ
+    date_in_system: จำนวนวันที่อยู่ในระบบ
+    sla_date: SLA Date
+    sla_text: SLA Text
+    origin_store: ร้านต้นทาง
+    origin_warehouse: คลังต้นทาง
+    destination_store: ร้านปลายทาง
+    crossdock_warehouse: คลัง Crossdock
+    shipping_by: ส่งพัสดุโดย
+    destination_warehouse: คลังปลายทาง
+  label_sender_in_warehouse:
+    sender_name: ชื่อผู้ส่ง
+    sender_address: ที่อยู่ผู้ส่ง
+  label_receiver_in_warehouse:
+    receiver_name: ชื่อผู้รับ
+    receiver_address: ที่อยู่ผู้รับ
 
 rm:
   text_pre_register: Pre-Register
