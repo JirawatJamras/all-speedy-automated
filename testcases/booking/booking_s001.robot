@@ -9,7 +9,7 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Booking_S001
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
-    [Tags]    Booking    UAT    Review_Pass
+    [Tags]    Booking    UAT    Pass_With_Condition
     Log    Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
