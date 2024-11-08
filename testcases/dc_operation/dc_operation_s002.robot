@@ -315,10 +315,10 @@ DC_Operation_s002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Pickup Schedule Change Status To Confirme
 
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
-    Switch Window	MAIN
-    b2c_home_page.Click Parcel Delivery Service Menu
-    b2c_home_page.Select Sub Menu Call Car Pick Up
-    Sleep    4s
+    # Switch Window	MAIN
+    # b2c_home_page.Click Parcel Delivery Service Menu
+    # b2c_home_page.Select Sub Menu Call Car Pick Up
+    # Sleep    4s
     # # Expected
     # # Inprogress
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Car Pickup Schedule Page Change Status To Confirme

@@ -108,6 +108,7 @@ Verify Parcel Pickup Status After Cut Off Time
     Search Parcel Pickup By Date    ${day}    ${next_day}
 
     WHILE    '${status_2}' == 'False'
+        Scroll Window To Vertical    0
         Run Keyword And Ignore Error    Wait Until Element Is Visible    ${card}
         ${number}=    Get Element Count    ${card}
         FOR    ${index}    IN RANGE    1    ${number}+1
