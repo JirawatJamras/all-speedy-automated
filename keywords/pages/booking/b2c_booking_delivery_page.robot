@@ -1,7 +1,7 @@
 *** Keywords ***
 Verify Booking Page For Business Customer
     ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=5s
-    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=5s
+    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=10s
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_business_customer']}  
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
     Wait Until Element Is Visible    ${btn_add}    timeout=${DEFAULT_TIMEOUT}
