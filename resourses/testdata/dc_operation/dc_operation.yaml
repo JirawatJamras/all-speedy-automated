@@ -26,9 +26,6 @@ DC_Operation_S001:
     receiving_type: รอบพิเศษ
     courier: CPALL
     number_of_parcel: '10'  #'0'
-    status: 
-      waiting: รอยืนยัน
-      confirm: ยืนยันแล้ว
 
 DC_Operation_S002:
   company_name: คุณ ไอดีซี
@@ -58,9 +55,6 @@ DC_Operation_S002:
     receiving_type: รอบพิเศษ
     courier: CPALL
     number_of_parcel: '10'
-    status: 
-      waiting: รอยืนยัน
-      confirm: ยืนยันแล้ว
 
 DC_Operation_S006:
   data_in_all_task_tab:

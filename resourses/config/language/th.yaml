@@ -321,6 +321,7 @@ dc_operation:
   icon_pencil: ไอคอนรูปดินสอ
   button_export: Export File
   button_approve: อนุมัติ
+  button_unapproved: ไม่อนุมัติ
   parcel_pickup_details: รายละเอียดรอบเข้ารับพัสดุ
   text_company: ชื่อบริษัท
   text_company_address: ที่อยู่บริษัท
@@ -447,6 +448,10 @@ dc_operation:
     transport: ผ่านขนส่ง
     parcel_number: จำนวนพัสดุ
     pouch_number: จำนวน Pouch
+  status:
+    confirm: ยืนยันแล้ว
+    waiting: รอยืนยัน
+    canceled: ยกเลิก
 
 
 rm:

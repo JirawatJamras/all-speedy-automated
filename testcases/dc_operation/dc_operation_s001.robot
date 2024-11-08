@@ -81,6 +81,7 @@ DC_Operation_S001
     
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add    
+    # Defect043
     # Expected
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    DC_Operation_S001    Verify Term & Condition
@@ -110,6 +111,7 @@ DC_Operation_S001
 
     Log    Step No.10 คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
+    # Defect068
     # Expected
     b2c_booking_delivery_page.Click Latest Booking Created    ## ใช้แก้ชั่วคราว
     b2c_booking_detail_page.Verify Booking List In Booking Detail Page
@@ -142,6 +144,7 @@ DC_Operation_S001
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
+    # Defect144
     # Expected
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
@@ -175,6 +178,7 @@ DC_Operation_S001
     ...    ${DATABASE_NAME}
     ...    ${COLLECTION}
     ...    ${QUERY}
+    # Defect150
     # Expected
     Reload Page
     b2c_booking_detail_page.Verify Booking Detail Page After Import File
@@ -236,6 +240,7 @@ DC_Operation_S001
 
     Log    Step No.23 คลิก Dropdown เลือกคลัง เป็น "คลัง DC BB"
     dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    # Defect175 Defect192
     # Expected
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -257,6 +262,7 @@ DC_Operation_S001
 
     Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
+    # Defect175 Defect192
     # Expected
     dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}

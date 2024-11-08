@@ -79,7 +79,8 @@ DC_Operation_s002
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Booking Page
     
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
-    b2c_booking_delivery_page.Click Button To Add    
+    b2c_booking_delivery_page.Click Button To Add   
+    # Defect043 
     # Expected    
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Term & Condition
@@ -109,6 +110,7 @@ DC_Operation_s002
 
     Log    Step No.10 คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
+    # Defect068
     # Expected
     b2c_booking_delivery_page.Click Latest Booking Created    ## ใช้แก้ชั่วคราว
     b2c_booking_detail_page.Verify Booking List In Booking Detail Page
@@ -142,6 +144,7 @@ DC_Operation_s002
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
     Log To Console    ${booking_id}
+    # Defect144
     # Expected
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
@@ -175,6 +178,7 @@ DC_Operation_s002
     ...    ${DATABASE_NAME}
     ...    ${COLLECTION}
     ...    ${QUERY}
+    # Defect150
     # Expected
     Reload Page
     b2c_booking_detail_page.Verify Booking Detail Page After Import File
@@ -222,6 +226,7 @@ DC_Operation_s002
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
+    # Defect175 Defect192
     # Expected
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -243,6 +248,7 @@ DC_Operation_s002
 
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
+    # Defect175 Defect192
     # Expected
     dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -263,6 +269,7 @@ DC_Operation_s002
 
     Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
     dps_check_receiving_cycle_page.Click Pencil Icon    ${booking_id}
+    # Defect178
     # Expected
     dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
     ...    ${DC_Operation_S002.receiving_cycle['company_name']} 
@@ -271,7 +278,7 @@ DC_Operation_s002
     ...    ${DC_Operation_S002.receiving_cycle['district']}
     ...    ${DC_Operation_S002.receiving_cycle['province']}
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
-    ...    ${tomorrow}
+    ...    08-11-2024  #${tomorrow}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['car_type']}
     ...    ${DC_Operation_S002.receiving_cycle['courier']}
@@ -287,7 +294,7 @@ DC_Operation_s002
     Log    Step No.24 คลิกปุ่ม อนุมัติ
     dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
     # Expected
-    dps_check_receiving_cycle_page.Verify Pickup Schedule Change Status To Confirme
+    dps_check_receiving_cycle_page.Verify Pickup Schedule Change Status
     ...    ${DC_Operation_S002.receiving_cycle['company_name']}
     ...    ${DC_Operation_S002.receiving_cycle['branch']}
     ...    ${DC_Operation_S002.receiving_cycle['company_address']}
@@ -300,7 +307,7 @@ DC_Operation_s002
     ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
-    ...    ${DC_Operation_S002.receiving_cycle.status['confirm']}
+    ...    ${DC_Operation.status['confirm']}
     common.Verify Capture Screenshot    DC_Operation_S002    Verify Pickup Schedule Change Status To Confirme
 
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"

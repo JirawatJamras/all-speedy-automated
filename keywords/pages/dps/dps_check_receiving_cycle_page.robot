@@ -121,8 +121,7 @@ Verify Parcel Pickup Details Popup
     ${label_postcode}=  Replace String   ${dps_txt_postcode_parcel_pickup_detail}   {text_postcode}    ${dc_operation['text_postcode']}
     ${actual_postcode}=  Replace String   ${label_postcode}   {postcode}    ${postcode}
     ${label_pickup_date}=  Replace String   ${dps_txt_pickup_date_parcel_pickup_detail}   {text_pickup}    ${dc_operation['pickup_date']}
-    ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}    08-11-2024 ${receiving_time}
-    # ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}    ${pickup_date} ${receiving_time}
+    ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}    ${pickup_date} ${receiving_time}
     ${label_receiving_type}=  Replace String   ${dps_txt_receiving_type_parcel_pickup_detail}   {text_receiving_type}    ${dc_operation['text_receiving_type']}
     ${actual_receiving_type}=  Replace String   ${label_receiving_type}   {receiving_type}    ${receiving_type}
     ${label_courier}=  Replace String   ${dps_txt_courier_parcel_pickup_detail}   {text_courier}    ${dc_operation['text_courier']}
@@ -160,7 +159,12 @@ Click Approve Button On Parcel Pickup Details Popup
     Scroll Element Into View    ${btn_parcel_pickup_details}
     Click When Ready    ${btn_parcel_pickup_details}
 
-Verify Pickup Schedule Change Status To Confirme
+Click Unapproved Button On Parcel Pickup Details Popup
+    ${btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_unapproved']}
+    Scroll Element Into View    ${btn_parcel_pickup_details}
+    Click When Ready    ${btn_parcel_pickup_details}
+
+Verify Pickup Schedule Change Status
     [Arguments]    ${company_name}    ${branch}    ${address}    ${sub_district}    ${district}    ${province}
     ...    ${postcode}    ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
     ${text_save_success}=  Replace String   ${dps_txt_save_success_parcel_pickup_detail}   {value}   ${dc_operation['text_save_success']}
