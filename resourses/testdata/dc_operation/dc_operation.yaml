@@ -399,6 +399,33 @@ DC_Operation_S016:
     symbol: รูปวงกลม
     symbol_after_changing_warehourse: รูปดาว
 
+DC_Operation_S018:
+  value_parcel_details_in_warehouse:
+    # tracking_number: 'Tracking Number '
+    parcel_status: 'พัสดุรอ Scan out ไปคลัง (AC)'
+    customer_type: 'B2C'
+    pouch_number: ''
+    parcel_size: 'ซอง A4'
+    route: ''
+    # check_in_date: ''
+    # date_in_system: ''
+    sla_date: ''
+    sla_text: ''
+    origin_store: '-'
+    origin_warehouse: DCBB
+    destination_store: '-'
+    crossdock_warehouse: AC
+    shipping_by: CP All
+    destination_warehouse: RDCLP
+  value_sender_in_warehouse:
+    name: คุณ i
+    phone: '0959494989'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  value_receiver_in_warehouse:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    phone: ''
+    address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
+
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี
   parcel_type:  พัสดุควบคุมอุณหภูมิ
