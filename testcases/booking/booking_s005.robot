@@ -9,7 +9,7 @@ Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${bo
 *** Test Cases ***
 Booking_S005
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก S (ไม่มีประกัน มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    UAT    Pass_With_Condition
+    [Tags]    Booking    UAT    Fail
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -177,16 +177,16 @@ Booking_S005
     Log    Step No.13 ขั้นตอน Promotion
     b2c_booking_delivery_page.Input Promotion    ${Booking_S005['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
-    # Defect050    Defect072
+    # Defect050
     # Expected
-    # b2c_booking_delivery_page.Verify Selected Coupon And Code
-    # ...    ${Booking_S005.promotion_detail['discount']}
-    # ...    ${Booking_S005.promotion_detail['promotion_name']}
-    # ...    ${Booking_S005.promotion_detail['parcel_size']}
-    # ...    ${Booking_S005.promotion_detail['expired_date']}
-    # ...    ${Booking_S005.promotion_detail['condition']}
-    # ...    ${Booking_S005.promotion_detail['period']}
-    # common.Verify Capture Screenshot    booking    Booking_S005    Verify Selected Coupon And Code
+    b2c_booking_delivery_page.Verify Selected Coupon And Code
+    ...    ${Booking_S005.promotion_detail['discount']}
+    ...    ${Booking_S005.promotion_detail['promotion_name']}
+    ...    ${Booking_S005.promotion_detail['parcel_size']}
+    ...    ${Booking_S005.promotion_detail['expired_date']}
+    ...    ${Booking_S005.promotion_detail['condition']}
+    ...    ${Booking_S005.promotion_detail['period']}
+    common.Verify Capture Screenshot    booking    Booking_S005    Verify Selected Coupon And Code
 
     Log    Step No.14 กดปุ่ม "จองเลขพัสดุ"
     b2c_booking_delivery_page.Click Parcel Booking Button

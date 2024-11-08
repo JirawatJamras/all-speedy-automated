@@ -15,7 +15,7 @@ ${b2c_txt_car_round_name_in_add_popup}    //form[@id='basic']//strong[contains(t
 ${b2c_txt_parcel_type_in_add_popup}    //label[@for='basic_parcelType']//strong[contains(text(),'{value}')]
 ${b2c_txt_parcel_pickup_date_in_add_popup}    //label[@for='basic_date']//strong[contains(text(),'{value}')]
 ${b2c_txt_parcel_pickup_time_in_add_popup}    //label[@for='basic_time']//strong[contains(text(),'{value}')]
-${b2c_txt_parcel_pickup_round}    //*[text()='{round}']/../../../..//strong[contains(text(),'{pickupdate}')]/../../..//span[contains(normalize-space(),'{value}')]/../../../../..
+${b2c_txt_parcel_pickup_round}    //*[text()='{status}']/../../../..//*[text()='{round}']/../../../..//strong[contains(text(),'{pickupdate}')]/../../..//span[contains(normalize-space(),'{value}')]/../../../../..
 ${b2c_txt_cutoff_pickup_round}    //strong[text()='{cutoff}']/../../..//span[contains(text(),'{cutoff_value}')]/../../../../..//strong[contains(text(),'{parcel}')]/../../..//span[contains(normalize-space(),'{value}')]/../../../../..
 ${b2c_txt_location_pickup}    //strong[text()='{price}']/../../..//span[contains(normalize-space(),'{price_value}')]/../../../../..//strong[text()='{location}']/../../..//span[text()='{location_value}']
 ${b2c_txt_complete_save_pickup_round}    //div[@class='ant-message-notice-content']

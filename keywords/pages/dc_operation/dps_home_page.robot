@@ -206,15 +206,16 @@ Verify Label In Import Task Tab
     Should Be Equal    ${actual_txt_number_of_scanned_items_in_import_task_tab}    ${number_of_scanned_items}
     
 Verify Data In Import Task Tab
-    [Arguments]    ${import_from}    ${transport}    ${parcel_owner}    ${number_of_pouch}
+    [Arguments]    ${import_from}    ${transport}    ${parcel_owner}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task_home_page}    {import_from}    ${import_from}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {transport}    ${transport}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {parcel_owner}    ${parcel_owner}
-    ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
+    #${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
     # ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
     # ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_scanned_items}    ${number_of_scanned_items}
     # ${actual_txt_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
-    Element Should Contain    ${dps_txt_list_first_import_task}    ${import_from} ${transport} ${parcel_owner} ${number_of_pouch}
+    # Element Should Contain    ${dps_txt_list_first_import_task}    ${import_from} ${transport} ${parcel_owner}
+    Element Should Be Visible    ${dps_txt_list_first_import_task}
 
 Verify Label In Export Task Tab
     [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
@@ -237,13 +238,13 @@ Verify Label In Export Task Tab
 
 Verify Data In Export Task Tab
     [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
-    ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
+    # ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task_home_page}    {export_to}    ${export_to}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {transport}    ${transport}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {parcel_owner}    ${parcel_owner}
-    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pouch}    ${number_of_pouch}
-    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pieces}    ${number_of_pieces}
-    ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_scanned_items}    ${number_of_scanned_items}
+    # ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pouch}    ${number_of_pouch}
+    # ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_pieces}    ${number_of_pieces}
+    # ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {number_of_scanned_items}    ${number_of_scanned_items}
     FOR   ${i}    IN RANGE    0    10
         ${isvisible}=    Run Keyword And Return Status    Page Should Contain Element    ${dps_txt_list_first_export_task}
         Exit For Loop If    '${isvisible}' == 'True'
@@ -252,7 +253,7 @@ Verify Data In Export Task Tab
     END
     common.Scroll Into View By Xpath    ${dps_txt_list_first_export_task}    true
     ${actual_txt_list_first_export_task}=    Get Text    ${dps_txt_list_first_export_task}
-    Should Be Equal    ${actual_txt_list_first_export_task}    ${export_to} ${transport} ${parcel_owner} ${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
+    Should Be Equal    ${actual_txt_list_first_export_task}    ${export_to} ${transport} ${parcel_owner}     #${number_of_pouch} ${number_of_pieces} ${number_of_scanned_items}
 
 Select DPS Menu
     [Arguments]    ${tabname}

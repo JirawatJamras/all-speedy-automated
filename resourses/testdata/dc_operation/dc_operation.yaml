@@ -238,21 +238,22 @@ DC_Operation_S013:
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
-    import_from: store
+    import_from: Store
     export_to: '-'
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
+    parcel_size: กล่อง L
     parcel_status: ร้านรับพัสดุ (คุณาลัย - บางใหญ่)
   data_in_import_task_tab:
     import_from: store
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '1'
-    number_of_scanned_items: '1'
+  data_in_export_task_tab:
+    import_from: Home
+    transport: Flash
+    parcel_owner: Speedy
   parcel_detail_in_scan_in_tab:
-    tracking: SPBD241100000476
+    tracking: SPBD241100000473
     receiving_date: 04-11-2567
     customer_id: 'B2C0002400563'    #'2400563'
     parcel_size: '120 ซม. กล่อง L'
@@ -273,31 +274,83 @@ DC_Operation_S013:
     phone: '0633906216'
     shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
     address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
-
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุCourier
     phone: '0971971445'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
-
   scan_out_waiting_scan:
-    tracking: SPBD241100000476
+    tracking: SPBD241100000473
     pouch_number: '-'
-    warehouse_source: คลัง DC BB
-    courier: Flash
+    receive_parcel_from: Store
+    transport: Flash
     parcel_owner: Speedy
     parcel_size: 'กล่อง L'
     update_date: 08/11/2567
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-
   scan_out_print:
     export_to: home
     deliver: Flash
-    parcel_amount: '1'
-    pouch_amount: '-'
-    total_parcel_pouch: '1'
+    update_date:
 
-
+DC_Operation_S014:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Store
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง L
+    parcel_status: ร้านรับพัสดุ (คุณาลัย - บางใหญ่)
+  data_in_import_task_tab:
+    import_from: Store
+    transport: CP All
+    parcel_owner: Speedy
+  data_in_export_task_tab:
+    import_from: Home
+    transport: Flash
+    parcel_owner: Speedy  
+  parcel_detail_in_scan_in_tab:
+    tracking: SPCD241100000423
+    receiving_date: 04-11-2567
+    customer_id: 'B2C0002400563'    #'2400563'
+    parcel_size: '120 ซม. กล่อง L'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    warehouse_source: DCBB
+    send_parcel_to: 'Home (11120)'
+  label_detail_in_scan_in_tab:
+    courier: 'FSH'
+    zipcode: '11120'
+    province: 'นนทบุรี'
+    customer: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    size: L
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0633906216'
+    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+  scan_out_waiting_scan:
+    tracking: SPCD241100000423
+    pouch_number: '-'
+    receive_parcel_from: Store
+    transport: Flash
+    parcel_owner: Speedy
+    parcel_size: 'กล่อง L'
+    update_date: 08/11/2567
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  scan_out_print:
+    export_to: home
+    deliver: Flash
+    update_date:
 
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
@@ -340,6 +393,33 @@ DC_Operation_S016:
     wh: 'DCBB - DCBB'
     symbol: รูปวงกลม
     symbol_after_changing_warehourse: รูปดาว
+
+DC_Operation_S018:
+  value_parcel_details_in_warehouse:
+    # tracking_number: 'Tracking Number '
+    parcel_status: 'พัสดุรอ Scan out ไปคลัง (AC)'
+    customer_type: 'B2C'
+    pouch_number: ''
+    parcel_size: 'ซอง A4'
+    route: ''
+    # check_in_date: ''
+    # date_in_system: ''
+    sla_date: ''
+    sla_text: ''
+    origin_store: '-'
+    origin_warehouse: DCBB
+    destination_store: '-'
+    crossdock_warehouse: AC
+    shipping_by: CP All
+    destination_warehouse: RDCLP
+  value_sender_in_warehouse:
+    name: คุณ i
+    phone: '0959494989'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  value_receiver_in_warehouse:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    phone: ''
+    address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
 
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี

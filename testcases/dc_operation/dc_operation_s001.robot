@@ -257,7 +257,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['courier']}
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
     ...    ${today}
-    ...    ${DC_Operation_S001.receiving_cycle.status['waiting']}
+    ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Check Receiving Cycle Page
 
     Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
@@ -278,7 +278,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['courier']}
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
     ...    ${today}
-    ...    ${DC_Operation_S001.receiving_cycle.status['waiting']}
+    ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Inventory Confirm List Tab
 
     Log    Step No.25 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
@@ -296,5 +296,22 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['car_type']}
     ...    ${DC_Operation_S001.receiving_cycle['courier']}
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
-    ...    ${DC_Operation_S001.receiving_cycle.status['waiting']}
+    ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Parcel Pickup Details Popup
+
+    dps_check_receiving_cycle_page.Click Unapproved Button On Parcel Pickup Details Popup
+    # Expected
+    dps_check_receiving_cycle_page.Verify Pickup Schedule Change Status
+    ...    ${DC_Operation_S002.receiving_cycle['company_name']}
+    ...    ${DC_Operation_S002.receiving_cycle['branch']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['province']}
+    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['courier']}
+    ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
+    ...    ${today}
+    ...    ${DC_Operation.status['canceled']}
