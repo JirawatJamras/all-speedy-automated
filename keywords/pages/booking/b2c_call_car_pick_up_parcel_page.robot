@@ -83,7 +83,7 @@ Search Parcel Pickup By Date
 
 Verify Parcel Pickup Status After Cut Off Time
     [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}
-    ${button_confirm}=  Replace String   ${btn_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
+    ${button_confirm}=  Replace String   ${b2c_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
     ${actual_status}=  Replace String   ${b2c_txt_status_and_id_pickup_round}    {status}    ${status}
     ${actual_status_and_id}=  Replace String   ${actual_status}    {booking_id}    ${booking_id}
     ${next_day}    Set Date Pattern    ${tomorrow}

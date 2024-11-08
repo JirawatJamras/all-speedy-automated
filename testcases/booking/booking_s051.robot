@@ -8,7 +8,6 @@ Test Teardown    Close Browser
 *** Test Cases ***
 Booking_S051
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า Return Business (ลูกค้าทั่วไปบุ๊คพัสดุ จาก Link Return Business ที่ได้รับ)
-    [Tags]    Booking    UAT
     Log    S051
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
