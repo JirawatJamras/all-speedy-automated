@@ -328,7 +328,7 @@ Booking_S011:
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
   discount_value: 'NaN'
-  discount_valu2: '5.00'
+  discount_value2: '5.00'
   total_price_amount:  '1'
   total_price_value:  'NaN'
   total_price_value2:  '35.00'
@@ -494,7 +494,7 @@ Booking_S016:
   parcel_cod_verify: 5,000.00
   parcel_cod_verify2: 5,000
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
-  parcel_price_verify: '140'
+  parcel_price_verify: '140.00'
   discount_amount: '0'
   discount_value: '0.00'
   insurance_fee_amount: '1'
@@ -612,7 +612,7 @@ Booking_S020:
   booking_name:  Booking CHILLED
   booking_item: 1 รายการ
   parcel_package_type:  กล่อง
-  price_value: 230.00
+  price_value: 230
   discount_amount: '1'
   discount_value: 'NaN'
   discount_value2: '5.00'
@@ -1155,7 +1155,8 @@ Booking_S043:
   parcel_package_type:  กล่อง
   buy_insurance: 2,500
   verify_buy_insurance: '2,500.00'
-  parcel_detail_remark:  ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
+  parcel_detail_remark2: ระวังพัสดุเสียหาย
   price_value: '250.00'
   discount_amount: '1'
   discount_value: '5.00'

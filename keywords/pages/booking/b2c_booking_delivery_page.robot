@@ -680,6 +680,7 @@ Verify Textbox Value On Parcel Detail Step [Dry Parcel]
 
 Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
     [Arguments]    ${cod}    ${remark}
+    ${txtbox_insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
     ${actual_cod}=    Get Value    ${txtbox_cod}
     ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
     Element Should Be Disabled    ${txtbox_insure_amount}
