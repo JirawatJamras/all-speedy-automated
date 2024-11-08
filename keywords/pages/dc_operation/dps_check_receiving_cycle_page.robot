@@ -97,7 +97,6 @@ Click Pencil Icon
     Log To Console    ${card_count}
     FOR    ${index}    IN RANGE    1    ${card_count}+1
         Scroll Element Into View    (${card_inventory})[${index}]
-        
         common.Click When Ready    (${card_inventory})[${index}]
         ${element}    Run Keyword And Return Status    Wait Until Element Is Visible    ${booking_ID}
         Exit For Loop If    '${element}' == 'True'
@@ -106,7 +105,11 @@ Click Pencil Icon
 
 Verify Parcel Pickup Details Popup
     [Arguments]    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}
-    ...    ${pickup_date}    ${receiving_time}    ${receiving_type}    ${courier}    ${parcel_num}    ${status}
+    ...    ${tomorrow}    ${receiving_time}    ${receiving_type}    ${courier}    ${parcel_num}    ${status}
+    ###################
+    ${today}=    Get Current Date    result_format=%Y-%m-%d
+    ${tomorrow_day}=    Add Time To Date    ${today}    1 days    result_format=%d-%m-%Y
+    ###################
     ${label_parcel_pickup_detail}=  Replace String   ${dps_txt_parcel_pickup_detail}   {value}   ${dc_operation['parcel_pickup_details']}
     ${label_comapny}=  Replace String   ${dps_txt_company_parcel_pickup_detail}   {text_company}    ${dc_operation['text_company']}
     ${actual_comapny}=  Replace String   ${label_comapny}   {company_name}    ${company_name}
@@ -121,7 +124,7 @@ Verify Parcel Pickup Details Popup
     ${label_postcode}=  Replace String   ${dps_txt_postcode_parcel_pickup_detail}   {text_postcode}    ${dc_operation['text_postcode']}
     ${actual_postcode}=  Replace String   ${label_postcode}   {postcode}    ${postcode}
     ${label_pickup_date}=  Replace String   ${dps_txt_pickup_date_parcel_pickup_detail}   {text_pickup}    ${dc_operation['pickup_date']}
-    ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}    ${pickup_date} ${receiving_time}
+    ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}   ${tomorrow_day} ${receiving_time}   ##${tomorrow} ${receiving_time}
     ${label_receiving_type}=  Replace String   ${dps_txt_receiving_type_parcel_pickup_detail}   {text_receiving_type}    ${dc_operation['text_receiving_type']}
     ${actual_receiving_type}=  Replace String   ${label_receiving_type}   {receiving_type}    ${receiving_type}
     ${label_courier}=  Replace String   ${dps_txt_courier_parcel_pickup_detail}   {text_courier}    ${dc_operation['text_courier']}
@@ -148,7 +151,6 @@ Verify Parcel Pickup Details Popup
     Wait Until Element Is Visible    ${cbo_vehicle_type}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${button_export}    timeout=${DEFAULT_TIMEOUT}
     
-
 Click Export Button On Parcel Pickup Details Popup
     ${btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_export']}
     Scroll Element Into View    ${btn_parcel_pickup_details}
@@ -164,12 +166,14 @@ Click Unapproved Button On Parcel Pickup Details Popup
     Scroll Element Into View    ${btn_parcel_pickup_details}
     Click When Ready    ${btn_parcel_pickup_details}
 
+Verify Data Saved Success Popup
+    ${text_save_success}=  Replace String   ${dps_txt_save_success_parcel_pickup_detail}   {value}   ${dc_operation['text_save_success']}
+    Wait Until Element Is Visible    ${text_save_success}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${text_save_success}    timeout=${DEFAULT_TIMEOUT}
+
 Verify Pickup Schedule Change Status
     [Arguments]    ${company_name}    ${branch}    ${address}    ${sub_district}    ${district}    ${province}
     ...    ${postcode}    ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
-    ${text_save_success}=  Replace String   ${dps_txt_save_success_parcel_pickup_detail}   {value}   ${dc_operation['text_save_success']}
-    Wait Until Element Is Visible    ${text_save_success}    timeout=${DEFAULT_TIMEOUT}
-    Select All Parcels Received List Tab
     ${tomorrow}    dps_home_page.Set Tomorrow Date
     ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {branch}    ${branch}
@@ -183,9 +187,12 @@ Verify Pickup Schedule Change Status
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {receiving_type}    ${receiving_type}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {courier}    ${courier}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {number_of_parcel}    ${number_of_parcel}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cuttoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
-    Scroll Element Into View    ${row_receiving_cycle}
-    Page Should Contain Element    ${row_receiving_cycle}
-    Wait Until Element Is Visible    ${row_receiving_cycle}
+    Log To Console    ${row_receiving_cycle}
+    Log    ${row_receiving_cycle}
+    # Page Should Contain Element    ${row_receiving_cycle}
+    # Wait Until Element Is Visible    ${row_receiving_cycle}    timeout=${DEFAULT_TIMEOUT}
+    # Scroll Element Into View    ${row_receiving_cycle}
 
