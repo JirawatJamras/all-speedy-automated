@@ -22,7 +22,7 @@ ${b2c_txt_profile_name}     //h1[@class='font-semibold w-1/2 text-[25px]'][conta
 ${b2c_txt_profile_phone}     //h1[@class='font-semibold w-1/2 text-[25px]'][contains(text(),'{value}')]
 ${b2c_txt_profile_mail}     //h1[@class='font-semibold w-1/2 text-[25px]'][normalize-space()='{value}']
 ${b2c_txt_profile_position}     //h1[@class='font-semibold w-1/2 text-[25px]'][contains(text(),'{value}')]
-${b2c_txt_sir_name}    //h1[@class='text-[30px] font-bold'][normalize-space()='{value}']
+${b2c_txt_sir_name}    //h1[@class='text-[30px] font-bold'][contains(normalize-space(), '{value}')]
 ${b2c_txt_company_name}    //h1[@class='text-[23px] font-bold'][normalize-space()='{value}']
 ${b2c_txt_name}     //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='{value}']
 ${b2c_txt_phone}     //h1[@class='ml-20 w-full text-[25px]'][normalize-space()='{value}']
