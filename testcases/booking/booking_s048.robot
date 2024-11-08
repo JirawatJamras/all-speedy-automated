@@ -9,7 +9,7 @@ Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The La
 *** Test Cases ***
 Booking_S048
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า เรียกรถเข้ารับพัสดุ (ตรวจสอบรอบรถปกติเเละเพิ่มรอบพิเศษ)
-    [Tags]    Booking    UAT    Review_Pass
+    [Tags]    Booking    UAT    Pass_With_Condition
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab

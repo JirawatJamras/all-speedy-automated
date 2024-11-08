@@ -16,14 +16,14 @@ Install Robot Framework:
 
 # all-speedy-automated
 -- Run Command --
-robot -v ENV:uat -i UAT  ../testcases/dps/
-robot -v ENV:uat -i UAT  ../testcases/c2c/
-robot -v ENV:uat -i Review_Pass  ../testcases/booking
+robot -v ENV:uat -i UAT  ../testcases/
+robot -v ENV:uat -i UAT  ../testcases/booking
+robot -v ENV:uat -i UAT  ../testcases/dc_operation
 
 
 # Pabot
 -v คือ Environment                   #(\resources\config)
--i คือ Tag                           #[Tags]   UAT    Regression
+-i คือ Tag                           #[Tags]   UAT    Booking    DC_Operation
 -t คือ testcase เช่น -t *01*          #AllSpeedy_B2C_001_ID_1 
 # Pabot
 pabot --processes 3 -v ENV:uat -i UAT ..\testcases |  tee output.txt
@@ -32,4 +32,3 @@ python -m pabot --processes 3 -v ENV:uat -i UAT ../testcases/  |  tee output.txt
 Report
      - results : log.html
      - results : report.html
-

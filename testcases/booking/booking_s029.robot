@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S029
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า C-Booking จองการจัดส่งพัสดุ
-    [Tags]    Booking    UAT    Review_Pass
+    [Tags]    Booking    UAT    Pass
     Log    Step No.1 Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page

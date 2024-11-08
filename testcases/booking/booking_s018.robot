@@ -9,7 +9,7 @@ Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Last
 *** Test Cases ***
 Booking_S018
     [Documentation]    สร้างรอบรถเข้ารับพัสดุ (รอบพิเศษ)
-    [Tags]    Booking    UAT    Review_Pass
+    [Tags]    Booking    UAT    Pass_With_Condition
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
