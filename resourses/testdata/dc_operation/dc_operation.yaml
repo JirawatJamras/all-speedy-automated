@@ -1,5 +1,5 @@
 DC_Operation_S001:
-  company_name: คุณ ไอดีซี
+  company_name: ไอดีซี พรีเมียร์
   parcel_type:  พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
   verify_pickup_time: '09:00:00 - 12:00 น.'
@@ -28,7 +28,7 @@ DC_Operation_S001:
     number_of_parcel: '10'  #'0'
 
 DC_Operation_S002:
-  company_name: คุณ ไอดีซี
+  company_name: ไอดีซี พรีเมียร์
   parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
   verify_pickup_time: '09:00:00 - 12:00 น.'

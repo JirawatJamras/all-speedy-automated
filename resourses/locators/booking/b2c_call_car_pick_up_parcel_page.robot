@@ -3,7 +3,7 @@ ${b2c_btn_add_call_car_pickup_page}    //button//span[@aria-label='plus-circle']
 ${b2c_btn_x_in_add_popup}    //button[@aria-label='Close']
 ${b2c_btn_next_page_pickup_round}    //span[@class='anticon anticon-right']/..
 ${b2c_btn_filter_pickup_round}    //span[text()='{value}']/..
-${btn_btn_confirm_close_popup}    //button//span[contains(text(),'{value}')]
+${b2c_btn_confirm_close_popup}    //button[contains(text(),'{value}')]
 ${btn_btn_search_pickup_round}    //span[text()='{value}']/..
 ${btn_save_in_add_popup}    //button//span[contains(text(),'{value}')]
 ${btn_cancel_in_add_popup}    //button//span[contains(text(),'{value}')]
