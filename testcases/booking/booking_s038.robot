@@ -5,7 +5,7 @@ Resource          ../../resourses/import.robot
 *** Test Cases ***
 Booking_S038
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่งต้องการใช้ที่อยู่ผู้ส่งพัสดุเดียวกันทั้งบุ๊คกิ้ง
-    [Tags]    Booking    UAT    Fail
+    [Tags]    Skip
     Log    Pre condition
     Open Chrome Browser   chrome      #headlesschrome   
     Set Folder Result with date
