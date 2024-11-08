@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S029
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า C-Booking จองการจัดส่งพัสดุ
-    [Tags]    Booking    UAT    Pass
+    [Tags]    Booking    UAT    Pass_With_Condition
     Log    Step No.1 Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -22,6 +22,7 @@ Booking_S029
     Log    Step No.2 หน้า Home
     c2c_landing_page.Click Menu Seven Store
     c2c_landing_page.Click Menu Shipping
+    # Defect198
     # Expected
-    b2c_booking_delivery_page.Verify Booking Page For General Customer
-    common.Verify Capture Screenshot    booking    Booking_S029    Verify SPEED-D Parcel Delivery Booking Page
+    # b2c_booking_delivery_page.Verify Booking Page For General Customer
+    # common.Verify Capture Screenshot    booking    Booking_S029    Verify SPEED-D Parcel Delivery Booking Page

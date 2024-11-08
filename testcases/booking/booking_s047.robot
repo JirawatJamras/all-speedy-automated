@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S047
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
-    [Tags]    Booking    UAT    
+    [Tags]    Booking    UAT    Fail
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -295,9 +295,9 @@ Booking_S047
     # ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
     # b2c_favorite_page.Verify Data Shipping Origin Area
     # ...    ${EMPTY}
-    # common.Verify Capture Screenshot    booking    Booking_S047    Verify Add Shipping Origin Area Popup
+    # common.Verify Capture Screenshot    Booking_S047    Verify Add Shipping Origin Area Popup
     # b2c_favorite_page.Scroll To Display Save Button
-    # common.Verify Capture Screenshot    booking    Booking_S047    Verify Add Shipping Origin Area Footer Popup
+    # common.Verify Capture Screenshot    Booking_S047    Verify Add Shipping Origin Area Footer Popup
 
     # # Defect124
     # Log    Step No.17 กรอกข้อมูลดังนี้
@@ -311,4 +311,4 @@ Booking_S047
     # ...    ${Booking_S047.add_shipping_origin_area['favorite_name']}
     # ...    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_address']}
     # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    booking    Booking_S047    Verify Shipping Origin Area Card After Added Information
+    # common.Verify Capture Screenshot    Booking_S047    Verify Shipping Origin Area Card After Added Information
