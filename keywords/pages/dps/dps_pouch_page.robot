@@ -26,3 +26,13 @@ Verify Pouch In Pouch Page
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {update_date}    ${update_date}
     Wait Until Element Is Visible    ${dps_txt_pouch_in_pouch_list}    timeout=5s
     Run Keyword IF    '${pencil_icon}' == 'ไอคอนรูปดินสอ'    Page Should Contain Element    ${dps_img_pencil_in_pouch_in_pouch_list}
+
+Verify Pouch Detail Popup
+    //span[text()='หมายเลข POUCH']/..//span[2]
+    //span[text()='คลัง Crossdock']/..//span[2]
+    //span[text()='สถานะ Pouch']/..//div
+    //span[text()='จำนวนพัสดุ']/..//span[2]
+    //span[text()='คลังต้นทาง']/..//span[2]
+    //span[text()='คลังปลายทาง']/..//span[2]
+
+    //div[@class='print-section ']//h1
