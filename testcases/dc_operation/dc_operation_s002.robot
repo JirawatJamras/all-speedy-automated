@@ -204,8 +204,7 @@ DC_Operation_s002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
-    Open Chrome Browser    chrome    #headlesschrome    #chrome
-    common.Open URL    ${DPS_UAT_URL}
+    Go To    ${DPS_UAT_URL}
 
     Log    Step No.19_1 เข้าสู่ระบบ
     dps_landing_page.Click Go Login Button
@@ -315,12 +314,17 @@ DC_Operation_s002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Pickup Schedule Change Status To Confirme
 
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
-    # Switch Window	MAIN
-    # b2c_home_page.Click Parcel Delivery Service Menu
-    # b2c_home_page.Select Sub Menu Call Car Pick Up
+    Go To    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
     # Sleep    4s
-    # # Expected
-    # # Inprogress
+    # Expected
+    # Inprogress
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Car Pickup Schedule Page Change Status To Confirme
 
     Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
