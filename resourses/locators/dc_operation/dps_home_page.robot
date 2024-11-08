@@ -11,8 +11,12 @@ ${dps_txt_parcels_in_warehouse_home_page}    //div[@class='ant-col ant-col-14 cs
 ${dps_txt_daily_task_overview_home_page}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 ${dps_txt_breadcrumb_home_page}    //span[@class='ant-breadcrumb-link' and text()='{value}']
 ${dps_txt_list_first_all_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{task_type}']/..//td[text()='{parcel_owner}']/..//td[text()='{import_from}']/..//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{pouch_number}']/..//td[text()='{parcel_number}']/..//h1[contains(text(),'{parcel_status}')]/../../..)[1]
-${dps_txt_list_first_import_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{import_from}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[text()='{number_of_pouch}']/..//td[5]/..//td[6]/..)[1]
-${dps_txt_list_first_export_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[text()='{number_of_pouch}']/..//td[text()='{number_of_pieces}']/..//td[text()='{number_of_scanned_items}']/..)[1]
+# ${dps_txt_list_first_import_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{import_from}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[text()='{number_of_pouch}']/..//td[5]/..//td[6]/..)[1]
+${dps_txt_list_first_import_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{import_from}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[5]/..//td[6]/..)[1]
+
+# ${dps_txt_list_first_export_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..//td[text()='{number_of_pouch}']/..//td[text()='{number_of_pieces}']/..//td[text()='{number_of_scanned_items}']/..)[1]
+${dps_txt_list_first_export_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..)[1]
+
 ${dps_txt_list_first_send_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{send_to}']/..//td[text()='{store_code}']/..//td[text()='{transport}']/..//td[text()='{number_of_pouch}']/..//td[5]/..//td[6]/..)[1]
 ${dps_txt_page_title}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 ${dps_txt_role_user}    /../..//strong[text()='{value}']

@@ -30,7 +30,7 @@ DC_Operation_S013
     ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Homepage Title
 
-    Log    Step No.19 เข้าเมนูหน้าหลัก เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Log    Step No.19 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -80,9 +80,7 @@ DC_Operation_S013
     # ...    home  # ${DC_Operation_S013.data_in_import_task_tab['import_from']}
     # ...    CPALL  # ${DC_Operation_S013.data_in_import_task_tab['transport']}
     # ...    speedy  # ${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
-    # ...    0  # ${DC_Operation_S013.data_in_import_task_tab['number_of_pouch']}
-    # ...    737  # ${DC_Operation_S013.data_in_import_task_tab['number_of_pieces']}
-    # ...    737  # ${DC_Operation_S013.data_in_import_task_tab['number_of_scanned_items']}
+
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In Import Task Tab
 
     Log    Step No.21 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
@@ -221,9 +219,7 @@ DC_Operation_S013
     # ...    DCSB  # ${DC_Operation_S007.data_in_export_task_tab['import_from']}
     # ...    CPALL  # ${DC_Operation_S007.data_in_export_task_tab['transport']}
     # ...    speedy  # ${DC_Operation_S007.data_in_export_task_tab['parcel_owner']}
-    # ...    0  # ${DC_Operation_S007.data_in_export_task_tab['number_of_pouch']}
-    # ...    7  # ${DC_Operation_S007.data_in_export_task_tab['number_of_pieces']}
-    # ...    7  # ${DC_Operation_S007.data_in_export_task_tab['number_of_scanned_items']}
+
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In Export Task Tab
 
 

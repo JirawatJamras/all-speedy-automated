@@ -238,11 +238,11 @@ DC_Operation_S013:
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
-    import_from: store
+    import_from: Store
     export_to: '-'
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
+    parcel_size: กล่อง L
     parcel_status: ร้านรับพัสดุ (คุณาลัย - บางใหญ่)
   data_in_import_task_tab:
     import_from: store
@@ -297,7 +297,65 @@ DC_Operation_S013:
     pouch_amount: '-'
     total_parcel_pouch: '1'
 
-
+DC_Operation_S014:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Store
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง L
+    parcel_status: ร้านรับพัสดุ (คุณาลัย - บางใหญ่)
+  data_in_import_task_tab:
+    import_from: Store
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '1'
+    number_of_scanned_items: '1'
+  parcel_detail_in_scan_in_tab:
+    tracking: SPBD241100000476
+    receiving_date: 04-11-2567
+    customer_id: 'B2C0002400563'    #'2400563'
+    parcel_size: '120 ซม. กล่อง L'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    warehouse_source: DCBB
+    send_parcel_to: 'Home (11120)'
+  label_detail_in_scan_in_tab:
+    courier: 'FSH'
+    zipcode: '11120'
+    province: 'นนทบุรี'
+    customer: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    size: L
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0633906216'
+    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+  scan_out_waiting_scan:
+    tracking: SPBD241100000476
+    pouch_number: '-'
+    warehouse_source: คลัง DC BB
+    courier: Flash
+    parcel_owner: Speedy
+    parcel_size: 'กล่อง L'
+    update_date: 08/11/2567
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  scan_out_print:
+    export_to: home
+    deliver: Flash
+    parcel_amount: '1'
+    pouch_amount: '-'
+    total_parcel_pouch: '1'
 
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
