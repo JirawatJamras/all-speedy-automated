@@ -21,14 +21,14 @@ Booking_S050
     b2c_home_page.Select Sub Menu Return Business
     # Expected
     b2c_return_business_page.Verify Return Business
-    common.Verify Capture Screenshot    Booking_S050    Verify Return Business Page
+    common.Verify Capture Screenshot    booking    Booking_S050    Verify Return Business Page
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_return_business_page.Click Add Booking Button
     # Expected
     b2c_return_business_page.Verify Term & Condition    ${txt_term_and_condition}    ${return_business['text_term_and_condition']}${current_date_thai}${return_business['text_version']}
     Sleep    5s
-    common.Verify Capture Screenshot    Booking_S050    Verify Term & Condition
+    common.Verify Capture Screenshot    booking    Booking_S050    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_return_business_page.Click Accept Condition Button
@@ -53,7 +53,7 @@ Booking_S050
     # ...    ${EMPTY}
     # ...    ${EMPTY}
     # ...    ${EMPTY}
-    # common.Verify Capture Screenshot    Booking_S050    Verify Link Return Business Popup
+    # common.Verify Capture Screenshot    booking    Booking_S050    Verify Link Return Business Popup
 
     Log    Step No.4 กรอกข้อมูล
     b2c_return_business_page.Input Link Name    ${Booking_S050.new_return_business['link_name']}
@@ -64,7 +64,7 @@ Booking_S050
     b2c_return_business_page.Input Address Receiver    ${Booking_S050.new_return_business['address']}
     b2c_return_business_page.Input Postcode Receiver    ${Booking_S050.new_return_business['postcode_5_digits']}
     b2c_return_business_page.Click Postcode Receiver Lists    ${Booking_S050.new_return_business['postcode']}
-    common.Verify Capture Screenshot    Booking_S050    Verify fill information Success
+    common.Verify Capture Screenshot    booking    Booking_S050    Verify fill information Success
 
     Log    Step No.5 กดปุ่ม "บันทึก"
     b2c_return_business_page.Click Save Button
@@ -75,7 +75,7 @@ Booking_S050
     ...    ${Booking_S050.new_return_business['phone']}
     ...    ${Booking_S050.new_return_business['address']}
     ...    ${Booking_S050.new_return_business['postcode']}
-    common.Verify Capture Screenshot    Booking_S050    Verify New Booking
+    common.Verify Capture Screenshot    booking    Booking_S050    Verify New Booking
     
     Log    Step No.6 กดที่รายการ Link : Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก
     b2c_return_business_page.Click Booking Card
@@ -95,20 +95,20 @@ Booking_S050
     ...    ${Booking_S050.new_return_business['location_pickup']}    
     ...    ${Booking_S050.new_return_business['address']}
     ...    ${Booking_S050.new_return_business['postcode']}  
-    common.Verify Capture Screenshot    Booking_S050    Verify Booking Card
+    common.Verify Capture Screenshot    booking    Booking_S050    Verify Booking Card
     
 
     Log    Step No.7 กดปุ่ม "Download QR Code"
     b2c_return_business_page.Click Download QR Code Button
     # Expected
     b2c_return_business_page.Verrify Download QR Code    ${return_business['text_download_qr_success']}
-    common.Verify Capture Screenshot    Booking_S050    Verrify Download QR Code
+    common.Verify Capture Screenshot    booking    Booking_S050    Verrify Download QR Code
     
     Log    Step No.8 กดปุ่ม "Copy Link"
     b2c_return_business_page.Click Copy Link Button
     # Expected
     b2c_return_business_page.Verify Copy Link    ${return_business['text_copy_link_success']}
-    common.Verify Capture Screenshot    Booking_S050    Verify Copy Link
+    common.Verify Capture Screenshot    booking    Booking_S050    Verify Copy Link
 
 
 

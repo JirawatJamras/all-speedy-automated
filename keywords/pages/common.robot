@@ -75,11 +75,11 @@ Convert Month To Thai
     RETURN    ${thai_month}
 
 Verify Capture Screenshot
-    [Arguments]    ${folder}    ${img_name}
+    [Arguments]    ${feature}    ${folder}    ${img_name}
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
-    Evaluate    os.makedirs('${FOlDER_RESULT}/${folder}', exist_ok=True)    modules=os
-    Capture Page Screenshot   ../results/${FOlDER_RESULT}/${folder}/${img_name}.png
+    Evaluate    os.makedirs('${FOlDER_RESULT}/${feature}/${folder}', exist_ok=True)    modules=os
+    Capture Page Screenshot   ../results/${FOlDER_RESULT}/${feature}/${folder}/${img_name}.png
 
 Clear Value Input Text
     [Arguments]    ${locator}

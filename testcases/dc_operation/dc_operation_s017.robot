@@ -27,7 +27,7 @@ DC_Operation_S017
     # Defect143
     # Expected
     # Verify Create Pouch Destination DCSB Popup
-    # common.Verify Capture Screenshot    DC_Operation_S017    Verify Create Pouch Destination DCSB Popup
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Create Pouch Destination DCSB Popup
 
     # Log    Step No.2 คลิกปุ่มตกลง
     # # Defect143    Defect155    Defect156    Defect158    Defect159    Defect165    Defect168    Defect171
@@ -45,18 +45,18 @@ DC_Operation_S017
     # # Expected
     # # dps_parcel_detail_page.Verify Print Label Success Popup
     # # ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
-    # # common.Verify Capture Screenshot    DC_Operation_S017    Verify Print Label Success Popup
+    # # common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Print Label Success Popup
 
     # # Defect145    Unable to click on popup, but anable to click on close button (X) to close popup.
     # # Log    Step No.5 คลิกที่ Pop up
     # # dps_parcel_detail_page.Click Close Print Label Success Popup
     # # # Expected
     # # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
-    # # common.Verify Capture Screenshot    DC_Operation_S017    Verify Navigate To Scan Page And Stay At Scan In Tab
+    # # common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Navigate To Scan Page And Stay At Scan In Tab
 
     Log    Step No.6 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
     dps_history_parcel_page.Filter Data By Parcel Number    SPBD241100002415
     # Expected
     dps_history_parcel_page.Verify Data In Table    SPBD241100002415
-    common.Verify Capture Screenshot    DC_Operation_S017    Verify Data In Table
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Data In Table

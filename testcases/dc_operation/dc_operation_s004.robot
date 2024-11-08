@@ -35,7 +35,7 @@ DC_Operation_S004
     ...    ${dc_operation_S012.data_in_all_task_tab['incoming_from']}
     ...    ${dc_operation_S012.data_in_all_task_tab['parcel_owner']}
     ...    ${dc_operation_S012.data_in_all_task_tab['task_type']}
-    common.Verify Capture Screenshot    DC_Operation_S012    Verify Data In All Task Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Data In All Task Tab
 
 
     Log    Step No.2 เลือกแท็บงานรับเข้า

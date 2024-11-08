@@ -69,7 +69,7 @@ Booking_S059
     ...    ${Booking_S002['booking_name']}
     ...    ${Booking_S002['booking_item']}
     ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
-    common.Verify Capture Screenshot    Booking_S059    Verify Created Booking On Booking Delivery Page
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Created Booking On Booking Delivery Page
 
     Log    Step No. 2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Booking With Waiting For Entering Parcel To System    ${booking_id}
@@ -105,9 +105,9 @@ Booking_S059
     ...    ${Booking_S002['total_price_value2']}
     ...    ${Booking_S002['store_code']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S059    Verify Booking Summary After Set Origin Shipping
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S059    Verify Booking Detail Page After Set Origin Shipping
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Booking Detail Page After Set Origin Shipping
 
     Log    Step No. 3 กดปุ่ม "+ เพิ่ม"
     b2c_booking_detail_page.Click Add Button
@@ -124,7 +124,7 @@ Booking_S059
     ...    ${Booking_S002['sender_name']}
     ...    ${Booking_S002['sender_address']}
     ...    ${Booking_S002['sender_postcode_full']}
-    common.Verify Capture Screenshot    Booking_S059    Verify Data Sender
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Data Sender
 
     Log    Step No. 4 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -143,7 +143,7 @@ Booking_S059
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S059    Verify Create Parcel Page Receiver Step When Select Home
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S002['receiver_phone']}
@@ -153,7 +153,7 @@ Booking_S059
     b2c_booking_delivery_page.Input Postcode Receiver    ${Booking_S002['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S002['receiver_postcode_full']}
     # Expected
-    common.Verify Capture Screenshot    Booking_S059    Verify Create Parcel Page After Input Receiver Step
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Create Parcel Page After Input Receiver Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -174,12 +174,12 @@ Booking_S059
     ...    0    # ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S059    Verify Parcel Detail
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Parcel Detail
 
     Log    Step No.7 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    A3
     # Expected
-    common.Verify Capture Screenshot    Booking_S059    Verify Create Parcel Page After Input Parcel Detail Step 
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Create Parcel Page After Input Parcel Detail Step 
 
     Log    Step No.8 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
@@ -187,7 +187,7 @@ Booking_S059
     b2c_booking_delivery_page.Verify Promotion Detail
     ...    ${Booking['text_selected_coupon_and_code']}
     ...    ${Booking['text_my_coupon_and_code']}
-    common.Verify Capture Screenshot    Booking_S059    Verify Promotion
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Promotion
 
     Log    Step No.9 ขั้นตอน Promotion
     # ไม่เลือก Promotion
@@ -226,6 +226,6 @@ Booking_S059
     ...    ${Booking.text_default['total_price_value']}    # Expected result is ${Booking_S002['total_price_value1']}
     ...    ${EMPTY}    #${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S059    Verify Booking Summary After Booking Success
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S059    Verify Booking Detail Page After Booking Success
+    common.Verify Capture Screenshot    booking    Booking_S059    Verify Booking Detail Page After Booking Success

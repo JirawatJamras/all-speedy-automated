@@ -6,29 +6,29 @@ Variables                   testdata/login_user.yaml
 Variables                   config/language/${LANG}.yaml
 
 ######################## B2C ########################
-Resource                    ../keywords/pages/b2c/b2c_login_page.robot
-Resource                    ../keywords/pages/b2c/b2c_forgot_password_page.robot
-Resource                    ../keywords/pages/b2c/b2c_home_page.robot
-Resource                    ../keywords/pages/b2c/b2c_booking_delivery_page.robot
-Resource                    ../keywords/pages/b2c/b2c_create_parcel_page.robot
-Resource                    ../keywords/pages/b2c/b2c_tracking_parcel_delivery_page.robot
-Resource                    ../keywords/pages/b2c/b2c_my_parcel_page.robot
-Resource                    ../keywords/pages/b2c/b2c_call_car_pick_up_parcel_page.robot
-Resource                    ../keywords/pages/b2c/b2c_favorite_page.robot
-Resource                    ../keywords/pages/b2c/b2c_booking_detail_page.robot
-Resource                    ../keywords/pages/b2c/b2c_return_business_page.robot
+Resource                    ../keywords/pages/booking/b2c_login_page.robot
+Resource                    ../keywords/pages/booking/b2c_forgot_password_page.robot
+Resource                    ../keywords/pages/booking/b2c_home_page.robot
+Resource                    ../keywords/pages/booking/b2c_booking_delivery_page.robot
+Resource                    ../keywords/pages/booking/b2c_create_parcel_page.robot
+Resource                    ../keywords/pages/booking/b2c_tracking_parcel_delivery_page.robot
+Resource                    ../keywords/pages/booking/b2c_my_parcel_page.robot
+Resource                    ../keywords/pages/booking/b2c_call_car_pick_up_parcel_page.robot
+Resource                    ../keywords/pages/booking/b2c_favorite_page.robot
+Resource                    ../keywords/pages/booking/b2c_booking_detail_page.robot
+Resource                    ../keywords/pages/booking/b2c_return_business_page.robot
 
-Resource                    locators/b2c/b2c_login_page.robot
-Resource                    locators/b2c/b2c_forgot_password_page.robot
-Resource                    locators/b2c/b2c_home_page.robot
-Resource                    locators/b2c/b2c_booking_delivery_page.robot
-Resource                    locators/b2c/b2c_create_parcel_page.robot
-Resource                    locators/b2c/b2c_tracking_parcel_delivery_page.robot
-Resource                    locators/b2c/b2c_my_parcel_page.robot
-Resource                    locators/b2c/b2c_call_car_pick_up_parcel_page.robot
-Resource                    locators/b2c/b2c_favorite_page.robot
-Resource                    locators/b2c/b2c_booking_detail_page.robot
-Resource                    locators/b2c/b2c_return_business_page.robot
+Resource                    locators/booking/b2c_login_page.robot
+Resource                    locators/booking/b2c_forgot_password_page.robot
+Resource                    locators/booking/b2c_home_page.robot
+Resource                    locators/booking/b2c_booking_delivery_page.robot
+Resource                    locators/booking/b2c_create_parcel_page.robot
+Resource                    locators/booking/b2c_tracking_parcel_delivery_page.robot
+Resource                    locators/booking/b2c_my_parcel_page.robot
+Resource                    locators/booking/b2c_call_car_pick_up_parcel_page.robot
+Resource                    locators/booking/b2c_favorite_page.robot
+Resource                    locators/booking/b2c_booking_detail_page.robot
+Resource                    locators/booking/b2c_return_business_page.robot
 
 Variables                   testdata/feature/b2c/b2c_login_001.yaml
 Variables                   testdata/feature/b2c/b2c_forgotpassword_002.yaml
@@ -57,23 +57,23 @@ Variables                   testdata/feature/c2c/c2c_testdata.yaml
 Variables                   testdata/feature/c2c/allspeedy_c2c_001.yaml
 
 ######################## DPS ########################
-Resource                    ../keywords/pages/dps/dps_landing_page.robot
-Resource                    ../keywords/pages/dps/dps_login_page.robot
-Resource                    ../keywords/pages/dps/dps_home_page.robot
-Resource                    ../keywords/pages/dps/dps_check_receiving_cycle_page.robot
-Resource                    ../keywords/pages/dps/dps_scan_page.robot
-Resource                    ../keywords/pages/dps/dps_parcel_detail_page.robot
-Resource                    ../keywords/pages/dps/dps_pouch_page.robot
-Resource                    ../keywords/pages/dps/dps_history_parcel_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_landing_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_login_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_home_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_check_receiving_cycle_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_scan_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_parcel_detail_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_pouch_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_history_parcel_page.robot
 
-Resource                    locators/dps/dps_landing_page.robot
-Resource                    locators/dps/dps_login_page.robot
-Resource                    locators/dps/dps_home_page.robot
-Resource                    locators/dps/dps_check_receiving_cycle_page.robot
-Resource                    locators/dps/dps_scan_page.robot
-Resource                    locators/dps/dps_parcel_detail_page.robot
-Resource                    locators/dps/dps_pouch_page.robot
-Resource                    locators/dps/dps_history_parcel_page.robot
+Resource                    locators/dc_operation/dps_landing_page.robot
+Resource                    locators/dc_operation/dps_login_page.robot
+Resource                    locators/dc_operation/dps_home_page.robot
+Resource                    locators/dc_operation/dps_check_receiving_cycle_page.robot
+Resource                    locators/dc_operation/dps_scan_page.robot
+Resource                    locators/dc_operation/dps_parcel_detail_page.robot
+Resource                    locators/dc_operation/dps_pouch_page.robot
+Resource                    locators/dc_operation/dps_history_parcel_page.robot
 
 Variables                   testdata/feature/dps/dps_testdata.yaml
 Variables                   testdata/feature/dps/allspeedy_dps_001.yaml

@@ -47,9 +47,9 @@ DC_Operation_S012
     # ...    SPBD241100002656
     # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S012.data_in_all_task_tab['parcel_status']}
     # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Homepage 1
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Homepage 1
     # common.Scroll Window To Vertical    750
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Data In All Task Tab
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Data In All Task Tab
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
@@ -69,7 +69,7 @@ DC_Operation_S012
     # ...    0  # ${DC_Operation_S012.data_in_import_task_tab['number_of_pouch']}
     # # ...    1025  # ${DC_Operation_S012.data_in_import_task_tab['number_of_pieces']}
     # # ...    1025  # ${DC_Operation_S012.data_in_import_task_tab['number_of_scanned_items']}
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Data In Import Task Tab
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Data In Import Task Tab
 
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ b" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
@@ -144,7 +144,7 @@ DC_Operation_S012
     # ...    ร้าน  # ${DC_Operation_S012.receiver_data_in_scan_in_tab['shipping_destination']}
     # ...    07004 สาขา เรวดี (ตลาดเปรมสุข) ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000  # ${DC_Operation_S012.receiver_data_in_scan_in_tab['address']}
     # common.Scroll Window To Vertical    425
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Parcel Details After Scanning
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Parcel Details After Scanning
 
     # Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
     # dps_parcel_detail_page.Click Print Label
@@ -156,14 +156,14 @@ DC_Operation_S012
     # # Expected
     # dps_parcel_detail_page.Verify Print Label Success Popup
     # ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Print Label Success Popup
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Print Label Success Popup
 
     # Log    Step No.6 คลิกที่ Pop up
     # # Defect145    Unable to click on popup, but anable to click on close button (X) to close popup.
     # dps_parcel_detail_page.Click Close Print Label Success Popup
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Navigate To Scan Page And Stay At Scan In Tab
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Navigate To Scan Page And Stay At Scan In Tab
 
     Log    Step No.7 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
@@ -185,9 +185,9 @@ DC_Operation_S012
     # ...    SPCD241000006512
     # ...    พัสดุรอนำจ่ายโดยคลัง  # ${DC_Operation_S012.data_in_all_task_tab_after_scan['parcel_status']}
     # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Homepage 2
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Homepage 2
     # common.Scroll Window To Vertical    750
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Data In All Task Tab After Scan Parcel
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Data In All Task Tab After Scan Parcel
 
     Log    Step No.8 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
@@ -209,4 +209,4 @@ DC_Operation_S012
     # # ...    29  # ${DC_Operation_S012.data_in_send_task_tab['number_of_pieces']}
     # # ...    29
     # common.Scroll Window To Vertical    750
-    # common.Verify Capture Screenshot    DC_Operation_S012    Verify Data In Send Task Tab
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Data In Send Task Tab

@@ -60,9 +60,9 @@ Booking_S051
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
-    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page [Not Have Parcel List]
+    common.Verify Capture Screenshot    booking    Booking_S051     Verify Booking Detail Page [Not Have Parcel List]
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page [Not Have Parcel List] 2
+    common.Verify Capture Screenshot    booking    Booking_S051     Verify Booking Detail Page [Not Have Parcel List] 2
 
     Log    Step No.3 กดปุ่ม "+ เพิ่ม"
     b2c_return_business_page.Click Add Parcel Button
@@ -82,7 +82,7 @@ Booking_S051
     ...    ${return_business.email_link['parcel_detail_XL']}
     ...    ${return_business.email_link['parcel_detail_XXL']}
     ...    ${return_business.email_link['text_remark']}
-    common.Verify Capture Screenshot    Booking_S051     Verify Create Parcel Popup
+    common.Verify Capture Screenshot    booking    Booking_S051     Verify Create Parcel Popup
 
     Log    Step No.4 กรอกข้อมูล การสร้างพัสดุ
     b2c_return_business_page.Input Sender Phone    ${Booking_S051['sender_phone']}
@@ -92,7 +92,7 @@ Booking_S051
     b2c_return_business_page.Select Sender Address Full    ${Booking_S051['sender_address_full']}
     b2c_return_business_page.Select Parcel Size    ${Booking_S051['parcel_size']}
     # Expected
-    common.Verify Capture Screenshot    Booking_S051     Input Data For Create Parcel
+    common.Verify Capture Screenshot    booking    Booking_S051     Input Data For Create Parcel
 
     Log    Step No.5 กดปุ่ม "จองเลขพัสดุ"
     b2c_return_business_page.Click Parcel Booking Button
@@ -120,14 +120,14 @@ Booking_S051
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S051['total_amount']}
     ...    30.00
-    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page 
+    common.Verify Capture Screenshot    booking    Booking_S051     Verify Booking Detail Page 
 
     Log    Step No.6 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_return_business_page.Click Edit Booking
     # Expected
     b2c_return_business_page.Verify Edit Booking List Popup    
     ...    ${Booking['text_shipping_origin_aria']}
-    common.Verify Capture Screenshot    Booking_S051     Verify Edit Booking Popup
+    common.Verify Capture Screenshot    booking    Booking_S051     Verify Edit Booking Popup
 
     Log    Step No.7 กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง
     b2c_return_business_page.Input Shipping Origin    ${Booking_S051['store']}
@@ -155,7 +155,7 @@ Booking_S051
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S051['total_amount']}
     ...    ${Booking_S051['verify_booking_price']}
-    common.Verify Capture Screenshot    Booking_S051     Verify Booking Detail Page After Shipping Origin
+    common.Verify Capture Screenshot    booking    Booking_S051     Verify Booking Detail Page After Shipping Origin
 
     Log    Step No.8 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_return_business_page.Click Print Parcel Label
@@ -179,9 +179,9 @@ Booking_S051
     ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
-    common.Verify Capture Screenshot    Booking_S051    Verify Parcel Label
+    common.Verify Capture Screenshot    booking    Booking_S051    Verify Parcel Label
 
     Log    Step No.9 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_return_business_page.Click Print Label On Popup
     # Expected
-    common.Verify Capture Screenshot    Booking_S051    Verify Parcel Label 2
+    common.Verify Capture Screenshot    booking    Booking_S051    Verify Parcel Label 2

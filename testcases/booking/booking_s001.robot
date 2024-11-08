@@ -15,7 +15,7 @@ Booking_S001
     register_general_customers_page.Select Business Customers Tab
     # Expected
     Sleep    2s
-    common.Verify Capture Screenshot    Booking_S001    Verify Login Page
+    common.Verify Capture Screenshot    booking    Booking_S001    Verify Login Page
 
     Log    Step No.2 Login
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -36,4 +36,4 @@ Booking_S001
     # ...    ${Booking_S001['phone']}
     # ...    ${Booking_S001['email']}
     # ...    ${Booking_S001['position']}
-    # common.Verify Capture Screenshot    Booking_S001    Verify Home Page
+    # common.Verify Capture Screenshot    booking    Booking_S001    Verify Home Page

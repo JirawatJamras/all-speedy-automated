@@ -26,7 +26,7 @@ Booking_S038
     ...    ${Booking['text_file_name']}
     ...    ${Booking['text_import_result']}
     ...    ${Booking['text_file_import_error']}
-    common.Verify Capture Screenshot    Booking_S038    Verify Import File Popup
+    common.Verify Capture Screenshot    booking    Booking_S038    Verify Import File Popup
 
     Log    Step No. 4 กดปุ่ม "Import" เเละเลือกไฟล์ชื่อ "Excel Template พัสดุทั่วไป" ที่ได้กรอกข้อมูลไว้เเล้ว
     b2c_booking_detail_page.Import Excel File Of Dry Parcel Template    ${path_excel_dry_parcel}
@@ -36,7 +36,7 @@ Booking_S038
     ...    ${Booking.import_file['dry_parcel_file_name']}
     ...    ${Booking.import_file['dry_parcel_import_success_amount']}
     ...    ${Booking.import_file['dry_parcel_import_fail_amount']}
-    common.Verify Capture Screenshot    Booking_S038    Verify Import Excel File Inspection Results
+    common.Verify Capture Screenshot    booking    Booking_S038    Verify Import Excel File Inspection Results
     Log    Step No. 5 กด Download ไฟล์ Error เเละตรวจสอบไฟล์
 
     #b2c_booking_detail_page.Click Download Import Error File

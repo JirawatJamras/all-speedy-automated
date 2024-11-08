@@ -83,14 +83,14 @@ DC_Operation_S016
     # ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['shipping_destination']}
     # ...    554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120  # ${DC_Operation_S016.receiver_data_in_scan_in_tab['address']}
     # common.Scroll Window To Vertical    400
-    # common.Verify Capture Screenshot    DC_Operation_S016    Verify Parcel Details After Scanning
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Details After Scanning
 
     Log    Step No.16-2 คลิกที่ผลรวมของขนาดพัสดุ และ แก้ไขเป็นเลข 45
     dps_scan_page.Clear Input Parcel Size In Scan Page
     dps_scan_page.Input Parcel Size In Scan Page    ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['value_parcel_size']}
     # Expected
     dps_scan_page.Verify Parcel Size Edited    ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['text_parcel_size']}
-    common.Verify Capture Screenshot    DC_Operation_S016    Verify Parcel Size Edited
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Size Edited
 
     Log    Step No.16-3 คลิก Dropdown Courier แก้ไขเป็น CP All
     dps_scan_page.Click Courier In Scan Page
@@ -112,7 +112,7 @@ DC_Operation_S016
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['pouch_number']}
     # ...    DC BB - -- DC BB  # ${DC_Operation_S016.edit_courier_in_scan_in_tab['wh']}
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['symbol']}
-    # common.Verify Capture Screenshot    DC_Operation_S016    Verify Parcel Label After Editing Courier
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Label After Editing Courier
 
     Log    Step No.16-4 คลิก Dropdown คลังปลายทาง แก้ไขเป็น DCSB
     dps_scan_page.Click Destination Warehouse In Scan Page
@@ -135,7 +135,7 @@ DC_Operation_S016
     # ...    DC BB - -- DC SB  # ${DC_Operation_S016.edit_courier_in_scan_in_tab['wh']}
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['symbol_after_changing_warehourse']}
     # common.Scroll Window To Vertical    400
-    # common.Verify Capture Screenshot    DC_Operation_S016    Verify Parcel Label After Editing Destination Warehouse
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Label After Editing Destination Warehouse
 
     # Log    Step No.16-5 คลิกปุ่ม ยืนยัน/Print Label
     # dps_parcel_detail_page.Click Print Label
@@ -147,11 +147,11 @@ DC_Operation_S016
     # Expected
     # dps_parcel_detail_page.Verify Print Label Success Popup
     # ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
-    # common.Verify Capture Screenshot    DC_Operation_S016    Verify Print Label Success Popup
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Print Label Success Popup
 
     # Defect145    Unable to click on popup, but anable to click on close button (X) to close popup.
     # Log    Step No.16-7 คลิกที่ Pop up
     # dps_parcel_detail_page.Click Close Print Label Success Popup
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
-    # common.Verify Capture Screenshot    DC_Operation_S016    Verify Navigate To Scan Page And Stay At Scan In Tab
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Navigate To Scan Page And Stay At Scan In Tab
