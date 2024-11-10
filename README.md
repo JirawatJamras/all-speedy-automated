@@ -11,7 +11,7 @@ Verify the installation by opening a Terminal (Mac/Linux) or Command Prompt (Win
     -python-3.12.0-amd64
 
 Install Robot Framework:
-    - requirement.txt
+    pip    install    -r requirement.txt
 
 
 # all-speedy-automated
