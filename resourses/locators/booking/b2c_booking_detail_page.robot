@@ -90,7 +90,7 @@ ${b2c_btn_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title=
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
-${b2c_txtbox_search_store}    //span[text()='{value}']/..//input
+${b2c_txtbox_search_store}    (//div[@class='ant-modal-content']//div[contains(@class,'ant-select-outlined')]//input)[1]
 ${b2c_txtbox_sender_postcode_edit}    //input[@id='create_parcel_form_sender_address_full']/..
 ${b2c_txtbox_receiver_postcode_edit}    //input[@id='create_parcel_form_receiver_address_full']/..
 ${b2c_txtbox_trigger_phone_number}    //input[@id='trigger_phoneNumber']
