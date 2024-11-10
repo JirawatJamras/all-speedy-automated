@@ -157,13 +157,18 @@ Select Shipping Origin Tab
 
 Search Shipping Store
     [Arguments]    ${code}
-    ${textbox_search_store}=    Replace String    ${b2c_txtbox_search_store}    {value}    ${Booking['text_search_store_on_map']}
-    Wait Until Element Is Visible    ${textbox_search_store}    timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    ${textbox_search_store}
-    Input When Ready    ${textbox_search_store}    ${code}
     ${search_result_store} =  Replace String    ${b2c_txt_search_result_store}    {value}    ${code}
-    Click When Ready    ${search_result_store}
-
+    ${select_store_button} =  Replace String    ${b2c_btn_select_store}    {value}    ${Booking['text_select_store_on_map']}
+    Wait Until Element Is Visible    ${b2c_txtbox_search_store}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${b2c_txtbox_search_store}
+    FOR    ${i}    IN RANGE    0    5
+        Input When Ready    ${b2c_txtbox_search_store}    ${code}
+        Click When Ready    ${search_result_store}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store_button}    timeout=10s
+        Exit For Loop If    '${isvisible}' == 'True'    
+        common.Clear Value Input Text    ${b2c_txtbox_search_store}
+    END
+    
 Click Select Store On Map
     ${select_store_button} =  Replace String    ${b2c_btn_select_store}    {value}    ${Booking['text_select_store_on_map']}
     common.Scroll Window To Vertical    100
