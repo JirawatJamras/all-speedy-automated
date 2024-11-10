@@ -262,6 +262,7 @@ Verify Website Never Save Sender Information
 
 Get The Highest Displayed Date And Set New Highest Date
     Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=20s
     ${titleName}=    Get Text    ${txt_parcel_pickup_schedule} 
     ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
     ${parts}=    Split String    ${highestDisplayedDate}    -

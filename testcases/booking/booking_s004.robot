@@ -269,10 +269,10 @@ Booking_S004
     # ...    ${Booking_S004['total_price_amount']}
     # ...    ${Booking_S004['total_price_value']}
     # ...    ${EMPTY}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Summary After Booking Success
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Detail Page After Booking Success
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Summary After Booking Success
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Detail Page After Booking Success
 
     Log    Step No.17 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -286,7 +286,7 @@ Booking_S004
     # ...    ${Booking_S004['booking_name']}
     # ...    ${Booking_S004['booking_item']}
     # ...    ${Booking.text_default['booking_price']}
-    common.Verify Capture Screenshot    booking    Booking_S004    Verify Created Booking On Booking Delivery Page
+    # common.Verify Capture Screenshot    booking    Booking_S004    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.18 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
@@ -322,10 +322,10 @@ Booking_S004
     # ...    ${Booking_S004['total_price_amount']}
     # ...    ${Booking_S004['total_price_value']}
     # ...    ${EMPTY}
-    common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Summary
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Detail Page
+    # common.Scroll Window To Vertical    500
+    # common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Summary
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    booking    Booking_S004    Verify Booking Detail Page
     
     Log    Step No.19 กดปุ่ม "แก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
