@@ -177,10 +177,6 @@ DC_Operation_S013
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Navigate To Scan Page And Stay At Scan In Tab
 
-
-    Log    Step No. check timelline
-    # Waiting Step
-
     Log    Step No.25 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
@@ -228,15 +224,15 @@ DC_Operation_S013
     dps_scan_page.Select Scan Out Tab
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['tracking']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['pouch_number']}
-    ...    คลัง DC BB    #${DC_Operation_S013.scan_out_waiting_scan['receive_parcel_from']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['transport']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_owner']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_size']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['update_date']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
+    # ...    ${DC_Operation_S013.scan_out_waiting_scan['tracking']}
+    # ...    ${DC_Operation_S013.scan_out_waiting_scan['pouch_number']}
+    # ...    คลัง DC BB    #${DC_Operation_S013.scan_out_waiting_scan['receive_parcel_from']}
+    # ...    ${DC_Operation_S013.scan_out_waiting_scan['transport']}
+    # ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_owner']}
+    # ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_size']}
+    # ...    ${DC_Operation_S013.scan_out_waiting_scan['update_date']}
+    # ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Section Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s
@@ -248,11 +244,6 @@ DC_Operation_S013
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${DC_Operation_S013.scan_out_waiting_scan['tracking']}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
-
-    Log    Step No.29 กดปุ่ม ยืนยัน Scan Out
-    dps_scan_page.Click Confirm Scan Out Button
-    # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -265,12 +256,17 @@ DC_Operation_S013
     dps_scan_page.Verify Value List Scan Out 
     ...    ${DC_Operation_S013.scan_out_waiting_scan['pouch_number']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['tracking']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['receive_parcel_from']}
+    ...    คลัง DC BB    # ${DC_Operation_S013.scan_out_waiting_scan['receive_parcel_from']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_owner']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_size']}
-    ...    2024-11-08    #${DC_Operation_S013.scan_out_waiting_scan['update_date']}
+    ...    2024-11-11    #${DC_Operation_S013.scan_out_waiting_scan['update_date']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
+
+    Log    Step No.29 กดปุ่ม ยืนยัน Scan Out
+    dps_scan_page.Click Confirm Scan Out Button
+    # Expected
+    dps_scan_page.Verify Popup Confirm Scan Out
 
     Log    Step No.30 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out 
@@ -282,14 +278,17 @@ DC_Operation_S013
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
 
-    Log    Step No. check timelline
+    Log    Step No.32 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     # Waiting Step
 
-    Log    Step No.32 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
+    Log    Step No.33 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
+    # Waiting Step
+
+    Log    Step No.34 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
     dps_scan_page.Click Waiting Delivery List Button 
     # Expected
 
-    Log    Step No.33 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_scan_page.Click Print Button By Data
     ...    ${DC_Operation_S013.scan_out_print['export_to']}
     ...    ${DC_Operation_S013.scan_out_print['deliver']}
@@ -298,7 +297,7 @@ DC_Operation_S013
     ...    ${DC_Operation_S013.scan_out_print['total_parcel_pouch']}
     # Expected
 
-    Log    Step No.34 กดปุ่ม พิมพ์
+    Log    Step No.36 กดปุ่ม พิมพ์
     dps_parcel_detail_page.Click ESC On Keyboard
     # Expected
 

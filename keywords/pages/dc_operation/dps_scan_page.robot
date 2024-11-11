@@ -400,7 +400,7 @@ Click Confirm Scan Out Button    # Scan Out
     common.Click When Ready    ${dps_btn_confirm_scan_out_scan_out_page}
 
 Verify Popup Confirm Scan Out 
-    ${txt_popup}=    Replace String    ${dps_txt_popup_scan_out}    {value}    ${dc_operation.scan_out['text_popup_confirm']}
+    ${txt_popup}=    Replace String    ${dps_txt_popup_scan_out}    {value}    ${dc_operation.scan_out_title['text_popup_comfirm']}
     Element Should Be Visible    ${txt_popup}
 
 Click Confirm Button On Popup Asking To Scan Out    # Scan Out
