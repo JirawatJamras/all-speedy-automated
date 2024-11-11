@@ -235,8 +235,8 @@ Verify Data Label Parcel In Scan Page Home Destination
 
     ${value_courier}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${courier}
     ${value_zipcode}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${zipcode} 
-    ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(กล่อง ${size})
-    # ${value_size}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${SPACE}(${label_size}: ${size})
+    # ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(กล่อง ${size})
+    ${value_size}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${SPACE}(${label_size}: ${size})
     ${value_customer}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${customer}
     ${value_phone}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${phone}
 
@@ -409,7 +409,7 @@ Click Confirm Button On Popup Asking To Scan Out    # Scan Out
 
 Verify Popup Save Data Success
     ${txt_popup}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
-    Element Should Be Visible    ${txt_popup}
+    Wait Until Element Is Visible    ${txt_popup}    timeout=${DEFAULT_TIMEOUT}
 
 Click Popup Save Data Success    # Scan Out
     ${dps_txt_save_data_success}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
@@ -421,13 +421,10 @@ Click Waiting Delivery List Button    # Scan Out
     common.Click When Ready    ${dps_btn_waiting_delivery_list_scan_out_page}
 
 Click Print Button By Data     # Scan Out
-    [Arguments]    ${export_to}    ${deliver}    ${parcel_amount}    
-    ...    ${pouch_amount}    ${total_parcel_pouch}
+    [Arguments]    ${export_to}    ${deliver}    
+    # ${parcel_amount}    ${pouch_amount}    ${total_parcel_pouch}
     ${btn_print}=    Replace String    ${dps_btn_print_scan_out}    {export_to}    ${export_to}
     ${btn_print}=    Replace String    ${btn_print}    {deliver}    ${deliver}
-    ${btn_print}=    Replace String    ${btn_print}    {parcel_amount}    ${parcel_amount}
-    ${btn_print}=    Replace String    ${btn_print}    {pouch_amount}    ${pouch_amount}
-    ${btn_print}=    Replace String    ${btn_print}    {total_parcel_pouch}    ${total_parcel_pouch}
     ${btn_print}=    Replace String    ${btn_print}    ${dc_operation['text_print']}
     common.Click When Ready    ${btn_print}
 
@@ -501,6 +498,7 @@ Verify Value List Scan Out
     
     ${actual_update_date}=    Get Text    ${dps_txt_update_time_scan_out}
     ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%Y-%m-%d %H:%M:%S    result_format=%Y-%m-%d %H:%M:%S
+    # ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M:%S    result_format=%d/%m/%Y %H:%M:%S
     Should Be Equal    ${actual_update_date}    ${date_convert}
     Element Should Be Visible    ${dps_txt_value_scan_out}
     

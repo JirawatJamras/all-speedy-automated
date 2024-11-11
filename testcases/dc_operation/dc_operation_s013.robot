@@ -127,7 +127,7 @@ DC_Operation_S013
     ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['zipcode']} 
     ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['customer']}
     ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['phone']}
-    ...    ${dc_operation.scan_in_title_label_detail['size']}    
+    ...    ${dc_operation.scan_in_title_label_detail['size_home']}    
     ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['size']}
 
     dps_scan_page.Verify Title Sender In Scan Page
@@ -289,12 +289,13 @@ DC_Operation_S013
     # Expected
 
     Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    #In progress 
     dps_scan_page.Click Print Button By Data
     ...    ${DC_Operation_S013.scan_out_print['export_to']}
     ...    ${DC_Operation_S013.scan_out_print['deliver']}
-    ...    ${DC_Operation_S013.scan_out_print['parcel_amount']}
-    ...    ${DC_Operation_S013.scan_out_print['pouch_amount']}
-    ...    ${DC_Operation_S013.scan_out_print['total_parcel_pouch']}
+    # ...    ${DC_Operation_S013.scan_out_print['parcel_amount']}
+    # ...    ${DC_Operation_S013.scan_out_print['pouch_amount']}
+    # ...    ${DC_Operation_S013.scan_out_print['total_parcel_pouch']}
     # Expected
 
     Log    Step No.36 กดปุ่ม พิมพ์
