@@ -111,7 +111,7 @@ Booking:
     price:  'ราคา :'
     default:
       parcel_number:  '0 รายการ'
-      cut_off_time:  '11:15:00'
+      cut_off_time:  '23:59:00'
       price:  '0 บาท'
   dry_parcel:
     parcel_A4: 'A4'
@@ -237,7 +237,7 @@ call_car_pick_up:
     morning: 'ช่วงเช้า 09:00 - 12:00'
     afternoon: 'ช่วงบ่าย 13:00 - 16:00'
   parcel_pickup_time_schedule:
-    morning: 0'9:00:00 - 12:00 น.'
+    morning: '9:00:00 - 12:00 น.'
   default:
     parcel_number: '0 รายการ'
     price: '0 บาท'
