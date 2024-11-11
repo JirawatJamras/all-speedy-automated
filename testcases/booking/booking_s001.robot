@@ -36,4 +36,4 @@ Booking_S001
     # ...    ${Booking_S001['phone']}
     # ...    ${Booking_S001['email']}
     # ...    ${Booking_S001['position']}
-    # common.Verify Capture Screenshot    booking    Booking_S001    Verify Home Page
+    common.Verify Capture Screenshot    booking    Booking_S001    Verify Home Page

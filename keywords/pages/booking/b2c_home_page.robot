@@ -1,6 +1,7 @@
 *** Keywords ***
 Click Book Parcel Delivery
     ${btn} =  Replace String    ${b2c_mnu_book_parcel_delivery_home_page}    {value}    ${Booking['text_menu_booking']}
+    Wait Until Element Is Enabled    ${btn}    timeout=10s
     common.Click When Ready    ${btn}
 
 Click Parcel Delivery Service Menu
