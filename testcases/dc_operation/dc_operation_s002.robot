@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_s002
-    [Tags]    DC_Operation    UAT    test
+    [Tags]    DC_Operation    UAT    #test
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -342,7 +342,12 @@ DC_Operation_s002
     # ...    ${booking_id}
     # ...    ${Booking['text_parcel_status_call_car']}    #${Booking['text_waiting_confirm_parcel_pickup']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Booking Change Status To Confirm
-    # b2c_booking_delivery_page.Select Booking With Booking ID    ${booking_id}
+    # b2c_booking_delivery_page.Select Booking With Booking ID    
+    # ...    ${booking_id}
+    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # b2c_booking_detail_page.Verify Parcel Status Change To Confirm
+    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    # ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
 
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Change Status To Confirm

@@ -781,6 +781,7 @@ Verify Booking Status After Cut Off Time
     Scroll Element Into View    ${actual_booking_status}
 
 Select Booking With Booking ID
-    [Arguments]    ${booking_id}
-    ${actual_booking_id}=    Replace String    ${txt_booking_id}    {value}    ${booking_id}
-    common.Click When Ready    ${actual_booking_id}
+    [Arguments]    ${booking_id}    ${status}
+    ${actual_booking_id}=    Replace String    ${txt_booking_status}    {id}    ${booking_id}
+    ${actual_booking_status}=    Replace String    ${actual_booking_id}    {status}    ${status}
+    common.Click When Ready    ${actual_booking_status}

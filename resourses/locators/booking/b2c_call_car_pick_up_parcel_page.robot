@@ -21,7 +21,6 @@ ${b2c_txt_location_pickup}    //strong[text()='{price}']/../../..//span[contains
 ${b2c_txt_complete_save_pickup_round}    //div[@class='ant-message-notice-content']
 ${b2c_txt_status_and_id_pickup_round}    //span[text()='{status}']/../../../../../../../..//strong[text()='{booking_id}']
 
-${txt_booking_id}    //span[text()='{value}']/../../../..
 ${txt_booking_status}    //span[contains(@class,'ant-tag ant-tag-borderless')]//h5[contains(@class,'ant-typography')]
 ${txt_parcel_pickup_schedule}    (//div[contains(@class,'ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small')]//h5[contains(@class,'ant-typography')])[1]
 ${txt_normal_parcel_pickup_schedule}    (//div[contains(@class,'ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small')]//h5[contains(text(),'{value}')])[1]
