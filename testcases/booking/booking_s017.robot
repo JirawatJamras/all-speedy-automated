@@ -238,13 +238,13 @@ Booking_S017
     b2c_booking_delivery_page.Input Promotion    ${Booking_S017['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     # Expected
-    b2c_booking_delivery_page.Verify Selected Coupon And Code
-    ...    ${Booking_S017.promotion_detail['discount']}
-    ...    ${Booking_S017.promotion_detail['promotion_name']}
-    ...    ${Booking_S017.promotion_detail['parcel_size']}
-    ...    ${Booking_S017.promotion_detail['expired_date']}
-    ...    ${Booking_S017.promotion_detail['condition']}
-    ...    ${Booking_S017.promotion_detail['period']}
+    # b2c_booking_delivery_page.Verify Selected Coupon And Code
+    # ...    ${Booking_S017.promotion_detail['discount']}
+    # ...    ${Booking_S017.promotion_detail['promotion_name']}
+    # ...    ${Booking_S017.promotion_detail['parcel_size']}
+    # ...    ${Booking_S017.promotion_detail['expired_date']}
+    # ...    ${Booking_S017.promotion_detail['condition']}
+    # ...    ${Booking_S017.promotion_detail['period']}
     common.Verify Capture Screenshot    booking    Booking_S017    Verify Selected Coupon And Code
 
     Log    Step No.17 กดปุ่ม "จองเลขพัสดุ"

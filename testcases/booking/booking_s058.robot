@@ -186,8 +186,7 @@ Booking_S058
 
     # Log    Step No.11 เเก้ไขรายการ
     # b2c_favorite_page.Select Pickup Location    ${Booking_S058.edit_receiver['receiver_location_pickup']}
-    # b2c_favorite_page.Input Store Code Receiver    ${Booking_S058.edit_receiver['receiver_store_code_5_digits']}
-    # b2c_favorite_page.Select Store Receiver Lists    ${Booking_S058.edit_receiver['receiver_store_address']}
+    # b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S058['receiver_store_code_5_digits']}    ${Booking_S058['receiver_store_address']}
     # b2c_favorite_page.Click Store On Map
     # # Defect106
     # # Expected

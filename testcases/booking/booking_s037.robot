@@ -147,8 +147,7 @@ Booking_S037
     # Log    Step No.9 ขั้นตอนข้อมูลผู้รับพัสดุ
     # b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S037['receiver_phone']}
     # b2c_booking_delivery_page.Input Name Receiver    ${Booking_S037['receiver_name']}
-    # b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S037['receiver_store_code_5_digits']}
-    # b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S037['receiver_store_address']}
+    # b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S037['receiver_store_code_5_digits']}    ${Booking_S037['receiver_store_address']}
     # b2c_booking_delivery_page.Click Store On Map
     # # Expected
     # common.Verify Capture Screenshot    Booking_S037    Verify After Create Parcel Page Receiver Step

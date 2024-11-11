@@ -123,8 +123,7 @@ Booking_S035
     # b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S035['receiver_phone']}
     # b2c_booking_delivery_page.Input Name Receiver    ${Booking_S035['receiver_name']}
     # b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
-    # b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S035['receiver_store_code_5_digits']}
-    # b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S035['receiver_store_address']}
+    # b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S035['receiver_store_code_5_digits']}    ${Booking_S035['receiver_store_address']}
     # b2c_booking_delivery_page.Click Store On Map
     # b2c_booking_delivery_page.Click Add To Favorites In Receiver
     # # Expected

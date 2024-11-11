@@ -511,9 +511,16 @@ Click Postcode Receiver Lists
     ${cbo_postcode_sender}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
     common.Click When Ready    ${cbo_postcode_sender}
 
-Input Store Code Receiver
-    [Arguments]    ${input_store_receiver}
-    common.Input When Ready      ${txtbox_store_receiver}    ${input_store_receiver}
+Input And Select Store Code Receiver
+    [Arguments]    ${input_store_receiver}    ${store}
+    ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${Booking['text_select_store_on_map']}
+    FOR    ${i}    IN RANGE    0    5
+        common.Input When Ready    ${txtbox_store_receiver}    ${input_store_receiver}
+        Click Store Receiver Lists    ${store}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=10s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+        common.Clear Value Input Text    ${txtbox_store_receiver}
+    END
 
 Click Store Receiver Lists
     [Arguments]    ${store}

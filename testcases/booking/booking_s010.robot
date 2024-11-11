@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
@@ -85,8 +85,7 @@ Booking_S010
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S010['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S010['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
-    b2c_booking_delivery_page.Input Store Code Receiver    ${Booking_S010['receiver_store_code_5_digits']}
-    b2c_booking_delivery_page.Click Store Receiver Lists    ${Booking_S010['receiver_store_address']}
+    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S010['receiver_store_code_5_digits']}    ${Booking_S010['receiver_store_address']}
     b2c_booking_delivery_page.Click Store On Map
     # Expected
     b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S010['receiver_store_full']}

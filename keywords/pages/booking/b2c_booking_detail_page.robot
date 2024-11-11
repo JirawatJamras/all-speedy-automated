@@ -190,7 +190,11 @@ Get Booking Time
     @{booking_time}    Create List
     ${txt_booking_time}=    Replace String    ${txt_booking_time}    {value}    ${Booking['text_booking_time_label']}
     Wait Until Element Is Visible    ${txt_booking_time}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=${DEFAULT_TIMEOUT}
+    FOR    ${i}    IN RANGE    0    5
+       ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=10s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+        Reload Page
+    END
     ${booking_time_1}=    Get Text    ${txt_booking_time}
     ${part}=    Split String    ${booking_time_1}    ${SPACE}
     ${day}=    Set Variable    ${part}[0]
