@@ -82,7 +82,7 @@ Search Parcel Pickup By Date
         common.Click When Ready    ${button_search}
         common.Click When Ready    ${button_filter}
 
-Verify Parcel Pickup Change Status
+Verify Parcel Pickup Status After Cut Off Time
     [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}    ${round}    ${pickup_time}    ${parcel_num}
     ${button_confirm}=  Replace String   ${b2c_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
     ${actual_status}=  Replace String   ${b2c_txt_status_and_id_pickup_round}    {status}    ${status}
@@ -130,6 +130,57 @@ Verify Parcel Pickup Change Status
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
     Register Keyword To Run On Failure    Capture Page Screenshot
+
+Verify Parcel Pickup Schedule Change Status To Confirm
+    [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}    ${round}    ${pickup_time}    ${parcel_num}
+    ${button_confirm}=  Replace String   ${b2c_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
+    ${actual_status}=  Replace String   ${b2c_txt_status_and_id_pickup_round}    {status}    ${status}
+    ${actual_status_and_id}=  Replace String   ${actual_status}    {booking_id}    ${booking_id}
+
+    ${actual_status}=  Replace String   ${b2c_txt_parcel_pickup_round}    {status}    ${status}
+    ${label_pickup_round}=  Replace String   ${actual_status}    {round}    ${round} ${tomorrow} ${pickup_time}
+    ${label_pickup_date}=  Replace String   ${label_pickup_round}    {pickupdate}    ${call_car_pick_up['text_parcel_pickup_date']}
+    ${value_pickup_date}=  Replace String   ${label_pickup_date}    {value}    ${tomorrow}
+    ${label_cut_off}=  Replace String   ${b2c_txt_cutoff_pickup_round}    {cutoff}    ${call_car_pick_up['text_cut_off_time']}
+    ${value_cut_off}=  Replace String   ${label_cut_off}    {cutoff_value}    ${today}
+    ${label_parcel}=  Replace String   ${value_cut_off}    {parcel}    ${call_car_pick_up['text_parcel_number']}
+    ${value_parcel}=  Replace String   ${label_parcel}    {value}    ${parcel_num}
+    ${card}=    Set Variable    ${value_pickup_date}${value_parcel}
+
+    ${next_day}    Set Date Pattern    ${tomorrow}
+    ${day}    Set Date Pattern    ${today}
+    Register Keyword To Run On Failure    NOTHING
+    ${status}=    Set Variable    FAIL
+    ${status_2}=    Set Variable    False
+
+    Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    Search Parcel Pickup By Date    ${day}    ${next_day}
+
+    WHILE    '${status_2}' == 'False'
+        Scroll Window To Vertical    0
+        Run Keyword And Ignore Error    Wait Until Element Is Visible    ${card}
+        ${number}=    Get Element Count    ${card}
+        FOR    ${index}    IN RANGE    1    ${number}+1
+            Scroll Element Into View    (${card})[${index}]
+            common.Click When Ready    (${card})[${index}]
+            ${status}    ${element}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${actual_status_and_id}
+            ${status_2}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_status_and_id}
+            Exit For Loop If    '${status}' == 'PASS'    
+            common.Click When Ready    ${b2c_btn_x_in_add_popup}
+            common.Click When Ready    ${button_confirm}
+        END
+        Exit For Loop If    '${status_2}' == 'True'
+        Scroll Window To Vertical    1000
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'False'    Run Keywords    
+        ...    Reload Page
+        ...    AND    Search Parcel Pickup By Date    ${day}    ${next_day}
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+    END
+    Register Keyword To Run On Failure    Capture Page Screenshot
+    common.Click When Ready    ${b2c_btn_x_in_add_popup}
+    common.Click When Ready    ${button_confirm}
 
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled

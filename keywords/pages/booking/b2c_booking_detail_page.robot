@@ -707,7 +707,7 @@ Verify Booking Detail Page After Import File
     ${count_card}=    Set Variable    0
     ## Verify number of parcels
     FOR    ${index}    IN RANGE    ${parcel_num}
-        Wait Until Element Is Visible    ${actual_parcel_list}    timeout=${DEFAULT_TIMEOUT}
+        Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
         ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
         ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
         ${count_new_card}=    Get Element Count    ${actual_parcel_list}
@@ -720,4 +720,6 @@ Verify Booking Detail Page After Import File
     END
     Should Be Equal As Strings    ${count_card}    ${parcel_num}
 
-
+# Verify Parcel Status Change To Confirm
+    #     [Arguments]    
+        
