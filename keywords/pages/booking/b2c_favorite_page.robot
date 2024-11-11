@@ -295,15 +295,19 @@ Select Pickup Location
     Run Keyword If    '${value}' == 'ส่งร้าน 7-11'    Run Keywords    Scroll Element Into View    ${tab_send_store_favorite_page}
     ...    AND    common.Click When Ready    ${tab_send_store_favorite_page}
 
-Input Store Code Receiver
-    [Arguments]    ${store_code}
-    ${txtbox_receiver_search_store}=    Replace String    ${txtbox_receiver_search_store_favorite_page}    {value}    ${favorite['text_search_store']}
-    common.Input When Ready    ${txtbox_receiver_search_store}    ${store_code}
 
-Select Store Receiver Lists
-    [Arguments]    ${store}
-    ${cbo_receiver_store}=    Replace String    ${cbo_receiver_store_favorite_page}    {value}    ${store}
-    common.Click When Ready    ${cbo_receiver_store}
+Input And Select Store Code Receiver
+    [Arguments]    ${input_store_receiver}    ${store}
+    ${txtbox_receiver_search_store}=    Replace String    ${txtbox_receiver_search_store_favorite_page}    {value}    ${favorite['text_search_store']}
+    ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${Booking['text_select_store_on_map']}
+    FOR    ${i}    IN RANGE    0    5
+        common.Input When Ready    ${txtbox_receiver_search_store}    ${input_store_receiver}
+        Click Store Receiver Lists    ${store}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=10s
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+        common.Clear Value Input Text    ${txtbox_receiver_search_store}
+    END
+
 
 Click Store On Map
     ${btn_choose_store}=    Replace String    ${btn_choose_store_favorite_page}    {value}    ${favorite['button_select_store']}

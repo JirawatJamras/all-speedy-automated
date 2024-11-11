@@ -9,164 +9,140 @@ Test Teardown     Close Browser
 Booking_S058
     [Documentation]    ลูกค้า All Member - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
     [Tags]    Booking    UAT    Fail
+    Log    Prerequisite S031
+    Booking_S031 
 
-    # Defect 198
-    # Log    Prerequisite S031
-    # Booking_S031 
+    Log    Prerequisite S032
+    Booking_S032
 
-    # Log    Prerequisite S032
-    # Booking_S032
+    Log    Step No.1 กด Tap "ผู้ส่งพัสดุ"
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Favorites
+    b2c_favorite_page.Select Sender Tab
+    # Expected
+    b2c_favorite_page.Verify Display Sender Card
+    ...    ${Booking_S058.sender_favorite_card['favorite_name']}
+    ...    ${Booking_S032['sender_name']}
+    ...    ${Booking_S032['sender_phone']}
+    ...    ${Booking_S032['sender_address']}
+    ...    ${Booking_S032['sender_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Display Sender Card
 
-    # Log    Step No.1 กด Tap "ผู้ส่งพัสดุ"
-    # b2c_home_page.Click Parcel Delivery Service Menu
-    # b2c_home_page.Select Sub Menu Favorites
-    # b2c_favorite_page.Select Sender Tab
-    # # Expected
-    # b2c_favorite_page.Verify Display Sender Card
-    # ...    ${Booking_S058.sender_favorite_card['favorite_name']}
-    # ...    ${Booking_S032['sender_name']}
-    # ...    ${Booking_S032['sender_phone']}
-    # ...    ${Booking_S032['sender_address']}
-    # ...    ${Booking_S032['sender_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Display Sender Card
-
-    # Log    Step No.2 กดที่รายการโปรด
-    # b2c_favorite_page.Click Sender Card
-    # ...    ${Booking_S058.sender_favorite_card['favorite_name']}
-    # ...    ${Booking_S032['sender_name']}
-    # ...    ${Booking_S032['sender_phone']}
-    # ...    ${Booking_S032['sender_address']}
-    # ...    ${Booking_S032['sender_postcode_full']}
-    # # Expected
-    # b2c_favorite_page.Verify Label Sender
-    # ...    ${favorite.label_sender_favorite['text_data_sender']}
-    # ...    ${favorite.label_sender_favorite['text_favorite_name']}
-    # ...    ${favorite.label_sender_favorite['text_phone']}
-    # ...    ${favorite.label_sender_favorite['text_name']}
-    # ...    ${favorite.label_sender_favorite['text_address']}
-    # ...    ${favorite.label_sender_favorite['text_postcode']}
-    # b2c_favorite_page.Verify Data Sender In Read-Only Mode
-    # ...    ${Booking_S058.sender_favorite_card['favorite_name']}
-    # ...    ${Booking_S032['sender_name']}
-    # ...    ${Booking_S032['sender_phone']}
-    # ...    ${Booking_S032['sender_address']}
-    # ...    ${Booking_S032['sender_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Sender In Popup
+    Log    Step No.2 กดที่รายการโปรด
+    b2c_favorite_page.Click Sender Card
+    ...    ${Booking_S058.sender_favorite_card['favorite_name']}
+    ...    ${Booking_S032['sender_name']}
+    ...    ${Booking_S032['sender_phone']}
+    ...    ${Booking_S032['sender_address']}
+    ...    ${Booking_S032['sender_postcode_full']}
+    # Expected
+    b2c_favorite_page.Verify Label Sender
+    ...    ${favorite.label_sender_favorite['text_data_sender']}
+    ...    ${favorite.label_sender_favorite['text_favorite_name']}
+    ...    ${favorite.label_sender_favorite['text_phone']}
+    ...    ${favorite.label_sender_favorite['text_name']}
+    ...    ${favorite.label_sender_favorite['text_address']}
+    ...    ${favorite.label_sender_favorite['text_postcode']}
+    b2c_favorite_page.Verify Data Sender In Read-Only Mode
+    ...    ${Booking_S058.sender_favorite_card['favorite_name']}
+    ...    ${Booking_S032['sender_name']}
+    ...    ${Booking_S032['sender_phone']}
+    ...    ${Booking_S032['sender_address']}
+    ...    ${Booking_S032['sender_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Sender In Popup
 
 
-    # Log    Step No.3 กดปุ่ม "เเก้ไข"
-    # b2c_favorite_page.Click Edit Button
-    # # Expected
-    # b2c_favorite_page.Verify Label Sender
-    # ...    ${favorite.label_sender_favorite['text_data_sender']}
-    # ...    ${favorite.label_sender_favorite['text_favorite_name']}
-    # ...    ${favorite.label_sender_favorite['text_phone']}
-    # ...    ${favorite.label_sender_favorite['text_name']}
-    # ...    ${favorite.label_sender_favorite['text_address']}
-    # ...    ${favorite.label_sender_favorite['text_postcode']}
-    # b2c_favorite_page.Verify Data Sender
-    # ...    ${Booking_S058.sender_favorite_card['favorite_name']}
-    # ...    ${Booking_S032['sender_name']}
-    # ...    ${Booking_S032['sender_phone']}
-    # ...    ${Booking_S032['sender_address']}
-    # ...    ${Booking_S032['sender_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Sender Before Editing In Popup
+    Log    Step No.3 กดปุ่ม "เเก้ไข"
+    b2c_favorite_page.Click Edit Button
+    # Expected
+    b2c_favorite_page.Verify Label Sender
+    ...    ${favorite.label_sender_favorite['text_data_sender']}
+    ...    ${favorite.label_sender_favorite['text_favorite_name']}
+    ...    ${favorite.label_sender_favorite['text_phone']}
+    ...    ${favorite.label_sender_favorite['text_name']}
+    ...    ${favorite.label_sender_favorite['text_address']}
+    ...    ${favorite.label_sender_favorite['text_postcode']}
+    b2c_favorite_page.Verify Data Sender
+    ...    ${Booking_S058.sender_favorite_card['favorite_name']}
+    ...    ${Booking_S032['sender_name']}
+    ...    ${Booking_S032['sender_phone']}
+    ...    ${Booking_S032['sender_address']}
+    ...    ${Booking_S032['sender_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Sender Before Editing In Popup
 
-    # Log    Step No.4 เเก้ไขรายการ
-    # b2c_favorite_page.Edit Sender Favorite Name    ${Booking_S058.edit_sender['sender_favorite_name']}
-    # # Expected
-    # b2c_favorite_page.Wait until Data Is Successfully Edited
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Sender Edited In Popup
+    Log    Step No.4 เเก้ไขรายการ
+    b2c_favorite_page.Edit Sender Favorite Name    ${Booking_S058.edit_sender['sender_favorite_name']}
+    # Expected
+    b2c_favorite_page.Wait until Data Is Successfully Edited
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Sender Edited In Popup
 
-    # Log    Step No.5 กดปุ่ม "บันทึกเเก้ไข"
-    # b2c_favorite_page.Click Save Edit Button
-    # # Expected
-    # b2c_favorite_page.Verify Display Sender Card After Edit Data
-    # ...    ${Booking_S058.edit_sender['sender_favorite_name']}
-    # ...    ${Booking_S032['sender_name']}
-    # ...    ${Booking_S032['sender_phone']}
-    # ...    ${Booking_S032['sender_address']}
-    # ...    ${Booking_S032['sender_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Sender After Edited
+    Log    Step No.5 กดปุ่ม "บันทึกเเก้ไข"
+    b2c_favorite_page.Click Save Edit Button
+    # Expected
+    b2c_favorite_page.Verify Display Sender Card After Edit Data
+    ...    ${Booking_S058.edit_sender['sender_favorite_name']}
+    ...    ${Booking_S032['sender_name']}
+    ...    ${Booking_S032['sender_phone']}
+    ...    ${Booking_S032['sender_address']}
+    ...    ${Booking_S032['sender_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Sender After Edited
 
-    # Log    Step No.6 กดปุ่ม "เพิ่ม"
-    # b2c_favorite_page.Click Add Sender Button
-    # # Expected
-    # b2c_favorite_page.Verify Label Sender
-    # ...    ${favorite.label_sender_favorite['text_data_sender']}
-    # ...    ${favorite.label_sender_favorite['text_favorite_name']}
-    # ...    ${favorite.label_sender_favorite['text_phone']}
-    # ...    ${favorite.label_sender_favorite['text_name']}
-    # ...    ${favorite.label_sender_favorite['text_address']}
-    # ...    ${favorite.label_sender_favorite['text_postcode']}
-    # b2c_favorite_page.Verify Data Sender
-    # ...    ${EMPTY}
-    # ...    ${EMPTY}
-    # ...    ${EMPTY}
-    # ...    ${EMPTY}
-    # ...    ${favorite['text_input_postcode']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Sender Favorite Popup
+    Log    Step No.6 กดปุ่ม "เพิ่ม"
+    b2c_favorite_page.Click Add Sender Button
+    # Expected
+    b2c_favorite_page.Verify Label Sender
+    ...    ${favorite.label_sender_favorite['text_data_sender']}
+    ...    ${favorite.label_sender_favorite['text_favorite_name']}
+    ...    ${favorite.label_sender_favorite['text_phone']}
+    ...    ${favorite.label_sender_favorite['text_name']}
+    ...    ${favorite.label_sender_favorite['text_address']}
+    ...    ${favorite.label_sender_favorite['text_postcode']}
+    b2c_favorite_page.Verify Data Sender
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${favorite['text_input_postcode']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Sender Favorite Popup
 
-    # Log    Step No.7 กรอกข้อมูล
-    # b2c_favorite_page.Input Sender Favorite Name    ${Booking_S058.add_sender_favorite['favorite_name']}
-    # b2c_favorite_page.Input Sender Phone Number    ${Booking_S058.add_sender_favorite['sender_phone']}
-    # b2c_favorite_page.Input Sender Name    ${Booking_S058.add_sender_favorite['sender_name']}
-    # b2c_favorite_page.Input Sender Address    ${Booking_S058.add_sender_favorite['sender_address']}
-    # b2c_favorite_page.Input Sender Postcode    ${Booking_S058.add_sender_favorite['sender_postcode_5_digits']}
-    # b2c_favorite_page.Select Sender Postcode List    ${Booking_S058.add_sender_favorite['sender_postcode_full']}
-    # b2c_favorite_page.Click Save Button
-    # # Expected
-    # b2c_favorite_page.Verify Display Sender Card After Add New
-    # ...    ${Booking_S058.add_sender_favorite['favorite_name']}
-    # ...    ${Booking_S058.add_sender_favorite['sender_name']}
-    # ...    ${Booking_S058.add_sender_favorite['sender_phone']}
-    # ...    ${Booking_S058.add_sender_favorite['sender_address']}
-    # ...    ${Booking_S058.add_sender_favorite['sender_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Sender Card After Added Information
+    Log    Step No.7 กรอกข้อมูล
+    b2c_favorite_page.Input Sender Favorite Name    ${Booking_S058.add_sender_favorite['favorite_name']}
+    b2c_favorite_page.Input Sender Phone Number    ${Booking_S058.add_sender_favorite['sender_phone']}
+    b2c_favorite_page.Input Sender Name    ${Booking_S058.add_sender_favorite['sender_name']}
+    b2c_favorite_page.Input Sender Address    ${Booking_S058.add_sender_favorite['sender_address']}
+    b2c_favorite_page.Input Sender Postcode    ${Booking_S058.add_sender_favorite['sender_postcode_5_digits']}
+    b2c_favorite_page.Select Sender Postcode List    ${Booking_S058.add_sender_favorite['sender_postcode_full']}
+    b2c_favorite_page.Click Save Button
+    # Expected
+    b2c_favorite_page.Verify Display Sender Card After Add New
+    ...    ${Booking_S058.add_sender_favorite['favorite_name']}
+    ...    ${Booking_S058.add_sender_favorite['sender_name']}
+    ...    ${Booking_S058.add_sender_favorite['sender_phone']}
+    ...    ${Booking_S058.add_sender_favorite['sender_address']}
+    ...    ${Booking_S058.add_sender_favorite['sender_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Sender Card After Added Information
 
-    # Log    Step No.8 กด Tap "ผู้รับพัสดุ"
-    # b2c_favorite_page.Select Receiver Tab
-    # # Expected
-    # b2c_favorite_page.Verify Display Receiver Card When Select Home
-    # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    # ...    ${Booking_S031['receiver_name']}
-    # ...    ${Booking_S031['receiver_phone']}
-    # ...    ${Booking_S031['receiver_address']}
-    # ...    ${Booking_S031['receiver_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Display Receiver Card When Select Send To Home
+    Log    Step No.8 กด Tap "ผู้รับพัสดุ"
+    b2c_favorite_page.Select Receiver Tab
+    # Expected
+    b2c_favorite_page.Verify Display Receiver Card When Select Home
+    ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    ...    ${Booking_S031['receiver_name']}
+    ...    ${Booking_S031['receiver_phone']}
+    ...    ${Booking_S031['receiver_address']}
+    ...    ${Booking_S031['receiver_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Display Receiver Card When Select Send To Home
 
 
-    # Log    Step No.9 กดที่รายการโปรด
-    # b2c_favorite_page.Click Receiver Card
-    # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    # ...    ${Booking_S031['receiver_name']}
-    # ...    ${Booking_S031['receiver_phone']}
-    # ...    ${Booking_S031['receiver_address']}
-    # ...    ${Booking_S031['receiver_postcode_full']}
-    # # Defect134
-    # # Expected
-    # # b2c_favorite_page.Verify Label Receiver
-    # # ...    ${favorite.label_reciever_favorite['text_data_receiver']}
-    # # ...    ${favorite.label_reciever_favorite['text_favorite_name']}
-    # # ...    ${favorite.label_reciever_favorite['text_phone']}
-    # # ...    ${favorite.label_reciever_favorite['text_name']}
-    # # ...    ${favorite.label_reciever_favorite['text_location_pickup']}
-    # # ...    ${favorite.label_reciever_favorite['text_address']}
-    # # ...    ${favorite.label_reciever_favorite['text_postcode']}
-    # # b2c_favorite_page.Verify Data Recevier In Read-Only Mode
-    # # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    # # ...    ${Booking_S031['receiver_name']}
-    # # ...    ${Booking_S031['receiver_phone']}
-    # # ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
-    # # ...    ${Booking_S031['receiver_address']}
-    # # ...    ${Booking_S031['receiver_postcode_full']}
-    # # common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Receiver In Popup
-    # # b2c_favorite_page.Scroll To Display Edit Button
-    # # common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Receiver Footer In Popup
-
-    # Log    Step No.10 กดปุ่ม "เเก้ไข"
-    # b2c_favorite_page.Click Edit Button
-    # # Expected
+    Log    Step No.9 กดที่รายการโปรด
+    b2c_favorite_page.Click Receiver Card
+    ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    ...    ${Booking_S031['receiver_name']}
+    ...    ${Booking_S031['receiver_phone']}
+    ...    ${Booking_S031['receiver_address']}
+    ...    ${Booking_S031['receiver_postcode_full']}
+    # Defect134
+    # Expected
     # b2c_favorite_page.Verify Label Receiver
     # ...    ${favorite.label_reciever_favorite['text_data_receiver']}
     # ...    ${favorite.label_reciever_favorite['text_favorite_name']}
@@ -175,107 +151,129 @@ Booking_S058
     # ...    ${favorite.label_reciever_favorite['text_location_pickup']}
     # ...    ${favorite.label_reciever_favorite['text_address']}
     # ...    ${favorite.label_reciever_favorite['text_postcode']}
-    # b2c_favorite_page.Verify Data Receiver
+    # b2c_favorite_page.Verify Data Recevier In Read-Only Mode
     # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
     # ...    ${Booking_S031['receiver_name']}
     # ...    ${Booking_S031['receiver_phone']}
     # ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
     # ...    ${Booking_S031['receiver_address']}
     # ...    ${Booking_S031['receiver_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Receiver Before Editing In Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Receiver In Popup
+    b2c_favorite_page.Scroll To Display Edit Button
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Receiver Footer In Popup
 
-    # Log    Step No.11 เเก้ไขรายการ
-    # b2c_favorite_page.Select Pickup Location    ${Booking_S058.edit_receiver['receiver_location_pickup']}
-    # b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S058['receiver_store_code_5_digits']}    ${Booking_S058['receiver_store_address']}
-    # b2c_favorite_page.Click Store On Map
-    # # Defect106
-    # # Expected
-    # # b2c_favorite_page.Verify Store Address Receiver    ${Booking_S058.edit_receiver['receiver_store_full_address']}
-    # # common.Verify Capture Screenshot    booking    Booking_S058    Verify Receiver Edited In Popup
+    Log    Step No.10 กดปุ่ม "เเก้ไข"
+    b2c_favorite_page.Click Edit Button
+    # Expected
+    b2c_favorite_page.Verify Label Receiver
+    ...    ${favorite.label_reciever_favorite['text_data_receiver']}
+    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
+    ...    ${favorite.label_reciever_favorite['text_phone']}
+    ...    ${favorite.label_reciever_favorite['text_name']}
+    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
+    ...    ${favorite.label_reciever_favorite['text_address']}
+    ...    ${favorite.label_reciever_favorite['text_postcode']}
+    b2c_favorite_page.Verify Data Receiver
+    ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    ...    ${Booking_S031['receiver_name']}
+    ...    ${Booking_S031['receiver_phone']}
+    ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
+    ...    ${Booking_S031['receiver_address']}
+    ...    ${Booking_S031['receiver_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Receiver Before Editing In Popup
 
-    # Log    Step No.12 กดปุ่ม "บันทึกเเก้ไข"
-    # b2c_favorite_page.Click Save Edit Button
-    # # Defect123
-    # # Expected
-    # # b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
-    # # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    # # ...    ${Booking_S031['receiver_name']}
-    # # ...    ${Booking_S031['receiver_phone']}
-    # # ...    ${Booking_S058.edit_receiver['receiver_store_address']}
-    # # common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Receiver After Edited
+    Log    Step No.11 เเก้ไขรายการ
+    b2c_favorite_page.Select Pickup Location    ${Booking_S058.edit_receiver['receiver_location_pickup']}
+    b2c_favorite_page.Input And Select Store Code Receiver    ${Booking_S058.edit_receiver['receiver_store_code_5_digits']}    ${Booking_S058.edit_receiver['receiver_store_address']}
+    b2c_favorite_page.Click Store On Map
+    # Defect106
+    # Expected
+    # b2c_favorite_page.Verify Store Address Receiver    ${Booking_S058.edit_receiver['receiver_store_full_address']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Receiver Edited In Popup
 
-    # Log    Step No.13 กดปุ่ม "เพิ่ม"
-    # b2c_favorite_page.Click Add Receiver Button
-    # b2c_favorite_page.Select Pickup Location    ${Booking_S058.add_receiver_favorite['receiver_location_pickup']}
-    # # Expected
-    # b2c_favorite_page.Verify Label Receiver
-    # ...    ${favorite.label_reciever_favorite['text_data_receiver']}
-    # ...    ${favorite.label_reciever_favorite['text_favorite_name']}
-    # ...    ${favorite.label_reciever_favorite['text_phone']}
-    # ...    ${favorite.label_reciever_favorite['text_name']}
-    # ...    ${favorite.label_reciever_favorite['text_location_pickup']}
-    # ...    ${favorite.label_reciever_favorite['text_address']}
-    # ...    ${favorite.label_reciever_favorite['text_postcode']}
-    # b2c_favorite_page.Verify Data Receiver
+    Log    Step No.12 กดปุ่ม "บันทึกเเก้ไข"
+    b2c_favorite_page.Click Save Edit Button
+    # Defect123
+    # Expected
+    # b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
+    # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    # ...    ${Booking_S031['receiver_name']}
+    # ...    ${Booking_S031['receiver_phone']}
+    # ...    ${Booking_S058.edit_receiver['receiver_store_address']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Data Receiver After Edited
+
+    Log    Step No.13 กดปุ่ม "เพิ่ม"
+    b2c_favorite_page.Click Add Receiver Button
+    b2c_favorite_page.Select Pickup Location    ${Booking_S058.add_receiver_favorite['receiver_location_pickup']}
+    # Expected
+    b2c_favorite_page.Verify Label Receiver
+    ...    ${favorite.label_reciever_favorite['text_data_receiver']}
+    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
+    ...    ${favorite.label_reciever_favorite['text_phone']}
+    ...    ${favorite.label_reciever_favorite['text_name']}
+    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
+    ...    ${favorite.label_reciever_favorite['text_address']}
+    ...    ${favorite.label_reciever_favorite['text_postcode']}
+    b2c_favorite_page.Verify Data Receiver
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${EMPTY}
+    ...    ${favorite['text_input_postcode']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Receiver Favorite Popup
+    b2c_favorite_page.Scroll To Display Save Button
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Receiver Favorite Footer Popup
+
+    Log    Step No.14 กรอกข้อมูล
+    b2c_favorite_page.Input Receiver Favorite Name    ${Booking_S058.add_receiver_favorite['favorite_name']}
+    b2c_favorite_page.Input Receiver Phone Number    ${Booking_S058.add_receiver_favorite['receiver_phone']}
+    b2c_favorite_page.Input Receiver Name    ${Booking_S058.add_receiver_favorite['receiver_name']}
+    b2c_favorite_page.Input Receiver Address    ${Booking_S058.add_receiver_favorite['receiver_address']}
+    b2c_favorite_page.Input Receiver Postcode    ${Booking_S058.add_receiver_favorite['receiver_postcode_5_digits']}
+    b2c_favorite_page.Select Receiver Postcode Lists    ${Booking_S058.add_receiver_favorite['receiver_postcode_full']}
+    b2c_favorite_page.Click Save Button
+    # Expected
+    b2c_favorite_page.Verify Display Receiver Card After Add New When Select Send To Home
+    ...    ${Booking_S058.add_receiver_favorite['favorite_name']}
+    ...    ${Booking_S058.add_receiver_favorite['receiver_name']}
+    ...    ${Booking_S058.add_receiver_favorite['receiver_phone']}
+    ...    ${Booking_S058.add_receiver_favorite['receiver_address']}
+    ...    ${Booking_S058.add_receiver_favorite['receiver_postcode_full']}
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Receiver Card After Added When Select Send To Home
+
+    Log    Step No.15 กด Tap "พื้นที่ต้นทางการจัดส่ง"
+    b2c_favorite_page.Select Shipping Origin Area Tab
+    # Expected
+    b2c_favorite_page.Verify Shipping Origin Area Tab
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Shipping Origin Area Tab
+
+    Log    Step No.16 กดปุ่ม "เพิ่ม"
+    b2c_favorite_page.Click Add Shipping Origin Area Button
+    # Defect135
+    # Expected
+    # ...    ${favorite.label_shipping_origin_area['text_data_shipping_origin_area']}
+    # ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
+    # ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
+    # b2c_favorite_page.Verify Data Shipping Origin Area
     # ...    ${EMPTY}
-    # ...    ${EMPTY}
-    # ...    ${EMPTY}
-    # ...    ${EMPTY}
-    # ...    ${EMPTY}
-    # ...    ${favorite['text_input_postcode']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Receiver Favorite Popup
-    # b2c_favorite_page.Scroll To Display Save Button
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Receiver Favorite Footer Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Shipping Origin Area Popup
+    b2c_favorite_page.Scroll To Display Save Button
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Shipping Origin Area Footer Popup
 
-    # Log    Step No.14 กรอกข้อมูล
-    # b2c_favorite_page.Input Receiver Favorite Name    ${Booking_S058.add_receiver_favorite['favorite_name']}
-    # b2c_favorite_page.Input Receiver Phone Number    ${Booking_S058.add_receiver_favorite['receiver_phone']}
-    # b2c_favorite_page.Input Receiver Name    ${Booking_S058.add_receiver_favorite['receiver_name']}
-    # b2c_favorite_page.Input Receiver Address    ${Booking_S058.add_receiver_favorite['receiver_address']}
-    # b2c_favorite_page.Input Receiver Postcode    ${Booking_S058.add_receiver_favorite['receiver_postcode_5_digits']}
-    # b2c_favorite_page.Select Receiver Postcode Lists    ${Booking_S058.add_receiver_favorite['receiver_postcode_full']}
-    # b2c_favorite_page.Click Save Button
-    # # Expected
-    # b2c_favorite_page.Verify Display Receiver Card After Add New When Select Send To Home
-    # ...    ${Booking_S058.add_receiver_favorite['favorite_name']}
-    # ...    ${Booking_S058.add_receiver_favorite['receiver_name']}
-    # ...    ${Booking_S058.add_receiver_favorite['receiver_phone']}
-    # ...    ${Booking_S058.add_receiver_favorite['receiver_address']}
-    # ...    ${Booking_S058.add_receiver_favorite['receiver_postcode_full']}
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Receiver Card After Added When Select Send To Home
-
-    # Log    Step No.15 กด Tap "พื้นที่ต้นทางการจัดส่ง"
-    # b2c_favorite_page.Select Shipping Origin Area Tab
-    # # Expected
-    # b2c_favorite_page.Verify Shipping Origin Area Tab
-    # common.Verify Capture Screenshot    booking    Booking_S058    Verify Shipping Origin Area Tab
-
-    # # Log    Step No.16 กดปุ่ม "เพิ่ม"
-    # # b2c_favorite_page.Click Add Shipping Origin Area Button
-    # # Defect135
-    # # Expected
-    # # ...    ${favorite.label_shipping_origin_area['text_data_shipping_origin_area']}
-    # # ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
-    # # ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
-    # # b2c_favorite_page.Verify Data Shipping Origin Area
-    # # ...    ${EMPTY}
-    # # common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Shipping Origin Area Popup
-    # # b2c_favorite_page.Scroll To Display Save Button
-    # # common.Verify Capture Screenshot    booking    Booking_S058    Verify Add Shipping Origin Area Footer Popup
-
-    # # Defect124
-    # # Log    Step No.17 กรอกข้อมูล
-    # # b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${Booking_S058.add_shipping_origin_area['favorite_name']}
-    # # b2c_favorite_page.Input Store Code Shipping Origin Area    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_code_5_digits']}
-    # # b2c_favorite_page.Select Store Shipping Origin Area Lists    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
-    # # b2c_favorite_page.Click Store On Map
-    # # b2c_favorite_page.Click Save Button
-    # # Expected
-    # # b2c_favorite_page.Verify Display Shipping Origin Area Card
-    # # ...    ${Booking_S058.add_shipping_origin_area['favorite_name']}
-    # # ...    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
-    # # common.Scroll Window To Vertical    0
-    # # common.Verify Capture Screenshot    booking    Booking_S058    Verify Shipping Origin Area Card After Added Information
+    # Defect124
+    Log    Step No.17 กรอกข้อมูล
+    b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${Booking_S058.add_shipping_origin_area['favorite_name']}
+    b2c_favorite_page.Input Store Code Shipping Origin Area    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_code_5_digits']}
+    b2c_favorite_page.Select Store Shipping Origin Area Lists    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
+    b2c_favorite_page.Click Store On Map
+    b2c_favorite_page.Click Save Button
+    # Expected
+    # b2c_favorite_page.Verify Display Shipping Origin Area Card
+    # ...    ${Booking_S058.add_shipping_origin_area['favorite_name']}
+    # ...    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
+    # common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    booking    Booking_S058    Verify Shipping Origin Area Card After Added Information
 
 *** Keywords ***
 Booking_S031
@@ -305,7 +303,6 @@ Booking_S031
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     b2c_booking_delivery_page.Click Save Button
     
-
 Booking_S032
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_delivery_page.Click Button To Add
