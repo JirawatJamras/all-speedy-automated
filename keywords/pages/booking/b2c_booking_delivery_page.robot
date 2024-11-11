@@ -773,9 +773,14 @@ Verify Selected Coupon And Code
     Should Be Equal As Strings    ${actual_selected_code_detail}
     ...    ${Booking['text_selected_coupon_and_code']} ${discount} ${promotion_name} ${parcel_size} ${Booking['text_expire']} ${expired_date} ${Booking['text_condition']} - ${condition} ${Booking['text_period']} ${period} ${Booking['text_take_out']}
 
-Verify Booking Status After Cutt Off Time
+Verify Booking Status After Cut Off Time
     [Arguments]    ${booking_id}    ${status}
     ${actual_booking_id}=    Replace String    ${txt_booking_status}    {id}    ${booking_id}
     ${actual_booking_status}=    Replace String    ${actual_booking_id}    {status}    ${status}
     Wait Until Element Is Visible    ${actual_booking_status}
     Scroll Element Into View    ${actual_booking_status}
+
+Select Booking With Booking ID
+    [Arguments]    ${booking_id}
+    ${actual_booking_id}=    Replace String    ${txt_booking_id}    {value}    ${booking_id}
+    common.Click When Ready    ${actual_booking_id}

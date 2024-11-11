@@ -78,6 +78,7 @@ DC_Operation_s002
     
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add   
+    Sleep    2s
     # Defect043 
     # Expected    
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
@@ -186,14 +187,14 @@ DC_Operation_s002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Status After Cut Off Time
     b2c_home_page.Click Book Parcel Delivery    
     # Expected
-    b2c_booking_delivery_page.Verify Booking Status After Cutt Off Time    
+    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
     ...    ${booking_id}
     ...    ${Booking['text_parcel_status_call_car']}    #${Booking['text_waiting_confirm_parcel_pickup']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Booking Status After Cut Off Time
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
+    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Change Status
     ...    ${call_car_pick_up.status['arrange_car']}
     ...    ${tomorrow}
     ...    ${today}
@@ -311,7 +312,7 @@ DC_Operation_s002
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['confirm']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Pickup Schedule Change Status To Confirme
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Pickup Schedule Change Status To Confirm
 
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     Go To    ${B2C_UAT_URL}
@@ -319,15 +320,23 @@ DC_Operation_s002
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
-
-    b2c_home_page.Click Parcel Delivery Service Menu
-    b2c_home_page.Select Sub Menu Call Car Pick Up
-    # Sleep    4s
-    # Expected
-    # Inprogress
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Car Pickup Schedule Page Change Status To Confirme
+    Sleep    3s
+    # b2c_home_page.Click Parcel Delivery Service Menu
+    # b2c_home_page.Select Sub Menu Call Car Pick Up
+    # # Expected
+    # b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Change Status
+    # ...    ${call_car_pick_up.status['confirm']}
+    # ...    ${tomorrow}
+    # ...    ${today}
+    # ...    ${booking_id}
+    # ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
+    # ...    ${DC_Operation_S002['verify_pickup_time']}
+    # ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Schedule Change Status To Confirm
 
     Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
-    # b2c_home_page.Click Book Parcel Delivery
-    # # Expected
-    # # Inprogress
+    b2c_home_page.Click Book Parcel Delivery    
+    # Expected
+    # b2c_booking_delivery_page.Select Booking With Booking ID    ${booking_id}
+    Sleep    3s
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Booking And Parcel Status Change Status To Confirm

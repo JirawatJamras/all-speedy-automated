@@ -226,6 +226,7 @@ call_car_pick_up:
   status:
     parcel_in_progress: กำลังจัดพัสดุ
     arrange_car: กำลังจัดรถ
+    confirm: ยืนยัน
   car_round_name:
     special: รอบพิเศษ
     normal: รอบปกติ

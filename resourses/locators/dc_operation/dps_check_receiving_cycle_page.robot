@@ -27,6 +27,7 @@ ${dps_btn_search_parcel_pickup}    //div[@aria-hidden='false']//div[text()='{val
 ${dps_btn_close_parcel_pickup_details}    //button[@aria-label='Close']
 
 ${dps_update_date_parcel_pickup}    //input[@id='dateModifyWaiting']/../..
+${dps_update_date_all_parcel_pickup}    //input[@id='dateModify']/../..
 
 ${dps_cbo_vehicle_type}    //strong[text()='{value}']/../../..//div[@class='ant-select-selector']
 ${dps_cbo_warehouse_parcel_pickup}    //li[@role='menuitem']//span[text()='{value}']

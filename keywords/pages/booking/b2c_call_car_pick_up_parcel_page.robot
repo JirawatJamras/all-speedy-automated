@@ -82,7 +82,7 @@ Search Parcel Pickup By Date
         common.Click When Ready    ${button_search}
         common.Click When Ready    ${button_filter}
 
-Verify Parcel Pickup Status After Cut Off Time
+Verify Parcel Pickup Change Status
     [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}    ${round}    ${pickup_time}    ${parcel_num}
     ${button_confirm}=  Replace String   ${b2c_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
     ${actual_status}=  Replace String   ${b2c_txt_status_and_id_pickup_round}    {status}    ${status}

@@ -174,6 +174,13 @@ Verify Data Saved Success Popup
 Verify Pickup Schedule Change Status
     [Arguments]    ${company_name}    ${branch}    ${address}    ${sub_district}    ${district}    ${province}
     ...    ${postcode}    ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
+    ${button_filter}=    Replace String    ${dps_btn_filter_parcel_pickup_details}    {value}    ${dc_operation['button_filter']}
+    ${button_search}=    Replace String    ${dps_btn_search_parcel_pickup}    {value}    ${dc_operation['button_search']}
+    common.Click When Ready    ${button_filter}
+    common.Click When Ready    ${dps_update_date_all_parcel_pickup}
+    common.Click When Ready    ${dps_btn_today_parcel_pickup}
+    common.Click When Ready    ${button_search}
+    common.Click When Ready    ${button_filter}
     ${tomorrow}    dps_home_page.Set Tomorrow Date
     ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {branch}    ${branch}
@@ -190,8 +197,6 @@ Verify Pickup Schedule Change Status
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
-    Log To Console    ${row_receiving_cycle}
-    Log    ${row_receiving_cycle}
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${row_receiving_cycle}
