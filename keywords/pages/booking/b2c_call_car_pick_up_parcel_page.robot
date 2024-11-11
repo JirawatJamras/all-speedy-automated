@@ -17,8 +17,8 @@ Verify Popup Parcel Pickup Schedule
     ${txt_parcel_type}=  Replace String   ${b2c_txt_parcel_type_in_add_popup}   {value}   ${parcel_type}
     ${txt_parcel_pickup_date}=  Replace String    ${b2c_txt_parcel_pickup_date_in_add_popup}    {value}   ${parcel_pickup_date}
     ${txt_parcel_pickup_time}=  Replace String    ${b2c_txt_parcel_pickup_time_in_add_popup}    {value}   ${parcel_pickup_time}
-    ${btn_save}=  Replace String    ${btn_save_in_add_popup}    {value}   ${save_button}
-    ${btn_cancel}=  Replace String    ${btn_cancel_in_add_popup}    {value}   ${cancel_button}
+    ${btn_save}=  Replace String    ${b2c_btn_save_in_add_popup}    {value}   ${save_button}
+    ${btn_cancel}=  Replace String    ${b2c_btn_cancel_in_add_popup}    {value}   ${cancel_button}
 
     Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_car_round_name}    timeout=${DEFAULT_TIMEOUT}
@@ -47,8 +47,8 @@ Select Parcel Pickup Time
     common.Click When Ready    ${selected_parcel_pickup_time}
 
 Click Save Button
-    ${btn_save_in_add_popup}=  Replace String   ${btn_save_in_add_popup}   {value}   ${call_car_pick_up['button_save']}
-    common.Click When Ready    ${btn_save_in_add_popup}
+    ${b2c_btn_save_in_add_popup}=  Replace String   ${b2c_btn_save_in_add_popup}   {value}   ${call_car_pick_up['button_save']}
+    common.Click When Ready    ${b2c_btn_save_in_add_popup}
 
 Verify Parcel Pickup Status
     [Arguments]    ${status}    ${round}    ${tomorrow}    ${pickup_time}    ${today}
@@ -82,7 +82,7 @@ Search Parcel Pickup By Date
         common.Click When Ready    ${button_search}
         common.Click When Ready    ${button_filter}
 
-Verify Parcel Pickup Change Status
+Verify Parcel Pickup Status After Cut Off Time
     [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}    ${round}    ${pickup_time}    ${parcel_num}
     ${button_confirm}=  Replace String   ${b2c_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
     ${actual_status}=  Replace String   ${b2c_txt_status_and_id_pickup_round}    {status}    ${status}
@@ -131,13 +131,64 @@ Verify Parcel Pickup Change Status
     END
     Register Keyword To Run On Failure    Capture Page Screenshot
 
+Verify Parcel Pickup Schedule Change Status To Confirm
+    [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}    ${round}    ${pickup_time}    ${parcel_num}
+    ${button_confirm}=  Replace String   ${b2c_btn_confirm_close_popup}    {value}    ${call_car_pick_up['button_confirm']}
+    ${actual_status}=  Replace String   ${b2c_txt_status_and_id_pickup_round}    {status}    ${status}
+    ${actual_status_and_id}=  Replace String   ${actual_status}    {booking_id}    ${booking_id}
+
+    ${actual_status}=  Replace String   ${b2c_txt_parcel_pickup_round}    {status}    ${status}
+    ${label_pickup_round}=  Replace String   ${actual_status}    {round}    ${round} ${tomorrow} ${pickup_time}
+    ${label_pickup_date}=  Replace String   ${label_pickup_round}    {pickupdate}    ${call_car_pick_up['text_parcel_pickup_date']}
+    ${value_pickup_date}=  Replace String   ${label_pickup_date}    {value}    ${tomorrow}
+    ${label_cut_off}=  Replace String   ${b2c_txt_cutoff_pickup_round}    {cutoff}    ${call_car_pick_up['text_cut_off_time']}
+    ${value_cut_off}=  Replace String   ${label_cut_off}    {cutoff_value}    ${today}
+    ${label_parcel}=  Replace String   ${value_cut_off}    {parcel}    ${call_car_pick_up['text_parcel_number']}
+    ${value_parcel}=  Replace String   ${label_parcel}    {value}    ${parcel_num}
+    ${card}=    Set Variable    ${value_pickup_date}${value_parcel}
+
+    ${next_day}    Set Date Pattern    ${tomorrow}
+    ${day}    Set Date Pattern    ${today}
+    Register Keyword To Run On Failure    NOTHING
+    ${status}=    Set Variable    FAIL
+    ${status_2}=    Set Variable    False
+
+    Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    Search Parcel Pickup By Date    ${day}    ${next_day}
+
+    WHILE    '${status_2}' == 'False'
+        Scroll Window To Vertical    0
+        Run Keyword And Ignore Error    Wait Until Element Is Visible    ${card}
+        ${number}=    Get Element Count    ${card}
+        FOR    ${index}    IN RANGE    1    ${number}+1
+            Scroll Element Into View    (${card})[${index}]
+            common.Click When Ready    (${card})[${index}]
+            ${status}    ${element}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${actual_status_and_id}
+            ${status_2}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_status_and_id}
+            Exit For Loop If    '${status}' == 'PASS'    
+            common.Click When Ready    ${b2c_btn_x_in_add_popup}
+            common.Click When Ready    ${button_confirm}
+        END
+        Exit For Loop If    '${status_2}' == 'True'
+        Scroll Window To Vertical    1000
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'False'    Run Keywords    
+        ...    Reload Page
+        ...    AND    Search Parcel Pickup By Date    ${day}    ${next_day}
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+    END
+    Register Keyword To Run On Failure    Capture Page Screenshot
+    common.Click When Ready    ${b2c_btn_x_in_add_popup}
+    common.Click When Ready    ${button_confirm}
+
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled
     Element Should Be Disabled    ${b2c_cbo_car_round_name_call_car_pickup_page}
 
 Click Parcel Type Dropdown
-    ${btn_basic_parcel_type_car_pickup_page}=    Replace String    ${btn_basic_parcel_type_car_pickup_page}    {value}    ${call_car_pick_up['text_parcel_type']}
-    common.Click When Ready      ${btn_basic_parcel_type_car_pickup_page}
+    ${b2c_btn_basic_parcel_type}=    Replace String    ${b2c_btn_basic_parcel_type_car_pickup_page}    {value}    ${call_car_pick_up['text_parcel_type']}
+    common.Click When Ready      ${b2c_btn_basic_parcel_type}
 
 Select Parcel Type Dropdown
     [Arguments]    ${parcel_type}
@@ -161,18 +212,17 @@ Verify Unselected Date Pickup Parcel
     Should Be Equal    ${placeholder}    ${value}
 
 Click Pickup Parcel Date Button
-    ${cbo_pickup_parcel_date_in_add_popup}=    Replace String    ${cbo_pickup_parcel_date_in_add_popup}    {value}    ${call_car_pick_up['text_parcel_pickup_date']}
-    common.Click When Ready    ${cbo_pickup_parcel_date_in_add_popup}
+    ${b2c_cbo_pickup_parcel_date_in_add_popup}=    Replace String    ${b2c_cbo_pickup_parcel_date_in_add_popup}    {value}    ${call_car_pick_up['text_parcel_pickup_date']}
+    common.Click When Ready    ${b2c_cbo_pickup_parcel_date_in_add_popup}
 
 Select Date Pickup Parcel Future Date
-    ${tbl_pickup_parcel_calendar}=    Replace String    ${tbl_pickup_parcel_calendar}    {value}    ${newDate}
+    ${b2c_tbl_pickup_parcel_calendar}=    Replace String    ${b2c_tbl_pickup_parcel_calendar}    {value}    ${newDate}
     FOR    ${i}    IN RANGE    0    5
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${tbl_pickup_parcel_calendar}    timeout=2s
-        Log    ${tbl_pickup_parcel_calendar}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_tbl_pickup_parcel_calendar}    timeout=2s
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         common.Click When Ready    ${btn_next_months_calendar_in_add_popup}
     END
-    common.Click When Ready    ${tbl_pickup_parcel_calendar}
+    common.Click When Ready    ${b2c_tbl_pickup_parcel_calendar}
 
 Verify Selected Date Pickup Parcel Future Date
     Wait Until Element Is Visible    ${cbo_pickup_parcel_date_in_add_popup}    timeout=${DEFAULT_TIMEOUT}
@@ -197,13 +247,13 @@ Verify Date Pickup Parcel Can Not Be Select Previouse Date
     Verify Unselected Date Pickup Parcel    ${value}
  
 Click Pickup Parcel Time Button
-    ${cbo_pickup_parcel_time_in_add_popup}=    Replace String    ${cbo_pickup_parcel_time_in_add_popup}    {value}    ${call_car_pick_up['text_parcel_pickup_time']}
-    common.Click When Ready    ${cbo_pickup_parcel_time_in_add_popup}
+    ${b2c_cbo_pickup_parcel_time_in_add_popup}=    Replace String    ${b2c_cbo_pickup_parcel_time_in_add_popup}    {value}    ${call_car_pick_up['text_parcel_pickup_time']}
+    common.Click When Ready    ${b2c_cbo_pickup_parcel_time_in_add_popup}
 
 Select Pickup Parcel Time
     [Arguments]    ${time}
-    ${cbo_time_pickup}=    Replace String    ${cbo_time_pickup}    {value}    ${time}
-    common.Click When Ready    ${cbo_time_pickup}
+    ${b2c_cbo_time_pickup}=    Replace String    ${b2c_cbo_time_pickup}    {value}    ${time}
+    common.Click When Ready    ${b2c_cbo_time_pickup}
 
 Verify Selected Pickup Parcel Time
     [Arguments]    ${value}
@@ -289,7 +339,7 @@ Get The Highest Displayed Date And Set New Highest Date 2
 
 Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
-    ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
+    ${btn_delete_car_round}=    Replace String    ${b2c_btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
     ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round}    {time}    ${current_time}
     ${b2c_btn_confirm_in_asking_to_close_popup}=    Replace String    ${b2c_btn_confirm_in_asking_to_close_popup}    {value}    ${Booking['text_confirm_popup']}
     Wait Until Element Is Visible    ${btn_delete_car_round}    timeout=10s
@@ -341,9 +391,9 @@ Verify Close Filter Section
 Verify Added New Car Pickup Schedule
     [Arguments]    ${parcel_type}    ${special_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
     ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
-    Wait Until Element Is Visible    ${card_frist_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_card_frist_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     common.Scroll Window To Vertical    0
-    ${actual_info_new_pickup_card}=    Get Text    ${card_frist_parcel_pickup_list}
+    ${actual_info_new_pickup_card}=    Get Text    ${b2c_card_frist_parcel_pickup_list}
     ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
     Run Keyword If    '${parcel_type}' == 'พัสดุทั่วไป (Dry)'    Element Should Be Visible   ${img_dry_parcel}
     Run Keyword If    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'    Element Should Be Visible   ${img_dry_parcel}
@@ -369,39 +419,33 @@ Get Normal Parcel Pickup Date
     Wait Until Element Is Visible    ${img_parcel_in_card}    timeout=${DEFAULT_TIMEOUT}
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel_pickup_list}    {title}    ${call_car_pick_up.car_round_name['normal']}
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {number_of_parcel}    ${Booking_S048['parcel_number']}
-    WHILE    True
-        ${elementVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${card_first_normal_parcel}    timeout=${DEFAULT_TIMEOUT}
-        IF    '${elementVisible}' == 'True'
-            Scroll Element Into View    ${card_first_normal_parcel}
-            ${txt_normal_parcel_pickup_schedule}=    Replace String    ${txt_normal_parcel_pickup_schedule}    {value}    ${call_car_pick_up.car_round_name['normal']}
-            ${titleName}=    Get Text    ${txt_normal_parcel_pickup_schedule} 
-            ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
-            ${parts}=    Split String    ${highestDisplayedDate}    -
-            ${day}=    Set Variable    ${parts}[0]
-            ${month}=    Set Variable    ${parts}[1]
-            ${year}=    Set Variable    ${parts}[2]
-            ${day}=    Convert To Integer    ${day}
-            ${day_str}=    Convert To String    ${day}
-            ${digit}=    Get Length    ${day_str}
-            IF    '${digit}' == '1'
-                ${day_str}=    Set Variable    0${day_str}
-            END
-            ${newDate}=    Set Variable    ${day_str}-${month}-${year}
-            RETURN    ${newDate}
-        ELSE
-            Scroll Element Into View    ${btn_next_page_car_pickup_page}
-            common.Click When Ready    ${btn_next_page_car_pickup_page}
-        END
+    Scroll Element Into View    ${b2c_btn_last_page_car_pickup_page}
+    common.Click When Ready    ${b2c_btn_last_page_car_pickup_page}
+    Wait Until Element Is Visible    ${img_parcel_in_card}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${card_first_normal_parcel}
+    ${txt_normal_parcel_pickup_schedule}=    Replace String    ${txt_normal_parcel_pickup_schedule}    {value}    ${call_car_pick_up.car_round_name['normal']}
+    ${titleName}=    Get Text    ${txt_normal_parcel_pickup_schedule} 
+    ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
+    ${parts}=    Split String    ${highestDisplayedDate}    -
+    ${day}=    Set Variable    ${parts}[0]
+    ${month}=    Set Variable    ${parts}[1]
+    ${year}=    Set Variable    ${parts}[2]
+    ${day}=    Convert To Integer    ${day}
+    ${day_str}=    Convert To String    ${day}
+    ${digit}=    Get Length    ${day_str}
+    IF    '${digit}' == '1'
+        ${day_str}=    Set Variable    0${day_str}
     END
+    ${newDate}=    Set Variable    ${day_str}-${month}-${year}
+    RETURN    ${newDate}
 
 Verify Car Pickup Schedule Card
-    [Arguments]    ${car_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
+    [Arguments]    ${booking_stauts}    ${car_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
     ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
-    Log   ${car_round}
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel_pickup_list}    {title}    ${car_round}
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {number_of_parcel}    ${Booking_S048['parcel_number']}
     Scroll Element Into View    ${card_first_normal_parcel}
     Wait Until Element Is Visible    ${card_first_normal_parcel}    timeout=${DEFAULT_TIMEOUT}
     ${actual_info_new_pickup_card}=    Get Text    ${card_first_normal_parcel}
     ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
-    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${car_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} ${call_car_pick_up['cut_off_time']} จำนวนพัสดุ: ${Booking_S048['parcel_number']} ราคา: 0 บาท จุดรับพัสดุ: ${pickup_point}
+    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${car_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} ${Booking.pickup_schedule.default['cut_off_time']} จำนวนพัสดุ: ${Booking_S048['parcel_number']} ราคา: 0 บาท จุดรับพัสดุ: ${pickup_point} ${booking_stauts}

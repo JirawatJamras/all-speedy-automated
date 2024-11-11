@@ -24,12 +24,14 @@ Booking_S048
     # Defect086    Defect107
     # Expected
     # b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
+    # ...    ${Booking_S048['booking_status']}
     # ...    ${call_car_pick_up.car_round_name['normal']}
     # ...    ${date}
     # ...    ${Booking_S048.pickup_time['expected']}
     # ...    ${Booking_S048.pickup_time['expected']}
     # ...    ${Booking_S048['pickup_point']}
-    # common.Verify Capture Screenshot    booking    Booking_S048    Verify Car Pickup Schedule Card
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    booking    Booking_S048    Verify Car Pickup Schedule Card
 
     Log    Step No.2 กดปุ่ม "เพิ่ม"
     b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
@@ -66,4 +68,4 @@ Booking_S048
     # ...    ${Booking_S048.add_new_pickup['expected']}
     # ...    ${Booking_S048.add_new_pickup['expected']}
     # ...    ${Booking_S048.add_new_pickup['pickup_point']}
-    # common.Verify Capture Screenshot    booking    Booking_S048    Verify Added New Car Pickup Schedule
+    common.Verify Capture Screenshot    booking    Booking_S048    Verify Added New Car Pickup Schedule

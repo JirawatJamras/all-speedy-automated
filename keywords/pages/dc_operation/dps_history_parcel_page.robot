@@ -55,7 +55,28 @@ Verify Title Parcel Details In Warehouse Details
     ${dps_txt_title_crossdock_warehouse}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${crossdock_warehouse}
     ${dps_txt_title_shipping_by}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${shipping_by}
     ${dps_txt_title_destination_warehouse}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${destination_warehouse}
-    Element Should Be Visible    ${dps_txt_header_parcel_detail}
+    
+    ${actual_txt_header_parcel_detail}=    Get Text    ${dps_txt_header_parcel_detail}
+    ${actual_txt_title_tracking_number}=    Get Text    ${dps_txt_title_tracking_number}
+    ${actual_txt_title_parcel_status}=    Get Text    ${dps_txt_title_parcel_status}
+    ${actual_txt_title_customer_type}=    Get Text    ${dps_txt_title_customer_type}
+    ${actual_txt_title_pouch_number}=    Get Text    ${dps_txt_title_pouch_number}
+    ${actual_txt_title_parcel_size}=    Get Text    ${dps_txt_title_parcel_size}
+    ${actual_txt_title_route}=    Get Text    ${dps_txt_title_route}
+    ${actual_txt_title_check_in_date}=    Get Text    ${dps_txt_title_check_in_date}
+    ${dps_txt_title_date_in_system}=    Get Text    ${dps_txt_title_date_in_system}
+    
+    Should Be Equal    ${actual_txt_header_parcel_detail}    ${title_parcel_detail}
+    Should Be Equal    ${actual_txt_title_tracking_number}    ${tracking_number}
+    Should Be Equal    ${actual_txt_title_parcel_status}    ${parcel_status}
+    Should Be Equal    ${actual_txt_title_customer_type}    ${customer_type}
+    Should Be Equal    ${actual_txt_title_pouch_number}    ${pouch_number}
+    Should Be Equal    ${actual_txt_title_parcel_size}    ${parcel_size}
+    Should Be Equal    ${actual_txt_title_route}    ${route}
+    Should Be Equal    ${actual_txt_title_check_in_date}    ${check_in_date}
+    Should Be Equal    ${dps_txt_title_date_in_system}    ${date_in_system}
+
+
     Element Should Be Visible    ${dps_txt_title_tracking_number}
     Element Should Be Visible    ${dps_txt_title_parcel_status}
     Element Should Be Visible    ${dps_txt_title_customer_type}

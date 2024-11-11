@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Run Keywords    Reset Cut Off Time
                   ...    AND    Close Browser
@@ -194,7 +194,7 @@ DC_Operation_s002
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Change Status
+    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
     ...    ${call_car_pick_up.status['arrange_car']}
     ...    ${tomorrow}
     ...    ${today}
@@ -321,22 +321,28 @@ DC_Operation_s002
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     Sleep    3s
-    # b2c_home_page.Click Parcel Delivery Service Menu
-    # b2c_home_page.Select Sub Menu Call Car Pick Up
-    # # Expected
-    # b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Change Status
-    # ...    ${call_car_pick_up.status['confirm']}
-    # ...    ${tomorrow}
-    # ...    ${today}
-    # ...    ${booking_id}
-    # ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
-    # ...    ${DC_Operation_S002['verify_pickup_time']}
-    # ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    # Expected
+    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Schedule Change Status To Confirm
+    ...    ${call_car_pick_up.status['confirm']}
+    ...    ${tomorrow}
+    ...    ${today}
+    ...    ${booking_id}
+    ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
+    ...    ${DC_Operation_S002['verify_pickup_time']}
+    ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Schedule Change Status To Confirm
 
     Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery    
+    # Defect199
     # Expected
+    # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
+    # ...    ${booking_id}
+    # ...    ${Booking['text_parcel_status_call_car']}    #${Booking['text_waiting_confirm_parcel_pickup']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Booking Change Status To Confirm
     # b2c_booking_delivery_page.Select Booking With Booking ID    ${booking_id}
-    Sleep    3s
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Booking And Parcel Status Change Status To Confirm
+    # b2c_booking_detail_page.Verify Parcel Status Change To Confirm
+
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Change Status To Confirm
