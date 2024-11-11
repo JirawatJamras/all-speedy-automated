@@ -60,4 +60,4 @@ Booking_S018
     # ...    ${Booking_S018.pickup_time['expected']}
     # ...    ${Booking_S018.pickup_time['expected']}
     # ...    ${Booking_S018['pickup_point']}
-    # common.Verify Capture Screenshot    booking    Booking_S018    Verify Added New Car Pickup Schedule
+    common.Verify Capture Screenshot    booking    Booking_S018    Verify Added New Car Pickup Schedule
