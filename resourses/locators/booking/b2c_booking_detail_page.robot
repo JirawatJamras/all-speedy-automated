@@ -46,6 +46,7 @@ ${b2c_txt_pickup_schedule}    //div[text()='{round}']/..//p[contains(normalize-s
 ${b2c_txt_parcel_list}    //div[@class='hidden sm:inline']//span[text()='{status}']/../..//strong[contains(text(),'{value}')]/../../../../../../../..
 ${b2c_txt_parcel_id}    //div[@class='hidden sm:inline']//strong[contains(text(),'{id}')]
 ${b2c_txt_get_sender_name}    //div[@class='hidden sm:inline']//strong[contains(text(),'{value}')]/../../..//span[text()]
+${b2c_txt_selected_pickup_type}    //div[text()='{value}']/../../..//span[contains(@class,'ant-radio-checked')]
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 
@@ -88,6 +89,7 @@ ${b2c_btn_increase_cod_value}    //input[@id='create_parcel_form_codValue']/../.
 ${b2c_btn_increase_insure_value}    //input[@id='create_parcel_form_insureAmount']/../..//span[@role='button' and @aria-label='Increase Value']
 ${b2c_btn_confirm_phone_number}    //span[@aria-label='check']/../../..
 ${b2c_btn_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']//button
+${b2c_btn_next_page_pickup_schedule}    //div[@aria-hidden='false']//span[@class='anticon anticon-right']/..
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
@@ -102,3 +104,5 @@ ${b2c_tab_pickup_Schedule}    //div[@role='tab']//div[text()='{value}']
 ${b2c_dialog_create_parcel}    //*[@role='dialog']
 
 ${b2c_img_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']
+
+${b2c_btn_status_next_page_pickup_schedule}    //div[@aria-hidden='false']//span[@class='anticon anticon-right']/../..

@@ -170,9 +170,9 @@ DC_Operation_s002
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Import File Success
-    b2c_booking_detail_page.Get Parcels Id And Senders Name
-    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    ...    ${DC_Operation_S001['parcel_number']}
+
+    Log    เก็บ parcel id และ ชื่อผู้ส่ง
+    ${ParcelsData}    Get Parcels And Sender Names    ${booking_id}
 
     Log    Step No.17 cut off time
     dps_home_page.Set Cut Off Time

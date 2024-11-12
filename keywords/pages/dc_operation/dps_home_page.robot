@@ -40,14 +40,6 @@ Set Today
     ${Today}    Set Variable    ${d}-${m}-${year}
     RETURN    ${Today}
 
-Set Date Pattern
-    [Arguments]    ${day}
-    ${d}    Split String And Select    ${day}    -    0
-    ${m}    Split String And Select    ${day}    -    1
-    ${y}    Split String And Select    ${day}    -    2
-    ${date}    Set Variable    ${d}/${m}/${y}
-    RETURN    ${date}
-
 Select Check Receiving Cycle Menu
     ${tab_check_receiving_cycle}=  Replace String   ${dps_tab_dps_menu}   {value}   ${dc_operation.dps_menu['Check_Receiving_Cycle']}
     Wait Until Element Is Visible    ${tab_check_receiving_cycle}    timeout=30s

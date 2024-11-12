@@ -74,6 +74,14 @@ Convert Month To Thai
     ...    ELSE IF    '${english_month}' == 'December'    Set Variable    ธันวาคม
     RETURN    ${thai_month}
 
+Set Date Pattern
+    [Arguments]    ${day}
+    ${d}    Split String And Select    ${day}    -    0
+    ${m}    Split String And Select    ${day}    -    1
+    ${y}    Split String And Select    ${day}    -    2
+    ${date}    Set Variable    ${d}/${m}/${y}
+    RETURN    ${date}
+
 Verify Capture Screenshot
     [Arguments]    ${feature}    ${folder}    ${img_name}
     ${date_YYYY_MM_DD}   Get Current Date

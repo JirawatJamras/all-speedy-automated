@@ -170,9 +170,6 @@ DC_Operation_S001
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Import File Success
-    b2c_booking_detail_page.Get Parcels Id And Senders Name
-    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    ...    ${DC_Operation_S001['parcel_number']}
 
     Log    Step No.17 cut off time
     dps_home_page.Set Cut Off Time
@@ -376,14 +373,11 @@ DC_Operation_S001
     ...    ${Booking['text_parcel_type_label']}
     ...    ${Booking['text_booking_name_label']}
     ...    ${Booking['text_shipping_origin_aria']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Popup To Edit Booking List After Canceled
 
     Log    Step No.31 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
     b2c_booking_detail_page.Select Pickup Schedule Tab
+    # Defect207
     # Expected
-    b2c_booking_detail_page.Verify Display Pickup Schedule Data
-    ...    ${DC_Operation_S001.call_car_pick_up['car_type']}
-    ...    ${tomorrow}
-    ...    ${call_car_pick_up.default['parcel_number']}
-    ...    ${today}
-    ...    ${call_car_pick_up.default['price']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Display Pickup Schedule Data
+    # b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Display Pickup Schedule Data After Canceled

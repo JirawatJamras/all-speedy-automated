@@ -129,6 +129,20 @@ Verify Display Pickup Schedule Data
     Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    timeout=${DEFAULT_TIMEOUT}
     Set Suite Variable    ${actual_pickup_schedule_checkbox}
 
+Verify Display Pickup Schedule Data After Canceled
+    ${status}=    Set Variable    False
+    ${actual_pickup_parcel} =  Replace String    ${b2c_txt_selected_pickup_type}    {value}    ${Booking.pickup_schedule['general_car_pickup']}
+    Register Keyword To Run On Failure    NOTHING
+    WHILE    '${status}' == 'False'
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_parcel}    timeout=5s
+        Log To Console    ${status}
+        Exit For Loop If    '${status}' == 'True'
+        ${nextpage}=    Get Element Attribute    ${b2c_btn_status_next_page_pickup_schedule}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'True'    common.Click When Ready    ${b2c_btn_next_page_pickup_schedule}
+        ...    ELSE    Fail    There is no selected pickup schedule
+    END
+
 Select Parcel Pickup Schedule 
     common.Click When Ready    ${actual_pickup_schedule_checkbox}
 
