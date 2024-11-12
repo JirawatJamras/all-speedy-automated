@@ -45,6 +45,7 @@ ${b2c_txt_label_in_edit_popup_booking_list}    //form[@id='detail_form']//strong
 ${b2c_txt_pickup_schedule}    //div[text()='{round}']/..//p[contains(normalize-space(.), '{pickup_date}')]/..//p[contains(normalize-space(.), '{parcel_num}')]/../..//p[contains(normalize-space(.), '{cut_off_time}')]/..//p[contains(normalize-space(.), 'ราคา : 0 บาท')]/../../../../..//input/..
 ${b2c_txt_parcel_list}    //div[@class='hidden sm:inline']//span[text()='{status}']/../..//strong[contains(text(),'{value}')]/../../../../../../../..
 ${b2c_txt_parcel_id}    //div[@class='hidden sm:inline']//strong[contains(text(),'{id}')]
+${b2c_txt_get_sender_name}    //div[@class='hidden sm:inline']//strong[contains(text(),'{value}')]/../../..//span[text()]
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 

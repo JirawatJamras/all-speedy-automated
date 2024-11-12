@@ -147,6 +147,11 @@ Get Parcel Codes By Sender Name
         Run Keyword If    '${current_sender}' == '${sender_name}'    Set Suite Variable    ${filtered_parcels_matched_with_sender_name}    ${current_parcel_code}
     END
     RETURN    ${filtered_parcels_matched_with_sender_name}
+
+Get Parcel ID By Sender Name
+    [Arguments]    ${list_data}    ${sender_name}
+    ${parcel_id}    Get From Dictionary    ${list_data}    ${sender_name}
+    RETURN    ${parcel_id}
   
 ################### Mobile - Android ###################
 Application Teardown

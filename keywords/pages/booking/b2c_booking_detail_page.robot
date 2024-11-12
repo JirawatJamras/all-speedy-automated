@@ -741,3 +741,50 @@ Verify Parcel Status Change To Confirm
     END
     Should Be Equal As Strings    ${count_card}    ${parcel_num}
         
+Verify Booking Detail Page After Canceled
+    [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
+    ${actual_parcel_list_status}=    Replace String    ${b2c_txt_parcel_list}    {status}    ${status}
+    ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
+    ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
+    ${count_card}=    Set Variable    0
+    ## Verify number of parcels
+    FOR    ${index}    IN RANGE    ${parcel_num}
+        Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
+        ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
+        ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
+        ${count_new_card}=    Get Element Count    ${actual_parcel_list}
+        ${count_card}=    Evaluate    ${count_card} + ${count_new_card}
+        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
+            Verify Parcel ID Format And Value    (${actual_parcel_id})[${i}]    ${parcel_id}
+        END
+        Exit For Loop If    ${boolean} == False
+        common.Click When Ready    ${b2c_btn_next_page_parcel_list}
+    END
+    Should Be Equal As Strings    ${count_card}    ${parcel_num}
+
+Get Parcels ID And Sender Name
+    [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
+    ${actual_parcel_list_status}=    Replace String    ${b2c_txt_parcel_list}    {status}    ${status}
+    ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
+    ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
+    ${actual_parcel_sender}=    Replace String    ${b2c_txt_get_sender_name}    {value}    ${Booking['text_sender']}
+    ${count_card}=    Set Variable    0
+    ${list_parcel_and_sender}=    Create Dictionary
+    ## Verify number of parcels
+    FOR    ${index}    IN RANGE    ${parcel_num}
+        Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
+        ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
+        ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
+        ${count_new_card}=    Get Element Count    ${actual_parcel_list}
+        ${count_card}=    Evaluate    ${count_card} + ${count_new_card}
+        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
+            Verify Parcel ID Format And Value    (${actual_parcel_id})[${i}]    ${parcel_id}
+            ${sender}=    Get Text    (${actual_parcel_sender})[${i}]
+            ${parcel}=    Get Text    (${actual_parcel_id})[${i}]
+            Set To Dictionary    ${list_parcel_and_sender}    ${sender}=${parcel}
+        END
+        Exit For Loop If    ${boolean} == False
+        common.Click When Ready    ${b2c_btn_next_page_parcel_list}
+    END
+    Set Suite Variable    ${list_parcel_and_sender}
+    Should Be Equal As Strings    ${count_card}    ${parcel_num}
