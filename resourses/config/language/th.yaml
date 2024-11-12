@@ -411,7 +411,7 @@ dc_operation:
     courier: COURIER
     zipcode: ZIPCODE
     province: PROVINCE
-    size: SIZE
+    size_home: กล่อง
   scan_in_title_sender_detail:
     title: ผู้ส่ง
     name: ชื่อผู้ส่ง

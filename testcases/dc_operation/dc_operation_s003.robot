@@ -113,6 +113,10 @@ DC_Operation_S003
     Log    Step เลือกไฟล์ "Booking Dry Template Test DC"
     b2c_booking_detail_page.Import Excel File Of Dry Parcel Template    ${path_excel_booking_dry_template}
 
+    Log    เก็บค่า Parcel ID
+    b2c_booking_detail_page.Get Parcels Id And Senders Name
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    ...    ${DC_Operation_S001['parcel_number']}
 
     Log    Step cut off time
     dps_home_page.Set Cut Off Time
@@ -235,9 +239,9 @@ DC_Operation_S003
     ...    ${today}
     ...    ${DC_Operation.status['confirm']}
     
-    Log    จัดเก็บค่า parcel id
-    ${ParcelsData}=    common.Get Parcels And Sender Names    ${booking_id}
-    Log    ${ParcelsData}
+    # Log    จัดเก็บค่า parcel id
+    # ${ParcelsData}=    common.Get Parcels And Sender Names    ${booking_id}
+    # Log    ${ParcelsData}
     
     # Log    Step เข้า Url : https://dps-uat.allspeedy.co.th
     # common.Open URL    ${DPS_UAT_URL}
@@ -256,6 +260,7 @@ DC_Operation_S003
     # ...    ${dc_operation.breadcrumb['homepage']}
     # ...    ${dc_operation.title['homepage']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Homepage Title
+    
 
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
@@ -293,7 +298,20 @@ DC_Operation_S003
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data In All Task Tab
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
-
+    dps_home_page.Select Tab Import Task
+    # Defect139
+    # Expected
+    dps_home_page.Verify Label In Import Task Tab
+    ...    ${dc_operation.label_import_task_tab['import_from']}
+    ...    ${dc_operation.label_import_task_tab['transport']}
+    ...    ${dc_operation.label_import_task_tab['parcel_owner']}
+    ...    ${dc_operation.label_import_task_tab['number_of_pouch']}
+    ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
+    ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
+    # dps_home_page.Verify Data In Import Task Tab
+    # ...    home  # ${DC_Operation_S013.data_in_import_task_tab['import_from']}
+    # ...    CPALL  # ${DC_Operation_S013.data_in_import_task_tab['transport']}
+    # ...    speedy  # ${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
 
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
 

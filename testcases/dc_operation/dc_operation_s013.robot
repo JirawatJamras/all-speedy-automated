@@ -89,7 +89,7 @@ DC_Operation_S013
     dps_scan_page.Input Tracking Number [Scan In Page]    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
     dps_scan_page.Click Search Button[Scan In Page]
     dps_home_page.Wait Until Page Loaded
-    # Defect158    Defect159    Defect160
+    # Defect158
     # Expected    
     # Inprogress
    dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
