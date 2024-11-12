@@ -170,6 +170,9 @@ DC_Operation_s002
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Import File Success
+    b2c_booking_detail_page.Get Parcels Id And Senders Name
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    ...    ${DC_Operation_S001['parcel_number']}
 
     Log    Step No.17 cut off time
     dps_home_page.Set Cut Off Time
@@ -180,7 +183,7 @@ DC_Operation_s002
     # Defect150
     # Expected
     Reload Page
-    b2c_booking_detail_page.Verify Booking Detail Page After Cut Off
+    b2c_booking_detail_page.Verify Booking Detail Page After Import File
     ...    ${Booking['text_parcel_status_waiting_entering']}    #${Booking['text_waiting_confirm_parcel_pickup']}
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
