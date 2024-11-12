@@ -20,7 +20,7 @@ DC_Operation_S007
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
-    Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Step Test:    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Defect138    Defect141
     # Expected
@@ -42,7 +42,7 @@ DC_Operation_S007
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Data In All Task Tab
 
-    Log    Step No.2 เลือกแท็บงานรับเข้า
+    Step Test:    Step No.2 เลือกแท็บงานรับเข้า
     # dps_home_page.Select Tab Import Task
     # Expected
     # dps_home_page.Verify Data In Import Task Tab
@@ -53,7 +53,7 @@ DC_Operation_S007
     # ...    CPALL  # ${DC_Operation_S007.data_in_import_task_tab['transport']}
     # ...    home  # ${DC_Operation_S007.data_in_import_task_tab['import_from']}
 
-    Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" และ กดค้นหา หรือกด Enter
+    Step Test:    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" และ กดค้นหา หรือกด Enter
     # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     # dps_scan_page.Select Scan In Tab
     # dps_scan_page.Input Tracking Number [Scan In Page]    SPCD241000006739
@@ -125,11 +125,11 @@ DC_Operation_S007
     # ...    ร้าน    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['shipping_destination']}
     # ...    15888 CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['address']}
 
-    Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
+    Step Test:    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
     ## dps_parcel_detail_page.Click Print Label
     ## Sleep    10s
 
-    Log    Step No.5 คลิกปุ่มพิมพ์
+    Step Test:    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     ## dps_parcel_detail_page.Click ESC On Keyboard
     # Defect142
@@ -138,14 +138,14 @@ DC_Operation_S007
     ##...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
     ##common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Print Label Success Popup
 
-    Log    Step No.6 คลิกที่ Pop up
+    Step Test:    Step No.6 คลิกที่ Pop up
     # Defect145    Unable to click on popup, but anable to click on close button (X) to close popup.
     ##dps_parcel_detail_page.Click Close Print Label Success Popup
     # Expected
     ##dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     ##common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Navigate To Scan Page And Stay At Scan In Tab
 
-    Log    Step No.7 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Step Test:    Step No.7 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Defect141
@@ -170,7 +170,7 @@ DC_Operation_S007
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Data In All Task Tab After Scan-in
 
 
-    Log    Step No.8 เลือกแท็บงานส่งออก
+    Step Test:    Step No.8 เลือกแท็บงานส่งออก
     # dps_home_page.Select Tab Export Task
     # Expected
     # dps_home_page.Verify Label In Export Task Tab
@@ -188,7 +188,7 @@ DC_Operation_S007
     # ...    7  # ${DC_Operation_S007.data_in_export_task_tab['number_of_pieces']}
     # ...    7  # ${DC_Operation_S007.data_in_export_task_tab['number_of_scanned_items']}
 
-    Log    Step No.9 เข้าเมนู Scan และ เลือกแท็บ Scan out
+    Step Test:    Step No.9 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
@@ -209,7 +209,7 @@ DC_Operation_S007
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Section Waiting List To Scan Out [Scan Out Page] 2
     # Bix เขียน Verify
 
-    Log    Step No.10 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" ในช่องค้นหา และ กดค้นหา หรือกด Enter
+    Step Test:    Step No.10 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" ในช่องค้นหา และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    SPBD241100000487
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
@@ -232,20 +232,20 @@ DC_Operation_S007
     ...    2024-11-07     # 2024-11-07 09:40:51
     ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
 
-    Log    Step No.11 กดปุ่ม ยืนยัน Scan Out
+    Step Test:    Step No.11 กดปุ่ม ยืนยัน Scan Out
     # dps_scan_page.Click Confirm Scan Out Button
     # Expected
 
 
-    Log    Step No.12 กดปุ่ม ยืนยัน
+    Step Test:    Step No.12 กดปุ่ม ยืนยัน
     # dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
 
-    Log    Step No.13 คลิกที่ Pop up
+    Step Test:    Step No.13 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success
     # Expected
 
-    Log    Step No.14 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
+    Step Test:    Step No.14 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
     dps_scan_page.Verify Label Delivery List
@@ -267,7 +267,7 @@ DC_Operation_S007
     ...    2024-11-07     # 09:40:51
     ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
 
-    Log    Step No.15 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Step Test:    Step No.15 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_scan_page.Click Print Button By Data
     ...    คลัง DC SB
     ...    CP ALL
@@ -276,28 +276,28 @@ DC_Operation_S007
     ...    1
     # Expected
 
-    Log    Step No.16 กดปุ่ม พิมพ์
+    Step Test:    Step No.16 กดปุ่ม พิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     dps_parcel_detail_page.Click ESC On Keyboard
     # Defect142
     # Expected
 
-    Log    Step No.17 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC SB
+    Step Test:    Step No.17 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC SB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']} 
     # Expected
 
-    Log    Step No.18 เลือกแท็บงานรับเข้า
+    Step Test:    Step No.18 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
 
-    Log    Step No.19 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" ในช่องค้นหา และ กดค้นหา หรือกด Enter
+    Step Test:    Step No.19 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" ในช่องค้นหา และ กดค้นหา หรือกด Enter
 
-    Log    Step No.20 คลิกปุ่ม ยืนยัน Scan in
+    Step Test:    Step No.20 คลิกปุ่ม ยืนยัน Scan in
 
-    Log    Step No.21 คลิกที่ี่ Pop up
+    Step Test:    Step No.21 คลิกที่ี่ Pop up
 
-    Log    Step No.22 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DCSB
+    Step Test:    Step No.22 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DCSB
 
-    Log    Step No.23 เลือกแท็บงานนำจ่าย
+    Step Test:    Step No.23 เลือกแท็บงานนำจ่าย
 

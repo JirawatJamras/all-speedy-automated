@@ -10,16 +10,16 @@ DC_Operation_S014
     [Documentation]    ลูกค้า C (ส่งพัสดุที่ร้าน 7-11) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
     [Tags]    DC_Operation    UAT
 
-    Log    Step No.1-15 Skip By Use Tracking Mannual
+    Step Test:    Step No.1-15 Skip By Use Tracking Mannual
 
-    Log    Step No.16 เข้า Url : https://dps-uat.allspeedy.co.th
+    Step Test:    Step No.16 เข้า Url : https://dps-uat.allspeedy.co.th
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     # Expected 
     dps_login_page.Verify Login Page
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    Verify Login Page
 
-    Log    Step No.17 กรอกข้อมูล Login
+    Step Test:    Step No.17 กรอกข้อมูล Login
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
@@ -30,7 +30,7 @@ DC_Operation_S014
     ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    Verify Homepage Title
 
-    Log    Step No.18 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Step Test:    Step No.18 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -66,7 +66,7 @@ DC_Operation_S014
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    Verify Data In All Task Tab
 
 
-    Log    Step No.19 เลือกแท็บงานรับเข้า
+    Step Test:    Step No.19 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Defect139
     # Expected
@@ -84,45 +84,45 @@ DC_Operation_S014
 
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    Verify Data In Import Task Tab
 
-    Log    Step No.20 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
+    Step Test:    Step No.20 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
 
 
-    Log    Step No.21 คลิกปุ่ม ยืนยัน/Print Label
+    Step Test:    Step No.21 คลิกปุ่ม ยืนยัน/Print Label
 
 
-    Log    Step No.22 คลิกปุ่มพิมพ์
+    Step Test:    Step No.22 คลิกปุ่มพิมพ์
 
 
-    Log    Step No.23 คลิกที่ x Pop up
+    Step Test:    Step No.23 คลิกที่ x Pop up
 
 
-    Log    Step No.24 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Step Test:    Step No.24 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
 
 
-    Log    Step No.25 เลือกแท็บงานส่งออก
+    Step Test:    Step No.25 เลือกแท็บงานส่งออก
 
 
-    Log    Step No.26 เข้าเมนู Scan และเลือกแท็บ Scan Out
+    Step Test:    Step No.26 เข้าเมนู Scan และเลือกแท็บ Scan Out
 
 
-    Log    Step No.27 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
+    Step Test:    Step No.27 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
 
 
-    Log    Step No.28 กดปุ่ม ยืนยัน Scan Out
+    Step Test:    Step No.28 กดปุ่ม ยืนยัน Scan Out
 
 
-    Log    Step No.29 กดปุ่ม ยืนยัน
+    Step Test:    Step No.29 กดปุ่ม ยืนยัน
 
 
-    Log    Step No.30 คลิกที่ Pop up
+    Step Test:    Step No.30 คลิกที่ Pop up
 
 
-    Log    Step No.31 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
+    Step Test:    Step No.31 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
 
 
-    Log    Step No.32 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Step Test:    Step No.32 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
 
 
-    Log    Step No.33 กดปุ่ม พิมพ์
+    Step Test:    Step No.33 กดปุ่ม พิมพ์
 
 

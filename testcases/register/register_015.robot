@@ -29,7 +29,7 @@ Register_S15
     pms_detail_full_register_page.Click Next Page Button
     pms_detail_full_register_page.Click Next Page Button
 
-    Log    Step No.9 กดปุ่ม "เพิ่ม" ข้อมูลผู้ติดต่อ
+    Step Test:    Step No.9 กดปุ่ม "เพิ่ม" ข้อมูลผู้ติดต่อ
     pms_detail_full_register_page.Click Add Contact Information
     # Expected
     pms_detail_full_register_page.Verify Click Add Contact Information Second
@@ -40,7 +40,7 @@ Register_S15
     ...    ${rm.full_regis.contact['text_mobile_ext']}
     common.Verify Capture Screenshot    Register_S015    Verify Click Add Contact Information Second
     
-    Log    Step No.10 ระบุข้อมูลผู้ติดต่อ
+    Step Test:    Step No.10 ระบุข้อมูลผู้ติดต่อ
     pms_detail_full_register_page.Input Contact Name Second    ${Register_S015.contact['name']}
     pms_detail_full_register_page.Input Contact Position Second    ${Register_S015.contact['position']}
     pms_detail_full_register_page.Input Contact Email Second    ${Register_S015.contact['email']}
@@ -114,7 +114,7 @@ Register_S015
     pms_requests_page.Click Tab Full-Register
     pms_requests_page.Select Pending Tab
 
-    Log    Step No.1 กดปุ่ม "ดำเนินการ" สถานะคำขอ "รอตรวจสอบ"
+    Step Test:    Step No.1 กดปุ่ม "ดำเนินการ" สถานะคำขอ "รอตรวจสอบ"
     # Go To    https://pms-uat.allspeedy.co.th/usermanager/requests/fullregister?id=240404338080107385
     Go To    https://pms-uat.allspeedy.co.th/usermanager/requests/fullregister?id=11028492908993200526
     # pms_requests_page.Select Request With Waiting For Confirm Status [legal entity]
@@ -144,7 +144,7 @@ Register_S015
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Register_S015    Verify Request Full Register Detail Page 2
 
-    Log    Step No.2 กดปุ่ม "หน้าถัดไป"
+    Step Test:    Step No.2 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
     pms_detail_full_register_page.Click Dry Parcel Tab
     pms_detail_full_register_page.Verify Dry Parcel Tab Full Register Detail Page
@@ -191,7 +191,7 @@ Register_S015
     ...    ${rm.full_regis.text_pickup_schedule['not_determined']}
     common.Verify Capture Screenshot    Register_S015    Verify Return Business Tab Full Register Detail Page
 
-    Log    Step No.3 ระบุข้อมูล แท็บพัสดุทั่วไป
+    Step Test:    Step No.3 ระบุข้อมูล แท็บพัสดุทั่วไป
     pms_detail_full_register_page.Click Dry Parcel Tab
     pms_detail_full_register_page.Input Information In The Dry Parcel Tab
     ...    ${Register_S015.dry_parcel['price_scheme']}
@@ -215,7 +215,7 @@ Register_S015
     ...    ${Register_S015.dry_parcel['address_full']}
     common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup Dry Parcel Tab
 
-    Log    Step No.4 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุทั่วไป
+    Step Test:    Step No.4 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุทั่วไป
     pms_detail_full_register_page.Input Set Pickup Point Popup
     ...    ${Register_S015.dry_parcel['parcel_type']}
     ...    ${Register_S015.dry_parcel['pickup_day']}
@@ -228,7 +228,7 @@ Register_S015
     # ...    ${rm.full_regis.text_pickup_schedule['determined']}
     common.Verify Capture Screenshot    Register_S015    Verify Pickup Schedule After Set Pickup Point [Dry Parcel Tab]
 
-    Log    Step No.5 ระบุข้อมูล แท็บพัสดุควบคุมอุณหภูมิ
+    Step Test:    Step No.5 ระบุข้อมูล แท็บพัสดุควบคุมอุณหภูมิ
     # pms_detail_full_register_page.Click Chill Parcel Tab
     # pms_detail_full_register_page.Input Information In The Chill Parcel Tab
     # ...    ${Register_S015.chill_parcel['price_scheme']}
@@ -250,7 +250,7 @@ Register_S015
     # ...    ${Register_S015.chill_parcel['address_full']}
     # common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup Chill Parcel Tab
 
-    Log    Step No.6 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุควบคุมอุณหภูมิ
+    Step Test:    Step No.6 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุควบคุมอุณหภูมิ
     # pms_detail_full_register_page.Input Set Pickup Point Popup
     # ...    ${Register_S015.chill_parcel['parcel_type']}
     # ...    ${Register_S015.chill_parcel['pickup_day']}
@@ -263,7 +263,7 @@ Register_S015
     # # ...    ${rm.full_regis.text_pickup_schedule['determined']}
     # common.Verify Capture Screenshot    Register_S015    Verify Pickup Schedule After Set Pickup Point [Chill Parcel Tab]
 
-    Log    Step No.7 ระบุข้อมูล แท็บ Return Business
+    Step Test:    Step No.7 ระบุข้อมูล แท็บ Return Business
     # pms_detail_full_register_page.Click Return Business Tab
     # pms_detail_full_register_page.Input Information In The Return Business Tab
     # ...    ${Register_S015.return_business['price_scheme']}
@@ -272,7 +272,7 @@ Register_S015
     # ...    ${Register_S015.return_business['insure_scheme_date']}
     # common.Verify Capture Screenshot    Register_S015    Verify Input Information In The Return Business Tab
 
-    Log    Step No.8 กดปุ่ม "หน้าถัดไป"
+    Step Test:    Step No.8 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
     pms_detail_full_register_page.Verify Request Detail Contact And Bank Information
     ...    ${Register_S013.bank['bank_id']}

@@ -23,7 +23,7 @@ DC_Operation_S004
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
-    Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Step Test:    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
     dps_home_page.Verify Data In All Task Tab
@@ -38,6 +38,6 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Data In All Task Tab
 
 
-    Log    Step No.2 เลือกแท็บงานรับเข้า
+    Step Test:    Step No.2 เลือกแท็บงานรับเข้า
     
 

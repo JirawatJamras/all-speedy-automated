@@ -55,7 +55,7 @@ DC_Operation_S017
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Navigate To Scan Page And Stay At Scan In Tab
 
-    Log    Step No.6 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
+    Step Test:    Step No.6 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
     dps_history_parcel_page.Filter Data By Parcel Number    SPBD241100002673  #SPBD241100002415
     # Expected
@@ -64,7 +64,7 @@ DC_Operation_S017
     ...    SPBD241100002673
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Data In Table
 
-    Log    Step No.7 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
+    Step Test:    Step No.7 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
     dps_history_parcel_page.Click Edit History Parcel    SPBD241100002673
     Go To    https://dps-uat.allspeedy.co.th/historyparcel/detailparcelinwarehouse?id=SPBD241100002673
     # Defect193    Defect194    Defect195    Defect196    Defect197

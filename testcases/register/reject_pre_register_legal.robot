@@ -12,17 +12,17 @@ Test Teardown     Close Browser
 Reject Pre Register (Legal)
     [Documentation]    E2E 2 Scenario
     [Tags]    Register    UAT    In_Review
-    Log    Scenario 02 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
+    Step Test:    Scenario 02 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
     Register_S002
     Assign RM
-    Log    Scenario 10 RM : ปฏิเสธ Pre-Register (ลูกค้านิติบุคคล)
+    Step Test:    Scenario 10 RM : ปฏิเสธ Pre-Register (ลูกค้านิติบุคคล)
     Register_S010
 
 *** Keywords ***
 Register_S002
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
     #[Tags]    Register    UAT
-    Log    Step No.1 กรอกข้อมูล
+    Step Test:    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -45,7 +45,7 @@ Register_S002
     register_business_pre_register.Input Mobile Ext Legal Entity   ${Register_S002['mobile_ext']}
     common.Verify Capture Screenshot    Register_S002    Filled In Contact Information Success   
 
-    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    Step Test:    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
@@ -74,7 +74,7 @@ Assign RM
     pms_request_detail_page.Click Save Button
 
 Register_S010
-    Log    Step No.1 RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
+    Step Test:    Step No.1 RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
     pms_requests_page.Select Request With Considering Status [legal entity]
     ...    ${Register_S002['checkbox_partner_types']}  
     ...    ${Register_S002['company_name']}  
@@ -102,18 +102,18 @@ Register_S010
     Scroll Window To Vertical    500
     common.Verify Capture Screenshot    Register_S010    Verify Request Detail Page2
 
-    Log    Step No.2 RM ระบุเหตุผลในการปฎิเสธ "ทดสอบปฎิเสธ"
+    Step Test:    Step No.2 RM ระบุเหตุผลในการปฎิเสธ "ทดสอบปฎิเสธ"
     pms_request_detail_page.Input Reject Reason    ${Register_S010['remark']}
     # Expected
     common.Verify Capture Screenshot    Register_S010    Verify Input Reject Reason
 
-    Log    Step No.3 กดปุ่ม "ปฎิเสธ"
+    Step Test:    Step No.3 กดปุ่ม "ปฎิเสธ"
     pms_request_detail_page.Click Reject Button
     # Expected
     pms_request_detail_page.Verify Reject Confirmation Popup
     common.Verify Capture Screenshot    Register_S010    Verify Reject Confirmation Popup
 
-    Log    Step No.4 กดปุ่ม "ยืนยัน"
+    Step Test:    Step No.4 กดปุ่ม "ยืนยัน"
     pms_request_detail_page.Click Confirm Reject Button
     pms_requests_page.Select Request With Rejected Status [legal entity]  
     ...    ${Register_S002['checkbox_partner_types']}  

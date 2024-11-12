@@ -16,7 +16,7 @@ Booking_S038
     b2c_login_page.Click Log On Button
     Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410004883
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    Log    Step No. 3 กดปุ่ม "Import File"
+    Step Test:    Step No. 3 กดปุ่ม "Import File"
     b2c_booking_detail_page.Click Import File Button
     # Expected
     b2c_booking_detail_page.Verify Import File Popup
@@ -28,7 +28,7 @@ Booking_S038
     ...    ${Booking['text_file_import_error']}
     common.Verify Capture Screenshot    booking    Booking_S038    Verify Import File Popup
 
-    Log    Step No. 4 กดปุ่ม "Import" เเละเลือกไฟล์ชื่อ "Excel Template พัสดุทั่วไป" ที่ได้กรอกข้อมูลไว้เเล้ว
+    Step Test:    Step No. 4 กดปุ่ม "Import" เเละเลือกไฟล์ชื่อ "Excel Template พัสดุทั่วไป" ที่ได้กรอกข้อมูลไว้เเล้ว
     b2c_booking_detail_page.Import Excel File Of Dry Parcel Template    ${path_excel_dry_parcel}
     b2c_booking_detail_page.Wait Until Loading Icon Success
     #Expected
@@ -37,7 +37,7 @@ Booking_S038
     ...    ${Booking.import_file['dry_parcel_import_success_amount']}
     ...    ${Booking.import_file['dry_parcel_import_fail_amount']}
     common.Verify Capture Screenshot    booking    Booking_S038    Verify Import Excel File Inspection Results
-    Log    Step No. 5 กด Download ไฟล์ Error เเละตรวจสอบไฟล์
+    Step Test:    Step No. 5 กด Download ไฟล์ Error เเละตรวจสอบไฟล์
 
     #b2c_booking_detail_page.Click Download Import Error File
     Wait Until Element Is Enabled    xpath=(//tbody/tr[@class="ant-table-row ant-table-row-level-0 text-center"]/td[@class="ant-table-cell"]/a[contains(text(),'Error Report')])[1]  

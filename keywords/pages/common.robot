@@ -222,3 +222,10 @@ Verify text of element
     [Arguments]   ${locator}   ${value}
     ${locator}=  Replace String   ${locator}   {value}   ${value}
     Wait Until Element Is Visible   ${locator}    ${DEFAULT_TIMEOUT}
+
+
+
+Step Test:    
+    [Arguments]    ${value}
+    ${message}=  Evaluate    '\\033[38;5;208m${value}\\033[0m'
+    Log To Console    \n${message}

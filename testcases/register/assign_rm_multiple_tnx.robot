@@ -9,19 +9,19 @@ Test Teardown     Close Browser
 Assign RM (Multiple tnx)
     [Documentation]    RM Lead : Assign RM ทีละหลายรายการในคำขอ Pre-Register
     [Tags]    Register    UAT    
-    Log    Scenario 2 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ
+    Step Test:    Scenario 2 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ
     Register_S002
-    Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
+    Step Test:    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
     Register_S004
-    Log    Scenario 5 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
+    Step Test:    Scenario 5 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่อปฎิเสธ
     Register_S005
-    Log    Scenario 8 RM Lead : Assign RM ทีละหลายรายการในคำขอ Pre-Register
+    Step Test:    Scenario 8 RM Lead : Assign RM ทีละหลายรายการในคำขอ Pre-Register
     Register_S008
 
 
 *** Keywords ***
 Register_S002
-    Log    Step No.1 กรอกข้อมูล
+    Step Test:    Step No.1 กรอกข้อมูล
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab  
     register_business_customers_page.Click Menu Register Business
@@ -39,14 +39,14 @@ Register_S002
     register_business_pre_register.Input Mobile No Legal Entity   ${Register_S002['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity   ${Register_S002['mobile_ext']}
 
-    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    Step Test:    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
     register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S008    Pre Register 002 Success
 
 Register_S004
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    Log    Step No.1 กรอกข้อมูล
+    Step Test:    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -66,14 +66,14 @@ Register_S004
     register_business_pre_register.Input Mobile No Individual    ${Register_S004['mobile_no']}
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S004['mobile_ext']}
 
-    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    Step Test:    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S008    Pre Register 004 Success
 
 Register_S005
-    Log    Step No.1 กรอกข้อมูล
+    Step Test:    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -92,13 +92,13 @@ Register_S005
     register_business_pre_register.Input Mobile No Individual    ${Register_S005['mobile_no']}
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S005['mobile_ext']}
 
-    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    Step Test:    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
     register_business_pre_register.Verify Confirm Page       ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S008    Pre Register 005 Success
 
 Register_S008
-    Log    Step No.1 RM Lead ได้รับคำขอที่มีสถานะ "รอบมอบหมาย" คลิกที่แท็บรอดำเนินการเพื่อเลือกรายการคำขอที่ต้องการ กดปุ่ม "Assign RM" 
+    Step Test:    Step No.1 RM Lead ได้รับคำขอที่มีสถานะ "รอบมอบหมาย" คลิกที่แท็บรอดำเนินการเพื่อเลือกรายการคำขอที่ต้องการ กดปุ่ม "Assign RM" 
     common.Open URL    ${PMS_UAT_URL}
     pms_landing_page.Click Go Login Button
     pms_login_page.Input Email    ${pms_login_user_01['username']}
@@ -132,12 +132,12 @@ Register_S008
     pms_requests_page.Verify Assign RM Popup
     common.Verify Capture Screenshot    Register_S008    Verify Assign RM Popup
 
-    Log    Step No.2 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
+    Step Test:    Step No.2 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
     pms_requests_page.Click Button To Assign RM    ${Register_S008['rm_name']}
     pms_requests_page.Verify Already Assign To RM Popup    ${Register_S008['rm_name']}
     common.Verify Capture Screenshot    Register_S008    Verify Already Assign To RM Popup
 
-    Log    Step No.3 กดปุ่ม "บันทึก"
+    Step Test:    Step No.3 กดปุ่ม "บันทึก"
     pms_requests_page.Click Save Button
     Reload page
     pms_requests_page.Verify Save Assign To RM Success [legal entity]

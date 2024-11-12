@@ -16,7 +16,7 @@ Register_S007
 
 *** Keywords ***
 register01
-    Log    Step No.1 กรอกข้อมูล
+    Step Test:    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -41,7 +41,7 @@ register01
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S001['mobile_ext']}
     # common.Verify Capture Screenshot    Register_S001    filled in contact information success   
 
-    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    Step Test:    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected

@@ -60,7 +60,7 @@ Booking_S060
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S019['shipping_origin']}
     ################ เพิ่ม Step เลือกรอบรถเข้ารับพัสดุ
 
-    Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
+    Step Test:    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
@@ -73,7 +73,7 @@ Booking_S060
     ...    0.00 บาท    # Expected result is: ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Created Booking On Booking Delivery Page
 
-    Log    Step No. 2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"
+    Step Test:    Step No. 2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Booking With Waiting For Entering Parcel To System    ${booking_id}
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page
@@ -111,7 +111,7 @@ Booking_S060
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Booking Detail Page After Set Origin Shipping
 
-    Log    Step No. 3 กดปุ่ม "+ เพิ่ม"
+    Step Test:    Step No. 3 กดปุ่ม "+ เพิ่ม"
     b2c_booking_detail_page.Click Add Button
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
@@ -128,7 +128,7 @@ Booking_S060
     ...    ${Booking_S019['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Data Sender
 
-    Log    Step No. 4 กดปุ่ม "ถัดไป"
+    Step Test:    Step No. 4 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
     #Expected
@@ -147,7 +147,7 @@ Booking_S060
     ...    ${EMPTY}
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Create Parcel Page Receiver Step When Select Home
 
-    Log    Step No.5 ขั้นตอนข้อมูลผู้รับพัสดุ
+    Step Test:    Step No.5 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S019['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S019['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
@@ -157,7 +157,7 @@ Booking_S060
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Create Parcel Page After Input Receiver Step
 
-    Log    Step No.6 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Dry Parcel]
@@ -178,12 +178,12 @@ Booking_S060
     ...    ${EMPTY}
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Parcel Detail
 
-    Log    Step No.7 ขั้นตอนรายละเอียดพัสดุ
+    Step Test:    Step No.7 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    S1
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Create Parcel Page After Input Parcel Detail Step 
 
-    Log    Step No.8 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.8 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
     # Expected
     b2c_booking_delivery_page.Verify Promotion Detail
@@ -191,7 +191,7 @@ Booking_S060
     ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    booking    Booking_S060    Verify Promotion
 
-    Log    Step No.9 ขั้นตอน Promotion
+    Step Test:    Step No.9 ขั้นตอน Promotion
     # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success

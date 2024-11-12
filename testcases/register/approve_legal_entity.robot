@@ -12,17 +12,17 @@ Test Teardown     Close Browser
 Approve Legal Entity
     [Documentation]    E2E 32 Scenario
     [Tags]    Register    UAT
-    Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
+    Step Test:    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
     # Register_S001
-    Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
+    Step Test:    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
     # Register_S007
-    Log    Scenario 9 RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)
+    Step Test:    Scenario 9 RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)
     # Register_S009
-    Log    Scenario 13 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล
+    Step Test:    Scenario 13 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล
     # Register_S013
-    Log    Scenario 15 RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
+    Step Test:    Scenario 15 RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
     #Register_S015   
-    Log    Scenario 20 RM : การ Update Vendor Code ในข้อมูลลูกค้า
+    Step Test:    Scenario 20 RM : การ Update Vendor Code ในข้อมูลลูกค้า
     #Register_S020
     Register_S022
     #Register_S023
@@ -31,7 +31,7 @@ Approve Legal Entity
 *** Keywords ***    
 Register_S001
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ   
-    Log    Step No.1 กรอกข้อมูล
+    Step Test:    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -56,7 +56,7 @@ Register_S001
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot    Register_S001    filled in contact information success   
 
-    Log    Step No.2 "กดปุ่มลงทะเบียน"
+    Step Test:    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
@@ -65,7 +65,7 @@ Register_S001
 Register_S007
     [Documentation]    RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
     #Step1
-    Log    Step No.1 RM Lead ได้รับคำขอที่มีสถานะ "รอมอบหมาย" กดปุ่ม "ดำเนินการ"
+    Step Test:    Step No.1 RM Lead ได้รับคำขอที่มีสถานะ "รอมอบหมาย" กดปุ่ม "ดำเนินการ"
     common.Open URL    ${PMS_UAT_URL}
     pms_landing_page.Click Go Login Button
     pms_login_page.Input Email    ${pms_login_user_01['username']}
@@ -101,17 +101,17 @@ Register_S007
     ...    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot    Register_S007    Verify Request Detail Page With Status Waiting For Assign
     
-    Log    Step No.2 RM Lead กดปุ่ม "Assign RM"
+    Step Test:    Step No.2 RM Lead กดปุ่ม "Assign RM"
     pms_request_detail_page.Click Assign RM Button
     pms_request_detail_page.Verify Assign RM Popup
     common.Verify Capture Screenshot    Register_S007    Verify Assign RM Popup
     
-    Log    Step No.3 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
+    Step Test:    Step No.3 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
     pms_request_detail_page.Click Button To Assign RM    ${Register_S007['rm_name']}
     pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
     common.Verify Capture Screenshot    Register_S007    Verify Assign To RM 
     
-    Log    Step No.4 กดปุ่ม "บันทึก"
+    Step Test:    Step No.4 กดปุ่ม "บันทึก"
     pms_request_detail_page.Click Save Button
     pms_requests_page.Verify Save Assign To RM Success [legal entity] 
     ...    ${Register_S001['checkbox_partner_types']}
@@ -125,7 +125,7 @@ Register_S007
 
 Register_S009
     [Documentation]    RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)
-    Log    Step No.1 RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
+    Step Test:    Step No.1 RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ "กำลังพิจารณา" กดปุ่ม "ดำเนินการ"
     pms_requests_page.Select Request With Considering Status [legal entity]
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
@@ -151,7 +151,7 @@ Register_S009
     common.Verify Capture Screenshot    Register_S009    Verify Request Detail Page
     
     
-    Log    Step No.2 RM กรอกเบอร์โทรศัพท์ 
+    Step Test:    Step No.2 RM กรอกเบอร์โทรศัพท์ 
     pms_request_detail_page.Input Mobile Number In Sale Information    ${Register_S009['sale_phone']}
     pms_request_detail_page.Click Approve Button
     pms_requests_page.Select Request With Confirm Sent Link Status [legal entity]
@@ -179,7 +179,7 @@ Register_S009
     ...    ${Register_S009['sale_phone']}
     common.Verify Capture Screenshot    Register_S009    Verify Approve Success
     
-    Log    Step No.3 กดปุ่ม "อนุมัติ"
+    Step Test:    Step No.3 กดปุ่ม "อนุมัติ"
     register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}
     register_business_full_register.Verify Email That Have Received Link
     common.Verify Capture Screenshot    Register_S009    Verify Email That Have Received Link
@@ -187,7 +187,7 @@ Register_S009
 #for do step 11-18
 Register_S13
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล 
-    Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+    Step Test:    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
     #register_business_full_register.Get Link On Email
     #common.Open URL    ${link_full_register}
     common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/5159665574078925243
@@ -211,12 +211,12 @@ Register_S13
     ...    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot    Register_S013    Verify Company Information
 
-    Log    Step No.2 กรอกข้อมูลเบอร์โทรศัพท์
+    Step Test:    Step No.2 กรอกข้อมูลเบอร์โทรศัพท์
     register_business_full_register.Input Mobile Company Legal Entity    ${Register_S013['mobile_company']}
     register_business_full_register.Input Mobile Company Ext Legal Entity    ${Register_S013['mobile_company_ext']}
     common.Verify Capture Screenshot    Register_S013    filled in mobile success
 
-    Log    Step No.3 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.3 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
     #Tab พัสดุทั่วไป
@@ -229,7 +229,7 @@ Register_S13
     register_business_full_register.Verify Service Information Page Tab Return Business
     common.Verify Capture Screenshot    Register_S013    Tab Return Business
     
-    Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
+    Step Test:    Step No.4 เปิดใช้งานพัสดุทั่วไป
     #Inprogress
     register_business_full_register.Click Tab Dry Parcel
     register_business_full_register.Click Select Dry Parcel
@@ -241,17 +241,17 @@ Register_S13
     register_business_full_register.Input Remark Dry Parcel    ${Register_S013.dry_parcel['remark']}
     common.Verify Capture Screenshot    Register_S013    Enable Dry Parcel
 
-    Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
+    Step Test:    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
     #register_business_full_register.Click Save
 
-    Log    Step No.6 กดปุ่ม "ยกเลิก"
+    Step Test:    Step No.6 กดปุ่ม "ยกเลิก"
     #register_business_full_register.Click Cancel
     #register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     
-    Log    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
+    Step Test:    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
     #register_business_full_register.Click Button Confirm Cancel Popup
 
-    Log    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
+    Step Test:    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
     #common.Open URL    ${link_full_register}
     #Expected    
     # register_business_full_register.Verify Company Information Legal Entity Page
@@ -271,7 +271,7 @@ Register_S13
     # ...    ${Register_S001['mobile_no']}
     # ...    ${Register_S001['mobile_ext']}    
     
-    Log    Step No.9 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.9 กดปุ่ม "ถัดไป"
     #register_business_full_register.Click Next
     #Expected 
     register_business_full_register.Verify Service Information Page Tab Dry Parcel
@@ -280,7 +280,7 @@ Register_S13
     ...    sale_channel=${Register_S013.dry_parcel['sale_channel']}
     ...    remark=${Register_S013.dry_parcel['remark']}
 
-    Log    Step No.10 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
+    Step Test:    Step No.10 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
     #Tab พัสดุควบคุมอุณหภูมิ
     register_business_full_register.Click Tab Chill Parcel
     register_business_full_register.Click Select Chill Parcel
@@ -299,13 +299,13 @@ Register_S13
     register_business_full_register.Select Sale Channel Return Business    ${Register_S013.return_business['sale_channel']}
     register_business_full_register.Input Remark Return Business    ${Register_S013.return_business['remark']}
     
-    Log    Step No.11 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.11 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     register_business_full_register.Click Add Contact Information
     #Expected
     register_business_full_register.Verify Contact And Bank Information Page
 
-    Log    Step No.12 ระบุข้อมูลผู้ติดต่อ
+    Step Test:    Step No.12 ระบุข้อมูลผู้ติดต่อ
     register_business_full_register.Input User Name    ${Register_S013.contact['user_name']}
     register_business_full_register.Input User Position    ${Register_S013.contact['user_position']}
     register_business_full_register.Input User Email    ${Register_S013.contact['user_email']}
@@ -320,14 +320,14 @@ Register_S13
 
 
 
-    Log    Step No.13 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.13 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
     register_business_full_register.Verify Supporting Document Page Legal Entity
     common.Verify Capture Screenshot    Register_S013    Verify Supporting Document Page
 
 
-    Log    Step No.14 อัปโหลดเอกสารประกอบ
+    Step Test:    Step No.14 อัปโหลดเอกสารประกอบ
     register_business_full_register.Upload Certificate Business Registration    ${testpdf}
     register_business_full_register.Upload Copy File 20    ${testpdf}
     register_business_full_register.Upload Copy ID Card    ${testpdf}
@@ -340,11 +340,11 @@ Register_S13
     common.Verify Capture Screenshot    Register_S013    Uploaded Supporting Document Page
     
 
-    Log    Step No.15 กดปุ่ม "ลงทะเบียน"
+    Step Test:    Step No.15 กดปุ่ม "ลงทะเบียน"
     #register_business_full_register.Click Confirm
 
     #ต้องไปทำ S0015 ในส่วนที่ RM ต้อง Comment
-    Log    Step No.16 กด Link Full Register เดิม ที่ได้รับทาง E-mail 
+    Step Test:    Step No.16 กด Link Full Register เดิม ที่ได้รับทาง E-mail 
     # common.Open URL    ${link_full_register}
     ${JuristicID2}=    Set Variable    5241022175555
     common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/240404338080107385
@@ -366,13 +366,13 @@ Register_S13
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}    
     
-    Log    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
+    Step Test:    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
     register_business_full_register.Click Remark
 
     register_business_full_register.Verify Remark Popup
     ...    remark_4=comment
     
-    Log    Step No.18 กดปุ่ม "x"
+    Step Test:    Step No.18 กดปุ่ม "x"
     register_business_full_register.Click Button Close Remark Popup
     #Expected
     register_business_full_register.Verify Popup Not Appear
@@ -382,7 +382,7 @@ Register_S13
 
 Register_S013
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล 
-    Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+    Step Test:    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
     register_business_full_register.Get Link On Email
     common.Open URL    ${link_full_register}
     #Expected
@@ -404,13 +404,13 @@ Register_S013
     ...    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot    Register_S013    Verify Company Information
 
-    Log    Step No.2 กรอกข้อมูลเบอร์โทรศัพท์
+    Step Test:    Step No.2 กรอกข้อมูลเบอร์โทรศัพท์
     register_business_full_register.Input Mobile Company Legal Entity    ${Register_S013['mobile_company']}
     register_business_full_register.Input Mobile Company Ext Legal Entity    ${Register_S013['mobile_company_ext']}
     common.Verify Capture Screenshot    Register_S013    filled in mobile success
     
 
-    Log    Step No.3 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.3 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
     #Tab พัสดุทั่วไป
@@ -423,7 +423,7 @@ Register_S013
     register_business_full_register.Verify Service Information Page Tab Return Business
     common.Verify Capture Screenshot    Register_S013     Verify Tab Return Business
 
-    Log    Step No.4 เปิดใช้งานพัสดุทั่วไป
+    Step Test:    Step No.4 เปิดใช้งานพัสดุทั่วไป
     register_business_full_register.Click Tab Dry Parcel
     register_business_full_register.Click Select Dry Parcel
     register_business_full_register.Select Add Service Cod Dry Parcel
@@ -434,21 +434,21 @@ Register_S013
     register_business_full_register.Input Remark Dry Parcel    ${Register_S013.dry_parcel['remark']}
     common.Verify Capture Screenshot    Register_S013    Enable Dry Parcel
 
-    Log    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
+    Step Test:    Step No.5 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
     register_business_full_register.Click Save
     common.Verify Capture Screenshot    Register_S013    Save Draft
 
-    Log    Step No.6 กดปุ่ม "ยกเลิก"
+    Step Test:    Step No.6 กดปุ่ม "ยกเลิก"
     register_business_full_register.Click Cancel
     #Expected
     register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     common.Verify Capture Screenshot    Register_S013    Cancel popup
 
-    Log    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
+    Step Test:    Step No.7 กดปุ่ม "ตกลง" ที่ Popup
     register_business_full_register.Click Button Confirm Cancel Popup
     common.Verify Capture Screenshot    Register_S013    Exit link Full register
 
-    Log    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
+    Step Test:    Step No.8 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
     common.Open URL    ${link_full_register}
     #Expected    
     register_business_full_register.Verify Company Information Legal Entity Page
@@ -470,7 +470,7 @@ Register_S013
     common.Verify Capture Screenshot    Register_S013    Verify Company Information
 
 
-    Log    Step No.9 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.9 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
     register_business_full_register.Verify Service Information Page Tab Dry Parcel
@@ -480,7 +480,7 @@ Register_S013
     ...    remark=${Register_S013.dry_parcel['remark']}
     common.Verify Capture Screenshot    Register_S013    Verify Dry Parcel
 
-    Log    Step No.10 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
+    Step Test:    Step No.10 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
     #Tab พัสดุควบคุมอุณหภูมิ
     register_business_full_register.Click Tab Chill Parcel
     register_business_full_register.Click Select Chill Parcel
@@ -502,14 +502,14 @@ Register_S013
     register_business_full_register.Input Remark Return Business    ${Register_S013.return_business['remark']}
     common.Verify Capture Screenshot    Register_S013    Enable Return Business
 
-    Log    Step No.11 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.11 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     register_business_full_register.Click Add Contact Information
     #Expected
     register_business_full_register.Verify Contact And Bank Information Page
     common.Verify Capture Screenshot    Register_S013    Verify Contact And Bank Information Page
         
-    Log    Step No.12 ระบุข้อมูลผู้ติดต่อ
+    Step Test:    Step No.12 ระบุข้อมูลผู้ติดต่อ
     #Step1 ระบุข้อมูลผู้ติดต่อ
     register_business_full_register.Input User Name    ${Register_S013.contact['user_name']}
     register_business_full_register.Input User Position    ${Register_S013.contact['user_position']}
@@ -526,13 +526,13 @@ Register_S013
     common.Verify Capture Screenshot    Register_S013    Verify Contact And Bank Information
     
 
-    Log    Step No.13 กดปุ่ม "ถัดไป"
+    Step Test:    Step No.13 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
     register_business_full_register.Verify Supporting Document Page Legal Entity
     common.Verify Capture Screenshot    Register_S013    Verify Supporting Document Page
 
-    Log    Step No.14 อัปโหลดเอกสารประกอบ
+    Step Test:    Step No.14 อัปโหลดเอกสารประกอบ
     register_business_full_register.Upload Certificate Business Registration    ${testpdf}
     register_business_full_register.Upload Copy File 20    ${testpdf}
     register_business_full_register.Upload Copy ID Card    ${testpdf}
@@ -544,14 +544,14 @@ Register_S013
     register_business_full_register.Click Acceptance Privacy Policy
     common.Verify Capture Screenshot    Register_S013    Uploaded Supporting Document Page
 
-    Log    Step No.15 กดปุ่ม "ลงทะเบียน"
+    Step Test:    Step No.15 กดปุ่ม "ลงทะเบียน"
     register_business_full_register.Click Confirm
     register_business_full_register.Verify Confirm Page    ${Register.Full_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S013    Full register success
 
 
     #ต้องไปทำ S0015 ในส่วนที่ RM ต้อง Comment
-    Log    Step No.16 กด Link Full Register เดิม ที่ได้รับทาง E-mail 
+    Step Test:    Step No.16 กด Link Full Register เดิม ที่ได้รับทาง E-mail 
     common.Open URL    ${link_full_register}
     #Expected    
     register_business_full_register.Verify Company Information Legal Entity Page
@@ -572,7 +572,7 @@ Register_S013
     ...    ${Register_S001['mobile_ext']}    
     common.Verify Capture Screenshot    Register_S013    Verify Company Information
     
-    Log    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
+    Step Test:    Step No.17 กดปุ่ม "หมายเหตุการแก้ไข"
     register_business_full_register.Click Remark
     #Expected
     register_business_full_register.Verify Remark Popup
@@ -580,7 +580,7 @@ Register_S013
     common.Verify Capture Screenshot    Register_S013    Verify remark popup
 
     
-    Log    Step No.18 กดปุ่ม "x"
+    Step Test:    Step No.18 กดปุ่ม "x"
     register_business_full_register.Click Button Close Remark Popup
     #Expected
     register_business_full_register.Verify Popup Not Appear
@@ -596,20 +596,20 @@ Register_S022
     [Documentation]    Customer : สร้างรหัสผ่านเข้าใช้งานระบบ
     register_business_full_register.Login mail    ${Register_S001['email']}    ${Register_S001['password']}   
 
-    Log    Step No.1 กด Link ที่ได้รับจาก Welcome E-mail
+    Step Test:    Step No.1 กด Link ที่ได้รับจาก Welcome E-mail
     register_business_full_register.Get Link Create Password
     Open URL  ${LinkCreatePassword}
     # Expected
     common.Click When Ready  //button//b[text()='ยืนยันตัวตน']
     # register_business_full_register.Verify Create Password Page
-    Log    Step No.2 ระบุรหัสผ่านสำหรับเข้าใช้งานระบบ : P@ssw0rd ให้ตรงกันทั้ง 2 ช่อง
+    Step Test:    Step No.2 ระบุรหัสผ่านสำหรับเข้าใช้งานระบบ : P@ssw0rd ให้ตรงกันทั้ง 2 ช่อง
 
 
 
-    Log    Step No.3 กดปุ่ม "ยืนยัน"
+    Step Test:    Step No.3 กดปุ่ม "ยืนยัน"
 
 
-    Log    Step No.4 กดปุ่ม "เข้าสู่ระบบ"
+    Step Test:    Step No.4 กดปุ่ม "เข้าสู่ระบบ"
 
 
 
