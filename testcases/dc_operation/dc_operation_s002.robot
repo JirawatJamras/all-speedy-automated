@@ -180,7 +180,7 @@ DC_Operation_s002
     # Defect150
     # Expected
     Reload Page
-    b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    b2c_booking_detail_page.Verify Booking Detail Page After Cut Off
     ...    ${Booking['text_parcel_status_waiting_entering']}    #${Booking['text_waiting_confirm_parcel_pickup']}
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
