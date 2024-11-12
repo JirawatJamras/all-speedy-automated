@@ -165,10 +165,9 @@ DC_Operation_S013
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
-    # Defect142
     # Expected
     dps_parcel_detail_page.Verify Print Label Success Popup
-    ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
+    ...    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Print Label Success Popup
 
     Log    Step No.24 คลิกที่ x Pop up
