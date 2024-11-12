@@ -53,7 +53,7 @@ DC_Operation_S012
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     # dps_home_page.Select Tab Import Task
-    # # Defect139
+    # # Defect139    Defect188
     # # Expected
     # # dps_home_page.Verify Label In Import Task Tab
     # # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -77,7 +77,7 @@ DC_Operation_S012
     # dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241100002422
     # dps_scan_page.Click Search Button [Scan In Page]
     # dps_home_page.Wait Until Page Loaded
-    # # Defect155    Defect156    Defect157    Defect158    Defect159    Defect165    Defect168
+    # # Defect155    Defect156    Defect157    Defect158    Defect165    Defect168
     # # Expected
     # # dps_scan_page.Verify Title Parcel Details In Scan Page Store Destination
     # # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
@@ -190,7 +190,7 @@ DC_Operation_S012
     # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # dps_home_page.Select Tab All Task
     # dps_home_page.Filter Data By Parcel Number [All Task Tab]    SPBD241100009191
-    # # Defect138    Defect141    Defect179
+    # # Defect138    Defect141    Defect179    Defect187
     # # Expected
     # # dps_home_page.Verify Homepage
     # # ...    ${dc_operation.breadcrumb['homepage']}
@@ -211,7 +211,7 @@ DC_Operation_S012
 
     Log    Step No.10 เลือกแท็บงานนำจ่าย
     # dps_home_page.Select Tab Send Task
-    # # Defect147    Defect148    Defect149
+    # # Defect147    Defect148    Defect149    Defect190
     # # Expected
     # # dps_home_page.Verify Label In Send Task Tab
     # # ...    ${dc_operation.label_send_task_tab['send_to']}
