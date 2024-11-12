@@ -9,10 +9,12 @@ ${dps_txt_title_history_parcel_history_parcel_page}    //strong[text()='{value}'
 ${dps_txt_header_timeline_history_parcel_page}    //strong[text()='{value}']
 ${dps_txt_header_parcel_detail_history_parcel_page}    //strong[text()='{value}']
 ${dps_txt_title_parcel_detail_history_parcel_page}    //div[text()='{value}']
-${dps_text_value_sender_history_parcel_page}    //p[text()='{value}']
-${dps_text_value_sender_address_history_parcel_page}    //p[contains(normalize-space(.), '{value}')]
-${dps_text_value_receiver_history_parcel_page}    //div[text()='{value}']
-
+${dps_txt_value_sender_history_parcel_page}    //p[text()='{value}']
+${dps_txt_value_sender_address_history_parcel_page}    //p[contains(normalize-space(.), '{value}')]
+${dps_txt_value_receiver_history_parcel_page}    //div[text()='{value}']
+${dps_txt_step_title_in_timeline_history_parcel_page}    //div[@class='ant-steps-item-title']//h1
+${dps_txt_step_description_in_timeline_history_parcel_page}    //div[@class='ant-steps-item-description']//h1
+${dps_txt_time_in_timeline_history_parcel_page}    //div[@class='flex justify-center mt-10']//div[contains(@class,'text-end')]
 
 ${dps_tbl_history_parcel_history_parcel_page}    //tbody[@class='ant-table-tbody']//tr[contains(@class,'ant-table-row')]
 ${dps_tbl_data_history_parcel_history_parcel_page}    //tbody[@class='ant-table-tbody']//td[text()='{value}']

@@ -1,4 +1,59 @@
 *** Keywords ***
+Verify History Parcel Page
+    [Arguments]    ${title_history_parcel}
+    ${dps_txt_title_history_parcel}=    Replace String    ${dps_txt_title_history_parcel_history_parcel_page}    {value}    ${title_history_parcel}
+    Wait Until Element Is Visible    ${dps_txt_title_history_parcel}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_title_history_parcel}=    Get Text    ${dps_txt_title_history_parcel}
+    Should Be Equal    ${actual_txt_title_history_parcel}    ${title_history_parcel}
+    Element Should Be Visible    ${dps_tbl_history_parcel_history_parcel_page}
+
+Check Date And Time Format In Timeline
+    [Arguments]    ${date}
+    @{thai_months}=    Create List    มกราคม    กุมภาพันธ์    มีนาคม    เมษายน    พฤษภาคม    มิถุนายน    กรกฎาคม    สิงหาคม    กันยายน    ตุลาคม    พฤศจิกายน    ธันวาคม
+    @{date_parts}=    Split String    ${date}    ${SPACE}
+    ${day}=    Set Variable    ${date_parts[0]}
+    ${month}=    Set Variable    ${date_parts[1]}
+    ${year}=    Set Variable    ${date_parts[2]}
+    ${hour}=    Set Variable    ${date_parts[3]}
+    ${minute}=    Set Variable    ${date_parts[5]}
+
+    ${day_is_valid}=    Run Keyword And Return Status    Should Match Regexp    ${day}    ^\\d{2}$
+    ${month_is_valid}=    Run Keyword And Return Status    List Should Contain Value    ${thai_months}    ${month}
+    ${year_has_four_digits}=    Run Keyword And Return Status    Should Match Regexp    ${year}    ^\\d{4}$
+    ${year_in_buddhist_range}=    Run Keyword And Return Status    Run Keyword If    ${year_has_four_digits}    Convert To Integer    ${year}
+    ${year_is_valid}=    Run Keyword And Return Status    Evaluate    ${year_in_buddhist_range} >= 2400 and ${year_in_buddhist_range} <= 2600
+    ${hour_is_valid}=    Run Keyword And Return Status    Should Match Regexp    ${hour}    ^\\d{2}$
+    ${minute_is_valid}=    Run Keyword And Return Status    Should Match Regexp    ${minute}    ^\\d{2}$
+
+Compare Time And Title In Timeline
+    [Arguments]    ${step_title}    ${step_description}
+    ${sequence}=    Convert To Integer    1
+    FOR    ${i}    IN RANGE    1    10
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_txt_step_title_in_timeline_history_parcel_page}[${i}]    timeout=1s
+        Run Keyword IF    '${isvisible}' == 'True'    Set Suite Variable    ${sequence}    ${i}
+        ${actual_description}=    Get Text    (${dps_txt_step_description_in_timeline_history_parcel_page})[${sequence}]
+        ${actual_title}=    Get Text    (${dps_txt_step_title_in_timeline_history_parcel_page})[${sequence}]
+        Exit For Loop If    '${actual_title}' == '${step_title}'
+        ${sequence}=    Set Variable    ${sequence + 1}
+    END
+    ${dps_card_timeline}=    Replace String    ${dps_card_timeline_history_parcel_page}    {value}    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
+    Wait Until Element Is VIsible    ${dps_card_timeline}
+    ${actual_time}=    Get Text    (${dps_txt_time_in_timeline_history_parcel_page})[${sequence}]
+    ${actual_time}=    Replace String    ${actual_time}    \n    ${SPACE}
+    Check Date And Time Format In Timeline    ${actual_time}
+    Should Be Equal    ${actual_title}    ${step_title}
+    Should Be Equal    ${actual_description}    ${step_description}
+
+Verify Timeline
+    [Arguments]    ${title1}    ${description1}    ${title2}    ${description2}    ${title3}    ${description3}
+    ...            ${title4}    ${description4}    ${title5}    ${description5}
+    # Defect206
+    # Compare Time And Title In Timeline    ${title1}    ${description1}
+    Compare Time And Title In Timeline    ${title2}    ${description2}
+    Compare Time And Title In Timeline    ${title3}    ${description3}
+    Compare Time And Title In Timeline    ${title4}    ${description4}
+    Compare Time And Title In Timeline    ${title5}    ${description5}
+
 Filter Data By Parcel Number
     [Arguments]    ${parcel_number}
     Select Filter Button
@@ -103,9 +158,9 @@ Verify Title Sender In Warehouse Details
 
 Verify Data Sender In Warehouse Details
     [Arguments]    ${sender_name}    ${sender_phone}    ${sender_adderss}
-    ${dps_text_value_sender_name}=    Replace String    ${dps_text_value_sender_history_parcel_page}    {value}    ${sender_name}
-    ${dps_text_value_sender_phone}=    Replace String    ${dps_text_value_sender_history_parcel_page}    {value}    ${sender_phone}
-    ${dps_text_value_sender_address}=    Replace String    ${dps_text_value_sender_address_history_parcel_page}    {value}    ${sender_adderss}
+    ${dps_text_value_sender_name}=    Replace String    ${dps_txt_value_sender_history_parcel_page}    {value}    ${sender_name}
+    ${dps_text_value_sender_phone}=    Replace String    ${dps_txt_value_sender_history_parcel_page}    {value}    ${sender_phone}
+    ${dps_text_value_sender_address}=    Replace String    ${dps_txt_value_sender_address_history_parcel_page}    {value}    ${sender_adderss}
     ${actual_text_value_sender_name}=    Get Text    ${dps_text_value_sender_name}
     Should Be Equal    ${actual_text_value_sender_name}    ${sender_name}
 

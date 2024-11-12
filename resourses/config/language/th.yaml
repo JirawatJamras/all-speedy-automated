@@ -315,7 +315,7 @@ dc_operation:
   text_search: ค้นหา
   text_print: พิมพ์
   text_print_label: ยืนยัน/Print Label
-  text_print_label_success: พิมพ์ Label เรียบร้อยแล้ว
+  text_print_label_success: ทำรายการสำเร็จ
   text_confirm_scan_out: ยืนยัน Scan Out
   text_confirm: ยืนยัน
   text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
@@ -481,6 +481,8 @@ dc_operation:
   label_receiver_in_warehouse:
     receiver_name: ชื่อผู้รับ
     receiver_address: ที่อยู่ผู้รับ
+  title_step_in_timeline:
+    carrier_go_to_pickup_parcel: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
 
 rm:
   text_pre_register: Pre-Register

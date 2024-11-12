@@ -292,6 +292,22 @@ DC_Operation_S012:
     phone: '0900987354'
     shipping_destination: 'ร้าน (07004)'
     address: 'ต.ตลาดขวัญ อ.เมืองนนทบุรี จ.นนทบุรี 11000'
+  timeline_in_history_parcel:
+    timeline1:
+      title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
+    timeline2:
+      title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    timeline3:
+      title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    timeline4:
+      title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    timeline5:
+      title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC BB
 
 DC_Operation_S013:
   data_in_all_task_tab:
