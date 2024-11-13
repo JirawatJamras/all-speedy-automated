@@ -331,7 +331,6 @@ DC_Operation_S007:
     customer_type: 'B2C'
     transport: CP All
 
-
 DC_Operation_S009:
   data_in_all_task_tab:
     task_type_import: งานรับเข้า
@@ -411,7 +410,6 @@ DC_Operation_S009:
     customer_type: 'B2C'
     transport: CP All
 
-
 DC_Operation_S012:
   data_in_all_task_tab:
     task_type: งานรับเข้า
@@ -450,12 +448,12 @@ DC_Operation_S012:
   parcel_detail_in_scan_in_tab:
     customer_id: '2400563'
     parcel_size: '90 ซม. กล่อง M'
-    warehouse_crossdock: '-'
-    warehouse_destination: DCBB
+    crossdock_warehouse: '-'
+    destination_warehouse: DCBB
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP All
     pouch_number: '-'
-    warehouse_source: DCBB
+    source_warehouse: DCBB
     send_parcel_to: 'Store (07004)'
     route: ''
   label_detail_in_scan_in_tab:
@@ -673,6 +671,8 @@ DC_Operation_S017:
     name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
     phone: '0900987354'
     address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
+  check_close_pouch:
+    inventory: RDC LP
 
 DC_Operation_S018:
   value_parcel_details_in_warehouse:

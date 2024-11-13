@@ -511,3 +511,6 @@ Filter Data By Parcel Number [Waiting Scan Out]
     common.Input When Ready    ${dps_txtbox_parcel_code_scan_out_page}    ${parcel_cod}
     Click Search Button On Filter
 
+Get Pouch Number
+    ${actual_pouch_number}=    Get Text    (//strong[text()='Pouch Number']/../../..//span)[2]
+    RETURN    ${actual_pouch_number}

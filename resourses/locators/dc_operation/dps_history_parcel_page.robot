@@ -2,6 +2,7 @@
 ${dps_btn_filter_history_parcel_page}    //div[text()='{value}']/..
 ${dps_btn_search_filter_history_parcel_page}    //div[text()='{value}']/..
 ${dps_btn_edit_history_parcel_history_parcel_page}    //tbody[@class='ant-table-tbody']//td[text()='{value}']/..//button
+${dps_btn_reprint_label_history_parcel_page}    //div[text()='{value}']/../..
 
 ${dps_txtbox_fitler_parcel_number_history_parcel_page}    //input[@id='parcelCode']
 
@@ -27,3 +28,6 @@ ${dps_tbl_history_parcel_history_parcel_page}    //tbody[@class='ant-table-tbody
 ${dps_tbl_data_history_parcel_history_parcel_page}    //tbody[@class='ant-table-tbody']//td[text()='{value}']
 
 ${dps_card_timeline_history_parcel_page}    //strong[text()='{value}']/../../../../..//div[@class='ant-card-body']
+
+${dps_cbo_reprint_label_history_parcel_page}    //a[contains(@class,'ant-dropdown-trigger ant-dropdown-open')]
+${dps_cbo_value_in_reprint_label_history_parcel_page}    //div[text()='{value}']/../..

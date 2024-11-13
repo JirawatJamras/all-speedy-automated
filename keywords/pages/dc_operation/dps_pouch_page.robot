@@ -92,7 +92,7 @@ Check Open Pouch And Close Pouch By Destination Inventory
     ${count}=    Get Element Count    //td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true']
     IF  '${count}' != '0'
         FOR    ${index}    IN RANGE    1    ${count}+1
-            Log    Step No. 4 ปิด Pouch ที่มีปลายทางเป็น DC SB (ทำทีละรายการจนหมด)
+            Log    Step No.4 ปิด Pouch ที่มีปลายทางเป็น ${destination_inventory} (ทำทีละรายการจนหมด)
             Click On/OFF Button Of Pouch List    ${destination_inventory}
             # Expected
             Verify Warning Confirm To Close Pouch
@@ -106,6 +106,33 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Verify Transaction Complete Popup
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
             Log    Step No.7 กดปุ่ม x
+            CLick Close Button
+            # Expected
+            Verify Transaction Complete Popup Was Closed
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}   Verify Transaction Complete Popup Was Closed On Checking Pouch Step
+        END
+    END
+
+Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
+    [Arguments]    ${destination_inventory}    ${testcase_name}
+    Filter Data By Destination Inventory [Pouch Page]    ${destination_inventory}
+    ${count}=    Get Element Count    //td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true']
+    IF  '${count}' != '0'
+        FOR    ${index}    IN RANGE    1    ${count}+1
+            Log    Step No.2 ปิด Pouch ที่มีปลายทางเป็น RDC LP (ทำทีละรายการจนหมด)
+            Click On/OFF Button Of Pouch List    ${destination_inventory}
+            # Expected
+            Verify Warning Confirm To Close Pouch
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Warning Confirm To Close Pouch On Checking Pouch Step
+            Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
+            Click Close Pouch/Print Label Btton On Warning Popup
+            Log    Step No.4 คลิกปุ่มพิมพ์
+            Sleep    5s
+            Click ESC On Keyboard
+            # Expected
+            Verify Transaction Complete Popup
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
+            Log    Step No.5 คลิกที่ x Pop up
             CLick Close Button
             # Expected
             Verify Transaction Complete Popup Was Closed
