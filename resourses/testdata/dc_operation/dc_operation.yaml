@@ -1,60 +1,42 @@
 DC_Operation_S001:
   company_name: ไอดีซี พรีเมียร์
-  parcel_type:  พัสดุทั่วไป
+  parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
   verify_pickup_time: '09:00:00 - 12:00 น.'
   parcel_number: '10'
-  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
-  call_car_pick_up:
-    car_type: รอบรถพิเศษ
-    receiving_type: รอบพิเศษ
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด
-    province: นนทบุรี  
-    postcode: '11120'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
-    branch: สาขาหลัก
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
-    province: นนทบุรี 
-    postcode: '11120'  #'11000'
-    receiving_time: '09:00' #'13:00'
     car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
+    company_address: 44 หมู่ 3
+    sub_district: บางเขน  #ปากเกร็ด
+    district: เมืองนนทบุรี  #ปากเกร็ด
+    province: นนทบุรี
+    postcode: '11000'  #'11120'
+    number_of_parcel: '10'
+    branch: สาขาหลัก
+    receiving_time: '09:00'
     courier: CPALL
-    number_of_parcel: '10'  #'0'
 
 DC_Operation_S002:
   company_name: ไอดีซี พรีเมียร์
   parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
   verify_pickup_time: '09:00:00 - 12:00 น.'
-  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
   parcel_number: '10'
-  call_car_pick_up:
-    car_type: รอบรถพิเศษ
-    receiving_type: รอบพิเศษ
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด
-    province: นนทบุรี 
-    postcode: '11120'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
-    branch: สาขาหลัก
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
-    province: นนทบุรี 
-    postcode: '11120'  #'11000'
-    receiving_time: '09:00'
     car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
-    courier: CPALL
+    company_address: 44 หมู่ 3
+    sub_district: บางเขน  #ปากเกร็ด
+    district: เมืองนนทบุรี  #ปากเกร็ด
+    province: นนทบุรี
+    postcode: '11000'  #'11120'
     number_of_parcel: '10'
+    branch: สาขาหลัก
+    receiving_time: '09:00'
+    courier: CPALL
 
 DC_Operation_S003:
   data_in_all_task_tab:

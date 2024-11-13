@@ -12,7 +12,7 @@ DC_Operation_S003
     [Tags]    DC_Operation    UAT
     
     Log    Prerequisite S002
-    Log    Step No.1 เข้า URL All Speedy
+    Log    Step เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
 
@@ -21,8 +21,7 @@ DC_Operation_S003
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page
-    ...    ${DC_Operation_S002['company_name']}
+    b2c_home_page.Verify Company profile page    ${DC_Operation_S002['company_name']}
 
     Log    Step เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
@@ -81,7 +80,7 @@ DC_Operation_S003
     b2c_booking_detail_page.Select Pickup Schedule Tab
     # Expected
     b2c_booking_detail_page.Verify Display Pickup Schedule Data
-    ...    ${DC_Operation_S002.call_car_pick_up['car_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['car_type']}
     ...    ${tomorrow}
     ...    ${call_car_pick_up.default['parcel_number']}
     ...    ${today}
@@ -97,7 +96,12 @@ DC_Operation_S003
     # Expected
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
-    ...    ${DC_Operation_S002['shipping_origin']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_name']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['province']}
+    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Complete Select Parcel Pickup Schedule And Save
 
     Log    Step คลิกปุ่ม Import File
@@ -121,10 +125,6 @@ DC_Operation_S003
     Log    เก็บค่า Parcel ID
     ${list_parcel_id}    common.Get Parcels And Sender Names    ${booking_id}
     Log    ${list_parcel_id}
-    # b2c_booking_detail_page.Get Parcels Id And Senders Name
-    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    # ...    ${DC_Operation_S001['parcel_number']}
-    # Log    ${list_parcel_and_sender}
 
     Log    Step cut off time
     dps_home_page.Set Cut Off Time
@@ -140,7 +140,7 @@ DC_Operation_S003
     ...    ${tomorrow}
     ...    ${today}
     ...    ${booking_id}
-    ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S002['verify_pickup_time']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Status After Cut Off Time

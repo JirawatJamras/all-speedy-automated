@@ -153,8 +153,7 @@ Click Save Button In Edit Booking List Popup
     common.Click When Ready    ${btn_save_shipping_origin}
 
 Verify Complete Select Parcel Pickup Schedule And Save
-    [Arguments]    ${today}    ${shipping_origin}
-    Sleep    3s
+    [Arguments]    ${today}    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ${text_booking_time_label}=    Replace String    ${b2c_txt_transaction_date}    {value}    ${booking['text_booking_time_label']}
     ${txt_booking_time_label}=    Replace String    ${text_booking_time_label}    {value2}    ${today}
 
@@ -163,7 +162,8 @@ Verify Complete Select Parcel Pickup Schedule And Save
     ${actual_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=30s
-    Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${shipping_origin}
+    # Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${company_address} ${sub_district} ${district} ${province} ${postcode}
+    Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${sub_district} ${district} ${province} ${postcode}
 
 Select Shipping Origin Tab 
     [Arguments]    ${aria}

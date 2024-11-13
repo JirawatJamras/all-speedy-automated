@@ -122,7 +122,7 @@ Verify Parcel Pickup Details Popup
     ${label_address}=  Replace String   ${dps_txt_company_address_parcel_pickup_detail}   {text_address}    ${dc_operation['text_company_address']}
     ${actual_address}=  Replace String   ${label_address}   {company_address}    ${company_address}
     ${label_sub_district}=  Replace String   ${dps_txt_sub_district_parcel_pickup_detail}   {text_sub_district}    ${dc_operation['text_sub_district']}
-    ${actual_sub_district}=  Replace String   ${label_sub_district}   {sub_district}    ${district}
+    ${actual_sub_district}=  Replace String   ${label_sub_district}   {sub_district}    ${sub_district}
     ${label_district}=  Replace String   ${dps_txt_district_parcel_pickup_detail}   {text_district}    ${dc_operation['text_district']}
     ${actual_district}=  Replace String   ${label_district}   {district}    ${district}
     ${label_province}=  Replace String   ${dps_txt_province_parcel_pickup_detail}   {text_province}    ${dc_operation['text_province']}
