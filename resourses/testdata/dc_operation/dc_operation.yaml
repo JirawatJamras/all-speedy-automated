@@ -77,13 +77,11 @@ DC_Operation_S003:
   parcel_detail_in_scan_in_tab:
     # tracking: SPBD241100000470
     # receiving_date: 04-11-2567
-    customer_id: 'B2C0002400563'    #'2400563'
+    customer_id: '0002400563'
     parcel_size: '120 ซม. กล่อง L'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
     pouch_number: '-'
-    warehouse_crossdock: '-'
-    warehouse_destination: DC BB
     warehouse_source: DCBB
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
@@ -116,6 +114,17 @@ DC_Operation_S003:
     export_to: home
     deliver: Flash
     update_date:
+  timeline_in_history_parcel:
+    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC BB
 
 DC_Operation_S004:
   sender_name: คุณ c
@@ -214,6 +223,7 @@ DC_Operation_S007:
     task_type: งานรับเข้า
     parcel_owner: Speedy
     import_from: Home
+    import_from2: คลัง DC BB
     export_to: '-'
     transport: CP All
     pouch_number: '-'
@@ -274,6 +284,18 @@ DC_Operation_S007:
     parcel_size: กล่อง XL
     receiving_date: ''
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  wait_derivery_data_list:
+    export_to: คลัง DC SB
+    transport: CP ALL
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_send_task_tab:
+    send_to: Store
+    store_code: '15888'
+    customer_type: 'B2C'
+    transport: CP All
+
 
 DC_Operation_S012:
   data_in_all_task_tab:
@@ -339,21 +361,32 @@ DC_Operation_S012:
     phone: '0900987354'
     shipping_destination: 'ร้าน (07004)'
     address: 'ต.ตลาดขวัญ อ.เมืองนนทบุรี จ.นนทบุรี 11000'
+  # timeline_in_history_parcel:
+  #   timeline1:
+  #     title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+  #     description: '-'
+  #   timeline2:
+  #     title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  #     description: ''
+  #   timeline3:
+  #     title: พัสดุเข้าคลังต้นทาง
+  #     description: DC BB
+  #   timeline4:
+  #     title: รอปริ้นใบลาเบลติดหน้ากล่อง
+  #     description: '-'
+  #   timeline5:
+  #     title: พัสดุรอนำจ่ายโดยคลัง
+  #     description: DC BB
   timeline_in_history_parcel:
-    timeline1:
-      title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      description: '-'
-    timeline2:
-      title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
       description: ''
-    timeline3:
-      title: พัสดุเข้าคลังต้นทาง
+    - title: พัสดุเข้าคลังต้นทาง
       description: DC BB
-    timeline4:
-      title: รอปริ้นใบลาเบลติดหน้ากล่อง
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
-    timeline5:
-      title: พัสดุรอนำจ่ายโดยคลัง
+    - title: พัสดุรอนำจ่ายโดยคลัง
       description: DC BB
 
 DC_Operation_S013:

@@ -42,8 +42,11 @@ Verify Check Receiving Cycle Page
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
     Page Should Contain Element    ${row_receiving_cycle}
-    Wait Until Element Is Visible    ${row_receiving_cycle}   
+    Wait Until Element Is Visible    ${row_receiving_cycle}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${row_receiving_cycle}
+    ${date_time}=    Get Text    ${row_receiving_cycle}/../..//td[13]
+    Log To Console    ${date_time}
+    Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
     # Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
 
 Select All Parcels Received List Tab
@@ -58,7 +61,7 @@ Select Waiting Inventory Confirm List Tab
 
 Verify Inventory Confirm List Tab
     [Arguments]    ${title}    ${tab}    ${company_name}    ${address}    ${sub_district}    ${district}    ${province}    ${postcode}
-    ...        ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
+    ...    ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
     Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
@@ -81,6 +84,9 @@ Verify Inventory Confirm List Tab
     Scroll Element Into View    ${row_receiving_cycle}
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}   
+    ${date_time}=    Get Text    ${row_receiving_cycle}/../..//td[13]
+    Log To Console    ${date_time}
+    Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
     Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
  
 Click Pencil Icon

@@ -349,7 +349,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['pouch_number']}
     ...    ${today}    # ${DC_Operation_S003.parcel_detail_in_scan_in_tab['receiving_date']}
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['warehouse_source']}
-    ...    HOME (11120)    # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['send_parcel_to']}
+    ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['send_parcel_to']}
 
     dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination
     ...    ${dc_operation.scan_in_title_label_detail['courier']}
@@ -406,18 +406,29 @@ DC_Operation_S003
     # Expected
     dps_parcel_detail_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Print Label Success Popup
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Print Label Success Popup
 
     Log    Step No.6 คลิกที่ x Pop up
     dps_scan_page.Click Close Popup Print Scan In Success
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Navigate To Scan Page And Stay At Scan In Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Navigate To Scan Page And Stay At Scan In Tab
 
     Log    Step No.7 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
+    # Expected
+    dps_history_parcel_page.Verify History Parcel Page    ${dc_operation.title['history_parcel']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify History Parcel Page 1
 
     Log    Step No.8 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-
+    dps_history_parcel_page.Filter Data By Parcel Number    ${parcel_a}
+    dps_history_parcel_page.Click Edit History Parcel    ${parcel_a}
+    Switch Window    NEW
+    # Defect201    Defect202    Defect206
+    # Expected
+    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S003['timeline_in_history_parcel']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Timeline
+    
 
     Log    Step No.9 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
 

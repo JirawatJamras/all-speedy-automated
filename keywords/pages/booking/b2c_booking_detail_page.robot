@@ -74,6 +74,7 @@ Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
 Click Edit Booking List
     # Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_btn_edit_booking_list}=    Replace String    ${b2c_btn_edit_booking_list}    {value}    ${Booking['text_booking_list']}
+    Scroll Window To Vertical    0
     common.Click When Ready    ${b2c_btn_edit_booking_list}
 
 Verify Edit Booking List Popup
