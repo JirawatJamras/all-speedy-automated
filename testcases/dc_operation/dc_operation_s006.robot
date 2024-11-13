@@ -92,20 +92,11 @@ DC_Operation_S006
     # Verify Create Pouch Destination DCSB Popup
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Create Pouch Destination DCSB Popup
     
-    # Log    Step No.9 คลิกปุ่มตกลง
-    # # Defect143    # Unable to test this step becuase of website is not display 'Create pouch destination: DCSB' popup
-    # # Click Accept    
-    # # Expected
-    # # รอโค้ด verify จากพี่พี
-
-
-
-
-
-
-
-
-
+    Log    Step No.9 คลิกปุ่มตกลง
+    # Defect143    # Unable to test this step becuase of website is not display 'Create pouch destination: DCSB' popup
+    # Click Accept    
+    # Expected
+    # รอโค้ด verify จากพี่พี
 
 
     # Log    Step No.5 คลิกปุ่ม ยืนยัน/Print Label
@@ -117,10 +108,10 @@ DC_Operation_S006
     # # Defect142
     # # Expected
     # dps_parcel_detail_page.Verify Print Label Success Popup
-    # ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
+    # ...    ${dc_operation['text_print_label_success']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Print Label Success Popup
 
-    # Log    Step No.7 คลิกที่ Pop up
+    # Log    Step No.7 คลิกที่ x Pop up
     # dps_parcel_detail_page.Click Close Print Label Success Popup
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab

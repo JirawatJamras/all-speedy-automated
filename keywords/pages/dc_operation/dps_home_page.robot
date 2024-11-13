@@ -241,7 +241,6 @@ Verify Label In Export Task Tab
 
 Verify Data In Export Task Tab
     [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
-    # ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task_home_page}    {export_to}    ${export_to}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {transport}    ${transport}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {parcel_owner}    ${parcel_owner}

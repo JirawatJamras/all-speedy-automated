@@ -135,6 +135,45 @@ DC_Operation_S004:
     parcel_owner: Speedy
   check_close_pouch:
     inventory: DC SB
+  parcel_detail_in_scan_in_tab:
+    receiving_date: 04-11-2567
+    customer_id: 'B2C0002400563'    #'2400563'
+    parcel_size: '120 ซม. กล่อง L'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    warehouse_source: DCBB
+    send_parcel_to: 'Home (11120)'
+  label_detail_in_scan_in_tab:
+    courier: 'FSH'
+    zipcode: '11120'
+    province: 'นนทบุรี'
+    customer: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    size: L
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0633906216'
+    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+  timeline_in_history_parcel_after_scan_in:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
   data_in_all_task_tab_after_scan:
     task_type: งานส่งออก
     parcel_owner: Speedy
@@ -157,11 +196,15 @@ DC_Operation_S004:
     parcel_owner: Speedy
     parcel_size: ซอง A4
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
-  data_in_pouch:
-    inventory_crossdock: '-'
-    destination_inventory: DC SC
-    parcel_amount: '1'
+  data_in_pouch_list:
+    crossdock_warehouse: '-'
+    destination_warehouse: DC SB
     status: 'On'
+  data_in_pouch_detail:
+    crossdock_warehouse: '-'
+    pouch_status: เปิด
+    origin_warehouse: DC BB
+    destination_warehouse: DC SB
 
 DC_Operation_S006:
   sender_name: คุณ e
@@ -202,7 +245,7 @@ DC_Operation_S006:
     parcel_owner: Speedy
     parcel_size: ซอง A4
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
-  data_in_pouch:
+  data_in_pouch_list:
     inventory_crossdock: '-'
     destination_inventory: DC SC
     parcel_amount: '1'

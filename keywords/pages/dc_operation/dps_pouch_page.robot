@@ -10,31 +10,68 @@ Click Print Pouch Label
 
 Verify Pouch In Pouch Page
     [Arguments]    ${pouch_number}    ${inventory_crossdock}    ${destination_inventory}
-    ...    ${parcel_amount}    ${status}    ${update_date}    ${pencil_icon}
+    ...    ${status}    ${update_date}    ${pencil_icon}
     ${checked}=    Set Variable If    '${status}' == 'On'    true    false
     ${dps_txt_pouch_in_pouch_list}=    Replace String    ${dps_txt_pouch_in_pouch_list}    {pouch_number}    ${pouch_number}
     ${dps_txt_pouch_in_pouch_list}=    Replace String    ${dps_txt_pouch_in_pouch_list}    {inventory_crossdock}    ${inventory_crossdock}
     ${dps_txt_pouch_in_pouch_list}=    Replace String    ${dps_txt_pouch_in_pouch_list}    {destination_inventory}    ${destination_inventory}
-    ${dps_txt_pouch_in_pouch_list}=    Replace String    ${dps_txt_pouch_in_pouch_list}    {parcel_amount}    ${parcel_amount}
     ${dps_txt_pouch_in_pouch_list}=    Replace String    ${dps_txt_pouch_in_pouch_list}    {checked}    ${checked}
     ${dps_txt_pouch_in_pouch_list}=    Replace String    ${dps_txt_pouch_in_pouch_list}    {update_date}    ${update_date}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {pouch_number}    ${pouch_number}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {inventory_crossdock}    ${inventory_crossdock}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {destination_inventory}    ${destination_inventory}
-    ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {parcel_amount}    ${parcel_amount}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {checked}    ${checked}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {update_date}    ${update_date}
     Wait Until Element Is Visible    ${dps_txt_pouch_in_pouch_list}    timeout=5s
+    ${actual_update_date}=    Get Text    ${dps_txt_pouch_in_pouch_list}//td[6]
+    ${expected_update_date_format}    Convert Date    ${actual_update_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
+    Should Be Equal    ${actual_update_date}   ${expected_update_date_format}
     Run Keyword IF    '${pencil_icon}' == 'ไอคอนรูปดินสอ'    Page Should Contain Element    ${dps_img_pencil_in_pouch_in_pouch_list}
 
-# Verify Pouch Detail Popup
-#     //span[text()='หมายเลข POUCH']/..//span[2]
-#     //span[text()='คลัง Crossdock']/..//span[2]
-#     //span[text()='สถานะ Pouch']/..//div
-#     //span[text()='จำนวนพัสดุ']/..//span[2]
-#     //span[text()='คลังต้นทาง']/..//span[2]
-#     //span[text()='คลังปลายทาง']/..//span[2]
-#     //div[@class='print-section ']//h1
+Verify Label Of Information Section In Pouch Detail Popup
+    [Arguments]    ${title_pouch_detail}    ${txt_pouch_num}    ${txt_crossdock_warehouse}
+    ...    ${txt_pouch_status}    ${txt_parcel_amount}    ${txt_origin_warehouse}
+    ...    ${txt_destination_warehouse}
+    ${dps_txt_title_pouch_detail}=    Replace String    ${dps_txt_title_pouch_detail}    {value}    ${title_pouch_detail}
+    ${dps_txt_pouch_number_pouch_detail}=    Replace String    ${dps_txt_pouch_number_pouch_detail}    {value}    ${txt_pouch_num}
+    ${dps_txt_crossdock_warehouse_pouch_detail}=    Replace String    ${dps_txt_crossdock_warehouse_pouch_detail}    {value}    ${txt_crossdock_warehouse}
+    ${dps_txt_pouch_status_pouch_detail}=    Replace String    ${dps_txt_pouch_status_pouch_detail}    {value}    ${txt_pouch_status}
+    ${dps_txt_parcel_amount_pouch_detail}=    Replace String    ${dps_txt_parcel_amount_pouch_detail}    {value}    ${txt_parcel_amount}
+    ${dps_txt_origin_warehouse_pouch_detail}=    Replace String    ${dps_txt_origin_warehouse_pouch_detail}    {value}    ${txt_origin_warehouse}
+    ${dps_txt_destination_warehouse_pouch_detail}=    Replace String    ${dps_txt_destination_warehouse_pouch_detail}    {value}    ${txt_destination_warehouse}
+    ${actual_txt_title_pouch_detail}=    Get Text    ${dps_txt_title_pouch_detail}
+    ${actual_txt_pouch_num}=    Get Text    ${dps_txt_pouch_number_pouch_detail}
+    ${actual_txt_crossdock_warehouse}=    Get Text    ${dps_txt_crossdock_warehouse_pouch_detail}
+    ${actual_txt_pouch_status}=    Get Text    ${dps_txt_pouch_status_pouch_detail}
+    ${actual_txt_parcel_amount}=    Get Text    ${dps_txt_parcel_amount_pouch_detail}
+    ${actual_origin_warehouse}=    Get Text    ${dps_txt_origin_warehouse_pouch_detail}
+    ${actual_destination_warehouse}=    Get Text    ${dps_txt_destination_warehouse_pouch_detail}
+    Should Be Equal    ${actual_txt_title_pouch_detail}    ${title_pouch_detail}
+    Should Be Equal    ${actual_txt_pouch_num}    ${txt_pouch_num}
+    Should Be Equal    ${actual_txt_crossdock_warehouse}    ${txt_crossdock_warehouse}
+    Should Be Equal    ${actual_txt_pouch_status}    ${txt_pouch_status}
+    Should Be Equal    ${actual_txt_parcel_amount}    ${txt_parcel_amount}
+    Should Be Equal    ${actual_origin_warehouse}    ${txt_origin_warehouse}
+    Should Be Equal    ${actual_destination_warehouse}    ${txt_destination_warehouse}
+
+Verify Data Of Information Section In Pouch Detail Popup
+    [Arguments]    ${expected_pouch_num}    ${expected_crossdock_warehouse}    ${expected_pouch_status}
+    ...    ${expected_origin_warehouse}    ${expected_destination_warehouse}
+    ${dps_txt_pouch_number_pouch_detail}=    Replace String    ${dps_txt_pouch_number_pouch_detail}    {value}    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
+    ${dps_txt_crossdock_warehouse_pouch_detail}=    Replace String    ${dps_txt_crossdock_warehouse_pouch_detail}    {value}    ${dc_operation.label_pouch_in_pouch_detail['crossdock_warehouse']}
+    ${dps_txt_pouch_status_pouch_detail}=    Replace String    ${dps_txt_pouch_status_pouch_detail}    {value}    ${dc_operation.label_pouch_in_pouch_detail['pouch_status']}
+    ${dps_txt_origin_warehouse_pouch_detail}=    Replace String    ${dps_txt_origin_warehouse_pouch_detail}    {value}    ${dc_operation.label_pouch_in_pouch_detail['origin_warehouse']}
+    ${dps_txt_destination_warehouse_pouch_detail}=    Replace String    ${dps_txt_destination_warehouse_pouch_detail}    {value}    ${dc_operation.label_pouch_in_pouch_detail['destination_warehouse']}
+    ${actual_txt_pouch_num}=    Get Text    ${dps_txt_pouch_number_pouch_detail}/..//span[2]
+    ${actual_txt_crossdock_warehouse}=    Get Text    ${dps_txt_crossdock_warehouse_pouch_detail}/..//span[2]
+    ${actual_txt_pouch_status}=    Get Text    ${dps_txt_pouch_status_pouch_detail}/..//div
+    ${actual_origin_warehouse}=    Get Text    ${dps_txt_origin_warehouse_pouch_detail}/..//span[2]
+    ${actual_destination_warehouse}=    Get Text    ${dps_txt_destination_warehouse_pouch_detail}/..//span[2]
+    Should Be Equal    ${actual_txt_pouch_num}    ${expected_pouch_num}
+    Should Be Equal    ${actual_txt_crossdock_warehouse}    ${expected_crossdock_warehouse}
+    Should Be Equal    ${actual_txt_pouch_status}    ${expected_pouch_status}
+    Should Be Equal    ${actual_origin_warehouse}    ${expected_origin_warehouse}
+    Should Be Equal    ${actual_destination_warehouse}    ${expected_destination_warehouse}
 
 Click Dropdown Select Warehouse List
     [Arguments]    ${selected_warehouse}

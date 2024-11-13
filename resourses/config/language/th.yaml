@@ -494,6 +494,15 @@ dc_operation:
     parcel_label: ใบปะหน้าพัสดุ
     parcel_sorting_sheet: ใบคัดแยกพัสดุ
     pouch_label: ใบ Label Pouch
+  label_pouch_in_pouch_detail:
+    title: รายละเอียด Pouch
+    pouch_number: หมายเลข POUCH
+    crossdock_warehouse: คลัง Crossdock
+    pouch_status: สถานะ Pouch
+    parcel_amount: จำนวนพัสดุ
+    origin_warehouse: คลังต้นทาง
+    destination_warehouse: คลังปลายทาง
+
 
 rm:
   text_pre_register: Pre-Register

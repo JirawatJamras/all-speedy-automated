@@ -201,9 +201,6 @@ DC_Operation_S007
     # ...    DCSB  # ${DC_Operation_S007.data_in_export_task_tab['import_from']}
     # ...    CPALL  # ${DC_Operation_S007.data_in_export_task_tab['transport']}
     # ...    speedy  # ${DC_Operation_S007.data_in_export_task_tab['parcel_owner']}
-    # ...    0  # ${DC_Operation_S007.data_in_export_task_tab['number_of_pouch']}
-    # ...    7  # ${DC_Operation_S007.data_in_export_task_tab['number_of_pieces']}
-    # ...    7  # ${DC_Operation_S007.data_in_export_task_tab['number_of_scanned_items']}
 
     Log    Step No.11 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
