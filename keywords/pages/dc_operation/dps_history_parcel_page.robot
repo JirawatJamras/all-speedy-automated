@@ -31,8 +31,9 @@ Check Date And Time Format In Timeline
     Should Be True    ${minute_is_valid}
 
 Compare Time And Title In Timeline
-    [Arguments]    ${step_title}    ${step_description}
+    [Arguments]    ${step_title}    ${step_description}    ${count_timeline}
     ${sequence}=    Convert To Integer    1
+    # FOR    ${i}    IN RANGE    1    ${count_timeline}
     FOR    ${i}    IN RANGE    1    10
         ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_txt_step_title_in_timeline_history_parcel_page}[${i}]    timeout=1s
         Run Keyword IF    '${isvisible}' == 'True'    Set Suite Variable    ${sequence}    ${i}
@@ -51,10 +52,11 @@ Compare Time And Title In Timeline
 
 Verify Timeline
     [Arguments]    ${timelines}
+    ${count_timeline}=    Get Length    ${timelines}
         FOR    ${timeline}    IN    @{timelines}
         ${title}=    Get From Dictionary    ${timeline}    title
         ${description}=    Get From Dictionary    ${timeline}    description
-        Compare Time And Title In Timeline    ${title}    ${description}
+        Compare Time And Title In Timeline    ${title}    ${description}    ${count_timeline}
     END
 
 Filter Data By Parcel Number

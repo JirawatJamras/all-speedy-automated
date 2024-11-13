@@ -114,22 +114,17 @@ DC_Operation_S003:
     export_to: home
     deliver: Flash
     update_date:
-  # timeline_in_history_parcel:
-  #   -timeline1:
-  #     title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-  #     description: '-'
-  #   -timeline2:
-  #     title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-  #     description: ''
-  #   -timeline3:
-  #     title: พัสดุเข้าคลังต้นทาง
-  #     description: DC BB
-  #   -timeline4:
-  #     title: รอปริ้นใบลาเบลติดหน้ากล่อง
-  #     description: '-'
-  #   -timeline5:
-  #     title: พัสดุรอนำจ่ายโดยคลัง
-  #     description: DC BB
+  timeline_in_history_parcel:
+    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC BB
 
 DC_Operation_S006:
   data_in_all_task_tab:
