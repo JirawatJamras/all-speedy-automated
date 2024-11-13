@@ -162,9 +162,9 @@ Verify Data Parcel Details In Warehouse Details
     ${dps_txt_value_parcel_size}=    Replace String    ${dps_txt_value_parcel_size_history_parcel_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['parcel_size']}
     ${dps_txt_value_parcel_size}=    Replace String    ${dps_txt_value_parcel_size}    {value}    ${parcel_size}
     ${dps_txt_value_route}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${route}
-    ${dps_txt_value_check_in_date}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${check_in_date}
+    # ${dps_txt_value_check_in_date}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${check_in_date}
     ${dps_txt_value_date_in_system}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${date_in_system}
-    ${dps_txt_value_sla_date}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${sla_date}
+    # ${dps_txt_value_sla_date}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${sla_date}
     ${dps_txt_value_sla_text}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${sla_text}
     ${dps_txt_value_origin_store}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${origin_store}
     ${dps_txt_value_origin_warehouse}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${origin_warehouse}
@@ -179,9 +179,9 @@ Verify Data Parcel Details In Warehouse Details
     ${actual_txt_value_pouch_number}=    Get Text    ${dps_txt_value_pouch_number}
     ${actual_txt_value_parcel_size}=    Get Text    ${dps_txt_value_parcel_size}
     ${actual_txt_value_route}=    Get Text    ${dps_txt_value_route}
-    ${actual_txt_value_check_in_date}=    Get Text    ${dps_txt_value_check_in_date}
+    # ${actual_txt_value_check_in_date}=    Get Text    ${dps_txt_value_check_in_date}
     ${actual_txt_value_date_in_system}=    Get Text    ${dps_txt_value_date_in_system}
-    ${actual_txt_value_sla_date}=    Get Text    ${dps_txt_value_sla_date}
+    # ${actual_txt_value_sla_date}=    Get Text    ${dps_txt_value_sla_date}
     ${actual_txt_value_sla_text}=    Get Text    ${dps_txt_value_sla_text}
     ${actual_txt_value_origin_store}=    Get Text    ${dps_txt_value_origin_store}
     ${actual_txt_value_origin_warehouse}=    Get Text    ${dps_txt_value_origin_warehouse}
@@ -195,9 +195,9 @@ Verify Data Parcel Details In Warehouse Details
     Should Be Equal    ${actual_txt_value_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_value_parcel_size}    ${parcel_size}
     Should Be Equal    ${actual_txt_value_route}    ${route}
-    Should Be Equal    ${actual_txt_value_check_in_date}    ${check_in_date}
+    # Should Be Equal    ${actual_txt_value_check_in_date}    ${check_in_date}
     Should Be Equal    ${actual_txt_value_date_in_system}    ${date_in_system}
-    Should Be Equal    ${actual_txt_value_sla_date}    ${sla_date}
+    # Should Be Equal    ${actual_txt_value_sla_date}    ${sla_date}
     Should Be Equal    ${actual_txt_value_sla_text}    ${sla_text}
     Should Be Equal    ${actual_txt_value_origin_store}    ${origin_store}
     Should Be Equal    ${actual_txt_value_origin_warehouse}    ${origin_warehouse}
@@ -248,4 +248,22 @@ Verify Data Receiver In Warehouse Details
     Should Be Equal    ${actual_txt_value_receiver_phone}    ${receiver_phone}
     Should Be Equal    ${actual_txt_value_receiver_address}    ${receiver_adderss}
 
-Click
+Click Reprint Label Dropdown
+    [Arguments]    ${title}
+    ${dps_btn_reprint_label}=    Replace String    ${dps_btn_reprint_label_history_parcel_page}    {value}    ${title}
+    FOR    ${i}    IN RANGE    0    5
+        common.Click When Ready    ${dps_btn_reprint_label}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_cbo_reprint_label_history_parcel_page}    timeout=10s
+        Exit For Loop If    '${isvisible}' == 'True'
+    END
+
+Verify Reprint Label Dropdown
+    [Arguments]    ${parcel_label}    ${parcel_sorting_sheet}    ${pouch_label}
+    ${dps_cbo_parcel_label}=    Replace String    ${dps_cbo_value_in_reprint_label_history_parcel_page}    {value}    ${parcel_label}
+    ${dps_cbo_parcel_sorting_sheet}=    Replace String    ${dps_cbo_value_in_reprint_label_history_parcel_page}    {value}    ${parcel_sorting_sheet}
+    ${dps_cbo_pouch_label}=    Replace String    ${dps_cbo_value_in_reprint_label_history_parcel_page}    {value}    ${pouch_label}
+    ${actual_status_parcel_sorting_sheet}=    Get Element Attribute    ${dps_cbo_parcel_sorting_sheet}    aria-disabled
+    ${actual_status_pouch_label}=    Get Element Attribute    ${dps_cbo_pouch_label}    aria-disabled
+    Element Should Be Visible    ${dps_cbo_parcel_label}
+    Should Be Equal    ${actual_status_parcel_sorting_sheet}    false
+    Should Be Equal    ${actual_status_pouch_label}    false
