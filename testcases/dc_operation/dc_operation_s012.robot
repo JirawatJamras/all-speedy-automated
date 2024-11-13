@@ -173,17 +173,7 @@ DC_Operation_S012
     Switch Window    NEW
     # Defect201    Defect202    Defect206
     # Expected
-    dps_history_parcel_page.Verify Timeline
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline1['title']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline1['description']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline2['title']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline2['description']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline3['title']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline3['description']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline4['title']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline4['description']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline5['title']}
-    ...    ${DC_Operation_S012.timeline_in_history_parcel.timeline5['description']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S012['timeline_in_history_parcel']}
 
     Log    Step No.9 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
