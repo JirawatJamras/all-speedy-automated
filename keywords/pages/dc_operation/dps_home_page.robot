@@ -261,20 +261,10 @@ Verify Data In Export Task Tab
 Select DPS Menu
     [Arguments]    ${tabname}
     Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
-    Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
     Mouse Over    //a[@href='/${tabname}']
     Wait Until Element Is Visible    //a[@href='/${tabname}']
     Click Element    //a[@href='/${tabname}']
     Mouse Out    //a[@href='/${tabname}']
-    IF  '${tabname}' == 'homepage'
-        FOR  ${i}  IN RANGE  0  5
-        Reload Page
-        ${isvisible}    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_img_loading_page}
-        Capture Page Screenshot
-        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
-        END
-        Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=240s
-    END
 
 Verify Parcels Into The Warehouse
     [Arguments]    ${test_scenario}

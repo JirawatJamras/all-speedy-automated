@@ -39,6 +39,16 @@ DC_Operation_S002:
     courier: CPALL
 
 DC_Operation_S003:
+  sender_name_1: 'คุณ a'
+  sender_name_2: 'คุณ b'
+  sender_name_3: 'คุณ c'
+  sender_name_4: 'คุณ d'
+  sender_name_5: 'คุณ e'
+  sender_name_6: 'คุณ f'
+  sender_name_7: 'คุณ g'
+  sender_name_8: 'คุณ h'
+  sender_name_9: 'คุณ i'
+  sender_name_10: 'คุณ j'
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
@@ -84,29 +94,29 @@ DC_Operation_S003:
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
   scan_out_waiting_scan:
-    tracking: SPBD241100000470
+    # tracking: SPBD241100000470
     pouch_number: '-'
-    receive_parcel_from: Store
+    receive_parcel_from: Home
     transport: Flash
     parcel_owner: Speedy
     parcel_size: 'กล่อง L'
-    update_date: 08/11/2567
+    # update_date: 08/11/2567
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   scan_out_print:
     export_to: home
     deliver: Flash
     update_date:
   timeline_in_history_parcel:
-    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      description: '-'
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
       description: ''
     - title: พัสดุเข้าคลังต้นทาง
       description: DC BB
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
-    - title: พัสดุรอนำจ่ายโดยคลัง
-      description: DC BB
+    - title: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+      description: '-'
 
 DC_Operation_S004:
   sender_name: คุณ c
@@ -454,9 +464,9 @@ DC_Operation_S013:
     transport: Flash
     parcel_owner: Speedy
   parcel_detail_in_scan_in_tab:
-    tracking: SPBD241100000469
+    tracking: SPBD241100000464
     receiving_date: 04-11-2567
-    customer_id: 'B2C0002400563'    #'2400563'
+    customer_id: '0002400563'
     parcel_size: '120 ซม. กล่อง L'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
@@ -481,7 +491,7 @@ DC_Operation_S013:
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
   scan_out_waiting_scan:
-    tracking: SPBD241100000469
+    tracking: SPBD241100000464
     pouch_number: '-'
     receive_parcel_from: Store
     transport: Flash
@@ -515,7 +525,7 @@ DC_Operation_S014:
   parcel_detail_in_scan_in_tab:
     tracking: SPCD241100000423
     receiving_date: 04-11-2567
-    customer_id: 'B2C0002400563'    #'2400563'
+    customer_id: '2400563'
     parcel_size: '120 ซม. กล่อง L'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
