@@ -175,6 +175,7 @@ DC_Operation_S007:
     task_type: งานรับเข้า
     parcel_owner: Speedy
     import_from: Home
+    import_from2: คลัง DC BB
     export_to: '-'
     transport: CP All
     pouch_number: '-'
@@ -235,6 +236,18 @@ DC_Operation_S007:
     parcel_size: กล่อง XL
     receiving_date: ''
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  wait_derivery_data_list:
+    export_to: คลัง DC SB
+    transport: CP ALL
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_send_task_tab:
+    send_to: Store
+    store_code: '15888'
+    customer_type: 'B2C'
+    transport: CP All
+
 
 DC_Operation_S012:
   data_in_all_task_tab:
