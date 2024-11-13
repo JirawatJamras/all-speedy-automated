@@ -84,26 +84,26 @@ DC_Operation_S012
     # # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    # # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']}
-    # # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']}
+    # # ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
+    # # ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    # # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    # # ...    ${dc_operation.scan_in_title_parcel_detail['source_warehouse']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # # ...    ROUTE  # ${dc_operation.scan_in_title_parcel_detail['route']}   
     # # dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
     # # ...    SPBD241100002422
     # # ...    B2C0002400563  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['customer_id']}
     # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['parcel_size']}
-    # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['warehouse_crossdock']}
-    # # ...    DC BB  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['warehouse_destination']}
+    # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['crossdock_warehouse']}
+    # # ...    DC BB  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['destination_warehouse']}
     # # ...    พัสดุถึงคลังปลายทาง  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['parcel_status']}
     # # ...    CP ALL  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['courier']}
     # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['pouch_number']}
     # # ...    06-11-2567 16:33:46  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['receiving_date']}
-    # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['warehouse_source']}
+    # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['source_warehouse']}
     # # ...    STORE (07004)  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['send_parcel_to']}
     # # ...    4629  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['route']}
     # # dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
@@ -155,7 +155,7 @@ DC_Operation_S012
     # dps_parcel_detail_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Print Label Success Popup
 
-    Log    Step No.6 คลิกที่ Pop up
+    Log    Step No.6 คลิกที่ x Pop up
     # dps_parcel_detail_page.Click Close Print Label Success Popup
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
