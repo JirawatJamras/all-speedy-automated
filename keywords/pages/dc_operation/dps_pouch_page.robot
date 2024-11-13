@@ -42,7 +42,8 @@ Click Dropdown Select Warehouse List
     ${button_selected_warehouse_list}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${name}
     common.Click When Ready    ${button_selected_warehouse_list}
     ${selected_warehouse_list}=    Replace String    ${dps_cbo_warehouse_parcel_pickup}    {value}    ${selected_warehouse}
-    common.Click When Ready    ${selected_warehouse_list}
+    common.Click Xpath By JavaScript    ${selected_warehouse_list}
+    Sleep    2s
 
 Verify Navigate To Pouch Page Success
     ${dps_txt_title_pouch_pouch_page}=    Replace String    ${dps_txt_title_pouch_pouch_page}    {value}    ${dc_operation.title['pouch']}
@@ -55,7 +56,7 @@ Check Open Pouch And Close Pouch By Destination Inventory
     IF  '${count}' != '0'
         FOR    ${index}    IN RANGE    1    ${count}+1
             Log    Step No. 4 ปิด Pouch ที่มีปลายทางเป็น DC SB (ทำทีละรายการจนหมด)
-            Click On/OFF Button Of Pouch List    ${destination_inventory}    ${index}
+            Click On/OFF Button Of Pouch List    ${destination_inventory}
             # Expected
             Verify Warning Confirm To Close Pouch
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Warning Confirm To Close Pouch On Checking Pouch Step
@@ -76,9 +77,9 @@ Check Open Pouch And Close Pouch By Destination Inventory
     END
 
 Click On/OFF Button Of Pouch List
-    [Arguments]    ${destination_inventory}    ${index}
-    common.Scroll Into View By Xpath    (//td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true'])[${index}]    true
-    common.Click When Ready    (//td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true'])[${index}]
+    [Arguments]    ${destination_inventory}
+    common.Scroll Into View By Xpath    (//td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true'])[1]    true
+    common.Click When Ready    (//td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true'])[1]
 
 Verify Warning Confirm To Close Pouch
     ${dps_txt_warning_confirm_to_close_pouch}=    Replace String    ${dps_txt_warning_confirm_to_close_pouch}    {value}    ${dc_operation['text_warning_confirm_to_close_pouch']}

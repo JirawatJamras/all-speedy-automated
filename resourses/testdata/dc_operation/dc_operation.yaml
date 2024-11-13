@@ -117,7 +117,8 @@ DC_Operation_S003:
     deliver: Flash
     update_date:
 
-DC_Operation_S006:
+DC_Operation_S004:
+  sender_name: คุณ c
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
@@ -131,6 +132,53 @@ DC_Operation_S006:
     import_from: Home
     transport: CP All
     parcel_owner: Speedy
+  check_close_pouch:
+    inventory: DC SB
+  data_in_all_task_tab_after_scan:
+    task_type: งานส่งออก
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: คลัง DCSB
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '1'
+    number_of_pieces: '-'
+    number_of_scanned_items: '1'
+  scan_out_waiting_scan:
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: ซอง A4
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_pouch:
+    inventory_crossdock: '-'
+    destination_inventory: DC SC
+    parcel_amount: '1'
+    status: 'On'
+
+DC_Operation_S006:
+  sender_name: คุณ e
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+  check_close_pouch:
+    inventory: DC SB
   data_in_all_task_tab_after_scan:
     task_type: งานส่งออก
     parcel_owner: Speedy
