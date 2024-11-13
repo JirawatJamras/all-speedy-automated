@@ -342,6 +342,8 @@ dc_operation:
   vehicle_type: ประเภทที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
+    text_warehouse_no_select: ไม่มีคลังที่เลือก
+    text_please_select_warehouse: โปรดเลือกคลัง
     text_warehouse_DC_BB: คลัง DC BB
     text_warehouse_DC_SB: คลัง DC SB
     text_warehouse_DC_MC: คลัง DC MC
@@ -452,6 +454,9 @@ dc_operation:
     transport: ผ่านขนส่ง
     parcel_number: จำนวนพัสดุ
     pouch_number: จำนวน Pouch
+    title_parcel_and_pouch_number: รวมจำนวนพัสดุและPouch
+    title_date: วันที่อัปเดตล่าสุด
+    title_status: สถานะ
   status:
     confirm: ยืนยันแล้ว
     waiting: รอยืนยัน

@@ -65,6 +65,7 @@ Resource                    ../keywords/pages/dc_operation/dps_scan_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_parcel_detail_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_pouch_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_history_parcel_page.robot
+Resource                    ../keywords/pages/dc_operation/dps_wait_delivery.robot
 
 Resource                    locators/dc_operation/dps_landing_page.robot
 Resource                    locators/dc_operation/dps_login_page.robot
@@ -74,6 +75,7 @@ Resource                    locators/dc_operation/dps_scan_page.robot
 Resource                    locators/dc_operation/dps_parcel_detail_page.robot
 Resource                    locators/dc_operation/dps_pouch_page.robot
 Resource                    locators/dc_operation/dps_history_parcel_page.robot
+Resource                    locators/dc_operation/dps_wait_delivery.robot
 
 Variables                   testdata/feature/dps/dps_testdata.yaml
 Variables                   testdata/feature/dps/allspeedy_dps_001.yaml
