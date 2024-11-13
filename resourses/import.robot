@@ -81,6 +81,7 @@ Variables                   testdata/feature/dps/dps_testdata.yaml
 Variables                   testdata/feature/dps/allspeedy_dps_001.yaml
 Variables                   testdata/feature/dps/allspeedy_dps_003.yaml
 Variables                   testdata/dc_operation/dc_operation.yaml
+Variables                   testdata/dc_operation/booking_dry_test_dc.yaml
 
 ######################## REGISTER ########################
 Resource                    ../keywords/pages/register/register_general_customers_page.robot

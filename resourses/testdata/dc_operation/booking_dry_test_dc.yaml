@@ -1,0 +1,120 @@
+ booking_dry:
+  parcel_sender_A:
+    sender_name: คุณ a
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุCourier
+    receiver_phone: 0900987354
+    pickup_destination: Home (11120)    ##ส่งที่บ้าน (รหัสไปรษณีย์ปลายทาง)
+    parcel_size: '120 ซม. กล่อง L'
+    pickup_location: บ้าน
+    pickup_address_detail: 554 หมู่ 3 ต.ปากเกร็ด อ.ปากเกร็ด จ.นนทบุรี
+
+  parcel_sender_B:
+    sender_name: คุณ b
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ In area
+    receiver_phone: 0900987354
+    pickup_destination: Store (07004)    ##ส่งที่ร้าน 7-11 (รหัสร้าน 7-11)
+    parcel_size: '90 ซม. กล่อง M'
+    pickup_location: ร้าน สาขา เรวดี (ตลาดเปรมสุข) (07004)
+    pickup_address_detail: ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000
+
+  parcel_sender_C:
+    sender_name: คุณ c
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Express ส่งบ้านสร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Home (10280)    ##ส่งที่บ้าน (รหัสไปรษณีย์ปลายทาง)
+    parcel_size: '51 ซม. ซอง A4'
+    pickup_location: บ้าน
+    pickup_address_detail: 228 ซอย 3 บางปู เมืองสมุทรปราการ สมุทรปราการ 10280
+
+  parcel_sender_D:
+    sender_name: คุณ d
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Express ส่งบ้านไม่สร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Home (10280)    ##ส่งที่บ้าน (รหัสไปรษณีย์ปลายทาง)
+    parcel_size: '150 ซม. กล่อง XL'
+    pickup_location: บ้าน
+    pickup_address_detail: 228 ซอย 3 บางปู เมืองสมุทรปราการ สมุทรปราการ 10280
+
+  parcel_sender_E:
+    sender_name: คุณ e
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Store (15888)    ##ส่งที่ร้าน 7-11 (รหัสร้าน 7-11)
+    parcel_size: '51 ซม. ซอง A4'
+    pickup_location: ร้าน สาขา CP TOWER สีลม (15888)
+    pickup_address_detail: สีลม บางรัก กรุงเทพมหานคร 10500
+  
+  parcel_sender_F:
+    sender_name: คุณ f
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Store (15888)    ##ส่งที่ร้าน 7-11 (รหัสร้าน 7-11)
+    parcel_size: '150 ซม. กล่อง XL'
+    pickup_location: ร้าน สาขา CP TOWER สีลม (15888)
+    pickup_address_detail: สีลม บางรัก กรุงเทพมหานคร 10500
+
+  parcel_sender_G:
+    sender_name: คุณ g
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Crossdock ส่งบ้านสร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Home (51000)    ##ส่งที่บ้าน (รหัสไปรษณีย์ปลายทาง)
+    parcel_size: '51 ซม. ซอง A4'
+    pickup_location: บ้าน
+    pickup_address_detail: 62 ต.ในเมือง อ.เมืองลำพูน จ.ลำพูน 51000
+
+  parcel_sender_H:
+    sender_name: คุณ h
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Home (51000)    ##ส่งที่บ้าน (รหัสไปรษณีย์ปลายทาง)
+    parcel_size: '150 ซม. กล่อง XL'
+    pickup_location: บ้าน
+    pickup_address_detail: 62 ต.ในเมือง อ.เมืองลำพูน จ.ลำพูน 51000
+
+  parcel_sender_I:
+    sender_name: คุณ i
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Store (01015)    ##ส่งที่ร้าน 7-11 (รหัสร้าน 7-11)
+    parcel_size: '51 ซม. ซอง A4'
+    pickup_location: ร้าน สาขา เวียงป่าเป้า (01015)
+    pickup_address_detail: เวียง เวียงป่าเป้า เชียงราย 57170
+
+  parcel_sender_J:
+    sender_name: คุณ j
+    sender_phone: 0959494989
+    sender_address: 74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม
+    sender_postcode: '73000'
+    receiver_name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    receiver_phone: 0900987354
+    pickup_destination: Store (01015)    ##ส่งที่ร้าน 7-11 (รหัสร้าน 7-11)
+    parcel_size: '150 ซม. กล่อง XL'
+    pickup_location: ร้าน สาขา เวียงป่าเป้า (01015)
+    pickup_address_detail: เวียง เวียงป่าเป้า เชียงราย 57170
