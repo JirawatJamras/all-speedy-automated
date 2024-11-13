@@ -161,10 +161,10 @@ DC_Operation_S013
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Click ESC On Keyboard
-    Switch Window    NEW
-    Press Keys    None    TAB+SPACE
-    Switch Window    MAIN    
+    dps_parcel_detail_page.Click ESC On Keyboard
+    # Switch Window    NEW
+    # Press Keys    None    TAB+SPACE
+    # Switch Window    MAIN    
     # Expected
     dps_parcel_detail_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}

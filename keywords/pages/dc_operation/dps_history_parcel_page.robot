@@ -50,14 +50,12 @@ Compare Time And Title In Timeline
     Should Be Equal    ${actual_description}    ${step_description}
 
 Verify Timeline
-    [Arguments]    ${title1}    ${description1}    ${title2}    ${description2}    ${title3}    ${description3}
-    ...            ${title4}    ${description4}    ${title5}    ${description5}
-    # Defect206
-    # Compare Time And Title In Timeline    ${title1}    ${description1}
-    Compare Time And Title In Timeline    ${title2}    ${description2}
-    Compare Time And Title In Timeline    ${title3}    ${description3}
-    Compare Time And Title In Timeline    ${title4}    ${description4}
-    Compare Time And Title In Timeline    ${title5}    ${description5}
+    [Arguments]    ${timelines}
+        FOR    ${timeline}    IN    @{timelines}
+        ${title}=    Get From Dictionary    ${timeline}    title
+        ${description}=    Get From Dictionary    ${timeline}    description
+        Compare Time And Title In Timeline    ${title}    ${description}
+    END
 
 Filter Data By Parcel Number
     [Arguments]    ${parcel_number}
