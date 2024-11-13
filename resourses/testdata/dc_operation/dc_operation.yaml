@@ -709,3 +709,9 @@ DC_Operation_S020:
     status: 
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว
+
+DC_Operation_S026:
+  parcel_detail_in_scan_in_tab:
+    sender_name: คุณ j
+    customer_id: '0002400563'
+    warehouse_crossdock: 'AC'
