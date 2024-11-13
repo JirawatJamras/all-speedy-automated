@@ -225,7 +225,7 @@ DC_Operation_S007:
     number_of_pouch: '-'
     number_of_pieces: '1'
     number_of_scanned_items: '1'
-  scan_in_data_paecel_detail:
+  scan_in_data_parcel_detail:
     parcel_id: 'SPBD241100000140'
     customer_id: '2400563'
     parcel_size: 150 ซม. กล่อง XL
@@ -256,6 +256,86 @@ DC_Operation_S007:
     phone: ''
     shipping_destination: ร้าน (15888)
     address: 'เขตสีลม แขวงบางรัก กรุงเทพมหานคร 10500'
+  scan_out_waiting_scan:
+    title: รายการพัสดุที่รอ Scan Out
+    parcel_id: ''
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    receiving_date: ''
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  wait_derivery_data_list:
+    export_to: คลัง DC SB
+    transport: CP ALL
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_send_task_tab:
+    send_to: Store
+    store_code: '15888'
+    customer_type: 'B2C'
+    transport: CP All
+
+
+DC_Operation_S009:
+  data_in_all_task_tab:
+    task_type_import: งานรับเข้า
+    task_type_export: งานส่งออก
+    parcel_owner: Speedy
+    import_from: Home
+    import_from2: คลัง DC BB
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '6'
+    number_of_scanned_items: '6'
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '1'
+    number_of_scanned_items: '1'
+  scan_in_data_parcel_detail:
+    parcel_id: ''
+    customer_id: '0002400563'
+    parcel_size: 150 ซม. กล่อง XL
+    warehouse_crossdock: AC
+    warehouse_destination: RDCLP
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: CP All
+    pouch_number: '-'
+    receiving_date: ''
+    warehouse_source: DCBB
+    send_parcel_to: Home (51000)
+    route: '-'
+  scan_in_data_label_detail:
+    route: '-'
+    store: '51000 (กล่อง XL)'
+    customer: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
+    phone: ''
+    pouch_number: '-'
+    wh: DCBB - AC - RDCLP
+    symbol: รูปนาฬิกาทราย
+  sender_data_in_scan_in_tab:
+    name: คุณ h
+    phone: ''
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
+    phone: ''
+    shipping_destination: บ้าน
+    address: '62 ในเมือง เมืองลำพูน ลำพูน 51000'
   scan_out_waiting_scan:
     title: รายการพัสดุที่รอ Scan Out
     parcel_id: ''
