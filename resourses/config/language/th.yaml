@@ -467,7 +467,7 @@ dc_operation:
   label_parcel_details_in_warehouse:
     timeline: Timeline
     parcel_detail: รายละเอียดพัสดุ
-    tracking_number: 'Tracking Number '
+    tracking_number: Tracking Number
     parcel_status: สถานะของพัสดุ
     customer_type: ประเภทลูกค้า
     pouch_number: Pouch Number
@@ -489,8 +489,11 @@ dc_operation:
   label_receiver_in_warehouse:
     receiver_name: ชื่อผู้รับ
     receiver_address: ที่อยู่ผู้รับ
-  title_step_in_timeline:
-    carrier_go_to_pickup_parcel: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  dropdown_reprint_label:
+    title: Reprint ใบปะหน้า
+    parcel_label: ใบปะหน้าพัสดุ
+    parcel_sorting_sheet: ใบคัดแยกพัสดุ
+    pouch_label: ใบ Label Pouch
 
 rm:
   text_pre_register: Pre-Register

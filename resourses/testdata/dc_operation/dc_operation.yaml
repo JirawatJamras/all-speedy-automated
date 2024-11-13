@@ -343,22 +343,6 @@ DC_Operation_S012:
     phone: '0900987354'
     shipping_destination: 'ร้าน (07004)'
     address: 'ต.ตลาดขวัญ อ.เมืองนนทบุรี จ.นนทบุรี 11000'
-  # timeline_in_history_parcel:
-  #   timeline1:
-  #     title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-  #     description: '-'
-  #   timeline2:
-  #     title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-  #     description: ''
-  #   timeline3:
-  #     title: พัสดุเข้าคลังต้นทาง
-  #     description: DC BB
-  #   timeline4:
-  #     title: รอปริ้นใบลาเบลติดหน้ากล่อง
-  #     description: '-'
-  #   timeline5:
-  #     title: พัสดุรอนำจ่ายโดยคลัง
-  #     description: DC BB
   timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
@@ -530,6 +514,32 @@ DC_Operation_S016:
     wh: 'DCBB - DCBB'
     symbol: รูปวงกลม
     symbol_after_changing_warehourse: รูปดาว
+
+DC_Operation_S017:
+  value_parcel_details_in_warehouse:
+    parcel_status: พัสดุรอ Scan out ไปคลัง AC
+    customer_type: B2C
+    # pouch_number: ''
+    parcel_size: 'ซอง A4'
+    route: '3235'
+    # check_in_date: วันที่รับพัสดุเข้าระบบ
+    # date_in_system: จำนวนวันที่อยู่ในระบบ
+    # sla_date: SLA Date
+    # sla_text: SLA Text
+    origin_store: '-'
+    origin_warehouse: DC BB
+    destination_store: 'To Store (01015)'
+    crossdock_warehouse: AC
+    shipping_by: CP All
+    destination_warehouse: RDC LP
+  value_sender_in_warehouse:
+    name: คุณ i
+    phone: '0959494989'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  value_receiver_in_warehouse:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    phone: '0900987354'
+    address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
 
 DC_Operation_S018:
   value_parcel_details_in_warehouse:
