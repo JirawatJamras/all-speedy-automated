@@ -24,7 +24,7 @@ DC_Operation_S013
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    dps_home_page.Wait Until Page Loaded
+    dps_home_page.Wait Until DC Operation Home Page Loaded
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -161,7 +161,7 @@ DC_Operation_S013
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # dps_parcel_detail_page.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
@@ -298,7 +298,7 @@ DC_Operation_S013
     # Expected
 
     Log    Step No.36 กดปุ่ม พิมพ์
-    dps_parcel_detail_page.Click ESC On Keyboard
+    common.Click ESC On Keyboard
     # Expected
 
 

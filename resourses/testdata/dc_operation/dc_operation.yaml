@@ -131,9 +131,6 @@ DC_Operation_S006:
     import_from: Home
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '7'
-    number_of_scanned_items: '7'
   data_in_all_task_tab_after_scan:
     task_type: งานส่งออก
     parcel_owner: Speedy

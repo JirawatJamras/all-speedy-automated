@@ -336,6 +336,9 @@ dc_operation:
   text_courier: Courier
   text_number_of_parcel: จำนวนพัสดุ
   text_status: สถานะ
+  text_close_pouch_and_print_label: ปิด Pouch/Print Label
+  text_transaction_complete: ทำรายการสำเร็จ
+  text_warning_confirm_to_close_pouch: ยืนยันการ ปิด Pouch หรือไม่
   vehicle_type: ประเภทที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก

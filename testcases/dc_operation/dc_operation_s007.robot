@@ -16,7 +16,7 @@ DC_Operation_S007
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    dps_home_page.Wait Until Page Loaded
+    dps_home_page.Wait Until DC Operation Home Page Loaded
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
@@ -131,7 +131,7 @@ DC_Operation_S007
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    ## dps_parcel_detail_page.Click ESC On Keyboard
+    ## common.Click ESC On Keyboard
     # Defect142
     # Expected
     ##dps_parcel_detail_page.Verify Print Label Success Popup
@@ -278,7 +278,7 @@ DC_Operation_S007
 
     Log    Step No.16 กดปุ่ม พิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    dps_parcel_detail_page.Click ESC On Keyboard
+    common.Click ESC On Keyboard
     # Defect142
     # Expected
 

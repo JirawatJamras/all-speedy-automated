@@ -20,13 +20,13 @@ DC_Operation_S006
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    dps_home_page.Wait Until Page Loaded
+    dps_home_page.Wait Until DC Operation Home Page Loaded
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
-    Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    # Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
-    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # # Defect141
     # # Expected
     # Filter Data By Parcel Number [All Task Tab]    SPCD241000006731
@@ -50,15 +50,41 @@ DC_Operation_S006
 
     # Log    Step No.2 เลือกแท็บงานรับเข้า
     # dps_home_page.Select Tab Import Task
+    # # Defect139
     # # Expected
-    # # dps_home_page.Verify Data In Import Task Tab
-    # # ...    home  # ${DC_Operation_S006.data_in_import_task_tab['import_from']}
-    # # ...    CPALL  # ${DC_Operation_S006.data_in_import_task_tab['transport']}
-    # # ...    speedy  # ${DC_Operation_S006.data_in_import_task_tab['parcel_owner']}
-    # # ...    0  # ${DC_Operation_S006.data_in_import_task_tab['number_of_pouch']}
-    # # ...    499  # ${DC_Operation_S006.data_in_import_task_tab['number_of_pieces']}
-    # # ...    499  # ${DC_Operation_S006.data_in_import_task_tab['number_of_scanned_items']}
-    # # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Import Task Tab
+    # dps_home_page.Verify Label In Import Task Tab
+    # ...    ${dc_operation.label_import_task_tab['import_from']}
+    # ...    ${dc_operation.label_import_task_tab['transport']}
+    # ...    ${dc_operation.label_import_task_tab['parcel_owner']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_pouch']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
+    # dps_home_page.Verify Data In Import Task Tab
+    # ...    home  # ${DC_Operation_S013.data_in_import_task_tab['import_from']}
+    # ...    CPALL  # ${DC_Operation_S013.data_in_import_task_tab['transport']}
+    # ...    speedy  # ${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Data In Import Task Tab
+
+    Log    Step No.3 เข้าเมนูจัดการ Pouch และ คลิก Dropdown เลือกสิทธิ์คลังเป็น DC BB
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
+    dps_pouch_page.Click Dropdown Select Warehouse List    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    # Expected
+    dps_pouch_page.Verify Navigate To Pouch Page Success
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Navigate To Pouch Page Success
+
+    Log    ตรวจสอบ Pouch ที่มีคลังปลายทางเป็น DC SB ที่ถูกเปิดอยู่ และถ้ามี Pouch ที่เปิดอยู่จะดำเนินการต่อใน Step No. 4-7
+    dps_pouch_page.Check Open Pouch And Close Pouch By Destination Inventory    DC SB    DC_Operation_S006
+
+
+
+
+
+
+
+
+
+
+
 
     # Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
     # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
@@ -81,7 +107,7 @@ DC_Operation_S006
     
     # Log    Step No.6 คลิกปุ่มพิมพ์
     # # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # dps_parcel_detail_page.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     # # Defect142
     # # Expected
     # dps_parcel_detail_page.Verify Print Label Success Popup
@@ -134,50 +160,50 @@ DC_Operation_S006
     # common.Scroll Window To Vertical    1000
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Data In Export Task Tab 2
 
-    Log    Step No. 10 เข้าเมนู Scan และ เลือกแท็บ Scan out
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
-    dps_scan_page.Select Scan Out Tab
-    # Expected
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    SPBD241100002442
-    ...    P112473971
-    ...    คลัง DC BB    #${DC_Operation_S006.scan_out_waiting_scan['receive_parcel_from']}
-    ...    CP ALL    #${DC_Operation_S006.scan_out_waiting_scan['transport']}
-    ...    ${DC_Operation_S006.scan_out_waiting_scan['parcel_owner']}
-    ...    กล่อง XL    #${DC_Operation_S006.scan_out_waiting_scan['parcel_size']}
-    ...    07/11/2567
-    ...    พัสดุรอ Scan out ไปคลัง DC SB    #${DC_Operation_S006.scan_out_waiting_scan['parcel_status']}
-    common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 1
-    Sleep    1s
-    common.Scroll Window To Vertical    1000
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 2
+    # Log    Step No. 10 เข้าเมนู Scan และ เลือกแท็บ Scan out
+    # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
+    # dps_scan_page.Select Scan Out Tab
+    # # Expected
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
+    # ...    SPBD241100002442
+    # ...    P112473971
+    # ...    คลัง DC BB    #${DC_Operation_S006.scan_out_waiting_scan['receive_parcel_from']}
+    # ...    CP ALL    #${DC_Operation_S006.scan_out_waiting_scan['transport']}
+    # ...    ${DC_Operation_S006.scan_out_waiting_scan['parcel_owner']}
+    # ...    กล่อง XL    #${DC_Operation_S006.scan_out_waiting_scan['parcel_size']}
+    # ...    07/11/2567
+    # ...    พัสดุรอ Scan out ไปคลัง DC SB    #${DC_Operation_S006.scan_out_waiting_scan['parcel_status']}
+    # common.Scroll Window To Vertical    0
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 1
+    # Sleep    1s
+    # common.Scroll Window To Vertical    1000
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
-    Log    Step No.11 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    SPBD241100002442
-    dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected
-    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
-    ...    เลขพัสดุนี้อยู่ในถุงแล้ว ไม่สามารถ Scan รายชิ้นได้ (scan ทั้ง ถุง)    #${dc_operation['text_please_close_pouch_before_scan_out']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
+    # Log    Step No.11 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
+    # dps_scan_page.Input Pouch Number [Scan Out Page]    SPBD241100002442
+    # dps_scan_page.Click Search Button [Scan Out Page]
+    # # Expected
+    # dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
+    # ...    เลขพัสดุนี้อยู่ในถุงแล้ว ไม่สามารถ Scan รายชิ้นได้ (scan ทั้ง ถุง)    #${dc_operation['text_please_close_pouch_before_scan_out']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
 
-    Log    Step No.12 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
-    # Expected
-    dps_pouch_page.Verify Pouch In Pouch Page
-    ...    P112473971
-    ...    ${DC_Operation_S006.data_in_pouch['inventory_crossdock']}
-    ...    DC SB    #${DC_Operation_S006.data_in_pouch['destination_inventory']}
-    ...    ${DC_Operation_S006.data_in_pouch['parcel_amount']}
-    ...    ${DC_Operation_S006.data_in_pouch['status']}
-    ...    07-11-2567
-    ...    ${dc_operation['icon_pencil']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Pouch In Pouch Page
+    # Log    Step No.12 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
+    # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
+    # # Expected
+    # dps_pouch_page.Verify Pouch In Pouch Page
+    # ...    P112473971
+    # ...    ${DC_Operation_S006.data_in_pouch['inventory_crossdock']}
+    # ...    DC SB    #${DC_Operation_S006.data_in_pouch['destination_inventory']}
+    # ...    ${DC_Operation_S006.data_in_pouch['parcel_amount']}
+    # ...    ${DC_Operation_S006.data_in_pouch['status']}
+    # ...    07-11-2567
+    # ...    ${dc_operation['icon_pencil']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Pouch In Pouch Page
 
-    Log    Step No.13 คลิกที่ไอคอนรูปดินสอ
-    dps_pouch_page.Proceed Pouch By Pouch Number    P112473971
-    # Expected
+    # Log    Step No.13 คลิกที่ไอคอนรูปดินสอ
+    # dps_pouch_page.Proceed Pouch By Pouch Number    P112473971
+    # # Expected
     
 
     # Log    Step No.14 คลิกปุ่มปิด Pouch/Print Label
@@ -186,7 +212,7 @@ DC_Operation_S006
 
     # Log    Step No.15 กดปุ่มพิมพ์
     # # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # dps_parcel_detail_page.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     # # Defect142
     # # Expected
 
@@ -227,7 +253,7 @@ DC_Operation_S006
 
     # Log    Step No.23 กดปุ่ม พิมพ์
     # # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # dps_parcel_detail_page.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     # # Defect142
     # # Expected
 

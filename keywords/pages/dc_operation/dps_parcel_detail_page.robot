@@ -5,16 +5,6 @@ Click Print Label
     common.Click When Ready    ${dps_btn_print_label_parcel_detail_page}
     Sleep    5s
 
-Click ESC On Keyboard
-    Switch Window    NEW
-    Press Keys    None    ESC
-    Switch Window    MAIN
-
-Click Space On Keyboard
-    Switch Window    NEW
-    Press Keys    None    SPACE
-    Switch Window    MAIN
-
 Click Close Print Label Success Popup
     common.Click When Ready    ${dps_btn_close_on_print_label_success_popup}
     

@@ -160,7 +160,22 @@ Get Parcel ID By Sender Name
     [Arguments]    ${list_data}    ${sender_name}
     ${parcel_id}    Get From Dictionary    ${list_data}    ${sender_name}
     RETURN    ${parcel_id}
-  
+
+Click ESC On Keyboard
+    Switch Window    NEW
+    Press Keys    None    ESC
+    Switch Window    MAIN
+
+Click Space On Keyboard
+    Switch Window    NEW
+    Press Keys    None    SPACE
+    Switch Window    MAIN
+
+Click Enter On Keyboard
+    Switch Window    NEW
+    Press Keys    None    ENTER
+    Switch Window    MAIN
+
 ################### Mobile - Android ###################
 Application Teardown
     # Run keyword If Test Failed   Capture page screenshot
