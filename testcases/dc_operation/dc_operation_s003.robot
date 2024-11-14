@@ -348,7 +348,7 @@ DC_Operation_S003
     ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
 
     dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
@@ -359,7 +359,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['courier']}
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['pouch_number']}
     ...    ${today}    # ${DC_Operation_S003.parcel_detail_in_scan_in_tab['receiving_date']}
-    ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['warehouse_source']}
+    ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['origin_warehouse']}
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['send_parcel_to']}
 
     dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination

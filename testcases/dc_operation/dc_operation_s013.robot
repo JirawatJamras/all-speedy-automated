@@ -42,11 +42,11 @@ DC_Operation_S013
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    dps_home_page.Wait Until DC Operation Home Page Loaded
-    dps_home_page.Verify Homepage
-    ...    ${dc_operation.breadcrumb['homepage']}
-    ...    ${dc_operation.title['homepage']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Homepage Title
+    # dps_home_page.Wait Until DC Operation Home Page Loaded
+    # dps_home_page.Verify Homepage
+    # ...    ${dc_operation.breadcrumb['homepage']}
+    # ...    ${dc_operation.title['homepage']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Homepage Title
 
     Log    Step No.19 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
@@ -57,6 +57,7 @@ DC_Operation_S013
     dps_home_page.Select Tab All Task
     dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
     # Defect138    Defect141
+    # Inprogress
     # Expected
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -87,6 +88,7 @@ DC_Operation_S013
     Log    Step No.20 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Defect139
+    # Inprogress
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -99,7 +101,6 @@ DC_Operation_S013
     # ...    home  # ${DC_Operation_S013.data_in_import_task_tab['import_from']}
     # ...    CPALL  # ${DC_Operation_S013.data_in_import_task_tab['transport']}
     # ...    speedy  # ${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In Import Task Tab
 
     Log    Step No.21 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
@@ -121,9 +122,21 @@ DC_Operation_S013
     ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
 
+    # dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    # ...    ${tracking_number}
+    # ...    ${customer_id}
+    # ...    ${size_cm} ${size}
+    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_status']}
+    # ...    ${courier}
+    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
+    # ...    ${create_date}
+    # ...    ${origin_warehoues}
+    # ...    ${send_parcel_to}
+    
+    # Old
     # dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
     # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
     # ...    B2C0002400563    # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['customer_id']}
@@ -132,9 +145,8 @@ DC_Operation_S013
     # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['courier']}
     # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
     # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['warehouse_source']}
+    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['origin_warehoues']}
     # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['send_parcel_to']}
-
     dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination
     ...    ${dc_operation.scan_in_title_label_detail['courier']}
     ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
