@@ -5,3 +5,4 @@ ${path_excel_dry_parcel}                ${EXECDIR}/../resourses/testdata/excel_f
 ${path_excel_error_report}               ${EXECDIR}/../resourses/testdata/excel_file/Error Report (FIX).xlsx.xlsx
 ${path_excel_booking_dry_template}      ${EXECDIR}/../resourses/testdata/excel_file/Booking Dry Template Test DC.xlsx
 ${path_excel_booking_chilled_template}      ${EXECDIR}/../resourses/testdata/excel_file/Booking Chilled Template Test DC.xlsx
+${path_excel_tracking_number}           ${EXECDIR}/../resourses/testdata/excel_file/Tracking_number.xlsx
