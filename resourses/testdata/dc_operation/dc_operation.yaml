@@ -1,62 +1,54 @@
 DC_Operation_S001:
   company_name: ไอดีซี พรีเมียร์
-  parcel_type:  พัสดุทั่วไป
+  parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
   verify_pickup_time: '09:00:00 - 12:00 น.'
   parcel_number: '10'
-  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
-  call_car_pick_up:
-    car_type: รอบรถพิเศษ
-    receiving_type: รอบพิเศษ
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด
-    province: นนทบุรี  
-    postcode: '11120'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
-    branch: สาขาหลัก
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
-    province: นนทบุรี 
-    postcode: '11120'  #'11000'
-    receiving_time: '09:00' #'13:00'
     car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
+    company_address: 44 หมู่ 3
+    sub_district: บางเขน  #ปากเกร็ด
+    district: เมืองนนทบุรี  #ปากเกร็ด
+    province: นนทบุรี
+    postcode: '11000'  #'11120'
+    number_of_parcel: '10'
+    branch: สาขาหลัก
+    receiving_time: '09:00'
     courier: CPALL
-    number_of_parcel: '10'  #'0'
 
 DC_Operation_S002:
   company_name: ไอดีซี พรีเมียร์
   parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
   verify_pickup_time: '09:00:00 - 12:00 น.'
-  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
   parcel_number: '10'
-  call_car_pick_up:
-    car_type: รอบรถพิเศษ
-    receiving_type: รอบพิเศษ
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด
-    province: นนทบุรี 
-    postcode: '11120'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
-    branch: สาขาหลัก
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
-    province: นนทบุรี 
-    postcode: '11120'  #'11000'
-    receiving_time: '09:00'
     car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
-    courier: CPALL
+    company_address: 44 หมู่ 3
+    sub_district: บางเขน  #ปากเกร็ด
+    district: เมืองนนทบุรี  #ปากเกร็ด
+    province: นนทบุรี
+    postcode: '11000'  #'11120'
     number_of_parcel: '10'
+    branch: สาขาหลัก
+    receiving_time: '09:00'
+    courier: CPALL
 
 DC_Operation_S003:
+  sender_name_1: 'คุณ a'
+  sender_name_2: 'คุณ b'
+  sender_name_3: 'คุณ c'
+  sender_name_4: 'คุณ d'
+  sender_name_5: 'คุณ e'
+  sender_name_6: 'คุณ f'
+  sender_name_7: 'คุณ g'
+  sender_name_8: 'คุณ h'
+  sender_name_9: 'คุณ i'
+  sender_name_10: 'คุณ j'
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
@@ -75,7 +67,75 @@ DC_Operation_S003:
     transport: Flash
     parcel_owner: Speedy
   parcel_detail_in_scan_in_tab:
-    tracking: SPBD241100000470
+    # tracking: SPBD241100000470
+    # receiving_date: 04-11-2567
+    customer_id: '0002400563'
+    parcel_size: '120 ซม. กล่อง L'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    warehouse_source: DCBB
+    send_parcel_to: 'Home (11120)'
+  label_detail_in_scan_in_tab:
+    courier: 'FSH'
+    zipcode: '11120'
+    province: 'นนทบุรี'
+    customer: ทดสอบพัสดุCourier
+    phone: '0900987354'
+    size: L
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0959494989'
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0900987354'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+  scan_out_waiting_scan:
+    # tracking: SPBD241100000470
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: Flash
+    parcel_owner: Speedy
+    parcel_size: 'กล่อง L'
+    # update_date: 08/11/2567
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  scan_out_print:
+    export_to: home
+    deliver: Flash
+    update_date:
+  timeline_in_history_parcel:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+      description: '-'
+
+DC_Operation_S004:
+  sender_name: คุณ c
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+  check_close_pouch:
+    inventory: DC SB
+  parcel_detail_in_scan_in_tab:
     receiving_date: 04-11-2567
     customer_id: 'B2C0002400563'    #'2400563'
     parcel_size: '120 ซม. กล่อง L'
@@ -101,37 +161,19 @@ DC_Operation_S003:
     phone: '0971971445'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
-  scan_out_waiting_scan:
-    tracking: SPBD241100000470
-    pouch_number: '-'
-    receive_parcel_from: Store
-    transport: Flash
-    parcel_owner: Speedy
-    parcel_size: 'กล่อง L'
-    update_date: 08/11/2567
-    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  scan_out_print:
-    export_to: home
-    deliver: Flash
-    update_date:
-
-DC_Operation_S006:
-  data_in_all_task_tab:
-    task_type: งานรับเข้า
-    parcel_owner: Speedy
-    import_from: Home
-    export_to: '-'
-    transport: CP All
-    pouch_number: '-'
-    parcel_size: กล่อง XL
-    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-  data_in_import_task_tab:
-    import_from: Home
-    transport: CP All
-    parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '7'
-    number_of_scanned_items: '7'
+  timeline_in_history_parcel_after_scan_in:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
   data_in_all_task_tab_after_scan:
     task_type: งานส่งออก
     parcel_owner: Speedy
@@ -154,7 +196,56 @@ DC_Operation_S006:
     parcel_owner: Speedy
     parcel_size: ซอง A4
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
-  data_in_pouch:
+  data_in_pouch_list:
+    crossdock_warehouse: '-'
+    destination_warehouse: DC SB
+    status: 'On'
+  data_in_pouch_detail:
+    crossdock_warehouse: '-'
+    pouch_status: เปิด
+    origin_warehouse: DC BB
+    destination_warehouse: DC SB
+
+DC_Operation_S006:
+  sender_name: คุณ e
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+  check_close_pouch:
+    inventory: DC SB
+  data_in_all_task_tab_after_scan:
+    task_type: งานส่งออก
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: คลัง DCSB
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '1'
+    number_of_pieces: '-'
+    number_of_scanned_items: '1'
+  scan_out_waiting_scan:
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: ซอง A4
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_pouch_list:
     inventory_crossdock: '-'
     destination_inventory: DC SC
     parcel_amount: '1'
@@ -167,6 +258,7 @@ DC_Operation_S007:
     task_type: งานรับเข้า
     parcel_owner: Speedy
     import_from: Home
+    import_from2: คลัง DC BB
     export_to: '-'
     transport: CP All
     pouch_number: '-'
@@ -186,7 +278,7 @@ DC_Operation_S007:
     number_of_pouch: '-'
     number_of_pieces: '1'
     number_of_scanned_items: '1'
-  scan_in_data_paecel_detail:
+  scan_in_data_parcel_detail:
     parcel_id: 'SPBD241100000140'
     customer_id: '2400563'
     parcel_size: 150 ซม. กล่อง XL
@@ -227,6 +319,96 @@ DC_Operation_S007:
     parcel_size: กล่อง XL
     receiving_date: ''
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  wait_derivery_data_list:
+    export_to: คลัง DC SB
+    transport: CP ALL
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_send_task_tab:
+    send_to: Store
+    store_code: '15888'
+    customer_type: 'B2C'
+    transport: CP All
+
+DC_Operation_S009:
+  data_in_all_task_tab:
+    task_type_import: งานรับเข้า
+    task_type_export: งานส่งออก
+    parcel_owner: Speedy
+    import_from: Home
+    import_from2: คลัง DC BB
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '6'
+    number_of_scanned_items: '6'
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '-'
+    number_of_pieces: '1'
+    number_of_scanned_items: '1'
+  scan_in_data_parcel_detail:
+    parcel_id: ''
+    customer_id: '0002400563'
+    parcel_size: 150 ซม. กล่อง XL
+    warehouse_crossdock: AC
+    warehouse_destination: RDCLP
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: CP All
+    pouch_number: '-'
+    receiving_date: ''
+    warehouse_source: DCBB
+    send_parcel_to: Home (51000)
+    route: '-'
+  scan_in_data_label_detail:
+    route: '-'
+    store: '51000 (กล่อง XL)'
+    customer: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
+    phone: ''
+    pouch_number: '-'
+    wh: DCBB - AC - RDCLP
+    symbol: รูปนาฬิกาทราย
+  sender_data_in_scan_in_tab:
+    name: คุณ h
+    phone: ''
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
+    phone: ''
+    shipping_destination: บ้าน
+    address: '62 ในเมือง เมืองลำพูน ลำพูน 51000'
+  scan_out_waiting_scan:
+    title: รายการพัสดุที่รอ Scan Out
+    parcel_id: ''
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    receiving_date: ''
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  wait_derivery_data_list:
+    export_to: คลัง DC SB
+    transport: CP ALL
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_send_task_tab:
+    send_to: Store
+    store_code: '15888'
+    customer_type: 'B2C'
+    transport: CP All
 
 DC_Operation_S012:
   data_in_all_task_tab:
@@ -266,12 +448,12 @@ DC_Operation_S012:
   parcel_detail_in_scan_in_tab:
     customer_id: '2400563'
     parcel_size: '90 ซม. กล่อง M'
-    warehouse_crossdock: '-'
-    warehouse_destination: DCBB
+    crossdock_warehouse: '-'
+    destination_warehouse: DCBB
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP All
     pouch_number: '-'
-    warehouse_source: DCBB
+    source_warehouse: DCBB
     send_parcel_to: 'Store (07004)'
     route: ''
   label_detail_in_scan_in_tab:
@@ -292,6 +474,17 @@ DC_Operation_S012:
     phone: '0900987354'
     shipping_destination: 'ร้าน (07004)'
     address: 'ต.ตลาดขวัญ อ.เมืองนนทบุรี จ.นนทบุรี 11000'
+  timeline_in_history_parcel:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC BB
 
 DC_Operation_S013:
   data_in_all_task_tab:
@@ -312,9 +505,9 @@ DC_Operation_S013:
     transport: Flash
     parcel_owner: Speedy
   parcel_detail_in_scan_in_tab:
-    tracking: SPBD241100000469
+    tracking: SPBD241100000464
     receiving_date: 04-11-2567
-    customer_id: 'B2C0002400563'    #'2400563'
+    customer_id: '0002400563'
     parcel_size: '120 ซม. กล่อง L'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
@@ -339,7 +532,7 @@ DC_Operation_S013:
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
   scan_out_waiting_scan:
-    tracking: SPBD241100000469
+    tracking: SPBD241100000464
     pouch_number: '-'
     receive_parcel_from: Store
     transport: Flash
@@ -373,7 +566,7 @@ DC_Operation_S014:
   parcel_detail_in_scan_in_tab:
     tracking: SPCD241100000423
     receiving_date: 04-11-2567
-    customer_id: 'B2C0002400563'    #'2400563'
+    customer_id: '2400563'
     parcel_size: '120 ซม. กล่อง L'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
@@ -452,6 +645,34 @@ DC_Operation_S016:
     wh: 'DCBB - DCBB'
     symbol: รูปวงกลม
     symbol_after_changing_warehourse: รูปดาว
+
+DC_Operation_S017:
+  value_parcel_details_in_warehouse:
+    parcel_status: พัสดุรอ Scan out ไปคลัง AC
+    customer_type: B2C
+    # pouch_number: ''
+    parcel_size: 'ซอง A4'
+    route: '3235'
+    # check_in_date: วันที่รับพัสดุเข้าระบบ
+    # date_in_system: จำนวนวันที่อยู่ในระบบ
+    # sla_date: SLA Date
+    # sla_text: SLA Text
+    origin_store: '-'
+    origin_warehouse: DC BB
+    destination_store: 'To Store (01015)'
+    crossdock_warehouse: AC
+    shipping_by: CP All
+    destination_warehouse: RDC LP
+  value_sender_in_warehouse:
+    name: คุณ i
+    phone: '0959494989'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  value_receiver_in_warehouse:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    phone: '0900987354'
+    address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
+  check_close_pouch:
+    inventory: RDC LP
 
 DC_Operation_S018:
   value_parcel_details_in_warehouse:
@@ -541,3 +762,9 @@ DC_Operation_S020:
     status: 
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว
+
+DC_Operation_S026:
+  parcel_detail_in_scan_in_tab:
+    sender_name: คุณ j
+    customer_id: '0002400563'
+    warehouse_crossdock: 'AC'

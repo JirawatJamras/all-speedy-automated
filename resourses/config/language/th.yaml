@@ -201,7 +201,7 @@ Booking:
     dry_parcel_import_fail_amount: 'ล้มเหลว 32'
   origin_shipping:
     idc_company_address: 'บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
-    15888_store_address: '15888 7-11 สาขาCP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    15888_store_address: '15888 7-11 สาขาCP TOWER สีลม'
     01523_store_address: '01523 7-11 สาขาปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
 
 call_car_pick_up:
@@ -227,6 +227,7 @@ call_car_pick_up:
     parcel_in_progress: กำลังจัดพัสดุ
     arrange_car: กำลังจัดรถ
     confirm: ยืนยัน
+    cancel: ยกเลิก
   car_round_name:
     special: รอบพิเศษ
     normal: รอบปกติ
@@ -314,7 +315,7 @@ dc_operation:
   text_search: ค้นหา
   text_print: พิมพ์
   text_print_label: ยืนยัน/Print Label
-  text_print_label_success: พิมพ์ Label เรียบร้อยแล้ว
+  text_print_label_success: ทำรายการสำเร็จ
   text_confirm_scan_out: ยืนยัน Scan Out
   text_confirm: ยืนยัน
   text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
@@ -335,9 +336,14 @@ dc_operation:
   text_courier: Courier
   text_number_of_parcel: จำนวนพัสดุ
   text_status: สถานะ
+  text_close_pouch_and_print_label: ปิด Pouch/Print Label
+  text_transaction_complete: ทำรายการสำเร็จ
+  text_warning_confirm_to_close_pouch: ยืนยันการ ปิด Pouch หรือไม่
   vehicle_type: ประเภทที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
+    text_warehouse_no_select: ไม่มีคลังที่เลือก
+    text_please_select_warehouse: โปรดเลือกคลัง
     text_warehouse_DC_BB: คลัง DC BB
     text_warehouse_DC_SB: คลัง DC SB
     text_warehouse_DC_MC: คลัง DC MC
@@ -410,7 +416,7 @@ dc_operation:
     courier: COURIER
     zipcode: ZIPCODE
     province: PROVINCE
-    size: SIZE
+    size_home: กล่อง
   scan_in_title_sender_detail:
     title: ผู้ส่ง
     name: ชื่อผู้ส่ง
@@ -448,6 +454,9 @@ dc_operation:
     transport: ผ่านขนส่ง
     parcel_number: จำนวนพัสดุ
     pouch_number: จำนวน Pouch
+    title_parcel_and_pouch_number: รวมจำนวนพัสดุและPouch
+    title_date: วันที่อัปเดตล่าสุด
+    title_status: สถานะ
   status:
     confirm: ยืนยันแล้ว
     waiting: รอยืนยัน
@@ -458,7 +467,7 @@ dc_operation:
   label_parcel_details_in_warehouse:
     timeline: Timeline
     parcel_detail: รายละเอียดพัสดุ
-    tracking_number: 'Tracking Number '
+    tracking_number: Tracking Number
     parcel_status: สถานะของพัสดุ
     customer_type: ประเภทลูกค้า
     pouch_number: Pouch Number
@@ -480,6 +489,20 @@ dc_operation:
   label_receiver_in_warehouse:
     receiver_name: ชื่อผู้รับ
     receiver_address: ที่อยู่ผู้รับ
+  dropdown_reprint_label:
+    title: Reprint ใบปะหน้า
+    parcel_label: ใบปะหน้าพัสดุ
+    parcel_sorting_sheet: ใบคัดแยกพัสดุ
+    pouch_label: ใบ Label Pouch
+  label_pouch_in_pouch_detail:
+    title: รายละเอียด Pouch
+    pouch_number: หมายเลข POUCH
+    crossdock_warehouse: คลัง Crossdock
+    pouch_status: สถานะ Pouch
+    parcel_amount: จำนวนพัสดุ
+    origin_warehouse: คลังต้นทาง
+    destination_warehouse: คลังปลายทาง
+
 
 rm:
   text_pre_register: Pre-Register

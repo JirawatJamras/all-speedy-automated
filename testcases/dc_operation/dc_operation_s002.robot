@@ -8,12 +8,11 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_s002
-    [Tags]    DC_Operation    UAT    #test
+    [Tags]    DC_Operation    UAT    In_Review
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    # Expected
-    Sleep    2
+    Sleep    2s
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Login Page
 
     Log    Step No.2 เข้าสู่ระบบลูกค้าธุรกิจ
@@ -21,8 +20,7 @@ DC_Operation_s002
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page
-    ...    ${DC_Operation_S002['company_name']}
+    b2c_home_page.Verify Company profile page    ${DC_Operation_S002['company_name']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
@@ -51,10 +49,11 @@ DC_Operation_s002
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S002['parcel_pickup_time']}
     b2c_call_car_pick_up_parcel_page.Click Save Button
+    # Defect208
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status
     ...    ${call_car_pick_up.status['parcel_in_progress']}
-    ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${tomorrow}
     ...    ${DC_Operation_S002['verify_pickup_time']}
     ...    ${today}
@@ -63,11 +62,11 @@ DC_Operation_s002
     ...    ${call_car_pick_up['text_price']}
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${DC_Operation_S002.call_car_pick_up['company_address']}
-    ...    ${DC_Operation_S002.call_car_pick_up['sub_district']}
-    ...    ${DC_Operation_S002.call_car_pick_up['district']}
-    ...    ${DC_Operation_S002.call_car_pick_up['province']}
-    ...    ${DC_Operation_S002.call_car_pick_up['postcode']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    ...    เมืองนนทบุรี  #${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    บางเขน  #${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['province']}
+    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002   Verify Add Special Pickup Round Success
 
     Log    Step No.6 เลือกเมนู "จองการจัดส่งพัสดุ"
@@ -131,7 +130,7 @@ DC_Operation_s002
     b2c_booking_detail_page.Select Pickup Schedule Tab
     # Expected
     b2c_booking_detail_page.Verify Display Pickup Schedule Data
-    ...    ${DC_Operation_S002.call_car_pick_up['car_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['car_type']}
     ...    ${tomorrow}
     ...    ${call_car_pick_up.default['parcel_number']}
     ...    ${today}
@@ -147,7 +146,12 @@ DC_Operation_s002
     # Expected
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
-    ...    ${DC_Operation_S002['shipping_origin']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_name']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['province']}
+    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Complete Select Parcel Pickup Schedule And Save
 
     Log    Step No.14 คลิกปุ่ม Import File
@@ -170,6 +174,10 @@ DC_Operation_s002
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Import File Success
+
+    Log    เก็บ parcel id และ ชื่อผู้ส่ง
+    ${ParcelsData}    Get Parcels And Sender Names    ${booking_id}
+    Log To Console    ${ParcelsData}
 
     Log    Step No.17 cut off time
     dps_home_page.Set Cut Off Time
@@ -199,7 +207,7 @@ DC_Operation_s002
     ...    ${tomorrow}
     ...    ${today}
     ...    ${booking_id}
-    ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S002['verify_pickup_time']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Status After Cut Off Time
@@ -213,7 +221,7 @@ DC_Operation_s002
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    dps_home_page.Wait Until Page Loaded
+    dps_home_page.Wait Until DC Operation Home Page Loaded
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -228,7 +236,7 @@ DC_Operation_s002
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
-    # Defect175    Defect192
+    # Defect192
     # Expected
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -250,7 +258,7 @@ DC_Operation_s002
 
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
-    # Defect175    Defect192
+    # Defect192
     # Expected
     dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -329,7 +337,7 @@ DC_Operation_s002
     ...    ${tomorrow}
     ...    ${today}
     ...    ${booking_id}
-    ...    ${DC_Operation_S002.call_car_pick_up['receiving_type']}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S002['verify_pickup_time']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Schedule Change Status To Confirm

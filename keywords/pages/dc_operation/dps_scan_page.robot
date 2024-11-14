@@ -236,7 +236,7 @@ Verify Data Label Parcel In Scan Page Home Destination
     ${value_courier}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${courier}
     ${value_zipcode}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${zipcode} 
     # ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(กล่อง ${size})
-    ${value_size}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${SPACE}(${label_size}: ${size})
+    ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(${label_size} ${size})
     ${value_customer}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${customer}
     ${value_phone}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${phone}
 
@@ -454,6 +454,7 @@ Verify Section Waiting List To Scan Out [Scan Out Page]
     common.Scroll Into View By Xpath    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    true
     Wait Until Element Is Visible    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}
     ${actual_update_date}=    Get Text    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}
+    # Should Match Regexp    ${actual_update_date}    ^\d{2}-\d{2}-\d{4} \d{2}:\d{2}$
     ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M    result_format=%d/%m/%Y %H:%M
     Should Be Equal    ${actual_update_date}    ${date_convert}
 
@@ -486,7 +487,6 @@ Verify Value List Scan Out
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_size}    ${parcel_size}
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_date}    ${date}
     ${dps_txt_value_scan_out}=    Replace String    ${dps_txt_value_scan_out}    {value_parcel_status}    ${parcel_status}
-
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_pouch_number}    ${pouch_number}
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_id}    ${parcel_id}
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_import_from}    ${import_from}
@@ -495,10 +495,10 @@ Verify Value List Scan Out
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_size}    ${parcel_size}
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_date}    ${date}
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_status}    ${parcel_status}
-    
     ${actual_update_date}=    Get Text    ${dps_txt_update_time_scan_out}
+    # Should Match Regexp    ${actual_update_date}    ^\d{2}-\d{2}-\d{4} \d{2}:\d{2}:\d{2}$
+    
     ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%Y-%m-%d %H:%M:%S    result_format=%Y-%m-%d %H:%M:%S
-    # ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M:%S    result_format=%d/%m/%Y %H:%M:%S
     Should Be Equal    ${actual_update_date}    ${date_convert}
     Element Should Be Visible    ${dps_txt_value_scan_out}
     
@@ -511,6 +511,6 @@ Filter Data By Parcel Number [Waiting Scan Out]
     common.Input When Ready    ${dps_txtbox_parcel_code_scan_out_page}    ${parcel_cod}
     Click Search Button On Filter
 
-Verify Label Delivery List
-    [Arguments]    ${pouch_number}    ${parcel_id}    ${import_from}    ${transport}
-    ...            ${parcel_owner}    ${parcel_size}    ${date}    ${parcel_status}
+Get Pouch Number
+    ${actual_pouch_number}=    Get Text    (//strong[text()='Pouch Number']/../../..//span)[2]
+    RETURN    ${actual_pouch_number}

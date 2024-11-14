@@ -8,12 +8,13 @@ Open Chrome Browser
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --no-sandbox
-    Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
+    # Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
     # Call Method    ${chrome_options}    add_argument    --headless\=old
     IF  '${chrome}'=='headlesschrome'
         Call Method     ${chrome_options}      add_argument    --headless\=old
     END
     Open Browser    about:blank    Chrome    options=${chrome_options}
+    Maximize Browser Window
     SeleniumLibrary.Set Selenium Speed    0.1
 
 Open URL
@@ -73,6 +74,14 @@ Convert Month To Thai
     ...    ELSE IF    '${english_month}' == 'November'    Set Variable    พฤศจิกายน
     ...    ELSE IF    '${english_month}' == 'December'    Set Variable    ธันวาคม
     RETURN    ${thai_month}
+
+Set Date Pattern
+    [Arguments]    ${day}
+    ${d}    Split String And Select    ${day}    -    0
+    ${m}    Split String And Select    ${day}    -    1
+    ${y}    Split String And Select    ${day}    -    2
+    ${date}    Set Variable    ${d}/${m}/${y}
+    RETURN    ${date}
 
 Verify Capture Screenshot
     [Arguments]    ${feature}    ${folder}    ${img_name}
@@ -147,7 +156,27 @@ Get Parcel Codes By Sender Name
         Run Keyword If    '${current_sender}' == '${sender_name}'    Set Suite Variable    ${filtered_parcels_matched_with_sender_name}    ${current_parcel_code}
     END
     RETURN    ${filtered_parcels_matched_with_sender_name}
-  
+
+Get Parcel ID By Sender Name
+    [Arguments]    ${list_data}    ${sender_name}
+    ${parcel_id}    Get From Dictionary    ${list_data}    ${sender_name}
+    RETURN    ${parcel_id}
+
+Click ESC On Keyboard
+    Switch Window    NEW
+    Press Keys    None   SPACE
+    Switch Window    MAIN
+
+Click Space On Keyboard
+    Switch Window    NEW
+    Press Keys    None    SPACE
+    Switch Window    MAIN
+
+Click Enter On Keyboard
+    Switch Window    NEW
+    Press Keys    None    ENTER
+    Switch Window    MAIN
+
 ################### Mobile - Android ###################
 Application Teardown
     # Run keyword If Test Failed   Capture page screenshot

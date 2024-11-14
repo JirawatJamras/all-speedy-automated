@@ -40,14 +40,6 @@ Set Today
     ${Today}    Set Variable    ${d}-${m}-${year}
     RETURN    ${Today}
 
-Set Date Pattern
-    [Arguments]    ${day}
-    ${d}    Split String And Select    ${day}    -    0
-    ${m}    Split String And Select    ${day}    -    1
-    ${y}    Split String And Select    ${day}    -    2
-    ${date}    Set Variable    ${d}/${m}/${y}
-    RETURN    ${date}
-
 Select Check Receiving Cycle Menu
     ${tab_check_receiving_cycle}=  Replace String   ${dps_tab_dps_menu}   {value}   ${dc_operation.dps_menu['Check_Receiving_Cycle']}
     Wait Until Element Is Visible    ${tab_check_receiving_cycle}    timeout=30s
@@ -63,16 +55,27 @@ Select Check Receiving Cycle Menu
     END
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
 
+# Select Warehouse List Button
+#     [Arguments]    ${selected_warehouse}
+#     ${dps_btn_selected_warehouse_list}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
+#     common.Click When Ready    ${dps_btn_selected_warehouse_list}
+#     ${dps_cbo_selected_warehouse_list}=    Replace String    ${dps_cbo_selected_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
+#     ${dps_warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_cbo_selected_warehouse_list}
+#     Run Keyword If    '${dps_warehouse_list_status}' == 'false'    Run Keywords    ${dps_cbo_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
+#     ...    AND    common.Click When Ready    ${dps_cbo_warehouse_list}
+#     Run Keyword If    '${dps_warehouse_list_status}' == 'true'    Run Keywords    ${dps_txt_daily_task_overview}=    Replace String    ${dps_txt_daily_task_overview_home_page}    {value}    ${dc_operation.title['homepage']}
+#     ...    AND    Mouse Over    ${dps_txt_daily_task_overview}
+
 Select Warehouse List Button
     [Arguments]    ${selected_warehouse}
-    ${dps_btn_selected_warehouse_list}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
-    common.Click When Ready    ${dps_btn_selected_warehouse_list}
-    ${dps_cbo_selected_warehouse_list}=    Replace String    ${dps_cbo_selected_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
-    ${dps_warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_cbo_selected_warehouse_list}
-    Run Keyword If    '${dps_warehouse_list_status}' == 'false'    Run Keywords    ${dps_cbo_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
-    ...    AND    common.Click When Ready    ${dps_cbo_warehouse_list}
-    Run Keyword If    '${dps_warehouse_list_status}' == 'true'    Run Keywords    ${dps_txt_daily_task_overview}=    Replace String    ${dps_txt_daily_task_overview_home_page}    {value}    ${dc_operation.title['homepage']}
-    ...    AND    Mouse Over    ${dps_txt_daily_task_overview}
+    ${dps_btn_selected_warehouse_list_1}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
+    common.Click When Ready    ${dps_btn_selected_warehouse_list_1}
+    ${dps_cbo_selected_warehouse_list_no_select}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${dc_operation.selected_warehouse_list['text_warehouse_no_select']}
+    common.Click When Ready    ${dps_cbo_selected_warehouse_list_no_select}
+    ${dps_btn_selected_warehouse_list_2}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_please_select_warehouse']}
+    common.Click When Ready    ${dps_btn_selected_warehouse_list_2}
+    ${dps_cbo_selected_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
+    common.Click When Ready    ${dps_cbo_selected_warehouse_list}
 
 Verify Homepage
     [Arguments]    ${breadcrumb}    ${head_title}
@@ -238,7 +241,6 @@ Verify Label In Export Task Tab
 
 Verify Data In Export Task Tab
     [Arguments]    ${export_to}    ${transport}    ${parcel_owner}       
-    # ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task_home_page}    {export_to}    ${export_to}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {transport}    ${transport}
     ${dps_txt_list_first_export_task}=    Replace String    ${dps_txt_list_first_export_task}    {parcel_owner}    ${parcel_owner}
@@ -258,20 +260,10 @@ Verify Data In Export Task Tab
 Select DPS Menu
     [Arguments]    ${tabname}
     Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
-    Wait Until Element Is Visible    //a[@href='/${tabname}']    timeout=30s
     Mouse Over    //a[@href='/${tabname}']
     Wait Until Element Is Visible    //a[@href='/${tabname}']
     Click Element    //a[@href='/${tabname}']
     Mouse Out    //a[@href='/${tabname}']
-    IF  '${tabname}' == 'homepage'
-        FOR  ${i}  IN RANGE  0  5
-        Reload Page
-        ${isvisible}    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_img_loading_page}
-        Capture Page Screenshot
-        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
-        END
-        Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=240s
-    END
 
 Verify Parcels Into The Warehouse
     [Arguments]    ${test_scenario}
@@ -467,9 +459,13 @@ Verify Tab Selected
     ${checked}    Get Element Attribute    ${dps_tab_name}    aria-selected
     Should Be Equal As Strings    ${checked}    true
 
+Wait Until DC Operation Home Page Loaded
+    Wait Until Element Is Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=180s
+
 Wait Until Page Loaded
     Wait Until Element Is Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=100s  #${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Label In Send Task Tab
     [Arguments]    ${send_to}    ${store_code}    ${transport}   

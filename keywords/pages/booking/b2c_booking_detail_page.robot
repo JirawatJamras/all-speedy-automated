@@ -74,6 +74,7 @@ Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
 Click Edit Booking List
     # Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_btn_edit_booking_list}=    Replace String    ${b2c_btn_edit_booking_list}    {value}    ${Booking['text_booking_list']}
+    Scroll Window To Vertical    0
     common.Click When Ready    ${b2c_btn_edit_booking_list}
 
 Verify Edit Booking List Popup
@@ -129,6 +130,20 @@ Verify Display Pickup Schedule Data
     Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    timeout=${DEFAULT_TIMEOUT}
     Set Suite Variable    ${actual_pickup_schedule_checkbox}
 
+Verify Display Pickup Schedule Data After Canceled
+    ${status}=    Set Variable    False
+    ${actual_pickup_parcel} =  Replace String    ${b2c_txt_selected_pickup_type}    {value}    ${Booking.pickup_schedule['general_car_pickup']}
+    Register Keyword To Run On Failure    NOTHING
+    WHILE    '${status}' == 'False'
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_parcel}    timeout=5s
+        Log To Console    ${status}
+        Exit For Loop If    '${status}' == 'True'
+        ${nextpage}=    Get Element Attribute    ${b2c_btn_status_next_page_pickup_schedule}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'True'    common.Click When Ready    ${b2c_btn_next_page_pickup_schedule}
+        ...    ELSE    Fail    There is no selected pickup schedule
+    END
+
 Select Parcel Pickup Schedule 
     common.Click When Ready    ${actual_pickup_schedule_checkbox}
 
@@ -138,8 +153,7 @@ Click Save Button In Edit Booking List Popup
     common.Click When Ready    ${btn_save_shipping_origin}
 
 Verify Complete Select Parcel Pickup Schedule And Save
-    [Arguments]    ${today}    ${shipping_origin}
-    Sleep    3s
+    [Arguments]    ${today}    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ${text_booking_time_label}=    Replace String    ${b2c_txt_transaction_date}    {value}    ${booking['text_booking_time_label']}
     ${txt_booking_time_label}=    Replace String    ${text_booking_time_label}    {value2}    ${today}
 
@@ -148,7 +162,8 @@ Verify Complete Select Parcel Pickup Schedule And Save
     ${actual_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=30s
-    Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${shipping_origin}
+    # Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${company_address} ${sub_district} ${district} ${province} ${postcode}
+    Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${sub_district} ${district} ${province} ${postcode}
 
 Select Shipping Origin Tab 
     [Arguments]    ${aria}
@@ -741,3 +756,44 @@ Verify Parcel Status Change To Confirm
     END
     Should Be Equal As Strings    ${count_card}    ${parcel_num}
         
+Verify Booking Detail Page After Canceled
+    [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
+    ${actual_parcel_list_status}=    Replace String    ${b2c_txt_parcel_list}    {status}    ${status}
+    ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
+    ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
+    ${count_card}=    Set Variable    0
+    ## Verify number of parcels
+    FOR    ${index}    IN RANGE    ${parcel_num}
+        Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
+        ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
+        ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
+        ${count_new_card}=    Get Element Count    ${actual_parcel_list}
+        ${count_card}=    Evaluate    ${count_card} + ${count_new_card}
+        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
+            Verify Parcel ID Format And Value    (${actual_parcel_id})[${i}]    ${parcel_id}
+        END
+        Exit For Loop If    ${boolean} == False
+        common.Click When Ready    ${b2c_btn_next_page_parcel_list}
+    END
+    Should Be Equal As Strings    ${count_card}    ${parcel_num}
+
+Get Parcels Id And Senders Name
+    [Arguments]    ${parcel_id}    ${parcel_num}
+    Reload Page
+    ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
+    ${actual_parcel_sender}=    Replace String    ${b2c_txt_get_sender_name}    {value}    ${Booking['text_sender']}
+    ${list_parcel_and_sender}=    Create Dictionary
+    FOR    ${index}    IN RANGE    ${parcel_num}
+        Wait Until Element Is Visible    ${actual_parcel_id}    timeout=60s
+        ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
+        ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
+        ${count_new_card}=    Get Element Count    ${actual_parcel_id}
+        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
+            ${sender}=    Get Text    (${actual_parcel_sender})[${i}]
+            ${parcel}=    Get Text    (${actual_parcel_id})[${i}]
+            Set To Dictionary    ${list_parcel_and_sender}    ${sender}=${parcel}
+        END
+        Exit For Loop If    ${boolean} == False
+        common.Click When Ready    ${b2c_btn_next_page_parcel_list}
+    END
+    Set Suite Variable    ${list_parcel_and_sender}
