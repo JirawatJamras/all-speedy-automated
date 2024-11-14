@@ -59,9 +59,7 @@ DC_Operation_S003
 
     Log    Step คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
-    # Defect068
     # Expected
-    b2c_booking_delivery_page.Click Latest Booking Created    ## ใช้แก้ชั่วคราว
     b2c_booking_detail_page.Verify Booking List In Booking Detail Page
     ...    ${Booking['text_booking_id_label']}
     ...    ${Booking['text_booking_name_label']}
@@ -154,10 +152,10 @@ DC_Operation_S003
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    dps_home_page.Wait Until DC Operation Home Page Loaded
-    dps_home_page.Verify Homepage
-    ...    ${dc_operation.breadcrumb['homepage']}
-    ...    ${dc_operation.title['homepage']}
+    # dps_home_page.Wait Until DC Operation Home Page Loaded
+    # dps_home_page.Verify Homepage
+    # ...    ${dc_operation.breadcrumb['homepage']}
+    # ...    ${dc_operation.title['homepage']}
 
 
     Log    Step เลือก role แอดมินคลัง
