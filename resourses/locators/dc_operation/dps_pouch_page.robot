@@ -16,6 +16,7 @@ ${dps_txt_pouch_status_pouch_detail}    //span[text()='{value}']
 ${dps_txt_parcel_amount_pouch_detail}    //span[text()='{value}']
 ${dps_txt_origin_warehouse_pouch_detail}    //span[text()='{value}']
 ${dps_txt_destination_warehouse_pouch_detail}    //span[text()='{value}']
+${dps_destination_warehouse_in_pouch_label}    //div[@class='print-section ']//h1
 
 ${dps_cbo_destination_inventory_in_filter}    //input[@id='destDc']/../..
 

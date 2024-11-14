@@ -73,6 +73,12 @@ Verify Data Of Information Section In Pouch Detail Popup
     Should Be Equal    ${actual_origin_warehouse}    ${expected_origin_warehouse}
     Should Be Equal    ${actual_destination_warehouse}    ${expected_destination_warehouse}
 
+# Verify Label Section In Pouch Detail Popup
+#     [Arguments]    ${destination_warehouse_name}    ${number}    ${route}
+#     ...    ${simbol}    ${pouch_number}
+    #
+    #
+
 Click Dropdown Select Warehouse List
     [Arguments]    ${selected_warehouse}
     ${name}=    Get Text    ${dps_txt_dropdown_warehouse_tab_home_page}

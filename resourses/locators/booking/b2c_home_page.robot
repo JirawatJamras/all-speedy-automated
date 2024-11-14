@@ -14,7 +14,7 @@ ${b2c_mnu_register_business_customer_home_page}    //a[text()='ลงทะเ�
 ${b2c_btn_add}     //button[contains(@class, 'ant-btn') and span[text()='{value}']]
 ${b2c_btn_edit_profile_info_home_page}    //span[text()='แก้ไข']/..
 
-${b2c_txt_business_profile_title_home_page}    //h2[text()='โปรไฟล์บริษัท']
+${b2c_txt_business_profile_title_home_page}    //h2[text()='{value}']
 
 ${b2c_txt_company_profile}    //h2[text()='{value}']
 ${b2c_txt_profile}     //div[@class='text-[25px] text-[#005390] font-semibold']
