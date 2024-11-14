@@ -5,12 +5,30 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
+Library    OperatingSystem
+Library    ExcelLibrary
+Library    Collections
+
+*** Variables ***   
+${SHEET_NAME}    Tracking_S013   # ชื่อชีตที่ต้องการ
+${ROW_NUMBER}    2      # แถวที่ต้องการลบ
+
 *** Test Cases ***
 DC_Operation_S013
     [Documentation]    ลูกค้า B (ส่งพัสดุที่ร้าน 7-11) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
     [Tags]    DC_Operation    UAT
 
-    Log    Step No.1-16 Skip By Use Tracking Mannual
+    Log    Step No.1-16 Skip By Use Tracking From Excel
+    
+    Log    Read Row From Excel
+    ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
+    Log    ${tracking_info}
+    
+    Log    Set Tracking Information
+    common.Set Tracking Information from excel    ${tracking_info}
+    
+    Log    Delete Tracking From Excel
+    common.Delete Row In Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
 
     Log    Step No.17 เข้า Url : https://dps-uat.allspeedy.co.th
     common.Open URL    ${DPS_UAT_URL}
