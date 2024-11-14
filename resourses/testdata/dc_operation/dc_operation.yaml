@@ -2,7 +2,7 @@ DC_Operation_S001:
   company_name: ไอดีซี พรีเมียร์
   parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
-  verify_pickup_time: '09:00:00 - 12:00 น.'
+  verify_pickup_time: '09:00 - 12:00 น.'
   parcel_number: '10'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
@@ -22,7 +22,7 @@ DC_Operation_S002:
   company_name: ไอดีซี พรีเมียร์
   parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
-  verify_pickup_time: '09:00:00 - 12:00 น.'
+  verify_pickup_time: '09:00 - 12:00 น.'
   parcel_number: '10'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
@@ -763,8 +763,10 @@ DC_Operation_S020:
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว
 
-DC_Operation_S026:
-  parcel_detail_in_scan_in_tab:
-    sender_name: คุณ j
-    customer_id: '0002400563'
-    warehouse_crossdock: 'AC'
+# DC_Operation_S026:
+  # sender_name: คุณ e
+  # sender_data_in_scan_in_tab:
+    # name: คุณ a
+    # phone: '0633906216'
+    # shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    # address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'

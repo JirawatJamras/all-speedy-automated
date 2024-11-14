@@ -339,7 +339,7 @@ dc_operation:
   text_close_pouch_and_print_label: ปิด Pouch/Print Label
   text_transaction_complete: ทำรายการสำเร็จ
   text_warning_confirm_to_close_pouch: ยืนยันการ ปิด Pouch หรือไม่
-  vehicle_type: ประเภทที่ใช้
+  vehicle_type: ประเภทรถที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_no_select: ไม่มีคลังที่เลือก
