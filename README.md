@@ -27,11 +27,6 @@ robot -v ENV:uat -i UAT  ../testcases/dc_operation
 -i คือ Tag                           #[Tags]   UAT    Booking    DC_Operation
 -t คือ testcase เช่น -t *01*          #AllSpeedy_B2C_001_ID_1 
 
-# For Window
-robot -v ENV:uat -i UAT -t *001* -t *003* -t *006*   ../testcases/
-
-# For MacOS
-robot -v ENV:uat -i UAT -t '*001*' -t '*003*' -t '*006*' ../testcases/
 
 # Pabot
 pabot --processes 3 -v ENV:uat -i UAT ..\testcases |  tee output.txt
