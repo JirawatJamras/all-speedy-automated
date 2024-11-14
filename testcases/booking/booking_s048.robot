@@ -17,7 +17,7 @@ Booking_S048
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
 
-    Step Test:    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"
+    Log    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     ${date}    Get Normal Parcel Pickup Date
@@ -33,7 +33,7 @@ Booking_S048
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S048    Verify Car Pickup Schedule Card
 
-    Step Test:    Step No.2 กดปุ่ม "เพิ่ม"
+    Log    Step No.2 กดปุ่ม "เพิ่ม"
     b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
     b2c_call_car_pick_up_parcel_page.Click Add Button
     # Expected
@@ -47,7 +47,7 @@ Booking_S048
     ...    ${call_car_pick_up['button_cancel']}
     common.Verify Capture Screenshot    booking    Booking_S048    Verify Popup Parcel Pickup Schedule
 
-    Step Test:    Step No.3 รอบรถเข้ารับพัสดุ
+    Log    Step No.3 รอบรถเข้ารับพัสดุ
     b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
     b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S048.add_new_pickup['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
@@ -57,7 +57,7 @@ Booking_S048
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S048    Verify Input Parcel Pickup Schedule In Add Popup
 
-    Step Test:    Step No.4 กดปุ่ม "บันทึก"
+    Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Defect086    Defect107    Issue016
     # Expected

@@ -9,7 +9,7 @@ Test Teardown    Close Browser
 Booking_S051
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า Return Business (ลูกค้าทั่วไปบุ๊คพัสดุ จาก Link Return Business ที่ได้รับ)
     [Tags]    Skip
-    Step Test:    S051
+    Log    S051
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -45,7 +45,7 @@ Booking_S051
     b2c_return_business_page.Click Copy Link Button
     b2c_return_business_page.Verify Copy Link    ${return_business['text_copy_link_success']}
 
-    Step Test:    Step No.2 กรอกเบอร์โทรศัพท์ เเละกดปุ่มยืนยัน
+    Log    Step No.2 กรอกเบอร์โทรศัพท์ เเละกดปุ่มยืนยัน
     Go To    ${Link_booking_return}
     b2c_return_business_page.Input Trigger Phone Number    ${Booking_S050.old_return_business['phone']}
     b2c_return_business_page.Click Confirm Button
@@ -64,7 +64,7 @@ Booking_S051
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S051     Verify Booking Detail Page [Not Have Parcel List] 2
 
-    Step Test:    Step No.3 กดปุ่ม "+ เพิ่ม"
+    Log    Step No.3 กดปุ่ม "+ เพิ่ม"
     b2c_return_business_page.Click Add Parcel Button
     # Expected
     b2c_return_business_page.Verify Create Parcel Popup
@@ -84,7 +84,7 @@ Booking_S051
     ...    ${return_business.email_link['text_remark']}
     common.Verify Capture Screenshot    booking    Booking_S051     Verify Create Parcel Popup
 
-    Step Test:    Step No.4 กรอกข้อมูล การสร้างพัสดุ
+    Log    Step No.4 กรอกข้อมูล การสร้างพัสดุ
     b2c_return_business_page.Input Sender Phone    ${Booking_S051['sender_phone']}
     b2c_return_business_page.Input Sender Name    ${Booking_S051['sender_name']}
     b2c_return_business_page.Input Sender Address    ${Booking_S051['sender_address']}
@@ -94,7 +94,7 @@ Booking_S051
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S051     Input Data For Create Parcel
 
-    Step Test:    Step No.5 กดปุ่ม "จองเลขพัสดุ"
+    Log    Step No.5 กดปุ่ม "จองเลขพัสดุ"
     b2c_return_business_page.Click Parcel Booking Button
     # Expected
     b2c_return_business_page.Verify Booking Detail Page
@@ -122,14 +122,14 @@ Booking_S051
     ...    30.00
     common.Verify Capture Screenshot    booking    Booking_S051     Verify Booking Detail Page 
 
-    Step Test:    Step No.6 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
+    Log    Step No.6 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_return_business_page.Click Edit Booking
     # Expected
     b2c_return_business_page.Verify Edit Booking List Popup    
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    booking    Booking_S051     Verify Edit Booking Popup
 
-    Step Test:    Step No.7 กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง
+    Log    Step No.7 กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง
     b2c_return_business_page.Input Shipping Origin    ${Booking_S051['store']}
     # Expected
     b2c_return_business_page.Verify Booking Detail Page
@@ -157,7 +157,7 @@ Booking_S051
     ...    ${Booking_S051['verify_booking_price']}
     common.Verify Capture Screenshot    booking    Booking_S051     Verify Booking Detail Page After Shipping Origin
 
-    Step Test:    Step No.8 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.8 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_return_business_page.Click Print Parcel Label
     # Expected
     b2c_return_business_page.Verify Parcel Label
@@ -181,7 +181,7 @@ Booking_S051
     ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S051    Verify Parcel Label
 
-    Step Test:    Step No.9 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.9 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_return_business_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S051    Verify Parcel Label 2

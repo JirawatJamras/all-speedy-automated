@@ -11,7 +11,7 @@ Test Teardown     Close Browser
 Approve Outbound
     [Documentation]    RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
     [Tags]    Register    UAT
-    Step Test:    Scenario 17 RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
+    Log    Scenario 17 RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
     Register_S017
     
 *** Keywords ***    
@@ -28,7 +28,7 @@ Register_S017
     pms_home_page.Select PMS Sub-Menu   ${rm['text_mange_request']}
     # Go To    https://pms-uat.allspeedy.co.th/usermanager/requests
 
-    Step Test:    Step No.1 RM กดปุ่ม "เพิ่มลูกค้าใหม่"
+    Log    Step No.1 RM กดปุ่ม "เพิ่มลูกค้าใหม่"
     pms_requests_page.Click Tab Full-Register
     pms_requests_page.Click Add New Customer
     # Expected
@@ -36,7 +36,7 @@ Register_S017
     pms_full_register_page.Verify Full Register Status    ${rm.text_status['non']}
     
 
-    Step Test:    Step No.2 ระบุข้อมูลลูกค้าใหม่
+    Log    Step No.2 ระบุข้อมูลลูกค้าใหม่
     pms_full_register_page.Select Type Customer    ${Register_S017.company_data['type_customer']}
     pms_full_register_page.Select Title Name Company    ${Register_S017.company_data['title_name_company']}
     pms_full_register_page.Input Name Company    ${Register_S017.company_data['name_company']}
@@ -52,11 +52,11 @@ Register_S017
     pms_full_register_page.Input Contact Data Mobile Number    ${Register_S017.company_data.contact_data['mobile_number']}
     pms_full_register_page.Input Contact Data Mobile Number Ext    ${Register_S017.company_data.contact_data['ext']}
 
-    Step Test:    Step No.3 กดปุ่ม"หน้าถัดไป"
+    Log    Step No.3 กดปุ่ม"หน้าถัดไป"
     pms_full_register_page.Click Button Next
     # Expected
 
-    Step Test:    Step No.4 ระบุข้อมูล
+    Log    Step No.4 ระบุข้อมูล
     pms_full_register_page.Click Tab Dry Parcel
     pms_full_register_page.Click Button Select For Edit Dry Parcel
     pms_full_register_page.Click Button COD Dry Parcel

@@ -9,14 +9,14 @@ Test Teardown     Close Browser
 Reject Individual Entity
     [Documentation]    E2E 4 Scenario
     [Tags]    Register    UAT    In_Review
-    Step Test:    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
+    Log    Scenario 4 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
     Register_S004
     #Assign RM
-    Step Test:    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
+    Log    Scenario 11 RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
     Register_S011
-    Step Test:    Scenario 14 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
+    Log    Scenario 14 Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
     Register_S014
-    Step Test:    Scenario 16 RM : ปฎิเสธคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้าบุคคลธรรมดา)
+    Log    Scenario 16 RM : ปฎิเสธคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้าบุคคลธรรมดา)
     #Register_S016
 
 
@@ -24,7 +24,7 @@ Reject Individual Entity
 *** Keywords ***
 Register_S004
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา) เพื่ออนุมัติ
-    Step Test:    Step No.1 กรอกข้อมูล
+    Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -45,7 +45,7 @@ Register_S004
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S004['mobile_ext']}
     common.Verify Capture Screenshot    Register_S004    filled in contact information success   
 
-    Step Test:    Step No.2 "กดปุ่มลงทะเบียน"
+    Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
@@ -73,7 +73,7 @@ Assign RM
 
 Register_S011
     [Documentation]    RM : อนุมัติ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    Step Test:    Step No. 1 "RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ กำลังพิจารณา กดปุ่ม ดำเนินการ"
+    Log    Step No. 1 "RM ได้รับคำขอที่ได้รับมอบหมายจาก RM Lead โดยคำขอจะมีสถานะ กำลังพิจารณา กดปุ่ม ดำเนินการ"
     pms_requests_page.Click Tab Pre-Register
     pms_requests_page.Select Request With Considering Status [Individual]
     ...    ${Register_S004['checkbox_partner_types']}
@@ -101,10 +101,10 @@ Register_S011
     Scroll Window To Vertical    0
     common.Verify Capture Screenshot    Register_S011    Verify Request Detail Page
 
-    Step Test:    Step No. 2 RM กรอกเบอร์โทรศัพท์
+    Log    Step No. 2 RM กรอกเบอร์โทรศัพท์
     Input Mobile Number In Sale Information    ${Register_S011['sale_phone']}
 
-    Step Test:    Step No. 3 กดปุ่ม "อนุมัติ"
+    Log    Step No. 3 กดปุ่ม "อนุมัติ"
     pms_request_detail_page.Click Approve Button
     # Expected
     pms_requests_page.Select Request With Confirm Sent Link Status [Individual]
@@ -135,7 +135,7 @@ Register_S011
 
 Register_S014
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้าบุคคลธรรมดา
-    Step Test:    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
+    Log    Step No.1 ลูกค้ากด Link Full Register ที่ได้รับทาง E-mail
     register_business_full_register.Get Link On Email
     common.Open URL    ${link_full_register}
     #common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
@@ -155,7 +155,7 @@ Register_S014
     ...    ${Register_S004['mobile_ext']}
     common.Verify Capture Screenshot    Register_S014    Verify Company Information
     
-    Step Test:    Step No.2 Click btn "ถัดไป"
+    Log    Step No.2 Click btn "ถัดไป"
     register_business_full_register.Click Next
     #Expected
     #Tab พัสดุทั่วไป
@@ -169,7 +169,7 @@ Register_S014
     common.Verify Capture Screenshot    Register_S014    Tab Return Business
 
 
-    Step Test:    Step No.3 เปิดใช้งานพัสดุทั่วไป
+    Log    Step No.3 เปิดใช้งานพัสดุทั่วไป
     register_business_full_register.Click Tab Dry Parcel
     register_business_full_register.Click Select Dry Parcel
     register_business_full_register.Select Add Service Cod Dry Parcel
@@ -181,23 +181,23 @@ Register_S014
     common.Verify Capture Screenshot    Register_S014    Enable Dry Parcel
 
 
-    Step Test:    Step No.4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
+    Log    Step No.4 กดปุ่ม "บันทึกร่าง" ที่ขั้นตอนข้อมูลบริการ
     register_business_full_register.Click Save
     common.Verify Capture Screenshot    Register_S014    Save Draft
 
 
-    Step Test:    Step No.5 กดปุ่ม "ยกเลิก"
+    Log    Step No.5 กดปุ่ม "ยกเลิก"
     register_business_full_register.Click Cancel
     #Expected
     register_business_full_register.Verify Cancel Popup    ${Register.Full_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     common.Verify Capture Screenshot    Register_S014    Cancel popup
 
 
-    Step Test:    Step No.6 กดปุ่ม "ตกลง" ที่ Popup
+    Log    Step No.6 กดปุ่ม "ตกลง" ที่ Popup
     register_business_full_register.Click Button Confirm Cancel Popup
     common.Verify Capture Screenshot    Register_S014    Exit link Full register
 
-    Step Test:    Step No.7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
+    Log    Step No.7 กดเปิด Link Full Register เดิม ที่ได้รับทาง E-mail 
     common.Open URL    ${link_full_register}
     # common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
     #Expected
@@ -216,7 +216,7 @@ Register_S014
     common.Verify Capture Screenshot    Register_S014    Verify Company Information
 
 
-    Step Test:    Step No.8 กดปุ่ม "ถัดไป"
+    Log    Step No.8 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     Expected
     register_business_full_register.Verify Service Information Page Tab Dry Parcel
@@ -227,7 +227,7 @@ Register_S014
     common.Verify Capture Screenshot    Register_S014    Verify Dry Parcel
 
 
-    Step Test:    Step No.9 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
+    Log    Step No.9 เปิดใช้งานพัสดุควบคุมอุณหภูมิ และ เปิดใช้งาน Return Business
     #Tab พัสดุควบคุมอุณหภูมิ
     register_business_full_register.Click Tab Chill Parcel
     register_business_full_register.Click Select Chill Parcel
@@ -250,7 +250,7 @@ Register_S014
     common.Verify Capture Screenshot    Register_S014    Enable Return Business
 
 
-    Step Test:    Step No.10 กดปุ่ม "ถัดไป"
+    Log    Step No.10 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     register_business_full_register.Click Add Contact Information
     #Expected
@@ -258,7 +258,7 @@ Register_S014
     common.Verify Capture Screenshot    Register_S014    Verify Contact And Bank Information Page
 
 
-    Step Test:    Step No.11 ระบุข้อมูลผู้ติดต่อ และ ข้อมูลธนาคาร
+    Log    Step No.11 ระบุข้อมูลผู้ติดต่อ และ ข้อมูลธนาคาร
     #Step1 ระบุข้อมูลผู้ติดต่อ
     register_business_full_register.Input User Name    ${Register_S014.contact['user_name']}
     register_business_full_register.Input User Position    ${Register_S014.contact['user_position']}
@@ -274,14 +274,14 @@ Register_S014
     register_business_full_register.Input Bank Account No    ${Register_S014.bank['bank_account_no']}
     common.Verify Capture Screenshot    Register_S014    Verify Contact And Bank Information
 
-    Step Test:    Step No.12 กดปุ่ม "ถัดไป"
+    Log    Step No.12 กดปุ่ม "ถัดไป"
     register_business_full_register.Click Next
     #Expected
     register_business_full_register.Verify Supporting Document Page Individual
     common.Verify Capture Screenshot    Register_S014    Verify Supporting Document Page
 
 
-    Step Test:    Step No.13 อัพโหลดเอกสารประกอบ
+    Log    Step No.13 อัพโหลดเอกสารประกอบ
     register_business_full_register.Upload Copy ID Card    ${testpdf}
     register_business_full_register.Upload Copy Of House Registration    ${testpdf}
     register_business_full_register.Copy Of Bank Account    ${testpdf}
@@ -291,12 +291,12 @@ Register_S014
     register_business_full_register.Click Acceptance Privacy Policy
     common.Verify Capture Screenshot    Register_S014    Uploaded Supporting Document Page
     
-    Step Test:    Step No.14 กดปุ่ม "ลงทะเบียน"
+    Log    Step No.14 กดปุ่ม "ลงทะเบียน"
     register_business_full_register.Click Confirm
     register_business_full_register.Verify Confirm Page    ${Register.Full_register['text_register_success']}
     common.Verify Capture Screenshot    Register_S014    Full register success
 
-    Step Test:    Step No.15 กด Link Full Register เดิม ที่ได้รับทาง E-mail
+    Log    Step No.15 กด Link Full Register เดิม ที่ได้รับทาง E-mail
     common.Open URL    ${link_full_register}
     # common.Open URL    https://www-uat.allspeedy.co.th/business-register/fullRegister/11153137768697514178
     #Expected
@@ -314,14 +314,14 @@ Register_S014
     # ...    ${Register_S004['mobile_ext']}
     # common.Verify Capture Screenshot    Register_S014    Verify Company Information
 
-    Step Test:    Step No.16 กดปุ่ม "หมายเหตุการแก้ไข"
+    Log    Step No.16 กดปุ่ม "หมายเหตุการแก้ไข"
     # register_business_full_register.Click Remark
     # #Expected
     # register_business_full_register.Verify Remark Popup
     # ...    remark_4=comment
     # common.Verify Capture Screenshot    Register_S014    Verify remark popup
 
-    Step Test:    Step No.17 กดปุ่ม "x"
+    Log    Step No.17 กดปุ่ม "x"
     # register_business_full_register.Click Button Close Remark Popup
     # #Expected
     # register_business_full_register.Verify Popup Not Appear

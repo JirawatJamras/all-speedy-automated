@@ -24,7 +24,7 @@ DC_Operation_S006
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
-    Step Test:    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # # Defect141
@@ -134,7 +134,7 @@ DC_Operation_S006
     # common.Scroll Window To Vertical    1000
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Data In Export Task Tab 2
 
-    Step Test:    Step No. 10 เข้าเมนู Scan และ เลือกแท็บ Scan out
+    Log    Step No. 10 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
@@ -154,7 +154,7 @@ DC_Operation_S006
     common.Scroll Window To Vertical    1000
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
-    Step Test:    Step No.11 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
+    Log    Step No.11 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    SPBD241100002442
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
@@ -162,7 +162,7 @@ DC_Operation_S006
     ...    เลขพัสดุนี้อยู่ในถุงแล้ว ไม่สามารถ Scan รายชิ้นได้ (scan ทั้ง ถุง)    #${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
 
-    Step Test:    Step No.12 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
+    Log    Step No.12 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
     # Expected
     dps_pouch_page.Verify Pouch In Pouch Page
@@ -175,7 +175,7 @@ DC_Operation_S006
     ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Pouch In Pouch Page
 
-    Step Test:    Step No.13 คลิกที่ไอคอนรูปดินสอ
+    Log    Step No.13 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    P112473971
     # Expected
     

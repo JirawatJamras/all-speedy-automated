@@ -79,7 +79,7 @@ Booking_S043
     ${booking_time}    Get Booking Time
     sleep    2s
 
-    Step Test:    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
+    Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     sleep    2s
     Reload Page
@@ -95,7 +95,7 @@ Booking_S043
     # ...    ${Booking_S020['price_value']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Created Booking On Booking Delivery Page
 
-    Step Test:    Step No.2 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
+    Log    Step No.2 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Waiting For Entering Parcel To System    ${booking_id}
     # Defect048    Defect072
     # Expected
@@ -134,7 +134,7 @@ Booking_S043
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Booking Detail Page
 
-    Step Test:    Step No.3 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
+    Log    Step No.3 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
@@ -151,7 +151,7 @@ Booking_S043
     ...    ${Booking_S020['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Data Sender
 
-    Step Test:    Step No.4 กดปุ่ม "เเก้ไข"
+    Log    Step No.4 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
     # Expected
     b2c_booking_detail_page.Verify Can Edit Data Sender
@@ -162,7 +162,7 @@ Booking_S043
     ...    ${Booking_S020['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Can Edit Data Sender
 
-    Step Test:    Step No.5 แก้ไข ข้อมูลผู้ส่งพัสดุ
+    Log    Step No.5 แก้ไข ข้อมูลผู้ส่งพัสดุ
     sleep    1s
     b2c_booking_detail_page.Edit Phone Sender    ${Booking_S043['sender_phone']}
     # Defect119
@@ -174,7 +174,7 @@ Booking_S043
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Edit Data Sender
 
-    Step Test:    Step No.6 กดปุ่ม "บันทึกเเก้ไข"
+    Log    Step No.6 กดปุ่ม "บันทึกเเก้ไข"
     b2c_booking_detail_page.Click Save Edit Data
     Reload Page
     ${booking_time}    Get Booking Time
@@ -215,7 +215,7 @@ Booking_S043
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Booking Detail Page After Edit Sender Data
 
-    Step Test:    Step No.7 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
+    Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Defect119
     # Expected
@@ -233,7 +233,7 @@ Booking_S043
     # ...    ${Booking_S043['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Data Sender After Edit Sender Data
 
-    Step Test:    Step No.8 กดปุ่ม "ถัดไป"
+    Log    Step No.8 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
@@ -251,7 +251,7 @@ Booking_S043
     ...    ${Booking_S020['receiver_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Data Receiver
 
-    Step Test:    Step No.9 กดปุ่ม "เเก้ไข"
+    Log    Step No.9 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
     # Expected
     b2c_booking_detail_page.Verify Can Edit Data Receiver
@@ -262,7 +262,7 @@ Booking_S043
     ...    ${Booking_S020['receiver_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Can Edit Data Receiver
 
-    Step Test:    Step No.10 เเก้ไข ข้อมูลผู้รับพัสดุ
+    Log    Step No.10 เเก้ไข ข้อมูลผู้รับพัสดุ
     b2c_booking_detail_page.Edit Phone Receiver    ${Booking_S043['receiver_phone']}
     b2c_booking_detail_page.Edit Name Receiver    ${Booking_S043['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
@@ -271,7 +271,7 @@ Booking_S043
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S043['receiver_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Edit Data Receiver
 
-    Step Test:    Step No.11 กดปุ่ม "บันทึกเเก้ไข"
+    Log    Step No.11 กดปุ่ม "บันทึกเเก้ไข"
     b2c_booking_detail_page.Click Save Edit Data
     Reload Page
     ${booking_time}    Get Booking Time
@@ -312,7 +312,7 @@ Booking_S043
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Booking Detail Page After Edit Data Receiver
 
-    Step Test:    Step No.12 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
+    Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Defect119
     # Expected
@@ -330,7 +330,7 @@ Booking_S043
     # ...    ${Booking_S043['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Data Sender After Edit Receiver Data
 
-    Step Test:    Step No.13 กดปุ่ม "ถัดไป"
+    Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Defect119
     # Expected
@@ -349,7 +349,7 @@ Booking_S043
     # ...    ${Booking_S043['receiver_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Data Receiver After Edit Receiver Data
 
-    Step Test:    Step No.14 กดปุ่ม "ถัดไป"
+    Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
@@ -366,7 +366,7 @@ Booking_S043
     ...    ${Booking_S020['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Parcel Detail
 
-    Step Test:    Step No.15 กดปุ่ม "เเก้ไข"
+    Log    Step No.15 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
     # Defect083
     # Expected
@@ -375,13 +375,13 @@ Booking_S043
     # ...    ${Booking_S020['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Can Edit Parcel Detail
 
-    Step Test:    Step No.16 เเก้ไข ข้อมูลพัสดุ
+    Log    Step No.16 เเก้ไข ข้อมูลพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S043['parcel_size']}
     b2c_booking_detail_page.Edit Parcel Remark    ${Booking_S043['parcel_detail_remark']}
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Edit Data Parcel Detail
 
-    Step Test:    Step No.17 กดปุ่ม "บันทึกเเก้ไข"
+    Log    Step No.17 กดปุ่ม "บันทึกเเก้ไข"
     b2c_booking_detail_page.Click Save Edit Data
     Reload Page
     ${booking_time}    Get Booking Time
@@ -422,7 +422,7 @@ Booking_S043
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S042    Verify Booking Detail Page After Edit Data Parcel
 
-    Step Test:    Step No.18 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
+    Log    Step No.18 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Expected
     # Defect119
@@ -440,7 +440,7 @@ Booking_S043
     # ...    ${Booking_S043['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Data Sender After Edit Data Parcel
 
-    Step Test:    Step No.19 กดปุ่ม "ถัดไป"
+    Log    Step No.19 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
     # Defect119
@@ -459,7 +459,7 @@ Booking_S043
     # ...    ${Booking_S043['receiver_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Data Receiver After Edit Data Parcel
 
-    Step Test:    Step No.20 กดปุ่ม "ถัดไป"
+    Log    Step No.20 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
     b2c_booking_delivery_page.Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
@@ -476,7 +476,7 @@ Booking_S043
     ...    ${Booking_S043['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Parcel Detail After Edit Data Parcel
 
-    Step Test:    Step No.21 กดปุ่ม "ถัดไป"
+    Log    Step No.21 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Defect050
     # Expected
@@ -489,7 +489,7 @@ Booking_S043
     # ...    ${Booking_S020.promotion_detail['period']}
     common.Verify Capture Screenshot    booking    Booking_S042     Verify Selected Coupon And Code
 
-    Step Test:    Step No.22 กดปุ่ม "เเก้ไข"
+    Log    Step No.22 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
     # Defect050
     # Expected
@@ -502,14 +502,14 @@ Booking_S043
     # ...    ${Booking_S003.promotion_detail['period']}
     common.Verify Capture Screenshot    booking    Booking_S042    Verify Can Edit Selected Coupon And Code
 
-    Step Test:    Step No.23 กดปุ่ม "นำออก" ที่รายการคูปองและโค้ดส่วนลดที่เลือก
+    Log    Step No.23 กดปุ่ม "นำออก" ที่รายการคูปองและโค้ดส่วนลดที่เลือก
     # Defect050
     # b2c_booking_delivery_page.Click Take Out Coupon
     # Expected
     b2c_booking_delivery_page.Verify Not Select Coupon And Code
     common.Verify Capture Screenshot    booking    Booking_S042    Verify Take Out Coupon
 
-    Step Test:    Step No.24 กดปุ่ม "บันทึกเเก้ไข"
+    Log    Step No.24 กดปุ่ม "บันทึกเเก้ไข"
     b2c_booking_detail_page.Click Save Edit Data
     Reload Page
     ${booking_time}    Get Booking Time
@@ -550,7 +550,7 @@ Booking_S043
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S042    Verify Booking Detail Page After Edit Coupon And Code
 
-    Step Test:    Step No.25 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.25 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # Defect119
     # Expected
@@ -575,7 +575,7 @@ Booking_S043
     # ...    ${Booking_S043['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Parcel Label
 
-    Step Test:    Step No.26 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.26 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S043    Verify Print Screen

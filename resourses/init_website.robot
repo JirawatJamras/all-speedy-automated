@@ -13,4 +13,3 @@ Library                     ExcelLibrary
 
 *** Variables ***
 ${LANG}                                 th
-

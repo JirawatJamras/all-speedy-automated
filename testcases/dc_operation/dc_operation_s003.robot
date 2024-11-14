@@ -12,11 +12,11 @@ DC_Operation_S003
     [Tags]    DC_Operation    UAT
     
     Log    Prerequisite S002
-    Step Test:    Step No.1 เข้า URL All Speedy
+    Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
 
-    Step Test:    Step เข้าสู่ระบบลูกค้าธุรกิจ
+    Log    Step เข้าสู่ระบบลูกค้าธุรกิจ
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
@@ -24,17 +24,17 @@ DC_Operation_S003
     b2c_home_page.Verify Company profile page
     ...    ${DC_Operation_S002['company_name']}
 
-    Step Test:    Step เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
+    Log    Step เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     b2c_call_car_pick_up_parcel_page.Verify Call Car Pick Up Page    ${call_car_pick_up['text_call_car_pick_up']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002   Verify Call Car Pick Up Page
 
-    Step Test:    Step คลิกปุ่ม +เพิ่ม
+    Log    Step คลิกปุ่ม +เพิ่ม
     b2c_call_car_pick_up_parcel_page.Click Add Button
 
 
-    Step Test:    Step ระบุข้อมูล
+    Log    Step ระบุข้อมูล
     ${tomorrow}    Set Tomorrow Date
     ${today}    Set Today
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
@@ -42,23 +42,23 @@ DC_Operation_S003
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S002['parcel_pickup_time']}
     b2c_call_car_pick_up_parcel_page.Click Save Button
 
-    Step Test:    Step เลือกเมนู "จองการจัดส่งพัสดุ"
+    Log    Step เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery    
     
-    Step Test:    Step คลิกปุ่ม "+ เพิ่ม"
+    Log    Step คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add   
     Sleep    2s
 
-    Step Test:    Step กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
+    Log    Step กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
     # Expected   
     b2c_booking_delivery_page.Verify Select Parcel Type
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Select Parcel Type
 
-    Step Test:    Step กดปุ่ม "พัสดุทั่วไป"
+    Log    Step กดปุ่ม "พัสดุทั่วไป"
     b2c_booking_delivery_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
 
-    Step Test:    Step คลิกปุ่ม x เพื่อปิด popup
+    Log    Step คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
     # Defect068
     # Expected
@@ -69,7 +69,7 @@ DC_Operation_S003
     ...    ${Booking['text_booking_time_label']}
     ...    ${Booking['text_shipping_origin']}
 
-    Step Test:    Step คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
+    Log    Step คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
     b2c_booking_detail_page.Click Edit Booking List
     b2c_booking_detail_page.Verify Popup To Edit Booking List
     ...    ${Booking['text_parcel_type_label']}
@@ -77,7 +77,7 @@ DC_Operation_S003
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Edit Booking Popup
 
-    Step Test:    Step คลิกแท็บ "รอบรถเข้ารับพัสดุ"
+    Log    Step คลิกแท็บ "รอบรถเข้ารับพัสดุ"
     b2c_booking_detail_page.Select Pickup Schedule Tab
     # Expected
     b2c_booking_detail_page.Verify Display Pickup Schedule Data
@@ -88,7 +88,7 @@ DC_Operation_S003
     ...    ${call_car_pick_up.default['price']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Display Pickup Schedule Data
 
-    Step Test:    Step เลือกรายการรอบรถที่สร้างไว้ใน Step 5 และกดปุ่มบันทึก
+    Log    Step เลือกรายการรอบรถที่สร้างไว้ใน Step 5 และกดปุ่มบันทึก
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
@@ -100,7 +100,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S002['shipping_origin']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Complete Select Parcel Pickup Schedule And Save
 
-    Step Test:    Step คลิกปุ่ม Import File
+    Log    Step คลิกปุ่ม Import File
     b2c_booking_detail_page.Click Import File Button
     b2c_booking_detail_page.Verify Import File Popup
     ...    ${Booking['text_import']}
@@ -110,11 +110,11 @@ DC_Operation_S003
     ...    ${Booking['text_import_result']}
     ...    ${Booking['text_file_import_error']}
 
-    Step Test:    Step เลือกไฟล์ "Booking Dry Template Test DC"
+    Log    Step เลือกไฟล์ "Booking Dry Template Test DC"
     b2c_booking_detail_page.Import Excel File Of Dry Parcel Template    ${path_excel_booking_dry_template}
 
 
-    Step Test:    Step cut off time
+    Log    Step cut off time
     dps_home_page.Set Cut Off Time
     ...    ${DB_URI}
     ...    ${DATABASE_NAME}
@@ -133,10 +133,10 @@ DC_Operation_S003
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Status After Cut Off Time
 
-    Step Test:    Step เปิด URL DPS
+    Log    Step เปิด URL DPS
     Go To    ${DPS_UAT_URL}
 
-    Step Test:    Step เข้าสู่ระบบ
+    Log    Step เข้าสู่ระบบ
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
@@ -148,7 +148,7 @@ DC_Operation_S003
     ...    ${dc_operation.title['homepage']}
 
 
-    Step Test:    Step เลือก role แอดมินคลัง
+    Log    Step เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
@@ -176,7 +176,7 @@ DC_Operation_S003
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
 
-    Step Test:    Step คลิกแท็บ "รายการรอคลังยืนยัน"
+    Log    Step คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
     # Defect175    Defect192
     # Expected
@@ -196,7 +196,7 @@ DC_Operation_S003
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
 
-    Step Test:    Step คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
+    Log    Step คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
     dps_check_receiving_cycle_page.Click Pencil Icon    ${booking_id}
     # Defect178
     # Expected
@@ -215,7 +215,7 @@ DC_Operation_S003
     ...    ${DC_Operation.status['waiting']}
 
 
-    Step Test:    Step คลิกปุ่ม อนุมัติ
+    Log    Step คลิกปุ่ม อนุมัติ
     dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
     # Expected
     dps_check_receiving_cycle_page.Verify Data Saved Success Popup
@@ -257,7 +257,7 @@ DC_Operation_S003
     # ...    ${dc_operation.title['homepage']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Homepage Title
 
-    Step Test:    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -292,60 +292,60 @@ DC_Operation_S003
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data In All Task Tab
 
-    Step Test:    Step No.2 เลือกแท็บงานรับเข้า
+    Log    Step No.2 เลือกแท็บงานรับเข้า
 
 
-    Step Test:    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
+    Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
 
 
-    Step Test:    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
+    Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
 
 
-    Step Test:    Step No.5 คลิกปุ่มพิมพ์
+    Log    Step No.5 คลิกปุ่มพิมพ์
 
 
-    Step Test:    Step No.6 คลิกที่ x Pop up
+    Log    Step No.6 คลิกที่ x Pop up
 
 
-    Step Test:    Step No.7 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
+    Log    Step No.7 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
 
-    Step Test:    Step No.8 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-
-
-    Step Test:    Step No.9 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Log    Step No.8 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
 
 
-    Step Test:    Step No.10 เลือกแท็บงานส่งออก
+    Log    Step No.9 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
 
 
-    Step Test:    Step No.11 เข้าเมนู Scan และ เลือกแท็บ Scan out
+    Log    Step No.10 เลือกแท็บงานส่งออก
 
 
-    Step Test:    Step No.12
+    Log    Step No.11 เข้าเมนู Scan และ เลือกแท็บ Scan out
 
 
-    Step Test:    Step No.13
+    Log    Step No.12
 
 
-    Step Test:    Step No.14
+    Log    Step No.13
 
 
-    Step Test:    Step No.15
+    Log    Step No.14
 
 
-    Step Test:    Step No.16
+    Log    Step No.15
 
 
-    Step Test:    Step No.17
+    Log    Step No.16
 
 
-    Step Test:    Step No.18
+    Log    Step No.17
 
 
-    Step Test:    Step No.19
+    Log    Step No.18
 
 
-    Step Test:    Step No.20
+    Log    Step No.19
+
+
+    Log    Step No.20
 
 
 

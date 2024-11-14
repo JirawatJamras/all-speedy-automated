@@ -19,7 +19,7 @@ DC_Operation_S016
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
-    Step Test:    Step No.16-1 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
+    Log    Step No.16-1 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    SPBD241100002305
@@ -85,14 +85,14 @@ DC_Operation_S016
     # common.Scroll Window To Vertical    400
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Details After Scanning
 
-    Step Test:    Step No.16-2 คลิกที่ผลรวมของขนาดพัสดุ และ แก้ไขเป็นเลข 45
+    Log    Step No.16-2 คลิกที่ผลรวมของขนาดพัสดุ และ แก้ไขเป็นเลข 45
     dps_scan_page.Clear Input Parcel Size In Scan Page
     dps_scan_page.Input Parcel Size In Scan Page    ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['value_parcel_size']}
     # Expected
     dps_scan_page.Verify Parcel Size Edited    ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['text_parcel_size']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Size Edited
 
-    Step Test:    Step No.16-3 คลิก Dropdown Courier แก้ไขเป็น CP All
+    Log    Step No.16-3 คลิก Dropdown Courier แก้ไขเป็น CP All
     dps_scan_page.Click Courier In Scan Page
     dps_scan_page.Select Courier In Dropdown In Scan Page    CP ALL  # ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['courier']}
     # Defect165
@@ -114,7 +114,7 @@ DC_Operation_S016
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['symbol']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Label After Editing Courier
 
-    Step Test:    Step No.16-4 คลิก Dropdown คลังปลายทาง แก้ไขเป็น DCSB
+    Log    Step No.16-4 คลิก Dropdown คลังปลายทาง แก้ไขเป็น DCSB
     dps_scan_page.Click Destination Warehouse In Scan Page
     dps_scan_page.Select Destination Warehouse In Dropdown In Scan Page    ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['destination_warehourse']}
     # Defect165

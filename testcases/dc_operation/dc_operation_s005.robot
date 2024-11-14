@@ -18,14 +18,14 @@ DC_Operation_S005
     # dps_home_page.Click Dropdown For Select Role
     # dps_home_page.Select Role    ${dc_operation.role['admin']}
 
-    Step Test:    Step No.1 เข้าเมนูหน้าหลัก -> เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Log    Step No.1 เข้าเมนูหน้าหลัก -> เลือก Dropdown ดูข้อมูลคลัง DC BB
     # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
 
-    Step Test:    Step No.2 เลือกแท็บงานรับเข้า
+    Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
 
-    Step Test:    Step No.3 เข้าเมนู Scan -> กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ d" -> กดค้นหา หรือกด Enter
+    Log    Step No.3 เข้าเมนู Scan -> กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ d" -> กดค้นหา หรือกด Enter
 
 

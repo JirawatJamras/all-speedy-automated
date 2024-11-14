@@ -12,16 +12,16 @@ Test Teardown     Close Browser
 Cancel On Pre Register Page
     [Documentation]    E2E 2 Scenario
     [Tags]    Register    UAT
-    Step Test:    Scenario 3 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
+    Log    Scenario 3 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
     Register_S003
-    Step Test:    Scenario 6 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
+    Log    Scenario 6 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
     Register_S006
 
 *** Keywords ***
 Register_S003
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
     #[Tags]    Register    UAT
-    Step Test:    Step No.1 กรอกข้อมูล
+    Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -46,17 +46,17 @@ Register_S003
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S003['mobile_ext']}
     common.Verify Capture Screenshot    Register_S003    filled in contact information success
     
-    Step Test:    Step No.2 ยกเลิกลงทะเบียน
+    Log    Step No.2 ยกเลิกลงทะเบียน
     register_business_pre_register.Click Cancel
     register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     
-    Step Test:    Step No.3 ตกลงยกเลิกลงทะเบียน
+    Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     register_business_pre_register.Click Button Confirm Cancel Popup
 
 Register_S006
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)
     #[Tags]    Register    UAT
-    Step Test:    Step No.1 กรอกข้อมูล
+    Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
     #Step2 Click tab ลูกค้าธุรกิจ
@@ -77,11 +77,11 @@ Register_S006
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S006['mobile_ext']}
     common.Verify Capture Screenshot    Register_S006    filled in contact information success
 
-    Step Test:    Step No.2 ยกเลิกลงทะเบียน
+    Log    Step No.2 ยกเลิกลงทะเบียน
     #Step Click btn ยกเลิก
     register_business_pre_register.Click Cancel
     register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     
-    Step Test:    Step No.3 ตกลงยกเลิกลงทะเบียน
+    Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     #Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup

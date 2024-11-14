@@ -10,16 +10,16 @@ DC_Operation_S013
     [Documentation]    ลูกค้า B (ส่งพัสดุที่ร้าน 7-11) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
     [Tags]    DC_Operation    UAT
 
-    Step Test:    Step No.1-16 Skip By Use Tracking Mannual
+    Log    Step No.1-16 Skip By Use Tracking Mannual
 
-    Step Test:    Step No.17 เข้า Url : https://dps-uat.allspeedy.co.th
+    Log    Step No.17 เข้า Url : https://dps-uat.allspeedy.co.th
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     # Expected 
     dps_login_page.Verify Login Page
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Login Page
     
-    Step Test:    Step No.18 กรอกข้อมูล Login
+    Log    Step No.18 กรอกข้อมูล Login
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
@@ -30,7 +30,7 @@ DC_Operation_S013
     ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Homepage Title
 
-    Step Test:    Step No.19 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Log    Step No.19 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -65,7 +65,7 @@ DC_Operation_S013
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In All Task Tab
 
-    Step Test:    Step No.20 เลือกแท็บงานรับเข้า
+    Log    Step No.20 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Defect139
     # Expected
@@ -83,7 +83,7 @@ DC_Operation_S013
 
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In Import Task Tab
 
-    Step Test:    Step No.21 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
+    Log    Step No.21 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['tracking']}
@@ -156,10 +156,10 @@ DC_Operation_S013
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Sender Data In Scan In
 
-    Step Test:    Step No.22 คลิกปุ่ม ยืนยัน/Print Label
+    Log    Step No.22 คลิกปุ่ม ยืนยัน/Print Label
     dps_parcel_detail_page.Click Print Label
 
-    Step Test:    Step No.23 คลิกปุ่มพิมพ์
+    Log    Step No.23 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     # dps_parcel_detail_page.Click ESC On Keyboard
     Switch Window    NEW
@@ -171,13 +171,13 @@ DC_Operation_S013
     ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Print Label Success Popup
 
-    Step Test:    Step No.24 คลิกที่ x Pop up
+    Log    Step No.24 คลิกที่ x Pop up
     dps_scan_page.Click Close Popup Print Scan In Success
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Navigate To Scan Page And Stay At Scan In Tab
 
-    Step Test:    Step No.25 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
+    Log    Step No.25 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     dps_home_page.Select Tab All Task
@@ -199,7 +199,7 @@ DC_Operation_S013
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In All Task Tab 2
 
-    Step Test:    Step No.26 เลือกแท็บงานส่งออก
+    Log    Step No.26 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Defect
     # Expected
@@ -219,7 +219,7 @@ DC_Operation_S013
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In Export Task Tab
 
 
-    Step Test:    Step No.27 เข้าเมนู Scan และ เลือกแท็บ Scan out
+    Log    Step No.27 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
@@ -240,7 +240,7 @@ DC_Operation_S013
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
 
-    Step Test:    Step No.28 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
+    Log    Step No.28 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${DC_Operation_S013.scan_out_waiting_scan['tracking']}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
@@ -263,32 +263,32 @@ DC_Operation_S013
     ...    2024-11-11    #${DC_Operation_S013.scan_out_waiting_scan['update_date']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
 
-    Step Test:    Step No.29 กดปุ่ม ยืนยัน Scan Out
+    Log    Step No.29 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
     dps_scan_page.Verify Popup Confirm Scan Out
 
-    Step Test:    Step No.30 กดปุ่ม ยืนยัน
+    Log    Step No.30 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out 
     # Expected
     dps_scan_page.Verify Popup Save Data Success
 
-    Step Test:    Step No.31 คลิกที่ Pop up
+    Log    Step No.31 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success 
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
 
-    Step Test:    Step No.32 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
+    Log    Step No.32 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     # Waiting Step
 
-    Step Test:    Step No.33 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
+    Log    Step No.33 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
     # Waiting Step
 
-    Step Test:    Step No.34 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
+    Log    Step No.34 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
     dps_scan_page.Click Waiting Delivery List Button 
     # Expected
 
-    Step Test:    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     #In progress 
     dps_scan_page.Click Print Button By Data
     ...    ${DC_Operation_S013.scan_out_print['export_to']}
@@ -298,7 +298,7 @@ DC_Operation_S013
     # ...    ${DC_Operation_S013.scan_out_print['total_parcel_pouch']}
     # Expected
 
-    Step Test:    Step No.36 กดปุ่ม พิมพ์
+    Log    Step No.36 กดปุ่ม พิมพ์
     dps_parcel_detail_page.Click ESC On Keyboard
     # Expected
 
