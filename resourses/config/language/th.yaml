@@ -397,13 +397,13 @@ dc_operation:
     parcel_id: หมายเลขพัสดุ
     customer_id: Customer ID
     parcel_size: ขนาดพัสดุ
-    warehouse_crossdock: คลัง Crossdock
-    warehouse_destination: คลังปลายทาง
+    crossdock_warehouse: คลัง Crossdock
+    destination_warehouse: คลังปลายทาง
     parcel_status: สถานะพัสดุ
     courier: Courier
     pouch_number: Pouch Number
     receiving_date: วันที่เข้ารับพัสดุ
-    warehouse_source: คลังต้นทาง
+    origin_warehouse: คลังต้นทาง
     send_parcel_to: ส่งพัสดุไปยัง
     route: Route
   scan_in_title_label_detail:

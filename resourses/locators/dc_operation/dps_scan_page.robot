@@ -18,13 +18,13 @@ ${dps_txt_title_parcel_detail}    //span[contains(@class,'ant-typography')]//str
 ${dps_txt_title_parcel_id}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']    
 ${dps_txt_title_customer_id}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_parcel_size}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']
-${dps_txt_title_warehouse_crossdock}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
-${dps_txt_title_warehouse_destination}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
+${dps_txt_title_crossdock_warehouse}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
+${dps_txt_title_destination_warehouse}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_parcel_status}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_courier}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_pouch_number}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_receiving_date}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
-${dps_txt_title_warehouse_source}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
+${dps_txt_title_origin_warehouse}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_send_parcel_to}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_route}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_label_scan_in}    //div[@class='']//span[text()='{value}']
@@ -42,14 +42,14 @@ ${dps_txt_value_customer_id}    //span[contains(@class,'ant-typography')]//stron
 ${dps_txt_value_parcel_size1}    //input[@type='number' and contains(@class,'ant-input')]
 ${dps_txt_value_parcel_size2}    //input[@type='number' and contains(@class,'ant-input')]/../span
 ${dps_txt_value_parcel_size3}    //input[@type='number' and contains(@class,'ant-input')]/../../input
-${dps_txt_value_warehouse_crossdock}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
-${dps_txt_value_warehouse_destination}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/div/div/span[2]
-${dps_txt_arrow_warehouse_destination}    /../../span[@class='ant-select-arrow']
+${dps_txt_value_crossdock_warehouse}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
+${dps_txt_value_destination_warehouse}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/div/div/span[2]
+${dps_txt_arrow_destination_warehouse}    /../../span[@class='ant-select-arrow']
 ${dps_txt_value_parcel_status}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_courier}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/div/div/span[2]
 ${dps_txt_value_pouch_number}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_receiving_date}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
-${dps_txt_value_warehouse_source}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
+${dps_txt_value_origin_warehouse}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_send_parcel_to}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_route}    (//div[@class="ant-form-item-control-input-content"]//input)[2]
 ${dps_txt_value_label_store}    //div[@class='mt-5']/div[2]/span[2]
