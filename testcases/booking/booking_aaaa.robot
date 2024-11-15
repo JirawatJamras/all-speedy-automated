@@ -4,22 +4,21 @@ Resource          ../../resourses/import.robot
 
 *** Variables ***
 ${EXCEL_FILE}     ${path_excel_booking_testdata_excel}
-${SCENARIO_NUMBER}    Booking_S005   # ระบุ Scenario Number ที่ต้องการค้นหา
-${maxColumn}    42    # +1 because loop starts with 1 not 0
-${maxRow}       6   # +1 because ignore column and col starts with 1
-${maxRow-1}     3   # because Amount of row used
+${maxColumn}    43    # +1 because loop starts with 1 not 0
+${maxRow}       63   # +3 because ignore column and col starts with 1
+
 
 *** Keywords ***
 Check Scenario Number And Use Row Data  
     [Arguments]    ${scenario_no}
     ${_ylist}    Create list
     Open Excel Document    filename=${EXCEL_FILE}  doc_id=doc1   keep_vba=True  
-    FOR    ${row}    IN RANGE    1    99999999
+    FOR    ${row}    IN RANGE    1    ${maxRow}
         Log   ${row}
         ${scenario_number}=   Read Excel Cell     row_num=${row}    col_num=1
         IF    '${scenario_number}' == '${scenario_no}'
             Log to Console    \n"Reached empty cell at row ${row}. Stopping the loop."\n
-            FOR    ${col}    IN RANGE    1    43
+            FOR    ${col}    IN RANGE    1    ${maxColumn}
              ${cell}=   Read Excel Cell     row_num=${row}   col_num=${col}
             Append to List     ${_ylist}    ${cell} 
             Set Global Variable     ${_ylist}
