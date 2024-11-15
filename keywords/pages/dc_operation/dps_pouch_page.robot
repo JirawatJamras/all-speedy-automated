@@ -73,11 +73,20 @@ Verify Data Of Information Section In Pouch Detail Popup
     Should Be Equal    ${actual_origin_warehouse}    ${expected_origin_warehouse}
     Should Be Equal    ${actual_destination_warehouse}    ${expected_destination_warehouse}
 
-# Verify Label Section In Pouch Detail Popup
-#     [Arguments]    ${destination_warehouse_name}    ${number}    ${route}
-#     ...    ${simbol}    ${pouch_number}
-    #
-    #
+Verify Label Section In Pouch Detail Popup
+    [Arguments]    ${destination_warehouse_name}    ${number}    ${route}
+    ...    ${simbol}    ${pouch_number}
+    ${actual_destination_warehouse_name}=    Get Text   ${dps_destination_warehouse_in_pouch_label}
+    ${actual_number}=    Get Text    ${dps_number_in_pouch_label}
+    ${actual_route}=    Get Text    ${dps_route_in_pouch_label}
+    Should Be Equal    ${actual_destination_warehouse_name}    ${destination_warehouse_name}
+    Should Be Equal    ${actual_number}    ${number}
+    Should Be Equal    ${actual_route}    ${route}
+    IF    '${simbol}' == 'รูปดาว'
+        Wait Until Element Is Visible    ${dps_img_star_simbol_pouch_label}    timeout=10s
+    END
+    
+
 
 Click Dropdown Select Warehouse List
     [Arguments]    ${selected_warehouse}

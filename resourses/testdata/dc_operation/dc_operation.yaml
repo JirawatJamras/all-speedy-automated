@@ -205,6 +205,11 @@ DC_Operation_S004:
     pouch_status: เปิด
     origin_warehouse: DC BB
     destination_warehouse: DC SB
+    label_destination_warehouse: DC SB
+    label_number: '1'
+    label_route: DC BB - DC SB
+    label_simbol: รูปดาว
+
 
 DC_Operation_S006:
   sender_name: คุณ e

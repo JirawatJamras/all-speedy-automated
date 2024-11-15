@@ -15,14 +15,14 @@ DC_Operation_S004
     # ${ParcelsData}    Get Parcels And Sender Names    B2411000294
     # ${tracking_c}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${DC_Operation_S004['sender_name']}
     ${tracking_c}=    Set Variable    SPBD241100009760
-    ${pouch_number}=    Set Variable    P112430859
+    ${pouch_number}=    Set Variable    P112475536
 
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    dps_home_page.Wait Until DC Operation Home Page Loaded
+    # dps_home_page.Wait Until DC Operation Home Page Loaded
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
@@ -150,7 +150,7 @@ DC_Operation_S004
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Sender Data In Scan In
 
-    # Log    Step No.10
+    # Log    Step No.10 คลิกปุ่ม ยืนยัน/Print Label
     # dps_parcel_detail_page.Click Print Label
 
     # Log    Step No.11 คลิกปุ่มพิมพ์
@@ -261,7 +261,7 @@ DC_Operation_S004
     ...    ${DC_Operation_S004.data_in_pouch_list['crossdock_warehouse']}
     ...    ${DC_Operation_S004.data_in_pouch_list['destination_warehouse']}
     ...    ${DC_Operation_S004.data_in_pouch_list['status']}
-    ...    13-11-2567
+    ...    14-11-2567
     ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Pouch In Pouch Page
 
@@ -282,5 +282,11 @@ DC_Operation_S004
     ...    ${DC_Operation_S004.data_in_pouch_detail['pouch_status']}
     ...    ${DC_Operation_S004.data_in_pouch_detail['origin_warehouse']}
     ...    ${DC_Operation_S004.data_in_pouch_detail['destination_warehouse']}
+    dps_pouch_page.Verify Label Section In Pouch Detail Popup
+    ...    ${DC_Operation_S004.data_in_pouch_detail['label_destination_warehouse']}
+    ...    ${DC_Operation_S004.data_in_pouch_detail['label_number']}
+    ...    ${DC_Operation_S004.data_in_pouch_detail['label_route']}
+    ...    ${DC_Operation_S004.data_in_pouch_detail['simbol']}
+    ...    
     #
     #
