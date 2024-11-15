@@ -655,13 +655,12 @@ DC_Operation_S017:
   value_parcel_details_in_warehouse:
     parcel_status: พัสดุรอ Scan out ไปคลัง AC
     customer_type: B2C
-    # pouch_number: ''
     parcel_size: 'ซอง A4'
     route: '3235'
     # check_in_date: วันที่รับพัสดุเข้าระบบ
-    # date_in_system: จำนวนวันที่อยู่ในระบบ
+    date_in_system: '2-3 วัน'
     # sla_date: SLA Date
-    # sla_text: SLA Text
+    sla_text: '3 วัน'
     origin_store: '-'
     origin_warehouse: DC BB
     destination_store: 'To Store (01015)'
@@ -678,6 +677,14 @@ DC_Operation_S017:
     address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
   check_close_pouch:
     inventory: RDC LP
+  data_in_pouch_list:
+    crossdock_warehouse: AC
+    destination_warehouse: RDC LP
+    status: 'On'
+  data_in_pouch_label:
+    destination_warehourse: RDC LP
+    route: DC BB - AC - RDC LP
+    destination_warehourse_symbol: รูปนาฬิกาทราย
 
 DC_Operation_S018:
   value_parcel_details_in_warehouse:

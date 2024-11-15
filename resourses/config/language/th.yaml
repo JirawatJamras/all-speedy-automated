@@ -494,6 +494,11 @@ dc_operation:
     parcel_label: ใบปะหน้าพัสดุ
     parcel_sorting_sheet: ใบคัดแยกพัสดุ
     pouch_label: ใบ Label Pouch
+  card_reprint_label:
+    text_parcel_label: ใบ Label Parcel
+    text_parcel_sorting_sheet: ใบคัดแยกพัสดุ
+    text_pouch_label: ใบ Label Pouch
+    button_cancel: ยกเลิก
   label_pouch_in_pouch_detail:
     title: รายละเอียด Pouch
     pouch_number: หมายเลข POUCH

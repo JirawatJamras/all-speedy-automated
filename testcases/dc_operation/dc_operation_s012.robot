@@ -20,7 +20,7 @@ DC_Operation_S012
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
-    # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # dps_home_page.Select Tab All Task
     # dps_home_page.Filter Data By Parcel Number [All Task Tab]    SPBD241100002656
     # # Defect138    Defect141

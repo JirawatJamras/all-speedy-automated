@@ -62,10 +62,15 @@ Verify Timeline
 Filter Data By Parcel Number
     [Arguments]    ${parcel_number}
     Select Filter Button
+    Is Value Present In Parcel Textbox
     common.Input When Ready    ${dps_txtbox_fitler_parcel_number_history_parcel_page}    ${parcel_number}
     Click Search Button On Filter
     Select Filter Button
 
+Is Value Present In Parcel Textbox
+    ${actual_txtbox_fitler_parcel_number}=    Get Value    ${dps_txtbox_fitler_parcel_number_history_parcel_page}
+    ${is_not_empty}=    Run Keyword And Return Status    Should Not Be Empty    ${actual_txtbox_fitler_parcel_number}
+    Run Keyword If    '${is_not_empty}' == 'True'    common.Click When Ready    ${dps_btn_clear_parcel_number_history_parcel_page}
 Select Filter Button
     ${dps_btn_filter}=    Replace String    ${dps_btn_filter_history_parcel_page}    {value}    ${dc_operation['button_filter']}
     common.Click When Ready    ${dps_btn_filter}
@@ -267,3 +272,43 @@ Verify Reprint Label Dropdown
     Element Should Be Visible    ${dps_cbo_parcel_label}
     Should Be Equal    ${actual_status_parcel_sorting_sheet}    false
     Should Be Equal    ${actual_status_pouch_label}    false
+
+Select Reprint Label Type In Dropdown
+    [Arguments]    ${label_type}
+    ${dps_cbo_value_in_reprint_label}=    Replace String    ${dps_cbo_value_in_reprint_label_history_parcel_page}    {value}    ${label_type}
+    common.Click When Ready    ${dps_cbo_value_in_reprint_label}
+
+Verify Reprint Label Popup
+    [Arguments]    ${label_type}
+    ${dps_card_reprint_label}=    Replace String    ${dps_card_reprint_label_history_parcel_page}    {value}    ${label_type}
+    ${dps_txt_title_reprint_label_in_card}=    Replace String    ${dps_txt_title_reprint_label_in_card_history_parcel_page}    {value}    ${label_type}
+    Wait Until Element Is Visible    ${dps_card_reprint_label}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_title_reprint_label_in_card}=    Get Text    ${dps_txt_title_reprint_label_in_card}
+    Should Be Equal    ${actual_txt_title_reprint_label_in_card}    ${label_type}
+
+Click Cancel Reprint Label Button
+    [Arguments]    ${label_type}
+    ${dps_btn_cancel_reprint_label}=    Replace String    ${dps_btn_cancel_reprint_label_history_parcel_page}    {label_type}    ${label_type}
+    ${dps_btn_cancel_reprint_label}=    Replace String    ${dps_btn_cancel_reprint_label}    {value}    ${dc_operation.card_reprint_label['button_cancel']}
+    common.Click When Ready    ${dps_btn_cancel_reprint_label}
+
+Verify Reprint Pouch Label Popup
+    [Arguments]    ${label_type}    ${destination_warehouse}    ${route}    ${destination_warehouse_symbol}
+    ${dps_card_reprint_label}=    Replace String    ${dps_card_reprint_label_history_parcel_page}    {value}    ${label_type}
+    ${dps_txt_title_reprint_label_in_card}=    Replace String    ${dps_txt_title_reprint_label_in_card_history_parcel_page}    {value}    ${label_type}
+    ${dps_txt_destination_warehouse_in_pouch_label}=    Replace String    ${dps_txt_destination_warehouse_in_pouch_label_history_parcel_page}    {label_type}    ${label_type}
+    ${dps_txt_destination_warehouse_in_pouch_label}=    Replace String    ${dps_txt_destination_warehouse_in_pouch_label}    {destination_warehouse}    ${destination_warehouse}
+    ${dps_txt_route_in_pouch_label}=    Replace String    ${dps_txt_route_in_pouch_label_history_parcel_page}    {label_type}    ${label_type}
+    ${dps_txt_route_in_pouch_label}=    Replace String    ${dps_txt_route_in_pouch_label}    {route}    ${route}
+    Wait Until Element Is Visible    ${dps_card_reprint_label}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_title_reprint_label_in_card}=    Get Text    ${dps_txt_title_reprint_label_in_card}
+    ${actual_txt_destination_warehouse_in_pouch_label}=    Get Text    ${dps_txt_destination_warehouse_in_pouch_label}
+    ${actual_txt_route_in_pouch_label}=    Get Text    ${dps_txt_route_in_pouch_label}
+    Should Be Equal    ${actual_txt_title_reprint_label_in_card}    ${label_type}
+    Should Be Equal    ${actual_txt_destination_warehouse_in_pouch_label}    ${destination_warehouse}
+    Should Be Equal    ${actual_txt_route_in_pouch_label}    ${route}
+
+    IF    '${destination_warehouse_symbol}' ==  'รูปนาฬิกาทราย'
+    ...    ${dps_img_rdclp_warehouse_symbol_in_pouch_label}=    Replace String    ${dps_img_rdclp_warehouse_symbol_in_pouch_label_history_parcel_page}    {label_type}    ${label_type}
+    ...    Should Be Visible    ${dps_img_rdclp_warehouse_symbol_in_pouch_label}
+    END

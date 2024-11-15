@@ -193,3 +193,16 @@ Select Filter Button
 Click Search Button On Filter
     ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_pouch_page}    {value}    ${dc_operation['button_search']}
     common.Click When Ready    ${dps_btn_search_filter}
+
+Click Close Pouch Button In Pouch Detail
+    common.Click When Ready    //span[text()=' ปิด Pouch/Print Label']/..
+
+Verify Close Pouch Confirmation Popup
+    [Arguments]    ${close_pouch}
+    ${dps_txt_close_pouch}=    Replace String    //div[@class='ant-modal-content']//div//h1[contains(normalize-space(), '{value}')]    {value}    ${close_pouch}
+    Wait Until Element Is Visible    ${dps_txt_close_pouch}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_txt_close_pouch}=    Get Text    ${dps_txt_close_pouch}
+    Should Be Equal    ${actual_txt_close_pouch}    ${close_pouch}
+
+Click Close Pouch Button In Popup
+    common.Click When Ready    //div[@class='ant-modal-content']//span[text()='ปิด Pouch/Print Label']/..
