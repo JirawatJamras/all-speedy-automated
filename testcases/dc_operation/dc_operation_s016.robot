@@ -105,7 +105,6 @@ DC_Operation_S016
     # ...    POUCH NO.  # ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # ...    ${dc_operation.scan_in_title_label_detail['wh']}
     # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
-    # ...    -  # ${DC_Operation_S016.edit_courier_in_scan_in_tab['route']}
     # ...    11120 (กล่อง S)  # ${DC_Operation_S016.edit_courier_in_scan_in_tab['zipcode']}
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['customer']}
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['phone']}
@@ -127,7 +126,6 @@ DC_Operation_S016
     # ...    POUCH NO.  # ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # ...    ${dc_operation.scan_in_title_label_detail['wh']}
     # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
-    # ...    -  # ${DC_Operation_S016.edit_courier_in_scan_in_tab['route']}
     # ...    11120 (กล่อง S)  # ${DC_Operation_S016.edit_courier_in_scan_in_tab['zipcode']}
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['customer']}
     # ...    ${DC_Operation_S016.edit_courier_in_scan_in_tab['phone']}

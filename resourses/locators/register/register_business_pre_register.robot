@@ -8,10 +8,10 @@ ${register_cbo_company_title_name_legal_entity}    //input[@id='companyTitleName
 ${register_cbo_title_name_legal_entity}    //input[@id='titleName']//..//..
 ${register_cbo_choice_title_name}     //div[text()='{value}'][@class='ant-select-item-option-content']
 ${register_cbo_company_address_full_legal_entity}    //input[@id='companyAddress_full']
-${register_cbo_choice_company_address_full_legal_entity}    //div[text()='{value}'][@class='ant-select-item-option-content']
+${register_cbo_choice_company_address_full_legal_entity}    //div[@title='{value}']    #//div[text()='{value}' and @class='ant-select-item-option-content']
 ${register_cbo_title_name_individual}    //input[@id='Form_titleName']//..//..
 ${register_cbo_address_full_individual}    //input[@id='Form_companyAddress_full']
-${register_cbo_choice_address_full_individual}    //div[text()='{value}'][@class='ant-select-item-option-content']
+${register_cbo_choice_address_full_individual}    //div[text()='{value}' and @class='ant-select-item-option-content']
 
 
 ${register_txtbox_company_name_legal_entity}    //input[@id='companyName']

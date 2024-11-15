@@ -102,10 +102,9 @@ DC_Operation_S012
     # # ...    พัสดุถึงคลังปลายทาง  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['parcel_status']}
     # # ...    CP ALL  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['courier']}
     # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['pouch_number']}
-    # # ...    06-11-2567 16:33:46  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['receiving_date']}
+    # # ...    06-11-2567  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['receiving_date']}
     # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['source_warehouse']}
     # # ...    STORE (07004)  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['send_parcel_to']}
-    # # ...    4629  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['route']}
     # # dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
     # # ...    ${dc_operation.scan_in_title_label_detail['route']}
     # # ...    ${dc_operation.scan_in_title_label_detail['store']}
@@ -114,7 +113,6 @@ DC_Operation_S012
     # # ...    POUCH NO.  # ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # # ...    ${dc_operation.scan_in_title_label_detail['wh']}
     # # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
-    # # ...    4629  # ${DC_Operation_S012.label_detail_in_scan_in_tab['route']}
     # # ...    ${DC_Operation_S012.label_detail_in_scan_in_tab['store_code']}
     # # ...    ${DC_Operation_S012.label_detail_in_scan_in_tab['customer']}
     # # ...    ${DC_Operation_S012.label_detail_in_scan_in_tab['phone']}

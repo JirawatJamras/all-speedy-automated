@@ -39,8 +39,8 @@ DC_Operation_s026
     b2c_booking_delivery_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
     Log    Step คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
-    b2c_booking_delivery_page.Click Latest Booking Created    ## ใช้แก้ชั่วคราว
     Log    Step คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
+    b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_booking_detail_page.Click Edit Booking List
     Log    Step คลิกแท็บ "รอบรถเข้ารับพัสดุ"
     b2c_booking_detail_page.Select Pickup Schedule Tab
@@ -92,7 +92,7 @@ DC_Operation_s026
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    dps_home_page.Wait Until DC Operation Home Page Loaded
+    # dps_home_page.Wait Until DC Operation Home Page Loaded
     Log    Step เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -121,8 +121,7 @@ DC_Operation_s026
     Log    Step คลิกปุ่ม อนุมัติ
     dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
     dps_check_receiving_cycle_page.Verify Data Saved Success Popup
-    ${parcel_code_J}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${DC_Operation_S026.parcel_detail_in_scan_in_tab['sender_name']}
-    # ${parcel_code_J}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${booking_dry.parcel_sender_J['sender_name']}
+    ${parcel_code_J}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${DC_Operation_S026['sender_name']}
     Log To Console    ${parcel_code_J}
 
     Log    Step No.1 เข้าเมนู Scan ,กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ j", กดค้นหา
@@ -149,19 +148,28 @@ DC_Operation_s026
     ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
     dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
     ...    ${parcel_code_J}
-    ...    B2C0002400563  #${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
-    ...    
-
-    dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
-    # ...    SPCD241000008174
-    # ...    fee (0988797374)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
-    # ...    51 ซม. ซอง A4    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}
-    ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['crossdock_warehouse']}
-    ...    DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['destination_warehouse']}
-    ...    รอปริ้นใบลาเบลติดหน้ากล่อง     # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_status']}
-    ...    CP ALL    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['courier']}
-    ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['pouch_number']}
-    ...    18-10-2567 14:37:59
-    ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
-    ...    STORE (15888)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
-    ...    0060    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['route']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
+    ...    RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_status']}
+    ...    CP ALL    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['courier']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['pouch_number']}
+    ...    ${today}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['origin_warehouse']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['send_parcel_to']}
+    dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
+    ...    ${dc_operation.scan_in_title_label_detail['route']}
+    ...    ${dc_operation.scan_in_title_label_detail['store']}
+    ...    ${dc_operation.scan_in_title_label_detail['customer']}
+    ...    ${dc_operation.scan_in_title_label_detail['phone']}
+    ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
+    ...    ${dc_operation.scan_in_title_label_detail['wh']}
+    dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['store']}
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['customer']}
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['phone']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['pouch_number']}
+    ...    DC BB - AC RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Parcel Details In Scan Page
