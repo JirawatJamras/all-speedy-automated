@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.0.1 (Python 3.9.2 on win32)" generated="2024-11-16T00:35:31.097076" rpa="false" schemaversion="5">
+<robot generator="Robot 7.0.1 (Python 3.9.2 on win32)" generated="2024-11-16T01:01:10.977271" rpa="false" schemaversion="5">
 <suite id="s1" name="Testcases" source="C:\Users\Home-Few\Documents\GitHub\all-speedy-automated\report\..\testcases">
 <suite id="s1-s1" name="Booking" source="C:\Users\Home-Few\Documents\GitHub\all-speedy-automated\report\..\testcases\booking">
 <suite id="s1-s1-s1" name="Booking Aaaa" source="C:\Users\Home-Few\Documents\GitHub\all-speedy-automated\report\..\testcases\booking\booking_aaaa.robot">
-<test id="s1-s1-s1-t1" name=" Check Scenario Number And Use Row Data" line="32">
+<test id="s1-s1-s1-t1" name="TEST" line="74">
+<kw name="Check Scenario Number And Use Row Data">
 <kw name="Create List" owner="BuiltIn">
-<msg time="2024-11-16T00:35:32.499002" level="INFO">${_ylist} = []</msg>
+<msg time="2024-11-16T01:01:12.321113" level="INFO">${_ylist} = []</msg>
 <var>${_ylist}</var>
 <doc>Returns a list containing given items.</doc>
-<status status="PASS" start="2024-11-16T00:35:32.499002" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:12.321113" elapsed="0.000000"/>
 </kw>
 <kw name="Open Excel Document" owner="ExcelLibrary">
 <arg>filename=${EXCEL_FILE}</arg>
 <arg>doc_id=doc1</arg>
 <arg>keep_vba=True</arg>
 <doc>Opens xlsx document file.</doc>
-<status status="PASS" start="2024-11-16T00:35:32.499002" elapsed="0.176656"/>
+<status status="PASS" start="2024-11-16T01:01:12.322089" elapsed="0.161380"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-11-16T00:35:33.699076" level="INFO">1</msg>
+<msg time="2024-11-16T01:01:13.507601" level="INFO">1</msg>
 <arg>${row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-11-16T00:35:33.699076" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.506624" elapsed="0.000977"/>
 </kw>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:33.699076" level="INFO">${scenario_number} = Variable</msg>
+<msg time="2024-11-16T01:01:13.507601" level="INFO">${scenario_number} = Variable</msg>
 <var>${scenario_number}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=1</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:33.699076" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.507601" elapsed="0.000000"/>
 </kw>
 <if>
-<branch type="IF" condition="'${scenario_number}' == 'Booking_S005'">
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:33.700053" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.508576" elapsed="0.000000"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
@@ -47,74 +48,59 @@
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:33.700053" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.508576" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:33.700053" elapsed="0.473178"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.508576" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.173231" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.508576" elapsed="0.000976"/>
 </kw>
 <var name="${col}"/>
-<status status="NOT RUN" start="2024-11-16T00:35:33.700053" elapsed="0.473178"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.508576" elapsed="0.000976"/>
 </iter>
 <var>${col}</var>
 <value>1</value>
-<value>42</value>
-<status status="NOT RUN" start="2024-11-16T00:35:33.700053" elapsed="0.473178"/>
-</for>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.174207" elapsed="0.000000"/>
-</kw>
-<var name="${i}"/>
-<status status="NOT RUN" start="2024-11-16T00:35:34.173231" elapsed="0.000976"/>
-</iter>
-<var>${i}</var>
-<value>0</value>
-<value>41</value>
-<status status="NOT RUN" start="2024-11-16T00:35:34.173231" elapsed="0.000976"/>
+<value>43</value>
+<status status="NOT RUN" start="2024-11-16T01:01:13.508576" elapsed="0.000976"/>
 </for>
 <kw name="Exit For Loop" owner="BuiltIn">
 <doc>Stops executing the enclosing FOR loop.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.174207" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.985126" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2024-11-16T00:35:33.699076" elapsed="0.475131"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.507601" elapsed="0.478501"/>
 </branch>
-<status status="PASS" start="2024-11-16T00:35:33.699076" elapsed="0.475131"/>
+<status status="PASS" start="2024-11-16T01:01:13.507601" elapsed="0.478501"/>
 </if>
 <var name="${row}">1</var>
-<status status="PASS" start="2024-11-16T00:35:33.698101" elapsed="0.476106"/>
+<status status="PASS" start="2024-11-16T01:01:13.506624" elapsed="0.479478"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.175183" level="INFO">2</msg>
+<msg time="2024-11-16T01:01:13.986102" level="INFO">2</msg>
 <arg>${row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.175183" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.986102" elapsed="0.000000"/>
 </kw>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.176160" level="INFO">${scenario_number} = Scenario Number</msg>
+<msg time="2024-11-16T01:01:13.987078" level="INFO">${scenario_number} = Scenario Number</msg>
 <var>${scenario_number}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=1</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.176160" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.986102" elapsed="0.000976"/>
 </kw>
 <if>
-<branch type="IF" condition="'${scenario_number}' == 'Booking_S005'">
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.176160" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.987078" elapsed="0.000000"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
@@ -123,1505 +109,3055 @@
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.177135" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.987078" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.177135" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.988054" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.178111" elapsed="0.000000"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.988054" elapsed="0.000000"/>
 </kw>
 <var name="${col}"/>
-<status status="NOT RUN" start="2024-11-16T00:35:34.177135" elapsed="0.000976"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.987078" elapsed="0.000976"/>
 </iter>
 <var>${col}</var>
 <value>1</value>
-<value>42</value>
-<status status="NOT RUN" start="2024-11-16T00:35:34.177135" elapsed="0.000976"/>
-</for>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.178111" elapsed="0.000000"/>
-</kw>
-<var name="${i}"/>
-<status status="NOT RUN" start="2024-11-16T00:35:34.178111" elapsed="0.000000"/>
-</iter>
-<var>${i}</var>
-<value>0</value>
-<value>41</value>
-<status status="NOT RUN" start="2024-11-16T00:35:34.178111" elapsed="0.000000"/>
+<value>43</value>
+<status status="NOT RUN" start="2024-11-16T01:01:13.987078" elapsed="0.000976"/>
 </for>
 <kw name="Exit For Loop" owner="BuiltIn">
 <doc>Stops executing the enclosing FOR loop.</doc>
-<status status="NOT RUN" start="2024-11-16T00:35:34.178111" elapsed="0.000976"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.988054" elapsed="0.000000"/>
 </kw>
-<status status="NOT RUN" start="2024-11-16T00:35:34.176160" elapsed="0.002927"/>
+<status status="NOT RUN" start="2024-11-16T01:01:13.987078" elapsed="0.000976"/>
 </branch>
-<status status="PASS" start="2024-11-16T00:35:34.176160" elapsed="0.002927"/>
+<status status="PASS" start="2024-11-16T01:01:13.987078" elapsed="0.000976"/>
 </if>
 <var name="${row}">2</var>
-<status status="PASS" start="2024-11-16T00:35:34.174207" elapsed="0.004880"/>
+<status status="PASS" start="2024-11-16T01:01:13.986102" elapsed="0.001952"/>
 </iter>
 <iter>
 <kw name="Log" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.179087" level="INFO">3</msg>
+<msg time="2024-11-16T01:01:13.989030" level="INFO">3</msg>
 <arg>${row}</arg>
 <doc>Logs the given message with the given level.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.179087" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.989030" elapsed="0.000000"/>
 </kw>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.180064" level="INFO">${scenario_number} = Booking_S005</msg>
+<msg time="2024-11-16T01:01:13.989030" level="INFO">${scenario_number} = Booking_S005</msg>
 <var>${scenario_number}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=1</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.179087" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:13.989030" elapsed="0.000000"/>
 </kw>
 <if>
-<branch type="IF" condition="'${scenario_number}' == 'Booking_S005'">
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
 <kw name="Log To Console" owner="BuiltIn">
 <arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.180064" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.990006" elapsed="0.000000"/>
 </kw>
 <for flavor="IN RANGE">
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.181040" level="INFO">${cell} = Booking_S005</msg>
+<msg time="2024-11-16T01:01:13.990983" level="INFO">${cell} = Booking_S005</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.181040" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.990983" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.182016" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.991959" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.182990" level="INFO">${_ylist} = ['Booking_S005']</msg>
+<msg time="2024-11-16T01:01:13.992934" level="INFO">${_ylist} = ['Booking_S005']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.182990" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.991959" elapsed="0.000975"/>
 </kw>
 <var name="${col}">1</var>
-<status status="PASS" start="2024-11-16T00:35:34.181040" elapsed="0.001950"/>
+<status status="PASS" start="2024-11-16T01:01:13.990983" elapsed="0.001951"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.183967" level="INFO">${cell} = พัสดุทั่วไป</msg>
+<msg time="2024-11-16T01:01:13.992934" level="INFO">${cell} = พัสดุทั่วไป</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.182990" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:13.992934" elapsed="0.000976"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.183967" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.993910" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.183967" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป']</msg>
+<msg time="2024-11-16T01:01:13.994886" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.183967" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.993910" elapsed="0.000976"/>
 </kw>
 <var name="${col}">2</var>
-<status status="PASS" start="2024-11-16T00:35:34.182990" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:13.992934" elapsed="0.001952"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.184943" level="INFO">${cell} = 0890000001</msg>
+<msg time="2024-11-16T01:01:13.994886" level="INFO">${cell} = 0890000001</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.184943" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.994886" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.184943" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.995862" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.185919" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001']</msg>
+<msg time="2024-11-16T01:01:13.996839" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.185919" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.995862" elapsed="0.000977"/>
 </kw>
 <var name="${col}">3</var>
-<status status="PASS" start="2024-11-16T00:35:34.184943" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:13.994886" elapsed="0.001953"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.185919" level="INFO">${cell} = สมชาย สายเสมอ</msg>
+<msg time="2024-11-16T01:01:13.997814" level="INFO">${cell} = สมชาย สายเสมอ</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.185919" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.996839" elapsed="0.000975"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.186896" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.997814" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.186896" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ']</msg>
+<msg time="2024-11-16T01:01:13.997814" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.186896" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.997814" elapsed="0.000000"/>
 </kw>
 <var name="${col}">4</var>
-<status status="PASS" start="2024-11-16T00:35:34.185919" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:13.996839" elapsed="0.000975"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.187872" level="INFO">${cell} = 48/698</msg>
+<msg time="2024-11-16T01:01:13.998791" level="INFO">${cell} = 48/698</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.187872" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.998791" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.187872" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.998791" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.188851" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698']</msg>
+<msg time="2024-11-16T01:01:13.999767" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.188851" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.999767" elapsed="0.000000"/>
 </kw>
 <var name="${col}">5</var>
-<status status="PASS" start="2024-11-16T00:35:34.186896" elapsed="0.001955"/>
+<status status="PASS" start="2024-11-16T01:01:13.998791" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.188851" level="INFO">${cell} = 10230</msg>
+<msg time="2024-11-16T01:01:13.999767" level="INFO">${cell} = 10230</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.188851" elapsed="0.000973"/>
+<status status="PASS" start="2024-11-16T01:01:13.999767" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.189824" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:13.999767" elapsed="0.000975"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.189824" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230']</msg>
+<msg time="2024-11-16T01:01:14.000742" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.189824" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.000742" elapsed="0.000000"/>
 </kw>
 <var name="${col}">6</var>
-<status status="PASS" start="2024-11-16T00:35:34.188851" elapsed="0.000973"/>
+<status status="PASS" start="2024-11-16T01:01:13.999767" elapsed="0.000975"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.190799" level="INFO">${cell} = ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230</msg>
+<msg time="2024-11-16T01:01:14.001718" level="INFO">${cell} = ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.190799" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.000742" elapsed="0.000976"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.191776" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.001718" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.192752" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230']</msg>
+<msg time="2024-11-16T01:01:14.001718" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.192752" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.001718" elapsed="0.000000"/>
 </kw>
 <var name="${col}">7</var>
-<status status="PASS" start="2024-11-16T00:35:34.189824" elapsed="0.002928"/>
+<status status="PASS" start="2024-11-16T01:01:14.000742" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.193728" level="INFO">${cell} = 0890000002</msg>
+<msg time="2024-11-16T01:01:14.002694" level="INFO">${cell} = 0890000002</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.192752" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.002694" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.193728" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.002694" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.194705" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002']</msg>
+<msg time="2024-11-16T01:01:14.003670" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.193728" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:14.003670" elapsed="0.000000"/>
 </kw>
 <var name="${col}">8</var>
-<status status="PASS" start="2024-11-16T00:35:34.192752" elapsed="0.001953"/>
+<status status="PASS" start="2024-11-16T01:01:14.001718" elapsed="0.001952"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.194705" level="INFO">${cell} = สมใจ ดีดีดี</msg>
+<msg time="2024-11-16T01:01:14.003670" level="INFO">${cell} = สมใจ ดีดีดี</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.194705" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.003670" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.194705" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.003670" elapsed="0.000977"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.195681" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี']</msg>
+<msg time="2024-11-16T01:01:14.004647" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.195681" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.004647" elapsed="0.000000"/>
 </kw>
 <var name="${col}">9</var>
-<status status="PASS" start="2024-11-16T00:35:34.194705" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.003670" elapsed="0.000977"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.196659" level="INFO">${cell} = 47 หมู่ 4</msg>
+<msg time="2024-11-16T01:01:14.005622" level="INFO">${cell} = 47 หมู่ 4</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.196659" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.004647" elapsed="0.000975"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.196659" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.005622" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.197633" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4']</msg>
+<msg time="2024-11-16T01:01:14.005622" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.197633" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.005622" elapsed="0.000000"/>
 </kw>
 <var name="${col}">10</var>
-<status status="PASS" start="2024-11-16T00:35:34.195681" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.004647" elapsed="0.001950"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.197633" level="INFO">${cell} = 86110</msg>
+<msg time="2024-11-16T01:01:14.006597" level="INFO">${cell} = 86110</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.197633" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.006597" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.198609" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.006597" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.198609" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110']</msg>
+<msg time="2024-11-16T01:01:14.007575" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110']</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.198609" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.007575" elapsed="0.000000"/>
 </kw>
 <var name="${col}">11</var>
-<status status="PASS" start="2024-11-16T00:35:34.197633" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.006597" elapsed="0.000978"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.199584" level="INFO">${cell} = พ้อแดง หลังสวน ชุมพร 86110</msg>
+<msg time="2024-11-16T01:01:14.008550" level="INFO">${cell} = พ้อแดง หลังสวน ชุมพร 86110</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.198609" elapsed="0.000975"/>
+<status status="PASS" start="2024-11-16T01:01:14.007575" elapsed="0.000975"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.199584" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.008550" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.199584" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.009527" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.199584" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.008550" elapsed="0.000977"/>
 </kw>
 <var name="${col}">12</var>
-<status status="PASS" start="2024-11-16T00:35:34.198609" elapsed="0.001949"/>
+<status status="PASS" start="2024-11-16T01:01:14.007575" elapsed="0.001952"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.200558" level="INFO">${cell} = N/A</msg>
+<msg time="2024-11-16T01:01:14.009527" level="INFO">${cell} = N/A</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.200558" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.009527" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.200558" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.009527" elapsed="0.000975"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.201570" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.010502" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.201570" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.010502" elapsed="0.000000"/>
 </kw>
 <var name="${col}">13</var>
-<status status="PASS" start="2024-11-16T00:35:34.200558" elapsed="0.001012"/>
+<status status="PASS" start="2024-11-16T01:01:14.009527" elapsed="0.000975"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.201570" level="INFO">${cell} = N/A</msg>
+<msg time="2024-11-16T01:01:14.011479" level="INFO">${cell} = N/A</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.201570" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.010502" elapsed="0.000977"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.202545" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.011479" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.202545" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.011479" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.202545" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.011479" elapsed="0.000000"/>
 </kw>
 <var name="${col}">14</var>
-<status status="PASS" start="2024-11-16T00:35:34.201570" elapsed="0.000975"/>
+<status status="PASS" start="2024-11-16T01:01:14.010502" elapsed="0.000977"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.203488" level="INFO">${cell} = N/A</msg>
+<msg time="2024-11-16T01:01:14.012454" level="INFO">${cell} = N/A</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.203488" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.012454" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.203488" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.012454" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.204463" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.013430" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.204463" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.012454" elapsed="0.000976"/>
 </kw>
 <var name="${col}">15</var>
-<status status="PASS" start="2024-11-16T00:35:34.202545" elapsed="0.001918"/>
+<status status="PASS" start="2024-11-16T01:01:14.011479" elapsed="0.001951"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.204463" level="INFO">${cell} = เลือกร้าน 7-11 ต้นทาง</msg>
+<msg time="2024-11-16T01:01:14.013430" level="INFO">${cell} = เลือกร้าน 7-11 ต้นทาง</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.204463" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.013430" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.205439" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.014406" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.205439" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.014406" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.205439" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.014406" elapsed="0.000000"/>
 </kw>
 <var name="${col}">16</var>
-<status status="PASS" start="2024-11-16T00:35:34.204463" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.013430" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.206415" level="INFO">${cell} = 15888</msg>
+<msg time="2024-11-16T01:01:14.015382" level="INFO">${cell} = 15888</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.206415" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.014406" elapsed="0.000976"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.206415" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.015382" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.207391" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.015382" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.206415" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.015382" elapsed="0.000000"/>
 </kw>
 <var name="${col}">17</var>
-<status status="PASS" start="2024-11-16T00:35:34.205439" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.014406" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.207391" level="INFO">${cell} = S</msg>
+<msg time="2024-11-16T01:01:14.016358" level="INFO">${cell} = S</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.207391" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.016358" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.208367" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.016358" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.208367" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.017334" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.208367" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:14.016358" elapsed="0.000976"/>
 </kw>
 <var name="${col}">18</var>
-<status status="PASS" start="2024-11-16T00:35:34.207391" elapsed="0.001953"/>
+<status status="PASS" start="2024-11-16T01:01:14.015382" elapsed="0.001952"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.209344" level="INFO">${cell} = 5000</msg>
+<msg time="2024-11-16T01:01:14.017334" level="INFO">${cell} = 5000</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.209344" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.017334" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.210356" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.017334" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.211295" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.018310" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.211295" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.018310" elapsed="0.000000"/>
 </kw>
 <var name="${col}">19</var>
-<status status="PASS" start="2024-11-16T00:35:34.209344" elapsed="0.001951"/>
+<status status="PASS" start="2024-11-16T01:01:14.017334" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.212271" level="INFO">${cell} = ระวังพัสดุเสียหาย</msg>
+<msg time="2024-11-16T01:01:14.018310" level="INFO">${cell} = ระวังพัสดุเสียหาย</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.211295" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.018310" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.212271" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.019286" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.213247" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.019286" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.213247" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.019286" elapsed="0.000000"/>
 </kw>
 <var name="${col}">20</var>
-<status status="PASS" start="2024-11-16T00:35:34.211295" elapsed="0.002929"/>
+<status status="PASS" start="2024-11-16T01:01:14.018310" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.215205" level="INFO">${cell} = SPBH5B</msg>
+<msg time="2024-11-16T01:01:14.020262" level="INFO">${cell} = SPBH5B</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.214224" elapsed="0.000981"/>
+<status status="PASS" start="2024-11-16T01:01:14.020262" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.215205" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.020262" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.216175" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.021239" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.216175" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.020262" elapsed="0.000977"/>
 </kw>
 <var name="${col}">21</var>
-<status status="PASS" start="2024-11-16T00:35:34.214224" elapsed="0.001951"/>
+<status status="PASS" start="2024-11-16T01:01:14.019286" elapsed="0.001953"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.217151" level="INFO">${cell} = Booking DRY</msg>
+<msg time="2024-11-16T01:01:14.021239" level="INFO">${cell} = Booking DRY</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.216175" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.021239" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.217151" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.022214" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.218127" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.022214" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.218127" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.022214" elapsed="0.000000"/>
 </kw>
 <var name="${col}">22</var>
-<status status="PASS" start="2024-11-16T00:35:34.216175" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.021239" elapsed="0.000975"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.219103" level="INFO">${cell} = 1 รายการ</msg>
+<msg time="2024-11-16T01:01:14.023189" level="INFO">${cell} = 1 รายการ</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.219103" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.023189" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.219103" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:14.023189" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.220080" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.024165" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.220080" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.024165" elapsed="0.000000"/>
 </kw>
 <var name="${col}">23</var>
-<status status="PASS" start="2024-11-16T00:35:34.219103" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:14.023189" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.221056" level="INFO">${cell} = กล่อง</msg>
+<msg time="2024-11-16T01:01:14.025142" level="INFO">${cell} = กล่อง</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.220080" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.024165" elapsed="0.000977"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.221056" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.025142" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.222032" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.026118" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.221056" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.026118" elapsed="0.000000"/>
 </kw>
 <var name="${col}">24</var>
-<status status="PASS" start="2024-11-16T00:35:34.220080" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.024165" elapsed="0.001953"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.222032" level="INFO">${cell} = 55</msg>
+<msg time="2024-11-16T01:01:14.026118" level="INFO">${cell} = 55</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.222032" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.026118" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.222032" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.027093" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.223008" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.027093" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.223008" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.027093" elapsed="0.000000"/>
 </kw>
 <var name="${col}">25</var>
-<status status="PASS" start="2024-11-16T00:35:34.222032" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.026118" elapsed="0.000975"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.223983" level="INFO">${cell} = 5,000.00</msg>
+<msg time="2024-11-16T01:01:14.028103" level="INFO">${cell} = 5,000.00</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.223008" elapsed="0.000975"/>
+<status status="PASS" start="2024-11-16T01:01:14.027093" elapsed="0.001010"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.223983" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.028103" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.224959" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.028103" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.224959" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.028103" elapsed="0.000000"/>
 </kw>
 <var name="${col}">26</var>
-<status status="PASS" start="2024-11-16T00:35:34.223008" elapsed="0.001951"/>
+<status status="PASS" start="2024-11-16T01:01:14.027093" elapsed="0.001010"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.225936" level="INFO">${cell} = ยอดชำระ 5000 บาท</msg>
+<msg time="2024-11-16T01:01:14.029048" level="INFO">${cell} = ยอดชำระ 5000 บาท</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.225936" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.029048" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.226936" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.029048" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.227888" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.030022" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.226936" elapsed="0.000952"/>
+<status status="PASS" start="2024-11-16T01:01:14.030022" elapsed="0.000000"/>
 </kw>
 <var name="${col}">27</var>
-<status status="PASS" start="2024-11-16T00:35:34.225936" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.029048" elapsed="0.000974"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.228863" level="INFO">${cell} = 5 บาท</msg>
+<msg time="2024-11-16T01:01:14.030022" level="INFO">${cell} = 5 บาท</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.227888" elapsed="0.000975"/>
+<status status="PASS" start="2024-11-16T01:01:14.030022" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.228863" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.031010" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.229840" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.031010" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.229840" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.031010" elapsed="0.000000"/>
 </kw>
 <var name="${col}">28</var>
-<status status="PASS" start="2024-11-16T00:35:34.227888" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.030022" elapsed="0.000988"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.230815" level="INFO">${cell} = คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน</msg>
+<msg time="2024-11-16T01:01:14.032007" level="INFO">${cell} = คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.230815" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.031010" elapsed="0.000997"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.230815" elapsed="0.000978"/>
+<status status="PASS" start="2024-11-16T01:01:14.032007" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.231793" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.032007" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.231793" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.032007" elapsed="0.000000"/>
 </kw>
 <var name="${col}">29</var>
-<status status="PASS" start="2024-11-16T00:35:34.229840" elapsed="0.001953"/>
+<status status="PASS" start="2024-11-16T01:01:14.031010" elapsed="0.000997"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.232767" level="INFO">${cell} = ทุกขนาด</msg>
+<msg time="2024-11-16T01:01:14.032983" level="INFO">${cell} = ทุกขนาด</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.232767" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.032983" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.233743" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.032983" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.233743" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.033960" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.233743" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.032983" elapsed="0.000977"/>
 </kw>
 <var name="${col}">30</var>
-<status status="PASS" start="2024-11-16T00:35:34.231793" elapsed="0.001950"/>
+<status status="PASS" start="2024-11-16T01:01:14.032983" elapsed="0.000977"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.234719" level="INFO">${cell} = 30 ตุลาคม 2568</msg>
+<msg time="2024-11-16T01:01:14.033960" level="INFO">${cell} = 30 ตุลาคม 2568</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.234719" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.033960" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.235695" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.033960" elapsed="0.000974"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.236672" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.034934" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.236672" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.034934" elapsed="0.000000"/>
 </kw>
 <var name="${col}">31</var>
-<status status="PASS" start="2024-11-16T00:35:34.234719" elapsed="0.001953"/>
+<status status="PASS" start="2024-11-16T01:01:14.033960" elapsed="0.000974"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.237648" level="INFO">${cell} = สำหรับลูกค้าที่เป็นกล่อง</msg>
+<msg time="2024-11-16T01:01:14.034934" level="INFO">${cell} = สำหรับลูกค้าที่เป็นกล่อง</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.237648" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.034934" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.237648" elapsed="0.000975"/>
+<status status="PASS" start="2024-11-16T01:01:14.035911" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.239600" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.035911" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.238623" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:14.035911" elapsed="0.000000"/>
 </kw>
 <var name="${col}">32</var>
-<status status="PASS" start="2024-11-16T00:35:34.236672" elapsed="0.002928"/>
+<status status="PASS" start="2024-11-16T01:01:14.034934" elapsed="0.000977"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.239600" level="INFO">${cell} = 08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568</msg>
+<msg time="2024-11-16T01:01:14.036887" level="INFO">${cell} = 08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.239600" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.036887" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.240576" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.036887" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.241551" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.036887" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.240576" elapsed="0.000975"/>
+<status status="PASS" start="2024-11-16T01:01:14.036887" elapsed="0.000975"/>
 </kw>
 <var name="${col}">33</var>
-<status status="PASS" start="2024-11-16T00:35:34.239600" elapsed="0.001951"/>
+<status status="PASS" start="2024-11-16T01:01:14.035911" elapsed="0.001951"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.242527" level="INFO">${cell} = 1</msg>
+<msg time="2024-11-16T01:01:14.037862" level="INFO">${cell} = 1</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.242527" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.037862" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.242527" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.037862" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.243503" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.505220" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.242527" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.038807" elapsed="0.466413"/>
 </kw>
 <var name="${col}">34</var>
-<status status="PASS" start="2024-11-16T00:35:34.241551" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.037862" elapsed="0.467358"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.243503" level="INFO">${cell} = 5</msg>
+<msg time="2024-11-16T01:01:14.506196" level="INFO">${cell} = 5</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.243503" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.506196" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.244480" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.506196" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.244480" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.507172" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.244480" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.506196" elapsed="0.000976"/>
 </kw>
 <var name="${col}">35</var>
-<status status="PASS" start="2024-11-16T00:35:34.243503" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:14.505220" elapsed="0.001952"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.245456" level="INFO">${cell} = NaN</msg>
+<msg time="2024-11-16T01:01:14.507172" level="INFO">${cell} = NaN</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.245456" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.507172" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.245456" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.508149" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.246431" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.508149" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.245456" elapsed="0.000975"/>
+<status status="PASS" start="2024-11-16T01:01:14.508149" elapsed="0.000000"/>
 </kw>
 <var name="${col}">36</var>
-<status status="PASS" start="2024-11-16T00:35:34.244480" elapsed="0.001951"/>
+<status status="PASS" start="2024-11-16T01:01:14.507172" elapsed="0.000977"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.246431" level="INFO">${cell} = NaN</msg>
+<msg time="2024-11-16T01:01:14.509124" level="INFO">${cell} = NaN</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.246431" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.508149" elapsed="0.000975"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.246431" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.509124" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.247407" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.509124" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.247407" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.509124" elapsed="0.000000"/>
 </kw>
 <var name="${col}">37</var>
-<status status="PASS" start="2024-11-16T00:35:34.246431" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.508149" elapsed="0.000975"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.248384" level="INFO">${cell} = 1</msg>
+<msg time="2024-11-16T01:01:14.510100" level="INFO">${cell} = 1</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.247407" elapsed="0.000977"/>
+<status status="PASS" start="2024-11-16T01:01:14.510100" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.248384" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.510100" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.248384" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.511076" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.248384" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.511076" elapsed="0.000000"/>
 </kw>
 <var name="${col}">38</var>
-<status status="PASS" start="2024-11-16T00:35:34.247407" elapsed="0.001952"/>
+<status status="PASS" start="2024-11-16T01:01:14.510100" elapsed="0.000976"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.249359" level="INFO">${cell} = 150</msg>
+<msg time="2024-11-16T01:01:14.511076" level="INFO">${cell} = 150</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.249359" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.511076" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.249359" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.512053" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.250335" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.512053" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.250335" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.512053" elapsed="0.000000"/>
 </kw>
 <var name="${col}">39</var>
-<status status="PASS" start="2024-11-16T00:35:34.249359" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.511076" elapsed="0.000977"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.250335" level="INFO">${cell} = 1</msg>
+<msg time="2024-11-16T01:01:14.513029" level="INFO">${cell} = 1</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.250335" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.512053" elapsed="0.000976"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.251311" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.513029" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.251311" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.513029" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.251311" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.513029" elapsed="0.000976"/>
 </kw>
 <var name="${col}">40</var>
-<status status="PASS" start="2024-11-16T00:35:34.250335" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.512053" elapsed="0.001952"/>
 </iter>
 <iter>
 <kw name="Read Excel Cell" owner="ExcelLibrary">
-<msg time="2024-11-16T00:35:34.252288" level="INFO">${cell} = NaN</msg>
+<msg time="2024-11-16T01:01:14.514005" level="INFO">${cell} = NaN</msg>
 <var>${cell}</var>
 <arg>row_num=${row}</arg>
 <arg>col_num=${col}</arg>
 <doc>Returns content of a cell.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.252288" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.514005" elapsed="0.000000"/>
 </kw>
 <kw name="Append To List" owner="Collections">
 <arg>${_ylist}</arg>
 <arg>${cell}</arg>
 <doc>Adds ``values`` to the end of ``list``.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.252288" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.514980" elapsed="0.000000"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.253264" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<msg time="2024-11-16T01:01:14.514980" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
 <arg>${_ylist}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.252288" elapsed="0.000976"/>
+<status status="PASS" start="2024-11-16T01:01:14.514980" elapsed="0.000976"/>
 </kw>
 <var name="${col}">41</var>
-<status status="PASS" start="2024-11-16T00:35:34.251311" elapsed="0.001953"/>
+<status status="PASS" start="2024-11-16T01:01:14.514005" elapsed="0.001951"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:14.515956" level="INFO">${cell} = 200</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:14.515956" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:14.516932" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:14.516932" level="INFO">${_ylist} = ['Booking_S005', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:14.516932" elapsed="0.000977"/>
+</kw>
+<var name="${col}">42</var>
+<status status="PASS" start="2024-11-16T01:01:14.515956" elapsed="0.001953"/>
 </iter>
 <var>${col}</var>
 <value>1</value>
-<value>42</value>
-<status status="PASS" start="2024-11-16T00:35:34.181040" elapsed="0.072224"/>
-</for>
-<for flavor="IN RANGE">
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.253264" elapsed="0.000976"/>
-</kw>
-<var name="${i}">0</var>
-<status status="PASS" start="2024-11-16T00:35:34.253264" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.254240" elapsed="0.000976"/>
-</kw>
-<var name="${i}">1</var>
-<status status="PASS" start="2024-11-16T00:35:34.254240" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.256196" elapsed="0.000971"/>
-</kw>
-<var name="${i}">2</var>
-<status status="PASS" start="2024-11-16T00:35:34.255216" elapsed="0.001951"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.258143" elapsed="0.000000"/>
-</kw>
-<var name="${i}">3</var>
-<status status="PASS" start="2024-11-16T00:35:34.257167" elapsed="0.001954"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.259121" elapsed="0.000977"/>
-</kw>
-<var name="${i}">4</var>
-<status status="PASS" start="2024-11-16T00:35:34.259121" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.261074" elapsed="0.000973"/>
-</kw>
-<var name="${i}">5</var>
-<status status="PASS" start="2024-11-16T00:35:34.261074" elapsed="0.000973"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.262047" elapsed="0.000977"/>
-</kw>
-<var name="${i}">6</var>
-<status status="PASS" start="2024-11-16T00:35:34.262047" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.263024" elapsed="0.000976"/>
-</kw>
-<var name="${i}">7</var>
-<status status="PASS" start="2024-11-16T00:35:34.263024" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.264000" elapsed="0.000975"/>
-</kw>
-<var name="${i}">8</var>
-<status status="PASS" start="2024-11-16T00:35:34.264000" elapsed="0.000975"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.264975" elapsed="0.487503"/>
-</kw>
-<var name="${i}">9</var>
-<status status="PASS" start="2024-11-16T00:35:34.264975" elapsed="0.487503"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.753453" elapsed="0.000000"/>
-</kw>
-<var name="${i}">10</var>
-<status status="PASS" start="2024-11-16T00:35:34.752478" elapsed="0.000975"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.753453" elapsed="0.000977"/>
-</kw>
-<var name="${i}">11</var>
-<status status="PASS" start="2024-11-16T00:35:34.753453" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.754430" elapsed="0.000975"/>
-</kw>
-<var name="${i}">12</var>
-<status status="PASS" start="2024-11-16T00:35:34.754430" elapsed="0.000975"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.755405" elapsed="0.000976"/>
-</kw>
-<var name="${i}">13</var>
-<status status="PASS" start="2024-11-16T00:35:34.755405" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.756381" elapsed="0.000000"/>
-</kw>
-<var name="${i}">14</var>
-<status status="PASS" start="2024-11-16T00:35:34.756381" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.757358" elapsed="0.000000"/>
-</kw>
-<var name="${i}">15</var>
-<status status="PASS" start="2024-11-16T00:35:34.757358" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.758333" elapsed="0.000976"/>
-</kw>
-<var name="${i}">16</var>
-<status status="PASS" start="2024-11-16T00:35:34.758333" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.759309" elapsed="0.000976"/>
-</kw>
-<var name="${i}">17</var>
-<status status="PASS" start="2024-11-16T00:35:34.759309" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.760285" elapsed="0.000000"/>
-</kw>
-<var name="${i}">18</var>
-<status status="PASS" start="2024-11-16T00:35:34.760285" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.761266" elapsed="0.000000"/>
-</kw>
-<var name="${i}">19</var>
-<status status="PASS" start="2024-11-16T00:35:34.761266" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.762237" elapsed="0.000000"/>
-</kw>
-<var name="${i}">20</var>
-<status status="PASS" start="2024-11-16T00:35:34.761266" elapsed="0.000971"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.762237" elapsed="0.000977"/>
-</kw>
-<var name="${i}">21</var>
-<status status="PASS" start="2024-11-16T00:35:34.762237" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.763214" elapsed="0.000977"/>
-</kw>
-<var name="${i}">22</var>
-<status status="PASS" start="2024-11-16T00:35:34.763214" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.764191" elapsed="0.000000"/>
-</kw>
-<var name="${i}">23</var>
-<status status="PASS" start="2024-11-16T00:35:34.764191" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.765165" elapsed="0.000000"/>
-</kw>
-<var name="${i}">24</var>
-<status status="PASS" start="2024-11-16T00:35:34.764191" elapsed="0.000974"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.765165" elapsed="0.000975"/>
-</kw>
-<var name="${i}">25</var>
-<status status="PASS" start="2024-11-16T00:35:34.765165" elapsed="0.000975"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.766140" elapsed="0.000000"/>
-</kw>
-<var name="${i}">26</var>
-<status status="PASS" start="2024-11-16T00:35:34.766140" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.767117" elapsed="0.000000"/>
-</kw>
-<var name="${i}">27</var>
-<status status="PASS" start="2024-11-16T00:35:34.766140" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.767117" elapsed="0.000976"/>
-</kw>
-<var name="${i}">28</var>
-<status status="PASS" start="2024-11-16T00:35:34.767117" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.768093" elapsed="0.000000"/>
-</kw>
-<var name="${i}">29</var>
-<status status="PASS" start="2024-11-16T00:35:34.768093" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.769069" elapsed="0.000000"/>
-</kw>
-<var name="${i}">30</var>
-<status status="PASS" start="2024-11-16T00:35:34.768093" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.769069" elapsed="0.000976"/>
-</kw>
-<var name="${i}">31</var>
-<status status="PASS" start="2024-11-16T00:35:34.769069" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.770045" elapsed="0.000976"/>
-</kw>
-<var name="${i}">32</var>
-<status status="PASS" start="2024-11-16T00:35:34.770045" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.771021" elapsed="0.000000"/>
-</kw>
-<var name="${i}">33</var>
-<status status="PASS" start="2024-11-16T00:35:34.771021" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.771998" elapsed="0.000000"/>
-</kw>
-<var name="${i}">34</var>
-<status status="PASS" start="2024-11-16T00:35:34.771998" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.772973" elapsed="0.000000"/>
-</kw>
-<var name="${i}">35</var>
-<status status="PASS" start="2024-11-16T00:35:34.772973" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.773949" elapsed="0.000000"/>
-</kw>
-<var name="${i}">36</var>
-<status status="PASS" start="2024-11-16T00:35:34.773949" elapsed="0.000000"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.774925" elapsed="0.000977"/>
-</kw>
-<var name="${i}">37</var>
-<status status="PASS" start="2024-11-16T00:35:34.774925" elapsed="0.000977"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.776878" elapsed="0.000000"/>
-</kw>
-<var name="${i}">38</var>
-<status status="PASS" start="2024-11-16T00:35:34.775902" elapsed="0.000976"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.777853" elapsed="0.000000"/>
-</kw>
-<var name="${i}">39</var>
-<status status="PASS" start="2024-11-16T00:35:34.776878" elapsed="0.001952"/>
-</iter>
-<iter>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>\n"${_ylist}[${i}]"\n</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.778830" elapsed="0.000000"/>
-</kw>
-<var name="${i}">40</var>
-<status status="PASS" start="2024-11-16T00:35:34.778830" elapsed="0.000000"/>
-</iter>
-<var>${i}</var>
-<value>0</value>
-<value>41</value>
-<status status="PASS" start="2024-11-16T00:35:34.253264" elapsed="0.525566"/>
+<value>43</value>
+<status status="PASS" start="2024-11-16T01:01:13.990006" elapsed="0.527903"/>
 </for>
 <kw name="Exit For Loop" owner="BuiltIn">
-<msg time="2024-11-16T00:35:34.779806" level="INFO">Exiting for loop altogether.</msg>
+<msg time="2024-11-16T01:01:14.517909" level="INFO">Exiting for loop altogether.</msg>
 <doc>Stops executing the enclosing FOR loop.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.779806" elapsed="0.000000"/>
+<status status="PASS" start="2024-11-16T01:01:14.517909" elapsed="0.000000"/>
 </kw>
-<status status="PASS" start="2024-11-16T00:35:34.180064" elapsed="0.599742"/>
+<status status="PASS" start="2024-11-16T01:01:13.989030" elapsed="0.528879"/>
 </branch>
-<status status="PASS" start="2024-11-16T00:35:34.180064" elapsed="0.599742"/>
+<status status="PASS" start="2024-11-16T01:01:13.989030" elapsed="0.528879"/>
 </if>
 <var name="${row}">3</var>
-<status status="PASS" start="2024-11-16T00:35:34.179087" elapsed="0.600719"/>
+<status status="PASS" start="2024-11-16T01:01:13.989030" elapsed="0.528879"/>
 </iter>
 <var>${row}</var>
 <value>1</value>
 <value>99999999</value>
-<status status="PASS" start="2024-11-16T00:35:32.675658" elapsed="2.104148"/>
+<status status="PASS" start="2024-11-16T01:01:12.483469" elapsed="2.034440"/>
 </for>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:35.581100" level="INFO">${test0} = Booking_S005</msg>
-<arg>${test0}</arg>
+<msg time="2024-11-16T01:01:15.319406" level="INFO">${Booking_S005_scenario_number} = Booking_S005</msg>
+<arg>${${scenario_no}_scenario_number}</arg>
 <arg>${_ylist}[0]</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:34.779806" elapsed="0.801294"/>
+<status status="PASS" start="2024-11-16T01:01:14.518885" elapsed="0.800521"/>
 </kw>
 <kw name="Set Global Variable" owner="BuiltIn">
-<msg time="2024-11-16T00:35:35.595742" level="INFO">${test1} = พัสดุทั่วไป</msg>
-<arg>${test1}</arg>
+<msg time="2024-11-16T01:01:15.336975" level="INFO">${Booking_S005_parcel_type} = พัสดุทั่วไป</msg>
+<arg>${${scenario_no}_parcel_type}</arg>
 <arg>${_ylist}[1]</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="PASS" start="2024-11-16T00:35:35.582077" elapsed="0.013665"/>
+<status status="PASS" start="2024-11-16T01:01:15.319406" elapsed="0.017569"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.353567" level="INFO">${Booking_S005_sender_phone} = 0890000001</msg>
+<arg>${${scenario_no}_sender_phone}</arg>
+<arg>${_ylist}[2]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.336975" elapsed="0.016592"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.371134" level="INFO">${Booking_S005_sender_name} = สมชาย สายเสมอ</msg>
+<arg>${${scenario_no}_sender_name}</arg>
+<arg>${_ylist}[3]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.354542" elapsed="0.017569"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.388703" level="INFO">${Booking_S005_sender_address} = 48/698</msg>
+<arg>${${scenario_no}_sender_address}</arg>
+<arg>${_ylist}[4]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.372111" elapsed="0.016592"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.407246" level="INFO">${Booking_S005_sender_postcode_5_digits} = 10230</msg>
+<arg>${${scenario_no}_sender_postcode_5_digits}</arg>
+<arg>${_ylist}[5]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.389679" elapsed="0.017567"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.460702" level="INFO">${Booking_S005_sender_postcode_full} = ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230</msg>
+<arg>${${scenario_no}_sender_postcode_full}</arg>
+<arg>${_ylist}[6]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.407246" elapsed="0.053456"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.478263" level="INFO">${Booking_S005_receiver_phone} = 0890000002</msg>
+<arg>${${scenario_no}_receiver_phone}</arg>
+<arg>${_ylist}[7]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.461672" elapsed="0.016591"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.495832" level="INFO">${Booking_S005_receiver_name} = สมใจ ดีดีดี</msg>
+<arg>${${scenario_no}_receiver_name}</arg>
+<arg>${_ylist}[8]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.479240" elapsed="0.016592"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.513399" level="INFO">${Booking_S005_receiver_address} = 47 หมู่ 4</msg>
+<arg>${${scenario_no}_receiver_address}</arg>
+<arg>${_ylist}[9]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.495832" elapsed="0.017567"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.530968" level="INFO">${Booking_S005_receiver_postcode_5_digits} = 86110</msg>
+<arg>${${scenario_no}_receiver_postcode_5_digits}</arg>
+<arg>${_ylist}[10]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.513399" elapsed="0.017569"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.549511" level="INFO">${Booking_S005_receiver_postcode_full} = พ้อแดง หลังสวน ชุมพร 86110</msg>
+<arg>${${scenario_no}_receiver_postcode_full}</arg>
+<arg>${_ylist}[11]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.530968" elapsed="0.018543"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.566103" level="INFO">${Booking_S005_receiver_store_code_5_digits} = N/A</msg>
+<arg>${${scenario_no}_receiver_store_code_5_digits}</arg>
+<arg>${_ylist}[12]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.549511" elapsed="0.016592"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.584647" level="INFO">${Booking_S005_receiver_store_address} = N/A</msg>
+<arg>${${scenario_no}_receiver_store_address}</arg>
+<arg>${_ylist}[13]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.567079" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.603191" level="INFO">${Booking_S005_receiver_store_full} = N/A</msg>
+<arg>${${scenario_no}_receiver_store_full}</arg>
+<arg>${_ylist}[14]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.584647" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.619783" level="INFO">${Booking_S005_shipping_origin} = เลือกร้าน 7-11 ต้นทาง</msg>
+<arg>${${scenario_no}_shipping_origin}</arg>
+<arg>${_ylist}[15]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.603191" elapsed="0.016592"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.636375" level="INFO">${Booking_S005_store_code} = 15888</msg>
+<arg>${${scenario_no}_store_code}</arg>
+<arg>${_ylist}[16]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.620759" elapsed="0.015616"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.661756" level="INFO">${Booking_S005_parcel_size} = S</msg>
+<arg>${${scenario_no}_parcel_size}</arg>
+<arg>${_ylist}[17]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.636375" elapsed="0.025381"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.678343" level="INFO">${Booking_S005_parcel_cod} = 5000</msg>
+<arg>${${scenario_no}_parcel_cod}</arg>
+<arg>${_ylist}[18]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.661756" elapsed="0.016587"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.696888" level="INFO">${Booking_S005_parcel_detail_remark} = ระวังพัสดุเสียหาย</msg>
+<arg>${${scenario_no}_parcel_detail_remark}</arg>
+<arg>${_ylist}[19]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.678343" elapsed="0.018545"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.713479" level="INFO">${Booking_S005_promotion} = SPBH5B</msg>
+<arg>${${scenario_no}_promotion}</arg>
+<arg>${_ylist}[20]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.696888" elapsed="0.016591"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.730071" level="INFO">${Booking_S005_booking_name} = Booking DRY</msg>
+<arg>${${scenario_no}_booking_name}</arg>
+<arg>${_ylist}[21]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.714455" elapsed="0.015616"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.746663" level="INFO">${Booking_S005_booking_item} = 1 รายการ</msg>
+<arg>${${scenario_no}_booking_item}</arg>
+<arg>${_ylist}[22]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.731047" elapsed="0.015616"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.765207" level="INFO">${Booking_S005_parcel_package_type} = กล่อง</msg>
+<arg>${${scenario_no}_parcel_package_type}</arg>
+<arg>${_ylist}[23]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.747639" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.781800" level="INFO">${Booking_S005_price_value} = 55</msg>
+<arg>${${scenario_no}_price_value}</arg>
+<arg>${_ylist}[24]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.765207" elapsed="0.016593"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.799367" level="INFO">${Booking_S005_parcel_cod_verify} = 5,000.00</msg>
+<arg>${${scenario_no}_parcel_cod_verify}</arg>
+<arg>${_ylist}[25]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.781800" elapsed="0.017567"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.816935" level="INFO">${Booking_S005_parcel_cod_verify_label} = ยอดชำระ 5000 บาท</msg>
+<arg>${${scenario_no}_parcel_cod_verify_label}</arg>
+<arg>${_ylist}[26]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.800343" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.843287" level="INFO">${Booking_S005_promotion_detail.discount} = 5 บาท</msg>
+<arg>${${scenario_no}_promotion_detail.discount}</arg>
+<arg>${_ylist}[27]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.817911" elapsed="0.025376"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.869639" level="INFO">${Booking_S005_promotion_detail.promotion_name} = คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน</msg>
+<arg>${${scenario_no}_promotion_detail.promotion_name}</arg>
+<arg>${_ylist}[28]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.844263" elapsed="0.025376"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.899895" level="INFO">${Booking_S005_promotion_detail.parcel_size} = ทุกขนาด</msg>
+<arg>${${scenario_no}_promotion_detail.parcel_size}</arg>
+<arg>${_ylist}[29]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.869639" elapsed="0.030256"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.926247" level="INFO">${Booking_S005_promotion_detail.expired_date} = 30 ตุลาคม 2568</msg>
+<arg>${${scenario_no}_promotion_detail.expired_date}</arg>
+<arg>${_ylist}[30]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.899895" elapsed="0.026352"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.951623" level="INFO">${Booking_S005_promotion_detail.condition} = สำหรับลูกค้าที่เป็นกล่อง</msg>
+<arg>${${scenario_no}_promotion_detail.condition}</arg>
+<arg>${_ylist}[31]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.926247" elapsed="0.025376"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.978951" level="INFO">${Booking_S005_promotion_detail.period} = 08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568</msg>
+<arg>${${scenario_no}_promotion_detail.period}</arg>
+<arg>${_ylist}[32]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.952599" elapsed="0.026352"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:15.996519" level="INFO">${Booking_S005_discount_amount} = 1</msg>
+<arg>${${scenario_no}_discount_amount}</arg>
+<arg>${_ylist}[33]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.978951" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.014087" level="INFO">${Booking_S005_discount_value} = 5</msg>
+<arg>${${scenario_no}_discount_value}</arg>
+<arg>${_ylist}[34]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:15.996519" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.032631" level="INFO">${Booking_S005_discount_value1} = NaN</msg>
+<arg>${${scenario_no}_discount_value1}</arg>
+<arg>${_ylist}[35]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.015064" elapsed="0.017567"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.050199" level="INFO">${Booking_S005_discount_value2} = NaN</msg>
+<arg>${${scenario_no}_discount_value2}</arg>
+<arg>${_ylist}[36]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.032631" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.067767" level="INFO">${Booking_S005_cod_fee_amount} = 1</msg>
+<arg>${${scenario_no}_cod_fee_amount}</arg>
+<arg>${_ylist}[37]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.050199" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.083383" level="INFO">${Booking_S005_cod_fee_value} = 150</msg>
+<arg>${${scenario_no}_cod_fee_value}</arg>
+<arg>${_ylist}[38]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.067767" elapsed="0.015616"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.101927" level="INFO">${Booking_S005_total_price_amount} = 1</msg>
+<arg>${${scenario_no}_total_price_amount}</arg>
+<arg>${_ylist}[39]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.084359" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.121448" level="INFO">${Booking_S005_total_price_value1} = NaN</msg>
+<arg>${${scenario_no}_total_price_value1}</arg>
+<arg>${_ylist}[40]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.102903" elapsed="0.018545"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.139991" level="INFO">${Booking_S005_total_price_value2} = 200</msg>
+<arg>${${scenario_no}_total_price_value2}</arg>
+<arg>${_ylist}[41]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.121448" elapsed="0.018543"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.140967" elapsed="0.000000"/>
+</kw>
+<arg>Booking_S005</arg>
+<status status="PASS" start="2024-11-16T01:01:12.319161" elapsed="3.821806"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Booking_S005_scenario_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.141943" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Booking_S005_parcel_type}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.141943" elapsed="0.000976"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Booking_S005_total_price_value2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.142919" elapsed="0.000000"/>
+</kw>
+<kw name="Check Scenario Number And Use Row Data">
+<kw name="Create List" owner="BuiltIn">
+<msg time="2024-11-16T01:01:16.143895" level="INFO">${_ylist} = []</msg>
+<var>${_ylist}</var>
+<doc>Returns a list containing given items.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.143895" elapsed="0.000000"/>
+</kw>
+<kw name="Open Excel Document" owner="ExcelLibrary">
+<arg>filename=${EXCEL_FILE}</arg>
+<arg>doc_id=doc1</arg>
+<arg>keep_vba=True</arg>
+<doc>Opens xlsx document file.</doc>
+<status status="PASS" start="2024-11-16T01:01:16.144871" elapsed="0.183488"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.338803" level="INFO">1</msg>
+<arg>${row}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.338803" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.338803" level="INFO">${scenario_number} = Variable</msg>
+<var>${scenario_number}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=1</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.338803" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.339779" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.339779" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.339779" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.340755" elapsed="0.000000"/>
+</kw>
+<var name="${col}"/>
+<status status="NOT RUN" start="2024-11-16T01:01:17.339779" elapsed="0.000976"/>
+</iter>
+<var>${col}</var>
+<value>1</value>
+<value>43</value>
+<status status="NOT RUN" start="2024-11-16T01:01:17.339779" elapsed="0.000976"/>
+</for>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.340755" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-16T01:01:17.338803" elapsed="0.001952"/>
+</branch>
+<status status="PASS" start="2024-11-16T01:01:17.338803" elapsed="0.001952"/>
+</if>
+<var name="${row}">1</var>
+<status status="PASS" start="2024-11-16T01:01:17.337826" elapsed="0.002929"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.341730" level="INFO">2</msg>
+<arg>${row}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.340755" elapsed="0.000975"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.341730" level="INFO">${scenario_number} = Scenario Number</msg>
+<var>${scenario_number}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=1</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.341730" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.341730" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.342707" elapsed="0.443103"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.785810" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.786786" elapsed="0.000000"/>
+</kw>
+<var name="${col}"/>
+<status status="NOT RUN" start="2024-11-16T01:01:17.342707" elapsed="0.444079"/>
+</iter>
+<var>${col}</var>
+<value>1</value>
+<value>43</value>
+<status status="NOT RUN" start="2024-11-16T01:01:17.342707" elapsed="0.444079"/>
+</for>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.786786" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-16T01:01:17.341730" elapsed="0.445056"/>
+</branch>
+<status status="PASS" start="2024-11-16T01:01:17.341730" elapsed="0.445056"/>
+</if>
+<var name="${row}">2</var>
+<status status="PASS" start="2024-11-16T01:01:17.340755" elapsed="0.446031"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.787762" level="INFO">3</msg>
+<arg>${row}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.786786" elapsed="0.000976"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.787762" level="INFO">${scenario_number} = Booking_S005</msg>
+<var>${scenario_number}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=1</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.787762" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.788738" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.788738" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.788738" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.788738" elapsed="0.000000"/>
+</kw>
+<var name="${col}"/>
+<status status="NOT RUN" start="2024-11-16T01:01:17.788738" elapsed="0.000000"/>
+</iter>
+<var>${col}</var>
+<value>1</value>
+<value>43</value>
+<status status="NOT RUN" start="2024-11-16T01:01:17.788738" elapsed="0.000976"/>
+</for>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.789714" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-16T01:01:17.787762" elapsed="0.001952"/>
+</branch>
+<status status="PASS" start="2024-11-16T01:01:17.787762" elapsed="0.001952"/>
+</if>
+<var name="${row}">3</var>
+<status status="PASS" start="2024-11-16T01:01:17.786786" elapsed="0.002928"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.789714" level="INFO">4</msg>
+<arg>${row}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.789714" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.790690" level="INFO">${scenario_number} = Booking_S027</msg>
+<var>${scenario_number}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=1</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.790690" elapsed="0.000000"/>
+</kw>
+<if>
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.790690" elapsed="0.000000"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.791666" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.791666" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.791666" elapsed="0.000000"/>
+</kw>
+<var name="${col}"/>
+<status status="NOT RUN" start="2024-11-16T01:01:17.790690" elapsed="0.000976"/>
+</iter>
+<var>${col}</var>
+<value>1</value>
+<value>43</value>
+<status status="NOT RUN" start="2024-11-16T01:01:17.790690" elapsed="0.000976"/>
+</for>
+<kw name="Exit For Loop" owner="BuiltIn">
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="NOT RUN" start="2024-11-16T01:01:17.791666" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2024-11-16T01:01:17.790690" elapsed="0.001952"/>
+</branch>
+<status status="PASS" start="2024-11-16T01:01:17.790690" elapsed="0.001952"/>
+</if>
+<var name="${row}">4</var>
+<status status="PASS" start="2024-11-16T01:01:17.789714" elapsed="0.002928"/>
+</iter>
+<iter>
+<kw name="Log" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.792642" level="INFO">5</msg>
+<arg>${row}</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.792642" elapsed="0.000000"/>
+</kw>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.793619" level="INFO">${scenario_number} = Booking_S002</msg>
+<var>${scenario_number}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=1</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.792642" elapsed="0.000977"/>
+</kw>
+<if>
+<branch type="IF" condition="'${scenario_number}' == '${scenario_no}'">
+<kw name="Log To Console" owner="BuiltIn">
+<arg>\n"Reached empty cell at row ${row}. Stopping the loop."\n</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.793619" elapsed="0.000975"/>
+</kw>
+<for flavor="IN RANGE">
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.794594" level="INFO">${cell} = Booking_S002</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.794594" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.794594" elapsed="0.000976"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.795570" level="INFO">${_ylist} = ['Booking_S002']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.795570" elapsed="0.000000"/>
+</kw>
+<var name="${col}">1</var>
+<status status="PASS" start="2024-11-16T01:01:17.794594" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.796546" level="INFO">${cell} = พัสดุทั่วไป</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.795570" elapsed="0.000976"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.796546" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.796546" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.796546" elapsed="0.000000"/>
+</kw>
+<var name="${col}">2</var>
+<status status="PASS" start="2024-11-16T01:01:17.795570" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.797522" level="INFO">${cell} = 0890000001</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.797522" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.797522" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.798499" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.798499" elapsed="0.000000"/>
+</kw>
+<var name="${col}">3</var>
+<status status="PASS" start="2024-11-16T01:01:17.797522" elapsed="0.000977"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.798499" level="INFO">${cell} = สมชาย สายเสมอ</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.798499" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.798499" elapsed="0.000975"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.799474" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.799474" elapsed="0.000000"/>
+</kw>
+<var name="${col}">4</var>
+<status status="PASS" start="2024-11-16T01:01:17.798499" elapsed="0.000975"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.800450" level="INFO">${cell} = 48/698</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.799474" elapsed="0.000976"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.800450" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:17.800450" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.800450" elapsed="0.000000"/>
+</kw>
+<var name="${col}">5</var>
+<status status="PASS" start="2024-11-16T01:01:17.799474" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:17.801428" level="INFO">${cell} = 10230</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.801428" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.801428" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.248434" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:17.802403" elapsed="0.446031"/>
+</kw>
+<var name="${col}">6</var>
+<status status="PASS" start="2024-11-16T01:01:17.800450" elapsed="0.447984"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.249410" level="INFO">${cell} = ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.248434" elapsed="0.000976"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.249410" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.249410" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.249410" elapsed="0.000000"/>
+</kw>
+<var name="${col}">7</var>
+<status status="PASS" start="2024-11-16T01:01:18.248434" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.250386" level="INFO">${cell} = 0890000002</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.250386" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.250386" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.251362" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.251362" elapsed="0.000000"/>
+</kw>
+<var name="${col}">8</var>
+<status status="PASS" start="2024-11-16T01:01:18.250386" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.251362" level="INFO">${cell} = สมใจ ดีดีดี</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.251362" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.251362" elapsed="0.000976"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.252338" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.252338" elapsed="0.000000"/>
+</kw>
+<var name="${col}">9</var>
+<status status="PASS" start="2024-11-16T01:01:18.251362" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.252338" level="INFO">${cell} = 47 หมู่ 4</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.252338" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.253314" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.253314" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.253314" elapsed="0.000000"/>
+</kw>
+<var name="${col}">10</var>
+<status status="PASS" start="2024-11-16T01:01:18.252338" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.254290" level="INFO">${cell} = 86110</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.254290" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.254290" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.254290" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110']</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.254290" elapsed="0.000000"/>
+</kw>
+<var name="${col}">11</var>
+<status status="PASS" start="2024-11-16T01:01:18.253314" elapsed="0.001952"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.255266" level="INFO">${cell} = พ้อแดง หลังสวน ชุมพร 86110</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.255266" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.255266" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.256242" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.256242" elapsed="0.000000"/>
+</kw>
+<var name="${col}">12</var>
+<status status="PASS" start="2024-11-16T01:01:18.255266" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.256242" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.256242" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.257218" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.257218" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.257218" elapsed="0.000000"/>
+</kw>
+<var name="${col}">13</var>
+<status status="PASS" start="2024-11-16T01:01:18.256242" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.258195" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.258195" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.258195" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.259171" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.258195" elapsed="0.000976"/>
+</kw>
+<var name="${col}">14</var>
+<status status="PASS" start="2024-11-16T01:01:18.257218" elapsed="0.001953"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.259171" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.259171" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.259171" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.260147" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.260147" elapsed="0.000000"/>
+</kw>
+<var name="${col}">15</var>
+<status status="PASS" start="2024-11-16T01:01:18.259171" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.260147" level="INFO">${cell} = เลือกร้าน 7-11 ต้นทาง</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.260147" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.261123" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.261123" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.261123" elapsed="0.000000"/>
+</kw>
+<var name="${col}">16</var>
+<status status="PASS" start="2024-11-16T01:01:18.260147" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.262099" level="INFO">${cell} = 15888</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.261123" elapsed="0.000976"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.262099" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.262099" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.262099" elapsed="0.000000"/>
+</kw>
+<var name="${col}">17</var>
+<status status="PASS" start="2024-11-16T01:01:18.261123" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.263075" level="INFO">${cell} = A4</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.263075" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.263075" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.264050" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.264050" elapsed="0.000000"/>
+</kw>
+<var name="${col}">18</var>
+<status status="PASS" start="2024-11-16T01:01:18.263075" elapsed="0.000975"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.264050" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.264050" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.265027" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.265027" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.265027" elapsed="0.000000"/>
+</kw>
+<var name="${col}">19</var>
+<status status="PASS" start="2024-11-16T01:01:18.264050" elapsed="0.000977"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.266030" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.266030" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.266030" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.267005" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.266030" elapsed="0.000975"/>
+</kw>
+<var name="${col}">20</var>
+<status status="PASS" start="2024-11-16T01:01:18.265027" elapsed="0.001978"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.267005" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.267005" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.267005" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.267981" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.267981" elapsed="0.000000"/>
+</kw>
+<var name="${col}">21</var>
+<status status="PASS" start="2024-11-16T01:01:18.267005" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.267981" level="INFO">${cell} = Booking DRY</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.267981" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.268958" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.268958" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.268958" elapsed="0.000000"/>
+</kw>
+<var name="${col}">22</var>
+<status status="PASS" start="2024-11-16T01:01:18.267981" elapsed="0.000977"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.269940" level="INFO">${cell} = 1 รายการ</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.268958" elapsed="0.000982"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.269940" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.269940" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.269940" elapsed="0.000000"/>
+</kw>
+<var name="${col}">23</var>
+<status status="PASS" start="2024-11-16T01:01:18.268958" elapsed="0.000982"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.270914" level="INFO">${cell} = ซอง</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.270914" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.270914" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.271859" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.271859" elapsed="0.000000"/>
+</kw>
+<var name="${col}">24</var>
+<status status="PASS" start="2024-11-16T01:01:18.269940" elapsed="0.001919"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.271859" level="INFO">${cell} = 50</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.271859" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.272836" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.272836" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.272836" elapsed="0.000000"/>
+</kw>
+<var name="${col}">25</var>
+<status status="PASS" start="2024-11-16T01:01:18.271859" elapsed="0.000977"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.273813" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.272836" elapsed="0.000977"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.273813" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.273813" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.273813" elapsed="0.000000"/>
+</kw>
+<var name="${col}">26</var>
+<status status="PASS" start="2024-11-16T01:01:18.272836" elapsed="0.000977"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.274787" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.274787" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.274787" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.275762" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.274787" elapsed="0.000975"/>
+</kw>
+<var name="${col}">27</var>
+<status status="PASS" start="2024-11-16T01:01:18.274787" elapsed="0.000975"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.275762" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.275762" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.275762" elapsed="0.000976"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.276738" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.276738" elapsed="0.000000"/>
+</kw>
+<var name="${col}">28</var>
+<status status="PASS" start="2024-11-16T01:01:18.275762" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.276738" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.276738" elapsed="0.000976"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.277714" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.277714" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.277714" elapsed="0.000000"/>
+</kw>
+<var name="${col}">29</var>
+<status status="PASS" start="2024-11-16T01:01:18.276738" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.278690" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.278690" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.278690" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.279671" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.278690" elapsed="0.000981"/>
+</kw>
+<var name="${col}">30</var>
+<status status="PASS" start="2024-11-16T01:01:18.277714" elapsed="0.001957"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.279671" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.279671" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.280642" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.280642" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.280642" elapsed="0.000000"/>
+</kw>
+<var name="${col}">31</var>
+<status status="PASS" start="2024-11-16T01:01:18.279671" elapsed="0.000971"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.281619" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.281619" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.281619" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.282594" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.281619" elapsed="0.000975"/>
+</kw>
+<var name="${col}">32</var>
+<status status="PASS" start="2024-11-16T01:01:18.280642" elapsed="0.001952"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.282594" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.282594" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.282594" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.283570" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.283570" elapsed="0.000000"/>
+</kw>
+<var name="${col}">33</var>
+<status status="PASS" start="2024-11-16T01:01:18.282594" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.283570" level="INFO">${cell} = 1</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.283570" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.284546" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.284546" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.284546" elapsed="0.000000"/>
+</kw>
+<var name="${col}">34</var>
+<status status="PASS" start="2024-11-16T01:01:18.283570" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.285522" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.284546" elapsed="0.000976"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.285522" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.285522" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.285522" elapsed="0.000000"/>
+</kw>
+<var name="${col}">35</var>
+<status status="PASS" start="2024-11-16T01:01:18.284546" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.286499" level="INFO">${cell} = NaN</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.286499" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.286499" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.287474" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.287474" elapsed="0.000000"/>
+</kw>
+<var name="${col}">36</var>
+<status status="PASS" start="2024-11-16T01:01:18.286499" elapsed="0.000975"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.287474" level="INFO">${cell} = 5</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.287474" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.288450" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.288450" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.288450" elapsed="0.000000"/>
+</kw>
+<var name="${col}">37</var>
+<status status="PASS" start="2024-11-16T01:01:18.287474" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.289427" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.288450" elapsed="0.000977"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.289427" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.289427" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.289427" elapsed="0.000000"/>
+</kw>
+<var name="${col}">38</var>
+<status status="PASS" start="2024-11-16T01:01:18.288450" elapsed="0.001952"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.290402" level="INFO">${cell} = N/A</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.290402" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.290402" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.291378" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.291378" elapsed="0.000000"/>
+</kw>
+<var name="${col}">39</var>
+<status status="PASS" start="2024-11-16T01:01:18.290402" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.291378" level="INFO">${cell} = 1</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.291378" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.292354" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.292354" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.292354" elapsed="0.000000"/>
+</kw>
+<var name="${col}">40</var>
+<status status="PASS" start="2024-11-16T01:01:18.291378" elapsed="0.000976"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.293330" level="INFO">${cell} = NaN</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.293330" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.293330" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.293330" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.293330" elapsed="0.000000"/>
+</kw>
+<var name="${col}">41</var>
+<status status="PASS" start="2024-11-16T01:01:18.292354" elapsed="0.001953"/>
+</iter>
+<iter>
+<kw name="Read Excel Cell" owner="ExcelLibrary">
+<msg time="2024-11-16T01:01:18.294307" level="INFO">${cell} = 50</msg>
+<var>${cell}</var>
+<arg>row_num=${row}</arg>
+<arg>col_num=${col}</arg>
+<doc>Returns content of a cell.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.294307" elapsed="0.000000"/>
+</kw>
+<kw name="Append To List" owner="Collections">
+<arg>${_ylist}</arg>
+<arg>${cell}</arg>
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.294307" elapsed="0.000000"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.295282" level="INFO">${_ylist} = ['Booking_S002', 'พัสดุทั่วไป', '0890000001', 'สมชาย สายเสมอ', '48/698', '10230', 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230', '0890000002', 'สมใจ ดีดีดี', '47 หมู่ 4', '86110', 'พ้อแดง หลังสวน ชุมพร 8611...</msg>
+<arg>${_ylist}</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.295282" elapsed="0.000000"/>
+</kw>
+<var name="${col}">42</var>
+<status status="PASS" start="2024-11-16T01:01:18.294307" elapsed="0.000975"/>
+</iter>
+<var>${col}</var>
+<value>1</value>
+<value>43</value>
+<status status="PASS" start="2024-11-16T01:01:17.794594" elapsed="0.500688"/>
+</for>
+<kw name="Exit For Loop" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.295282" level="INFO">Exiting for loop altogether.</msg>
+<doc>Stops executing the enclosing FOR loop.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.295282" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2024-11-16T01:01:17.793619" elapsed="0.501663"/>
+</branch>
+<status status="PASS" start="2024-11-16T01:01:17.793619" elapsed="0.501663"/>
+</if>
+<var name="${row}">5</var>
+<status status="PASS" start="2024-11-16T01:01:17.792642" elapsed="0.502640"/>
+</iter>
+<var>${row}</var>
+<value>1</value>
+<value>99999999</value>
+<status status="PASS" start="2024-11-16T01:01:16.328359" elapsed="1.966923"/>
+</for>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:18.993630" level="INFO">${Booking_S002_scenario_number} = Booking_S002</msg>
+<arg>${${scenario_no}_scenario_number}</arg>
+<arg>${_ylist}[0]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.296258" elapsed="0.698347"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.011197" level="INFO">${Booking_S002_parcel_type} = พัสดุทั่วไป</msg>
+<arg>${${scenario_no}_parcel_type}</arg>
+<arg>${_ylist}[1]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:18.994605" elapsed="0.016592"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.028765" level="INFO">${Booking_S002_sender_phone} = 0890000001</msg>
+<arg>${${scenario_no}_sender_phone}</arg>
+<arg>${_ylist}[2]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.012174" elapsed="0.016591"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.046332" level="INFO">${Booking_S002_sender_name} = สมชาย สายเสมอ</msg>
+<arg>${${scenario_no}_sender_name}</arg>
+<arg>${_ylist}[3]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.029742" elapsed="0.016590"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.065852" level="INFO">${Booking_S002_sender_address} = 48/698</msg>
+<arg>${${scenario_no}_sender_address}</arg>
+<arg>${_ylist}[4]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.046332" elapsed="0.019520"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.087324" level="INFO">${Booking_S002_sender_postcode_5_digits} = 10230</msg>
+<arg>${${scenario_no}_sender_postcode_5_digits}</arg>
+<arg>${_ylist}[5]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.066828" elapsed="0.020496"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.106844" level="INFO">${Booking_S002_sender_postcode_full} = ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230</msg>
+<arg>${${scenario_no}_sender_postcode_full}</arg>
+<arg>${_ylist}[6]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.088307" elapsed="0.018537"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.125388" level="INFO">${Booking_S002_receiver_phone} = 0890000002</msg>
+<arg>${${scenario_no}_receiver_phone}</arg>
+<arg>${_ylist}[7]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.106844" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.143932" level="INFO">${Booking_S002_receiver_name} = สมใจ ดีดีดี</msg>
+<arg>${${scenario_no}_receiver_name}</arg>
+<arg>${_ylist}[8]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.125388" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.164428" level="INFO">${Booking_S002_receiver_address} = 47 หมู่ 4</msg>
+<arg>${${scenario_no}_receiver_address}</arg>
+<arg>${_ylist}[9]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.144908" elapsed="0.019520"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.181996" level="INFO">${Booking_S002_receiver_postcode_5_digits} = 86110</msg>
+<arg>${${scenario_no}_receiver_postcode_5_digits}</arg>
+<arg>${_ylist}[10]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.164428" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.200579" level="INFO">${Booking_S002_receiver_postcode_full} = พ้อแดง หลังสวน ชุมพร 86110</msg>
+<arg>${${scenario_no}_receiver_postcode_full}</arg>
+<arg>${_ylist}[11]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.181996" elapsed="0.018583"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.221578" level="INFO">${Booking_S002_receiver_store_code_5_digits} = N/A</msg>
+<arg>${${scenario_no}_receiver_store_code_5_digits}</arg>
+<arg>${_ylist}[12]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.201553" elapsed="0.020025"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.241600" level="INFO">${Booking_S002_receiver_store_address} = N/A</msg>
+<arg>${${scenario_no}_receiver_store_address}</arg>
+<arg>${_ylist}[13]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.222554" elapsed="0.019046"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.261124" level="INFO">${Booking_S002_receiver_store_full} = N/A</msg>
+<arg>${${scenario_no}_receiver_store_full}</arg>
+<arg>${_ylist}[14]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.241600" elapsed="0.019524"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.279198" level="INFO">${Booking_S002_shipping_origin} = เลือกร้าน 7-11 ต้นทาง</msg>
+<arg>${${scenario_no}_shipping_origin}</arg>
+<arg>${_ylist}[15]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.261124" elapsed="0.018074"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.296295" level="INFO">${Booking_S002_store_code} = 15888</msg>
+<arg>${${scenario_no}_store_code}</arg>
+<arg>${_ylist}[16]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.279198" elapsed="0.018073"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.315342" level="INFO">${Booking_S002_parcel_size} = A4</msg>
+<arg>${${scenario_no}_parcel_size}</arg>
+<arg>${_ylist}[17]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.297271" elapsed="0.018071"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.332438" level="INFO">${Booking_S002_parcel_cod} = N/A</msg>
+<arg>${${scenario_no}_parcel_cod}</arg>
+<arg>${_ylist}[18]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.316318" elapsed="0.016120"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.353445" level="INFO">${Booking_S002_parcel_detail_remark} = N/A</msg>
+<arg>${${scenario_no}_parcel_detail_remark}</arg>
+<arg>${_ylist}[19]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.333414" elapsed="0.020031"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.371519" level="INFO">${Booking_S002_promotion} = N/A</msg>
+<arg>${${scenario_no}_promotion}</arg>
+<arg>${_ylist}[20]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.353445" elapsed="0.018074"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.389593" level="INFO">${Booking_S002_booking_name} = Booking DRY</msg>
+<arg>${${scenario_no}_booking_name}</arg>
+<arg>${_ylist}[21]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.371519" elapsed="0.018074"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.407166" level="INFO">${Booking_S002_booking_item} = 1 รายการ</msg>
+<arg>${${scenario_no}_booking_item}</arg>
+<arg>${_ylist}[22]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.389593" elapsed="0.017573"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.426215" level="INFO">${Booking_S002_parcel_package_type} = ซอง</msg>
+<arg>${${scenario_no}_parcel_package_type}</arg>
+<arg>${_ylist}[23]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.407166" elapsed="0.019049"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.442806" level="INFO">${Booking_S002_price_value} = 50</msg>
+<arg>${${scenario_no}_price_value}</arg>
+<arg>${_ylist}[24]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.426215" elapsed="0.016591"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.461380" level="INFO">${Booking_S002_parcel_cod_verify} = N/A</msg>
+<arg>${${scenario_no}_parcel_cod_verify}</arg>
+<arg>${_ylist}[25]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.443782" elapsed="0.017598"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.479917" level="INFO">${Booking_S002_parcel_cod_verify_label} = N/A</msg>
+<arg>${${scenario_no}_parcel_cod_verify_label}</arg>
+<arg>${_ylist}[26]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.462349" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.511149" level="INFO">${Booking_S002_promotion_detail.discount} = N/A</msg>
+<arg>${${scenario_no}_promotion_detail.discount}</arg>
+<arg>${_ylist}[27]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.480893" elapsed="0.030256"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.537501" level="INFO">${Booking_S002_promotion_detail.promotion_name} = N/A</msg>
+<arg>${${scenario_no}_promotion_detail.promotion_name}</arg>
+<arg>${_ylist}[28]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.511149" elapsed="0.026352"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.564829" level="INFO">${Booking_S002_promotion_detail.parcel_size} = N/A</msg>
+<arg>${${scenario_no}_promotion_detail.parcel_size}</arg>
+<arg>${_ylist}[29]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.538477" elapsed="0.026352"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.626318" level="INFO">${Booking_S002_promotion_detail.expired_date} = N/A</msg>
+<arg>${${scenario_no}_promotion_detail.expired_date}</arg>
+<arg>${_ylist}[30]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.565805" elapsed="0.060513"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.653645" level="INFO">${Booking_S002_promotion_detail.condition} = N/A</msg>
+<arg>${${scenario_no}_promotion_detail.condition}</arg>
+<arg>${_ylist}[31]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.627294" elapsed="0.026351"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.681949" level="INFO">${Booking_S002_promotion_detail.period} = N/A</msg>
+<arg>${${scenario_no}_promotion_detail.period}</arg>
+<arg>${_ylist}[32]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.654621" elapsed="0.027328"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.699517" level="INFO">${Booking_S002_discount_amount} = 1</msg>
+<arg>${${scenario_no}_discount_amount}</arg>
+<arg>${_ylist}[33]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.681949" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.718061" level="INFO">${Booking_S002_discount_value} = N/A</msg>
+<arg>${${scenario_no}_discount_value}</arg>
+<arg>${_ylist}[34]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.700493" elapsed="0.017568"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.735629" level="INFO">${Booking_S002_discount_value1} = NaN</msg>
+<arg>${${scenario_no}_discount_value1}</arg>
+<arg>${_ylist}[35]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.718061" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.755149" level="INFO">${Booking_S002_discount_value2} = 5</msg>
+<arg>${${scenario_no}_discount_value2}</arg>
+<arg>${_ylist}[36]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.736605" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.772717" level="INFO">${Booking_S002_cod_fee_amount} = N/A</msg>
+<arg>${${scenario_no}_cod_fee_amount}</arg>
+<arg>${_ylist}[37]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.755149" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.790285" level="INFO">${Booking_S002_cod_fee_value} = N/A</msg>
+<arg>${${scenario_no}_cod_fee_value}</arg>
+<arg>${_ylist}[38]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.773693" elapsed="0.016592"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.809805" level="INFO">${Booking_S002_total_price_amount} = 1</msg>
+<arg>${${scenario_no}_total_price_amount}</arg>
+<arg>${_ylist}[39]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.791261" elapsed="0.018544"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.829325" level="INFO">${Booking_S002_total_price_value1} = NaN</msg>
+<arg>${${scenario_no}_total_price_value1}</arg>
+<arg>${_ylist}[40]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.809805" elapsed="0.019520"/>
+</kw>
+<kw name="Set Global Variable" owner="BuiltIn">
+<msg time="2024-11-16T01:01:19.848845" level="INFO">${Booking_S002_total_price_value2} = 50</msg>
+<arg>${${scenario_no}_total_price_value2}</arg>
+<arg>${_ylist}[41]</arg>
+<doc>Makes a variable available globally in all tests and suites.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.829325" elapsed="0.019520"/>
+</kw>
+<kw name="Close All Excel Documents" owner="ExcelLibrary">
+<doc>Closes all opened documents.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.848845" elapsed="0.000000"/>
+</kw>
+<arg>Booking_S002</arg>
+<status status="PASS" start="2024-11-16T01:01:16.143895" elapsed="3.704950"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Booking_S002_scenario_number}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.849820" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Booking_S002_parcel_type}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.849820" elapsed="0.000977"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>${Booking_S002_total_price_value2}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2024-11-16T01:01:19.850797" elapsed="0.000000"/>
 </kw>
 <tag>Excel</tag>
-<status status="PASS" start="2024-11-16T00:35:32.496073" elapsed="3.099669"/>
+<status status="PASS" start="2024-11-16T01:01:12.318185" elapsed="7.532612"/>
 </test>
-<test id="s1-s1-s1-t2" name=" Check Scenario Number And Use Row Data111" line="55">
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${test0}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:35.597694" elapsed="0.000000"/>
-</kw>
-<kw name="Log To Console" owner="BuiltIn">
-<arg>${test1}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="PASS" start="2024-11-16T00:35:35.597694" elapsed="0.000000"/>
-</kw>
-<tag>Excel</tag>
-<status status="PASS" start="2024-11-16T00:35:35.596718" elapsed="0.001952"/>
-</test>
-<status status="PASS" start="2024-11-16T00:35:31.128308" elapsed="4.470362"/>
+<status status="PASS" start="2024-11-16T01:01:10.997749" elapsed="8.854024"/>
 </suite>
-<status status="PASS" start="2024-11-16T00:35:31.126356" elapsed="4.473288"/>
+<status status="PASS" start="2024-11-16T01:01:10.996772" elapsed="8.855977"/>
 </suite>
-<status status="PASS" start="2024-11-16T00:35:31.098052" elapsed="4.502568"/>
+<status status="PASS" start="2024-11-16T01:01:10.979223" elapsed="8.874502"/>
 </suite>
 <statistics>
 <total>
-<stat pass="2" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="2" fail="0" skip="0">Excel</stat>
+<stat pass="1" fail="0" skip="0">Excel</stat>
 </tag>
 <suite>
-<stat pass="2" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1" name="Booking">Testcases.Booking</stat>
-<stat pass="2" fail="0" skip="0" id="s1-s1-s1" name="Booking Aaaa">Testcases.Booking.Booking Aaaa</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testcases">Testcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Booking">Testcases.Booking</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Booking Aaaa">Testcases.Booking.Booking Aaaa</stat>
 </suite>
 </statistics>
 <errors>
