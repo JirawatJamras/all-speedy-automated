@@ -139,7 +139,7 @@ Register_S008
 
     Log    Step No.3 กดปุ่ม "บันทึก"
     pms_requests_page.Click Save Button
-    Reload page
+    Reload Page
     pms_requests_page.Verify Save Assign To RM Success [legal entity]
     ...    ${Register_S002['checkbox_partner_types']}
     ...    ${Register_S002['company_name']}

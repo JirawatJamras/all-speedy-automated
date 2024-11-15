@@ -35,8 +35,7 @@ Input Company Address Full Legal Entity
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_company_address_full_legal_entity}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_company_address_full_legal_entity}    {value}    ${select}
-    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_company_address_full}
-    # common.Click when ready     //div[@id='companyAddress_full_list']/..//div[@title='ปากเกร็ด ปากเกร็ด นนทบุรี 11120']    
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_company_address_full}  
 
 Select Title Name Legal Entity
     [Arguments]    ${title}
