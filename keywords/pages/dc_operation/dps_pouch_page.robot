@@ -76,16 +76,42 @@ Verify Data Of Information Section In Pouch Detail Popup
 Verify Label Section In Pouch Detail Popup
     [Arguments]    ${destination_warehouse_name}    ${number}    ${route}
     ...    ${simbol}    ${pouch_number}
-    ${actual_destination_warehouse_name}=    Get Text   ${dps_destination_warehouse_in_pouch_label}
-    ${actual_number}=    Get Text    ${dps_number_in_pouch_label}
-    ${actual_route}=    Get Text    ${dps_route_in_pouch_label}
+    ${actual_destination_warehouse_name}=    Get Text   ${dps_txt_destination_warehouse_in_pouch_label}
+    ${actual_number}=    Get Text    ${dps_txt_number_in_pouch_label}
+    ${actual_route}=    Get Text    ${dps_txt_route_in_pouch_label}
+    ${actual_pouch_number}=    Get Text    ${dps_txt_pouch_number_pouch_label}
     Should Be Equal    ${actual_destination_warehouse_name}    ${destination_warehouse_name}
     Should Be Equal    ${actual_number}    ${number}
     Should Be Equal    ${actual_route}    ${route}
     IF    '${simbol}' == 'รูปดาว'
         Wait Until Element Is Visible    ${dps_img_star_simbol_pouch_label}    timeout=10s
     END
-    
+    Should Be Equal    ${actual_pouch_number}    ${pouch_number}
+    Wait Until Element Is Visible    ${dps_txt_pouch_number_pouch_label}    timeout=10s
+    Wait Until Element Is Visible    ${dps_img_qr_pouch_label}    timeout=10s
+
+Verify Parcel In Pouch List In Pouch Detail Popup
+    [Arguments]    ${expected_title}    ${parcel_number}    ${destination_warehouse}
+    ...    ${pickup_place}    ${type}    ${parcel_status}    
+    ...    ${btn_print_pouch}
+    # //div[@class='ant-modal-content']//tr[td[1]='${parcel_number}' and td[2]='${destination_warehouse}' and td[3]='${pickup_place}' and td[4]='${type}' and td//h1[text()='${parcel_status}']]
+    # //div[@class='ant-modal-content']//tr[td[1]='SPBD241100010913' and td[2]='DC SB' and td[3]='null' and td[4]='B2C' and td//h1[text()='รอปริ้นใบลาเบลติดหน้ากล่อง']]
+    common.Scroll Window To Vertical    500
+    ${dps_txt_title_parcel_in_pouch_list_pouch_label}=    Replace String    ${dps_txt_title_parcel_in_pouch_list_pouch_label}    {value}    ${expected_title}
+    ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {parcel_number}    ${parcel_number}
+    ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {destination_warehouse}    ${destination_warehouse}
+    ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {pickup_place}    ${pickup_place}
+    ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {type}    ${type}
+    ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {parcel_status}    ${parcel_status}
+    ${dps_btn_print_pouch_label_pouch_detail_page}=    Replace String    ${dps_btn_print_pouch_label_pouch_detail_page}    {value}    ${btn_print_pouch}
+    common.Scroll Into View By Xpath    ${dps_txt_title_parcel_in_pouch_list_pouch_label}    true
+    ${actual_title}=    Get Text    ${dps_txt_title_parcel_in_pouch_list_pouch_label}
+    ${actual_btn_print_pouch}=    Get Text    ${dps_btn_print_pouch_label_pouch_detail_page}
+    Should Be Equal    ${actual_title}    ${expected_title}
+    Wait Until Element Is Visible    ${dps_txt_tr_parcel_in_table_pouch_detail}
+    Should Be Equal    ${actual_btn_print_pouch}    ${btn_print_pouch}
+
+
 
 
 Click Dropdown Select Warehouse List

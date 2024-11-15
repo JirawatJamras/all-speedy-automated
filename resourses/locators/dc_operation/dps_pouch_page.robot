@@ -1,5 +1,5 @@
 *** Variables ***
-${dps_btn_print_pouch_label_pouch_detail_page}    //span[text()=' Print Pouch Label']/..
+${dps_btn_print_pouch_label_pouch_detail_page}    //span[text()=' {value}']/..
 ${dps_btn_close_pouch_and_print_label_on_warning_popup}    //span[text()='{value}']/..
 ${dps_btn_close_x_button_on_popup}    //div[@class='ant-modal-mask']/..//button[@aria-label='Close']
 ${dps_btn_filter_pouch_page}    //span[text()='{value}']/..
@@ -16,9 +16,12 @@ ${dps_txt_pouch_status_pouch_detail}    //span[text()='{value}']
 ${dps_txt_parcel_amount_pouch_detail}    //span[text()='{value}']
 ${dps_txt_origin_warehouse_pouch_detail}    //span[text()='{value}']
 ${dps_txt_destination_warehouse_pouch_detail}    //span[text()='{value}']
-${dps_destination_warehouse_in_pouch_label}    //div[@class='print-section ']//h1
-${dps_number_in_pouch_label}    //div[@class='print-section ']//h1/..//div//span
-${dps_route_in_pouch_label}    //div[@class='print-section ']/div/div/div[3]//span
+${dps_txt_destination_warehouse_in_pouch_label}    //div[@class='print-section ']//h1
+${dps_txt_number_in_pouch_label}    //div[@class='print-section ']//h1/..//div//span
+${dps_txt_route_in_pouch_label}    //div[@class='print-section ']/div/div/div[3]//span
+${dps_txt_pouch_number_pouch_label}    //div[@class='print-section ']//div[@id='barcodePouch']
+${dps_txt_title_parcel_in_pouch_list_pouch_label}    //h1[text()='{value}']
+${dps_txt_tr_parcel_in_table_pouch_detail}    //div[@class='ant-modal-content']//tr[td[1]='{parcel_number}' and td[2]='{destination_warehouse}' and td[3]='{pickup_place}' and td[4]='{type}' and td//h1[text()='{parcel_status}']]
 
 ${dps_cbo_destination_inventory_in_filter}    //input[@id='destDc']/../..
 
