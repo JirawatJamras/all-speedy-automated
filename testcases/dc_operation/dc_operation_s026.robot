@@ -158,14 +158,14 @@ DC_Operation_s026
     ...    ${today}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['send_parcel_to']}
-    dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
+    dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['store']}
     ...    ${dc_operation.scan_in_title_label_detail['customer']}
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-    dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
+    dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S026.scan_in_data_label_detail['store']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['phone']}

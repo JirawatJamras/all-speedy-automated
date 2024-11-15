@@ -216,7 +216,7 @@ Verify Data Parcel Details In Scan Page Home Destination
     Should Be Equal    ${actual_value_origin_warehouse}    ${origin_warehouse}
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
 
-Verify Title Label Parcel In Scan Page Home Destination
+Verify Title Label Parcel In Scan Page [Other Courier]
     [Arguments]    ${courier}    ${zipcode}    ${customer}    ${phone}
 
     ${label_courier}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${courier}
@@ -229,24 +229,17 @@ Verify Title Label Parcel In Scan Page Home Destination
     Element Should Be Visible    ${label_customer}
     Element Should Be Visible    ${label_phone}
 
-
-Verify Data Label Parcel In Scan Page Home Destination
-    [Arguments]    ${courier}    ${zipcode}    ${customer}    ${phone}    # ${label_size}    ${size}
-
+Verify Data Label Parcel In Scan Page [Other Courier]
+    [Arguments]    ${courier}    ${zipcode}    ${customer}    ${phone}
     ${value_courier}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${courier}
-    ${value_zipcode}=    Get Text    ${dps_txt_value_label_home} 
-    # ${value_zipcode}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${zipcode}
-    # ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(กล่อง ${size})
-    # ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(${label_size} ${size})
     ${value_customer}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${customer}
     ${value_phone}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${phone}
+    ${value_zipcode}=    Get Text    ${dps_txt_value_label_home}
 
     Element Should Be Visible    ${value_courier}
     Should Be Equal    ${value_zipcode}    ${zipcode}
-    # Element Should Be Visible    ${value_zipcode}
     Element Should Be Visible    ${value_customer}
     Element Should Be Visible    ${value_phone}
-    # Element Should Be Visible    ${value_size}
 
 #################################### Store Destination ####################################
 
@@ -344,9 +337,8 @@ Verify Data Parcel Details In Scan Page Store Destination
     Should Be Equal    ${actual_value_origin_warehouse}    ${origin_warehouse}
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
 
-Verify Title Label Parcel In Scan Page Store Destination
-    [Arguments]    ${route}    ${store}    ${customer}
-    ...            ${phone}    ${pouch_number}    ${wh}
+Verify Title Label Parcel In Scan Page [CP All Courier]
+    [Arguments]    ${route}    ${store}    ${customer}    ${phone}    ${pouch_number}    ${wh}
     ${dps_txt_title_label_route}=    Replace String    ${dps_txt_title_label}    {value}    ${route}
     ${dps_txt_title_label_store}=    Replace String    ${dps_txt_title_label}    {value}    ${store}
     ${dps_txt_title_label_customer}=    Replace String    ${dps_txt_title_label}    {value}    ${customer}
@@ -361,24 +353,25 @@ Verify Title Label Parcel In Scan Page Store Destination
     Element Should Be Visible    ${dps_txt_title_label_pouch_number}
     Element Should Be Visible    ${dps_txt_title_label_wh}
 
-Verify Data Label Parcel In Scan Page Store Destination
-    [Arguments]    ${store}    ${customer}
-    ...            ${phone}    ${pouch_number}    ${wh}    ${symbol}
+Verify Data Label Parcel In Scan Page [CP All Courier]
+    [Arguments]    ${store}    ${customer}    ${phone}    ${pouch_number}    ${wh}    ${symbol}
     ${actual_value_route}=    Get Value    ${dps_txt_value_route}
+    IF    '${actual_value_route}' == ''
+        ${actual_value_route}=    Set Variable    -
+    END
     ${dps_txt_value_label_route}=    Replace String    ${dps_txt_value_label}    {value}    ${actual_value_route}
     ${dps_txt_value_label_customer}=    Replace String    ${dps_txt_value_label}    {value}    ${customer}
     ${dps_txt_value_label_phone}=    Replace String    ${dps_txt_value_label}    {value}    ${phone}
     ${dps_txt_value_label_pouch_number}=    Replace String    ${dps_txt_value_label}    {value}    ${pouch_number}
     ${actual_txt_value_label_store}=    Get Text    ${dps_txt_value_label_store}
     ${actual_txt_value_label_wh}=    Get Text    ${dps_txt_value_label_wh}
-
     Element Should Be Visible    ${dps_txt_value_label_route}
     Element Should Be Visible    ${dps_txt_value_label_customer}
     Element Should Be Visible    ${dps_txt_value_label_phone}
     Element Should Be Visible    ${dps_txt_value_label_pouch_number}
     Should Be Equal    ${actual_txt_value_label_store}    ${store}
     Should Be Equal    ${actual_txt_value_label_wh}    ${wh}
-    # verify symbol
+
     IF         '${symbol}' == 'รูปดาว'
         Wait Until Page Contains Element    ${dps_img_label_star_symbol_in_scan_page}     
     ELSE IF    '${symbol}' == 'รูปวงกลม'

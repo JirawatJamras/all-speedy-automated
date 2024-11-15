@@ -616,7 +616,7 @@ DC_Operation_S014:
 
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
-    customer_id: '2400563'
+    customer_id: '0002400563'
     parcel_size: '120 ซม. กล่อง L'
     crossdock_warehouse: '-'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
@@ -626,7 +626,7 @@ DC_Operation_S016:
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: FSH
-    zipcode: '11120'
+    zipcode: '11120 (กล่อง L)'
     province: นนทบุรี
     customer: ทดสอบพัสดุCourier
     phone: '0900987354'
@@ -635,20 +635,20 @@ DC_Operation_S016:
     name: คุณ a
     phone: '0959494989'
     shipping_origin: 'บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
-    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุCourier
     phone: '0900987354'
     shipping_destination: บ้าน
-    address: '554 หมู่ 3 ต.ปากเกร็ด อ.ปากเกร็ด จ.นนทบุรี 11120'
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
   edit_parcel_detail_in_scan_in_tab:
     value_parcel_size: '45'
     text_parcel_size: กล่อง S
     courier: CP All
     destination_warehourse: DC SB
   edit_courier_in_scan_in_tab:
-    route: ''
-    zipcode: '11120'
+    route: '-'
+    zipcode: '11120 (กล่อง S)'
     customer: ทดสอบพัสดุCourier
     phone: '0900987354'
     pouch_number: '-'
@@ -693,30 +693,29 @@ DC_Operation_S017:
 
 DC_Operation_S018:
   value_parcel_details_in_warehouse:
-    # tracking_number: 'Tracking Number '
-    parcel_status: 'พัสดุรอ Scan out ไปคลัง (AC)'
-    customer_type: 'B2C'
-    pouch_number: ''
-    parcel_size: 'ซอง A4'
-    route: ''
-    # check_in_date: ''
-    # date_in_system: ''
-    sla_date: ''
-    sla_text: ''
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+    customer_type: B2C
+    pouch_number: '-'
+    parcel_size: S
+    route: '-'
+    # check_in_date: วันที่รับพัสดุเข้าระบบ
+    date_in_system: '2-3 วัน'
+    # sla_date: SLA Date
+    sla_text: '3 วัน'
     origin_store: '-'
-    origin_warehouse: DCBB
+    origin_warehouse: DC BB
     destination_store: '-'
-    crossdock_warehouse: AC
+    crossdock_warehouse: '-'
     shipping_by: CP All
-    destination_warehouse: RDCLP
+    destination_warehouse: DC SB
   value_sender_in_warehouse:
-    name: คุณ i
+    name: คุณ a
     phone: '0959494989'
     address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   value_receiver_in_warehouse:
-    name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
-    phone: ''
-    address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
+    name: ทดสอบพัสดุCourier
+    phone: '0900987354'
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
 
 DC_Operation_S019: 
   company_name: คุณ ไอดีซี

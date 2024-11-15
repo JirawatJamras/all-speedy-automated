@@ -99,14 +99,14 @@ DC_Operation_S007
     # ...    18-10-2567
     # ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
     # ...    STORE (15888)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
-    # dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_label_detail['route']}
     # ...    STORE    # Expected Result is ${dc_operation.scan_in_title_label_detail['store']}
     # ...    CUSTOMER    # Expected Result is ${dc_operation.scan_in_title_label_detail['customer']}
     # ...    PHONE    # Expected Result is ${dc_operation.scan_in_title_label_detail['phone']}
     # ...    POUCH NO.    # Expected Result is ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # ...    WH    # Expected Result is ${dc_operation.scan_in_title_label_detail['wh']}
-    # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     # ...    15506 (ซอง A4)     # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['store']}
     # ...    soff    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['customer']}
     # ...    0988797374    # Expected Result is (เบอร์โทรที่ระบุในไฟล์ Excel Template ขั้นตอน Booking)
@@ -375,14 +375,14 @@ DC_Operation_S007
     # ...    18-10-2567
     # ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
     # ...    STORE (15888)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
-    # dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_label_detail['route']}
     # ...    STORE    # Expected Result is ${dc_operation.scan_in_title_label_detail['store']}
     # ...    CUSTOMER    # Expected Result is ${dc_operation.scan_in_title_label_detail['customer']}
     # ...    PHONE    # Expected Result is ${dc_operation.scan_in_title_label_detail['phone']}
     # ...    POUCH NO.    # Expected Result is ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # ...    WH    # Expected Result is ${dc_operation.scan_in_title_label_detail['wh']}
-    # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     # ...    15506 (ซอง A4)     # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['store']}
     # ...    soff    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['customer']}
     # ...    0988797374    # Expected Result is (เบอร์โทรที่ระบุในไฟล์ Excel Template ขั้นตอน Booking)

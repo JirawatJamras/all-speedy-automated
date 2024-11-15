@@ -113,12 +113,12 @@ DC_Operation_S004
     # ...    ${DC_Operation_S004.parcel_detail_in_scan_in_tab['receiving_date']}
     # ...    ${DC_Operation_S004.parcel_detail_in_scan_in_tab['origin_warehouse']}
     # ...    HOME (11120)    # ${DC_Operation_S004.parcel_detail_in_scan_in_tab['send_parcel_to']}
-    # dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # ...    ${dc_operation.scan_in_title_label_detail['courier']}
     # ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
     # ...    ${dc_operation.scan_in_title_label_detail['customer']}
     # ...    ${dc_operation.scan_in_title_label_detail['phone']}
-    # dps_scan_page.Verify Data Label Parcel In Scan Page Home Destination
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
     # ...    ${DC_Operation_S004.label_detail_in_scan_in_tab['courier']}
     # ...    ${DC_Operation_S004.label_detail_in_scan_in_tab['zipcode']} 
     # ...    ${DC_Operation_S004.label_detail_in_scan_in_tab['customer']}

@@ -18,13 +18,8 @@ DC_Operation_S017
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
-    # dps_home_page.Click Dropdown For Select Role
-    # dps_home_page.Select Role    ${dc_operation.role['admin']}
-
-    Sleep    5s
-    Go To    https://dps-uat.allspeedy.co.th/pouch
-    dps_home_page.Click Dropdown For Select role
+    dps_home_page.Wait Until DC Operation Home Page Loaded
+    dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เข้าเมนูจัดการ Pouch และ คลิก Dropdown เลือกสิทธิ์คลังเป็น DC BB
@@ -148,6 +143,7 @@ DC_Operation_S017
     dps_history_parcel_page.Verify Reprint Label Dropdown
     ...    ${dc_operation.dropdown_reprint_label['parcel_label']}
     ...    ${dc_operation.dropdown_reprint_label['parcel_sorting_sheet']}
+    ...    ${pouch_number}
     ...    ${dc_operation.dropdown_reprint_label['pouch_label']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Reprint Label Dropdown
 
@@ -281,6 +277,7 @@ DC_Operation_S017
     dps_history_parcel_page.Verify Reprint Label Dropdown
     ...    ${dc_operation.dropdown_reprint_label['parcel_label']}
     ...    ${dc_operation.dropdown_reprint_label['parcel_sorting_sheet']}
+    ...    ${pouch_number}
     ...    ${dc_operation.dropdown_reprint_label['pouch_label']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Reprint Label Dropdown After Close Pouch
 

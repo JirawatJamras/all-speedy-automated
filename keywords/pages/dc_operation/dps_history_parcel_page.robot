@@ -263,7 +263,7 @@ Click Reprint Label Dropdown
     END
 
 Verify Reprint Label Dropdown
-    [Arguments]    ${parcel_label}    ${parcel_sorting_sheet}    ${pouch_label}
+    [Arguments]    ${parcel_label}    ${parcel_sorting_sheet}    ${pouch_number}    ${pouch_label}
     ${dps_cbo_parcel_label}=    Replace String    ${dps_cbo_value_in_reprint_label_history_parcel_page}    {value}    ${parcel_label}
     ${dps_cbo_parcel_sorting_sheet}=    Replace String    ${dps_cbo_value_in_reprint_label_history_parcel_page}    {value}    ${parcel_sorting_sheet}
     ${dps_cbo_pouch_label}=    Replace String    ${dps_cbo_value_in_reprint_label_history_parcel_page}    {value}    ${pouch_label}
@@ -271,7 +271,12 @@ Verify Reprint Label Dropdown
     ${actual_status_pouch_label}=    Get Element Attribute    ${dps_cbo_pouch_label}    aria-disabled
     Element Should Be Visible    ${dps_cbo_parcel_label}
     Should Be Equal    ${actual_status_parcel_sorting_sheet}    false
-    Should Be Equal    ${actual_status_pouch_label}    false
+    Log    ${pouch_number}
+    IF    '${pouch_number}' == '-'
+        Should Be Equal    ${actual_status_pouch_label}    true
+    ELSE
+        Should Be Equal    ${actual_status_pouch_label}    false
+    END
 
 Select Reprint Label Type In Dropdown
     [Arguments]    ${label_type}
@@ -308,7 +313,6 @@ Verify Reprint Pouch Label Popup
     Should Be Equal    ${actual_txt_destination_warehouse_in_pouch_label}    ${destination_warehouse}
     Should Be Equal    ${actual_txt_route_in_pouch_label}    ${route}
 
-    IF    '${destination_warehouse_symbol}' ==  'รูปนาฬิกาทราย'
+    Run Keyword If    "$destination_warehouse_symbol" == 'รูปนาฬิกาทราย'    Run Keywords
     ...    ${dps_img_rdclp_warehouse_symbol_in_pouch_label}=    Replace String    ${dps_img_rdclp_warehouse_symbol_in_pouch_label_history_parcel_page}    {label_type}    ${label_type}
-    ...    Should Be Visible    ${dps_img_rdclp_warehouse_symbol_in_pouch_label}
-    END
+    ...    AND    Should Be Visible    ${dps_img_rdclp_warehouse_symbol_in_pouch_label}

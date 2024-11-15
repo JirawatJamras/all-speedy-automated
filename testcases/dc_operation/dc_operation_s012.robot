@@ -105,14 +105,14 @@ DC_Operation_S012
     # # ...    06-11-2567  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['receiving_date']}
     # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['source_warehouse']}
     # # ...    STORE (07004)  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['send_parcel_to']}
-    # # dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
+    # # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # # ...    ${dc_operation.scan_in_title_label_detail['route']}
     # # ...    ${dc_operation.scan_in_title_label_detail['store']}
     # # ...    ${dc_operation.scan_in_title_label_detail['customer']}
     # # ...    ${dc_operation.scan_in_title_label_detail['phone']}
     # # ...    POUCH NO.  # ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # # ...    ${dc_operation.scan_in_title_label_detail['wh']}
-    # # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
+    # # dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     # # ...    ${DC_Operation_S012.label_detail_in_scan_in_tab['store_code']}
     # # ...    ${DC_Operation_S012.label_detail_in_scan_in_tab['customer']}
     # # ...    ${DC_Operation_S012.label_detail_in_scan_in_tab['phone']}
