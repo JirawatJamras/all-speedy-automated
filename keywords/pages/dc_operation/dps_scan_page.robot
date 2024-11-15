@@ -298,7 +298,7 @@ Verify Data Parcel Details In Scan Page Store Destination
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
     ...            ${crossdock_warehouse}    ${destination_warehouse}    ${parcel_status}
     ...            ${courier}    ${pouch_number}    ${receiving_date}
-    ...            ${origin_warehouse}    ${send_parcel_to}    ${route}
+    ...            ${origin_warehouse}    ${send_parcel_to}
     ${dps_txt_value_parcel_id}=    Replace String    ${dps_txt_value_parcel_id}    {value}    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ${dps_txt_value_customer_id}=    Replace String    ${dps_txt_value_customer_id}    {value}    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
     ${dps_txt_value_crossdock_warehouse}=    Replace String    ${dps_txt_value_crossdock_warehouse}    {value}    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
@@ -324,6 +324,11 @@ Verify Data Parcel Details In Scan Page Store Destination
     ${actual_value_send_parcel_to}=    Get Text    ${dps_txt_value_send_parcel_to}
     ${actual_value_route}=    Get Value    ${dps_txt_value_route}
     ${actual_value_parcel_size}=    Set Variable    ${actual_value_parcel_size1} ${actual_value_parcel_size2} ${actual_value_parcel_size3}
+    ${actual_receiving_date}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  0
+    ${actual_receiving_time}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  1
+    Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}:\\d{2}$
+    Should Match Regexp    ${actual_value_route}    ^\\d+$  
+    
     Should Be Equal    ${actual_value_parcel_id}    ${parcel_id}
     Should Be Equal    ${actual_value_customer_id}    ${customer_id}
     Should Be Equal    ${actual_value_parcel_size}    ${parcel_size}
@@ -333,10 +338,9 @@ Verify Data Parcel Details In Scan Page Store Destination
     Should Be Equal    ${actual_value_parcel_status}    ${parcel_status}
     Should Be Equal    ${actual_value_courier}    ${courier}
     Should Be Equal    ${actual_value_pouch_number}    ${pouch_number}
-    Should Be Equal    ${actual_value_receiving_date}    ${receiving_date}
+    Should Be Equal    ${actual_receiving_date}    ${receiving_date}
     Should Be Equal    ${actual_value_origin_warehouse}    ${origin_warehouse}
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
-    Should Be Equal As Integers    ${actual_value_route}    ${route}
 
 Verify Title Label Parcel In Scan Page Store Destination
     [Arguments]    ${route}    ${store}    ${customer}
@@ -356,14 +360,16 @@ Verify Title Label Parcel In Scan Page Store Destination
     Element Should Be Visible    ${dps_txt_title_label_wh}
 
 Verify Data Label Parcel In Scan Page Store Destination
-    [Arguments]    ${route}    ${store}    ${customer}
+    [Arguments]    ${store}    ${customer}
     ...            ${phone}    ${pouch_number}    ${wh}    ${symbol}
-    ${dps_txt_value_label_route}=    Replace String    ${dps_txt_value_label}    {value}    ${route}
+    ${actual_value_route}=    Get Value    ${dps_txt_value_route}
+    ${dps_txt_value_label_route}=    Replace String    ${dps_txt_value_label}    {value}    ${actual_value_route}
     ${dps_txt_value_label_customer}=    Replace String    ${dps_txt_value_label}    {value}    ${customer}
     ${dps_txt_value_label_phone}=    Replace String    ${dps_txt_value_label}    {value}    ${phone}
     ${dps_txt_value_label_pouch_number}=    Replace String    ${dps_txt_value_label}    {value}    ${pouch_number}
     ${actual_txt_value_label_store}=    Get Text    ${dps_txt_value_label_store}
     ${actual_txt_value_label_wh}=    Get Text    ${dps_txt_value_label_wh}
+
     Element Should Be Visible    ${dps_txt_value_label_route}
     Element Should Be Visible    ${dps_txt_value_label_customer}
     Element Should Be Visible    ${dps_txt_value_label_phone}
@@ -375,6 +381,8 @@ Verify Data Label Parcel In Scan Page Store Destination
         Wait Until Page Contains Element    ${dps_img_label_star_symbol_in_scan_page}     
     ELSE IF    '${symbol}' == 'รูปวงกลม'
         Wait Until Page Contains Element    ${dps_img_label_circle_symbol_in_scan_page}
+    ELSE IF    '${symbol}' == 'รูปนาฬิกาทราย'
+        Wait Until Page Contains Element    ${dps_img_label_hourglass_symbol_in_scan_page}
     END
 
 Click Close Popup Print Scan In Success
