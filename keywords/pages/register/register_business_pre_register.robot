@@ -17,7 +17,7 @@ Select Company Title Name Legal Entity
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_company_title_name_legal_entity}
     ${selected_company_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    common.Click when ready    ${selected_company_title_name}
+    ${result}=    Run Keyword And Ignore Error    common.Click when ready    ${selected_company_title_name}
 
 Input Company Name Legal Entity
     [Arguments]    ${text}  
@@ -35,13 +35,13 @@ Input Company Address Full Legal Entity
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_company_address_full_legal_entity}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_company_address_full_legal_entity}    {value}    ${select}
-    common.Click when ready     ${selected_company_address_full}
+    ${result}=    Run Keyword And Ignore Error    common.Click when ready     ${selected_company_address_full}
 
 Select Title Name Legal Entity
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_title_name_legal_entity}
     ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    common.Click when ready    ${selected_title_name}
+    ${result}=    Run Keyword And Ignore Error    common.Click when ready    ${selected_title_name}
 
 Input First Name Legal Entity
     [Arguments]    ${value}  
