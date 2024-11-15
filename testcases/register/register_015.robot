@@ -38,7 +38,7 @@ Register_S15
     ...    ${rm.full_regis.contact['text_email']}
     ...    ${rm.full_regis.contact['text_mobile']}
     ...    ${rm.full_regis.contact['text_mobile_ext']}
-    common.Verify Capture Screenshot    Register_S015    Verify Click Add Contact Information Second
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Click Add Contact Information Second
     
     Log    Step No.10 ระบุข้อมูลผู้ติดต่อ
     pms_detail_full_register_page.Input Contact Name Second    ${Register_S015.contact['name']}
@@ -68,14 +68,14 @@ Register_S15
     # ...    ${Register_S015.contact['email']}
     # ...    ${Register_S015.contact['mobile_no']}
     # ...    ${Register_S015.contact['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S015    Verify Input Contact Second
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Input Contact Second
     
 
     # Log    Step No.11 กดปุ่ม "หน้าถัดไป"
     # pms_detail_full_register_page.Click Next Page Button
     # #Expected 4
     # pms_detail_full_register_page.Verify Supporting Document Page Legal Entity
-    # common.Verify Capture Screenshot    Register_S015    Verify Supporting Document Page Legal Entity
+    # common.Verify Capture Screenshot     Register    Register_S015    Verify Supporting Document Page Legal Entity
     
     # Log    Step No.12 ระบุความเห็นการแก้ไข #4 : แก้ไขเอกสารหน้าบัญชีธนาคาร
     # pms_detail_full_register_page.Input Remark 4    ${Register_S015['remark_4']}
@@ -85,7 +85,7 @@ Register_S15
     # #Expected
     # #Inprogress
     # # pms_detail_full_register_page.Verify Officer Section Page
-    # common.Verify Capture Screenshot    Register_S015    Verify Officer Section Page
+    # common.Verify Capture Screenshot     Register    Register_S015    Verify Officer Section Page
     
 
     # Log    Step No.14 ระบุข้อมูลรายละเอียดเพิ่มเติม
@@ -94,7 +94,7 @@ Register_S15
     # Log    Step No.15 กดปุ่ม "ส่งกลับแก้ไข"
     # pms_detail_full_register_page.Click Return Button
     # pms_detail_full_register_page.Verify Return Popup    remark_4=${Register_S015['remark_4']}
-    # common.Verify Capture Screenshot    Register_S015    Verify Return Popup
+    # common.Verify Capture Screenshot     Register    Register_S015    Verify Return Popup
 
 
     # Log    Step No.16 กดปุ่ม "ยืนยัน" ที่ Popup ส่งกลับแก้ไข
@@ -140,9 +140,9 @@ Register_S015
     ...    ${Register_S001['email']}
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S015    Verify Request Full Register Detail Page
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Request Full Register Detail Page
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Register_S015    Verify Request Full Register Detail Page 2
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Request Full Register Detail Page 2
 
     Log    Step No.2 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
@@ -160,7 +160,7 @@ Register_S015
     ...    ${Register_S015.dry_parcel['address_full']}
     ...    ${rm.full_regis['latitude_longitude']}
     ...    ${rm.full_regis.text_pickup_schedule['not_determined']}
-    common.Verify Capture Screenshot    Register_S015    Verify Dry Parcel Tab Full Register Detail Page
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Dry Parcel Tab Full Register Detail Page
     pms_detail_full_register_page.Click Chill Parcel Tab
     pms_detail_full_register_page.Verify Chill Parcel Tab Full Register Detail Page
     ...    ${Register_S015.chill_parcel['selected_cod']}
@@ -174,7 +174,7 @@ Register_S015
     ...    ${Register_S015.chill_parcel['address_full']}
     ...    ${rm.full_regis['latitude_longitude']}
     ...    ${rm.full_regis.text_pickup_schedule['not_determined']}
-    common.Verify Capture Screenshot    Register_S015    Verify Chill Parcel Tab Full Register Detail Page
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Chill Parcel Tab Full Register Detail Page
     pms_detail_full_register_page.Click Return Business Tab
     pms_detail_full_register_page.Verify Return Business Tab Full Register Detail Page
     ...    ${Register_S015.return_business['selected_express']}
@@ -189,7 +189,7 @@ Register_S015
     ...    ${Register_S015.return_business['address_full']}
     ...    ${rm.full_regis['latitude_longitude']}
     ...    ${rm.full_regis.text_pickup_schedule['not_determined']}
-    common.Verify Capture Screenshot    Register_S015    Verify Return Business Tab Full Register Detail Page
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Return Business Tab Full Register Detail Page
 
     Log    Step No.3 ระบุข้อมูล แท็บพัสดุทั่วไป
     pms_detail_full_register_page.Click Dry Parcel Tab
@@ -213,7 +213,7 @@ Register_S015
     ...    ${Register_S015.dry_parcel['branch_id']}
     ...    ${Register_S015.dry_parcel['address']}
     ...    ${Register_S015.dry_parcel['address_full']}
-    common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup Dry Parcel Tab
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Set Pickup Point Popup Dry Parcel Tab
 
     Log    Step No.4 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุทั่วไป
     pms_detail_full_register_page.Input Set Pickup Point Popup
@@ -226,7 +226,7 @@ Register_S015
     # ...    ${Register_S015.dry_parcel['address_full']}
     # ...    ${rm.full_regis['latitude_longitude']}
     # ...    ${rm.full_regis.text_pickup_schedule['determined']}
-    common.Verify Capture Screenshot    Register_S015    Verify Pickup Schedule After Set Pickup Point [Dry Parcel Tab]
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Pickup Schedule After Set Pickup Point [Dry Parcel Tab]
 
     Log    Step No.5 ระบุข้อมูล แท็บพัสดุควบคุมอุณหภูมิ
     # pms_detail_full_register_page.Click Chill Parcel Tab
@@ -248,7 +248,7 @@ Register_S015
     # ...    ${Register_S015.chill_parcel['branch_id']}
     # ...    ${Register_S015.chill_parcel['address']}
     # ...    ${Register_S015.chill_parcel['address_full']}
-    # common.Verify Capture Screenshot    Register_S015    Verify Set Pickup Point Popup Chill Parcel Tab
+    # common.Verify Capture Screenshot     Register    Register_S015    Verify Set Pickup Point Popup Chill Parcel Tab
 
     Log    Step No.6 ระบุจุดเรียกรถเข้ารับ แท็บพัสดุควบคุมอุณหภูมิ
     # pms_detail_full_register_page.Input Set Pickup Point Popup
@@ -261,7 +261,7 @@ Register_S015
     # # ...    ${Register_S015.chill_parcel['address_full']}
     # # ...    ${rm.full_regis['latitude_longitude']}
     # # ...    ${rm.full_regis.text_pickup_schedule['determined']}
-    # common.Verify Capture Screenshot    Register_S015    Verify Pickup Schedule After Set Pickup Point [Chill Parcel Tab]
+    # common.Verify Capture Screenshot     Register    Register_S015    Verify Pickup Schedule After Set Pickup Point [Chill Parcel Tab]
 
     Log    Step No.7 ระบุข้อมูล แท็บ Return Business
     # pms_detail_full_register_page.Click Return Business Tab
@@ -270,7 +270,7 @@ Register_S015
     # ...    ${Register_S015.return_business['price_scheme_date']}
     # ...    ${Register_S015.return_business['insure_scheme']}
     # ...    ${Register_S015.return_business['insure_scheme_date']}
-    # common.Verify Capture Screenshot    Register_S015    Verify Input Information In The Return Business Tab
+    # common.Verify Capture Screenshot     Register    Register_S015    Verify Input Information In The Return Business Tab
 
     Log    Step No.8 กดปุ่ม "หน้าถัดไป"
     pms_detail_full_register_page.Click Next Page Button
@@ -286,7 +286,7 @@ Register_S015
     ...    ${Register_S013.contact['user_email']}
     ...    ${Register_S013.contact['user_phone']}
     ...    ${Register_S013.contact['user_phone_ex']}
-    common.Verify Capture Screenshot    Register_S015    Verify Request Detail Contact And Bank Information
+    common.Verify Capture Screenshot     Register    Register_S015    Verify Request Detail Contact And Bank Information
 
     
     

@@ -518,24 +518,24 @@ DC_Operation_S013:
     # courier: Flash
     pouch_number: '-'
     # origin_warehoues: DCBB
-    send_parcel_to: 'Home (11120)'
+    # send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
-    courier: 'FSH'
-    zipcode: '11120'
-    province: 'นนทบุรี'
-    customer: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    size: L
+    # courier: 'FSH'
+    # zipcode: '11120'
+    # province: 'นนทบุรี'
+    # customer: ทดสอบพัสดุCourier
+    # phone: '0971971445'
+    # size: L
   sender_data_in_scan_in_tab:
-    name: คุณ a
-    phone: '0633906216'
-    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
-    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+    # name: คุณ a
+    # phone: '0633906216'
+    # shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    # address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   receiver_data_in_scan_in_tab:
-    name: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    shipping_destination: บ้าน
-    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+    # name: ทดสอบพัสดุCourier
+    # phone: '0971971445'
+    # shipping_destination: บ้าน
+    # address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
   scan_out_waiting_scan:
     tracking: SPBD241100000464
     pouch_number: '-'

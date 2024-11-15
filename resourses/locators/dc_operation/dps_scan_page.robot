@@ -53,6 +53,7 @@ ${dps_txt_value_origin_warehouse}    //span[contains(@class,'ant-typography')]//
 ${dps_txt_value_send_parcel_to}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_value_route}    (//div[@class="ant-form-item-control-input-content"]//input)[2]
 ${dps_txt_value_label_store}    //div[@class='mt-5']/div[2]/span[2]
+${dps_txt_value_label_home}    (//div[contains(@class,'mt-5 gap-5')]/..//div[3]//span[2])[1]
 ${dps_txt_value_label_wh}    //div[@class='mt-5']/div[6]/span[2]
 ${dps_txt_value_label}    //div[@class='']//span[text()='{value}']
 ${dps_txt_label_sender_title_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_sender_title}']

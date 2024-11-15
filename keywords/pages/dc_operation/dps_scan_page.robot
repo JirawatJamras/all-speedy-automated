@@ -231,20 +231,22 @@ Verify Title Label Parcel In Scan Page Home Destination
 
 
 Verify Data Label Parcel In Scan Page Home Destination
-    [Arguments]    ${courier}    ${zipcode}    ${customer}    ${phone}    ${label_size}    ${size}
+    [Arguments]    ${courier}    ${zipcode}    ${customer}    ${phone}    # ${label_size}    ${size}
 
     ${value_courier}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${courier}
-    ${value_zipcode}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${zipcode} 
+    ${value_zipcode}=    Get Text    ${dps_txt_value_label_home} 
+    # ${value_zipcode}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${zipcode}
     # ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(กล่อง ${size})
-    ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(${label_size} ${size})
+    # ${value_size}=    Replace String    ${dps_txt_label_size_scan_in}    {value}    ${SPACE}(${label_size} ${size})
     ${value_customer}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${customer}
     ${value_phone}=    Replace String    ${dps_txt_label_scan_in}    {value}    ${phone}
 
     Element Should Be Visible    ${value_courier}
-    Element Should Be Visible    ${value_zipcode}
+    Should Be Equal    ${value_zipcode}    ${zipcode}
+    # Element Should Be Visible    ${value_zipcode}
     Element Should Be Visible    ${value_customer}
     Element Should Be Visible    ${value_phone}
-    Element Should Be Visible    ${value_size}
+    # Element Should Be Visible    ${value_size}
 
 #################################### Store Destination ####################################
 

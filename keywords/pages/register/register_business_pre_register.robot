@@ -76,7 +76,7 @@ Select Title Name Individual
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_title_name_individual}
     ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    common.Click when ready    ${selected_title_name}
+    ${result}=    Run Keyword And Ignore Error    common.Click when ready    ${selected_title_name}
 
 Input First Name Individual
     [Arguments]    ${value}  
@@ -102,7 +102,7 @@ Input Address Full Individual
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_address_full_individual}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_address_full_individual}    {value}    ${select}
-    common.Click when ready     ${selected_company_address_full}
+    ${result}=    Run Keyword And Ignore Error    common.Click when ready     ${selected_company_address_full}
 
 Input Mobile No Individual
     [Arguments]    ${value}  

@@ -42,14 +42,14 @@ Register_S005
     register_business_pre_register.Input Address Full Individual    ${Register_S005['search_individual_address_full']}    ${Register_S005['select_individual_address_full']}
     register_business_pre_register.Input Mobile No Individual    ${Register_S005['mobile_no']}
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S005['mobile_ext']}
-    common.Verify Capture Screenshot    Register_S005    filled in contact information success   
+    common.Verify Capture Screenshot     Register    Register_S005    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
-    common.Verify Capture Screenshot    Register_S005    pre register success
+    common.Verify Capture Screenshot     Register    Register_S005    pre register success
 
 Assign RM
     common.Open URL    ${PMS_UAT_URL}
@@ -94,20 +94,20 @@ Register_S012
     ...    ${Register.text_blank['remark']}
     ...    ${Register_S012['rm_name']}
     ...    ${Register_S012['sale_email']}
-    common.Verify Capture Screenshot    Register_S012    Verify Request Detail Page
+    common.Verify Capture Screenshot     Register    Register_S012    Verify Request Detail Page
     Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Register_S012    Verify Request Detail Page2
+    common.Verify Capture Screenshot     Register    Register_S012    Verify Request Detail Page2
 
     Log    Step No.2 RM ระบุเหตุผลในการปฎิเสธ "ทดสอบปฎิเสธ"
     pms_request_detail_page.Input Reject Reason    ${Register_S012['remark']}
     # Expected
-    common.Verify Capture Screenshot    Register_S012    Verify Input Reject Reason
+    common.Verify Capture Screenshot     Register    Register_S012    Verify Input Reject Reason
 
     Log    Step No.3 กดปุ่ม "ปฎิเสธ"
     pms_request_detail_page.Click Reject Button
     # Expected
     pms_request_detail_page.Verify Reject Confirmation Popup
-    common.Verify Capture Screenshot    Register_S012    Verify Reject Confirmation Popup
+    common.Verify Capture Screenshot     Register    Register_S012    Verify Reject Confirmation Popup
 
     Log    Step No.4 กดปุ่ม "ยืนยัน"
     pms_request_detail_page.Click Confirm Reject Button
@@ -133,6 +133,6 @@ Register_S012
     ...    ${Register_S012['rm_name']}
     ...    ${Register_S012['sale_email']}
     ...    ${Register_S012['sale_phone']}
-    common.Verify Capture Screenshot    Register_S012    Verify Information After Reject Request
+    common.Verify Capture Screenshot     Register    Register_S012    Verify Information After Reject Request
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    Register_S012    Verify Information After Reject Request2
+    common.Verify Capture Screenshot     Register    Register_S012    Verify Information After Reject Request2
