@@ -17,7 +17,7 @@ Select Company Title Name Legal Entity
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_company_title_name_legal_entity}
     ${selected_company_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    ${result}=    Run Keyword And Ignore Error    common.Click when ready    ${selected_company_title_name}
+    common.Click when ready    ${selected_company_title_name}
 
 Input Company Name Legal Entity
     [Arguments]    ${text}  
@@ -35,13 +35,14 @@ Input Company Address Full Legal Entity
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_company_address_full_legal_entity}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_company_address_full_legal_entity}    {value}    ${select}
-    ${result}=    Run Keyword And Ignore Error    common.Click when ready     ${selected_company_address_full}
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_company_address_full}
+    # common.Click when ready     //div[@id='companyAddress_full_list']/..//div[@title='ปากเกร็ด ปากเกร็ด นนทบุรี 11120']    
 
 Select Title Name Legal Entity
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_title_name_legal_entity}
     ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    ${result}=    Run Keyword And Ignore Error    common.Click when ready    ${selected_title_name}
+    common.Click when ready    ${selected_title_name}
 
 Input First Name Legal Entity
     [Arguments]    ${value}  
@@ -76,7 +77,7 @@ Select Title Name Individual
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_title_name_individual}
     ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    ${result}=    Run Keyword And Ignore Error    common.Click when ready    ${selected_title_name}
+    common.Click when ready    ${selected_title_name}
 
 Input First Name Individual
     [Arguments]    ${value}  
@@ -102,7 +103,7 @@ Input Address Full Individual
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_address_full_individual}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_address_full_individual}    {value}    ${select}
-    ${result}=    Run Keyword And Ignore Error    common.Click when ready     ${selected_company_address_full}
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready     ${selected_company_address_full}
 
 Input Mobile No Individual
     [Arguments]    ${value}  
