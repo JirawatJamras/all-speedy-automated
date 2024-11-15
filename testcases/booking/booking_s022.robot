@@ -245,7 +245,7 @@ Booking_S022
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
     # Defect083    Defect136
-    # Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
+    # b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
     # ...    ${EMPTY}
     # ...    ${Booking_S022['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S022    Verify Parcel Detail

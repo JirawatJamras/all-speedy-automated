@@ -138,13 +138,13 @@ DC_Operation_s026
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
     ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
     dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
@@ -156,12 +156,12 @@ DC_Operation_s026
     # ...    SPCD241000008174
     # ...    fee (0988797374)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
     # ...    51 ซม. ซอง A4    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}
-    ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_crossdock']}
-    ...    DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_destination']}
+    ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['crossdock_warehouse']}
+    ...    DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['destination_warehouse']}
     ...    รอปริ้นใบลาเบลติดหน้ากล่อง     # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_status']}
     ...    CP ALL    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['courier']}
     ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['pouch_number']}
     ...    18-10-2567 14:37:59
-    ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_source']}
+    ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
     ...    STORE (15888)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
     ...    0060    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['route']}

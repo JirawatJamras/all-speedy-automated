@@ -36,7 +36,7 @@ DC_Operation_S016
     # ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
     # ...    SPBD241100002305
@@ -46,7 +46,7 @@ DC_Operation_S016
     # ...    Flash  # ${DC_Operation_S016.parcel_detail_in_scan_in_tab['courier']}
     # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['pouch_number']}
     # ...    06-11-2567 14:28:56  # ${DC_Operation_S016.parcel_detail_in_scan_in_tab['receiving_date']}
-    # ...    DCBB  # ${DC_Operation_S016.parcel_detail_in_scan_in_tab['warehouse_source']}
+    # ...    DCBB  # ${DC_Operation_S016.parcel_detail_in_scan_in_tab['origin_warehouse']}
     # ...    HOME (11120)  # ${DC_Operation_S016.parcel_detail_in_scan_in_tab['send_parcel_to']}
     # dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination
     # ...    ${dc_operation.scan_in_title_label_detail['courier']}

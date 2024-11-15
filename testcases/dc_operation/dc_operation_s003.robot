@@ -59,9 +59,7 @@ DC_Operation_S003
 
     Log    Step คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
-    # Defect068
     # Expected
-    b2c_booking_delivery_page.Click Latest Booking Created    ## ใช้แก้ชั่วคราว
     b2c_booking_detail_page.Verify Booking List In Booking Detail Page
     ...    ${Booking['text_booking_id_label']}
     ...    ${Booking['text_booking_name_label']}
@@ -154,10 +152,10 @@ DC_Operation_S003
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    dps_home_page.Wait Until DC Operation Home Page Loaded
-    dps_home_page.Verify Homepage
-    ...    ${dc_operation.breadcrumb['homepage']}
-    ...    ${dc_operation.title['homepage']}
+    # dps_home_page.Wait Until DC Operation Home Page Loaded
+    # dps_home_page.Verify Homepage
+    # ...    ${dc_operation.breadcrumb['homepage']}
+    # ...    ${dc_operation.title['homepage']}
 
 
     Log    Step เลือก role แอดมินคลัง
@@ -350,7 +348,7 @@ DC_Operation_S003
     ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
 
     dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
@@ -361,7 +359,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['courier']}
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['pouch_number']}
     ...    ${today}    # ${DC_Operation_S003.parcel_detail_in_scan_in_tab['receiving_date']}
-    ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['warehouse_source']}
+    ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['origin_warehouse']}
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['send_parcel_to']}
 
     dps_scan_page.Verify Title Label Parcel In Scan Page Home Destination

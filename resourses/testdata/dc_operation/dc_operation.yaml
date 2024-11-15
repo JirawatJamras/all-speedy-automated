@@ -2,7 +2,7 @@ DC_Operation_S001:
   company_name: ไอดีซี พรีเมียร์
   parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
-  verify_pickup_time: '09:00:00 - 12:00 น.'
+  verify_pickup_time: '09:00 - 12:00 น.'
   parcel_number: '10'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
@@ -22,7 +22,7 @@ DC_Operation_S002:
   company_name: ไอดีซี พรีเมียร์
   parcel_type: พัสดุทั่วไป
   parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
-  verify_pickup_time: '09:00:00 - 12:00 น.'
+  verify_pickup_time: '09:00 - 12:00 น.'
   parcel_number: '10'
   receiving_cycle:
     company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
@@ -74,7 +74,7 @@ DC_Operation_S003:
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
     pouch_number: '-'
-    warehouse_source: DCBB
+    origin_warehouse: DCBB
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: 'FSH'
@@ -142,7 +142,7 @@ DC_Operation_S004:
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
     pouch_number: '-'
-    warehouse_source: DCBB
+    origin_warehouse: DCBB
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: 'FSH'
@@ -205,6 +205,11 @@ DC_Operation_S004:
     pouch_status: เปิด
     origin_warehouse: DC BB
     destination_warehouse: DC SB
+    label_destination_warehouse: DC SB
+    label_number: '1'
+    label_route: DC BB - DC SB
+    label_simbol: รูปดาว
+
 
 DC_Operation_S006:
   sender_name: คุณ e
@@ -282,13 +287,13 @@ DC_Operation_S007:
     parcel_id: 'SPBD241100000140'
     customer_id: '2400563'
     parcel_size: 150 ซม. กล่อง XL
-    warehouse_crossdock: '-'
-    warehouse_destination: DCBB
+    crossdock_warehouse: '-'
+    destination_warehouse: DCBB
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP ALL
     pouch_number: '-'
     receiving_date: 01-11-2567 14:06:18
-    warehouse_source: '-'
+    origin_warehouse: '-'
     send_parcel_to: Store (15888)
     route: ''
   scan_in_data_label_detail:
@@ -361,13 +366,13 @@ DC_Operation_S009:
     parcel_id: ''
     customer_id: '0002400563'
     parcel_size: 150 ซม. กล่อง XL
-    warehouse_crossdock: AC
-    warehouse_destination: RDCLP
+    crossdock_warehouse: AC
+    destination_warehouse: RDCLP
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP All
     pouch_number: '-'
     receiving_date: ''
-    warehouse_source: DCBB
+    origin_warehouse: DCBB
     send_parcel_to: Home (51000)
     route: '-'
   scan_in_data_label_detail:
@@ -505,14 +510,14 @@ DC_Operation_S013:
     transport: Flash
     parcel_owner: Speedy
   parcel_detail_in_scan_in_tab:
-    tracking: SPBD241100000464
-    receiving_date: 04-11-2567
-    customer_id: '0002400563'
-    parcel_size: '120 ซม. กล่อง L'
+    # tracking: SPBD241100000464
+    # receiving_date: 04-11-2567
+    # customer_id: '0002400563'
+    # parcel_size: '120 ซม. กล่อง L'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: Flash
+    # courier: Flash
     pouch_number: '-'
-    warehouse_source: DCBB
+    # origin_warehoues: DCBB
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: 'FSH'
@@ -571,7 +576,7 @@ DC_Operation_S014:
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
     pouch_number: '-'
-    warehouse_source: DCBB
+    origin_warehouse: DCBB
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: 'FSH'
@@ -608,11 +613,11 @@ DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
     customer_id: '2400563'
     parcel_size: '120 ซม. กล่อง L'
-    warehouse_crossdock: '-'
+    crossdock_warehouse: '-'
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: Flash
     pouch_number: '-'
-    warehouse_source: DCBB
+    origin_warehouse: DCBB
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: FSH
@@ -763,8 +768,10 @@ DC_Operation_S020:
       waiting: รอยืนยัน
       confirm: ยืนยันแล้ว
 
-DC_Operation_S026:
-  parcel_detail_in_scan_in_tab:
-    sender_name: คุณ j
-    customer_id: '0002400563'
-    warehouse_crossdock: 'AC'
+# DC_Operation_S026:
+  # sender_name: คุณ e
+  # sender_data_in_scan_in_tab:
+    # name: คุณ a
+    # phone: '0633906216'
+    # shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    # address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'

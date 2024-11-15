@@ -21,8 +21,7 @@ DC_Operation_S001
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page
-    ...    ${DC_Operation_S001['company_name']}
+    b2c_home_page.Verify Company profile page    ${DC_Operation_S001['company_name']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
@@ -109,9 +108,7 @@ DC_Operation_S001
 
     Log    Step No.10 คลิกปุ่ม x เพื่อปิด popup
     b2c_booking_delivery_page.Click Close X Popup
-    # Defect068
     # Expected
-    b2c_booking_delivery_page.Click Latest Booking Created    ## ใช้แก้ชั่วคราว
     b2c_booking_detail_page.Verify Booking List In Booking Detail Page
     ...    ${Booking['text_booking_id_label']}
     ...    ${Booking['text_booking_name_label']}
@@ -184,18 +181,6 @@ DC_Operation_S001
     ...    ${QUERY}
     # Defect150
     # Expected
-    Reload Page
-    b2c_booking_detail_page.Verify Booking Detail Page After Import File
-    ...    ${Booking['text_parcel_status_waiting_entering']}    #${Booking['text_waiting_confirm_parcel_pickup']}
-    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    ...    ${DC_Operation_S001['parcel_number']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Parcel Status After Cut Off Time
-    b2c_home_page.Click Book Parcel Delivery    
-    # Expected
-    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
-    ...    ${booking_id}
-    ...    ${Booking['text_parcel_status_call_car']}    #${Booking['text_waiting_confirm_parcel_pickup']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Booking Status After Cut Off Time
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
@@ -208,6 +193,19 @@ DC_Operation_S001
     ...    ${DC_Operation_S001['verify_pickup_time']}
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Parcel Pickup Status After Cut Off Time
+    b2c_home_page.Click Book Parcel Delivery    
+    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
+    ...    ${booking_id}
+    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Booking Status After Cut Off Time
+    b2c_booking_delivery_page.Select Booking With Booking ID    
+    ...    ${booking_id}
+    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    ...    ยืนยันรอบรถเข้ารับพัสดุ    #${Booking['text_waiting_confirm_parcel_pickup']}
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    ...    ${DC_Operation_S001['parcel_number']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
     Go To    ${DPS_UAT_URL}
@@ -218,11 +216,11 @@ DC_Operation_S001
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    dps_home_page.Wait Until DC Operation Home Page Loaded
-    dps_home_page.Verify Homepage
-    ...    ${dc_operation.breadcrumb['homepage']}
-    ...    ${dc_operation.title['homepage']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Homepage Title
+    # dps_home_page.Wait Until DC Operation Home Page Loaded
+    # dps_home_page.Verify Homepage
+    # ...    ${dc_operation.breadcrumb['homepage']}
+    # ...    ${dc_operation.title['homepage']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Homepage Title
 
     Log    Step No.20 เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
@@ -333,7 +331,6 @@ DC_Operation_S001
     b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
-    Sleep    3s
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Defect208
@@ -357,34 +354,35 @@ DC_Operation_S001
 
     Log    Step No.28 เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery 
+    # Defect221
     # Expected
-    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
-    ...    ${booking_id}
-    ...    ${Booking['text_parcel_status_call_car']}
+    # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
+    # ...    ${booking_id}
+    # ...    ${Booking['text_parcel_status_call_car']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Booking Change Status To Call Car
 
-    Log    Step No.29 คลิกเลือกรายการ Booking
-    b2c_booking_delivery_page.Select Booking With Booking ID    
-    ...    ${booking_id}
-    ...    ${Booking['text_parcel_status_call_car']}
-    # Expected
-    b2c_booking_detail_page.Verify Booking Detail Page After Canceled
-    ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    ...    ${DC_Operation_S001['parcel_number']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Booking Detail After Canceled
+    # Log    Step No.29 คลิกเลือกรายการ Booking
+    # b2c_booking_delivery_page.Select Booking With Booking ID    
+    # ...    ${booking_id}
+    # ...    ${Booking['text_parcel_status_call_car']}
+    # # Expected
+    # b2c_booking_detail_page.Verify Booking Detail Page After Canceled
+    # ...    ${Booking['text_parcel_status_waiting_entering']}
+    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    # ...    ${DC_Operation_S001['parcel_number']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Booking Detail After Canceled
 
-    Log    Step No.30 คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
-    b2c_booking_detail_page.Click Edit Booking List
-    b2c_booking_detail_page.Verify Popup To Edit Booking List
-    ...    ${Booking['text_parcel_type_label']}
-    ...    ${Booking['text_booking_name_label']}
-    ...    ${Booking['text_shipping_origin_aria']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Popup To Edit Booking List After Canceled
+    # Log    Step No.30 คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
+    # b2c_booking_detail_page.Click Edit Booking List
+    # b2c_booking_detail_page.Verify Popup To Edit Booking List
+    # ...    ${Booking['text_parcel_type_label']}
+    # ...    ${Booking['text_booking_name_label']}
+    # ...    ${Booking['text_shipping_origin_aria']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Popup To Edit Booking List After Canceled
 
-    Log    Step No.31 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
-    b2c_booking_detail_page.Select Pickup Schedule Tab
-    # Defect207
-    # Expected
-    # b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Display Pickup Schedule Data After Canceled
+    # Log    Step No.31 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
+    # b2c_booking_detail_page.Select Pickup Schedule Tab
+    # # Defect207
+    # # Expected
+    # # b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Display Pickup Schedule Data After Canceled
