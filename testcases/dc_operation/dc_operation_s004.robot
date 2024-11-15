@@ -15,7 +15,7 @@ DC_Operation_S004
     # ${ParcelsData}    Get Parcels And Sender Names    B2411000294
     # ${tracking_c}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${DC_Operation_S004['sender_name']}
     ${tracking_c}=    Set Variable    SPBD241100009760
-    ${pouch_number}=    Set Variable    P112475536
+    ${pouch_number}=    Set Variable    P112425013
 
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -261,7 +261,7 @@ DC_Operation_S004
     ...    ${DC_Operation_S004.data_in_pouch_list['crossdock_warehouse']}
     ...    ${DC_Operation_S004.data_in_pouch_list['destination_warehouse']}
     ...    ${DC_Operation_S004.data_in_pouch_list['status']}
-    ...    14-11-2567
+    ...    15-11-2567
     ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Pouch In Pouch Page
 
@@ -269,7 +269,7 @@ DC_Operation_S004
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
-    ...    ${dc_operation.label_pouch_in_pouch_detail['title']}
+    ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['crossdock_warehouse']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_status']}
@@ -286,7 +286,14 @@ DC_Operation_S004
     ...    ${DC_Operation_S004.data_in_pouch_detail['label_destination_warehouse']}
     ...    ${DC_Operation_S004.data_in_pouch_detail['label_number']}
     ...    ${DC_Operation_S004.data_in_pouch_detail['label_route']}
-    ...    ${DC_Operation_S004.data_in_pouch_detail['simbol']}
-    ...    
-    #
-    #
+    ...    ${DC_Operation_S004.data_in_pouch_detail['label_simbol']}
+    ...    ${pouch_number}
+    dps_pouch_page.Verify Parcel In Pouch List In Pouch Detail Popup
+    ...    ${dc_operation.label_pouch_in_pouch_detail['title_parcel_in_pouch_list']}
+    ...    SPBD241100010913    #${tracking_c}
+    ...    ${DC_Operation_S004.data_in_pouch_detail.data_in_table['destination_warehouse']}
+    ...    ${DC_Operation_S004.data_in_pouch_detail.data_in_table['pickup_place']}
+    ...    ${DC_Operation_S004.data_in_pouch_detail.data_in_table['type']}
+    ...    ${DC_Operation_S004.data_in_pouch_detail.data_in_table['parcel_status']}
+    ...    ${dc_operation['text_close_pouch_and_print_label']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Pouch Detail Popup

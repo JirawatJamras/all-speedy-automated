@@ -500,13 +500,15 @@ dc_operation:
     text_pouch_label: ใบ Label Pouch
     button_cancel: ยกเลิก
   label_pouch_in_pouch_detail:
-    title: รายละเอียด Pouch
+    title_detail_pouch: รายละเอียด Pouch
     pouch_number: หมายเลข POUCH
     crossdock_warehouse: คลัง Crossdock
     pouch_status: สถานะ Pouch
     parcel_amount: จำนวนพัสดุ
     origin_warehouse: คลังต้นทาง
     destination_warehouse: คลังปลายทาง
+    title_parcel_in_pouch_list: รายการพัสดุใน Pouch
+
 
 
 rm:

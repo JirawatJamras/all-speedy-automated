@@ -209,6 +209,11 @@ DC_Operation_S004:
     label_number: '1'
     label_route: DC BB - DC SB
     label_simbol: รูปดาว
+    data_in_table:
+      destination_warehouse: DC SB
+      pickup_place: 'null'
+      type: B2C
+      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
 
 
 DC_Operation_S006:
