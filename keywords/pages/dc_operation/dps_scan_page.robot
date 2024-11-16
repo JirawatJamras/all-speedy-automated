@@ -94,6 +94,11 @@ Input Tracking Number [Scan In Page]
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_in_page}
     common.Input When Ready    ${dps_txtbox_on_scan_in_page}    ${value}
 
+Input Pouch Number [Scan In Page]
+    [Arguments]    ${value}
+    Wait Until Element Is Enabled    ${dps_txtbox_on_scan_in_page}
+    common.Input When Ready    ${dps_txtbox_on_scan_in_page}    ${value} 
+
 Click Search Button [Scan In Page]
     ${dps_btn_search_scan_in_page}=    Replace String    ${dps_btn_search_scan_in_page}    {value}    ${dc_operation['text_search']}
     common.Click When Ready    ${dps_btn_search_scan_in_page}
@@ -402,18 +407,24 @@ Click Confirm Scan Out Button    # Scan Out
     ${dps_btn_confirm_scan_out_scan_out_page}=    Replace String    ${dps_btn_confirm_scan_out_scan_out_page}    {value}    ${dc_operation['text_confirm_scan_out']}
     common.Click When Ready    ${dps_btn_confirm_scan_out_scan_out_page}
 
-Verify Popup Confirm Scan Out 
-    ${txt_popup}=    Replace String    ${dps_txt_popup_scan_out}    {value}    ${dc_operation.scan_out_title['text_popup_comfirm']}
-    Element Should Be Visible    ${txt_popup}
+Verify Popup Confirm Scan Out
+    [Arguments]    ${txt_expected}
+    ${dps_txt_popup_scan_out}=    Replace String    ${dps_txt_popup_scan_out}    {value}    ${txt_expected}
+    Wait Until Element Is Visible    ${dps_txt_popup_scan_out}    timeout=10s
+    ${actual_txt}=    Get Text    ${dps_txt_popup_scan_out}
+    Sould Be Equal    ${actual_txt}    ${txt_expected}
 
 Click Confirm Button On Popup Asking To Scan Out    # Scan Out
     ${button_confirm}=    Replace String    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    {value}    ${dc_operation['text_confirm']}
     common.Click When Ready    ${button_confirm}
 
 Verify Popup Save Data Success
-    ${txt_popup}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
-    Wait Until Element Is Visible    ${txt_popup}    timeout=${DEFAULT_TIMEOUT}
-
+    [Arguments]    ${expected_txt}
+    ${dps_txt_save_data_success}=    Replace String    ${dps_txt_save_data_success}    {value}    ${expected_txt}
+    Wait Until Element Is Visible    ${dps_txt_save_data_success}    timeout=10s
+    ${actual_txt}=    Get Text    ${dps_txt_save_data_success}
+    Should Be Equal    ${actual_txt}    ${expected_txt}
+    
 Click Popup Save Data Success    # Scan Out
     ${dps_txt_save_data_success}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
     common.Click When Ready    ${dps_txt_save_data_success}

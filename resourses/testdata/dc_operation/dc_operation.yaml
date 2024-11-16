@@ -215,7 +215,63 @@ DC_Operation_S004:
       pickup_place: 'null'
       type: B2C
       parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-
+  timeline_in_history_parcel_after_scan_out:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
+  wait_derivery_data_list:
+    export_to: Store
+    transport: CP All
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_all_task_tab_after_delivery:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: คลัง DC BB
+    export_to: '-'
+    transport: CP All
+    parcel_size: ซอง A4
+    parcel_status: พัสดุออกจากคลังต้นทาง (DC BB)
+  data_in_import_task_tab_after_delivery:
+    import_from: คลัง DC BB
+    transport: CP All
+    parcel_owner: Speedy
+  timeline_in_history_parcel_after_scan_in_at_destination_warehouse:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
+    - title: พัสดุถึงคลังปลายทาง
+      description: ''
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC SB
+  data_in_send_task_tab:
+    send_to: Home
+    store_code: '-'
+    customer_type: 'B2C'
+    transport: CP All
 
 DC_Operation_S006:
   sender_name: คุณ e

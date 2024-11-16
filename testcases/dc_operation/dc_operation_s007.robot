@@ -248,11 +248,13 @@ DC_Operation_S007
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
     # dps_scan_page.Verify Popup Confirm Scan Out 
+    # ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
 
     Log    Step No.14 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
     # dps_scan_page.Verify Popup Save Data Success
+    # ...    ${dc_operation['text_save_success']}
 
     Log    Step No.15 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success
