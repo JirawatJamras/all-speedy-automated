@@ -4,9 +4,9 @@ Proceed Pouch By Pouch Number
     common.Click When Ready    //td[text()='${pouch_number}']/..//td[7]//img/..
 
 Click Print Pouch Label
+    ${dps_btn_print_pouch_label_pouch_detail_page}=    Replace String    ${dps_btn_print_pouch_label_pouch_detail_page}    {value}    ${dc_operation['text_close_pouch_and_print_label']}
     common.Scroll Into View By Xpath    ${dps_btn_print_pouch_label_pouch_detail_page}    true
     common.Click When Ready    ${dps_btn_print_pouch_label_pouch_detail_page}
-    Sleep    5s
 
 Verify Pouch In Pouch Page
     [Arguments]    ${pouch_number}    ${inventory_crossdock}    ${destination_inventory}
@@ -22,6 +22,7 @@ Verify Pouch In Pouch Page
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {destination_inventory}    ${destination_inventory}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {checked}    ${checked}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {update_date}    ${update_date}
+    Scroll Element Into View    ${dps_txt_pouch_in_pouch_list}
     Wait Until Element Is Visible    ${dps_txt_pouch_in_pouch_list}    timeout=5s
     ${actual_update_date}=    Get Text    ${dps_txt_pouch_in_pouch_list}//td[6]
     ${expected_update_date_format}    Convert Date    ${actual_update_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
@@ -90,29 +91,36 @@ Verify Label Section In Pouch Detail Popup
     Wait Until Element Is Visible    ${dps_txt_pouch_number_pouch_label}    timeout=10s
     Wait Until Element Is Visible    ${dps_img_qr_pouch_label}    timeout=10s
 
-Verify Parcel In Pouch List In Pouch Detail Popup
-    [Arguments]    ${expected_title}    ${parcel_number}    ${destination_warehouse}
-    ...    ${pickup_place}    ${type}    ${parcel_status}    
+Verify Label In Table On Pouch Detail Popup
+    [Arguments]    ${expected_title}    ${txt_pouch_number}    ${txt_destination_warehouse}
+    ...    ${txt_pickup_place}    ${txt_type}    ${txt_parcel_status}
     ...    ${btn_print_pouch}
-    # //div[@class='ant-modal-content']//tr[td[1]='${parcel_number}' and td[2]='${destination_warehouse}' and td[3]='${pickup_place}' and td[4]='${type}' and td//h1[text()='${parcel_status}']]
-    # //div[@class='ant-modal-content']//tr[td[1]='SPBD241100010913' and td[2]='DC SB' and td[3]='null' and td[4]='B2C' and td//h1[text()='รอปริ้นใบลาเบลติดหน้ากล่อง']]
-    common.Scroll Window To Vertical    500
+    # //tr[th='${txt_pouch_number}' and th='${txt_destination_warehouse}' and th='${txt_pickup_place}' and th='${txt_type}' and th='${txt_parcel_status}']
+    # //tr[th='หมายเลขพัสดุ' and th='คลังปลายทาง' and th='สถานที่รับพัสดุ' and th='ประเภท' and th='สถานะพัสดุ']
+    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pouch_number}    ${txt_pouch_number}
+    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_destination_warehouse}    ${txt_destination_warehouse}
+    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pickup_place}    ${txt_pickup_place}
+    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_type}    ${txt_type}
+    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_parcel_status}    ${txt_parcel_status}
     ${dps_txt_title_parcel_in_pouch_list_pouch_label}=    Replace String    ${dps_txt_title_parcel_in_pouch_list_pouch_label}    {value}    ${expected_title}
+    ${dps_btn_print_pouch_label_pouch_detail_page}=    Replace String    ${dps_btn_print_pouch_label_pouch_detail_page}    {value}    ${btn_print_pouch}
+    ${actual_title}=    Get Text    ${dps_txt_title_parcel_in_pouch_list_pouch_label}
+    ${actual_btn_print_pouch}=    Get Text    ${dps_btn_print_pouch_label_pouch_detail_page}
+    common.Scroll Into View By Xpath    ${dps_txt_title_parcel_in_pouch_list_pouch_label}    true
+    Wait Until Element Is Visible    ${dps_txt_th_parcel_in_table_poch_detail}    timeout=10s
+    Should Be Equal    ${actual_title}    ${expected_title}
+    Should Be Equal    ${actual_btn_print_pouch}    ${btn_print_pouch}
+
+Verify Data In Table On Pouch Detail Popup
+    [Arguments]    ${parcel_number}    ${destination_warehouse}    ${pickup_place}
+    ...    ${type}    ${parcel_status}    
+    common.Scroll Window To Vertical    500
     ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {parcel_number}    ${parcel_number}
     ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {destination_warehouse}    ${destination_warehouse}
     ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {pickup_place}    ${pickup_place}
     ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {type}    ${type}
     ${dps_txt_tr_parcel_in_table_pouch_detail}=    Replace String    ${dps_txt_tr_parcel_in_table_pouch_detail}    {parcel_status}    ${parcel_status}
-    ${dps_btn_print_pouch_label_pouch_detail_page}=    Replace String    ${dps_btn_print_pouch_label_pouch_detail_page}    {value}    ${btn_print_pouch}
-    common.Scroll Into View By Xpath    ${dps_txt_title_parcel_in_pouch_list_pouch_label}    true
-    ${actual_title}=    Get Text    ${dps_txt_title_parcel_in_pouch_list_pouch_label}
-    ${actual_btn_print_pouch}=    Get Text    ${dps_btn_print_pouch_label_pouch_detail_page}
-    Should Be Equal    ${actual_title}    ${expected_title}
     Wait Until Element Is Visible    ${dps_txt_tr_parcel_in_table_pouch_detail}
-    Should Be Equal    ${actual_btn_print_pouch}    ${btn_print_pouch}
-
-
-
 
 Click Dropdown Select Warehouse List
     [Arguments]    ${selected_warehouse}
@@ -128,25 +136,25 @@ Verify Navigate To Pouch Page Success
     Wait Until Element Is Visible    ${dps_txt_title_pouch_pouch_page}    timeout=${DEFAULT_TIMEOUT}
 
 Check Open Pouch And Close Pouch By Destination Inventory
-    [Arguments]    ${destination_inventory}    ${testcase_name}
+    [Arguments]    ${destination_inventory}    ${txt_warning}    ${txt_transaction_complete}    ${testcase_name}
     Filter Data By Destination Inventory [Pouch Page]    ${destination_inventory}
     ${count}=    Get Element Count    //td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true']
     IF  '${count}' != '0'
         FOR    ${index}    IN RANGE    1    ${count}+1
-            Log    Step No.4 ปิด Pouch ที่มีปลายทางเป็น ${destination_inventory} (ทำทีละรายการจนหมด)
+            Log    Step No.2 ปิด Pouch ที่มีปลายทางเป็น ${destination_inventory} (ทำทีละรายการจนหมด)
             Click On/OFF Button Of Pouch List    ${destination_inventory}
             # Expected
-            Verify Warning Confirm To Close Pouch
+            Verify Warning Confirm To Close Pouch    ${txt_warning}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Warning Confirm To Close Pouch On Checking Pouch Step
-            Log    Step No.5 คลิกปุ่ม ปิด Pouch/Print Label
+            Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Btton On Warning Popup
-            Log    Step No.6 คลิกปุ่มพิมพ์
+            Log    Step No.4 คลิกปุ่มพิมพ์
             Sleep    5s
             Click ESC On Keyboard
             # Expected
-            Verify Transaction Complete Popup
+            Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
-            Log    Step No.7 กดปุ่ม x
+            Log    Step No.5 คลิกที่ x Pop up
             CLick Close Button
             # Expected
             Verify Transaction Complete Popup Was Closed
@@ -155,15 +163,15 @@ Check Open Pouch And Close Pouch By Destination Inventory
     END
 
 Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
-    [Arguments]    ${destination_inventory}    ${testcase_name}
+    [Arguments]    ${destination_inventory}    ${txt_warning}    ${txt_transaction_complete}    ${testcase_name}
     Filter Data By Destination Inventory [Pouch Page]    ${destination_inventory}
     ${count}=    Get Element Count    //td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true']
     IF  '${count}' != '0'
         FOR    ${index}    IN RANGE    1    ${count}+1
-            Log    Step No.2 ปิด Pouch ที่มีปลายทางเป็น RDC LP (ทำทีละรายการจนหมด)
+            Log    Step No.2 ปิด Pouch ที่มีปลายทางเป็น ${destination_inventory} (ทำทีละรายการจนหมด)
             Click On/OFF Button Of Pouch List    ${destination_inventory}
             # Expected
-            Verify Warning Confirm To Close Pouch
+            Verify Warning Confirm To Close Pouch    ${txt_warning}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Warning Confirm To Close Pouch On Checking Pouch Step
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Btton On Warning Popup
@@ -171,7 +179,7 @@ Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
             Sleep    5s
             Click ESC On Keyboard
             # Expected
-            Verify Transaction Complete Popup
+            Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
             Log    Step No.5 คลิกที่ x Pop up
             CLick Close Button
@@ -187,16 +195,22 @@ Click On/OFF Button Of Pouch List
     common.Click When Ready    (//td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true'])[1]
 
 Verify Warning Confirm To Close Pouch
-    ${dps_txt_warning_confirm_to_close_pouch}=    Replace String    ${dps_txt_warning_confirm_to_close_pouch}    {value}    ${dc_operation['text_warning_confirm_to_close_pouch']}
+    [Arguments]    ${expected}
+    ${dps_txt_warning_confirm_to_close_pouch}=    Replace String    ${dps_txt_warning_confirm_to_close_pouch}    {value}    ${expected}
     Wait Until Element Is Visible    ${dps_txt_warning_confirm_to_close_pouch}    timeout=10s
+    ${actual_text}=    Get Text   ${dps_txt_warning_confirm_to_close_pouch} 
+    Should Be Equal   ${actual_text}    ${expected}
 
 Click Close Pouch/Print Label Btton On Warning Popup
     ${dps_btn_close_pouch_and_print_label_on_warning_popup}=    Replace String    ${dps_btn_close_pouch_and_print_label_on_warning_popup}    {value}    ${dc_operation['text_close_pouch_and_print_label']}
     common.Click When Ready    ${dps_btn_close_pouch_and_print_label_on_warning_popup}
 
 Verify Transaction Complete Popup
-    ${dps_txt_transaction_complete_popup}=    Replace String    ${dps_txt_transaction_complete_popup}    {value}    ${dc_operation['text_transaction_complete']}
-    Wait Until Element Is Visible    ${dps_txt_transaction_complete_popup}    timeout=${DEFAULT_TIMEOUT}
+    [Arguments]    ${expected}
+    ${dps_txt_transaction_complete_popup}=    Replace String    ${dps_txt_transaction_complete_popup}    {value}    ${expected}
+    Wait Until Element Is Visible    ${dps_txt_transaction_complete_popup}    timeout=10s
+    ${actual_text}=    Get Text    ${dps_txt_transaction_complete_popup} 
+    Should Be Equal    ${actual_text}    ${expected}
 
 CLick Close Button
     common.Click When Ready    ${dps_btn_close_x_button_on_popup}

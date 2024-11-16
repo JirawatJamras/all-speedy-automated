@@ -199,7 +199,8 @@ DC_Operation_S004:
   data_in_pouch_list:
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
-    status: 'On'
+    status_on: 'On'
+    status_off: 'Off'
   data_in_pouch_detail:
     crossdock_warehouse: '-'
     pouch_status: เปิด

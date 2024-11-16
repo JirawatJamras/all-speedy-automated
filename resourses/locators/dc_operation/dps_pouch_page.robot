@@ -22,6 +22,7 @@ ${dps_txt_route_in_pouch_label}    //div[@class='print-section ']/div/div/div[3]
 ${dps_txt_pouch_number_pouch_label}    //div[@class='print-section ']//div[@id='barcodePouch']
 ${dps_txt_title_parcel_in_pouch_list_pouch_label}    //h1[text()='{value}']
 ${dps_txt_tr_parcel_in_table_pouch_detail}    //div[@class='ant-modal-content']//tr[td[1]='{parcel_number}' and td[2]='{destination_warehouse}' and td[3]='{pickup_place}' and td[4]='{type}' and td//h1[text()='{parcel_status}']]
+${dps_txt_th_parcel_in_table_poch_detail}    //tr[th='{txt_pouch_number}' and th='{txt_destination_warehouse}' and th='{txt_pickup_place}' and th='{txt_type}' and th='{txt_parcel_status}']
 
 ${dps_cbo_destination_inventory_in_filter}    //input[@id='destDc']/../..
 

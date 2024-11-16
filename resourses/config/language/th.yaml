@@ -508,7 +508,12 @@ dc_operation:
     origin_warehouse: คลังต้นทาง
     destination_warehouse: คลังปลายทาง
     title_parcel_in_pouch_list: รายการพัสดุใน Pouch
-
+    table_header_in_pouch_detail:
+      pouch_number: หมายเลขพัสดุ
+      destination_warehouse: คลังปลายทาง
+      pickup_place: สถานที่รับพัสดุ
+      type: ประเภท
+      parcel_status: สถานะพัสดุ
 
 
 rm:
