@@ -201,6 +201,13 @@ DC_Operation_s026
 
     Log    Step No.2 คลิกปุ่ม "สร้าง" บริเวณกล่อง Pouch
     dps_scan_page.Click Create Pouch Button
-    Sleep    2s
-    # dps_scan_page.Verify Create Pounch Popup
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Create Pounch Popup
+    # Defect227  ขาด pouch number ยังไม่ได้เขียน verify
+    dps_scan_page.Verify Create Pouch Popup
+    ...    DC BB  #${DC_Operation_S026.scan_in_data_parcel_detail['origin_warehouse']}
+    ...    RDC LP  #${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Create Pouch Popup
+    dps_scan_page.Click Confirm Button To Create Pouch
+    dps_scan_page.Verify Pouch Detail In Scan Page
+    ...    P  #${pouch_number}
+    ...    ${dc_operation.label_pouch_detail['default_number_of_parcel']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail In Scan Page

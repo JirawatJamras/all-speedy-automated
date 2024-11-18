@@ -146,10 +146,38 @@ Select Destination Warehouse In Dropdown In Scan Page
     common.Click When Ready    ${dps_cbo_destination_warehouse}
 
 Click Create Pouch Button
-    ${btn_create_pounch}=    Replace String    ${dps_btn_create_pounch}    {value}    ${dc_operation['button_create_pounch']}
-    common.Click When Ready    ${btn_create_pounch}
+    ${btn_create_pouch}=    Replace String    ${dps_btn_create_pouch}    {value}    ${dc_operation['button_create_pouch']}
+    common.Click When Ready    ${btn_create_pouch}
 
-# Verify Create Pounch Popup
+Verify Create Pouch Popup
+    [Arguments]    ${origin_warehouse}    ${destination_warehouse}
+    ${label_create_pouch}=    Replace String    ${dps_txt_popup_create_pouch}    {value}    ${dc_operation.label_pouch_detail['text_create_pouch']}
+    ${label_origin_warehouse}=    Replace String    ${dps_txt_popup_create_pouch_detail}    {value}    ${dc_operation.label_pouch_detail['origin_warehouse']}
+    ${value_origin_warehouse}=    Replace String    ${dps_txt_popup_create_pouch_detail}    {value}    ${origin_warehouse}
+    ${label_destination_warehouse}=    Replace String    ${dps_txt_popup_create_pouch_detail}    {value}    ${dc_operation.label_pouch_detail['destination_warehouse']}
+    ${value_destination_warehouse}=    Replace String    ${dps_txt_popup_create_pouch_detail}    {value}    ${destination_warehouse}
+    Wait Until Element Is Visible    ${label_create_pouch}    timeout=10s
+    Wait Until Element Is Visible    ${label_origin_warehouse}    timeout=10s
+    Wait Until Element Is Visible    ${value_origin_warehouse}    timeout=10s
+    Wait Until Element Is Visible    ${label_destination_warehouse}    timeout=10s
+    Wait Until Element Is Visible    ${value_destination_warehouse}    timeout=10s
+    Wait Until Element Is Visible    ${dps_cbo_destination_warehouse_in_create_pouch_popup}
+
+# Get Pouch Number In Scan Page
+
+Click Confirm Button To Create Pouch
+    common.Click When Ready    ${dps_btn_confirm_create_pouch}
+
+Verify Pouch Detail In Scan Page
+    [Arguments]    ${pouch_number}    ${number_of_parcel}
+    ${label_pouch}=    Replace String    ${dps_txt_pouch_detail}    {value}    ${dc_operation.label_pouch_detail['label_pouch']}
+    ${label_pouch_number}=    Replace String    ${label_pouch}    {pouch_number}    ${pouch_number}
+    ${text_pouch_number}=    Replace String    ${dps_txt_number_of_parcel_in_pouch}    {pouch_number}    ${pouch_number}
+    ${text_number_of_parcel}=    Replace String    ${text_pouch_number}    {value}    ${number_of_parcel}
+    Wait Until Element Is Visible    ${label_pouch_number}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${text_number_of_parcel}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${text_number_of_parcel}
+
 
 #################################### Other Courier ####################################
 

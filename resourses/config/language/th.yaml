@@ -397,7 +397,7 @@ dc_operation:
     number_of_scanned_items: รวมรายการที่ต้องการสแกน
   button_filter: ตัวกรอง
   button_search: ค้นหา
-  button_create_pounch: สร้าง Pouch
+  button_create_pouch: สร้าง Pouch
   scan_in_title_parcel_detail: 
     title: รายละเอียดพัสดุ
     parcel_id: หมายเลขพัสดุ
@@ -520,6 +520,14 @@ dc_operation:
       pickup_place: สถานที่รับพัสดุ
       type: ประเภท
       parcel_status: สถานะพัสดุ
+  label_pouch_detail:
+    label_pouch: POUCH
+    text_create_pouch: สร้าง Pouch
+    pouch_number: 'Pouch Number :'
+    origin_warehouse: 'คลังต้นทาง :'
+    destination_warehouse: คลังปลายทาง
+    default_number_of_parcel: '0'
+
 
 
 rm:
