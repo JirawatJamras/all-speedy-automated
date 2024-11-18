@@ -131,8 +131,10 @@ Delete API Booking By Booking ID
 Get Parcels And Sender Names
     [Documentation]    Retrieve parcels' codes and sender's names from the API response
     [Arguments]    ${booking_id}
-    Create Session    api_session    https://cps-api-uat.allspeedy.co.th/v1/bookings/${booking_id}
-    ${response} =    GET On Session    api_session    /
+    ${access_token}=    Get Access Token
+    &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
+    Create Session    api_session    https://cps-api-uat.allspeedy.co.th/v1
+    ${response} =    GET On Session    api_session    /bookings/${booking_id}    headers=${headers}
     ${status_code} =    Convert To Integer    ${response.status_code}
     Should Be Equal As Integers    ${status_code}    200    API request failed
     ${json_response} =    Convert String To Json    ${response.content}
