@@ -484,6 +484,7 @@ DC_Operation_S003
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     ${update_date}    Set Date Pattern    ${today}
+    # Defect 191
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
@@ -504,6 +505,7 @@ DC_Operation_S003
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_a}
     dps_scan_page.Click Search Button [Scan Out Page]
+
     # Expected
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
@@ -515,13 +517,13 @@ DC_Operation_S003
     ...    ${dc_operation.scan_out_title['date']}
     ...    ${dc_operation.scan_out_title['parcel_status']}
     dps_scan_page.Verify Value List Scan Out 
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['pouch_number']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['tracking']}
-    ...    คลัง DC BB    # ${DC_Operation_S013.scan_out_waiting_scan['receive_parcel_from']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['transport']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_owner']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_size']}
-    ...    2024-11-15    # ${today}
+    ...    ${DC_Operation_S003.scan_out_waiting_scan['pouch_number']}
+    ...    ${DC_Operation_S003.scan_out_waiting_scan['tracking']}
+    ...    คลัง DC BB    # ${DC_Operation_S003.scan_out_waiting_scan['receive_parcel_from']}
+    ...    ${DC_Operation_S003.scan_out_waiting_scan['transport']}
+    ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_owner']}
+    ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_size']}
+    ...    ${today}        # Defect 191 edit in keyword hh:mm
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
     
 
@@ -537,26 +539,28 @@ DC_Operation_S003
     dps_scan_page.Verify Popup Save Data Success
     ...    ${dc_operation['text_save_success']}
 
-
     Log    Step No.15 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success 
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
 
 
-    Log    Step No.16
+    Log    Step No.16 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
+    # Expected
+    dps_history_parcel_page.Verify History Parcel Page    ${dc_operation.title['history_parcel']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify History Parcel Page 2
+
+    Log    Step No.17 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
 
 
-    Log    Step No.17
+    Log    Step No.18 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
 
 
-    Log    Step No.18
+    Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
 
 
-    Log    Step No.19
-
-
-    Log    Step No.20
+    Log    Step No.20 กดปุ่ม พิมพ์
 
 
 

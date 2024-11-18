@@ -297,6 +297,8 @@ DC_Operation_S013
     Log    Step No.28 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_number}
     dps_scan_page.Click Search Button [Scan Out Page]
+    ${today}    Set Today
+    # Defect 191
     # Expected
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
@@ -314,7 +316,7 @@ DC_Operation_S013
     ...    ${DC_Operation_S013.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_owner']}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_size']}
-    ...    2024-11-14    #${DC_Operation_S013.scan_out_waiting_scan['update_date']}
+    ...    ${today}
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Value List Scan Out 
 
