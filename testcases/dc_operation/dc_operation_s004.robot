@@ -155,17 +155,17 @@ DC_Operation_S004
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Sender Data In Scan In
 
     # Log    Step No.10 คลิกปุ่ม ยืนยัน/Print Label
-    # dps_parcel_detail_page.Click Print Label
+    # dps_sacn_page.Click Print Label
 
     # Log    Step No.11 คลิกปุ่มพิมพ์
     # common.Click ESC On Keyboard
     # # Expected
-    # dps_parcel_detail_page.Verify Print Label Success Popup
+    # dps_sacn_page.Verify Print Label Success Popup
     # ...    ${dc_operation['text_print_label_success']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Print Label Success Popup
 
     # Log    Step No.12 คลิกที่ x Pop up
-    # dps_parcel_detail_page.Click Close Print Label Success Popup
+    # dps_sacn_page.Click Close Print Label Success Popup
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Navigate To Scan Page And Stay At Scan In Tab
@@ -633,15 +633,15 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Parcel Detail Page At Destination Warehouse
     
     Log    Step No.44 คลิกปุ่ม ยืนยัน Scan in
-    dps_parcel_detail_page.Click Print Label
+    dps_sacn_page.Click Print Label
     # Expected
     dps_parcel_detail_page.Click ESC On Keyboard
-    dps_parcel_detail_page.Verify Print Label Success Popup
+    dps_sacn_page.Verify Print Label Success Popup
     ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Print Label Success Popup At Destination Warehouse
 
     Log    Step No.45 คลิกที่ Pop up
-    dps_parcel_detail_page.Click Close Print Label Success Popup
+    dps_sacn_page.Click Close Print Label Success Popup
     # Expected 
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Navigate To Scan Page And Stay At Scan In Tab At Destination Warehouse

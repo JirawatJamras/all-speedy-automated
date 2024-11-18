@@ -138,7 +138,7 @@ DC_Operation_S007
     # ...    15888 CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['address']}
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
-    dps_parcel_detail_page.Click Print Label
+    dps_sacn_page.Click Print Label
     ## Sleep    10s
 
     Log    Step No.5 คลิกปุ่มพิมพ์
@@ -146,13 +146,13 @@ DC_Operation_S007
     common.Click ESC On Keyboard
     # Defect142
     # Expected
-    dps_parcel_detail_page.Verify Print Label Success Popup
+    dps_sacn_page.Verify Print Label Success Popup
     ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
     ##common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Print Label Success Popup
 
     Log    Step No.6 คลิกที่ x Pop up
     # Defect145    Unable to click on popup, but anable to click on close button (X) to close popup.
-    dps_parcel_detail_page.Click Close Print Label Success Popup
+    dps_sacn_page.Click Close Print Label Success Popup
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     ##common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Navigate To Scan Page And Stay At Scan In Tab
@@ -444,14 +444,14 @@ DC_Operation_S007
     Sleep    10s
 
     Log    Step No.24 คลิกปุ่ม ยืนยัน Scan in
-    dps_parcel_detail_page.Click Accept Scan In
+    dps_sacn_page.Click Accept Scan In
     # Defect222
     # Expected
-    dps_parcel_detail_page.Verify Accept Scan In Success Popup
+    dps_sacn_page.Verify Accept Scan In Success Popup
     ...    ยืนยันรับเข้าพัสดุ เรียบร้อยแล้ว    # Expected is: ${dc_operation['text_accept_scan_in_success']}
 
     Log    Step No.25 คลิกที่ี Pop up
-    dps_parcel_detail_page.Click Close Print Label Success Popup
+    dps_sacn_page.Click Close Print Label Success Popup
     # Expected 
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
 

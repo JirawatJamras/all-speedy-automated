@@ -100,19 +100,19 @@ DC_Operation_S006
 
 
     # Log    Step No.5 คลิกปุ่ม ยืนยัน/Print Label
-    # dps_parcel_detail_page.Click Print Label
+    # dps_sacn_page.Click Print Label
     
     # Log    Step No.6 คลิกปุ่มพิมพ์
     # # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     # common.Click ESC On Keyboard
     # # Defect142
     # # Expected
-    # dps_parcel_detail_page.Verify Print Label Success Popup
+    # dps_sacn_page.Verify Print Label Success Popup
     # ...    ${dc_operation['text_print_label_success']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Print Label Success Popup
 
     # Log    Step No.7 คลิกที่ x Pop up
-    # dps_parcel_detail_page.Click Close Print Label Success Popup
+    # dps_sacn_page.Click Close Print Label Success Popup
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Navigate To Scan Page And Stay At Scan In Tab

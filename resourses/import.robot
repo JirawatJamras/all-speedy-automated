@@ -62,7 +62,6 @@ Resource                    ../keywords/pages/dc_operation/dps_login_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_home_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_check_receiving_cycle_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_scan_page.robot
-Resource                    ../keywords/pages/dc_operation/dps_parcel_detail_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_pouch_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_history_parcel_page.robot
 Resource                    ../keywords/pages/dc_operation/dps_wait_delivery.robot
@@ -72,7 +71,6 @@ Resource                    locators/dc_operation/dps_login_page.robot
 Resource                    locators/dc_operation/dps_home_page.robot
 Resource                    locators/dc_operation/dps_check_receiving_cycle_page.robot
 Resource                    locators/dc_operation/dps_scan_page.robot
-Resource                    locators/dc_operation/dps_parcel_detail_page.robot
 Resource                    locators/dc_operation/dps_pouch_page.robot
 Resource                    locators/dc_operation/dps_history_parcel_page.robot
 Resource                    locators/dc_operation/dps_wait_delivery.robot
