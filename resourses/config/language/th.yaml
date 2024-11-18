@@ -317,6 +317,8 @@ dc_operation:
   text_print: พิมพ์
   text_print_label: ยืนยัน/Print Label
   text_print_label_success: ทำรายการสำเร็จ
+  text_accept_scan_in: ยืนยัน Scan In
+  text_accept_scan_in_success: ยืนยันรับเข้าพัสดุเรียบร้อยแล้ว
   text_confirm_scan_out: ยืนยัน Scan Out
   text_confirm: ยืนยัน
   text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
@@ -348,6 +350,8 @@ dc_operation:
     text_warehouse_DC_BB: คลัง DC BB
     text_warehouse_DC_SB: คลัง DC SB
     text_warehouse_DC_MC: คลัง DC MC
+    text_warehouse_RDC_LP: คลัง RDC LP
+    text_warehouse_AC: AC
   tab_daily_task:
     all_task: งานทั้งหมด
     import_task: งานรับเข้า

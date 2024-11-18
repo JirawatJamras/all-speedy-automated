@@ -5,7 +5,7 @@ Verify History Parcel Page
     Wait Until Element Is Visible    ${dps_txt_title_history_parcel}    timeout=${DEFAULT_TIMEOUT}
     ${actual_txt_title_history_parcel}=    Get Text    ${dps_txt_title_history_parcel}
     Should Be Equal    ${actual_txt_title_history_parcel}    ${title_history_parcel}
-    Element Should Be Visible    ${dps_tbl_history_parcel_history_parcel_page}
+    Wait Until Element Is Visible    ${dps_tbl_history_parcel_history_parcel_page}    timeout=${DEFAULT_TIMEOUT}
 
 Check Date And Time Format In Timeline
     [Arguments]    ${date}

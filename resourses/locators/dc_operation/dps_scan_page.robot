@@ -1,6 +1,6 @@
 *** Variables ***
-${dps_txtbox_on_scan_in_page}    (//input[@placeholder='Search...'])[1]
-${dps_txtbox_on_scan_out_page}    (//input[@placeholder='Search...'])[2]
+${dps_txtbox_on_scan_in_page}    (//input)[1]
+${dps_txtbox_on_scan_out_page}    (//input)[2]
 ${dps_txtbox_parcel_code_scan_out_page}    //input[@id='parcelCodee']
 
 ${dps_btn_search_scan_in_page}    //span[text()='{value}']/../..//button
