@@ -148,7 +148,7 @@ DC_Operation_S012
     # dps_scan_page.Click Print Label
 
     Log    Step No.5 คลิกปุ่มพิมพ์
-    # dps_parcel_detail_page.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     # # Expected
     # dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Print Label Success Popup

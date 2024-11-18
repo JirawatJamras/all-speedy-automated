@@ -632,7 +632,7 @@ DC_Operation_S004
     Log    Step No.44 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Print Label
     # Expected
-    dps_scan_page.Click ESC On Keyboard
+    common.Click ESC On Keyboard
     dps_scan_page.Verify Print Label Success Popup
     ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Print Label Success Popup At Destination Warehouse

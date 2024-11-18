@@ -408,7 +408,7 @@ DC_Operation_S003
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # dps_parcel_detail_page.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
