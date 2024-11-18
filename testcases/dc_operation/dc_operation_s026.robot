@@ -158,7 +158,7 @@ DC_Operation_s026
     ...    ${today}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['send_parcel_to']}
-    dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
+    dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['store']}
     ...    ${dc_operation.scan_in_title_label_detail['customer']}
@@ -173,3 +173,34 @@ DC_Operation_s026
     ...    DC BB - AC RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Parcel Details In Scan Page
+    dps_scan_page.Verify Title Sender In Scan Page
+    ...    ${dc_operation.scan_in_title_sender_detail['title']}
+    ...    ${dc_operation.scan_in_title_sender_detail['name']}
+    ...    ${dc_operation.scan_in_title_sender_detail['phone']}
+    ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
+    ...    ${dc_operation.scan_in_title_sender_detail['address']}
+    # Defect155
+    dps_scan_page.Verify Data Sender In Scan Page
+    ...    ${DC_Operation_S026['sender_name']}
+    ...    ${DC_Operation_S026.sender_data_in_scan_in_tab['phone']}
+    ...    -  ##${DC_Operation_S026.sender_data_in_scan_in_tab['shipping_origin']}
+    ...    ${DC_Operation_S026.sender_data_in_scan_in_tab['address']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Sender Details In Scan Page
+    dps_scan_page.Verify Title Receiver In Scan Page
+    ...    ${dc_operation.scan_in_title_receiver_detail['title']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['name']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
+    ...    ${dc_operation.scan_in_title_receiver_detail['address']}
+    dps_scan_page.Verify Data Recevier In Scan Page
+    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['name']}
+    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['phone']}
+    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['shipping_destination']}
+    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['address']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Recevier Details In Scan Page
+
+    Log    Step No.2 คลิกปุ่ม "สร้าง" บริเวณกล่อง Pouch
+    dps_scan_page.Click Create Pouch Button
+    Sleep    2s
+    # dps_scan_page.Verify Create Pounch Popup
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Create Pounch Popup

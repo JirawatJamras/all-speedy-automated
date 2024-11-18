@@ -397,6 +397,7 @@ dc_operation:
     number_of_scanned_items: รวมรายการที่ต้องการสแกน
   button_filter: ตัวกรอง
   button_search: ค้นหา
+  button_create_pounch: สร้าง Pouch
   scan_in_title_parcel_detail: 
     title: รายละเอียดพัสดุ
     parcel_id: หมายเลขพัสดุ

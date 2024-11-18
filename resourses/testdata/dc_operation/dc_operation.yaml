@@ -9,10 +9,10 @@ DC_Operation_S001:
     car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
     company_address: 44 หมู่ 3
-    sub_district: บางเขน  #ปากเกร็ด
-    district: เมืองนนทบุรี  #ปากเกร็ด
+    sub_district: บางเขน
+    district: เมืองนนทบุรี
     province: นนทบุรี
-    postcode: '11000'  #'11120'
+    postcode: '11000'
     number_of_parcel: '10'
     branch: สาขาหลัก
     receiving_time: '09:00'
@@ -859,3 +859,13 @@ DC_Operation_S026:
     pouch_number: '-'
     wh: DCBB - AC - RDCLP
     symbol: รูปนาฬิกาทราย
+  sender_data_in_scan_in_tab:
+    name: คุณ j
+    phone: '0959494989'
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    phone: '0900987354'
+    shipping_destination: ร้าน สาขา เวียงป่าเป้า (01015)
+    address: 'เวียง เวียงป่าเป้า เชียงราย 57170'

@@ -12,6 +12,7 @@ Verify Title Sender In Scan Page
     ${actual_txt_label_sender_phone_in_scan_in}=    Get Text    ${dps_txt_label_sender_phone_in_scan_in}
     ${actual_txt_label_shipping_origin_in_scan_in}=    Get Text    ${dps_txt_label_shipping_origin_in_scan_in}
     ${actual_txt_label_sender_address_in_scan_in}=    Get Text    ${dps_txt_label_sender_address_in_scan_in}
+    
     Should Be Equal    ${actual_txt_label_sender_title_in_scan_in}    ${sender_title}
     Should Be Equal    ${actual_txt_label_sender_name_in_scan_in}    ${sender_name}
     Should Be Equal    ${actual_txt_label_sender_phone_in_scan_in}    ${sender_phone}
@@ -73,6 +74,7 @@ Verify Data Recevier In Scan Page
     Should Be Equal    ${actual_txt_value_receiver_phone_in_scan_in}    ${receiver_phone}
     Should Be Equal    ${actual_txt_value_shipping_destination_in_scan_in}    ${shipping_destination}
     Should Be Equal    ${actual_txt_value_receiver_address_in_scan_in}    ${receiver_address}
+    Scroll Element Into View    ${dps_txt_value_receiver_address_in_scan_in}
 
 Select Move Status Tab
     Select Tab In Scan Page    ${dc_operation.tab_scan['move_status']}
@@ -142,6 +144,12 @@ Select Destination Warehouse In Dropdown In Scan Page
     [Arguments]    ${warehouse}
     ${dps_cbo_destination_warehouse}=    Replace String    ${dps_cbo_destination_warehouse_in_scan_page}    {value}    ${warehouse}
     common.Click When Ready    ${dps_cbo_destination_warehouse}
+
+Click Create Pouch Button
+    ${btn_create_pounch}=    Replace String    ${dps_btn_create_pounch}    {value}    ${dc_operation['button_create_pounch']}
+    common.Click When Ready    ${btn_create_pounch}
+
+# Verify Create Pounch Popup
 
 #################################### Home Destination ####################################
 
