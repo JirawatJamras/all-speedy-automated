@@ -230,6 +230,7 @@ DC_Operation_S004:
       description: DC SB
     - title: พัสดุออกจากคลังต้นทาง
       description: DC BB
+      
   wait_derivery_data_list:
     export_to: Store
     transport: CP All

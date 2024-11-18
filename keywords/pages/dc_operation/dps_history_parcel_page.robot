@@ -51,9 +51,10 @@ Compare Time And Title In Timeline
     Should Be Equal    ${actual_description}    ${step_description}
 
 Verify Timeline
-    [Arguments]    ${timelines}
+    [Arguments]    ${timelines}    ${index}
     ${count_timeline}=    Get Length    ${timelines}
-        FOR    ${timeline}    IN    @{timelines}
+        FOR    ${i}    IN RANGE    ${index}
+        ${timeline}    Get From List    ${timelines}    ${i}
         ${title}=    Get From Dictionary    ${timeline}    title
         ${description}=    Get From Dictionary    ${timeline}    description
         Compare Time And Title In Timeline    ${title}    ${description}    ${count_timeline}

@@ -435,7 +435,7 @@ DC_Operation_S003
     Switch Window    NEW
     # Defect201    Defect202    Defect206
     # Expected
-    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S003['timeline_in_history_parcel']}
+    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S003['timeline_in_history_parcel']}    4    # 5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Timeline
     
 
@@ -443,6 +443,7 @@ DC_Operation_S003
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     dps_home_page.Select Tab All Task
+    # Defect187
     # Expected
     # dps_home_page.Verify Homepage
     # ...    ${dc_operation.breadcrumb['homepage']}
@@ -464,7 +465,7 @@ DC_Operation_S003
 
     Log    Step No.10 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
-    # Defect
+    # Defect 189
     # Expected
     # dps_home_page.Verify Label In Export Task Tab
     # ...    ${dc_operation.label_export_task_tab['export_to']}
@@ -518,7 +519,7 @@ DC_Operation_S003
     ...    ${dc_operation.scan_out_title['parcel_status']}
     dps_scan_page.Verify Value List Scan Out 
     ...    ${DC_Operation_S003.scan_out_waiting_scan['pouch_number']}
-    ...    ${DC_Operation_S003.scan_out_waiting_scan['tracking']}
+    ...    ${tracking_a}
     ...    คลัง DC BB    # ${DC_Operation_S003.scan_out_waiting_scan['receive_parcel_from']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_owner']}
@@ -552,10 +553,33 @@ DC_Operation_S003
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify History Parcel Page 2
 
     Log    Step No.17 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-
+    dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_a}
+    dps_history_parcel_page.Click Edit History Parcel    ${tracking_a}
+    Switch Window    NEW
+    # Defect201    Defect202    Defect206
+    # Expected
+    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S003['timeline_in_history_parcel']}    5    # 6
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Timeline
 
     Log    Step No.18 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
-
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
+    dps_scan_page.Select Scan Out Tab
+    dps_scan_page.Click Waiting Delivery List Button
+    # Expected
+    # dps_wait_delivery.Verify Label Delivery List
+    # ...    ${dc_operation.label_delivery_list['export_to']}
+    # ...    ${dc_operation.label_delivery_list['transport']}
+    # ...    ${dc_operation.label_delivery_list['parcel_number']}
+    # ...    ${dc_operation.label_delivery_list['pouch_number']}
+    # ...    ${dc_operation.label_delivery_list['title_parcel_and_pouch_number']}
+    # ...    ${dc_operation.label_delivery_list['title_date']}
+    # ...    ${dc_operation.label_delivery_list['title_status']}
+    # dps_wait_delivery.Verify Data Delivery List
+    # ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
+    # ...    ${DC_Operation_S003.wait_derivery_data_list['transport']}
+    # ...    ${DC_Operation_S003.wait_derivery_data_list['date']}
+    # ...    ${DC_Operation_S003.wait_derivery_data_list['status']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data Delivery List
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
 

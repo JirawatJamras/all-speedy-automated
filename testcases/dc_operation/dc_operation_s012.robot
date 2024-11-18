@@ -171,7 +171,7 @@ DC_Operation_S012
     Switch Window    NEW
     # Defect201    Defect202    Defect206
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S012['timeline_in_history_parcel']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S012['timeline_in_history_parcel']}    4    #5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Timeline
 
     Log    Step No.9 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
