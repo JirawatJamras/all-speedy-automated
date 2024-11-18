@@ -78,37 +78,35 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']}
-    # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
     # dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
     # ...    SPCD241000008174
     # ...    fee (0988797374)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
     # ...    51 ซม. ซอง A4    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}
-    # ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_crossdock']}
-    # ...    DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_destination']}
+    # ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['crossdock_warehouse']}
+    # ...    DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['destination_warehouse']}
     # ...    รอปริ้นใบลาเบลติดหน้ากล่อง     # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_status']}
     # ...    CP ALL    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['courier']}
     # ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['pouch_number']}
-    # ...    18-10-2567 14:37:59
-    # ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_source']}
+    # ...    18-10-2567
+    # ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
     # ...    STORE (15888)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
-    # ...    0060    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['route']}
-    # dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_label_detail['route']}
     # ...    STORE    # Expected Result is ${dc_operation.scan_in_title_label_detail['store']}
     # ...    CUSTOMER    # Expected Result is ${dc_operation.scan_in_title_label_detail['customer']}
     # ...    PHONE    # Expected Result is ${dc_operation.scan_in_title_label_detail['phone']}
     # ...    POUCH NO.    # Expected Result is ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # ...    WH    # Expected Result is ${dc_operation.scan_in_title_label_detail['wh']}
-    # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
-    # ...    4262    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['route']}
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     # ...    15506 (ซอง A4)     # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['store']}
     # ...    soff    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['customer']}
     # ...    0988797374    # Expected Result is (เบอร์โทรที่ระบุในไฟล์ Excel Template ขั้นตอน Booking)
@@ -250,11 +248,13 @@ DC_Operation_S007
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
     # dps_scan_page.Verify Popup Confirm Scan Out 
+    # ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
 
     Log    Step No.14 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
     # dps_scan_page.Verify Popup Save Data Success
+    # ...    ${dc_operation['text_save_success']}
 
     Log    Step No.15 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success
@@ -356,37 +356,35 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_crossdock']}
-    # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_destination']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
     # dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
     # ...    SPCD241000008174
     # ...    fee (0988797374)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
     # ...    51 ซม. ซอง A4    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}
-    # ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_crossdock']}
-    # ...    DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_destination']}
+    # ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['crossdock_warehouse']}
+    # ...    DC SB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['destination_warehouse']}
     # ...    รอปริ้นใบลาเบลติดหน้ากล่อง     # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_status']}
     # ...    CP ALL    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['courier']}
     # ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['pouch_number']}
-    # ...    18-10-2567 14:37:59
-    # ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['warehouse_source']}
+    # ...    18-10-2567
+    # ...    DCBB    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
     # ...    STORE (15888)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
-    # ...    0060    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['route']}
-    # dps_scan_page.Verify Title Label Parcel In Scan Page Store Destination
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_label_detail['route']}
     # ...    STORE    # Expected Result is ${dc_operation.scan_in_title_label_detail['store']}
     # ...    CUSTOMER    # Expected Result is ${dc_operation.scan_in_title_label_detail['customer']}
     # ...    PHONE    # Expected Result is ${dc_operation.scan_in_title_label_detail['phone']}
     # ...    POUCH NO.    # Expected Result is ${dc_operation.scan_in_title_label_detail['pouch_number']}
     # ...    WH    # Expected Result is ${dc_operation.scan_in_title_label_detail['wh']}
-    # dps_scan_page.Verify Data Label Parcel In Scan Page Store Destination
-    # ...    4262    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['route']}
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     # ...    15506 (ซอง A4)     # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['store']}
     # ...    soff    # Expected Result is ${DC_Operation_S007.scan_in_data_label_detail['customer']}
     # ...    0988797374    # Expected Result is (เบอร์โทรที่ระบุในไฟล์ Excel Template ขั้นตอน Booking)

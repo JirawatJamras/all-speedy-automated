@@ -339,7 +339,7 @@ dc_operation:
   text_close_pouch_and_print_label: ปิด Pouch/Print Label
   text_transaction_complete: ทำรายการสำเร็จ
   text_warning_confirm_to_close_pouch: ยืนยันการ ปิด Pouch หรือไม่
-  vehicle_type: ประเภทที่ใช้
+  vehicle_type: ประเภทรถที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_no_select: ไม่มีคลังที่เลือก
@@ -397,13 +397,13 @@ dc_operation:
     parcel_id: หมายเลขพัสดุ
     customer_id: Customer ID
     parcel_size: ขนาดพัสดุ
-    warehouse_crossdock: คลัง Crossdock
-    warehouse_destination: คลังปลายทาง
+    crossdock_warehouse: คลัง Crossdock
+    destination_warehouse: คลังปลายทาง
     parcel_status: สถานะพัสดุ
     courier: Courier
     pouch_number: Pouch Number
     receiving_date: วันที่เข้ารับพัสดุ
-    warehouse_source: คลังต้นทาง
+    origin_warehouse: คลังต้นทาง
     send_parcel_to: ส่งพัสดุไปยัง
     route: Route
   scan_in_title_label_detail:
@@ -494,14 +494,26 @@ dc_operation:
     parcel_label: ใบปะหน้าพัสดุ
     parcel_sorting_sheet: ใบคัดแยกพัสดุ
     pouch_label: ใบ Label Pouch
+  card_reprint_label:
+    text_parcel_label: ใบ Label Parcel
+    text_parcel_sorting_sheet: ใบคัดแยกพัสดุ
+    text_pouch_label: ใบ Label Pouch
+    button_cancel: ยกเลิก
   label_pouch_in_pouch_detail:
-    title: รายละเอียด Pouch
+    title_detail_pouch: รายละเอียด Pouch
     pouch_number: หมายเลข POUCH
     crossdock_warehouse: คลัง Crossdock
     pouch_status: สถานะ Pouch
     parcel_amount: จำนวนพัสดุ
     origin_warehouse: คลังต้นทาง
     destination_warehouse: คลังปลายทาง
+    title_parcel_in_pouch_list: รายการพัสดุใน Pouch
+    table_header_in_pouch_detail:
+      pouch_number: หมายเลขพัสดุ
+      destination_warehouse: คลังปลายทาง
+      pickup_place: สถานที่รับพัสดุ
+      type: ประเภท
+      parcel_status: สถานะพัสดุ
 
 
 rm:

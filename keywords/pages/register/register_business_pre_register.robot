@@ -35,7 +35,7 @@ Input Company Address Full Legal Entity
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_company_address_full_legal_entity}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_company_address_full_legal_entity}    {value}    ${select}
-    common.Click when ready     ${selected_company_address_full}
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_company_address_full}  
 
 Select Title Name Legal Entity
     [Arguments]    ${title}
@@ -102,7 +102,7 @@ Input Address Full Individual
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_address_full_individual}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_address_full_individual}    {value}    ${select}
-    common.Click when ready     ${selected_company_address_full}
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready     ${selected_company_address_full}
 
 Input Mobile No Individual
     [Arguments]    ${value}  

@@ -129,6 +129,8 @@ Verify Parcel Pickup Status After Cut Off Time
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
     Register Keyword To Run On Failure    Capture Page Screenshot
+    common.Click When Ready    ${b2c_btn_x_in_add_popup}
+    common.Click When Ready    ${button_confirm}
 
 Verify Parcel Pickup Schedule Change Status To Confirm
     [Arguments]    ${status}    ${tomorrow}    ${today}    ${booking_id}    ${round}    ${pickup_time}    ${parcel_num}

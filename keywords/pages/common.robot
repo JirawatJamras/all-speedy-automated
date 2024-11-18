@@ -164,7 +164,7 @@ Get Parcel ID By Sender Name
 
 Click ESC On Keyboard
     Switch Window    NEW
-    Press Keys    None   SPACE
+    Press Keys    None   ESC
     Switch Window    MAIN
 
 Click Space On Keyboard

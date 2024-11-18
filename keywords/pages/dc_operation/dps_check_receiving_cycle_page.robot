@@ -99,6 +99,7 @@ Click Pencil Icon
     common.Click When Ready    ${dps_btn_today_parcel_pickup}
     common.Click When Ready    ${button_search}
     common.Click When Ready    ${button_filter}
+    Register Keyword To Run On Failure    NOTHING
     ${card_count}=    Get Element Count    ${card_inventory}
     Log To Console    ${card_count}
     FOR    ${index}    IN RANGE    1    ${card_count}+1
@@ -108,14 +109,11 @@ Click Pencil Icon
         Exit For Loop If    '${element}' == 'True'
         common.Click When Ready    ${dps_btn_close_parcel_pickup_details}
     END
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 Verify Parcel Pickup Details Popup
     [Arguments]    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ...    ${tomorrow}    ${receiving_time}    ${receiving_type}    ${courier}    ${parcel_num}    ${status}
-    ###################
-    ${today}=    Get Current Date    result_format=%Y-%m-%d
-    ${tomorrow_day}=    Add Time To Date    ${today}    1 days    result_format=%d-%m-%Y
-    ###################
     ${label_parcel_pickup_detail}=  Replace String   ${dps_txt_parcel_pickup_detail}   {value}   ${dc_operation['parcel_pickup_details']}
     ${label_comapny}=  Replace String   ${dps_txt_company_parcel_pickup_detail}   {text_company}    ${dc_operation['text_company']}
     ${actual_comapny}=  Replace String   ${label_comapny}   {company_name}    ${company_name}
@@ -130,7 +128,7 @@ Verify Parcel Pickup Details Popup
     ${label_postcode}=  Replace String   ${dps_txt_postcode_parcel_pickup_detail}   {text_postcode}    ${dc_operation['text_postcode']}
     ${actual_postcode}=  Replace String   ${label_postcode}   {postcode}    ${postcode}
     ${label_pickup_date}=  Replace String   ${dps_txt_pickup_date_parcel_pickup_detail}   {text_pickup}    ${dc_operation['pickup_date']}
-    ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}   ${tomorrow_day} ${receiving_time}   ##${tomorrow} ${receiving_time}
+    ${actual_pickup_date}=  Replace String   ${label_pickup_date}   {pickup_date}   ${tomorrow} ${receiving_time}
     ${label_receiving_type}=  Replace String   ${dps_txt_receiving_type_parcel_pickup_detail}   {text_receiving_type}    ${dc_operation['text_receiving_type']}
     ${actual_receiving_type}=  Replace String   ${label_receiving_type}   {receiving_type}    ${receiving_type}
     ${label_courier}=  Replace String   ${dps_txt_courier_parcel_pickup_detail}   {text_courier}    ${dc_operation['text_courier']}

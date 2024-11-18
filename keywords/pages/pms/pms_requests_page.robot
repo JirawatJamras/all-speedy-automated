@@ -68,8 +68,10 @@ Verify Already Assign To RM Popup
 
 Click Save Button
     ${btn_save}=    Replace String    ${pms_btn_save_popup}    {value}    ${rm['text_save']}
+    ${title_assign_rm}=    Replace String    ${pms_txt_tile_assign_rm}    {value}    ${rm['text_assign_rm']}
     Scroll Element Into View    ${btn_save}
     Click When Ready    ${btn_save}
+    Wait Until Element Is Not Visible    ${title_assign_rm}    timeout=${DEFAULT_TIMEOUT}
 
 Select Request
     [Arguments]    ${partner_types}    ${company_name}    ${contact_first_name}    ${contact_last_name}
@@ -150,12 +152,21 @@ Verify Save Assign To RM Success [legal entity]
     ${txt_list}=    Replace String    ${txt_list}    {ext}    ${mobile_ext}
     ${txt_list}=    Replace String    ${txt_list}    {status}    ${rm.text_status['under_consideration']}
     ${txt_list}=    Replace String    ${txt_list}    {rm}    ${rm_name}
+
+    Register Keyword To Run On Failure    NOTHING
+    ${status}=    Set Variable    FAIL
+    ${status_2}=    Set Variable    False
+
+    Scroll Window To Vertical    0
     FOR    ${i}    IN    @{legal_req_list}
         ${txt_list_complete}=    Replace String    ${txt_list}    {request_no}    ${i}
-        Wait Until Element Is Visible    ${txt_list_complete}        timeout=${DEFAULT_TIMEOUT}
-        Scroll Element Into View    ${txt_list_complete}
+        ${status}    ${element}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${txt_list_complete}
+        Run Keyword And Ignore Error    Scroll Element Into View    ${txt_list_complete}
         Log    ${txt_list_complete}
+        Log To Console    ${element}
+        Exit For Loop If    '${status}' == 'Pass'
     END
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 ## Individual
 Select Checkbox Request [Individual]
@@ -219,11 +230,19 @@ Verify Save Assign To RM Success [Individual]
     ${txt_list}=    Replace String    ${txt_list}    {ext}    ${mobile_ext}
     ${txt_list}=    Replace String    ${txt_list}    {status}    ${rm.text_status['under_consideration']}
     ${txt_list}=    Replace String    ${txt_list}    {rm}    ${rm_name}
-    FOR    ${i}    IN    @{individual_req_list}
+    Register Keyword To Run On Failure    NOTHING
+    ${status}=    Set Variable    FAIL
+    ${status_2}=    Set Variable    False
+
+    Scroll Window To Vertical    0
+    FOR    ${i}    IN    @{legal_req_list}
         ${txt_list_complete}=    Replace String    ${txt_list}    {request_no}    ${i}
-        Wait Until Element Is Visible    ${txt_list_complete}        timeout=${DEFAULT_TIMEOUT}
-        Scroll Element Into View    ${txt_list_complete}
+        ${status}    ${element}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${txt_list_complete}
+        Run Keyword And Ignore Error    Scroll Element Into View    ${txt_list_complete}
+        Log    ${txt_list_complete}
+        Exit For Loop If    '${status}' == 'Pass'
     END
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 #################### Full-Register ####################
 

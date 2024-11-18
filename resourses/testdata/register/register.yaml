@@ -114,7 +114,7 @@ Register_S001:
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
-  email: businessregisterflow@gmail.com
+  email: test_business1@yopmail.com
   password: Business1234@
   mobile_no: '0000000000'
   mobile_ext: '0000'
@@ -131,7 +131,7 @@ Register_S002:
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
-  email: businessregisterflow@gmail.com
+  email: test_business2@yopmail.com
   password: Business1234@
   mobile_no: '0000000000'
   mobile_ext: '0000'
@@ -147,7 +147,7 @@ Register_S003:
   title_name: น.ส.
   first_name: ชลธิชา
   last_name: อยู่ยง
-  email: businessregisterflow@gmail.com
+  email: test_business3@yopmail.com
   password: Business1234@
   mobile_no: '0931234567'
   mobile_ext: '0000'
@@ -158,7 +158,7 @@ Register_S004:
   first_name: วีวิกา
   last_name: ยั่งยืน
   # id_number: '1513763255099'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
-  email: businessregisterflow@gmail.com
+  email: test_business4@yopmail.com
   password: Business1234@
   individual_address: 456/22 หมู่บ้านสัมมากร
   search_individual_address_full: '10240'
@@ -172,7 +172,7 @@ Register_S005:
   first_name: อัสมา
   last_name: รวมทอง
   #id_number: '0460823097311'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
-  email: businessregisterflow@gmail.com
+  email: test_business5@yopmail.com
   password: Business1234@
   individual_address: 145 หมู่บ้านชวนชม
   search_individual_address_full: '10240'
@@ -186,7 +186,7 @@ Register_S006:
   first_name: อัสมา
   last_name: รวมทอง
   #id_number: '7311253028120'   #ห้ามซ้ำ ต้องเปลี่ยนก่อน run
-  email: businessregisterflow@gmail.com
+  email: test_business6@yopmail.com
   password: Business1234@
   individual_address: 145 หมู่บ้านชวนชม
   search_individual_address_full: '10240'

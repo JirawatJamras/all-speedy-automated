@@ -734,6 +734,7 @@ Verify Booking Detail Page After Import File
         common.Click When Ready    ${b2c_btn_next_page_parcel_list}
     END
     Should Be Equal As Strings    ${count_card}    ${parcel_num}
+    Scroll Window To Vertical    0
 
 Verify Parcel Status Change To Confirm
     [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
