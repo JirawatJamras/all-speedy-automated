@@ -116,7 +116,7 @@ DC_Operation_S013
     # Expected    
     # Inprogress
     # dps_home_page.Wait Until Page Loaded
-    dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
+    dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -128,7 +128,7 @@ DC_Operation_S013
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
 
-    dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     ...    ${tracking_number}
     ...    ${customer_id}
     ...    ${size_cm} ${size}
@@ -139,7 +139,7 @@ DC_Operation_S013
     ...    ${origin_warehoues}
     ...    ${send_parcel_to}
     # Old
-    # dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     # ...    ${tracking_number}
     # ...    B2C0002400563    # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['customer_id']}
     # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_size']}

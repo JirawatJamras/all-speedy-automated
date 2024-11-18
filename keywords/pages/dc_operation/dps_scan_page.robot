@@ -151,9 +151,9 @@ Click Create Pouch Button
 
 # Verify Create Pounch Popup
 
-#################################### Home Destination ####################################
+#################################### Other Courier ####################################
 
-Verify Title Parcel Details In Scan Page Home Destination
+Verify Title Parcel Details In Scan Page [Other Courier]
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
     ...            ${parcel_size}    ${parcel_status}    ${courier}    ${pouch_number}
     ...            ${receiving_date}    ${origin_warehouse}    ${send_parcel_to}
@@ -191,7 +191,7 @@ Verify Title Parcel Details In Scan Page Home Destination
     Should Be Equal    ${actual_txt_title_origin_warehouse}    ${origin_warehouse}
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
 
-Verify Data Parcel Details In Scan Page Home Destination
+Verify Data Parcel Details In Scan Page [Other Courier]
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
     ...            ${parcel_status}    ${courier}    ${pouch_number}   
     ...            ${receiving_date}    ${origin_warehouse}    ${send_parcel_to}  
@@ -254,9 +254,9 @@ Verify Data Label Parcel In Scan Page [Other Courier]
     Element Should Be Visible    ${value_customer}
     Element Should Be Visible    ${value_phone}
 
-#################################### Store Destination ####################################
+#################################### CP All Courier ####################################
 
-Verify Title Parcel Details In Scan Page Store Destination
+Verify Title Parcel Details In Scan Page [CP All Courier]
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}    
     ...            ${parcel_size}    ${crossdock_warehouse}    ${destination_warehouse} 
     ...            ${parcel_status}    ${courier}    ${pouch_number}
@@ -302,7 +302,7 @@ Verify Title Parcel Details In Scan Page Store Destination
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_txt_title_route}    ${route}
 
-Verify Data Parcel Details In Scan Page Store Destination
+Verify Data Parcel Details In Scan Page [CP All Courier]
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
     ...            ${crossdock_warehouse}    ${destination_warehouse}    ${parcel_status}
     ...            ${courier}    ${pouch_number}    ${receiving_date}

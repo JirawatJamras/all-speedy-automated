@@ -74,7 +74,7 @@ DC_Operation_S009
     # dps_scan_page.Click Search Button [Scan In Page]
     # Expected
     # dps_home_page.Wait Until Page Loaded
-    # dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
+    # dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -86,7 +86,7 @@ DC_Operation_S009
     # ...    ${dc_operation.scan_in_title_parcel_detail['warehouse_source']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
 
-    # dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     # ...    ${DC_Operation_S009.parcel_detail_in_scan_in_tab['tracking']}
     # ...    ${DC_Operation_S009.parcel_detail_in_scan_in_tab['customer_id']}
     # ...    ${DC_Operation_S009.parcel_detail_in_scan_in_tab['parcel_size']}

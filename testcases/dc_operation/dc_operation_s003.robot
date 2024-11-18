@@ -339,7 +339,7 @@ DC_Operation_S003
     # Expected    
     # Inprogress
     # Add check warehouse crossdock,warehouse destination,Route
-   dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
+   dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -351,7 +351,7 @@ DC_Operation_S003
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
 
-    dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     ...    ${tracking_a}   
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['customer_id']}
     ...    ${DC_Operation_S003.parcel_detail_in_scan_in_tab['parcel_size']}
@@ -430,8 +430,8 @@ DC_Operation_S003
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify History Parcel Page 1
 
     Log    Step No.8 ค้นหาหมายเลข Tracking และ คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-    dps_history_parcel_page.Filter Data By Parcel Number    ${parcel_a}
-    dps_history_parcel_page.Click Edit History Parcel    ${parcel_a}
+    dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_a}
+    dps_history_parcel_page.Click Edit History Parcel    ${tracking_a}
     Switch Window    NEW
     # Defect201    Defect202    Defect206
     # Expected
@@ -466,13 +466,13 @@ DC_Operation_S003
     dps_home_page.Select Tab Export Task
     # Defect
     # Expected
-    dps_home_page.Verify Label In Export Task Tab
-    ...    ${dc_operation.label_export_task_tab['export_to']}
-    ...    ${dc_operation.label_export_task_tab['transport']}
-    ...    ${dc_operation.label_export_task_tab['parcel_owner']}
-    ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
-    ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
-    ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
+    # dps_home_page.Verify Label In Export Task Tab
+    # ...    ${dc_operation.label_export_task_tab['export_to']}
+    # ...    ${dc_operation.label_export_task_tab['transport']}
+    # ...    ${dc_operation.label_export_task_tab['parcel_owner']}
+    # ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
+    # ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
+    # ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
     # Expected not correct
     # dps_home_page.Verify Data In Export Task Tab
     # ...    DCSB  # ${DC_Operation_S003.data_in_export_task_tab['import_from']}

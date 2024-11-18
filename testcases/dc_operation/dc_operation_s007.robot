@@ -74,7 +74,7 @@ DC_Operation_S007
     dps_scan_page.Input Tracking Number [Scan In Page]    ${parcel_f}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
-    # dps_scan_page.Verify Title Parcel Details In Scan Page Store Destination
+    # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -88,7 +88,7 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
-    # dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     # ...    SPCD241000008174
     # ...    fee (0988797374)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
     # ...    51 ซม. ซอง A4    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}
@@ -378,7 +378,7 @@ DC_Operation_S007
     dps_scan_page.Click Search Button [Scan In Page]
     # dps_home_page.Wait Until Page Loaded
     # Expected
-    # dps_scan_page.Verify Title Parcel Details In Scan Page Store Destination
+    # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -392,7 +392,7 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
-    # dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     # ...    SPCD241000008174
     # ...    fee (0988797374)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
     # ...    51 ซม. ซอง A4    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}

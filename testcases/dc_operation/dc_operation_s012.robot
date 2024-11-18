@@ -79,7 +79,7 @@ DC_Operation_S012
     # dps_home_page.Wait Until Page Loaded
     # # Defect155    Defect156    Defect157    Defect158    Defect165    Defect168
     # # Expected
-    # # dps_scan_page.Verify Title Parcel Details In Scan Page Store Destination
+    # # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     # # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -93,7 +93,7 @@ DC_Operation_S012
     # # ...    ${dc_operation.scan_in_title_parcel_detail['source_warehouse']}
     # # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # # ...    ROUTE  # ${dc_operation.scan_in_title_parcel_detail['route']}   
-    # # dps_scan_page.Verify Data Parcel Details In Scan Page Store Destination
+    # # dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     # # ...    SPBD241100002422
     # # ...    B2C0002400563  # ${DC_Operation_S012.parcel_detail_in_scan_in_tab['customer_id']}
     # # ...    ${DC_Operation_S012.parcel_detail_in_scan_in_tab['parcel_size']}

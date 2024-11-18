@@ -96,7 +96,7 @@ DC_Operation_S004
     # # Click Accept    
     # # Expected    
     # dps_home_page.Wait Until Page Loaded
-    # dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
+    # dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -107,7 +107,7 @@ DC_Operation_S004
     # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    # dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     # ...    ${tracking_c}
     # ...    ${DC_Operation_S004.parcel_detail_in_scan_in_tab['customer_id']}
     # ...    ${DC_Operation_S004.parcel_detail_in_scan_in_tab['parcel_size']}
@@ -574,7 +574,7 @@ DC_Operation_S004
     dps_scan_page.Click Search Button [Scan In Page] 
     # Expected    
     dps_home_page.Wait Until Page Loaded
-    dps_scan_page.Verify Title Parcel Details In Scan Page Home Destination
+    dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -585,7 +585,7 @@ DC_Operation_S004
     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    dps_scan_page.Verify Data Parcel Details In Scan Page Home Destination
+    dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     ...    ${tracking_c}
     ...    ${DC_Operation_S004.parcel_detail_in_scan_in_tab['customer_id']}
     ...    ${DC_Operation_S004.parcel_detail_in_scan_in_tab['parcel_size']}
