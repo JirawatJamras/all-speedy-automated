@@ -16,6 +16,8 @@ ${dps_btn_create_pouch}    //span[text()='{value}']/..
 ${dps_btn_confirm_create_pouch}    //div[@role='dialog']//button[@type='submit']
 ${dps_btn_print_label_parcel_detail_page}    //span[text()=' {value}']/..
 ${dps_btn_close_on_print_label_success_popup}    //div[@class='ant-modal-mask']/..//button[@aria-label='Close']
+${dps_btn_create_pounch}    //span[text()='{value}']/..
+${dps_btn_selected_warehouse_list_scan_page}    //button[@type='button']//span[@aria-label='down']
 
 ${dps_txt_scan_header_ion_scan_page}    //div[@class='ant-card-head-wrapper']//span[text()='{value}']
 ${dps_txt_title_parcel_detail}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']
@@ -33,6 +35,9 @@ ${dps_txt_title_send_parcel_to}   //span[contains(@class,'ant-typography')]//str
 ${dps_txt_title_route}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_label_scan_in}    //div[@class='']//span[text()='{value}']
 ${dps_txt_label_size_scan_in}    //div[@class='']//span[contains(normalize-space(), '{value}')]
+${dps_txt_label_scan_in_warehouse_ac}    //tr[th[1]='{parcel_id}' and th[2]='{pouch_number}' and th[3]='{receive_parcel_from}' and th[4]='{parcel_size}' and th[5]='{receiving_date}' and th[6]='{parcel_status}']
+${dps_txt_value_scan_in_warehouse_ac}    //tr[td[1]='{parcel_id}' and td[2]='{pouch_number}' and td[3]='{receive_parcel_from}' and td[4]='{parcel_size}' and contains(td[5],'{receiving_date}') and td[6]='{parcel_status}']
+
 ${dps_txt_value_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and contains(td[7], '{value_date}') and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]
 ${dps_txt_update_time_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and contains(td[7], '{value_date}') and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]//td[7]
 ${dps_txt_label_title_scan_out}    //tr[th[1]='{title_pouch_number}' and th[2]='{title_parcel_id}' and th[3]='{title_import_from}' and th[4]='{title_transport}' and th[5]='{title_parcel_owner}' and th[6]='{title_parcel_size}' and th[7]='{title_date}' and th[8]='{title_parcel_status}' ]
@@ -96,3 +101,4 @@ ${dps_cbo_destination_warehouse_in_scan_page}    //div[contains(@class,'ant-sele
 ${dps_cbo_destination_warehouse_in_create_pouch_popup}    //div[@role='dialog']//div[@class='ant-select-selector']
 
 ${dps_iframe_print_window}    //iframe[@id='printWindow']
+${dps_cbo_warehouse_list_scan_page}    //span[text()='{warehouse}']

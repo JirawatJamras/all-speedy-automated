@@ -35,7 +35,7 @@ DC_Operation_S007
     # Defect138    Defect141
     # Expected
     # dps_home_page.Wait Until DC Operation Home Page Loaded
-    # Filter Data By Parcel Number [All Task Tab]    SPCD241000006135
+    # Filter Data By Parcel Number [All Task Tab]    ${parcel_f}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -46,7 +46,7 @@ DC_Operation_S007
     # ...    -    #${DC_Operation_S007.data_in_all_task_tab['export_to']}
     # ...    CPALL  # ${DC_Operation_S007.data_in_all_task_tab['transport']}
     # ...    -    #${DC_Operation_S007.data_in_all_task_tab['pouch_number']}
-    # ...    SPCD241000006135
+    # ...    ${parcel_f}
     # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S007.data_in_all_task_tab['parcel_status']}
     # common.Scroll Window To Vertical    0
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Homepage
@@ -89,7 +89,7 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
     # dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
-    # ...    SPCD241000008174
+    # ...    ${parcel_f}
     # ...    fee (0988797374)    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
     # ...    51 ซม. ซอง A4    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}
     # ...    -    # Expected Result is ${DC_Operation_S007.scan_in_data_parcel_detail['crossdock_warehouse']}
@@ -139,7 +139,7 @@ DC_Operation_S007
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label
-    ## Sleep    10s
+    Sleep    5s
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
@@ -177,21 +177,20 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Defect141
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
     # Expected
-    # Filter Data By Parcel Number [All Task Tab]    SPCD241000006135
+    # Filter Data By Parcel Number [All Task Tab]    ${parcel_f}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
     # dps_home_page.Verify Data In All Task Tab
-    # ...    งานรับเข้า    # ${DC_Operation_S007.data_in_all_task_tab['task_type']}
+    # ...    งานส่งออก    # ${DC_Operation_S007.data_in_all_task_tab['task_type2']}
     # ...    speedy    # ${DC_Operation_S007.data_in_all_task_tab['parcel_owner']}
     # ...    home    # ${DC_Operation_S007.data_in_all_task_tab['import_from']}
-    # ...    -    #${DC_Operation_S007.data_in_all_task_tab['export_to']}
+    # ...    -    #${DC_Operation_S007.data_in_all_task_tab['export_to2']}
     # ...    CPALL  # ${DC_Operation_S007.data_in_all_task_tab['transport']}
     # ...    -    #${DC_Operation_S007.data_in_all_task_tab['pouch_number']}
-    # ...    SPCD241000006135
-    # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S007.data_in_all_task_tab['parcel_status']}
+    # ...    ${parcel_f}
+    # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S007.data_in_all_task_tab['parcel_status2']}
     # common.Scroll Window To Vertical    0
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Homepage After Scan-in
     # Sleep    1s
@@ -219,14 +218,14 @@ DC_Operation_S007
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    # ...    SPBD241100000487
-    # ...    -
-    # ...    คลัง DC BB    
-    # ...    Flash   
-    # ...    Speedy
-    # ...    กล่อง L
-    # ...    07/11/2567
-    # ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง    
+    # ...    ${parcel_f}
+    # ...    # ${DC_Operation_S007.scan_out_waiting_scan['pouch_number']}
+    # ...    # ${DC_Operation_S007.scan_out_waiting_scan['import_from']}
+    # ...    # ${DC_Operation_S007.scan_out_waiting_scan['deliver']}
+    # ...    # ${DC_Operation_S007.scan_out_waiting_scan['parcel_owner']}
+    # ...    # ${DC_Operation_S007.scan_out_waiting_scan['parcel_size']}
+    # ...    16-11-2567
+    # ...    # ${DC_Operation_S007.scan_out_waiting_scan['parcel_status']}  
     # common.Scroll Window To Vertical    0
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Section Waiting List To Scan Out [Scan Out Page] 1
     # Sleep    1s
@@ -237,7 +236,7 @@ DC_Operation_S007
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" ในช่องค้นหา และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${parcel_f}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # # Expected
+    # Expected
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -248,14 +247,14 @@ DC_Operation_S007
     ...    ${dc_operation.scan_out_title['date']}
     ...    ${dc_operation.scan_out_title['parcel_status']}
     # dps_scan_page.Verify Value List Scan Out 
-    # ...    -
-    # ...    SPBD241100000487
-    # ...    คลัง DC BB
-    # ...    Flash
-    # ...    Speedy
-    # ...    กล่อง L
+    # ...    ${DC_Operation_S007.scan_out_list_data['pouch_number']}
+    # ...    ${parcel_f}
+    # ...    ${DC_Operation_S007.scan_out_list_data['receive_parcel_from']}
+    # ...    ${DC_Operation_S007.scan_out_list_data['transport']}
+    # ...    ${DC_Operation_S007.scan_out_list_data['parcel_owner']}
+    # ...    ${DC_Operation_S007.scan_out_list_data['parcel_size']}
     # ...    2024-11-07     # 2024-11-07 09:40:51
-    # ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+    # ...    ${DC_Operation_S007.scan_out_list_data['parcel_status']}
 
     Log    Step No.13 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
@@ -287,8 +286,8 @@ DC_Operation_S007
     Switch Window    NEW
     # Defect201    Defect202    Defect206
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    Verify Timeline
+    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Timeline
 
     Log    Step No.18 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}

@@ -433,31 +433,28 @@ DC_Operation_S006:
 DC_Operation_S007:
   data_in_all_task_tab:
     task_type: งานรับเข้า
+    task_type2: งานส่งออก
     parcel_owner: Speedy
     import_from: Home
     import_from2: คลัง DC BB
     export_to: '-'
+    export_to2: 'คลัง DCSB'
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง XL
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (DCSB)
   data_in_import_task_tab:
     import_from: Home
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '6'
-    number_of_scanned_items: '6'
   data_in_export_task_tab:
     export_to: คลัง DCSB
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '1'
-    number_of_scanned_items: '1'
   scan_in_data_parcel_detail:
-    parcel_id: 'SPBD241100000140'
-    customer_id: '2400563'
+    parcel_id: ''
+    customer_id: '0002400563'
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: '-'
     destination_warehouse: DCBB
@@ -487,14 +484,18 @@ DC_Operation_S007:
     shipping_destination: ร้าน (15888)
     address: 'เขตสีลม แขวงบางรัก กรุงเทพมหานคร 10500'
   scan_out_waiting_scan:
-    title: รายการพัสดุที่รอ Scan Out
-    parcel_id: ''
     pouch_number: '-'
     receive_parcel_from: Home
     transport: CP All
     parcel_owner: Speedy
     parcel_size: กล่อง XL
-    receiving_date: ''
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  scan_out_list_data:
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
     parcel_status: พัสดุรอส่งไปคลัง (DCSB)
   wait_derivery_data_list:
     export_to: คลัง DC SB
@@ -590,6 +591,80 @@ DC_Operation_S009:
     store_code: '15888'
     customer_type: 'B2C'
     transport: CP All
+
+DC_Operation_S011:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    task_type2: งานส่งออก
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: '-'
+    export_to2: คลัง AC
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+  data_in_export_task_tab:
+    export_to: คลัง AC
+    transport: CP All
+    parcel_owner: Speedy
+  scan_in_data_parcel_detail:
+    customer_id: '0002400563'
+    parcel_size: 150 ซม. กล่อง XL
+    crossdock_warehouse: AC
+    destination_warehouse: RDCLP
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: CP All
+    pouch_number: '-'
+    origin_warehouse: DCBB
+    send_parcel_to: Store (01015)
+  scan_in_data_label_detail:
+    store: '01015'
+    customer: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    phone: ''
+    pouch_number: ''
+    wh: DCBB - AC - RDCLP
+    symbol: รูปนาฬิกาทราย
+  sender_data_in_scan_in_tab:
+    name: คุณ j
+    phone: ''
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+    address: 74 ลำพยา เมืองนครปฐม นครปฐม 73000
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    phone: ''
+    shipping_destination: ร้าน (01015)
+    address: เวียง เวียงป่าเป้า เชียงราย 57170
+  scan_in_value_waiting_scan_warehouse_ac:
+    pouch_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุออกจากคลังต้นทาง (DCBB)
+  scan_out_waiting_scan:
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+  scan_out_list_data:
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+  wait_derivery_data_list:
+    export_to: คลัง AC
+    transport: CP ALL
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
 
 DC_Operation_S012:
   data_in_all_task_tab:

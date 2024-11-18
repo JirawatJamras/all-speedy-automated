@@ -336,8 +336,7 @@ DC_Operation_S009
     Log    Step No.22 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ h" และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
-    Click When Ready    //*[@id="__next"]/div/div/div[2]/main/div[2]/div[1]/div/div/button
-    Click When Ready    //span[text()='AC']
+    dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     dps_scan_page.Input Tracking Number [Scan In Page]    ${parcel_h}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
@@ -379,8 +378,7 @@ DC_Operation_S009
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.26 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ h" และ กดค้นหา หรือกด Enter
-    Click When Ready    //*[@id="__next"]/div/div/div[2]/main/div[2]/div[1]/div/div/button
-    Click When Ready    //span[text()='AC']
+    dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${parcel_h}
     dps_scan_page.Click Search Button [Scan Out Page]
     # # Expected

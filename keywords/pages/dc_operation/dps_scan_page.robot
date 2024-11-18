@@ -82,6 +82,12 @@ Select Move Status Tab
 Select Change Courier Tab
     Select Tab In Scan Page    ${dc_operation.tab_scan['change_courier']}
 
+Select Warehouse List Button
+    [Arguments]    ${selected_warehouse}
+    ${dps_cbo_selected_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_scan_page}    {warehouse}    ${selected_warehouse}
+    common.Click When Ready    ${dps_btn_selected_warehouse_list_scan_page}
+    common.Click When Ready    ${dps_cbo_selected_warehouse_list}
+
 #################################### Scan In ####################################
 
 Select Tab In Scan Page
@@ -164,6 +170,32 @@ Verify Create Pouch Popup
     Wait Until Element Is Visible    ${dps_cbo_destination_warehouse_in_create_pouch_popup}
 
 # Get Pouch Number In Scan Page
+
+Verify Label Wait Scan In Warehouse AC
+    [Arguments]    ${parcel_id}    ${pouch_number}    ${receive_parcel_from}
+    ...            ${parcel_size}    ${receiving_date}    ${parcel_status}
+    ${dps_txt_label_scan_in_warehouse_ac}=    Replace String    ${dps_txt_label_scan_in_warehouse_ac}    {parcel_id}    ${parcel_id}
+    ${dps_txt_label_scan_in_warehouse_ac}=    Replace String    ${dps_txt_label_scan_in_warehouse_ac}    {pouch_number}    ${pouch_number}
+    ${dps_txt_label_scan_in_warehouse_ac}=    Replace String    ${dps_txt_label_scan_in_warehouse_ac}    {receive_parcel_from}    ${receive_parcel_from}
+    ${dps_txt_label_scan_in_warehouse_ac}=    Replace String    ${dps_txt_label_scan_in_warehouse_ac}    {parcel_size}    ${parcel_size}
+    ${dps_txt_label_scan_in_warehouse_ac}=    Replace String    ${dps_txt_label_scan_in_warehouse_ac}    {receiving_date}    ${receiving_date}
+    ${dps_txt_label_scan_in_warehouse_ac}=    Replace String    ${dps_txt_label_scan_in_warehouse_ac}    {parcel_status}    ${parcel_status}
+    Wait Until Element Is Visible    ${dps_txt_label_scan_in_warehouse_ac}    timeout=${DEFAULT_TIMEOUT}
+
+
+Verify Data List Wait Scan In Warehouse AC
+    [Arguments]    ${parcel_id}    ${pouch_number}    ${receive_parcel_from}
+    ...            ${parcel_size}    ${receiving_date}    ${parcel_status}
+    ${dps_txt_value_scan_in_warehouse_ac}=    Replace String    ${dps_txt_value_scan_in_warehouse_ac}    {parcel_id}    ${parcel_id}
+    ${dps_txt_value_scan_in_warehouse_ac}=    Replace String    ${dps_txt_value_scan_in_warehouse_ac}    {pouch_number}    ${pouch_number}
+    ${dps_txt_value_scan_in_warehouse_ac}=    Replace String    ${dps_txt_value_scan_in_warehouse_ac}    {receive_parcel_from}    ${receive_parcel_from}
+    ${dps_txt_value_scan_in_warehouse_ac}=    Replace String    ${dps_txt_value_scan_in_warehouse_ac}    {parcel_size}    ${parcel_size}
+    ${dps_txt_value_scan_in_warehouse_ac}=    Replace String    ${dps_txt_value_scan_in_warehouse_ac}    {receiving_date}    ${receiving_date}
+    ${dps_txt_value_scan_in_warehouse_ac}=    Replace String    ${dps_txt_value_scan_in_warehouse_ac}    {parcel_status}    ${parcel_status}
+    Wait Until Element Is Visible    ${dps_txt_value_scan_in_warehouse_ac}    timeout=${DEFAULT_TIMEOUT}
+
+
+#################################### Home Destination ####################################
 
 Click Confirm Button To Create Pouch
     common.Click When Ready    ${dps_btn_confirm_create_pouch}
