@@ -404,7 +404,7 @@ DC_Operation_S003
 
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
-    dps_parcel_detail_page.Click Print Label
+    dps_scan_page.Click Print Label
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
@@ -413,7 +413,7 @@ DC_Operation_S003
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
     # Expected
-    dps_parcel_detail_page.Verify Print Label Success Popup
+    dps_scan_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Print Label Success Popup
 

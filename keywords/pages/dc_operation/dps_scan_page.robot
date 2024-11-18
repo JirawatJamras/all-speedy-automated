@@ -178,6 +178,34 @@ Verify Pouch Detail In Scan Page
     Wait Until Element Is Visible    ${text_number_of_parcel}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${text_number_of_parcel}
 
+Click Print Label
+    ${dps_btn_print_label_parcel_detail_page}=    Replace String    ${dps_btn_print_label_parcel_detail_page}    {value}    ${dc_operation['text_print_label']}
+    common.Scroll Into View By Xpath    ${dps_btn_print_label_parcel_detail_page}    true
+    common.Click When Ready    ${dps_btn_print_label_parcel_detail_page}
+    Sleep    5s
+
+Click Accept Scan In
+    ${dps_btn_print_label_parcel_detail_page}=    Replace String    ${dps_btn_print_label_parcel_detail_page}    {value}    ${dc_operation['text_accept_scan_in']}
+    common.Scroll Into View By Xpath    ${dps_btn_print_label_parcel_detail_page}    true
+    common.Click When Ready    ${dps_btn_print_label_parcel_detail_page}
+    Sleep    5s
+
+Click Close Print Label Success Popup
+    common.Click When Ready    ${dps_btn_close_on_print_label_success_popup}
+    
+Verify Print Label Success Popup
+    [Arguments]    ${expected_text}
+    Wait Until Element Is Visible    ${dps_txt_print_label_success_in_popup}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_text}=    Get Text    ${dps_txt_print_label_success_in_popup}
+    Should Be Equal    ${actual_text}    ${expected_text}
+
+Verify Accept Scan In Success Popup
+    [Arguments]    ${expected_text}
+    Wait Until Element Is Visible    ${dps_txt_accept_scan_in_success_in_popup}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_text}=    Get Text    ${dps_txt_accept_scan_in_success_in_popup}
+    Should Be Equal    ${actual_text}    ${expected_text}
+
+Verify Create Pouch Popup Confirmation 
 
 #################################### Other Courier ####################################
 
