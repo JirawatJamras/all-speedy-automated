@@ -282,6 +282,7 @@ favorite:
   text_input_postcode: ระบุไปรษณีย์
 
 dc_operation:
+  non: '-'
   role:
     dev: Role Dev
     admin: แอดมินคลัง

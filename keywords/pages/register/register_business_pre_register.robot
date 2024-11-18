@@ -17,7 +17,7 @@ Select Company Title Name Legal Entity
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_company_title_name_legal_entity}
     ${selected_company_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    common.Click when ready    ${selected_company_title_name}
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_company_title_name}
 
 Input Company Name Legal Entity
     [Arguments]    ${text}  
@@ -41,7 +41,7 @@ Select Title Name Legal Entity
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_title_name_legal_entity}
     ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    common.Click when ready    ${selected_title_name}
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_title_name}
 
 Input First Name Legal Entity
     [Arguments]    ${value}  
@@ -76,7 +76,7 @@ Select Title Name Individual
     [Arguments]    ${title}
     common.Click when ready    ${register_cbo_title_name_individual}
     ${selected_title_name}=    Replace String    ${register_cbo_choice_title_name}    {value}    ${title}
-    common.Click when ready    ${selected_title_name}
+    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_title_name}
 
 Input First Name Individual
     [Arguments]    ${value}  

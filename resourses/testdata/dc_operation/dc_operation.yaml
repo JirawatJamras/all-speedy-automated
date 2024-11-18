@@ -78,7 +78,7 @@ DC_Operation_S003:
     send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
     courier: 'FSH'
-    zipcode: '11120'
+    zipcode: '11120 (กล่อง L)'
     province: 'นนทบุรี'
     customer: ทดสอบพัสดุCourier
     phone: '0900987354'
@@ -102,7 +102,7 @@ DC_Operation_S003:
     parcel_size: 'กล่อง L'
     # update_date: 08/11/2567
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  scan_out_print:
+  wait_derivery_data_list:
     export_to: home
     deliver: Flash
     update_date:
@@ -607,7 +607,7 @@ DC_Operation_S013:
     parcel_size: 'กล่อง L'
     update_date: 08/11/2567
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  scan_out_print:
+  wait_derivery_data_list:
     export_to: home
     deliver: Flash
     update_date: 
@@ -666,7 +666,7 @@ DC_Operation_S014:
     parcel_size: 'กล่อง L'
     update_date: 08/11/2567
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  scan_out_print:
+  wait_derivery_data_list:
     export_to: home
     deliver: Flash
     update_date:

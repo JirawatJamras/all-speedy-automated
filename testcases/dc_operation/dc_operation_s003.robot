@@ -385,7 +385,7 @@ DC_Operation_S003
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S003.sender_data_in_scan_in_tab['name']}
     ...    ${DC_Operation_S003.sender_data_in_scan_in_tab['phone']}
-    ...    บริษัท TecheX    # ${DC_Operation_S003.sender_data_in_scan_in_tab['shipping_origin']}
+    ...    ${dc_operation['non']}    # บริษัท TecheX    # ${DC_Operation_S003.sender_data_in_scan_in_tab['shipping_origin']}
     ...    ${DC_Operation_S003.sender_data_in_scan_in_tab['address']}
     
     dps_scan_page.Verify Title Receiver In Scan Page

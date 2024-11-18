@@ -11,7 +11,7 @@ Library    Collections
 
 *** Variables ***   
 ${SHEET_NAME}    Tracking_S013   # ชื่อชีตที่ต้องการ
-${ROW_NUMBER}    2      # แถวที่ต้องการลบ
+${ROW_NUMBER}    3      # แถวที่ต้องการลบ
 
 *** Test Cases ***
 DC_Operation_S013
@@ -349,11 +349,11 @@ DC_Operation_S013
     Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     #In progress 
     dps_scan_page.Click Print Button By Data
-    ...    ${DC_Operation_S013.scan_out_print['export_to']}
-    ...    ${DC_Operation_S013.scan_out_print['deliver']}
-    # ...    ${DC_Operation_S013.scan_out_print['parcel_amount']}
-    # ...    ${DC_Operation_S013.scan_out_print['pouch_amount']}
-    # ...    ${DC_Operation_S013.scan_out_print['total_parcel_pouch']}
+    ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
+    ...    ${DC_Operation_S013.wait_derivery_data_list['deliver']}
+    # ...    ${DC_Operation_S013.wait_derivery_data_list['parcel_amount']}
+    # ...    ${DC_Operation_S013.wait_derivery_data_list['pouch_amount']}
+    # ...    ${DC_Operation_S013.wait_derivery_data_list['total_parcel_pouch']}
     # Expected
 
     Log    Step No.36 กดปุ่ม พิมพ์

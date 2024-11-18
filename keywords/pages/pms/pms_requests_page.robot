@@ -155,7 +155,7 @@ Verify Save Assign To RM Success [legal entity]
 
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    FAIL
-    ${status_2}=    Set Variable    False
+
 
     Scroll Window To Vertical    0
     FOR    ${i}    IN    @{legal_req_list}
