@@ -31,9 +31,11 @@ DC_Operation_S018
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    Verify Data In Table
 
     Log    Step No.2 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
+    ${today}    Set Today
+    ${today_repattern}    Set Date Pattern    ${today}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
-    # Defect224    Defect225    Defect209
+    # Defect209    Defect225    Defect241
     # Expected
     dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
@@ -59,8 +61,8 @@ DC_Operation_S018
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_status']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['customer_type']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['pouch_number']}
-    ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_size']}
-    ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['route']}
+    ...    กล่อง L  #${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_size']}
+    ...    ${today_repattern}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['origin_store']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['origin_warehouse']}
     ...    To Home ()  # ${DC_Operation_S018.value_parcel_details_in_warehouse['destination_store']}

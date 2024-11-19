@@ -158,7 +158,7 @@ Verify Title Parcel Details In Warehouse Details
 
 Verify Data Parcel Details In Warehouse Details
     [Arguments]    ${tracking_number}    ${parcel_status}    ${customer_type}    ${pouch_number}
-    ...            ${parcel_size}    ${check_in_date}  ${origin_store}     ${origin_warehouse}
+    ...            ${parcel_size}    ${check_in_date}    ${origin_store}    ${origin_warehouse}
     ...            ${destination_store}    ${crossdock_warehouse}    ${shipping_by}    ${destination_warehouse}
     ${dps_txt_value_route}=    Replace String    ${dps_txt_value_parcel_detail_with_title_history_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['route']}
     ${actual_value_route}=    Get Text    ${dps_txt_value_route}
