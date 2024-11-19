@@ -53,7 +53,7 @@ DC_Operation_S017
     Sleep  5s
     ${pouch_number}    Get Pouch Number
     ${today}    Set Today
-    # Defect155    Defect156
+    # Defect155
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
