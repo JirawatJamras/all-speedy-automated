@@ -510,6 +510,7 @@ DC_Operation_S006
 
     Log    Step No.39 กรอกหมายเลข pouch
     dps_scan_page.Input Pouch Number [Scan In Page]    ${pouch_number}
+    dps_scan_page.Click Search Button [Scan In Page]
     # Expected
     #
 

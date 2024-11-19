@@ -228,6 +228,33 @@ Verify Data List Scan In Warehouse AC
     ${dps_txt_value_scan_in_warehouse_ac}=    Replace String    ${dps_txt_value_scan_in_warehouse_ac}    {parcel_status}    ${parcel_status}
     Wait Until Element Is Visible    ${dps_txt_value_scan_in_warehouse_ac}    timeout=${DEFAULT_TIMEOUT}
     
+Verify Parcel Is On Pouch Warning Popup
+    [Arguments]    ${expected_txt}
+    Wait Until Element Is Visible    ${dps_txt_parcel_is_on_pouch_popup1}    timeout=10s
+    ${actual_txt1}=    Get Text    ${dps_txt_parcel_is_on_pouch_popup1}
+    ${actual_txt2}=    Get Text    ${dps_txt_parcel_is_on_pouch_popup2}
+    Should Be Equal As Strings    ${expected_txt}    ${actual_txt1} ${actual_txt2}
+
+Click Agree On Parcel Is On Pouch Warning Popup
+    ${dps_btn_agree_on_parcel_is_on_pouch_popup}=    Replace String    ${dps_btn_agree_on_parcel_is_on_pouch_popup}    {value}    ${dc_operation['text_agree']}
+    common.Click When Ready    ${dps_btn_agree_on_parcel_is_on_pouch_popup}
+
+Verify Unbox Pouch And Scan Piece By Piece
+    [Arguments]    ${expected_text}
+    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}=    Replace String    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}    {value}    ${expected_text}
+    Wait Until Element Is Visible    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}    timeout=10s
+    ${actual_text}=    Get Text    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}
+    Should Be Equal    ${actual_text}    ${expected_text}
+
+Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
+    ${dps_btn_confirm_unbox_pouch_and_scan_piece_by_piece}=    Replace String    ${dps_btn_confirm_unbox_pouch_and_scan_piece_by_piece}    {value}    ${dc_operation['text_confirm']}
+    common.Click When Ready    ${dps_btn_confirm_unbox_pouch_and_scan_piece_by_piece}
+
+Input Tracking Number In Search Bar On Pouch Detail Section
+    [Arguments]    ${text}
+    ${dps_txtbox_on_pouch_detail_section}=    Replace String    ${dps_txtbox_on_pouch_detail_section}    {value}    ${dc_operation['text_pouch_detail']}
+    common.Input When Ready  ${dps_txtbox_on_pouch_detail_section}    ${text}
+
 #################################### Home Destination ####################################
 
 Click Confirm Button To Create Pouch
