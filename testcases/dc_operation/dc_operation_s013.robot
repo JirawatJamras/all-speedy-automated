@@ -112,7 +112,7 @@ DC_Operation_S013
     dps_home_page.Wait Until DC Operation Home Page Loaded
     Log    Delete Tracking From Excel
     common.Delete Row In Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
-    # Defect158
+    # Defect158    Defect159
     # Expected    
     # Inprogress
     # dps_home_page.Wait Until Page Loaded

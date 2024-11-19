@@ -103,7 +103,7 @@ DC_Operation_S003:
     # update_date: 08/11/2567
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
-    export_to: home
+    export_to: Home
     deliver: Flash
     update_date:
   timeline_in_history_parcel:

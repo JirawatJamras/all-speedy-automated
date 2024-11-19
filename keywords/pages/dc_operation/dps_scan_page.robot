@@ -527,7 +527,7 @@ Verify Popup Confirm Scan Out
     ${dps_txt_popup_scan_out}=    Replace String    ${dps_txt_popup_scan_out}    {value}    ${txt_expected}
     Wait Until Element Is Visible    ${dps_txt_popup_scan_out}    timeout=10s
     ${actual_txt}=    Get Text    ${dps_txt_popup_scan_out}
-    Sould Be Equal    ${actual_txt}    ${txt_expected}
+    Should Be Equal    ${actual_txt}    ${txt_expected}
 
 Click Confirm Button On Popup Asking To Scan Out    # Scan Out
     ${button_confirm}=    Replace String    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    {value}    ${dc_operation['text_confirm']}
@@ -554,7 +554,7 @@ Click Print Button By Data     # Scan Out
     # ${parcel_amount}    ${pouch_amount}    ${total_parcel_pouch}
     ${btn_print}=    Replace String    ${dps_btn_print_scan_out}    {export_to}    ${export_to}
     ${btn_print}=    Replace String    ${btn_print}    {deliver}    ${deliver}
-    ${btn_print}=    Replace String    ${btn_print}    ${dc_operation['text_print']}
+    ${btn_print}=    Replace String    ${btn_print}    {print}    ${dc_operation['text_print']}
     common.Click When Ready    ${btn_print}
 
 Input Pouch Number [Scan Out Page]    # Scan Out
