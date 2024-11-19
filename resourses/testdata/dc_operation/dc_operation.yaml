@@ -1251,8 +1251,6 @@ DC_Operation_S017:
     parcel_status: พัสดุรอ Scan out ไปคลัง AC
     customer_type: B2C
     parcel_size: 'ซอง A4'
-    date_in_system: '2-3 วัน'
-    sla_text: '3 วัน'
     origin_store: '-'
     origin_warehouse: DC BB
     destination_store: 'To Store (01015)'
@@ -1266,7 +1264,7 @@ DC_Operation_S017:
   value_receiver_in_warehouse:
     name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
     phone: '0900987354'
-    address: 'Store(01015) สาขาเวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
+    address: '01015 สาขา เวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
   check_close_pouch:
     inventory: RDC LP
   data_in_pouch_list:

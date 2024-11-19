@@ -157,9 +157,18 @@ Verify Title Parcel Details In Warehouse Details
     Should Be Equal    ${actual_txt_title_destination_warehouse}    ${destination_warehouse}
 
 Verify Data Parcel Details In Warehouse Details
-    [Arguments]    ${tracking_number}    ${parcel_status}    ${customer_type}    ${pouch_number}    ${parcel_size}
-    ...            ${route}    ${check_in_date}    ${date_in_system}    ${sla_date}    ${sla_text}    ${origin_store}
-    ...            ${origin_warehouse}    ${destination_store}    ${crossdock_warehouse}    ${shipping_by}    ${destination_warehouse}
+    [Arguments]    ${tracking_number}    ${parcel_status}    ${customer_type}    ${pouch_number}
+    ...            ${parcel_size}    ${check_in_date}  ${origin_store}     ${origin_warehouse}
+    ...            ${destination_store}    ${crossdock_warehouse}    ${shipping_by}    ${destination_warehouse}
+    ${dps_txt_value_route}=    Replace String    ${dps_txt_value_parcel_detail_with_title_history_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['route']}
+    ${actual_value_route}=    Get Text    ${dps_txt_value_route}
+    ${dps_txt_value_date_in_system}=    Replace String    ${dps_txt_value_parcel_detail_with_title_history_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['date_in_system']}
+    ${actual_value_date_in_system}=    Get Text    ${dps_txt_value_date_in_system}
+    ${dps_txt_value_sla_date}=    Replace String    ${dps_txt_value_parcel_detail_with_title_history_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['sla_date']}
+    ${actual_value_sla_date}=    Get Text    ${dps_txt_value_sla_date}
+    ${dps_txt_value_sla_text}=    Replace String    ${dps_txt_value_parcel_detail_with_title_history_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['sla_text']}
+    ${actual_value_sla_text}=    Get Text    ${dps_txt_value_sla_text}
+
     ${dps_txt_value_tracking_number}=    Replace String    ${dps_txt_value_tracking_number_history_parcel_page}    {value}    ${tracking_number}
     ${dps_txt_value_parcel_status}=    Replace String    ${dps_txt_value_parcel_status_history_parcel_page}    {value}    ${parcel_status}
     ${dps_txt_value_customer_type}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${customer_type}
@@ -167,11 +176,11 @@ Verify Data Parcel Details In Warehouse Details
     ${dps_txt_value_pouch_number}=    Replace String    ${dps_txt_value_pouch_number}    {value}    ${pouch_number}
     ${dps_txt_value_parcel_size}=    Replace String    ${dps_txt_value_parcel_size_history_parcel_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['parcel_size']}
     ${dps_txt_value_parcel_size}=    Replace String    ${dps_txt_value_parcel_size}    {value}    ${parcel_size}
-    ${dps_txt_value_route}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${route}
-    # ${dps_txt_value_check_in_date}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${check_in_date}
-    ${dps_txt_value_date_in_system}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${date_in_system}
-    # ${dps_txt_value_sla_date}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${sla_date}
-    ${dps_txt_value_sla_text}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${sla_text}
+    ${dps_txt_value_route}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${actual_value_route}
+    ${dps_txt_value_check_in_date}=    Replace String    ${dps_txt_value_parcel_detail_with_title_history_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['check_in_date']}
+    ${dps_txt_value_date_in_system}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${actual_value_date_in_system}
+    ${dps_txt_value_sla_date}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${actual_value_sla_date}
+    ${dps_txt_value_sla_text}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${actual_value_sla_text}
     ${dps_txt_value_origin_store}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${origin_store}
     ${dps_txt_value_origin_warehouse}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${origin_warehouse}
     ${dps_txt_value_destination_store}=    Replace String    ${dps_txt_value_destination_store_history_parcel_page}    {title}    ${dc_operation.label_parcel_details_in_warehouse['destination_store']}
@@ -179,32 +188,33 @@ Verify Data Parcel Details In Warehouse Details
     ${dps_txt_value_crossdock_warehouse}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${crossdock_warehouse}
     ${dps_txt_value_shipping_by}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${shipping_by}
     ${dps_txt_value_destination_warehouse}=    Replace String    ${dps_txt_value_parcel_detail_history_parcel_page}    {value}    ${destination_warehouse}
+    
     ${actual_txt_value_tracking_number}=    Get Text    ${dps_txt_value_tracking_number}
     ${actual_txt_value_parcel_status}=    Get Text    ${dps_txt_value_parcel_status}
     ${actual_txt_value_customer_type}=    Get Text    ${dps_txt_value_customer_type}
     ${actual_txt_value_pouch_number}=    Get Text    ${dps_txt_value_pouch_number}
     ${actual_txt_value_parcel_size}=    Get Text    ${dps_txt_value_parcel_size}
-    ${actual_txt_value_route}=    Get Text    ${dps_txt_value_route}
-    # ${actual_txt_value_check_in_date}=    Get Text    ${dps_txt_value_check_in_date}
-    ${actual_txt_value_date_in_system}=    Get Text    ${dps_txt_value_date_in_system}
-    # ${actual_txt_value_sla_date}=    Get Text    ${dps_txt_value_sla_date}
-    ${actual_txt_value_sla_text}=    Get Text    ${dps_txt_value_sla_text}
+    ${actual_txt_value_check_in_date}=    Get Text    ${dps_txt_value_check_in_date}
     ${actual_txt_value_origin_store}=    Get Text    ${dps_txt_value_origin_store}
     ${actual_txt_value_origin_warehouse}=    Get Text    ${dps_txt_value_origin_warehouse}
     ${actual_txt_value_destination_store}=    Get Text    ${dps_txt_value_destination_store}
     ${actual_txt_value_crossdock_warehouse}=    Get Text    ${dps_txt_value_crossdock_warehouse}
     ${actual_txt_value_shipping_by}=    Get Text    ${dps_txt_value_shipping_by}
     ${actual_txt_value_destination_warehouse}=    Get Text    ${dps_txt_value_destination_warehouse}
+    
     Should Be Equal    ${actual_txt_value_tracking_number}    ${tracking_number}
     Should Be Equal    ${actual_txt_value_parcel_status}    ${parcel_status}
     Should Be Equal    ${actual_txt_value_customer_type}    ${customer_type}
     Should Be Equal    ${actual_txt_value_pouch_number}    ${pouch_number}
     Should Be Equal    ${actual_txt_value_parcel_size}    ${parcel_size}
-    Should Be Equal    ${actual_txt_value_route}    ${route}
-    # Should Be Equal    ${actual_txt_value_check_in_date}    ${check_in_date}
-    Should Be Equal    ${actual_txt_value_date_in_system}    ${date_in_system}
-    # Should Be Equal    ${actual_txt_value_sla_date}    ${sla_date}
-    Should Be Equal    ${actual_txt_value_sla_text}    ${sla_text}
+    Element Should Be Visible    ${dps_txt_value_route}
+    ${actual_value_date}    Split String And Select  ${actual_txt_value_check_in_date}  ${SPACE}  0
+    ${actual_value_time}    Split String And Select  ${actual_txt_value_check_in_date}  ${SPACE}  1
+    Should Match Regexp    ${actual_value_time}    ^\\d{2}:\\d{2}$
+    Should Be Equal    ${actual_value_date}    ${check_in_date}
+    Element Should Be Visible    ${dps_txt_value_date_in_system}
+    Element Should Be Visible    ${dps_txt_value_sla_date}
+    Element Should Be Visible    ${dps_txt_value_sla_text}
     Should Be Equal    ${actual_txt_value_origin_store}    ${origin_store}
     Should Be Equal    ${actual_txt_value_origin_warehouse}    ${origin_warehouse}
     Should Be Equal    ${actual_txt_value_destination_store}    ${destination_store}
