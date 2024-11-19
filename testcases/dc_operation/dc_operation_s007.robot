@@ -456,7 +456,7 @@ DC_Operation_S007
 
     Log    Step No.26 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     # Defect220
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}    #Expect Result is ประวัติพัสดุภายในคลัง
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
     # Expected
     dps_history_parcel_page.Verify History Parcel Page    ${dc_operation.title['history_parcel']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    Verify History Parcel Page
@@ -468,7 +468,7 @@ DC_Operation_S007
     # Defect201    Defect202    Defect206
     # Expected
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    Verify Timeline
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Timeline
 
     Log    Step No.28 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DCSB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}

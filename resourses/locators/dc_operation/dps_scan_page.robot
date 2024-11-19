@@ -36,8 +36,10 @@ ${dps_txt_title_send_parcel_to}   //span[contains(@class,'ant-typography')]//str
 ${dps_txt_title_route}   //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_label_scan_in}    //div[@class='']//span[text()='{value}']
 ${dps_txt_label_size_scan_in}    //div[@class='']//span[contains(normalize-space(), '{value}')]
-${dps_txt_label_scan_in_warehouse_ac}    //tr[th[1]='{parcel_id}' and th[2]='{pouch_number}' and th[3]='{receive_parcel_from}' and th[4]='{parcel_size}' and th[5]='{receiving_date}' and th[6]='{parcel_status}']
-${dps_txt_value_scan_in_warehouse_ac}    //tr[td[1]='{parcel_id}' and td[2]='{pouch_number}' and td[3]='{receive_parcel_from}' and td[4]='{parcel_size}' and contains(td[5],'{receiving_date}') and td[6]='{parcel_status}']
+${dps_txt_label_wait_scan_in_warehouse_ac}    //tr[th[1]='{parcel_id}' and th[2]='{pouch_number}' and th[3]='{receive_parcel_from}' and th[4]='{parcel_size}' and th[5]='{receiving_date}' and th[6]='{parcel_status}']
+${dps_txt_value_wait_scan_in_warehouse_ac}    //tr[td[1]='{parcel_id}' and td[2]='{pouch_number}' and td[3]='{receive_parcel_from}' and td[4]='{parcel_size}' and contains(td[5],'{receiving_date}') and td[6]='{parcel_status}']
+${dps_txt_label_scan_in_warehouse_ac}    //tr[th[1]='{pouch_number}' and th[2]='{parcel_id}' and th[3]='{receive_parcel_from}' and th[4]='{parcel_size}' and th[5]='{receiving_date}' and th[6]='{parcel_status}']
+${dps_txt_value_scan_in_warehouse_ac}    //tr[td[1]='{pouch_number}' and td[2]='{parcel_id}' and td[3]='{receive_parcel_from}' and td[4]='{parcel_size}' and contains(td[5],'{receiving_date}') and td[6]='{parcel_status}']
 
 ${dps_txt_value_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and contains(td[7], '{value_date}') and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]
 ${dps_txt_update_time_scan_out}    //tr[td[1]='{value_pouch_number}' and td[2]='{value_parcel_id}' and td[3]='{value_import_from}' and td[4]='{value_transport}' and td[5]='{value_parcel_owner}' and td[6]='{value_parcel_size}' and contains(td[7], '{value_date}') and //td[8]//h1[contains(normalize-space(), '{value_parcel_status}')]]//td[7]

@@ -922,8 +922,10 @@ DC_Operation_S011:
     parcel_size: กล่อง XL
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status3: พัสดุออกจากคลังข้ามภาค (AC)
   data_in_import_task_tab:
     import_from: Home
+    import_from2: คลัง AC
     transport: CP All
     parcel_owner: Speedy
   data_in_export_task_tab:
@@ -934,18 +936,18 @@ DC_Operation_S011:
     customer_id: '0002400563'
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: AC
-    destination_warehouse: RDCLP
+    destination_warehouse: RDC LP
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: CP All
+    courier: CP ALL
     pouch_number: '-'
     origin_warehouse: DCBB
     send_parcel_to: Store (01015)
   scan_in_data_label_detail:
     store: '01015'
-    customer: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    customer: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
     phone: ''
     pouch_number: ''
-    wh: DCBB - AC - RDCLP
+    wh: DCBB - AC - RDC LP
     symbol: รูปนาฬิกาทราย
   sender_data_in_scan_in_tab:
     name: คุณ j
