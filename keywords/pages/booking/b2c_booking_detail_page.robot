@@ -151,6 +151,7 @@ Click Save Button In Edit Booking List Popup
     ${btn_save_shipping_origin} =  Replace String    ${b2c_btn_save_shipping_origin}    {value}    ${Booking['text_save']}
     Scroll Element Into View    ${btn_save_shipping_origin}
     common.Click When Ready    ${btn_save_shipping_origin}
+    Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Complete Select Parcel Pickup Schedule And Save
     [Arguments]    ${today}    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}

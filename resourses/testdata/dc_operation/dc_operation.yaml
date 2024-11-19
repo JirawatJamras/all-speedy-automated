@@ -1408,3 +1408,23 @@ DC_Operation_S026:
     phone: '0900987354'
     shipping_destination: ร้าน สาขา เวียงป่าเป้า (01015)
     address: 'เวียง เวียงป่าเป้า เชียงราย 57170'
+  pouch:
+    number_of_parcel: '1'
+  value_parcel_details_in_warehouse:
+    parcel_status: พัสดุรอ Scan out ไปคลัง AC
+    customer_type: B2C
+    parcel_size: 'กล่อง XL'
+    origin_store: '-'
+    origin_warehouse: DC BB
+    destination_store: 'To Store (01015)'
+    crossdock_warehouse: AC
+    shipping_by: CP All
+    destination_warehouse: RDC LP
+  value_sender_in_warehouse:
+    name: คุณ j
+    phone: '0959494989'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  value_receiver_in_warehouse:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    phone: '0900987354'
+    address: '01015 สาขา เวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'

@@ -179,6 +179,10 @@ Verify Create Pouch Popup After Scan In
 Click Accept Button On Popup For Creating Pouch
     ${dps_btn_accept_for_create_pouch_auto}=    Replace String    ${dps_btn_accept_for_create_pouch_auto}    {value}    ${dc_operation['text_confirm']}
     common.Click When Ready    ${dps_btn_accept_for_create_pouch_auto}
+    
+Get Pouch Number In Scan Page    ##ใช้ชั่วคราว
+    ${pouch_number}=    Get text    (//span[text()='ปิด POUCH']/../../../..//span[text()='0']/../..//span[contains(text(),'P')])[1]
+    RETURN    ${pouch_number}
 
 Verify Label Wait Scan In Warehouse AC
     [Arguments]    ${parcel_id}    ${pouch_number}    ${receive_parcel_from}
@@ -228,6 +232,7 @@ Verify Data List Scan In Warehouse AC
 
 Click Confirm Button To Create Pouch
     common.Click When Ready    ${dps_btn_confirm_create_pouch}
+    Wait Until Element Is Not Visible    ${dps_btn_confirm_create_pouch}
 
 Verify Pouch Detail In Scan Page
     [Arguments]    ${pouch_number}    ${number_of_parcel}
@@ -253,6 +258,7 @@ Click Accept Scan In
 
 Click Close Print Label Success Popup
     common.Click When Ready    ${dps_btn_close_on_print_label_success_popup}
+    Wait Until Element Is Not Visible    ${dps_txt_print_label_success_in_popup}    timeout=${DEFAULT_TIMEOUT}
     
 Verify Print Label Success Popup
     [Arguments]    ${expected_text}
@@ -277,6 +283,13 @@ Verify Create Pouch Popup Confirmation
 Click Confirm Button To Create Pouch Popup Confirmation
     ${dps_btn_confirm_create_pouch_confirmation}=    Replace String    ${dps_btn_confirm_create_pouch_confirmation_scan_in_page}    {value}    ${dc_operation.create_pouch_confirmation['button_confirm']}
     common.Click When Ready    ${dps_btn_confirm_create_pouch_confirmation}
+
+Click Pouch Box
+    [Arguments]    ${pouch_number}    ${number_of_parcel}
+    ${text_pouch_number}=    Replace String    ${dps_txt_number_of_parcel_in_pouch}    {pouch_number}    ${pouch_number}
+    ${text_number_of_parcel}=    Replace String    ${text_pouch_number}    {value}    ${number_of_parcel}
+    Scroll Element Into View    ${text_number_of_parcel}
+    common.Click When Ready    ${text_number_of_parcel}
 
 #################################### Other Courier ####################################
 

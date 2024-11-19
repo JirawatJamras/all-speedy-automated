@@ -91,7 +91,7 @@ ${dps_txt_close_pouch_first_warning_popup}    //span[text()='{value}']
 ${dps_txt_popup_scan_out}    //div[text()='{value}']
 ${dps_txt_popup_create_pouch}    //div[@role='dialog']//div[text()='{value}']
 ${dps_txt_popup_create_pouch_detail}    //div[@role='dialog']//span[contains(text(),'{value}')]
-${dps_txt_pouch_detail}    //strong[contains(text(),'{value}')]/../../../../../..//div[contains(@class,'ant-row ant-row-center')]//span[contains(text(),'{pouch_number}')]
+${dps_txt_pouch_detail}    //strong[contains(text(),'{value}')]/../../../../../..//div[contains(@class,'ant-row ant-row-center')]//span[contains(text(),'{pouch_number}')]/..
 ${dps_txt_number_of_parcel_in_pouch}    //span[contains(text(),'{pouch_number}')]/../..//span[text()='{value}']
 ${dps_txt_print_label_success_in_popup}    //div[@class='ant-modal-content']//button[@class='ant-modal-close']/..//div[@class='ant-modal-body']//div//div[2]
 ${dps_txt_accept_scan_in_success_in_popup}    //div[@class='ant-modal-content']/div/div/p
