@@ -536,8 +536,11 @@ dc_operation:
     origin_warehouse: 'คลังต้นทาง :'
     destination_warehouse: คลังปลายทาง
     default_number_of_parcel: '0'
-
-
+  create_pouch_confirmation: 
+    text_create_pouch: พัสดุปลายทางนี้ยังไม่มี Pouch ยืนยันการสร้าง Pouch
+    title_destination_pouch: 'คลังปลายทาง :'
+    value_destination_pouch: RDC LP
+    button_confirm: ยืนยัน
 
 rm:
   text_pre_register: Pre-Register

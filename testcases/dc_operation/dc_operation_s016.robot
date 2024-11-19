@@ -138,20 +138,20 @@ DC_Operation_S016
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Label After Editing Destination Warehouse
 
     # Log    Step No.5 คลิกปุ่ม ยืนยัน/Print Label
-    # dps_parcel_detail_page.Click Print Label
+    # dps_scan_page.Click Print Label
 
     # Log    Step No.6 คลิกปุ่มพิมพ์
     # # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     # common.Click ESC On Keyboard
     # Defect142
     # Expected
-    # dps_parcel_detail_page.Verify Print Label Success Popup
+    # dps_scan_page.Verify Print Label Success Popup
     # ...    ทำรายการสำเร็จ    # Expected is: ${dc_operation['text_print_label_success']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Print Label Success Popup
 
     # Defect145    Unable to click on popup, but anable to click on close button (X) to close popup.
     # Log    Step No.7 คลิกที่ Pop up
-    # dps_parcel_detail_page.Click Close Print Label Success Popup
+    # dps_scan_page.Click Close Print Label Success Popup
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Navigate To Scan Page And Stay At Scan In Tab
