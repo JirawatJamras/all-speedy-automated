@@ -1234,7 +1234,8 @@ DC_Operation_S016:
     customer: ทดสอบพัสดุCourier
     phone: '0900987354'
     pouch_number: '-'
-    wh: 'DCBB - DCBB'
+    wh: 'DC BB - DC BB'
+    wh_after_changing_warehouse: 'DC BB - DC SB'
     symbol: รูปวงกลม
     symbol_after_changing_warehourse: รูปดาว
 
@@ -1313,12 +1314,8 @@ DC_Operation_S018:
     parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
     customer_type: B2C
     pouch_number: '-'
-    parcel_size: S
+    parcel_size: กล่อง S
     route: '-'
-    # check_in_date: วันที่รับพัสดุเข้าระบบ
-    date_in_system: '2-3 วัน'
-    # sla_date: SLA Date
-    sla_text: '3 วัน'
     origin_store: '-'
     origin_warehouse: DC BB
     destination_store: '-'

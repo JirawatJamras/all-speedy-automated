@@ -9,7 +9,7 @@ Test Teardown     Close Browser
 DC_Operation_S018
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ และใบคัดแยกพัสดุ กรณีแก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in ที่คลังต้นทาง
     [Tags]    DC_Operation    UAT    Fail
-    ${tracking_i}=    Set Variable    SPBD241100012375
+    ${tracking_i}=    Set Variable    SPBD241100014589
 
     Log    Login
     common.Open URL    ${DPS_UAT_URL}
@@ -59,12 +59,8 @@ DC_Operation_S018
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_status']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['customer_type']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['pouch_number']}
-    ...    กล่อง S  # ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_size']}
+    ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_size']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['route']}
-    ...    15/11/2567 16:02
-    ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['date_in_system']}
-    ...    18/11/2567
-    ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['sla_text']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['origin_store']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['origin_warehouse']}
     ...    To Home ()  # ${DC_Operation_S018.value_parcel_details_in_warehouse['destination_store']}
