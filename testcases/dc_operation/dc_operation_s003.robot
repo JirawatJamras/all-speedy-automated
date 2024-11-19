@@ -570,7 +570,7 @@ DC_Operation_S003
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
-    # Defect218
+    # Defect235
     # Expected
     # dps_wait_delivery.Verify Label Delivery List
     # ...    ${dc_operation.label_delivery_list['export_to']}
@@ -583,14 +583,20 @@ DC_Operation_S003
     # dps_wait_delivery.Verify Data Delivery List
     # ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
     # ...    ${DC_Operation_S003.wait_derivery_data_list['transport']}
-    # ...    ${DC_Operation_S003.wait_derivery_data_list['date']}
+    # ...    ${today}
     # ...    ${DC_Operation_S003.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data Delivery List
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     # Defect235
+    dps_scan_page.Click Print Button By Data
+    ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
+    ...    ${DC_Operation_S003.wait_derivery_data_list['deliver']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
+    common.Click ESC On Keyboard
+    # Defect235    
+    # Expected
 
 
 

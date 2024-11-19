@@ -105,7 +105,7 @@ DC_Operation_S003:
   wait_derivery_data_list:
     export_to: Home
     deliver: Flash
-    update_date:
+    status: รอขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
@@ -1107,18 +1107,35 @@ DC_Operation_S013:
     # shipping_destination: บ้าน
     # address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
   scan_out_waiting_scan:
-    tracking: SPBD241100000464
     pouch_number: '-'
     receive_parcel_from: Store
     transport: Flash
     parcel_owner: Speedy
     parcel_size: 'กล่อง L'
-    update_date: 08/11/2567
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  scan_out_list_data:
+    pouch_number: '-'
+    receive_parcel_from: Store
+    transport: Flash
+    parcel_owner: Speedy
+    parcel_size: กล่อง L
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
-    export_to: home
+    export_to: Home
     deliver: Flash
-    update_date: 
+    status: รอขนส่งเข้ารับพัสดุ
+
+  timeline_in_history_parcel:
+    # - title: ร้านรับพัสดุ
+    #   description: '07465 สาขา คุณาลัย-บางใหญ่'
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+      description: '-'
+    # - title: พัสดุออกจากคลังต้นทาง
+    #   description: DC BB
 
 DC_Operation_S014:
   data_in_all_task_tab:

@@ -366,6 +366,7 @@ Verify Data Parcel Details In Scan Page [Other Courier]
     Should Be Equal    ${actual_value_pouch_number}    ${pouch_number}
     Should Contain    ${actual_value_receiving_date}    ${receiving_date}
     Should Match Regexp    ${actual_value_receiving_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
+    # Should Match Regexp    ${actual_value_receiving_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
     Should Be Equal    ${actual_value_origin_warehouse}    ${origin_warehouse}
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
 

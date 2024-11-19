@@ -449,7 +449,7 @@ DC_Operation_S007
     dps_scan_page.Verify Accept Scan In Success Popup
     ...    ยืนยันรับเข้าพัสดุ เรียบร้อยแล้ว    # Expected is: ${dc_operation['text_accept_scan_in_success']}
 
-    Log    Step No.25 คลิกที่ี Pop up
+    Log    Step No.25 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
     # Expected 
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
