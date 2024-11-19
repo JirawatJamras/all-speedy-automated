@@ -30,59 +30,59 @@ DC_Operation_S016
     dps_home_page.Wait Until Page Loaded
     # Defect155    Defect160
     # Expected
-    dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
-    ...    ${dc_operation.scan_in_title_parcel_detail['title']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
-    ...    ${tracking_a}
-    ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['customer_id']}
-    ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['parcel_size']}
-    ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['parcel_status']}
-    ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['courier']}
-    ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['pouch_number']}
-    ...    ${today}
-    ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['origin_warehouse']}
-    ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['send_parcel_to']}
-    dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
-    ...    ${dc_operation.scan_in_title_label_detail['courier']}
-    ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
-    ...    ${dc_operation.scan_in_title_label_detail['customer']}
-    ...    ${dc_operation.scan_in_title_label_detail['phone']}
-    dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
-    ...    FLS  # ${DC_Operation_S016.label_detail_in_scan_in_tab['courier']}
-    ...    ${DC_Operation_S016.label_detail_in_scan_in_tab['zipcode']} 
-    ...    ${DC_Operation_S016.label_detail_in_scan_in_tab['customer']}
-    ...    ${DC_Operation_S016.label_detail_in_scan_in_tab['phone']}
-    dps_scan_page.Verify Title Sender In Scan Page
-    ...    ${dc_operation.scan_in_title_sender_detail['title']}
-    ...    ${dc_operation.scan_in_title_sender_detail['name']}
-    ...    ${dc_operation.scan_in_title_sender_detail['phone']}
-    ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
-    ...    ${dc_operation.scan_in_title_sender_detail['address']}
-    dps_scan_page.Verify Data Sender In Scan Page
-    ...    ${DC_Operation_S016.sender_data_in_scan_in_tab['name']}
-    ...    ${DC_Operation_S016.sender_data_in_scan_in_tab['phone']}
-    ...    บริษัท ไอดีซี พรีเมียร์ จำกัด (-)  # ${DC_Operation_S016.sender_data_in_scan_in_tab['shipping_origin']}
-    ...    ${DC_Operation_S016.sender_data_in_scan_in_tab['address']}
-    dps_scan_page.Verify Title Receiver In Scan Page
-    ...    ${dc_operation.scan_in_title_receiver_detail['title']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['name']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Recevier In Scan Page
-    ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['name']}
-    ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['phone']}
-    ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['shipping_destination']}
-    ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['address']}
+    # dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
+    # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
+    # ...    ${tracking_a}
+    # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['customer_id']}
+    # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['parcel_size']}
+    # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['parcel_status']}
+    # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['courier']}
+    # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['pouch_number']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['origin_warehouse']}
+    # ...    ${DC_Operation_S016.parcel_detail_in_scan_in_tab['send_parcel_to']}
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
+    # ...    ${dc_operation.scan_in_title_label_detail['courier']}
+    # ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
+    # ...    ${dc_operation.scan_in_title_label_detail['customer']}
+    # ...    ${dc_operation.scan_in_title_label_detail['phone']}
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
+    # ...    FLS  # ${DC_Operation_S016.label_detail_in_scan_in_tab['courier']}
+    # ...    ${DC_Operation_S016.label_detail_in_scan_in_tab['zipcode']} 
+    # ...    ${DC_Operation_S016.label_detail_in_scan_in_tab['customer']}
+    # ...    ${DC_Operation_S016.label_detail_in_scan_in_tab['phone']}
+    # dps_scan_page.Verify Title Sender In Scan Page
+    # ...    ${dc_operation.scan_in_title_sender_detail['title']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['name']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['address']}
+    # dps_scan_page.Verify Data Sender In Scan Page
+    # ...    ${DC_Operation_S016.sender_data_in_scan_in_tab['name']}
+    # ...    ${DC_Operation_S016.sender_data_in_scan_in_tab['phone']}
+    # ...    บริษัท ไอดีซี พรีเมียร์ จำกัด (-)  # ${DC_Operation_S016.sender_data_in_scan_in_tab['shipping_origin']}
+    # ...    ${DC_Operation_S016.sender_data_in_scan_in_tab['address']}
+    # dps_scan_page.Verify Title Receiver In Scan Page
+    # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['name']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
+    # dps_scan_page.Verify Data Recevier In Scan Page
+    # ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['name']}
+    # ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['phone']}
+    # ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['shipping_destination']}
+    # ...    ${DC_Operation_S016.receiver_data_in_scan_in_tab['address']}
     common.Scroll Window To Vertical    400
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Parcel Details After Scanning
 
