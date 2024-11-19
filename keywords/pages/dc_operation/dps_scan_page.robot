@@ -169,7 +169,16 @@ Verify Create Pouch Popup
     Wait Until Element Is Visible    ${value_destination_warehouse}    timeout=10s
     Wait Until Element Is Visible    ${dps_cbo_destination_warehouse_in_create_pouch_popup}
 
-# Get Pouch Number In Scan Page
+Verify Create Pouch Popup After Scan In
+    [Arguments]    ${destination_warehouse}
+    ${dps_txt_destination_warehouse_create_pouch_popup_after_scan_in}=    Replace String    ${dps_txt_destination_warehouse_create_pouch_popup_after_scan_in}    {value}    ${dc_operation['text_destination_warehouse']}
+    Wait Until Element Is Visible    ${dps_txt_destination_warehouse_create_pouch_popup_after_scan_in}    timeout=10s
+    ${actual_text}=    Get Text    ${dps_txt_destination_warehouse_create_pouch_popup_after_scan_in}
+    Should Be Equal    ${actual_text}    ${destination_warehouse}
+
+Click Accept Button On Popup For Creating Pouch
+    ${dps_btn_accept_for_create_pouch_auto}=    Replace String    ${dps_btn_accept_for_create_pouch_auto}    {value}    ${dc_operation['text_confirm']}
+    common.Click When Ready    ${dps_btn_accept_for_create_pouch_auto}
 
 Verify Label Wait Scan In Warehouse AC
     [Arguments]    ${parcel_id}    ${pouch_number}    ${receive_parcel_from}
@@ -236,8 +245,6 @@ Verify Accept Scan In Success Popup
     Wait Until Element Is Visible    ${dps_txt_accept_scan_in_success_in_popup}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text}=    Get Text    ${dps_txt_accept_scan_in_success_in_popup}
     Should Be Equal    ${actual_text}    ${expected_text}
-
-Verify Create Pouch Popup Confirmation 
 
 #################################### Other Courier ####################################
 

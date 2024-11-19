@@ -14,7 +14,7 @@ DC_Operation_S006
     # รอ Operation_S002
     # ${ParcelsData}    Get Parcels And Sender Names    B2411000294
     # ${tracking_e}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${DC_Operation_S006['sender_name']}
-    ${tracking_e}=    Set Variable    SPBD241100010913
+    ${tracking_i}=    Set Variable    SPBD241100010913
     ${pouch_number}=    Set Variable    P112425013
 
     common.Open URL    ${DPS_UAT_URL}
@@ -92,8 +92,7 @@ DC_Operation_S006
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Create Pouch Destination DCSB Popup
     
     Log    Step No.9 คลิกปุ่มตกลง
-    # Defect143    # Unable to test this step becuase of website is not display 'Create pouch destination: DCSB' popup
-    # Click Accept    
+    dps_scan_page.Click Accept Button On Popup For Creating Pouch
     # Expected    
     dps_home_page.Wait Until Page Loaded
     dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
@@ -308,14 +307,14 @@ DC_Operation_S006
     ...    ${DC_Operation_S006.data_in_pouch_detail.data_in_table['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Pouch Detail Popup
 
-    Log    Step No.21 คลิกปุ่มปิด Pouch/Print Label
+    Log    Step No.21  ปิด Pouch/Print Label
     dps_pouch_page.Click Print Pouch Label
     # Expected
     dps_pouch_page.Verify Warning Confirm To Close Pouch
     ...    ${dc_operation['text_warning_confirm_to_close_pouch']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Warning Confirm To Close Pouch
 
-    Log    Step No.22 กด ปุ่มปิด Pouch/Print Label ที่ pop up
+    Log    Step No.22 ปิด Pouch/Print Label
     dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
 
     Log    Step No.23 คลิกปุ่มพิมพ์

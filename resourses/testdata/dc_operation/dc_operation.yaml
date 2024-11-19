@@ -120,6 +120,7 @@ DC_Operation_S003:
 
 DC_Operation_S004:
   sender_name: คุณ c
+  destination_warehouse: RDC LP
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
@@ -509,6 +510,161 @@ DC_Operation_S007:
     customer_type: 'B2C'
     transport: CP All
 
+DC_Operation_S008:
+  sender_name: คุณ g
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+  check_close_pouch:
+    inventory: DC SB
+  parcel_detail_in_scan_in_tab:
+    receiving_date: 04-11-2567
+    customer_id: 'B2C0002400563'    #'2400563'
+    parcel_size: '120 ซม. กล่อง L'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    origin_warehouse: DCBB
+    send_parcel_to: 'Home (11120)'
+  label_detail_in_scan_in_tab:
+    courier: 'FSH'
+    zipcode: '11120'
+    province: 'นนทบุรี'
+    customer: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    size: L
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0633906216'
+    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+  timeline_in_history_parcel_after_scan_in:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+  data_in_all_task_tab_after_scan:
+    task_type: งานส่งออก
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: คลัง DCSB
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '1'
+    number_of_pieces: '-'
+    number_of_scanned_items: '1'
+  scan_out_waiting_scan:
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: ซอง A4
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_pouch_list:
+    crossdock_warehouse: '-'
+    destination_warehouse: DC SB
+    status_on: 'On'
+    status_off: 'Off'
+  data_in_pouch_detail:
+    crossdock_warehouse: '-'
+    pouch_status: เปิด
+    origin_warehouse: DC BB
+    destination_warehouse: DC SB
+    label_destination_warehouse: DC SB
+    label_number: '1'
+    label_route: DC BB - DC SB
+    label_simbol: รูปดาว
+    data_in_table:
+      destination_warehouse: DC SB
+      pickup_place: 'null'
+      type: B2C
+      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+  timeline_in_history_parcel_after_scan_out:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
+  wait_derivery_data_list:
+    export_to: Store
+    transport: CP All
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_all_task_tab_after_delivery:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: คลัง DC BB
+    export_to: '-'
+    transport: CP All
+    parcel_size: ซอง A4
+    parcel_status: พัสดุออกจากคลังต้นทาง (DC BB)
+  data_in_import_task_tab_after_delivery:
+    import_from: คลัง DC BB
+    transport: CP All
+    parcel_owner: Speedy
+  timeline_in_history_parcel_after_scan_in_at_destination_warehouse:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
+    - title: พัสดุถึงคลังปลายทาง
+      description: ''
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC SB
+  data_in_send_task_tab:
+    send_to: Home
+    store_code: '-'
+    customer_type: 'B2C'
+    transport: CP All
+
 DC_Operation_S009:
   data_in_all_task_tab:
     task_type_import: งานรับเข้า
@@ -589,6 +745,167 @@ DC_Operation_S009:
   data_in_send_task_tab:
     send_to: Store
     store_code: '15888'
+    customer_type: 'B2C'
+    transport: CP All
+
+DC_Operation_S010:
+  sender_name: คุณ e
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+  data_in_import_task_tab:
+    import_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+  check_close_pouch:
+    inventory: DC SB
+  parcel_detail_in_scan_in_tab:
+    receiving_date: 04-11-2567
+    customer_id: 'B2C0002400563'    #'2400563'
+    parcel_size: '120 ซม. กล่อง L'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: Flash
+    pouch_number: '-'
+    origin_warehouse: DCBB
+    send_parcel_to: 'Home (11120)'
+  label_detail_in_scan_in_tab:
+    courier: 'FSH'
+    zipcode: '11120'
+    province: 'นนทบุรี'
+    customer: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    size: L
+  sender_data_in_scan_in_tab:
+    name: คุณ a
+    phone: '0633906216'
+    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุCourier
+    phone: '0971971445'
+    shipping_destination: บ้าน
+    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+  timeline_in_history_parcel_after_scan_in:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+  data_in_all_task_tab_after_scan:
+    task_type: งานส่งออก
+    parcel_owner: Speedy
+    import_from: Home
+    export_to: คลัง DCSB
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_export_task_tab:
+    export_to: คลัง DCSB
+    transport: CP All
+    parcel_owner: Speedy
+    number_of_pouch: '1'
+    number_of_pieces: '-'
+    number_of_scanned_items: '1'
+  scan_out_waiting_scan:
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: ซอง A4
+    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+  data_in_pouch_list:
+    inventory_crossdock: '-'
+    destination_inventory: DC SC
+    parcel_amount: '1'
+    status: 'On'
+    status_off: 'Off'
+  data_in_pouch_detail:
+    crossdock_warehouse: '-'
+    pouch_status: เปิด
+    origin_warehouse: DC BB
+    destination_warehouse: DC SB
+    label_destination_warehouse: DC SB
+    label_number: '1'
+    label_route: DC BB - DC SB
+    label_simbol: รูปดาว
+    data_in_table:
+      destination_warehouse: DC SB
+      pickup_place: 'null'
+      type: B2C
+      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+  timeline_in_history_parcel_after_scan_out:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
+  wait_derivery_data_list:
+    export_to: Store
+    transport: CP All
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  data_in_all_task_tab_after_delivery:
+    task_type: งานรับเข้า
+    parcel_owner: Speedy
+    import_from: คลัง DC BB
+    export_to: '-'
+    transport: CP All
+    parcel_size: ซอง A4
+    parcel_status: พัสดุออกจากคลังต้นทาง (DC BB)
+  data_in_import_task_tab_after_delivery:
+    import_from: คลัง DC BB
+    transport: CP All
+    parcel_owner: Speedy
+  scan_in_value_waiting_scan_warehouse_ac:
+    pouch_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุออกจากคลังต้นทาง (DCBB)
+  timeline_in_history_parcel_after_scan_in_at_destination_warehouse:
+    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+    #   description: '-'
+    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+      description: ''
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: สเเกนเข้า POUCH
+      description: DC SB
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
+    - title: พัสดุถึงคลังปลายทาง
+      description: ''
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC SB
+  data_in_send_task_tab:
+    send_to: Home
+    store_code: '-'
     customer_type: 'B2C'
     transport: CP All
 

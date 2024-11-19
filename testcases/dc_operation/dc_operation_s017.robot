@@ -195,7 +195,7 @@ DC_Operation_S017
     # ...    ${dc_operation.label_pouch_in_pouch_detail['origin_warehouse']}
     # ...    ${dc_operation.label_pouch_in_pouch_detail['destination_warehouse']}
 
-    Log    Step No.19 คลิกปุ่มปิด Pouch/Print Label
+    Log    Step No.19  ปิด Pouch/Print Label
 
     Log    Step No.20 ปิด Pouch/Print Label
 
