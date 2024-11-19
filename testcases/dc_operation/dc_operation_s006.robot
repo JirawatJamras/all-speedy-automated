@@ -289,7 +289,7 @@ DC_Operation_S006
     ...    ${DC_Operation_S006.data_in_pouch_detail['label_destination_warehouse']}
     ...    ${DC_Operation_S006.data_in_pouch_detail['label_number']}
     ...    ${DC_Operation_S006.data_in_pouch_detail['label_route']}
-    ...    ${DC_Operation_S006.data_in_pouch_detail['label_simbol']}
+    ...    ${DC_Operation_S006.data_in_pouch_detail['label_symbol']}
     ...    ${pouch_number}
     dps_pouch_page.Verify Label In Table On Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_parcel_in_pouch_list']}
@@ -534,7 +534,7 @@ DC_Operation_S006
     ...    ${DC_Operation_S006.data_in_pouch_detail['label_destination_warehouse']}
     ...    ${DC_Operation_S006.data_in_pouch_detail['label_number']}
     ...    ${DC_Operation_S006.data_in_pouch_detail['label_route']}
-    ...    ${DC_Operation_S006.data_in_pouch_detail['label_simbol']}
+    ...    ${DC_Operation_S006.data_in_pouch_detail['label_symbol']}
     ...    ${pouch_number}
     dps_pouch_page.Verify Label In Table On Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_parcel_in_pouch_list']}

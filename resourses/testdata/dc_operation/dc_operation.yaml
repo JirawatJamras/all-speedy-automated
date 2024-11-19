@@ -210,7 +210,7 @@ DC_Operation_S004:
     label_destination_warehouse: DC SB
     label_number: '1'
     label_route: DC BB - DC SB
-    label_simbol: รูปดาว
+    label_symbol: รูปดาว
     data_in_table:
       destination_warehouse: DC SB
       pickup_place: 'null'
@@ -367,7 +367,7 @@ DC_Operation_S006:
     label_destination_warehouse: DC SB
     label_number: '1'
     label_route: DC BB - DC SB
-    label_simbol: รูปดาว
+    label_symbol: รูปดาว
     data_in_table:
       destination_warehouse: DC SB
       pickup_place: 'null'
@@ -1220,14 +1220,36 @@ DC_Operation_S016:
     symbol_after_changing_warehourse: รูปดาว
 
 DC_Operation_S017:
+  parcel_detail_in_scan_in_tab:
+    customer_id: '0002400563'
+    parcel_size: '51 ซม. ซอง A4'
+    crossdock_warehouse: AC
+    destination_warehouse: RDC LP
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    courier: CP All
+    origin_warehouse: DCBB
+    send_parcel_to: 'Store (01015)'
+  label_detail_in_scan_in_tab:
+    store_code: '01015 (ซอง A4)'
+    customer: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    phone: '0900987354'
+    wh: 'DC BB - AC - RDC LP'
+    symbol: รูปนาฬิกาทราย
+  sender_data_in_scan_in_tab:
+    name: คุณ i
+    phone: '0959494989'
+    shipping_origin: 'บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
+    phone: '0900987354'
+    shipping_destination: 'ร้าน (01015)'
+    address: 'เวียง เวียงป่าเป้า เชียงราย 57170'
   value_parcel_details_in_warehouse:
     parcel_status: พัสดุรอ Scan out ไปคลัง AC
     customer_type: B2C
     parcel_size: 'ซอง A4'
-    route: '3235'
-    # check_in_date: วันที่รับพัสดุเข้าระบบ
     date_in_system: '2-3 วัน'
-    # sla_date: SLA Date
     sla_text: '3 วัน'
     origin_store: '-'
     origin_warehouse: DC BB
@@ -1249,10 +1271,25 @@ DC_Operation_S017:
     crossdock_warehouse: AC
     destination_warehouse: RDC LP
     status: 'On'
+    status_off: 'Off'
   data_in_pouch_label:
     destination_warehourse: RDC LP
     route: DC BB - AC - RDC LP
     destination_warehourse_symbol: รูปนาฬิกาทราย
+  data_in_pouch_detail:
+    crossdock_warehouse: AC
+    pouch_status: เปิด
+    origin_warehouse: DC BB
+    destination_warehouse: RDC LP
+    label_destination_warehouse: RDC LP
+    label_number: '1'
+    label_route: DC BB - AC- RDC LP
+    label_symbol: รูปนาฬิกาทราย
+    data_in_table:
+      destination_warehouse: RDC LP
+      pickup_place: บริษัท ไอดีซี พรีเมียร์ จำกัด
+      type: B2C
+      parcel_status: พัสดุรอ Scan out ไปคลัง AC
 
 DC_Operation_S018:
   value_parcel_details_in_warehouse:

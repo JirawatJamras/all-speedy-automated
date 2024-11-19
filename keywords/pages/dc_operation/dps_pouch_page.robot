@@ -76,7 +76,7 @@ Verify Data Of Information Section In Pouch Detail Popup
 
 Verify Label Section In Pouch Detail Popup
     [Arguments]    ${destination_warehouse_name}    ${number}    ${route}
-    ...    ${simbol}    ${pouch_number}
+    ...    ${symbol}    ${pouch_number}
     ${actual_destination_warehouse_name}=    Get Text   ${dps_txt_destination_warehouse_in_pouch_label}
     ${actual_number}=    Get Text    ${dps_txt_number_in_pouch_label}
     ${actual_route}=    Get Text    ${dps_txt_route_in_pouch_label}
@@ -84,8 +84,8 @@ Verify Label Section In Pouch Detail Popup
     Should Be Equal    ${actual_destination_warehouse_name}    ${destination_warehouse_name}
     Should Be Equal    ${actual_number}    ${number}
     Should Be Equal    ${actual_route}    ${route}
-    IF    '${simbol}' == 'รูปดาว'
-        Wait Until Element Is Visible    ${dps_img_star_simbol_pouch_label}    timeout=10s
+    IF    '${symbol}' == 'รูปดาว'
+        Wait Until Element Is Visible    ${dps_img_star_symbol_pouch_label}    timeout=10s
     END
     Should Be Equal    ${actual_pouch_number}    ${pouch_number}
     Wait Until Element Is Visible    ${dps_txt_pouch_number_pouch_label}    timeout=10s
@@ -150,7 +150,8 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             Sleep    5s
-            Click ESC On Keyboard
+            # common.Click ESC On Keyboard
+            common.Click Space On Keyboard
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
@@ -177,7 +178,7 @@ Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             Sleep    5s
-            Click ESC On Keyboard
+            common.Click ESC On Keyboard
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step

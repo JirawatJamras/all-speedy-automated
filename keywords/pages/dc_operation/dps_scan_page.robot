@@ -246,6 +246,18 @@ Verify Accept Scan In Success Popup
     ${actual_text}=    Get Text    ${dps_txt_accept_scan_in_success_in_popup}
     Should Be Equal    ${actual_text}    ${expected_text}
 
+Verify Create Pouch Popup Confirmation
+    [Arguments]    ${text_create_pouch}    ${title_destination_warehouse}    ${value_destination_warehouse}
+    ${dps_txt_create_pouch_confirmation}=    Replace String    ${dps_txt_create_pouch_confirmation_scan_in_page}    {value}    ${text_create_pouch}
+    ${dps_txt_destination_warehouse_in_create_pouch_confirmation}=    Replace String    ${dps_txt_destination_warehouse_in_create_pouch_confirmation_scan_in_page}    {title_destination_warehouse}    ${title_destination_warehouse}
+    ${dps_txt_destination_warehouse_in_create_pouch_confirmation}=    Replace String    ${dps_txt_destination_warehouse_in_create_pouch_confirmation}    {value_destination_warehouse}    ${value_destination_warehouse}
+    Wait Until Element Is Visible    ${dps_txt_create_pouch_confirmation}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_txt_destination_warehouse_in_create_pouch_confirmation}    timeout=${DEFAULT_TIMEOUT}
+
+Click Confirm Button To Create Pouch Popup Confirmation
+    ${dps_btn_confirm_create_pouch_confirmation}=    Replace String    ${dps_btn_confirm_create_pouch_confirmation_scan_in_page}    {value}    ${dc_operation.create_pouch_confirmation['button_confirm']}
+    common.Click When Ready    ${dps_btn_confirm_create_pouch_confirmation}
+
 #################################### Other Courier ####################################
 
 Verify Title Parcel Details In Scan Page [Other Courier]
