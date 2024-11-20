@@ -49,7 +49,6 @@ DC_Operation_s002
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S002['parcel_pickup_time']}
     b2c_call_car_pick_up_parcel_page.Click Save Button
-    # Defect208
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status
     ...    ${call_car_pick_up.status['parcel_in_progress']}
@@ -63,8 +62,8 @@ DC_Operation_s002
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
     ...    ${DC_Operation_S002.receiving_cycle['company_address']}
-    ...    เมืองนนทบุรี  #${DC_Operation_S002.receiving_cycle['sub_district']}
-    ...    บางเขน  #${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S002.receiving_cycle['district']}
     ...    ${DC_Operation_S002.receiving_cycle['province']}
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002   Verify Add Special Pickup Round Success
@@ -176,6 +175,7 @@ DC_Operation_s002
     Log    เก็บ parcel id และ ชื่อผู้ส่ง
     ${ParcelsData}    Get Parcels And Sender Names    ${booking_id}
     Log To Console    ${ParcelsData}
+    Set Global Variable    ${Global_ParcelsData}    ${ParcelsData}
 
     Log    Step No.17 cut off time
     dps_home_page.Set Cut Off Time
@@ -220,10 +220,9 @@ DC_Operation_s002
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
-    # dps_home_page.Verify Homepage
-    # ...    ${dc_operation.breadcrumb['homepage']}
-    # ...    ${dc_operation.title['homepage']}
+    dps_home_page.Verify Homepage
+    ...    ${dc_operation.breadcrumb['homepage']}
+    ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Homepage Title
 
     Log    Step No.19_2 เลือก role แอดมินคลัง
@@ -235,7 +234,7 @@ DC_Operation_s002
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
-    # Defect192
+    # Defect247
     # Expected
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -257,7 +256,7 @@ DC_Operation_s002
 
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
-    # Defect192
+    # Defect247
     # Expected
     dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -278,7 +277,6 @@ DC_Operation_s002
 
     Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
     dps_check_receiving_cycle_page.Click Pencil Icon    ${booking_id}
-    # Defect178
     # Expected
     dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
     ...    ${DC_Operation_S002.receiving_cycle['company_name']} 

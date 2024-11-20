@@ -181,6 +181,7 @@ Click Accept Button On Popup For Creating Pouch
     common.Click When Ready    ${dps_btn_accept_for_create_pouch_auto}
     
 Get Pouch Number In Scan Page    ##ใช้ชั่วคราว
+    Wait Until Element Is Visible    (//span[text()='ปิด POUCH']/../../../..//span[text()='0']/../..//span[contains(text(),'P')])[1]    timeout=${DEFAULT_TIMEOUT}
     ${pouch_number}=    Get text    (//span[text()='ปิด POUCH']/../../../..//span[text()='0']/../..//span[contains(text(),'P')])[1]
     RETURN    ${pouch_number}
 

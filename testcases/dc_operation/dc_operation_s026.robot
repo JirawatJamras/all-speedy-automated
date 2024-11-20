@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_s026
-    [Tags]    DC_Operation    UAT    test
+    [Tags]    DC_Operation    UAT    
     Log    Prerequisite S002
     Log    Step Login All Speedy
     common.Open URL   ${B2C_UAT_URL}
@@ -25,6 +25,7 @@ DC_Operation_s026
     Log    Step ระบุข้อมูล
     ${tomorrow}    Set Tomorrow Date
     ${today}    Set Today
+    ${today_repattern}    Set Date Pattern    ${today}
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S002['parcel_pickup_time']}
@@ -65,8 +66,8 @@ DC_Operation_s026
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     Log    เก็บ parcel id และ ชื่อผู้ส่ง
-    ${ParcelsData}    Get Parcels And Sender Names    ${booking_id}
-    Log To Console    ${ParcelsData}
+    ${Global_ParcelsData}    Get Parcels And Sender Names    ${booking_id}
+    Log To Console    ${Global_ParcelsData}
     Log    Step cut off time
     dps_home_page.Set Cut Off Time
     ...    ${DB_URI}
@@ -122,7 +123,7 @@ DC_Operation_s026
     Log    Step คลิกปุ่ม อนุมัติ
     dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
     dps_check_receiving_cycle_page.Verify Data Saved Success Popup
-    ${parcel_code_J}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${DC_Operation_S026['sender_name']}
+    ${parcel_code_J}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S026['sender_name']}
     Log To Console    ${parcel_code_J}
 
     Log    Step No.1 เข้าเมนู Scan ,กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ j", กดค้นหา
@@ -211,7 +212,7 @@ DC_Operation_s026
 
     Log    Step No.3 คลิกปุ่มตกลง
     dps_scan_page.Click Confirm Button To Create Pouch
-    ${pouch_number}    Get Pouch Number In Scan Page
+    ${pouch_number}    Get Pouch Number In Scan Page    ## ใช้ชั่วคราว
     # Expected
     dps_scan_page.Verify Pouch Detail In Scan Page
     ...    ${pouch_number}

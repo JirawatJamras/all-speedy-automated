@@ -64,8 +64,8 @@ DC_Operation_S001
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
     ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    เมืองนนทบุรี  #${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    บางเขน  #${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
     ...    ${DC_Operation_S001.receiving_cycle['province']}
     ...    ${DC_Operation_S001.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001   Verify Add Special Pickup Round Success
@@ -217,10 +217,10 @@ DC_Operation_S001
     dps_login_page.Click Log On Button
     # Expected
     # dps_home_page.Wait Until DC Operation Home Page Loaded
-    # dps_home_page.Verify Homepage
-    # ...    ${dc_operation.breadcrumb['homepage']}
-    # ...    ${dc_operation.title['homepage']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Homepage Title
+    dps_home_page.Verify Homepage
+    ...    ${dc_operation.breadcrumb['homepage']}
+    ...    ${dc_operation.title['homepage']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Homepage Title
 
     Log    Step No.20 เลือก role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
@@ -245,7 +245,7 @@ DC_Operation_S001
 
     Log    Step No.23 คลิก Dropdown เลือกคลัง เป็น "คลัง DC BB"
     dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation.selected_warehouse_list['text_warehouse_DC_BB']}
-    # Defect175 Defect192
+    # Defect247
     # Expected
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -267,7 +267,7 @@ DC_Operation_S001
 
     Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
-    # Defect175 Defect192
+    # Defect247
     # Expected
     dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -333,7 +333,6 @@ DC_Operation_S001
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
-    # Defect208
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Canceled Status
     ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
@@ -346,8 +345,8 @@ DC_Operation_S001
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
     ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    เมืองนนทบุรี  #${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    บางเขน  #${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
     ...    ${DC_Operation_S001.receiving_cycle['province']}
     ...    ${DC_Operation_S001.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Parcel Pickup Schedule Change Status To Cancel
