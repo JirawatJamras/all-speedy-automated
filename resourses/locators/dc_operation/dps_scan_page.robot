@@ -25,6 +25,8 @@ ${dps_btn_agree_on_parcel_is_on_pouch_popup}    //div[@class='ant-modal-content'
 ${dps_btn_confirm_unbox_pouch_and_scan_piece_by_piece}    //div[@class='ant-modal-content']//span[text()='{value}']/..
 ${dps_btn_sub_tab_in_move_status_tab}    //div[@role='tab' and text()='{tab}']/..
 ${dps_btn_in_move_status_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
+${dps_btn_search_filter_move_status_tab}    //div[@aria-hidden='false']//div[text()='{value}']/..
+${dps_btn_clear_filter_move_status_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
 
 ${dps_txt_scan_header_ion_scan_page}    //div[@class='ant-card-head-wrapper']//span[text()='{value}']
 ${dps_txt_title_parcel_detail}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']
@@ -117,7 +119,11 @@ ${dps_cbo_courier_in_scan_page}    //div[contains(@class,'ant-select-dropdown')]
 ${dps_cbo_destination_warehouse_in_scan_page}    //div[contains(@class,'ant-select-dropdown')]//div[@title='{value}']
 ${dps_cbo_destination_warehouse_in_create_pouch_popup}    //div[@role='dialog']//div[@class='ant-select-selector']
 ${dps_cbo_filter_move_status}    //div[@aria-hidden='false']//strong[text()='{value}']/../../..//div[@class='ant-select-selector']
-${dps_cbo_status_list_move_status}    //div[@id='status_list']
+${dps_cbo_selected_date_move_status}    //div[@aria-hidden='false']//div[@class='ant-form-item-control-input']//input[@id='modifiedDate']/..
+${dps_cbo_status_list_move_status}    //div[@id='status_list']/..
+${dps_cbo_size_list_move_status}    //div[@id='size_list']/..
+${dps_cbo_courier_list_move_status}    //div[@id='courier_list']/..
+${dps_cbo_calendar_move_status}    //div[@class='ant-picker-panels']
 
 ${dps_iframe_print_window}    //iframe[@id='printWindow']
 ${dps_cbo_warehouse_list_scan_page}    //span[text()='{warehouse}']

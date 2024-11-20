@@ -403,6 +403,7 @@ dc_operation:
     number_of_pieces: จำนวนชิ้น
   button_filter: ตัวกรอง
   button_search: ค้นหา
+  button_clear: เคลียร์
   button_create_pouch: สร้าง Pouch
   button_download_template: Download Template
   button_import: Import File

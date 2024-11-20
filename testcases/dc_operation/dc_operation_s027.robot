@@ -50,5 +50,41 @@ DC_Operation_s027
     dps_scan_page.Verify Parcel Status List In Dropdown
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Parcel Status List In Dropdown
 
-    # Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
-    # dps_scan_page.Input Parcel Status    ${DC_Operation_S027['parcel_status']}
+    Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
+
+    Log    Step No.5 คลิกปุ่มค้นหา
+    dps_scan_page.Click Search Button [Move Status]
+    # Expected
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Search Parcel Status Result
+
+    Log    Step No.6 คลิกปุ่มเคลียร์
+    dps_scan_page.Click Clear Button [Move Status]
+    # Expected
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Clear Search Result Parcel Status
+
+    Log    Step No.7 คลิกช่องค้นหาขนาดพัสดุ
+    dps_scan_page.Click Filter With Parcel Size
+    # Expected
+    dps_scan_page.Verify Parcel Size List In Dropdown
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Parcel Size List In Dropdown
+
+    Log    Step No.8 คลิกช่องค้นหาผ่านขนส่ง
+    dps_scan_page.Click Filter With Courier
+    # Expected
+    dps_scan_page.Verify Courier List In Dropdown
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Courier List In Dropdown
+
+    Log    Step No.9 คลิกช่องค้นหา Parcel Owner
+    dps_scan_page.Click Filter With Parcel Owner
+    # Expected
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Parcel Owner List In Dropdown
+
+    Log    Step No.10 คลิกช่องค้นหาวันที่อัปเดตล่าสุด
+    dps_scan_page.Click Filter With Last Updated Date
+    # Expected
+    dps_scan_page.Verify Calendar Last Updated Date
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Calendar Last Updated Date
+
+    Log    Step No.11 คลิกช่องค้นหา Pouch Number และพิมพ์หมายเลข Pouch ที่มีสถานะปิดอยู่ลงในช่องค้นหา, กดปุ่มค้นหา
+    # dps_scan_page.Input Pouch Number [Move Status]
+

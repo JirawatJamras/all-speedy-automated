@@ -717,10 +717,11 @@ Verify Move Status Page
     ${btn_import}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_import']}
     ${btn_filter}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_filter']}
     ${txt_update_date}=    Replace String    ${dps_txt_update_date_move_status}   {date}    ${today_repattern}
-    ${count}=    Get Element Count    ${txt_update_date}
     Wait Until Element Is Visible    ${btn_download_template}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_import}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_filter}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_update_date}    timeout=${DEFAULT_TIMEOUT}
+    ${count}=    Get Element Count    ${txt_update_date}
     Should Be Equal As Strings    ${count}    ${dc_operation.move_status['default_table']}
 
 Click Filter Button
@@ -753,6 +754,37 @@ Click Filter With Parcel Status
     common.Click When Ready    ${cbo_parcel_status}
 
 Verify Parcel Status List In Dropdown
-    Wait Until Elment Is Visible    ${dps_cbo_status_list_move_status}
+    Wait Until Element Is Visible    ${dps_cbo_status_list_move_status}
 
-# Input Parcel Status
+Click Filter With Parcel Size
+    ${cbo_parcel_status}=    Replace String    ${dps_cbo_filter_move_status}    {value}    ${dc_operation.move_status['parcel_size']}
+    common.Click When Ready    ${cbo_parcel_status}
+
+Verify Parcel Size List In Dropdown
+    Wait Until Element Is Visible    ${dps_cbo_size_list_move_status}
+
+Click Filter With Courier
+    ${cbo_transport}=    Replace String    ${dps_cbo_filter_move_status}    {value}    ${dc_operation.move_status['transport']}
+    common.Click When Ready    ${cbo_transport}
+
+Verify Courier List In Dropdown
+    Wait Until Element Is Visible    ${dps_cbo_courier_list_move_status}
+
+Click Filter With Parcel Owner
+    ${cbo_parcel_owner}=    Replace String    ${dps_cbo_filter_move_status}    {value}    ${dc_operation.move_status['parcel_owner']}
+    common.Click When Ready    ${cbo_parcel_owner}
+
+Click Filter With Last Updated Date
+    common.Click When Ready    ${dps_cbo_selected_date_move_status}
+
+Verify Calendar Last Updated Date
+    Wait Until Element Is Visible    ${dps_cbo_calendar_move_status}
+
+Click Search Button [Move Status]
+    ${btn_search}=    Replace String    ${dps_btn_search_filter_move_status_tab}    {value}    ${dc_operation['button_search']}
+    common.Click When Ready    ${btn_search}
+
+Click Clear Button [Move Status]
+    ${btn_clear}=    Replace String    ${dps_btn_clear_filter_move_status_tab}    {value}    ${dc_operation['button_clear']}
+    common.Click When Ready    ${btn_clear}
+
