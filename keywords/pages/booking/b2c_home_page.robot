@@ -86,11 +86,10 @@ Verify My Profile PageBusiness
     ${expected_emailtxtbox} =    Get value    ${b2c_personal_information_txtbox}
     Should Be Equal    ${name}    ${expected_emailtxtbox}
 
-Verify Company profile page
+Verify Company Profile Page
     [Arguments]    ${company_profile}
     ${text_company_profile}=        Replace String    ${b2c_txt_sir_name}        {value}    ${company_profile}  
     Wait Until Element Is Visible    ${text_company_profile}    timeout=${DEFAULT_TIMEOUT}
-
 
 Click Button To Add
     Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s

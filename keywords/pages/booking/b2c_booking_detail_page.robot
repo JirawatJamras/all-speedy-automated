@@ -106,8 +106,8 @@ Verify Edit Booking List Popup For General Customer
     Should Be Equal As Strings    ${actual_text_shipping_origin_aria}    ${shipping_origin_aria}
 
 Select Pickup Schedule Tab
-    ${tab_pickup_Schedule} =  Replace String    ${b2c_tab_pickup_Schedule}    {value}    ${Booking.tab_shipping_origin['car_pickup']}
-    common.Click When Ready    ${tab_pickup_Schedule}
+    ${tab_pickup_schedule} =  Replace String    ${b2c_tab_pickup_schedule}    {value}    ${Booking.tab_shipping_origin['car_pickup']}
+    common.Click When Ready    ${tab_pickup_schedule}
 
 Verify Display Pickup Schedule Data
     [Arguments]   ${round}    ${tomorrow}    ${parcel_num}    ${today}    ${price}
@@ -157,7 +157,6 @@ Verify Complete Select Parcel Pickup Schedule And Save
     [Arguments]    ${today}    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ${text_booking_time_label}=    Replace String    ${b2c_txt_transaction_date}    {value}    ${booking['text_booking_time_label']}
     ${txt_booking_time_label}=    Replace String    ${text_booking_time_label}    {value2}    ${today}
-
     ${txt_shipping_origin}=    Replace String    ${b2c_txt_shipping_origin}    {value}    ${booking['text_shipping_origin']}
     ${txt_shipping_origin}    Get Text    ${txt_shipping_origin}
     ${actual_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
@@ -721,7 +720,7 @@ Verify Booking Detail Page After Import File
     ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
     ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
     ${count_card}=    Set Variable    0
-    ## Verify number of parcels
+    # Verify number of parcels
     FOR    ${index}    IN RANGE    ${parcel_num}
         Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
         ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled

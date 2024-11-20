@@ -21,7 +21,7 @@ DC_Operation_S001
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page    ${DC_Operation_S001['company_name']}
+    b2c_home_page.Verify Company Profile Page    ${DC_Operation_S001['company_name']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
@@ -173,7 +173,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Import File Success
 
-    Log    Step No.17 cut off time
+    Log    Step No.17 Cut Off Time
     dps_home_page.Set Cut Off Time
     ...    ${DB_URI}
     ...    ${DATABASE_NAME}
@@ -222,7 +222,7 @@ DC_Operation_S001
     ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Homepage Title
 
-    Log    Step No.20 เลือก role แอดมินคลัง
+    Log    Step No.20 เลือก Role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
@@ -266,10 +266,10 @@ DC_Operation_S001
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Check Receiving Cycle Page
 
     Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
+    dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
     # Defect247
     # Expected
-    dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
+    dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
     ...    ${DC_Operation_S001.receiving_cycle['company_name']}   
@@ -284,7 +284,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Inventory Confirm List Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Warehouse Confirm List Tab
 
     Log    Step No.25 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
     dps_check_receiving_cycle_page.Click Pencil Icon  ${booking_id}
@@ -323,7 +323,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['canceled']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Pickup Schedule Change Status To Cancle
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Pickup Schedule Change Status To Cancel
 
     Log    Step No.27 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     Go To    ${B2C_UAT_URL}

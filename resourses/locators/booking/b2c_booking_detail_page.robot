@@ -99,7 +99,7 @@ ${b2c_txtbox_receiver_postcode_edit}    //input[@id='create_parcel_form_receiver
 ${b2c_txtbox_trigger_phone_number}    //input[@id='trigger_phoneNumber']
 
 ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
-${b2c_tab_pickup_Schedule}    //div[@role='tab']//div[text()='{value}']
+${b2c_tab_pickup_schedule}    //div[@role='tab']//div[text()='{value}']
 
 ${b2c_dialog_create_parcel}    //*[@role='dialog']
 

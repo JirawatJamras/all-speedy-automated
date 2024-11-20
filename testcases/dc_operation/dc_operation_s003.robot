@@ -21,7 +21,7 @@ DC_Operation_S003
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page    ${DC_Operation_S002['company_name']}
+    b2c_home_page.Verify Company Profile Page    ${DC_Operation_S002['company_name']}
 
     Log    Step เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
     b2c_booking_detail_page.Wait Until Loading Icon Success
@@ -189,10 +189,10 @@ DC_Operation_S003
     ...    ${DC_Operation.status['waiting']}
 
     Log    Step คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
+    dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
     # Defect175    Defect192
     # Expected
-    dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
+    dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
     ...    ${DC_Operation_S002.receiving_cycle['company_name']}   
@@ -398,7 +398,7 @@ DC_Operation_S003
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S003.receiver_data_in_scan_in_tab['name']}
     ...    ${DC_Operation_S003.receiver_data_in_scan_in_tab['phone']}
     ...    ${DC_Operation_S003.receiver_data_in_scan_in_tab['shipping_destination']}

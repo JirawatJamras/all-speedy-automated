@@ -144,7 +144,7 @@ DC_Operation_S008
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S008.receiver_data_in_scan_in_tab['name']}
     ...    ${DC_Operation_S008.receiver_data_in_scan_in_tab['phone']}
     ...    ${DC_Operation_S008.receiver_data_in_scan_in_tab['shipping_destination']}
@@ -754,7 +754,7 @@ DC_Operation_S008
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S008.receiver_data_in_scan_in_tab['name']}
     ...    ${DC_Operation_S008.receiver_data_in_scan_in_tab['phone']}
     ...    ${DC_Operation_S008.receiver_data_in_scan_in_tab['shipping_destination']}

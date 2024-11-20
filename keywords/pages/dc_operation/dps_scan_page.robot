@@ -56,7 +56,7 @@ Verify Title Receiver In Scan Page
     Should Be Equal    ${actual_txt_label_shipping_destination_in_scan_in}    ${shipping_destination}
     Should Be Equal    ${actual_txt_label_receiver_address_in_scan_in}    ${receiver_address}
 
-Verify Data Recevier In Scan Page
+Verify Data Receiver In Scan Page
     [Arguments]    ${receiver_name}    ${receiver_phone}    ${shipping_destination}    ${receiver_address}
     ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in_scan_page}    {label_receiver_name}    ${dc_operation.scan_in_title_receiver_detail['name']}
     ${dps_txt_value_receiver_name_in_scan_in}=    Replace String    ${dps_txt_value_receiver_name_in_scan_in}    {value_receiver_name}    ${receiver_name}
@@ -504,6 +504,7 @@ Verify Data Parcel Details In Scan Page [CP All Courier]
     ${actual_receiving_date}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  0
     ${actual_receiving_time}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  1
     Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}:\\d{2}$
+    # Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}$
     Should Match Regexp    ${actual_value_route}    ^\\d+$  
     
     Should Be Equal    ${actual_value_parcel_id}    ${parcel_id}

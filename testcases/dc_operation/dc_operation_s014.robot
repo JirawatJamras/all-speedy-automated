@@ -161,7 +161,7 @@ DC_Operation_S014
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${receiver_name}
     ...    ${receiver_phone}
     ...    ${receiver_shipping_destination}

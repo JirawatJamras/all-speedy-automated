@@ -21,7 +21,7 @@ DC_Operation_S020
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page
+    b2c_home_page.Verify Company Profile Page
     ...    ${DC_Operation_S020['company_name']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S020   Verify Home Page
 

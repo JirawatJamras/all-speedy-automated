@@ -52,14 +52,14 @@ Verify Check Receiving Cycle Page
 Select All Parcels Received List Tab
     common.Scroll Window To Vertical    0
     ${dps_tab_name}=  Replace String   ${dps_tab_name}   {value}   ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
-    Click When Ready    ${dps_tab_name}
+    common.Click When Ready    ${dps_tab_name}
     
-Select Waiting Inventory Confirm List Tab
+Select Waiting Warehouse Confirm List Tab
     common.Scroll Window To Vertical    0
     ${dps_tab_name}=  Replace String   ${dps_tab_name}   {value}   ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
-    Click When Ready    ${dps_tab_name}
+    common.Click When Ready    ${dps_tab_name}
 
-Verify Inventory Confirm List Tab
+Verify Warehouse Confirm List Tab
     [Arguments]    ${title}    ${tab}    ${company_name}    ${address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ...    ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
     Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
@@ -115,8 +115,8 @@ Verify Parcel Pickup Details Popup
     [Arguments]    ${company_name}    ${company_address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ...    ${tomorrow}    ${receiving_time}    ${receiving_type}    ${courier}    ${parcel_num}    ${status}
     ${label_parcel_pickup_detail}=  Replace String   ${dps_txt_parcel_pickup_detail}   {value}   ${dc_operation['parcel_pickup_details']}
-    ${label_comapny}=  Replace String   ${dps_txt_company_parcel_pickup_detail}   {text_company}    ${dc_operation['text_company']}
-    ${actual_comapny}=  Replace String   ${label_comapny}   {company_name}    ${company_name}
+    ${label_company}=  Replace String   ${dps_txt_company_parcel_pickup_detail}   {text_company}    ${dc_operation['text_company']}
+    ${actual_company}=  Replace String   ${label_company}   {company_name}    ${company_name}
     ${label_address}=  Replace String   ${dps_txt_company_address_parcel_pickup_detail}   {text_address}    ${dc_operation['text_company_address']}
     ${actual_address}=  Replace String   ${label_address}   {company_address}    ${company_address}
     ${label_sub_district}=  Replace String   ${dps_txt_sub_district_parcel_pickup_detail}   {text_sub_district}    ${dc_operation['text_sub_district']}
@@ -141,7 +141,7 @@ Verify Parcel Pickup Details Popup
     ${button_export}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_export']}
 
     Wait Until Element Is Visible    ${label_parcel_pickup_detail}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${actual_comapny}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${actual_company}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${actual_address}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${actual_sub_district}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${actual_district}    timeout=${DEFAULT_TIMEOUT}
@@ -158,17 +158,17 @@ Verify Parcel Pickup Details Popup
 Click Export Button On Parcel Pickup Details Popup
     ${btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_export']}
     Scroll Element Into View    ${btn_parcel_pickup_details}
-    Click When Ready    ${btn_parcel_pickup_details}
+    common.Click When Ready    ${btn_parcel_pickup_details}
 
 Click Approve Button On Parcel Pickup Details Popup
     ${btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_approve']}
     Scroll Element Into View    ${btn_parcel_pickup_details}
-    Click When Ready    ${btn_parcel_pickup_details}
+    common.Click When Ready    ${btn_parcel_pickup_details}
 
 Click Unapproved Button On Parcel Pickup Details Popup
     ${btn_parcel_pickup_details}=  Replace String   ${dps_btn_parcel_pickup_details}   {value}   ${dc_operation['button_unapproved']}
     Scroll Element Into View    ${btn_parcel_pickup_details}
-    Click When Ready    ${btn_parcel_pickup_details}
+    common.Click When Ready    ${btn_parcel_pickup_details}
 
 Verify Data Saved Success Popup
     ${text_save_success}=  Replace String   ${dps_txt_save_success_parcel_pickup_detail}   {value}   ${dc_operation['text_save_success']}
@@ -204,4 +204,3 @@ Verify Pickup Schedule Change Status
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${row_receiving_cycle}
-

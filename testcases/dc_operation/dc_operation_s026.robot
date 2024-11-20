@@ -1,7 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Run Keywords    Reset Cut Off Time
                   ...    AND    Close Browser
@@ -9,8 +9,9 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 *** Test Cases ***
 DC_Operation_s026
     [Documentation]    การนำพัสดุใส่ Pouch และนำออกจาก Pouch แบบ Manual ในขั้นตอนการ Scan in 
-    [Tags]    DC_Operation    UAT    In_Review
+    [Tags]    DC_Operation    UAT    Pass_With_Condition
     Log    Prerequisite S002
+    
     Log    Step Login All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -69,7 +70,7 @@ DC_Operation_s026
     Log    เก็บ parcel id และ ชื่อผู้ส่ง
     ${Global_ParcelsData}    Get Parcels And Sender Names    ${booking_id}
     Log To Console    ${Global_ParcelsData}
-    Log    Step cut off time
+    Log    Step cut off Time
     dps_home_page.Set Cut Off Time
     ...    ${DB_URI}
     ...    ${DATABASE_NAME}
@@ -103,8 +104,8 @@ DC_Operation_s026
     Log    Step เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
     Log    Step คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab
-    dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
+    dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab
+    dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
     ...    ${DC_Operation_S002.receiving_cycle['company_name']}   
@@ -186,7 +187,7 @@ DC_Operation_s026
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S026['sender_name']}
     ...    ${DC_Operation_S026.sender_data_in_scan_in_tab['phone']}
-    ...    -  ##${DC_Operation_S026.sender_data_in_scan_in_tab['shipping_origin']}
+    ...    -  #${DC_Operation_S026.sender_data_in_scan_in_tab['shipping_origin']}
     ...    ${DC_Operation_S026.sender_data_in_scan_in_tab['address']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Sender Details In Scan Page
     dps_scan_page.Verify Title Receiver In Scan Page
@@ -195,12 +196,12 @@ DC_Operation_s026
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['name']}
     ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['phone']}
     ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['shipping_destination']}
     ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Recevier Details In Scan Page
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Receiver Details In Scan Page
 
     Log    Step No.2 คลิกปุ่ม "สร้าง" บริเวณกล่อง Pouch
     dps_scan_page.Click Create Pouch Button
@@ -226,7 +227,7 @@ DC_Operation_s026
     dps_scan_page.Verify Pouch Detail In Scan Page
     ...    ${pouch_number}
     ...    ${DC_Operation_S026.pouch['number_of_parcel']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 1st time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 1st Time
     Scroll Window To Vertical    0
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${parcel_code_J}
@@ -247,7 +248,7 @@ DC_Operation_s026
     ...    ${pouch_number}
     ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Parcel Details After Click Pouch Box 1st time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Parcel Details After Click Pouch Box 1st Time
 
     Log    Step No.5 คลิกที่กล่อง Pouch ครั้งที่ 2
     dps_scan_page.Click Pouch Box    ${pouch_number}    ${DC_Operation_S026.pouch['number_of_parcel']}
@@ -255,7 +256,7 @@ DC_Operation_s026
     dps_scan_page.Verify Pouch Detail In Scan Page
     ...    ${pouch_number}
     ...    ${dc_operation.label_pouch_detail['default_number_of_parcel']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 2nd time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 2nd Time
     Scroll Window To Vertical    0
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${parcel_code_J}
@@ -276,7 +277,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['pouch_number']}
     ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Parcel Details After Click Pouch Box 2nd time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Parcel Details After Click Pouch Box 2nd Time
 
     Log    Step No.6 คลิกที่กล่อง Pouch ครั้งที่ 3
     dps_scan_page.Click Pouch Box    ${pouch_number}    ${dc_operation.label_pouch_detail['default_number_of_parcel']}
@@ -284,7 +285,7 @@ DC_Operation_s026
     dps_scan_page.Verify Pouch Detail In Scan Page
     ...    ${pouch_number}
     ...    ${DC_Operation_S026.pouch['number_of_parcel']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 3rd time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 3rd Time
     Scroll Window To Vertical    0
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${parcel_code_J}
@@ -305,7 +306,7 @@ DC_Operation_s026
     ...    ${pouch_number}
     ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Parcel Details After Click Pouch Box 3rd time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Parcel Details After Click Pouch Box 3rd Time
 
     Log    Step No.7 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label

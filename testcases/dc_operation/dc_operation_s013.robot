@@ -195,13 +195,13 @@ DC_Operation_S013
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${receiver_name}
     ...    ${receiver_phone}
     ...    ${receiver_shipping_destination}
     ...    ${receiver_address}
     # Old
-    # dps_scan_page.Verify Data Recevier In Scan Page
+    # dps_scan_page.Verify Data Receiver In Scan Page
     # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['name']}
     # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['phone']}
     # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['shipping_destination']}

@@ -1,14 +1,14 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Run Keywords    Reset Cut Off Time
                   ...    AND    Close Browser
 
 *** Test Cases ***
-DC_Operation_s002
-    [Tags]    DC_Operation    UAT    In_Review
+DC_Operation_S002
+    [Tags]    DC_Operation    UAT    Pass_With_Condition
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -16,11 +16,11 @@ DC_Operation_s002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Login Page
 
     Log    Step No.2 เข้าสู่ระบบลูกค้าธุรกิจ
-    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page    ${DC_Operation_S002['company_name']}
+    b2c_home_page.Verify Company Profile Page    ${DC_Operation_S002['company_name']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
@@ -172,12 +172,12 @@ DC_Operation_s002
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Import File Success
 
-    Log    เก็บ parcel id และ ชื่อผู้ส่ง
+    Log    เก็บ Parcel ID และ ชื่อผู้ส่ง
     ${ParcelsData}    Get Parcels And Sender Names    ${booking_id}
     Log To Console    ${ParcelsData}
     Set Global Variable    ${Global_ParcelsData}    ${ParcelsData}
 
-    Log    Step No.17 cut off time
+    Log    Step No.17 Cut Off Time
     dps_home_page.Set Cut Off Time
     ...    ${DB_URI}
     ...    ${DATABASE_NAME}
@@ -225,7 +225,7 @@ DC_Operation_s002
     ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Homepage Title
 
-    Log    Step No.19_2 เลือก role แอดมินคลัง
+    Log    Step No.19_2 เลือก Role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
@@ -255,10 +255,10 @@ DC_Operation_s002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Check Receiving Cycle Page
 
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
+    dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
     # Defect247
     # Expected
-    dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
+    dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
     ...    ${DC_Operation_S002.receiving_cycle['company_name']}   
@@ -273,7 +273,7 @@ DC_Operation_s002
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Inventory Confirm List Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Warehouse Confirm List Tab
 
     Log    Step No.22 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
     dps_check_receiving_cycle_page.Click Pencil Icon    ${booking_id}
