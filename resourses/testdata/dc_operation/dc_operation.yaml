@@ -1158,9 +1158,9 @@ DC_Operation_S014:
     # receiving_date: 04-11-2567
     # customer_id: '2400563'
     # parcel_size: '120 ซม. กล่อง L'
-    # parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     # courier: Flash
-    # pouch_number: '-'
+    pouch_number: '-'
     # origin_warehouse: DCBB
     # send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
@@ -1209,6 +1209,75 @@ DC_Operation_S014:
       description: '-'
     # - title: พัสดุออกจากคลังต้นทาง
     #   description: DC BB
+
+DC_Operation_S015:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    parcel_owner: Partnership
+    import_from: Store
+    export_to: '-'
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: ซอง A4
+    parcel_status: ร้านรับพัสดุ (คุณาลัย - บางใหญ่)
+  data_in_import_task_tab:
+    import_from: Store
+    transport: CP All
+    parcel_owner: KEX
+  data_in_export_task_tab:
+    import_from: Home
+    transport: Kerry
+    parcel_owner: Partnership  
+  parcel_detail_in_scan_in_tab:
+    # customer_id: '-'
+    # parcel_size: '51 ซม. ซอง A4'
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    # courier: Kerry
+    pouch_number: '-'
+    # origin_warehouse: DCBB
+    # send_parcel_to: 'Home (57170)'
+  label_detail_in_scan_in_tab:
+    # courier: 'KEX'
+    # zipcode: '57170 (ซอง A4)'
+    # province: 'เชียงราย'
+    # customer: 'ทดสอบส่งพัสดุ Dropoff'
+    # phone: '0971971445'
+  sender_data_in_scan_in_tab:
+    # name: คุณ z
+    # phone: '0633906216'
+    # shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    # address: '47 มาบไผ่ บ้านบึง ชลบุรี'
+  receiver_data_in_scan_in_tab:
+    # name: ทดสอบส่งพัสดุ Dropoff
+    # phone: '0971971445'
+    # shipping_destination: บ้าน
+    # address: '654 เวียง เวียงป่าเป้า เชียงราย 57170'
+  scan_out_waiting_scan:
+    pouch_number: '-'
+    receive_parcel_from: Store
+    transport: Kerry
+    parcel_owner: Partnership
+    parcel_size: 'ซอง A4'
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  scan_out_list_data:
+    pouch_number: '-'
+    receive_parcel_from: Store
+    transport: Kerry
+    parcel_owner: Partnership
+    parcel_size: 'ซอง A4'
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  timeline_in_history_parcel:
+    # - title: ร้านรับพัสดุ
+    #   description: '07465 สาขา คุณาลัย-บางใหญ่'
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    # - title: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+    #   description: '-'
+    # - title: พัสดุออกจากคลังต้นทาง
+    #   description: DC BB
+
 
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
