@@ -682,7 +682,8 @@ DC_Operation_S010
 
     Log    Step No.56 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ i" ในช่องค้นหาด้านล่างรายละเอียด Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number In Search Bar On Pouch Detail Section    ${tracking_i}
-    # # Expected
+    #
+    # Expected
     dps_home_page.Wait Until Page Loaded
     dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
