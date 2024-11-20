@@ -1125,7 +1125,6 @@ DC_Operation_S013:
     export_to: Home
     deliver: Flash
     status: รอขนส่งเข้ารับพัสดุ
-
   timeline_in_history_parcel:
     # - title: ร้านรับพัสดุ
     #   description: '07465 สาขา คุณาลัย-บางใหญ่'
@@ -1157,45 +1156,61 @@ DC_Operation_S014:
     transport: Flash
     parcel_owner: Speedy  
   parcel_detail_in_scan_in_tab:
-    tracking: SPCD241100000423
-    receiving_date: 04-11-2567
-    customer_id: '2400563'
-    parcel_size: '120 ซม. กล่อง L'
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: Flash
-    pouch_number: '-'
-    origin_warehouse: DCBB
-    send_parcel_to: 'Home (11120)'
+    # tracking: SPCD241100000423
+    # receiving_date: 04-11-2567
+    # customer_id: '2400563'
+    # parcel_size: '120 ซม. กล่อง L'
+    # parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    # courier: Flash
+    # pouch_number: '-'
+    # origin_warehouse: DCBB
+    # send_parcel_to: 'Home (11120)'
   label_detail_in_scan_in_tab:
-    courier: 'FSH'
-    zipcode: '11120'
-    province: 'นนทบุรี'
-    customer: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    size: L
+    # courier: 'FSH'
+    # zipcode: '11120'
+    # province: 'นนทบุรี'
+    # customer: ทดสอบพัสดุCourier
+    # phone: '0971971445'
+    # size: L
   sender_data_in_scan_in_tab:
-    name: คุณ a
-    phone: '0633906216'
-    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
-    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
+    # name: คุณ a
+    # phone: '0633906216'
+    # shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    # address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   receiver_data_in_scan_in_tab:
-    name: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    shipping_destination: บ้าน
-    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+    # name: ทดสอบพัสดุCourier
+    # phone: '0971971445'
+    # shipping_destination: บ้าน
+    # address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
   scan_out_waiting_scan:
-    tracking: SPCD241100000423
     pouch_number: '-'
     receive_parcel_from: Store
     transport: Flash
     parcel_owner: Speedy
     parcel_size: 'กล่อง L'
-    update_date: 08/11/2567
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  scan_out_list_data:
+    pouch_number: '-'
+    receive_parcel_from: Store
+    transport: Flash
+    parcel_owner: Speedy
+    parcel_size: กล่อง L
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
-    export_to: home
+    export_to: Home
     deliver: Flash
-    update_date:
+    status: รอขนส่งเข้ารับพัสดุ
+  timeline_in_history_parcel:
+    # - title: ร้านรับพัสดุ
+    #   description: '07465 สาขา คุณาลัย-บางใหญ่'
+    - title: พัสดุเข้าคลังต้นทาง
+      description: DC BB
+    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+      description: '-'
+    - title: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+      description: '-'
+    # - title: พัสดุออกจากคลังต้นทาง
+    #   description: DC BB
 
 DC_Operation_S016:
   parcel_detail_in_scan_in_tab:
