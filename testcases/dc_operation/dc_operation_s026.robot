@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_s026
-    [Tags]    DC_Operation    UAT    
+    [Tags]    DC_Operation    UAT    In_Review
     Log    Prerequisite S002
     Log    Step Login All Speedy
     common.Open URL   ${B2C_UAT_URL}
@@ -310,10 +310,7 @@ DC_Operation_s026
     dps_scan_page.Click Print Label
 
     Log    Step No.8 คลิกปุ่มพิมพ์
-    # common.Click ESC On Keyboard
-    Switch Window  NEW
-    Press Keys  None  TAB+SPACE
-    Switch Window  MAIN
+    common.Click Space On Keyboard
     # Expected
     dps_scan_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}
