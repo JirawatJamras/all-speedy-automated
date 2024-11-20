@@ -1022,34 +1022,32 @@ DC_Operation_S012:
     task_type: งานนำจ่าย
     parcel_status: พัสดุรอนำจ่ายโดยคลัง
   parcel_detail_in_scan_in_tab:
-    customer_id: '2400563'
+    customer_id: '0002400563'
     parcel_size: '90 ซม. กล่อง M'
-    crossdock_warehouse: '-'
-    destination_warehouse: DCBB
+    crossdock_warehouse: ''  #'-'
+    destination_warehouse: DC BB
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP All
     pouch_number: '-'
-    source_warehouse: DCBB
+    origin_warehouse: DCBB
     send_parcel_to: 'Store (07004)'
-    route: ''
   label_detail_in_scan_in_tab:
-    route: ''
     store_code: '07004 (กล่อง M)'
     customer: ทดสอบพัสดุ In area
     phone: '0900987354'
     pouch_number: '-'
-    wh: 'DCBB - DCBB'
+    wh: 'DC BB - DC BB'
     symbol: รูปวงกลม
   sender_data_in_scan_in_tab:
     name: คุณ b
     phone: '0959494989'
     shipping_origin: 'บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
-    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
+    address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุ In area
     phone: '0900987354'
-    shipping_destination: 'ร้าน (07004)'
-    address: 'ต.ตลาดขวัญ อ.เมืองนนทบุรี จ.นนทบุรี 11000'
+    shipping_destination: 'ร้าน สาขา เรวดี (ตลาดเปรมสุข) (07004)'
+    address: 'ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'
   timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'

@@ -379,6 +379,7 @@ dc_operation:
     transport: ผ่านขนส่ง
     pouch_number: Pouch Number 
     parcel_number: หมายเลขพัสดุ
+    parcel_size: ขนาดพัสดุ
     parcel_status: สถานะพัสดุ
   label_import_task_tab:
     import_from: งานรับเข้าจาก
@@ -397,10 +398,9 @@ dc_operation:
   label_send_task_tab:
     send_to: นำจ่ายไปยัง
     store_code: รหัสร้านสาขา
+    customer_type: ประเภทลูกค้า
     transport: ผ่านขนส่ง
-    number_of_pouch: จำนวน Pouch
     number_of_pieces: จำนวนชิ้น
-    number_of_scanned_items: รวมรายการที่ต้องการสแกน
   button_filter: ตัวกรอง
   button_search: ค้นหา
   button_create_pouch: สร้าง Pouch
