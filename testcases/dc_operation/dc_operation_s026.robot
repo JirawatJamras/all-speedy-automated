@@ -8,6 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_s026
+    [Documentation]    การนำพัสดุใส่ Pouch และนำออกจาก Pouch แบบ Manual ในขั้นตอนการ Scan in 
     [Tags]    DC_Operation    UAT    In_Review
     Log    Prerequisite S002
     Log    Step Login All Speedy
