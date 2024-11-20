@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S018
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ และใบคัดแยกพัสดุ กรณีแก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in ที่คลังต้นทาง
-    [Tags]    DC_Operation    UAT    Fail
+    [Tags]    DC_Operation    UAT    Pass_With_Condition
     ${tracking_i}=    Set Variable    SPBD241100014589
 
     Log    Login

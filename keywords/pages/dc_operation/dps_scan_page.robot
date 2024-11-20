@@ -528,7 +528,7 @@ Verify Title Label Parcel In Scan Page [CP All Courier]
     ${dps_txt_title_label_pouch_number}=    Replace String    ${dps_txt_title_label}    {value}    ${pouch_number}
     ${dps_txt_title_label_wh}=    Replace String    ${dps_txt_title_label}    {value}    ${wh}
     Wait Until Element Is Visible    ${dps_txt_title_label_route}    timeout=${DEFAULT_TIMEOUT}
-    Element Should Be Visible    ${dps_txt_title_label_route}
+    Wait Until Keyword Succeeds    5x    2s    Element Should Be Visible    ${dps_txt_title_label_route}
     Element Should Be Visible    ${dps_txt_title_label_store}
     Element Should Be Visible    ${dps_txt_title_label_customer}
     Element Should Be Visible    ${dps_txt_title_label_phone}

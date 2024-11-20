@@ -8,8 +8,8 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S016
     [Documentation]    คลัง Dry การแก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in ที่คลังต้นทาง
-    [Tags]    DC_Operation    UAT    Fail
-    ${tracking_a}=    Set Variable    SPBD241100014589
+    [Tags]    DC_Operation    UAT    Pass_With_Condition
+    ${tracking_a}=    Set Variable    SPBD241100016835
 
     Log    Login
     common.Open URL    ${DPS_UAT_URL}
