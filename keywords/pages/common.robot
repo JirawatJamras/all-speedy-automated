@@ -253,3 +253,74 @@ Verify text of element
     [Arguments]   ${locator}   ${value}
     ${locator}=  Replace String   ${locator}   {value}   ${value}
     Wait Until Element Is Visible   ${locator}    ${DEFAULT_TIMEOUT}
+
+################### Manage Excel ###################    
+Read Row From Excel
+    [Arguments]    ${file_path}    ${sheet_name}    ${row_number}
+    ${workbook}=   Evaluate    openpyxl.load_workbook(r"${file_path}")
+    ${sheet}=    Set Variable    ${workbook}[${sheet_name}]
+    ${row_values}=    Create List
+    FOR    ${cell}    IN    @{sheet[${row_number}]}
+        Append To List    ${row_values}    ${cell.value}
+    END    
+    RETURN   ${row_values}
+
+Set Tracking Information from excel
+    [Arguments]    ${tracking_info}
+    # Classify data
+    ${create_date}    Get From List    ${tracking_info}    0
+    ${tracking_number}    Get From List    ${tracking_info}    1
+    ${customer_id}    Get From List    ${tracking_info}    2
+    ${size_cm}    Get From List    ${tracking_info}    3
+    ${size}    Get From List    ${tracking_info}    4
+    ${courier}    Get From List    ${tracking_info}    5
+    ${origin_warehoues}    Get From List    ${tracking_info}    6
+    ${send_parcel_to}    Get From List    ${tracking_info}    7
+    ${sender_name}    Get From List    ${tracking_info}    8
+    ${sender_phone}    Get From List    ${tracking_info}    9
+    ${sender_shipping_origin}    Get From List    ${tracking_info}    10
+    ${sender_address}    Get From List    ${tracking_info}    11
+    ${receiver_name}    Get From List    ${tracking_info}    12
+    ${receiver_phone}    Get From List    ${tracking_info}    13
+    ${receiver_shipping_destination}    Get From List    ${tracking_info}    14
+    ${receiver_address}    Get From List    ${tracking_info}    15
+
+    ${courier_label}    Get From List    ${tracking_info}    20
+    ${zipcode_label}    Get From List    ${tracking_info}    21
+    ${province_label}    Get From List    ${tracking_info}    22
+    ${customer_label}    Get From List    ${tracking_info}    23
+    ${phone_label}    Get From List    ${tracking_info}    24
+    ${tracking_label}=     Set Variable    ${tracking_number}
+    
+    Set Suite Variable    ${create_date}
+    Set Suite Variable    ${tracking_number}
+    Set Suite Variable    ${customer_id}
+    Set Suite Variable    ${size_cm}
+    Set Suite Variable    ${size}
+    Set Suite Variable    ${courier}
+    Set Suite Variable    ${origin_warehoues}
+    Set Suite Variable    ${send_parcel_to}
+    Set Suite Variable    ${sender_name}
+    Set Suite Variable    ${sender_phone}
+    Set Suite Variable    ${sender_shipping_origin}
+    Set Suite Variable    ${sender_address}
+    Set Suite Variable    ${receiver_name}
+    Set Suite Variable    ${receiver_phone}
+    Set Suite Variable    ${receiver_shipping_destination}
+    Set Suite Variable    ${receiver_address}
+    Set Suite Variable    ${courier_label} 
+    Set Suite Variable    ${zipcode_label} 
+    Set Suite Variable    ${province_label} 
+    Set Suite Variable    ${customer_label}
+    Set Suite Variable    ${phone_label}
+    Set Suite Variable    ${tracking_label}
+    
+    
+Delete Row In Excel
+    [Arguments]    ${file_path}    ${sheet_name}    ${row_to_delete}
+    ${workbook}=    Evaluate    openpyxl.load_workbook(r"${file_path}")
+    ${sheet}=    Set Variable    ${workbook}[${sheet_name}]
+    ${row_to_delete_int}=    Convert To Integer    ${row_to_delete}
+    Run Keyword    Call Method    ${sheet}    delete_rows    ${row_to_delete_int}
+    Run Keyword    Call Method    ${workbook}    save    ${file_path}
+    Run Keyword    Call Method    ${workbook}    close

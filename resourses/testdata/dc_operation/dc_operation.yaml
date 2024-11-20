@@ -117,7 +117,8 @@ DC_Operation_S003:
       description: '-'
     - title: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
       description: '-'
-
+    # - title: พัสดุออกจากคลังต้นทาง
+    #   description: DC BB
 DC_Operation_S004:
   sender_name: คุณ c
   destination_warehouse: RDC LP

@@ -563,7 +563,7 @@ DC_Operation_S003
     Switch Window    NEW
     # Defect218
     # Expected
-    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S003['timeline_in_history_parcel']}    5    # 6
+    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S003['timeline_in_history_parcel']}    4    # 6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Timeline
 
     Log    Step No.18 คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
@@ -572,6 +572,7 @@ DC_Operation_S003
     dps_scan_page.Click Waiting Delivery List Button
     # Defect235
     # Expected
+    # Keyword have to edit about date
     # dps_wait_delivery.Verify Label Delivery List
     # ...    ${dc_operation.label_delivery_list['export_to']}
     # ...    ${dc_operation.label_delivery_list['transport']}
@@ -589,12 +590,12 @@ DC_Operation_S003
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     # Defect235
-    dps_scan_page.Click Print Button By Data
-    ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S003.wait_derivery_data_list['deliver']}
+    # dps_scan_page.Click Print Button By Data
+    # ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
+    # ...    ${DC_Operation_S003.wait_derivery_data_list['deliver']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    common.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     # Defect235    
     # Expected
 

@@ -381,12 +381,12 @@ DC_Operation_S013
     Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     #In progress 
     # Defect235
-    dps_scan_page.Click Print Button By Data
-    ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S013.wait_derivery_data_list['deliver']}
+    # dps_scan_page.Click Print Button By Data
+    # ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
+    # ...    ${DC_Operation_S013.wait_derivery_data_list['deliver']}
 
     Log    Step No.36 กดปุ่ม พิมพ์
-    common.Click ESC On Keyboard
+    # common.Click ESC On Keyboard
     # Defect235    
     # Expected
 
