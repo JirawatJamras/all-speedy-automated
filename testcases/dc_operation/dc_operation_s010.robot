@@ -86,7 +86,6 @@ DC_Operation_S010
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_i}
     dps_scan_page.Click Search Button [Scan In Page]
-    # Defect143
     # Expected
     dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S010['destination_warehouse']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Create Pouch Destination DCSB Popup
