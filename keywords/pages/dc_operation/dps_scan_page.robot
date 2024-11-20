@@ -76,9 +76,6 @@ Verify Data Receiver In Scan Page
     Should Be Equal    ${actual_txt_value_receiver_address_in_scan_in}    ${receiver_address}
     Scroll Element Into View    ${dps_txt_value_receiver_address_in_scan_in}
 
-Select Move Status Tab
-    Select Tab In Scan Page    ${dc_operation.tab_scan['move_status']}
-
 Select Change Courier Tab
     Select Tab In Scan Page    ${dc_operation.tab_scan['change_courier']}
 
@@ -704,3 +701,58 @@ Filter Data By Parcel Number [Waiting Scan Out]
 Get Pouch Number
     ${actual_pouch_number}=    Get Text    (//strong[text()='Pouch Number']/../../..//span)[2]
     RETURN    ${actual_pouch_number}
+
+############################ Move Status Tab #########################################
+Select Move Status Tab
+    Select Tab In Scan Page    ${dc_operation.tab_scan['move_status']}
+
+Select Finding Parcel Tab
+    ${tab}=    Replace String    ${dps_btn_sub_tab_in_move_status_tab}    {tab}    ${dc_operation.tab_scan['finding_parcel']}
+    common.Click When Ready    ${tab}
+
+Verify Move Status Page
+    ${today}    Set Today
+    ${today_repattern}    Set Date Pattern    ${today}
+    ${btn_download_template}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_download_template']}
+    ${btn_import}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_import']}
+    ${btn_filter}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_filter']}
+    ${txt_update_date}=    Replace String    ${dps_txt_update_date_move_status}   {date}    ${today_repattern}
+    ${count}=    Get Element Count    ${txt_update_date}
+    Wait Until Element Is Visible    ${btn_download_template}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_import}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_filter}    timeout=${DEFAULT_TIMEOUT}
+    Should Be Equal As Strings    ${count}    ${dc_operation.move_status['default_table']}
+
+Click Filter Button
+    ${btn_filter}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_filter']}
+    common.Click When Ready    ${btn_filter}
+
+Verify Filter Title Used To Search Information
+    [Arguments]    ${parcel_status}    ${parcel_number}    ${pouch_number}    ${receive_parcel_from}    ${transport}    ${parcel_owner}
+    ...        ${parcel_size}        ${last_updated_date}
+    ${txt_parcel_status}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_status}
+    ${txt_parcel_number}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_number}
+    ${txt_pouch_number}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${pouch_number}
+    ${txt_receive_parcel_from}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${receive_parcel_from}
+    ${txt_transport}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${transport}
+    ${txt_parcel_owner}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_owner}
+    ${txt_parcel_size}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_size}
+    ${txt_last_updated_date}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${last_updated_date}
+
+    Wait Until Element Is Visible    ${txt_parcel_status}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_parcel_number}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_pouch_number}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_receive_parcel_from}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_transport}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_parcel_owner}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_parcel_size}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_last_updated_date}    timeout=${DEFAULT_TIMEOUT}
+
+Click Filter With Parcel Status
+    ${cbo_parcel_status}=    Replace String    ${dps_cbo_filter_move_status}    {value}    ${dc_operation.move_status['parcel_status']}
+    common.Click When Ready    ${cbo_parcel_status}
+
+Verify Parcel Status List In Dropdown
+    Wait Until Elment Is Visible    ${dps_cbo_status_list_move_status}
+
+# Input Parcel Status

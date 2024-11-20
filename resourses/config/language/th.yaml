@@ -370,6 +370,7 @@ dc_operation:
     scan_out: Scan Out
     move_status: Move Status
     change_courier: Change Courier
+    finding_parcel: ค้นหาพัสดุ
   label_all_task_tab:
     task_type: ประเภทงาน
     parcel_owner: Parcel Owner
@@ -403,6 +404,8 @@ dc_operation:
   button_filter: ตัวกรอง
   button_search: ค้นหา
   button_create_pouch: สร้าง Pouch
+  button_download_template: Download Template
+  button_import: Import File
   scan_in_title_parcel_detail: 
     title: รายละเอียดพัสดุ
     parcel_id: หมายเลขพัสดุ
@@ -545,6 +548,16 @@ dc_operation:
     title_destination_pouch: 'คลังปลายทาง :'
     value_destination_pouch: RDC LP
     button_confirm: ยืนยัน
+  move_status:
+    default_table: '10'
+    parcel_status: สถานะพัสดุ
+    parcel_number: หมายเลขพัสดุ
+    pouch_number: Pouch Number
+    receive_parcel_from: งานรับเข้าจาก
+    transport: ผ่านขนส่ง
+    parcel_owner: Parcel Owner
+    parcel_size: ขนาดพัสดุ
+    last_updated_date: วันที่อัปเดตล่าสุด
 
 rm:
   text_pre_register: Pre-Register
