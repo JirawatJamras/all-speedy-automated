@@ -9,7 +9,7 @@ Test Teardown     Close Browser
 DC_Operation_S018
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ และใบคัดแยกพัสดุ กรณีแก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in ที่คลังต้นทาง
     [Tags]    DC_Operation    UAT    Pass_With_Condition
-    ${tracking_i}=    Set Variable    SPBD241100014589
+    ${tracking_a}=    Set Variable    SPBD241100014589
 
     Log    Login
     common.Open URL    ${DPS_UAT_URL}
@@ -23,17 +23,17 @@ DC_Operation_S018
 
     Log    Step No.1 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
-    dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_i}
+    dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_a}
     # Expected
     dps_history_parcel_page.Verify Data In Table
     ...    ${dc_operation.title['history_parcel']}  
-    ...    ${tracking_i}
+    ...    ${tracking_a}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    Verify Data In Table
 
     Log    Step No.2 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
     ${today}    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
-    dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
+    dps_history_parcel_page.Click Edit History Parcel    ${tracking_a}
     Switch Window    NEW
     # Defect209    Defect225    Defect241
     # Expected
@@ -57,7 +57,7 @@ DC_Operation_S018
     # ...    ${dc_operation.label_parcel_details_in_warehouse['shipping_by']}
     # ...    ${dc_operation.label_parcel_details_in_warehouse['destination_warehouse']}
     # dps_history_parcel_page.Verify Data Parcel Details In Warehouse Details
-    # ...    ${tracking_i}
+    # ...    ${tracking_a}
     # ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_status']}
     # ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['customer_type']}
     # ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['pouch_number']}
