@@ -531,6 +531,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_size']}
     ...    ${today}        # Defect 191 edit in keyword hh:mm
     ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Value List Scan Out 
     
 
     Log    Step No.13 กดปุ่ม ยืนยัน Scan Out
@@ -538,17 +539,20 @@ DC_Operation_S003
     # Expected
     dps_scan_page.Verify Popup Confirm Scan Out
     ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Popup Confirm Scan Out
 
     Log    Step No.14 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out 
     # Expected
     dps_scan_page.Verify Popup Save Data Success
     ...    ${dc_operation['text_save_success']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Popup Save Data Success
 
     Log    Step No.15 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success 
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Navigate To Scan Page And Stay At Scan Out Tab
 
 
     Log    Step No.16 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย

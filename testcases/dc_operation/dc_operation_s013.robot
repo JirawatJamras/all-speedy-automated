@@ -161,7 +161,7 @@ DC_Operation_S013
     ...    ${zipcode_label} 
     ...    ${customer_label}
     ...    ${phone_label}
-
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Sender Data In Scan In 1
     # Old
     # dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
     # ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['courier']}
@@ -207,7 +207,7 @@ DC_Operation_S013
     # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['shipping_destination']}
     # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Sender Data In Scan In
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Sender Data In Scan In 2
 
     Log    Step No.22 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label
@@ -333,12 +333,14 @@ DC_Operation_S013
     # Expected
     dps_scan_page.Verify Popup Save Data Success
     ...    ${dc_operation['text_save_success']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Popup Save Data Success
 
     Log    Step No.31 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success 
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Navigate To Scan Page And Stay At Scan Out Tab
+    
     Log    Step No.32 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
     # Expected
