@@ -11,6 +11,8 @@ DC_Operation_S016
     [Tags]    DC_Operation    UAT    Pass_With_Condition
     ${tracking_a}=    Set Variable    SPBD241100016835
 
+    Log    Prerequisite S002
+
     Log    Login
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button

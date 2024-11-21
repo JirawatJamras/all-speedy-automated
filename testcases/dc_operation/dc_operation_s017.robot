@@ -12,6 +12,8 @@ DC_Operation_S017
     ${tracking_i}=    Set Variable    SPBD241100016926
     # ${pouch_number}=    Set Variable    P112461862
 
+    Log    Prerequisite S002
+
     Log    Login
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -230,13 +232,13 @@ DC_Operation_S017
     dps_history_parcel_page.Click Cancel Reprint Label Button    ${dc_operation.card_reprint_label['text_parcel_sorting_sheet']}
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['pouch_label']}
-    # Defect219
+    # Defect219 ยังไม่มี modal แสดงให้เก็บ xpath to verify
     # Expected
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Popup Error When Click Print Pouch Label And Pouch Is Not Closed
-
-    Log    Step No.17 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
     Close Window
     Switch Window    MAIN
+
+    Log    Step No.17 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
     # Expected
     dps_pouch_page.Verify Pouch In Pouch Page
@@ -404,4 +406,3 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.data_in_pouch_label['route']}
     ...    ${DC_Operation_S017.data_in_pouch_label['destination_warehourse_symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Reprint Pouch Label
-    
