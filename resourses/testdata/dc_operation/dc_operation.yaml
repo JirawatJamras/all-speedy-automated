@@ -104,7 +104,7 @@ DC_Operation_S003:
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
     export_to: Home
-    deliver: Flash
+    transport: Flash
     status: รอขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
@@ -1121,7 +1121,7 @@ DC_Operation_S013:
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
     export_to: Home
-    deliver: Flash
+    transport: Flash
     status: รอขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
     # - title: ร้านรับพัสดุ
@@ -1196,7 +1196,7 @@ DC_Operation_S014:
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
     export_to: Home
-    deliver: Flash
+    transport: Flash
     status: รอขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
     # - title: ร้านรับพัสดุ

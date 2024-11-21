@@ -46,8 +46,7 @@ Verify Check Receiving Cycle Page
     Scroll Element Into View    ${row_receiving_cycle}
     ${date_time}=    Get Text    ${row_receiving_cycle}/../..//td[13]
     Log To Console    ${date_time}
-    Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
-    # Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
+    Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
 
 Select All Parcels Received List Tab
     common.Scroll Window To Vertical    0
@@ -85,8 +84,7 @@ Verify Warehouse Confirm List Tab
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}   
     ${date_time}=    Get Text    ${row_receiving_cycle}/../..//td[13]
-    Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
-    # Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
+    Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
     Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
  
 Click Pencil Icon

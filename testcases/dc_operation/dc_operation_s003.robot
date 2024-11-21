@@ -341,8 +341,6 @@ DC_Operation_S003
     dps_home_page.Wait Until Page Loaded
     # Defect155    Defect158    Defect173
     # Expected    
-    # Inprogress
-    # Add check warehouse crossdock,warehouse destination,Route
    dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -596,7 +594,7 @@ DC_Operation_S003
     # Defect235
     # dps_scan_page.Click Print Button By Data
     # ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
-    # ...    ${DC_Operation_S003.wait_derivery_data_list['deliver']}
+    # ...    ${DC_Operation_S003.wait_derivery_data_list['transport']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
     # common.Click ESC On Keyboard

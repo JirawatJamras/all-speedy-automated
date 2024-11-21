@@ -346,7 +346,7 @@ DC_Operation_S014
     # Defect235
     # dps_scan_page.Click Print Button By Data
     # ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
-    # ...    ${DC_Operation_S014.wait_derivery_data_list['deliver']}
+    # ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
     # common.Click ESC On Keyboard

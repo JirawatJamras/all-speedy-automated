@@ -364,28 +364,28 @@ DC_Operation_S013
     # Defect235
     # Expected
     # Keyword have to edit about date
-    # dps_wait_delivery.Verify Label Delivery List
-    # ...    ${dc_operation.label_delivery_list['export_to']}
-    # ...    ${dc_operation.label_delivery_list['transport']}
-    # ...    ${dc_operation.label_delivery_list['parcel_number']}
-    # ...    ${dc_operation.label_delivery_list['pouch_number']}
-    # ...    ${dc_operation.label_delivery_list['title_parcel_and_pouch_number']}
-    # ...    ${dc_operation.label_delivery_list['title_date']}
-    # ...    ${dc_operation.label_delivery_list['title_status']}
-    # dps_wait_delivery.Verify Data Delivery List
-    # ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
-    # ...    ${DC_Operation_S013.wait_derivery_data_list['transport']}
-    # ...    ${today}
-    # ...    ${DC_Operation_S013.wait_derivery_data_list['status']}
+    dps_wait_delivery.Verify Label Delivery List
+    ...    ${dc_operation.label_delivery_list['export_to']}
+    ...    ${dc_operation.label_delivery_list['transport']}
+    ...    ${dc_operation.label_delivery_list['parcel_number']}
+    ...    ${dc_operation.label_delivery_list['pouch_number']}
+    ...    ${dc_operation.label_delivery_list['title_parcel_and_pouch_number']}
+    ...    ${dc_operation.label_delivery_list['title_date']}
+    ...    ${dc_operation.label_delivery_list['title_status']}
+    dps_wait_delivery.Verify Data Delivery List
+    ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
+    ...    ${DC_Operation_S013.wait_derivery_data_list['transport']}
+    ...    ${today}
+    ...    ${DC_Operation_S013.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data Delivery List
 
 
     Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     #In progress 
     # Defect235
-    # dps_scan_page.Click Print Button By Data
-    # ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
-    # ...    ${DC_Operation_S013.wait_derivery_data_list['deliver']}
+    dps_scan_page.Click Print Button By Data
+    ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
+    ...    ${DC_Operation_S013.wait_derivery_data_list['transport']}
 
     Log    Step No.36 กดปุ่ม พิมพ์
     # common.Click ESC On Keyboard

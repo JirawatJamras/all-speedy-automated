@@ -390,8 +390,7 @@ Verify Data Parcel Details In Scan Page [Other Courier]
     Should Be Equal    ${actual_value_courier}    ${courier}
     Should Be Equal    ${actual_value_pouch_number}    ${pouch_number}
     Should Contain    ${actual_value_receiving_date}    ${receiving_date}
-    Should Match Regexp    ${actual_value_receiving_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
-    # Should Match Regexp    ${actual_value_receiving_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
+    Should Match Regexp    ${actual_value_receiving_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
     Should Be Equal    ${actual_value_origin_warehouse}    ${origin_warehouse}
     Should Be Equal    ${actual_value_send_parcel_to}    ${send_parcel_to}
 
@@ -500,8 +499,7 @@ Verify Data Parcel Details In Scan Page [CP All Courier]
     ${actual_value_parcel_size}=    Set Variable    ${actual_value_parcel_size1} ${actual_value_parcel_size2} ${actual_value_parcel_size3}
     ${actual_receiving_date}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  0
     ${actual_receiving_time}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  1
-    Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}:\\d{2}$
-    # Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}$
+    Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}$
     Should Match Regexp    ${actual_value_route}    ^\\d+$  
     
     Should Be Equal    ${actual_value_parcel_id}    ${parcel_id}
@@ -644,8 +642,7 @@ Verify Section Waiting List To Scan Out [Scan Out Page]
     Wait Until Element Is Visible    ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}
     ${actual_update_date}=    Get Text    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}
     Should Match Regexp    ${actual_update_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
-    # ${date_convert}=    Convert Date    ${actual_update_date}    date_format=%d/%m/%Y %H:%M    result_format=%d/%m/%Y %H:%M
-    # Should Be Equal    ${actual_update_date}    ${date_convert}
+
 
 Verify Close Pouch Before Scan Out Warning Popup
     [Arguments]    ${text}
@@ -685,8 +682,7 @@ Verify Value List Scan Out
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_date}    ${date}
     ${dps_txt_update_time_scan_out}=    Replace String    ${dps_txt_update_time_scan_out}    {value_parcel_status}    ${parcel_status}
     ${actual_update_date}=    Get Text    ${dps_txt_update_time_scan_out}
-    Should Match Regexp    ${actual_update_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
-    # Should Match Regexp    ${actual_update_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$ 
+    Should Match Regexp    ${actual_update_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$ 
     Element Should Be Visible    ${dps_txt_value_scan_out}
     
 
