@@ -253,6 +253,82 @@ Input Tracking Number In Search Bar On Pouch Detail Section
     ${dps_txtbox_on_pouch_detail_section}=    Replace String    ${dps_txtbox_on_pouch_detail_section}    {value}    ${dc_operation['text_pouch_detail']}
     common.Input When Ready  ${dps_txtbox_on_pouch_detail_section}    ${text}
 
+Verify Label Pouch Detail In Scan In Page
+    [Arguments]    ${expected_pouch_num}    ${expected_parcel_in_pouch}    ${expected_courier}
+    ...    ${expected_date_delivery_pouch}    ${expected_origin_warehouse}    ${expected_destination_warehouse}
+    ...    ${expected_crossdock_warehouse}
+    ${dps_txt_pouch_number_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_pouch_number_in_pouch_detail_scan_in_page}   {value}    ${expected_pouch_num}
+    ${dps_txt_parcel_in_pouch_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_parcel_in_pouch_in_pouch_detail_scan_in_page}    {value}    ${expected_parcel_in_pouch}
+    ${dps_txt_courier_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_courier_in_pouch_detail_scan_in_page}    {value}    ${expected_courier}
+    ${dps_txt_date_delivery_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_date_delivery_in_pouch_detail_scan_in_page}    {value}    ${expected_date_delivery_pouch}
+    ${dps_txt_origin_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_origin_warehouse_in_pouch_detail_scan_in_page}    {value}    ${expected_origin_warehouse}
+    ${dps_txt_destination_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_destination_warehouse_in_pouch_detail_scan_in_page}    {value}    ${expected_destination_warehouse}
+    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}    {value}    ${expected_crossdock_warehouse}
+    Wait Until Element Is Visible    ${dps_txt_pouch_number_in_pouch_detail_scan_in_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_pouch_num}=    Get Text    ${dps_txt_pouch_number_in_pouch_detail_scan_in_page}
+    ${actual_parcel_in_pouch}=    Get Text    ${dps_txt_parcel_in_pouch_in_pouch_detail_scan_in_page}
+    ${actual_courier}=    Get Text    ${dps_txt_courier_in_pouch_detail_scan_in_page}
+    ${actual_date_delivery}=    Get Text    ${dps_txt_date_delivery_in_pouch_detail_scan_in_page}
+    ${actual_origin_warehouse}=    Get Text    ${dps_txt_origin_warehouse_in_pouch_detail_scan_in_page}
+    ${actual_destination_warehouse}=    Get Text    ${dps_txt_destination_warehouse_in_pouch_detail_scan_in_page}
+    ${actual_crossdock_warehouse}=    Get Text    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}
+    Should Be Equal    ${actual_pouch_num}    ${expected_pouch_num}
+    Should Be Equal    ${actual_parcel_in_pouch}    ${expected_parcel_in_pouch}
+    Should Be Equal    ${actual_courier}    ${expected_courier}
+    Should Be Equal    ${actual_date_delivery}    ${expected_date_delivery_pouch}
+    Should Be Equal    ${actual_origin_warehouse}    ${expected_origin_warehouse}
+    Should Be Equal    ${actual_destination_warehouse}    ${expected_destination_warehouse}
+    Should Be Equal    ${actual_crossdock_warehouse}    ${expected_crossdock_warehouse}
+
+Verify Data Pouch Detail In Scan In Page
+    [Arguments]    ${expected_pouch_num}    ${expected_parcel_in_pouch}    ${expected_courier}
+    ...    ${expected_origin_warehouse}    ${expected_destination_warehouse}    ${expected_crossdock_warehouse}
+    ${dps_txt_data_pouch_number_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_pouch_number_in_pouch_detail_scan_in_page}   {value}    ${dc_operation.Label_pouch_detail_in_scan_in_page['pouch_number']}
+    ${dps_txt_data_parcel_in_pouch_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.Label_pouch_detail_in_scan_in_page['parcel_in_pouch_amount']}
+    ${dps_txt_data_courier_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_courier_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.Label_pouch_detail_in_scan_in_page['courier']}
+    ${dps_txt_data_date_delivery_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_date_delivery_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.Label_pouch_detail_in_scan_in_page['date_delivery_origin_warehouse']}
+    ${dps_txt_data_origin_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_origin_warehouse_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.Label_pouch_detail_in_scan_in_page['origin_warehouse']}
+    ${dps_txt_data_destination_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_destination_warehouse_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.Label_pouch_detail_in_scan_in_page['destination_warehouse']}
+    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.Label_pouch_detail_in_scan_in_page['crossdock_warehouse']}
+    ${dps_parcel_have_to_scan_remaining}=    Replace String    ${dps_parcel_have_to_scan_remaining}    {value}    ${dc_operation['text_parcel_have_to_scan_remaining']}
+    ${actual_pouch_num}=    Get Text    ${dps_txt_data_pouch_number_in_pouch_detail_scan_in_page}
+    ${actual_parcel_in_pouch}=    Get Text    ${dps_txt_data_parcel_in_pouch_in_pouch_detail_scan_in_page}
+    ${actual_courier}=    Get Text    ${dps_txt_data_courier_in_pouch_detail_scan_in_page}
+    ${actual_date_delivery}=    Get Text    ${dps_txt_data_date_delivery_in_pouch_detail_scan_in_page}
+    ${actual_origin_warehouse}=    Get Text    ${dps_txt_data_origin_warehouse_in_pouch_detail_scan_in_page}
+    ${actual_destination_warehouse}=    Get Text    ${dps_txt_data_destination_warehouse_in_pouch_detail_scan_in_page}
+    ${actual_crossdock_warehouse}=    Get Text    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}
+    ${actual_parcel_remaining_in_text}=    Get Text    ${dps_parcel_have_to_scan_remaining}
+    ${actual_parcel_remaining_in_table}=    Get Element Count    ${dps_amount_parcel_have_to_scan_remaining_in_table}
+    Should Be Equal    ${actual_pouch_num}    ${expected_pouch_num}
+    Should Be Equal    ${actual_parcel_in_pouch}    ${expected_parcel_in_pouch}
+    Should Be Equal    ${actual_courier}    ${expected_courier}
+    Should Match Regexp    ${actual_date_delivery}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}:\\d{2}$
+    Should Be Equal    ${actual_origin_warehouse}    ${expected_origin_warehouse}
+    Should Be Equal    ${actual_destination_warehouse}    ${expected_destination_warehouse}
+    Should Be Equal    ${actual_crossdock_warehouse}    ${expected_crossdock_warehouse}
+    Should be Equal    ${actual_parcel_remaining_in_text}    ${actual_parcel_remaining_in_table}
+
+Verify Label Parcel In Pouch In Scan In Page
+    [Arguments]    ${tracking}    ${destination_warehourse}    ${parcel_size}
+    ...    ${type}    ${parcel_status}
+    ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {tracking}    ${tracking}
+    ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {destination_warehourse}    ${destination_warehourse}
+    ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {parcel_size}    ${parcel_size}
+    ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {type}    ${type}
+    ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {parcel_status}    ${parcel_status}
+    Wait Until Element Is Visible    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    timeout=${DEFAULT_TIMEOUT}
+
+Verify Data Parcel In Pouch In Scan In Page
+    [Arguments]    ${tracking}    ${destination_warehourse}    ${parcel_size}
+    ...    ${type}    ${parcel_status}
+    ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {tracking}    ${tracking}
+    ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {destination_warehourse}    ${destination_warehourse}
+    ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {parcel_size}    ${parcel_size}
+    ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {type}    ${type}
+    ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {parcel_status}    ${parcel_status}
+    Wait Until Element Is Visible    ${dps_txt_data_parcel_in_pouch_scan_in_page}    timeout=${DEFAULT_TIMEOUT}
+
 #################################### Home Destination ####################################
 
 Click Confirm Button To Create Pouch

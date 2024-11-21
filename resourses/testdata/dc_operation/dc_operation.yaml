@@ -278,6 +278,7 @@ DC_Operation_S004:
 
 DC_Operation_S006:
   sender_name: คุณ e
+  destination_warehouse: DC SB
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
@@ -293,32 +294,33 @@ DC_Operation_S006:
     parcel_owner: Speedy
   check_close_pouch:
     inventory: DC SB
-  parcel_detail_in_scan_in_tab:
-    receiving_date: 04-11-2567
-    customer_id: 'B2C0002400563'    #'2400563'
-    parcel_size: '120 ซม. กล่อง L'
+  scan_in_data_parcel_detail:
+    customer_id: '0002400563'
+    parcel_size: 51 ซม. ซอง A4
+    crossdock_warehouse: '-'
+    destination_warehouse: DC SB 
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: Flash
+    courier: CP All
     pouch_number: '-'
     origin_warehouse: DCBB
-    send_parcel_to: 'Home (11120)'
-  label_detail_in_scan_in_tab:
-    courier: 'FSH'
-    zipcode: '11120'
-    province: 'นนทบุรี'
-    customer: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    size: L
+    send_parcel_to: Store (01015)
+  scan_in_data_label_detail:
+    store: '01015 (กล่อง XL)'
+    customer: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    phone: '0900987354'
+    pouch_number: '-'
+    wh: DCBB - AC - RDCLP
+    symbol: รูปนาฬิกาทราย
   sender_data_in_scan_in_tab:
-    name: คุณ a
-    phone: '0633906216'
-    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    name: คุณ j
+    phone: '0959494989'
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
     address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   receiver_data_in_scan_in_tab:
-    name: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    shipping_destination: บ้าน
-    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+    name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    phone: '0900987354'
+    shipping_destination: ร้าน สาขา เวียงป่าเป้า (01015)
+    address: 'เวียง เวียงป่าเป้า เชียงราย 57170'
   timeline_in_history_parcel_after_scan_in:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
@@ -431,6 +433,17 @@ DC_Operation_S006:
     store_code: '-'
     customer_type: 'B2C'
     transport: CP All
+  data_in_pouch_detail_scan_in_page:
+    parcel_amount: '1'
+    courier: CP All
+    origin_warehoues: DC BB
+    destination_warehourse: DC SB
+    crossdock_warehouse: '-'
+  data_in_parcel_in_pouch_scan_in_page:
+    destination_warehourse: DC SB
+    parcel_size: ซอง A4
+    type: B2C
+    parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
     
 DC_Operation_S007:
   data_in_all_task_tab:

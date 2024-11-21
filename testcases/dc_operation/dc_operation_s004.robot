@@ -86,7 +86,6 @@ DC_Operation_S004
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_c}
     dps_scan_page.Click Search Button [Scan In Page]
-    # Defect143
     # Expected
     dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S004['destination_warehouse']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Create Pouch Destination DCSB Popup
@@ -540,7 +539,7 @@ DC_Operation_S004
     #
     # Expected
     dps_home_page.Wait Until Page Loaded
-    dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
+    dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}

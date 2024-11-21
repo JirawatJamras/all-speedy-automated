@@ -347,6 +347,7 @@ dc_operation:
   text_unbox_pouch_and_scan_piece_by_piece: กรุณาแกะ Pouch เพื่อสแกนรับพัสดุรายชิ้น
   text_agree: ตกลง
   text_pouch_detail: รายละเอียด Pouch
+  text_parcel_have_to_scan_remaining: จำนวนพัสดุที่ต้องสแกนคงเหลือ
   vehicle_type: ประเภทรถที่ใช้
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
@@ -559,6 +560,20 @@ dc_operation:
     parcel_owner: Parcel Owner
     parcel_size: ขนาดพัสดุ
     last_updated_date: วันที่อัปเดตล่าสุด
+  label_pouch_detail_in_scan_in_page:
+    pouch_number: Pouch Number
+    parcel_in_pouch_amount: จำนวนพัสดุใน Pouch
+    courier: Courier
+    date_delivery_origin_warehouse: วันที่จัดส่ง Pouch ออกจากต้นทาง
+    origin_warehouse: คลังต้นทาง
+    destination_warehouse: คลังปลายทาง
+    crossdock_warehouse: คลัง Crossdock
+  label_parcel_in_pouch_in_scan_in_page:
+    parcel_number: หมายเลขพัสดุ
+    destination_warehourse: คลังปลายทาง
+    parcel_size: ขนาดพัสดุ
+    type: ประเภท
+    parcel_status: สถานะพัสดุ
 
 rm:
   text_pre_register: Pre-Register

@@ -95,8 +95,6 @@ Verify Label In Table On Pouch Detail Popup
     [Arguments]    ${expected_title}    ${txt_pouch_number}    ${txt_destination_warehouse}
     ...    ${txt_pickup_place}    ${txt_type}    ${txt_parcel_status}
     ...    ${btn_print_pouch}
-    # //tr[th='${txt_pouch_number}' and th='${txt_destination_warehouse}' and th='${txt_pickup_place}' and th='${txt_type}' and th='${txt_parcel_status}']
-    # //tr[th='หมายเลขพัสดุ' and th='คลังปลายทาง' and th='สถานที่รับพัสดุ' and th='ประเภท' and th='สถานะพัสดุ']
     ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pouch_number}    ${txt_pouch_number}
     ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_destination_warehouse}    ${txt_destination_warehouse}
     ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pickup_place}    ${txt_pickup_place}
@@ -150,8 +148,8 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             Sleep    5s
-            # common.Click ESC On Keyboard
-            common.Click Space On Keyboard
+            common.Click ESC On Keyboard    #FOR MAC
+            # common.Click Space On Keyboard    #FOR WINDOW
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
