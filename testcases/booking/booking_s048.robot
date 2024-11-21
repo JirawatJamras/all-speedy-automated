@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
+
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S048.add_new_pickup['expected']}
@@ -9,7 +10,7 @@ Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The La
 *** Test Cases ***
 Booking_S048
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า เรียกรถเข้ารับพัสดุ (ตรวจสอบรอบรถปกติเเละเพิ่มรอบพิเศษ)
-    [Tags]    Booking    UAT    Pass_With_Condition
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect086    Defect107
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -21,15 +22,14 @@ Booking_S048
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     ${date}    Get Normal Parcel Pickup Date
-    # Defect086    Defect107
     # Expected
-    # b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
-    # ...    ${Booking_S048['booking_status']}
-    # ...    ${call_car_pick_up.car_round_name['normal']}
-    # ...    ${date}
-    # ...    ${Booking_S048.pickup_time['expected']}
-    # ...    ${Booking_S048.pickup_time['expected']}
-    # ...    ${Booking_S048['pickup_point']}
+    b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
+    ...    ${Booking_S048['booking_status']}
+    ...    ${call_car_pick_up.car_round_name['normal']}
+    ...    ${date}
+    ...    ${Booking_S048.pickup_time['expected']}
+    ...    ${Booking_S048.pickup_time['expected']}
+    ...    ${Booking_S048['pickup_point']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S048    Verify Car Pickup Schedule Card
 
@@ -59,13 +59,12 @@ Booking_S048
 
     Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
-    # Defect086    Defect107    Issue016
     # Expected
-    # b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
-    # ...    ${Booking_S048.add_new_pickup['parcel_type']}
-    # ...    ${call_car_pick_up.car_round_name['special']}
-    # ...    ${newDate}
-    # ...    ${Booking_S048.add_new_pickup['expected']}
-    # ...    ${Booking_S048.add_new_pickup['expected']}
-    # ...    ${Booking_S048.add_new_pickup['pickup_point']}
+    b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
+    ...    ${Booking_S048.add_new_pickup['parcel_type']}
+    ...    ${call_car_pick_up.car_round_name['special']}
+    ...    ${newDate}
+    ...    ${Booking_S048.add_new_pickup['expected']}
+    ...    ${Booking_S048.add_new_pickup['expected']}
+    ...    ${Booking_S048.add_new_pickup['pickup_point']}
     common.Verify Capture Screenshot    booking    Booking_S048    Verify Added New Car Pickup Schedule

@@ -11,8 +11,8 @@ Input Password
 
 Click Log On Button
     ${b2c_btn_log_on}=    Replace String    ${b2c_btn_log_on}    {value}    ${Booking['text_login']}
-    Wait Until Element Is Visible    ${b2c_btn_log_on}    timeout=10s
-    Wait Until Element Is Enabled    ${b2c_btn_log_on}    timeout=10s
+    Wait Until Element Is Visible    ${b2c_btn_log_on}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Enabled    ${b2c_btn_log_on}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${b2c_btn_log_on}
     Wait Until Profile Page Loaded
 

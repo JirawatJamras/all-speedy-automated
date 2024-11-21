@@ -4,13 +4,14 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
-Test Teardown    Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
+Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S059
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่งต้องการใช้ที่อยู่ผู้ส่งพัสดุเดียวกันทั้งบุ๊คกิ้ง
-    [Tags]    Skip
+    [Tags]    Booking    Business_To_Customer    UAT
+    skip
     Log    Pre condition
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -129,7 +130,7 @@ Booking_S059
     Log    Step No. 4 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
-    #Expected
+    # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -171,7 +172,7 @@ Booking_S059
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
     b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Dry Parcel]
-    ...    0    # ${EMPTY}
+    ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
     common.Verify Capture Screenshot    booking    Booking_S059    Verify Parcel Detail
@@ -190,7 +191,6 @@ Booking_S059
     common.Verify Capture Screenshot    booking    Booking_S059    Verify Promotion
 
     Log    Step No.9 ขั้นตอน Promotion
-    # ไม่เลือก Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
@@ -222,9 +222,9 @@ Booking_S059
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}    #${Booking_S002['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}    # Expected result is ${Booking_S002['total_price_value1']}
-    ...    ${EMPTY}    #${Booking.text_blank['store_code']}
+    ...    ${Booking_S002['total_price_amount']}
+    ...    ${Booking_S002['total_price_value1']}
+    ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S059    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0

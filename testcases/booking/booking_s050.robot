@@ -1,14 +1,15 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S050
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า Return Business (เพิ่มรายการ Return Business)
-    [Tags]    Skip
+    [Tags]    Booking    Business_To_Customer    UAT
+    skip
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab

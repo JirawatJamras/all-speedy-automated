@@ -1,7 +1,7 @@
 *** Keywords ***
 Verify Create Parcel Page
     ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
-    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=${DEFAULT_TIMEOUT}
     ${title_text}=    Get Text    ${title_create_parcel_page_txt}
     Should Be Equal    ${title_text}    ${B2C_AddBooking_003_001['text_title']}
     ${step_name}=    Get Text    ${frist_step_name}
@@ -13,35 +13,35 @@ Click Close Parcel Page
     Click Element    ${close_noticonfirm_btn}
 
 Click Choose Favorites
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${choose_favorites_btn}
-    Wait Until Element Is Visible    ${favorites_defult_text}    timeout=30s
+    Wait Until Element Is Visible    ${favorites_defult_text}    timeout=${DEFAULT_TIMEOUT}
     ${title_text}=    Get Text    ${favorites_defult_text}
     Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_default_text']}
 
 Click Favorites Default
-    Wait Until Element Is Visible    ${select_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${select_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${select_favorites_btn}
 
 
 Input Special Letters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Clear Search Favorites TextBox
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${search_favorites_txtbox}
     Clear Element Text    ${search_favorites_txtbox}
 
 Input Text Exceeds 100 Characters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Clear Element Text    ${search_favorites_txtbox}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Verify Popup Favorites Sender 
-    Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=30s
+    Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=${DEFAULT_TIMEOUT}
     ${title_text}=    Get Text    ${favorites_title_text}
     Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_title_text']}
     ${default_text}=    Get Text    ${favorites_default_text}
@@ -49,7 +49,7 @@ Verify Popup Favorites Sender
 
 Input Favorites TextBox Nomal Letters Less Than 100 Characters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Verify Favorites Text In TextBox
@@ -65,11 +65,11 @@ Verify Favorites Not Show Item Lists
 
 Input Favorites TextBox Nomal Letters More Than 100 Characters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Click Favorites Default List
-    Wait Until Element Is Visible    ${choose_default_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${choose_default_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${choose_default_favorites_btn}
 
 Click Accept Favorites List
@@ -79,7 +79,7 @@ Click Cancel Favorites List
     Click Element    ${cancel_favorites_btn}
 
 Verify Choose From Favorites
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     Should Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_5['verify_phone_sender']}    
     ${name_text}=    Get Value    ${name_sender_txtbox}
@@ -90,7 +90,7 @@ Verify Choose From Favorites
     Should Be Equal    ${postcode_text}    ${b2c_addbooking_003_ID_5['verify_postcode_sender']}
 
 Verify Not Choose From Favorites
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     Should Not Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_6['verify_phone_sender']}    
     ${name_text}=    Get Value    ${name_sender_txtbox}
@@ -102,35 +102,35 @@ Verify Not Choose From Favorites
 
 Input Phone Sender
     [Arguments]    ${input_phone_sender}
-    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${phone_sender_txtbox}    ${input_phone_sender}
 
 Verify Phone Sender Value
     [Arguments]    ${verify_phone_sender_value}
-    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${phone_sender_txt}=    Get Value    ${phone_sender_txtbox}
     Should Be Equal    ${phone_sender_txt}    ${verify_phone_sender_value}  
 
 Verify Phone Sender Error Msg
     [Arguments]    ${text_error_msg_phone_sender}
-    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${phone_sender_error_msg}=    Get Text    ${phone_sender_txtbox}
     Should Be Equal    ${phone_sender_error_msg}    ${text_error_msg_phone_sender}
 
 Input Name Sender
     [Arguments]    ${input_name_sender}
-    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${name_sender_txtbox}    ${input_name_sender}
 
 Verify Name Sender Value
     [Arguments]    ${verify_name_sender_value}
-    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${name_sender_txt}=    Get Value    ${name_sender_txtbox}
     Should Be Equal    ${name_sender_txt}    ${verify_name_sender_value} 
 
 Verify Name Sender Error Msg
     [Arguments]    ${text_error_msg_name_sender}
-    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${name_sender_error_msg}=    Get Text    ${name_sender_error_txt}
     Should Be Equal    ${name_sender_error_msg}    ${text_error_msg_name_sender}
 
@@ -140,13 +140,13 @@ Input Address Sender
 
 Verify Address Sender Value
     [Arguments]    ${verify_address_sender_value}
-    Wait Until Element Is Visible    ${address_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${address_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${address_sender_txt}=    Get Value    ${address_sender_txtbox}
     Should Be Equal    ${address_sender_txt}    ${verify_address_sender_value} 
 
 Verify Address Sender Error Msg
     [Arguments]    ${text_error_msg_address_sender}
-    Wait Until Element Is Visible    ${address_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${address_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${address_sender_error_msg}=    Get Text    ${address_sender_error_txt}
     Should Be Equal    ${address_sender_error_msg}    ${text_error_msg_address_sender}
 
@@ -175,7 +175,7 @@ Click Postcode Sender Lists
 
 Verify Postcode Sender Error Msg
     [Arguments]    ${text_error_msg_postcode_sender}
-    Wait Until Element Is Visible    ${postcode_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${postcode_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${postcode_sender_error_msg}=    Get Text    ${postcode_sender_error_txt}
     Should Be Equal    ${postcode_sender_error_msg}    ${text_error_msg_postcode_sender}
 

@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
+
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
@@ -9,7 +10,7 @@ Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Last
 *** Test Cases ***
 Booking_S018
     [Documentation]    สร้างรอบรถเข้ารับพัสดุ (รอบพิเศษ)
-    [Tags]    Booking    UAT    Pass_With_Condition
+    [Tags]    Booking    Parcel_Pickup_Schedule    UAT    Unknown    Defect086    Defect087
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -51,13 +52,12 @@ Booking_S018
     Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    # Defect086    Defect087
     # Expected
-    # b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
-    # ...    ${Booking_S018['parcel_type']}
-    # ...    ${call_car_pick_up.car_round_name['special']}
-    # ...    ${newDate}
-    # ...    ${Booking_S018.pickup_time['expected']}
-    # ...    ${Booking_S018.pickup_time['expected']}
-    # ...    ${Booking_S018['pickup_point']}
+    b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
+    ...    ${Booking_S018['parcel_type']}
+    ...    ${call_car_pick_up.car_round_name['special']}
+    ...    ${newDate}
+    ...    ${Booking_S018.pickup_time['expected']}
+    ...    ${Booking_S018.pickup_time['expected']}
+    ...    ${Booking_S018['pickup_point']}
     common.Verify Capture Screenshot    booking    Booking_S018    Verify Added New Car Pickup Schedule

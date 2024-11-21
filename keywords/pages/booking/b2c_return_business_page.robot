@@ -12,7 +12,7 @@ Click Add Booking Button
 Verify Term & Condition 
     [Arguments]    ${txt_term_and_condition}    ${header_term_and_condition}
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
-    Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
+    Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=${DEFAULT_TIMEOUT}
     ${actual_term_and_condition}=    Get Text    ${txt_term_and_condition}
     Should Be Equal    ${actual_term_and_condition}    ${actual_term_and_condition}
 
@@ -177,8 +177,6 @@ Verify Booking Popup
     Wait Until Element Is Visible    ${label_address}
     Should Be Equal As Strings    ${txt_address}    ${address} ${postcode}
     Wait Until Element Is Visible    ${topic_list_of_bookings}
-
-
 
 Click Download QR Code Button
     ${btn_add_download_qr}=    Replace String    ${btn_popup_return_business}    {value}    ${return_business['text_btn_download_qr']}
@@ -477,4 +475,3 @@ Verify Parcel Label
 Click Print Label On Popup
     ${btn_print_parcel_label_popup}=    Replace String    ${btn_print_popup_return_business}    {value}    ${Booking['text_print_parcel_label']}
     common.Click When Ready    ${btn_print_parcel_label_popup}
-

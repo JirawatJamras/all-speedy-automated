@@ -1,16 +1,17 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
+
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
+Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Test Cases ***
 Booking_S026
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เลือกจากรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S2 (มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    UAT    Fail
+    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect054    Defect118    Defect122    Defect126
     Log    Prerequisite
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -60,9 +61,8 @@ Booking_S026
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
-    # Defect043
-    # # Expected
-    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
+    # Expected
+    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
@@ -115,7 +115,6 @@ Booking_S026
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Create Parcel Page Receiver Step When Select Home
     
     Log    Step No.7 กดปุ่ม "เลือกจากรายการโปรด"
-    # Defect122
     b2c_booking_delivery_page.Click Choose Favorites
     # Expected
     b2c_booking_delivery_page.Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
@@ -124,9 +123,7 @@ Booking_S026
     ...    ${Booking_S026['receiver_store_full']}
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Favorites Receiver PopUp
 
-    
     Log    Step No.8 กดเลือกรายการ
-    # Defect122
     b2c_booking_delivery_page.Click Choose Favorites Receiver List When Address At 7-ELEVEN Store    ...    ${Booking_S026['receiver_name']}
     ...    ${Booking_S026['receiver_name']}
     ...    ${Booking_S026['receiver_phone']}
@@ -148,7 +145,6 @@ Booking_S026
 
     Log    Step No.9 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
-    Defect122
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     ...    ${Booking['text_booking_list']}
@@ -223,52 +219,50 @@ Booking_S026
 
     Log    Step No.13 "ขั้นตอนรายละเอียดพัสดุ"
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S026['parcel_size']}
-    # Defect118
-    # b2c_booking_delivery_page.Input COD    ${Booking_S026['parcel_cod']}
+    b2c_booking_delivery_page.Input COD    ${Booking_S026['parcel_cod']}
+    # Expected
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Select Parcel Size And Input COD
 
     Log    Step No.14 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
-    # Defect045
     # Expected
-    # b2c_booking_delivery_page.Verify Promotion Detail
-    # ...    ${Booking['text_selected_coupon_and_code']}
-    # ...    ${Booking['text_my_coupon_and_code']}
+    b2c_booking_delivery_page.Verify Promotion Detail
+    ...    ${Booking['text_selected_coupon_and_code']}
+    ...    ${Booking['text_my_coupon_and_code']}
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Promotion
 
     Log    Step No.15 ขั้นตอน Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
-    # Defect048    Defect054
     # Expected
-    # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
-    # ...    ${Booking['text_title_booking_list']}
-    # ...    ${booking_id}
-    # ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
-    # ...    ${booking_name}
-    # ...    ${booking_time}
-    # ...    ${Booking['text_title_parcel_list']}
-    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    # ...    ${Booking.img_is_favorite['img_sender_heart']}
-    # ...    ${Booking_S026['sender_name']}
-    # ...    ${Booking_S026['sender_phone']}
-    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    # ...    ${Booking_S026['receiver_name']}
-    # ...    ${Booking_S026['receiver_phone']}
-    # ...    ${Booking_S026['receiver_store_address']}
-    # ...    ${Booking_S026['parcel_size']}
-    # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking.text_blank['buy_insurance']}
-    # ...    ${Booking.text_blank['cod_value']}
-    # ...    ${Booking['text_title_booking_summary']}
-    # ...    ${Booking.text_default['discount_amount']}
-    # ...    ${Booking.text_default['discount_value']}
-    # ...    ${Booking.text_default['insurance_fee_amount']}
-    # ...    ${Booking.text_default['insurance_fee_value']}
-    # ...    ${Booking_S026['cod_fee_amount']}
-    # ...    ${Booking_S026['cod_fee_value']}
-    # ...    ${Booking_S026['total_price_amount']}
-    # ...    ${Booking_S026['total_price_value']}
-    # ...    ${Booking.text_blank['origin_shipping']}
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S026['sender_name']}
+    ...    ${Booking_S026['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S026['receiver_name']}
+    ...    ${Booking_S026['receiver_phone']}
+    ...    ${Booking_S026['receiver_store_address']}
+    ...    ${Booking_S026['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking_S026['cod_fee_amount']}
+    ...    ${Booking_S026['cod_fee_value']}
+    ...    ${Booking_S026['total_price_amount']}
+    ...    ${Booking_S026['total_price_value']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -277,49 +271,47 @@ Booking_S026
     Log    Step No.16 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     # Expected
-    # Defect047
-    # b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
-    # ...    ${booking_id}
-    # ...    ${booking_time}
-    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    # ...    ${Booking_S026['booking_name']}
-    # ...    ${Booking_S026['booking_item']}
-    # ...    ${Booking.text_default['booking_price']}
+    b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
+    ...    ${booking_id}
+    ...    ${booking_time}
+    ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    ...    ${Booking_S026['booking_name']}
+    ...    ${Booking_S026['booking_item']}
+    ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Created Booking On Booking Delivery Page
 
     Log    Step No.17 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
-    # Defect048    Defect054
     # Expected
-    # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
-    # ...    ${Booking['text_title_booking_list']}
-    # ...    ${booking_id}
-    # ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
-    # ...    ${booking_name}
-    # ...    ${booking_time}
-    # ...    ${Booking['text_title_parcel_list']}
-    # ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    # ...    ${Booking.img_is_favorite['img_sender_heart']}
-    # ...    ${Booking_S026['sender_name']}
-    # ...    ${Booking_S026['sender_phone']}
-    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    # ...    ${Booking_S026['receiver_name']}
-    # ...    ${Booking_S026['receiver_phone']}
-    # ...    ${Booking_S026['receiver_store_address']}
-    # ...    ${Booking_S026['parcel_size']}
-    # ...    ${Booking.text_blank['price_value']}
-    # ...    ${Booking.text_blank['buy_insurance']}
-    # ...    ${Booking.text_blank['cod_value']}
-    # ...    ${Booking['text_title_booking_summary']}
-    # ...    ${Booking.text_default['discount_amount']}
-    # ...    ${Booking.text_default['discount_value']}
-    # ...    ${Booking.text_default['insurance_fee_amount']}
-    # ...    ${Booking.text_default['insurance_fee_value']}
-    # ...    ${Booking_S026['cod_fee_amount']}
-    # ...    ${Booking_S026['cod_fee_value']}
-    # ...    ${Booking_S026['total_price_amount']}
-    # ...    ${Booking_S026['total_price_value']}
-    # ...    ${Booking.text_blank['origin_shipping']}
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_select_shipping_origin']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S026['sender_name']}
+    ...    ${Booking_S026['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S026['receiver_name']}
+    ...    ${Booking_S026['receiver_phone']}
+    ...    ${Booking_S026['receiver_store_address']}
+    ...    ${Booking_S026['parcel_size']}
+    ...    ${Booking.text_blank['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking_S026['cod_fee_amount']}
+    ...    ${Booking_S026['cod_fee_value']}
+    ...    ${Booking_S026['total_price_amount']}
+    ...    ${Booking_S026['total_price_value']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -339,37 +331,36 @@ Booking_S026
     b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
-    # Defect048    Defect054    Defect126
     # Expected
-    # b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
-    # ...    ${Booking['text_title_booking_list']}
-    # ...    ${booking_id}
-    # ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
-    # ...    ${booking_name}
-    # ...    ${booking_time}
-    # ...    ${Booking['text_title_parcel_list']}
-    # ...    ${Booking['text_parcel_status_waiting_entering']}
-    # ...    ${Booking.img_is_favorite['img_sender_heart']}
-    # ...    ${Booking_S026['sender_name']}
-    # ...    ${Booking_S026['sender_phone']}
-    # ...    ${Booking.img_is_favorite['img_receiver_heart']}
-    # ...    ${Booking_S026['receiver_name']}
-    # ...    ${Booking_S026['receiver_phone']}
-    # ...    ${Booking_S026['receiver_store_address']}
-    # ...    ${Booking_S026['parcel_size']}
-    # ...    ${Booking_S026['price_value']}
-    # ...    ${Booking.text_blank['buy_insurance']}
-    # ...    ${Booking.text_blank['cod_value']}
-    # ...    ${Booking['text_title_booking_summary']}
-    # ...    ${Booking.text_default['discount_amount']}
-    # ...    ${Booking.text_default['discount_value']}
-    # ...    ${Booking.text_default['insurance_fee_amount']}
-    # ...    ${Booking.text_default['insurance_fee_value']}
-    # ...    $${Booking_S026['cod_fee_amount']}
-    # ...    ${Booking_S026['cod_fee_value']}
-    # ...    ${Booking_S026['total_price_amount']}
-    # ...    ${Booking_S026['total_price_value2']}
-    # ...    ${Booking.origin_shipping['idc_company_address']}
+    b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
+    ...    ${Booking['text_title_booking_list']}
+    ...    ${booking_id}
+    ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
+    ...    ${booking_name}
+    ...    ${booking_time}
+    ...    ${Booking['text_title_parcel_list']}
+    ...    ${Booking['text_parcel_status_waiting_entering']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking_S026['sender_name']}
+    ...    ${Booking_S026['sender_phone']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking_S026['receiver_name']}
+    ...    ${Booking_S026['receiver_phone']}
+    ...    ${Booking_S026['receiver_store_address']}
+    ...    ${Booking_S026['parcel_size']}
+    ...    ${Booking_S026['price_value']}
+    ...    ${Booking.text_blank['buy_insurance']}
+    ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking['text_title_booking_summary']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    $${Booking_S026['cod_fee_amount']}
+    ...    ${Booking_S026['cod_fee_value']}
+    ...    ${Booking_S026['total_price_amount']}
+    ...    ${Booking_S026['total_price_value2']}
+    ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0
@@ -377,26 +368,25 @@ Booking_S026
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
-    # Defect118
     # Expected
-    # b2c_booking_detail_page.Verify Parcel Label When Select 7-ELEVEN Store
-    # ...    ${Booking.text_paper_size['size_a4']}
-    # ...    ${Booking.text_paper_size['size_a5']}
-    # ...    ${Booking.text_paper_size['size_8cm']}
-    # ...    ${Booking.label['text_destination_deparment_code']}
-    # ...    ${Booking_S026['receiver_store_code_5_digits']}
-    # ...    ${Booking_S026['parcel_package_type']}
-    # ...    ${Booking_S026['parcel_size']}
-    # ...    ${Booking_S026['sender_name']}
-    # ...    ${Booking_S026['sender_phone']}
-    # ...    ${Booking_S026['sender_address']}
-    # ...    ${Booking_S026['sender_postcode_full']}
-    # ...    ${Booking_S026['receiver_name']}
-    # ...    ${Booking_S026['receiver_phone']}
-    # ...    ${Booking_S025['store_address']}
-    # ...    ${Booking_S026['parcel_cod']}
-    # ...    ${Booking.label['parcel_not_buy_insure']}
-    # ...    ${Booking.text_blank['parcel_detail_remark']}
+    b2c_booking_detail_page.Verify Parcel Label When Select 7-ELEVEN Store
+    ...    ${Booking.text_paper_size['size_a4']}
+    ...    ${Booking.text_paper_size['size_a5']}
+    ...    ${Booking.text_paper_size['size_8cm']}
+    ...    ${Booking.label['text_destination_deparment_code']}
+    ...    ${Booking_S026['receiver_store_code_5_digits']}
+    ...    ${Booking_S026['parcel_package_type']}
+    ...    ${Booking_S026['parcel_size']}
+    ...    ${Booking_S026['sender_name']}
+    ...    ${Booking_S026['sender_phone']}
+    ...    ${Booking_S026['sender_address']}
+    ...    ${Booking_S026['sender_postcode_full']}
+    ...    ${Booking_S026['receiver_name']}
+    ...    ${Booking_S026['receiver_phone']}
+    ...    ${Booking_S025['store_address']}
+    ...    ${Booking_S026['parcel_cod']}
+    ...    ${Booking.label['parcel_not_buy_insure']}
+    ...    ${Booking.text_blank['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S026    Verify Parcel Label
 
     Log    Step No.21 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"

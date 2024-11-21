@@ -16,15 +16,15 @@ Click Search Parcel Button
     Click When Ready    ${btn}
 
 Verify Parcel Search Results
-    Wait Until Element Is Visible    ${b2c_txt_parcel_search_results}    timeout=10s
+    Wait Until Element Is Visible    ${b2c_txt_parcel_search_results}    timeout=${DEFAULT_TIMEOUT}
     Element Should Be Visible    ${b2c_txt_parcel_search_results}
 
 Click Remove Search Parcel Button
     Click When Ready    ${b2c_btn_remove_search_parcel}
 
 Verify Parcel Search Results When Searching For More Than 1 Parcel
-    Wait Until Page Contains Element    ${b2c_txt_amount_of_parcel_search_results}    timeout=10s
-    Wait Until Page Contains Element    ${b2c_txt_parcel_search_results}    timeout=10s
+    Wait Until Page Contains Element    ${b2c_txt_amount_of_parcel_search_results}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Page Contains Element    ${b2c_txt_parcel_search_results}    timeout=${DEFAULT_TIMEOUT}
     ${text}=    Get Text    ${b2c_txt_amount_of_parcel_search_results}
     ${amount}=    Split String    ${text}     ${SPACE}
     ${number} =    Set Variable    ${amount}[1]
@@ -40,12 +40,12 @@ Select Search Type In Dropdown
     
 Verify Error Message In Modal
     [Arguments]    ${error_msg}
-    Wait Until Element Is Visible    ${b2c_msg_error_msg_in_modal}    timeout=10s
+    Wait Until Element Is Visible    ${b2c_msg_error_msg_in_modal}    timeout=${DEFAULT_TIMEOUT}
     Element Should Be Visible    ${b2c_msg_error_msg_in_modal}
     Element Should Contain    ${b2c_msg_error_msg_in_modal}    ${error_msg}
 
 Verify Search Results When Search More Than 10 Parcels
-    Wait Until Element Is Visible    ${b2c_txt_parcel_search_results}    timeout=10s
+    Wait Until Element Is Visible    ${b2c_txt_parcel_search_results}    timeout=${DEFAULT_TIMEOUT}
     Element Should Be Visible    ${b2c_txt_parcel_search_results}
     ${length}=    Get Element Count    ${b2c_txt_parcel_search_results} 
     Should Be Equal As Numbers    ${length}    10
@@ -59,5 +59,5 @@ Select Filter
 
 Verify Parcel Status
     [Arguments]    ${status}
-    Wait Until Element Is Visible    ${b2c_txt_parcel_search_results}    timeout=10s
+    Wait Until Element Is Visible    ${b2c_txt_parcel_search_results}    timeout=${DEFAULT_TIMEOUT}
     Element Should Be Visible    ${b2c_txt_parcel_status}//div[text()='${status}']

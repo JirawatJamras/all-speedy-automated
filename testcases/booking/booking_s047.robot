@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
+
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
@@ -8,7 +9,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S047
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
-    [Tags]    Booking    UAT    Fail
+    [Tags]    Booking    Business_To_Customer    UAT    Defect106    Defect123    Defect124    Defect135
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -222,20 +223,18 @@ Booking_S047
     b2c_favorite_page.Select Pickup Location    ${Booking_S047.edit_receiver['receiver_location_pickup']}
     b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S047['receiver_store_code_5_digits']}    ${Booking_S047['receiver_store_address']}
     b2c_favorite_page.Click Store On Map
-    # Defect106
     # Expected
-    # b2c_favorite_page.Verify Store Address Receiver    ${Booking_S047.edit_receiver['receiver_store_full_address']}
+    b2c_favorite_page.Verify Store Address Receiver    ${Booking_S047.edit_receiver['receiver_store_full_address']}
     common.Verify Capture Screenshot    booking    Booking_S047    Verify Receiver Edited In Popup
 
     Log    Step No.12 กดปุ่ม "บันทึกเเก้ไข"
     b2c_favorite_page.Click Save Edit Button
-    # Defect123
     # Expected
-    # b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
-    # ...    ${Booking_S047.receiver_favorite_card['favorite_name']}
-    # ...    ${Booking_S003['receiver_name']}
-    # ...    ${Booking_S003['receiver_phone']}
-    # ...    ${Booking_S047.edit_receiver['receiver_store_address']}
+    b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
+    ...    ${Booking_S047.receiver_favorite_card['favorite_name']}
+    ...    ${Booking_S003['receiver_name']}
+    ...    ${Booking_S003['receiver_phone']}
+    ...    ${Booking_S047.edit_receiver['receiver_store_address']}
     common.Verify Capture Screenshot    booking    Booking_S047    Verify Data Receiver After Edited
 
     Log    Step No.13 กดปุ่ม "เพิ่ม"
@@ -284,7 +283,6 @@ Booking_S047
     b2c_favorite_page.Verify Shipping Origin Area Tab
     common.Verify Capture Screenshot    booking    Booking_S047    Verify Shipping Origin Area Tab
 
-    # Defect135
     Log    Step No.16 กดปุ่ม "เพิ่ม"
     b2c_favorite_page.Click Add Shipping Origin Area Button
     # Expected
@@ -298,7 +296,6 @@ Booking_S047
     b2c_favorite_page.Scroll To Display Save Button
     common.Verify Capture Screenshot    Booking_S047    Verify Add Shipping Origin Area Footer Popup
 
-    # Defect124
     Log    Step No.17 กรอกข้อมูลดังนี้
     b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${Booking_S047.add_shipping_origin_area['favorite_name']}
     b2c_favorite_page.Input Store Code Shipping Origin Area    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_code_5_digits']}

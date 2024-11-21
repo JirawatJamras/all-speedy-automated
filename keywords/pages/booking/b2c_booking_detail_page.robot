@@ -135,7 +135,7 @@ Verify Display Pickup Schedule Data After Canceled
     ${actual_pickup_parcel} =  Replace String    ${b2c_txt_selected_pickup_type}    {value}    ${Booking.pickup_schedule['general_car_pickup']}
     Register Keyword To Run On Failure    NOTHING
     WHILE    '${status}' == 'False'
-        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_parcel}    timeout=5s
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_parcel}    timeout=${DEFAULT_TIMEOUT}
         Log To Console    ${status}
         Exit For Loop If    '${status}' == 'True'
         ${nextpage}=    Get Element Attribute    ${b2c_btn_status_next_page_pickup_schedule}    aria-disabled
@@ -161,7 +161,7 @@ Verify Complete Select Parcel Pickup Schedule And Save
     ${txt_shipping_origin}    Get Text    ${txt_shipping_origin}
     ${actual_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=30s
+    Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=${DEFAULT_TIMEOUT}
     # Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${company_address} ${sub_district} ${district} ${province} ${postcode}
     Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${sub_district} ${district} ${province} ${postcode}
 
@@ -179,7 +179,7 @@ Search Shipping Store
     FOR    ${i}    IN RANGE    0    5
         Input When Ready    ${b2c_txtbox_search_store}    ${code}
         Click When Ready    ${search_result_store}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store_button}    timeout=10s
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store_button}    timeout=${DEFAULT_TIMEOUT}
         Exit For Loop If    '${isvisible}' == 'True'    
         common.Clear Value Input Text    ${b2c_txtbox_search_store}
     END
@@ -206,7 +206,7 @@ Get Booking Time
     ${txt_booking_time}=    Replace String    ${txt_booking_time}    {value}    ${Booking['text_booking_time_label']}
     Wait Until Element Is Visible    ${txt_booking_time}    timeout=${DEFAULT_TIMEOUT}
     FOR    ${i}    IN RANGE    0    5
-       ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=10s
+       ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=${DEFAULT_TIMEOUT}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         Reload Page
     END
@@ -293,7 +293,7 @@ Verify Booking Detail Page
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
+    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
     Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
@@ -339,7 +339,7 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     ${b2c_txt_shipping_origin_booking_detail_page}=    Replace String    ${b2c_txt_shipping_origin_booking_detail_page}    {value}    ${Booking['text_shipping_origin_aria']}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${b2c_txt_booking_id_booking_detail_page}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${Booking['text_booking_id_label']}
-    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
+    Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
@@ -506,7 +506,7 @@ Verify Date And Time With Time Distortion
     Run Keyword IF  '${match_found}' == 'False'   Fail    No matching time found in the booking time.
 
 Wait Until Loading Icon Success
-    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${b2c_img_loading}    timeout=5s
+    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Does Not Contain Element    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
 
 Wait Until Page Loaded After Select Origin Shipping
@@ -543,11 +543,11 @@ Verify Import File Popup
     ${b2c_txt_import_file_result}=    Replace String    ${b2c_txt_import_file_result}    {value}    ${txt_importResult}
     ${b2c_txt_file_import_error}=    Replace String    ${b2c_txt_file_import_error}    {value}    ${txt_fileImportError}
     Wait Until Page Contains Element    ${b2c_txt_import_file_in_popup}
-    Wait Until Element Is Visible    ${btn_template_file}   timeout=15s
-    Wait Until Element Is Visible    ${b2c_txt_import_time}    timeout=15s
-    Wait Until Element Is Visible    ${b2c_txt_file_name}    timeout=15s
-    Wait Until Element Is Visible    ${b2c_txt_import_file_result}    timeout=15s
-    Wait Until Element Is Visible    ${b2c_txt_file_import_error}    timeout=15s
+    Wait Until Element Is Visible    ${btn_template_file}   timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_txt_import_time}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_txt_file_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_txt_import_file_result}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_txt_file_import_error}    timeout=${DEFAULT_TIMEOUT}
     ${actual_b2c_btn_import_file_in_popup}=    Get Text    ${b2c_txt_import_file_in_popup}
     ${actual_btn_template_file}=    Get Text    ${btn_template_file}
     ${actual_b2c_txt_import_time}=    Get Text    ${b2c_txt_import_time}

@@ -242,7 +242,7 @@ Click Pickup Parcel Date Button
 Select Date Pickup Parcel Future Date
     ${b2c_tbl_pickup_parcel_calendar}=    Replace String    ${b2c_tbl_pickup_parcel_calendar}    {value}    ${newDate}
     FOR    ${i}    IN RANGE    0    5
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_tbl_pickup_parcel_calendar}    timeout=2s
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_tbl_pickup_parcel_calendar}    timeout=${DEFAULT_TIMEOUT}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         common.Click When Ready    ${btn_next_months_calendar_in_add_popup}
     END
@@ -336,7 +336,7 @@ Verify Website Never Save Sender Information
 
 Get The Highest Displayed Date And Set New Highest Date
     Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
-    Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=20s
+    Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=${DEFAULT_TIMEOUT}
     ${titleName}=    Get Text    ${txt_parcel_pickup_schedule} 
     ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
     ${parts}=    Split String    ${highestDisplayedDate}    -
@@ -366,11 +366,11 @@ Delete The Lastest Parcel Pickup Schedule
     ${btn_delete_car_round}=    Replace String    ${b2c_btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
     ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round}    {time}    ${current_time}
     ${b2c_btn_confirm_in_asking_to_close_popup}=    Replace String    ${b2c_btn_confirm_in_asking_to_close_popup}    {value}    ${Booking['text_confirm_popup']}
-    Wait Until Element Is Visible    ${btn_delete_car_round}    timeout=10s
+    Wait Until Element Is Visible    ${btn_delete_car_round}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${btn_delete_car_round}
-    Wait Until Element Is Visible    ${b2c_btn_confirm_in_asking_to_close_popup}    timeout=3s
+    Wait Until Element Is Visible    ${b2c_btn_confirm_in_asking_to_close_popup}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${b2c_btn_confirm_in_asking_to_close_popup}
-    Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=5s
+    Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
@@ -398,7 +398,7 @@ Click Open Filter
 Click Close Filter
     FOR    ${i}    IN RANGE    0    5
         common.Click When Ready    ${b2c_btc_filter_pickup_page}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=2s
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
     END
 

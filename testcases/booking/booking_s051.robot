@@ -1,15 +1,16 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome   #chrome
+
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown    Close Browser
+Test Teardown     Close Browser
 
 *** Test Cases ***
 Booking_S051
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า Return Business (ลูกค้าทั่วไปบุ๊คพัสดุ จาก Link Return Business ที่ได้รับ)
-    [Tags]    Skip
-    Log    S051
+    [Tags]    Booking    Business_To_Customer    UAT
+    skip
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -108,11 +109,11 @@ Booking_S051
     ...    ${Booking_S050.new_return_business['address']}
     ...    ${Booking_S050.new_return_business['postcode']}
     ...    ${EMPTY}
-    # ...    ${Booking_S051['size']}
+    ...    ${Booking_S051['size']}
     ...    ${Booking_S051['booking_price']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S051['cod']}
-    # ...    ${Booking.text_blank['cod_value']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking.text_default['discount_value']}
