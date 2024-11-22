@@ -112,7 +112,7 @@ DC_Operation_S013
     dps_home_page.Wait Until DC Operation Home Page Loaded
     Log    Delete Tracking From Excel
     common.Delete Row In Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
-    # Defect158    Defect159    Defect160
+    # Defect158    Defect160
     # Expected    
     # Inprogress
     # dps_home_page.Wait Until Page Loaded
@@ -132,23 +132,23 @@ DC_Operation_S013
     ...    ${tracking_number}
     ...    ${customer_id}
     ...    ${size_cm} ${size}
-    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_status']}
+    ...    ${DC_Operation_S013.scan_in_data_parcel_detail['parcel_status']}
     ...    ${courier}
-    ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
-    ...    ${create_date}    # Defect159 should to edit check format time
+    ...    ${DC_Operation_S013.scan_in_data_parcel_detail['pouch_number']}
+    ...    ${create_date}
     ...    ${origin_warehoues}
     ...    ${send_parcel_to}
     # Old
     # dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     # ...    ${tracking_number}
-    # ...    B2C0002400563    # ${DC_Operation_S013.parcel_detail_in_scan_in_tab['customer_id']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_size']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['parcel_status']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['courier']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['pouch_number']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['receiving_date']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['origin_warehoues']}
-    # ...    ${DC_Operation_S013.parcel_detail_in_scan_in_tab['send_parcel_to']}
+    # ...    B2C0002400563    # ${DC_Operation_S013.scan_in_data_parcel_detail['customer_id']}
+    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['parcel_size']}
+    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['parcel_status']}
+    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['courier']}
+    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['pouch_number']}
+    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['receiving_date']}
+    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['origin_warehoues']}
+    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['send_parcel_to']}
     
     dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_label_detail['courier']}
@@ -164,12 +164,12 @@ DC_Operation_S013
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Sender Data In Scan In 1
     # Old
     # dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
-    # ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['courier']}
-    # ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['zipcode']} 
-    # ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['customer']}
-    # ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['phone']}
+    # ...    ${DC_Operation_S013.scan_in_data_label_detail['courier']}
+    # ...    ${DC_Operation_S013.scan_in_data_label_detail['zipcode']} 
+    # ...    ${DC_Operation_S013.scan_in_data_label_detail['customer']}
+    # ...    ${DC_Operation_S013.scan_in_data_label_detail['phone']}
     # ...    ${dc_operation.scan_in_title_label_detail['size_home']}    
-    # ...    ${DC_Operation_S013.label_detail_in_scan_in_tab['size']}
+    # ...    ${DC_Operation_S013.scan_in_data_label_detail['size']}
 
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
@@ -184,10 +184,10 @@ DC_Operation_S013
     ...    ${sender_address}
     # Old
     # dps_scan_page.Verify Data Sender In Scan Page
-    # ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['name']}
-    # ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['phone']}
-    # ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['shipping_origin']}
-    # ...    ${DC_Operation_S013.sender_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S013.scan_in_sender_data['name']}
+    # ...    ${DC_Operation_S013.scan_in_sender_data['phone']}
+    # ...    ${DC_Operation_S013.scan_in_sender_data['shipping_origin']}
+    # ...    ${DC_Operation_S013.scan_in_sender_data['address']}
 
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -202,10 +202,10 @@ DC_Operation_S013
     ...    ${receiver_address}
     # Old
     # dps_scan_page.Verify Data Receiver In Scan Page
-    # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['name']}
-    # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['phone']}
-    # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['shipping_destination']}
-    # ...    ${DC_Operation_S013.receiver_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S013.scan_in_receiver_data['name']}
+    # ...    ${DC_Operation_S013.scan_in_receiver_data['phone']}
+    # ...    ${DC_Operation_S013.scan_in_receiver_data['shipping_destination']}
+    # ...    ${DC_Operation_S013.scan_in_receiver_data['address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Sender Data In Scan In 2
 

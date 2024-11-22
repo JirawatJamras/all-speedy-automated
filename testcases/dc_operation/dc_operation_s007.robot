@@ -121,10 +121,10 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_sender_detail['address']}
 
     dps_scan_page.Verify Data Sender In Scan Page
-    ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['name']}
-    ...    0959494989    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['phone']}
-    ...    -    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['shipping_origin']}
-    ...    ${DC_Operation_S007.sender_data_in_scan_in_tab['address']}
+    ...    ${DC_Operation_S007.scan_in_sender_data['name']}
+    ...    0959494989    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['phone']}
+    ...    -    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['shipping_origin']}
+    ...    ${DC_Operation_S007.scan_in_sender_data['address']}
 
     # dps_scan_page.Verify Title Receiver In Scan Page
     # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -134,10 +134,10 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
 
     # dps_scan_page.Verify Data Receiver In Scan Page
-    # ...    feee    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['name']}
-    # ...    0988797374    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['phone']}
-    # ...    ร้าน    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['shipping_destination']}
-    # ...    15888 CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['address']}
+    # ...    feee    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['name']}
+    # ...    0988797374    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['phone']}
+    # ...    ร้าน    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['shipping_destination']}
+    # ...    15888 CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['address']}
 
     error
 
@@ -428,10 +428,10 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     # ...    ${dc_operation.scan_in_title_sender_detail['address']}
     # dps_scan_page.Verify Data Sender In Scan Page
-    # ...    fee    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['name']}
-    # ...    0988797374    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['phone']}
-    # ...     สาขา ตลาดบางบัวทอง จุด 2 (13462)    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['shipping_origin']}
-    # ...    11 คลองเตย คลองเตย กรุงเทพมหานคร 10110    # Expected Result is ${DC_Operation_S007.sender_data_in_scan_in_tab['address']}
+    # ...    fee    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['name']}
+    # ...    0988797374    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['phone']}
+    # ...     สาขา ตลาดบางบัวทอง จุด 2 (13462)    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['shipping_origin']}
+    # ...    11 คลองเตย คลองเตย กรุงเทพมหานคร 10110    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['address']}
     # dps_scan_page.Verify Title Receiver In Scan Page
     # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     # ...    ${dc_operation.scan_in_title_receiver_detail['name']}
@@ -439,10 +439,10 @@ DC_Operation_S007
     # ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
     # dps_scan_page.Verify Data Receiver In Scan Page
-    # ...    feee    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['name']}
-    # ...    0988797374    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['phone']}
-    # ...    ร้าน    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['shipping_destination']}
-    # ...    15888 CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500    # Expected Result is ${DC_Operation_S007.receiver_data_in_scan_in_tab['address']}
+    # ...    feee    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['name']}
+    # ...    0988797374    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['phone']}
+    # ...    ร้าน    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['shipping_destination']}
+    # ...    15888 CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500    # Expected Result is ${DC_Operation_S007.scan_in_receiver_data['address']}
 
     Sleep    10s
 

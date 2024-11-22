@@ -143,10 +143,10 @@ DC_Operation_S006
     # ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     # ...    ${dc_operation.scan_in_title_sender_detail['address']}
     # dps_scan_page.Verify Data Sender In Scan Page
-    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['name']}
-    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['phone']}
-    # ...     บริษัท ไอดีซี พรีเมียร์ จำกัด (-)    #${DC_Operation_S006.sender_data_in_scan_in_tab['shipping_origin']}
-    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S006.scan_in_sender_data['name']}
+    # ...    ${DC_Operation_S006.scan_in_sender_data['phone']}
+    # ...     บริษัท ไอดีซี พรีเมียร์ จำกัด (-)    #${DC_Operation_S006.scan_in_sender_data['shipping_origin']}
+    # ...    ${DC_Operation_S006.scan_in_sender_data['address']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Sender Details In Scan Page
     # dps_scan_page.Verify Title Receiver In Scan Page
     # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -155,10 +155,10 @@ DC_Operation_S006
     # ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
     # dps_scan_page.Verify Data Receiver In Scan Page
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['name']}
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['phone']}
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['shipping_destination']}
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['name']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['phone']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['shipping_destination']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['address']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Receiver Details In Scan Page
 
     Log    Step No.10 คลิกปุ่ม ยืนยัน/Print Label
@@ -576,26 +576,26 @@ DC_Operation_S006
     # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     # dps_scan_page.Verify Data Parcel Details In Scan Page [Other Courier]
     # ...    ${tracking_e}
-    # ...    ${DC_Operation_S006.parcel_detail_in_scan_in_tab['customer_id']}
-    # ...    ${DC_Operation_S006.parcel_detail_in_scan_in_tab['parcel_size']}
-    # ...    ${DC_Operation_S006.parcel_detail_in_scan_in_tab['parcel_status']}
-    # ...    ${DC_Operation_S006.parcel_detail_in_scan_in_tab['courier']}
-    # ...    ${DC_Operation_S006.parcel_detail_in_scan_in_tab['pouch_number']}
-    # ...    ${DC_Operation_S006.parcel_detail_in_scan_in_tab['receiving_date']}
-    # ...    ${DC_Operation_S006.parcel_detail_in_scan_in_tab['origin_warehouse']}
-    # ...    HOME (11120)    # ${DC_Operation_S006.parcel_detail_in_scan_in_tab['send_parcel_to']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['customer_id']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_size']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_status']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['courier']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['pouch_number']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['receiving_date']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['origin_warehouse']}
+    # ...    HOME (11120)    # ${DC_Operation_S006.scan_in_data_parcel_detail['send_parcel_to']}
     # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # ...    ${dc_operation.scan_in_title_label_detail['courier']}
     # ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
     # ...    ${dc_operation.scan_in_title_label_detail['customer']}
     # ...    ${dc_operation.scan_in_title_label_detail['phone']}
     # dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
-    # ...    ${DC_Operation_S006.label_detail_in_scan_in_tab['courier']}
-    # ...    ${DC_Operation_S006.label_detail_in_scan_in_tab['zipcode']} 
-    # ...    ${DC_Operation_S006.label_detail_in_scan_in_tab['customer']}
-    # ...    ${DC_Operation_S006.label_detail_in_scan_in_tab['phone']}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['courier']}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['zipcode']} 
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['customer']}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['phone']}
     # ...    ${dc_operation.scan_in_title_label_detail['size_home']}    
-    # ...    ${DC_Operation_S006.label_detail_in_scan_in_tab['size']}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['size']}
     # dps_scan_page.Verify Title Sender In Scan Page
     # ...    ${dc_operation.scan_in_title_sender_detail['title']}
     # ...    ${dc_operation.scan_in_title_sender_detail['name']}
@@ -603,10 +603,10 @@ DC_Operation_S006
     # ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     # ...    ${dc_operation.scan_in_title_sender_detail['address']}
     # dps_scan_page.Verify Data Sender In Scan Page
-    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['name']}
-    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['phone']}
-    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['shipping_origin']}
-    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S006.scan_in_sender_data['name']}
+    # ...    ${DC_Operation_S006.scan_in_sender_data['phone']}
+    # ...    ${DC_Operation_S006.scan_in_sender_data['shipping_origin']}
+    # ...    ${DC_Operation_S006.scan_in_sender_data['address']}
     # dps_scan_page.Verify Title Receiver In Scan Page
     # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     # ...    ${dc_operation.scan_in_title_receiver_detail['name']}
@@ -614,10 +614,10 @@ DC_Operation_S006
     # ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
     # dps_scan_page.Verify Data Receiver In Scan Page
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['name']}
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['phone']}
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['shipping_destination']}
-    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['name']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['phone']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['shipping_destination']}
+    # ...    ${DC_Operation_S006.scan_in_receiver_data['address']}
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Parcel Detail Page At Destination Warehouse
 

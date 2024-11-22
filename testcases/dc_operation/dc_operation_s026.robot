@@ -186,9 +186,9 @@ DC_Operation_s026
     # Defect155
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S026['sender_name']}
-    ...    ${DC_Operation_S026.sender_data_in_scan_in_tab['phone']}
-    ...    -  #${DC_Operation_S026.sender_data_in_scan_in_tab['shipping_origin']}
-    ...    ${DC_Operation_S026.sender_data_in_scan_in_tab['address']}
+    ...    ${DC_Operation_S026.scan_in_sender_data['phone']}
+    ...    -  #${DC_Operation_S026.scan_in_sender_data['shipping_origin']}
+    ...    ${DC_Operation_S026.scan_in_sender_data['address']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Sender Details In Scan Page
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -197,10 +197,10 @@ DC_Operation_s026
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
     dps_scan_page.Verify Data Receiver In Scan Page
-    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['name']}
-    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['phone']}
-    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['shipping_destination']}
-    ...    ${DC_Operation_S026.receiver_data_in_scan_in_tab['address']}
+    ...    ${DC_Operation_S026.scan_in_receiver_data['name']}
+    ...    ${DC_Operation_S026.scan_in_receiver_data['phone']}
+    ...    ${DC_Operation_S026.scan_in_receiver_data['shipping_destination']}
+    ...    ${DC_Operation_S026.scan_in_receiver_data['address']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Data Receiver Details In Scan Page
 
     Log    Step No.2 คลิกปุ่ม "สร้าง" บริเวณกล่อง Pouch

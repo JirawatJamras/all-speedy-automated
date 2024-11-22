@@ -119,10 +119,10 @@ DC_Operation_S011
     # ...    ${dc_operation.scan_in_title_sender_detail['address']}
 
     # dps_scan_page.Verify Data Sender In Scan Page
-    # ...    ${DC_Operation_S011.sender_data_in_scan_in_tab['name']}
-    # ...    0959494989    # Expected Result is ${DC_Operation_S011.sender_data_in_scan_in_tab['phone']}
-    # ...    -    #${DC_Operation_S011.sender_data_in_scan_in_tab['shipping_origin']}
-    # ...    ${DC_Operation_S011.sender_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S011.scan_in_sender_data['name']}
+    # ...    0959494989    # Expected Result is ${DC_Operation_S011.scan_in_sender_data['phone']}
+    # ...    -    #${DC_Operation_S011.scan_in_sender_data['shipping_origin']}
+    # ...    ${DC_Operation_S011.scan_in_sender_data['address']}
 
     # dps_scan_page.Verify Title Receiver In Scan Page
     # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -132,10 +132,10 @@ DC_Operation_S011
     # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
 
     dps_scan_page.Verify Data Receiver In Scan Page
-    ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['name']}
-    ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['phone']}
-    ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['shipping_destination']}
-    ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['address']}
+    ...    ${DC_Operation_S011.scan_in_receiver_data['name']}
+    ...    ${DC_Operation_S011.scan_in_receiver_data['phone']}
+    ...    ${DC_Operation_S011.scan_in_receiver_data['shipping_destination']}
+    ...    ${DC_Operation_S011.scan_in_receiver_data['address']}
 
     # common.Scroll Window To Vertical    500
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    Verify Sender Data In Scan In
@@ -551,10 +551,10 @@ DC_Operation_S011
     # ...    ${dc_operation.scan_in_title_sender_detail['address']}
 
     # dps_scan_page.Verify Data Sender In Scan Page
-    # ...    ${DC_Operation_S011.sender_data_in_scan_in_tab['name']}
-    # ...    0988797374    # Expected Result is ${DC_Operation_S011.sender_data_in_scan_in_tab['phone']}
-    # ...    ${DC_Operation_S011.sender_data_in_scan_in_tab['shipping_origin']}
-    # ...    ${DC_Operation_S011.sender_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S011.scan_in_sender_data['name']}
+    # ...    0988797374    # Expected Result is ${DC_Operation_S011.scan_in_sender_data['phone']}
+    # ...    ${DC_Operation_S011.scan_in_sender_data['shipping_origin']}
+    # ...    ${DC_Operation_S011.scan_in_sender_data['address']}
 
     # dps_scan_page.Verify Title Receiver In Scan Page
     # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -564,10 +564,10 @@ DC_Operation_S011
     # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
 
     # dps_scan_page.Verify Data Receiver In Scan Page
-    # ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['name']}
-    # ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['phone']}
-    # ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['shipping_destination']}
-    # ...    ${DC_Operation_S011.receiver_data_in_scan_in_tab['address']}
+    # ...    ${DC_Operation_S011.scan_in_receiver_data['name']}
+    # ...    ${DC_Operation_S011.scan_in_receiver_data['phone']}
+    # ...    ${DC_Operation_S011.scan_in_receiver_data['shipping_destination']}
+    # ...    ${DC_Operation_S011.scan_in_receiver_data['address']}
 
     Log    Step No.35 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
