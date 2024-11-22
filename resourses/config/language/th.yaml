@@ -200,7 +200,7 @@ Booking:
     dry_parcel_import_success_amount: 'สำเร็จ 15'
     dry_parcel_import_fail_amount: 'ล้มเหลว 32'
   origin_shipping:
-    idc_company_address: 'บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+    idc_company_address: 'บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
     15888_store_address: '15888 7-11 สาขาCP TOWER สีลม'
     01523_store_address: '01523 7-11 สาขาปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
 

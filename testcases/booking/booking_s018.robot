@@ -23,7 +23,7 @@ Booking_S018
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Call Car Pick Up Page    ${call_car_pick_up['text_call_car_pick_up']}
-    common.Verify Capture Screenshot    booking    Booking_S018    Verify Navigate To Call Car Pick Up Page
+    common.Verify Capture Screenshot    booking    Booking_S018    1.Verify Navigate To Call Car Pick Up Page
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
@@ -37,7 +37,7 @@ Booking_S018
     ...    ${call_car_pick_up['text_parcel_pickup_time']}
     ...    ${call_car_pick_up['button_save']}
     ...    ${call_car_pick_up['button_cancel']}
-    common.Verify Capture Screenshot    booking    Booking_S018    Verify Popup Parcel Pickup Schedule
+    common.Verify Capture Screenshot    booking    Booking_S018    2.Verify Popup Parcel Pickup Schedule
 
     Log    Step No.3 รอบรถเข้ารับพัสดุ
     b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
@@ -47,7 +47,7 @@ Booking_S018
     b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
     b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
     # Expected
-    common.Verify Capture Screenshot    booking    Booking_S018    Verify Input Parcel Pickup Schedule In Add Popup
+    common.Verify Capture Screenshot    booking    Booking_S018    3.Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
@@ -60,4 +60,4 @@ Booking_S018
     ...    ${Booking_S018.pickup_time['expected']}
     ...    ${Booking_S018.pickup_time['expected']}
     ...    ${Booking_S018['pickup_point']}
-    common.Verify Capture Screenshot    booking    Booking_S018    Verify Added New Car Pickup Schedule
+    common.Verify Capture Screenshot    booking    Booking_S018    4.Verify Added New Car Pickup Schedule

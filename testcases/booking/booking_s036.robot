@@ -277,7 +277,7 @@ Booking_S036
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    booking    Booking_S036    Verify Edit Booking List Popup  
 
-    Log    Step No.17 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
+    Log    Step No.17 "กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง"
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S036['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S036['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
