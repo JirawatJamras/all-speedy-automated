@@ -102,11 +102,14 @@ Verify Parcel Pickup Status After Cut Off Time
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    FAIL
     ${status_2}=    Set Variable    False
+    ${loop}=    Set Variable    0
 
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Search Parcel Pickup By Date    ${day}    ${next_day}
 
     WHILE    '${status_2}' == 'False'
+        ${loop}=    Evaluate    ${loop} + 1
+        Run Keyword If    ${loop} > 75    Fail    After 5 minutes of cut off time, the status has not changed.
         Scroll Window To Vertical    0
         Run Keyword And Ignore Error    Wait Until Element Is Visible    ${card}
         ${number}=    Get Element Count    ${card}
