@@ -279,7 +279,8 @@ Verify Booking Detail Page
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
     Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
+    ${actual_txt_shipping_origin_booking_detail_page}=    Get Text    ${b2c_txt_shipping_origin_booking_detail_page}
+    Should Be Equal    ${actual_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
     Reload Page
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
@@ -508,6 +509,7 @@ Verify Date And Time With Time Distortion
 Wait Until Loading Icon Success
     ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Does Not Contain Element    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
+    Sleep    5s
 
 Wait Until Page Loaded After Select Origin Shipping
     Wait Until Element Is Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}

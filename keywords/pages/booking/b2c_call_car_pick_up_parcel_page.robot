@@ -313,8 +313,8 @@ Verify Saved Popup Is Visible
 
 Verify Saved Information In Visible In List
     [Arguments]    ${data}
-    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
-    Element Should Contain    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    ${newDate}
+    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
+    Element Should Contain    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    ${newDate}
 
 Click Cancel Button On Parcel Pickup Schedule Popup
     common.Click When Ready    ${b2c_btn_cancel_in_add_popup}
@@ -334,31 +334,21 @@ Click Confirm To Close Parcel Pickup Schedule Popup Button
 
 Verify Website Never Save Sender Information
     [Arguments]    ${data}
-    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
-    Element Should Not Contain    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    ${newDate}
+    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
+    Element Should Not Contain    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    ${newDate}
 
 Get The Highest Displayed Date And Set New Highest Date
-    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
     Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=${DEFAULT_TIMEOUT}
     ${titleName}=    Get Text    ${txt_parcel_pickup_schedule} 
     ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
-    ${parts}=    Split String    ${highestDisplayedDate}    -
-    ${day}=    Set Variable    ${parts}[0]
-    ${month}=    Set Variable    ${parts}[1]
-    ${year}=    Set Variable    ${parts}[2]
-    ${day}=    Convert To Integer    ${day}
-    ${nextDay}=    Evaluate    ${day} + 1
-    ${day}    Convert To String    ${nextDay}
-    ${digit}=     Get Length    ${day}
-    IF    '${digit}' == '1'
-        ${day}=    Set Variable    0${day}
-    END
-    ${newDate}=    Set Variable    ${day}-${month}-${year}
-    Set Suite Variable    ${newDate}    ${newDate}
+    ${newDate}=    Convert Date    ${highestDisplayedDate}    date_format=%d-%m-%Y    result_format=%Y-%m-%d
+    ${tomorrow_day}=    Add Time To Date    ${newDate}    1 days    result_format=%d-%m-%Y
+    Set Suite Variable    ${newDate}    ${tomorrow_day}
 
 Get The Highest Displayed Date And Set New Highest Date 2
-    # Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
-    # ${titleName}=    Get Text    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]//div[@class='ant-card-meta-title']//h5
+    # Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
+    # ${titleName}=    Get Text    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}//div[@class='ant-card-meta-title']//h5
     ${titleName}=    Set Variable    รอบปกติ 31-10-2567 16:00:00 - 19:00 น.    
     ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
     ${date} =    Add Time To Date    ${highestDisplayedDate}    1 days    date_format=%d-%m-%Y    result_format=%d-%m-%Y
@@ -382,7 +372,7 @@ Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     Delete The Lastest Parcel Pickup Schedule    ${current_date}    ${current_time}
     
 Click Select Item On Parcel Pickup Schedule List
-    common.Click When Ready    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+    common.Click When Ready    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
 
 Verify Information Detail Popup of Parcel Pickup Schedule
     Wait Until Element Is Visible    ${b2c_txt_pickup_parcel_schedule_in_detail_popup}    timeout=${DEFAULT_TIMEOUT}
@@ -408,19 +398,19 @@ Click Close Filter
 Verify Open Filter Section
     Wait Until Element Is Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_btn_search_in_filter}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Close Filter Section
     Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${b2c_btn_search_in_filter}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Added New Car Pickup Schedule
     [Arguments]    ${parcel_type}    ${special_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
     ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
-    Wait Until Element Is Visible    ${b2c_card_frist_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
     common.Scroll Window To Vertical    0
-    ${actual_info_new_pickup_card}=    Get Text    ${b2c_card_frist_parcel_pickup_list}
+    ${actual_info_new_pickup_card}=    Get Text    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
     ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
     Run Keyword If    '${parcel_type}' == 'พัสดุทั่วไป (Dry)'    Element Should Be Visible   ${img_dry_parcel}
     Run Keyword If    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'    Element Should Be Visible   ${img_dry_parcel}

@@ -19,27 +19,6 @@ Reset Cut Off Time
     update_document    ${QUERY}    ${update}
     disconnect
 
-Set Tomorrow Date
-    ${today}=    Get Current Date    result_format=%Y-%m-%d
-    ${tomorrow_day}=    Add Time To Date    ${today}    1 days    result_format=%d-%m-%Y
-    ${day}    Split String And Select    ${tomorrow_day}    -    0
-    ${month}    Split String And Select    ${tomorrow_day}    -    1
-    ${year}    Split String And Select    ${tomorrow_day}    -    2
-    ${year_be}    Evaluate    int(${year}) + 543
-    ${tomorrow}    Set Variable    ${day}-${month}-${year_be}
-    RETURN    ${tomorrow}
-
-Set Today
-    ${date_YYYY_MM_DD}   Get Current Date
-    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
-    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
-    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
-    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
-    ${year}    Convert To Integer    ${y}
-    ${year}    Evaluate    ${y} + 543
-    ${Today}    Set Variable    ${d}-${m}-${year}
-    RETURN    ${Today}
-
 Select Check Receiving Cycle Menu
     ${tab_check_receiving_cycle}=  Replace String   ${dps_tab_dps_menu}   {value}   ${dc_operation.dps_menu['Check_Receiving_Cycle']}
     Wait Until Element Is Visible    ${tab_check_receiving_cycle}    timeout=30s
