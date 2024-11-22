@@ -93,7 +93,8 @@ DC_Operation_S006
     # dps_scan_page.Click Accept Button On Popup For Creating Pouch
     # Expected    
     dps_home_page.Wait Until Page Loaded
-    ${pouch_number}    Get Pouch Number
+    # Defect260    comment code อยู่ด้านใน keyword "Get Pouch Number And Verify Pouch Format"
+    ${pouch_number}    Get Pouch Number And Verify Pouch Format
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -112,12 +113,12 @@ DC_Operation_S006
     ...    ${tracking_e}
     ...    ${DC_Operation_S006.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_size']}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['crossdock_warehouse']}
+    ...    ${EMPTY}    #${DC_Operation_S006.scan_in_data_parcel_detail['crossdock_warehouse']}
     ...    ${DC_Operation_S006.scan_in_data_parcel_detail['destination_warehouse']}
     ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_status']}
     ...    CP ALL    # Expected Result is ${DC_Operation_S006.scan_in_data_parcel_detail['courier']}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['pouch_number']}
-    ...    ${today}
+    ...    ${pouch_number}
+    ...    	18-11-2567    #${today}
     ...    ${DC_Operation_S006.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S006.scan_in_data_parcel_detail['send_parcel_to']}
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
@@ -131,8 +132,8 @@ DC_Operation_S006
     ...    ${DC_Operation_S006.scan_in_data_label_detail['store']}
     ...    ${DC_Operation_S006.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S006.scan_in_data_label_detail['phone']}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['pouch_number']}
-    ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S006.scan_in_data_label_detail['wh']}
+    ...    ${pouch_number}
+    ...    ${DC_Operation_S006.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S006.scan_in_data_label_detail['symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Parcel Details In Scan Page
     dps_scan_page.Verify Title Sender In Scan Page

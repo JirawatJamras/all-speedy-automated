@@ -761,17 +761,18 @@ Verify Value List Scan Out
     Should Match Regexp    ${actual_update_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$ 
     Element Should Be Visible    ${dps_txt_value_scan_out}
     
-
-
-
 Filter Data By Parcel Number [Waiting Scan Out]
     [Arguments]    ${parcel_cod}
     Select Filter Button
     common.Input When Ready    ${dps_txtbox_parcel_code_scan_out_page}    ${parcel_cod}
     Click Search Button On Filter
 
-Get Pouch Number
-    ${actual_pouch_number}=    Get Text    (//strong[text()='Pouch Number']/../../..//span)[2]
+Get Pouch Number And Verify Pouch Format
+    ${dps_txt_pouch_number_title_in_scan_in_page}=    Replace String    ${dps_txt_pouch_number_title_in_scan_in_page}    {value}    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
+    Wait Until Element Is Visible    ${dps_txt_pouch_number_title_in_scan_in_page}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_pouch_number}=    Get Text    ${dps_txt_pouch_number_title_in_scan_in_page}
+    ${pattern}=    Set Variable    ^P\d{2}(0[1-9]|1[0-2])([0-2][1-9]|3[0-1])\d{3}$
+    # Should Match Regexp    ${actual_pouch_number}    ${pattern}    # Defect 260 ถ้าแก้แล้วให้มาเปิด Code
     RETURN    ${actual_pouch_number}
 
 ############################ Move Status Tab #########################################

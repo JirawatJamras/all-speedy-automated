@@ -53,7 +53,7 @@ DC_Operation_S017
     Log    Step No.7 คลิกปุ่มตกลง
     dps_scan_page.Click Confirm Button To Create Pouch Popup Confirmation
     Sleep  5s
-    ${pouch_number}    Get Pouch Number
+    ${pouch_number}    Get Pouch Number And Verify Pouch Format
     ${today}    Set Today
     # Defect155
     # Expected

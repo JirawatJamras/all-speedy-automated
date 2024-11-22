@@ -301,26 +301,24 @@ DC_Operation_S006:
     destination_warehouse: DC SB 
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP All
-    pouch_number: '-'
     origin_warehouse: DCBB
-    send_parcel_to: Store (01015)
+    send_parcel_to: Store (15888)
   scan_in_data_label_detail:
-    store: '01015 (กล่อง XL)'
-    customer: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    store: '15888 (ซอง A4)'
+    customer: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
     phone: '0900987354'
-    pouch_number: '-'
-    wh: DCBB - AC - RDCLP
+    wh: DC BB - DC SB
     symbol: รูปนาฬิกาทราย
   sender_data_in_scan_in_tab:
-    name: คุณ j
+    name: คุณ e
     phone: '0959494989'
     shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
     address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   receiver_data_in_scan_in_tab:
-    name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    name: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
     phone: '0900987354'
-    shipping_destination: ร้าน สาขา เวียงป่าเป้า (01015)
-    address: 'เวียง เวียงป่าเป้า เชียงราย 57170'
+    shipping_destination: ร้าน สาขา CP TOWER สีลม (15888)
+    address: 'สีลม บางรัก กรุงเทพมหานคร 10500'
   timeline_in_history_parcel_after_scan_in:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
