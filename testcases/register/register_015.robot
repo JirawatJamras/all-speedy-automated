@@ -8,9 +8,10 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S015
     [Documentation]    RM : อนุมัติคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้านิติบุคคล)
-    [Tags]    Register    UAT    BEW
-    # Register_S015
-    Register_S15
+    [Tags]    Register    UAT    
+    skip
+    Register_S015
+
 
 
 

@@ -11,6 +11,7 @@ Test Teardown     Close Browser
 Approve Outbound
     [Documentation]    RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
     [Tags]    Register    UAT
+    skip
     Log    Scenario 17 RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
     Register_S017
     

@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
+
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
@@ -10,12 +11,13 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 Approve Legal Entity
-    [Documentation]    E2E 32 Scenario
-    [Tags]    Register    UAT
+    [Documentation]    อนุมัติคำขอลูกค้าประเภทนิติบุคคล
+    [Tags]    Register    Approved_Pre_Register    UAT
     Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
     Register_S001
-    # Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
+    Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
     Register_S007
+
 
     # Phase 2
     # Log    Scenario 9 RM : อนุมัติ Pre-Register (ลูกค้านิติบุคคล)

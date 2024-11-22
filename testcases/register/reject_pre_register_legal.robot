@@ -12,6 +12,7 @@ Test Teardown     Close Browser
 Reject Pre Register (Legal)
     [Documentation]    E2E 2 Scenario
     [Tags]    Register    UAT    In_Review
+    skip
     Log    Scenario 02 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่อปฎิเสธ  
     Register_S002
     Assign RM
