@@ -60,14 +60,26 @@ Verify Timeline
         Compare Time And Title In Timeline    ${title}    ${description}    ${count_timeline}
     END
 
+Set Pouch Number In Timeline List
+    [Arguments]    ${timelines}    ${title_to_update}    ${new_description}
+    FOR    ${timeline}    IN    @{timelines}
+        ${title}=    Get From Dictionary    ${timeline}    title
+        Run Keyword If    '${title}' == '${title_to_update}'    Set To Dictionary    ${timeline}    description=${new_description}
+    END
+
 Filter Data By Parcel Number
     [Arguments]    ${parcel_number}
-    Select Filter Button
-    Is Value Present In Parcel Textbox
-    common.Input When Ready    ${dps_txtbox_fitler_parcel_number_history_parcel_page}    ${parcel_number}
-    Click Search Button On Filter
-    Sleep    5s
-    # Select Filter Button
+    ${dps_btn_edit_history_parcel}=    Replace String    ${dps_btn_edit_history_parcel_history_parcel_page}    {value}    ${parcel_number}
+    FOR    ${i}    IN RANGE    0    5
+        Select Filter Button
+        Is Value Present In Parcel Textbox
+        common.Input When Ready    ${dps_txtbox_fitler_parcel_number_history_parcel_page}    ${parcel_number}
+        Sleep    3s
+        Click Search Button On Filter
+        Select Filter Button
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_btn_edit_history_parcel}
+        Exit For Loop If    '${isvisible}' == 'True'   
+    END
 
 Is Value Present In Parcel Textbox
     ${actual_txtbox_fitler_parcel_number}=    Get Value    ${dps_txtbox_fitler_parcel_number_history_parcel_page}
@@ -80,7 +92,7 @@ Select Filter Button
 
 Click Search Button On Filter
     ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_history_parcel_page}    {value}    ${dc_operation['button_search']}
-    common.Click When Ready    ${dps_btn_search_filter}
+    common.Click Xpath By JavaScript    ${dps_btn_search_filter}
 
 Verify Data In Table
     [Arguments]    ${title_history_parcel}    ${parcel_number}

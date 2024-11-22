@@ -434,13 +434,13 @@ DC_Operation_S006:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
+      description: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'    #empty
     - title: พัสดุเข้าคลังต้นทาง
       description: DC BB
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description:
+      description: ''    # pouch number to be dynamically set
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
   data_in_all_task_tab_after_scan:
@@ -449,22 +449,18 @@ DC_Operation_S006:
     import_from: Home
     export_to: คลัง DCSB
     transport: CP All
-    pouch_number: '-'
     parcel_size: กล่อง XL
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    parcel_status: พัสดุรอ Scan out ไปคลัง (DCSB)
   data_in_export_task_tab:
     export_to: คลัง DCSB
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '1'
-    number_of_pieces: '-'
-    number_of_scanned_items: '1'
   scan_out_waiting_scan:
     receive_parcel_from: Home
     transport: CP All
     parcel_owner: Speedy
     parcel_size: ซอง A4
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   data_in_pouch_list:
     inventory_crossdock: '-'
     destination_inventory: DC SC
