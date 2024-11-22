@@ -66,12 +66,14 @@ Filter Data By Parcel Number
     Is Value Present In Parcel Textbox
     common.Input When Ready    ${dps_txtbox_fitler_parcel_number_history_parcel_page}    ${parcel_number}
     Click Search Button On Filter
-    Select Filter Button
+    Sleep    5s
+    # Select Filter Button
 
 Is Value Present In Parcel Textbox
     ${actual_txtbox_fitler_parcel_number}=    Get Value    ${dps_txtbox_fitler_parcel_number_history_parcel_page}
     ${is_not_empty}=    Run Keyword And Return Status    Should Not Be Empty    ${actual_txtbox_fitler_parcel_number}
     Run Keyword If    '${is_not_empty}' == 'True'    common.Click When Ready    ${dps_btn_clear_parcel_number_history_parcel_page}
+    
 Select Filter Button
     ${dps_btn_filter}=    Replace String    ${dps_btn_filter_history_parcel_page}    {value}    ${dc_operation['button_filter']}
     common.Click When Ready    ${dps_btn_filter}

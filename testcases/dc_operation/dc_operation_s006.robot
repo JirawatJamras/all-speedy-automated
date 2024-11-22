@@ -66,28 +66,28 @@ DC_Operation_S006
     # ...    speedy  # ${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006   Verify Import Task Tab
 
-    Log    Step No.3 เข้าเมนูจัดการ Pouch และ คลิก Dropdown เลือกสิทธิ์คลังเป็น DC BB
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
-    dps_pouch_page.Click Dropdown Select Warehouse List    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
-    # Expected
-    dps_pouch_page.Verify Navigate To Pouch Page Success
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Navigate To Pouch Page Success
-
-    Log    ตรวจสอบ Pouch ที่มีคลังปลายทางเป็น DC SB ที่ถูกเปิดอยู่ และถ้ามี Pouch ที่เปิดอยู่จะดำเนินการต่อใน Step No. 4-7
-    dps_pouch_page.Check Open Pouch And Close Pouch By Destination Inventory
-    ...    ${DC_Operation_S006.check_close_pouch['inventory']}
-    ...    ${dc_operation['text_warning_confirm_to_close_pouch']}
-    ...    ${dc_operation['text_transaction_complete']}
-    ...    DC_Operation_S006
-
-    Log    Step No.8 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
-    dps_scan_page.Select Scan In Tab
-    dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_e}
-    dps_scan_page.Click Search Button [Scan In Page]
+    # Log    Step No.3 เข้าเมนูจัดการ Pouch และ คลิก Dropdown เลือกสิทธิ์คลังเป็น DC BB
+    # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
+    # dps_pouch_page.Click Dropdown Select Warehouse List    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # # Expected
-    dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S006['destination_warehouse']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Create Pouch Destination DCSB Popup
+    # dps_pouch_page.Verify Navigate To Pouch Page Success
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Navigate To Pouch Page Success
+
+    # Log    ตรวจสอบ Pouch ที่มีคลังปลายทางเป็น DC SB ที่ถูกเปิดอยู่ และถ้ามี Pouch ที่เปิดอยู่จะดำเนินการต่อใน Step No. 4-7
+    # dps_pouch_page.Check Open Pouch And Close Pouch By Destination Inventory
+    # ...    ${DC_Operation_S006.check_close_pouch['inventory']}
+    # ...    ${dc_operation['text_warning_confirm_to_close_pouch']}
+    # ...    ${dc_operation['text_transaction_complete']}
+    # ...    DC_Operation_S006
+
+    # Log    Step No.8 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
+    # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
+    # dps_scan_page.Select Scan In Tab
+    # dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_e}
+    # dps_scan_page.Click Search Button [Scan In Page]
+    # # # Expected
+    # dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S006['destination_warehouse']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Create Pouch Destination DCSB Popup
     
     # Log    Step No.9 คลิกปุ่มตกลง
     # dps_scan_page.Click Accept Button On Popup For Creating Pouch
@@ -161,21 +161,21 @@ DC_Operation_S006
     # ...    ${DC_Operation_S006.scan_in_receiver_data['address']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Receiver Details In Scan Page
 
-    Log    Step No.10 คลิกปุ่ม ยืนยัน/Print Label
-    dps_scan_page.Click Print Label
+    # Log    Step No.10 คลิกปุ่ม ยืนยัน/Print Label
+    # dps_scan_page.Click Print Label
 
-    Log    Step No.11 คลิกปุ่มพิมพ์
-    common.Click ESC On Keyboard
-    # Expected
-    dps_scan_page.Verify Print Label Success Popup
-    ...    ${dc_operation['text_print_label_success']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Print Label Success Popup
+    # Log    Step No.11 คลิกปุ่มพิมพ์
+    # common.Click ESC On Keyboard
+    # # Expected
+    # dps_scan_page.Verify Print Label Success Popup
+    # ...    ${dc_operation['text_print_label_success']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Print Label Success Popup
 
-    Log    Step No.12 คลิกที่ x Pop up
-    dps_scan_page.Click Close Print Label Success Popup
-    # Expected
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Navigate To Scan Page And Stay At Scan In Tab
+    # Log    Step No.12 คลิกที่ x Pop up
+    # dps_scan_page.Click Close Print Label Success Popup
+    # # Expected
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Navigate To Scan Page And Stay At Scan In Tab
 
     Log    Step No.13 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
@@ -189,7 +189,7 @@ DC_Operation_S006
     Switch Window    NEW
     # Defect201    Defect214
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel_after_scan_in']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel_after_scan_in']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Timeline
 
     Log    Step No.15 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB

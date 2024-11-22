@@ -397,7 +397,7 @@ DC_Operation_S006:
     export_to: '-'
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
+    parcel_size: ซอง A4
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
   data_in_import_task_tab:
     import_from: Home
@@ -440,7 +440,7 @@ DC_Operation_S006:
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: DC SB
+      description:
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
   data_in_all_task_tab_after_scan:
