@@ -155,14 +155,14 @@ DC_Operation_S008
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
     # dps_home_page.Verify Data In All Task Tab
-    # ...    ${DC_Operation_S008.data_in_all_task_tab['task_type']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['task_type1']}
     # ...    speedy  # ${DC_Operation_S008.data_in_all_task_tab['parcel_owner']}
     # ...    home  # ${DC_Operation_S008.data_in_all_task_tab['import_from']}
-    # ...    ${DC_Operation_S008.data_in_all_task_tab['export_to']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['export_to1']}
     # ...    CPALL  # ${DC_Operation_S008.data_in_all_task_tab['transport']}
-    # ...    ${DC_Operation_S008.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['pouch_number1']}
     # ...    ${tracking_g}
-    # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S008.data_in_all_task_tab['parcel_status']}
+    # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S008.data_in_all_task_tab['parcel_status1']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Homepage
     Sleep    1s
@@ -240,19 +240,23 @@ DC_Operation_S008
     ...    ${today}
     ...    ${DC_Operation_S008.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S008.scan_in_data_parcel_detail['send_parcel_to']}
-    # Inprogress Change to use CPALL courier
-    dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
-    ...    ${dc_operation.scan_in_title_label_detail['courier']}
+    
+    dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
+    ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
     ...    ${dc_operation.scan_in_title_label_detail['customer']}
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
-    dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
-    ...    ${DC_Operation_S008.scan_in_data_label_detail['courier']}
-    ...    ${DC_Operation_S008.scan_in_data_label_detail['zipcode']} 
+    ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
+    ...    ${dc_operation.scan_in_title_label_detail['wh']}
+    
+    dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
+    ...    ${DC_Operation_S008.scan_in_data_label_detail['zipcode']}
     ...    ${DC_Operation_S008.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S008.scan_in_data_label_detail['phone']}
-    ...    ${dc_operation.scan_in_title_label_detail['size_home']}    
-    ...    ${DC_Operation_S008.scan_in_data_label_detail['size']}
+    ...    ${DC_Operation_S008.scan_in_data_parcel_detail['pouch_number']}
+    ...    ${DC_Operation_S008.scan_in_data_label_detail['wh']}
+    ...    ${DC_Operation_S008.scan_in_data_label_detail['symbol']}    
+# Inprogress Change to use CPALL courier
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
@@ -262,7 +266,7 @@ DC_Operation_S008
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S008.scan_in_sender_data['name']}
     ...    ${DC_Operation_S008.scan_in_sender_data['phone']}
-    ...    ${DC_Operation_S008.scan_in_sender_data['shipping_origin']}
+    ...    -    #${DC_Operation_S008.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S008.scan_in_sender_data['address']}
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -306,7 +310,8 @@ DC_Operation_S008
     Switch Window    NEW
     # Defect201    Defect214
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}
+    
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel_after_scan_in']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline
 
     Log    Step No.15 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
@@ -318,15 +323,15 @@ DC_Operation_S008
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
-    dps_home_page.Verify Data In All Task Tab
-    ...    ${DC_Operation_S008.data_in_all_task_tab_after_scan['task_type']}
-    ...    speedy  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['parcel_owner']}
-    ...    home  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['import_from']}
-    ...    ${DC_Operation_S008.data_in_all_task_tab_after_scan['export_to']}
-    ...    CPALL  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['transport']}
-    ...    ${DC_Operation_S008.data_in_all_task_tab_after_scan['pouch_number']}
-    ...    ${tracking_g}
-    ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['parcel_status']}
+    # dps_home_page.Verify Data In All Task Tab
+    # ...    ${DC_Operation_S008.data_in_all_task_tab_after_scan['task_type2']}
+    # ...    speedy  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['parcel_owner']}
+    # ...    home  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['import_from']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab_after_scan['export_to2']}
+    # ...    CPALL  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['transport']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab_after_scan['pouch_number']}
+    # ...    ${tracking_g}
+    # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S008.data_in_all_task_tab_after_scan['parcel_status2']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Data In All Task Tab 1
     Sleep    1s
@@ -335,18 +340,19 @@ DC_Operation_S008
 
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
+    # Defect188
     # Expected
-    dps_home_page.Verify Label In Export Task Tab
-    ...    ${dc_operation.label_export_task_tab['export_to']}
-    ...    ${dc_operation.label_export_task_tab['transport']}
-    ...    ${dc_operation.label_export_task_tab['parcel_owner']}
-    ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
-    ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
-    ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
-    dps_home_page.Verify Data In Export Task Tab
-    ...    DCSB  # ${DC_Operation_S008.data_in_export_task_tab['import_from']}
-    ...    CPALL  # ${DC_Operation_S008.data_in_export_task_tab['transport']}
-    ...    speedy  # ${DC_Operation_S008.data_in_export_task_tab['parcel_owner']}
+    # dps_home_page.Verify Label In Export Task Tab
+    # ...    ${dc_operation.label_export_task_tab['export_to']}
+    # ...    ${dc_operation.label_export_task_tab['transport']}
+    # ...    ${dc_operation.label_export_task_tab['parcel_owner']}
+    # ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
+    # ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
+    # ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
+    # dps_home_page.Verify Data In Export Task Tab
+    # ...    DCSB  # ${DC_Operation_S008.data_in_export_task_tab['import_from']}
+    # ...    CPALL  # ${DC_Operation_S008.data_in_export_task_tab['transport']}
+    # ...    speedy  # ${DC_Operation_S008.data_in_export_task_tab['parcel_owner']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Data In Export Task Tab 1
     Sleep    1s
@@ -358,15 +364,15 @@ DC_Operation_S008
     dps_scan_page.Select Scan Out Tab
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    ${tracking_g}
-    ...    ${pouch_number}
-    ...    คลัง DC BB    #${DC_Operation_S008.scan_out_waiting_scan['receive_parcel_from']}
-    ...    CP ALL    #${DC_Operation_S008.scan_out_waiting_scan['transport']}
-    ...    ${DC_Operation_S008.scan_out_waiting_scan['parcel_owner']}
-    ...    กล่อง XL    #${DC_Operation_S008.scan_out_waiting_scan['parcel_size']}
-    ...    07/11/2567
-    ...    พัสดุรอ Scan out ไปคลัง DC SB    #${DC_Operation_S008.scan_out_waiting_scan['parcel_status']}
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
+    # ...    ${tracking_g}
+    # ...    ${pouch_number}
+    # ...    คลัง DC BB    #${DC_Operation_S008.scan_out_waiting_scan['receive_parcel_from']}
+    # ...    ${DC_Operation_S008.scan_out_waiting_scan['transport']}
+    # ...    ${DC_Operation_S008.scan_out_waiting_scan['parcel_owner']}
+    # ...    ${DC_Operation_S008.scan_out_waiting_scan['parcel_size']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S008.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Section Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s
@@ -389,10 +395,10 @@ DC_Operation_S008
     ...    ${DC_Operation_S008.data_in_pouch_list['crossdock_warehouse']}
     ...    ${DC_Operation_S008.data_in_pouch_list['destination_warehouse']}
     ...    ${DC_Operation_S008.data_in_pouch_list['status_on']}
-    ...    16-11-2567
+    ...    ${today}
     ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Pouch In Pouch Page
-
+# Inprogress
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected

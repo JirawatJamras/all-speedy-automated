@@ -467,7 +467,7 @@ DC_Operation_S003
 
     Log    Step No.10 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
-    # Defect 181
+    # Defect181    Defect189
     # Expected
     # dps_home_page.Verify Label In Export Task Tab
     # ...    ${dc_operation.label_export_task_tab['export_to']}
