@@ -2,7 +2,7 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    chrome    headlesschrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
@@ -10,14 +10,14 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 Register_S001_S007
-    [Documentation]    อนุมัติคำขอลูกค้าประเภทนิติบุคคล
-    [Tags]    Register    Approved_Pre_Register    UAT
+    [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ และ RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
+    [Tags]    Register    RM_Lead_Assign_TXN    UAT
     Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
     Register_S001
     Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
     Register_S007
 
-    *** Keywords ***    
+*** Keywords ***    
 Register_S001
     Log    Step No.1 กรอกข้อมูล
     #Step1 เข้าสู่ระบบ
@@ -34,7 +34,7 @@ Register_S001
     register_business_pre_register.Input Juristic Identification Number Legal Entity    ${JuristicID}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S001['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S001['search_company_address_full']}    ${Register_S001['select_company_address_full']}
-    common.Verify Capture Screenshot      Register    Approve Legal Entity    filled in general information success
+    common.Verify Capture Screenshot      Register    Register_S001_S007    filled in general information success
     # common.Scroll Window To Vertical    0
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S001['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S001['first_name']}
@@ -42,14 +42,14 @@ Register_S001
     register_business_pre_register.Input Email Legal Entity    ${Register_S001['email']}
     register_business_pre_register.Input Mobile No Legal Entity    ${Register_S001['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity    ${Register_S001['mobile_ext']}
-    common.Verify Capture Screenshot     Register    Approve Legal Entity    filled in contact information success   
+    common.Verify Capture Screenshot     Register    Register_S001_S007    filled in contact information success   
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     #Step Click btn กดปุ่มลงทะเบียน
     register_business_pre_register.Click Confirm
     #Expected
     register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
-    common.Verify Capture Screenshot     Register    Approve Legal Entity    Verify Confirm Page    
+    common.Verify Capture Screenshot     Register    Register_S001_S007    Verify Confirm Page    
 
 Register_S007
     #Step1
@@ -87,17 +87,17 @@ Register_S007
     ...    ${Register_S001['email']}
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
-    common.Verify Capture Screenshot      Register    Approve Legal Entity    Verify Request Detail Page With Status Waiting For Assign
+    common.Verify Capture Screenshot      Register    Register_S001_S007    Verify Request Detail Page With Status Waiting For Assign
     
     Log    Step No.2 RM Lead กดปุ่ม "Assign RM"
     pms_request_detail_page.Click Assign RM Button
     pms_request_detail_page.Verify Assign RM Popup
-    common.Verify Capture Screenshot      Register    Approve Legal Entity    Verify Assign RM Popup
+    common.Verify Capture Screenshot      Register    Register_S001_S007    Verify Assign RM Popup
     
     Log    Step No.3 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
     pms_request_detail_page.Click Button To Assign RM    ${Register_S007['rm_name']}
     pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
-    common.Verify Capture Screenshot      Register    Approve Legal Entity    Verify Assign To RM 
+    common.Verify Capture Screenshot      Register    Register_S001_S007    Verify Assign To RM 
     
     Log    Step No.4 กดปุ่ม "บันทึก"
     pms_request_detail_page.Click Save Button
@@ -109,4 +109,4 @@ Register_S007
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
     ...    ${Register_S007['rm_name']}
-    common.Verify Capture Screenshot      Register    Approve Legal Entity    Verify Save Assign To RM Success
+    common.Verify Capture Screenshot      Register    Register_S001_S007    Verify Save Assign To RM Success
