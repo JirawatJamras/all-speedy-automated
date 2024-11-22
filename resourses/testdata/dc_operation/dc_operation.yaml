@@ -124,7 +124,7 @@ DC_Operation_S003:
       description: '-'
     # - title: พัสดุออกจากคลังต้นทาง
     #   description: DC BB
-    
+
 DC_Operation_S004:
   sender_name: คุณ c
   destination_warehouse: RDC LP
@@ -605,14 +605,17 @@ DC_Operation_S007:
 DC_Operation_S008:
   sender_name: คุณ g
   data_in_all_task_tab:
-    task_type: งานรับเข้า
+    task_type1: งานรับเข้า
+    task_type2: งานส่งออก
     parcel_owner: Speedy
     import_from: Home
-    export_to: '-'
+    export_to1: '-'
+    export_to2: 'คลัง AC'
     transport: CP All
-    pouch_number: '-'
+    pouch_number1: '-'
     parcel_size: 'ซอง A4'
-    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
   data_in_import_task_tab:
     import_from: Home
     transport: CP All
@@ -620,7 +623,6 @@ DC_Operation_S008:
   check_close_pouch:
     inventory: RDC LP
   scan_in_data_parcel_detail:
-    # receiving_date: 04-11-2567
     customer_id: '2400563'
     parcel_size: '51 ซม. ซอง A4'
     crossdock_warehouse: 'AC'
@@ -631,23 +633,21 @@ DC_Operation_S008:
     send_parcel_to: Home (51000)
     route: ''
   scan_in_data_label_detail:
-    courier: 'FSH'
-    zipcode: '11120'
-    province: 'นนทบุรี'
-    customer: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    size: L
-    route: '-'
+    zipcode: '51000 (ซอง A4)'
+    customer: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    phone: '0900987354'
+    wh: DCBB - AC - RDCLP
+    symbol: รูปนาฬิกาทราย
   scan_in_sender_data:
-    name: คุณ a
-    phone: '0633906216'
-    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    name: คุณ g
+    phone: '0959494989'
+    shipping_origin: 'บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
     address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   scan_in_receiver_data:
-    name: ทดสอบพัสดุCourier
-    phone: '0971971445'
+    name: 'ทดสอบพัสดุ Crossdock ส่งบ้านสร้าง Pouch'
+    phone: '0900987354'
     shipping_destination: บ้าน
-    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+    address: '62 ในเมือง เมืองลำพูน ลำพูน 51000'
   timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
@@ -658,22 +658,13 @@ DC_Operation_S008:
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: DC SB
+      description: '-'
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
     - title: พัสดุออกจากคลังต้นทาง
       description: DC BB
-  data_in_all_task_tab_after_scan:
-    task_type: งานส่งออก
-    parcel_owner: Speedy
-    import_from: Home
-    export_to: คลัง DCSB
-    transport: CP All
-    pouch_number: '-'
-    parcel_size: กล่อง XL
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
   data_in_export_task_tab:
-    export_to: คลัง DCSB
+    export_to: คลัง RDCLP
     transport: CP All
     parcel_owner: Speedy
     number_of_pouch: '1'
@@ -684,16 +675,16 @@ DC_Operation_S008:
     transport: CP All
     parcel_owner: Speedy
     parcel_size: ซอง A4
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
   data_in_pouch_list:
-    crossdock_warehouse: '-'
-    destination_warehouse: DC SB
+    crossdock_warehouse: 'AC'
+    destination_warehouse: RDC LP
     status_on: 'On'
     status_off: 'Off'
   data_in_pouch_detail:
+    origin_warehouse: DC BB
     crossdock_warehouse: '-'
     pouch_status: เปิด
-    origin_warehouse: DC BB
     destination_warehouse: DC SB
     label_destination_warehouse: DC SB
     label_number: '1'
@@ -710,37 +701,6 @@ DC_Operation_S008:
     date: ''
     status: รอขนส่งเข้ารับพัสดุ
     status_after_print: ขนส่งเข้ารับพัสดุ
-  data_in_all_task_tab_after_delivery:
-    task_type: งานรับเข้า
-    parcel_owner: Speedy
-    import_from: คลัง DC BB
-    export_to: '-'
-    transport: CP All
-    parcel_size: ซอง A4
-    parcel_status: พัสดุออกจากคลังต้นทาง (DC BB)
-  data_in_import_task_tab_after_delivery:
-    import_from: คลัง DC BB
-    transport: CP All
-    parcel_owner: Speedy
-  timeline_in_history_parcel_after_scan_in_at_destination_warehouse:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
-    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    - title: สเเกนเข้า POUCH
-      description: DC SB
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
-    - title: พัสดุถึงคลังปลายทาง
-      description: ''
-    - title: พัสดุรอนำจ่ายโดยคลัง
-      description: DC SB
   data_in_send_task_tab:
     send_to: Home
     store_code: '-'
