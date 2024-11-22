@@ -39,7 +39,6 @@ Variables                   testdata/feature/b2c/b2c_addpickuptime_008.yaml
 Variables                   testdata/feature/b2c/b2c_addfavoriteitem_010.yaml
 Variables                   testdata/booking/booking.yaml
 
-
 ######################## C2C ########################
 Resource                    ../keywords/pages/booking/c2c_landing_page.robot
 Resource                    ../keywords/pages/booking/c2c_login.robot

@@ -40,7 +40,6 @@ ${b2c_cbo_parcel_pickup_time}    //div[@id='basic_time_list']/..//div[contains(t
 
 ${b2c_next_page_pickup_round}   //span[@class='anticon anticon-right']/../..
 ${b2c_card_parcel_pickup_list}    //div[@class='ant-card-body']//div[@class='ant-card-meta w-full']
-${b2c_card_frist_parcel_pickup_list}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
 ${card_first_normal_parcel_pickup_list}    (//h5[contains(text(),'{title}')]/../../../../..//span[contains(normalize-space(),'{number_of_parcel}')]/../../../../../../../../../..)[1]
 ${input_parcel_pickup_date}    //input[@id='parcelList_receivedDate']
 ${input_parcel_pickup_end_date}    (//input[@id='parcelList_receivedDate']/../..//input)[2]
@@ -79,7 +78,7 @@ ${b2c_cbo_time_pickup}    //div[text()='{value}']
 ${b2c_tbl_pickup_parcel_calendar_in_add_popup}    //*[contains(@class,'ant-picker-dropdown')]
 ${b2c_tbl_pickup_parcel_calendar}    //td[@title='{value}']
 
-${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div
+${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
 
 ${img_dry_parcel}    //div[@class='ant-space-item']//*[@alt='parcel']
 ${img_parcel_in_card}    (//div[@class='ant-card-body']//*[@alt='parcel'])[1]
