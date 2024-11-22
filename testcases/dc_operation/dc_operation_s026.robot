@@ -125,13 +125,13 @@ DC_Operation_s026
     Log    Step คลิกปุ่ม อนุมัติ
     dps_check_receiving_cycle_page.Click Approve Button On Parcel Pickup Details Popup
     dps_check_receiving_cycle_page.Verify Data Saved Success Popup
-    ${parcel_code_J}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S026['sender_name']}
-    Log To Console    ${parcel_code_J}
+    ${tracking_j}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S026['sender_name']}
+    Log To Console    ${tracking_j}
 
     Log    Step No.1 เข้าเมนู Scan ,กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ j", กดค้นหา
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
-    dps_scan_page.Input Tracking Number [Scan In Page]    ${parcel_code_J}
+    dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan In Page]
     # Defect158
     # Expected
@@ -151,7 +151,7 @@ DC_Operation_s026
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
-    ...    ${parcel_code_J}
+    ...    ${tracking_j}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
@@ -230,7 +230,7 @@ DC_Operation_s026
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 1st Time
     Scroll Window To Vertical    0
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
-    ...    ${parcel_code_J}
+    ...    ${tracking_j}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
@@ -259,7 +259,7 @@ DC_Operation_s026
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 2nd Time
     Scroll Window To Vertical    0
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
-    ...    ${parcel_code_J}
+    ...    ${tracking_j}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
@@ -288,7 +288,7 @@ DC_Operation_s026
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Pouch Detail After Click Pouch Box 3rd Time
     Scroll Window To Vertical    0
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
-    ...    ${parcel_code_J}
+    ...    ${tracking_j}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
@@ -326,15 +326,15 @@ DC_Operation_s026
 
     Log    Step No.10 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
-    dps_history_parcel_page.Filter Data By Parcel Number    ${parcel_code_J}
+    dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_j}
     # Expected
     dps_history_parcel_page.Verify Data In Table
     ...    ${dc_operation.title['history_parcel']}  
-    ...    ${parcel_code_J}
+    ...    ${tracking_j}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    Verify Data In Table
 
     Log    Step No.11 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-    dps_history_parcel_page.Click Edit History Parcel    ${parcel_code_J}
+    dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Defect209    Defect210
     # Expected
@@ -358,7 +358,7 @@ DC_Operation_s026
     ...    ${dc_operation.label_parcel_details_in_warehouse['shipping_by']}
     ...    ${dc_operation.label_parcel_details_in_warehouse['destination_warehouse']}
     dps_history_parcel_page.Verify Data Parcel Details In Warehouse Details
-    ...    ${parcel_code_J}
+    ...    ${tracking_j}
     ...    ${DC_Operation_S026.value_parcel_details_in_warehouse['parcel_status']}
     ...    ${DC_Operation_S026.value_parcel_details_in_warehouse['customer_type']}
     ...    ${pouch_number}

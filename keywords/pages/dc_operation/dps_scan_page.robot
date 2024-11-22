@@ -861,3 +861,33 @@ Click Clear Button [Move Status]
     ${btn_clear}=    Replace String    ${dps_btn_clear_filter_move_status_tab}    {value}    ${dc_operation['button_clear']}
     common.Click When Ready    ${btn_clear}
 
+Verify Clear Filter Input
+    ${parcel_number}=    Get Value    ${dps_txtbox_parcel_number_move_status}
+    ${pouch_number}=    Get Value    ${dps_txtbox_pouch_number_move_status}
+    ${start_date}=    Get Value    ${dps_txtbox_start_date_move_status}
+    ${end_date}=    Get Value    ${dps_txtbox_end_date_move_status}
+
+    Wait Until Element Is Visible    ${dps_txt_blank_parcel_status_move_status}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_txt_blank_dc_initial_move_status}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_txt_courier_move_status}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_txt_blank_parcel_owner_move_status}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_txt_blank_parcel_size_move_status}    timeout=${DEFAULT_TIMEOUT}
+    Should Be Empty    ${parcel_number}
+    Should Be Empty    ${pouch_number}
+    Should Be Empty    ${start_date}
+    Should Be Empty    ${end_date}
+
+Input Pouch Number [Move Status]
+    [Arguments]    ${pouch_number}
+    common.Input When Ready    ${dps_txtbox_pouch_number_move_status}    ${pouch_number}
+
+Verify Search Pouch Number Result
+    [Arguments]    ${pouch_number}
+    ${pouch_no}=    Replace String    ${dps_txt_pouch_number_move_status}    {value}    ${pouch_number}
+    Wait Until Element Is Visible    ${pouch_no}    timeout=${DEFAULT_TIMEOUT}
+    ${count}=    Get Element Count    ${dps_table_data_move_status}
+    Should Be Equal As Strings    ${count}    1
+
+
+
+

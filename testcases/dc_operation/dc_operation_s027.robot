@@ -60,7 +60,8 @@ DC_Operation_s027
     Log    Step No.6 คลิกปุ่มเคลียร์
     dps_scan_page.Click Clear Button [Move Status]
     # Expected
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Clear Search Result Parcel Status
+    dps_scan_page.Verify Clear Filter Input
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Clear Filter Parcel Status
 
     Log    Step No.7 คลิกช่องค้นหาขนาดพัสดุ
     dps_scan_page.Click Filter With Parcel Size
@@ -86,5 +87,25 @@ DC_Operation_s027
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Calendar Last Updated Date
 
     Log    Step No.11 คลิกช่องค้นหา Pouch Number และพิมพ์หมายเลข Pouch ที่มีสถานะปิดอยู่ลงในช่องค้นหา, กดปุ่มค้นหา
-    # dps_scan_page.Input Pouch Number [Move Status]
+    dps_scan_page.Input Pouch Number [Move Status]    P112421310
+    dps_scan_page.Click Search Button [Move Status]
+    # Expected
+    dps_scan_page.Verify Search Pouch Number Result    P112421310
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Search Pouch Number Result
+
+    Log    Step No.12 คลิกปุ่มเคลียร์
+    dps_scan_page.Click Clear Button [Move Status]
+    # Expected
+    dps_scan_page.Verify Clear Filter Input
+    Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Clear Filter Pouch Number
+
+    Log    Step No.13 คลิกปุ่มค้นหา
+    dps_scan_page.Click Search Button [Move Status]
+    # Expected
+    dps_scan_page.Verify Move Status Page
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Click Search Button
+
+    Log    Step No.14 คลิกช่องค้นหาหมายเลขพัสดุ, พิมพ์หมายเลขพัสดุที่มีชื่อผู้ส่งเป็น คุณ b ถึง คุณ j โดยพิมพ์ Tracking1 เว้นวรรค ตามด้วย Tracking2 จนครบทุกหมายเลข, คลิกปุ่มค้นหา
+
 
