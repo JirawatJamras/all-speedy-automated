@@ -276,6 +276,111 @@ DC_Operation_S004:
     customer_type: 'B2C'
     transport: CP All
 
+DC_Operation_S005:
+  data_in_all_task_tab:
+    task_type: งานรับเข้า
+    task_type2: งานส่งออก
+    task_type3: งานนำจ่าย
+    parcel_owner: Speedy
+    import_from: Home
+    import_from2: คลัง DC BB
+    export_to: '-'
+    export_to2: คลัง AC
+    export_to3: Home
+    export_to4: DC SB
+    transport: CP All
+    pouch_number: '-'
+    parcel_size: กล่อง XL
+    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status3: พัสดุออกจากคลังข้ามภาค (AC)
+    parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
+  data_in_import_task_tab:
+    import_from: Home
+    import_from2: คลัง AC
+    transport: CP All
+    parcel_owner: Speedy
+  data_in_export_task_tab:
+    export_to: คลัง AC
+    transport: CP All
+    parcel_owner: Speedy
+  scan_in_data_parcel_detail:
+    customer_id: '0002400563'
+    parcel_size: 150 ซม. กล่อง XL
+    crossdock_warehouse: '-'
+    destination_warehouse: DC SB
+    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
+    courier: CP ALL
+    pouch_number: '-'
+    origin_warehouse: DCBB
+    send_parcel_to: Home (10280)
+  scan_in_data_label_detail:
+    store: 10280 (กล่อง XL)
+    customer: ทดสอบพัสดุ Express ส่งบ้านสร้าง Pouch
+    customer2: ทดสอบพัสดุ Express ส่งบ้านไม่สร้าง Pouch
+    phone: ''
+    pouch_number: ''
+    wh: DC BB - DC SB
+    symbol: รูปดาว
+  sender_data_in_scan_in_tab:
+    name: คุณ d
+    phone: ''
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+    address: 74 ลำพยา เมืองนครปฐม นครปฐม 73000
+  receiver_data_in_scan_in_tab:
+    name: ทดสอบพัสดุ Express ส่งบ้านไม่สร้าง Pouch
+    phone: ''
+    shipping_destination: บ้าน
+    address: 228 ซอย 3 บางปู เมืองสมุทรปราการ สมุทรปราการ 10280
+  scan_in_value_waiting_scan_warehouse_ac:
+    pouch_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุออกจากคลังต้นทาง (DCBB)
+  scan_out_waiting_scan:
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอ Scan out ไปคลัง (DCSB)
+  scan_out_list_data:
+    pouch_number: '-'
+    receive_parcel_from: Home
+    transport: CP ALL
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+  wait_derivery_data_list:
+    export_to: คลัง DC SB
+    transport: CP ALL
+    date: ''
+    status: รอขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุ
+  timeline_in_history_parcel:
+      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      #   description: '-'
+      - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+        description: ''
+      - title: พัสดุเข้าคลังต้นทาง
+        description: DC BB
+      - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+        description: '-'
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: DC SB
+      - title: พัสดุออกจากคลังต้นทาง
+        description: DC BB
+      - title: พัสดุถึงคลังปลายทาง
+        description: DC SB
+      - title: พัสดุรอนำจ่ายโดยคลัง
+        description: DC SB
+  data_in_send_task_tab:
+    send_to: Home
+    store_code: '-'
+    customer_type: 'B2C'
+    transport: CP All
+
 DC_Operation_S006:
   sender_name: คุณ e
   destination_warehouse: DC SB
@@ -470,27 +575,26 @@ DC_Operation_S007:
     customer_id: '0002400563'
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: '-'
-    destination_warehouse: DCBB
+    destination_warehouse: DC SB
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP ALL
     pouch_number: '-'
-    receiving_date: 01-11-2567 14:06:18
-    origin_warehouse: '-'
+    origin_warehouse: DCBB
     send_parcel_to: Store (15888)
     route: ''
   scan_in_data_label_detail:
     route: ''
-    store: '15888'
+    store: '15888 (กล่อง XL)'
     customer: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
     phone: ''
     pouch_number: ''
-    wh: DCBB - DCSB
+    wh: DC BB - DC SB
     symbol: รูปดาว
   sender_data_in_scan_in_tab:
     name: คุณ f
     phone: ''
     shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
-    address: '74 ต.ลำพยา อ.เมืองนครปฐม จ.นครปฐม 73000'
+    address: 74 ลำพยา เมืองนครปฐม นครปฐม 73000
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
     phone: ''
@@ -955,11 +1059,11 @@ DC_Operation_S011:
     origin_warehouse: DCBB
     send_parcel_to: Store (01015)
   scan_in_data_label_detail:
-    store: '01015'
+    store: '01015 (กล่อง XL)'
     customer: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
     phone: ''
     pouch_number: ''
-    wh: DCBB - AC - RDC LP
+    wh: DC BB - AC - RDC LP
     symbol: รูปนาฬิกาทราย
   sender_data_in_scan_in_tab:
     name: คุณ j
@@ -969,7 +1073,7 @@ DC_Operation_S011:
   receiver_data_in_scan_in_tab:
     name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
     phone: ''
-    shipping_destination: ร้าน (01015)
+    shipping_destination: ร้าน สาขา เวียงป่าเป้า (01015)
     address: เวียง เวียงป่าเป้า เชียงราย 57170
   scan_in_value_waiting_scan_warehouse_ac:
     pouch_number: '-'
@@ -996,6 +1100,17 @@ DC_Operation_S011:
     date: ''
     status: รอขนส่งเข้ารับพัสดุ
     status_after_print: ขนส่งเข้ารับพัสดุ
+  timeline_in_history_parcel:
+      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      #   description: '-'
+      - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+        description: ''
+      - title: พัสดุเข้าคลังต้นทาง
+        description: DC BB
+      - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+        description: '-'
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: AC
 
 DC_Operation_S012:
   data_in_all_task_tab:

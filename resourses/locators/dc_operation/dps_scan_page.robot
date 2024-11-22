@@ -28,6 +28,8 @@ ${dps_btn_in_move_status_tab}    //div[@aria-hidden='false']//span[text()='{valu
 ${dps_btn_search_filter_move_status_tab}    //div[@aria-hidden='false']//div[text()='{value}']/..
 ${dps_btn_clear_filter_move_status_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
 
+${dps_input_route_parcel_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]//input
+
 ${dps_txt_scan_header_ion_scan_page}    //div[@class='ant-card-head-wrapper']//span[text()='{value}']
 ${dps_txt_title_parcel_detail}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${dps_txt_title_parcel_id}    //span[contains(@class,'ant-typography')]//strong[text()='{value}']    

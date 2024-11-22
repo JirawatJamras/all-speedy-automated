@@ -558,6 +558,7 @@ Verify Data Parcel Details In Scan Page [CP All Courier]
     ${dps_txt_value_receiving_date}=    Replace String    ${dps_txt_value_receiving_date}    {value}    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
     ${dps_txt_value_origin_warehouse}=    Replace String    ${dps_txt_value_origin_warehouse}    {value}    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ${dps_txt_value_send_parcel_to}=    Replace String    ${dps_txt_value_send_parcel_to}    {value}    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
+    ${dps_input_route_parcel_detail_scan_in_page}=    Replace String    ${dps_input_route_parcel_detail_scan_in_page}    {value}    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
     ${actual_value_parcel_id}=    Get Text    ${dps_txt_value_parcel_id}
     ${actual_value_customer_id}=    Get Text    ${dps_txt_value_customer_id}
     ${actual_value_parcel_size1}=    Get Value    ${dps_txt_value_parcel_size1}
@@ -576,8 +577,11 @@ Verify Data Parcel Details In Scan Page [CP All Courier]
     ${actual_receiving_date}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  0
     ${actual_receiving_time}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  1
     Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}$
-    Should Match Regexp    ${actual_value_route}    ^\\d+$  
-    
+    IF         '${actual_value_route}' == ''
+        Element Should Be Disabled    ${dps_input_route_parcel_detail_scan_in_page}
+    ELSE
+        Should Match Regexp    ${actual_value_route}    ^\\d+$  
+    END
     Should Be Equal    ${actual_value_parcel_id}    ${parcel_id}
     Should Be Equal    ${actual_value_customer_id}    ${customer_id}
     Should Be Equal    ${actual_value_parcel_size}    ${parcel_size}

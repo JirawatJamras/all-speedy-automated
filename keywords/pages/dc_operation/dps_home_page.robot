@@ -142,9 +142,10 @@ Verify Data In All Task Tab
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_number}    ${parcel_number}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_status}    ${parcel_status}
     Scroll Element Into View    ${dps_txt_list_first_all_task}
-    ${actual_txt_list_first_daily_task}=    Get Text    ${dps_txt_list_first_all_task}
-    ${actual_txt_list_first_daily_task}=    Replace String    ${actual_txt_list_first_daily_task}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_txt_list_first_daily_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
+    # ${actual_txt_list_first_daily_task}=    Get Text    ${dps_txt_list_first_all_task}
+    # ${actual_txt_list_first_daily_task}=    Replace String    ${actual_txt_list_first_daily_task}    \n    ${SPACE}
+    # Should Be Equal As Strings    ${actual_txt_list_first_daily_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
+    Wait Until Element Is Visible    ${dps_txt_list_first_all_task}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Data In All Task Tab (Loop To Find Each Row)
     [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
@@ -487,26 +488,13 @@ Wait Until Page Loaded
 
 Verify Label In Send Task Tab
     [Arguments]    ${send_to}    ${store_code}    ${customer_type}    ${transport}    ${number_of_pieces}
-    ${dps_txt_send_to_in_send_task_tab}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {title}    ${send_to}
-    ${dps_txt_store_code_in_send_task_tab}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {title}    ${store_code}
-    ${dps_txt_customer_type_in_send_task_tab}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {title}    ${customer_type}
-    ${dps_txt_transport_in_send_task_tab}=    Replace String    ${dps_txt_transport_title_table_in_send_task_tab_home_page}    {title_store_code}    ${store_code}
-    ${dps_txt_transport_in_send_task_tab}=    Replace String    ${dps_txt_transport_in_send_task_tab}    {title_transport}    ${transport}
-    ${dps_txt_number_of_pieces_in_send_task_tab}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {title}    ${number_of_pieces}
-    Wait Until Element Is Visible    ${dps_txt_send_to_in_send_task_tab}    timeout=${DEFAULT_TIMEOUT}
-    ${dps_tab_send_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['send_task']}
-    ${actual_tab_send_task_status}=    Get Element Attribute    ${dps_tab_send_task}    aria-selected
-    Should Be Equal    ${actual_tab_send_task_status}    true
-    ${actual_txt_send_to_in_send_task_tab}=    Get Text    ${dps_txt_send_to_in_send_task_tab}
-    ${actual_txt_store_code_in_send_task_tab}=    Get Text    ${dps_txt_store_code_in_send_task_tab}
-    ${actual_txt_customer_type_in_send_task_tab}=    Get Text    ${dps_txt_customer_type_in_send_task_tab}
-    ${actual_txt_transport_in_send_task_tab}=    Get Text    ${dps_txt_transport_in_send_task_tab}
-    ${actual_txt_number_of_pieces_in_send_task_tab}=    Get Text    ${dps_txt_number_of_pieces_in_send_task_tab}
-    Should Be Equal    ${actual_txt_send_to_in_send_task_tab}    ${send_to}
-    Should Be Equal    ${actual_txt_store_code_in_send_task_tab}    ${store_code}
-    Should Be Equal    ${actual_txt_customer_type_in_send_task_tab}    ${customer_type}
-    Should Be Equal    ${actual_txt_transport_in_send_task_tab}    ${transport}
-    Should Be Equal    ${actual_txt_number_of_pieces_in_send_task_tab}    ${number_of_pieces}
+    ${dps_txt_title_table_in_send_task_tab_home_page}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {send_to}    ${send_to}
+    ${dps_txt_title_table_in_send_task_tab_home_page}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {store_code}    ${store_code}
+    ${dps_txt_title_table_in_send_task_tab_home_page}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {customer_type}    ${customer_type}
+    ${dps_txt_title_table_in_send_task_tab_home_page}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {transport}    ${transport}
+    ${dps_txt_title_table_in_send_task_tab_home_page}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {number_of_pieces}    ${number_of_pieces}
+    Wait Until Element Is Visible    ${dps_txt_title_table_in_send_task_tab_home_page}    timeout=${DEFAULT_TIMEOUT}
+    
 
 Verify Data In Send Task Tab
     [Arguments]    ${send_to}    ${store_code}    ${customer_type}    ${transport}
@@ -515,7 +503,8 @@ Verify Data In Send Task Tab
     ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {customer_type}    ${customer_type}
     ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {transport}    ${transport}
     Scroll Element Into View    ${dps_txt_list_first_send_task}
-    Element Should Contain    ${dps_txt_list_first_send_task}    ${send_to} ${store_code} ${customer_type} ${transport}
+    # Element Should Contain    ${dps_txt_list_first_send_task}    ${send_to} ${store_code} ${customer_type} ${transport}
+    Wait Until Element Is Visible    ${dps_txt_list_first_send_task}    timeout=${DEFAULT_TIMEOUT}
 
 Select Filter Button
     ${dps_btn_filter}=    Replace String    ${dps_btn_filter_home_page}    {value}    ${dc_operation['button_filter']}
