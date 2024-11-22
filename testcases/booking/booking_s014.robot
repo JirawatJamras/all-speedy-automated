@@ -23,19 +23,19 @@ Booking_S014
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
     b2c_booking_delivery_page.Verify Booking Page For Business Customer
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Booking Page For Business Customer
+    common.Verify Capture Screenshot    booking    Booking_S014    1.Verify Booking Page For Business Customer
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
     # Expected
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Term & Condition
+    common.Verify Capture Screenshot    booking    Booking_S014    2.Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
-    # Expected   
+    # Expected
     b2c_booking_delivery_page.Verify Select Parcel Type
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Select Parcel Type
+    common.Verify Capture Screenshot    booking    Booking_S014    3.Verify Select Parcel Type
 
     Log    Step No.4 กดปุ่ม "พัสดุทั่วไป"
     b2c_booking_delivery_page.Select Parcel Type    ${Booking_S014['parcel_type']}
@@ -52,7 +52,7 @@ Booking_S014
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Create Parcel Page Sender Step
+    common.Verify Capture Screenshot    booking    Booking_S014    4.Verify Create Parcel Page Sender Step
 
     Log    Step No.5 ขั้นตอนข้อมูลผู้ส่งพัสดุ
     b2c_booking_delivery_page.Input Phone Sender    ${Booking_S014['sender_phone']}
@@ -62,7 +62,7 @@ Booking_S014
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S014['sender_postcode_full']}
     b2c_create_parcel_page.Click Add To Favorites
     # Expected
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify After Create Parcel Page Sender Step
+    common.Verify Capture Screenshot    booking    Booking_S014    5.Verify After Create Parcel Page Sender Step
 
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -80,7 +80,7 @@ Booking_S014
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Create Parcel Page Receiver Step When Select Home
+    common.Verify Capture Screenshot    booking    Booking_S014    6.Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.7 ขั้นตอนข้อมูลผู้รับพัสดุ
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S014['receiver_phone']}
@@ -91,7 +91,7 @@ Booking_S014
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     # Expected
     b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S014['receiver_store_full']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Create Parcel Page After Input Receiver Step
+    common.Verify Capture Screenshot    booking    Booking_S014    7.Verify Create Parcel Page After Input Receiver Step
 
     Log    Step No.8 กดปุ่ม "บันทึกร่าง"
     b2c_booking_delivery_page.Click Save Button
@@ -111,7 +111,7 @@ Booking_S014
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Draft Parcel Receiver
+    common.Verify Capture Screenshot    booking    Booking_S014    8.Verify Draft Parcel Receiver
 
     Log    Step No.9 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
     ${booking_id}    Get Booking ID
@@ -132,7 +132,7 @@ Booking_S014
     ...    ${Booking_S014['sender_name']}
     ...    ${Booking_S014['sender_address']}
     ...    ${Booking_S014['sender_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Data Sender
+    common.Verify Capture Screenshot    booking    Booking_S014    9.Verify Data Sender
 
     Log    Step No.10 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button  
@@ -148,7 +148,7 @@ Booking_S014
     ...    ${Booking_S014['receiver_phone']}
     ...    ${Booking_S014['receiver_name']}
     ...    ${Booking_S014['receiver_store_full']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Data Receiver When Select 7-ELEVEN Store
+    common.Verify Capture Screenshot    booking    Booking_S014    10.Verify Data Receiver When Select 7-ELEVEN Store
    
     Log    Step No.11 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -169,13 +169,13 @@ Booking_S014
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Parcel Detail
+    common.Verify Capture Screenshot    booking    Booking_S014    11.Verify Parcel Detail
 
     Log    Step No.12 ขั้นตอนรายละเอียดพัสดุ
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S014['parcel_size']}
     b2c_booking_delivery_page.Input Insurance    ${Booking_S014['buy_insurance']}
     # Expected
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Create Parcel Page After Input Parcel Detail Step 
+    common.Verify Capture Screenshot    booking    Booking_S014    12.Verify Create Parcel Page After Input Parcel Detail Step 
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
@@ -183,7 +183,7 @@ Booking_S014
     b2c_booking_delivery_page.Verify Promotion Detail
     ...    ${Booking['text_selected_coupon_and_code']}
     ...    ${Booking['text_my_coupon_and_code']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Promotion
+    common.Verify Capture Screenshot    booking    Booking_S014    13.Verify Promotion
 
     Log    Step No.14 ขั้นตอน Promotion
     b2c_booking_delivery_page.Click Parcel Booking Button
@@ -194,7 +194,7 @@ Booking_S014
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
+    ...    ${Booking_S014['booking_name']}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
@@ -220,9 +220,9 @@ Booking_S014
     ...    ${Booking_S014['total_price_value1']}
     ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Booking Summary After Booking Success
+    common.Verify Capture Screenshot    booking    Booking_S014    14.Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Booking Detail Page After Booking Success
+    common.Verify Capture Screenshot    booking    Booking_S014    14.Verify Booking Detail Page After Booking Success
 
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -235,7 +235,7 @@ Booking_S014
     ...    ${Booking_S014['booking_name']}
     ...    ${Booking_S014['booking_item']}
     ...    ${Booking.text_default['booking_price']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Created Booking On Booking Delivery Page
+    common.Verify Capture Screenshot    booking    Booking_S014    15.Verify Created Booking On Booking Delivery Page
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
@@ -244,7 +244,7 @@ Booking_S014
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
+    ...    ${Booking_S014['booking_name']}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
@@ -270,9 +270,9 @@ Booking_S014
     ...    ${Booking_S014['total_price_value1']}
     ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Booking Summary
+    common.Verify Capture Screenshot    booking    Booking_S014    16.Verify Booking Summary
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Booking Detail Page
+    common.Verify Capture Screenshot    booking    Booking_S014    16.Verify Booking Detail Page
  
     Log    Step No.17 กดปุ่ม "เเก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
@@ -281,9 +281,9 @@ Booking_S014
     ...    ${Booking_S014['parcel_type']}
     ...    ${Booking_S014['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Edit Booking List Popup  
+    common.Verify Capture Screenshot    booking    Booking_S014    17.Verify Edit Booking List Popup  
 
-    Log    Step No.18 "กรอกข้อมูลเพื้นที่ต้นทางการจัดส่ง"
+    Log    Step No.18 "กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง"
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S014['shipping_origin']}
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S014['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
@@ -295,7 +295,7 @@ Booking_S014
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    ${booking_name}
+    ...    ${Booking_S014['booking_name']}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
@@ -321,9 +321,9 @@ Booking_S014
     ...    ${Booking_S014['total_price_value2']}
     ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Booking Summary After Set Origin Shipping
+    common.Verify Capture Screenshot    booking    Booking_S014    18.Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Booking Detail Page After Set Origin Shipping
+    common.Verify Capture Screenshot    booking    Booking_S014    18.Verify Booking Detail Page After Set Origin Shipping
 
    Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
@@ -346,9 +346,9 @@ Booking_S014
     ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_buy_insure']}
     ...    ${Booking.text_blank['parcel_detail_remark']}
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Parcel Label
+    common.Verify Capture Screenshot    booking    Booking_S014    19.Verify Parcel Label
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
-    common.Verify Capture Screenshot    booking    Booking_S014    Verify Print Screen
+    common.Verify Capture Screenshot    booking    Booking_S014    20.Verify Print Screen
