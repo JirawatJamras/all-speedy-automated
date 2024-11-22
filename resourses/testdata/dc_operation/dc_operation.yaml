@@ -391,14 +391,17 @@ DC_Operation_S006:
   sender_name: คุณ e
   destination_warehouse: DC SB
   data_in_all_task_tab:
-    task_type: งานรับเข้า
+    task_type1: งานรับเข้า
+    task_type2: งานส่งออก
     parcel_owner: Speedy
     import_from: Home
-    export_to: '-'
+    export_to1: '-'
+    export_to2: คลัง DCSB
     transport: CP All
     pouch_number: '-'
     parcel_size: ซอง A4
-    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (DCSB)
   data_in_import_task_tab:
     import_from: Home
     transport: CP All
@@ -443,14 +446,6 @@ DC_Operation_S006:
       description: ''    # pouch number to be dynamically set
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
-  data_in_all_task_tab_after_scan:
-    task_type: งานส่งออก
-    parcel_owner: Speedy
-    import_from: Home
-    export_to: คลัง DCSB
-    transport: CP All
-    parcel_size: กล่อง XL
-    parcel_status: พัสดุรอ Scan out ไปคลัง (DCSB)
   data_in_export_task_tab:
     export_to: คลัง DCSB
     transport: CP All
@@ -462,10 +457,9 @@ DC_Operation_S006:
     parcel_size: ซอง A4
     parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   data_in_pouch_list:
-    inventory_crossdock: '-'
-    destination_inventory: DC SC
-    parcel_amount: '1'
-    status: 'On'
+    crossdock_warehouse: '-'
+    destination_warehouse: DC SB
+    status_on: 'On'
     status_off: 'Off'
   data_in_pouch_detail:
     crossdock_warehouse: '-'
@@ -478,9 +472,9 @@ DC_Operation_S006:
     label_symbol: รูปดาว
     data_in_table:
       destination_warehouse: DC SB
-      pickup_place: 'null'
+      pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
-      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+      parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   timeline_in_history_parcel_after_scan_out:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
