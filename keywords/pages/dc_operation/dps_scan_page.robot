@@ -798,8 +798,9 @@ Verify Move Status Page
     Wait Until Element Is Visible    ${btn_import}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_filter}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_update_date}    timeout=${DEFAULT_TIMEOUT}
-    ${count}=    Get Element Count    ${txt_update_date}
-    Should Be Equal As Strings    ${count}    ${dc_operation.move_status['default_table']}
+    ${amount_of_update_date}=    Get Element Count    ${txt_update_date}
+    ${amount_of_data}=    Get Element Count    ${dps_table_data_move_status}
+    Should Be Equal As Strings    ${amount_of_update_date}    ${amount_of_data}
 
 Click Filter Button
     ${btn_filter}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_filter']}
@@ -832,6 +833,21 @@ Click Filter With Parcel Status
 
 Verify Parcel Status List In Dropdown
     Wait Until Element Is Visible    ${dps_cbo_status_list_move_status}
+
+Search With Parcel Status [Move Status]
+    [Arguments]    ${status}
+    ${parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${status}
+    Scroll Element Into View    ${parcel_status}
+    common.Click When Ready    ${parcel_status}
+
+Verify Search Parcel Status Result
+    [Arguments]    ${status}
+    Scroll Window To Vertical    700
+    ${parcel_status}=    Replace String    ${dps_txt_parcel_status_move_status}    {value}    ${status}
+    Wait Until Element Is Visible    ${parcel_status}    timeout=${DEFAULT_TIMEOUT}
+    ${count_parcel_status}=    Get Element Count    ${parcel_status}
+    ${count}=    Get Element Count    ${dps_table_data_move_status}
+    Should Be Equal As Strings    ${count}    ${count_parcel_status}
 
 Click Filter With Parcel Size
     ${cbo_parcel_status}=    Replace String    ${dps_cbo_filter_move_status}    {value}    ${dc_operation.move_status['parcel_size']}
@@ -892,6 +908,15 @@ Verify Search Pouch Number Result
     ${count}=    Get Element Count    ${dps_table_data_move_status}
     Should Be Equal As Strings    ${count}    1
 
+Input Tracking Number [Move Status]
+    [Arguments]    ${tracking_number_b}
+    common.Input When Ready    ${dps_txtbox_parcel_number_move_status}
+    ...    ${tracking_number_b}
+
+Verify Search Tracking Number Result
+    [Arguments]    ${status}    ${tracking}
+    ${actual_status}=    Replace String    ${dps_txt_list_data_move_status}    {status}    ${status}
+    ${actual_tracking}=    Replace String    ${actual_status}    {tracking}    ${tracking}
 
 
 

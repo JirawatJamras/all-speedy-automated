@@ -51,16 +51,25 @@ DC_Operation_s027
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Parcel Status List In Dropdown
 
     Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
+    # Defect257
+    ###################### ใช้ชั่วคราว #######################
+    dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
+    Sleep    2s
+    # Expected
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Search With Pickup Pending Status
 
     Log    Step No.5 คลิกปุ่มค้นหา
     dps_scan_page.Click Search Button [Move Status]
     # Expected
+    dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Search Parcel Status Result
 
     Log    Step No.6 คลิกปุ่มเคลียร์
     dps_scan_page.Click Clear Button [Move Status]
+    # Defect266
     # Expected
     dps_scan_page.Verify Clear Filter Input
+    # dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Clear Filter Parcel Status
 
     Log    Step No.7 คลิกช่องค้นหาขนาดพัสดุ
@@ -77,6 +86,7 @@ DC_Operation_s027
 
     Log    Step No.9 คลิกช่องค้นหา Parcel Owner
     dps_scan_page.Click Filter With Parcel Owner
+    # Defect182
     # Expected
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Parcel Owner List In Dropdown
 
@@ -97,7 +107,6 @@ DC_Operation_s027
     dps_scan_page.Click Clear Button [Move Status]
     # Expected
     dps_scan_page.Verify Clear Filter Input
-    Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Clear Filter Pouch Number
 
     Log    Step No.13 คลิกปุ่มค้นหา
@@ -107,5 +116,15 @@ DC_Operation_s027
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Click Search Button
 
     Log    Step No.14 คลิกช่องค้นหาหมายเลขพัสดุ, พิมพ์หมายเลขพัสดุที่มีชื่อผู้ส่งเป็น คุณ b ถึง คุณ j โดยพิมพ์ Tracking1 เว้นวรรค ตามด้วย Tracking2 จนครบทุกหมายเลข, คลิกปุ่มค้นหา
+    dps_scan_page.Input Tracking Number [Move Status]
+    ...    SPBD241100019833    # B
+    dps_scan_page.Click Search Button [Move Status]
+    Sleep    2s
+    # Expected
+    dps_scan_page.Verify Search Tracking Number Result   
+    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    ...    SPBD241100019833    # B
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Search Tracking Number Result
+
 
 

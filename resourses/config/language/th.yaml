@@ -574,6 +574,10 @@ dc_operation:
     parcel_size: ขนาดพัสดุ
     type: ประเภท
     parcel_status: สถานะพัสดุ
+  parcel_status:
+    pickup_pending: พัสดุรอเข้ารับที่ร้าน
+    awaiting_delivery_warehouse: พัสดุรอนำจ่ายโดยคลัง
+  
 
 rm:
   text_pre_register: Pre-Register
