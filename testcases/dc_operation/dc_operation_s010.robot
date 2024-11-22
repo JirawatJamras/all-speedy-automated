@@ -180,7 +180,7 @@ DC_Operation_S010
     Switch Window    NEW
     # Defect201    Defect214
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel_after_scan_in']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Timeline
 
     Log    Step No.15 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
@@ -413,7 +413,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel_after_scan_out']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Timeline After Scan Out
 
     Log    Step No.32 เข้าเมนู Scan เลือกแท็บ Scan Out และ คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
@@ -519,7 +519,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel_after_scan_out']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Timeline After Scan Out
 
     Log    Step No.41 เข้าเมนู Scan และ เลือกแท็บ Scan out
@@ -609,7 +609,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel_after_scan_out']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Timeline After Scan Out
 
     Log    Step No.50 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง RDC LP
@@ -766,7 +766,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel_after_scan_out']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Timeline After Scan Out
 
     Log    Step No.61 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง RDC LP

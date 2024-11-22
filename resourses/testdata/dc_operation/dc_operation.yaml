@@ -169,7 +169,7 @@ DC_Operation_S004:
     phone: '0971971445'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
-  timeline_in_history_parcel_after_scan_in:
+  timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
@@ -182,6 +182,8 @@ DC_Operation_S004:
       description: DC SB
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
   data_in_all_task_tab_after_scan:
     task_type: งานส่งออก
     parcel_owner: Speedy
@@ -222,23 +224,7 @@ DC_Operation_S004:
       destination_warehouse: DC SB
       pickup_place: 'null'
       type: B2C
-      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-  timeline_in_history_parcel_after_scan_out:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
-    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    - title: สเเกนเข้า POUCH
-      description: DC SB
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
-      
+      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง      
   wait_derivery_data_list:
     export_to: Store
     transport: CP All
@@ -433,7 +419,7 @@ DC_Operation_S006:
     phone: '0900987354'
     shipping_destination: ร้าน สาขา CP TOWER สีลม (15888)
     address: 'สีลม บางรัก กรุงเทพมหานคร 10500'
-  timeline_in_history_parcel_after_scan_in:
+  timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
@@ -446,6 +432,8 @@ DC_Operation_S006:
       description: ''    # pouch number to be dynamically set
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
   data_in_export_task_tab:
     export_to: คลัง DCSB
     transport: CP All
@@ -456,6 +444,13 @@ DC_Operation_S006:
     parcel_owner: Speedy
     parcel_size: ซอง A4
     parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+  scan_out_list_data:
+    tracking_number: '-'
+    receive_parcel_from: Home
+    transport: Flash
+    parcel_owner: Speedy
+    parcel_size: 'กล่อง L'
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง    
   data_in_pouch_list:
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
@@ -475,21 +470,6 @@ DC_Operation_S006:
       pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
       parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
-  timeline_in_history_parcel_after_scan_out:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
-    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    - title: สเเกนเข้า POUCH
-      description: DC SB
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
   wait_derivery_data_list:
     export_to: Store
     transport: CP All
@@ -668,7 +648,7 @@ DC_Operation_S008:
     phone: '0971971445'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
-  timeline_in_history_parcel_after_scan_in:
+  timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
@@ -681,6 +661,8 @@ DC_Operation_S008:
       description: DC SB
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
   data_in_all_task_tab_after_scan:
     task_type: งานส่งออก
     parcel_owner: Speedy
@@ -722,21 +704,6 @@ DC_Operation_S008:
       pickup_place: 'null'
       type: B2C
       parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-  timeline_in_history_parcel_after_scan_out:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
-    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    - title: สเเกนเข้า POUCH
-      description: DC SB
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
   wait_derivery_data_list:
     export_to: Store
     transport: CP All
@@ -901,7 +868,7 @@ DC_Operation_S010:
     phone: '0971971445'
     shipping_destination: บ้าน
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
-  timeline_in_history_parcel_after_scan_in:
+  timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
@@ -914,6 +881,8 @@ DC_Operation_S010:
       description: DC SB
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
   data_in_all_task_tab_after_scan:
     task_type: งานส่งออก
     parcel_owner: Speedy
@@ -956,21 +925,6 @@ DC_Operation_S010:
       pickup_place: 'null'
       type: B2C
       parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-  timeline_in_history_parcel_after_scan_out:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
-    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    - title: สเเกนเข้า POUCH
-      description: DC SB
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
   wait_derivery_data_list:
     export_to: Store
     transport: CP All
