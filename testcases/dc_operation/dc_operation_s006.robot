@@ -13,7 +13,7 @@ DC_Operation_S006
     Log    Pre Condition
 
     ${tracking_e}=    Set Variable    SPBD241100012715
-    # ${pouch_number}=    Set Variable    P112413999
+    ${pouch_number}=    Set Variable    P112455983
     ${today}    Set Today
 
     common.Open URL    ${DPS_UAT_URL}
@@ -86,80 +86,80 @@ DC_Operation_S006
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_e}
     dps_scan_page.Click Search Button [Scan In Page]
     # # Expected
-    # dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S006['destination_warehouse']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Create Pouch Destination DCSB Popup
+    dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S006['destination_warehouse']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Create Pouch Destination DCSB Popup
     
     # Log    Step No.9 คลิกปุ่มตกลง
     # dps_scan_page.Click Accept Button On Popup For Creating Pouch
-    # Expected    
-    dps_home_page.Wait Until Page Loaded
-    # Defect260    comment code อยู่ด้านใน keyword "Get Pouch Number And Verify Pouch Format"
-    ${pouch_number}    Get Pouch Number And Verify Pouch Format
-    dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
-    ...    ${dc_operation.scan_in_title_parcel_detail['title']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
-    dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
-    ...    ${tracking_e}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['customer_id']}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_size']}
-    ...    ${EMPTY}    #${DC_Operation_S006.scan_in_data_parcel_detail['crossdock_warehouse']}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['destination_warehouse']}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_status']}
-    ...    CP ALL    # Expected Result is ${DC_Operation_S006.scan_in_data_parcel_detail['courier']}
-    ...    ${pouch_number}
-    ...    	18-11-2567    #${today}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['origin_warehouse']}
-    ...    ${DC_Operation_S006.scan_in_data_parcel_detail['send_parcel_to']}
-    dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
-    ...    ${dc_operation.scan_in_title_label_detail['route']}
-    ...    ${dc_operation.scan_in_title_label_detail['store']}
-    ...    ${dc_operation.scan_in_title_label_detail['customer']}
-    ...    ${dc_operation.scan_in_title_label_detail['phone']}
-    ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
-    ...    ${dc_operation.scan_in_title_label_detail['wh']}
-    dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
-    ...    ${DC_Operation_S006.scan_in_data_label_detail['store']}
-    ...    ${DC_Operation_S006.scan_in_data_label_detail['customer']}
-    ...    ${DC_Operation_S006.scan_in_data_label_detail['phone']}
-    ...    ${pouch_number}
-    ...    ${DC_Operation_S006.scan_in_data_label_detail['wh']}
-    ...    ${DC_Operation_S006.scan_in_data_label_detail['symbol']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Parcel Details In Scan Page
-    dps_scan_page.Verify Title Sender In Scan Page
-    ...    ${dc_operation.scan_in_title_sender_detail['title']}
-    ...    ${dc_operation.scan_in_title_sender_detail['name']}
-    ...    ${dc_operation.scan_in_title_sender_detail['phone']}
-    ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
-    ...    ${dc_operation.scan_in_title_sender_detail['address']}
-    dps_scan_page.Verify Data Sender In Scan Page
-    ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['name']}
-    ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['phone']}
-    ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['shipping_origin']}
-    ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Sender Details In Scan Page
-    dps_scan_page.Verify Title Receiver In Scan Page
-    ...    ${dc_operation.scan_in_title_receiver_detail['title']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['name']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Receiver In Scan Page
-    ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['name']}
-    ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['phone']}
-    ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['shipping_destination']}
-    ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Receiver Details In Scan Page
+    # # Expected    
+    # dps_home_page.Wait Until Page Loaded
+    # # Defect260    comment code อยู่ด้านใน keyword "Get Pouch Number And Verify Pouch Format"
+    # ${pouch_number}    Get Pouch Number And Verify Pouch Format
+    # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
+    # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
+    # ...    ROUTE    # Expected Result is ${dc_operation.scan_in_title_parcel_detail['route']}
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
+    # ...    ${tracking_e}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['customer_id']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_size']}
+    # ...    ${EMPTY}    #${DC_Operation_S006.scan_in_data_parcel_detail['crossdock_warehouse']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['destination_warehouse']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['parcel_status']}
+    # ...    CP ALL    # Expected Result is ${DC_Operation_S006.scan_in_data_parcel_detail['courier']}
+    # ...    ${pouch_number}
+    # ...    	18-11-2567    #${today}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['origin_warehouse']}
+    # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['send_parcel_to']}
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
+    # ...    ${dc_operation.scan_in_title_label_detail['route']}
+    # ...    ${dc_operation.scan_in_title_label_detail['store']}
+    # ...    ${dc_operation.scan_in_title_label_detail['customer']}
+    # ...    ${dc_operation.scan_in_title_label_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
+    # ...    ${dc_operation.scan_in_title_label_detail['wh']}
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['store']}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['customer']}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['phone']}
+    # ...    ${pouch_number}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['wh']}
+    # ...    ${DC_Operation_S006.scan_in_data_label_detail['symbol']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Parcel Details In Scan Page
+    # dps_scan_page.Verify Title Sender In Scan Page
+    # ...    ${dc_operation.scan_in_title_sender_detail['title']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['name']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['address']}
+    # dps_scan_page.Verify Data Sender In Scan Page
+    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['name']}
+    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['phone']}
+    # ...     บริษัท ไอดีซี พรีเมียร์ จำกัด (-)    #${DC_Operation_S006.sender_data_in_scan_in_tab['shipping_origin']}
+    # ...    ${DC_Operation_S006.sender_data_in_scan_in_tab['address']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Sender Details In Scan Page
+    # dps_scan_page.Verify Title Receiver In Scan Page
+    # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['name']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
+    # dps_scan_page.Verify Data Receiver In Scan Page
+    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['name']}
+    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['phone']}
+    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['shipping_destination']}
+    # ...    ${DC_Operation_S006.receiver_data_in_scan_in_tab['address']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Data Receiver Details In Scan Page
 
     Log    Step No.10 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label

@@ -308,7 +308,7 @@ DC_Operation_S006:
     customer: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
     phone: '0900987354'
     wh: DC BB - DC SB
-    symbol: รูปนาฬิกาทราย
+    symbol: รูปดาว
   sender_data_in_scan_in_tab:
     name: คุณ e
     phone: '0959494989'
