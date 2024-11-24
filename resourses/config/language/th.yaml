@@ -452,7 +452,6 @@ dc_operation:
     parcel_size: ขนาดพัสดุ
     receiving_date: วันที่อัปเดตข้อมูล
     parcel_status: สถานะพัสดุ
-
   scan_out_title_waiting_scan:
     title: รายการพัสดุที่รอ Scan Out
     parcel_id: หมายเลขพัสดุ
