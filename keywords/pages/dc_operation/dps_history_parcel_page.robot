@@ -88,7 +88,7 @@ Is Value Present In Parcel Textbox
     
 Select Filter Button
     ${dps_btn_filter}=    Replace String    ${dps_btn_filter_history_parcel_page}    {value}    ${dc_operation['button_filter']}
-    common.Click When Ready    ${dps_btn_filter}
+    common.Click Xpath By JavaScript    ${dps_btn_filter}
 
 Click Search Button On Filter
     ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_history_parcel_page}    {value}    ${dc_operation['button_search']}

@@ -108,7 +108,7 @@ ${dps_txt_popup_create_pouch_detail}    //div[@role='dialog']//span[contains(tex
 ${dps_txt_pouch_detail}    //strong[contains(text(),'{value}')]/../../../../../..//div[contains(@class,'ant-row ant-row-center')]//span[contains(text(),'{pouch_number}')]/..
 ${dps_txt_number_of_parcel_in_pouch}    //span[contains(text(),'{pouch_number}')]/../..//span[text()='{value}']
 ${dps_txt_print_label_success_in_popup}    //div[@class='ant-modal-content']//button[@class='ant-modal-close']/..//div[@class='ant-modal-body']//div//div[2]
-${dps_txt_accept_scan_in_success_in_popup}    //div[@class='ant-modal-content']/div/div/p
+${dps_txt_accept_scan_in_success_in_popup}    //div[@class='ant-modal-mask']/..//div/div/p
 ${dps_txt_destination_warehouse_create_pouch_popup_after_scan_in}    //p[text()='{value} :']//span
 ${dps_txt_create_pouch_confirmation_scan_in_page}    //div[@class='ant-modal-content']//p[normalize-space()='{value}']
 ${dps_txt_destination_warehouse_in_create_pouch_confirmation_scan_in_page}    //div[@class='ant-modal-content']//p[text()='{title_destination_warehouse}']//span[text()='{value_destination_warehouse}']
