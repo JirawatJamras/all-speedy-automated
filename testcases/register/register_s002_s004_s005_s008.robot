@@ -34,7 +34,6 @@ Register_S002
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S002['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     common.Verify Capture Screenshot     Register    Assign RM (Multiple tnx)    Pre Register 002 fill information 1
-    
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S002['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S002['first_name']}
     register_business_pre_register.Input Last Name Legal Entity    ${Register_S002['last_name']}
@@ -50,13 +49,9 @@ Register_S002
 
 Register_S004
     Log    Step No.1 กรอกข้อมูล
-    #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
-    #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
-    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
-    #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S004['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S004['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S004['first_name']}
@@ -78,11 +73,8 @@ Register_S004
 
 Register_S005
     Log    Step No.1 กรอกข้อมูล
-    #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
-    #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
-    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S005['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S005['title_name']}
