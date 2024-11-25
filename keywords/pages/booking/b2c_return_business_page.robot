@@ -352,6 +352,10 @@ Verify Booking Detail Page
     ${txt_insure}=    Replace String    ${txt_insure_return_business}    {value}    ${return_business.email_link['text_insure']}
     ${txt_cod}=    Replace String    ${txt_cod_return_business}    {value}    ${return_business.email_link['text_cod']}
     ${txt_total}=    Replace String    ${txt_total_return_business}    {value}    ${return_business.email_link['text_total_price']}
+    ${b2c_img_red_heart_front_sender}=    Replace String    ${b2c_img_red_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
 
     Log    Booking List
     ${actual_booking_id}=    Get Text    ${txt_booking_id}

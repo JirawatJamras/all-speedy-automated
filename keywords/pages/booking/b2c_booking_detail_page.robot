@@ -13,6 +13,10 @@ Verify Booking Detail Page After Draft
     ${receiver_address}=    Set Variable If    '${receiver_address}' == '-' and '${receiver_postcode_full}' == '-'    -    ${receiver_address} ${receiver_postcode_full}
     ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${booking_list}
     ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
+    ${b2c_img_red_heart_front_sender}=    Replace String    ${b2c_img_red_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
@@ -45,6 +49,10 @@ Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     ...    ${parcel_size}    ${price_value}    ${buy_insurance}    ${cod_value}
     ${b2c_txt_booking_list} =  Replace String    ${b2c_txt_booking_list}    {value}    ${booking_list}
     ${b2c_txt_list_of_parcels_status}=    Replace String    ${b2c_txt_list_of_parcels_status}    {value}    ${status}
+    ${b2c_img_red_heart_front_sender}=    Replace String    ${b2c_img_red_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
@@ -270,9 +278,13 @@ Verify Booking Detail Page
     ${b2c_txt_booking_summary_booking_detail_page} =  Replace String    ${b2c_txt_booking_summary_booking_detail_page}    {value}    ${booking_summary}
     ${b2c_txt_booking_name_booking_detail_page}=    Replace String    ${b2c_txt_booking_name_booking_detail_page}    {value}    ${Booking['text_booking_name_label']}
     ${text_booking_date_and_time_booking_detail_page}=    Replace String    ${b2c_txt_booking_date_and_time_booking_detail_page}    {value}    ${Booking['text_booking_time_label']}
-    ${b2c_txt_shipping_origin_booking_detail_page}=    Replace String    ${b2c_txt_shipping_origin_booking_detail_page}    {value}    ${Booking['text_shipping_origin_aria']}
+    ${b2c_txt_shipping_origin_booking_detail_page}=    Replace String    ${b2c_txt_shipping_origin_booking_detail_page}    {value}    ${Booking['text_shipping_origin']}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${b2c_txt_booking_id_booking_detail_page}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${Booking['text_booking_id_label']}
+    ${b2c_img_red_heart_front_sender}=    Replace String    ${b2c_img_red_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
@@ -337,9 +349,13 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     ${b2c_txt_booking_summary_booking_detail_page} =  Replace String    ${b2c_txt_booking_summary_booking_detail_page}    {value}    ${booking_summary}
     ${b2c_txt_booking_name_booking_detail_page}=    Replace String    ${b2c_txt_booking_name_booking_detail_page}    {value}    ${Booking['text_booking_name_label']}
     ${text_booking_date_and_time_booking_detail_page}=    Replace String    ${b2c_txt_booking_date_and_time_booking_detail_page}    {value}    ${Booking['text_booking_time_label']}
-    ${b2c_txt_shipping_origin_booking_detail_page}=    Replace String    ${b2c_txt_shipping_origin_booking_detail_page}    {value}    ${Booking['text_shipping_origin_aria']}
+    ${b2c_txt_shipping_origin_booking_detail_page}=    Replace String    ${b2c_txt_shipping_origin_booking_detail_page}    {value}    ${Booking['text_shipping_origin']}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${b2c_txt_booking_id_booking_detail_page}=    Replace String    ${b2c_txt_booking_id_booking_detail_page}    {value}    ${Booking['text_booking_id_label']}
+    ${b2c_img_red_heart_front_sender}=    Replace String    ${b2c_img_red_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
+    ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
