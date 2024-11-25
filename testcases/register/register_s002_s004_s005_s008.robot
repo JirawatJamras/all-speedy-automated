@@ -50,13 +50,9 @@ Register_S002
 
 Register_S004
     Log    Step No.1 กรอกข้อมูล
-    #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
-    #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
-    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
-    #Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S004['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S004['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S004['first_name']}
@@ -78,11 +74,8 @@ Register_S004
 
 Register_S005
     Log    Step No.1 กรอกข้อมูล
-    #Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
-    #Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
-    #Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S005['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S005['title_name']}

@@ -205,8 +205,9 @@ Click Close Pouch/Print Label Btton On Warning Popup
 
 Verify Transaction Complete Popup
     [Arguments]    ${expected}
+    Sleep    3s
     ${dps_txt_transaction_complete_popup}=    Replace String    ${dps_txt_transaction_complete_popup}    {value}    ${expected}
-    Wait Until Element Is Visible    ${dps_txt_transaction_complete_popup}    timeout=10s
+    Wait Until Element Is Visible    ${dps_txt_transaction_complete_popup}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text}=    Get Text    ${dps_txt_transaction_complete_popup} 
     Should Be Equal    ${actual_text}    ${expected}
 

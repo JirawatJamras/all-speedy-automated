@@ -379,17 +379,23 @@ DC_Operation_S006:
   data_in_all_task_tab:
     task_type1: งานรับเข้า
     task_type2: งานส่งออก
+    task_type3: งานนำจ่าย
     parcel_owner: Speedy
-    import_from: Home
+    import_from1: Home
+    import_from2: DC BB
     export_to1: '-'
     export_to2: คลัง DCSB
+    export_to3: Store
     transport: CP All
     pouch_number: '-'
     parcel_size: ซอง A4
     parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (DCSB)
+    parcel_status3: พัสดุออกจากคลังต้นทาง (DC BB)
+    parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
   data_in_import_task_tab:
-    import_from: Home
+    import_from1: Home
+    import_from2: คลัง DC BB
     transport: CP All
     parcel_owner: Speedy
   check_close_pouch:
@@ -399,7 +405,8 @@ DC_Operation_S006:
     parcel_size: 51 ซม. ซอง A4
     crossdock_warehouse: '-'
     destination_warehouse: DC SB 
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
     courier: CP All
     origin_warehouse: DCBB
     send_parcel_to: Store (15888)
@@ -434,6 +441,10 @@ DC_Operation_S006:
       description: DC SB
     - title: พัสดุออกจากคลังต้นทาง
       description: DC BB
+    - title: พัสดุถึงคลังปลายทาง
+      description: DC SB
+    # - title: พัสดุรอนำจ่ายโดยคลัง
+    #   description: DC SB
   data_in_export_task_tab:
     export_to: คลัง DCSB
     transport: CP All
@@ -447,10 +458,10 @@ DC_Operation_S006:
   scan_out_list_data:
     tracking_number: '-'
     receive_parcel_from: Home
-    transport: Flash
+    transport: CP All
     parcel_owner: Speedy
-    parcel_size: 'กล่อง L'
-    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง    
+    parcel_size: '-'
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   data_in_pouch_list:
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
@@ -471,42 +482,10 @@ DC_Operation_S006:
       type: B2C
       parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   wait_derivery_data_list:
-    export_to: Store
+    export_to: คลัง DC SB
     transport: CP All
-    date: ''
     status: รอขนส่งเข้ารับพัสดุ
     status_after_print: ขนส่งเข้ารับพัสดุ
-  data_in_all_task_tab_after_delivery:
-    task_type: งานรับเข้า
-    parcel_owner: Speedy
-    import_from: คลัง DC BB
-    export_to: '-'
-    transport: CP All
-    parcel_size: ซอง A4
-    parcel_status: พัสดุออกจากคลังต้นทาง (DC BB)
-  data_in_import_task_tab_after_delivery:
-    import_from: คลัง DC BB
-    transport: CP All
-    parcel_owner: Speedy
-  timeline_in_history_parcel_after_scan_in_at_destination_warehouse:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
-    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    - title: สเเกนเข้า POUCH
-      description: DC SB
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
-    - title: พัสดุถึงคลังปลายทาง
-      description: ''
-    - title: พัสดุรอนำจ่ายโดยคลัง
-      description: DC SB
   data_in_send_task_tab:
     send_to: Home
     store_code: '-'

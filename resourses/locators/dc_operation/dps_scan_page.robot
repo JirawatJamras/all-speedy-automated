@@ -31,6 +31,7 @@ ${dps_btn_sub_tab_in_move_status_tab}    //div[@role='tab' and text()='{tab}']/.
 ${dps_btn_in_move_status_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
 ${dps_btn_search_filter_move_status_tab}    //div[@aria-hidden='false']//div[text()='{value}']/..
 ${dps_btn_clear_filter_move_status_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
+${dps_btn_seach_on_pouch_detail_on_scan_page}    //strong[text()='{label}']/../../../../..//span[text()='{value}']/..
 
 ${dps_input_route_parcel_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]//input
 
@@ -107,7 +108,7 @@ ${dps_txt_popup_create_pouch_detail}    //div[@role='dialog']//span[contains(tex
 ${dps_txt_pouch_detail}    //strong[contains(text(),'{value}')]/../../../../../..//div[contains(@class,'ant-row ant-row-center')]//span[contains(text(),'{pouch_number}')]/..
 ${dps_txt_number_of_parcel_in_pouch}    //span[contains(text(),'{pouch_number}')]/../..//span[text()='{value}']
 ${dps_txt_print_label_success_in_popup}    //div[@class='ant-modal-content']//button[@class='ant-modal-close']/..//div[@class='ant-modal-body']//div//div[2]
-${dps_txt_accept_scan_in_success_in_popup}    //div[@class='ant-modal-content']/div/div/p
+${dps_txt_accept_scan_in_success_in_popup}    //div[@class='ant-modal-mask']/..//div/div/p
 ${dps_txt_destination_warehouse_create_pouch_popup_after_scan_in}    //p[text()='{value} :']//span
 ${dps_txt_create_pouch_confirmation_scan_in_page}    //div[@class='ant-modal-content']//p[normalize-space()='{value}']
 ${dps_txt_destination_warehouse_in_create_pouch_confirmation_scan_in_page}    //div[@class='ant-modal-content']//p[text()='{title_destination_warehouse}']//span[text()='{value_destination_warehouse}']
@@ -130,7 +131,7 @@ ${dps_txt_data_courier_in_pouch_detail_scan_in_page}    //strong[text()='{value}
 ${dps_txt_data_date_delivery_in_pouch_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_data_origin_warehouse_in_pouch_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_data_destination_warehouse_in_pouch_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]/span
-${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]/span
+${dps_txt_data_cossdock_warehouse_in_pouch_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]/span
 ${dps_txt_thead_parcel_in_pouch_scan_in_page}    //tr[th='{tracking}' and th='{destination_warehourse}' and th='{parcel_size}' and th='{type}' and th='{parcel_status}']
 ${dps_txt_data_parcel_in_pouch_scan_in_page}        //tr[td[1][normalize-space()='{tracking}'] and     td[2][normalize-space()='{destination_warehourse}'] and     td[3][normalize-space()='{parcel_size}'] and     td[4][normalize-space()='{type}'] and     td[5]//h1[contains(normalize-space(), '{parcel_status}')] ]
 ${dps_parcel_have_to_scan_remaining}    //strong[text()='{value} ']/span

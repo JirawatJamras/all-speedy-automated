@@ -133,7 +133,6 @@ Booking_S058
     ...    ${Booking_S031['receiver_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S058    Verify Display Receiver Card When Select Send To Home
 
-
     Log    Step No.9 กดที่รายการโปรด
     b2c_favorite_page.Click Receiver Card
     ...    ${Booking_S058.receiver_favorite_card['favorite_name']}

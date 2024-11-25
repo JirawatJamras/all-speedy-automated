@@ -6,8 +6,6 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #head
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
-
-
 *** Test Cases ***
 Register_S003_S006
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register
