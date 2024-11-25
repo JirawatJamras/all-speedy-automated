@@ -28,7 +28,7 @@ Booking_S003
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
     # Expected
-    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
+    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    booking    Booking_S003    2.Verify Term & Condition
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
@@ -174,13 +174,13 @@ Booking_S003
     b2c_booking_delivery_page.Input Promotion    ${Booking_S003['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     # Expected
-    # b2c_booking_delivery_page.Verify Selected Coupon And Code
-    # ...    ${Booking_S003.promotion_detail['discount']}
-    # ...    ${Booking_S003.promotion_detail['promotion_name']}
-    # ...    ${Booking_S003.promotion_detail['parcel_size']}
-    # ...    ${Booking_S003.promotion_detail['expired_date']}
-    # ...    ${Booking_S003.promotion_detail['condition']}
-    # ...    ${Booking_S003.promotion_detail['period']}
+    b2c_booking_delivery_page.Verify Selected Coupon And Code
+    ...    ${Booking_S003.promotion_detail['discount']}
+    ...    ${Booking_S003.promotion_detail['promotion_name']}
+    ...    ${Booking_S003.promotion_detail['parcel_size']}
+    ...    ${Booking_S003.promotion_detail['expired_date']}
+    ...    ${Booking_S003.promotion_detail['condition']}
+    ...    ${Booking_S003.promotion_detail['period']}
     common.Verify Capture Screenshot    booking    Booking_S003    13.Verify Selected Coupon And Code
 
     Log    Step No.14 กดปุ่ม "จองเลขพัสดุ"
@@ -192,14 +192,14 @@ Booking_S003
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    รายการบุ๊กกิ๊ง ${booking_id}  # ${Booking_S003['booking_name']}
+    ...    ${Booking_S003['booking_name']}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S003['sender_name']}
     ...    ${Booking_S003['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}  #${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S003['receiver_name']}
     ...    ${Booking_S003['receiver_phone']}
     ...    ${Booking_S003['receiver_address']}
@@ -209,13 +209,13 @@ Booking_S003
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    1  #${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    1  #${Booking.text_default['total_price_amount']}
+    ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
@@ -231,9 +231,9 @@ Booking_S003
     ...    ${booking_id}
     ...    ${booking_time}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    รายการบุ๊กกิ๊ง ${booking_id}  # ${Booking_S003['booking_name']}
+    ...    ${Booking_S003['booking_name']}
     ...    ${Booking_S003['booking_item']}
-    ...    0.00 บาท  # ${Booking.text_default['booking_price']}
+    ...    ${Booking.text_default['booking_price']}
     common.Verify Capture Screenshot    booking    Booking_S003    15.Verify Created Booking On Booking Delivery Page
 
     Log    Step No.16 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
@@ -243,14 +243,14 @@ Booking_S003
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    รายการบุ๊กกิ๊ง ${booking_id}  # ${Booking_S003['booking_name']}
+    ...    ${Booking_S003['booking_name']}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
     ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S003['sender_name']}
     ...    ${Booking_S003['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}  #${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S003['receiver_name']}
     ...    ${Booking_S003['receiver_phone']}
     ...    ${Booking_S003['receiver_address']}
@@ -260,13 +260,13 @@ Booking_S003
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    1  #${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_amount']}
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    1  #${Booking.text_default['total_price_amount']}
+    ...    ${Booking.text_default['total_price_amount']}
     ...    ${Booking.text_default['total_price_value']}
     ...    ${EMPTY}
     common.Scroll Window To Vertical    500
@@ -279,7 +279,7 @@ Booking_S003
     # Expected
     b2c_booking_detail_page.Verify Edit Booking List Popup    
     ...    ${Booking_S003['parcel_type']}
-    ...    รายการบุ๊กกิ๊ง ${booking_id}  # ${Booking_S003['booking_name']}
+    ...    ${Booking_S003['booking_name']}
     ...    ${Booking['text_shipping_origin_aria']}
     common.Verify Capture Screenshot    booking    Booking_S003    17.Verify Edit Booking List Popup  
 
@@ -295,7 +295,7 @@ Booking_S003
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_dry_parcel_id_4_start_unit']}
-    ...    รายการบุ๊กกิ๊ง ${booking_id}  # ${Booking_S003['booking_name']}
+    ...    ${Booking_S003['booking_name']}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
