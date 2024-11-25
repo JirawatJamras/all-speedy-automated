@@ -127,3 +127,6 @@ Resource                    locators/sps/sps_login_page.robot
 Resource                    locators/sps/sps_landing_page.robot
 
 Variables                   testdata/feature/sps/SPS_Login_001.yaml
+
+######################## Prerequisite ########################
+Resource                    ../keywords/pages/prerequisite.robot

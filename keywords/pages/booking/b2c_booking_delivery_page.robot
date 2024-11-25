@@ -67,11 +67,6 @@ Click Close X Popup
 Click Latest Booking Created
     common.Click When Ready    ${btn_card_latest_booking}
 
-# Verify Close Pop-Up
-#     Wait Until Element Is Visible    ${close_noti_txt}    timeout=${DEFAULT_TIMEOUT}
-#     ${button_text}=    Get Text    ${close_noti_txt}
-#     Should Be Equal    ${button_text}    ${AllSpeedy_B2C_005_ID_1['closepopun_noti']}
-
 Verify Create Parcel Page Sender Step
     [Arguments]    ${title}    ${parcel_sender_information}    ${phone_sender}    ${name_sender}    ${address_sender}    ${postcode_sender}  
     ${txt_parcel_sender_information}=  Replace String   ${txt_parcel_sender_information}   {value}   ${parcel_sender_information}
@@ -98,8 +93,6 @@ Verify Data Sender
     ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
     ${actual_text_name_sender}=    Get Value    ${txtbox_name_sender}
     ${actual_text_address_sender}=    Get Value    ${txtbox_address_sender}
-    # ${actual_textbox_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
-    # ${actual_text_full_postcode_sender}=    Get Text    ${txt_full_postcode_sender}
     Should Be Equal    ${actual_text_phone_sender}    ${phone_sender}
     Should Be Equal    ${actual_text_name_sender}    ${name_sender}
     Should Be Equal    ${actual_text_address_sender}    ${address_sender}
@@ -123,7 +116,6 @@ Verify Data Receiver When Select Home
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
     ${actual_text_address_receiver}=    Get Value    ${txtbox_address_receiver}
-    #${actual_text_full_postcode_receiver}=    Get Text    ${txt_full_postcode_receiver}
     Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
     Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
