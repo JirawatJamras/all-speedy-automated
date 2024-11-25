@@ -155,7 +155,7 @@ Booking_S008
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S008['sender_name']}
     ...    ${Booking_S008['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S008['receiver_name']}
     ...    ${Booking_S008['receiver_phone']}
     ...    ${Booking_S008['receiver_address']}
@@ -269,7 +269,7 @@ Booking_S008
     ...    ${Booking_S008['cod_fee_value']}
     ...    ${Booking_S008['total_price_amount']}
     ...    ${Booking_S008['total_price_value']}
-    ...    ${EMPTY}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S008    16.Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -320,7 +320,7 @@ Booking_S008
     ...    ${Booking_S008['cod_fee_value']}
     ...    ${Booking_S008['total_price_amount']}
     ...    ${Booking_S008['total_price_value']}
-    ...    ${Booking.origin_shipping['15888_store_address']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S008    18.Verify Booking Summary
     common.Scroll Window To Vertical    0

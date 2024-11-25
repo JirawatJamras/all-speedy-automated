@@ -208,7 +208,7 @@ Booking_S035
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S035['total_price_amount']}
     ...    ${Booking_S035['total_price_value1']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S035    Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -258,7 +258,7 @@ Booking_S035
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S035['total_price_amount']}
     ...    ${Booking_S035['total_price_value1']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S035    Verify Booking Summary
     common.Scroll Window To Vertical    0

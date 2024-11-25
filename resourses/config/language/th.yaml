@@ -165,7 +165,7 @@ Booking:
     size_a5:  'กระดาษ A5'
     size_8cm:  'กระดาษ หน้ากว้าง 8 ซม.'
   text_blank:
-    origin_shipping: ''
+    origin_shipping: '-'
     text_dry_parcel_id_4_start_unit: '-'
     text_chilled_parcel_id_4_start_unit: '-'
     receiver_name: '-'
