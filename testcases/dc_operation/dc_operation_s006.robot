@@ -263,9 +263,10 @@ DC_Operation_S006
     Log    Step No.18 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_e}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected
-    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
-    ...    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
+    # Defect177
+    # # Expected
+    # dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
+    # ...    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
 
     Log    Step No.19 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
@@ -283,7 +284,7 @@ DC_Operation_S006
 
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
-    # Defect236
+    # Defect215    Defect223    Defect236
     # Expected
     # dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     # ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}

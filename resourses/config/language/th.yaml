@@ -322,7 +322,8 @@ dc_operation:
   text_confirm_scan_out: ยืนยัน Scan Out
   text_confirm: ยืนยัน
   text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
-  text_please_close_pouch_before_scan_out: ปิด Pouch ของพัสดุก่อน Scan out
+  text_please_close_pouch_before_scan_out: 'ปิด Pouch ของพัสดุก่อน Scan out'
+  text_unable_to_scan_trcking_becuase_parcel_is_in_pouch: 'ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch'
   icon_pencil: ไอคอนรูปดินสอ
   button_export: Export File
   button_approve: อนุมัติ

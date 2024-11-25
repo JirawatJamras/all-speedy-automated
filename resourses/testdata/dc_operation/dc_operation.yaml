@@ -127,85 +127,93 @@ DC_Operation_S003:
 
 DC_Operation_S004:
   sender_name: คุณ c
-  destination_warehouse: RDC LP
+  destination_warehouse: DC SB
   data_in_all_task_tab:
-    task_type: งานรับเข้า
+    task_type1: งานรับเข้า
+    task_type2: งานส่งออก
+    task_type3: งานนำจ่าย
     parcel_owner: Speedy
-    import_from: Home
-    export_to: '-'
+    import_from1: Home
+    import_from2: DC BB
+    export_to1: '-'
+    export_to2: คลัง DCSB
+    export_to3: Store
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
-    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_size: ซอง A4
+    parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (DCSB)
+    parcel_status3: พัสดุออกจากคลังต้นทาง (DC BB)
+    parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
   data_in_import_task_tab:
-    import_from: Home
+    import_from1: Home
+    import_from2: คลัง DC BB
     transport: CP All
     parcel_owner: Speedy
   check_close_pouch:
     inventory: DC SB
   scan_in_data_parcel_detail:
-    receiving_date: 04-11-2567
-    customer_id: 'B2C0002400563'    #'2400563'
-    parcel_size: '120 ซม. กล่อง L'
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: Flash
-    pouch_number: '-'
+    customer_id: '0002400563'
+    parcel_size: 51 ซม. ซอง A4
+    crossdock_warehouse: '-'
+    destination_warehouse: DC SB 
+    parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
+    courier: CP All
     origin_warehouse: DCBB
-    send_parcel_to: 'Home (11120)'
+    send_parcel_to: Home (10280)
   scan_in_data_label_detail:
-    courier: 'FSH'
-    zipcode: '11120'
-    province: 'นนทบุรี'
-    customer: ทดสอบพัสดุCourier
-    phone: '0971971445'
-    size: L
+    zipcode: '10280 (ซอง A4)'
+    customer: ทดสอบพัสดุ Express ส่งบ้านสร้าง Pouch
+    phone: '0900987354'
+    wh: DC BB - DC SB
+    symbol: รูปดาว
   scan_in_sender_data:
-    name: คุณ a
-    phone: '0633906216'
-    shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
+    name: คุณ c
+    phone: '0959494989'
+    shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
     address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   scan_in_receiver_data:
-    name: ทดสอบพัสดุCourier
-    phone: '0971971445'
+    name: ทดสอบพัสดุ Express ส่งบ้านสร้าง Pouch
+    phone: '0900987354'
     shipping_destination: บ้าน
-    address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+    address: '228 ซอย 3 บางปู เมืองสมุทรปราการ สมุทรปราการ 10280'
   timeline_in_history_parcel:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
+      description: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'    #empty
     - title: พัสดุเข้าคลังต้นทาง
       description: DC BB
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: DC SB
+      description: ''    # pouch number to be dynamically set
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
     - title: พัสดุออกจากคลังต้นทาง
       description: DC BB
-  data_in_all_task_tab_after_scan:
-    task_type: งานส่งออก
-    parcel_owner: Speedy
-    import_from: Home
-    export_to: คลัง DCSB
-    transport: CP All
-    pouch_number: '-'
-    parcel_size: กล่อง XL
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    - title: พัสดุถึงคลังปลายทาง
+      description: DC SB
+    # - title: พัสดุรอนำจ่ายโดยคลัง
+    #   description: DC SB
   data_in_export_task_tab:
     export_to: คลัง DCSB
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '1'
-    number_of_pieces: '-'
-    number_of_scanned_items: '1'
   scan_out_waiting_scan:
     receive_parcel_from: Home
     transport: CP All
     parcel_owner: Speedy
     parcel_size: ซอง A4
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+  scan_out_list_data:
+    tracking_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: '-'
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   data_in_pouch_list:
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
@@ -222,51 +230,31 @@ DC_Operation_S004:
     label_symbol: รูปดาว
     data_in_table:
       destination_warehouse: DC SB
-      pickup_place: 'null'
+      pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
-      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง      
+      parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   wait_derivery_data_list:
-    export_to: Store
+    export_to: คลัง DC SB
     transport: CP All
-    date: ''
     status: รอขนส่งเข้ารับพัสดุ
     status_after_print: ขนส่งเข้ารับพัสดุ
-  data_in_all_task_tab_after_delivery:
-    task_type: งานรับเข้า
-    parcel_owner: Speedy
-    import_from: คลัง DC BB
-    export_to: '-'
-    transport: CP All
-    parcel_size: ซอง A4
-    parcel_status: พัสดุออกจากคลังต้นทาง (DC BB)
-  data_in_import_task_tab_after_delivery:
-    import_from: คลัง DC BB
-    transport: CP All
-    parcel_owner: Speedy
-  timeline_in_history_parcel_after_scan_in_at_destination_warehouse:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
-    - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: ''
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    - title: สเเกนเข้า POUCH
-      description: DC SB
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
-    - title: พัสดุถึงคลังปลายทาง
-      description: ''
-    - title: พัสดุรอนำจ่ายโดยคลัง
-      description: DC SB
   data_in_send_task_tab:
     send_to: Home
     store_code: '-'
     customer_type: 'B2C'
     transport: CP All
+  data_in_pouch_detail_scan_in_page:
+    parcel_amount: '1'
+    courier: CP All
+    origin_warehoues: DC BB
+    destination_warehourse: DC SB
+    crossdock_warehouse: '-'
+  data_in_parcel_in_pouch_scan_in_page:
+    destination_warehourse: DC SB
+    parcel_size: ซอง A4
+    type: B2C
+    parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
+ 
 
 DC_Operation_S005:
   data_in_all_task_tab:
