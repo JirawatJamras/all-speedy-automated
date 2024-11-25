@@ -11,10 +11,8 @@ DC_Operation_S006
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางร้าน ส่งโดย CP All สร้าง Pouch (ไม่ข้ามภาค)
     [Tags]    DC_Operation    UAT
 
-    Log    Pre Condition
-    ${tracking_e}=    Set Variable    SPBD241100020084
-    # ${pouch_number}=    Set Variable    P112434385
-    ${today}    Set Today
+    Log    Prerequisite
+    DC_Operation_S002
 
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -186,9 +184,9 @@ DC_Operation_S006
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_e}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
-    # Defect201    Defect214    Defect230
+    # Defect201    Defect230
     # Expected
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    DC SB    #${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Timeline
     Close Window
@@ -430,9 +428,9 @@ DC_Operation_S006
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_e}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
-    # Defect201    Defect214    Defect230
+    # Defect201    Defect230
     # # Expected
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    DC SB    #${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    6    #7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Timeline After Scan Out
     Close Window
@@ -544,7 +542,7 @@ DC_Operation_S006
     dps_scan_page.Verify Unbox Pouch And Scan Piece By Piece    ${dc_operation['text_unbox_pouch_and_scan_piece_by_piece']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Unbox Pouch And Scan Piece By Piece
 
-    Log    Step No.40 คลิกปุ่มตกลง
+    Log    Step No.40 คลิกปุ่มยืนยัน
     dps_scan_page.Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
     # Defect242
     # Expected
@@ -606,7 +604,7 @@ DC_Operation_S006
     # ...    พัสดุถึงคลังปลายทาง    #${DC_Operation_S006.scan_in_data_parcel_detail['parcel_status2']}
     # ...    CP ALL    # Expected Result is ${DC_Operation_S006.scan_in_data_parcel_detail['courier']}
     # ...    ${pouch_number}
-    # ...    	18-11-2567    #${today}
+    # ...    18-11-2567    #${today}
     # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['origin_warehouse']}
     # ...    ${DC_Operation_S006.scan_in_data_parcel_detail['send_parcel_to']}
     # dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
@@ -672,9 +670,9 @@ DC_Operation_S006
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_e}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
-    # Defect201    Defect214    Defect230    Defect269
+    # Defect201    Defect230    Defect269
     # Expected
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    DC SB    #${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    7    #9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Timeline After Scan In At Destination Warehouse
     Close Window

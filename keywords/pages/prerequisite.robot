@@ -333,21 +333,3 @@ DC_Operation_S002
     ...    ${DC_Operation_S002['verify_pickup_time']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Pickup Schedule Change Status To Confirm
-
-    Log    Step No.26 เลือกเมนู "จองการจัดส่งพัสดุ"
-    b2c_home_page.Click Book Parcel Delivery    
-    # Defect199
-    # Expected
-    # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
-    # ...    ${booking_id}
-    # ...    ${Booking['text_parcel_status_call_car']}    #${Booking['text_waiting_confirm_parcel_pickup']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Booking Change Status To Confirm
-    # b2c_booking_delivery_page.Select Booking With Booking ID    
-    # ...    ${booking_id}
-    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    # b2c_booking_detail_page.Verify Parcel Status Change To Confirm
-    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    # ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
-
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    Verify Parcel Change Status To Confirm

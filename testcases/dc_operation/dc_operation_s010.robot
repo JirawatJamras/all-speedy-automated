@@ -10,7 +10,7 @@ Test Teardown     Close Browser
 DC_Operation_S010
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางร้าน ส่งโดย CP All สร้าง Pouch (ข้ามภาค)
     [Tags]    DC_Operation    UAT
-    Log    Pre Condition
+    Log    Prerequisite
     # รอ Operation_S002
     # ${ParcelsData}    Get Parcels And Sender Names    B2411000294
     # ${tracking_i}    Get Parcel Codes By Sender Name    ${ParcelsData}    ${DC_Operation_S010['sender_name']}
@@ -178,7 +178,7 @@ DC_Operation_S010
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_i}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
-    # Defect201    Defect214
+    # Defect201
     # Expected
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Timeline

@@ -10,7 +10,7 @@ Test Teardown     Close Browser
 DC_Operation_S008
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย CP All สร้าง Pouch (ข้ามภาค)
     [Tags]    DC_Operation    UAT
-    Log    Pre Condition
+    Log    Prerequisite
     # รอ Operation_S002
     Log    Prerequisite S002
     
@@ -308,9 +308,9 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect201    Defect214
+    # Defect201
     # Expected
-    
+
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel_after_scan_in']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline
 
