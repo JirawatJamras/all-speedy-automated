@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S014
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก M (มีประกัน ไม่มีCOD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect052    Defect055    Defect063    Defect076    Defect077    Defect091    Defect101
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect051    Defect052    Defect055    Defect063    Defect076    Defect077    Defect078    Defect091    Defect101    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -60,7 +60,7 @@ Booking_S014
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S014['sender_address']}
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S014['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S014['sender_postcode_full']}
-    b2c_create_parcel_page.Click Add To Favorites
+    b2c_booking_delivery_page.Click Add To Favorites In Sender
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S014    5.Verify After Create Parcel Page Sender Step
 

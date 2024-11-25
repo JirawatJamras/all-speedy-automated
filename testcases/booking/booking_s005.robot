@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S005
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก S (ไม่มีประกัน มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect050    Defect051    Defect052    Defect055    Defect063    Defect078    Defect101
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect050    Defect051    Defect052    Defect055    Defect063    Defect075    Defect078    Defect101    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -60,7 +60,7 @@ Booking_S005
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S005['sender_address']}
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S005['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S005['sender_postcode_full']}
-    b2c_create_parcel_page.Click Add To Favorites
+    b2c_booking_delivery_page.Click Add To Favorites In Sender
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S005    5.Verify After Create Parcel Page Sender Step
 
@@ -210,8 +210,8 @@ Booking_S005
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S005['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking_S005['discount_amount']}
+    ...    ${Booking_S005['discount_value1']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
@@ -261,8 +261,8 @@ Booking_S005
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking_S005['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking.text_default['discount_amount']}
-    ...    ${Booking.text_default['discount_value']}
+    ...    ${Booking_S005['discount_amount']}
+    ...    ${Booking_S005['discount_value1']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
@@ -314,7 +314,7 @@ Booking_S005
     ...    ${Booking_S005['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S005['discount_amount']}
-    ...    ${Booking_S005['discount_value']}
+    ...    ${Booking_S005['discount_value2']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking_S005['cod_fee_amount']}

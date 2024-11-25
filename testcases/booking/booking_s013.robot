@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S013
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก S (ไม่มีประกัน มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect051    Defect052    Defect055    Defect063    Defect072    Defect076    Defect077    Defect078    Defect101
+    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect050    Defect051    Defect052    Defect055    Defect063    Defect072    Defect075    Defect076    Defect077    Defect078    Defect101    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -60,7 +60,7 @@ Booking_S013
     b2c_booking_delivery_page.Input Address Sender    ${Booking_S013['sender_address']}
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S013['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S013['sender_postcode_full']}
-    b2c_create_parcel_page.Click Add To Favorites
+    b2c_booking_delivery_page.Click Add To Favorites In Sender
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S013    5.Verify After Create Parcel Page Sender Step
 
@@ -174,7 +174,7 @@ Booking_S013
     Log    Step No.13 ขั้นตอน Promotion
     b2c_booking_delivery_page.Input Promotion    ${Booking_S013['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
-    # Expected
+    Expected
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S013.promotion_detail['discount']}
     ...    ${Booking_S013.promotion_detail['promotion_name']}
@@ -200,7 +200,7 @@ Booking_S013
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S013['sender_name']}
     ...    ${Booking_S013['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S013['receiver_name']}
     ...    ${Booking_S013['receiver_phone']}
     ...    ${Booking_S013['receiver_store_address']}
@@ -250,7 +250,7 @@ Booking_S013
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S013['sender_name']}
     ...    ${Booking_S013['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S013['receiver_name']}
     ...    ${Booking_S013['receiver_phone']}
     ...    ${Booking_S013['receiver_store_address']}
@@ -301,7 +301,7 @@ Booking_S013
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S013['sender_name']}
     ...    ${Booking_S013['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S013['receiver_name']}
     ...    ${Booking_S013['receiver_phone']}
     ...    ${Booking_S013['receiver_store_address']}

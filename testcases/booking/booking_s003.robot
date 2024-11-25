@@ -215,8 +215,8 @@ Booking_S003
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking_S003['total_price_amount']}
+    ...    ${Booking_S003['total_price_value1']}
     ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S003    14.Verify Booking Summary After Booking Success
@@ -266,8 +266,8 @@ Booking_S003
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking_S003['total_price_amount']}
+    ...    ${Booking_S003['total_price_value1']}
     ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S003    16.Verify Booking Summary
@@ -319,7 +319,7 @@ Booking_S003
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S003['total_price_amount']}
-    ...    ${Booking_S003['total_price_value']}
+    ...    ${Booking_S003['total_price_value2']}
     ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S003    18.Verify Booking Summary After Set Origin Shipping

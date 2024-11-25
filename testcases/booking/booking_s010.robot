@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S010
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect052    Defect055    Defect063    Defect076    Defect077    Defect078    Defect101
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect052    Defect055    Defect063    Defect076    Defect077    Defect078    Defect101    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -195,10 +195,10 @@ Booking_S010
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S010['sender_name']}
     ...    ${Booking_S010['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
     ...    ${Booking_S010['receiver_store_address']}
@@ -213,7 +213,7 @@ Booking_S010
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
+    ...    ${Booking_S010['total_price_amount']}
     ...    ${Booking_S010['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
@@ -245,10 +245,10 @@ Booking_S010
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S010['sender_name']}
     ...    ${Booking_S010['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S010['receiver_name']}
     ...    ${Booking_S010['receiver_phone']}
     ...    ${Booking_S010['receiver_store_address']}
@@ -263,7 +263,7 @@ Booking_S010
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
+    ...    ${Booking_S010['total_price_amount']}
     ...    ${Booking_S010['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500

@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S012
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect055    Defect077
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect054    Defect055    Defect063    Defect077    Defect078    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -236,7 +236,7 @@ Booking_S012
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S012['sender_name']}
     ...    ${Booking_S012['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -255,7 +255,7 @@ Booking_S012
     ...    ${Booking_S012['cod_fee_amount']}
     ...    ${Booking_S012['cod_fee_value']}
     ...    ${Booking_S012['total_price_amount']}
-    ...    ${Booking_S012['total_price_value']}
+    ...    ${Booking_S012['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S012    16.Verify Booking Summary After Booking Success
@@ -286,7 +286,7 @@ Booking_S012
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S012['sender_name']}
     ...    ${Booking_S012['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -302,10 +302,10 @@ Booking_S012
     ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
-    ...    ${Booking.text_default['total_price_value']}
+    ...    ${Booking_S012['cod_fee_amount']}
+    ...    ${Booking_S012['cod_fee_value']}
+    ...    ${Booking_S012['total_price_amount']}
+    ...    ${Booking_S012['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S012    18.Verify Booking Summary
@@ -326,6 +326,7 @@ Booking_S012
     b2c_booking_detail_page.Search Shipping Store    ${Booking_S012['store_code']}
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
+    b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
@@ -336,7 +337,7 @@ Booking_S012
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S012['sender_name']}
     ...    ${Booking_S012['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}

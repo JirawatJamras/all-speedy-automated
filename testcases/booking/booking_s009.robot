@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S009
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก XXL (มีประกัน มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect052    Defect055    Defect063    Defect072    Defect101
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect049    Defect050    Defect052    Defect055    Defect063    Defect072    Defect075    Defect078    Defect101    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -276,14 +276,14 @@ Booking_S009
     ...    ${Booking_S009['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S009['discount_amount']}
-    ...    ${Booking_S009['discount_value']}
+    ...    ${Booking_S009['discount_value1']}
     ...    ${Booking_S009['insurance_fee_amount']}
     ...    ${Booking_S009['insurance_fee_value']}
     ...    ${Booking_S009['cod_fee_amount']}
     ...    ${Booking_S009['cod_fee_value']}
     ...    ${Booking_S009['total_price_amount']}
     ...    ${Booking_S009['total_price_value1']}
-    ...    ${Booking.text_blank['origin_shipping']}
+    ...      #${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S009    17.Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -327,7 +327,7 @@ Booking_S009
     ...    ${Booking_S009['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S009['discount_amount']}
-    ...    ${Booking_S009['discount_value']}
+    ...    ${Booking_S009['discount_value1']}
     ...    ${Booking_S009['insurance_fee_amount']}
     ...    ${Booking_S009['insurance_fee_value']}
     ...    ${Booking_S009['cod_fee_amount']}
@@ -379,7 +379,7 @@ Booking_S009
     ...    ${Booking_S009['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S009['discount_amount']}
-    ...    ${Booking_S009['discount_value']}
+    ...    ${Booking_S009['discount_value2']}
     ...    ${Booking_S009['insurance_fee_amount']}
     ...    ${Booking_S009['insurance_fee_value']}
     ...    ${Booking_S009['cod_fee_amount']}
