@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S016
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก XL (มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect054    Defect055    Defect076    Defect077    Defect101
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect054    Defect055    Defect063    Defect076    Defect077    Defect078    Defect101    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -275,14 +275,14 @@ Booking_S016
     ...    ${Booking_S016['parcel_insure_verify']}
     ...    ${Booking_S016['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S016['discount_amount']}
-    ...    ${Booking_S016['discount_value']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
     ...    ${Booking_S016['insurance_fee_amount']}
     ...    ${Booking_S016['insurance_fee_value']}
     ...    ${Booking_S016['cod_fee_amount']}
     ...    ${Booking_S016['cod_fee_value']}
     ...    ${Booking_S016['total_price_amount']}
-    ...    ${Booking_S016['total_price_value']}
+    ...    ${Booking_S016['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S016    16.Verify Booking Summary After Booking Success
@@ -325,14 +325,14 @@ Booking_S016
     ...    ${Booking_S016['parcel_insure_verify']}
     ...    ${Booking_S016['parcel_cod_verify']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S016['discount_amount']}
-    ...    ${Booking_S016['discount_value']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
     ...    ${Booking_S016['insurance_fee_amount']}
     ...    ${Booking_S016['insurance_fee_value']}
     ...    ${Booking_S016['cod_fee_amount']}
     ...    ${Booking_S016['cod_fee_value']}
     ...    ${Booking_S016['total_price_amount']}
-    ...    ${Booking_S016['total_price_value']}
+    ...    ${Booking_S016['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S016    18.Verify Booking Summary

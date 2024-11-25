@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S004
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect047    Defect048    Defect049    Defect054    Defect055
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect049    Defect054    Defect055    Defect063    Defect078    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -148,7 +148,7 @@ Booking_S004
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S004['sender_name']}
     ...    ${Booking_S004['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -244,7 +244,7 @@ Booking_S004
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S004['sender_name']}
     ...    ${Booking_S004['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -264,8 +264,8 @@ Booking_S004
     ...    ${Booking_S004['cod_fee_amount']}
     ...    ${Booking_S004['cod_fee_value']}
     ...    ${Booking_S004['total_price_amount']}
-    ...    ${Booking_S004['total_price_value']}
-    ...    ${EMPTY}
+    ...    ${Booking_S004['total_price_value1']}
+    ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S004    16.Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -295,7 +295,7 @@ Booking_S004
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S004['sender_name']}
     ...    ${Booking_S004['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -315,8 +315,8 @@ Booking_S004
     ...    ${Booking_S004['cod_fee_amount']}
     ...    ${Booking_S004['cod_fee_value']}
     ...    ${Booking_S004['total_price_amount']}
-    ...    ${Booking_S004['total_price_value']}
-    ...    ${EMPTY}
+    ...    ${Booking_S004['total_price_value1']}
+    ...    ${Booking.text_blank['store_code']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S004    18.Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -347,7 +347,7 @@ Booking_S004
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S004['sender_name']}
     ...    ${Booking_S004['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}

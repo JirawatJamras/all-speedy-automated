@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S008
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก XL (มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect055
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect053    Defect055    Defect063    Defect078    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -268,7 +268,7 @@ Booking_S008
     ...    ${Booking_S008['cod_fee_amount']}
     ...    ${Booking_S008['cod_fee_value']}
     ...    ${Booking_S008['total_price_amount']}
-    ...    ${Booking_S008['total_price_value']}
+    ...    ${Booking_S008['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S008    16.Verify Booking Summary After Booking Success
@@ -319,7 +319,7 @@ Booking_S008
     ...    ${Booking_S008['cod_fee_amount']}
     ...    ${Booking_S008['cod_fee_value']}
     ...    ${Booking_S008['total_price_amount']}
-    ...    ${Booking_S008['total_price_value']}
+    ...    ${Booking_S008['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S008    18.Verify Booking Summary

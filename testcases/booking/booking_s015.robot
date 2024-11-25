@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S015
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect047    Defect048    Defect052    Defect054    Defect055    Defect072    Defect077
+    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect050    Defect052    Defect055    Defect063    Defect072    Defect075    Defect077    Defect078    Defect102    Defect258
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -166,14 +166,14 @@ Booking_S015
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S015['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S015['receiver_name']}
     b2c_booking_delivery_page.Select Send To 7-ELEVEN Store Tab
-    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S015['receiver_store_code_5_digits']}    ${Booking_S015['store_address']}
+    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S015['receiver_store_code_5_digits']}    ${Booking_S015['receiver_store_address']}
     b2c_booking_delivery_page.Click Store On Map
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     # Expected
     b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
     ...    ${Booking_S015['receiver_phone']}
     ...    ${Booking_S015['receiver_name']}
-    ...    ${Booking_S015['store_full']}
+    ...    ${Booking_S015['receiver_store_full']}
     common.Verify Capture Screenshot    booking    Booking_S015    10.Verify After Create Parcel Page Receiver Step
 
     Log    Step No.11 กดปุ่ม "ถัดไป"
@@ -244,20 +244,20 @@ Booking_S015
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S015['receiver_name']}
     ...    ${Booking_S015['receiver_phone']}
-    ...    ${Booking_S015['store_address']}
+    ...    ${Booking_S015['receiver_store_address']}
     ...    ${Booking_S015['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking_S015['buy_insurance_verify']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S015['discount_amount']}
-    ...    ${Booking_S015['discount_value']}
+    ...    ${Booking_S015['discount_value1']}
     ...    ${Booking_S015['insurance_fee_amount']}
     ...    ${Booking_S015['insurance_fee_value']}
     ...    ${Booking_S015['cod_fee_amount']}
     ...    ${Booking_S015['cod_fee_value']}
     ...    ${Booking_S015['total_price_amount']}
-    ...    ${Booking_S015['total_price_value']}
+    ...    ${Booking_S015['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S015    15.Verify Booking Summary After Booking Success
@@ -301,13 +301,13 @@ Booking_S015
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S015['discount_amount']}
-    ...    ${Booking_S015['discount_value']}
+    ...    ${Booking_S015['discount_value1']}
     ...    ${Booking_S015['insurance_fee_amount']}
     ...    ${Booking_S015['insurance_fee_value']}
     ...    ${Booking_S015['cod_fee_amount']}
     ...    ${Booking_S015['cod_fee_value']}
     ...    ${Booking_S015['total_price_amount']}
-    ...    ${Booking_S015['total_price_value']}
+    ...    ${Booking_S015['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S015    17.Verify Booking Summary
@@ -345,7 +345,7 @@ Booking_S015
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S015['receiver_name']}
     ...    ${Booking_S015['receiver_phone']}
-    ...    ${Booking_S015['store_address']}
+    ...    ${Booking_S015['receiver_store_address']}
     ...    ${Booking_S015['parcel_size']}
     ...    ${Booking_S015['parcel_price_verify']}
     ...    ${Booking_S015['buy_insurance_verify']}
@@ -382,7 +382,7 @@ Booking_S015
     ...    ${Booking_S015['sender_postcode_full']}
     ...    ${Booking_S015['receiver_name']}
     ...    ${Booking_S015['receiver_phone']}
-    ...    ${Booking_S015['store_address']}
+    ...    ${Booking_S015['receiver_store_address']}
     ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_buy_insure']}
     ...    ${Booking_S015['parcel_detail_remark']}
