@@ -85,7 +85,7 @@ Booking_S043
     sleep    2s
     Reload Page
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    # Defect047
+    # Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${booking_time}
@@ -106,7 +106,7 @@ Booking_S043
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -283,7 +283,7 @@ Booking_S043
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S020['receiver_name']}
     ...    ${Booking_S020['receiver_phone']}
     ...    ${Booking_S020['receiver_address']}
@@ -389,7 +389,7 @@ Booking_S043
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S020['receiver_name']}
     ...    ${Booking_S020['receiver_phone']}
     ...    ${Booking_S020['receiver_address']}
@@ -511,7 +511,7 @@ Booking_S043
     ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
-    ...    ${Booking.img_is_favorite['img_receiver_heart']}
+    ...    ${Booking.img_not_favorite['img_receiver_heart']}
     ...    ${Booking_S020['receiver_name']}
     ...    ${Booking_S020['receiver_phone']}
     ...    ${Booking_S020['receiver_address']}

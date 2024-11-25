@@ -109,7 +109,7 @@ Booking_S015
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_dry_parcel_id_4_start_unit']}
-    ...    ${Booking.img_not_favorite['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S015['sender_name']}
     ...    ${Booking_S015['sender_phone']}
     ...    ${Booking.img_not_favorite['img_receiver_heart']}
@@ -142,7 +142,6 @@ Booking_S015
     ...    ${Booking_S015['sender_address']}
     ...    ${Booking_S015['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S015    8.Verify Data Sender
-
 
     Log    Step No.9 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
@@ -259,7 +258,7 @@ Booking_S015
     ...    ${Booking_S015['cod_fee_value']}
     ...    ${Booking_S015['total_price_amount']}
     ...    ${Booking_S015['total_price_value']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S015    15.Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -309,7 +308,7 @@ Booking_S015
     ...    ${Booking_S015['cod_fee_value']}
     ...    ${Booking_S015['total_price_amount']}
     ...    ${Booking_S015['total_price_value']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S015    17.Verify Booking Summary
     common.Scroll Window To Vertical    0

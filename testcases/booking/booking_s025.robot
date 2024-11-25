@@ -113,10 +113,10 @@ Booking_S025
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S025['sender_name']}
     ...    ${Booking_S025['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S025['receiver_name']}
     ...    ${Booking_S025['receiver_phone']}
     ...    ${Booking_S025['store_address']}
@@ -221,7 +221,7 @@ Booking_S025
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S025['sender_name']}
     ...    ${Booking_S025['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -321,7 +321,7 @@ Booking_S025
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S025['sender_name']}
     ...    ${Booking_S025['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}

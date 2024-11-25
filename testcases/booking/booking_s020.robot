@@ -225,7 +225,7 @@ Booking_S020
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -246,7 +246,7 @@ Booking_S020
     ...    ${Booking_S020['cod_fee_value']}
     ...    ${Booking_S020['total_price_amount']}
     ...    ${Booking_S020['total_price_value']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S020    15.Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
@@ -276,7 +276,7 @@ Booking_S020
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -297,7 +297,7 @@ Booking_S020
     ...    ${Booking_S020['cod_fee_value']}
     ...    ${Booking_S020['total_price_amount']}
     ...    ${Booking_S020['total_price_value']}
-    ...    ${Booking.text_blank['store_code']}
+    ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S020    17.Verify Booking Summary
     common.Scroll Window To Vertical    0
@@ -327,7 +327,7 @@ Booking_S020
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
