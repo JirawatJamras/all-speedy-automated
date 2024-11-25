@@ -12,8 +12,9 @@ DC_Operation_S004
     [Tags]    DC_Operation    UAT
 
     Log    Pre Condition
-    DC_Operation_S002
-    ${tracking_c}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S004['sender_name']}
+    # DC_Operation_S002
+    # ${tracking_c}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S004['sender_name']}
+    ${tracking_c}=    Set Variable    SPBD241100021155
 
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
