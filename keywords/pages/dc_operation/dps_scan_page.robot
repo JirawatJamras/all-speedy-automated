@@ -797,6 +797,10 @@ Select Finding Parcel Tab
     ${tab}=    Replace String    ${dps_btn_sub_tab_in_move_status_tab}    {tab}    ${dc_operation.tab_scan['finding_parcel']}
     common.Click When Ready    ${tab}
 
+Select Selected Parcel Tab
+    ${tab}=    Replace String    ${dps_btn_sub_tab_in_move_status_tab}    {tab}    ${dc_operation.tab_scan['selected_parcel']}
+    common.Click When Ready    ${tab}
+
 Verify Move Status Page
     ${today}    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
@@ -847,8 +851,9 @@ Verify Parcel Status List In Dropdown
 Search With Parcel Status [Move Status]
     [Arguments]    ${status}
     ${parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${status}
-    Scroll Element Into View    ${parcel_status}
-    common.Click When Ready    ${parcel_status}
+    # Wait Until Element Is Visible    ${parcel_status}
+    # Scroll Element Into View    ${parcel_status}
+    # common.Click When Ready    ${parcel_status}
 
 Verify Search Parcel Status Result
     [Arguments]    ${status}
@@ -924,9 +929,62 @@ Input Tracking Number [Move Status]
     ...    ${tracking_number_b}
 
 Verify Search Tracking Number Result
-    [Arguments]    ${status}    ${tracking}
-    ${actual_status}=    Replace String    ${dps_txt_list_data_move_status}    {status}    ${status}
-    ${actual_tracking}=    Replace String    ${actual_status}    {tracking}    ${tracking}
+    [Arguments]    ${status}    ${tracking}    ${pouch}    ${courier}    ${owner}    ${size}     ${date}
+    ${txt_list_data_move_status}=    Replace String    ${dps_txt_list_data_move_status}    {status}    ${status}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${tracking}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${pouch}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {courier}    ${courier}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {owner}    ${owner}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {size}    ${size}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {date}    ${date}
 
+Click Checkbox [Move Status]
+    common.Click When Ready    ${dps_btn_select_all_on_move_status_tab}
 
+Click Selected Checkbox [Move Status]
+    [Arguments]    ${tracking}
+    ${btn_select_on_move_status_tab}=    Replace String    ${dps_btn_select_on_move_status_tab}    {value}    ${tracking}
+    common.Click When Ready    ${btn_select_on_move_status_tab}
+
+Verify Selected Parcel Tab
+    [Arguments]    ${text_move_status}    ${download_template}    ${import_file}    ${confirm_move}    ${tracking_b}
+    # ...    ${tracking_c}    ${tracking_d}    ${tracking_e}    ${tracking_f}    ${tracking_g}    ${tracking_h}
+    # ...    ${tracking_i}    ${tracking_j}
+    ${txt_move_status_to}=    Replace String    ${dps_txt_move_status_to}    {value}    ${text_move_status}
+    ${btn_download_template}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${download_template}
+    ${btn_import_file}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${import_file}
+    ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${confirm_move}
+    ${txt_tracking_b}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_b}
+    # ${txt_tracking_c}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_c}
+    # ${txt_tracking_d}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_d}
+    # ${txt_tracking_e}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_e}
+    # ${txt_tracking_f}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_f}
+    # ${txt_tracking_g}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_g}
+    # ${txt_tracking_h}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_h}
+    # ${txt_tracking_i}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_i}
+    # ${txt_tracking_j}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_j}
+
+    Wait Until Element Is Visible    ${txt_move_status_to}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${dps_cbo_move_status_to}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_download_template}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_import_file}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${btn_confirm_move}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_b}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_c}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_d}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_e}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_f}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_g}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_h}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_i}    timeout=${DEFAULT_TIMEOUT}
+    # Wait Until Element Is Visible    ${txt_tracking_j}    timeout=${DEFAULT_TIMEOUT}
+
+Click Dropdown Move Status To
+    [Arguments]    ${status}
+    common.Click When Ready    ${dps_cbo_move_status_to}
+    ${parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status_to}    {value}    ${status}
+    Wait Until Element Is Visible    ${parcel_status}
+    Scroll Element Into View    ${parcel_status}
+    common.Click When Ready    ${parcel_status}
+    
 

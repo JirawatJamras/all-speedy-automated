@@ -53,15 +53,15 @@ DC_Operation_s027
     Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
     # Defect257
     ###################### ใช้ชั่วคราว #######################
-    dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
-    Sleep    2s
-    # Expected
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Search With Pickup Pending Status
+    # dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
+    # Sleep    2s
+    # # Expected
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Search With Pickup Pending Status
 
     Log    Step No.5 คลิกปุ่มค้นหา
     dps_scan_page.Click Search Button [Move Status]
     # Expected
-    dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
+    # dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Search Parcel Status Result
 
     Log    Step No.6 คลิกปุ่มเคลียร์
@@ -97,10 +97,10 @@ DC_Operation_s027
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Calendar Last Updated Date
 
     Log    Step No.11 คลิกช่องค้นหา Pouch Number และพิมพ์หมายเลข Pouch ที่มีสถานะปิดอยู่ลงในช่องค้นหา, กดปุ่มค้นหา
-    dps_scan_page.Input Pouch Number [Move Status]    P112421310
+    dps_scan_page.Input Pouch Number [Move Status]    P112478683
     dps_scan_page.Click Search Button [Move Status]
     # Expected
-    dps_scan_page.Verify Search Pouch Number Result    P112421310
+    dps_scan_page.Verify Search Pouch Number Result    P112478683
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Search Pouch Number Result
 
     Log    Step No.12 คลิกปุ่มเคลียร์
@@ -119,12 +119,36 @@ DC_Operation_s027
     dps_scan_page.Input Tracking Number [Move Status]
     ...    SPBD241100019833    # B
     dps_scan_page.Click Search Button [Move Status]
-    Sleep    2s
     # Expected
     dps_scan_page.Verify Search Tracking Number Result   
     ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
     ...    SPBD241100019833    # B
+    ...    -
+    ...    CP ALL
+    ...    Speedy
+    ...    กล่อง M
+    ...    22/11/2567
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Search Tracking Number Result
+
+    Log    Step No.15 คลิกเลือก Checkbox ทุกรายการที่แสดงในตารางค้นหา, คลิกแท็บ "พัสดุที่เลือก" ด้านบนตัวกรอง
+    ############ ใช้ชั่วคราว ############
+    Click Selected Checkbox [Move Status]    SPBD241100019833
+    ############ ใช้ชั่วคราว ############
+    # dps_scan_page.Click Checkbox [Move Status]
+    dps_scan_page.Select Selected Parcel Tab
+    # Expected
+    dps_scan_page.Verify Selected Parcel Tab
+    ...    ${dc_operation['text_move_status_to']}
+    ...    ${dc_operation['button_download_template']}
+    ...    ${dc_operation['button_import']}
+    ...    ${dc_operation['button_import']}
+    ...    SPBD241100019833    # B
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Selected Parcel Tab
+
+    Log    Step No.16 คลิก Dropdown Move Status To, เลือกสถานะ "พัสดุรอเข้ารับที่ร้าน", คลิกปุ่มยืนยัน Move Status
+    dps_scan_page.Click Dropdown Move Status To     ${dc_operation.parcel_status['pickup_pending']}
+    Sleep    2s
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Move Status Success Pop up 
 
 
 

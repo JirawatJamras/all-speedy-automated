@@ -352,6 +352,7 @@ dc_operation:
   text_pouch_detail: รายละเอียด Pouch
   text_parcel_have_to_scan_remaining: จำนวนพัสดุที่ต้องสแกนคงเหลือ
   vehicle_type: ประเภทรถที่ใช้
+  text_move_status_to: Move Status To
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_no_select: ไม่มีคลังที่เลือก
@@ -375,6 +376,7 @@ dc_operation:
     move_status: Move Status
     change_courier: Change Courier
     finding_parcel: ค้นหาพัสดุ
+    selected_parcel: พัสดุที่เลือก
   label_all_task_tab:
     task_type: ประเภทงาน
     parcel_owner: Parcel Owner
@@ -411,6 +413,7 @@ dc_operation:
   button_create_pouch: สร้าง Pouch
   button_download_template: Download Template
   button_import: Import File
+  button_confirm_move_status: ยืนยัน Move Status
   scan_in_title_parcel_detail: 
     title: รายละเอียดพัสดุ
     parcel_id: หมายเลขพัสดุ
