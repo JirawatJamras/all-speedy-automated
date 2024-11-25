@@ -30,9 +30,3 @@ Register_S024
     register_business_profile_business.Input User Mobile No    0931234567
     #register_business_profile_business.Input User Mobile Ext    0
     register_business_profile_business.Input User Position    พนักงานแพคสินค้า
-    #Step 3 ไม่มีปุ่มยืนยัน
-    #Step 4 กดยกเลิกมาที่หน้าเดิมไม่ได้
-    #Step 5 ไม่มีปุ่มดำเนินการ
-    #Step 6 ไม่มีปุ่มแก้ไข
-    #Step 7 ไม่มีปุ่มยกเลิก
-    #Step 8 ไม่มีปุ่มย้อนกลับ

@@ -29,8 +29,7 @@ Register_S002
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S002['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S002['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S002['company_name']}
-    register_business_pre_register.Set Juristic ID Legal Entity
-    register_business_pre_register.Input Juristic Identification Number Legal Entity    ${JuristicID}
+    register_business_pre_register.Input Juristic Identification Number Legal Entity    ${Register_S002['id_number']}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S002['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    Pre Register 002 fill information 1
@@ -57,8 +56,7 @@ Register_S004
     register_business_pre_register.Select Title Name Individual    ${Register_S004['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S004['first_name']}
     register_business_pre_register.Input Last Name Individual    ${Register_S004['last_name']}
-    register_business_pre_register.Set National ID Individual
-    register_business_pre_register.Input National ID Individual    ${NationalID}
+    register_business_pre_register.Input National ID Individual    ${Register_S004['id_number']}
     register_business_pre_register.Input Email Individual    ${Register_S004['email']}
     register_business_pre_register.Input Address Individual    ${Register_S004['individual_address']}
     register_business_pre_register.Input Address Full Individual    ${Register_S004['search_individual_address_full']}    ${Register_S004['select_individual_address_full']}
@@ -68,7 +66,7 @@ Register_S004
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
-    #Expected
+    # Expected
     register_business_pre_register.Verify Confirm Page    ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    Pre Register 004 Success
 
@@ -81,8 +79,7 @@ Register_S005
     register_business_pre_register.Select Title Name Individual    ${Register_S005['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S005['first_name']}
     register_business_pre_register.Input Last Name Individual    ${Register_S005['last_name']}
-    register_business_pre_register.Set National ID Individual
-    register_business_pre_register.Input National ID Individual    ${NationalID}
+    register_business_pre_register.Input National ID Individual    ${Register_S005['id_number']}
     register_business_pre_register.Input Email Individual    ${Register_S005['email']}
     register_business_pre_register.Input Address Individual    ${Register_S005['individual_address']}
     register_business_pre_register.Input Address Full Individual    ${Register_S005['search_individual_address_full']}    ${Register_S005['select_individual_address_full']}

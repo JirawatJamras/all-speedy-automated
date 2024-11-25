@@ -17,14 +17,17 @@ Register_S001_S007
 *** Keywords ***    
 Register_S001
     Log    Step No.1 กรอกข้อมูล
+    # Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
+    # Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
+    # Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
+    # Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S001['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S001['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S001['company_name']}
-    register_business_pre_register.Set Juristic ID Legal Entity
-    register_business_pre_register.Input Juristic Identification Number Legal Entity    ${JuristicID}
+    register_business_pre_register.Input Juristic Identification Number Legal Entity    ${Register_S001['id_number']}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S001['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S001['search_company_address_full']}    ${Register_S001['select_company_address_full']}
     common.Verify Capture Screenshot      Register    Register_S001_S007    filled in general information success
@@ -38,7 +41,7 @@ Register_S001
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
-    #Expected
+    # Expected
     register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot     Register    Register_S001_S007    Verify Confirm Page    
 

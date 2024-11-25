@@ -22,11 +22,3 @@ Register_S032
     register_business_profile_business.Click Profile Business
     register_business_profile_business.Click Menu Tracking Request list
     register_business_profile_business.Click Add Request    ขอแก้ไขข้อมูลบริการ
-    #Step 2 
-    #Step 3
-    #Step 4
-    #Step 5 ไม่แสดงหน้า คำขอแก้ไขข้อมูลบริการ
-    #Click Add Request    ขอแก้ไขข้อมูลบริการ
-    #Step 6
-    #Step 7
-    #Step 8 

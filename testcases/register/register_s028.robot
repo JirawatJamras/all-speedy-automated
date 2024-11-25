@@ -21,10 +21,3 @@ Register_S028
     register_business_profile_business.Click Profile Icon
     register_business_profile_business.Click Profile Business
     register_business_profile_business.Click Menu Manage Users
-    #Step 2 ไม่มีปุ่ม "ยกเลิก" 
-    #Step 3
-    #Step 4
-    #Step 5 
-    #Step 6
-    #Step 7
-    #Step 8

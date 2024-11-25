@@ -12,8 +12,6 @@ Get Link Create Password
     ${LinkCreatePassword}=    Get Element Attribute    ${register_link_create_password}     href
     Set Suite Variable    ${LinkCreatePassword}
 
-#Verify Create Password Page
-
 Get Link On Email
     ${select_link}=    Replace String    ${register_link_register_gmail}     {value}    ${rm_link_full_register}
     Wait Until Element Is Visible    ${select_link}   ${DEFAULT_TIMEOUT}
@@ -26,12 +24,11 @@ Verify Email That Have Received Link
     ${select_link}=    Replace String    ${select_link}     {link}    ${rm_link_full_register}
     Scroll Into View By Xpath    ${select_link}    true
 
-#Legal Entity
+#################### Legal Entity ####################
 Verify Company Information Legal Entity Page
     [Arguments]    ${partner_type}    ${company_title_name}    ${company_name}    ${id_number}    
     ...    ${company_address}    ${select_company_address_full}    ${mobile_company}    ${mobile_company_ext}
     ...    ${title_name}    ${first_name}    ${last_name}    ${email}    ${mobile_no}    ${mobile_ext}
-    #หัวข้อข้อมูลบริษัท
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_company_information']}
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_company_information']}
         
@@ -117,7 +114,6 @@ Verify Supporting Document Page Legal Entity
     Page Should Contain Element    ${txt_terms_of_service}
     Page Should Contain Element    ${txt_privacy_policy}
 
- #Uploadfile
 Cancel Block Input Upload
     Execute JavaScript    Array.from(document.querySelectorAll('input[name="file"]')).forEach(el => el.style.display = 'block');
     
@@ -187,12 +183,12 @@ Click Acceptance Privacy Policy
     Scroll Element Into View    ${click_checkbox}
     Select Checkbox    ${click_checkbox}
 
-#Individual
+#################### Individual ####################
 Verify Company Information Individual Page
     [Arguments]    ${partner_type}    ${title_name}    ${first_name}    ${last_name}    
     ...    ${id_number}    ${email}    ${company_address}
     ...    ${select_company_address_full}    ${mobile_no}    ${mobile_ext}
-    #หัวข้อข้อมูลบริษัท
+
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_company_information']}
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_company_information']}
         
@@ -254,8 +250,7 @@ Verify Supporting Document Page Individual
     Page Should Contain Element    ${txt_privacy_policy}
 
 
-#Both
- #Service Information
+#################### Both ####################
 Click Tab Dry Parcel
     common.Scroll Window To Vertical    0 
     ${txt_tab}=    Replace String    ${register_tab_parcel_type_full_register}    {value}    ${Register.Full_register['text_tab_dry_parcel']}
@@ -495,7 +490,6 @@ Verify Contact And Bank Information Page
     ${txt_title}=    Replace String    ${register_txt_title_full_register}    {value}    ${Register.Full_register['text_title_contact_and_bank_information']}
     ${txt_header}=    Replace String    ${register_txt_header_full_register}    {value}    ${Register.Full_register['text_header_contact_and_bank_information']}
      
-    #common.Scroll Window To Vertical    0 
     Page Should Contain Element    ${txt_title}
     Page Should Contain Element    ${txt_header}
 
@@ -577,12 +571,6 @@ Input Bank Account No
    [Arguments]    ${value}
    common.Input When Ready    ${register_txtbox_bank_account_no}     ${value}
 
-
-
-
-
-
-#All page
 Click Next 
     ${click_next}=    Replace String    ${register_btn_next_full_register}     {value}    ${Register.Full_register['btn_next']}
     common.Click when ready    ${click_next}

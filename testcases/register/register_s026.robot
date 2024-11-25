@@ -23,5 +23,3 @@ Register_S026
     register_business_profile_business.Click Menu Manage Branches
     #Step 2 ไม่มีปุ่ม "ย้ายผู้ใช้งาน"
     register_business_profile_business.Click Checkbox User    พิชิต สุริยัน
-    #Step 3 ไม่มี Dropdown
-    #Step 4 ไม่มี Dropdown ให้เลือก

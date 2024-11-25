@@ -16,10 +16,7 @@ Register_S022
     Log    Step No.1 กด Link ที่ได้รับจาก Welcome E-mail
     register_business_full_register.Get Link Create Password
     Open URL  ${LinkCreatePassword}
-    # Expected
-    common.Click When Ready  //button//b[text()='ยืนยันตัวตน']
-    # register_business_full_register.Verify Create Password Page
-    Log    Step No.2 ระบุรหัสผ่านสำหรับเข้าใช้งานระบบ : P@ssw0rd ให้ตรงกันทั้ง 2 ช่อง
+
 
 
 

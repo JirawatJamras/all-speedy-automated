@@ -17,29 +17,29 @@ Register_S047
     b2c_login_page.Input Password    P@ssw0rd
     b2c_login_page.Click Log On Button
 
-    #Step 1 Company Admin : กดปุ่ม "โปรไฟล์บริษัท"
+    # Step 1 Company Admin : กดปุ่ม "โปรไฟล์บริษัท"
     register_business_profile_business.Click Profile Icon
     register_business_profile_business.Click Profile Business
-    #Step 2 กดแท็บ "แท็บข้อมูลบริการ" และ แท็บ "พัสดุทั่วไป"
+    # Step 2 กดแท็บ "แท็บข้อมูลบริการ" และ แท็บ "พัสดุทั่วไป"
     register_business_profile_business.Click Menu Service Information
     register_business_profile_business.Click Menu General Parcel
-    #Step 3 กดแท็บ "พัสดุควบคุมอุณหภูมิ"
+    # Step 3 กดแท็บ "พัสดุควบคุมอุณหภูมิ"
     register_business_profile_business.Click Menu Temperature Controlled Parcels
-    #Step 4 กดแท็บ "Return Business"
+    # Step 4 กดแท็บ "Return Business"
     register_business_profile_business.Click Menu Return Business
-    #Step 5 กดแท็บ "ข้อมูลผู้ติดต่อและข้อมูลธนาคาร"
+    # Step 5 กดแท็บ "ข้อมูลผู้ติดต่อและข้อมูลธนาคาร"
     register_business_profile_business.Click Menu Contact and Bank Information
-    #Step 6 กดแท็บ "เอกสารประกอบ"
+    # Step 6 กดแท็บ "เอกสารประกอบ"
     register_business_profile_business.Click Menu Supporting Documents
-    #Step 7 กดแท็บ "จัดการผู้ใช้งาน"
+    # Step 7 กดแท็บ "จัดการผู้ใช้งาน"
     register_business_profile_business.Click Menu Manage Users 
-    #Step 8 กดแท็บ "Super User"
+    # Step 8 กดแท็บ "Super User"
     register_business_profile_business.Click Menu Super User 
-    #Step 9 กดแท็บ "User"
+    # Step 9 กดแท็บ "User"
     register_business_profile_business.Click Menu User 
-    #Step 10 กดแท็บ "จัดการสาขา"
+    # Step 10 กดแท็บ "จัดการสาขา"
     register_business_profile_business.Click Menu Manage Branches  
-    #Step 11 กดแท็บ "ติดตามรายการคำขอ"
+    # Step 11 กดแท็บ "ติดตามรายการคำขอ"
     register_business_profile_business.Click Menu Tracking Request List 
-    #Step 12 กดแท็บ "ใบแจ้งหนี้"
+    # Step 12 กดแท็บ "ใบแจ้งหนี้"
     register_business_profile_business.Click Menu Invoice
