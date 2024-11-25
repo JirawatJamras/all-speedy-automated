@@ -76,6 +76,8 @@ Booking:
   text_chilled_parcel_id_4_start_unit: SPBC
   text_error_report: Error Report
   text_confirm_popup: ' ยืนยัน'
+  text_use_code: ใช้โค้ด
+  text_input_discount_code: ระบุโค้ดส่วนลด
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง

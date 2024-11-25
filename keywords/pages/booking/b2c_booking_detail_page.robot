@@ -639,6 +639,7 @@ Verify Can Edit Data Parcel
 
 Edit Parcel Remark
     [Arguments]    ${value}
+    ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
     common.Click When Ready    ${b2c_btn_cleal_parcel_remark_postcode}
     common.Input When Ready    ${txtbox_parcel_remark}    ${value}
 

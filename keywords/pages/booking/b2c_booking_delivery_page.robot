@@ -281,6 +281,7 @@ Verify Choose Favorites Receiver List
 Verify Choose Receiver From Favorites
     [Arguments]    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode} 
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
+    ${tab_send_to_home_verify}=    Replace String    ${tab_send_to_home_verify}    {value}    ${Booking['text_send_home']}
     Wait Until Element Is Visible    ${tab_send_to_home_verify}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${txtbox_phone_receiver}
     ${name_text}=    Get Value    ${txtbox_name_receiver}
@@ -677,6 +678,7 @@ Verify Parcel Detail Page of Create Parcel [Dry Parcel]
 Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     [Arguments]    ${insure}    ${cod}    ${remark}
     ${insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
     ${actual_insure_amount}=    Get Value    ${insure_amount}
     ${actual_cod}=    Get Value    ${txtbox_cod}
     ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
@@ -687,6 +689,7 @@ Verify Textbox Value On Parcel Detail Step [Dry Parcel]
 Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
     [Arguments]    ${cod}    ${remark}
     ${txtbox_insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
     ${actual_cod}=    Get Value    ${txtbox_cod}
     ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
     Element Should Be Disabled    ${txtbox_insure_amount}
@@ -728,13 +731,16 @@ Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
 
 Input Parcel Remark
     [Arguments]    ${value}
+    ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
     Input When Ready    ${txtbox_parcel_remark}    ${value}
 
 Input Promotion
     [Arguments]    ${value}
+    ${txtbox_promotion}=    Replace String    ${txtbox_promotion}    {value}    ${Booking['text_input_discount_code']}
     common.Input When Ready    ${txtbox_promotion}    ${value}
 
 Click Use Code Button
+    ${btn_use_code}=    Replace String    ${btn_use_code}    {value}    ${Booking['text_use_code']}
     Click When Ready    ${btn_use_code}
 
 Click Use Coupon
