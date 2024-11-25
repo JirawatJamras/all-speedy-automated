@@ -180,7 +180,7 @@ Booking_S002
 
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button 
-    # # Expected
+    # Expected
     b2c_booking_delivery_page.Verify Promotion Detail
     ...    ${Booking['text_selected_coupon_and_code']}
     ...    ${Booking['text_my_coupon_and_code']}
@@ -229,7 +229,6 @@ Booking_S002
     Log    Step No.15 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
