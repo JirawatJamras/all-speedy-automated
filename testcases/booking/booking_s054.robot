@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S054 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Customer_To_Customer    UAT    Defect050    Defect054    Defect055    Defect084    Defect101    Defect117    Defect133
+    [Tags]    Booking    Customer_To_Customer    UAT    Defect050    Defect054    Defect055    Defect084    Defect101    Defect117    Defect119    Defect133
     Log    Prerequisite S031
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
@@ -143,7 +143,6 @@ Booking_S054
 
     Log    Step No.5 เเก้ไข ข้อมูลผู้ส่งพัสดุ
     b2c_booking_detail_page.Edit Phone Sender    ${Booking_S054['sender_phone']}
-    # Defect119
     b2c_booking_detail_page.Edit Name Sender    ${Booking_S054['sender_name']}    
     b2c_booking_detail_page.Edit Address Sender    ${Booking_S054['sender_address']}
     b2c_booking_detail_page.Edit Postcode Sender    ${Booking_S054['sender_postcode_5_digits']}
@@ -240,7 +239,6 @@ Booking_S054
 
     Log    Step No.10 เเก้ไข ข้อมูลผู้รับพัสดุ
     b2c_booking_detail_page.Edit Phone Receiver    ${Booking_S054['receiver_phone']}
-    # Defect119
     b2c_booking_detail_page.Edit Name Receiver    ${Booking_S054['receiver_name']}
     b2c_booking_delivery_page.Click Button    ${tab_send_to_home}
     b2c_booking_detail_page.Edit Addres s Receiver    ${Booking_S054['receiver_address']}
