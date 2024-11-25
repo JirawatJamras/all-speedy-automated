@@ -82,7 +82,7 @@ Variables                   testdata/dc_operation/booking_dry_test_dc.yaml
 ######################## REGISTER ########################
 Resource                    ../keywords/pages/register/register_general_customers_page.robot
 Resource                    ../keywords/pages/register/register_business_customers_page.robot
-Resource                    ../keywords/pages/register/register_business_customers_register_page.robot    #
+Resource                    ../keywords/pages/register/register_business_customers_register_page.robot
 Resource                    ../keywords/pages/register/register_business_pre_register.robot
 Resource                    ../keywords/pages/register/register_business_full_register.robot
 Resource                    ../keywords/pages/register/register_business_my_profile.robot
@@ -90,14 +90,14 @@ Resource                    ../keywords/pages/register/register_business_profile
 
 Resource                    locators/register/register_business_customers_page.robot
 Resource                    locators/register/register_general_customers_page.robot
-Resource                    locators/register/register_business_customers_register_page.robot    #
+Resource                    locators/register/register_business_customers_register_page.robot
 Resource                    locators/register/register_business_pre_register.robot
 Resource                    locators/register/register_business_full_register.robot
 Resource                    locators/register/register_business_my_profile.robot
 Resource                    locators/register/register_business_profile_business.robot
 
-Variables                   testdata/feature/register/allspeedy_register_001.yaml    #
-Variables                   testdata/feature/register/allspeedy_register_004.yaml    #
+Variables                   testdata/feature/register/allspeedy_register_001.yaml
+Variables                   testdata/feature/register/allspeedy_register_004.yaml
 Variables                   testdata/register/register.yaml
 Resource                    testdata/test_upload_file/filepath.robot
 
