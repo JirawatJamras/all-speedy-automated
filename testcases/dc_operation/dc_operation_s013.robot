@@ -381,11 +381,11 @@ DC_Operation_S013
 
 
     Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
-    #In progress 
-    
-    dps_scan_page.Click Print Button By Data
+    dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S013.wait_derivery_data_list['transport']}
+    ...    ${today}
+    ...    ${DC_Operation_S013.wait_derivery_data_list['status']}
 
     Log    Step No.36 กดปุ่ม พิมพ์
     # common.Robot Skip Step Print Label

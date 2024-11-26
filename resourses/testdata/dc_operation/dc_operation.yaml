@@ -647,11 +647,16 @@ DC_Operation_S008:
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: '-'
+      description: ''    # pouch number to be dynamically set
     - title: พัสดุรอ Scan out ไปคลัง
       description: AC
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
+    # - title: พัสดุออกจากคลังต้นทาง
+    #   description: DC BB
+    - title: พัสดุถึงคลังข้ามภาค
+      description: AC
+    # - title: พัสดุรอ Scan out ไปคลัง
+    #   description: RDC LP
+
   data_in_export_task_tab:
     export_to: คลัง RDCLP
     transport: CP All
@@ -692,9 +697,8 @@ DC_Operation_S008:
       type: B2C
       parcel_status: พัสดุรอ Scan out ไปคลัง AC
   wait_derivery_data_list:
-    export_to: Store
+    export_to: คลัง AC
     transport: CP All
-    date: ''
     status: รอขนส่งเข้ารับพัสดุ
     status_after_print: ขนส่งเข้ารับพัสดุแล้ว
   data_in_send_task_tab:
@@ -702,6 +706,16 @@ DC_Operation_S008:
     store_code: '-'
     customer_type: 'B2C'
     transport: CP All
+  scan_in_data_waiting_scan_warehouse_ac:
+    tracking_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: '-'
+    parcel_status: ออกจากคลังต้นทาง (DCBB)
+  scan_in_data_warehouse_ac:
+    tracking_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: '-'
+    parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
 
 DC_Operation_S009:
   data_in_all_task_tab:
@@ -1098,7 +1112,7 @@ DC_Operation_S012:
     export_to: '-'
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
+    parcel_size: กล่อง M
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
   data_in_import_task_tab:
     import_from: Home
@@ -1114,7 +1128,7 @@ DC_Operation_S012:
     export_to: Store
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
+    parcel_size: กล่อง M
     parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
   data_in_send_task_tab:
     send_to: Store
