@@ -494,40 +494,45 @@ DC_Operation_S007:
   data_in_all_task_tab:
     task_type: งานรับเข้า
     task_type2: งานส่งออก
+    task_type3: งานนำจ่าย
     parcel_owner: Speedy
-    import_from: Home
-    import_from2: คลัง DC BB
+    import_from: home
+    import_from2: คลัง DCBB
     export_to: '-'
     export_to2: 'คลัง DCSB'
+    export_to3: 'Store'
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง XL
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (DCSB)
+    parcel_status3: พัสดุออกจากคลังต้นทาง (DCBB)
+    parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
   data_in_import_task_tab:
     import_from: Home
     transport: CP All
     parcel_owner: Speedy
   data_in_export_task_tab:
-    export_to: คลัง DCSB
-    transport: CP All
-    parcel_owner: Speedy
+    export_to: DCSB
+    transport: CPALL
+    parcel_owner: speedy
   scan_in_data_parcel_detail:
-    parcel_id: ''
     customer_id: '0002400563'
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
     courier: CP ALL
     pouch_number: '-'
-    origin_warehouse: DCBB
+    origin_warehouse: 'DCBB'
     send_parcel_to: Store (15888)
     route: ''
   scan_in_data_label_detail:
     route: ''
     store: '15888 (กล่อง XL)'
     customer: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
+    customer2: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
     phone: ''
     pouch_number: ''
     wh: DC BB - DC SB
@@ -540,22 +545,22 @@ DC_Operation_S007:
   scan_in_receiver_data:
     name: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
     phone: ''
-    shipping_destination: ร้าน (15888)
-    address: 'เขตสีลม แขวงบางรัก กรุงเทพมหานคร 10500'
+    shipping_destination: ร้าน สาขา CP TOWER สีลม (15888)
+    address: สีลม บางรัก กรุงเทพมหานคร 10500
   scan_out_waiting_scan:
     pouch_number: '-'
-    receive_parcel_from: Home
-    transport: CP All
+    import_from: Home
+    transport: CP ALL
     parcel_owner: Speedy
     parcel_size: กล่อง XL
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   scan_out_list_data:
     pouch_number: '-'
-    receive_parcel_from: Home
-    transport: CP All
+    import_from: Home
+    transport: CP ALL
     parcel_owner: Speedy
     parcel_size: กล่อง XL
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   wait_derivery_data_list:
     export_to: คลัง DC SB
     transport: CP ALL
@@ -567,6 +572,24 @@ DC_Operation_S007:
     store_code: '15888'
     customer_type: 'B2C'
     transport: CP All
+  timeline_in_history_parcel:
+      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      #   description: '-'
+      - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+        description: ''
+      - title: พัสดุเข้าคลังต้นทาง
+        description: DC BB
+      - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+        description: '-'
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: DC SB
+      - title: พัสดุออกจากคลังต้นทาง
+        description: DC BB
+      - title: พัสดุถึงคลังปลายทาง
+        description: DC SB
+      - title: พัสดุรอนำจ่ายโดยคลัง
+        description: DC SB
+
 
 DC_Operation_S008:
   sender_name: คุณ g
@@ -675,49 +698,51 @@ DC_Operation_S008:
 
 DC_Operation_S009:
   data_in_all_task_tab:
-    task_type_import: งานรับเข้า
-    task_type_export: งานส่งออก
+    task_type: งานรับเข้า
+    task_type2: งานส่งออก
+    task_type3: งานนำจ่าย
     parcel_owner: Speedy
     import_from: Home
     import_from2: คลัง DC BB
+    import_from3: คลัง AC
     export_to: '-'
+    export_to2: คลัง AC
+    export_to3: Home
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง XL
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status3: พัสดุออกจากคลังข้ามภาค (AC)
+    parcel_status4: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
   data_in_import_task_tab:
     import_from: Home
+    import_from2: DCBB
+    import_from3: คลัง AC
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '6'
-    number_of_scanned_items: '6'
   data_in_export_task_tab:
-    export_to: คลัง DCSB
+    export_to: คลัง AC
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '1'
-    number_of_scanned_items: '1'
   scan_in_data_parcel_detail:
-    parcel_id: ''
     customer_id: '0002400563'
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: AC
     destination_warehouse: RDC LP
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: Flash
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
+    courier: CP All
     pouch_number: '-'
     origin_warehouse: DCBB
     send_parcel_to: Home (51000)
-    route: '-'
   scan_in_data_label_detail:
     route: '-'
-    store: '51000 (กล่อง XL)'
+    zipcode: '51000 (กล่อง XL)'
     customer: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
     phone: ''
     pouch_number: '-'
-    wh: DCBB - AC - RDCLP
+    wh: DC BB - AC - RDC LP
     symbol: รูปนาฬิกาทราย
   scan_in_sender_data:
     name: คุณ h
@@ -730,26 +755,65 @@ DC_Operation_S009:
     shipping_destination: บ้าน
     address: '62 ในเมือง เมืองลำพูน ลำพูน 51000'
   scan_out_waiting_scan:
-    title: รายการพัสดุที่รอ Scan Out
-    parcel_id: ''
     pouch_number: '-'
-    receive_parcel_from: Home
+    import_from: Home
+    import_from2: DCBB
     transport: CP All
     parcel_owner: Speedy
     parcel_size: กล่อง XL
-    receiving_date: ''
-    parcel_status: พัสดุรอส่งไปคลัง (DCSB)
+    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
+  scan_out_list_data:
+    pouch_number: '-'
+    import_from: Home
+    import_from2: DCBB
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
   wait_derivery_data_list:
-    export_to: คลัง DC SB
-    transport: CP ALL
+    export_to: คลัง AC
+    transport: CP All
     date: ''
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status2: ขนส่งเข้ารับพัสดุ
   data_in_send_task_tab:
     send_to: Store
+    send_to2: Home
     store_code: '15888'
+    store_code2: '-'
     customer_type: 'B2C'
     transport: CP All
+  timeline_in_history_parcel:
+      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      #   description: '-'
+      - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+        description: ''
+      - title: พัสดุเข้าคลังต้นทาง
+        description: DC BB
+      - title: รอปริ้นใบลาเบลติดหน้ากล่อง
+        description: '-'
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: AC
+      - title: พัสดุออกจากคลังต้นทาง
+        description: DC BB
+      - title: พัสดุถึงคลังข้ามภาค
+        description: AC
+      - title: พัสดุรอส่งไปคลัง    #พัสดุรอ Scan out ไปคลัง
+        description: RDC LP
+      - title: พัสดุออกจากคลังข้ามภาค
+        description: AC
+      - title: พัสดุถึงคลังปลายทาง
+        description: RDC LP    #'-'
+      - title: พัสดุรอนำจ่ายโดยคลัง
+        description: RDC LP    #DC SB
+  scan_in_data_warehouse_ac:
+    pouch_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
+
 
 DC_Operation_S010:
   sender_name: คุณ i
@@ -892,16 +956,20 @@ DC_Operation_S011:
   data_in_all_task_tab:
     task_type: งานรับเข้า
     task_type2: งานส่งออก
+    task_type3: งานนำจ่าย
     parcel_owner: Speedy
     import_from: Home
+    import_from2: คลัง AC
     export_to: '-'
     export_to2: คลัง AC
+    export_to3: Store
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง XL
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
     parcel_status3: พัสดุออกจากคลังข้ามภาค (AC)
+    parcel_status4: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
   data_in_import_task_tab:
     import_from: Home
     import_from2: คลัง AC
@@ -917,7 +985,8 @@ DC_Operation_S011:
     crossdock_warehouse: AC
     destination_warehouse: RDC LP
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: CP ALL
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
+    courier: CP All
     pouch_number: '-'
     origin_warehouse: DCBB
     send_parcel_to: Store (01015)
@@ -942,17 +1011,25 @@ DC_Operation_S011:
     pouch_number: '-'
     receive_parcel_from: DCBB
     parcel_size: กล่อง XL
-    parcel_status: พัสดุออกจากคลังต้นทาง (DCBB)
+    parcel_status: พัสดุออกจากคลังต้นทาง (DC BB)
+  scan_in_data_warehouse_ac:
+    pouch_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: กล่อง XL
+    parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
   scan_out_waiting_scan:
     pouch_number: '-'
-    receive_parcel_from: Home
+    import_from: Home
+    import_from2: DCBB
     transport: CP All
     parcel_owner: Speedy
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
   scan_out_list_data:
     pouch_number: '-'
     receive_parcel_from: Home
+    receive_parcel_from2: DCBB
     transport: CP All
     parcel_owner: Speedy
     parcel_size: กล่อง XL
@@ -960,9 +1037,8 @@ DC_Operation_S011:
   wait_derivery_data_list:
     export_to: คลัง AC
     transport: CP ALL
-    date: ''
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status2: ขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
       # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
       #   description: '-'
@@ -974,6 +1050,19 @@ DC_Operation_S011:
         description: '-'
       - title: พัสดุรอ Scan out ไปคลัง
         description: AC
+      - title: พัสดุออกจากคลังต้นทาง
+        description: DC BB
+      - title: พัสดุรอส่งไปคลัง    #พัสดุถึงคลังข้ามภาค
+        description: RDC LP    #AC
+      - title: พัสดุออกจากคลังข้ามภาค    #พัสดุรอ Scan out ไปคลัง
+        description: AC    #RDC LP
+      - title: พัสดุถึงคลังข้ามภาค    #พัสดุออกจากคลังข้ามภาค
+        description: AC
+      - title: พัสดุถึงคลังปลายทาง
+        description: RDC LP    #'-'
+      - title: พัสดุรอนำจ่ายโดยคลัง
+        description: RDC LP    #DC SB
+
 
 DC_Operation_S012:
   data_in_all_task_tab:
@@ -1003,10 +1092,9 @@ DC_Operation_S012:
     parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
   data_in_send_task_tab:
     send_to: Store
-    store_code: '07004'
+    store_code: '01015'
     customer_type: 'B2C'
     transport: CP All
-    number_of_pieces: '1'
   filter:
     task_type: งานนำจ่าย
     parcel_status: พัสดุรอนำจ่ายโดยคลัง
