@@ -1093,7 +1093,7 @@ DC_Operation_S012:
     export_to: '-'
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
+    parcel_size: กล่อง M
     parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
   data_in_import_task_tab:
     import_from: Home
@@ -1109,7 +1109,7 @@ DC_Operation_S012:
     export_to: Store
     transport: CP All
     pouch_number: '-'
-    parcel_size: กล่อง XL
+    parcel_size: กล่อง M
     parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
   data_in_send_task_tab:
     send_to: Store

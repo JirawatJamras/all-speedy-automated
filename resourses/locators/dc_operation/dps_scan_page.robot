@@ -167,6 +167,7 @@ ${dps_cbo_calendar_move_status}    //div[@class='ant-picker-panels']
 ${dps_cbo_parcel_status_move_status}    //div[@id='status_list']/..//div[@title='{value}']
 ${dps_cbo_parcel_status_move_status_to}    //div[@role='listbox']/..//div[@title='{value}']
 ${dps_cbo_move_status_to}    //div[@id='statusCode']//div[@class='ant-select-selector']
+${dps_cbo_no_data_move_status}    //div[@role='listbox']//div[@class='ant-empty-image']
 
 ${dps_iframe_print_window}    //iframe[@id='printWindow']
 ${dps_cbo_warehouse_list_scan_page}    //span[text()='{warehouse}']

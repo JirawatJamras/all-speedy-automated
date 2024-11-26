@@ -6,13 +6,24 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 # Test Teardown     Run Keywords    Reset Cut Off Time
 #                   ...    AND    Close Browser
 
+*** Variables ***
+${tracking_b}   SPBD241100020119
+${tracking_c}   
+${tracking_d}   SPBD241100012704
+${tracking_e}   
+${tracking_f}   SPBD241100012454
+${tracking_g}   
+${tracking_h}   SPBD241100012456
+${tracking_i}   
+${tracking_j}   SPBD241100021162
+
 *** Test Cases ***
 DC_Operation_s027
     [Documentation]    การ Move Status แบบค้นหาพัสดุ
     [Tags]    DC_Operation    UAT
+
     Set Today
     ${today_repattern}    Set Date Pattern    ${today}
-
     Log    Login
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -51,12 +62,14 @@ DC_Operation_s027
 
     Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
     # Defect257
-    #################### ใช้ชั่วคราว #######################
+    ######## ใช้ชั่วคราว ########
     dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
+    ######## ใช้ชั่วคราว ########
     # Expected
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    4.Search With Pickup Pending Status
 
     Log    Step No.5 คลิกปุ่มค้นหา
+    # Defect263
     dps_scan_page.Click Search Button [Move Status]
     # Expected
     dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
@@ -86,6 +99,7 @@ DC_Operation_s027
     dps_scan_page.Click Filter With Parcel Owner
     # Defect182
     # Expected
+    # dps_scan_page.Verify Parcel Owner List In Dropdown
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    9.Verify Parcel Owner List In Dropdown
 
     Log    Step No.10 คลิกช่องค้นหาวันที่อัปเดตล่าสุด
@@ -103,8 +117,10 @@ DC_Operation_s027
 
     Log    Step No.12 คลิกปุ่มเคลียร์
     dps_scan_page.Click Clear Button [Move Status]
+    # Defect266
     # Expected
     dps_scan_page.Verify Clear Filter Input
+    # dps_scan_page.Verify Search Pouch Number Result    P112478683
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    12.Verify Clear Filter Pouch Number
 
     Log    Step No.13 คลิกปุ่มค้นหา
@@ -116,20 +132,93 @@ DC_Operation_s027
     ####  ใช้ชั่วคราว ####
     dps_scan_page.Click Clear Button [Move Status]
     ####  ใช้ชั่วคราว ####
+
+    # Defect282
     Log    Step No.14 คลิกช่องค้นหาหมายเลขพัสดุ, พิมพ์หมายเลขพัสดุที่มีชื่อผู้ส่งเป็น คุณ b ถึง คุณ j โดยพิมพ์ Tracking1 เว้นวรรค ตามด้วย Tracking2 จนครบทุกหมายเลข, คลิกปุ่มค้นหา
     dps_scan_page.Input Tracking Number [Move Status]
-    ...    SPBD241100019833    # B
-    ...    SPBD241100012704    # D
+    ...    ${tracking_b}    
+    ...    ${tracking_c}    
+    ...    ${tracking_d}    
+    ...    ${tracking_e}    
+    ...    ${tracking_f}    
+    ...    ${tracking_g}    
+    ...    ${tracking_h}    
+    ...    ${tracking_i}    
+    ...    ${tracking_j}    
     dps_scan_page.Click Search Button [Move Status]
     # Expected
     dps_scan_page.Verify Search Tracking Number Result   
     ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    SPBD241100019833    # B
-    ...    -
-    ...    CP ALL
-    ...    Speedy
-    ...    กล่อง M
-    ...    22/11/2567
+    ...    ${tracking_b}
+    ...    ${DC_Operation_S012.data_in_all_task_tab['pouch_number']}
+    ...    CP ALL  #${DC_Operation_S012.data_in_all_task_tab['transport']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_size']}
+    ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_c}
+    # ...    ${DC_Operation_S004.data_in_all_task_tab['pouch_number']}
+    # ...    CP ALL  #${DC_Operation_S004.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S004.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S004.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    dps_scan_page.Verify Search Tracking Number Result   
+    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    ...    ${tracking_D}
+    ...    ${DC_Operation_S005.data_in_all_task_tab['pouch_number']}
+    ...    CP ALL  #${DC_Operation_S005.data_in_all_task_tab['transport']}
+    ...    ${DC_Operation_S005.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S005.data_in_all_task_tab['parcel_size']}
+    ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_e}
+    # ...    ${DC_Operation_S006.data_in_all_task_tab['pouch_number']}
+    # ...    CP ALL  #${DC_Operation_S006.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S006.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S006.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    dps_scan_page.Verify Search Tracking Number Result   
+    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    ...    ${tracking_f}
+    ...    ${DC_Operation_S007.data_in_all_task_tab['pouch_number']}
+    ...    CP ALL  #${DC_Operation_S007.data_in_all_task_tab['transport']}
+    ...    ${DC_Operation_S007.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S007.data_in_all_task_tab['parcel_size']}
+    ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_g}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['pouch_number']}
+    # ...    CP ALL  #${DC_Operation_S008.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    dps_scan_page.Verify Search Tracking Number Result   
+    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    ...    ${tracking_h}
+    ...    ${DC_Operation_S009.data_in_all_task_tab['pouch_number']}
+    ...    CP ALL  #${DC_Operation_S009.data_in_all_task_tab['transport']}
+    ...    ${DC_Operation_S009.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S009.data_in_all_task_tab['parcel_size']}
+    ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_i}
+    # ...    ${DC_Operation_S010.data_in_all_task_tab['pouch_number']}
+    # ...    CP ALL  #${DC_Operation_S010.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S010.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S010.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    dps_scan_page.Verify Search Tracking Number Result   
+    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    ...    ${tracking_j}
+    ...    ${DC_Operation_S011.data_in_all_task_tab['pouch_number']}
+    ...    CP ALL  #${DC_Operation_S011.data_in_all_task_tab['transport']}
+    ...    ${DC_Operation_S011.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S011.data_in_all_task_tab['parcel_size']}
+    ...    ${today_repattern}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    14.Verify Search Tracking Number Result
 
     Log    Step No.15 คลิกเลือก Checkbox ทุกรายการที่แสดงในตารางค้นหา, คลิกแท็บ "พัสดุที่เลือก" ด้านบนตัวกรอง
@@ -141,7 +230,15 @@ DC_Operation_s027
     ...    ${dc_operation['button_download_template']}
     ...    ${dc_operation['button_import']}
     ...    ${dc_operation['button_confirm_move_status']}
-    ...    SPBD241100019833    # B
+    ...    ${tracking_b}   
+    ...    ${tracking_c}   
+    ...    ${tracking_d}   
+    ...    ${tracking_e}   
+    ...    ${tracking_f}   
+    ...    ${tracking_g}   
+    ...    ${tracking_h}  
+    ...    ${tracking_i}   
+    ...    ${tracking_j}   
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    15.Verify Selected Parcel Tab
 
     Log    Step No.16 คลิก Dropdown Move Status To, เลือกสถานะ "พัสดุรอเข้ารับที่ร้าน", คลิกปุ่มยืนยัน Move Status
@@ -153,7 +250,8 @@ DC_Operation_s027
 
     Log    Step No.17 คลิกที่ Pop up บันทึกข้อมูลเรียบร้อย
     dps_scan_page.Click Popup Save Data Success
+    # Defect284
     # Expected
-    dps_scan_page.Verify Move Status Page
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    Verify Move Status Page After Change Status
+    # dps_scan_page.Verify Move Status Page
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    17.Verify Move Status Page After Change Status
 
