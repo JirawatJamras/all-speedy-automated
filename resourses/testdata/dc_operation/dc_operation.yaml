@@ -944,13 +944,18 @@ DC_Operation_S010:
     parcel_size: ซอง A4
     type: B2C
     parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
-  scan_in_value_waiting_scan_warehouse_ac:
+  scan_in_data_waiting_scan_warehouse_ac:
     tracking_number: '-'
     pouch_number: '-'
     receive_parcel_from: DCBB
     parcel_size: '-'
-    parcel_status1: พัสดุออกจากคลังต้นทาง (DCBB)
-    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
+    parcel_status: พัสดุออกจากคลังต้นทาง (DCBB)
+  scan_in_data_warehouse_ac:
+    tracking_number: '-'
+    pouch_number: '-'
+    receive_parcel_from: DCBB
+    parcel_size: '-'
+    parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
 
 DC_Operation_S011:
   data_in_all_task_tab:
