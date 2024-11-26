@@ -29,13 +29,6 @@ Resource                    locators/booking/b2c_favorite_page.robot
 Resource                    locators/booking/b2c_booking_detail_page.robot
 Resource                    locators/booking/b2c_return_business_page.robot
 
-Variables                   testdata/feature/b2c/b2c_login_001.yaml
-Variables                   testdata/feature/b2c/b2c_forgotpassword_002.yaml
-Variables                   testdata/feature/b2c/b2c_addbooking_003.yaml
-Variables                   testdata/feature/b2c/b2c_searchtracking_006.yaml
-Variables                   testdata/feature/b2c/b2c_managemybooking_007.yaml
-Variables                   testdata/feature/b2c/b2c_addpickuptime_008.yaml
-Variables                   testdata/feature/b2c/b2c_addfavoriteitem_010.yaml
 Variables                   testdata/booking/booking.yaml
 
 ######################## C2C ########################
@@ -50,9 +43,6 @@ Resource                    locators/booking/c2c_landing_page.robot
 Resource                    locators/booking/c2c_login.robot
 Resource                    locators/booking/c2c_profile_page.robot
 Resource                    locators/booking/c2c_login_seven_page.robot
-
-Variables                   testdata/feature/c2c/c2c_testdata.yaml
-Variables                   testdata/feature/c2c/allspeedy_c2c_001.yaml
 
 ######################## DPS ########################
 Resource                    ../keywords/pages/dc_operation/dps_landing_page.robot
@@ -73,9 +63,6 @@ Resource                    locators/dc_operation/dps_pouch_page.robot
 Resource                    locators/dc_operation/dps_history_parcel_page.robot
 Resource                    locators/dc_operation/dps_wait_delivery.robot
 
-Variables                   testdata/feature/dps/dps_testdata.yaml
-Variables                   testdata/feature/dps/allspeedy_dps_001.yaml
-Variables                   testdata/feature/dps/allspeedy_dps_003.yaml
 Variables                   testdata/dc_operation/dc_operation.yaml
 Variables                   testdata/dc_operation/booking_dry_test_dc.yaml
 
@@ -92,7 +79,7 @@ Resource                    locators/register/register_business_pre_register.rob
 Resource                    locators/register/register_business_full_register.robot
 
 Variables                   testdata/register/register.yaml
-Resource                    testdata/test_upload_file/filepath.robot
+Resource                    testdata/upload_file/filepath.robot
 
 ######################## PMS ########################
 Resource                    ../keywords/pages/pms/pms_landing_page.robot
@@ -111,14 +98,5 @@ Resource                    locators/pms/pms_request_detail_page.robot
 Resource                    locators/pms/pms_full_register_page.robot
 Resource                    locators/pms/pms_detail_full_register_page.robot
 
-######################## SPS ########################
-Resource                    ../keywords/pages/sps/sps_landing_page.robot
-Resource                    ../keywords/pages/sps/sps_login_page.robot
-
-Resource                    locators/sps/sps_login_page.robot
-Resource                    locators/sps/sps_landing_page.robot
-
-Variables                   testdata/feature/sps/SPS_Login_001.yaml
-
 ######################## Prerequisite ########################
-Resource                    ../keywords/pages/prerequisite.robot
+Resource                    ../keywords/pages/dc_operation/prerequisite.robot
