@@ -849,11 +849,19 @@ Verify Parcel Status List In Dropdown
     Wait Until Element Is Visible    ${dps_cbo_status_list_move_status}
 
 Search With Parcel Status [Move Status]
-    [Arguments]    ${status}
-    ${parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${status}
-    # Wait Until Element Is Visible    ${parcel_status}
-    # Scroll Element Into View    ${parcel_status}
-    # common.Click When Ready    ${parcel_status}
+    [Arguments]    ${parcel_status}
+    ${actual_parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${parcel_status}
+    ${status}=    Set Variable    False
+    Register Keyword To Run On Failure    NOTHING
+    WHILE    '${status}' == 'False'
+    # FOR    ${i}    IN RANGE    10
+        Press Keys    None    DOWN
+        ${status}    Run Key Word And Return Status    Page Should Contain Element    ${actual_parcel_status}
+        Exit For Loop If    '${status}' == 'True'
+    END
+    Scroll Element Into View    ${actual_parcel_status}
+    common.Click When Ready    ${actual_parcel_status}
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 Verify Search Parcel Status Result
     [Arguments]    ${status}
@@ -986,5 +994,10 @@ Click Dropdown Move Status To
     Wait Until Element Is Visible    ${parcel_status}
     Scroll Element Into View    ${parcel_status}
     common.Click When Ready    ${parcel_status}
+
+Click Confirm Move Status Button
+    ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${dc_operation['button_confirm_move_status']}
+    common.Click When Ready    ${btn_confirm_move}
+
     
 
