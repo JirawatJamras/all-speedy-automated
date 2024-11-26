@@ -322,7 +322,7 @@ DC_Operation_S014
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
-    # Defect235
+    
     # Expected
     # Keyword have to edit about date
     # dps_wait_delivery.Verify Label Delivery List
@@ -343,13 +343,13 @@ DC_Operation_S014
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     #In progress 
-    # Defect235
+    
     # dps_scan_page.Click Print Button By Data
     # ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
     # ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
     # common.Click ESC On Keyboard
-    # Defect235    
+        
     # Expected
 

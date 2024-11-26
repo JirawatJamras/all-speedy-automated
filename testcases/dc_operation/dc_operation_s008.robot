@@ -351,7 +351,7 @@ DC_Operation_S008
     ...    ${today}
     ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008   Verify Transaction Complete Popup Was Closed
-
+# Inprogress
     Log    Step No.25 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
@@ -363,8 +363,8 @@ DC_Operation_S008
     ...    คลัง DC BB    #${DC_Operation_S008.scan_out_waiting_scan['receive_parcel_from']}
     ...    CP ALL    #${DC_Operation_S008.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S008.scan_out_waiting_scan['parcel_owner']}
-    ...    กล่อง XL    #${DC_Operation_S008.scan_out_waiting_scan['parcel_size']}
-    ...    15/11/2567
+    ...    กล่อง A4    #${DC_Operation_S008.scan_out_waiting_scan['parcel_size']}
+    ...    ${today}
     ...    พัสดุรอ Scan out ไปคลัง DC SB    #${DC_Operation_S008.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Section Waiting List To Scan Out After Close Pouch [Scan Out Page] 1

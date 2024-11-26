@@ -452,7 +452,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
-    # Defect235
+    
     # Expected
     # dps_wait_delivery.Verify Label Delivery List
     # ...    ${dc_operation.label_delivery_list['export_to']}
@@ -469,7 +469,7 @@ DC_Operation_S004
     # ...    ${DC_Operation_S004.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Delivery List Page
 
-    # Defect235
+    
     # Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     # dps_wait_delivery.Click Print Button By Data
     # ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
@@ -477,7 +477,7 @@ DC_Operation_S004
     # ...    ${today}
     # ...    ${DC_Operation_S004.wait_derivery_data_list['status']}
 
-    # Defect235
+    
     # Log    Step No.35 กดปุ่ม พิมพ์
     # Sleep    5s
     # common.Click ESC On Keyboard

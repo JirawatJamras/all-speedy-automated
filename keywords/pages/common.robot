@@ -168,7 +168,7 @@ Click ESC On Keyboard
     Switch Window    NEW
     ${os} =    Evaluate    platform.system().lower()    modules=platform
     Run Keyword If    'darwin' == '${os}'    Press Keys    None    ESC  # macOS
-    ...               ELSE IF    'windows' in ${os}    Press Keys    None    SPACE  # Windows
+    ...               ELSE IF    'windows' == '${os}'    Press Keys    None    TAB+SPACE  # Windows
     ...               ELSE    Log    Unsupported OS
     Switch Window    MAIN
 
@@ -260,7 +260,7 @@ Set Tomorrow Date
     ${year}    Split String And Select    ${tomorrow_day}    -    2
     ${year_be}    Evaluate    int(${year}) + 543
     ${tomorrow}    Set Variable    ${day}-${month}-${year_be}
-    RETURN    ${tomorrow}
+    Set Suite Variable    ${tomorrow}
 
 Set Today
     ${date_YYYY_MM_DD}   Get Current Date
@@ -270,5 +270,5 @@ Set Today
     ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
     ${year}    Convert To Integer    ${y}
     ${year}    Evaluate    ${y} + 543
-    ${Today}    Set Variable    ${d}-${m}-${year}
-    RETURN    ${Today}
+    ${today}    Set Variable    ${d}-${m}-${year}
+    Set Suite Variable    ${today}
