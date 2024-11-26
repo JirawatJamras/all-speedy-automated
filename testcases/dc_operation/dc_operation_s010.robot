@@ -284,7 +284,7 @@ DC_Operation_S010
 
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
-    # Defect223    Defect236
+    # Defect223
     # Expected
     # dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     # ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
