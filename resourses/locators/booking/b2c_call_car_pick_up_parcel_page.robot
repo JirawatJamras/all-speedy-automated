@@ -79,6 +79,7 @@ ${b2c_tbl_pickup_parcel_calendar_in_add_popup}    //*[contains(@class,'ant-picke
 ${b2c_tbl_pickup_parcel_calendar}    //td[@title='{value}']
 
 ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
+${b2c_card_pickup_parcel_schedule_recently_created_call_car_pickup_page}    (//*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div//div[@class='ant-card-meta w-full'])[1]
 
 ${img_dry_parcel}    //div[@class='ant-space-item']//*[@alt='parcel']
 ${img_parcel_in_card}    (//div[@class='ant-card-body']//*[@alt='parcel'])[1]

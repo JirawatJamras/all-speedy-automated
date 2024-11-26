@@ -408,13 +408,13 @@ Verify Close Filter Section
 Verify Added New Car Pickup Schedule
     [Arguments]    ${parcel_type}    ${special_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
     ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
-    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_recently_created_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
     common.Scroll Window To Vertical    0
-    ${actual_info_new_pickup_card}=    Get Text    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
+    ${actual_info_new_pickup_card}=    Get Text    ${b2c_card_pickup_parcel_schedule_recently_created_call_car_pickup_page}
     ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
     Run Keyword If    '${parcel_type}' == 'พัสดุทั่วไป (Dry)'    Element Should Be Visible   ${img_dry_parcel}
     Run Keyword If    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'    Element Should Be Visible   ${img_dry_parcel}
-    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${special_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} ${call_car_pick_up['cut_off_time']} จำนวนพัสดุ: 0 รายการ ราคา: 0 บาท จุดรับพัสดุ: ${pickup_point}
+    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${special_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} ${Booking.pickup_schedule.default['cut_off_time']} จำนวนพัสดุ: 0 รายการ ราคา: 0.00 บาท จุดรับพัสดุ: ${pickup_point}
 
 Get Cut Off Date From Value
     [Arguments]    ${date}

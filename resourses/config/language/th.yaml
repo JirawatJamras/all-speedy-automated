@@ -1,13 +1,13 @@
 landing_page:
   text_button_login: เข้าสู่ระบบ
   
-sub_menu: 
+sub_menu:
   my_parcel: พัสดุของฉัน
   call_car_pickup: เรียกรถเข้ารับพัสดุ
   favorite: รายการโปรด
   return_business: Return Business
 
-Booking:
+Booking: 
   text_login: เข้าสู่ระบบ
   text_company_profile: โปรไฟล์ของฉัน         
   text_profile: ข้อมูลส่วนตัว           
