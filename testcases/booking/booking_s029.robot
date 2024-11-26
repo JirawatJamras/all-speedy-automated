@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
+
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
@@ -8,7 +9,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S029
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า C-Booking จองการจัดส่งพัสดุ
-    [Tags]    Booking    UAT    Pass
+    [Tags]    Booking    Login_Customer_To_Customer    UAT
     Log    Step No.1 Log-In
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page

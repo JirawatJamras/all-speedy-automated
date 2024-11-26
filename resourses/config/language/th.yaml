@@ -26,7 +26,7 @@ Booking:
   text_btn_edit: แก้ไข
   text_btn_save_edit: บันทึกแก้ไข
   text_btn_select: เลือก
-  text_term_and_condition_date_set: '5 พฤศจิกายน 2024'
+  text_term_and_condition_date_set: '22 ตุลาคม 2024'
   text_term_and_condition: 'ข้อกำหนดและเงื่อนไขการใช้บริการขนส่งพัสดุ SPEED-D (สปีด ดี) ณ วันที่ '
   text_version: ' (Version 2)'
   text_accept_term_and_condition: 'ยอมรับเงื่อนไขการใช้บริการ'
@@ -76,6 +76,8 @@ Booking:
   text_chilled_parcel_id_4_start_unit: SPBC
   text_error_report: Error Report
   text_confirm_popup: ' ยืนยัน'
+  text_use_code: ใช้โค้ด
+  text_input_discount_code: ระบุโค้ดส่วนลด
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -115,43 +117,43 @@ Booking:
       price:  '0 บาท'
   dry_parcel:
     parcel_A4: 'A4'
-    parcel_detail_A4: 'A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ชม.'
+    parcel_detail_A4: 'A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ซม.'
     parcel_A3: 'A3'
-    parcel_detail_A3: 'A3 ซอง A3 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 72 ชม.'
+    parcel_detail_A3: 'A3 ซอง A3 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 72 ซม.'
     parcel_XS: XS
     parcel_text_size_XS: (เล็กพิเศษ)
-    parcel_detail_XS: 'XS กล่อง XS (เล็กพิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 40 ชม.'
+    parcel_detail_XS: 'XS กล่อง XS (เล็กพิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 40 ซม.'
     parcel_S: S
     parcel_text_size_S: (เล็ก)
-    parcel_detail_S: 'S กล่อง S (เล็ก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 60 ชม.'
+    parcel_detail_S: 'S กล่อง S (เล็ก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 60 ซม.'
     parcel_M: M
     parcel_text_size_M: (กลาง)
-    parcel_detail_M: 'M กล่อง M (กลาง) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 90 ชม.'
+    parcel_detail_M: 'M กล่อง M (กลาง) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 90 ซม.'
     parcel_L: L
     parcel_text_size_L: (ใหญ่)
-    parcel_detail_L: 'L กล่อง L (ใหญ่) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 120 ชม.'
+    parcel_detail_L: 'L กล่อง L (ใหญ่) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 120 ซม.'
     parcel_XL: XL
     parcel_text_size_XL: (ใหญ่มาก)
-    parcel_detail_XL: 'XL กล่อง XL (ใหญ่มาก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 150 ชม.'
+    parcel_detail_XL: 'XL กล่อง XL (ใหญ่มาก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 150 ซม.'
     parcel_XXL: XXL
     parcel_text_size_XXL: (ใหญ่พิเศษ)
-    parcel_detail_XXL: 'XXL กล่อง XXL (ใหญ่พิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 200 ชม.'
+    parcel_detail_XXL: 'XXL กล่อง XXL (ใหญ่พิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 200 ซม.'
   chilled_parcel:
     parcel_S0: 'S0'
     parcel_text_size_S0: '(S0)'
-    parcel_detail_S0: 'S0 กล่อง S0 (S0) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 400 ชม.'
+    parcel_detail_S0: 'S0 กล่อง S0 (S0) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 400 ซม.'
     parcel_S1: 'S1'
     parcel_text_size_S1: '(S1)'
-    parcel_detail_S1: 'S1 กล่อง S1 (S1) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 500 ชม.'
+    parcel_detail_S1: 'S1 กล่อง S1 (S1) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 500 ซม.'
     parcel_S2: 'S2'
     parcel_text_size_S2: '(S2)'
-    parcel_detail_S2: 'S2 กล่อง S2 (S2) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 700 ชม.'
+    parcel_detail_S2: 'S2 กล่อง S2 (S2) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 700 ซม.'
     parcel_A1: 'A1'
     parcel_text_size_A1: '(A1)'
-    parcel_detail_A1: 'A1 กล่อง A1 (A1) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 800 ชม.'
+    parcel_detail_A1: 'A1 กล่อง A1 (A1) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 800 ซม.'
     parcel_A2: 'A2'
     parcel_text_size_A2: '(A2)'
-    parcel_detail_A2: 'A2 กล่อง A2 (A2) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 900 ชม.'
+    parcel_detail_A2: 'A2 กล่อง A2 (A2) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 900 ซม.'
   parcel_detail_insure_amount: จำนวนเงินซื้อประกัน
   parcel_detail_cod: เก็บเงินปลายทาง
   parcel_detail_remark: หมายเหตุ
@@ -163,7 +165,7 @@ Booking:
     size_a5:  'กระดาษ A5'
     size_8cm:  'กระดาษ หน้ากว้าง 8 ซม.'
   text_blank:
-    origin_shipping: ''
+    origin_shipping: '-'
     text_dry_parcel_id_4_start_unit: '-'
     text_chilled_parcel_id_4_start_unit: '-'
     receiver_name: '-'
@@ -200,7 +202,7 @@ Booking:
     dry_parcel_import_success_amount: 'สำเร็จ 15'
     dry_parcel_import_fail_amount: 'ล้มเหลว 32'
   origin_shipping:
-    idc_company_address: 'บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+    idc_company_address: 'บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
     15888_store_address: '15888 7-11 สาขาCP TOWER สีลม'
     01523_store_address: '01523 7-11 สาขาปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
 
@@ -282,6 +284,7 @@ favorite:
   text_input_postcode: ระบุไปรษณีย์
 
 dc_operation:
+  non: '-'
   role:
     dev: Role Dev
     admin: แอดมินคลัง
@@ -316,10 +319,13 @@ dc_operation:
   text_print: พิมพ์
   text_print_label: ยืนยัน/Print Label
   text_print_label_success: ทำรายการสำเร็จ
+  text_accept_scan_in: ยืนยัน Scan In
+  text_accept_scan_in_success: ยืนยันรับเข้าพัสดุเรียบร้อยแล้ว
   text_confirm_scan_out: ยืนยัน Scan Out
   text_confirm: ยืนยัน
   text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
-  text_please_close_pouch_before_scan_out: ปิด Pouch ของพัสดุก่อน Scan out
+  text_please_close_pouch_before_scan_out: 'ปิด Pouch ของพัสดุก่อน Scan out'
+  text_unable_to_scan_trcking_becuase_parcel_is_in_pouch: 'ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch'
   icon_pencil: ไอคอนรูปดินสอ
   button_export: Export File
   button_approve: อนุมัติ
@@ -339,7 +345,14 @@ dc_operation:
   text_close_pouch_and_print_label: ปิด Pouch/Print Label
   text_transaction_complete: ทำรายการสำเร็จ
   text_warning_confirm_to_close_pouch: ยืนยันการ ปิด Pouch หรือไม่
+  text_destination_warehouse: คลังปลายทาง
+  text_parcel_is_on_pouch_warning: พัสดุชิ้นนี้อยู่ใน "ถุง" กรุณา Scan ด้วยเลขถุง เท่านั้น
+  text_unbox_pouch_and_scan_piece_by_piece: กรุณาแกะ Pouch เพื่อสแกนรับพัสดุรายชิ้น
+  text_agree: ตกลง
+  text_pouch_detail: รายละเอียด Pouch
+  text_parcel_have_to_scan_remaining: จำนวนพัสดุที่ต้องสแกนคงเหลือ
   vehicle_type: ประเภทรถที่ใช้
+  text_move_status_to: Move Status To
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_no_select: ไม่มีคลังที่เลือก
@@ -347,6 +360,8 @@ dc_operation:
     text_warehouse_DC_BB: คลัง DC BB
     text_warehouse_DC_SB: คลัง DC SB
     text_warehouse_DC_MC: คลัง DC MC
+    text_warehouse_RDC_LP: คลัง RDC LP
+    text_warehouse_AC: AC
   tab_daily_task:
     all_task: งานทั้งหมด
     import_task: งานรับเข้า
@@ -360,6 +375,8 @@ dc_operation:
     scan_out: Scan Out
     move_status: Move Status
     change_courier: Change Courier
+    finding_parcel: ค้นหาพัสดุ
+    selected_parcel: พัสดุที่เลือก
   label_all_task_tab:
     task_type: ประเภทงาน
     parcel_owner: Parcel Owner
@@ -368,6 +385,7 @@ dc_operation:
     transport: ผ่านขนส่ง
     pouch_number: Pouch Number 
     parcel_number: หมายเลขพัสดุ
+    parcel_size: ขนาดพัสดุ
     parcel_status: สถานะพัสดุ
   label_import_task_tab:
     import_from: งานรับเข้าจาก
@@ -386,12 +404,16 @@ dc_operation:
   label_send_task_tab:
     send_to: นำจ่ายไปยัง
     store_code: รหัสร้านสาขา
+    customer_type: ประเภทลูกค้า
     transport: ผ่านขนส่ง
-    number_of_pouch: จำนวน Pouch
     number_of_pieces: จำนวนชิ้น
-    number_of_scanned_items: รวมรายการที่ต้องการสแกน
   button_filter: ตัวกรอง
   button_search: ค้นหา
+  button_clear: เคลียร์
+  button_create_pouch: สร้าง Pouch
+  button_download_template: Download Template
+  button_import: Import File
+  button_confirm_move_status: ยืนยัน Move Status
   scan_in_title_parcel_detail: 
     title: รายละเอียดพัสดุ
     parcel_id: หมายเลขพัสดุ
@@ -429,6 +451,13 @@ dc_operation:
     phone: เบอร์โทรศัพท์ผู้รับ
     shipping_destination: ปลายทางจัดส่งพัสดุ
     address: รายละเอียดที่อยู่
+  scan_in_title_waiting_scan_warehouse_ac:
+    parcel_id: หมายเลขพัสดุ
+    pouch_number: Pouch Number
+    receive_parcel_from: งานรับเข้าจาก
+    parcel_size: ขนาดพัสดุ
+    receiving_date: วันที่อัปเดตข้อมูล
+    parcel_status: สถานะพัสดุ
   scan_out_title_waiting_scan:
     title: รายการพัสดุที่รอ Scan Out
     parcel_id: หมายเลขพัสดุ
@@ -514,7 +543,46 @@ dc_operation:
       pickup_place: สถานที่รับพัสดุ
       type: ประเภท
       parcel_status: สถานะพัสดุ
-
+  label_pouch_detail:
+    label_pouch: POUCH
+    text_create_pouch: สร้าง Pouch
+    pouch_number: 'Pouch Number :'
+    origin_warehouse: 'คลังต้นทาง :'
+    destination_warehouse: คลังปลายทาง
+    default_number_of_parcel: '0'
+  create_pouch_confirmation: 
+    text_create_pouch: พัสดุปลายทางนี้ยังไม่มี Pouch ยืนยันการสร้าง Pouch
+    title_destination_pouch: 'คลังปลายทาง :'
+    value_destination_pouch: RDC LP
+    button_confirm: ยืนยัน
+  move_status:
+    default_table: '10'
+    parcel_status: สถานะพัสดุ
+    parcel_number: หมายเลขพัสดุ
+    pouch_number: Pouch Number
+    receive_parcel_from: งานรับเข้าจาก
+    transport: ผ่านขนส่ง
+    parcel_owner: Parcel Owner
+    parcel_size: ขนาดพัสดุ
+    last_updated_date: วันที่อัปเดตล่าสุด
+  label_pouch_detail_in_scan_in_page:
+    pouch_number: Pouch Number
+    parcel_in_pouch_amount: จำนวนพัสดุใน Pouch
+    courier: Courier
+    date_delivery_origin_warehouse: วันที่จัดส่ง Pouch ออกจากต้นทาง
+    origin_warehouse: คลังต้นทาง
+    destination_warehouse: คลังปลายทาง
+    crossdock_warehouse: คลัง Crossdock
+  label_parcel_in_pouch_in_scan_in_page:
+    parcel_number: หมายเลขพัสดุ
+    destination_warehourse: คลังปลายทาง
+    parcel_size: ขนาดพัสดุ
+    type: ประเภท
+    parcel_status: สถานะพัสดุ
+  parcel_status:
+    pickup_pending: พัสดุรอเข้ารับที่ร้าน
+    awaiting_delivery_warehouse: พัสดุรอนำจ่ายโดยคลัง
+  
 
 rm:
   text_pre_register: Pre-Register
@@ -690,7 +758,6 @@ rm:
   text_blank:
     sale_mobile: ''
 
-
 return_business:
   text_btn_add: เพิ่ม
   text_btn_save: บันทึก
@@ -743,27 +810,27 @@ return_business:
     text_address_full: แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์
     text_parcel_detail: รายละเอียดพัสดุ
     parcel_A4: A4
-    parcel_detail_A4: A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ชม.
+    parcel_detail_A4: A4 ซอง A4 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 51 ซม.
     parcel_A3: A3
-    parcel_detail_A3: A3 ซอง A3 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 72 ชม.
+    parcel_detail_A3: A3 ซอง A3 ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 72 ซม.
     parcel_XS: XS
     parcel_text_size_XS: (เล็กพิเศษ)
-    parcel_detail_XS: XS กล่อง XS (เล็กพิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 40 ชม.
+    parcel_detail_XS: XS กล่อง XS (เล็กพิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 40 ซม.
     parcel_S: S
     parcel_text_size_S: (เล็ก)
-    parcel_detail_S: S กล่อง S (เล็ก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 60 ชม.
+    parcel_detail_S: S กล่อง S (เล็ก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 60 ซม.
     parcel_M: M
     parcel_text_size_M: (กลาง)
-    parcel_detail_M: M กล่อง M (กลาง) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 90 ชม.
+    parcel_detail_M: M กล่อง M (กลาง) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 90 ซม.
     parcel_L: L
     parcel_text_size_L: (ใหญ่)
-    parcel_detail_L: L กล่อง L (ใหญ่) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 120 ชม.
+    parcel_detail_L: L กล่อง L (ใหญ่) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 120 ซม.
     parcel_XL: XL
     parcel_text_size_XL: (ใหญ่มาก)
-    parcel_detail_XL: XL กล่อง XL (ใหญ่มาก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 150 ชม.
+    parcel_detail_XL: XL กล่อง XL (ใหญ่มาก) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 150 ซม.
     parcel_XXL: XXL
     parcel_text_size_XXL: (ใหญ่พิเศษ)
-    parcel_detail_XXL: XXL กล่อง XXL (ใหญ่พิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 200 ชม.
+    parcel_detail_XXL: XXL กล่อง XXL (ใหญ่พิเศษ) ขนาดวัดตามสายวัด กว้าง + ยาว + สูง ไม่เกิน 200 ซม.
     text_remark: หมายเหตุ
     text_button_booking: จองเลขพัสดุ
     text_sender: 'ผู้ส่ง :'
@@ -776,3 +843,105 @@ return_business:
     text_save: บันทึก
     text_shipping_origin_aria:  เลือกพื้นที่ต้นทางการจัดส่ง
     text_print_parcel_label: พิมพ์ใบจ่ายหน้าพัสดุ
+    
+Register:
+  text_menu_business: ลูกค้าธุรกิจ
+  text_menu_general: ลูกค้าทั่วไป
+  text_blank:
+    remark: ''
+  email: businessregisterflow@gmail.com
+  password: Business1234@
+  password_allspeedy: P@ssw0rd
+  Pre_register:
+    text_menu_register: ลงทะเบียนลูกค้าธุรกิจ
+    text_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ
+    btn_confirm: ลงทะเบียน
+    btn_cancel: ยกเลิก
+    text_header_cancel: ยกเลิกการลงทะเบียน
+    text_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    confirm_cancel_popup: ตกลง
+    cancel_cancel_popup: ยกเลิก
+  Full_register:
+    text_link_register: ลงทะเบียนได้ที่ / Register at
+    text_title_company_information: ข้อมูลบริษัท
+    text_title_service_information: ข้อมูลบริการ
+    text_title_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    text_title_supporting_document: เอกสารประกอบ
+    text_header_company_information: ข้อมูลทั่วไป
+    text_header_service_information: ข้อมูลบริการ
+    text_header_contact_and_bank_information: ข้อมูลผู้ติดต่อและข้อมูลธนาคาร
+    text_header_supporting_document: อัปโหลดเอกสารประกอบ
+    text_partner_type: ประเภทคู่ค้า
+    text_company_title_name: 'คำนำหน้าประเภทจดทะเบียนบริษัท *'
+    text_company_name: 'ชื่อบริษัท *'
+    text_id_number: 'เลขประจำตัวผู้เสียภาษี *'
+    text_company_address: 'ที่อยู่บริษัท *'
+    text_company_address_full: 'ตำบล/อำเภอ/จังหวัด/รหัสไปรษณีย์ *'
+    text_mobile_company: 'เบอร์โทรศัพท์ *'
+    text_mobile_company_extra: '#ต่อ'
+    text_contact_information: ข้อมูลผู้ติดต่อ
+    text_title_name: 'คำนำหน้าชื่อ *'
+    text_first_name: 'ชื่อ (ผู้ติดต่อ) *'
+    text_last_name: 'นามสกุล *'
+    text_email: 'E-mail *'
+    text_mobile: 'เบอร์โทรศัพท์ *'
+    text_mobile_extra: '#ต่อ' 
+    text_customer_first_name: 'ชื่อ *'
+    text_customer_last_name: 'นามสกุล *'
+    text_id_card_number: 'เลขประจำตัวประชาชน *'
+    text_tab_dry_parcel: พัสดุทั่วไป
+    text_tab_chill_parcel: พัสดุควบคุมอุณหภูมิ
+    text_tab_return_business: Return Business
+    text_btn_add_service_cod: บริการเก็บเงินปลายทาง
+    text_btn_add_service_insurance: ประกันคุ้มครองพัสดุ
+    text_btn_add_service_express: บริการส่งด่วน
+    text_btn_select_parcel: เลือก
+    text_service_usage_information_topic: ข้อมูลการใช้บริการ
+    text_type_product: 'ประเภทสินค้าหลักที่จัดส่ง *'
+    text_number_by_day: 'จำนวนการจัดส่งเฉลี่ยต่อวัน *'
+    text_sale_channel: 'ช่องทางจำหน่าย *'
+    text_vat: 'Vat ของสินค้า *'
+    text_vat_chill: 'Vat ของสินค้า*'
+    text_input_vat_default: 'ไม่มี Vat'
+    text_remark: หมายเหตุ
+    text_input_remark_default: 'ระบุหมายเหตุ'
+    text_input_default: 'ระบุข้อมูล'
+    text_contact_information_topic: ข้อมูลผู้ติดต่อ
+    text_user_name: 'ชื่อผู้ติดต่อ *'
+    text_user_position: 'ตำแหน่ง *'
+    text_user_email: 'E-mail *'
+    text_user_phone: 'เบอร์โทรศัพท์ *'
+    text_user_phone_ex: '#ต่อ'
+    text_bank_information_topic: ข้อมูลธนาคาร
+    text_bank_id: 'ประเทศ *'
+    text_bank_name: 'ธนาคาร *'
+    text_bank_account_type: 'ประเภทบัญชี *'
+    text_bank_branch: 'สาขาธนาคาร *'
+    text_bank_account_name: 'ชื่อบัญชี *'
+    text_bank_account_no: 'เลขที่บัญชี *'
+    text_certificate_business_registration: สำเนาหนังสือรองรับการจดทะเบียนนิติบุคคล
+    text_copy_file_20: สำเนาเอกสาร ภพ. 20
+    text_copy_id_card: สำเนาบัตรประชาชนผู้มีอำนาจลงนาม
+    text_copy_of_bank_account: สำเนาหน้าบัญชีธนาคาร
+    text_copy_of_house_registration: สำเนาทะเบียนบ้านของผู้มีอำนาจลงนาม
+    text_permission_form: หนังสือยินยอมให้หักค่าธรรมเนียมการโอนผ่านบัญชีธนาคาร
+    text_other_file: เอกสารอื่นๆ
+    btn_next: ถัดไป
+    btn_cancel: ยกเลิก
+    text_header_cancel: ยกเลิกการลงทะเบียน
+    text_question_cancel: ท่านต้องการยกเลิกการลงทะเบียนหรือไม่ ?
+    confirm_cancel_popup: ตกลง
+    cancel_cancel_popup: ยกเลิก    
+    btn_remark: หมายเหตุการแก้ไข
+    text_header_remark: หมายเหตุการณ์แก้ไข
+    text_remark_page_1: 'หมายเหตุการณ์แก้ไข #1'
+    text_remark_page_2: 'หมายเหตุการณ์แก้ไข #2'
+    text_remark_page_3: 'หมายเหตุการณ์แก้ไข #3'
+    text_remark_page_4: 'หมายเหตุการณ์แก้ไข #4'
+    text_no_remark: '-'
+    btn_save: บันทึกร่าง
+    btn_confirm: ลงทะเบียน
+    text_accept: ยอมรับ
+    text_terms_of_service: เงื่อนไขให้บริการ
+    text_privacy_policy:  นโยบายความเป็นส่วนตัว
+    text_register_success: ท่านได้ลงทะเบียนเรียบร้อยแล้ว กรุณารอเจ้าหน้าที่ติดต่อกลับ

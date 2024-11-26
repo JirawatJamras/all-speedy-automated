@@ -13,6 +13,7 @@ ${dps_txt_header_timeline_history_parcel_page}    //strong[text()='{value}']
 ${dps_txt_header_parcel_detail_history_parcel_page}    //strong[text()='{value}']
 ${dps_txt_title_parcel_detail_history_parcel_page}    //div[contains(text(),'{value}')]
 ${dps_txt_value_parcel_detail_history_parcel_page}    //div[text()='{value}']
+${dps_txt_value_parcel_detail_with_title_history_page}    //div[text()='{title}']/..//div[2]
 ${dps_txt_value_tracking_number_history_parcel_page}    //p[text()='{value}']
 ${dps_txt_value_parcel_status_history_parcel_page}    //h1[contains(normalize-space(.), '{value}')]
 ${dps_txt_value_pouch_number_history_parcel_page}    //div[text()='{title}']/..//div[text()='{value}']
@@ -23,7 +24,7 @@ ${dps_txt_value_sender_address_history_parcel_page}    //p[contains(normalize-sp
 ${dps_txt_value_receiver_history_parcel_page}    //p[text()='{value}']
 ${dps_txt_value_receiver_address_history_parcel_page}    //p[contains(normalize-space(.), '{value}')]
 ${dps_txt_step_title_in_timeline_history_parcel_page}    //div[@class='ant-steps-item-title']//h1
-${dps_txt_step_description_in_timeline_history_parcel_page}    //div[@class='ant-steps-item-description']//h1
+${dps_txt_step_description_in_timeline_history_parcel_page}    //div[@class='ant-steps-item-description']
 ${dps_txt_time_in_timeline_history_parcel_page}    //div[@class='flex justify-center mt-10']//div[contains(@class,'text-end')]
 ${dps_txt_title_reprint_label_in_card_history_parcel_page}    //div[@class='ant-modal-content']//div[text()='{value}']
 ${dps_txt_destination_warehouse_in_pouch_label_history_parcel_page}    //div[@class='ant-modal-content']//div[text()='{label_type}']/..//div[contains(@class,'w-[2in] h-[3in] bg-white m-0')]//h1[text()='{destination_warehouse}']

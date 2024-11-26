@@ -303,7 +303,7 @@ Input And Select Store Code Receiver
     FOR    ${i}    IN RANGE    0    5
         common.Input When Ready    ${txtbox_receiver_search_store}    ${input_store_receiver}
         Click Store Receiver Lists    ${store}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=10s
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=${DEFAULT_TIMEOUT}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         common.Clear Value Input Text    ${txtbox_receiver_search_store}
     END

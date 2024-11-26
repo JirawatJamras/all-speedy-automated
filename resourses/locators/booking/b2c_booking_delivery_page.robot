@@ -31,7 +31,7 @@ ${btn_parcel_select_S1}    //strong[text()= '{value}']/../../../div[@class='ant-
 ${btn_parcel_select_S2}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_A1}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_A2}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
-${btn_use_code}    //button//span[text()='ใช้โค้ด']
+${btn_use_code}    //button//span[text()='{value}']
 ${btn_use_coupon}    //div[contains(@class,'ant-row max-sm:hidden')]//span[text()='{value}']/..
 ${btn_take_out_coupon}    //span[text()='{value}']/..
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
@@ -93,8 +93,8 @@ ${txtbox_postcode_receiver}    //input[@id='create_parcel_form_receiver_address_
 ${txtbox_postcode_receiver_not_select_text}    //span[@class='ant-select-selection-placeholder']
 ${txtbox_postcode_receiver_select_text}    //span[@class='ant-select-selection-item']
 ${txtbox_full_postcode_receiver}    //span[text()='{value} ']/../../..//div[@class='ant-select-selector']//span[1]
-${txtbox_parcel_remark}    //label[text()='หมายเหตุ']/../..//textarea[@id='create_parcel_form_remark']
-${txtbox_promotion}    //input[@placeholder='ระบุโค้ดส่วนลด']
+${txtbox_parcel_remark}    //label[text()='{value}']/../..//textarea[@id='create_parcel_form_remark']
+${txtbox_promotion}    //input[@placeholder='{value}']
 ${txtbox_cod}    //input[@id='create_parcel_form_codValue']
 ${txtbox_insure_amount}    //label[text()='{value}']/../..//input[@id='create_parcel_form_insureAmount']
 ${txtbox_store_receiver}    (//div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input'])[1]
@@ -106,7 +106,7 @@ ${cbo_store_receiver}    //div[@title='{value}']
 
 ${tab_send_to_home}    //div[@data-node-key='home']
 ${tab_send_to_store}    //div[@data-node-key='store']
-${tab_send_to_home_verify}    //div[@role='tab' and @aria-selected='true']//div[text()='ส่งที่บ้าน']
+${tab_send_to_home_verify}    //div[@role='tab' and @aria-selected='true']//div[text()='{value}']
 ${tab_send_to_store_verify}    //div[@data-node-key='store']//div[@id='create_parcel_form_receiver_placeType-tab-store']
 
 ${status_active_sender}    //div[@step='1' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']

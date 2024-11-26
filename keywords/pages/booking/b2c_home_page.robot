@@ -1,13 +1,13 @@
 *** Keywords ***
 Click Book Parcel Delivery
     ${btn} =  Replace String    ${b2c_mnu_book_parcel_delivery_home_page}    {value}    ${Booking['text_menu_booking']}
-    Wait Until Element Is Enabled    ${btn}    timeout=10s
+    Wait Until Element Is Enabled    ${btn}    timeout=${DEFAULT_TIMEOUT}
     common.Click When Ready    ${btn}
 
 Click Parcel Delivery Service Menu
     FOR    ${i}    IN RANGE    0    5
         Mouse Over    ${b2c_mnu_parcel_delivery_service_home_page}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_cbo_parcel_delivery_service}    timeout=2s
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_cbo_parcel_delivery_service}    timeout=${DEFAULT_TIMEOUT}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
     END
 
@@ -79,21 +79,19 @@ Verify My Profile Page
     Should Be Equal    ${email}    ${actual_email}
     Should Be Equal    ${position}    ${actual_position}
 
-
 Verify My Profile PageBusiness
     [Arguments]    ${name} 
     Wait Until Element Is Visible    ${b2c_personal_information_txtbox}
     ${expected_emailtxtbox} =    Get value    ${b2c_personal_information_txtbox}
     Should Be Equal    ${name}    ${expected_emailtxtbox}
 
-Verify Company profile page
+Verify Company Profile Page
     [Arguments]    ${company_profile}
     ${text_company_profile}=        Replace String    ${b2c_txt_sir_name}        {value}    ${company_profile}  
     Wait Until Element Is Visible    ${text_company_profile}    timeout=${DEFAULT_TIMEOUT}
 
-
 Click Button To Add
-    Wait Until Element Is Visible    ${b2c_btn_add}    timeout=30s
+    Wait Until Element Is Visible    ${b2c_btn_add}    timeout=${DEFAULT_TIMEOUT}
     Click Element        ${b2c_btn_add}
 
 Click Tracking Parcel Delivery Menu

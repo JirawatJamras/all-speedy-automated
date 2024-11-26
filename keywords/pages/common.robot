@@ -8,10 +8,10 @@ Open Chrome Browser
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --no-sandbox
-    # Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
     # Call Method    ${chrome_options}    add_argument    --headless\=old
     IF  '${chrome}'=='headlesschrome'
         Call Method     ${chrome_options}      add_argument    --headless\=old
+        Call Method    ${chrome_options}    add_argument    --window-size\=1920,1080
     END
     Open Browser    about:blank    Chrome    options=${chrome_options}
     Maximize Browser Window
@@ -131,8 +131,10 @@ Delete API Booking By Booking ID
 Get Parcels And Sender Names
     [Documentation]    Retrieve parcels' codes and sender's names from the API response
     [Arguments]    ${booking_id}
-    Create Session    api_session    https://cps-api-uat.allspeedy.co.th/v1/bookings/${booking_id}
-    ${response} =    GET On Session    api_session    /
+    ${access_token}=    Get Access Token
+    &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
+    Create Session    api_session    https://cps-api-uat.allspeedy.co.th/v1
+    ${response} =    GET On Session    api_session    /bookings/${booking_id}    headers=${headers}
     ${status_code} =    Convert To Integer    ${response.status_code}
     Should Be Equal As Integers    ${status_code}    200    API request failed
     ${json_response} =    Convert String To Json    ${response.content}
@@ -251,3 +253,94 @@ Verify text of element
     [Arguments]   ${locator}   ${value}
     ${locator}=  Replace String   ${locator}   {value}   ${value}
     Wait Until Element Is Visible   ${locator}    ${DEFAULT_TIMEOUT}
+
+################### Manage Excel ###################    
+Read Row From Excel
+    [Arguments]    ${file_path}    ${sheet_name}    ${row_number}
+    ${workbook}=   Evaluate    openpyxl.load_workbook(r"${file_path}")
+    ${sheet}=    Set Variable    ${workbook}[${sheet_name}]
+    ${row_values}=    Create List
+    FOR    ${cell}    IN    @{sheet[${row_number}]}
+        Append To List    ${row_values}    ${cell.value}
+    END    
+    RETURN   ${row_values}
+
+Set Tracking Information from excel
+    [Arguments]    ${tracking_info}
+    # Classify data
+    ${create_date}    Get From List    ${tracking_info}    0
+    ${tracking_number}    Get From List    ${tracking_info}    1
+    ${customer_id}    Get From List    ${tracking_info}    2
+    ${size_cm}    Get From List    ${tracking_info}    3
+    ${size}    Get From List    ${tracking_info}    4
+    ${courier}    Get From List    ${tracking_info}    5
+    ${origin_warehoues}    Get From List    ${tracking_info}    6
+    ${send_parcel_to}    Get From List    ${tracking_info}    7
+    ${sender_name}    Get From List    ${tracking_info}    8
+    ${sender_phone}    Get From List    ${tracking_info}    9
+    ${sender_shipping_origin}    Get From List    ${tracking_info}    10
+    ${sender_address}    Get From List    ${tracking_info}    11
+    ${receiver_name}    Get From List    ${tracking_info}    12
+    ${receiver_phone}    Get From List    ${tracking_info}    13
+    ${receiver_shipping_destination}    Get From List    ${tracking_info}    14
+    ${receiver_address}    Get From List    ${tracking_info}    15
+
+    ${courier_label}    Get From List    ${tracking_info}    20
+    ${zipcode_label}    Get From List    ${tracking_info}    21
+    ${province_label}    Get From List    ${tracking_info}    22
+    ${customer_label}    Get From List    ${tracking_info}    23
+    ${phone_label}    Get From List    ${tracking_info}    24
+    ${tracking_label}=     Set Variable    ${tracking_number}
+    
+    Set Suite Variable    ${create_date}
+    Set Suite Variable    ${tracking_number}
+    Set Suite Variable    ${customer_id}
+    Set Suite Variable    ${size_cm}
+    Set Suite Variable    ${size}
+    Set Suite Variable    ${courier}
+    Set Suite Variable    ${origin_warehoues}
+    Set Suite Variable    ${send_parcel_to}
+    Set Suite Variable    ${sender_name}
+    Set Suite Variable    ${sender_phone}
+    Set Suite Variable    ${sender_shipping_origin}
+    Set Suite Variable    ${sender_address}
+    Set Suite Variable    ${receiver_name}
+    Set Suite Variable    ${receiver_phone}
+    Set Suite Variable    ${receiver_shipping_destination}
+    Set Suite Variable    ${receiver_address}
+    Set Suite Variable    ${courier_label} 
+    Set Suite Variable    ${zipcode_label} 
+    Set Suite Variable    ${province_label} 
+    Set Suite Variable    ${customer_label}
+    Set Suite Variable    ${phone_label}
+    Set Suite Variable    ${tracking_label}
+    
+Delete Row In Excel
+    [Arguments]    ${file_path}    ${sheet_name}    ${row_to_delete}
+    ${workbook}=    Evaluate    openpyxl.load_workbook(r"${file_path}")
+    ${sheet}=    Set Variable    ${workbook}[${sheet_name}]
+    ${row_to_delete_int}=    Convert To Integer    ${row_to_delete}
+    Run Keyword    Call Method    ${sheet}    delete_rows    ${row_to_delete_int}
+    Run Keyword    Call Method    ${workbook}    save    ${file_path}
+    Run Keyword    Call Method    ${workbook}    close
+
+Set Tomorrow Date
+    ${today}=    Get Current Date    result_format=%Y-%m-%d
+    ${tomorrow_day}=    Add Time To Date    ${today}    1 days    result_format=%d-%m-%Y
+    ${day}    Split String And Select    ${tomorrow_day}    -    0
+    ${month}    Split String And Select    ${tomorrow_day}    -    1
+    ${year}    Split String And Select    ${tomorrow_day}    -    2
+    ${year_be}    Evaluate    int(${year}) + 543
+    ${tomorrow}    Set Variable    ${day}-${month}-${year_be}
+    RETURN    ${tomorrow}
+
+Set Today
+    ${date_YYYY_MM_DD}   Get Current Date
+    ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%d-%m-%Y
+    ${d}    Split String And Select    ${date_YYYY_MM_DD}    -    0
+    ${m}    Split String And Select    ${date_YYYY_MM_DD}    -    1
+    ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
+    ${year}    Convert To Integer    ${y}
+    ${year}    Evaluate    ${y} + 543
+    ${Today}    Set Variable    ${d}-${m}-${year}
+    RETURN    ${Today}

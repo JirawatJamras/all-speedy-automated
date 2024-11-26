@@ -1,16 +1,15 @@
 ######################## DPS ########################
 
-dps_login_user_01:
-  username: out-sumitrawic@gosoft.co.th
-  password: 11111111
-
-dps_login_user_02:
-  username: testloginspeedy
-  password: 11111111
-
-dps_login_user_03:
-  username: out-sumitrawic@gosoft.co.th
-  password: Vasup#123456
+##### Functional test user #####
+# dps_login_user_01:
+#   username: out-sumitrawic@gosoft.co.th
+#   password: 11111111
+# dps_login_user_02:
+#   username: testloginspeedy
+#   password: 11111111
+# dps_login_user_03:
+#   username: out-sumitrawic@gosoft.co.th
+#   password: Vasup#123456
 
 dps_login_user_04:
   username: testloginspeedyldap03@cpall.store
@@ -22,24 +21,19 @@ b2c_login_user_01:
   username: idc@gmail.com
   password: P@ssw0rd
 
-b2c_login_user_02:
-  username: vrk@gmail.com
-  password: P@ssw0rd
-
 ######################## C2C ########################
 
 c2c_login_user_01:
   username: chayathit2593@gmail.com
   password: test1234
 
-c2c_login_user_02:
-  username: ik.watcharakorn.toei@gmail.com
-  password: 0910408910
+##### Functional test user #####
+# c2c_login_user_02:
+#   username: ik.watcharakorn.toei@gmail.com
+#   password: 0910408910
 
 ######################## PMS ########################
 
 pms_login_user_01:
   username: testloginspeedyldap03@cpall.store
   password: id711711711711
-
-######################## SPS ########################

@@ -23,7 +23,6 @@ Verify Pouch In Pouch Page
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {checked}    ${checked}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {update_date}    ${update_date}
     Scroll Element Into View    ${dps_txt_pouch_in_pouch_list}
-    Wait Until Element Is Visible    ${dps_txt_pouch_in_pouch_list}    timeout=5s
     ${actual_update_date}=    Get Text    ${dps_txt_pouch_in_pouch_list}//td[6]
     ${expected_update_date_format}    Convert Date    ${actual_update_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
     Should Be Equal    ${actual_update_date}   ${expected_update_date_format}
@@ -76,7 +75,7 @@ Verify Data Of Information Section In Pouch Detail Popup
 
 Verify Label Section In Pouch Detail Popup
     [Arguments]    ${destination_warehouse_name}    ${number}    ${route}
-    ...    ${simbol}    ${pouch_number}
+    ...    ${symbol}    ${pouch_number}
     ${actual_destination_warehouse_name}=    Get Text   ${dps_txt_destination_warehouse_in_pouch_label}
     ${actual_number}=    Get Text    ${dps_txt_number_in_pouch_label}
     ${actual_route}=    Get Text    ${dps_txt_route_in_pouch_label}
@@ -84,8 +83,8 @@ Verify Label Section In Pouch Detail Popup
     Should Be Equal    ${actual_destination_warehouse_name}    ${destination_warehouse_name}
     Should Be Equal    ${actual_number}    ${number}
     Should Be Equal    ${actual_route}    ${route}
-    IF    '${simbol}' == 'รูปดาว'
-        Wait Until Element Is Visible    ${dps_img_star_simbol_pouch_label}    timeout=10s
+    IF    '${symbol}' == 'รูปดาว'
+        Wait Until Element Is Visible    ${dps_img_star_symbol_pouch_label}    timeout=10s
     END
     Should Be Equal    ${actual_pouch_number}    ${pouch_number}
     Wait Until Element Is Visible    ${dps_txt_pouch_number_pouch_label}    timeout=10s
@@ -95,8 +94,6 @@ Verify Label In Table On Pouch Detail Popup
     [Arguments]    ${expected_title}    ${txt_pouch_number}    ${txt_destination_warehouse}
     ...    ${txt_pickup_place}    ${txt_type}    ${txt_parcel_status}
     ...    ${btn_print_pouch}
-    # //tr[th='${txt_pouch_number}' and th='${txt_destination_warehouse}' and th='${txt_pickup_place}' and th='${txt_type}' and th='${txt_parcel_status}']
-    # //tr[th='หมายเลขพัสดุ' and th='คลังปลายทาง' and th='สถานที่รับพัสดุ' and th='ประเภท' and th='สถานะพัสดุ']
     ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pouch_number}    ${txt_pouch_number}
     ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_destination_warehouse}    ${txt_destination_warehouse}
     ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pickup_place}    ${txt_pickup_place}
@@ -150,7 +147,8 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             Sleep    5s
-            Click ESC On Keyboard
+            common.Click ESC On Keyboard    #FOR MAC
+            # common.Click Space On Keyboard    #FOR WINDOW
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
@@ -177,7 +175,7 @@ Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             Sleep    5s
-            Click ESC On Keyboard
+            common.Click ESC On Keyboard
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
@@ -207,8 +205,9 @@ Click Close Pouch/Print Label Btton On Warning Popup
 
 Verify Transaction Complete Popup
     [Arguments]    ${expected}
+    Sleep    3s
     ${dps_txt_transaction_complete_popup}=    Replace String    ${dps_txt_transaction_complete_popup}    {value}    ${expected}
-    Wait Until Element Is Visible    ${dps_txt_transaction_complete_popup}    timeout=10s
+    Wait Until Element Is Visible    ${dps_txt_transaction_complete_popup}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text}=    Get Text    ${dps_txt_transaction_complete_popup} 
     Should Be Equal    ${actual_text}    ${expected}
 

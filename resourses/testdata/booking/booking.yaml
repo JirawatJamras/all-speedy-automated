@@ -24,7 +24,7 @@ Booking_S002:
   booking_item: 1 รายการ
   parcel_size:  A4
   parcel_package_type:  ซอง
-  price_value: 50.00
+  price_value: '50.00'
   total_price_amount:  '1'
   total_price_value1: 'NaN'
   total_price_value2:  '50.00'
@@ -60,7 +60,8 @@ Booking_S003:
   discount_value: '5.00'
   price_value: '80.00'
   total_price_amount:  '1'
-  total_price_value:  '75.00'
+  total_price_value1: 'NaN'
+  total_price_value2:  '75.00'
   text_price_value: 80.00 บาท
 
 Booking_S004:
@@ -79,17 +80,17 @@ Booking_S004:
   store_code:  '15888'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
-  parcel_price: '50'
+  parcel_price: '50.00'
   parcel_size:  XS
   parcel_package_type:  กล่อง
-  parcel_cod: 5000
+  parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify2: 5,000
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  'NaN'
+  total_price_value1:  'NaN'
   total_price_value2:  '200.00'
 
 Booking_S005:
@@ -110,8 +111,8 @@ Booking_S005:
   booking_item: 1 รายการ
   parcel_size: S
   parcel_package_type:  กล่อง
-  price_value: 55.00
-  parcel_cod: 5000
+  price_value: '55.00'
+  parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
@@ -124,7 +125,8 @@ Booking_S005:
     condition: สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: '5.00'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
@@ -156,7 +158,7 @@ Booking_S006:
   total_price_amount:  '1'
   total_price_value1:  'NaN'
   total_price_value2:  '186.00'
-  price_value: 80.00
+  price_value: '80.00'
 
 Booking_S007:
   parcel_type:  พัสดุทั่วไป
@@ -172,7 +174,7 @@ Booking_S007:
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   parcel_size:  L
   parcel_package_type:  กล่อง
-  parcel_insure: 2500
+  parcel_insure: '2500'
   buy_insurance_verify: 2,500.00
   parcel_detail_remark:  ระวังพัสดุเสียหาย
   price_value: '120.00'
@@ -185,15 +187,15 @@ Booking_S007:
     condition:  สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: 'NaN'
+  discount_value1: 'NaN'
   discount_value2: '5.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   cod_fee_amount: '0'
   cod_fee_value: '0.00'
   total_price_amount:  '1'
-  total_price_value:  'NaN'
-  total_price_value2:  '200.00'
+  total_price_value1:  'NaN'
+  total_price_value2:  '221.00'
   store_code: '15888'
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   booking_name:  Booking DRY
@@ -213,20 +215,20 @@ Booking_S008:
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
   parcel_size:  XL
   parcel_package_type:  กล่อง
-  parcel_insure: 2500
+  parcel_insure: '2500'
   parcel_insure_verify: 2,500.00
   parcel_insure_verify2: 2,500
-  parcel_cod: 5000
+  parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify2: 5,000
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
-  parcel_price_verify: '200'
+  parcel_price_verify: '200.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  'NaN'
+  total_price_value1:  'NaN'
   total_price_value2:  '456.00'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
@@ -245,10 +247,10 @@ Booking_S009:
   receiver_address: 47 หมู่ 4
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  price_value: 300.00
-  buy_insurance: 2500
+  price_value: '300.00'
+  buy_insurance: '2500'
   buy_insurance_verify: '2,500.00'
-  parcel_cod: 5000
+  parcel_cod: '5000'
   parcel_cod_verify: '5,000.00'
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
@@ -267,7 +269,8 @@ Booking_S009:
     condition: สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: '5.00'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   cod_fee_amount: '1'
@@ -294,7 +297,7 @@ Booking_S010:
   booking_item: 1 รายการ
   parcel_size:  A4
   parcel_package_type:  ซอง
-  price_value: 20.00
+  price_value: '20.00'
   total_price_amount:  '1'
   total_price_value1:  'NaN'
   total_price_value2:  '20.00'
@@ -310,14 +313,14 @@ Booking_S011:
   receiver_name: สมใจ ดีดีดี
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
   receiver_store_code_5_digits:  '01523'
-  store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
-  store_address_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
+  receiver_store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
+  receiver_store_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
   booking_name:  Booking DRY
   booking_item: 1 รายการ
   parcel_size:  A3
   parcel_package_type:  ซอง
   parcel_detail_remark:  ระวังพัสดุเสียหาย
-  parcel_price_verify: '40'
+  price_value: '40.00'
   promotion:  SPBH5B
   promotion_detail:
     discount:  5 บาท
@@ -327,10 +330,10 @@ Booking_S011:
     condition:  สำหรับลูกค้าที่เป็นกล่อง
     period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
   discount_amount: '1'
-  discount_value: 'NaN'
+  discount_value1: 'NaN'
   discount_value2: '5.00'
   total_price_amount:  '1'
-  total_price_value:  'NaN'
+  total_price_value1:  'NaN'
   total_price_value2:  '35.00'
   store_code:  '15888'
 
@@ -347,8 +350,8 @@ Booking_S012:
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
   parcel_size: XS
-  price_value: 20.00
-  parcel_cod:  5000
+  price_value: '20.00'
+  parcel_cod:  '5000'
   parcel_cod_verify:  5,000.00
   parcel_cod_verify2:  5,000
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
@@ -362,7 +365,7 @@ Booking_S012:
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  NaN
+  total_price_value1:  'NaN'
   total_price_value2:  '170.00'
 
 Booking_S013:
@@ -383,8 +386,8 @@ Booking_S013:
   booking_item: 1 รายการ
   parcel_size: S
   parcel_package_type: กล่อง
-  price_value: 25.00
-  parcel_cod: 5000
+  price_value: '25.00'
+  parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
@@ -402,7 +405,7 @@ Booking_S013:
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value1:  'Nan'
+  total_price_value1:  'NaN'
   total_price_value2:  '170.00'
 
 Booking_S014:
@@ -425,11 +428,11 @@ Booking_S014:
   buy_insurance:  '2,500'
   buy_insurance_verify: '2,500.00'
   parcel_package_type: กล่อง
-  price_value: 40.00
+  price_value: '40.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   total_price_amount:  '1'
-  total_price_value1:  'Nan'
+  total_price_value1:  'NaN'
   total_price_value2:  '146.00'
 
 Booking_S015:
@@ -442,34 +445,34 @@ Booking_S015:
   receiver_phone: 0890000002
   receiver_name: สมใจ ดีดีดี
   receiver_store_code_5_digits: '01523'
-  store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
-  store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
   parcel_size:  L
   parcel_package_type:  กล่อง
-  parcel_price_verify: '70'
-  parcel_insure: 2500
+  parcel_price_verify: '70.00'
+  parcel_insure: '2500'
   buy_insurance_verify: 2,500.00
   parcel_detail_remark:  ระวังพัสดุเสียหาย
   promotion:  SPBH5B
   promotion_detail:
     discount:  5 บาท
-    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
-    parcel_size:  ทุกขนาด
-    expired_date:  30 ตุลาคม 2568
-    condition:  สำหรับลูกค้าที่เป็นกล่อง
-    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
-  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
-  booking_name:  Booking DRY
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period: 08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  shipping_origin: เลือกร้าน 7-11 ต้นทาง
+  booking_name: Booking DRY
   booking_item: 1 รายการ
   discount_amount: '1'
-  discount_value: 'NaN'
+  discount_value1: 'NaN'
   discount_value2: '5.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   cod_fee_amount: '0'
   cod_fee_value: '0.00'
   total_price_amount:  '1'
-  total_price_value:  'NaN'
+  total_price_value1:  'NaN'
   total_price_value2:  '171.00'
   store_code:  '15888'
 
@@ -487,22 +490,20 @@ Booking_S016:
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
   parcel_size:  XL
   parcel_package_type:  กล่อง
-  parcel_insure: 2500
+  parcel_insure: '2500'
   parcel_insure_verify: 2,500.00
   parcel_insure_verify2: 2,500
-  parcel_cod: 5000
+  parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify2: 5,000
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_price_verify: '140.00'
-  discount_amount: '0'
-  discount_value: '0.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value:  'NaN'
+  total_price_value1:  'NaN'
   total_price_value2:  '396.00'
   booking_name:  Booking DRY
   booking_item: 1 รายการ
@@ -522,7 +523,7 @@ Booking_S017:
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
   parcel_size: XXL
-  price_value: 260.00
+  price_value: '260.00'
   buy_insurance:  '2,500'
   buy_insurance_verify: '2,500.00'
   parcel_cod:  '5000'
@@ -559,7 +560,7 @@ Booking_S018:
   parcel_type: พัสดุควบคุมอุณหภูมิ
   pickup_time:
     input: ช่วงบ่าย 13:00 - 16:00
-    expected: 13:00:00 - 16:00    #13:00 - 16:00
+    expected: 13:00 - 16:00
   pickup_point: บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
 
 Booking_S019:
@@ -612,7 +613,7 @@ Booking_S020:
   booking_name:  Booking CHILLED
   booking_item: 1 รายการ
   parcel_package_type:  กล่อง
-  price_value: 230
+  price_value: '230'
   discount_amount: '1'
   discount_value: 'NaN'
   discount_value2: '5.00'
@@ -626,30 +627,31 @@ Booking_S020:
 
 Booking_S021:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
-  sender_phone: 0899999999
+  sender_phone: '0899999999'
   sender_name: สมชาย สายเสมอ
-  sender_address: 48/698 
+  sender_address: '48/698' 
   sender_postcode_5_digits: '10230'
   sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
-  receiver_phone: 0890000002
+  receiver_phone: '0890000002'
   receiver_name: สมใจ ดีดีดี
-  receiver_address: 47 หมู่ 4
+  receiver_address: '47 หมู่ 4'
   receiver_postcode_5_digits: '86110'
   receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
-  parcel_size: S2
-  parcel_cod:  5000
-  parcel_cod_verify:  5,000.00
+  parcel_size: 'S2'
+  parcel_cod:  '5000'
+  parcel_cod_verify:  '5,000.00'
   booking_name:  Booking CHILLED
   shipping_origin:  รอบรถเข้ารับพัสดุ
   store_code:  '15888'
-  booking_item: 1 รายการ
+  booking_item: '1 รายการ'
   parcel_package_type:  กล่อง
-  price_value: 250.00
+  price_value: '250.00'
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
   total_price_value:  'NaN'
   total_price_value2:  '400.00'
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
 
 Booking_S022:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
@@ -669,8 +671,8 @@ Booking_S022:
   booking_item: 1 รายการ
   parcel_size: A1
   parcel_package_type: กล่อง
-  price_value: 290
-  parcel_cod: 5000
+  price_value: '290'
+  parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
@@ -688,7 +690,7 @@ Booking_S022:
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value1:  'Nan'
+  total_price_value1:  'NaN'
   total_price_value2: '445.00'
 
 Booking_S023:
@@ -709,7 +711,7 @@ Booking_S023:
   booking_item: 1 รายการ
   parcel_size:  A2
   parcel_package_type:  กล่อง
-  price_value: 330
+  price_value: '330'
   total_price_amount:  '1'
   total_price_value1: 'NaN'
   total_price_value2:  '330.00'
@@ -732,9 +734,9 @@ Booking_S024:
   booking_item: 1 รายการ
   parcel_size: S0
   parcel_package_type: กล่อง
-  price_value: 170
+  price_value: '170'
   total_price_amount:  '1'
-  total_price_value1:  'Nan'
+  total_price_value1:  'NaN'
   total_price_value2:  '170.00'
 
 Booking_S025:
@@ -751,7 +753,7 @@ Booking_S025:
   store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
   store_address_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
   parcel_size:  S1    
-  price_value: 210.00
+  price_value: '210.00'
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน    
   promotion:  SPBH5B    
   promotion_detail:    
@@ -783,8 +785,8 @@ Booking_S026:
   receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
   receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
   parcel_size: S2   
-  price_value: 230.00
-  parcel_cod:  5000
+  price_value: '230.00'
+  parcel_cod:  '5000'
   parcel_cod_verify:  5,000.00
   img_sender_heart: รูปหัวใจสีแดง
   img_receiver_heart: รูปหัวใจสีแดง
@@ -817,8 +819,8 @@ Booking_S027:
   booking_item: 1 รายการ
   parcel_size: A1
   parcel_package_type: กล่อง
-  price_value: 270
-  parcel_cod: 5000
+  price_value: '270'
+  parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
@@ -836,7 +838,7 @@ Booking_S027:
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value1:  'Nan'
+  total_price_value1:  'NaN'
   total_price_value2:  '415.00'
 
 Booking_S028:
@@ -857,11 +859,11 @@ Booking_S028:
   booking_item: 1 รายการ
   parcel_size: A2
   parcel_package_type: กล่อง
-  price_value: 310
+  price_value: '310'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
   total_price_amount:  '1'
-  total_price_value1:  'Nan'
+  total_price_value1:  'NaN'
   total_price_value2:  '310.00'
 
 Booking_S030:
@@ -1216,7 +1218,7 @@ Booking_S048:
   add_new_pickup:
     parcel_type: พัสดุทั่วไป (Dry)
     input: 'ช่วงเช้า 09:00 - 12:00'
-    expected: 09:00:00 - 12:00    #'09:00 - 12:00'
+    expected: '09:00 - 12:00'
 
 Booking_S050:
   old_return_business:

@@ -13,10 +13,9 @@ ${b2c_txt_parcel_status_booking_detail_page}    //*[@class='hidden sm:inline']//
 ${b2c_txt_booking_id_booking_detail_page}    //strong[text()='{value}']/../../..//div[2]//span
 ${b2c_txt_booking_name_booking_detail_page}    //strong[text()='{value}']/../../..//div[4]//span
 ${b2c_txt_booking_date_and_time_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='{value}']/../../..//div[2]//span
-${b2c_txt_shipping_origin_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='ต้นทางจัดส่ง :']/../../..//div[2]//span
+${b2c_txt_shipping_origin_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='{value}']/../../..//div[2]//span
 ${b2c_txt_parcel_list_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='{value}']
 ${b2c_txt_booking_summary_booking_detail_page}    //*[@class='hidden sm:inline']//strong[text()='{value}']
-${b2c_txt_timestamp_after_print_label}    //span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']/../../..//span[contains(text(),'{value}')]
 ${b2c_txt_edit_booking_list}    //div[@class='ant-modal-content']//div[text()='{value}']
 ${b2c_txt_parcel_type}    //form[@id='detail_form']//strong[contains(text(),'{value}')]/../../..
 ${b2c_txt_booking_name}    //form[@id='detail_form']//strong[contains(text(),'{value}')]/../../..//input
@@ -50,10 +49,10 @@ ${b2c_txt_selected_pickup_type}    //div[text()='{value}']/../../..//span[contai
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 
-${b2c_img_red_heart_front_sender}    (//strong[text()='ผู้ส่ง : '])[1]/../../../../span[@role='img' and contains(@style,'color: red')]
-${b2c_img_white_heart_front_sender}    (//strong[text()='ผู้ส่ง : '])[1]/../../../../span[@role='img' and not(contains(@style,'color: red'))]
-${b2c_img_red_heart_front_receiver}    (//strong[text()='ผู้รับ : '])[1]/../../../../span[@role='img' and contains(@style,'color: red')]
-${b2c_img_white_heart_front_receiver}    (//strong[text()='ผู้รับ : '])[1]/../../../../span[@role='img' and not(contains(@style,'color: red'))]
+${b2c_img_red_heart_front_sender}    (//strong[text()='{value} '])[1]/../../../../span[@role='img' and contains(@style,'color: red')]
+${b2c_img_white_heart_front_sender}    (//strong[text()='{value} '])[1]/../../../../span[@role='img' and not(contains(@style,'color: red'))]
+${b2c_img_red_heart_front_receiver}    (//strong[text()='{value} '])[1]/../../../../span[@role='img' and contains(@style,'color: red')]
+${b2c_img_white_heart_front_receiver}    (//strong[text()='{value} '])[1]/../../../../span[@role='img' and not(contains(@style,'color: red'))]
 ${b2c_img_loading}    //div[@role='dialog']//img
 ${b2c_img_logo_speed_d}    //div[text()='{value}']/../../../..//img
 ${b2c_img_qr_code}    //div[text()='{value}']/../../../..//canvas
@@ -99,7 +98,7 @@ ${b2c_txtbox_receiver_postcode_edit}    //input[@id='create_parcel_form_receiver
 ${b2c_txtbox_trigger_phone_number}    //input[@id='trigger_phoneNumber']
 
 ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
-${b2c_tab_pickup_Schedule}    //div[@role='tab']//div[text()='{value}']
+${b2c_tab_pickup_schedule}    //div[@role='tab']//div[text()='{value}']
 
 ${b2c_dialog_create_parcel}    //*[@role='dialog']
 

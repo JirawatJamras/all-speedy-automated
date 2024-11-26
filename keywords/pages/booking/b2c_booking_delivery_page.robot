@@ -1,7 +1,7 @@
 *** Keywords ***
 Verify Booking Page For Business Customer
-    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=5s
-    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=10s
+    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_business_customer']}  
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
     Wait Until Element Is Visible    ${btn_add}    timeout=${DEFAULT_TIMEOUT}
@@ -9,23 +9,23 @@ Verify Booking Page For Business Customer
     Should Be Equal    ${title}    ${Booking['text_title_booking_for_business_customer']}
 
 Verify Booking Page For General Customer 
-    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=5s
-    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=5s
+    ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']}
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
-    Wait Until Element Is Visible    ${btn_add}    timeout=30s
+    Wait Until Element Is Visible    ${btn_add}    timeout=${DEFAULT_TIMEOUT}
     ${title}=    Get Text    ${txt_title_booking}    
     Should Be Equal    ${title}    ${Booking['text_title_booking_for_general_customer']}
 
 Click Button To Add
     ${btn_add}=    Replace String    ${b2c_btn_add}    {value}    ${Booking['text_btn_add']}
-    Wait Until Element Is Enabled    ${btn_add}    timeout=30s
+    Wait Until Element Is Enabled    ${btn_add}    timeout=${DEFAULT_TIMEOUT}
     common.Click When Ready    ${btn_add}
 
 Verify Term & Condition 
     [Arguments]    ${txt_term_and_condition}    ${header_term_and_condition}
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
-    Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=30s
+    Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=${DEFAULT_TIMEOUT}
     ${actual_term_and_condition}=    Get Text    ${txt_term_and_condition}
     Should Be Equal    ${actual_term_and_condition}    ${header_term_and_condition}
 
@@ -34,7 +34,7 @@ Click Accept Terms of Service
     common.Click Xpath By JavaScript    ${btn_accept_terms_service}
 
 Verify Select Parcel Type
-    Wait Until Element Is Enabled   ${btn_parcel_type_dry}    timeout=30s
+    Wait Until Element Is Enabled   ${btn_parcel_type_dry}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_parcel_type_dry}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_parcel_type_chill}    timeout=${DEFAULT_TIMEOUT}
 
@@ -67,18 +67,12 @@ Click Close X Popup
 Click Latest Booking Created
     common.Click When Ready    ${btn_card_latest_booking}
 
-
-# Verify Close Pop-Up
-#     Wait Until Element Is Visible    ${close_noti_txt}    timeout=30s
-#     ${button_text}=    Get Text    ${close_noti_txt}
-#     Should Be Equal    ${button_text}    ${AllSpeedy_B2C_005_ID_1['closepopun_noti']}
-
 Verify Create Parcel Page Sender Step
     [Arguments]    ${title}    ${parcel_sender_information}    ${phone_sender}    ${name_sender}    ${address_sender}    ${postcode_sender}  
     ${txt_parcel_sender_information}=  Replace String   ${txt_parcel_sender_information}   {value}   ${parcel_sender_information}
     ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
-    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
-    Wait Until Element Is Not Visible    ${status_active_sender}    timeout=30s
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${status_active_sender}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
     ${actual_text_parcel_sender_information}=    Get Text    ${txt_parcel_sender_information}
     ${actual_text_phone}=    Get Text    ${txt_phone_sender}
@@ -95,12 +89,10 @@ Verify Create Parcel Page Sender Step
 Verify Data Sender
     [Arguments]   ${phone_sender}    ${name_sender}    ${address_sender}    ${full_postcode_sender}
     ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
-    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_phone_sender}=    Get Value    ${txtbox_phone_sender}
     ${actual_text_name_sender}=    Get Value    ${txtbox_name_sender}
     ${actual_text_address_sender}=    Get Value    ${txtbox_address_sender}
-    # ${actual_textbox_full_postcode_sender}=    Get Text    ${txtbox_full_postcode_sender}
-    # ${actual_text_full_postcode_sender}=    Get Text    ${txt_full_postcode_sender}
     Should Be Equal    ${actual_text_phone_sender}    ${phone_sender}
     Should Be Equal    ${actual_text_name_sender}    ${name_sender}
     Should Be Equal    ${actual_text_address_sender}    ${address_sender}
@@ -120,11 +112,10 @@ Verify full_postcode_sender Equal Text
 Verify Data Receiver When Select Home
     [Arguments]   ${phone_receiver}    ${name_receiver}    ${address_receiver}    ${full_postcode_receiver} 
     ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
-    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
     ${actual_text_address_receiver}=    Get Value    ${txtbox_address_receiver}
-    #${actual_text_full_postcode_receiver}=    Get Text    ${txt_full_postcode_receiver}
     Should Be Equal    ${actual_text_phone_receiver}    ${phone_receiver}
     Should Be Equal    ${actual_text_name_receiver}    ${name_receiver}
     Should Be Equal    ${actual_text_address_receiver}    ${address_receiver}
@@ -145,7 +136,7 @@ Verify full_postcode_receiver Equal Text
 Verify Data Receiver When Select 7-ELEVEN Store
     [Arguments]   ${phone_receiver}    ${name_receiver}    ${store_address_receiver}
     ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
-    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_phone_receiver}=    Get Value    ${txtbox_phone_receiver}
     ${actual_text_name_receiver}=    Get Value    ${txtbox_name_receiver}
     ${tab_send_to_store_verify}=    Get Element Attribute    ${tab_send_to_store_verify}    aria-selected
@@ -159,8 +150,8 @@ Verify Create Parcel Page Receiver Step When Select Home
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}    ${postcode_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
     ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
-    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
-    Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
     ${actual_text_parcel_receiver_information}=    Get Text    ${txt_parcel_receiver_information}
     ${actual_text_phone}=    Get Text    ${txt_phone_receiver}
@@ -180,8 +171,8 @@ Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     [Arguments]    ${title}    ${parcel_receiver_information}   ${phone_receiver}    ${name_receiver}    ${location_receiver}    ${address_receiver}
     ${txt_parcel_receiver_information}=  Replace String   ${txt_parcel_receiver_information}   {value}   ${parcel_receiver_information}
     ${title_create_parcel_page_txt}=    Replace String    ${title_create_parcel_page_txt}    {value}    ${Booking['text_title']}
-    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=30s
-    Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=30s
+    Wait Until Element Is Visible    ${title_create_parcel_page_txt}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Not Visible    ${status_active_receiver}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get Text    ${txt_title_create_parcel_page}
     ${actual_text_parcel_receiver_information}=    Get Text    ${txt_parcel_receiver_information}
     ${actual_text_phone}=    Get Text    ${txt_phone_receiver}
@@ -202,7 +193,7 @@ Click Close Parcel Page
 
 Click Choose Favorites 
     common.Click When Ready    ${choose_favorites_btn}
-    Wait Until Element Is Visible    ${favorites_defult_text}    timeout=30s
+    Wait Until Element Is Visible    ${favorites_defult_text}    timeout=${DEFAULT_TIMEOUT}
 
 Click Choose Favorites Receiver
     common.Click When Ready    ${choose_favorites_btn}
@@ -217,7 +208,7 @@ Verify Favorites Sender PopUp
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_district}   ${sender_postcode_full_list[1]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_province}   ${sender_postcode_full_list[2]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${sender_postcode_full_list[3]}
-    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Favorites Receiver PopUp
     [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_address}    ${receiver_postcode_full}
@@ -229,7 +220,7 @@ Verify Favorites Receiver PopUp
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_district}   ${receiver_postcode_full_list[1]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_province}   ${receiver_postcode_full_list[2]}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_postal_code}   ${receiver_postcode_full_list[3]}    
-    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
     [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_store_address}
@@ -237,7 +228,7 @@ Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list_store}   {value_name}   ${receiver_name}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {store_address}   ${receiver_store_address_split[0]}  
-    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=${DEFAULT_TIMEOUT}
 
 Click Choose Favorites Receiver List When Address At 7-ELEVEN Store
     [Arguments]    ${receiver_phone}    ${receiver_name}    ${receiver_store_address}
@@ -277,12 +268,13 @@ Verify Choose Favorites Receiver List
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list}   {value_name}   ${receiver_name}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_address}   ${receiver_address}
-    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=30s
+    Wait Until Element Is Visible    ${selected_favorites_list}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Choose Receiver From Favorites
     [Arguments]    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode} 
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
-    Wait Until Element Is Visible    ${tab_send_to_home_verify}    timeout=30s
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
+    ${tab_send_to_home_verify}=    Replace String    ${tab_send_to_home_verify}    {value}    ${Booking['text_send_home']}
+    Wait Until Element Is Visible    ${tab_send_to_home_verify}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${txtbox_phone_receiver}
     ${name_text}=    Get Value    ${txtbox_name_receiver}
     ${address_text}=    Get Value    ${txtbox_address_receiver}
@@ -297,7 +289,7 @@ Click Favorites Default
 
 Input Special Letters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Clear Search Favorites TextBox
@@ -306,13 +298,13 @@ Clear Search Favorites TextBox
 
 Input Text Exceeds 100 Characters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Clear Element Text    ${search_favorites_txtbox}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Verify Popup Favorites Sender 
     ${favorites_accetp_btn}=    Replace String    ${favorites_accetp_btn}    {value}    ${Booking['text_btn_select']}
-    Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=30s 
+    Wait Until Element Is Visible    ${favorites_accetp_btn}    timeout=${DEFAULT_TIMEOUT} 
     ${title_text}=    Get Text    ${favorites_title_text}
     ${default_text}=    Get Text    ${favorites_default_text}
     Should Be Equal    ${title_text}    ${B2C_AddBooking_003_002['favorites_title_text']}
@@ -320,7 +312,7 @@ Verify Popup Favorites Sender
 
 Input Favorites TextBox Nomal Letters Less Than 100 Characters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Verify Favorites Text In TextBox
@@ -336,7 +328,7 @@ Verify Favorites Not Show Item Lists
 
 Input Favorites TextBox Nomal Letters More Than 100 Characters
     [Arguments]    ${search_txt}
-    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${search_favorites_txtbox}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${search_favorites_txtbox}    ${search_txt}
 
 Click Favorites Default List
@@ -350,7 +342,7 @@ Click Cancel Favorites List
     common.Click When Ready    ${cancel_favorites_btn}
 
 Verify Choose From Favorites
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     ${name_text}=    Get Value    ${name_sender_txtbox}
     ${address_text}=    Get Value    ${address_sender_txtbox}
@@ -361,7 +353,7 @@ Verify Choose From Favorites
     Should Be Equal    ${postcode_text}    ${b2c_addbooking_003_ID_5['verify_postcode_sender']}
 
 Verify Not Choose From Favorites
-    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=30s
+    Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     Should Not Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_6['verify_phone_sender']}    
     ${name_text}=    Get Value    ${name_sender_txtbox}
@@ -373,35 +365,35 @@ Verify Not Choose From Favorites
 
 Input Phone Sender
     [Arguments]    ${input_phone_sender}
-    Wait Until Element Is Visible    ${txtbox_phone_sender}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_phone_sender}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${txtbox_phone_sender}    ${input_phone_sender}
 
 Verify Phone Sender Value
     [Arguments]    ${verify_phone_sender_value}
-    Wait Until Element Is Visible    ${txtbox_phone_sender}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_phone_sender}    timeout=${DEFAULT_TIMEOUT}
     ${phone_sender_txt}=    Get Value    ${txtbox_phone_sender}
     Should Be Equal    ${phone_sender_txt}    ${verify_phone_sender_value}  
 
 Verify Phone Sender Error Msg
     [Arguments]    ${text_error_msg_phone_sender}
-    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${phone_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${phone_sender_error_msg}=    Get Text    ${phone_sender_txtbox}
     Should Be Equal    ${phone_sender_error_msg}    ${text_error_msg_phone_sender}
 
 Input Name Sender
     [Arguments]    ${input_name_sender}
-    Wait Until Element Is Visible    ${txtbox_name_sender}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_name_sender}    timeout=${DEFAULT_TIMEOUT}
     Input Text    ${txtbox_name_sender}    ${input_name_sender}
 
 Verify Name Sender Value
     [Arguments]    ${verify_name_sender_value}
-    Wait Until Element Is Visible    ${txtbox_name_sender}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_name_sender}    timeout=${DEFAULT_TIMEOUT}
     ${name_sender_txt}=    Get Value    ${txtbox_name_sender}
     Should Be Equal    ${name_sender_txt}    ${verify_name_sender_value} 
 
 Verify Name Sender Error Msg
     [Arguments]    ${text_error_msg_name_sender}
-    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${name_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${name_sender_error_msg}=    Get Text    ${name_sender_error_txt}
     Should Be Equal    ${name_sender_error_msg}    ${text_error_msg_name_sender}
 
@@ -411,13 +403,13 @@ Input Address Sender
 
 Verify Address Sender Value
     [Arguments]    ${verify_address_sender_value}
-    Wait Until Element Is Visible    ${txtbox_address_sender}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_address_sender}    timeout=${DEFAULT_TIMEOUT}
     ${address_sender_txt}=    Get Value    ${txtbox_address_sender}
     Should Be Equal    ${address_sender_txt}    ${verify_address_sender_value} 
 
 Verify Address Sender Error Msg
     [Arguments]    ${text_error_msg_address_sender}
-    Wait Until Element Is Visible    ${address_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${address_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${address_sender_error_msg}=    Get Text    ${address_sender_error_txt}
     Should Be Equal    ${address_sender_error_msg}    ${text_error_msg_address_sender}
 
@@ -447,7 +439,7 @@ Click Postcode Sender Lists
 
 Verify Postcode Sender Error Msg
     [Arguments]    ${text_error_msg_postcode_sender}
-    Wait Until Element Is Visible    ${postcode_sender_txtbox}    timeout=10s
+    Wait Until Element Is Visible    ${postcode_sender_txtbox}    timeout=${DEFAULT_TIMEOUT}
     ${postcode_sender_error_msg}=    Get Text    ${postcode_sender_error_txt}
     Should Be Equal    ${postcode_sender_error_msg}    ${text_error_msg_postcode_sender}
 
@@ -517,7 +509,7 @@ Input And Select Store Code Receiver
     FOR    ${i}    IN RANGE    0    5
         common.Input When Ready    ${txtbox_store_receiver}    ${input_store_receiver}
         Click Store Receiver Lists    ${store}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=10s
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=${DEFAULT_TIMEOUT}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
         common.Clear Value Input Text    ${txtbox_store_receiver}
     END
@@ -533,25 +525,25 @@ Click Store On Map
 
 Verify Phone Receiver Value
     [Arguments]    ${verify_phone_receiver_value}
-    Wait Until Element Is Visible    ${txtbox_phone_receiver}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_phone_receiver}    timeout=${DEFAULT_TIMEOUT}
     ${phone_receiver_txt}=    Get Value    ${txtbox_phone_receiver}
     Should Be Equal    ${phone_receiver_txt}    ${verify_phone_receiver_value} 
 
 Verify Name Receiver Value
     [Arguments]    ${verify_name_receiver_value}
-    Wait Until Element Is Visible    ${txtbox_name_receiver}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_name_receiver}    timeout=${DEFAULT_TIMEOUT}
     ${name_receiver_txt}=    Get Value    ${txtbox_name_receiver}
     Should Be Equal    ${name_receiver_txt}    ${verify_name_receiver_value} 
 
 Verify Address Receiver Value
     [Arguments]    ${verify_address_receiver_value}
-    Wait Until Element Is Visible    ${txtbox_address_receiver}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_address_receiver}    timeout=${DEFAULT_TIMEOUT}
     ${address_receiver_txt}=    Get Value    ${txtbox_address_receiver}
     Should Be Equal    ${address_receiver_txt}    ${verify_address_receiver_value} 
 
 Verify Full Post Code Value
     [Arguments]    ${verify_full_post_code_receiver_value}
-    Wait Until Element Is Visible    ${txtbox_full_postcode_sender}    timeout=10s
+    Wait Until Element Is Visible    ${txtbox_full_postcode_sender}    timeout=${DEFAULT_TIMEOUT}
     ${full_post_code_receiver_txt}=    Get Text    ${txtbox_full_postcode_sender}
     Should Be Equal    ${full_post_code_receiver_txt}    ${verify_full_post_code_receiver_value}
 
@@ -563,7 +555,7 @@ Verify Store Address Receiver
 Verify Created Booking On Booking Delivery Page
     [Arguments]    ${booking_id}    ${booking_time}    ${status_booking}    ${name_booking}    ${item_booking}    ${price_booking}    
     ${booking_id_replace}=    Replace String    ${txt_booking_id_in_list}    {value}    ${booking_id}
-    Wait Until Element Is Visible    ${booking_id_replace}    timeout=30s
+    Wait Until Element Is Visible    ${booking_id_replace}    timeout=${DEFAULT_TIMEOUT}
     Verify Booking ID Format And Value    ${booking_id_replace}    ${booking_id}
     ${booking_status_replace}=    Replace String    ${txt_booking_status_in_list}    {value}    ${booking_id}
     ${txt_status}=    Get Text    ${booking_status_replace}
@@ -678,6 +670,7 @@ Verify Parcel Detail Page of Create Parcel [Dry Parcel]
 Verify Textbox Value On Parcel Detail Step [Dry Parcel]
     [Arguments]    ${insure}    ${cod}    ${remark}
     ${insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
     ${actual_insure_amount}=    Get Value    ${insure_amount}
     ${actual_cod}=    Get Value    ${txtbox_cod}
     ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
@@ -688,6 +681,7 @@ Verify Textbox Value On Parcel Detail Step [Dry Parcel]
 Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
     [Arguments]    ${cod}    ${remark}
     ${txtbox_insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
+    ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
     ${actual_cod}=    Get Value    ${txtbox_cod}
     ${actual_remark}=    Get Text    ${txtbox_parcel_remark}
     Element Should Be Disabled    ${txtbox_insure_amount}
@@ -729,13 +723,16 @@ Verify Parcel Detail Page of Create Parcel [Chilled Parcel]
 
 Input Parcel Remark
     [Arguments]    ${value}
+    ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
     Input When Ready    ${txtbox_parcel_remark}    ${value}
 
 Input Promotion
     [Arguments]    ${value}
+    ${txtbox_promotion}=    Replace String    ${txtbox_promotion}    {value}    ${Booking['text_input_discount_code']}
     common.Input When Ready    ${txtbox_promotion}    ${value}
 
 Click Use Code Button
+    ${btn_use_code}=    Replace String    ${btn_use_code}    {value}    ${Booking['text_use_code']}
     Click When Ready    ${btn_use_code}
 
 Click Use Coupon

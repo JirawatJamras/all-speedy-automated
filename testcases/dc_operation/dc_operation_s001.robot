@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_S001
-    [Tags]    DC_Operation    UAT    In_Review
+    [Tags]    DC_Operation    UAT    Fail
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -21,7 +21,7 @@ DC_Operation_S001
     b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     # Expected
-    b2c_home_page.Verify Company profile page    ${DC_Operation_S001['company_name']}
+    b2c_home_page.Verify Company Profile Page    ${DC_Operation_S001['company_name']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001   Verify Home Page
 
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
@@ -64,8 +64,8 @@ DC_Operation_S001
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
     ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    เมืองนนทบุรี  #${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    บางเขน  #${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
     ...    ${DC_Operation_S001.receiving_cycle['province']}
     ...    ${DC_Operation_S001.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001   Verify Add Special Pickup Round Success
@@ -173,7 +173,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Import File Success
 
-    Log    Step No.17 cut off time
+    Log    Step No.17 Cut Off Time
     dps_home_page.Set Cut Off Time
     ...    ${DB_URI}
     ...    ${DATABASE_NAME}
@@ -217,12 +217,12 @@ DC_Operation_S001
     dps_login_page.Click Log On Button
     # Expected
     # dps_home_page.Wait Until DC Operation Home Page Loaded
-    # dps_home_page.Verify Homepage
-    # ...    ${dc_operation.breadcrumb['homepage']}
-    # ...    ${dc_operation.title['homepage']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Homepage Title
+    dps_home_page.Verify Homepage
+    ...    ${dc_operation.breadcrumb['homepage']}
+    ...    ${dc_operation.title['homepage']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Homepage Title
 
-    Log    Step No.20 เลือก role แอดมินคลัง
+    Log    Step No.20 เลือก Role แอดมินคลัง
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
     # Expected
@@ -245,7 +245,7 @@ DC_Operation_S001
 
     Log    Step No.23 คลิก Dropdown เลือกคลัง เป็น "คลัง DC BB"
     dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation.selected_warehouse_list['text_warehouse_DC_BB']}
-    # Defect175 Defect192
+    # Defect247
     # Expected
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -266,10 +266,10 @@ DC_Operation_S001
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Check Receiving Cycle Page
 
     Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
-    dps_check_receiving_cycle_page.Select Waiting Inventory Confirm List Tab   
-    # Defect175 Defect192
+    dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
+    # Defect247
     # Expected
-    dps_check_receiving_cycle_page.Verify Inventory Confirm List Tab 
+    dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
     ...    ${DC_Operation_S001.receiving_cycle['company_name']}   
@@ -284,7 +284,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Inventory Confirm List Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Warehouse Confirm List Tab
 
     Log    Step No.25 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
     dps_check_receiving_cycle_page.Click Pencil Icon  ${booking_id}
@@ -323,7 +323,7 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['canceled']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Pickup Schedule Change Status To Cancle
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Pickup Schedule Change Status To Cancel
 
     Log    Step No.27 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     Go To    ${B2C_UAT_URL}
@@ -333,7 +333,6 @@ DC_Operation_S001
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
-    # Defect208
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Canceled Status
     ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
@@ -346,8 +345,8 @@ DC_Operation_S001
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
     ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    เมืองนนทบุรี  #${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    บางเขน  #${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
     ...    ${DC_Operation_S001.receiving_cycle['province']}
     ...    ${DC_Operation_S001.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    Verify Parcel Pickup Schedule Change Status To Cancel
