@@ -825,6 +825,7 @@ DC_Operation_S010:
     parcel_owner: Speedy
     import_from1: Home
     import_from2: DC BB
+    import_from3: คลัง AC
     export_to1: '-'
     export_to2: คลัง AC
     export_to3: Store
@@ -835,9 +836,11 @@ DC_Operation_S010:
     parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
     parcel_status3: พัสดุออกจากคลังต้นทาง (DC BB)
     parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
+    parcel_status5: พัสดุออกจากคลังข้ามภาค (AC)
   data_in_import_task_tab:
     import_from1: Home
     import_from2: คลัง DC BB
+    import_from3: คลัง AC
     transport: CP All
     parcel_owner: Speedy
   check_close_pouch:
@@ -887,16 +890,22 @@ DC_Operation_S010:
       description: AC
     # - title: พัสดุรอ Scan out ไปคลัง
     #   description: RDC LP
+    - title: พัสดุออกจากคลังข้ามภาค
+      description: AC
   data_in_export_task_tab:
     export_to: คลัง AC
     transport: CP All
     parcel_owner: Speedy
   scan_out_waiting_scan:
-    receive_parcel_from: Home
+    tracking_number: '-'
+    receive_parcel_from1: Home
+    receive_parcel_from2: DCBB
     transport: CP All
     parcel_owner: Speedy
-    parcel_size: ซอง A4
-    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_size1: ซอง A4
+    parcel_size2: '-'
+    parcel_status1: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
   scan_out_list_data:
     tracking_number: '-'
     receive_parcel_from: Home
