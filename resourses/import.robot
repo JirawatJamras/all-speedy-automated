@@ -77,7 +77,7 @@ Resource                    locators/register/register_general_customers_page.ro
 Resource                    locators/register/register_business_pre_register.robot
 
 Variables                   testdata/register/register.yaml
-Resource                    testdata/upload_file/filepath.robot
+Resource                    testdata/filepath.robot
 
 ######################## PMS ########################
 Resource                    ../keywords/pages/pms/pms_landing_page.robot
@@ -92,9 +92,6 @@ Resource                    locators/pms/pms_landing_page.robot
 Resource                    locators/pms/pms_login_page.robot
 Resource                    locators/pms/pms_home_page.robot
 Resource                    locators/pms/pms_requests_page.robot
-Resource                    locators/pms/pms_request_detail_page.robot
-Resource                    locators/pms/pms_full_register_page.robot
-Resource                    locators/pms/pms_detail_full_register_page.robot
 
 ######################## Prerequisite ########################
 Resource                    ../keywords/pages/dc_operation/prerequisite.robot

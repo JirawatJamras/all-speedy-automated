@@ -486,17 +486,16 @@ DC_Operation_S003
     Log    Step No.11 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
-    ${update_date}    Set Date Pattern    ${today}
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    ${trackling_a}
+    ...    ${tracking_a}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['pouch_number']}
     ...    คลัง DC BB    #${DC_Operation_S003.scan_out_waiting_scan['receive_parcel_from']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_owner']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_size']}
-    ...    ${update_date}    # ${today}
+    ...    ${today}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Section Waiting List To Scan Out [Scan Out Page] 1
