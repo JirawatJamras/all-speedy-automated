@@ -1,15 +1,18 @@
 *** Settings ***
-Resource          ../../resourses/init_website.robot
-Resource          ../../resourses/import.robot
+Library    SeleniumLibrary
+Library    Python
+Force Tags    UAT
 
 *** Test Cases ***
+Press Appropriate Key Based on OS
+    ${os} =    Evaluate    platform.system().lower()    modules=platform
+    Run Keyword If    'darwin' == '${os}'    Press Key ESC  # macOS
+    ...               ELSE IF    'windows' in ${os}    Press Key Space  # Windows
+    ...               ELSE    Log    Unsupported OS
 
-Get Parcels And Sender Names
-    [Documentation]    Retrieve parcels' codes and sender's names from the API response
-    [Tags]    UAT
-    # ${ParcelsData}    Get Parcels And Sender Names    B2411000294
-    # ${parcel_code}    Get Parcel Codes By Sender Name    ${ParcelsData}    คุณ g
+*** Keywords ***
+Press Key ESC
+    Press Key    None    ESC
 
-    # ${test}=    Set Variable    robot --outputdir Prerequisite -v ENV:uat -t DC_Operation_S002 ../testcases/ > output.log
-    # ${result}=  OperatingSystem.Run    ${test}
-    # Log    Prerequisite DC_S002
+Press Key Space
+    Press Key    None    SPACE

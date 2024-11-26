@@ -166,7 +166,10 @@ Get Parcel ID By Sender Name
 
 Click ESC On Keyboard
     Switch Window    NEW
-    Press Keys    None   ESC
+    ${os} =    Evaluate    platform.system().lower()    modules=platform
+    Run Keyword If    'darwin' == '${os}'    Press Keys    None    ESC  # macOS
+    ...               ELSE IF    'windows' in ${os}    Press Keys    None    SPACE  # Windows
+    ...               ELSE    Log    Unsupported OS
     Switch Window    MAIN
 
 Click Space On Keyboard
