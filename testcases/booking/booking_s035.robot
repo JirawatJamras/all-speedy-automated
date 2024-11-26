@@ -11,7 +11,7 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 Booking_S035 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
     [Tags]    Booking    Customer_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect054    Defect055    Defect063    Defect072    Defect075    Defect076    Defect077    Defect078    Defect084    Defect099    Defect101    Defect115
-    Log    Log-In
+    Log    Login
     common.Open URL    ${C2C_UAT_URL}
     c2c_landing_page.Click Log In Button In Landing Page
     c2c_login.Input Email    ${c2c_login_user_01['username']}
