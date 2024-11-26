@@ -338,14 +338,14 @@ DC_Operation_S011
     # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     # dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     # Expected
-    # Verify Label Wait Scan In Warehouse AC
+    # dps_scan_page.Verify Label Wait Scan In Warehouse AC
     # ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_id']}
     # ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['pouch_number']}
     # ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['receive_parcel_from']}
     # ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_size']}
     # ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['receiving_date']}
     # ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_status']}
-    # Verify Data List Wait Scan In Warehouse AC
+    # dps_scan_page.Verify Data List Wait Scan In Warehouse AC
     # ...    ${tracking_j}
     # ...    ${DC_Operation_S011.scan_in_value_waiting_scan_warehouse_ac['pouch_number']}
     # ...    คลัง DC BB    #${DC_Operation_S011.scan_in_value_waiting_scan_warehouse_ac['receive_parcel_from']}

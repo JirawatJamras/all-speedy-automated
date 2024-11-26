@@ -858,7 +858,7 @@ DC_Operation_S010:
     crossdock_warehouse: 'AC'
     destination_warehouse: RDC LP
     parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
-    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
     courier: CP All
     origin_warehouse: DCBB
     send_parcel_to: Store (01015)
@@ -953,13 +953,13 @@ DC_Operation_S010:
     parcel_amount: '1'
     courier: CP All
     origin_warehoues: DC BB
-    destination_warehourse: DC SB
-    crossdock_warehouse: '-'
+    destination_warehourse: RDC LP
+    crossdock_warehouse: AC
   data_in_parcel_in_pouch_scan_in_page:
-    destination_warehourse: DC SB
+    destination_warehourse: RDC LP
     parcel_size: ซอง A4
     type: B2C
-    parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
+    parcel_status: พัสดุถึงคลังปลายทาง
   scan_in_data_waiting_scan_warehouse_ac:
     tracking_number: '-'
     pouch_number: '-'
