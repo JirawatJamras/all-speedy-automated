@@ -342,14 +342,15 @@ DC_Operation_S014
 
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
-    #In progress 
-    
-    # dps_scan_page.Click Print Button By Data
-    # ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
-    # ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
+    dps_wait_delivery.Click Print Button By Data
+    ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
+    ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
+    ...    ${today}
+    ...    ${DC_Operation_S014.wait_derivery_data_list['status']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
-    # common.Click ESC On Keyboard
-        
+    Sleep    5s
+    common.Click ESC On Keyboard
+      
     # Expected
 

@@ -587,18 +587,16 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data Delivery List
 
-    Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
-    
-    dps_scan_page.Click Print Button By Data
+    Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ 
+    dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S003.wait_derivery_data_list['transport']}
+    ...    ${today}
+    ...    ${DC_Operation_S003.wait_derivery_data_list['status']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # common.Click ESC On Keyboard
-    Switch Window    NEW
-    Press Keys    None    TAB+SPACE
-    Switch Window    MAIN         
-    # Expected
+    Sleep    5s
+    common.Click ESC On Keyboard
 
 
 
