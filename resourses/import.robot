@@ -70,13 +70,11 @@ Variables                   testdata/dc_operation/booking_dry_test_dc.yaml
 Resource                    ../keywords/pages/register/register_general_customers_page.robot
 Resource                    ../keywords/pages/register/register_business_customers_page.robot
 Resource                    ../keywords/pages/register/register_business_pre_register.robot
-Resource                    ../keywords/pages/register/register_business_full_register.robot
 Resource                    ../keywords/pages/register/register_business_profile_business.robot
 
 Resource                    locators/register/register_business_customers_page.robot
 Resource                    locators/register/register_general_customers_page.robot
 Resource                    locators/register/register_business_pre_register.robot
-Resource                    locators/register/register_business_full_register.robot
 
 Variables                   testdata/register/register.yaml
 Resource                    testdata/upload_file/filepath.robot
