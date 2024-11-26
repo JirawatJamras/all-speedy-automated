@@ -12,7 +12,9 @@ DC_Operation_S006
     [Tags]    DC_Operation    UAT
 
     Log    Prerequisite
-    DC_Operation_S002
+    # DC_Operation_S002
+    # ${tracking_e}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S006['sender_name']}
+    ${tracking_e}=    Set Variable    SPBD241100021155    # Hard code for development.
 
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -59,9 +61,9 @@ DC_Operation_S006
     # ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
     # ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
     # dps_home_page.Verify Data In Import Task Tab
-    # ...    home  # ${DC_Operation_S013.data_in_import_task_tab['import_from1']}
-    # ...    CPALL  # ${DC_Operation_S013.data_in_import_task_tab['transport']}
-    # ...    speedy  # ${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
+    # ...    home  # ${DC_Operation_S006.data_in_import_task_tab['import_from1']}
+    # ...    CPALL  # ${DC_Operation_S006.data_in_import_task_tab['transport']}
+    # ...    speedy  # ${DC_Operation_S006.data_in_import_task_tab['parcel_owner']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006   Verify Import Task Tab
 
     Log    Step No.3 เข้าเมนูจัดการ Pouch และ คลิก Dropdown เลือกสิทธิ์คลังเป็น DC BB
@@ -412,11 +414,13 @@ DC_Operation_S006
     # Expected
     dps_scan_page.Verify Popup Save Data Success
     ...    ${dc_operation['text_save_success']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Popup Save Data Success
 
     Log    Step No.29 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Navigate To Scan Page After Scan Out
 
     Log    Step No.30 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
