@@ -35,6 +35,7 @@ ${dps_btn_seach_on_pouch_detail_on_scan_page}    //strong[text()='{label}']/../.
 ${dps_btn_select_all_on_move_status_tab}    //input[@aria-label='Select all']/..
 ${dps_btn_on_move_status_tab}    //div[@aria-hidden='false']//div[@aria-hidden='false']//button//span[text()='{value}']/..
 ${dps_btn_select_on_move_status_tab}    //td[text()='{value}']/..//input/..
+${dps_btn_select_statuscode_on_move_status_tab}    //div[@id='statusCode']//input/..
 
 ${dps_input_route_parcel_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]//input
 
