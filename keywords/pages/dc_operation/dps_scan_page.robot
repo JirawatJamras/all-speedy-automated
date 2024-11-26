@@ -932,21 +932,22 @@ Verify Search Pouch Number Result
     Should Be Equal As Strings    ${count}    1
 
 Input Tracking Number [Move Status]
-    [Arguments]    ${tracking_number_b}
+    [Arguments]    ${tracking_number_b}    ${tracking_number_d}
     common.Input When Ready    ${dps_txtbox_parcel_number_move_status}
-    ...    ${tracking_number_b}
+    ...    ${tracking_number_b}  #${tracking_number_d}
 
 Verify Search Tracking Number Result
     [Arguments]    ${status}    ${tracking}    ${pouch}    ${courier}    ${owner}    ${size}     ${date}
     ${txt_list_data_move_status}=    Replace String    ${dps_txt_list_data_move_status}    {status}    ${status}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${tracking}
-    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${pouch}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {pouch}    ${pouch}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {courier}    ${courier}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {owner}    ${owner}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {size}    ${size}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {date}    ${date}
+    Wait Until Element Is Visible    ${txt_list_data_move_status}
 
-Click Checkbox [Move Status]
+Click All Checkbox [Move Status]
     common.Click When Ready    ${dps_btn_select_all_on_move_status_tab}
 
 Click Selected Checkbox [Move Status]
@@ -988,12 +989,19 @@ Verify Selected Parcel Tab
     # Wait Until Element Is Visible    ${txt_tracking_j}    timeout=${DEFAULT_TIMEOUT}
 
 Click Dropdown Move Status To
-    [Arguments]    ${status}
-    common.Click When Ready    ${dps_cbo_move_status_to}
-    ${parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status_to}    {value}    ${status}
-    Wait Until Element Is Visible    ${parcel_status}
-    Scroll Element Into View    ${parcel_status}
-    common.Click When Ready    ${parcel_status}
+    [Arguments]    ${parcel_status}
+    ${actual_parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status_to}    {value}    ${parcel_status}
+    ${status}=    Set Variable    False
+    common.Click When Ready    ${dps_btn_select_statuscode_on_move_status_tab}
+    Register Keyword To Run On Failure    NOTHING
+    WHILE    '${status}' == 'False'
+        Press Keys    None    DOWN
+        ${status}    Run Key Word And Return Status    Page Should Contain Element    ${actual_parcel_status}
+        Exit For Loop If    '${status}' == 'True'
+    END
+    Scroll Element Into View    ${actual_parcel_status}
+    common.Click When Ready    ${actual_parcel_status}
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 Click Confirm Move Status Button
     ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${dc_operation['button_confirm_move_status']}

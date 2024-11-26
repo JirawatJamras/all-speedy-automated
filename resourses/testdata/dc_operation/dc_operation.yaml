@@ -665,6 +665,13 @@ DC_Operation_S008:
     parcel_owner: Speedy
     parcel_size: ซอง A4
     parcel_status: 'พัสดุรอ Scan out ไปคลัง AC'
+  scan_out_list_data:
+    tracking_number: '-'
+    receive_parcel_from: Home
+    transport: CP All
+    parcel_owner: Speedy
+    parcel_size: '-'
+    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)    
   data_in_pouch_list:
     crossdock_warehouse: 'AC'
     destination_warehouse: RDC LP
