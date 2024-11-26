@@ -166,7 +166,7 @@ DC_Operation_S008
     dps_scan_page.Click Print Label
 
     Log    Step No.11 คลิกปุ่มพิมพ์
-    common.Click ESC On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_scan_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}
@@ -260,7 +260,7 @@ DC_Operation_S008
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.18 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ g" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_g}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
@@ -331,7 +331,7 @@ DC_Operation_S008
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s
-    Click ESC On Keyboard
+    Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup
     ...    ${dc_operation['text_transaction_complete']}
@@ -373,7 +373,7 @@ DC_Operation_S008
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Section Waiting List To Scan Out After Close Pouch [Scan Out Page] 2
 
     Log    Step No.26 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ g" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_g}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
@@ -466,8 +466,7 @@ DC_Operation_S008
     ...    ${DC_Operation_S008.wait_derivery_data_list['status']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
-    Sleep    5s
-    common.Click ESC On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S008.wait_derivery_data_list['export_to']}
@@ -565,7 +564,7 @@ DC_Operation_S008
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.43 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ g" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_g}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
@@ -638,7 +637,7 @@ DC_Operation_S008
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     #
 
-    Log    Step No.51 เลือก Dropdown ดูข้อมูลคลัง RDCLP
+    Log    Step No.51 เลือก Dropdown ดูข้อมูลคลัง RDC LP
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}
     # Expected

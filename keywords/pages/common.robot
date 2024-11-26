@@ -164,22 +164,13 @@ Get Parcel ID By Sender Name
     ${parcel_id}    Get From Dictionary    ${list_data}    ${sender_name}
     RETURN    ${parcel_id}
 
-Click ESC On Keyboard
+Robot Skip Step Print Label
+    Sleep    5s
     Switch Window    NEW
     ${os} =    Evaluate    platform.system().lower()    modules=platform
     Run Keyword If    'darwin' == '${os}'    Press Keys    None    ESC  # macOS
     ...               ELSE IF    'windows' == '${os}'    Press Keys    None    TAB+SPACE  # Windows
     ...               ELSE    Log    Unsupported OS
-    Switch Window    MAIN
-
-Click Space On Keyboard
-    Switch Window    NEW
-    Press Keys    None    SPACE
-    Switch Window    MAIN
-
-Click Enter On Keyboard
-    Switch Window    NEW
-    Press Keys    None    ENTER
     Switch Window    MAIN
 
 ################### Manage Excel ###################    

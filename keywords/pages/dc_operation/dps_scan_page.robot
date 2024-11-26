@@ -109,6 +109,7 @@ Click Search Button [Scan In Page]
     common.Click When Ready    ${dps_btn_search_scan_in_page}
 
 Verify Navigate To Scan Page And Stay At Scan In Tab
+    Sleep    3s
     ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
     ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_in']}
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
@@ -239,6 +240,7 @@ Click Agree On Parcel Is On Pouch Warning Popup
 
 Verify Unbox Pouch And Scan Piece By Piece
     [Arguments]    ${expected_text}
+    Sleep    3s
     ${dps_txt_unbox_pouch_and_scan_piece_by_piece}=    Replace String    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}    {value}    ${expected_text}
     Wait Until Element Is Visible    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}    timeout=10s
     ${actual_text}=    Get Text    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}
@@ -710,6 +712,11 @@ Input Pouch Number [Scan Out Page]    # Scan Out
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
 
+Input Tracking Number [Scan Out Page]    # Scan Out
+    [Arguments]    ${value}
+    Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
+    common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
+
 Verify Section Waiting List To Scan Out [Scan Out Page]
     [Arguments]    ${parcel_number}    ${pouch_number}    ${import_from}
     ...    ${deliver}    ${parcel_owner}    ${parcel_size}    
@@ -902,6 +909,10 @@ Click Search Button [Move Status]
 
 Click Clear Button [Move Status]
     ${btn_clear}=    Replace String    ${dps_btn_clear_filter_move_status_tab}    {value}    ${dc_operation['button_clear']}
+    common.Click When Ready    ${btn_clear}
+
+Click Clear Button [Scan Out]
+    ${btn_clear}=    Replace String    ${dps_btn_clear_filter_scan_out_tab}    {value}    ${dc_operation['button_clear']}
     common.Click When Ready    ${btn_clear}
 
 Verify Clear Filter Input

@@ -142,11 +142,10 @@ DC_Operation_S007
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label
-    Sleep    5s
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    common.Click ESC On Keyboard
+    common.Robot Skip Step Print Label
     # Defect142
     # Expected
     dps_scan_page.Verify Print Label Success Popup
@@ -234,7 +233,7 @@ DC_Operation_S007
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ f" ในช่องค้นหา และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_f}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_f}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Defect191 Defect255
     # Expected
@@ -314,12 +313,11 @@ DC_Operation_S007
     ...    ${DC_Operation_S007.wait_derivery_data_list['transport']}
     ...    22-11-2567    #${DC_Operation_S007.wait_derivery_data_list['date']}
     ...    ${DC_Operation_S007.wait_derivery_data_list['status']}
-    # sleep    5s
 
     
     Log    Step No.20 กดปุ่ม พิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    common.Click ESC On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S007.wait_derivery_data_list['export_to']}

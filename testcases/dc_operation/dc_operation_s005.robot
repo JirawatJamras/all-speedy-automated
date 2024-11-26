@@ -155,7 +155,7 @@ DC_Operation_S005
 
 
     Log    Step No.5 คลิกปุ่มพิมพ์
-    # common.Click ESC On Keyboard
+    # common.Robot Skip Step Print Label
     # Expected
     # dps_scan_page.Verify Print Label Success Popup
     # ...    ${dc_operation['text_print_label_success']}
@@ -239,7 +239,7 @@ DC_Operation_S005
     # ...    ${DC_Operation_S005.scan_out_waiting_scan['parcel_status']}
 
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ d" ในช่องค้นหา และ กดค้นหา หรือกด Enter
-    # dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_d}
+    # dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_d}
     # dps_scan_page.Click Search Button [Scan Out Page]
     # Defect255
     # Expected
@@ -322,7 +322,7 @@ DC_Operation_S005
 
     Log    Step No.20 กดปุ่ม พิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Click ESC On Keyboard
+    # common.Robot Skip Step Print Label
     # Expected
     # dps_wait_delivery.Verify Data Delivery List
     # ...    ${DC_Operation_S005.wait_derivery_data_list['export_to']}

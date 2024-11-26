@@ -127,7 +127,7 @@ DC_Operation_S017
     
     Log    Step No.9 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    common.Click Space On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Print Label Success Popup
@@ -299,8 +299,7 @@ DC_Operation_S017
     dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
 
     Log    Step No.21 คลิกปุ่มพิมพ์
-    Sleep    5s
-    common.Click Space On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup    ${dc_operation['text_transaction_complete']}
     common.Verify Capture Screenshot  dc_operation    DC_Operation_S017    Verify Transaction Complete Popup

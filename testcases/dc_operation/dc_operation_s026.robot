@@ -312,7 +312,7 @@ DC_Operation_s026
     dps_scan_page.Click Print Label
 
     Log    Step No.8 คลิกปุ่มพิมพ์
-    common.Click Space On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_scan_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}

@@ -148,9 +148,7 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
-            Sleep    5s
-            common.Click ESC On Keyboard    #FOR MAC
-            # common.Click Space On Keyboard    #FOR WINDOW
+            common.Robot Skip Step Print Label
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
@@ -176,8 +174,7 @@ Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
-            Sleep    5s
-            common.Click ESC On Keyboard
+            common.Robot Skip Step Print Label
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step

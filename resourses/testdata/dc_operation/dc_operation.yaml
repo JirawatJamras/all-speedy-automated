@@ -237,7 +237,7 @@ DC_Operation_S004:
     export_to: คลัง DC SB
     transport: CP All
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
   data_in_send_task_tab:
     send_to: Home
     store_code: '-'
@@ -336,7 +336,7 @@ DC_Operation_S005:
     transport: CP ALL
     date: ''
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
   timeline_in_history_parcel:
       # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
       #   description: '-'
@@ -472,7 +472,7 @@ DC_Operation_S006:
     export_to: คลัง DC SB
     transport: CP All
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
   data_in_send_task_tab:
     send_to: Home
     store_code: '-'
@@ -566,7 +566,7 @@ DC_Operation_S007:
     transport: CP ALL
     date: ''
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
   data_in_send_task_tab:
     send_to: Store
     store_code: '15888'
@@ -696,7 +696,7 @@ DC_Operation_S008:
     transport: CP All
     date: ''
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
   data_in_send_task_tab:
     send_to: Home
     store_code: '-'
@@ -844,6 +844,7 @@ DC_Operation_S010:
     parcel_status3: พัสดุออกจากคลังต้นทาง (DC BB)
     parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
     parcel_status5: พัสดุออกจากคลังข้ามภาค (AC)
+    parcel_status6: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
   data_in_import_task_tab:
     import_from1: Home
     import_from2: คลัง DC BB
@@ -851,7 +852,7 @@ DC_Operation_S010:
     transport: CP All
     parcel_owner: Speedy
   check_close_pouch:
-    inventory: DC SB
+    inventory: RDC LP
   scan_in_data_parcel_detail:
     customer_id: '0002400563'
     parcel_size: 51 ซม. ซอง A4
@@ -891,14 +892,18 @@ DC_Operation_S010:
       description: ''    # pouch number to be dynamically set
     - title: พัสดุรอ Scan out ไปคลัง
       description: AC
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
+    # - title: พัสดุออกจากคลังต้นทาง
+    #   description: DC BB
     - title: พัสดุถึงคลังข้ามภาค
       description: AC
     # - title: พัสดุรอ Scan out ไปคลัง
     #   description: RDC LP
     - title: พัสดุออกจากคลังข้ามภาค
       description: AC
+    - title: พัสดุถึงคลังปลายทาง
+      description: RDC LP
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: RDC LP
   data_in_export_task_tab:
     export_to: คลัง AC
     transport: CP All
@@ -943,10 +948,10 @@ DC_Operation_S010:
     export_to: คลัง AC
     transport: CP All
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุ
+    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
   data_in_send_task_tab:
-    send_to: Home
-    store_code: '-'
+    send_to: Store
+    store_code: '01015'
     customer_type: 'B2C'
     transport: CP All
   data_in_pouch_detail_scan_in_page:
@@ -965,7 +970,7 @@ DC_Operation_S010:
     pouch_number: '-'
     receive_parcel_from: DCBB
     parcel_size: '-'
-    parcel_status: พัสดุออกจากคลังต้นทาง (DCBB)
+    parcel_status: ออกจากคลังต้นทาง (DCBB)
   scan_in_data_warehouse_ac:
     tracking_number: '-'
     pouch_number: '-'

@@ -410,7 +410,7 @@ DC_Operation_S003
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Click ESC On Keyboard
+    # common.Robot Skip Step Print Label
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
@@ -504,7 +504,7 @@ DC_Operation_S003
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_a}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_a}
     dps_scan_page.Click Search Button [Scan Out Page]
 
     # Defect232
@@ -594,7 +594,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.wait_derivery_data_list['transport']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # common.Click ESC On Keyboard
+    # common.Robot Skip Step Print Label
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN         
