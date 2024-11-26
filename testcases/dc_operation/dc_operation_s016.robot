@@ -24,7 +24,7 @@ DC_Operation_S016
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
-    ${today}    Set Today
+    Set Today
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_a}

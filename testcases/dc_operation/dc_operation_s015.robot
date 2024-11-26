@@ -15,7 +15,7 @@ DC_Operation_S015
     [Tags]    DC_Operation    UAT
     # Skip
     Log    Step No.1-2 Skip By Use Tracking Mannual
-    ${today}    Set Today
+    Set Today
     Log    Read Row From Excel
     ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
     Log    ${tracking_info}

@@ -626,7 +626,7 @@ DC_Operation_S008:
     - title: สเเกนเข้า POUCH
       description: '-'
     - title: พัสดุรอ Scan out ไปคลัง
-      description: DC SB
+      description: AC
     - title: พัสดุออกจากคลังต้นทาง
       description: DC BB
   data_in_export_task_tab:
@@ -641,26 +641,26 @@ DC_Operation_S008:
     transport: CP All
     parcel_owner: Speedy
     parcel_size: ซอง A4
-    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status: 'พัสดุรอ Scan out ไปคลัง AC'
   data_in_pouch_list:
     crossdock_warehouse: 'AC'
     destination_warehouse: RDC LP
     status_on: 'On'
     status_off: 'Off'
   data_in_pouch_detail:
-    origin_warehouse: DC BB
     crossdock_warehouse: '-'
     pouch_status: เปิด
-    destination_warehouse: DC SB
-    label_destination_warehouse: DC SB
+    origin_warehouse: DC BB
+    destination_warehouse: 'RDC LP'
+    label_destination_warehouse: 'RDC LP'
     label_number: '1'
-    label_route: DC BB - DC SB
-    label_simbol: รูปดาว
+    label_route: 'DC BB - AC - RDC LP'
+    label_symbol: รูปนาฬิกาทราย
     data_in_table:
-      destination_warehouse: DC SB
-      pickup_place: 'null'
+      destination_warehouse: 'RDC LP'
+      pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
-      parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+      parcel_status: พัสดุรอ Scan out ไปคลัง AC
   wait_derivery_data_list:
     export_to: Store
     transport: CP All

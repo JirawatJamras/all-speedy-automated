@@ -33,7 +33,7 @@ DC_Operation_S018
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    Verify Data In Table
 
     Log    Step No.2 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-    ${today}    Set Today
+    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_a}
     Switch Window    NEW

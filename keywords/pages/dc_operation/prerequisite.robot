@@ -38,8 +38,8 @@ DC_Operation_S002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002   Verify Parcel Pickup Schedule Popup
 
     Log    Step No.5 ระบุข้อมูล
-    ${tomorrow}    Set Tomorrow Date
-    ${today}    Set Today
+    Set Tomorrow Date
+    Set Today
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S002['parcel_pickup_time']}

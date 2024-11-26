@@ -802,7 +802,7 @@ Select Selected Parcel Tab
     common.Click When Ready    ${tab}
 
 Verify Move Status Page
-    ${today}    Set Today
+    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     ${btn_download_template}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_download_template']}
     ${btn_import}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_import']}

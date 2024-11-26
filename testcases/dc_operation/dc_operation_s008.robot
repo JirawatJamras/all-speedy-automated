@@ -73,7 +73,7 @@ DC_Operation_S008
     dps_pouch_page.Verify Navigate To Pouch Page Success
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Navigate To Pouch Page Success
 
-    Log    ตรวจสอบ Pouch ที่มีคลังปลายทางเป็น RDC LP  ที่ถูกเปิดอยู่ และถ้ามี Pouch ที่เปิดอยู่จะดำเนินการต่อใน Step No. 4-7
+    Log    ตรวจสอบ Pouch ที่มีคลังปลายทางเป็น RDC LP ที่ถูกเปิดอยู่ และถ้ามี Pouch ที่เปิดอยู่จะดำเนินการต่อใน Step No. 4-7
     dps_pouch_page.Check Open Pouch And Close Pouch By Destination Inventory
     ...    ${DC_Operation_S008.check_close_pouch['inventory']}
     ...    ${dc_operation['text_warning_confirm_to_close_pouch']}
@@ -136,7 +136,7 @@ DC_Operation_S008
     ...    ${DC_Operation_S008.scan_in_data_parcel_detail['pouch_number']}
     ...    ${DC_Operation_S008.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S008.scan_in_data_label_detail['symbol']}    
-# Inprogress Change to use CPALL courier
+
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
@@ -190,8 +190,8 @@ DC_Operation_S008
     Switch Window    NEW
     # Defect201
     # Expected
-
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel_after_scan_in']}    5    #6
+    dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}e
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline
 
     Log    Step No.15 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
@@ -264,7 +264,7 @@ DC_Operation_S008
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
-    ...    เลขพัสดุนี้อยู่ในถุงแล้ว ไม่สามารถ Scan รายชิ้นได้ (scan ทั้ง ถุง)    #${dc_operation['text_please_close_pouch_before_scan_out']}
+    ...    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Close Pouch Before Scan Out Warning Popup
 
     Lop    Step No.19 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
@@ -278,9 +278,10 @@ DC_Operation_S008
     ...    ${today}
     ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Pouch In Pouch Page
-# Inprogress
+
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
+    # Defect223    Defect279
     # Expected
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
@@ -292,7 +293,7 @@ DC_Operation_S008
     ...    ${dc_operation.label_pouch_in_pouch_detail['destination_warehouse']}
     dps_pouch_page.Verify Data Of Information Section In Pouch Detail Popup
     ...    ${pouch_number}
-    ...    ${EMPTY}    #${DC_Operation_S008.data_in_pouch_detail['crossdock_warehouse']}
+    ...    ${DC_Operation_S008.data_in_pouch_detail['crossdock_warehouse']}
     ...    ${DC_Operation_S008.data_in_pouch_detail['pouch_status']}
     ...    ${DC_Operation_S008.data_in_pouch_detail['origin_warehouse']}
     ...    ${DC_Operation_S008.data_in_pouch_detail['destination_warehouse']}
@@ -347,7 +348,7 @@ DC_Operation_S008
     ...    ${DC_Operation_S008.data_in_pouch_list['crossdock_warehouse']}
     ...    ${DC_Operation_S008.data_in_pouch_list['destination_warehouse']}
     ...    ${DC_Operation_S008.data_in_pouch_list['status_off']}
-    ...    16-11-2567
+    ...    ${today}
     ...    ${dc_operation['icon_pencil']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008   Verify Transaction Complete Popup Was Closed
 

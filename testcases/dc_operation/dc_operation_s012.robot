@@ -75,7 +75,7 @@ DC_Operation_S012
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    Verify Data In Import Task Tab
 
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ b" และ กดค้นหา หรือกด Enter
-    ${today}    Set Today
+    Set Today
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
     # Defect254

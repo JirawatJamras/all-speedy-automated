@@ -54,7 +54,7 @@ DC_Operation_S017
     dps_scan_page.Click Confirm Button To Create Pouch Popup Confirmation
     Sleep  5s
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
-    ${today}    Set Today
+    Set Today
     # Defect155
     # Expected
     # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
@@ -148,7 +148,7 @@ DC_Operation_S017
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Data In Table
 
     Log    Step No.12 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-    ${today}    Set Today
+    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW

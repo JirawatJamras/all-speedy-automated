@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 DC_Operation_s027
     [Documentation]    การ Move Status แบบค้นหาพัสดุ
     [Tags]    DC_Operation    UAT    Pass_With_Condition
-    ${today}    Set Today
+    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
 
     Log    Login

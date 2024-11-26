@@ -85,7 +85,9 @@ Verify Label Section In Pouch Detail Popup
     Should Be Equal    ${actual_route}    ${route}
     IF    '${symbol}' == 'รูปดาว'
         Wait Until Element Is Visible    ${dps_img_star_symbol_pouch_label}    timeout=10s
-    END
+    ELSE IF    '${symbol}' == 'รูปนาฬิกาทราย'
+        Wait Until Element Is Visible    ${dps_img_label_hourglass_symbol_pouch_label}    timeout=10s
+    END    
     Should Be Equal    ${actual_pouch_number}    ${pouch_number}
     Wait Until Element Is Visible    ${dps_txt_pouch_number_pouch_label}    timeout=10s
     Wait Until Element Is Visible    ${dps_img_qr_pouch_label}    timeout=10s

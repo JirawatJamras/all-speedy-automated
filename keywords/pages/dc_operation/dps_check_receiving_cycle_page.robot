@@ -25,7 +25,7 @@ Verify Check Receiving Cycle Page
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
 
-    ${tomorrow}    Set Tomorrow Date
+    Set Tomorrow Date
     ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {branch}    ${branch}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {address}    ${address}
@@ -65,7 +65,7 @@ Verify Warehouse Confirm List Tab
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
 
-    ${tomorrow}    Set Tomorrow Date
+    Set Tomorrow Date
     ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle_waiting}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {address}    ${address}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {sub_district}    ${sub_district}
@@ -183,7 +183,7 @@ Verify Pickup Schedule Change Status
     common.Click When Ready    ${dps_btn_today_parcel_pickup}
     common.Click When Ready    ${button_search}
     common.Click When Ready    ${button_filter}
-    ${tomorrow}    Set Tomorrow Date
+    Set Tomorrow Date
     ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {branch}    ${branch}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {address}    ${address}

@@ -25,8 +25,8 @@ DC_Operation_s026
     Log    Step คลิกปุ่ม +เพิ่ม
     b2c_call_car_pick_up_parcel_page.Click Add Button
     Log    Step ระบุข้อมูล
-    ${tomorrow}    Set Tomorrow Date
-    ${today}    Set Today
+    Set Tomorrow Date
+    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${DC_Operation_S002['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
