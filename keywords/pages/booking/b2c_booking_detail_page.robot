@@ -102,7 +102,7 @@ Verify Edit Booking List Popup
     Should Be Equal As Strings    ${actual_text_shipping_origin_aria}    ${shipping_origin_aria}
 
 Verify Edit Booking List Popup For General Customer
-    [Arguments]    ${parcel_type}    ${booking_name}    ${shipping_origin_aria}
+    [Arguments]    ${booking_name}    ${shipping_origin_aria}
     ${text_edit_booking_list}=    Replace String    ${b2c_txt_edit_booking_list}    {value}    ${Booking['text_edit_booking_list']}
     Wait Until Element Is Visible    ${text_edit_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_txt_booking_name}=    Replace String    ${b2c_txt_booking_name}    {value}    ${Booking['text_booking_name']}
