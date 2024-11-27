@@ -665,11 +665,15 @@ DC_Operation_S008:
     number_of_pieces: '-'
     number_of_scanned_items: '1'
   scan_out_waiting_scan:
-    receive_parcel_from: Home
+    tracking_number: '-'
+    receive_parcel_from1: Home
+    receive_parcel_from2: DCBB
     transport: CP All
     parcel_owner: Speedy
-    parcel_size: ซอง A4
-    parcel_status: 'พัสดุรอ Scan out ไปคลัง AC'
+    parcel_size1: ซอง A4
+    parcel_size2: '-'
+    parcel_status1: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)    
   scan_out_list_data:
     tracking_number: '-'
     receive_parcel_from: Home
