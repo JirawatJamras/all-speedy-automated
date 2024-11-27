@@ -934,11 +934,13 @@ DC_Operation_S010:
     parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
   scan_out_list_data:
     tracking_number: '-'
-    receive_parcel_from: Home
+    receive_parcel_from1: Home
+    receive_parcel_from2: DCBB
     transport: CP All
     parcel_owner: Speedy
     parcel_size: '-'
-    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status1: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
   data_in_pouch_list:
     crossdock_warehouse: 'AC'
     destination_warehouse: RDC LP

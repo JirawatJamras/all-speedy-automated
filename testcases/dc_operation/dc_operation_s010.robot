@@ -400,12 +400,12 @@ DC_Operation_S010
     # dps_scan_page.Verify Value List Scan Out 
     # ...    ${pouch_number}
     # ...    ${DC_Operation_S010.scan_out_list_data['tracking_number']}
-    # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_list_data['receive_parcel_from']}
+    # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_list_data['receive_parcel_from1']}
     # ...    CPALL    #${DC_Operation_S010.scan_out_list_data['transport']}
     # ...    ${DC_Operation_S010.scan_out_list_data['parcel_owner']}
     # ...    ${DC_Operation_S010.scan_out_list_data['parcel_size']}
     # ...    ${today}
-    # ...    ${DC_Operation_S010.scan_out_list_data['parcel_status']}
+    # ...    ${DC_Operation_S010.scan_out_list_data['parcel_status1']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value List Scan Out
 
     Log    Step No.27 กดปุ่ม ยืนยัน Scan Out
@@ -608,12 +608,12 @@ DC_Operation_S010
     # dps_scan_page.Verify Value List Scan Out 
     # ...    ${pouch_number}
     # ...    ${DC_Operation_S010.scan_out_list_data['tracking_number']}
-    # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_list_data['receive_parcel_from']}
+    # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_list_data['receive_parcel_from2']}
     # ...    CPALL    #${DC_Operation_S010.scan_out_list_data['transport']}
     # ...    ${DC_Operation_S010.scan_out_list_data['parcel_owner']}
     # ...    ${DC_Operation_S010.scan_out_list_data['parcel_size']}
     # ...    21-11-2567    #${today}
-    # ...    ${DC_Operation_S010.scan_out_list_data['parcel_status']}
+    # ...    ${DC_Operation_S010.scan_out_list_data['parcel_status2']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value List Scan Out
 
     Log    Step No.44 กดปุ่ม ยืนยัน Scan Out
