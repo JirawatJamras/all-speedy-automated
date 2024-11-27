@@ -31,14 +31,6 @@ DC_Operation_s027
 
     Set Today
     ${today_repattern}    Set Date Pattern    ${today}
-    # Log    Login
-    # common.Open URL    ${DPS_UAT_URL}
-    # dps_landing_page.Click Go Login Button
-    # dps_login_page.Input Email    ${dps_login_user_04['username']}
-    # dps_login_page.Input Password    ${dps_login_user_04['password']}
-    # dps_login_page.Click Log On Button
-    # dps_home_page.Click Dropdown For Select Role
-    # dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เลือกเมนู Scan, เลือกแท็บ Move Status > แท็บค้นหาพัสดุ
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
@@ -54,7 +46,6 @@ DC_Operation_s027
     ...    ${dc_operation.move_status['parcel_status']}
     ...    ${dc_operation.move_status['parcel_number']}
     ...    ${dc_operation.move_status['pouch_number']}
-    ...    ${dc_operation.move_status['receive_parcel_from']}
     ...    ${dc_operation.move_status['transport']}
     ...    ${dc_operation.move_status['pouch_number']}
     ...    ${dc_operation.move_status['parcel_size']}

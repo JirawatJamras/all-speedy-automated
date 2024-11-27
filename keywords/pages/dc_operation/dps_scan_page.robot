@@ -842,12 +842,11 @@ Click Filter Button
     common.Click When Ready    ${btn_filter}
 
 Verify Filter Title Used To Search Information
-    [Arguments]    ${parcel_status}    ${parcel_number}    ${pouch_number}    ${receive_parcel_from}    ${transport}    ${parcel_owner}
+    [Arguments]    ${parcel_status}    ${parcel_number}    ${pouch_number}    ${transport}    ${parcel_owner}
     ...        ${parcel_size}        ${last_updated_date}
     ${txt_parcel_status}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_status}
     ${txt_parcel_number}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_number}
     ${txt_pouch_number}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${pouch_number}
-    ${txt_receive_parcel_from}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${receive_parcel_from}
     ${txt_transport}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${transport}
     ${txt_parcel_owner}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_owner}
     ${txt_parcel_size}=    Replace String    ${dps_txt_filter_title_move_status}    {value}    ${parcel_size}
@@ -856,7 +855,6 @@ Verify Filter Title Used To Search Information
     Wait Until Element Is Visible    ${txt_parcel_status}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_parcel_number}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_pouch_number}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${txt_receive_parcel_from}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_transport}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_parcel_owner}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_parcel_size}    timeout=${DEFAULT_TIMEOUT}
