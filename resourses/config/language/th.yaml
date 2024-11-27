@@ -466,6 +466,7 @@ dc_operation:
     receiving_date: วันที่อัปเดตล่าสุด
     parcel_status: สถานะพัสดุ
   scan_out_title_waiting_scan:
+    title: รายการพัสดุที่รอ Scan Out
     parcel_id: หมายเลขพัสดุ
     pouch_number: Pouch Number
     receive_parcel_from: งานรับเข้าจาก

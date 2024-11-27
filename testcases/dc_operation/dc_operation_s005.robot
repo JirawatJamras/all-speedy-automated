@@ -228,16 +228,7 @@ DC_Operation_S005
     # dps_scan_page.Select Scan Out Tab
     # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    # dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['pouch_number']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receive_parcel_from']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['transport']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_owner']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_size']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receiving_date']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_status']}
-    # dps_scan_page.Verify Value Waiting List To Scan Out [Scan Out Page]
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
     # ...    ${tracking_d}
     # ...    ${DC_Operation_S005.scan_out_waiting_scan['pouch_number']}
     # ...    ${DC_Operation_S005.scan_out_waiting_scan['receive_parcel_from']}

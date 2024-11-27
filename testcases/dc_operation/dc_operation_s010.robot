@@ -245,16 +245,7 @@ DC_Operation_S010
     # Defect265
     # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    # dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['pouch_number']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receive_parcel_from']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['transport']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_owner']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_size']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receiving_date']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_status']}
-    # dps_scan_page.Verify Value Waiting List To Scan Out [Scan Out Page]
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
     # ...    ${tracking_i}
     # ...    ${pouch_number}
     # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_waiting_scan['receive_parcel_from']}
@@ -264,10 +255,10 @@ DC_Operation_S010
     # ...    ${today}
     # ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value Waiting List To Scan Out [Scan Out Page] 1
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Section Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s
     common.Scroll Window To Vertical    1000
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value Waiting List To Scan Out [Scan Out Page] 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.18 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ i" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_i}
@@ -371,16 +362,7 @@ DC_Operation_S010
     # Defect265
     # # Expected
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    # dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['pouch_number']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receive_parcel_from']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['transport']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_owner']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_size']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receiving_date']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_status']}
-    # dps_scan_page.Verify Value Waiting List To Scan Out [Scan Out Page]
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
     # ...    ${tracking_i}
     # ...    ${pouch_number}
     # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_waiting_scan['receive_parcel_from']}
@@ -390,10 +372,10 @@ DC_Operation_S010
     # ...    ${today}
     # ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value Waiting List To Scan Out [Scan Out Page] 1
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Section Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s
     common.Scroll Window To Vertical    1000
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value Waiting List To Scan Out [Scan Out Page] 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.26 กรอกหมายเลข Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
@@ -577,32 +559,22 @@ DC_Operation_S010
     Log    Step No.41 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
-    # Defect281
-    # # Expected
-    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    # dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['pouch_number']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receive_parcel_from']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['transport']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_owner']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_size']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['receiving_date']}
-    # ...    ${dc_operation.scan_out_title_waiting_scan['parcel_status']}
-    # dps_scan_page.Verify Value Waiting List To Scan Out [Scan Out Page]
-    # ...    ${DC_Operation_S010.scan_out_waiting_scan['tracking_number']}
-    # ...    ${pouch_number}
-    # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_waiting_scan['receive_parcel_from2']}
-    # ...    CP ALL    #${DC_Operation_S010.scan_out_waiting_scan['transport']}
-    # ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_owner']}
-    # ...    กล่อง A4    #${DC_Operation_S010.scan_out_waiting_scan['parcel_size2']}
-    # ...    ${today}
-    # ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_status2']}
+    # Expected
+    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
+    dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
+    ...    ${parcel_j}
+    ...    # ${DC_Operation_S010.scan_out_waiting_scan['pouch_number']}
+    ...    # ${DC_Operation_S010.scan_out_waiting_scan['import_from']}
+    ...    # ${DC_Operation_S010.scan_out_waiting_scan['deliver']}
+    ...    # ${DC_Operation_S010.scan_out_waiting_scan['parcel_owner']}
+    ...    # ${DC_Operation_S010.scan_out_waiting_scan['parcel_size']}
+    ...    16-11-2567
+    ...    # ${DC_Operation_S010.scan_out_waiting_scan['parcel_status']}  
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value Waiting List To Scan Out [Scan Out Page] 1
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Section Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s
     common.Scroll Window To Vertical    1000
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value Waiting List To Scan Out [Scan Out Page] 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.42 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ i" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_i}
