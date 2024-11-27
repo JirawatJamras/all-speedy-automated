@@ -358,7 +358,7 @@ DC_Operation_S001
     # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
     # ...    ${booking_id}
     # ...    ${Booking['text_parcel_status_call_car']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    28.Verify Booking Change Status To Call Car
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    28.Verify Booking Change Status To Call Car
 
     # Log    Step No.29 คลิกเลือกรายการ Booking
     # b2c_booking_delivery_page.Select Booking With Booking ID    
