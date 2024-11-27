@@ -14,9 +14,11 @@ DC_Operation_s026
     DC_Operation_S002
 
     ${tracking_j}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S026['sender_name']}
+    ${today_repattern}    Set Date Pattern    ${today}
 
     Log    Login
     Go To    ${DPS_UAT_URL}
+    dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
@@ -47,7 +49,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
-    ...    RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_status']}
     ...    CP ALL    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['courier']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['pouch_number']}
@@ -66,7 +68,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['phone']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['pouch_number']}
-    ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    1.Data Parcel Details In Scan Page
     dps_scan_page.Verify Title Sender In Scan Page
@@ -100,8 +102,8 @@ DC_Operation_s026
     # Defect227  ขาด pouch number ยังไม่ได้เขียน verify
     # Expected
     dps_scan_page.Verify Create Pouch Popup
-    ...    DC BB  #${DC_Operation_S026.scan_in_data_parcel_detail['origin_warehouse']}
-    ...    RDC LP  #${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
+    ...    ${DC_Operation_S026.pouch['origin_warehouse']}
+    ...    ${DC_Operation_S026.pouch['destination_warehouse']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    2.Verify Create Pouch Popup
 
     Log    Step No.3 คลิกปุ่มตกลง
@@ -126,7 +128,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
-    ...    RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_status']}
     ...    CP ALL    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['courier']}
     ...    ${pouch_number}
@@ -138,7 +140,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['phone']}
     ...    ${pouch_number}
-    ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    4.Verify Parcel Details After Click Pouch Box 1st Time
 
@@ -155,7 +157,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
-    ...    RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_status']}
     ...    CP ALL    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['courier']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['pouch_number']}
@@ -167,7 +169,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['phone']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['pouch_number']}
-    ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    5.Verify Parcel Details After Click Pouch Box 2nd Time
 
@@ -184,7 +186,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_size']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['crossdock_warehouse']}
-    ...    RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
+    ...    ${DC_Operation_S026.scan_in_data_parcel_detail['destination_warehouse']}
     ...    ${DC_Operation_S026.scan_in_data_parcel_detail['parcel_status']}
     ...    CP ALL    # Expected Result is ${DC_Operation_S026.scan_in_data_parcel_detail['courier']}
     ...    ${pouch_number}
@@ -196,7 +198,7 @@ DC_Operation_s026
     ...    ${DC_Operation_S026.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['phone']}
     ...    ${pouch_number}
-    ...    DC BB - AC - RDC LP    # Expected Result is ${DC_Operation_S026.scan_in_data_label_detail['wh']}
+    ...    ${DC_Operation_S026.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S026.scan_in_data_label_detail['symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    6.Verify Parcel Details After Click Pouch Box 3rd Time
 

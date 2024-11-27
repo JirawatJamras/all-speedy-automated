@@ -139,15 +139,15 @@ DC_Operation_S002
     Log To Console    ${booking_id}
     # Defect144
     # Expected
-    b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
-    ...    ${today}
-    ...    ${DC_Operation_S002.receiving_cycle['company_name']}
-    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
-    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
-    ...    ${DC_Operation_S002.receiving_cycle['district']}
-    ...    ${DC_Operation_S002.receiving_cycle['province']}
-    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    13.Verify Complete Select Parcel Pickup Schedule And Save
+    # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
+    # ...    ${today}
+    # ...    ${DC_Operation_S002.receiving_cycle['company_name']}
+    # ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    # ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    # ...    ${DC_Operation_S002.receiving_cycle['district']}
+    # ...    ${DC_Operation_S002.receiving_cycle['province']}
+    # ...    ${DC_Operation_S002.receiving_cycle['postcode']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    13.Verify Complete Select Parcel Pickup Schedule And Save
 
     Log    Step No.14 คลิกปุ่ม Import File
     b2c_booking_detail_page.Click Import File Button

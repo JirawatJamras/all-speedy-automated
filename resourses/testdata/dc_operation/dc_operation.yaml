@@ -1610,7 +1610,7 @@ DC_Operation_S026:
     customer_id: '0002400563'
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: AC
-    destination_warehouse: RDCLP
+    destination_warehouse: RDC LP
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP All
     pouch_number: '-'
@@ -1621,7 +1621,7 @@ DC_Operation_S026:
     customer: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
     phone: '0900987354'
     pouch_number: '-'
-    wh: DCBB - AC - RDCLP
+    wh: DC BB - AC - RDC LP
     symbol: รูปนาฬิกาทราย
   scan_in_sender_data:
     name: คุณ j
@@ -1635,6 +1635,8 @@ DC_Operation_S026:
     address: 'เวียง เวียงป่าเป้า เชียงราย 57170'
   pouch:
     number_of_parcel: '1'
+    origin_warehouse: DC BB
+    destination_warehouse: RDC LP
   value_parcel_details_in_warehouse:
     parcel_status: พัสดุรอ Scan out ไปคลัง AC
     customer_type: B2C

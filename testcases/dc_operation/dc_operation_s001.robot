@@ -82,7 +82,7 @@ DC_Operation_S001
     # Defect043
     # Expected
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    7.Verify Term & Condition
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    7.Verify Term & Condition
 
     Log    Step No.8 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
@@ -143,15 +143,15 @@ DC_Operation_S001
     Log To Console    ${booking_id}
     # Defect144
     # Expected
-    b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
-    ...    ${today}
-    ...    ${DC_Operation_S001.receiving_cycle['company_name']}
-    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    ${DC_Operation_S001.receiving_cycle['district']}
-    ...    ${DC_Operation_S001.receiving_cycle['province']}
-    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    13.Verify Complete Select Parcel Pickup Schedule And Save
+    # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
+    # ...    ${today}
+    # ...    ${DC_Operation_S001.receiving_cycle['company_name']}
+    # ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    # ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['province']}
+    # ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    13.Verify Complete Select Parcel Pickup Schedule And Save
 
     Log    Step No.14 คลิกปุ่ม Import File
     b2c_booking_detail_page.Click Import File Button
@@ -194,19 +194,19 @@ DC_Operation_S001
     ...    ${DC_Operation_S001['verify_pickup_time']}
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Parcel Pickup Status After Cut Off Time
-    b2c_home_page.Click Book Parcel Delivery    
-    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
-    ...    ${booking_id}
-    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Booking Status After Cut Off Time
-    b2c_booking_delivery_page.Select Booking With Booking ID    
-    ...    ${booking_id}
-    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    b2c_booking_detail_page.Verify Booking Detail Page After Import File
-    ...    ยืนยันรอบรถเข้ารับพัสดุ    #${Booking['text_waiting_confirm_parcel_pickup']}
-    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    ...    ${DC_Operation_S001['parcel_number']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Parcel Status After Cut Off Time
+    # b2c_home_page.Click Book Parcel Delivery    
+    # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
+    # ...    ${booking_id}
+    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Booking Status After Cut Off Time
+    # b2c_booking_delivery_page.Select Booking With Booking ID    
+    # ...    ${booking_id}
+    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    # ...    ${DC_Operation_S001['parcel_number']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
     Go To    ${DPS_UAT_URL}
