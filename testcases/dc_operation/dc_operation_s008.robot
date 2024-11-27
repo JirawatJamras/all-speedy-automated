@@ -188,11 +188,13 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect201
+    # Defect201    Defect230
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}e
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline
+    Close Window
+    Switch Window    MAIN
 
     Log    Step No.15 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
@@ -434,11 +436,13 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect270
+    # Defect201    Defect230    Defect270
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}e
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    5    #7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline After Scan Out
+    Close Window
+    Switch Window    MAIN
 
     Log    Step No.33 เข้าเมนู Scan เลือกแท็บ Scan Out และ คลิกปุ่ม "รายการรอขนส่งเข้ารับ" ด้านล่างของหน้าจอ
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
@@ -547,9 +551,12 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
+    # Defect201    Defect230    Defect270
     # Expected
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    6    #9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline After Scan Out
+    Close Window
+    Switch Window    MAIN
 
     Log    Step No.42 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
@@ -636,20 +643,41 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
+    # Defect201    Defect230    Defect270
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    7    # 10
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline After Scan Out
+    Close Window
+    Switch Window    MAIN
 
     Log    Step No.50 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC SB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']}
+    # Defect141    Defect187
     # Expected
-    Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
-    #
+    Filter Data By Parcel Number [All Task Tab]    ${tracking_i}
+    dps_home_page.Verify Homepage
+    ...    ${dc_operation.breadcrumb['homepage']}
+    ...    ${dc_operation.title['homepage']}
+    dps_home_page.Verify Parcel Is Not Visible [All Task Tab]
+    ...    ${DC_Operation_S008.data_in_all_task_tab['task_type1']}
+    ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_owner']}
+    ...    ${DC_Operation_S008.data_in_all_task_tab['import_from3']}
+    ...    ${DC_Operation_S008.data_in_all_task_tab['export_to1']}
+    ...    ${DC_Operation_S008.data_in_all_task_tab['transport']}
+    ...    ${pouch_number}
+    ...    ${tracking_g}
+    ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_status5']}
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Data In All Task Tab Warehouse DCSB 1
+    Sleep    1s
+    common.Scroll Window To Vertical    1000
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Data In All Task Tab Warehouse DCSB 2
 
     Log    Step No.51 เลือก Dropdown ดูข้อมูลคลัง RDC LP
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}
+    # Defect141    Defect187    
     # Expected
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
@@ -803,6 +831,8 @@ DC_Operation_S008
     # Expected
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    Verify Timeline After Scan Out
+    Close Window
+    Switch Window    MAIN
 
     Log    Step No.62 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง RDC LP
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}

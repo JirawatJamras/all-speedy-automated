@@ -656,7 +656,12 @@ DC_Operation_S008:
       description: AC
     # - title: พัสดุรอ Scan out ไปคลัง
     #   description: RDC LP
-
+    - title: พัสดุออกจากคลังข้ามภาค
+      description: AC
+    - title: พัสดุถึงคลังปลายทาง
+      description: RDC LP
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: RDC LP
   data_in_export_task_tab:
     export_to: คลัง RDCLP
     transport: CP All
@@ -720,6 +725,7 @@ DC_Operation_S008:
     receive_parcel_from: DCBB
     parcel_size: '-'
     parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
+
 
 DC_Operation_S009:
   data_in_all_task_tab:
