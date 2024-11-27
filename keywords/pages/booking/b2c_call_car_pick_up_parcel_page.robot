@@ -208,6 +208,7 @@ Verify Parcel Pickup Canceled Status
     Search Parcel Pickup By Date    ${day}    ${next_day}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${value_pickup_date}${value_parcel}${value_location}
 
 ################# OLD ###################
 Verify Car Round Name Dropdown Was Disabled
