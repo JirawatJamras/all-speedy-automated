@@ -487,19 +487,19 @@ DC_Operation_S006:
     
 DC_Operation_S007:
   data_in_all_task_tab:
-    task_type: งานรับเข้า
+    task_type1: งานรับเข้า
     task_type2: งานส่งออก
     task_type3: งานนำจ่าย
     parcel_owner: Speedy
-    import_from: home
+    import_from1: home
     import_from2: คลัง DCBB
-    export_to: '-'
+    export_to1: '-'
     export_to2: 'คลัง DCSB'
     export_to3: 'Store'
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง XL
-    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (DCSB)
     parcel_status3: พัสดุออกจากคลังต้นทาง (DCBB)
     parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
@@ -516,7 +516,7 @@ DC_Operation_S007:
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
     parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
     courier: CP ALL
     pouch_number: '-'
@@ -526,7 +526,7 @@ DC_Operation_S007:
   scan_in_data_label_detail:
     route: ''
     store: '15888 (กล่อง XL)'
-    customer: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
+    customer1: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
     customer2: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
     phone: ''
     pouch_number: ''
@@ -560,8 +560,8 @@ DC_Operation_S007:
     export_to: คลัง DC SB
     transport: CP ALL
     date: ''
-    status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
+    status1: รอขนส่งเข้ารับพัสดุ
+    status2: ขนส่งเข้ารับพัสดุแล้ว
   data_in_send_task_tab:
     send_to: Store
     store_code: '15888'
