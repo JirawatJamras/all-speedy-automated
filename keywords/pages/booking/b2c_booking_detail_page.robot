@@ -739,6 +739,7 @@ Verify Booking Detail Page After Import File
     ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
     ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
     ${count_card}=    Set Variable    0
+    Wait Until Page Does Not Contain    ${b2c_txt_import_file_in_popup}
     # Verify number of parcels
     FOR    ${index}    IN RANGE    ${parcel_num}
         Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
