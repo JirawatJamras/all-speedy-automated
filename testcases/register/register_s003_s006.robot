@@ -18,13 +18,9 @@ Register_S003_S006
 *** Keywords ***
 Register_S003
     Log    Step No.1 กรอกข้อมูล
-    # Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
-    # Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
-    # Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
-    # Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S003['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S003['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S003['company_name']}
@@ -49,13 +45,9 @@ Register_S003
 
 Register_S006
     Log    Step No.1 กรอกข้อมูล
-    # Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
-    # Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
-    # Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
-    # Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S006['checkbox_partner_types']}
     register_business_pre_register.Select Title Name Individual    ${Register_S006['title_name']}
     register_business_pre_register.Input First Name Individual    ${Register_S006['first_name']}
@@ -69,10 +61,8 @@ Register_S006
     common.Verify Capture Screenshot      Register    Register_S003_S006    filled in contact information success
 
     Log    Step No.2 ยกเลิกลงทะเบียน
-    # Step Click btn ยกเลิก
     register_business_pre_register.Click Cancel
     register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
-    # Step Click btn ตกลง
     register_business_pre_register.Click Button Confirm Cancel Popup

@@ -591,8 +591,10 @@ DC_Operation_S008:
   data_in_all_task_tab:
     task_type1: งานรับเข้า
     task_type2: งานส่งออก
+    task_type3: 
     parcel_owner: Speedy
-    import_from: Home
+    import_from1: Home
+    import_from2: 'คลัง AC'
     export_to1: '-'
     export_to2: 'คลัง AC'
     transport: CP All
@@ -600,8 +602,10 @@ DC_Operation_S008:
     parcel_size: 'ซอง A4'
     parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status3: พัสดุออกจากคลังข้ามภาค (AC)
   data_in_import_task_tab:
-    import_from: Home
+    import_from1: Home
+    import_from2: 'คลัง AC'
     transport: CP All
     parcel_owner: Speedy
   check_close_pouch:
