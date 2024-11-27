@@ -7,7 +7,7 @@ Click Book Parcel Delivery
 Click Parcel Delivery Service Menu
     FOR    ${i}    IN RANGE    0    5
         Mouse Over    ${b2c_mnu_parcel_delivery_service_home_page}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_cbo_parcel_delivery_service}    timeout=${DEFAULT_TIMEOUT}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_cbo_parcel_delivery_service}    timeout=5s
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
     END
 

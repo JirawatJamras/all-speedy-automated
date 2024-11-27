@@ -1028,7 +1028,7 @@ Booking_S035:
     condition: 'สำหรับลูกค้าที่เป็นกล่อง'
     period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
   discount_amount: '1'
-  discount_value1: NaN
+  discount_value1: 'NaN'
   discount_value2: '5.00'
   total_price_amount: '1'
   total_price_value1: 'NaN'
