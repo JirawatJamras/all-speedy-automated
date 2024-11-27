@@ -170,8 +170,7 @@ Verify Complete Select Parcel Pickup Schedule And Save
     ${actual_shipping_origin}=    Replace String    ${txt_shipping_origin}    \n    ${SPACE}
     Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=${DEFAULT_TIMEOUT}
-    # Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${company_address} ${sub_district} ${district} ${province} ${postcode}
-    Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${sub_district} ${district} ${province} ${postcode}
+    Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${company_address} ${sub_district} ${district} ${province} ${postcode}
 
 Select Shipping Origin Tab 
     [Arguments]    ${aria}
