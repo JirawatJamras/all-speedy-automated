@@ -29,6 +29,8 @@ Input Company Address Full Legal Entity
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_company_address_full_legal_entity}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_company_address_full_legal_entity}    {value}    ${select}
+    Wait Until Page Contains Element    ${selected_company_address_full}
+    Scroll Element Into View    ${selected_company_address_full}
     Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_company_address_full}  
 
 Select Title Name Legal Entity
