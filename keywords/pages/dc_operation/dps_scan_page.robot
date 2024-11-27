@@ -109,6 +109,7 @@ Click Search Button [Scan In Page]
     common.Click When Ready    ${dps_btn_search_scan_in_page}
 
 Verify Navigate To Scan Page And Stay At Scan In Tab
+    Sleep    3s
     ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
     ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_in']}
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
@@ -239,6 +240,7 @@ Click Agree On Parcel Is On Pouch Warning Popup
 
 Verify Unbox Pouch And Scan Piece By Piece
     [Arguments]    ${expected_text}
+    Sleep    3s
     ${dps_txt_unbox_pouch_and_scan_piece_by_piece}=    Replace String    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}    {value}    ${expected_text}
     Wait Until Element Is Visible    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}    timeout=10s
     ${actual_text}=    Get Text    ${dps_txt_unbox_pouch_and_scan_piece_by_piece}
@@ -710,6 +712,11 @@ Input Pouch Number [Scan Out Page]    # Scan Out
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
 
+Input Tracking Number [Scan Out Page]    # Scan Out
+    [Arguments]    ${value}
+    Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
+    common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
+
 Verify Section Waiting List To Scan Out [Scan Out Page]
     [Arguments]    ${parcel_number}    ${pouch_number}    ${import_from}
     ...    ${deliver}    ${parcel_owner}    ${parcel_size}    
@@ -802,7 +809,7 @@ Select Selected Parcel Tab
     common.Click When Ready    ${tab}
 
 Verify Move Status Page
-    ${today}    Set Today
+    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     ${btn_download_template}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_download_template']}
     ${btn_import}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_import']}
@@ -849,11 +856,19 @@ Verify Parcel Status List In Dropdown
     Wait Until Element Is Visible    ${dps_cbo_status_list_move_status}
 
 Search With Parcel Status [Move Status]
-    [Arguments]    ${status}
-    ${parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${status}
-    # Wait Until Element Is Visible    ${parcel_status}
-    # Scroll Element Into View    ${parcel_status}
-    # common.Click When Ready    ${parcel_status}
+    [Arguments]    ${parcel_status}
+    ${actual_parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${parcel_status}
+    ${status}=    Set Variable    False
+    Register Keyword To Run On Failure    NOTHING
+    WHILE    '${status}' == 'False'
+    # FOR    ${i}    IN RANGE    10
+        Press Keys    None    DOWN
+        ${status}    Run Key Word And Return Status    Page Should Contain Element    ${actual_parcel_status}
+        Exit For Loop If    '${status}' == 'True'
+    END
+    Scroll Element Into View    ${actual_parcel_status}
+    common.Click When Ready    ${actual_parcel_status}
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 Verify Search Parcel Status Result
     [Arguments]    ${status}
@@ -882,6 +897,9 @@ Click Filter With Parcel Owner
     ${cbo_parcel_owner}=    Replace String    ${dps_cbo_filter_move_status}    {value}    ${dc_operation.move_status['parcel_owner']}
     common.Click When Ready    ${cbo_parcel_owner}
 
+Verify Parcel Owner List In Dropdown
+    Wait Until Element Is Not Visible    ${dps_cbo_no_data_move_status}
+
 Click Filter With Last Updated Date
     common.Click When Ready    ${dps_cbo_selected_date_move_status}
 
@@ -896,7 +914,12 @@ Click Clear Button [Move Status]
     ${btn_clear}=    Replace String    ${dps_btn_clear_filter_move_status_tab}    {value}    ${dc_operation['button_clear']}
     common.Click When Ready    ${btn_clear}
 
+Click Clear Button [Scan Out]
+    ${btn_clear}=    Replace String    ${dps_btn_clear_filter_scan_out_tab}    {value}    ${dc_operation['button_clear']}
+    common.Click When Ready    ${btn_clear}
+
 Verify Clear Filter Input
+    Scroll Window To Vertical    0
     ${parcel_number}=    Get Value    ${dps_txtbox_parcel_number_move_status}
     ${pouch_number}=    Get Value    ${dps_txtbox_pouch_number_move_status}
     ${start_date}=    Get Value    ${dps_txtbox_start_date_move_status}
@@ -924,21 +947,23 @@ Verify Search Pouch Number Result
     Should Be Equal As Strings    ${count}    1
 
 Input Tracking Number [Move Status]
-    [Arguments]    ${tracking_number_b}
+    [Arguments]    ${tracking_number_b}    ${tracking_number_c}    ${tracking_number_d}    ${tracking_number_e}    ${tracking_number_f}    
+    ...    ${tracking_number_g}    ${tracking_number_h}    ${tracking_number_i}    ${tracking_number_j}
     common.Input When Ready    ${dps_txtbox_parcel_number_move_status}
-    ...    ${tracking_number_b}
+    ...    ${tracking_number_b} ${tracking_number_c} ${tracking_number_d} ${tracking_number_e} ${tracking_number_f} ${tracking_number_g} ${tracking_number_h} ${tracking_number_i} ${tracking_number_j}
 
 Verify Search Tracking Number Result
     [Arguments]    ${status}    ${tracking}    ${pouch}    ${courier}    ${owner}    ${size}     ${date}
     ${txt_list_data_move_status}=    Replace String    ${dps_txt_list_data_move_status}    {status}    ${status}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${tracking}
-    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${pouch}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {pouch}    ${pouch}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {courier}    ${courier}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {owner}    ${owner}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {size}    ${size}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {date}    ${date}
+    Wait Until Element Is Visible    ${txt_list_data_move_status}
 
-Click Checkbox [Move Status]
+Click All Checkbox [Move Status]
     common.Click When Ready    ${dps_btn_select_all_on_move_status_tab}
 
 Click Selected Checkbox [Move Status]
@@ -948,21 +973,21 @@ Click Selected Checkbox [Move Status]
 
 Verify Selected Parcel Tab
     [Arguments]    ${text_move_status}    ${download_template}    ${import_file}    ${confirm_move}    ${tracking_b}
-    # ...    ${tracking_c}    ${tracking_d}    ${tracking_e}    ${tracking_f}    ${tracking_g}    ${tracking_h}
-    # ...    ${tracking_i}    ${tracking_j}
+    ...    ${tracking_c}    ${tracking_d}    ${tracking_e}    ${tracking_f}    ${tracking_g}    ${tracking_h}
+    ...    ${tracking_i}    ${tracking_j}
     ${txt_move_status_to}=    Replace String    ${dps_txt_move_status_to}    {value}    ${text_move_status}
     ${btn_download_template}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${download_template}
     ${btn_import_file}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${import_file}
     ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${confirm_move}
     ${txt_tracking_b}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_b}
-    # ${txt_tracking_c}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_c}
-    # ${txt_tracking_d}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_d}
-    # ${txt_tracking_e}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_e}
-    # ${txt_tracking_f}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_f}
-    # ${txt_tracking_g}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_g}
-    # ${txt_tracking_h}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_h}
-    # ${txt_tracking_i}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_i}
-    # ${txt_tracking_j}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_j}
+    ${txt_tracking_c}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_c}
+    ${txt_tracking_d}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_d}
+    ${txt_tracking_e}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_e}
+    ${txt_tracking_f}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_f}
+    ${txt_tracking_g}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_g}
+    ${txt_tracking_h}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_h}
+    ${txt_tracking_i}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_i}
+    ${txt_tracking_j}=    Replace String    ${dps_txt_tracking_move_status}    {value}    ${tracking_j}
 
     Wait Until Element Is Visible    ${txt_move_status_to}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${dps_cbo_move_status_to}    timeout=${DEFAULT_TIMEOUT}
@@ -980,11 +1005,23 @@ Verify Selected Parcel Tab
     # Wait Until Element Is Visible    ${txt_tracking_j}    timeout=${DEFAULT_TIMEOUT}
 
 Click Dropdown Move Status To
-    [Arguments]    ${status}
-    common.Click When Ready    ${dps_cbo_move_status_to}
-    ${parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status_to}    {value}    ${status}
-    Wait Until Element Is Visible    ${parcel_status}
-    Scroll Element Into View    ${parcel_status}
-    common.Click When Ready    ${parcel_status}
+    [Arguments]    ${parcel_status}
+    ${actual_parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status_to}    {value}    ${parcel_status}
+    ${status}=    Set Variable    False
+    common.Click When Ready    ${dps_btn_select_statuscode_on_move_status_tab}
+    Register Keyword To Run On Failure    NOTHING
+    WHILE    '${status}' == 'False'
+        Press Keys    None    DOWN
+        ${status}    Run Key Word And Return Status    Page Should Contain Element    ${actual_parcel_status}
+        Exit For Loop If    '${status}' == 'True'
+    END
+    Scroll Element Into View    ${actual_parcel_status}
+    common.Click When Ready    ${actual_parcel_status}
+    Register Keyword To Run On Failure    Capture Page Screenshot
+
+Click Confirm Move Status Button
+    ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${dc_operation['button_confirm_move_status']}
+    common.Click When Ready    ${btn_confirm_move}
+
     
 

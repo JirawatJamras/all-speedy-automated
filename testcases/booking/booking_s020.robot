@@ -11,8 +11,7 @@ Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Last
 *** Test Cases ***
 Booking_S020
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S1 (ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect052    Defect072    Defect083    Defect101
-    Log    Login
+    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect050    Defect052    Defect063    Defect072    Defect075    Defect083    Defect101    Defect102    Defect126    Defect258
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
@@ -114,10 +113,10 @@ Booking_S020
     ...    ${Booking['text_booking_list']}
     ...    ${Booking['text_draft_status']}
     ...    ${Booking.text_blank['text_chilled_parcel_id_4_start_unit']}
-    ...    ${Booking.img_is_favorite['img_sender_heart']}
+    ...    ${Booking.img_not_favorite['img_sender_heart']}
     ...    ${Booking_S020['sender_name']}
     ...    ${Booking_S020['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S020['receiver_name']}
     ...    ${Booking_S020['receiver_phone']}
     ...    ${Booking_S020['receiver_address']}
@@ -240,10 +239,10 @@ Booking_S020
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S020['discount_amount']}
     ...    ${Booking_S020['discount_value']}
-    ...    ${Booking_S020['insurance_fee_amount']}
-    ...    ${Booking_S020['insurance_fee_value']}
-    ...    ${Booking_S020['cod_fee_amount']}
-    ...    ${Booking_S020['cod_fee_value']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S020['total_price_amount']}
     ...    ${Booking_S020['total_price_value']}
     ...    ${Booking.text_blank['origin_shipping']}
@@ -290,11 +289,11 @@ Booking_S020
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S020['discount_amount']}
-    ...    ${Booking_S020['discount_value']}
-    ...    ${Booking_S020['insurance_fee_amount']}
-    ...    ${Booking_S020['insurance_fee_value']}
-    ...    ${Booking_S020['cod_fee_amount']}
-    ...    ${Booking_S020['cod_fee_value']}
+    ...    ${Booking_S020['discount_value1']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S020['total_price_amount']}
     ...    ${Booking_S020['total_price_value']}
     ...    ${Booking.text_blank['origin_shipping']}
@@ -341,11 +340,11 @@ Booking_S020
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S020['discount_amount']}
-    ...    ${Booking_S020['discount_value']}
-    ...    ${Booking_S020['insurance_fee_amount']}
-    ...    ${Booking_S020['insurance_fee_value']}
-    ...    ${Booking_S020['cod_fee_amount']}
-    ...    ${Booking_S020['cod_fee_value']}
+    ...    ${Booking_S020['discount_value2']}
+    ...    ${Booking.text_default['insurance_fee_amount']}
+    ...    ${Booking.text_default['insurance_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S020['total_price_amount']}
     ...    ${Booking_S020['total_price_value2']}
     ...    ${Booking.origin_shipping['idc_company_address']}

@@ -164,95 +164,14 @@ Get Parcel ID By Sender Name
     ${parcel_id}    Get From Dictionary    ${list_data}    ${sender_name}
     RETURN    ${parcel_id}
 
-Click ESC On Keyboard
+Robot Skip Step Print Label
+    Sleep    5s
     Switch Window    NEW
-    Press Keys    None   ESC
+    ${os} =    Evaluate    platform.system().lower()    modules=platform
+    Run Keyword If    'darwin' == '${os}'    Press Keys    None    ESC  # macOS
+    ...               ELSE IF    'windows' == '${os}'    Press Keys    None    TAB+SPACE  # Windows
+    ...               ELSE    Log    Unsupported OS
     Switch Window    MAIN
-
-Click Space On Keyboard
-    Switch Window    NEW
-    Press Keys    None    SPACE
-    Switch Window    MAIN
-
-Click Enter On Keyboard
-    Switch Window    NEW
-    Press Keys    None    ENTER
-    Switch Window    MAIN
-
-################### Mobile - Android ###################
-Application Teardown
-    # Run keyword If Test Failed   Capture page screenshot
-    Close All Applications
-
-Open AllSpeedy Application On Android App
-    [Documentation]  Open application that already exist in mobile phone
-    Open Application   ${REMOTE_URL}
-      #...  deviceName=${DEVICE}
-      ...  automationName=${AUTOMATION_ANDRIOD_NAME}
-      ...  platformName=${ANDROID_PLATFORM_NAME}
-      ...  appPackage=${ALLSPEEDY_ANDROID_PACKAGE}
-      ...  appActivity=${ALLSPEEDY_ANDROID_ACTIVITY}
-      ...  autoGrantPermissions=true
-
-Open POS Online Application On Android App
-    [Documentation]  Open application that already exist in mobile phone
-    Open Application   ${REMOTE_URL}
-      #...  deviceName=${DEVICE}
-      ...  automationName=${AUTOMATION_ANDRIOD_NAME}
-      ...  platformName=${ANDROID_PLATFORM_NAME}
-      ...  appPackage=${POSONLINE_ANDROID_PACKAGE}
-      ...  appActivity=${POSONLINE_ANDROID_ACTIVITY}
-      ...  autoGrantPermissions=true
-
-Open Chrome On Android Device
-    Open Application  ${REMOTE_URL}
-    ...    automationName=${AUTOMATION_ANDRIOD_NAME}
-    ...    platformName=${PLATFORM_NAME}
-    ...    platformVersion=${PLATFORM_VERSION}
-    ...    deviceName=${DEVICE_NAME}
-    ...    appPackage=${CHROME_ANDROID_PACKAGE}
-    ...    appActivity=${CHROME_ANDROID_ACTIVITY}
-    ...    autoGrantPermissions=true
-
-Click Back Button
-    common.Click when ready    ${btn_back}
-
-Generate Random Mobile Number
-    ${random_digits}=  Evaluate   ''.join([str(random.randint(0,9)) for i in range(8)])   random
-    ${mobile_number}=  Set Variable   09${random_digits}
-    RETURN   ${mobile_number}
-
-Hide Device Keyboard
-    Run Keyword If   '${PLATFORM_NAME}' == '${ANDROID_PLATFORM_NAME}'   Hide Keyboard
-    Run Keyword If   '${PLATFORM_NAME}' == '${IOS_PLATFORM_NAME}'   Hide Keyboard    key_name=Done
-
-Format Mobile Number
-    [Arguments]    ${mobile_number}
-    ${formatted_number}=    Set Variable    ${mobile_number[:3]}-${mobile_number[3:6]}-${mobile_number[6:]}
-    RETURN    ${formatted_number}
-
-Find Element Vertical
-    [Arguments]    ${element}
-    FOR    ${index}    IN RANGE    5
-        ${element_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}
-        Run keyword if    '${element_status}' == 'False'    Swipe by percent    50  70  50  40
-        Exit For Loop If    ${element_status}
-    END
-    Run keyword if    '${element_status}' == 'False'   Fail   Element not found
-
-Find Element Horizontal
-     [Arguments]    ${element}
-    FOR    ${index}    IN RANGE    5
-        ${element_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${element}
-        Run keyword if    '${element_status}' == 'False'    Swipe By Percent    70    50    40    50
-        Exit For Loop If    ${element_status}
-    END
-    Run keyword if    '${element_status}' == 'False'   Fail   Element not found
-
-Verify text of element
-    [Arguments]   ${locator}   ${value}
-    ${locator}=  Replace String   ${locator}   {value}   ${value}
-    Wait Until Element Is Visible   ${locator}    ${DEFAULT_TIMEOUT}
 
 ################### Manage Excel ###################    
 Read Row From Excel
@@ -332,7 +251,7 @@ Set Tomorrow Date
     ${year}    Split String And Select    ${tomorrow_day}    -    2
     ${year_be}    Evaluate    int(${year}) + 543
     ${tomorrow}    Set Variable    ${day}-${month}-${year_be}
-    RETURN    ${tomorrow}
+    Set Suite Variable    ${tomorrow}
 
 Set Today
     ${date_YYYY_MM_DD}   Get Current Date
@@ -342,5 +261,5 @@ Set Today
     ${y}    Split String And Select    ${date_YYYY_MM_DD}    -    2
     ${year}    Convert To Integer    ${y}
     ${year}    Evaluate    ${y} + 543
-    ${Today}    Set Variable    ${d}-${m}-${year}
-    RETURN    ${Today}
+    ${today}    Set Variable    ${d}-${m}-${year}
+    Set Suite Variable    ${today}

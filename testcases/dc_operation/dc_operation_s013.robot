@@ -19,7 +19,7 @@ DC_Operation_S013
     [Tags]    DC_Operation    UAT
 
     Log    Step No.1-16 Skip By Use Tracking From Excel
-    ${today}    Set Today
+    Set Today
     Log    Read Row From Excel
     ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
     Log    ${tracking_info}
@@ -214,7 +214,7 @@ DC_Operation_S013
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Click ESC On Keyboard
+    # common.Robot Skip Step Print Label
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
@@ -297,7 +297,7 @@ DC_Operation_S013
 
 
     Log    Step No.28 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_number}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_number}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Defect 191
     # Expected
@@ -361,7 +361,7 @@ DC_Operation_S013
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
-    # Defect235
+    
     # Expected
     # Keyword have to edit about date
     dps_wait_delivery.Verify Label Delivery List
@@ -381,15 +381,15 @@ DC_Operation_S013
 
 
     Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
-    #In progress 
-    # Defect235
-    dps_scan_page.Click Print Button By Data
+    dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S013.wait_derivery_data_list['transport']}
+    ...    ${today}
+    ...    ${DC_Operation_S013.wait_derivery_data_list['status']}
 
     Log    Step No.36 กดปุ่ม พิมพ์
-    # common.Click ESC On Keyboard
-    # Defect235    
+    # common.Robot Skip Step Print Label
+        
     # Expected
 
 

@@ -85,7 +85,9 @@ Verify Label Section In Pouch Detail Popup
     Should Be Equal    ${actual_route}    ${route}
     IF    '${symbol}' == 'รูปดาว'
         Wait Until Element Is Visible    ${dps_img_star_symbol_pouch_label}    timeout=10s
-    END
+    ELSE IF    '${symbol}' == 'รูปนาฬิกาทราย'
+        Wait Until Element Is Visible    ${dps_img_label_hourglass_symbol_pouch_label}    timeout=10s
+    END    
     Should Be Equal    ${actual_pouch_number}    ${pouch_number}
     Wait Until Element Is Visible    ${dps_txt_pouch_number_pouch_label}    timeout=10s
     Wait Until Element Is Visible    ${dps_img_qr_pouch_label}    timeout=10s
@@ -146,9 +148,7 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
-            Sleep    5s
-            common.Click ESC On Keyboard    #FOR MAC
-            # common.Click Space On Keyboard    #FOR WINDOW
+            common.Robot Skip Step Print Label
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
@@ -174,8 +174,7 @@ Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
-            Sleep    5s
-            common.Click ESC On Keyboard
+            common.Robot Skip Step Print Label
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step

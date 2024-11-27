@@ -14,7 +14,13 @@ DC_Operation_S004
     Log    Prerequisite
     # DC_Operation_S002
     # ${tracking_c}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S004['sender_name']}
-    ${tracking_c}=    Set Variable    SPBD241100021155    # Hard code for development.
+
+
+    ################ Hard Code For Development ################
+    ${tracking_c}=    Set Variable    SPBD241100021606
+    Set Today
+    # ${pouch_number}=    Set Variable    P112438994
+    ###########################################################
 
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -164,7 +170,7 @@ DC_Operation_S004
     dps_scan_page.Click Print Label
 
     Log    Step No.11 คลิกปุ่มพิมพ์
-    common.Click ESC On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_scan_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}
@@ -261,7 +267,7 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.18 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ c" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_c}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_c}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Defect177
     # # Expected
@@ -284,7 +290,7 @@ DC_Operation_S004
 
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
-    # Defect215    Defect223    Defect236
+    # Defect215    Defect223    Defect279
     # Expected
     # dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     # ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
@@ -334,7 +340,7 @@ DC_Operation_S004
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s
-    Click ESC On Keyboard
+    Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup
     ...    ${dc_operation['text_transaction_complete']}
@@ -378,7 +384,7 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.26 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ c" ในช่องค้นหา และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_c}
+    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_c}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
@@ -386,6 +392,7 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Close Pouch Before Scan Out Warning Popup
 
     Log    Step No.27 กรอกหมายเลข Pouch และ กดค้นหา หรือกด Enter
+    dps_scan_page.Click Clear Button [Scan Out]
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Defect232
@@ -452,7 +459,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
-    # Defect235
+    
     # Expected
     # dps_wait_delivery.Verify Label Delivery List
     # ...    ${dc_operation.label_delivery_list['export_to']}
@@ -469,7 +476,7 @@ DC_Operation_S004
     # ...    ${DC_Operation_S004.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Delivery List Page
 
-    # Defect235
+    
     # Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     # dps_wait_delivery.Click Print Button By Data
     # ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
@@ -477,10 +484,9 @@ DC_Operation_S004
     # ...    ${today}
     # ...    ${DC_Operation_S004.wait_derivery_data_list['status']}
 
-    # Defect235
+    
     # Log    Step No.35 กดปุ่ม พิมพ์
-    # Sleep    5s
-    # common.Click ESC On Keyboard
+    # common.Robot Skip Step Print Label
     # # Expected
     # dps_wait_delivery.Verify Data Delivery List
     # ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
@@ -667,8 +673,9 @@ DC_Operation_S004
 
     Log    Step No.44 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
-    # Expected 
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
+    # Defect288
+    # # Expected 
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Navigate To Scan Page And Stay At Scan In Tab At Destination Warehouse
 
     Log    Step No.45 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย

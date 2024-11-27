@@ -237,8 +237,8 @@ Booking_S007
     ...    ${Booking_S007['discount_value1']}
     ...    ${Booking_S007['insurance_fee_amount']}
     ...    ${Booking_S007['insurance_fee_value']}
-    ...    ${Booking_S007['cod_fee_amount']}
-    ...    ${Booking_S007['cod_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S007['total_price_amount']}
     ...    ${Booking_S007['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
@@ -288,8 +288,8 @@ Booking_S007
     ...    ${Booking_S007['discount_value1']}
     ...    ${Booking_S007['insurance_fee_amount']}
     ...    ${Booking_S007['insurance_fee_value']}
-    ...    ${Booking_S007['cod_fee_amount']}
-    ...    ${Booking_S007['cod_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S007['total_price_amount']}
     ...    ${Booking_S007['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
@@ -340,8 +340,8 @@ Booking_S007
     ...    ${Booking_S007['discount_value2']}
     ...    ${Booking_S007['insurance_fee_amount']}
     ...    ${Booking_S007['insurance_fee_value']}
-    ...    ${Booking_S007['cod_fee_amount']}
-    ...    ${Booking_S007['cod_fee_value']}
+    ...    ${Booking.text_default['cod_fee_amount']}
+    ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S007['total_price_amount']}
     ...    ${Booking_S007['total_price_value2']}
     ...    ${Booking.origin_shipping['15888_store_address']}

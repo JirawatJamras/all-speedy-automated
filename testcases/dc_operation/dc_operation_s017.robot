@@ -54,7 +54,7 @@ DC_Operation_S017
     dps_scan_page.Click Confirm Button To Create Pouch Popup Confirmation
     Sleep  5s
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
-    ${today}    Set Today
+    Set Today
     # Defect155
     # Expected
     # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
@@ -127,7 +127,7 @@ DC_Operation_S017
     
     Log    Step No.9 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    common.Click Space On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Print Label Success Popup
@@ -148,7 +148,7 @@ DC_Operation_S017
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Data In Table
 
     Log    Step No.12 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
-    ${today}    Set Today
+    Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
@@ -299,8 +299,7 @@ DC_Operation_S017
     dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
 
     Log    Step No.21 คลิกปุ่มพิมพ์
-    Sleep    5s
-    common.Click Space On Keyboard
+    common.Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup    ${dc_operation['text_transaction_complete']}
     common.Verify Capture Screenshot  dc_operation    DC_Operation_S017    Verify Transaction Complete Popup
