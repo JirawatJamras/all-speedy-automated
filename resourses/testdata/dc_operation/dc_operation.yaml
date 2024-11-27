@@ -256,6 +256,7 @@ DC_Operation_S004:
     parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
  
 DC_Operation_S005:
+  sender_name: คุณ d
   data_in_all_task_tab:
     task_type1: งานรับเข้า
     task_type2: งานส่งออก
@@ -486,6 +487,7 @@ DC_Operation_S006:
     parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
     
 DC_Operation_S007:
+  sender_name: คุณ f
   data_in_all_task_tab:
     task_type1: งานรับเข้า
     task_type2: งานส่งออก
@@ -727,6 +729,7 @@ DC_Operation_S008:
 
 
 DC_Operation_S009:
+  sender_name: คุณ h
   data_in_all_task_tab:
     task_type: งานรับเข้า
     task_type2: งานส่งออก
@@ -1004,6 +1007,7 @@ DC_Operation_S010:
     parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
 
 DC_Operation_S011:
+  sender_name: คุณ j
   data_in_all_task_tab:
     task_type: งานรับเข้า
     task_type2: งานส่งออก
@@ -1116,6 +1120,7 @@ DC_Operation_S011:
 
 
 DC_Operation_S012:
+  sender_name: คุณ b
   data_in_all_task_tab:
     task_type: งานรับเข้า
     parcel_owner: Speedy
