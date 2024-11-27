@@ -103,6 +103,7 @@ ${dps_txt_value_shipping_destination_in_scan_in_scan_page}    //div[@aria-hidden
 ${dps_txt_value_receiver_address_in_scan_in_scan_page}    //div[@aria-hidden='false']//strong[text()='{label_receiver_address}']/../../..//span[contains(normalize-space(.), '{value_receiver_address}')]
 ${dps_txt_save_data_success}    //p[text()='{value}']
 ${dps_txt_wiating_list_to_scan_out_in_scan_out_page}    //tr[td[1]='{parcel_number}' and td[2]='{pouch_number}' and td[3]='{import_from}' and td[4]='{deliver}' and td[5]='{parcel_owner}' and td[6]='{parcel_size}' and contains(td[7], '{update_date}') and td[8]//h1[contains(normalize-space(),'{parcel_status}')]]
+${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    //tr[th[1]='{parcel_number}' and th[2]='{pouch_number}' and th[3]='{import_from}' and th[4]='{deliver}' and th[5]='{parcel_owner}' and th[6]='{parcel_size}' and th[7]='{update_date}' and th[8]='{parcel_status}']
 ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    //tr[td[1]='{parcel_number}' and td[2]='{pouch_number}' and td[3]='{import_from}' and td[4]='{deliver}' and td[5]='{parcel_owner}' and td[6]='{parcel_size}']//td[7]
 ${dps_txt_close_pouch_first_warning_popup}    //span[text()='{value}']
 ${dps_txt_popup_scan_out}    //div[text()='{value}']
