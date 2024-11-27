@@ -490,7 +490,7 @@ DC_Operation_S003
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    ${trackling_a}
+    ...    ${tracking_a}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['pouch_number']}
     ...    คลัง DC BB    #${DC_Operation_S003.scan_out_waiting_scan['receive_parcel_from']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['transport']}

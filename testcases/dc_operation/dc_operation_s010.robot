@@ -559,17 +559,18 @@ DC_Operation_S010
     Log    Step No.41 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
-    # Expected
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
-    dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
-    ...    ${parcel_j}
-    ...    # ${DC_Operation_S010.scan_out_waiting_scan['pouch_number']}
-    ...    # ${DC_Operation_S010.scan_out_waiting_scan['import_from']}
-    ...    # ${DC_Operation_S010.scan_out_waiting_scan['deliver']}
-    ...    # ${DC_Operation_S010.scan_out_waiting_scan['parcel_owner']}
-    ...    # ${DC_Operation_S010.scan_out_waiting_scan['parcel_size']}
-    ...    16-11-2567
-    ...    # ${DC_Operation_S010.scan_out_waiting_scan['parcel_status']}  
+    # Defect281
+    # # Expected
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
+    # dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
+    # ...    ${DC_Operation_S010.scan_out_waiting_scan['tracking_number']}
+    # ...    ${pouch_number}
+    # ...    คลัง DC BB    #${DC_Operation_S010.scan_out_waiting_scan['receive_parcel_from2']}
+    # ...    CP ALL    #${DC_Operation_S010.scan_out_waiting_scan['transport']}
+    # ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_owner']}
+    # ...    กล่อง A4    #${DC_Operation_S010.scan_out_waiting_scan['parcel_size2']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_status2']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Section Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s

@@ -710,6 +710,11 @@ Input Pouch Number [Scan Out Page]    # Scan Out
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
 
+Input Tracking Number [Scan Out Page]    # Scan Out
+    [Arguments]    ${value}
+    Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
+    common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
+
 Verify Section Waiting List To Scan Out [Scan Out Page]
     [Arguments]    ${parcel_number}    ${pouch_number}    ${import_from}
     ...    ${deliver}    ${parcel_owner}    ${parcel_size}    
