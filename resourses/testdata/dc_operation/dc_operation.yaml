@@ -590,10 +590,11 @@ DC_Operation_S007:
 
 DC_Operation_S008:
   sender_name: คุณ g
+  destination_warehouse: RDC LP
   data_in_all_task_tab:
     task_type1: งานรับเข้า
     task_type2: งานส่งออก
-    task_type3: 
+    task_type3: งานนำจ่าย
     parcel_owner: Speedy
     import_from1: Home
     import_from2: 'คลัง AC'
@@ -605,6 +606,7 @@ DC_Operation_S008:
     parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
     parcel_status3: พัสดุออกจากคลังข้ามภาค (AC)
+    parcel_status4: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
   data_in_import_task_tab:
     import_from1: Home
     import_from2: 'คลัง AC'
@@ -613,20 +615,21 @@ DC_Operation_S008:
   check_close_pouch:
     inventory: RDC LP
   scan_in_data_parcel_detail:
-    customer_id: '2400563'
+    customer_id: '0002400563'
     parcel_size: '51 ซม. ซอง A4'
     crossdock_warehouse: 'AC'
     destination_warehouse: 'RDC LP'
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    courier: CP ALL
+    parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (RDCLP)
+    courier: CP All
     origin_warehouse: 'DCBB'
     send_parcel_to: Home (51000)
     route: ''
   scan_in_data_label_detail:
-    zipcode: '51000 (ซอง A4)'
-    customer: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
+    store: '51000 (ซอง A4)'
+    customer: ทดสอบพัสดุ Crossdock ส่งบ้านสร้าง Pouch
     phone: '0900987354'
-    wh: DCBB - AC - RDCLP
+    wh: DC BB - AC - RDC LP
     symbol: รูปนาฬิกาทราย
   scan_in_sender_data:
     name: คุณ g
@@ -726,7 +729,17 @@ DC_Operation_S008:
     receive_parcel_from: DCBB
     parcel_size: '-'
     parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
-
+  data_in_pouch_detail_scan_in_page:
+    parcel_amount: '1'
+    courier: CP All
+    origin_warehoues: DC BB
+    destination_warehourse: RDC LP
+    crossdock_warehouse: AC
+  data_in_parcel_in_pouch_scan_in_page:
+    destination_warehourse: RDC LP
+    parcel_size: ซอง A4
+    type: B2C
+    parcel_status: พัสดุถึงคลังปลายทาง (RDCLP)
 
 DC_Operation_S009:
   sender_name: คุณ h
@@ -990,7 +1003,7 @@ DC_Operation_S010:
     destination_warehourse: RDC LP
     parcel_size: ซอง A4
     type: B2C
-    parcel_status: พัสดุถึงคลังปลายทาง
+    parcel_status: พัสดุถึงคลังปลายทาง (RDCLP)
   scan_in_data_waiting_scan_warehouse_ac:
     tracking_number: '-'
     pouch_number: '-'
