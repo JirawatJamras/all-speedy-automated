@@ -18,11 +18,11 @@ Booking_S029
     c2c_login.Click Log On Button
     # Expected
     c2c_landing_page.Verify Login Success    ${c2c_login_user_01['username']}
-    common.Verify Capture Screenshot    booking    Booking_S029    Verify 7-Eleven Home Page
+    common.Verify Capture Screenshot    booking    Booking_S029    1.Verify 7-Eleven Home Page
 
     Log    Step No.2 หน้า Home
     c2c_landing_page.Click Menu Seven Store
     c2c_landing_page.Click Menu Shipping
     # Expected
     b2c_booking_delivery_page.Verify Booking Page For General Customer
-    common.Verify Capture Screenshot    booking    Booking_S029    Verify SPEED-D Parcel Delivery Booking Page
+    common.Verify Capture Screenshot    booking    Booking_S029    2.Verify SPEED-D Parcel Delivery Booking Page
