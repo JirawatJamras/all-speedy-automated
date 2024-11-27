@@ -312,11 +312,6 @@ DC_Operation_S005:
     phone: ''
     shipping_destination: บ้าน
     address: 228 ซอย 3 บางปู เมืองสมุทรปราการ สมุทรปราการ 10280
-  scan_in_value_waiting_scan_warehouse_ac:
-    pouch_number: '-'
-    receive_parcel_from: DCBB
-    parcel_size: กล่อง XL
-    parcel_status: พัสดุออกจากคลังต้นทาง (DCBB)
   scan_out_waiting_scan:
     pouch_number: '-'
     receive_parcel_from: Home
@@ -333,10 +328,10 @@ DC_Operation_S005:
     parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
   wait_derivery_data_list:
     export_to: คลัง DC SB
-    transport: CP ALL
+    transport: CP All
     date: ''
     status: รอขนส่งเข้ารับพัสดุ
-    status_after_print: ขนส่งเข้ารับพัสดุแล้ว
+    status2: ขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
       # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
       #   description: '-'
@@ -1059,7 +1054,7 @@ DC_Operation_S011:
     phone: ''
     shipping_destination: ร้าน สาขา เวียงป่าเป้า (01015)
     address: เวียง เวียงป่าเป้า เชียงราย 57170
-  scan_in_value_waiting_scan_warehouse_ac:
+  scan_in_data_waiting_scan_warehouse_ac:
     pouch_number: '-'
     receive_parcel_from: DCBB
     parcel_size: กล่อง XL
