@@ -341,6 +341,7 @@ DC_Operation_S002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    25.Verify Parcel Pickup Schedule Change Status To Confirm
 
 DC_Operation_S004
+    ${tracking_c}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S004['sender_name']}
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
@@ -1072,6 +1073,7 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Send Task Tab
 
 DC_Operation_S006
+    ${tracking_e}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S006['sender_name']}
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
@@ -1795,6 +1797,7 @@ DC_Operation_S006
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Send Task Tab
 
 DC_Operation_S010
+    ${tracking_i}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S010['sender_name']}
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role

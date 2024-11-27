@@ -13,7 +13,6 @@ DC_Operation_S006
 
     Log    Prerequisite
     prerequisite.DC_Operation_S002
-    ${tracking_e}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S006['sender_name']}
 
     Log    S006
     prerequisite.DC_Operation_S006
