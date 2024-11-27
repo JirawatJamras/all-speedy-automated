@@ -257,25 +257,25 @@ DC_Operation_S004:
  
 DC_Operation_S005:
   data_in_all_task_tab:
-    task_type: งานรับเข้า
+    task_type1: งานรับเข้า
     task_type2: งานส่งออก
     task_type3: งานนำจ่าย
     parcel_owner: Speedy
-    import_from: Home
+    import_from1: Home
     import_from2: คลัง DC BB
-    export_to: '-'
+    export_to1: '-'
     export_to2: คลัง AC
     export_to3: Home
-    export_to4: DC SB
+    export_to4: คลัง DCSB
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง XL
-    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
     parcel_status2: พัสดุรอ Scan out ไปคลัง (AC)
     parcel_status3: พัสดุออกจากคลังข้ามภาค (AC)
     parcel_status4: พัสดุรอนำจ่ายโดยคลัง (DCSB)
   data_in_import_task_tab:
-    import_from: Home
+    import_from1: Home
     import_from2: คลัง AC
     transport: CP All
     parcel_owner: Speedy
@@ -288,7 +288,7 @@ DC_Operation_S005:
     parcel_size: 150 ซม. กล่อง XL
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
+    parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
     parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
     courier: CP ALL
     pouch_number: '-'
@@ -296,7 +296,7 @@ DC_Operation_S005:
     send_parcel_to: Home (10280)
   scan_in_data_label_detail:
     store: 10280 (กล่อง XL)
-    customer: ทดสอบพัสดุ Express ส่งบ้านสร้าง Pouch
+    customer1: ทดสอบพัสดุ Express ส่งบ้านสร้าง Pouch
     customer2: ทดสอบพัสดุ Express ส่งบ้านไม่สร้าง Pouch
     phone: ''
     pouch_number: ''
@@ -330,7 +330,7 @@ DC_Operation_S005:
     export_to: คลัง DC SB
     transport: CP All
     date: ''
-    status: รอขนส่งเข้ารับพัสดุ
+    status1: รอขนส่งเข้ารับพัสดุ
     status2: ขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
       # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
