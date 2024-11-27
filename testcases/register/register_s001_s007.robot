@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S001_S007
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ และ RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
-    [Tags]    Register    RM_Lead_Assign_TXN    UAT
+    [Tags]    Register    RM_Lead_Assign_Transaction    UAT
     Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
     Register_S001
     Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
@@ -17,13 +17,9 @@ Register_S001_S007
 *** Keywords ***    
 Register_S001
     Log    Step No.1 กรอกข้อมูล
-    # Step1 เข้าสู่ระบบ
     common.Open URL    ${B2C_UAT_URL}
-    # Step2 Click tab ลูกค้าธุรกิจ
     register_general_customers_page.Select Business Customers Tab  
-    # Step3 Click btn ลงทะเบียนลูกค้าธุรกิจ
     register_business_customers_page.Click Menu Register Business
-    # Step4 กรอกข้อมูลลงทะเบียน
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S001['checkbox_partner_types']}
     register_business_pre_register.Select Company Title Name Legal Entity     ${Register_S001['company_title_name']}
     register_business_pre_register.Input Company Name Legal Entity    ${Register_S001['company_name']}

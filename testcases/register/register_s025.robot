@@ -18,16 +18,14 @@ Register_S025
     b2c_login_page.Click Log On Button
 
     [Documentation]    Customer : จัดการผู้ใช้งาน User
-    #Step 1
     register_business_profile_business.Click Profile Icon
     register_business_profile_business.Click Profile Business
     register_business_profile_business.Click Menu Manage Users
     register_business_profile_business.Click Menu User
     register_business_profile_business.Click Add User
-    #Step 2
     register_business_profile_business.Input User Name    Automate
     register_business_profile_business.Input User Last Name    User
     register_business_profile_business.Input User Email    allspeedy.user@yopmail.com
     register_business_profile_business.Input User Mobile No    0931234567
-    #register_business_profile_business.Input User Mobile Ext    0
+    register_business_profile_business.Input User Mobile Ext    0
     register_business_profile_business.Input User Position    พนักงานแพคสินค้า
