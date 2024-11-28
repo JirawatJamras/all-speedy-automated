@@ -400,6 +400,18 @@ Input Store Code Shipping Origin Area
     ${txtbox_shipping_origin_search_store}=    Replace String    ${txtbox_shipping_origin_search_store_favorite_page}    {value}    ${favorite['text_search_store']}
     common.Input When Ready    ${txtbox_shipping_origin_search_store}    ${store_code}
 
+Input And Select Store Code Shipping Origin Area
+    [Arguments]    ${input_store_receiver}    ${store}
+    ${txtbox_shipping_origin_search_store}=    Replace String    ${txtbox_shipping_origin_search_store_favorite_page}    {value}    ${favorite['text_search_store']}
+    ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${Booking['text_select_store_on_map']}
+    FOR    ${i}    IN RANGE    0    5
+        common.Input When Ready    ${txtbox_shipping_origin_search_store}    ${input_store_receiver}
+        Select Store Shipping Origin Area Lists    ${store}
+        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=${DEFAULT_TIMEOUT}
+        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
+        common.Clear Value Input Text    ${txtbox_shipping_origin_search_store}
+    END
+
 Select Store Shipping Origin Area Lists
     [Arguments]    ${store}
     ${cbo_shipping_origin_store}=    Replace String    ${cbo_shipping_origin_store_favorite_page}    {value}    ${store}

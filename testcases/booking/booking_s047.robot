@@ -66,7 +66,7 @@ Booking_S047
     ...    ${Booking_S005['sender_phone']}
     ...    ${Booking_S005['sender_address']}
     ...    ${Booking_S005['sender_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Display Sender Card
+    common.Verify Capture Screenshot    booking    Booking_S047    1.Verify Display Sender Card
 
     Log    Step No.2 กดที่รายการโปรด
     b2c_favorite_page.Click Sender Card
@@ -89,7 +89,7 @@ Booking_S047
     ...    ${Booking_S005['sender_phone']}
     ...    ${Booking_S005['sender_address']}
     ...    ${Booking_S005['sender_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Data Sender In Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    2.Verify Data Sender In Popup
 
     Log    Step No.3 กดปุ่ม "เเก้ไข"
     b2c_favorite_page.Click Edit Button
@@ -107,13 +107,13 @@ Booking_S047
     ...    ${Booking_S005['sender_phone']}
     ...    ${Booking_S005['sender_address']}
     ...    ${Booking_S005['sender_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Sender Before Editing In Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    3.Verify Sender Before Editing In Popup
     
     Log    Step No.4 เเก้ไขรายการดังนี้
     b2c_favorite_page.Edit Sender Favorite Name    ${Booking_S047.edit_sender['sender_favorite_name']}
     # Expected
     b2c_favorite_page.Wait until Data Is Successfully Edited
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Sender Edited In Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    4.Verify Sender Edited In Popup
 
     Log    Step No.5 กดปุ่ม "บันทึกเเก้ไข"
     b2c_favorite_page.Click Save Edit Button
@@ -124,7 +124,7 @@ Booking_S047
     ...    ${Booking_S005['sender_phone']}
     ...    ${Booking_S005['sender_address']}
     ...    ${Booking_S005['sender_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Data Sender After Edited
+    common.Verify Capture Screenshot    booking    Booking_S047    5.Verify Data Sender After Edited
     
     Log    Step No.6 กดปุ่ม "เพิ่ม"
     b2c_favorite_page.Click Add Sender Button
@@ -142,7 +142,7 @@ Booking_S047
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${favorite['text_input_postcode']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Add Sender Favorite Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    6.Verify Add Sender Favorite Popup
 
     Log    Step No.7 กรอกข้อมูลดังนี้
     b2c_favorite_page.Input Sender Favorite Name    ${Booking_S047.add_sender_favorite['favorite_name']}
@@ -159,7 +159,7 @@ Booking_S047
     ...    ${Booking_S047.add_sender_favorite['sender_phone']}
     ...    ${Booking_S047.add_sender_favorite['sender_address']}
     ...    ${Booking_S047.add_sender_favorite['sender_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Sender Card After Added Information
+    common.Verify Capture Screenshot    booking    Booking_S047    7.Verify Sender Card After Added Information
 
     Log    Step No.8 กด Tap "ผู้รับพัสดุ"
     b2c_favorite_page.Select Receiver Tab
@@ -170,7 +170,7 @@ Booking_S047
     ...    ${Booking_S003['receiver_phone']}
     ...    ${Booking_S003['receiver_address']}
     ...    ${Booking_S003['receiver_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Display Receiver Card When Select Send To Home
+    common.Verify Capture Screenshot    booking    Booking_S047    8.Verify Display Receiver Card When Select Send To Home
 
     Log    Step No.9 กดที่รายการโปรด
     b2c_favorite_page.Click Receiver Card
@@ -195,9 +195,9 @@ Booking_S047
     ...    ${Booking_S047.receiver_favorite_card['receiver_location_pickup']}
     ...    ${Booking_S003['receiver_address']}
     ...    ${Booking_S003['receiver_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Data Receiver In Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    9.Verify Data Receiver In Popup
     b2c_favorite_page.Scroll To Display Edit Button
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Data Receiver Footer In Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    9.Verify Data Receiver Footer In Popup
 
     Log    Step No.10 กดปุ่ม "เเก้ไข"
     b2c_favorite_page.Click Edit Button
@@ -217,15 +217,15 @@ Booking_S047
     ...    ${Booking_S047.receiver_favorite_card['receiver_location_pickup']}
     ...    ${Booking_S003['receiver_address']}
     ...    ${Booking_S003['receiver_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Receiver Before Editing In Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    10.Verify Receiver Before Editing In Popup
 
     Log    Step No.11 เเก้ไขรายการดังนี้
     b2c_favorite_page.Select Pickup Location    ${Booking_S047.edit_receiver['receiver_location_pickup']}
-    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S047['receiver_store_code_5_digits']}    ${Booking_S047['receiver_store_address']}
+    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S047.edit_receiver['receiver_store_code_5_digits']}    ${Booking_S047.edit_receiver['receiver_store_address']}
     b2c_favorite_page.Click Store On Map
     # Expected
     b2c_favorite_page.Verify Store Address Receiver    ${Booking_S047.edit_receiver['receiver_store_full_address']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Receiver Edited In Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    11.Verify Receiver Edited In Popup
 
     Log    Step No.12 กดปุ่ม "บันทึกเเก้ไข"
     b2c_favorite_page.Click Save Edit Button
@@ -234,8 +234,8 @@ Booking_S047
     ...    ${Booking_S047.receiver_favorite_card['favorite_name']}
     ...    ${Booking_S003['receiver_name']}
     ...    ${Booking_S003['receiver_phone']}
-    ...    ${Booking_S047.edit_receiver['receiver_store_address']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Data Receiver After Edited
+    ...    ${Booking_S047.edit_receiver['receiver_store_address2']}
+    common.Verify Capture Screenshot    booking    Booking_S047    12.Verify Data Receiver After Edited
 
     Log    Step No.13 กดปุ่ม "เพิ่ม"
     b2c_favorite_page.Click Add Receiver Button
@@ -256,9 +256,9 @@ Booking_S047
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${favorite['text_input_postcode']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Add Receiver Favorite Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    13.Verify Add Receiver Favorite Popup
     b2c_favorite_page.Scroll To Display Save Button
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Add Receiver Favorite Footer Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    13.Verify Add Receiver Favorite Footer Popup
 
     Log    Step No.14 กรอกข้อมูลดังนี้
     b2c_favorite_page.Input Receiver Favorite Name    ${Booking_S047.add_receiver_favorite['favorite_name']}
@@ -275,13 +275,13 @@ Booking_S047
     ...    ${Booking_S047.add_receiver_favorite['receiver_phone']}
     ...    ${Booking_S047.add_receiver_favorite['receiver_address']}
     ...    ${Booking_S047.add_receiver_favorite['receiver_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Receiver Card After Added When Select Send To Home
+    common.Verify Capture Screenshot    booking    Booking_S047    14.Verify Receiver Card After Added When Select Send To Home
 
     Log    Step No.15 กด Tap "พื้นที่ต้นทางการจัดส่ง"
     b2c_favorite_page.Select Shipping Origin Area Tab
     # Expected
     b2c_favorite_page.Verify Shipping Origin Area Tab
-    common.Verify Capture Screenshot    booking    Booking_S047    Verify Shipping Origin Area Tab
+    common.Verify Capture Screenshot    booking    Booking_S047    15.Verify Shipping Origin Area Tab
 
     Log    Step No.16 กดปุ่ม "เพิ่ม"
     b2c_favorite_page.Click Add Shipping Origin Area Button
@@ -292,14 +292,13 @@ Booking_S047
     ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
     b2c_favorite_page.Verify Data Shipping Origin Area
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    Booking_S047    Verify Add Shipping Origin Area Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    16.Verify Add Shipping Origin Area Popup
     b2c_favorite_page.Scroll To Display Save Button
-    common.Verify Capture Screenshot    Booking_S047    Verify Add Shipping Origin Area Footer Popup
+    common.Verify Capture Screenshot    booking    Booking_S047    16.Verify Add Shipping Origin Area Footer Popup
 
     Log    Step No.17 กรอกข้อมูลดังนี้
     b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${Booking_S047.add_shipping_origin_area['favorite_name']}
-    b2c_favorite_page.Input Store Code Shipping Origin Area    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_code_5_digits']}
-    b2c_favorite_page.Select Store Shipping Origin Area Lists    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_address']}
+    b2c_favorite_page.Input And Select Store Code Shipping Origin Area    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_code_5_digits']}    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_address']}
     b2c_favorite_page.Click Store On Map
     b2c_favorite_page.Click Save Button
     # Expected
@@ -307,4 +306,4 @@ Booking_S047
     ...    ${Booking_S047.add_shipping_origin_area['favorite_name']}
     ...    ${Booking_S047.add_shipping_origin_area['shipping_origin_store_address']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    Booking_S047    Verify Shipping Origin Area Card After Added Information
+    common.Verify Capture Screenshot    booking    Booking_S047    17.Verify Shipping Origin Area Card After Added Information

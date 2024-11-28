@@ -26,12 +26,14 @@ ${dps_txt_task_type_title_table_in_all_task_tab_home_page}    //div[@class='ant-
 ${dps_txt_title_table_in_all_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title_task_type}']/..//th[text()='{main_title}']
 ${dps_txt_pouch_number_title_table_in_all_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title}']
 ${dps_txt_label_import_task_tab_in_home_page}    //tr[th[1]='{import_from}' and th[2]='{transport}' and th[3]='{parcel_owner}' and th[4]='{number_of_pouch}' and th[5]='{number_of_pieces}' and th[6]='{number_of_scanned_items}']
+
 ${dps_txt_import_from_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[1]
 ${dps_txt_transport_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[2]
 ${dps_txt_parcel_owner_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[3]
 ${dps_txt_number_of_pouch_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[4]
 ${dps_txt_number_of_pieces_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[5]
 ${dps_txt_number_of_scanned_items_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[6]
+
 # ${dps_txt_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title}']
 ${dps_txt_title_table_in_send_task_tab_home_page}    //tr[th[1]='{send_to}' and th[2]='{store_code}' and th[3]='{customer_type}' and th[4]='{transport}' and th[5]='{number_of_pieces}' ]
 ${dps_txt_transport_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title_store_code}']/..//th[text()='{title_transport}']

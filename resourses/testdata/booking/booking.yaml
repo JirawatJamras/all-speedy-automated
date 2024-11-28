@@ -1122,7 +1122,7 @@ Booking_S042:
   buy_insurance: 2,500
   verify_buy_insurance: '2,500.00'
   parcel_detail_remark:  ระวังพัสดุเสียหาย
-  price_value: '120'
+  price_value: '120.00'
   discount_amount: '1'
   discount_value: '5.00'
   insurance_fee_amount: '1'
@@ -1154,10 +1154,6 @@ Booking_S043:
   price_value: '250.00'
   discount_amount: '1'
   discount_value: '5.00'
-  insurance_fee_amount: '0'
-  insurance_fee_value: '0.00'
-  cod_fee_amount: '0'
-  cod_fee_value: '0.00'
   total_price_amount: '1'
   total_price_value: '245.00'
   total_price_value2: '225.00'
@@ -1185,6 +1181,7 @@ Booking_S047:
     receiver_location_pickup: 'ส่งร้าน 7-11'
     receiver_store_code_5_digits: '15888'
     receiver_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    receiver_store_address2: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 35110'
     receiver_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
   add_receiver_favorite:
     favorite_name: บ้าน
