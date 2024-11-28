@@ -49,7 +49,7 @@ DC_Operation_S008
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139
+    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -221,7 +221,7 @@ DC_Operation_S008
 
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
-    # Defect188
+    # Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Export Task Tab
     # ...    ${dc_operation.label_export_task_tab['export_to']}
@@ -732,7 +732,7 @@ DC_Operation_S008
 
     Log    Step No.52 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139
+    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -931,6 +931,7 @@ DC_Operation_S008
 
     Log    Step No.63 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
+    # Defect190    Defect291
     # Expected
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}

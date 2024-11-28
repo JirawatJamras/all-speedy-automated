@@ -542,7 +542,7 @@ DC_Operation_S004
 
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
-    # Defect189
+    # Defect189    Defect291
     # Expected
     # dps_home_page.Verify Label In Export Task Tab
     # ...    ${dc_operation.label_export_task_tab['export_to']}
@@ -852,7 +852,7 @@ DC_Operation_S004
 
     Log   Step No.37 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139    Defect188
+    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -1053,7 +1053,7 @@ DC_Operation_S004
 
     Log    Step No.48 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
-    # Defect190
+    # Defect190    Defect291
     # Expected
     # dps_home_page.Verify Label In Send Task Tab
     # ...    ${dc_operation.label_send_task_tab['send_to']}
@@ -1102,7 +1102,7 @@ DC_Operation_S006
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139    Defect188
+    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -1271,7 +1271,7 @@ DC_Operation_S006
 
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
-    # Defect189
+    # Defect189    Defect291
     # Expected
     # dps_home_page.Verify Label In Export Task Tab
     # ...    ${dc_operation.label_export_task_tab['export_to']}
@@ -1573,7 +1573,7 @@ DC_Operation_S006
 
     Log   Step No.36 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139    Defect188
+    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -1775,7 +1775,7 @@ DC_Operation_S006
 
     Log    Step No.47 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
-    # Defect190
+    # Defect190    Defect291
     # Expected
     # dps_home_page.Verify Label In Send Task Tab
     # ...    ${dc_operation.label_send_task_tab['send_to']}
@@ -1824,7 +1824,7 @@ DC_Operation_S010
 
     # Log    Step No.2 เลือกแท็บงานรับเข้า
     # dps_home_page.Select Tab Import Task
-    # # Defect139    Defect188
+    # # Defect139    Defect188    Defect291
     # # Expected
     # # dps_home_page.Verify Label In Import Task Tab
     # # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -1993,7 +1993,7 @@ DC_Operation_S010
 
     # Log    Step No.16 เลือกแท็บงานส่งออก
     # dps_home_page.Select Tab Export Task
-    # # Defect189
+    # # Defect189    Defect291
     # # Expected
     # # dps_home_page.Verify Label In Export Task Tab
     # # ...    ${dc_operation.label_export_task_tab['export_to']}
@@ -2472,7 +2472,7 @@ DC_Operation_S010
 
     Log    Step No.50 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139    Defect188
+    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -2672,7 +2672,7 @@ DC_Operation_S010
 
     Log    Step No.61 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
-    # Defect190
+    # Defect190    Defect291
     # Expected
     # dps_home_page.Verify Label In Send Task Tab
     # ...    ${dc_operation.label_send_task_tab['send_to']}
