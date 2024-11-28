@@ -9,35 +9,35 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 *** Test Cases ***
 DC_Operation_S003
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
-    [Tags]    DC_Operation    UAT
+    [Tags]    DC_Operation    UAT    Defect138    Defect139    Defect141    Defect155    Defect181    Defect187    Defect188    Defect189    Defect201    Defect205    Defect218    Defect232    Defect259
     
     Log    Prerequisite
     prerequisite.DC_Operation_S002
     
     Log    Step เตรียมค่า tracking
-    ${tracking_a}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_1']}
-    ${tracking_b}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_2']}
-    ${tracking_c}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_3']}
-    ${tracking_d}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_4']}
-    ${tracking_e}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_5']}
-    ${tracking_f}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_6']}
-    ${tracking_g}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_7']}
-    ${tracking_h}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_8']}
-    ${tracking_i}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_9']}
-    ${tracking_j}   Get Parcel Codes By Sender Name    ${list_parcel_id}    ${DC_Operation_S003['sender_name_10']}
-    Log To Console    ${tracking_j}
+    ${tracking_a}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_1']}
+    ${tracking_b}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_2']}
+    ${tracking_c}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_3']}
+    ${tracking_d}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_4']}
+    ${tracking_e}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_5']}
+    ${tracking_f}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_6']}
+    ${tracking_g}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_7']}
+    ${tracking_h}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_8']}
+    ${tracking_i}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_9']}
+    ${tracking_j}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_10']}
 
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
-    # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
-    # dps_home_page.Click Dropdown For Select Role
-    # dps_home_page.Select Role    ${dc_operation.role['admin']}
-    # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
-    # dps_home_page.Select Tab All Task
-    # # dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${DC_Operation_S003.scan_in_data_parcel_detail['tracking']}
+    common.Open URL    ${DPS_UAT_URL}
+    dps_landing_page.Click Go Login Button
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
+    dps_home_page.Click Dropdown For Select Role
+    dps_home_page.Select Role    ${dc_operation.role['admin']}
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    dps_home_page.Select Tab All Task
+    dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${tracking_a}
     
     # # Defect138    Defect141    Defect187
-    # # Expected #Check all in ${list_parcel_id}
+    # # Expected # Check all in ${Global_ParcelsData}
     # dps_home_page.Verify Homepage
     # ...    ${dc_operation.breadcrumb['homepage']}
     # ...    ${dc_operation.title['homepage']}
@@ -51,23 +51,23 @@ DC_Operation_S003
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
-    # ...    งานส่งออก    #for run same tracking# ${DC_Operation_S003.data_in_all_task_tab['task_type']}
-    # ...    speedy  # ${DC_Operation_S003.data_in_all_task_tab['parcel_owner']}
-    # ...    -  # ${DC_Operation_S003.data_in_all_task_tab['import_from']}
-    # ...    DC BB    #for run same tracking# ${DC_Operation_S003.data_in_all_task_tab['export_to']}
-    # ...    CPALL  # ${DC_Operation_S003.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['task_type']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['import_from']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['export_to']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['transport']}
     # ...    ${DC_Operation_S003.data_in_all_task_tab['pouch_number']}
-    # ...    ${DC_Operation_S013.scan_in_data_parcel_detail['tracking']}
-    # ...    พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง  # ${DC_Operation_S003.data_in_all_task_tab['parcel_status']}
-    # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Homepage
-    # common.Scroll Window To Vertical    500
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data In All Task Tab
+    # ...    ${tracking_a}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['parcel_status']}
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Homepage
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data In All Task Tab
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
-    # dps_home_page.Select Tab Import Task
+    dps_home_page.Select Tab Import Task
 
-    # # Defect188    Defect205
+    # # Defect139    Defect188    Defect205
     # # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -109,7 +109,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.scan_in_data_parcel_detail['parcel_status']}
     ...    ${DC_Operation_S003.scan_in_data_parcel_detail['courier']}
     ...    ${DC_Operation_S003.scan_in_data_parcel_detail['pouch_number']}
-    ...    ${today}    # ${DC_Operation_S003.scan_in_data_parcel_detail['receiving_date']}
+    ...    ${today}
     ...    ${DC_Operation_S003.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S003.scan_in_data_parcel_detail['send_parcel_to']}
 
@@ -159,10 +159,7 @@ DC_Operation_S003
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Robot Skip Step Print Label
-    Switch Window    NEW
-    Press Keys    None    TAB+SPACE
-    Switch Window    MAIN    
+    common.Robot Skip Step Print Label  
     # Expected
     dps_scan_page.Verify Print Label Success Popup
     ...    ${dc_operation['text_print_label_success']}
@@ -208,10 +205,10 @@ DC_Operation_S003
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
-    # common.Scroll Window To Vertical    0
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Homepage 2
-    # common.Scroll Window To Vertical    500
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data In All Task Tab 2
+    common.Scroll Window To Vertical    0
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Homepage 2
+    common.Scroll Window To Vertical    500
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data In All Task Tab 2
 
 
     Log    Step No.10 เลือกแท็บงานส่งออก
@@ -353,11 +350,8 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.wait_derivery_data_list['status']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # common.Robot Skip Step Print Label
-    Switch Window    NEW
-    Press Keys    None    TAB+SPACE
-    Switch Window    MAIN         
-    # Expected
+    common.Robot Skip Step Print Label     
+
 
 
 

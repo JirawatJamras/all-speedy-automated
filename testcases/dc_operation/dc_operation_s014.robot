@@ -6,13 +6,13 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
 Test Teardown     Close Browser
 
 *** Variables ***   
-${SHEET_NAME}    Tracking_S014   # ชื่อชีตที่ต้องการ
-${ROW_NUMBER}    2      # แถวที่ต้องการลบ
+${SHEET_NAME}    Tracking_S014
+${ROW_NUMBER}    2
 
 *** Test Cases ***
 DC_Operation_S014
     [Documentation]    ลูกค้า C (ส่งพัสดุที่ร้าน 7-11) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
-    [Tags]    DC_Operation    UAT
+    [Tags]    DC_Operation    UAT    Defect138    Defect139    Defect141    Defect160    Defect181    Defect187    Defect188    Defect189    Defect191    Defect205    Defect218    Defect232    Defect259
 
     Log    Step No.1-15 Skip By Use Tracking Mannual
     Set Today
@@ -35,7 +35,6 @@ DC_Operation_S014
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
     # Expected
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -358,7 +357,6 @@ DC_Operation_S014
     ...    ${DC_Operation_S014.wait_derivery_data_list['status']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
-    # common.Robot Skip Step Print Label
+    common.Robot Skip Step Print Label
         
-    # Expected
 
