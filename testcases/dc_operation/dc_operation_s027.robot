@@ -8,7 +8,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 *** Test Cases ***
 DC_Operation_s027
     [Documentation]    การ Move Status แบบค้นหาพัสดุ
-    [Tags]    DC_Operation    UAT
+    [Tags]    DC_Operation    UAT    Defect257    Defect266
 
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002
@@ -24,10 +24,16 @@ DC_Operation_s027
 
     Log    Prerequisite S004
     prerequisite.DC_Operation_S004
+    Log    Prerequisite S005
     Log    Prerequisite S006
     prerequisite.DC_Operation_S006
+    Log    Prerequisite S007
+    Log    Prerequisite S008
+    Log    Prerequisite S009
     Log    Prerequisite S010
     prerequisite.DC_Operation_S010
+    Log    Prerequisite S011
+    Log    Prerequisite S012
 
     Set Today
     ${today_repattern}    Set Date Pattern    ${today}
@@ -59,15 +65,13 @@ DC_Operation_s027
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    3.Verify Parcel Status List In Dropdown
 
     Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
-    # Defect257
-    ######## ใช้ชั่วคราว ########
-    dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
-    ######## ใช้ชั่วคราว ########
+    # dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     # Expected
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    4.Search With Pickup Pending Status
+    # dps_scan_page.Verify Parcel Status Dropdown [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    4.Verify Parcel Status Dropdown
 
     Log    Step No.5 คลิกปุ่มค้นหา
-    # Defect263
+    dps_scan_page.Select Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     dps_scan_page.Click Search Button [Move Status]
     # Expected
     dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
@@ -107,18 +111,17 @@ DC_Operation_s027
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    10.Verify Calendar Last Updated Date
 
     Log    Step No.11 คลิกช่องค้นหา Pouch Number และพิมพ์หมายเลข Pouch ที่มีสถานะปิดอยู่ลงในช่องค้นหา, กดปุ่มค้นหา
-    dps_scan_page.Input Pouch Number [Move Status]    P112478683
+    dps_scan_page.Input Pouch Number [Move Status]    ${global_pouch_number}
     dps_scan_page.Click Search Button [Move Status]
     # Expected
-    dps_scan_page.Verify Search Pouch Number Result    P112478683
+    dps_scan_page.Verify Search Pouch Number Result    ${global_pouch_number}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    11.Verify Search Pouch Number Result
 
     Log    Step No.12 คลิกปุ่มเคลียร์
     dps_scan_page.Click Clear Button [Move Status]
-    # Defect266
     # Expected
     dps_scan_page.Verify Clear Filter Input
-    # dps_scan_page.Verify Search Pouch Number Result    P112478683
+    # dps_scan_page.Verify Search Pouch Number Result    ${global_pouch_number}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    12.Verify Clear Filter Pouch Number
 
     Log    Step No.13 คลิกปุ่มค้นหา
@@ -127,11 +130,6 @@ DC_Operation_s027
     dps_scan_page.Verify Move Status Page
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    13.Verify Click Search Button
 
-    ####  ใช้ชั่วคราว ####
-    dps_scan_page.Click Clear Button [Move Status]
-    ####  ใช้ชั่วคราว ####
-
-    # Defect282
     Log    Step No.14 คลิกช่องค้นหาหมายเลขพัสดุ, พิมพ์หมายเลขพัสดุที่มีชื่อผู้ส่งเป็น คุณ b ถึง คุณ j โดยพิมพ์ Tracking1 เว้นวรรค ตามด้วย Tracking2 จนครบทุกหมายเลข, คลิกปุ่มค้นหา
     dps_scan_page.Input Tracking Number [Move Status]
     ...    ${tracking_b}    

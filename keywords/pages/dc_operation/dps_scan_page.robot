@@ -555,6 +555,12 @@ Verify Title Parcel Details In Scan Page [CP All Courier]
     Should Be Equal    ${actual_txt_title_send_parcel_to}    ${send_parcel_to}
     Should Be Equal    ${actual_txt_title_route}    ${route}
 
+Verify Pouch Number Data Parcel Details In Scan Page [CP All Courier]
+    [Arguments]    ${pouch_number}
+    ${actual_pouch_number}=    Replace String    ${dps_txt_value_pouch_number_scan_in}    {text}    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
+    ${actual_pouch_number}=    Replace String    ${actual_pouch_number}    {value}    ${pouch_number}
+    Wait Until Element Is Visible    ${actual_pouch_number}    timeout=${DEFAULT_TIMEOUT}
+
 Verify Data Parcel Details In Scan Page [CP All Courier]
     [Arguments]    ${parcel_id}    ${customer_id}    ${parcel_size}
     ...            ${crossdock_warehouse}    ${destination_warehouse}    ${parcel_status}
@@ -622,6 +628,12 @@ Verify Title Label Parcel In Scan Page [CP All Courier]
     Element Should Be Visible    ${dps_txt_title_label_phone}
     Element Should Be Visible    ${dps_txt_title_label_pouch_number}
     Element Should Be Visible    ${dps_txt_title_label_wh}
+
+Verify Pouch Number Data Label Parcel In Scan Page [CP All Courier]
+    [Arguments]    ${pouch_number}
+    ${actual_pouch}=    Replace String   ${dps_txt_pouch_value_label}    {text}    ${dc_operation.scan_in_title_label_detail['pouch_number']}
+    ${actual_pouch}=    Replace String   ${actual_pouch}    {value}    ${pouch_number}
+    Wait Until Element Is VIsible    ${actual_pouch}
 
 Verify Data Label Parcel In Scan Page [CP All Courier]
     [Arguments]    ${store}    ${customer}    ${phone}    ${pouch_number}    ${wh}    ${symbol}
@@ -869,11 +881,14 @@ Verify Parcel Status List In Dropdown
 
 Search With Parcel Status [Move Status]
     [Arguments]    ${parcel_status}
+    common.Input When Ready    ${dps_txtbox_status_move_status}    ${parcel_status}
+
+Select Parcel Status [Move Status]
+    [Arguments]    ${parcel_status}
     ${actual_parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${parcel_status}
     ${status}=    Set Variable    False
     Register Keyword To Run On Failure    NOTHING
     WHILE    '${status}' == 'False'
-    # FOR    ${i}    IN RANGE    10
         Press Keys    None    DOWN
         ${status}    Run Key Word And Return Status    Page Should Contain Element    ${actual_parcel_status}
         Exit For Loop If    '${status}' == 'True'
@@ -881,6 +896,11 @@ Search With Parcel Status [Move Status]
     Scroll Element Into View    ${actual_parcel_status}
     common.Click When Ready    ${actual_parcel_status}
     Register Keyword To Run On Failure    Capture Page Screenshot
+
+Verify Parcel Status Dropdown [Move Status]
+    [Arguments]    ${status}
+    ${actual_parcel_status}=    Replace String    ${dps_cbo_parcel_status_move_status}    {value}    ${parcel_status}
+    Wait Until Element Is Visible    ${actual_parcel_status}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Search Parcel Status Result
     [Arguments]    ${status}
@@ -938,7 +958,6 @@ Verify Clear Filter Input
     ${end_date}=    Get Value    ${dps_txtbox_end_date_move_status}
 
     Wait Until Element Is Visible    ${dps_txt_blank_parcel_status_move_status}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${dps_txt_blank_dc_initial_move_status}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${dps_txt_courier_move_status}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${dps_txt_blank_parcel_owner_move_status}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${dps_txt_blank_parcel_size_move_status}    timeout=${DEFAULT_TIMEOUT}

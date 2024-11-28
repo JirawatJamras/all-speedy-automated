@@ -48,7 +48,7 @@ DC_Operation_S002
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S002['parcel_pickup_time']}
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status
+    b2c_call_car_pick_up_parcel_page.Verify Add Parcel Pickup
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
     ...    ${tomorrow}
@@ -75,7 +75,6 @@ DC_Operation_S002
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add   
     Sleep    2s
-    # Defect043 
     # Expected    
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    7.Verify Term & Condition
@@ -136,8 +135,6 @@ DC_Operation_S002
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
-    Log To Console    ${booking_id}
-    # Defect144
     # Expected
     # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     # ...    ${today}
@@ -181,7 +178,6 @@ DC_Operation_S002
     ...    ${DATABASE_NAME}
     ...    ${COLLECTION}
     ...    ${QUERY}
-    # Defect150
     # Expected
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
@@ -203,11 +199,11 @@ DC_Operation_S002
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    b2c_booking_detail_page.Verify Booking Detail Page After Import File
-    ...    ยืนยันรอบรถเข้ารับพัสดุ    #${Booking['text_waiting_confirm_parcel_pickup']}
-    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    ...    ${DC_Operation_S002['parcel_number']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.Verify Parcel Status After Cut Off Time
+    # b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    # ...    ${DC_Operation_S002['parcel_number']}
+    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
     Go To    ${DPS_UAT_URL}
@@ -257,7 +253,6 @@ DC_Operation_S002
 
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
-    # Defect247
     # Expected
     dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -414,6 +409,7 @@ DC_Operation_S004
     Log    Step No.9 คลิกปุ่มตกลง
     dps_scan_page.Click Accept Button On Popup For Creating Pouch
     ${pouch_number}    Get Pouch Number And Verify Pouch Format    # Defect260    comment code อยู่ด้านใน keyword "Get Pouch Number And Verify Pouch Format"
+    Set Suite Variable    ${global_pouch_number}    ${pouch_number}
     # Defect155    Defect215    Defect249    Defect260
     # # Expected    
     # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]

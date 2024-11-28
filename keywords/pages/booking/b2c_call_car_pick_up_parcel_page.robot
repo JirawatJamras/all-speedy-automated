@@ -50,7 +50,7 @@ Click Save Button
     ${b2c_btn_save_in_add_popup}=  Replace String   ${b2c_btn_save_in_add_popup}   {value}   ${call_car_pick_up['button_save']}
     common.Click When Ready    ${b2c_btn_save_in_add_popup}
 
-Verify Parcel Pickup Status
+Verify Add Parcel Pickup
     [Arguments]    ${status}    ${round}    ${tomorrow}    ${pickup_time}    ${today}
     ...    ${text_parcel_number}    ${parcel_num}    ${text_price}    ${price_value}    ${text_pickup_location}    ${company_address}
     ...    ${sub_district}    ${district}    ${province}    ${postcode}
@@ -68,7 +68,23 @@ Verify Parcel Pickup Status
     ${value_location}=  Replace String   ${label_location}    {location_value}    ${company_address} ${sub_district} ${district} ${province} ${postcode}
     Wait Until Element Is Visible    ${b2c_txt_complete_save_pickup_round}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
+    Register Keyword To Run On Failure    NOTHING
+    ${status}=    Set Variable    False
+    ${loop}=    Set Variable    0
+    ${today_pattern}    Set Date Pattern    ${today}
+    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
+    Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
+
+    WHILE    '${status}' == 'False'
+        Scroll Window To Vertical    0
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_card}
+        Exit For Loop If    '${status}' == 'True' 
+        Scroll Window To Vertical    1000
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+    END
 
 Search Parcel Pickup By Date
     [Arguments]    ${start_date}    ${end_date}

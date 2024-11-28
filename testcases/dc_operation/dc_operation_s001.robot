@@ -4,12 +4,11 @@ Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
                   ...    AND   Reset Cut Off Time
-Test Teardown     Run Keywords    Reset Cut Off Time
-                  ...    AND    Close Browser
+Test Teardown     Close Browser
 
 *** Test Cases ***
 DC_Operation_S001
-    [Tags]    DC_Operation    UAT    Fail
+    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150    Defect221
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -53,7 +52,7 @@ DC_Operation_S001
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${DC_Operation_S001['parcel_pickup_time']}
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status
+    b2c_call_car_pick_up_parcel_page.Verify Add Parcel Pickup
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
     ...    ${tomorrow}
@@ -78,11 +77,11 @@ DC_Operation_S001
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    6.Verify Booking Page
     
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
-    b2c_booking_delivery_page.Click Button To Add    
-    # Defect043
+    b2c_booking_delivery_page.Click Button To Add   
+    # Defect043 
     # Expected
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    7.Verify Term & Condition
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    7.Verify Term & Condition
 
     Log    Step No.8 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
@@ -140,8 +139,7 @@ DC_Operation_S001
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
-    Log To Console    ${booking_id}
-    # Defect144
+    # Defect143
     # Expected
     # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     # ...    ${today}
@@ -194,14 +192,14 @@ DC_Operation_S001
     ...    ${DC_Operation_S001['verify_pickup_time']}
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Parcel Pickup Status After Cut Off Time
-    # b2c_home_page.Click Book Parcel Delivery    
-    # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
-    # ...    ${booking_id}
-    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Booking Status After Cut Off Time
-    # b2c_booking_delivery_page.Select Booking With Booking ID    
-    # ...    ${booking_id}
-    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    b2c_home_page.Click Book Parcel Delivery    
+    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
+    ...    ${booking_id}
+    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Booking Status After Cut Off Time
+    b2c_booking_delivery_page.Select Booking With Booking ID    
+    ...    ${booking_id}
+    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # b2c_booking_detail_page.Verify Booking Detail Page After Import File
     # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
@@ -361,10 +359,10 @@ DC_Operation_S001
     # ...    ${Booking['text_parcel_status_call_car']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    28.Verify Booking Change Status To Call Car
 
-    # Log    Step No.29 คลิกเลือกรายการ Booking
-    # b2c_booking_delivery_page.Select Booking With Booking ID    
-    # ...    ${booking_id}
-    # ...    ${Booking['text_parcel_status_call_car']}
+    Log    Step No.29 คลิกเลือกรายการ Booking
+    b2c_booking_delivery_page.Select Booking With Booking ID    
+    ...    ${booking_id}
+    ...    ${Booking['text_parcel_status_call_car']}
     # # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page After Canceled
     # ...    ${Booking['text_parcel_status_waiting_entering']}

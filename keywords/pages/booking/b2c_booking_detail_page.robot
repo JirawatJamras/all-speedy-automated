@@ -119,22 +119,15 @@ Select Pickup Schedule Tab
 
 Verify Display Pickup Schedule Data
     [Arguments]   ${round}    ${tomorrow}    ${parcel_num}    ${today}    ${price}
-    ${day}    Split String And Select    ${tomorrow}    -    0
-    ${month}    Split String And Select    ${tomorrow}    -    1
-    ${year}    Split String And Select    ${tomorrow}    -    2
-    ${nextDay}    Set Variable    ${day}/${month}/${year}
-
-    ${day}    Split String And Select    ${today}    -    0
-    ${month}    Split String And Select    ${today}    -    1
-    ${year}    Split String And Select    ${today}    -    2
-    ${date}    Set Variable    ${day}/${month}/${year}
+    ${today_pattern}    Set Date Pattern    ${today}
+    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
 
     ${actual_round} =  Replace String    ${b2c_txt_pickup_schedule}    {round}    ${round}
-    ${actual_pickup_date} =  Replace String    ${actual_round}    {pickup_date}    ${Booking.pickup_schedule['pickup_date']} ${nextDay}
+    ${actual_pickup_date} =  Replace String    ${actual_round}    {pickup_date}    ${Booking.pickup_schedule['pickup_date']} ${tomorrow_pattern}
     ${actual_parcel} =  Replace String    ${actual_pickup_date}    {parcel_num}    ${Booking.pickup_schedule['parcel_number']} ${parcel_num}
-    ${actual_cut_off_time} =  Replace String    ${actual_parcel}    {cut_off_time}    ${Booking.pickup_schedule['cut_off_time']} ${date}
+    ${actual_cut_off_time} =  Replace String    ${actual_parcel}    {cut_off_time}    ${Booking.pickup_schedule['cut_off_time']} ${today_pattern}
     ${actual_pickup_schedule_checkbox} =  Replace String    ${actual_cut_off_time}    {price}    ${Booking.pickup_schedule['price']} ${price}
-
+    
     Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    timeout=${DEFAULT_TIMEOUT}
     Set Suite Variable    ${actual_pickup_schedule_checkbox}
 
