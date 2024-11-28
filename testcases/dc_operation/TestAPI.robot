@@ -24,6 +24,25 @@ Test
     Set Global Variable    ${tracking_i}
     Set Global Variable    ${pouch_number}
 
-    prerequisite.DC_Operation_S010
+    # prerequisite.DC_Operation_S010
+
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
+
+    Log    Step No.2 เลือกแท็บงานรับเข้า
+    dps_home_page.Select Tab Import Task
+    # Defect139    Defect188    Defect291
+    # Expected
+    # dps_home_page.Verify Label In Import Task Tab
+    # ...    ${dc_operation.label_import_task_tab['import_from']}
+    # ...    ${dc_operation.label_import_task_tab['transport']}
+    # ...    ${dc_operation.label_import_task_tab['parcel_owner']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_pouch']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
+    dps_home_page.Verify Data In Import Task Tab
+    ...    Home  # ${DC_Operation_S010.data_in_import_task_tab['import_from1']}
+    ...    CP ALL	  # ${DC_Operation_S010.data_in_import_task_tab['transport']}
+    ...    CP ALL	  # ${DC_Operation_S010.data_in_import_task_tab['parcel_owner']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S010   Verify Import Task Tab
 
     

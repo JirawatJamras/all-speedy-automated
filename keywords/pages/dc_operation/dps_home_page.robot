@@ -227,11 +227,7 @@ Verify Data In Import Task Tab
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task_home_page}    {import_from}    ${import_from}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {transport}    ${transport}
     ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {parcel_owner}    ${parcel_owner}
-    #${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pouch}    ${number_of_pouch}
-    # ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_pieces}    ${number_of_pieces}
-    # ${dps_txt_list_first_import_task}=    Replace String    ${dps_txt_list_first_import_task}    {number_of_scanned_items}    ${number_of_scanned_items}
-    # ${actual_txt_list_first_import_task}=    Get Text    ${dps_txt_list_first_import_task}
-    # Element Should Contain    ${dps_txt_list_first_import_task}    ${import_from} ${transport} ${parcel_owner}
+    common.Scroll Into View By Xpath    ${dps_txt_list_first_import_task}    true
     Element Should Be Visible    ${dps_txt_list_first_import_task}
 
 Verify Label In Export Task Tab
