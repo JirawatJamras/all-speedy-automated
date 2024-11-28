@@ -1129,7 +1129,6 @@ DC_Operation_S011:
       - title: พัสดุรอนำจ่ายโดยคลัง
         description: RDC LP    #DC SB
 
-
 DC_Operation_S012:
   sender_name: คุณ b
   data_in_all_task_tab:
@@ -1376,6 +1375,7 @@ DC_Operation_S015:
 
 
 DC_Operation_S016:
+  sender_name: คุณ a
   scan_in_data_parcel_detail:
     customer_id: '0002400563'
     parcel_size: '120 ซม. กล่อง L'
@@ -1419,6 +1419,7 @@ DC_Operation_S016:
     symbol_after_changing_warehourse: รูปดาว
 
 DC_Operation_S017:
+  sender_name: คุณ i
   scan_in_data_parcel_detail:
     customer_id: '0002400563'
     parcel_size: '51 ซม. ซอง A4'

@@ -144,19 +144,19 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Click On/OFF Button Of Pouch List    ${destination_inventory}
             # Expected
             Verify Warning Confirm To Close Pouch    ${txt_warning}
-            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Warning Confirm To Close Pouch On Checking Pouch Step
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    2.Verify Warning Confirm To Close Pouch On Checking Pouch Step
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Btton On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             common.Robot Skip Step Print Label
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
-            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Transaction Complete Popup On Checking Pouch Step
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    4.Verify Transaction Complete Popup On Checking Pouch Step
             Log    Step No.5 คลิกที่ x Pop up
             CLick Close Button
             # Expected
             Verify Transaction Complete Popup Was Closed
-            common.Verify Capture Screenshot    dc_operation    ${testcase_name}   Verify Transaction Complete Popup Was Closed On Checking Pouch Step
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    5.Verify Transaction Complete Popup Was Closed On Checking Pouch Step
         END
     END
 

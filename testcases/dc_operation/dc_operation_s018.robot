@@ -8,20 +8,14 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S018
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ และใบคัดแยกพัสดุ กรณีแก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in ที่คลังต้นทาง
-    [Tags]    DC_Operation    UAT    Pass_With_Condition
-    ${tracking_a}=    Set Variable    SPBD241100014589
+    [Tags]    DC_Operation    UAT    Defect209    Defect225    Defect241
+
+    Log    Prerequisite S002
+    prerequisite.DC_Operation_S002
+    ${tracking_a}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S016['sender_name']}
 
     Log    Prerequisite S016
-
-    Log    Login
-    common.Open URL    ${DPS_UAT_URL}
-    dps_landing_page.Click Go Login Button
-    dps_login_page.Input Email    ${dps_login_user_04['username']}
-    dps_login_page.Input Password    ${dps_login_user_04['password']}
-    dps_login_page.Click Log On Button
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
-    dps_home_page.Click Dropdown For Select Role
-    dps_home_page.Select Role    ${dc_operation.role['admin']}
+    prerequisite.DC_Operation_S016
 
     Log    Step No.1 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
@@ -30,14 +24,13 @@ DC_Operation_S018
     dps_history_parcel_page.Verify Data In Table
     ...    ${dc_operation.title['history_parcel']}  
     ...    ${tracking_a}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    Verify Data In Table
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    1.Verify Data In Table
 
     Log    Step No.2 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
     Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_a}
     Switch Window    NEW
-    # Defect209    Defect225    Defect241
     # Expected
     # dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     # dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
@@ -85,9 +78,9 @@ DC_Operation_S018
     # ...    ${DC_Operation_S018.value_receiver_in_warehouse['name']}
     # ...    ${DC_Operation_S018.value_receiver_in_warehouse['phone']}
     # ...    ${DC_Operation_S018.value_receiver_in_warehouse['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    Verify Parcel Details In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    2.Verify Parcel Details In Warehouse
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    Verify Sender And Receiver In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    2.Verify Sender And Receiver In Warehouse
 
     Log    Step No.3 คลิกปุ่ม Dropdown Reprint
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
@@ -97,13 +90,13 @@ DC_Operation_S018
     ...    ${dc_operation.dropdown_reprint_label['parcel_sorting_sheet']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['pouch_number']}
     ...    ${dc_operation.dropdown_reprint_label['pouch_label']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018   Verify Reprint Label Dropdown
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    3.Verify Reprint Label Dropdown
 
     Log    Step No.4 คลิกที่ใบปะหน้าพัสดุ
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['parcel_label']}
     # Expected
     dps_history_parcel_page.Verify Reprint Label Popup    ${dc_operation.card_reprint_label['text_parcel_label']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018   Verify Reprint Parcel Label
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    4.Verify Reprint Parcel Label
 
     Log    Step No.5 คลิกที่ใบคัดแยกพัสดุ
     dps_history_parcel_page.Click Cancel Reprint Label Button    ${dc_operation.card_reprint_label['text_parcel_label']}
@@ -111,4 +104,4 @@ DC_Operation_S018
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['parcel_sorting_sheet']}
     # Expected
     dps_history_parcel_page.Verify Reprint Label Popup    ${dc_operation.card_reprint_label['text_parcel_sorting_sheet']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Reprint Parcel Sorting Sheet
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    5.Verify Reprint Parcel Sorting Sheet
