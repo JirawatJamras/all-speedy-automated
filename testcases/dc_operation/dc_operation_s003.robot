@@ -9,7 +9,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 *** Test Cases ***
 DC_Operation_S003
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
-    [Tags]    DC_Operation    UAT    Defect138    Defect139    Defect141    Defect155    Defect181    Defect187    Defect188    Defect189    Defect201    Defect205    Defect218    Defect232    Defect259
+    [Tags]    DC_Operation    UAT    Defect138    Defect139    Defect141    Defect155    Defect181    Defect187    Defect188    Defect189    Defect201    Defect205    Defect218    Defect232    Defect259    Defect291
     
     Log    Prerequisite
     prerequisite.DC_Operation_S002
@@ -222,11 +222,11 @@ DC_Operation_S003
     # ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
     # ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
     # ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
-    # Expected not correct
+    # Expected 
     # dps_home_page.Verify Data In Export Task Tab
-    # ...    DCSB  # ${DC_Operation_S003.data_in_export_task_tab['import_from']}
-    # ...    CPALL  # ${DC_Operation_S003.data_in_export_task_tab['transport']}
-    # ...    speedy  # ${DC_Operation_S03.data_in_export_task_tab['parcel_owner']}
+    # ...    Home  # ${DC_Operation_S003.data_in_export_task_tab['import_from']}
+    # ...    Flash  # ${DC_Operation_S003.data_in_export_task_tab['transport']}
+    # ...    Flash  # ${DC_Operation_S03.data_in_export_task_tab['parcel_owner']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data In Export Task Tab
 
     Log    Step No.11 เข้าเมนู Scan และ เลือกแท็บ Scan out

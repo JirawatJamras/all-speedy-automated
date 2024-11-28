@@ -16,7 +16,7 @@ ${ROW_NUMBER}    3
 *** Test Cases ***
 DC_Operation_S013
     [Documentation]    ลูกค้า B (ส่งพัสดุที่ร้าน 7-11) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
-    [Tags]    DC_Operation    UAT    Defect138    Defect139    Defect141    Defect160    Defect181    Defect187    Defect188    Defect189    Defect191    Defect205    Defect218    Defect232    Defect259
+    [Tags]    DC_Operation    UAT    Defect138    Defect139    Defect141    Defect160    Defect181    Defect187    Defect188    Defect189    Defect191    Defect205    Defect218    Defect232    Defect259    Defect291
 
     Log    Step No.1-16 Skip By Use Tracking From Excel
     Set Today
@@ -96,9 +96,9 @@ DC_Operation_S013
     # ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
     # ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
     # dps_home_page.Verify Data In Import Task Tab
-    # ...    ${DC_Operation_S013.data_in_import_task_tab['import_from']}
-    # ...    ${DC_Operation_S013.data_in_import_task_tab['transport']}
-    # ...    ${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
+    # ...    Home    #${DC_Operation_S013.data_in_import_task_tab['import_from']}
+    # ...    CP ALL    #${DC_Operation_S013.data_in_import_task_tab['transport']}
+    # ...    CP ALL    #${DC_Operation_S013.data_in_import_task_tab['parcel_owner']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In Import Task Tab
 
     Log    Step No.21 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
@@ -218,18 +218,18 @@ DC_Operation_S013
     dps_home_page.Select Tab Export Task
     # Defect181    Defect189
     # Expected
-    # dps_home_page.Verify Label In Export Task Tab
-    # ...    ${dc_operation.label_export_task_tab['export_to']}
-    # ...    ${dc_operation.label_export_task_tab['transport']}
-    # ...    ${dc_operation.label_export_task_tab['parcel_owner']}
-    # ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
-    # ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
-    # ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
-    # Expected not correct
-    # dps_home_page.Verify Data In Export Task Tab
-    # ...    DCSB  # ${DC_Operation_S013.data_in_export_task_tab['import_from']}
-    # ...    CPALL  # ${DC_Operation_S013.data_in_export_task_tab['transport']}
-    # ...    speedy  # ${DC_Operation_S13.data_in_export_task_tab['parcel_owner']}
+    dps_home_page.Verify Label In Export Task Tab
+    ...    ${dc_operation.label_export_task_tab['export_to']}
+    ...    ${dc_operation.label_export_task_tab['transport']}
+    ...    ${dc_operation.label_export_task_tab['parcel_owner']}
+    ...    ${dc_operation.label_export_task_tab['number_of_pouch']}
+    ...    ${dc_operation.label_export_task_tab['number_of_pieces']}
+    ...    ${dc_operation.label_export_task_tab['number_of_scanned_items']}
+    # Expected 
+    dps_home_page.Verify Data In Export Task Tab
+    ...    Home  # ${DC_Operation_S013.data_in_export_task_tab['import_from']}
+    ...    Flash  # ${DC_Operation_S013.data_in_export_task_tab['transport']}
+    ...    Flash  # ${DC_Operation_S13.data_in_export_task_tab['parcel_owner']}
 
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    Verify Data In Export Task Tab
 

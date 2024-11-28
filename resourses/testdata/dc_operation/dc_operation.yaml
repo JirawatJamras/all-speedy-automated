@@ -626,7 +626,7 @@ DC_Operation_S008:
     send_parcel_to: Home (51000)
     route: ''
   scan_in_data_label_detail:
-    store: '51000 (ซอง A4)'
+    zipcode: '51000 (ซอง A4)'
     customer: ทดสอบพัสดุ Crossdock ส่งบ้านสร้าง Pouch
     phone: '0900987354'
     wh: DC BB - AC - RDC LP

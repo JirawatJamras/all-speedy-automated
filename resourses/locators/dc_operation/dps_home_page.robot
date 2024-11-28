@@ -35,12 +35,7 @@ ${dps_txt_number_of_scanned_items_in_import_task_tab_home_page}    (//div[@id='r
 # ${dps_txt_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title}']
 ${dps_txt_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//tr[th[1]='{send_to}' and th[2]='{store_code}' and th[3]='{customer_type}' and th[4]='{transport}' and th[5]='{number_of_pieces}' ]
 ${dps_txt_transport_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title_store_code}']/..//th[text()='{title_transport}']
-${dps_txt_export_to_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[1]
-${dps_txt_transport_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[2]
-${dps_txt_parcel_owner_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[3]
-${dps_txt_number_of_pouch_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[4]
-${dps_txt_number_of_pieces_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[5]
-${dps_txt_number_of_scanned_items_in_export_task_tab_home_page}    //div[@id='rc-tabs-1-panel-3']//thead[@class='ant-table-thead']//tr//th[6]
+${dps_txt_label_export_task_tab_in_home_page}    //tr[th[1]='{export_to}' and th[2]='{transport}' and th[3]='{parcel_owner}' and th[4]='{number_of_pouch}' and th[5]='{number_of_pieces}' and th[6]='{number_of_scanned_items}']
 ${dps_txt_dropdown_warehouse_tab_home_page}    //span[@aria-label='down']/../..//div[@class='ant-space-item' and text()]
 
 ${dps_btn_dropdown_select_role}    //span[@aria-label='down-circle']
