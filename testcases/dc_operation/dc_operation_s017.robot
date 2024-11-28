@@ -8,13 +8,13 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S017
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ กรณีไม่แก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in
-    [Tags]    DC_Operation    UAT    Fail
-    ${tracking_i}=    Set Variable    SPBD241100016926
-    # ${pouch_number}=    Set Variable    P112461862
+    [Tags]    DC_Operation    UAT    Defect155    Defect209    Defect219    Defect223    Defect260
 
     Log    Prerequisite S002
+    prerequisite.DC_Operation_S002
 
     Log    Login
+    ${tracking_i}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S017['sender_name']}
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
     dps_login_page.Input Email    ${dps_login_user_04['username']}
@@ -29,7 +29,7 @@ DC_Operation_S017
     dps_pouch_page.Click Dropdown Select Warehouse List    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
     dps_pouch_page.Verify Navigate To Pouch Page Success
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Navigate To Pouch Page Success
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    1.Verify Navigate To Pouch Page Success
 
     Log    ตรวจสอบ Pouch ที่มีคลังปลายทางเป็น RDC LP ที่ถูกเปิดอยู่ และถ้ามี Pouch ที่เปิดอยู่จะดำเนินการต่อใน Step No. 2-5
     dps_pouch_page.Check Open Pouch And Close Pouch By Destination Inventory
@@ -48,14 +48,13 @@ DC_Operation_S017
     ...    ${dc_operation.create_pouch_confirmation['text_create_pouch']}
     ...    ${dc_operation.create_pouch_confirmation['title_destination_pouch']}
     ...    ${dc_operation.create_pouch_confirmation['value_destination_pouch']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Create Pouch Destination DCSB Popup
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    6.Verify Create Pouch Destination DCSB Popup
 
     Log    Step No.7 คลิกปุ่มตกลง
     dps_scan_page.Click Confirm Button To Create Pouch Popup Confirmation
     Sleep  5s
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
     Set Today
-    # Defect155
     # Expected
     # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
@@ -120,7 +119,7 @@ DC_Operation_S017
     # ...    ร้าน สาขา เวียงป่าเป้า (01015)  # ${DC_Operation_S017.scan_in_receiver_data['shipping_destination']}
     # ...    ${DC_Operation_S017.scan_in_receiver_data['address']}
     common.Scroll Window To Vertical    425
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Parcel Details After Scanning
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    7.Verify Parcel Details After Scanning
 
     Log    Step No.8 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label
@@ -130,13 +129,13 @@ DC_Operation_S017
     common.Robot Skip Step Print Label
     # Expected
     dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Print Label Success Popup
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    9.Verify Print Label Success Popup
 
     Log    Step No.10 คลิกที่ x Pop up
     dps_scan_page.Click Close Print Label Success Popup
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Navigate To Scan Page And Stay At Scan In Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    10.Verify Navigate To Scan Page And Stay At Scan In Tab
 
     Log    Step No.11 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
@@ -145,14 +144,13 @@ DC_Operation_S017
     dps_history_parcel_page.Verify Data In Table
     ...    ${dc_operation.title['history_parcel']}  
     ...    ${tracking_i}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Data In Table
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    11.Verify Data In Table
 
     Log    Step No.12 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
     Set Today
     ${today_repattern}    Set Date Pattern    ${today}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
-    # Defect209
     # Expected
     # dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     # dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
@@ -200,9 +198,9 @@ DC_Operation_S017
     # ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
     # ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
     # ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Parcel Details In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.Verify Parcel Details In Warehouse
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Sender And Receiver In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.Verify Sender And Receiver In Warehouse
 
     Log    Step No.13 คลิกปุ่ม Dropdown Reprint
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
@@ -212,13 +210,13 @@ DC_Operation_S017
     ...    ${dc_operation.dropdown_reprint_label['parcel_sorting_sheet']}
     ...    ${pouch_number}
     ...    ${dc_operation.dropdown_reprint_label['pouch_label']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Reprint Label Dropdown
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    13.Verify Reprint Label Dropdown
 
     Log    Step No.14 คลิกที่ใบปะหน้าพัสดุ
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['parcel_label']}
     # Expected
     dps_history_parcel_page.Verify Reprint Label Popup    ${dc_operation.card_reprint_label['text_parcel_label']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Reprint Parcel Label
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    14.Verify Reprint Parcel Label
 
     Log    Step No.15 คลิกที่ใบคัดแยกพัสดุ
     dps_history_parcel_page.Click Cancel Reprint Label Button    ${dc_operation.card_reprint_label['text_parcel_label']}
@@ -226,7 +224,7 @@ DC_Operation_S017
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['parcel_sorting_sheet']}
     # Expected
     dps_history_parcel_page.Verify Reprint Label Popup    ${dc_operation.card_reprint_label['text_parcel_sorting_sheet']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Reprint Parcel Sorting Sheet
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    15.Verify Reprint Parcel Sorting Sheet
 
     Log    Step No.16 คลิกที่ใบ Label Pouch
     dps_history_parcel_page.Click Cancel Reprint Label Button    ${dc_operation.card_reprint_label['text_parcel_sorting_sheet']}
@@ -234,7 +232,7 @@ DC_Operation_S017
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['pouch_label']}
     # Defect219 ยังไม่มี modal แสดงให้เก็บ xpath to verify
     # Expected
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Popup Error When Click Print Pouch Label And Pouch Is Not Closed
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    16.Verify Popup Error When Click Print Pouch Label And Pouch Is Not Closed
     Close Window
     Switch Window    MAIN
 
@@ -248,7 +246,7 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.data_in_pouch_list['status']}
     ...    ${today}
     ...    ${dc_operation['icon_pencil']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Pouch In Pouch Page
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    17.Verify Pouch In Pouch Page
 
     Log    Step No.18 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
@@ -287,13 +285,13 @@ DC_Operation_S017
     ...    null  # ${DC_Operation_S017.data_in_pouch_detail.data_in_table['pickup_place']}
     ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['type']}
     ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['parcel_status']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Pouch Detail Popup
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    18.Verify Pouch Detail Popup
 
     Log    Step No.19 คลิกปุ่มปิด Pouch/Print Label
     dps_pouch_page.Click Print Pouch Label
     # Expected
     dps_pouch_page.Verify Warning Confirm To Close Pouch    ${dc_operation['text_warning_confirm_to_close_pouch']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Warning Confirm To Close Pouch
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    19.Verify Warning Confirm To Close Pouch
 
     Log    Step No.20 ปิด Pouch/Print Label
     dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
@@ -302,7 +300,7 @@ DC_Operation_S017
     common.Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup    ${dc_operation['text_transaction_complete']}
-    common.Verify Capture Screenshot  dc_operation    DC_Operation_S017    Verify Transaction Complete Popup
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    21.Verify Transaction Complete Popup
 
     Log    Step No.22 กดปุ่ม x
     dps_pouch_page.CLick Close Button
@@ -317,7 +315,7 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.data_in_pouch_list['status_off']}
     ...    ${today}
     ...    ${dc_operation['icon_pencil']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Transaction Complete Popup Was Closed
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    22.Verify Transaction Complete Popup Was Closed
 
     Log    Step No.23 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
@@ -326,12 +324,11 @@ DC_Operation_S017
     dps_history_parcel_page.Verify Data In Table
     ...    ${dc_operation.title['history_parcel']}  
     ...    ${tracking_i}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Data In Table After Close Pouch
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    23.Verify Data In Table After Close Pouch
 
     Log    Step No.24 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
-    # Defect209
     # Expected
     # dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     # dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
@@ -381,9 +378,9 @@ DC_Operation_S017
     # ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
     # ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
     # ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Parcel Details In Warehouse After Close Pouch
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.Verify Parcel Details In Warehouse After Close Pouch
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Sender And Receiver In Warehouse After Close Pouch
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.Verify Sender And Receiver In Warehouse After Close Pouch
 
     Log    Step No.25 คลิกปุ่ม Dropdown Reprint
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
@@ -393,7 +390,7 @@ DC_Operation_S017
     ...    ${dc_operation.dropdown_reprint_label['parcel_sorting_sheet']}
     ...    ${pouch_number}
     ...    ${dc_operation.dropdown_reprint_label['pouch_label']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   Verify Reprint Label Dropdown After Close Pouch
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017   25.Verify Reprint Label Dropdown After Close Pouch
 
     Log    Step No.26 คลิกที่ใบ Label Pouch
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
@@ -404,4 +401,4 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.data_in_pouch_label['destination_warehourse']}
     ...    ${DC_Operation_S017.data_in_pouch_label['route']}
     ...    ${DC_Operation_S017.data_in_pouch_label['destination_warehourse_symbol']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    Verify Reprint Pouch Label
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    26.Verify Reprint Pouch Label
