@@ -127,9 +127,18 @@ Verify Display Pickup Schedule Data
     ${actual_parcel} =  Replace String    ${actual_pickup_date}    {parcel_num}    ${Booking.pickup_schedule['parcel_number']} ${parcel_num}
     ${actual_cut_off_time} =  Replace String    ${actual_parcel}    {cut_off_time}    ${Booking.pickup_schedule['cut_off_time']} ${today_pattern}
     ${actual_pickup_schedule_checkbox} =  Replace String    ${actual_cut_off_time}    {price}    ${Booking.pickup_schedule['price']} ${price}
-    
-    Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    timeout=${DEFAULT_TIMEOUT}
     Set Suite Variable    ${actual_pickup_schedule_checkbox}
+
+    Register Keyword To Run On Failure    NOTHING
+    ${status}=    Set Variable    False
+
+    WHILE    '${status}' == 'False'
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    2s
+        Exit For Loop If    '${status}' == 'True'
+        ${nextpage}=    Get Element Attribute    ${b2c_btn_status_next_page_pickup_schedule}    aria-disabled
+        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_schedule}
+    END
 
 Verify Display Pickup Schedule Data After Canceled
     ${status}=    Set Variable    False
@@ -137,7 +146,6 @@ Verify Display Pickup Schedule Data After Canceled
     Register Keyword To Run On Failure    NOTHING
     WHILE    '${status}' == 'False'
         ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_parcel}    timeout=${DEFAULT_TIMEOUT}
-        Log To Console    ${status}
         Exit For Loop If    '${status}' == 'True'
         ${nextpage}=    Get Element Attribute    ${b2c_btn_status_next_page_pickup_schedule}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false

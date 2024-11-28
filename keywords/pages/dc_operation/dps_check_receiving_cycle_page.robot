@@ -24,8 +24,12 @@ Verify Check Receiving Cycle Page
     Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
+    ${button_filter}=    Replace String    ${dps_btn_filter_parcel_pickup_details}    {value}    ${dc_operation['button_filter']}
+    ${button_search}=    Replace String    ${dps_btn_search_parcel_pickup}    {value}    ${dc_operation['button_search']}
 
     Set Tomorrow Date
+    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
+
     ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {branch}    ${branch}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {address}    ${address}
@@ -41,12 +45,34 @@ Verify Check Receiving Cycle Page
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
+    common.Click When Ready    ${button_filter}
+    common.Click When Ready    ${dps_update_date_all_parcel_pickup}
+    common.Click When Ready    ${dps_btn_today_parcel_pickup}
+    common.Click When Ready    ${button_search}
+    common.Click When Ready    ${button_filter}
+
+    Register Keyword To Run On Failure    NOTHING
+    ${status_card}=    Set Variable    False
+
+    WHILE    '${status_card}' == 'False'
+        Scroll Window To Vertical    0
+        ${status_card}    Run Keyword And Return Status    Wait Until Element Is Visible    ${row_receiving_cycle}    2s
+        ${nextpage}=    Get Element Attribute    ${dps_btn_status_next_page_pickup_schedule}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Scroll Window To Vertical    1000
+        Run Keyword If    '${status_card}' == 'True'    Exit For Loop
+        ...    ELSE IF    '${status_button}' == 'True'    common.Click When Ready    ${dps_btn_next_page_pickup_schedule}
+        ...    ELSE    Fail
+    END
+
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${row_receiving_cycle}
     ${date_time}=    Get Text    ${row_receiving_cycle}/../..//td[13]
     Log To Console    ${date_time}
     Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
+
+    Register Keyword To Run On Failure    Capture Page Screenshot
 
 Select All Parcels Received List Tab
     common.Scroll Window To Vertical    0
@@ -64,8 +90,11 @@ Verify Warehouse Confirm List Tab
     Wait Until Element Is Not Visible    ${dps_img_loading}    timeout=${DEFAULT_TIMEOUT}
     dps_home_page.Verify Page Title    ${title}
     dps_home_page.Verify Tab Selected    ${tab}
+    ${button_filter}=    Replace String    ${dps_btn_filter_parcel_pickup_details}    {value}    ${dc_operation['button_filter']}
+    ${button_search}=    Replace String    ${dps_btn_search_parcel_pickup}    {value}    ${dc_operation['button_search']}
 
     Set Tomorrow Date
+    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
     ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle_waiting}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {address}    ${address}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {sub_district}    ${sub_district}
@@ -80,6 +109,24 @@ Verify Warehouse Confirm List Tab
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
+    common.Click When Ready    ${button_filter}
+    common.Click When Ready    ${dps_update_date_parcel_pickup}
+    common.Click When Ready    ${dps_btn_today_parcel_pickup}
+    common.Click When Ready    ${button_search}
+    common.Click When Ready    ${button_filter}
+
+    Register Keyword To Run On Failure    NOTHING
+    ${status_card}=    Set Variable    False
+
+    WHILE    '${status_card}' == 'False'
+        ${status_card}    Run Keyword And Return Status    Wait Until Element Is Visible    ${row_receiving_cycle}    
+        ${nextpage}=    Get Element Attribute    ${dps_btn_status_next_page_pickup_schedule}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_card}' == 'True'    Exit For Loop
+        ...    ELSE IF    '${status_button}' == 'True'    common.Click When Ready    ${dps_btn_next_page_pickup_schedule}
+        ...    ELSE    Fail
+    END
+
     Scroll Element Into View    ${row_receiving_cycle}
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}   
@@ -87,25 +134,30 @@ Verify Warehouse Confirm List Tab
     Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
     Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
  
+    Register Keyword To Run On Failure    Capture Page Screenshot
+
 Click Pencil Icon
     [Arguments]    ${bookig_id}
     ${button_filter}=    Replace String    ${dps_btn_filter_parcel_pickup_details}    {value}    ${dc_operation['button_filter']}
     ${button_search}=    Replace String    ${dps_btn_search_parcel_pickup}    {value}    ${dc_operation['button_search']}
     ${booking_ID}=    Replace String    ${dps_txt_booking_id_parcel_pickup_detail}    {value}    ${bookig_id}
-    common.Click When Ready    ${button_filter}
-    common.Click When Ready    ${dps_update_date_parcel_pickup}
-    common.Click When Ready    ${dps_btn_today_parcel_pickup}
-    common.Click When Ready    ${button_search}
-    common.Click When Ready    ${button_filter}
     Register Keyword To Run On Failure    NOTHING
-    ${card_count}=    Get Element Count    ${card_inventory}
-    Log To Console    ${card_count}
-    FOR    ${index}    IN RANGE    1    ${card_count}+1
-        Scroll Element Into View    (${card_inventory})[${index}]
-        common.Click When Ready    (${card_inventory})[${index}]
-        ${element}    Run Keyword And Return Status    Wait Until Element Is Visible    ${booking_ID}
+
+    ${element}=    Set Variable    False
+
+    WHILE    '${element}' == 'False'
+        ${card_count}=    Get Element Count    ${card_inventory}
+        ${nextpage}=    Get Element Attribute    ${dps_btn_status_next_page_pickup_schedule}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        FOR    ${index}    IN RANGE    1    ${card_count}+1
+            Scroll Element Into View    (${card_inventory})[${index}]
+            common.Click When Ready    (${card_inventory})[${index}]
+            ${element}    Run Keyword And Return Status    Wait Until Element Is Visible    ${booking_ID}
+            Exit For Loop If    '${element}' == 'True'
+            common.Click When Ready    ${dps_btn_close_parcel_pickup_details}
+        END
         Exit For Loop If    '${element}' == 'True'
-        common.Click When Ready    ${dps_btn_close_parcel_pickup_details}
+        Run Keyword If    '${status_button}' == 'True'    common.Click When Ready    ${dps_btn_next_page_pickup_schedule}
     END
     Register Keyword To Run On Failure    Capture Page Screenshot
 

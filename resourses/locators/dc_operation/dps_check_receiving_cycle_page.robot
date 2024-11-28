@@ -18,6 +18,8 @@ ${dps_txt_save_success_parcel_pickup_detail}    //p[text()='{value}']
 ${dps_txt_booking_id_parcel_pickup_detail}    //td[text()='{value}']
 ${dps_txt_company_name_parcel_pickup_detail}    //td[text()='{company}']/..//td[text()='{branch}']
 
+${dps_date_recieve_picker}    //input[@id='dateRecieve'] 
+
 ${dps_popup_parcel_pickup_details}    //button[@aria-label='Close']/..//div[@class='ant-card-body']
 
 ${dps_btn_parcel_pickup_details}    //button[@aria-label='Close']/..//button//span[text()='{value}']
@@ -25,6 +27,8 @@ ${dps_btn_filter_parcel_pickup_details}    //div[@aria-hidden='false']//span[tex
 ${dps_btn_today_parcel_pickup}    //li[@class='ant-picker-now']//a
 ${dps_btn_search_parcel_pickup}    //div[@aria-hidden='false']//div[text()='{value}']/..
 ${dps_btn_close_parcel_pickup_details}    //button[@aria-label='Close']
+${dps_btn_status_next_page_pickup_schedule}    //div[@aria-hidden='false']//span[@class='anticon anticon-right']/../..
+${dps_btn_next_page_pickup_schedule}    //div[@aria-hidden='false']//span[@class='anticon anticon-right']/..
 
 ${dps_update_date_parcel_pickup}    //input[@id='dateModifyWaiting']/../..
 ${dps_update_date_all_parcel_pickup}    //input[@id='dateModify']/../..

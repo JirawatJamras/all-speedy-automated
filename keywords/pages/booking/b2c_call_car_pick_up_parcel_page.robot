@@ -71,7 +71,6 @@ Verify Add Parcel Pickup
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    False
-    ${loop}=    Set Variable    0
     ${today_pattern}    Set Date Pattern    ${today}
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
     Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
@@ -79,7 +78,6 @@ Verify Add Parcel Pickup
     WHILE    '${status}' == 'False'
         Scroll Window To Vertical    0
         ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_card}
-        Exit For Loop If    '${status}' == 'True' 
         Scroll Window To Vertical    1000
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         Run Keyword If    '${status}' == 'True'    Exit For Loop

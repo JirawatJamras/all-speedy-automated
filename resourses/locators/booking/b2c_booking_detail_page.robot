@@ -88,7 +88,7 @@ ${b2c_btn_increase_cod_value}    //input[@id='create_parcel_form_codValue']/../.
 ${b2c_btn_increase_insure_value}    //input[@id='create_parcel_form_insureAmount']/../..//span[@role='button' and @aria-label='Increase Value']
 ${b2c_btn_confirm_phone_number}    //span[@aria-label='check']/../../..
 ${b2c_btn_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']//button
-${b2c_btn_next_page_pickup_schedule}    //div[@aria-hidden='false']//span[@class='anticon anticon-right']/..
+${b2c_btn_next_page_pickup_schedule}    //div[@role='dialog']//span[@class='anticon anticon-right']/../..
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
