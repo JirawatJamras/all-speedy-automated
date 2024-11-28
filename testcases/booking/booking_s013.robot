@@ -174,7 +174,7 @@ Booking_S013
     Log    Step No.13 ขั้นตอน Promotion
     b2c_booking_delivery_page.Input Promotion    ${Booking_S013['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
-    Expected
+    # Expected
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S013.promotion_detail['discount']}
     ...    ${Booking_S013.promotion_detail['promotion_name']}

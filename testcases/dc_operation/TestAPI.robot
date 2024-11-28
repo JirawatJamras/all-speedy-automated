@@ -14,19 +14,16 @@ Test
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
-    dps_scan_page.Select Scan Out Tab
+    Set Today
+    ${tracking_i}=    Set Variable    SPBD241100022410
+    ${pouch_number}=    Set Variable    P112462447
 
-    dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
-    ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
-    ...    ${dc_operation.scan_out_title_waiting_scan['pouch_number']}
-    ...    ${dc_operation.scan_out_title_waiting_scan['receive_parcel_from']}
-    ...    ${dc_operation.scan_out_title_waiting_scan['transport']}
-    ...    ${dc_operation.scan_out_title_waiting_scan['parcel_owner']}
-    ...    ${dc_operation.scan_out_title_waiting_scan['parcel_size']}
-    ...    ${dc_operation.scan_out_title_waiting_scan['receiving_date']}
-    ...    ${dc_operation.scan_out_title_waiting_scan['parcel_status']}
+    Set Global Variable    ${tracking_i}
+    Set Global Variable    ${pouch_number}
+
+    prerequisite.DC_Operation_S010
+
+    
