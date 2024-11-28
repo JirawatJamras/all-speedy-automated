@@ -657,7 +657,7 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Warning Confirm To Close Pouch
 
     Log    Step No.22 ปิด Pouch/Print Label
-    dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
+    dps_pouch_page.Click Close Pouch/Print Label Button On Warning Popup
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s
@@ -1934,7 +1934,7 @@ DC_Operation_S006
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Warning Confirm To Close Pouch
 
     Log    Step No.22 ปิด Pouch/Print Label
-    dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
+    dps_pouch_page.Click Close Pouch/Print Label Button On Warning Popup
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s
@@ -3904,7 +3904,7 @@ DC_Operation_S010
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Warning Confirm To Close Pouch
 
     Log    Step No.22 ปิด Pouch/Print Label
-    dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
+    dps_pouch_page.Click Close Pouch/Print Label Button On Warning Popup
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s

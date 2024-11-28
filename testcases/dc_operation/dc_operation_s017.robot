@@ -294,7 +294,7 @@ DC_Operation_S017
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    19.Verify Warning Confirm To Close Pouch
 
     Log    Step No.20 ปิด Pouch/Print Label
-    dps_pouch_page.Click Close Pouch/Print Label Btton On Warning Popup
+    dps_pouch_page.Click Close Pouch/Print Label Button On Warning Popup
 
     Log    Step No.21 คลิกปุ่มพิมพ์
     common.Robot Skip Step Print Label

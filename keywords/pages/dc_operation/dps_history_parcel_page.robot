@@ -43,7 +43,7 @@ Compare Time And Title In Timeline
         ${sequence}=    Set Variable    ${sequence + 1}
     END
     ${dps_card_timeline}=    Replace String    ${dps_card_timeline_history_parcel_page}    {value}    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
-    Wait Until Element Is VIsible    ${dps_card_timeline}
+    Wait Until Element Is Visible    ${dps_card_timeline}    timeout=${DEFAULT_TIMEOUT}
     ${actual_time}=    Get Text    (${dps_txt_time_in_timeline_history_parcel_page})[${sequence}]
     ${actual_time}=    Replace String    ${actual_time}    \n    ${SPACE}
     Check Date And Time Format In Timeline    ${actual_time}

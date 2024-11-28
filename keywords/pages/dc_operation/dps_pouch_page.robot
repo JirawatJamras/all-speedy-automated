@@ -22,6 +22,7 @@ Verify Pouch In Pouch Page
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {destination_inventory}    ${destination_inventory}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {checked}    ${checked}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {update_date}    ${update_date}
+    Sleep    5s
     Scroll Element Into View    ${dps_txt_pouch_in_pouch_list}
     ${actual_update_date}=    Get Text    ${dps_txt_pouch_in_pouch_list}//td[6]
     ${expected_update_date_format}    Convert Date    ${actual_update_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
@@ -146,7 +147,7 @@ Check Open Pouch And Close Pouch By Destination Inventory
             Verify Warning Confirm To Close Pouch    ${txt_warning}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    2.Verify Warning Confirm To Close Pouch On Checking Pouch Step
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
-            Click Close Pouch/Print Label Btton On Warning Popup
+            Click Close Pouch/Print Label Button On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             common.Robot Skip Step Print Label
             # Expected
@@ -172,7 +173,7 @@ Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
             Verify Warning Confirm To Close Pouch    ${txt_warning}
             common.Verify Capture Screenshot    dc_operation    ${testcase_name}    Verify Warning Confirm To Close Pouch On Checking Pouch Step
             Log    Step No.3 คลิกปุ่ม ปิด Pouch/Print Label
-            Click Close Pouch/Print Label Btton On Warning Popup
+            Click Close Pouch/Print Label Button On Warning Popup
             Log    Step No.4 คลิกปุ่มพิมพ์
             common.Robot Skip Step Print Label
             # Expected
@@ -198,7 +199,7 @@ Verify Warning Confirm To Close Pouch
     ${actual_text}=    Get Text   ${dps_txt_warning_confirm_to_close_pouch} 
     Should Be Equal   ${actual_text}    ${expected}
 
-Click Close Pouch/Print Label Btton On Warning Popup
+Click Close Pouch/Print Label Button On Warning Popup
     ${dps_btn_close_pouch_and_print_label_on_warning_popup}=    Replace String    ${dps_btn_close_pouch_and_print_label_on_warning_popup}    {value}    ${dc_operation['text_close_pouch_and_print_label']}
     common.Click When Ready    ${dps_btn_close_pouch_and_print_label_on_warning_popup}
 

@@ -689,20 +689,21 @@ DC_Operation_S008:
     transport: CP All
     parcel_owner: Speedy
     parcel_size: '-'
-    parcel_status: พัสดุรอ Scan out ไปคลัง (AC)    
+    parcel_status1: พัสดุรอ Scan out ไปคลัง (AC)
+    parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)     
   data_in_pouch_list:
     crossdock_warehouse: 'AC'
     destination_warehouse: RDC LP
     status_on: 'On'
     status_off: 'Off'
   data_in_pouch_detail:
-    crossdock_warehouse: '-'
+    crossdock_warehouse: 'AC'
     pouch_status: เปิด
     origin_warehouse: DC BB
     destination_warehouse: 'RDC LP'
     label_destination_warehouse: 'RDC LP'
     label_number: '1'
-    label_route: 'DC BB - AC - RDC LP'
+    label_route: 'DC BB - AC- RDC LP'
     label_symbol: รูปนาฬิกาทราย
     data_in_table:
       destination_warehouse: 'RDC LP'
