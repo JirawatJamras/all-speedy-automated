@@ -471,13 +471,13 @@ Verify Label In Send Task Tab
 
 Verify Data In Send Task Tab
     [Arguments]    ${send_to}    ${store_code}    ${customer_type}    ${transport}
-    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task_home_page}    {send_to}    ${send_to}
-    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {store_code}    ${store_code}
-    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {customer_type}    ${customer_type}
-    ${dps_txt_list_first_send_task}=    Replace String    ${dps_txt_list_first_send_task}    {transport}    ${transport}
-    Scroll Element Into View    ${dps_txt_list_first_send_task}
-    # Element Should Contain    ${dps_txt_list_first_send_task}    ${send_to} ${store_code} ${customer_type} ${transport}
-    Wait Until Element Is Visible    ${dps_txt_list_first_send_task}    timeout=${DEFAULT_TIMEOUT}
+    ${dps_txt_list_send_task}=    Replace String    ${dps_txt_list_send_task_home_page}    {send_to}    ${send_to}
+    ${dps_txt_list_send_task}=    Replace String    ${dps_txt_list_send_task}    {store_code}    ${store_code}
+    ${dps_txt_list_send_task}=    Replace String    ${dps_txt_list_send_task}    {customer_type}    ${customer_type}
+    ${dps_txt_list_send_task}=    Replace String    ${dps_txt_list_send_task}    {transport}    ${transport}
+    Scroll Element Into View    ${dps_txt_list_send_task}
+    # Element Should Contain    ${dps_txt_list_send_task}    ${send_to} ${store_code} ${customer_type} ${transport}
+    Wait Until Element Is Visible    ${dps_txt_list_send_task}    timeout=${DEFAULT_TIMEOUT}
 
 Select Filter Button
     ${dps_btn_filter}=    Replace String    ${dps_btn_filter_home_page}    {value}    ${dc_operation['button_filter']}

@@ -19,7 +19,7 @@ ${dps_txt_list_first_import_task_home_page}    (//tbody[@class='ant-table-tbody'
 ${dps_txt_list_first_export_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{export_to}']/..//td[text()='{transport}']/..//td[text()='{parcel_owner}']/..)[1]
 
 # ${dps_txt_list_first_send_task_home_page}    (//tbody[@class='ant-table-tbody']//td[text()='{send_to}']/..//td[text()='{store_code}']/..//td[text()='{customer_type}']/..//td[text()='{transport}']/..)[1]
-${dps_txt_list_first_send_task_home_page}    //tbody[@class='ant-table-tbody']//tr[td[1]='{send_to}' and td[2]='{store_code}' and td[3]='{customer_type}' and td[4]='{transport}']
+${dps_txt_list_send_task_home_page}    //tr[td[1]='{send_to}' and td[2]='{store_code}' and td[3]='{customer_type}' and td[4]='{transport}']
 ${dps_txt_page_title}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 ${dps_txt_role_user}    /../..//strong[text()='{value}']
 ${dps_txt_task_type_title_table_in_all_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title}']
@@ -33,7 +33,7 @@ ${dps_txt_number_of_pouch_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1
 ${dps_txt_number_of_pieces_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[5]
 ${dps_txt_number_of_scanned_items_in_import_task_tab_home_page}    (//div[@id='rc-tabs-1-panel-2']//thead[@class='ant-table-thead']//th[@class='ant-table-cell'])[6]
 # ${dps_txt_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title}']
-${dps_txt_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//tr[th[1]='{send_to}' and th[2]='{store_code}' and th[3]='{customer_type}' and th[4]='{transport}' and th[5]='{number_of_pieces}' ]
+${dps_txt_title_table_in_send_task_tab_home_page}    //tr[th[1]='{send_to}' and th[2]='{store_code}' and th[3]='{customer_type}' and th[4]='{transport}' and th[5]='{number_of_pieces}' ]
 ${dps_txt_transport_title_table_in_send_task_tab_home_page}    //div[@class='ant-tabs-content ant-tabs-content-top']//thead[@class='ant-table-thead']//th[text()='{title_store_code}']/..//th[text()='{title_transport}']
 ${dps_txt_label_export_task_tab_in_home_page}    //tr[th[1]='{export_to}' and th[2]='{transport}' and th[3]='{parcel_owner}' and th[4]='{number_of_pouch}' and th[5]='{number_of_pieces}' and th[6]='{number_of_scanned_items}']
 ${dps_txt_dropdown_warehouse_tab_home_page}    //span[@aria-label='down']/../..//div[@class='ant-space-item' and text()]
