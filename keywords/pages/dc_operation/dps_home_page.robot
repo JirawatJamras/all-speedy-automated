@@ -205,22 +205,14 @@ Select Tab SLA Parcel
 Verify Label In Import Task Tab
     [Arguments]    ${import_from}    ${transport}    ${parcel_owner}   
     ...            ${number_of_pouch}    ${number_of_pieces}    ${number_of_scanned_items}
-    Wait Until Element Is Visible    ${dps_txt_import_from_in_import_task_tab_home_page}    timeout=${DEFAULT_TIMEOUT}
-    ${dps_tab_all_task}=    Replace String    ${dps_tab_in_home_page}    {value}    ${dc_operation.tab_daily_task['import_task']}
-    ${actual_tab_import_task_status}=    Get Element Attribute    ${dps_tab_all_task}    aria-selected
-    Should Be Equal    ${actual_tab_import_task_status}    true
-    ${actual_txt_import_from_in_import_task_tab}=    Get Text    ${dps_txt_import_from_in_import_task_tab_home_page}
-    ${actual_txt_transport_in_import_task_tab}=    Get Text    ${dps_txt_transport_in_import_task_tab_home_page}
-    ${actual_txt_parcel_owner_in_import_task_tab}=    Get Text    ${dps_txt_parcel_owner_in_import_task_tab_home_page}
-    ${actual_txt_number_of_pouch_in_import_task_tab}=    Get Text    ${dps_txt_number_of_pouch_in_import_task_tab_home_page}
-    ${actual_txt_number_of_pieces_in_import_task_tab}=    Get Text    ${dps_txt_number_of_pieces_in_import_task_tab_home_page}
-    ${actual_txt_number_of_scanned_items_in_import_task_tab}=    Get Text    ${dps_txt_number_of_scanned_items_in_import_task_tab_home_page}
-    Should Be Equal    ${actual_txt_import_from_in_import_task_tab}    ${import_from}
-    Should Be Equal    ${actual_txt_transport_in_import_task_tab}    ${transport}
-    Should Be Equal    ${actual_txt_parcel_owner_in_import_task_tab}    ${parcel_owner}
-    Should Be Equal    ${actual_txt_number_of_pouch_in_import_task_tab}    ${number_of_pouch}
-    Should Be Equal    ${actual_txt_number_of_pieces_in_import_task_tab}    ${number_of_pieces}
-    Should Be Equal    ${actual_txt_number_of_scanned_items_in_import_task_tab}    ${number_of_scanned_items}
+    ${dps_txt_label_import_task_tab_in_home_page}=    Replace String    ${dps_txt_label_import_task_tab_in_home_page}    {import_from}    ${import_from}
+    ${dps_txt_label_import_task_tab_in_home_page}=    Replace String    ${dps_txt_label_import_task_tab_in_home_page}    {transport}    ${transport}
+    ${dps_txt_label_import_task_tab_in_home_page}=    Replace String    ${dps_txt_label_import_task_tab_in_home_page}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_label_import_task_tab_in_home_page}=    Replace String    ${dps_txt_label_import_task_tab_in_home_page}    {number_of_pouch}    ${number_of_pouch}
+    ${dps_txt_label_import_task_tab_in_home_page}=    Replace String    ${dps_txt_label_import_task_tab_in_home_page}    {number_of_pieces}    ${number_of_pieces}
+    ${dps_txt_label_import_task_tab_in_home_page}=    Replace String    ${dps_txt_label_import_task_tab_in_home_page}    {number_of_scanned_items}    ${number_of_scanned_items}
+    common.Scroll Into View By Xpath    ${dps_txt_label_import_task_tab_in_home_page}    true
+    Element Should Be Visible    ${dps_txt_label_import_task_tab_in_home_page}
     
 Verify Data In Import Task Tab
     [Arguments]    ${import_from}    ${transport}    ${parcel_owner}

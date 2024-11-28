@@ -32,13 +32,13 @@ Test
     dps_home_page.Select Tab Import Task
     # Defect139    Defect188    Defect291
     # Expected
-    # dps_home_page.Verify Label In Import Task Tab
-    # ...    ${dc_operation.label_import_task_tab['import_from']}
-    # ...    ${dc_operation.label_import_task_tab['transport']}
-    # ...    ${dc_operation.label_import_task_tab['parcel_owner']}
-    # ...    ${dc_operation.label_import_task_tab['number_of_pouch']}
-    # ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
-    # ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
+    dps_home_page.Verify Label In Import Task Tab
+    ...    ${dc_operation.label_import_task_tab['import_from']}
+    ...    ${dc_operation.label_import_task_tab['transport']}
+    ...    ${dc_operation.label_import_task_tab['parcel_owner']}
+    ...    ${dc_operation.label_import_task_tab['number_of_pouch']}
+    ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
+    ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
     dps_home_page.Verify Data In Import Task Tab
     ...    Home  # ${DC_Operation_S010.data_in_import_task_tab['import_from1']}
     ...    CP ALL	  # ${DC_Operation_S010.data_in_import_task_tab['transport']}
