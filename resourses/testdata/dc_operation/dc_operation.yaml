@@ -1137,33 +1137,24 @@ DC_Operation_S011:
 DC_Operation_S012:
   sender_name: คุณ b
   data_in_all_task_tab:
-    task_type: งานรับเข้า
+    task_type1: งานรับเข้า
+    task_type2: งานนำจ่าย
     parcel_owner: Speedy
     import_from: Home
-    export_to: '-'
+    export_to1: '-'
+    export_to2: Store
     transport: CP All
     pouch_number: '-'
     parcel_size: กล่อง M
-    parcel_status: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status1: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCBB)
   data_in_import_task_tab:
     import_from: Home
     transport: CP All
     parcel_owner: Speedy
-    number_of_pouch: '-'
-    number_of_pieces: '1'
-    number_of_scanned_items: '1'
-  data_in_all_task_tab_after_scan:
-    task_type: งานนำจ่าย
-    parcel_owner: Speedy
-    import_from: Home
-    export_to: Store
-    transport: CP All
-    pouch_number: '-'
-    parcel_size: กล่อง M
-    parcel_status: พัสดุรอนำจ่ายโดยคลัง (DCBB)
   data_in_send_task_tab:
     send_to: Store
-    store_code: '01015'
+    store_code: '07004'
     customer_type: 'B2C'
     transport: CP All
   filter:
@@ -1172,7 +1163,7 @@ DC_Operation_S012:
   scan_in_data_parcel_detail:
     customer_id: '0002400563'
     parcel_size: '90 ซม. กล่อง M'
-    crossdock_warehouse: ''  #'-'
+    crossdock_warehouse: ''
     destination_warehouse: DC BB
     parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     courier: CP All
