@@ -1,0 +1,1308 @@
+Booking_S001:
+  sir_name: คุณ ไอดีซี
+  company_name: Comapany Admin
+  name: ไอดีซี
+  phone: 0871000000
+  email: idc@gmail.com
+  position: หัวหน้าฝ่ายขาย
+
+Booking_S002:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: '0890000001'
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size:  A4
+  parcel_package_type:  ซอง
+  price_value: '50.00'
+  total_price_amount:  '1'
+  total_price_value1: 'NaN'
+  total_price_value2:  '50.00'
+
+Booking_S003:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0899999999
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size:  A3
+  parcel_package_type:  ซอง
+  parcel_detail_remark:  ระวังพัสดุเสียหาย
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size:  ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition:  สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value: '5.00'
+  price_value: '80.00'
+  total_price_amount:  '1'
+  total_price_value1: 'NaN'
+  total_price_value2:  '75.00'
+  text_price_value: 80.00 บาท
+
+Booking_S004:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0899999999
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_price: '50.00'
+  parcel_size:  XS
+  parcel_package_type:  กล่อง
+  parcel_cod: '5000'
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify2: 5,000
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '200.00'
+
+Booking_S005:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin: เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size: S
+  parcel_package_type:  กล่อง
+  price_value: '55.00'
+  parcel_cod: '5000'
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '200.00'
+
+Booking_S006:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0638757776
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size:  M
+  parcel_package_type:  กล่อง
+  buy_insurance:  2,500
+  buy_insurance_verify: 2,500.00
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_item: 1 รายการ
+  booking_name:  Booking DRY
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '186.00'
+  price_value: '80.00'
+
+Booking_S007:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0638757776
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size:  L
+  parcel_package_type:  กล่อง
+  parcel_insure: '2500'
+  buy_insurance_verify: 2,500.00
+  parcel_detail_remark:  ระวังพัสดุเสียหาย
+  price_value: '120.00'
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size:  ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition:  สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '221.00'
+  store_code: '15888'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  
+Booking_S008:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size:  XL
+  parcel_package_type:  กล่อง
+  parcel_insure: '2500'
+  parcel_insure_verify: 2,500.00
+  parcel_insure_verify2: 2,500
+  parcel_cod: '5000'
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify2: 5,000
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_price_verify: '200.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '456.00'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  store_code: '15888'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+
+Booking_S009:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  price_value: '300.00'
+  buy_insurance: '2500'
+  buy_insurance_verify: '2,500.00'
+  parcel_cod: '5000'
+  parcel_cod_verify: '5,000.00'
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  booking_name:  Booking DRY
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_item: 1 รายการ
+  parcel_size: XXL
+  parcel_package_type: กล่อง
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '561.00'
+
+Booking_S010:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size:  A4
+  parcel_package_type:  ซอง
+  price_value: '20.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '20.00'
+
+Booking_S011:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  receiver_store_code_5_digits:  '01523'
+  receiver_store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
+  receiver_store_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size:  A3
+  parcel_package_type:  ซอง
+  parcel_detail_remark:  ระวังพัสดุเสียหาย
+  price_value: '40.00'
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size:  ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition:  สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '35.00'
+  store_code:  '15888'
+
+Booking_S012:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0899999999
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size: XS
+  price_value: '20.00'
+  parcel_cod:  '5000'
+  parcel_cod_verify:  5,000.00
+  parcel_cod_verify2:  5,000
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  img_sender_heart: รูปหัวใจไม่มีสี
+  img_receiver_heart: รูปหัวใจสีแดง
+  booking_name:  Booking DRY
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_item: 1 รายการ
+  parcel_package_type:  กล่อง
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '170.00'
+
+Booking_S013:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size: S
+  parcel_package_type: กล่อง
+  price_value: '25.00'
+  parcel_cod: '5000'
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '170.00'
+
+Booking_S014:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  parcel_size: M
+  buy_insurance:  '2,500'
+  buy_insurance_verify: '2,500.00'
+  parcel_package_type: กล่อง
+  price_value: '40.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '146.00'
+
+Booking_S015:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0638757776
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size:  L
+  parcel_package_type:  กล่อง
+  parcel_price_verify: '70.00'
+  parcel_insure: '2500'
+  buy_insurance_verify: 2,500.00
+  parcel_detail_remark:  ระวังพัสดุเสียหาย
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period: 08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  shipping_origin: เลือกร้าน 7-11 ต้นทาง
+  booking_name: Booking DRY
+  booking_item: 1 รายการ
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '171.00'
+  store_code:  '15888'
+
+Booking_S016:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size:  XL
+  parcel_package_type:  กล่อง
+  parcel_insure: '2500'
+  parcel_insure_verify: 2,500.00
+  parcel_insure_verify2: 2,500
+  parcel_cod: '5000'
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify2: 5,000
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_price_verify: '140.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '396.00'
+  booking_name:  Booking DRY
+  booking_item: 1 รายการ
+  store_code: '15888'
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+
+Booking_S017:
+  parcel_type:  พัสดุทั่วไป
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size: XXL
+  price_value: '260.00'
+  buy_insurance:  '2,500'
+  buy_insurance_verify: '2,500.00'
+  parcel_cod:  '5000'
+  parcel_cod_verify: '5,000.00'
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  img_sender_heart: รูปหัวใจไม่มีสี
+  img_receiver_heart: รูปหัวใจสีแดง
+  booking_name:  Booking DRY
+  shipping_origin:  เลือกร้าน 7-11 ต้นทาง
+  store_code:  '15888'
+  booking_item: 1 รายการ
+  parcel_package_type: กล่อง
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '511.00'
+
+Booking_S018:
+  parcel_type: พัสดุควบคุมอุณหภูมิ
+  pickup_time:
+    input: ช่วงบ่าย 13:00 - 16:00
+    expected: 13:00 - 16:00
+  pickup_point: บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
+
+Booking_S019:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin:  รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name:  Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_size:  S0
+  price_value: '190.00'
+  parcel_package_type:  กล่อง
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '190.00'
+
+Booking_S020:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size:  S1
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size:  ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition:  สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  shipping_origin:  รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name:  Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_package_type:  กล่อง
+  price_value: '230.00'
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  total_price_amount:  '1'
+  total_price_value:  'NaN'
+  total_price_value2:  '225.00'
+
+Booking_S021:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: '47 หมู่ 4'
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size: 'S2'
+  parcel_cod:  '5000'
+  parcel_cod_verify:  '5,000.00'
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  booking_name:  Booking CHILLED
+  shipping_origin:  รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_item: '1 รายการ'
+  parcel_package_type:  กล่อง
+  price_value: '250.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value:  'NaN'
+  total_price_value2:  '400.00'
+
+Booking_S022:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin: รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name: Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_size: A1
+  parcel_package_type: กล่อง
+  price_value: '290.00'
+  parcel_cod: '5000'
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify2: 5,000
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2: '445.00'
+
+Booking_S023:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: '0890000001'
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: 47 หมู่ 4
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  shipping_origin:  รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name: Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_size:  A2
+  parcel_package_type:  กล่อง
+  price_value: '330.00'
+  total_price_amount:  '1'
+  total_price_value1: 'NaN'
+  total_price_value2:  '330.00'
+
+Booking_S024:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  shipping_origin:  รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name: Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_size: S0
+  parcel_package_type: กล่อง
+  price_value: '170.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '170.00'
+
+Booking_S025:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ    
+  sender_phone: 0890000001    
+  sender_name: สมชาย สายเสมอ    
+  sender_address: 48/698     
+  sender_postcode_5_digits: '10230'    
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'    
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  shipping_origin: รอบรถเข้ารับพัสดุ
+  store_code:  '01523'
+  receiver_store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
+  receiver_store_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
+  parcel_size:  S1    
+  price_value: '210.00'
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน    
+  promotion:  SPBH5B    
+  promotion_detail:    
+    discount:  5 บาท
+    promotion_name:  คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size:  ทุกขนาด
+    expired_date:  30 ตุลาคม 2568
+    condition:  สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  booking_name:  Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_package_type:  กล่อง
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '210.00'
+
+Booking_S026:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0899999999
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size: S2   
+  price_value: '230.00'
+  parcel_cod:  '5000'
+  parcel_cod_verify:  5,000.00
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  booking_name:  Booking CHILLED
+  shipping_origin: รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_item: 1 รายการ
+  parcel_package_type:  กล่อง
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '380.00'
+
+Booking_S027:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  shipping_origin: รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name:  Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_size: A1
+  parcel_package_type: กล่อง
+  price_value: '270.00'
+  parcel_cod: '5000'
+  parcel_cod_verify: 5,000.00
+  parcel_cod_verify2: 5,000
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
+  promotion:  SPBH5B
+  promotion_detail:
+    discount:  5 บาท
+    promotion_name: คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน
+    parcel_size: ทุกขนาด
+    expired_date: 30 ตุลาคม 2568
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period:  08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  cod_fee_amount: '1'
+  cod_fee_value: '150.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '415.00'
+
+Booking_S028:
+  parcel_type:  พัสดุควบคุมอุณหภูมิ
+  sender_phone: 0890000001
+  sender_name: สมชาย สายเสมอ
+  sender_address: 48/698
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0890000002
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  shipping_origin:  รอบรถเข้ารับพัสดุ
+  store_code:  '15888'
+  booking_name:  Booking CHILLED
+  booking_item: 1 รายการ
+  parcel_size: A2
+  parcel_package_type: กล่อง
+  price_value: '310.00'
+  total_price_amount:  '1'
+  total_price_value1:  'NaN'
+  total_price_value2:  '310.00'
+
+Booking_S030:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0890000001'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: '47 หมู่ 4'
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size: 'A4'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '50.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '50.00'
+  parcel_package_type: ซอง
+
+Booking_S031:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: '47 หมู่ 4'
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size: 'A3'
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  promotion: 'SPBH5B'
+  promotion_detail:
+    discount: '5 บาท'
+    promotion_name: 'คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน'
+    parcel_size: 'ทุกขนาด'
+    expired_date: '30 ตุลาคม 2568'
+    condition: 'สำหรับลูกค้าที่เป็นกล่อง'
+    period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '75.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '80.00'
+  parcel_package_type: ซอง
+
+Booking_S032:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: '47 หมู่ 4'
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size: M
+  input_buy_insurance: '2,500'
+  check_buy_insurance: '2,500.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '186.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '80.00'  
+  parcel_package_type: กล่อง
+
+Booking_S033:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_address: '47 หมู่ 4'
+  receiver_postcode_5_digits: '86110'
+  receiver_postcode_full: 'พ้อแดง หลังสวน ชุมพร 86110'
+  parcel_size: L
+  input_buy_insurance: '2,500'
+  check_buy_insurance: '2,500.00'
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  promotion: 'SPBH5B'
+  promotion_detail:
+    discount: '5 บาท'
+    promotion_name: 'คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน'
+    parcel_size: 'ทุกขนาด'
+    expired_date: '30 ตุลาคม 2568'
+    condition: 'สำหรับลูกค้าที่เป็นกล่อง'
+    period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
+  discount_amount: '1'
+  discount_value1: NaN
+  discount_value2: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '221.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '120.00'
+  parcel_package_type: กล่อง
+  
+Booking_S034:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0890000001'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size: 'A4'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '20.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '20.00'
+  parcel_package_type: ซอง
+
+Booking_S035:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size: 'A3'
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  promotion: 'SPBH5B'
+  promotion_detail:
+    discount: '5 บาท'
+    promotion_name: 'คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน'
+    parcel_size: 'ทุกขนาด'
+    expired_date: '30 ตุลาคม 2568'
+    condition: 'สำหรับลูกค้าที่เป็นกล่อง'
+    period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
+  discount_amount: '1'
+  discount_value1: 'NaN'
+  discount_value2: '5.00'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '30.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '40.00'
+  parcel_package_type: ซอง
+
+Booking_S036:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size: M
+  input_buy_insurance: '2,500'
+  check_buy_insurance: '2,500.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '146.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '40.00'
+  parcel_package_type: กล่อง
+
+Booking_S037:
+  parcel_type: พัสดุทั่วไป
+  sender_phone: '0899999999'
+  sender_name: สมชาย สายเสมอ
+  sender_address: '48/698' 
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0890000002'
+  receiver_name: สมใจ ดีดีดี
+  receiver_store_code_5_digits: '01523'
+  receiver_store_address: '01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150'
+  receiver_store_full: '01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150'
+  parcel_size: L
+  input_buy_insurance: '2,500'
+  check_buy_insurance: '2,500.00'
+  parcel_detail_remark: ระวังพัสดุเสียหาย
+  promotion: 'SPBH5B'
+  promotion_detail:
+    discount: '5 บาท'
+    promotion_name: 'คูปองส่วนลดค่าส่งพัสดุ 5 บาท สำหรับ SPEED-D ทุกขนาด ปลายทางบ้าน'
+    parcel_size: ทุกขนาด
+    expired_date: '30 ตุลาคม 2568'
+    condition: สำหรับลูกค้าที่เป็นกล่อง
+    period: '08 กุมภาพันธ์ 2567 - 30 ตุลาคม 2568'
+  discount_amount: '1'
+  discount_value1: '5.00'
+  discount_value2: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount: '1'
+  total_price_value1: 'NaN'
+  total_price_value2: '171.00'
+  booking_name: Booking DRY
+  booking_item: '1 รายการ'
+  shipping_origin: 'เลือกร้าน 7-11 ต้นทาง'
+  store_code: '15888'
+  price_value: '70.00'
+  parcel_package_type: กล่อง
+
+Booking_S042:
+  sender_phone: '0656666666'
+  sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก 1
+  sender_address: 22/589
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'จรเข้บัว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: '0892222222'
+  receiver_name: สมใจ ทดสอบการเเก้ไข 3
+  receiver_address: 89 หมู่ 16
+  receiver_postcode_5_digits: '86210'
+  receiver_postcode_full: 'ดอนยาง ปะทิว ชุมพร 86210'
+  parcel_size:  L
+  parcel_package_type:  กล่อง
+  buy_insurance: 2,500
+  verify_buy_insurance: '2,500.00'
+  parcel_detail_remark:  ระวังพัสดุเสียหาย
+  price_value: '120.00'
+  discount_amount: '1'
+  discount_value: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount: '1'
+  total_price_value: '221.00'
+  not_use_code:
+    total_price_value: '226.00'
+  old:
+    total_price_value: 80.00 บาท
+
+Booking_S043:
+  sender_phone: '0656666666'
+  sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก 1
+  sender_address: 22/589
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: 'จรเข้บัว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_phone: 0892222222
+  receiver_name: สมใจ ทดสอบการเเก้ไข 3
+  receiver_address: 89 หมู่ 16
+  receiver_postcode_5_digits: '86210'
+  receiver_postcode_full: 'ดอนยาง ปะทิว ชุมพร 86210'
+  parcel_size:  S2
+  parcel_package_type:  กล่อง
+  buy_insurance: 2,500
+  verify_buy_insurance: '2,500.00'
+  parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
+  parcel_detail_remark2: ระวังพัสดุเสียหาย
+  price_value: '250.00'
+  discount_amount: '1'
+  discount_value: '5.00'
+  total_price_amount: '1'
+  total_price_value: '245.00'
+  total_price_value2: '225.00'
+  total_price_value3: '250.00'
+  not_use_code:
+    total_price_value: '226.00'
+  text_price_value: 80.00 บาท
+
+Booking_S047:
+  sender_favorite_card: 
+    favorite_name: รายการโปรดผู้ส่ง
+  edit_sender:
+    sender_favorite_name: บ้านต่างจังหวัด
+  add_sender_favorite:
+    favorite_name: บ้าน
+    sender_name: สมชาย สายเสมอ
+    sender_phone: '0890000001'
+    sender_address: '48/698'
+    sender_postcode_5_digits: '10230'
+    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_favorite_card: 
+    favorite_name: รายการโปรดผู้รับ
+    receiver_location_pickup: ส่งที่บ้าน
+  edit_receiver:
+    receiver_location_pickup: 'ส่งร้าน 7-11'
+    receiver_store_code_5_digits: '15888'
+    receiver_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    receiver_store_address2: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 35110'
+    receiver_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
+  add_receiver_favorite:
+    favorite_name: บ้าน
+    receiver_name: สมชาย สายเสมอ
+    receiver_phone: '0890000001'
+    receiver_location_pickup: ส่งที่บ้าน
+    receiver_address: '48/698'
+    receiver_postcode_5_digits: '10230'
+    receiver_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  add_shipping_origin_area:
+    favorite_name: 'ร้าน 7-11 หน้าบ้าน'
+    shipping_origin_store_code_5_digits: '15888'
+    shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
+
+Booking_S048:
+  booking_status: 'กำลังจัดพัสดุ'
+  pickup_time:
+    input: 'ช่วงบ่าย 13:00 - 16:00'
+    expected: '13:00 - 16:00'
+  parcel_number: '0 รายการ'
+  pickup_point: 'บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
+  add_new_pickup:
+    parcel_type: พัสดุทั่วไป (Dry)
+    input: 'ช่วงเช้า 09:00 - 12:00'
+    expected: '09:00 - 12:00'
+
+Booking_S050:
+  old_return_business:
+    link_name: 'Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก'
+    phone: '0871000000'
+    name: 'ไอดีซี'
+    shipping_payer: บริษัทชำระค่าจัดส่ง
+    location_pickup: ส่งที่บ้าน
+    address: '200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์'
+    postcode_5_digits: '11120'
+    postcode: 'ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
+  new_return_business:
+    link_name: 'Return บริษัท ไอดีซี พรีเมียร์ จำกัด สาขาหลัก'
+    phone: '0871000000'
+    name: 'ไอดีซี'
+    shipping_payer: บริษัทชำระค่าจัดส่ง
+    location_pickup: ส่งที่บ้าน
+    address: '44 หมู่ 3'
+    postcode_5_digits: '11000'
+    postcode: 'บางเขน เมืองนนทบุรี นนทบุรี 11000'   
+
+Booking_S051:
+    sender_phone: '0899999999'
+    sender_name: สมชาย สายเสมอ
+    sender_address: '48/698'
+    sender_postcode: '10230'
+    sender_address_full: ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230
+    size: A4
+    parcel_size: ซอง A4
+    parcel_status: เลือกต้นทางจัดส่ง
+    total_amount: '1'
+    booking_price: NaN
+    cod: '0.00'
+    store: '15888'
+    verify_booking_price: '30.00'
+    parcel_package_type:  ซอง
+
+Booking_S054:
+  old:
+    total_price_value: 80.00 บาท
+  sender_phone: 0877777777
+  sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก 1
+  sender_address: '22/589'
+  sender_postcode_5_digits: '10230'
+  sender_postcode_full: จรเข้บัว ลาดพร้าว กรุงเทพมหานคร 10230
+  receiver_phone: 0892222222
+  receiver_name: สมใจ ทดสอบการเเก้ไข 3
+  receiver_address: 89 หมู่ 16
+  receiver_postcode_5_digits: '86210'
+  receiver_postcode_full: 'ดอนยาง ปะทิว ชุมพร 86210'
+  parcel_size:  L
+  parcel_package_type:  กล่อง
+  buy_insurance: 2,500
+  verify_buy_insurance: '2,500.00'
+  parcel_detail_remark:  ระวังพัสดุเสียหาย
+  price_value: '120'
+  discount_amount: '1'
+  discount_value: '5.00'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
+  total_price_amount: '1'
+  total_price_value: '221.00'
+  not_use_code:
+    total_price_value: '226.00'
+
+Booking_S058:
+  sender_favorite_card: 
+    favorite_name: รายการโปรดผู้ส่ง
+  edit_sender:
+    sender_favorite_name: บ้านต่างจังหวัด
+  edit_receiver:
+    receiver_location_pickup: 'ส่งร้าน 7-11'
+    receiver_store_code_5_digits: '15888'
+    receiver_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    receiver_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'    
+  add_sender_favorite:
+    favorite_name: บ้าน
+    sender_name: สมชาย สายเสมอ
+    sender_phone: '0890000001'
+    sender_address: '48/698'
+    sender_postcode_5_digits: '10230'
+    sender_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  receiver_favorite_card: 
+    favorite_name: รายการโปรดผู้รับ
+    receiver_location_pickup: ส่งที่บ้าน
+  add_receiver_favorite:
+    favorite_name: บ้าน
+    receiver_name: สมชาย สายเสมอ
+    receiver_phone: '0890000001'
+    receiver_location_pickup: ส่งที่บ้าน
+    receiver_address: '48/698'
+    receiver_postcode_5_digits: '10230'
+    receiver_postcode_full: 'ลาดพร้าว ลาดพร้าว กรุงเทพมหานคร 10230'
+  add_shipping_origin_area:
+    favorite_name: 'ร้าน 7-11 หน้าบ้าน'
+    shipping_origin_store_code_5_digits: '15888'
+    shipping_origin_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'        
