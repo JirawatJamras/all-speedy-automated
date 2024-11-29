@@ -1168,7 +1168,6 @@ DC_Operation_S005
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_d}
     dps_scan_page.Click Search Button [Scan In Page]
-    sleep    5s
     # Defect155    Defect249
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
@@ -1185,7 +1184,6 @@ DC_Operation_S005
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_d}
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['customer_id']}
@@ -1198,7 +1196,6 @@ DC_Operation_S005
     ...    ${today}
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['send_parcel_to']}
-    
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
@@ -1206,7 +1203,6 @@ DC_Operation_S005
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S005.scan_in_data_label_detail['store']}
     ...    ${DC_Operation_S005.scan_in_data_label_detail['customer']}
@@ -1214,37 +1210,30 @@ DC_Operation_S005
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['pouch_number']}
     ...    ${DC_Operation_S005.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S005.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    3.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S005.scan_in_sender_data['name']}
     ...    ${DC_Operation_S005.scan_in_sender_data['phone']}
     ...    -    #${DC_Operation_S005.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S005.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    3.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S005.scan_in_receiver_data['name']}
     ...    ${DC_Operation_S005.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S005.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S005.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    3.Data Receiver Details In Scan Page
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
@@ -1277,7 +1266,7 @@ DC_Operation_S005
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S005['timeline_in_history_parcel']}    4    #5
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S005['timeline_in_history_parcel']}    4    #5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    8.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -1355,7 +1344,7 @@ DC_Operation_S005
     dps_scan_page.Verify Value Waiting List To Scan Out [Scan Out Page]
     ...    ${tracking_d}
     ...    ${DC_Operation_S005.scan_out_waiting_scan['pouch_number']}
-    ...    ${DC_Operation_S005.scan_out_waiting_scan['receive_parcel_from']}
+    ...    คลัง DC BB    #${DC_Operation_S005.scan_out_waiting_scan['receive_parcel_from']}
     ...    CP ALL    #${DC_Operation_S005.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S005.scan_out_waiting_scan['parcel_owner']}
     ...    ${DC_Operation_S005.scan_out_waiting_scan['parcel_size']}
@@ -1395,15 +1384,13 @@ DC_Operation_S005
     Log    Step No.13 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out 
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    13.Verify Popup Confirm Scan Out
 
     Log    Step No.14 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    14.Verify Popup Save Data Success
 
     Log    Step No.15 คลิกที่ Pop up
@@ -1424,7 +1411,7 @@ DC_Operation_S005
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline    ${DC_Operation_S005['timeline_in_history_parcel']}    5    #6
+    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S005['timeline_in_history_parcel']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    17.Verify Timeline After Scan Out
     Close Window
     Switch Window    MAIN
@@ -1460,7 +1447,6 @@ DC_Operation_S005
     sleep    5s
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     common.Robot Skip Step Print Label
     # Expected
     dps_wait_delivery.Verify Data Delivery List
@@ -1506,7 +1492,6 @@ DC_Operation_S005
     common.Scroll Window To Vertical    1000
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    21.Verify Data In All Task Tab After Print Waiting Delivery
 
-
     Log    Step No.22 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Defect188
@@ -1524,17 +1509,15 @@ DC_Operation_S005
     # ...    ${DC_Operation_S005.data_in_import_task_tab['parcel_owner']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    22.Verify Import Task Tab At Destination Warehouse
 
-
     Log    Step No.23 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ d" ในช่องค้นหา และ กดค้นหา หรือกด Enter
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']}
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_d}
     dps_scan_page.Click Search Button [Scan In Page]
-    sleep    5s
     # Defect155    Defect212    Defect249    Defect268
     # Expected
-    Verify Title Parcel Details In Scan Page [CP All Courier]
+    dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -1548,8 +1531,7 @@ DC_Operation_S005
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
-    Verify Data Parcel Details In Scan Page [CP All Courier]
+    dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_d}
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['parcel_size']}
@@ -1561,7 +1543,6 @@ DC_Operation_S005
     ...    ${today}
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['send_parcel_to']}
-    
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
@@ -1569,7 +1550,6 @@ DC_Operation_S005
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S005.scan_in_data_label_detail['zipcode']}
     ...    ${DC_Operation_S005.scan_in_data_label_detail['customer']}
@@ -1577,37 +1557,30 @@ DC_Operation_S005
     ...    ${DC_Operation_S005.scan_in_data_parcel_detail['pouch_number']}
     ...    ${DC_Operation_S005.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S005.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    23.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S005.scan_in_sender_data['name']}
     ...    ${DC_Operation_S005.scan_in_sender_data['phone']}
     ...    -    #${DC_Operation_S005.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S005.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    23.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
-    dps_scan_page.Verify Data Recevier In Scan Page
+    dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S005.scan_in_receiver_data['name']}
     ...    ${DC_Operation_S005.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S005.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S005.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    23.Data Receiver Details In Scan Page
 
     Log    Step No.24 คลิกปุ่ม ยืนยัน Scan in
@@ -1692,8 +1665,6 @@ DC_Operation_S005
     # ...    ${EMPTY}    #${DC_Operation_S005.data_in_send_task_tab['customer_type']}
     # ...    ${DC_Operation_S005.data_in_send_task_tab['transport']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    29.Verify Send Task Tab
-
-
 
 DC_Operation_S006
     ${tracking_e}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S006['sender_name']}
@@ -2457,7 +2428,6 @@ DC_Operation_S006
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Send Task Tab
 
 DC_Operation_S007
-    Log    Pre Condition
     ${tracking_f}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S007['sender_name']}
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -2519,7 +2489,6 @@ DC_Operation_S007
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_f}
     dps_scan_page.Click Search Button [Scan In Page]
-    sleep    5s
     # Defect155    Defect249
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
@@ -2536,7 +2505,6 @@ DC_Operation_S007
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_f}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
@@ -2549,7 +2517,6 @@ DC_Operation_S007
     ...    ${today}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
-
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['store']}
@@ -2557,7 +2524,6 @@ DC_Operation_S007
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S007.scan_in_data_label_detail['store']}
     ...    ${DC_Operation_S007.scan_in_data_label_detail['customer']}
@@ -2565,37 +2531,30 @@ DC_Operation_S007
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['pouch_number']}
     ...    ${DC_Operation_S007.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S007.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    3.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S007.scan_in_sender_data['name']}
     ...    ${DC_Operation_S007.scan_in_sender_data['phone']}
     ...    -    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S007.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    3.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
     dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S007.scan_in_receiver_data['name']}
     ...    ${DC_Operation_S007.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S007.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S007.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    3.Data Receiver Details In Scan Page
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
@@ -2606,8 +2565,7 @@ DC_Operation_S007
     Log    Step No.5 คลิกปุ่มพิมพ์
     common.Robot Skip Step Print Label
     # Expected
-    dps_scan_page.Verify Print Label Success Popup
-    ...    ${dc_operation['text_print_label_success']}
+    dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    5.Verify Print Label Success Popup
 
     Log    Step No.6 คลิกที่ x Pop up
@@ -2628,7 +2586,7 @@ DC_Operation_S007
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    4    #5
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    4    #5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    8.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -2746,15 +2704,13 @@ DC_Operation_S007
     Log    Step No.13 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out 
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    13.Verify Popup Confirm Scan Out
 
     Log    Step No.14 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    14.Verify Popup Save Data Success
 
     Log    Step No.15 คลิกที่ Pop up
@@ -2775,7 +2731,7 @@ DC_Operation_S007
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    5    #6
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    17.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -2809,7 +2765,6 @@ DC_Operation_S007
     ...    ${DC_Operation_S007.wait_derivery_data_list['status1']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     common.Robot Skip Step Print Label
     # Expected
     dps_wait_delivery.Verify Data Delivery List
@@ -2894,20 +2849,18 @@ DC_Operation_S007
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_f}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['parcel_size']}
     ...    ${EMPTY}    #${DC_Operation_S007.scan_in_data_parcel_detail['crossdock_warehouse']}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['destination_warehouse']}
-    ...    พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ    #${DC_Operation_S007.scan_in_data_parcel_detail['parcel_status2']}
+    ...    พัสดุออกจากคลังต้นทาง    #${DC_Operation_S007.scan_in_data_parcel_detail['parcel_status2']}
     ...    CP ALL    #${DC_Operation_S007.scan_in_data_parcel_detail['courier']}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['pouch_number']}
     ...    ${today}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['send_parcel_to']}
-
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['store']}
@@ -2915,7 +2868,6 @@ DC_Operation_S007
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S007.scan_in_data_label_detail['store']}
     ...    ${DC_Operation_S007.scan_in_data_label_detail['customer']}
@@ -2923,45 +2875,37 @@ DC_Operation_S007
     ...    ${DC_Operation_S007.scan_in_data_parcel_detail['pouch_number']}
     ...    ${DC_Operation_S007.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S007.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    23.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S007.scan_in_sender_data['name']}
     ...    ${DC_Operation_S007.scan_in_sender_data['phone']}
-    ...    -    # Expected Result is ${DC_Operation_S007.scan_in_sender_data['shipping_origin']}
+    ...    -    #${DC_Operation_S007.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S007.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    23.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
     dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S007.scan_in_receiver_data['name']}
     ...    ${DC_Operation_S007.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S007.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S007.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    23.Data Receiver Details In Scan Page
 
 
     Log    Step No.24 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
-    dps_scan_page.Verify Accept Scan In Success Popup
-    ...    ${dc_operation['text_accept_scan_in_success']}
+    dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    24.Verify Accept Scan In Success Popup
 
     Log    Step No.25 คลิกที่ Pop up
@@ -2982,7 +2926,7 @@ DC_Operation_S007
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    7    #8
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    6    #8
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    27.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -3046,7 +2990,7 @@ DC_Operation_S008
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
-    
+
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
@@ -3540,19 +3484,19 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     dps_home_page.Select Tab Import Task
-    Defect139    Defect188
-    Expected
-    dps_home_page.Verify Label In Import Task Tab
-    ...    ${dc_operation.label_import_task_tab['import_from']}
-    ...    ${dc_operation.label_import_task_tab['transport']}
-    ...    ${dc_operation.label_import_task_tab['parcel_owner']}
-    ...    ${dc_operation.label_import_task_tab['number_of_pouch']}
-    ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
-    ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
-    dps_home_page.Verify Data In Import Task Tab
-    ...    ${DC_Operation_S008.data_in_import_task_tab['import_from3']}
-    ...    ${DC_Operation_S008.data_in_import_task_tab['transport']}
-    ...    ${DC_Operation_S008.data_in_import_task_tab['parcel_owner']}
+    # Defect139    Defect188
+    # Expected
+    # dps_home_page.Verify Label In Import Task Tab
+    # ...    ${dc_operation.label_import_task_tab['import_from']}
+    # ...    ${dc_operation.label_import_task_tab['transport']}
+    # ...    ${dc_operation.label_import_task_tab['parcel_owner']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_pouch']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_pieces']}
+    # ...    ${dc_operation.label_import_task_tab['number_of_scanned_items']}
+    # dps_home_page.Verify Data In Import Task Tab
+    # ...    ${DC_Operation_S008.data_in_import_task_tab['import_from3']}
+    # ...    ${DC_Operation_S008.data_in_import_task_tab['transport']}
+    # ...    ${DC_Operation_S008.data_in_import_task_tab['parcel_owner']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    36.Verify Homepage 
     Sleep    1s
@@ -3592,7 +3536,7 @@ DC_Operation_S008
     ...    ${pouch_number}
     ...    คลัง DC BB    #${DC_Operation_S008.scan_in_data_warehouse_ac['receive_parcel_from']}
     ...    ${DC_Operation_S008.scan_in_data_warehouse_ac['parcel_size']}
-    ...    2024-11-29    #${today}
+    ...    ${EMPTY}    #${today}
     ...    พัสดุถึงคลังข้ามภาค AC    #${DC_Operation_S008.scan_in_data_warehouse_ac['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    39.Verify List Scan In Warehouse AC
     
@@ -3681,15 +3625,13 @@ DC_Operation_S008
     Log    Step No.45 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    45.Verify Popup Confirm Scan Out
 
     Log    Step No.46 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    46.Verify Popup Save Data Success
 
 
@@ -3840,9 +3782,8 @@ DC_Operation_S008
     Log    Step No.57 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ g" ในช่องค้นหาด้านล่างรายละเอียด Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number In Search Bar On Pouch Detail Section    ${tracking_g}
     dps_scan_page.Click Search Button Of Pouch Detail Section
-    Defect155    Defect243    Defect260    Defect268
-    Expected
-    Sleep    10s
+    # Defect155    Defect243    Defect260    Defect268
+    # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -3912,7 +3853,6 @@ DC_Operation_S008
 
     Log    Step No.58 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
-    # Defect288
     # Expected
     dps_scan_page.Verify Accept Scan In Success Popup
     ...    ${dc_operation['text_accept_scan_in_success']}
@@ -3920,6 +3860,7 @@ DC_Operation_S008
 
     Log    Step No.59 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
+    # Defect288
     # Expected 
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    59.Verify Accept Scan In Success Popup After Scan In At RDC LP Warehouse
@@ -3985,7 +3926,6 @@ DC_Operation_S008
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    63.Verify Send Task Tab
 
 DC_Operation_S009
-    Log    Pre Condition
     ${tracking_h}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S009['sender_name']}
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
@@ -4046,7 +3986,6 @@ DC_Operation_S009
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_h}
     dps_scan_page.Click Search Button [Scan In Page]
-    sleep    5s
     # Defect155    Defect249
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
@@ -4063,7 +4002,6 @@ DC_Operation_S009
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_h}
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['customer_id']}
@@ -4076,7 +4014,6 @@ DC_Operation_S009
     ...    ${today}
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['send_parcel_to']}
-
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
@@ -4084,7 +4021,6 @@ DC_Operation_S009
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S009.scan_in_data_label_detail['zipcode']}
     ...    ${DC_Operation_S009.scan_in_data_label_detail['customer']}
@@ -4092,37 +4028,30 @@ DC_Operation_S009
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['pouch_number']}
     ...    ${DC_Operation_S009.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S009.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    3.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S009.scan_in_sender_data['name']}
     ...    ${DC_Operation_S009.scan_in_sender_data['phone']}
-    ...    -    # Expected Result is ${DC_Operation_S009.scan_in_sender_data['shipping_origin']}
+    ...    -    #${DC_Operation_S009.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S009.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    3.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
     dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S009.scan_in_receiver_data['name']}
-    ...    0900987354    # Expected Result is ${DC_Operation_S009.scan_in_receiver_data['phone']}
+    ...    ${DC_Operation_S009.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S009.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S009.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    3.Data Receiver Details In Scan Page
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
@@ -4133,8 +4062,7 @@ DC_Operation_S009
     Log    Step No.5 คลิกปุ่มพิมพ์
     common.Robot Skip Step Print Label
     # Expected
-    dps_scan_page.Verify Print Label Success Popup
-    ...    ${dc_operation['text_print_label_success']}
+    dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    5.Verify Print Label Success Popup
 
     Log    Step No.6 คลิกที่ x Pop up
@@ -4155,7 +4083,7 @@ DC_Operation_S009
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    4    #5
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    3    #5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    8.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -4273,15 +4201,13 @@ DC_Operation_S009
     Log    Step No.13 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out 
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    13.Verify Popup Confirm Scan Out
 
     Log    Step No.14 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    14.Verify Popup Save Data Success
 
     Log    Step No.15 คลิกที่ Pop up
@@ -4292,7 +4218,7 @@ DC_Operation_S009
 
 
     Log    Step No.16 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}    #Expect Result is ประวัติพัสดุภายในคลัง
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['history_parcel']}
     # Expected
     dps_history_parcel_page.Verify History Parcel Page    ${dc_operation.title['history_parcel']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    16.Verify History Parcel Page
@@ -4303,7 +4229,7 @@ DC_Operation_S009
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}     5     #6
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}     4     #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    17.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -4337,7 +4263,6 @@ DC_Operation_S009
     ...    ${DC_Operation_S009.wait_derivery_data_list['status1']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
     common.Robot Skip Step Print Label
     # Expected
     dps_wait_delivery.Verify Data Delivery List
@@ -4391,8 +4316,8 @@ DC_Operation_S009
     ...    ${tracking_h}
     ...    ${DC_Operation_S009.scan_in_data_warehouse_ac['pouch_number']}
     ...    คลัง DC BB    #${dc_operation.scan_in_data_warehouse_ac['receive_parcel_from']}
-    ...    ${DC_Operation_S009.scan_in_data_warehouse_ac['parcel_size']}
-    ...    ${today}
+    ...    พัสดุ SPEED-D Size XL ปลายทางบ้าน    #${DC_Operation_S009.scan_in_data_warehouse_ac['parcel_size']}
+    ...    ${EMPTY}    #${today}
     ...    พัสดุรอส่งไปคลัง (RDC LP)    #${dc_operation.scan_in_data_warehouse_ac['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    22.Verify Scan In Page Warehouse AC
 
@@ -4408,7 +4333,7 @@ DC_Operation_S009
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    7    #8
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    4    #8
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    24.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -4473,15 +4398,13 @@ DC_Operation_S009
     Log    Step No.27 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out 
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    27.Verify Popup Confirm Scan Out
 
     Log    Step No.28 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    28.Verify Popup Save Data Success
 
     Log    Step No.29 คลิกที่ Pop up
@@ -4503,7 +4426,7 @@ DC_Operation_S009
     Switch Window    NEW
     # Defect201    Defect273
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    8    #9
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    4    #9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    31.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -4582,7 +4505,6 @@ DC_Operation_S009
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_h}
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['customer_id']}
@@ -4595,7 +4517,6 @@ DC_Operation_S009
     ...    ${today}
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['send_parcel_to']}
-
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
@@ -4603,7 +4524,6 @@ DC_Operation_S009
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S009.scan_in_data_label_detail['zipcode']}
     ...    ${DC_Operation_S009.scan_in_data_label_detail['customer']}
@@ -4611,37 +4531,30 @@ DC_Operation_S009
     ...    ${DC_Operation_S009.scan_in_data_parcel_detail['pouch_number']}
     ...    DC BB - RDC LP    #${DC_Operation_S009.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S009.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    34.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S009.scan_in_sender_data['name']}
     ...    ${DC_Operation_S009.scan_in_sender_data['phone']}
     ...    -    # Expected Result is ${DC_Operation_S009.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S009.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    34.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
     dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S009.scan_in_receiver_data['name']}
-    ...    Expected Result is ${DC_Operation_S009.scan_in_receiver_data['phone']}
+    ...    ${DC_Operation_S009.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S009.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S009.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    34.Data Receiver Details In Scan Page
 
     Log    Step No.35 คลิกปุ่ม ยืนยัน Scan in
@@ -4651,7 +4564,7 @@ DC_Operation_S009
     ...     ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    35.Verify Accept Scan In Success Popup
 
-    Log    Step No.36 คลิกที่ี Pop up
+    Log    Step No.36 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
     # Expected 
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
@@ -4669,7 +4582,7 @@ DC_Operation_S009
     Switch Window    NEW
     # Defect201    Defect206
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    10    #11
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    4    #11
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    38.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -5140,15 +5053,13 @@ DC_Operation_S010
     Log    Step No.27 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    27.Verify Popup Confirm Scan Out
 
     Log    Step No.28 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    28.Verify Popup Save Data Success
 
     Log    Step No.29 คลิกที่ Pop up
@@ -5638,15 +5549,11 @@ DC_Operation_S011
     ${tracking_j}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S011['sender_name']}
     common.Open URL    ${DPS_UAT_URL}
     dps_landing_page.Click Go Login Button
-    dps_login_page.Input Email    ${dps_login_user_04['username']}
-    dps_login_page.Input Password    ${dps_login_user_04['password']}
-    dps_login_page.Click Log On Button
-    # dps_home_page.Wait Until DC Operation Home Page Loaded
-    dps_home_page.Click Dropdown For Select Role
+    dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
 
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
-    # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Defect141    Defect187
     # Expected
     # Filter Data By Parcel Number [All Task Tab]    ${tracking_j}
@@ -5678,7 +5585,7 @@ DC_Operation_S011
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    1.Verify Data In All Task Tab
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
-    # dps_home_page.Select Tab Import Task
+    dps_home_page.Select Tab Import Task
     # Defect139    Defect188
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
@@ -5695,14 +5602,13 @@ DC_Operation_S011
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    2.Verify Import Task Tab
 
     Log    Step No.3 เข้าเมนู Scan, กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ j" และ กดค้นหา หรือกด Enter
-    # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
-    # dps_scan_page.Select Scan In Tab
-    # dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
-    # dps_scan_page.Click Search Button [Scan In Page]
-    # sleep    5s
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
+    dps_scan_page.Select Scan In Tab
+    dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
+    dps_scan_page.Click Search Button [Scan In Page]
     # Defect155    Defect249
     # Expected
-    Verify Title Parcel Details In Scan Page [CP All Courier]
+    dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -5716,8 +5622,7 @@ DC_Operation_S011
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
-    Verify Data Parcel Details In Scan Page [CP All Courier]
+    dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_j}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['parcel_size']}
@@ -5729,7 +5634,6 @@ DC_Operation_S011
     ...    ${today}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['send_parcel_to']}
-    
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['store']}
@@ -5737,7 +5641,6 @@ DC_Operation_S011
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S011.scan_in_data_label_detail['store']}
     ...    ${DC_Operation_S011.scan_in_data_label_detail['customer']}
@@ -5745,37 +5648,30 @@ DC_Operation_S011
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['pouch_number']}
     ...    ${DC_Operation_S011.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S011.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    3.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S011.scan_in_sender_data['name']}
     ...    ${DC_Operation_S011.scan_in_sender_data['phone']}
     ...    -    #${DC_Operation_S011.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S011.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    3.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
     dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S011.scan_in_receiver_data['name']}
     ...    ${DC_Operation_S011.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S011.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S011.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    3.Data Receiver Details In Scan Page
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
@@ -5783,14 +5679,11 @@ DC_Operation_S011
     Sleep    5s
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    4.Verify Click Print Label
 
-
     Log    Step No.5 คลิกปุ่มพิมพ์
-    # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    common.Click ESC On Keyboard
+    common.Robot Skip Step Print Label
     # Defect142
     # Expected
-    dps_scan_page.Verify Print Label Success Popup
-    ...    ${dc_operation['text_print_label_success']}
+    dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    5.Verify Print Label Success Popup
 
     Log    Step No.6 คลิกที่ x Pop up
@@ -5811,7 +5704,7 @@ DC_Operation_S011
     Switch Window    NEW
     # Defect201
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    4    #5
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    3    #5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    8.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -5929,15 +5822,13 @@ DC_Operation_S011
     Log    Step No.13 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out 
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    13.Verify Popup Confirm Scan Out
 
     Log    Step No.14 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    14.Verify Popup Save Data Success
 
     Log    Step No.15 คลิกที่ Pop up
@@ -5957,7 +5848,7 @@ DC_Operation_S011
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    5    #6
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    4    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    17.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -5993,8 +5884,7 @@ DC_Operation_S011
     sleep    5s
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    common.Click ESC On Keyboard
+    common.Robot Skip Step Print Label
     # Defect142    Defect235
     # Expected
     dps_wait_delivery.Verify Data Delivery List
@@ -6008,20 +5898,21 @@ DC_Operation_S011
     Log    Step No.21 เข้าเมนู Scan, เลือกคลังที่ดำเนินงานเป็น "AC"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
+    #  Defect
     # Expected
-    Verify Label Wait Scan In Warehouse AC
+    dps_scan_page.Verify Label Wait Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['pouch_number']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['receive_parcel_from']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_size']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['receiving_date']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_status']}
-    Verify Data List Wait Scan In Warehouse AC
+    dps_scan_page.Verify Data List Wait Scan In Warehouse AC
     ...    ${tracking_j}
     ...    ${DC_Operation_S011.scan_in_data_waiting_scan_warehouse_ac['pouch_number']}
     ...    คลัง DC BB    #${DC_Operation_S011.scan_in_data_waiting_scan_warehouse_ac['receive_parcel_from']}
     ...    ${DC_Operation_S011.scan_in_data_waiting_scan_warehouse_ac['parcel_size']}
-    ...    ${today}
+    ...    ${EMPTY}    #${today}
     ...    ${DC_Operation_S011.scan_in_data_waiting_scan_warehouse_ac['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    21.Verify Homepage After Print Waiting Delivery
@@ -6037,19 +5928,19 @@ DC_Operation_S011
     dps_scan_page.Click Search Button [Scan In Page]
     # Defect271
     # Expected
-    Verify Label Scan In Warehouse AC
+    dps_scan_page.Verify Label Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_warehouse_ac['pouch_number']}
     ...    ${dc_operation.scan_in_title_warehouse_ac['receive_parcel_from']}
     ...    ${dc_operation.scan_in_title_warehouse_ac['parcel_size']}
     ...    ${dc_operation.scan_in_title_warehouse_ac['receiving_date']}
     ...    ${dc_operation.scan_in_title_warehouse_ac['parcel_status']}
-    Verify Data List Scan In Warehouse AC
+    dps_scan_page.Verify Data List Scan In Warehouse AC
     ...    ${tracking_j}
     ...    ${DC_Operation_S011.scan_in_data_warehouse_ac['pouch_number']}
     ...    คลัง DC BB    #${DC_Operation_S011.scan_in_data_warehouse_ac['receive_parcel_from']}
-    ...    ${DC_Operation_S011.scan_in_data_warehouse_ac['parcel_size']}
-    ...    ${today}
+    ...    พัสดุ SPEED-D Size XL ปลายทางร้าน    #${DC_Operation_S011.scan_in_data_warehouse_ac['parcel_size']}
+    ...    ${EMPTY}    #${today}
     ...    พัสดุรอส่งไปคลัง (RDC LP)    #${DC_Operation_S011.scan_in_data_warehouse_ac['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    22.Verify Scan In Page Warehouse AC
 
@@ -6065,7 +5956,7 @@ DC_Operation_S011
     Switch Window    NEW
     # Defect201    Defect273
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    7    #8
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    4    #8
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    24.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -6129,15 +6020,13 @@ DC_Operation_S011
     Log    Step No.27 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out 
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    27.Verify Popup Confirm Scan Out
 
     Log    Step No.28 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    28.Verify Popup Save Data Success
 
     Log    Step No.29 คลิกที่ Pop up
@@ -6158,14 +6047,14 @@ DC_Operation_S011
     Switch Window    NEW
     # Defect201    Defect273
     # Expected
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    8    #9
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    4    #9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    31.Verify Timeline
     Close Window
     Switch Window    MAIN
 
     Log    Step No.32 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง RDCLP
-    # dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
-    # dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']} 
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']} 
     # Defect187
     # Expected
     # dps_home_page.Verify Homepage
@@ -6197,7 +6086,7 @@ DC_Operation_S011
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    32.Verify Data In All Task Tab
 
     Log    Step No.33 เลือกแท็บงานรับเข้า
-    # dps_home_page.Select Tab Import Task
+    dps_home_page.Select Tab Import Task
     # Defect188
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
@@ -6220,10 +6109,9 @@ DC_Operation_S011
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan In Page]
-    sleep    5s
     # Defect243    Defect249
     # Expected
-    Verify Title Parcel Details In Scan Page [CP All Courier]
+    dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
     ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
@@ -6237,8 +6125,7 @@ DC_Operation_S011
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
     ...    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
-
-    Verify Data Parcel Details In Scan Page [CP All Courier]
+    dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_j}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['customer_id']}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['parcel_size']}
@@ -6250,7 +6137,6 @@ DC_Operation_S011
     ...    ${today}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['send_parcel_to']}
-    
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['store']}
@@ -6258,7 +6144,6 @@ DC_Operation_S011
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S011.scan_in_data_label_detail['store']}
     ...    ${DC_Operation_S011.scan_in_data_label_detail['customer']}
@@ -6266,47 +6151,39 @@ DC_Operation_S011
     ...    ${DC_Operation_S011.scan_in_data_parcel_detail['pouch_number']}
     ...    DC BB - RDC LP    #${DC_Operation_S011.scan_in_data_label_detail['wh']}
     ...    ${DC_Operation_S011.scan_in_data_label_detail['symbol']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    34.Data Parcel Details In Scan Page
-
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
     ...    ${dc_operation.scan_in_title_sender_detail['phone']}
     ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
     ...    ${dc_operation.scan_in_title_sender_detail['address']}
-
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S011.scan_in_sender_data['name']}
     ...    ${DC_Operation_S011.scan_in_sender_data['phone']}
     ...    -    #${DC_Operation_S011.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S011.scan_in_sender_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    34.Data Sender Details In Scan Page
-
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     ...    ${dc_operation.scan_in_title_receiver_detail['name']}
     ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
     ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
     ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-
     dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S011.scan_in_receiver_data['name']}
     ...    ${DC_Operation_S011.scan_in_receiver_data['phone']}
     ...    ${DC_Operation_S011.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S011.scan_in_receiver_data['address']}
-
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    34.Data Receiver Details In Scan Page
 
     Log    Step No.35 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
-    dps_scan_page.Verify Accept Scan In Success Popup
-    ...    ${dc_operation['text_accept_scan_in_success']}
+    dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    35.Verify Accept Scan In Success Popup
 
-    Log    Step No.36 คลิกที่ี Pop up
+    Log    Step No.36 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
     # Expected 
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
@@ -6324,14 +6201,14 @@ DC_Operation_S011
     Switch Window    NEW
     # Defect201    Defect273
     # Expected
-    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    10    #11
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    4    #11
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    38.Verify Timeline
     Close Window
     Switch Window    MAIN
 
     Log    Step No.39 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
-    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_BB']} 
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']} 
     # Defect187
     # Expected
     # dps_home_page.Verify Homepage

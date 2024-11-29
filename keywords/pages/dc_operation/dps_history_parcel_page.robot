@@ -34,7 +34,7 @@ Compare Time And Title In Timeline
     [Arguments]    ${step_title}    ${step_description}    ${count_timeline}
     ${sequence}=    Convert To Integer    1
     # FOR    ${i}    IN RANGE    1    ${count_timeline}
-    FOR    ${i}    IN RANGE    1    10
+    FOR    ${i}    IN RANGE    1    12
         ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_txt_step_title_in_timeline_history_parcel_page}[${i}]    timeout=1s
         Run Keyword IF    '${isvisible}' == 'True'    Set Suite Variable    ${sequence}    ${i}
         ${actual_description}=    Get Text    (${dps_txt_step_description_in_timeline_history_parcel_page})[${sequence}]

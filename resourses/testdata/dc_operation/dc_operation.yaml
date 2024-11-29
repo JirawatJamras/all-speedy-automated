@@ -340,8 +340,8 @@ DC_Operation_S005:
         description: DC BB
       - title: รอปริ้นใบลาเบลติดหน้ากล่อง
         description: '-'
-      # - title: พัสดุรอ Scan out ไปคลัง
-      #   description: DC SB
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: DC SB
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
       - title: พัสดุถึงคลังข้ามภาค    #พัสดุถึงคลังปลายทาง
@@ -573,12 +573,12 @@ DC_Operation_S007:
         description: DC BB
       - title: รอปริ้นใบลาเบลติดหน้ากล่อง
         description: '-'
-      # - title: พัสดุรอ Scan out ไปคลัง
-      #   description: DC SB
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: DC SB
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
-      - title: พัสดุถึงคลังข้ามภาค    #พัสดุถึงคลังปลายทาง
-        description: '-'    #DC SB
+      # - title: พัสดุถึงคลังปลายทาง
+      #   description: 'DC SB'
       - title: พัสดุรอนำจ่ายโดยคลัง
         description: DC SB
 
@@ -844,16 +844,16 @@ DC_Operation_S009:
       #   description: AC
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
-      - title: พัสดุถึงคลังข้ามภาค
-        description: '-'    #AC
-      - title: พัสดุรอส่งไปคลัง    #พัสดุรอ Scan out ไปคลัง
-        description: RDC LP
-      - title: พัสดุออกจากคลังข้ามภาค
-        description: '-'    #AC
+      # - title: พัสดุถึงคลังข้ามภาค
+      #   description: 'AC'
+      # - title: พัสดุรอ Scan out ไปคลัง
+      # #   description: RDC LP
+      # - title: พัสดุออกจากคลังข้ามภาค
+      #   description: 'AC'
       # - title: พัสดุถึงคลังปลายทาง
       #   description: '-'
-      - title: พัสดุรอนำจ่ายโดยคลัง
-        description: RDC LP    #DC SB
+      # - title: พัสดุรอนำจ่ายโดยคลัง
+      #   description: DC SB
   scan_in_data_warehouse_ac:
     pouch_number: '-'
     receive_parcel_from: DCBB
@@ -1117,20 +1117,20 @@ DC_Operation_S011:
         description: DC BB
       - title: รอปริ้นใบลาเบลติดหน้ากล่อง
         description: '-'
-      - title: พัสดุรอ Scan out ไปคลัง
-        description: AC
+      # - title: พัสดุรอ Scan out ไปคลัง
+      #   description: AC
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
-      - title: พัสดุถึงคลังข้ามภาค
-        description: '-'    #AC
-      - title: พัสดุรอส่งไปคลัง    #พัสดุรอ Scan out ไปคลัง
-        description: RDC LP
-      - title: พัสดุออกจากคลังข้ามภาค
-        description: AC
-      - title: พัสดุถึงคลังปลายทาง
-        description: '-'
-      - title: พัสดุรอนำจ่ายโดยคลัง
-        description: RDC LP    #DC SB
+      # - title: พัสดุถึงคลังข้ามภาค
+      #   description: 'AC'
+      # - title: พัสดุรอ Scan out ไปคลัง
+      #   description: RDC LP
+      # - title: พัสดุออกจากคลังข้ามภาค
+      #   description: AC
+      # - title: พัสดุถึงคลังปลายทาง
+      #   description: '-'
+      # - title: พัสดุรอนำจ่ายโดยคลัง
+      #   description: DC SB
 
 DC_Operation_S012:
   sender_name: คุณ b
