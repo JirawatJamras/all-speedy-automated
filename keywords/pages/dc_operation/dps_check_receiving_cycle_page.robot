@@ -150,6 +150,7 @@ Click Pencil Icon
         ${nextpage}=    Get Element Attribute    ${dps_btn_status_next_page_pickup_schedule}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         FOR    ${index}    IN RANGE    1    ${card_count}+1
+            Wait Until Element Is Visible    (${card_inventory})[${index}]
             Scroll Element Into View    (${card_inventory})[${index}]
             common.Click When Ready    (${card_inventory})[${index}]
             ${element}    Run Keyword And Return Status    Wait Until Element Is Visible    ${booking_ID}
