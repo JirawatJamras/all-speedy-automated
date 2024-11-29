@@ -792,19 +792,19 @@ DC_Operation_S004
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
-    # dps_wait_delivery.Verify Label Delivery List
-    # ...    ${dc_operation.label_delivery_list['export_to']}
-    # ...    ${dc_operation.label_delivery_list['transport']}
-    # ...    ${dc_operation.label_delivery_list['parcel_number']}
-    # ...    ${dc_operation.label_delivery_list['pouch_number']}
-    # ...    ${dc_operation.label_delivery_list['title_parcel_and_pouch_number']}
-    # ...    ${dc_operation.label_delivery_list['title_date']}
-    # ...    ${dc_operation.label_delivery_list['title_status']}
-    # dps_wait_delivery.Verify Data Delivery List
-    # ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
-    # ...    ${DC_Operation_S004.wait_derivery_data_list['transport']}
-    # ...    ${today}
-    # ...    ${DC_Operation_S004.wait_derivery_data_list['status']}
+    dps_wait_delivery.Verify Label Delivery List
+    ...    ${dc_operation.label_delivery_list['export_to']}
+    ...    ${dc_operation.label_delivery_list['transport']}
+    ...    ${dc_operation.label_delivery_list['parcel_number']}
+    ...    ${dc_operation.label_delivery_list['pouch_number']}
+    ...    ${dc_operation.label_delivery_list['title_parcel_and_pouch_number']}
+    ...    ${dc_operation.label_delivery_list['title_date']}
+    ...    ${dc_operation.label_delivery_list['title_status']}
+    dps_wait_delivery.Verify Data Delivery List
+    ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
+    ...    CP ALL    #${DC_Operation_S004.wait_derivery_data_list['transport']}
+    ...    ${today}
+    ...    ${DC_Operation_S004.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Delivery List Page
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
@@ -2070,7 +2070,7 @@ DC_Operation_S006
     ...    ${dc_operation.label_delivery_list['title_status']}
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S006.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S006.wait_derivery_data_list['transport']}
+    ...    CP ALL    #${DC_Operation_S006.wait_derivery_data_list['transport']}
     ...    ${today}
     ...    ${DC_Operation_S006.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Delivery List Page
@@ -4039,7 +4039,7 @@ DC_Operation_S010
     ...    ${dc_operation.label_delivery_list['title_status']}
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S010.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S010.wait_derivery_data_list['transport']}
+    ...    CP ALL    #${DC_Operation_S010.wait_derivery_data_list['transport']}
     ...    ${today}
     ...    ${DC_Operation_S010.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Delivery List Page
