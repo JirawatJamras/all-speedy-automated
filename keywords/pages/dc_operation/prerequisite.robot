@@ -810,7 +810,7 @@ DC_Operation_S004
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
-    ...    CP ALL    ${DC_Operation_S004.wait_derivery_data_list['transport']}
+    ...    CP ALL    #${DC_Operation_S004.wait_derivery_data_list['transport']}
     ...    ${today}
     ...    ${DC_Operation_S004.wait_derivery_data_list['status']}
 
