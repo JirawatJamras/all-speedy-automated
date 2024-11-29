@@ -2078,7 +2078,7 @@ DC_Operation_S006
     Log    Step No.33 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S006.wait_derivery_data_list['export_to']}
-    ...    CP ALL    ${DC_Operation_S006.wait_derivery_data_list['transport']}
+    ...    CP ALL    #${DC_Operation_S006.wait_derivery_data_list['transport']}
     ...    ${today}
     ...    ${DC_Operation_S006.wait_derivery_data_list['status']}
 
@@ -2087,7 +2087,7 @@ DC_Operation_S006
     # Expected
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S006.wait_derivery_data_list['export_to']}
-    ...    CP ALL    ${DC_Operation_S006.wait_derivery_data_list['transport']}
+    ...    CP ALL    #${DC_Operation_S006.wait_derivery_data_list['transport']}
     ...    ${today}
     ...    ${DC_Operation_S006.wait_derivery_data_list['status_after_print']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Delivery List Page After Print
@@ -4047,7 +4047,7 @@ DC_Operation_S010
     Log    Step No.33 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S010.wait_derivery_data_list['export_to']}
-    ...    CP ALL    ${DC_Operation_S010.wait_derivery_data_list['transport']}
+    ...    CP ALL    #${DC_Operation_S010.wait_derivery_data_list['transport']}
     ...    ${today}
     ...    ${DC_Operation_S010.wait_derivery_data_list['status']}
 
@@ -4056,7 +4056,7 @@ DC_Operation_S010
     # Expected
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S010.wait_derivery_data_list['export_to']}
-    ...    CP ALL    ${DC_Operation_S010.wait_derivery_data_list['transport']}
+    ...    CP ALL    #${DC_Operation_S010.wait_derivery_data_list['transport']}
     ...    ${today}
     ...    ${DC_Operation_S010.wait_derivery_data_list['status_after_print']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Delivery List Page After Print
