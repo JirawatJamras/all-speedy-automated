@@ -258,7 +258,7 @@ Input Tracking Number In Search Bar On Pouch Detail Section
 Click Search Button Of Pouch Detail Section
     ${dps_btn_seach_on_pouch_detail_on_scan_page}=    Replace String    ${dps_btn_seach_on_pouch_detail_on_scan_page}    {label}    ${dc_operation['text_pouch_detail']}
     ${dps_btn_seach_on_pouch_detail_on_scan_page}=    Replace String    ${dps_btn_seach_on_pouch_detail_on_scan_page}    {value}    ${dc_operation['text_search']}
-    common.Click When Ready    ${dps_btn_seach_on_pouch_detail_on_scan_page}
+    common.Click Xpath By JavaScript    ${dps_btn_seach_on_pouch_detail_on_scan_page}
 
 Verify Label Pouch Detail In Scan In Page
     [Arguments]    ${expected_pouch_num}    ${expected_parcel_in_pouch}    ${expected_courier}
@@ -514,7 +514,7 @@ Verify Title Parcel Details In Scan Page [CP All Courier]
     ...            ${parcel_size}    ${crossdock_warehouse}    ${destination_warehouse} 
     ...            ${parcel_status}    ${courier}    ${pouch_number}
     ...            ${receiving_date}    ${origin_warehouse}    ${send_parcel_to}    ${route}
-    
+    Sleep    5s
     ${dps_txt_title_parcel_detail}=    Replace String    ${dps_txt_title_parcel_detail}    {value}    ${title}
     ${dps_txt_title_parcel_id}=    Replace String    ${dps_txt_title_parcel_id}    {value}    ${parcel_id}
     ${dps_txt_title_customer_id}=    Replace String    ${dps_txt_title_customer_id}    {value}    ${customer_id}
@@ -528,6 +528,7 @@ Verify Title Parcel Details In Scan Page [CP All Courier]
     ${dps_txt_title_origin_warehouse}=    Replace String    ${dps_txt_title_origin_warehouse}    {value}    ${origin_warehouse}
     ${dps_txt_title_send_parcel_to}=    Replace String    ${dps_txt_title_send_parcel_to}    {value}    ${send_parcel_to}
     ${dps_txt_title_route}=    Replace String    ${dps_txt_title_route}    {value}    ${route}
+    Wait Until Element Is Visible    ${dps_txt_title_parcel_detail}    timeout=${DEFAULT_TIMEOUT}
     ${actual_txt_title_parcel_detail_}=    Get Text    ${dps_txt_title_parcel_detail}
     ${actual_txt_title_parcel_id}=    Get Text    ${dps_txt_title_parcel_id}
     ${actual_txt_title_customer_id}=    Get Text    ${dps_txt_title_customer_id}

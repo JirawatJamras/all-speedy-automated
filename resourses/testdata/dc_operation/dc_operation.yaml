@@ -191,8 +191,8 @@ DC_Operation_S004:
       description: ''    # pouch number to be dynamically set
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
-    - title: พัสดุออกจากคลังต้นทาง
-      description: DC BB
+    # - title: พัสดุออกจากคลังต้นทาง
+    #   description: DC BB
     - title: พัสดุถึงคลังปลายทาง
       description: DC SB
     - title: พัสดุรอนำจ่ายโดยคลัง

@@ -32,7 +32,7 @@ DC_Operation_S017
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    1.Verify Navigate To Pouch Page Success
 
     Log    ตรวจสอบ Pouch ที่มีคลังปลายทางเป็น RDC LP ที่ถูกเปิดอยู่ และถ้ามี Pouch ที่เปิดอยู่จะดำเนินการต่อใน Step No. 2-5
-    dps_pouch_page.Check Open Pouch And Close Pouch By Destination Inventory
+    dps_pouch_page.Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
     ...    ${DC_Operation_S017.check_close_pouch['inventory']}
     ...    ${dc_operation['text_warning_confirm_to_close_pouch']}
     ...    ${dc_operation['text_transaction_complete']}
