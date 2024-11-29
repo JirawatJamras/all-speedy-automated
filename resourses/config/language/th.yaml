@@ -113,7 +113,7 @@ Booking:
     price:  'ราคา :'
     default:
       parcel_number:  '0 รายการ'
-      cut_off_time:  '23:59:00'
+      cut_off_time:  '22:54:00'
       price:  '0 บาท'
   dry_parcel:
     parcel_A4: 'A4'
@@ -243,7 +243,7 @@ call_car_pick_up:
     morning: '9:00:00 - 12:00 น.'
   default:
     parcel_number: '0 รายการ'
-    price: '0 บาท'
+    price: '0.00 บาท'
 
 favorite:
   text_parcel_sender: ผู้ส่งพัสดุ

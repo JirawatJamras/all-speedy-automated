@@ -110,7 +110,7 @@ Verify Label In All Task Tab
 
 Verify Data In All Task Tab
     [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
-    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_size}    ${parcel_status}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}
@@ -120,14 +120,11 @@ Verify Data In All Task Tab
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_number}    ${parcel_number}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_status}    ${parcel_status}
     Scroll Element Into View    ${dps_txt_list_first_all_task}
-    # ${actual_txt_list_first_daily_task}=    Get Text    ${dps_txt_list_first_all_task}
-    # ${actual_txt_list_first_daily_task}=    Replace String    ${actual_txt_list_first_daily_task}    \n    ${SPACE}
-    # Should Be Equal As Strings    ${actual_txt_list_first_daily_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
     Wait Until Element Is Visible    ${dps_txt_list_first_all_task}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Parcel Is Not Visible [All Task Tab]
     [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
-    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_size}    ${parcel_status}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}
@@ -144,7 +141,7 @@ Verify Parcel Is Not Visible [All Task Tab]
     
 Verify Data In All Task Tab (Loop To Find Each Row)
     [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
-    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_size}    ${parcel_status}
         ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
         ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
         ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}

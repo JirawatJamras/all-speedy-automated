@@ -519,48 +519,45 @@ DC_Operation_S007:
     crossdock_warehouse: '-'
     destination_warehouse: DC SB
     parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
-    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
+    parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DC SB)
     courier: CP All
     pouch_number: '-'
     origin_warehouse: DCBB
     send_parcel_to: Store (15888)
-    route: ''
   scan_in_data_label_detail:
-    route: ''
     store: '15888 (กล่อง XL)'
-    customer1: ทดสอบพัสดุ Express ส่งร้านสร้าง Pouch
-    customer2: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
-    phone: ''
-    pouch_number: ''
+    customer: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
+    phone: '0900987354'
+    pouch_number: '-'
     wh: DC BB - DC SB
     symbol: รูปดาว
   scan_in_sender_data:
     name: คุณ f
-    phone: ''
+    phone: '0959494989'
     shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
     address: 74 ลำพยา เมืองนครปฐม นครปฐม 73000
   scan_in_receiver_data:
     name: ทดสอบพัสดุ Express ส่งร้านไม่สร้าง Pouch
-    phone: ''
+    phone: '0900987354'
     shipping_destination: ร้าน สาขา CP TOWER สีลม (15888)
     address: สีลม บางรัก กรุงเทพมหานคร 10500
   scan_out_waiting_scan:
     pouch_number: '-'
     import_from: Home
-    transport: CP ALL
+    transport: CP All
     parcel_owner: Speedy
     parcel_size: กล่อง XL
-    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+    parcel_status: พัสดุรอ Scan out ไปคลัง (DC SB)
   scan_out_list_data:
     pouch_number: '-'
     import_from: Home
-    transport: CP ALL
+    transport: CP All
     parcel_owner: Speedy
     parcel_size: กล่อง XL
-    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+    parcel_status: พัสดุรอ Scan out ไปคลัง (DC SB)
   wait_derivery_data_list:
     export_to: คลัง DC SB
-    transport: CP ALL
+    transport: CP All
     date: ''
     status1: รอขนส่งเข้ารับพัสดุ
     status2: ขนส่งเข้ารับพัสดุแล้ว
@@ -570,8 +567,8 @@ DC_Operation_S007:
     customer_type: 'B2C'
     transport: CP All
   timeline_in_history_parcel:
-      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      #   description: '-'
+      - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+        description: '-'
       - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
         description: ''
       - title: พัสดุเข้าคลังต้นทาง
@@ -583,7 +580,7 @@ DC_Operation_S007:
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
       - title: พัสดุถึงคลังปลายทาง
-        description: DC SB
+        description: ''
       - title: พัสดุรอนำจ่ายโดยคลัง
         description: DC SB
 
@@ -1236,15 +1233,15 @@ DC_Operation_S013:
     receive_parcel_from: Store
     transport: Flash
     parcel_owner: Speedy
-    parcel_size: 'กล่อง L'
-    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  scan_out_list_data:
-    pouch_number: '-'
-    receive_parcel_from: Store
-    transport: Flash
-    parcel_owner: Speedy
     parcel_size: กล่อง L
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  # scan_out_list_data:
+  #   pouch_number: '-'
+  #   receive_parcel_from: Store
+  #   transport: Flash
+  #   parcel_owner: Speedy
+  #   parcel_size: กล่อง L
+  #   parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
     export_to: Home
     transport: Flash
