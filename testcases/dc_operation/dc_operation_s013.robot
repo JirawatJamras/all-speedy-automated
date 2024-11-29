@@ -257,14 +257,14 @@ DC_Operation_S013
     ...    ${dc_operation.scan_out_title['date']}
     ...    ${dc_operation.scan_out_title['parcel_status']}
     dps_scan_page.Verify Value List Scan Out 
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['pouch_number']}
+    ...    ${DC_Operation_S013.scan_out_list_data['pouch_number']}
     ...    ${tracking_number}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['receive_parcel_from']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['transport']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_owner']}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_size']}
+    ...    ${DC_Operation_S013.scan_out_list_data['receive_parcel_from']}
+    ...    ${DC_Operation_S013.scan_out_list_data['transport']}
+    ...    ${DC_Operation_S013.scan_out_list_data['parcel_owner']}
+    ...    ${DC_Operation_S013.scan_out_list_data['parcel_size']}
     ...    ${today}
-    ...    ${DC_Operation_S013.scan_out_waiting_scan['parcel_status']}
+    ...    ${DC_Operation_S013.scan_out_list_data['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    28.Verify Value List Scan Out 
 
     Log    Step No.29 กดปุ่ม ยืนยัน Scan Out

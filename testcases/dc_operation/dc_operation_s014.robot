@@ -257,11 +257,11 @@ DC_Operation_S014
     ...    ${DC_Operation_S014.scan_out_waiting_scan['pouch_number']}
     ...    ${tracking_number}
     ...    คลัง DC BB    # ${DC_Operation_S014.scan_out_waiting_scan['receive_parcel_from']}
-    ...    ${DC_Operation_S014.scan_out_waiting_scan['transport']}
-    ...    ${DC_Operation_S014.scan_out_waiting_scan['parcel_owner']}
-    ...    ${DC_Operation_S014.scan_out_waiting_scan['parcel_size']}
+    ...    ${DC_Operation_S014.scan_out_list_data['transport']}
+    ...    ${DC_Operation_S014.scan_out_list_data['parcel_owner']}
+    ...    ${DC_Operation_S014.scan_out_list_data['parcel_size']}
     ...    ${today}
-    ...    ${DC_Operation_S014.scan_out_waiting_scan['parcel_status']}
+    ...    ${DC_Operation_S014.scan_out_list_data['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    27.Verify Value List Scan Out 
 
     Log    Step No.28 กดปุ่ม ยืนยัน Scan Out

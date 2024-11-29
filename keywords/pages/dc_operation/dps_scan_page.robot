@@ -712,14 +712,6 @@ Click Waiting Delivery List Button    # Scan Out
     common.Scroll Into View By Xpath    ${dps_btn_waiting_delivery_list_scan_out_page}    true
     common.Click When Ready    ${dps_btn_waiting_delivery_list_scan_out_page}
 
-Click Print Button By Data     # Scan Out
-    [Arguments]    ${export_to}    ${deliver}    
-    # ${parcel_amount}    ${pouch_amount}    ${total_parcel_pouch}
-    ${btn_print}=    Replace String    ${dps_btn_print_scan_out}    {export_to}    ${export_to}
-    ${btn_print}=    Replace String    ${btn_print}    {deliver}    ${deliver}
-    ${btn_print}=    Replace String    ${btn_print}    {print}    ${dc_operation['text_print']}
-    common.Click When Ready    ${btn_print}
-
 Input Pouch Number [Scan Out Page]    # Scan Out
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
