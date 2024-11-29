@@ -787,18 +787,18 @@ DC_Operation_S009:
     route: '-'
     zipcode: '51000 (กล่อง XL)'
     customer: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
-    phone: ''
+    phone: '0900987354'
     pouch_number: '-'
     wh: DC BB - AC - RDC LP
     symbol: รูปนาฬิกาทราย
   scan_in_sender_data:
     name: คุณ h
-    phone: ''
+    phone: '0959494989'
     shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
     address: '74 ลำพยา เมืองนครปฐม นครปฐม 73000'
   scan_in_receiver_data:
     name: ทดสอบพัสดุ Crossdock ส่งบ้านไม่สร้าง Pouch
-    phone: ''
+    phone: '0900987354'
     shipping_destination: บ้าน
     address: '62 ในเมือง เมืองลำพูน ลำพูน 51000'
   scan_out_waiting_scan:
@@ -828,7 +828,6 @@ DC_Operation_S009:
   wait_derivery_data_list:
     export_to: คลัง AC
     transport: CP All
-    date: ''
     status1: รอขนส่งเข้ารับพัสดุ
     status2: ขนส่งเข้ารับพัสดุ
   data_in_send_task_tab:
@@ -837,8 +836,8 @@ DC_Operation_S009:
     customer_type: 'B2C'
     transport: CP All
   timeline_in_history_parcel:
-      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      #   description: '-'
+      - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+        description: '-'
       - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
         description: ''
       - title: พัสดุเข้าคลังต้นทาง
@@ -851,14 +850,14 @@ DC_Operation_S009:
         description: DC BB
       - title: พัสดุถึงคลังข้ามภาค
         description: AC
-      - title: พัสดุรอส่งไปคลัง    #พัสดุรอ Scan out ไปคลัง
+      - title: พัสดุรอ Scan out ไปคลัง
         description: RDC LP
       - title: พัสดุออกจากคลังข้ามภาค
         description: AC
       - title: พัสดุถึงคลังปลายทาง
-        description: RDC LP    #'-'
+        description: '-'
       - title: พัสดุรอนำจ่ายโดยคลัง
-        description: RDC LP    #DC SB
+        description: DC SB
   scan_in_data_warehouse_ac:
     pouch_number: '-'
     receive_parcel_from: DCBB
