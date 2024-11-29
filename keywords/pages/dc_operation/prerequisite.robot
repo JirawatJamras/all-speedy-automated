@@ -5221,6 +5221,7 @@ DC_Operation_S012
     # ...    CPALL  # ${DC_Operation_S012.data_in_all_task_tab['transport']}
     # ...    ${DC_Operation_S012.data_in_all_task_tab['pouch_number']}
     # ...    ${tracking_b}
+    # ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_size']}
     # ...    ร้านรับพัสดุเข้าระบบ  # ${DC_Operation_S012.data_in_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    1.Verify Homepage 1st Time
