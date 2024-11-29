@@ -14,15 +14,16 @@ Test
     dps_login_page.Input Email    ${dps_login_user_04['username']}
     dps_login_page.Input Password    ${dps_login_user_04['password']}
     dps_login_page.Click Log On Button
+    Sleep    5s
 
     Set Today
-    ${tracking_e}=    Set Variable    SPBD241100023148
-    # ${pouch_number}=    Set Variable    P112462447
+    ${tracking_i}=    Set Variable    SPBD241100023152
+    ${pouch_number}=    Set Variable    P112480946
 
-    Set Global Variable    ${tracking_e}
-    # Set Global Variable    ${pouch_number}
+    Set Global Variable    ${tracking_i}
+    Set Global Variable    ${pouch_number}
 
         Log    S004
-    prerequisite.DC_Operation_S006
+    prerequisite.DC_Operation_S010
 
     

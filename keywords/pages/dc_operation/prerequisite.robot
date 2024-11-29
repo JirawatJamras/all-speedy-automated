@@ -3892,7 +3892,7 @@ DC_Operation_S010
     ...    ${DC_Operation_S010.data_in_pouch_detail.data_in_table['destination_warehouse']}
     ...    null    #${DC_Operation_S010.data_in_pouch_detail.data_in_table['pickup_place']}
     ...    ${DC_Operation_S010.data_in_pouch_detail.data_in_table['type']}
-    ...    พัสดุรอ Scan out ไปคลัง AC    ${DC_Operation_S010.data_in_pouch_detail.data_in_table['parcel_status']}
+    ...    พัสดุรอ Scan out ไปคลัง AC    #${DC_Operation_S010.data_in_pouch_detail.data_in_table['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Pouch Detail Popup
 
     Log    Step No.21 คลิกปุ่มปิด Pouch/Print Label
@@ -3952,7 +3952,7 @@ DC_Operation_S010
     ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_owner']}
     ...    กล่อง A4    #${DC_Operation_S010.scan_out_waiting_scan['parcel_size1']}
     ...    ${today}
-    ...    ${DC_Operation_S010.scan_out_waiting_scan['parcel_status1']}
+    ...    พัสดุรอ Scan out ไปคลัง AC    #${DC_Operation_S010.scan_out_waiting_scan['parcel_status1']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s
@@ -3981,7 +3981,7 @@ DC_Operation_S010
     ...    ${DC_Operation_S010.scan_out_list_data['parcel_owner']}
     ...    ${DC_Operation_S010.scan_out_list_data['parcel_size']}
     ...    ${today}
-    ...    ${DC_Operation_S010.scan_out_list_data['parcel_status1']}
+    ...    พัสดุรอ Scan out ไปคลัง AC    #${DC_Operation_S010.scan_out_list_data['parcel_status1']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    Verify Value List Scan Out
 
     Log    Step No.27 กดปุ่ม ยืนยัน Scan Out
