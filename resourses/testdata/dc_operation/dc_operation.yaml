@@ -607,6 +607,7 @@ DC_Operation_S008:
   data_in_import_task_tab:
     import_from1: Home
     import_from2: 'คลัง AC'
+    import_from3: DC BB
     transport: CP All
     parcel_owner: Speedy
   check_close_pouch:
@@ -661,8 +662,8 @@ DC_Operation_S008:
       description: AC
     - title: พัสดุถึงคลังปลายทาง
       description: RDC LP
-    - title: พัสดุรอนำจ่ายโดยคลัง
-      description: RDC LP
+    # - title: พัสดุรอนำจ่ายโดยคลัง
+    #   description: RDC LP
   data_in_export_task_tab:
     export_to: คลัง RDCLP
     transport: CP All
@@ -1235,13 +1236,13 @@ DC_Operation_S013:
     parcel_owner: Speedy
     parcel_size: กล่อง L
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  # scan_out_list_data:
-  #   pouch_number: '-'
-  #   receive_parcel_from: Store
-  #   transport: Flash
-  #   parcel_owner: Speedy
-  #   parcel_size: กล่อง L
-  #   parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
+  scan_out_list_data:
+    pouch_number: '-'
+    receive_parcel_from: Store
+    transport: Flash
+    parcel_owner: Speedy
+    parcel_size: กล่อง L
+    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   wait_derivery_data_list:
     export_to: Home
     transport: Flash
