@@ -589,6 +589,9 @@ dc_operation:
   parcel_status:
     pickup_pending: พัสดุรอเข้ารับที่ร้าน
     awaiting_delivery_warehouse: พัสดุรอนำจ่ายโดยคลัง
+  parcel_owner:
+    speedy: Speedy
+    partnership: Partership
   
 
 rm:
