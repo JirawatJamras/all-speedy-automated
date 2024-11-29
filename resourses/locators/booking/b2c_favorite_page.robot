@@ -45,7 +45,7 @@ ${txtbox_receiver_name_favorite_page}    //input[@id='favorite_form_receiver_nam
 ${txtbox_receiver_address_favorite_page}    //textarea[@id='favorite_form_receiver_address_info']
 ${txtbox_receiver_postcode_value_favorite_page}    //input[@id='favorite_form_receiver_address_full']/../..
 ${txtbox_receiver_postcode_favorite_page}    //input[@id='favorite_form_receiver_address_full']
-${txtbox_receiver_search_store_favorite_page}    //span[text()='{value}']/..//input[@class='ant-select-selection-search-input']
+${txtbox_receiver_search_store_favorite_page}    (//div[@id='favorite_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input'])[1]
 ${txtbox_receiver_display_store_address_favorite_page}    //textarea[@id='favorite_form_receiver_address_display']
 ${txtbox_shipping_origin_favorite_name_favorite_page}    //input[@id='favorite_form_name']
 ${txtbox_shipping_origin_search_store_favorite_page}    //input[@class='ant-select-selection-search-input']

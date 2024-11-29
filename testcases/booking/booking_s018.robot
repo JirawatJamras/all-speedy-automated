@@ -4,7 +4,8 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
+                  ...    AND   Reset Cut Off Time
+Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule   ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
 
 *** Test Cases ***
@@ -26,7 +27,7 @@ Booking_S018
     common.Verify Capture Screenshot    booking    Booking_S018    1.Verify Navigate To Call Car Pick Up Page
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
-    b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
+    # b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
     b2c_call_car_pick_up_parcel_page.Click Add Button
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Popup Parcel Pickup Schedule
@@ -40,24 +41,29 @@ Booking_S018
     common.Verify Capture Screenshot    booking    Booking_S018    2.Verify Popup Parcel Pickup Schedule
 
     Log    Step No.3 รอบรถเข้ารับพัสดุ
-    b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
-    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S018['parcel_type']}
-    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
-    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
-    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
-    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
+    Set Tomorrow Date
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${Booking_S018['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${Booking_S018.pickup_time['input']}
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S018    3.Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.4 กดปุ่ม "บันทึก"
+    Set Today
     b2c_call_car_pick_up_parcel_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
+    b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
+    ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${Booking_S018['parcel_type']}
     ...    ${call_car_pick_up.car_round_name['special']}
-    ...    ${newDate}
+    ...    ${tomorrow}
     ...    ${Booking_S018.pickup_time['expected']}
-    ...    ${Booking_S018.pickup_time['expected']}
-    ...    ${Booking_S018['pickup_point']}
-    common.Verify Capture Screenshot    booking    Booking_S018    4.Verify Added New Car Pickup Schedule
+    ...    ${today}
+    ...    ${call_car_pick_up['text_parcel_number']}
+    ...    ${call_car_pick_up.default['parcel_number']}
+    ...    ${call_car_pick_up['text_price']}
+    ...    ${call_car_pick_up.default['price']}
+    ...    ${call_car_pick_up['text_pickup_location']}
+    ...    44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000  #${Booking_S018['pickup_point']}
+    common.Verify Capture Screenshot    booking    Booking_S018    4.Verify Added New Parcel Pickup

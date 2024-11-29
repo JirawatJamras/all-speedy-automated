@@ -8,7 +8,7 @@ Verify Booking Page For Business Customer
     ${title}=    Get Text    ${txt_title_booking}    
     Should Be Equal    ${title}    ${Booking['text_title_booking_for_business_customer']}
 
-Verify Booking Page For General Customer 
+Verify Booking Page For General Customer
     ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']}
@@ -22,7 +22,7 @@ Click Button To Add
     Wait Until Element Is Enabled    ${btn_add}    timeout=${DEFAULT_TIMEOUT}
     common.Click When Ready    ${btn_add}
 
-Verify Term & Condition 
+Verify Term & Condition
     [Arguments]    ${txt_term_and_condition}    ${header_term_and_condition}
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
     Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=${DEFAULT_TIMEOUT}
