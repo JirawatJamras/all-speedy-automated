@@ -17,13 +17,13 @@ Test
     Sleep    5s
 
     Set Today
-    ${tracking_b}=    Set Variable    SPBD241100023381
+    ${tracking_a}=    Set Variable    SPBD241100023683
     # ${pouch_number}=    Set Variable    P112490114
 
-    Set Global Variable    ${tracking_b}
+    Set Global Variable    ${tracking_a}
     # Set Global Variable    ${pouch_number}
 
-        Log    S004
-    prerequisite.DC_Operation_S012
+    Log    S016
+    prerequisite.DC_Operation_S016
 
     

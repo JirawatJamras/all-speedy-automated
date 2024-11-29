@@ -410,7 +410,7 @@ Verify Title Parcel Details In Scan Page [Other Courier]
     [Arguments]    ${title}    ${parcel_id}    ${customer_id}
     ...            ${parcel_size}    ${parcel_status}    ${courier}    ${pouch_number}
     ...            ${receiving_date}    ${origin_warehouse}    ${send_parcel_to}
-
+    Sleep    5s
     ${dps_txt_title_parcel_detail}=    Replace String    ${dps_txt_title_parcel_detail}    {value}    ${title}
     ${dps_txt_title_parcel_id}=    Replace String    ${dps_txt_title_parcel_id}    {value}    ${parcel_id}
     ${dps_txt_title_customer_id}=    Replace String    ${dps_txt_title_customer_id}    {value}    ${customer_id}
@@ -421,7 +421,7 @@ Verify Title Parcel Details In Scan Page [Other Courier]
     ${dps_txt_title_receiving_date}=    Replace String    ${dps_txt_title_receiving_date}    {value}    ${receiving_date}
     ${dps_txt_title_origin_warehouse}=    Replace String    ${dps_txt_title_origin_warehouse}    {value}    ${origin_warehouse}
     ${dps_txt_title_send_parcel_to}=    Replace String    ${dps_txt_title_send_parcel_to}    {value}    ${send_parcel_to}
-    
+    Wait Until Element Is Visible    ${dps_txt_title_parcel_detail}    timeout=${DEFAULT_TIMEOUT}
     ${actual_txt_title_parcel_detail_}=    Get Text    ${dps_txt_title_parcel_detail}
     ${actual_txt_title_parcel_id}=    Get Text    ${dps_txt_title_parcel_id}
     ${actual_txt_title_customer_id}=    Get Text    ${dps_txt_title_customer_id}
