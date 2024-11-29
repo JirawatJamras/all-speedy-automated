@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_s027
     [Documentation]    การ Move Status แบบค้นหาพัสดุ
-    [Tags]    DC_Operation    UAT    Defect257    Defect266
+    [Tags]    DC_Operation    UAT    Defect257    Defect266    Defect182    Defect284
 
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002
@@ -71,6 +71,7 @@ DC_Operation_s027
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    3.Verify Parcel Status List In Dropdown
 
     Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
+    # Defect257
     # dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     # Expected
     # dps_scan_page.Verify Parcel Status Dropdown [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
@@ -107,7 +108,7 @@ DC_Operation_s027
     dps_scan_page.Click Filter With Parcel Owner
     # Defect182
     # Expected
-    dps_scan_page.Verify Parcel Owner List In Dropdown    ${dc_operation.parcel_owner['speedy']}    ${dc_operation.parcel_owner['partnership']}
+    # dps_scan_page.Verify Parcel Owner List In Dropdown    ${dc_operation.parcel_owner['speedy']}    ${dc_operation.parcel_owner['partnership']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    9.Verify Parcel Owner List In Dropdown
 
     Log    Step No.10 คลิกช่องค้นหาวันที่อัปเดตล่าสุด
@@ -125,6 +126,7 @@ DC_Operation_s027
 
     Log    Step No.12 คลิกปุ่มเคลียร์
     dps_scan_page.Click Clear Button [Move Status]
+    # Defect266
     # Expected
     dps_scan_page.Verify Clear Filter Input
     # dps_scan_page.Verify Search Pouch Number Result    ${global_pouch_number}

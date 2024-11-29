@@ -591,7 +591,7 @@ dc_operation:
     awaiting_delivery_warehouse: พัสดุรอนำจ่ายโดยคลัง
   parcel_owner:
     speedy: Speedy
-    partnership: Partership
+    partnership: Partnership
   
 
 rm:
