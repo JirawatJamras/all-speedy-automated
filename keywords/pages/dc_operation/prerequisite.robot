@@ -75,6 +75,7 @@ DC_Operation_S002
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add   
     Sleep    2s
+    # Defect043
     # Expected    
     # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    7.Verify Term & Condition
@@ -135,6 +136,7 @@ DC_Operation_S002
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
+    # Defect144
     # Expected
     # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     # ...    ${today}
@@ -199,6 +201,7 @@ DC_Operation_S002
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # Defect150
     # b2c_booking_detail_page.Verify Booking Detail Page After Import File
     # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}

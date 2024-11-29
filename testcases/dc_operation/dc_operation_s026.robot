@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_s026
     [Documentation]    การนำพัสดุใส่ Pouch และนำออกจาก Pouch แบบ Manual ในขั้นตอนการ Scan in 
-    [Tags]    DC_Operation    UAT    Defect249    Defect155    Defect227    Defect209    Defect210    Defect219
+    [Tags]    DC_Operation    UAT    Defect249    Defect155    Defect227    Defect209    Defect219
     Log    Prerequisite S002
     DC_Operation_S002
 
@@ -26,6 +26,7 @@ DC_Operation_s026
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan In Page]
+    # Defect155    Defect249
     # Expected
     dps_home_page.Wait Until Page Loaded
     # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
@@ -96,6 +97,7 @@ DC_Operation_s026
 
     Log    Step No.2 คลิกปุ่ม "สร้าง" บริเวณกล่อง Pouch
     dps_scan_page.Click Create Pouch Button
+    # Defect227
     # Expected
     # dps_scan_page.Verify Create Pouch Popup
     # ...    ${DC_Operation_S026.pouch['origin_warehouse']}
@@ -170,7 +172,7 @@ DC_Operation_s026
     Log    Step No.11 คลิกไอคอนรูปดินสอ ด้านหลังรายการ Tracking นั้น
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
-    # Defect209    Defect210
+    # Defect209
     # Expected
     # dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     # dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
@@ -243,5 +245,6 @@ DC_Operation_s026
     dps_history_parcel_page.Click Cancel Reprint Label Button    ${dc_operation.card_reprint_label['text_parcel_sorting_sheet']}
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['pouch_label']}
+    # Defect219
     # Expected
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026   14.Verify Popup Error When Click Print Pouch Label And Pouch Is Not Closed

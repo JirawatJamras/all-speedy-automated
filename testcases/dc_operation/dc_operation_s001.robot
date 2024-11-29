@@ -3,12 +3,11 @@ Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-                  ...    AND   Reset Cut Off Time
 Test Teardown     Close Browser
 
 *** Test Cases ***
 DC_Operation_S001
-    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150    Defect221
+    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150    Defect221    Defect207
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -139,7 +138,7 @@ DC_Operation_S001
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
-    # Defect143
+    # Defect144
     # Expected
     # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     # ...    ${today}
@@ -178,7 +177,6 @@ DC_Operation_S001
     ...    ${DATABASE_NAME}
     ...    ${COLLECTION}
     ...    ${QUERY}
-    # Defect150
     # Expected
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
@@ -200,6 +198,7 @@ DC_Operation_S001
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # Defect150
     # b2c_booking_detail_page.Verify Booking Detail Page After Import File
     # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
@@ -363,24 +362,27 @@ DC_Operation_S001
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
     ...    ${Booking['text_parcel_status_call_car']}
-    # # Expected
+    # Defect221 effect
+    # Expected
     # b2c_booking_detail_page.Verify Booking Detail Page After Canceled
     # ...    ${Booking['text_parcel_status_waiting_entering']}
     # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     # ...    ${DC_Operation_S001['parcel_number']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    29.Verify Booking Detail After Canceled
 
-    # Log    Step No.30 คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
-    # b2c_booking_detail_page.Click Edit Booking List
+    Log    Step No.30 คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
+    b2c_booking_detail_page.Click Edit Booking List
+    # Defect221 effect
+    # Expected
     # b2c_booking_detail_page.Verify Popup To Edit Booking List
     # ...    ${Booking['text_parcel_type_label']}
     # ...    ${Booking['text_booking_name_label']}
     # ...    ${Booking['text_shipping_origin_aria']}
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    30.Verify Popup To Edit Booking List After Canceled
 
-    # Log    Step No.31 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
-    # b2c_booking_detail_page.Select Pickup Schedule Tab
-    # # Defect207
-    # # Expected
-    # # b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
+    Log    Step No.31 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
+    b2c_booking_detail_page.Select Pickup Schedule Tab
+    # Defect207
+    # Expected
+    # b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    31.Verify Display Pickup Schedule Data After Canceled
