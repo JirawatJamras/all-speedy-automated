@@ -845,9 +845,8 @@ Verify Move Status Page
     Wait Until Element Is Visible    ${btn_import}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_filter}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_update_date}    timeout=${DEFAULT_TIMEOUT}
-    ${amount_of_update_date}=    Get Element Count    ${txt_update_date}
     ${amount_of_data}=    Get Element Count    ${dps_table_data_move_status}
-    Should Be Equal As Strings    ${amount_of_update_date}    ${amount_of_data}
+    Should Be Equal As Strings    ${amount_of_data}    10
 
 Click Filter Button
     ${btn_filter}=    Replace String    ${dps_btn_in_move_status_tab}    {value}    ${dc_operation['button_filter']}
@@ -930,7 +929,13 @@ Click Filter With Parcel Owner
     common.Click When Ready    ${cbo_parcel_owner}
 
 Verify Parcel Owner List In Dropdown
-    Wait Until Element Is Not Visible    ${dps_cbo_no_data_move_status}
+    [Arguments]    ${speedy}    ${partnership}
+    ${cbo_speedy}=    Replace String    ${dps_cbo_value_parcel_owner_move_status}    {value}    ${speedy}
+    ${cbo_partnership}=    Replace String    ${dps_cbo_value_parcel_owner_move_status}    {value}    ${partnership}
+    Wait Until Element Is Not Visible    ${dps_cbo_no_data_move_status}   
+    Wait Until Element Is Visible    ${dps_cbo_parcel_owner_list_move_status}
+    Wait Until Element Is Visible    ${cbo_speedy}
+    Wait Until Element Is Visible    ${cbo_partnership}
 
 Click Filter With Last Updated Date
     common.Click When Ready    ${dps_cbo_selected_date_move_status}
@@ -1026,14 +1031,14 @@ Verify Selected Parcel Tab
     Wait Until Element Is Visible    ${btn_import_file}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${btn_confirm_move}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_tracking_b}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_c}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_d}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_e}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_f}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_g}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_h}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_i}    timeout=${DEFAULT_TIMEOUT}
-    # Wait Until Element Is Visible    ${txt_tracking_j}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_c}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_d}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_e}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_f}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_g}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_h}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_i}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${txt_tracking_j}    timeout=${DEFAULT_TIMEOUT}
 
 Click Dropdown Move Status To
     [Arguments]    ${parcel_status}

@@ -251,6 +251,17 @@ Verify Pickup Schedule Change Status
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
 
+    Register Keyword To Run On Failure    NOTHING
+    ${status_card}=    Set Variable    False
+
+    WHILE    '${status_card}' == 'False'
+        ${status_card}    Run Keyword And Return Status    Wait Until Element Is Visible    ${row_receiving_cycle}    
+        ${nextpage}=    Get Element Attribute    ${dps_btn_status_next_page_pickup_schedule}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_card}' == 'True'    Exit For Loop
+        ...    ELSE IF    '${status_button}' == 'True'    common.Click When Ready    ${dps_btn_next_page_pickup_schedule}
+        ...    ELSE    Fail
+    END
     Page Should Contain Element    ${row_receiving_cycle}
     Wait Until Element Is Visible    ${row_receiving_cycle}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${row_receiving_cycle}

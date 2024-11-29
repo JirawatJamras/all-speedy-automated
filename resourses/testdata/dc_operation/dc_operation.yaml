@@ -291,26 +291,26 @@ DC_Operation_S005:
     destination_warehouse: DC SB
     parcel_status1: รอปริ้นใบลาเบลติดหน้ากล่อง
     parcel_status2: พัสดุรอนำจ่ายโดยคลัง (DCSB)
-    courier: CP ALL
+    courier: CP All
     pouch_number: '-'
     origin_warehouse: DCBB
     send_parcel_to: Home (10280)
   scan_in_data_label_detail:
     store: 10280 (กล่อง XL)
-    customer1: ทดสอบพัสดุ Express ส่งบ้านสร้าง Pouch
-    customer2: ทดสอบพัสดุ Express ส่งบ้านไม่สร้าง Pouch
-    phone: ''
-    pouch_number: ''
+    zipcode: 10280 (กล่อง XL)
+    customer: ทดสอบพัสดุ Express ส่งบ้านไม่สร้าง Pouch
+    phone: '0900987354'
+    pouch_number: '-'
     wh: DC BB - DC SB
     symbol: รูปดาว
   scan_in_sender_data:
     name: คุณ d
-    phone: ''
+    phone: '0959494989'
     shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
     address: 74 ลำพยา เมืองนครปฐม นครปฐม 73000
   scan_in_receiver_data:
     name: ทดสอบพัสดุ Express ส่งบ้านไม่สร้าง Pouch
-    phone: ''
+    phone: '0900987354'
     shipping_destination: บ้าน
     address: 228 ซอย 3 บางปู เมืองสมุทรปราการ สมุทรปราการ 10280
   scan_out_waiting_scan:
@@ -323,10 +323,10 @@ DC_Operation_S005:
   scan_out_list_data:
     pouch_number: '-'
     receive_parcel_from: Home
-    transport: CP ALL
+    transport: CP All
     parcel_owner: Speedy
     parcel_size: กล่อง XL
-    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+    parcel_status: พัสดุรอ Scan out ไปคลัง (DCSB)
   wait_derivery_data_list:
     export_to: คลัง DC SB
     transport: CP All
