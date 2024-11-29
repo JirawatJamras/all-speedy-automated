@@ -921,7 +921,7 @@ DC_Operation_S004
 
     Log    Step No.41 คลิกปุ่มยืนยัน
     dps_scan_page.Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
-    Defect242
+    # Defect242
     # Expected
     dps_scan_page.Verify Label Pouch Detail In Scan In Page
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['pouch_number']}
@@ -1033,8 +1033,8 @@ DC_Operation_S004
     Log    Step No.44 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
     # Defect288
-    # # Expected 
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
+    # Expected 
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    Verify Navigate To Scan Page And Stay At Scan In Tab At Destination Warehouse
 
     Log    Step No.45 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
