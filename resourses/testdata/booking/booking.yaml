@@ -1198,11 +1198,12 @@ Booking_S047:
     shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
 
 Booking_S048:
-  booking_status: 'กำลังจัดพัสดุ'
+  # booking_status: 'กำลังจัดรถ'
   pickup_time:
     input: 'ช่วงบ่าย 13:00 - 16:00'
     expected: '13:00 - 16:00'
-  parcel_number: '0 รายการ'
+  # parcel_number: '0 รายการ'
+  # parcel_price: '0.00 บาท'
   pickup_point: 'บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
   add_new_pickup:
     parcel_type: พัสดุทั่วไป (Dry)
@@ -1263,7 +1264,7 @@ Booking_S054:
   buy_insurance: 2,500
   verify_buy_insurance: '2,500.00'
   parcel_detail_remark:  ระวังพัสดุเสียหาย
-  price_value: '120'
+  price_value: '120.00'
   discount_amount: '1'
   discount_value: '5.00'
   insurance_fee_amount: '1'
@@ -1282,6 +1283,7 @@ Booking_S058:
     receiver_location_pickup: 'ส่งร้าน 7-11'
     receiver_store_code_5_digits: '15888'
     receiver_store_address: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 10500'
+    receiver_store_address2: '15888 สาขา CP TOWER สีลม สีลม บางรัก กรุงเทพมหานคร 35110'
     receiver_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'    
   add_sender_favorite:
     favorite_name: บ้าน
