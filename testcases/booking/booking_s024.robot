@@ -11,7 +11,7 @@ Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Last
 *** Test Cases ***
 Booking_S024
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S0 (ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect052    Defect054    Defect063    Defect076    Defect077    Defect083    Defect126    Defect258    Defect278
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect049    Defect052    Defect054    Defect076    Defect077    Defect083
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -145,6 +145,7 @@ Booking_S024
     b2c_booking_delivery_page.Click Button    ${tab_send_to_store}
     b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S024['receiver_store_code_5_digits']}    ${Booking_S024['receiver_store_address']}
     b2c_booking_delivery_page.Click Store On Map
+    b2c_booking_delivery_page.Click Add To Favorites In Receiver
     # Expected
     b2c_booking_delivery_page.Verify Store Address Receiver    ${Booking_S024['receiver_store_full']}
     common.Verify Capture Screenshot    booking    Booking_S024    9.Verify Create Parcel Page After Input Receiver Step
@@ -349,10 +350,10 @@ Booking_S024
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_waiting_entering']}
-    ...    ${Booking.img_not_favorite['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S024['sender_name']}
     ...    ${Booking_S024['sender_phone']}
-    ...    ${Booking.img_not_favorite['img_receiver_heart']}
+    ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S024['receiver_name']}
     ...    ${Booking_S024['receiver_phone']}
     ...    ${Booking_S024['receiver_store_address']}

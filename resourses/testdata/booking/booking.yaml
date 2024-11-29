@@ -86,7 +86,7 @@ Booking_S004:
   parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify2: 5,000
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
@@ -114,7 +114,7 @@ Booking_S005:
   price_value: '55.00'
   parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
   promotion:  SPBH5B
   promotion_detail:
@@ -191,6 +191,8 @@ Booking_S007:
   discount_value2: '5.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
+  cod_fee_amount: '0'
+  cod_fee_value: '0.00'
   total_price_amount:  '1'
   total_price_value1:  'NaN'
   total_price_value2:  '221.00'
@@ -219,7 +221,7 @@ Booking_S008:
   parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify2: 5,000
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_price_verify: '200.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
@@ -250,7 +252,7 @@ Booking_S009:
   buy_insurance_verify: '2,500.00'
   parcel_cod: '5000'
   parcel_cod_verify: '5,000.00'
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
   booking_name:  Booking DRY
   shipping_origin:  เลือกร้าน 7-11 ต้นทาง
@@ -352,7 +354,7 @@ Booking_S012:
   parcel_cod:  '5000'
   parcel_cod_verify:  5,000.00
   parcel_cod_verify2:  5,000
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   img_sender_heart: รูปหัวใจไม่มีสี
   img_receiver_heart: รูปหัวใจสีแดง
   booking_name:  Booking DRY
@@ -387,7 +389,7 @@ Booking_S013:
   price_value: '25.00'
   parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
   promotion:  SPBH5B
   promotion_detail:
@@ -467,6 +469,8 @@ Booking_S015:
   discount_value2: '5.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
+  cod_fee_amount: '0'
+  cod_fee_value: '0.00'
   total_price_amount:  '1'
   total_price_value1:  'NaN'
   total_price_value2:  '171.00'
@@ -492,7 +496,7 @@ Booking_S016:
   parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
   parcel_cod_verify2: 5,000
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_price_verify: '140.00'
   insurance_fee_amount: '1'
   insurance_fee_value: '106.00'
@@ -524,7 +528,7 @@ Booking_S017:
   buy_insurance_verify: '2,500.00'
   parcel_cod:  '5000'
   parcel_cod_verify: '5,000.00'
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเสียหาย
   img_sender_heart: รูปหัวใจไม่มีสี
   img_receiver_heart: รูปหัวใจสีแดง
@@ -609,10 +613,14 @@ Booking_S020:
   booking_name:  Booking CHILLED
   booking_item: 1 รายการ
   parcel_package_type:  กล่อง
-  price_value: '230.00'
+  price_value: '230'
   discount_amount: '1'
-  discount_value1: 'NaN'
+  discount_value: 'NaN'
   discount_value2: '5.00'
+  insurance_fee_amount: '0'
+  insurance_fee_value: '0.00'
+  cod_fee_amount: '0'
+  cod_fee_value: '0.00'
   total_price_amount:  '1'
   total_price_value:  'NaN'
   total_price_value2:  '225.00'
@@ -632,7 +640,6 @@ Booking_S021:
   parcel_size: 'S2'
   parcel_cod:  '5000'
   parcel_cod_verify:  '5,000.00'
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
   booking_name:  Booking CHILLED
   shipping_origin:  รอบรถเข้ารับพัสดุ
   store_code:  '15888'
@@ -644,6 +651,7 @@ Booking_S021:
   total_price_amount:  '1'
   total_price_value:  'NaN'
   total_price_value2:  '400.00'
+  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
 
 Booking_S022:
   parcel_type:  พัสดุควบคุมอุณหภูมิ
@@ -663,11 +671,10 @@ Booking_S022:
   booking_item: 1 รายการ
   parcel_size: A1
   parcel_package_type: กล่อง
-  price_value: '290.00'
+  price_value: '290'
   parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
-  parcel_cod_verify2: 5,000
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
   promotion:  SPBH5B
   promotion_detail:
@@ -704,7 +711,7 @@ Booking_S023:
   booking_item: 1 รายการ
   parcel_size:  A2
   parcel_package_type:  กล่อง
-  price_value: '330.00'
+  price_value: '330'
   total_price_amount:  '1'
   total_price_value1: 'NaN'
   total_price_value2:  '330.00'
@@ -727,7 +734,7 @@ Booking_S024:
   booking_item: 1 รายการ
   parcel_size: S0
   parcel_package_type: กล่อง
-  price_value: '170.00'
+  price_value: '170'
   total_price_amount:  '1'
   total_price_value1:  'NaN'
   total_price_value2:  '170.00'
@@ -743,8 +750,8 @@ Booking_S025:
   receiver_name: สมใจ ดีดีดี
   shipping_origin: รอบรถเข้ารับพัสดุ
   store_code:  '01523'
-  receiver_store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
-  receiver_store_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
+  store_address: 01523 สาขา ปากน้ำหลังสวน ปากน้ำ หลังสวน ชุมพร 86150
+  store_address_full: 01523 สาขา ปากน้ำหลังสวน ตำบลปากน้ำ อำเภอหลังสวน จังหวัดชุมพร รหัสไปรษณีย์ 86150
   parcel_size:  S1    
   price_value: '210.00'
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน    
@@ -760,10 +767,9 @@ Booking_S025:
   booking_item: 1 รายการ
   parcel_package_type:  กล่อง
   discount_amount: '1'
-  discount_value1: 'NaN'
-  discount_value2: '5.00'
+  discount_value: 'NaN'
   total_price_amount:  '1'
-  total_price_value1:  'NaN'
+  total_price_value:  'NaN'
   total_price_value2:  '210.00'
 
 Booking_S026:
@@ -782,7 +788,8 @@ Booking_S026:
   price_value: '230.00'
   parcel_cod:  '5000'
   parcel_cod_verify:  5,000.00
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  img_sender_heart: รูปหัวใจสีแดง
+  img_receiver_heart: รูปหัวใจสีแดง
   booking_name:  Booking CHILLED
   shipping_origin: รอบรถเข้ารับพัสดุ
   store_code:  '15888'
@@ -791,7 +798,7 @@ Booking_S026:
   cod_fee_amount: '1'
   cod_fee_value: '150.00'
   total_price_amount:  '1'
-  total_price_value1:  'NaN'
+  total_price_value:  'NaN'
   total_price_value2:  '380.00'
 
 Booking_S027:
@@ -812,11 +819,10 @@ Booking_S027:
   booking_item: 1 รายการ
   parcel_size: A1
   parcel_package_type: กล่อง
-  price_value: '270.00'
+  price_value: '270'
   parcel_cod: '5000'
   parcel_cod_verify: 5,000.00
-  parcel_cod_verify2: 5,000
-  parcel_cod_verify_label: ยอดชำระ 5,000.00 บาท
+  parcel_cod_verify_label: ยอดชำระ 5000 บาท
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
   promotion:  SPBH5B
   promotion_detail:
@@ -853,7 +859,9 @@ Booking_S028:
   booking_item: 1 รายการ
   parcel_size: A2
   parcel_package_type: กล่อง
-  price_value: '310.00'
+  price_value: '310'
+  insurance_fee_amount: '1'
+  insurance_fee_value: '106.00'
   total_price_amount:  '1'
   total_price_value1:  'NaN'
   total_price_value2:  '310.00'

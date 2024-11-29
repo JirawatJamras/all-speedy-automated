@@ -150,10 +150,11 @@ DC_Operation_S009
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
     # dps_scan_page.Click Print Label
+    # Sleep    5s
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Robot Skip Step Print Label
+    # common.Click ESC On Keyboard
     # Defect142
     # Expected
     # dps_scan_page.Verify Print Label Success Popup
@@ -243,7 +244,7 @@ DC_Operation_S009
     # common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ h" ในช่องค้นหา และ กดค้นหา หรือกด Enter
-    # dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_h}
+    # dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_h}
     # dps_scan_page.Click Search Button [Scan Out Page]
     # Defect232
     # Expected
@@ -323,10 +324,11 @@ DC_Operation_S009
     # ...    ${DC_Operation_S009.wait_derivery_data_list['transport']}
     # ...    ${DC_Operation_S009.wait_derivery_data_list['date']}
     # ...    ${DC_Operation_S009.wait_derivery_data_list['status']}
+    # sleep    5s
 
     Log    Step No.20 กดปุ่ม พิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Robot Skip Step Print Label
+    # common.Click ESC On Keyboard
     # Defect142
     # Expected
     # dps_wait_delivery.Verify Data Delivery List
@@ -416,7 +418,7 @@ DC_Operation_S009
 
     Log    Step No.26 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ h" และ กดค้นหา หรือกด Enter
     # dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
-    # dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_h}
+    # dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_h}
     # dps_scan_page.Click Search Button [Scan Out Page]
     # Defect232
     # Expected

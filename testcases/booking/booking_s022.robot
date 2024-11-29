@@ -11,7 +11,7 @@ Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Last
 *** Test Cases ***
 Booking_S022
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A1 (มี COD เเละใส่หมายเหตุ)(บันทึกร่าง) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect050    Defect051    Defect052    Defect063    Defect072    Defect075    Defect083    Defect102    Defect118    Defect126    Defect136    Defect258    Defect267    Defect278
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect047    Defect048    Defect051    Defect052    Defect072    Defect083    Defect102    Defect118    Defect136
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -196,10 +196,6 @@ Booking_S022
     common.Verify Capture Screenshot    booking    Booking_S022    12.Verify Draft Parcel After Input Parcel Detail
 
     Log    Step No.13 กดที่รายการพัสดุที่มีสถานะ "ร่าง"
-    ${booking_id}    Get Booking ID
-    ${booking_time}    Get Booking Time
-    ${booking_name}    Get Booking Name
-    ${parcel_id}    Get Parcel ID
     b2c_booking_detail_page.Select Draft Booking
     # Expected
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
@@ -248,7 +244,7 @@ Booking_S022
     ...    ${Booking['parcel_detail_cod']}
     ...    ${Booking['parcel_detail_remark']}
     b2c_booking_delivery_page.Verify Textbox Value On Parcel Detail Step [Chilled Parcel]
-    ...    ${Booking_S022['parcel_cod_verify2']}
+    ...    ${EMPTY}
     ...    ${Booking_S022['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S022    15.Verify Parcel Detail
 
@@ -282,7 +278,7 @@ Booking_S022
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
     ...    ${Booking['text_chilled_parcel_id_4_start_unit']}
-    ...    ${Booking_S022['booking_name']}
+    ...    ${booking_s022['booking_name']}
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
@@ -399,7 +395,7 @@ Booking_S022
     ...    ${Booking_S022['parcel_size']}
     ...    ${Booking_S022['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
-    ...    ${Booking_S022['parcel_cod_verify']}
+    ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S022['discount_amount']}
     ...    ${Booking_S022['discount_value2']}

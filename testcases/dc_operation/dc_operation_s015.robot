@@ -172,7 +172,7 @@ DC_Operation_S015
 
     Log    Step No.9 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Robot Skip Step Print Label
+    # common.Click ESC On Keyboard
     # Switch Window    NEW
     # Press Keys    None    TAB+SPACE
     # Switch Window    MAIN    

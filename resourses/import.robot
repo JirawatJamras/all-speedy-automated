@@ -77,7 +77,6 @@ Resource                    locators/register/register_general_customers_page.ro
 Resource                    locators/register/register_business_pre_register.robot
 
 Variables                   testdata/register/register.yaml
-Resource                    testdata/filepath.robot
 
 ######################## PMS ########################
 Resource                    ../keywords/pages/pms/pms_landing_page.robot

@@ -410,7 +410,7 @@ DC_Operation_S003
 
     Log    Step No.5 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Robot Skip Step Print Label
+    # common.Click ESC On Keyboard
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
@@ -486,6 +486,7 @@ DC_Operation_S003
     Log    Step No.11 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
+    ${update_date}    Set Date Pattern    ${today}
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify Section Waiting List To Scan Out [Scan Out Page]
@@ -495,7 +496,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.scan_out_waiting_scan['transport']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_owner']}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_size']}
-    ...    ${today}
+    ...    ${update_date}    # ${today}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Section Waiting List To Scan Out [Scan Out Page] 1
@@ -504,7 +505,7 @@ DC_Operation_S003
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Section Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_a}
+    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_a}
     dps_scan_page.Click Search Button [Scan Out Page]
 
     # Defect232
@@ -587,15 +588,14 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.wait_derivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    Verify Data Delivery List
 
-    Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ 
-    dps_wait_delivery.Click Print Button By Data
+    Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    
+    dps_scan_page.Click Print Button By Data
     ...    ${DC_Operation_S003.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S003.wait_derivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S003.wait_derivery_data_list['status']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    # common.Robot Skip Step Print Label
+    # common.Click ESC On Keyboard
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN         

@@ -11,7 +11,7 @@ Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Last
 *** Test Cases ***
 Booking_S025
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S1 (ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect050    Defect054    Defect063    Defect072    Defect075    Defect076    Defect077    Defect083    Defect126    Defect258    Defect283
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect054    Defect072    Defect076    Defect077    Defect083    Defect126
     Log    Login
     common.Open URL    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -100,7 +100,7 @@ Booking_S025
     b2c_booking_delivery_page.Input Phone Receiver    ${Booking_S025['receiver_phone']}
     b2c_booking_delivery_page.Input Name Receiver    ${Booking_S025['receiver_name']}
     b2c_booking_delivery_page.Select Send To 7-ELEVEN Store Tab
-    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S025['store_code']}    ${Booking_S025['receiver_store_address']}
+    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S025['store_code']}    ${Booking_S025['store_address']}
     b2c_booking_delivery_page.Click Store On Map
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     # Expected
@@ -119,7 +119,7 @@ Booking_S025
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
     ...    ${Booking_S025['receiver_name']}
     ...    ${Booking_S025['receiver_phone']}
-    ...    ${Booking_S025['receiver_store_address']}
+    ...    ${Booking_S025['store_address']}
     ...    ${Booking.text_blank['parcel_size']}
     ...    ${Booking.text_blank['price_value']}
     ...    ${Booking.text_blank['buy_insurance']}
@@ -161,7 +161,7 @@ Booking_S025
     b2c_booking_delivery_page.Verify Data Receiver When Select 7-ELEVEN Store
     ...    ${Booking_S025['receiver_phone']}
     ...    ${Booking_S025['receiver_name']}
-    ...    ${Booking_S025['receiver_store_full']}
+    ...    ${Booking_S025['store_address_full']}
     common.Verify Capture Screenshot    booking    Booking_S025    10.Verify Create Parcel Page Receiver Step When Select Home
 
     Log    Step No.11 กดปุ่ม "ถัดไป"
@@ -234,13 +234,13 @@ Booking_S025
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S025['discount_amount']}
-    ...    ${Booking_S025['discount_value1']}
+    ...    ${Booking_S025['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S025['total_price_amount']}
-    ...    ${Booking_S025['total_price_value1']}
+    ...    ${Booking_S025['total_price_value']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S025    15.Verify Booking Summary After Booking Success
@@ -271,7 +271,7 @@ Booking_S025
     ...    ${booking_time}
     ...    ${Booking['text_title_parcel_list']}
     ...    ${Booking['text_parcel_status_select_shipping_origin']}
-    ...    ${Booking.img_not_favorite['img_sender_heart']}
+    ...    ${Booking.img_is_favorite['img_sender_heart']}
     ...    ${Booking_S025['sender_name']}
     ...    ${Booking_S025['sender_phone']}
     ...    ${Booking.img_is_favorite['img_receiver_heart']}
@@ -284,13 +284,13 @@ Booking_S025
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S025['discount_amount']}
-    ...    ${Booking_S025['discount_value1']}
+    ...    ${Booking_S025['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S025['total_price_amount']}
-    ...    ${Booking_S025['total_price_value1']}
+    ...    ${Booking_S025['total_price_value']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S025    17.Verify Booking Summary
@@ -333,14 +333,14 @@ Booking_S025
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S025['discount_amount']}
-    ...    ${Booking_S025['discount_value2']}
+    ...    ${Booking.text_default['discount_amount']}
+    ...    ${Booking.text_default['discount_value']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
     ...    ${Booking.text_default['cod_fee_value']}
     ...    ${Booking_S025['total_price_amount']}
-    ...    ${Booking_S025['total_price_value2']}
+    ...    ${Booking_S025['origin_shipping']}
     ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    booking    Booking_S025    19.Verify Booking Summary After Set Origin Shipping
@@ -364,7 +364,7 @@ Booking_S025
     ...    ${Booking_S025['sender_postcode_full']}
     ...    ${Booking_S025['receiver_name']}
     ...    ${Booking_S025['receiver_phone']}
-    ...    ${Booking_S025['receiver_store_address']}
+    ...    ${Booking_S025['store_address']}
     ...    ${Booking.label['non_cod']}
     ...    ${Booking.label['parcel_not_buy_insure']}
     ...    ${Booking_S025['parcel_detail_remark']}

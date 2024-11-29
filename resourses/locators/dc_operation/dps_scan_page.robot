@@ -16,7 +16,7 @@ ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    //div[@class='ant-modal-c
 ${dps_btn_waiting_delivery_list_scan_out_page}    //span[text()='{value}']/..
 ${dps_btn_close_popup_success}    //span[@class='ant-modal-close-x']//span[@aria-label='close']
 # ${dps_btn_print_scan_out}    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='{export_to}']/..//td[text()='{deliver}']/..//td[text()='{parcel_amount}'][1]/..//td[text()='{pouch_amount}']/..//td[text()='{total_parcel_pouch}'][2]/..//td[@title='{print}'])[1]
-${dps_btn_print_scan_out}    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='{export_to}']/..//td[text()='{deliver}']/..//td[@title='{print}'])[1]//button
+${dps_btn_print_scan_out}    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='{export_to}']/..//td[text()='{deliver}']/..//td[@title='{print}'])[1]
 ${dps_btn_create_pouch}    //span[text()='{value}']/..
 ${dps_btn_confirm_create_pouch}    //div[@role='dialog']//button[@type='submit']
 ${dps_btn_print_label_parcel_detail_page}    //span[text()=' {value}']/..
@@ -31,12 +31,10 @@ ${dps_btn_sub_tab_in_move_status_tab}    //div[@role='tab' and text()='{tab}']/.
 ${dps_btn_in_move_status_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
 ${dps_btn_search_filter_move_status_tab}    //div[@aria-hidden='false']//div[text()='{value}']/..
 ${dps_btn_clear_filter_move_status_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
-${dps_btn_clear_filter_scan_out_tab}    //div[@aria-hidden='false']//span[text()='{value}']/..
 ${dps_btn_seach_on_pouch_detail_on_scan_page}    //strong[text()='{label}']/../../../../..//span[text()='{value}']/..
 ${dps_btn_select_all_on_move_status_tab}    //input[@aria-label='Select all']/..
 ${dps_btn_on_move_status_tab}    //div[@aria-hidden='false']//div[@aria-hidden='false']//button//span[text()='{value}']/..
 ${dps_btn_select_on_move_status_tab}    //td[text()='{value}']/..//input/..
-${dps_btn_select_statuscode_on_move_status_tab}    //div[@id='statusCode']//input/..
 
 ${dps_input_route_parcel_detail_scan_in_page}    //strong[text()='{value}']/../../../div[2]//input
 
@@ -168,7 +166,6 @@ ${dps_cbo_calendar_move_status}    //div[@class='ant-picker-panels']
 ${dps_cbo_parcel_status_move_status}    //div[@id='status_list']/..//div[@title='{value}']
 ${dps_cbo_parcel_status_move_status_to}    //div[@role='listbox']/..//div[@title='{value}']
 ${dps_cbo_move_status_to}    //div[@id='statusCode']//div[@class='ant-select-selector']
-${dps_cbo_no_data_move_status}    //div[@role='listbox']//div[@class='ant-empty-image']
 
 ${dps_iframe_print_window}    //iframe[@id='printWindow']
 ${dps_cbo_warehouse_list_scan_page}    //span[text()='{warehouse}']

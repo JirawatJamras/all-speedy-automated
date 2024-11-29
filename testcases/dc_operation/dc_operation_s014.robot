@@ -175,7 +175,7 @@ DC_Operation_S014
 
     Log    Step No.22 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    # common.Robot Skip Step Print Label
+    # common.Click ESC On Keyboard
     Switch Window    NEW
     Press Keys    None    TAB+SPACE
     Switch Window    MAIN    
@@ -257,7 +257,7 @@ DC_Operation_S014
 
 
     Log    Step No.27 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
-    dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_number}
+    dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_number}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Defect 191
     # Expected
@@ -342,14 +342,14 @@ DC_Operation_S014
 
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
-    dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S014.wait_derivery_data_list['status']}
+    #In progress 
+    
+    # dps_scan_page.Click Print Button By Data
+    # ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
+    # ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
-    # common.Robot Skip Step Print Label
+    # common.Click ESC On Keyboard
         
     # Expected
 

@@ -141,7 +141,7 @@ DC_Operation_S016
 
     Log    Step No.6 คลิกปุ่มพิมพ์
     # Robot is unable to click print on browser popup, so change to click ESC Button to go on.
-    common.Robot Skip Step Print Label
+    common.Click Space On Keyboard
     # Expected
     dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S016    Verify Print Label Success Popup
