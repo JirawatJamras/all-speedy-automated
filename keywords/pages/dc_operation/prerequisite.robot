@@ -6601,7 +6601,6 @@ DC_Operation_S016
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_a}
     dps_scan_page.Click Search Button [Scan In Page]
-    # Defect155    Defect160
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
