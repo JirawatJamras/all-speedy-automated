@@ -596,7 +596,7 @@ Verify Data Parcel Details In Scan Page [CP All Courier]
     ${actual_receiving_date}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  0
     ${actual_receiving_time}    Split String And Select  ${actual_value_receiving_date}  ${SPACE}  1
     Should Match Regexp    ${actual_receiving_time}    ^\\d{2}:\\d{2}$
-    IF         '${actual_value_route}' == ''
+    IF    '${actual_value_route}' == '' or '${actual_value_route}' == '-'
         Element Should Be Disabled    ${dps_input_route_parcel_detail_scan_in_page}
     ELSE
         Should Match Regexp    ${actual_value_route}    ^\\d+$  
