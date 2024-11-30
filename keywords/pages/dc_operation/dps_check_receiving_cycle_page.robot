@@ -132,17 +132,33 @@ Verify Warehouse Confirm List Tab
     Wait Until Element Is Visible    ${row_receiving_cycle}   
     ${date_time}=    Get Text    ${row_receiving_cycle}/../..//td[13]
     Should Match Regexp    ${date_time}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
-    Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
  
     Register Keyword To Run On Failure    Capture Page Screenshot
 
 Click Pencil Icon
-    [Arguments]    ${bookig_id}
+    [Arguments]    ${bookig_id}    ${title}    ${tab}    ${company_name}    ${address}    ${sub_district}    ${district}    ${province}    ${postcode}
+    ...    ${receiving_time}    ${receiving_type}    ${courier}    ${number_of_parcel}    ${today}    ${status}
     ${button_filter}=    Replace String    ${dps_btn_filter_parcel_pickup_details}    {value}    ${dc_operation['button_filter']}
     ${button_search}=    Replace String    ${dps_btn_search_parcel_pickup}    {value}    ${dc_operation['button_search']}
     ${booking_ID}=    Replace String    ${dps_txt_booking_id_parcel_pickup_detail}    {value}    ${bookig_id}
     Register Keyword To Run On Failure    NOTHING
 
+    Set Tomorrow Date
+    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
+    ${row_receiving_cycle}=    Replace String    ${dps_txt_list_receiving_cycle_waiting}    {company_name}    ${company_name}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {address}    ${address}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {sub_district}    ${sub_district}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {district}    ${district}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {province}    ${province}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {postcode}    ${postcode}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {tomorrow}    ${tomorrow}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {receiving_time}    ${receiving_time}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {receiving_type}    ${receiving_type}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {courier}    ${courier}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {number_of_parcel}    ${number_of_parcel}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
+    ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
+    Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
     ${element}=    Set Variable    False
 
     WHILE    '${element}' == 'False'
