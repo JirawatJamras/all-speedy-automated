@@ -31,7 +31,7 @@ DC_Operation_s027
     Log    Prerequisite S007
     prerequisite.DC_Operation_S007
     Log    Prerequisite S008
-
+    prerequisite.DC_Operation_S008  
     Log    Prerequisite S009
     prerequisite.DC_Operation_S009
     Log    Prerequisite S010

@@ -411,7 +411,7 @@ DC_Operation_S006:
     # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
     #   description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
-      description: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'    #empty
+      description: ''
     - title: พัสดุเข้าคลังต้นทาง
       description: DC BB
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง

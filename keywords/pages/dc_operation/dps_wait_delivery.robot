@@ -29,7 +29,4 @@ Click Print Button By Data
     ${dps_btn_print_delivery_list}=    Replace String    ${dps_btn_print_delivery_list}    {value_status}    ${status}
     common.Scroll Into View By Xpath    ${dps_btn_print_delivery_list}    true
     Click When Ready    ${dps_btn_print_delivery_list}   
-
-Verify Print Success
-    [Arguments]    ${text}
     

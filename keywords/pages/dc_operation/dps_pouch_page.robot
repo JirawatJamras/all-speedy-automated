@@ -98,17 +98,17 @@ Verify Label In Table On Pouch Detail Popup
     [Arguments]    ${expected_title}    ${txt_pouch_number}    ${txt_destination_warehouse}
     ...    ${txt_pickup_place}    ${txt_type}    ${txt_parcel_status}
     ...    ${btn_print_pouch}
-    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pouch_number}    ${txt_pouch_number}
-    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_destination_warehouse}    ${txt_destination_warehouse}
-    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_pickup_place}    ${txt_pickup_place}
-    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_type}    ${txt_type}
-    ${dps_txt_th_parcel_in_table_poch_detail}    Replace String    ${dps_txt_th_parcel_in_table_poch_detail}    {txt_parcel_status}    ${txt_parcel_status}
+    ${dps_txt_th_parcel_in_table_pouch_detail}    Replace String    ${dps_txt_th_parcel_in_table_pouch_detail}    {txt_pouch_number}    ${txt_pouch_number}
+    ${dps_txt_th_parcel_in_table_pouch_detail}    Replace String    ${dps_txt_th_parcel_in_table_pouch_detail}    {txt_destination_warehouse}    ${txt_destination_warehouse}
+    ${dps_txt_th_parcel_in_table_pouch_detail}    Replace String    ${dps_txt_th_parcel_in_table_pouch_detail}    {txt_pickup_place}    ${txt_pickup_place}
+    ${dps_txt_th_parcel_in_table_pouch_detail}    Replace String    ${dps_txt_th_parcel_in_table_pouch_detail}    {txt_type}    ${txt_type}
+    ${dps_txt_th_parcel_in_table_pouch_detail}    Replace String    ${dps_txt_th_parcel_in_table_pouch_detail}    {txt_parcel_status}    ${txt_parcel_status}
     ${dps_txt_title_parcel_in_pouch_list_pouch_label}=    Replace String    ${dps_txt_title_parcel_in_pouch_list_pouch_label}    {value}    ${expected_title}
     ${dps_btn_print_pouch_label_pouch_detail_page}=    Replace String    ${dps_btn_print_pouch_label_pouch_detail_page}    {value}    ${btn_print_pouch}
     ${actual_title}=    Get Text    ${dps_txt_title_parcel_in_pouch_list_pouch_label}
     ${actual_btn_print_pouch}=    Get Text    ${dps_btn_print_pouch_label_pouch_detail_page}
     common.Scroll Into View By Xpath    ${dps_txt_title_parcel_in_pouch_list_pouch_label}    true
-    Wait Until Element Is Visible    ${dps_txt_th_parcel_in_table_poch_detail}    timeout=10s
+    Wait Until Element Is Visible    ${dps_txt_th_parcel_in_table_pouch_detail}    timeout=10s
     Should Be Equal    ${actual_title}    ${expected_title}
     Should Be Equal    ${actual_btn_print_pouch}    ${btn_print_pouch}
 
@@ -139,26 +139,27 @@ Verify Navigate To Pouch Page Success
 Check Open Pouch And Close Pouch By Destination Inventory
     [Arguments]    ${destination_inventory}    ${txt_warning}    ${txt_transaction_complete}    ${testcase_name}
     Filter Data By Destination Inventory [Pouch Page]    ${destination_inventory}
-    ${count}=    Get Element Count    //td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true']
+    ${destination_inventory_pouch_detail}=    Replace String    ${dps_txt_destination_inventory_pouch_detail}    {destination_inventory}    ${destination_inventory}
+    ${count}=    Get Element Count    ${destination_inventory_pouch_detail}
     IF  '${count}' != '0'
         FOR    ${index}    IN RANGE    1    ${count}+1
             Log    Step No.4 ปิด Pouch ที่มีปลายทางเป็น ${destination_inventory} (ทำทีละรายการจนหมด)
             Click On/OFF Button Of Pouch List    ${destination_inventory}
             # Expected
             Verify Warning Confirm To Close Pouch    ${txt_warning}
-            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    2.Verify Warning Confirm To Close Pouch On Checking Pouch Step
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    4.Verify Warning Confirm To Close Pouch On Checking Pouch Step
             Log    Step No.5 คลิกปุ่ม ปิด Pouch/Print Label
             Click Close Pouch/Print Label Button On Warning Popup
             Log    Step No.6 คลิกปุ่มพิมพ์
             common.Robot Skip Step Print Label
             # Expected
             Verify Transaction Complete Popup    ${txt_transaction_complete}
-            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    4.Verify Transaction Complete Popup On Checking Pouch Step
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    6.Verify Transaction Complete Popup On Checking Pouch Step
             Log    Step No.7 คลิกที่ x Pop up
             CLick Close Button
             # Expected
             Verify Transaction Complete Popup Was Closed
-            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    5.Verify Transaction Complete Popup Was Closed On Checking Pouch Step
+            common.Verify Capture Screenshot    dc_operation    ${testcase_name}    7.Verify Transaction Complete Popup Was Closed On Checking Pouch Step
         END
     END
 
