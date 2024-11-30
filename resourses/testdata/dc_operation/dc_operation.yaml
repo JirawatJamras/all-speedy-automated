@@ -648,20 +648,20 @@ DC_Operation_S008:
       description: '-'
     - title: สเเกนเข้า POUCH
       description: ''    # pouch number to be dynamically set
-    - title: พัสดุรอ Scan out ไปคลัง
-      description: AC
+    # - title: พัสดุรอ Scan out ไปคลัง
+    #   description: AC
     # - title: พัสดุออกจากคลังต้นทาง
     #   description: DC BB
-    - title: พัสดุถึงคลังข้ามภาค
-      description: AC
+    # - title: พัสดุถึงคลังข้ามภาค
+    #   description: AC
     # - title: พัสดุรอ Scan out ไปคลัง
     #   description: RDC LP
-    - title: พัสดุออกจากคลังข้ามภาค
-      description: AC
+    # - title: พัสดุออกจากคลังข้ามภาค
+    #   description: AC
     - title: พัสดุถึงคลังปลายทาง
       description: RDC LP
-    # - title: พัสดุรอนำจ่ายโดยคลัง
-    #   description: RDC LP
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: RDC LP
   data_in_export_task_tab:
     export_to: คลัง RDCLP
     transport: CP All

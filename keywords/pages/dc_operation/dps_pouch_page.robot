@@ -22,6 +22,8 @@ Verify Pouch In Pouch Page
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {destination_inventory}    ${destination_inventory}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {checked}    ${checked}
     ${dps_img_pencil_in_pouch_in_pouch_list}=    Replace String    ${dps_img_pencil_in_pouch_in_pouch_list}    {update_date}    ${update_date}
+    Sleep    5s
+    Page Should Contain Element    ${dps_txt_pouch_in_pouch_list}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${dps_txt_pouch_in_pouch_list}
     ${actual_update_date}=    Get Text    ${dps_txt_pouch_in_pouch_list}//td[6]
     ${expected_update_date_format}    Convert Date    ${actual_update_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M

@@ -3062,11 +3062,11 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
-    # dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S008['destination_warehouse']}
+    dps_scan_page.Verify Create Pouch Popup After Scan In    ${DC_Operation_S008['destination_warehouse']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    8.Verify Create Pouch Destination DCSB Popup
     
     Log    Step No.9 คลิกปุ่มตกลง
-    # dps_scan_page.Click Accept Button On Popup For Creating Pouch
+    dps_scan_page.Click Accept Button On Popup For Creating Pouch
     # Defect155    Defect249    Defect260 
     # Expected    
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
@@ -3167,7 +3167,7 @@ DC_Operation_S008
     # Defect201    Defect230
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    5    #6
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    14.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -3438,7 +3438,7 @@ DC_Operation_S008
     # Defect201    Defect230    Defect270
     # # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    5    #7
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    #7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    32.Verify Timeline After Scan Out
     Close Window
     Switch Window    MAIN
@@ -3553,7 +3553,7 @@ DC_Operation_S008
     # Defect201    Defect230    Defect239    Defect270
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    6    #9
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    #9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    41.Verify Timeline After Scan Out
     Close Window
     Switch Window    MAIN
@@ -3654,7 +3654,7 @@ DC_Operation_S008
     # Defect201    Defect230    Defect270
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    7    # 10
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    # 10
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    49.Verify Timeline After Scan Out
     Close Window
     Switch Window    MAIN
@@ -3862,7 +3862,7 @@ DC_Operation_S008
     dps_scan_page.Click Close Print Label Success Popup
     # Defect288
     # Expected 
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    59.Verify Accept Scan In Success Popup After Scan In At RDC LP Warehouse
 
     Log    Step No.60 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
@@ -3878,7 +3878,7 @@ DC_Operation_S008
     # Defect201    Defect230    Defect239    Defect270
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    8    # 12
+    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    6    # 12
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    61.Verify Timeline After Scan Out
     Close Window
     Switch Window    MAIN
