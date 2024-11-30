@@ -39,9 +39,6 @@ Compare Time And Title In Timeline
         Wait Until Element Is Visible    (${dps_txt_step_title_in_timeline_history_parcel_page})[${i}]    timeout=${DEFAULT_TIMEOUT}
         ${actual_description}=    Get Text    (${dps_txt_step_description_in_timeline_history_parcel_page})[${i}]
         ${actual_title}=    Get Text    (${dps_txt_step_title_in_timeline_history_parcel_page})[${i}]  
-        log to console    ${actual_description}
-        log to console    ${actual_title}
-        log to console    ${i}
         ${i}=    Set Variable    ${i + 1} 
     END
     ${dps_card_timeline}=    Replace String    ${dps_card_timeline_history_parcel_page}    {value}    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
