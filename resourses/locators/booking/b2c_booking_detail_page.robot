@@ -60,6 +60,7 @@ ${b2c_img_loading_in_detail_after_set_origin_shipping}    //div[@role='dialog']/
 ${b2c_img_logo_home}    //div[contains(@class,'ant-col flex items-center')]//*[@stroke='currentColor']
 ${b2c_img_logo_store}    //div[contains(@class,'ant-col flex items-center')]//*[@draggable='false' and @loading='lazy']
 ${b2c_img_empty_data}    //div[@class='hidden sm:inline']//div[@class='ant-list-empty-text']//div[@class='ant-empty-image']
+${b2c_img_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']
 
 ${b2c_btn_print_the_parcel_payment_slip_disabled}   //button[@type='button' and contains(@class, 'ant-btn-primary') and contains(@class, 'bg-blue-800') and @disabled and span[text()='{value}']]
 ${b2c_btn_edit_booking_list}    (//strong[text()='{value}']/../../..//button)[1]
@@ -89,6 +90,7 @@ ${b2c_btn_increase_insure_value}    //input[@id='create_parcel_form_insureAmount
 ${b2c_btn_confirm_phone_number}    //span[@aria-label='check']/../../..
 ${b2c_btn_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']//button
 ${b2c_btn_next_page_pickup_schedule}    //div[@role='dialog']//span[@class='anticon anticon-right']/../..
+${b2c_btn_status_next_page_pickup_schedule}    //div[@aria-hidden='false']//span[@class='anticon anticon-right']/../..
 
 ${b2c_cbo_paper_size}    //span[text()='{value}']/../..//span[@class='ant-select-selection-item']
 
@@ -101,7 +103,3 @@ ${b2c_tab_shipping_origin_aria}    //div[@role='tab']//div[text()='{value}']
 ${b2c_tab_pickup_schedule}    //div[@role='tab']//div[text()='{value}']
 
 ${b2c_dialog_create_parcel}    //*[@role='dialog']
-
-${b2c_img_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']
-
-${b2c_btn_status_next_page_pickup_schedule}    //div[@aria-hidden='false']//span[@class='anticon anticon-right']/../..

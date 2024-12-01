@@ -3,6 +3,14 @@ ${btn_add_booking}    //span[text()='{value}']/..
 ${btn_accept_condition}    //span[text()='{value}']/..
 ${btn_save_return_business}    //button//span[text()='{value}']
 ${btn_popup_return_business}    //button//span[text()='{value}']
+${btn_add_parcel_return_business}    //span[@aria-label='plus-circle']/../..
+${btn_select_address_return_business}    //div[@id='create_parcel_form_sender_address_full_list']/..//div[text()='{value}']
+${btn_select_parcel_size_return_business}    //div[@class='ant-list-item']//strong[contains(normalize-space(.), '{value}')]
+${btn_parcel_booking_return_business}    //span[text()='{value}']/..
+${btn_edit_parcel_return_business}    //button[@id='edit-detail']
+${btn_save_shipping_return_business}    //span[text()='{value}']/..
+${btn_print_return_business}    //div[@class='ant-card-body']//button//span[text()='{value}']
+${btn_print_popup_return_business}    //div[text()='{value}']/../../..//button//span[text()='{value}']
 
 ${txt_return_business_header}    //div[@class='ant-card-head-title']//h3
 ${txt_link_return_business_header}    //div[@class='ant-modal-title']//span[contains(@class,'ant-typography') and contains(@class,'text-xl')]
@@ -11,7 +19,6 @@ ${txt_phone_return_business}    //label[@for='return_tel']
 ${txt_name_return_business}    //label[@for='return_name']
 ${txt_shipping_payer_return_business}    //label[@for='return_paymentBy']
 ${txt_location_pickup_return_business}    //form[contains(@class,'ant-form ant-form-vertical')]//h5
-
 ${txt_heading_booking_list}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 ${txt_heading_parcel_list_return_business}    //div[@class='ant-card-head-title']//strong[text()='{value}']
 ${txt_heading_summary_booking_return_business}    //div[@class='ant-card-head-title']//strong[text()='{value}']
@@ -32,7 +39,6 @@ ${txt_sender_address_full_return_business}    //label[@for='create_parcel_form_s
 ${txt_list_parcel_size_return_business}    //div[@class='ant-list-item']//strong[text()='{value}']/../..
 ${txt_remark_full_return_business}    //label[@for='create_parcel_form_remark']
 ${txt_shipping_origin_aria_return_business}    //form[@id='detail_form']//strong[contains(text(),'{value}')]
-
 ${txt_address_return_business}    //label[@for='return_address_info']
 ${txt_postcode_return_business}    //label[@for='return_address_full']
 ${txt_topic_in_popup}    //*[text()='{value}']
@@ -51,27 +57,16 @@ ${txtbox_link_name_in_popup}    //input[@id="trigger_linkId"]
 ${txtbox_phone_in_popup}    //input[@id="trigger_tel"]
 ${txtbox_name_in_popup}    //input[@id="trigger_name"]
 ${txtbox_address_in_popup}    //label[@title='{value}']//..//..//textarea
-
 ${txtbox_link_name_delete}    //input[@id='return_linkName']//..//span[@role='button']
 ${txtbox_phone_delete}    //input[@id='return_tel']//..//span[@role='button']
 ${txtbox_name_delete}    //input[@id='return_name']//..//span[@role='button']
 ${txtbox_address_delete}    //textarea[@id='return_address_info']//..//span[@role='button']
 ${txtbox_postcode_delete}    //input[@id='return_address_full']//..//..//..//span[@aria-label='close-circle']
-
 ${txtbox_sender_phone_return_business}    //input[@id='create_parcel_form_sender_tel']
 ${txtbox_sender_name_return_business}    //input[@id='create_parcel_form_sender_name']
 ${txtbox_sender_address_return_business}    //textarea[@id='create_parcel_form_sender_address_info']
 ${txtbox_sender_postcode_return_business}    //input[@id='create_parcel_form_sender_address_full']
 ${txtbox_shipping_origin_return_business}    //form[@id='detail_form']//input[@class='ant-select-selection-search-input']
-
-${btn_add_parcel_return_business}    //span[@aria-label='plus-circle']/../..
-${btn_select_address_return_business}    //div[@id='create_parcel_form_sender_address_full_list']/..//div[text()='{value}']
-${btn_select_parcel_size_return_business}    //div[@class='ant-list-item']//strong[contains(normalize-space(.), '{value}')]
-${btn_parcel_booking_return_business}    //span[text()='{value}']/..
-${btn_edit_parcel_return_business}    //button[@id='edit-detail']
-${btn_save_shipping_return_business}    //span[text()='{value}']/..
-${btn_print_return_business}    //div[@class='ant-card-body']//button//span[text()='{value}']
-${btn_print_popup_return_business}    //div[text()='{value}']/../../..//button//span[text()='{value}']
 
 ${opt_postcode_choice_return_business}    //*[text()='{value}']
 ${opt_owner_pay_return_business}    //span[text()='{value}']/..//input[@value='owner']//..

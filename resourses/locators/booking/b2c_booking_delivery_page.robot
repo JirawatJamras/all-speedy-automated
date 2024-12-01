@@ -1,14 +1,6 @@
 *** Variables ***
-### booking page ###
-${txt_title_booking}    //div[contains(@class,'ant-layout')]//h2[contains(@class,'ant-typography')][contains(text(), '{value}')]
-
-### term&con ###
-${txt_term_and_condition}     //div[@class='ant-modal-title']//span[contains(@class,'ant-typography')]
-
 ${btn_accept_terms_service}     //span[text()='{value}']/..
 ${btn_close_condition_popup}     (//button[@type='button' and @class='ant-modal-close'])[1]
-
-### create a parcel ###
 ${btn_parcel_type_dry}     //img[@alt='Dry']
 ${btn_parcel_type_chill}    //img[@alt='Chill']
 ${btn_add_sender_to_favorites}    //div[@id='create_parcel_form_sender_isDefault']//span[@class='anticon anticon-heart']
@@ -41,6 +33,8 @@ ${btn_close_popup}    //div[text()='{value}']/../../..//button//span[@aria-label
 ${btn_confirm_to_close_popup}    //button//span[@aria-label='check']
 ${btn_card_latest_booking}    (//div[@class='ant-spin-container']//div[@class='ant-card-body'])[1]
 
+${txt_title_booking}    //div[contains(@class,'ant-layout')]//h2[contains(@class,'ant-typography')][contains(text(), '{value}')]
+${txt_term_and_condition}     //div[@class='ant-modal-title']//span[contains(@class,'ant-typography')]
 ${txt_title_create_parcel_page}     //div[@class='ant-modal-title']/div[@class='max-sm:border-b pb-2 border-blue-800 text-blue-800']
 ${txt_parcel_sender_information}    (//div[contains(text(),'{value}')])[2]
 ${txt_phone_sender}    //label[@for='create_parcel_form_sender_tel']/span
