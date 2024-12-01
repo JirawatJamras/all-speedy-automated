@@ -1575,8 +1575,7 @@ DC_Operation_S005
     Log    Step No.24 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
-    dps_scan_page.Verify Accept Scan In Success Popup
-    ...    ${dc_operation['text_accept_scan_in_success']}
+    dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    24.Verify Accept Scan In Success Popup
 
     Log    Step No.25 คลิกที่ Pop up
@@ -5862,7 +5861,7 @@ DC_Operation_S011
     Log    Step No.21 เข้าเมนู Scan, เลือกคลังที่ดำเนินงานเป็น "AC"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
-    #  Defect
+    # Defect238    Defect280
     # Expected
     dps_scan_page.Verify Label Wait Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_id']}
