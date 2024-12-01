@@ -78,6 +78,13 @@ Booking:
   text_confirm_popup: ' ยืนยัน'
   text_use_code: ใช้โค้ด
   text_input_discount_code: ระบุโค้ดส่วนลด
+  text_7_11_store: ร้านเซเว่น
+  text_service: บริการ
+  text_check_speedy_shipping_status: เช็คสถานะการจัดส่ง สปีด-ดี
+  text_send_parcel_speed_d: ส่งพัสดุ สปีด-ดี
+  text_delete_data_complete: ลบข้อมูลสำเร็จ
+  text_choose_from_favorite_list: เลือกจากรายการโปรด
+  text_add_to_fovorite: เพิ่มเป็นรายการโปรด
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -100,6 +107,7 @@ Booking:
   text_parcel_status_call_car: กำลังเรียกรถเข้ารับ  
   text_waiting_confirm_parcel_pickup: รอยืนยันรอบรถเข้ารับพัสดุ
   text_parcel_type_label: 'ประเภทพัสดุ :'
+  text_favorite_list: รายการโปรด
   tab_shipping_origin:
     favorite:  เลือกรายการโปรด
     store:  'เลือกร้าน 7-11 ต้นทาง'
@@ -217,6 +225,7 @@ call_car_pick_up:
   text_parcel_number: 'จำนวนพัสดุ:'
   text_price:  'ราคา:'
   text_pickup_location: 'จุดรับพัสดุ:'
+  text_delivery_service: บริการขนส่งพัสดุ
   button_save: บันทึก
   button_cancel: ยกเลิก
   button_confirm: ยืนยัน
@@ -353,6 +362,7 @@ dc_operation:
   text_parcel_have_to_scan_remaining: จำนวนพัสดุที่ต้องสแกนคงเหลือ
   vehicle_type: ประเภทรถที่ใช้
   text_move_status_to: Move Status To
+  text_data_at_date: ข้อมูล ณ วันที่
   selected_warehouse_list:
     text_selected_warehouse_list: รายชื่อคลังที่เลือก
     text_warehouse_no_select: ไม่มีคลังที่เลือก

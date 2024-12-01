@@ -328,6 +328,7 @@ Re Format And Sum Number of In Warehouse Parcels
     RETURN     ${sum_number}
 
 Verify Current Date
+    ${dps_txt_date}=    Replace String    ${dps_txt_date}    {value}    ${dc_operation['text_data_at_date']}
     Wait Until Element Is Visible    ${dps_txt_date}    30s
     ${Web_Date}    Get Text    ${dps_txt_date}  
     ${Web_Date}    Split String And Select    ${Web_Date}    ${space}    3

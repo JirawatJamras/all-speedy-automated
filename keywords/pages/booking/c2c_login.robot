@@ -16,12 +16,6 @@ Select Customer Tab
     Wait Until Element Is Visible    ${c2c_tab_customer_login_page}
     Click Element                    ${c2c_tab_customer_login_page}
 
-Clear Data Input
-    Clear Element Text    ${c2c_txtbox_email_login_page}
-    Sleep    1s
-    Clear Element Text    ${c2ctxtbox_password_login_page}
-    Sleep    1s
-
 Click Show Password
     Wait Until Element Is Visible    ${c2c_icon_show_password_login_page}
     Click Element    ${c2c_icon_show_password_login_page}

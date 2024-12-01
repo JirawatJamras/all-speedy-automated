@@ -5,38 +5,25 @@ Click Book Parcel Delivery
     common.Click When Ready    ${btn}
 
 Click Parcel Delivery Service Menu
+    ${b2c_mnu_parcel_delivery_service_home_page}=    Replace String    ${b2c_mnu_parcel_delivery_service_home_page}    {value}    ${call_car_pick_up['text_delivery_service']}
     FOR    ${i}    IN RANGE    0    5
         Mouse Over    ${b2c_mnu_parcel_delivery_service_home_page}
         ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible   ${b2c_cbo_parcel_delivery_service}    timeout=5s
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
     END
 
-Select Sub Menu My Parcel
-    Wait Until Element Is Visible    ${b2c_cbo_parcel_delivery_service}
-    common.Click When Ready    ${b2c_mnu_my_parcel_home_page}
-
 Select Sub Menu Call Car Pick Up
+    ${b2c_mnu_call_car_pick_up_home_page}=    Replace String    ${b2c_mnu_call_car_pick_up_home_page}    {value}    ${call_car_pick_up['text_call_car_pick_up']}
     common.Click When Ready    ${b2c_mnu_call_car_pick_up_home_page}
     Mouse Out    ${b2c_mnu_parcel_delivery_service_home_page}
 
 Select Sub Menu Favorites
+    ${b2c_mnu_favorites_home_page}=    Replace String    ${b2c_mnu_favorites_home_page}    {value}    ${Booking['text_favorite_list']}
     common.Click When Ready    ${b2c_mnu_favorites_home_page}
 
 Select Sub Menu Return Business
     ${mnu_return_business_home_page}=    Replace String    ${mnu_return_business_home_page}    {value}    ${sub_menu['return_business']}
     common.Click When Ready    ${mnu_return_business_home_page}
-
-Select Sub Menu Calculate Shipping Costs
-    common.Click When Ready    ${b2c_mnu_calculate_shipping_cost_home_page}
-
-Select Sub Menu Shipping Methods
-    common.Click When Ready    ${b2c_mnu_shipping_methods_home_page}
-
-Select Sub Menu Term Of Service
-    common.Click When Ready    ${b2c_mnu_term_of_service_home_page}
-
-Select Sub Menu Register Business Customer
-    common.Click When Ready    ${b2c_mnu_register_business_customer_home_page}
 
 Verify My Profile Page
     [Arguments]    ${company_profile}    ${profile}    ${profile_name}    ${profile_phone}    ${profile_email}    ${profile_position}    
@@ -99,6 +86,7 @@ Click Tracking Parcel Delivery Menu
     common.Click When Ready    ${btn}
 
 Wait Until Profile Page Loaded
+    ${b2c_btn_edit_profile_info_home_page}=    Replace String    ${b2c_btn_edit_profile_info_home_page}    {value}    ${Booking['text_btn_edit']}
     ${b2c_txt_business_profile_title_home_page}=    Replace String    ${b2c_txt_business_profile_title_home_page}    {value}    ${Booking['text_company_profile']}
     Wait Until Element Is Visible    ${b2c_txt_business_profile_title_home_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Contains Element    ${b2c_btn_edit_profile_info_home_page}    timeout=${DEFAULT_TIMEOUT}

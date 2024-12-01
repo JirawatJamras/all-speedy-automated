@@ -17,6 +17,7 @@ Verify Booking Detail Page After Draft
     ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
     ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_btn_print_the_parcel_payment_slip_disabled}=    Replace String    ${b2c_btn_print_the_parcel_payment_slip_disabled}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}

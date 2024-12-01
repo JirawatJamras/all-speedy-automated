@@ -7,12 +7,9 @@ Verify Create Parcel Page
     ${step_name}=    Get Text    ${frist_step_name}
     Should Be Equal    ${step_name}    ${B2C_AddBooking_003_001['text_frist_step']}
 
-Click Close Parcel Page
-    Click Element    ${close_noti_btn}
-    # Verify Close Pop-Up
-    Click Element    ${close_noticonfirm_btn}
-
 Click Choose Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
+    ${favorites_defult_text}=    Replace String    ${favorites_defult_text}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=${DEFAULT_TIMEOUT}
@@ -79,6 +76,7 @@ Click Cancel Favorites List
     Click Element    ${cancel_favorites_btn}
 
 Verify Choose From Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     Should Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_5['verify_phone_sender']}    
@@ -90,6 +88,7 @@ Verify Choose From Favorites
     Should Be Equal    ${postcode_text}    ${b2c_addbooking_003_ID_5['verify_postcode_sender']}
 
 Verify Not Choose From Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     Should Not Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_6['verify_phone_sender']}    
@@ -183,10 +182,8 @@ Click Button
     [Arguments]    ${btn}
     Click Element    ${btn}
 
-Click Next To Receiver
-    common.Click When Ready  ${next_to_receiver_btn}
-
 Click Add To Favorites
+    ${add_to_favorites_btn}=    Replace String    ${add_to_favorites_btn}    {value}    ${Booking['text_add_to_fovorite']}
     common.Click When Ready    ${add_to_favorites_btn}
 
 Verify Favorites Icon Red Heart

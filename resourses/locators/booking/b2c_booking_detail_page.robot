@@ -61,7 +61,7 @@ ${b2c_img_logo_home}    //div[contains(@class,'ant-col flex items-center')]//*[@
 ${b2c_img_logo_store}    //div[contains(@class,'ant-col flex items-center')]//*[@draggable='false' and @loading='lazy']
 ${b2c_img_empty_data}    //div[@class='hidden sm:inline']//div[@class='ant-list-empty-text']//div[@class='ant-empty-image']
 
-${b2c_btn_print_the_parcel_payment_slip_disabled}   //button[@type='button' and contains(@class, 'ant-btn-primary') and contains(@class, 'bg-blue-800') and @disabled and span[text()='พิมพ์ใบจ่ายหน้าพัสดุ']]
+${b2c_btn_print_the_parcel_payment_slip_disabled}   //button[@type='button' and contains(@class, 'ant-btn-primary') and contains(@class, 'bg-blue-800') and @disabled and span[text()='{value}']]
 ${b2c_btn_edit_booking_list}    (//strong[text()='{value}']/../../..//button)[1]
 ${b2c_btn_select_store}    //button//b[text()='{value}']/..
 ${b2c_btn_save_shipping_origin}    //span[text()='{value}']/..

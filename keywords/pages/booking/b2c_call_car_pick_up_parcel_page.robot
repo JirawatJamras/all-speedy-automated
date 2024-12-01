@@ -239,12 +239,6 @@ Select Parcel Type Dropdown
     ${b2c_cbo_parcel_type}=    Replace String    ${b2c_cbo_parcel_type}    {value}    ${parcel_type}
     common.Click When Ready    ${b2c_cbo_parcel_type}
 
-Verify Unselected Date Pickup Parcel
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${b2c_btn_placeholder_date_pickup_in_add_popup}    timeout=${DEFAULT_TIMEOUT}
-    ${placeholder}=    Get Element Attribute    ${b2c_btn_placeholder_date_pickup_in_add_popup}    placeholder
-    Should Be Equal    ${placeholder}    ${value}
-
 Click Pickup Parcel Date Button
     ${b2c_cbo_pickup_parcel_date_in_add_popup}=    Replace String    ${b2c_cbo_pickup_parcel_date_in_add_popup}    {value}    ${call_car_pick_up['text_parcel_pickup_date']}
     common.Click When Ready    ${b2c_cbo_pickup_parcel_date_in_add_popup}
@@ -280,6 +274,7 @@ Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
     ${btn_delete_car_round}=    Replace String    ${b2c_btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
     ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round}    {time}    ${current_time}
+    ${b2c_txt_delete_complete_pickup_page}=    Replace String    ${b2c_txt_delete_complete_pickup_page}    {value}    ${Booking['text_delete_data_complete']}
     ${b2c_btn_confirm_in_asking_to_close_popup}=    Replace String    ${b2c_btn_confirm_in_asking_to_close_popup}    {value}    ${Booking['text_confirm_popup']}
     Wait Until Element Is Visible    ${btn_delete_car_round}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${btn_delete_car_round}
@@ -289,37 +284,6 @@ Delete The Lastest Parcel Pickup Schedule
     
 Click Select Item On Parcel Pickup Schedule List
     common.Click When Ready    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
-
-Verify Information Detail Popup of Parcel Pickup Schedule
-    Wait Until Element Is Visible    ${b2c_txt_pickup_parcel_schedule_in_detail_popup}    timeout=${DEFAULT_TIMEOUT}
-
-Verify Information Detail Popup of Select Pickup Booking List
-    Wait Until Element Is Visible    ${b2c_txt_select_pickup_booking_list_in_detail_popup}    timeout=${DEFAULT_TIMEOUT}
-
-Verify Pickup Parcel Schedule Page
-    Wait Until Element Is Visible    ${b2c_txt_call_pickup_parcel_pickup_page}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_txt_pickup_parcel_schedule_pickup_page}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_add_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
-
-Click Open Filter
-    common.Click When Ready    ${b2c_btc_filter_pickup_page}
-   
-Click Close Filter
-    FOR    ${i}    IN RANGE    0    5
-        common.Click When Ready    ${b2c_btc_filter_pickup_page}
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
-        Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
-    END
-
-Verify Open Filter Section
-    Wait Until Element Is Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_search_in_filter}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
-
-Verify Close Filter Section
-    Wait Until Element Is Not Visible    ${b2c_txt_pickup_date_in_filter}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${b2c_btn_search_in_filter}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Added New Parcel Pickup
     [Arguments]    ${status}    ${parcel_type}    ${round}    ${tomorrow}    ${pickup_time}    ${today}

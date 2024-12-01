@@ -32,6 +32,3 @@ Verify Validation Required Input Password
     [Arguments]    ${text}
     Wait Until Element Is Visible    ${b2c_error_message_passwordbusiness}
     Element Should Contain    ${b2c_error_message_passwordbusiness}    ${text}
-
-Click Forgot Password Button
-    common.Click When Ready    ${b2c_btn_forgot_password_login_page}

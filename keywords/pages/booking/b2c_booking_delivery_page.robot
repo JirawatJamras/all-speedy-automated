@@ -187,15 +187,14 @@ Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     Should Be Equal    ${actual_text_address}    ${address_receiver}
     Element Should Be Visible    ${txtbox_store_receiver} 
 
-Click Close Parcel Page
-    common.Click When Ready    ${close_noti_btn}
-    common.Click When Ready    ${close_noticonfirm_btn}
-
-Click Choose Favorites 
+Click Choose Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
+    ${favorites_defult_text}=    Replace String    ${favorites_defult_text}    {value}    ${Booking['text_choose_from_favorite_list']}
     common.Click When Ready    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=${DEFAULT_TIMEOUT}
 
 Click Choose Favorites Receiver
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     common.Click When Ready    ${choose_favorites_btn}
 
 Verify Favorites Sender PopUp
@@ -272,6 +271,7 @@ Verify Choose Favorites Receiver List
 
 Verify Choose Receiver From Favorites
     [Arguments]    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode} 
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${tab_send_to_home_verify}=    Replace String    ${tab_send_to_home_verify}    {value}    ${Booking['text_send_home']}
     Wait Until Element Is Visible    ${tab_send_to_home_verify}    timeout=${DEFAULT_TIMEOUT}
@@ -342,6 +342,7 @@ Click Cancel Favorites List
     common.Click When Ready    ${cancel_favorites_btn}
 
 Verify Choose From Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     ${name_text}=    Get Value    ${name_sender_txtbox}
@@ -353,6 +354,7 @@ Verify Choose From Favorites
     Should Be Equal    ${postcode_text}    ${b2c_addbooking_003_ID_5['verify_postcode_sender']}
 
 Verify Not Choose From Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     Should Not Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_6['verify_phone_sender']}    

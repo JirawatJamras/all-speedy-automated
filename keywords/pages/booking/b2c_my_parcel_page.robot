@@ -1,23 +1,4 @@
 *** Keywords ***
-Verify My Parcel Page
-    Wait Until Element Is Visible    ${b2c_txt_my_parcel}    timeout=${DEFAULT_TIMEOUT}
-    Element Should Be Visible    ${b2c_txt_my_parcel}
-
-Click Delivered Parcel Button
-    Wait Until Element Is Visible    ${b2c_txt_my_parcel}    timeout=${DEFAULT_TIMEOUT}
-    Click When Ready    ${b2c_btn_delivered_parcel}
-
-Verify Activate Delivered Parcel Button
-    Wait Until Element Is Visible    ${b2c_txt_my_parcel}    timeout=${DEFAULT_TIMEOUT}
-    ${checked}=    Get Element Attribute    ${b2c_btn_delivered_parcel}    aria-selected
-    Should Be Equal As Strings    ${checked}    true
-
-Click In Transit Button
-    Click When Ready    ${b2c_btn_in_transit}
-
-Click Waiting For Pick Up
-    Click When Ready    ${b2c_btn_waiting_for_pick_up}
-
 Click Delivery Completed
     Click When Ready    ${b2c_btn_delivery_completed}
 
@@ -34,10 +15,6 @@ Verify Parcels In Tab Is In Transit
     ${checked}=    Get Element Attribute    ${b2c_txt_parcels_in_tab_is_in_transit}    aria-hidden
     Should Be Equal As Strings    ${checked}    false
 
-Click Filter Button
-    Wait Until Element Is Visible    ${b2c_btn_filter}    timeout=${DEFAULT_TIMEOUT}
-    Click When Ready    ${b2c_btn_filter}
-
 Verify Open Filter Form 
     Wait Until Element Is Visible    ${b2c_form_filter}    timeout=${DEFAULT_TIMEOUT}
     Element Should Be Visible    ${b2c_form_filter}
@@ -50,9 +27,6 @@ Input Parcel Number In Filter
     Wait Until Element Is Visible    ${b2c_txtbox_parcel_number}    timeout=${DEFAULT_TIMEOUT}
     Input When Ready    ${b2c_txtbox_parcel_number}    ${parcel_number}
 
-Click Search Button
-    Click When Ready    ${b2c_btn_search_filter}
-
 Verify Input Parcel Number In Filter
     Wait Until Element Is Visible    ${b2c_txtbox_parcel_number}    timeout=${DEFAULT_TIMEOUT}
     ${parcel_number}=    Get Value    ${b2c_txtbox_parcel_number}
@@ -64,11 +38,6 @@ Verify Parcels In Search Result
 
 Click Remove Data In Search Button
     Click When Ready    ${b2c_btn_remove_search}
-
-Verify Error Message In Modal
-    [Arguments]    ${errormsg}
-    Wait Until Element Is Visible    //div[text()='${errormsg}']    timeout=${DEFAULT_TIMEOUT}
-    Element Should Be Visible    //div[text()='${errormsg}']
 
 Input Name In Filter
     [Arguments]    ${name}
