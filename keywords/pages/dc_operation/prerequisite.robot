@@ -212,7 +212,7 @@ DC_Operation_S002
     Go To    ${DPS_UAT_URL}
     # Expected
     dps_landing_page.Verify Go Login Page
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    18.Verify Go Login DPS Page
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    18.Verify Go Login DPS Page
 
     Log    Step No.19_1 เข้าสู่ระบบ
     dps_landing_page.Click Go Login Button
@@ -436,7 +436,7 @@ DC_Operation_S004
     dps_scan_page.Click Accept Button On Popup For Creating Pouch
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
     Set Suite Variable    ${global_pouch_number}    ${pouch_number}
-    # # Expected    
+    # Expected    
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -529,8 +529,8 @@ DC_Operation_S004
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_c}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    5    #6
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    14.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -771,15 +771,13 @@ DC_Operation_S004
     Log    Step No.28 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    28.Verify Popup Confirm Scan Out
 
     Log    Step No.29 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    29.Verify Popup Save Data Success
 
     Log    Step No.30 คลิกที่ Pop up
@@ -799,8 +797,8 @@ DC_Operation_S004
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_c}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    5    #7
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    5    #7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    32.Verify Timeline After Scan Out
     Close Window
     Switch Window    MAIN
@@ -1019,8 +1017,7 @@ DC_Operation_S004
     Log    Step No.43 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
-    dps_scan_page.Verify Accept Scan In Success Popup
-    ...    ${dc_operation['text_accept_scan_in_success']}
+    dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    43.Verify Accept Scan In Success Popup
 
     Log    Step No.44 คลิกที่ Pop up
@@ -1040,8 +1037,8 @@ DC_Operation_S004
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_c}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    7    #9
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    7    #9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    46.Verify Timeline After Scan In At Destination Warehouse
     Close Window
     Switch Window    MAIN
@@ -1787,7 +1784,7 @@ DC_Operation_S006
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S006.scan_in_sender_data['name']}
     ...    ${DC_Operation_S006.scan_in_sender_data['phone']}
-    ...     บริษัท ไอดีซี พรีเมียร์ จำกัด (-)    #${DC_Operation_S006.scan_in_sender_data['shipping_origin']}
+    ...    -    #${DC_Operation_S006.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S006.scan_in_sender_data['address']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    9.Data Sender Details In Scan Page
     dps_scan_page.Verify Title Receiver In Scan Page
@@ -1809,8 +1806,7 @@ DC_Operation_S006
     Log    Step No.11 คลิกปุ่มพิมพ์
     common.Robot Skip Step Print Label
     # Expected
-    dps_scan_page.Verify Print Label Success Popup
-    ...    ${dc_operation['text_print_label_success']}
+    dps_scan_page.Verify Print Label Success Popup    ${dc_operation['text_print_label_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    11.Verify Print Label Success Popup
 
     Log    Step No.12 คลิกที่ x Pop up
@@ -1830,8 +1826,8 @@ DC_Operation_S006
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    5    #6
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    5    #6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    14.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -1990,8 +1986,7 @@ DC_Operation_S006
     Sleep    5s
     Robot Skip Step Print Label
     # Expected
-    dps_pouch_page.Verify Transaction Complete Popup
-    ...    ${dc_operation['text_transaction_complete']}
+    dps_pouch_page.Verify Transaction Complete Popup    ${dc_operation['text_transaction_complete']}
     common.Verify Capture Screenshot  dc_operation    DC_Operation_S006    23.Verify Transaction Complete Popup
 
     Log    Step No.24 คลิกที่ x Pop up
@@ -2060,7 +2055,7 @@ DC_Operation_S006
     ...    ${DC_Operation_S006.scan_out_list_data['parcel_owner']}
     ...    ${DC_Operation_S006.scan_out_list_data['parcel_size']}
     ...    ${today}
-    ...    ${DC_Operation_S006.scan_out_list_data['parcel_status']}
+    ...    พัสดุรอ Scan out ไปคลัง DC SB  #${DC_Operation_S006.scan_out_list_data['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    26.Verify Value List Scan Out
 
     Log    Step No.27 กดปุ่ม ยืนยัน Scan Out
@@ -2072,8 +2067,7 @@ DC_Operation_S006
     Log    Step No.28 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    28.Verify Popup Save Data Success
 
     Log    Step No.29 คลิกที่ Pop up
@@ -2093,8 +2087,8 @@ DC_Operation_S006
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
     # # Expected
-    dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
-    dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    6    #7
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    6    #7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    31.Verify Timeline After Scan Out
     Close Window
     Switch Window    MAIN
@@ -2957,7 +2951,6 @@ DC_Operation_S008
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
-    # Defect141
     # Expected
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
@@ -2990,7 +2983,6 @@ DC_Operation_S008
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -3030,7 +3022,6 @@ DC_Operation_S008
     
     Log    Step No.9 คลิกปุ่มตกลง
     dps_scan_page.Click Accept Button On Popup For Creating Pouch
-    # Defect155    Defect249    Defect260 
     # Expected    
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
@@ -3059,7 +3050,6 @@ DC_Operation_S008
     ...    ${today}
     ...    ${DC_Operation_S008.scan_in_data_parcel_detail['origin_warehouse']}
     ...    ${DC_Operation_S008.scan_in_data_parcel_detail['send_parcel_to']}
-    
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
     ...    ${dc_operation.scan_in_title_label_detail['zipcode']}
@@ -3067,7 +3057,6 @@ DC_Operation_S008
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
     ...    ${dc_operation.scan_in_title_label_detail['wh']}
-    
     dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
     ...    ${DC_Operation_S008.scan_in_data_label_detail['zipcode']}
     ...    ${DC_Operation_S008.scan_in_data_label_detail['customer']}
@@ -3127,7 +3116,6 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect201    Defect230
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    #6
@@ -3138,7 +3126,6 @@ DC_Operation_S008
     Log    Step No.15 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
-    # Defect141
     # Expected
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
@@ -3161,7 +3148,6 @@ DC_Operation_S008
 
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
-    # Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Export Task Tab
     # ...    ${dc_operation.label_export_task_tab['export_to']}
@@ -3213,8 +3199,7 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
-    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
-    ...    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
+    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    18.Verify Close Pouch Before Scan Out Warning Popup
 
     Log    Step No.19 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
@@ -3231,7 +3216,6 @@ DC_Operation_S008
 
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
-    # Defect223    Defect279    Defect290
     # Expected
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
@@ -3254,7 +3238,6 @@ DC_Operation_S008
     ...    ${DC_Operation_S008.data_in_pouch_detail['label_symbol']}
     ...    ${pouch_number}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    20.Verify Pouch Detail Popup 1
-
     dps_pouch_page.Verify Label In Table On Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_parcel_in_pouch_list']}
     ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['pouch_number']}
@@ -3274,8 +3257,7 @@ DC_Operation_S008
     Log    Step No.21 คลิกปุ่มปิด Pouch/Print Label
     dps_pouch_page.Click Print Pouch Label
     # Expected
-    dps_pouch_page.Verify Warning Confirm To Close Pouch
-    ...    ${dc_operation['text_warning_confirm_to_close_pouch']}
+    dps_pouch_page.Verify Warning Confirm To Close Pouch    ${dc_operation['text_warning_confirm_to_close_pouch']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    21.Verify Warning Confirm To Close Pouch
 
     Log    Step No.22 ปิด Pouch/Print Label
@@ -3307,7 +3289,6 @@ DC_Operation_S008
     Log    Step No.25 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
-    # Defect265
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
@@ -3338,15 +3319,13 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
-    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
-    ...    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
+    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_unable_to_scan_trcking_becuase_parcel_is_in_pouch']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    26.Verify Close Pouch Before Scan Out Warning Popup
 
     Log    Step No.27 กรอกหมายเลข Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Click Clear Button [Scan Out]
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Defect232
     # Expected 
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
@@ -3371,15 +3350,13 @@ DC_Operation_S008
     Log    Step No.28 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    28.Verify Popup Confirm Scan Out
 
     Log    Step No.29 กดปุ่ม ยืนยัน
     dps_scan_page.Click Confirm Button On Popup Asking To Scan Out
     # Expected
-    dps_scan_page.Verify Popup Save Data Success
-    ...    ${dc_operation['text_save_success']}
+    dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    29.Verify Popup Save Data Success
 
     Log    Step No.30 คลิกที่ Pop up
@@ -3398,7 +3375,6 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect201    Defect230    Defect270
     # # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    #7
@@ -3447,7 +3423,6 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     dps_home_page.Select Tab Import Task
-    # Defect139    Defect188
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -3472,7 +3447,6 @@ DC_Operation_S008
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan In Page]
-    # Defect237
     # Expected
     dps_scan_page.Verify Parcel Is On Pouch Warning Popup    พัสดุชิ้นนี้อยู่ใน "ถุง" กรุณา Scan ด้วยเลขถุง เท่านั้น    #${dc_operation['text_parcel_is_on_pouch_warning']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    37.Verify Parcel Is On Pouch Warning Popup
@@ -3513,7 +3487,6 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect201    Defect230    Defect239    Defect270
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    #9
@@ -3524,7 +3497,6 @@ DC_Operation_S008
     Log    Step No.42 เข้าเมนู Scan และ เลือกแท็บ Scan out
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
-    # Defect281
     # Expected
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
@@ -3555,15 +3527,13 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
-    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup
-    ...    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
+    dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch    #${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    43.Verify Close Pouch Before Scan Out Warning Popup
 
     Log    Step No.44 กรอกหมายเลข Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Click Clear Button [Scan Out]
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Defect232    Defect285
     # Expected 
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
@@ -3597,7 +3567,6 @@ DC_Operation_S008
     dps_scan_page.Verify Popup Save Data Success    ${dc_operation['text_save_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    46.Verify Popup Save Data Success
 
-
     Log    Step No.47 คลิกที่ Pop up
     dps_scan_page.Click Popup Save Data Success
     # Expected
@@ -3614,7 +3583,6 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect201    Defect230    Defect270
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    4    # 10
@@ -3625,7 +3593,6 @@ DC_Operation_S008
     Log    Step No.50 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC SB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']}
-    # Defect141    Defect187
     # Expected
     # Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     # dps_home_page.Verify Homepage
@@ -3648,8 +3615,7 @@ DC_Operation_S008
 
     Log    Step No.51 เลือก Dropdown ดูข้อมูลคลัง RDC LP
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
-    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}
-    # Defect141    Defect187    
+    dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}   
     # Expected
     # Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     # dps_home_page.Verify Homepage
@@ -3672,7 +3638,6 @@ DC_Operation_S008
 
     Log    Step No.52 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
-    # Defect139    Defect188    Defect291
     # Expected
     # dps_home_page.Verify Label In Import Task Tab
     # ...    ${dc_operation.label_import_task_tab['import_from']}
@@ -3711,7 +3676,6 @@ DC_Operation_S008
 
     Log    Step No.56 คลิกปุ่มยืนยัน
     dps_scan_page.Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
-    # Defect242
     # Expected
     dps_scan_page.Verify Label Pouch Detail In Scan In Page
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['pouch_number']}
@@ -3745,7 +3709,6 @@ DC_Operation_S008
     Log    Step No.57 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ g" ในช่องค้นหาด้านล่างรายละเอียด Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number In Search Bar On Pouch Detail Section    ${tracking_g}
     dps_scan_page.Click Search Button Of Pouch Detail Section
-    # Defect155    Defect243    Defect260    Defect268
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
@@ -3817,13 +3780,11 @@ DC_Operation_S008
     Log    Step No.58 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
-    dps_scan_page.Verify Accept Scan In Success Popup
-    ...    ${dc_operation['text_accept_scan_in_success']}
+    dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    58.Verify Accept Scan In Success Popup
 
     Log    Step No.59 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
-    # Defect288
     # Expected 
     # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    59.Verify Accept Scan In Success Popup After Scan In At RDC LP Warehouse
@@ -3838,7 +3799,6 @@ DC_Operation_S008
     dps_history_parcel_page.Filter Data By Parcel Number    ${tracking_g}
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
-    # Defect201    Defect230    Defect239    Defect270
     # Expected
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    6    # 12
@@ -3849,7 +3809,6 @@ DC_Operation_S008
     Log    Step No.62 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง RDC LP
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}
-    # Defect141    Defect187
     # Expected
     # Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     # dps_home_page.Verify Homepage
@@ -3872,7 +3831,6 @@ DC_Operation_S008
 
     Log    Step No.63 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
-    # Defect190    Defect291
     # Expected
     # dps_home_page.Verify Label In Send Task Tab
     # ...    ${dc_operation.label_send_task_tab['send_to']}

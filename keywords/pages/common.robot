@@ -263,3 +263,14 @@ Set Today
     ${year}    Evaluate    ${y} + 543
     ${today}    Set Variable    ${d}-${m}-${year}
     Set Suite Variable    ${today}
+
+Set Yesterday
+    ${today}=    Get Current Date    result_format=%Y-%m-%d
+    ${yester_day}=    Subtract Time From Date	    ${today}    1 days    result_format=%d-%m-%Y
+    ${day}    Split String And Select    ${yester_day}    -    0
+    ${month}    Split String And Select    ${yester_day}    -    1
+    ${year}    Split String And Select    ${yester_day}    -    2
+    ${year_be}    Evaluate    int(${year}) + 543
+    ${yesterday}    Set Variable    ${day}-${month}-${year_be}
+    Set Suite Variable    ${yesterday}
+    Log To Console    ${yesterday}

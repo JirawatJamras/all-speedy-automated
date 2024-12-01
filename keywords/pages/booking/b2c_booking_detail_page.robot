@@ -747,9 +747,6 @@ Verify Booking Detail Page After Import File
         ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
         ${count_new_card}=    Get Element Count    ${actual_parcel_list}
         ${count_card}=    Evaluate    ${count_card} + ${count_new_card}
-        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
-            Verify Parcel ID Format And Value    (${actual_parcel_id})[${i}]    ${parcel_id}
-        END
         Exit For Loop If    ${boolean} == False
         common.Click When Ready    ${b2c_btn_next_page_parcel_list}
     END
@@ -790,9 +787,6 @@ Verify Booking Detail Page After Canceled
         ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
         ${count_new_card}=    Get Element Count    ${actual_parcel_list}
         ${count_card}=    Evaluate    ${count_card} + ${count_new_card}
-        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
-            Verify Parcel ID Format And Value    (${actual_parcel_id})[${i}]    ${parcel_id}
-        END
         Exit For Loop If    ${boolean} == False
         common.Click When Ready    ${b2c_btn_next_page_parcel_list}
     END

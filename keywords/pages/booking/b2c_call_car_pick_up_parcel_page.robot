@@ -71,9 +71,10 @@ Verify Add Parcel Pickup
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    False
-    ${today_pattern}    Set Date Pattern    ${today}
+    Set Yesterday
+    ${yesterday_pattern}    Set Date Pattern    ${yesterday}
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
-    Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
+    Search Parcel Pickup By Date    ${yesterday_pattern}    ${tomorrow_pattern}
     WHILE    '${status}' == 'False'
         Scroll Window To Vertical    0
         ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_card}
@@ -110,15 +111,17 @@ Verify Parcel Pickup Status After Cut Off Time
     ${value_parcel}=  Replace String   ${label_parcel}    {value}    ${parcel_num}
     ${card}=    Set Variable    ${value_pickup_date}${value_parcel}
 
+    Set Yesterday
     ${next_day}    Set Date Pattern    ${tomorrow}
     ${day}    Set Date Pattern    ${today}
+    ${yesterday_pattern}    Set Date Pattern    ${yesterday}
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    FAIL
     ${status_2}=    Set Variable    False
     ${loop}=    Set Variable    0
 
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    Search Parcel Pickup By Date    ${day}    ${next_day}
+    Search Parcel Pickup By Date    ${yesterday_pattern}    ${next_day}
 
     WHILE    '${status_2}' == 'False'
         ${loop}=    Evaluate    ${loop} + 1
@@ -141,7 +144,7 @@ Verify Parcel Pickup Status After Cut Off Time
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Run Keywords    
         ...    Reload Page
-        ...    AND    Search Parcel Pickup By Date    ${day}    ${next_day}
+        ...    AND    Search Parcel Pickup By Date    ${yesterday_pattern}    ${next_day}
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
     Register Keyword To Run On Failure    Capture Page Screenshot
@@ -164,14 +167,16 @@ Verify Parcel Pickup Schedule Change Status To Confirm
     ${value_parcel}=  Replace String   ${label_parcel}    {value}    ${parcel_num}
     ${card}=    Set Variable    ${value_pickup_date}${value_parcel}
 
+    Set Yesterday
     ${next_day}    Set Date Pattern    ${tomorrow}
     ${day}    Set Date Pattern    ${today}
+    ${yesterday_pattern}    Set Date Pattern    ${yesterday}
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    FAIL
     ${status_2}=    Set Variable    False
 
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    Search Parcel Pickup By Date    ${day}    ${next_day}
+    Search Parcel Pickup By Date    ${yesterday_pattern}    ${next_day}
 
     WHILE    '${status_2}' == 'False'
         Scroll Window To Vertical    0
@@ -192,7 +197,7 @@ Verify Parcel Pickup Schedule Change Status To Confirm
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Run Keywords    
         ...    Reload Page
-        ...    AND    Search Parcel Pickup By Date    ${day}    ${next_day}
+        ...    AND    Search Parcel Pickup By Date    ${yesterday_pattern}    ${next_day}
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
     Register Keyword To Run On Failure    Capture Page Screenshot
@@ -217,8 +222,10 @@ Verify Parcel Pickup Canceled Status
     ${value_location}=  Replace String   ${label_location}    {location_value}    ${company_address} ${sub_district} ${district} ${province} ${postcode}
     ${next_day}    Set Date Pattern    ${tomorrow}
     ${day}    Set Date Pattern    ${today}
+    Set Yesterday
+    ${yesterday_pattern}    Set Date Pattern    ${yesterday}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    Search Parcel Pickup By Date    ${day}    ${next_day}
+    Search Parcel Pickup By Date    ${yesterday_pattern}    ${next_day}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${value_pickup_date}${value_parcel}${value_location}
