@@ -18,9 +18,3 @@ Verify Error Message
     [Arguments]    ${expected_error}
     Wait Until Element Is Visible    ${dps_error_message}    timeout=${DEFAULT_TIMEOUT}
     Element Should Contain    ${dps_error_message}    ${expected_error}
-    
-
-Verify Menu Displayed
-    [Arguments]    ${menu_item}
-    Wait Until Element Is Visible    ${dps_txthome}    timeout=${DEFAULT_TIMEOUT}
-    Element Should Be Visible    ${dps_txthome}    ${menu_item}
