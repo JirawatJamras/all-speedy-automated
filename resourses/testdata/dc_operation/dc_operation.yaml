@@ -1485,7 +1485,7 @@ DC_Operation_S017:
 
 DC_Operation_S018:
   value_parcel_details_in_warehouse:
-    parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
+    parcel_status: 'พัสดุรอ Scan out ไปคลัง (DCSB)'
     customer_type: B2C
     pouch_number: '-'
     parcel_size: กล่อง S
