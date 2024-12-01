@@ -276,11 +276,31 @@ Delete The Lastest Parcel Pickup Schedule
     ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round}    {time}    ${current_time}
     ${b2c_txt_delete_complete_pickup_page}=    Replace String    ${b2c_txt_delete_complete_pickup_page}    {value}    ${Booking['text_delete_data_complete']}
     ${b2c_btn_confirm_in_asking_to_close_popup}=    Replace String    ${b2c_btn_confirm_in_asking_to_close_popup}    {value}    ${Booking['text_confirm_popup']}
+    common.Scroll Window To Vertical    0
     Wait Until Element Is Visible    ${btn_delete_car_round}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${btn_delete_car_round}
     Click Element    ${btn_delete_car_round}
     Wait Until Element Is Visible    ${b2c_btn_confirm_in_asking_to_close_popup}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${b2c_btn_confirm_in_asking_to_close_popup}
     Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
+
+Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
+    [Arguments]    ${tomorrow_date}    ${current_time}
+    Set Today
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    ${status}=    Set Variable    False
+    ${today_pattern}    Set Date Pattern    ${today}
+    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow_date}
+    Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
+    WHILE    '${status}' == 'False'
+        Scroll Window To Vertical    0
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    (//h5[text()='รอบพิเศษ 30-11-2567 13:00 - 16:00 น.'])[1]
+        Scroll Window To Vertical    1000
+        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+    END
+    Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time} 
     
 Click Select Item On Parcel Pickup Schedule List
     common.Click When Ready    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}

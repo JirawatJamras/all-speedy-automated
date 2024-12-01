@@ -556,7 +556,7 @@ Booking_S018:
   parcel_type: พัสดุควบคุมอุณหภูมิ
   pickup_time:
     input: ช่วงบ่าย 13:00 - 16:00
-    expected: 13:00 - 16:00
+    expected: 13:00 - 16:00 น.
   pickup_point: บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
 
 Booking_S019:
@@ -1198,12 +1198,9 @@ Booking_S047:
     shipping_origin_store_full_address: '15888 สาขา CP TOWER สีลม ตำบล สีลม อำเภอ บางรัก จังหวัด กรุงเทพมหานคร รหัสไปรษณีย์ 10500'
 
 Booking_S048:
-  # booking_status: 'กำลังจัดรถ'
   pickup_time:
     input: 'ช่วงบ่าย 13:00 - 16:00'
     expected: '13:00 - 16:00'
-  # parcel_number: '0 รายการ'
-  # parcel_price: '0.00 บาท'
   pickup_point: 'บริษัท ไอดีซี พรีเมียร์ จำกัด 44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000'
   add_new_pickup:
     parcel_type: พัสดุทั่วไป (Dry)

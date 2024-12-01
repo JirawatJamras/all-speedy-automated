@@ -4,7 +4,8 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S048.add_new_pickup['expected']}
+                  ...    AND   Reset Cut Off Time
+Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S048.add_new_pickup['expected']}
                   ...    AND    Close Browser
 
 *** Test Cases ***
@@ -24,14 +25,14 @@ Booking_S048
     ${date}    Get Normal Parcel Pickup Date
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
-    ...    ${Booking_S048['booking_status']}
+    ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${call_car_pick_up.car_round_name['normal']}
     ...    ${date}
     ...    ${Booking_S048.pickup_time['expected']}
     ...    ${Booking_S048.pickup_time['expected']}
     ...    ${Booking_S048['pickup_point']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S048    Verify Car Pickup Schedule Card
+    common.Verify Capture Screenshot    booking    Booking_S048    1.Verify Car Pickup Schedule Card
 
     Log    Step No.2 กดปุ่ม "เพิ่ม"
     b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
@@ -45,26 +46,31 @@ Booking_S048
     ...    ${call_car_pick_up['text_parcel_pickup_time']}
     ...    ${call_car_pick_up['button_save']}
     ...    ${call_car_pick_up['button_cancel']}
-    common.Verify Capture Screenshot    booking    Booking_S048    Verify Popup Parcel Pickup Schedule
+    common.Verify Capture Screenshot    booking    Booking_S048    2.Verify Popup Parcel Pickup Schedule
 
     Log    Step No.3 รอบรถเข้ารับพัสดุ
-    b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
-    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S048.add_new_pickup['parcel_type']}
-    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
-    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
-    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
-    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S048.add_new_pickup['input']}
+    Set Tomorrow Date
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${Booking_S048.add_new_pickup['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${Booking_S048.add_new_pickup['input']}
     # Expected
-    common.Verify Capture Screenshot    booking    Booking_S048    Verify Input Parcel Pickup Schedule In Add Popup
+    common.Verify Capture Screenshot    booking    Booking_S048    3.Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.4 กดปุ่ม "บันทึก"
+    Set Today
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
-    b2c_call_car_pick_up_parcel_page.Verify Added New Car Pickup Schedule
+    b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
+    ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${Booking_S048.add_new_pickup['parcel_type']}
     ...    ${call_car_pick_up.car_round_name['special']}
-    ...    ${newDate}
+    ...    ${tomorrow}
     ...    ${Booking_S048.add_new_pickup['expected']}
-    ...    ${Booking_S048.add_new_pickup['expected']}
+    ...    ${today}
+    ...    ${call_car_pick_up['text_parcel_number']}
+    ...    ${call_car_pick_up.default['parcel_number']}
+    ...    ${call_car_pick_up['text_price']}
+    ...    ${call_car_pick_up.default['price']}
+    ...    ${call_car_pick_up['text_pickup_location']}
     ...    ${Booking_S048.add_new_pickup['pickup_point']}
-    common.Verify Capture Screenshot    booking    Booking_S048    Verify Added New Car Pickup Schedule
+    common.Verify Capture Screenshot    booking    Booking_S048    4.Verify Added New Parcel Pickup
