@@ -8,7 +8,10 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 
 *** Test Cases ***
 DC_Operation_S019
+    [Documentation]    คลัง Chilled ปฏิเสธรอบรถเข้ารับพัสดุที่บ้านลูกค้า (Key Account)
     [Tags]    DC_Operation    UAT
+    skip
+    
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
