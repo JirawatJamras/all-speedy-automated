@@ -1437,7 +1437,7 @@ DC_Operation_S017:
   scan_in_receiver_data:
     name: ทดสอบพัสดุ Crossdock ส่งร้านสร้าง Pouch
     phone: '0900987354'
-    shipping_destination: 'ร้าน (01015)'
+    shipping_destination: 'ร้าน สาขา เวียงป่าเป้า (01015)'
     address: 'เวียง เวียงป่าเป้า เชียงราย 57170'
   value_parcel_details_in_warehouse:
     parcel_status: พัสดุรอ Scan out ไปคลัง AC
