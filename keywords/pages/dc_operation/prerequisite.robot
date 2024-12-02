@@ -73,7 +73,7 @@ DC_Operation_S002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    6.Verify Booking Page
     
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
-    b2c_booking_delivery_page.Click Button To Add   
+    b2c_booking_delivery_page.Click Button To Add
     Sleep    2s
     # Expected    
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
@@ -329,8 +329,8 @@ DC_Operation_S002
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
     Go To    ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email                    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password                 ${b2c_login_user_01['password']}
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     Sleep    3s
     b2c_home_page.Click Parcel Delivery Service Menu
