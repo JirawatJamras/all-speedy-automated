@@ -177,8 +177,8 @@ DC_Operation_S004:
     shipping_destination: บ้าน
     address: '228 ซอย 3 บางปู เมืองสมุทรปราการ สมุทรปราการ 10280'
   timeline_in_history_parcel:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
+    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
       description: ''
     - title: พัสดุเข้าคลังต้นทาง
@@ -186,11 +186,11 @@ DC_Operation_S004:
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: ''    # pouch number to be dynamically set
+      description: ''
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
-    # - title: พัสดุออกจากคลังต้นทาง
-    #   description: DC BB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
     - title: พัสดุถึงคลังปลายทาง
       description: DC SB
     - title: พัสดุรอนำจ่ายโดยคลัง
