@@ -708,10 +708,25 @@ Verify Import Error File Name Format
     Should Be Equal    ${actual_text_time_part}    ${time_convert}
 
 Select Booked Pickup Time From List
-    [Arguments]    ${date}
-    ${date}    Replace String    ${date}    -    /
-    common.Scroll Into View By Xpath    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input    true
-    common.Click Xpath By JavaScript    //div[text()='รอบรถพิเศษ']/..//p[text()='${date}']/../../../../..//input
+    [Arguments]    ${round}    ${tomorrow}    ${parcel_num}    ${today}    ${price}
+    ${today_pattern}    Set Date Pattern    ${today}
+    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
+
+    ${actual_round} =  Replace String    ${b2c_txt_pickup_schedule}    {round}    ${round}
+    ${actual_pickup_date} =  Replace String    ${actual_round}    {pickup_date}    ${Booking.pickup_schedule['pickup_date']} ${tomorrow_pattern}
+    ${actual_parcel} =  Replace String    ${actual_pickup_date}    {parcel_num}    ${Booking.pickup_schedule['parcel_number']} ${parcel_num}
+    ${actual_cut_off_time} =  Replace String    ${actual_parcel}    {cut_off_time}    ${Booking.pickup_schedule['cut_off_time']} ${today_pattern}
+    ${actual_pickup_schedule_checkbox} =  Replace String    ${actual_cut_off_time}    {price}    ${Booking.pickup_schedule['price']} ${price}
+    Set Suite Variable    ${actual_pickup_schedule_checkbox}
+    ${status}=    Set Variable    False
+    WHILE    '${status}' == 'False'
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    2s
+        Exit For Loop If    '${status}' == 'True'
+        ${nextpage}=    Get Element Attribute    ${b2c_btn_status_next_page_pickup_schedule}    aria-disabled
+        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_schedule}
+    END
+    common.Click When Ready    ${actual_pickup_schedule_checkbox}
 
 Verify Booking List In Booking Detail Page
     [Arguments]    ${text_booking_id}    ${text_booking_name}    ${text_booking_time}    ${text_shipping_origin}

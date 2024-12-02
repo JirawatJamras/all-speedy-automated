@@ -18,21 +18,6 @@ Booking_S016
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
 
-    Log    Prerequisite S013
-    b2c_home_page.Click Book Parcel Delivery
-    b2c_booking_detail_page.Wait Until Loading Icon Success
-    b2c_booking_delivery_page.Click Button To Add
-    b2c_booking_delivery_page.Click Accept Terms of Service
-    b2c_booking_delivery_page.Select Parcel Type    ${Booking_S013['parcel_type']}
-    b2c_booking_delivery_page.Input Phone Sender    ${Booking_S013['sender_phone']}
-    b2c_booking_delivery_page.Input Name Sender    ${Booking_S013['sender_name']}    
-    b2c_booking_delivery_page.Input Address Sender    ${Booking_S013['sender_address']}
-    b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S013['sender_postcode_5_digits']}
-    b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S013['sender_postcode_full']}
-    b2c_create_parcel_page.Click Add To Favorites
-    b2c_booking_delivery_page.Click Save Button
-    b2c_booking_detail_page.Wait Until Loading Icon Success
-
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success

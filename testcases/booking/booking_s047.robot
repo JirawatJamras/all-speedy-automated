@@ -6,18 +6,8 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #head
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
-*** Test Cases ***
-Booking_S047
-    [Documentation]    ลูกค้า B - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
-    [Tags]    Booking    Business_To_Customer    UAT    Defect106    Defect123    Defect124    Defect135
-    Log    Login
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
-
-    Log    Prerequisite S005
+*** Keywords ***
+Booking_S005
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_booking_delivery_page.Click Button To Add
@@ -32,7 +22,7 @@ Booking_S047
     b2c_booking_delivery_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
 
-    Log    Prerequisite S003
+Booking_S003
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_booking_delivery_page.Click Button To Add
@@ -54,6 +44,23 @@ Booking_S047
     b2c_booking_delivery_page.Click Add To Favorites In Receiver
     b2c_booking_delivery_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
+
+*** Test Cases ***
+Booking_S047
+    [Documentation]    ลูกค้า B - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
+    [Tags]    Booking    Business_To_Customer    UAT    Defect106    Defect123    Defect124    Defect135
+    Log    Login
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+
+    Log    Prerequisite S005
+    Booking_S005
+
+    Log    Prerequisite S003
+    Booking_S003
 
     Log    Step No.1 กด Tap "ผู้ส่งพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu

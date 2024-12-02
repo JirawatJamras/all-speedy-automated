@@ -280,6 +280,8 @@ Delete The Lastest Parcel Pickup Schedule
 
 Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${tomorrow_date}    ${current_time}
+    ${b2c_card_delete_pickup_parcel}=    Replace String    ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    {value}    ${call_car_pick_up.car_round_name['special']} ${tomorrow_date} ${current_time}
+    ${b2c_txt_status_in_card}=    Replace String    ${b2c_txt_status_in_card_call_car_pickup_page}    {value}    ${call_car_pick_up.status['parcel_in_progress']}
     Set Today
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
@@ -289,9 +291,10 @@ Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
     WHILE    '${status}' == 'False'
         Scroll Window To Vertical    0
-        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    (//h5[text()='รอบพิเศษ 30-11-2567 13:00 - 16:00 น.'])[1]
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_status_in_card}
+        ${visible_card}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_card_delete_pickup_parcel}
         Scroll Window To Vertical    1000
-        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        Run Keyword If    '${status}' == 'True' and '${visible_card}' == 'True'    Exit For Loop
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
     Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time} 

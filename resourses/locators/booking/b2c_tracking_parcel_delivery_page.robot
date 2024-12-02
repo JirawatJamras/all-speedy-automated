@@ -6,5 +6,3 @@ ${b2c_btn_search_parcel}    //button[contains(@class,'ant-btn-default')]//span[t
 ${b2c_btn_remove_search_parcel}    //div[contains(@class,'ant-card ant-card-bordered max-w-')]//span[@class='ant-input-clear-icon']
 
 ${b2c_cbo_search_type_selection}    //div[@class='ant-select-selector']
-
-${b2c_msg_error_msg_in_modal}    //div[@class=' text-center font-bold text-xl mt-2']

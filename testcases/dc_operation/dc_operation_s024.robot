@@ -8,5 +8,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S024
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Chilled ปลายทางร้าน ส่งโดย CP All สร้าง Pouch (Express)
-    [Tags]    DC_Operation    UAT
+    [Tags]    DC_Operation    Chilled_B2C_Request_Pickup    UAT
     skip

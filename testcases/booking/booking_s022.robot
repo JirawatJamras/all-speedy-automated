@@ -4,9 +4,21 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${newDate}    ${Booking_S018.pickup_time['expected']}
+Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
+
+*** Keywords ***
+Booking_S018
+    b2c_home_page.Click Parcel Delivery Service Menu
+    b2c_home_page.Select Sub Menu Call Car Pick Up
+    b2c_call_car_pick_up_parcel_page.Click Add Button
+    Set Tomorrow Date
+    b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${Booking_S018['parcel_type']}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
+    b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${Booking_S018.pickup_time['input']}
+    b2c_call_car_pick_up_parcel_page.Click Save Button
+    b2c_booking_detail_page.Wait Until Loading Icon Success
 
 *** Test Cases ***
 Booking_S022
@@ -20,18 +32,7 @@ Booking_S022
     b2c_login_page.Click Log On Button
 
     Log    Prerequisite S018
-    b2c_home_page.Click Parcel Delivery Service Menu
-    b2c_home_page.Select Sub Menu Call Car Pick Up
-    b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
-    b2c_call_car_pick_up_parcel_page.Click Add Button
-    b2c_call_car_pick_up_parcel_page.Click Parcel Type Dropdown
-    b2c_call_car_pick_up_parcel_page.Select Parcel Type Dropdown    ${Booking_S018['parcel_type']}
-    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Date Button
-    b2c_call_car_pick_up_parcel_page.Select Date Pickup Parcel Future Date
-    b2c_call_car_pick_up_parcel_page.Click Pickup Parcel Time Button
-    b2c_call_car_pick_up_parcel_page.Select Pickup Parcel Time    ${Booking_S018.pickup_time['input']}
-    b2c_call_car_pick_up_parcel_page.Click Save Button
-    b2c_booking_detail_page.Wait Until Loading Icon Success
+    Booking_S018
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -374,8 +375,14 @@ Booking_S022
     common.Verify Capture Screenshot    booking    Booking_S022    21.Verify Edit Booking List Popup  
 
     Log    Step No.22 "กรอกข้อมูลพื้นที่ต้นทางการจัดส่ง"
+    Set Today
     b2c_booking_detail_page.Select Shipping Origin Tab    ${Booking_S022['shipping_origin']}
-    b2c_booking_detail_page.Select Booked Pickup Time From List    ${newDate}
+    b2c_booking_detail_page.Select Booked Pickup Time From List
+    ...    ${Booking.pickup_schedule['special_car_pickup']}
+    ...    ${tomorrow}
+    ...    ${call_car_pick_up.default['parcel_number']}
+    ...    ${today}
+    ...    ${call_car_pick_up.default['price']}
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time

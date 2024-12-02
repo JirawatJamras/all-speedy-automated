@@ -1135,6 +1135,8 @@ Booking_S042:
     total_price_value: 80.00 บาท
 
 Booking_S043:
+  old:
+    total_price_value: 230.00 บาท
   sender_phone: '0656666666'
   sender_name: สมชาย เเก้ไขข้อมูลเพื่อบันทึก 1
   sender_address: 22/589
@@ -1147,20 +1149,12 @@ Booking_S043:
   receiver_postcode_full: 'ดอนยาง ปะทิว ชุมพร 86210'
   parcel_size:  S2
   parcel_package_type:  กล่อง
-  buy_insurance: 2,500
-  verify_buy_insurance: '2,500.00'
   parcel_detail_remark: ระวังพัสดุเเตก เนื่องจากมีน้ำอยู่ด้านใน
-  parcel_detail_remark2: ระวังพัสดุเสียหาย
   price_value: '250.00'
-  discount_amount: '1'
-  discount_value: '5.00'
-  total_price_amount: '1'
-  total_price_value: '245.00'
-  total_price_value2: '225.00'
-  total_price_value3: '250.00'
+  total_price_value: '225.00'
+  total_price_value2: '245.00'
   not_use_code:
-    total_price_value: '226.00'
-  text_price_value: 80.00 บาท
+    total_price_value: '250.00'
 
 Booking_S047:
   sender_favorite_card: 

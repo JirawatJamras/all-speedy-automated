@@ -9,7 +9,8 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 *** Test Cases ***
 DC_Operation_S003
     [Documentation]    ลูกค้า B (เรียกรถเข้ารับพัสดุ) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
-    [Tags]    DC_Operation    UAT    Defect138    Defect139    Defect141    Defect155    Defect181    Defect187    Defect188    Defect189    Defect201    Defect205    Defect218    Defect232    Defect259    Defect291
+    [Tags]    DC_Operation    Dry_B2C_Request_Pickup    UAT    Defect138    Defect139    Defect141    Defect155    Defect181    Defect187    Defect188    
+    ...    Defect189    Defect201    Defect205    Defect218    Defect232    Defect259    Defect291
     
     Log    Prerequisite
     prerequisite.DC_Operation_S002
