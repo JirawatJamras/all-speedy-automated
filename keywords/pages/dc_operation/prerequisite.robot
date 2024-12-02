@@ -24,6 +24,7 @@ DC_Operation_S002
     Log    Step No.3 เลือกเมนูู "เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
+    # Expected
     b2c_call_car_pick_up_parcel_page.Verify Call Car Pick Up Page    ${call_car_pick_up['text_call_car_pick_up']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002   3.Verify Call Car Pick Up Page
 
@@ -114,6 +115,7 @@ DC_Operation_S002
 
     Log    Step No.11 คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
     b2c_booking_detail_page.Click Edit Booking List
+    # Expected
     b2c_booking_detail_page.Verify Popup To Edit Booking List
     ...    ${Booking['text_parcel_type_label']}
     ...    ${Booking['text_booking_name_label']}
@@ -148,6 +150,7 @@ DC_Operation_S002
 
     Log    Step No.14 คลิกปุ่ม Import File
     b2c_booking_detail_page.Click Import File Button
+    # Expected
     b2c_booking_detail_page.Verify Import File Popup
     ...    ${Booking['text_import']}
     ...    ${Booking['text_btn_template']}
@@ -1894,7 +1897,7 @@ DC_Operation_S006
     Log    Step No.18 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_e}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # # Expected
+    # Expected
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
 
@@ -2420,7 +2423,6 @@ DC_Operation_S007
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_f}
     dps_scan_page.Click Search Button [Scan In Page]
-    # Defect155    Defect249
     # Expected
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
@@ -6333,7 +6335,7 @@ DC_Operation_S016
     ...    ${dc_operation.scan_in_title_label_detail['customer']}
     ...    ${dc_operation.scan_in_title_label_detail['phone']}
     dps_scan_page.Verify Data Label Parcel In Scan Page [Other Courier]
-    ...    FLS  # ${DC_Operation_S016.scan_in_data_label_detail['courier']}
+    ...    ${DC_Operation_S016.scan_in_data_label_detail['courier']}
     ...    ${DC_Operation_S016.scan_in_data_label_detail['zipcode']} 
     ...    ${DC_Operation_S016.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S016.scan_in_data_label_detail['phone']}

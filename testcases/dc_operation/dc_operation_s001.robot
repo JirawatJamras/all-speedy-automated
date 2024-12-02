@@ -122,6 +122,7 @@ DC_Operation_S001
 
     Log    Step No.11 คลิกไอคอนรูปดินสอ ด้านข้างข้อความรายการบุ๊คกิ้ง
     b2c_booking_detail_page.Click Edit Booking List
+    # Expected
     b2c_booking_detail_page.Verify Popup To Edit Booking List
     ...    ${Booking['text_parcel_type_label']}
     ...    ${Booking['text_booking_name_label']}
@@ -156,6 +157,7 @@ DC_Operation_S001
 
     Log    Step No.14 คลิกปุ่ม Import File
     b2c_booking_detail_page.Click Import File Button
+    # Expected
     b2c_booking_detail_page.Verify Import File Popup
     ...    ${Booking['text_import']}
     ...    ${Booking['text_btn_template']}
@@ -181,7 +183,6 @@ DC_Operation_S001
     ...    ${DATABASE_NAME}
     ...    ${COLLECTION}
     ...    ${QUERY}
-    # Expected
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
