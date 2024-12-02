@@ -134,9 +134,6 @@ Verify Parcel Is Not Visible [All Task Tab]
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_number}    ${parcel_number}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_status}    ${parcel_status}
     Sleep    5s
-    # ${actual_txt_list_first_daily_task}=    Get Text    ${dps_txt_list_first_all_task}
-    # ${actual_txt_list_first_daily_task}=    Replace String    ${actual_txt_list_first_daily_task}    \n    ${SPACE}
-    # Should Be Equal As Strings    ${actual_txt_list_first_daily_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
     Wait Until Element Is Not Visible    ${dps_txt_list_first_all_task}    timeout=${DEFAULT_TIMEOUT}
     
 Verify Data In All Task Tab (Loop To Find Each Row)
@@ -253,50 +250,6 @@ Select DPS Menu
     Wait Until Element Is Visible    ${tab_menu}
     Click Element    ${tab_menu}
     Mouse Out    ${tab_menu}
-
-Verify Parcels Into The Warehouse
-    [Arguments]    ${test_scenario}
-    Verify Parcels Into The Warehouse Store    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['store']}
-    Verify Parcels Into The Warehouse House    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['house']}
-    Verify Parcels Into The Warehouse Warehouse    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['warehouse']}
-    Verify Admission Task    ${${test_scenario}.daily_work_overview.parcel_into_warehouse['admission']}
-
-Verify Parcels Into The Warehouse Store
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcel_into_warehouse_store_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcel_into_warehouse_store_home_page}    ${value}
-    ${number}    Get Text    //div[@class='ant-col ant-col-5 css-1x1kih3']//div[contains(@class,'ant-col bg-white')][1]//div[contains(@class,'h-2/3')]
-    Set Suite Variable    ${into_warehouse_store_number}    ${number}
-
-Verify Parcels Into The Warehouse House
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcel_into_warehouse_house_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcel_into_warehouse_house_home_page}    ${value}
-    ${number}    Get Text    //div[@class='ant-col ant-col-5 css-1x1kih3']//div[contains(@class,'ant-col bg-white')][2]//div[contains(@class,'h-2/3')]
-    Set Suite Variable    ${into_warehouse_house_number}    ${number}
-
-Verify Parcels Into The Warehouse Warehouse
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcel_into_warehouse_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcel_into_warehouse_warehouse_home_page}    ${value}
-    ${number}    Get Text    //div[@class='ant-col ant-col-5 css-1x1kih3']//div[contains(@class,'ant-col bg-white')][3]//div[contains(@class,'h-2/3')]
-    Set Suite Variable    ${into_warehouse_warehouse_number}    ${number}
-
-Verify Admission Task
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_admission_task_home_page}
-    Element Should Be Visible    ${dps_txt_admission_task_home_page}    ${value}
-    ${sum_number}    Re Format And Sum Number of Admission Task    ${into_warehouse_store_number}    ${into_warehouse_house_number}    ${into_warehouse_warehouse_number}
-    Element Should Be Visible    ${dps_txt_admission_task_number_home_page}    ${sum_number}
-
-Re Format And Sum Number of Admission Task
-    [Arguments]    ${number1}    ${number2}    ${number3}
-    ${number1}=    Convert To Integer    ${number1}
-    ${number2}=    Convert To Integer    ${number2}
-    ${number3}=    Convert To Integer    ${number3}
-    ${sum_number}=    Evaluate    ${number1} + ${number2} + ${number3}
-    ${sum_number}=    Convert To String    ${sum_number}
-    RETURN     ${sum_number}
 
 Re Format And Sum Number of Export Work
     [Arguments]    ${number1}    ${number2}    ${number3}    ${number4}    ${number5}
