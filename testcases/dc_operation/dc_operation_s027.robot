@@ -190,7 +190,7 @@ DC_Operation_s027
     dps_scan_page.Verify Search Tracking Number Result   
     ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
     ...    ${tracking_g}
-    ...    ${DC_Operation_S008.data_in_all_task_tab['pouch_number']}
+    ...    ${DC_Operation_S008.data_in_all_task_tab['pouch_number1']}
     ...    ${DC_Operation_S008.data_in_all_task_tab['transport']}
     ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_owner']}
     ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_size']}
