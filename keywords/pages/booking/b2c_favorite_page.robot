@@ -298,16 +298,14 @@ Select Pickup Location
 
 Input And Select Store Code Receiver
     [Arguments]    ${input_store_receiver}    ${store}
-    ${txtbox_receiver_search_store}=    Replace String    ${txtbox_receiver_search_store_favorite_page}    {value}    ${favorite['text_search_store']}
     ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${Booking['text_select_store_on_map']}
     FOR    ${i}    IN RANGE    0    5
-        common.Input When Ready    ${txtbox_receiver_search_store}    ${input_store_receiver}
+        common.Input When Ready    ${txtbox_receiver_search_store_favorite_page}    ${input_store_receiver}
         Click Store Receiver Lists    ${store}
         ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${select_store}    timeout=${DEFAULT_TIMEOUT}
         Run Keyword IF  '${isvisible}' == 'True'    Exit For Loop
-        common.Clear Value Input Text    ${txtbox_receiver_search_store}
+        common.Clear Value Input Text    ${txtbox_receiver_search_store_favorite_page}
     END
-
 
 Click Store On Map
     ${btn_choose_store}=    Replace String    ${btn_choose_store_favorite_page}    {value}    ${favorite['button_select_store']}

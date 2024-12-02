@@ -285,7 +285,22 @@ DC_Operation_S001
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    24.Verify Warehouse Confirm List Tab
 
     Log    Step No.25 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
-    dps_check_receiving_cycle_page.Click Pencil Icon  ${booking_id}
+    dps_check_receiving_cycle_page.Click Pencil Icon  
+    ...    ${booking_id}
+    ...    ${dc_operation.title['check_receiving_cycle']}
+    ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
+    ...    ${DC_Operation_S001.receiving_cycle['company_name']}   
+    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S001.receiving_cycle['district']}
+    ...    ${DC_Operation_S001.receiving_cycle['province']}
+    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
+    ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
+    ...    ${DC_Operation_S001.receiving_cycle['courier']}
+    ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
+    ...    ${today}
+    ...    ${DC_Operation.status['waiting']}
     # Expected
     dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
     ...    ${DC_Operation_S001.receiving_cycle['company_name']} 

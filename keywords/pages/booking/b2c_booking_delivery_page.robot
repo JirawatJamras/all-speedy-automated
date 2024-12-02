@@ -8,7 +8,7 @@ Verify Booking Page For Business Customer
     ${title}=    Get Text    ${txt_title_booking}    
     Should Be Equal    ${title}    ${Booking['text_title_booking_for_business_customer']}
 
-Verify Booking Page For General Customer 
+Verify Booking Page For General Customer
     ${isvisible}=    Run Keyword And Ignore Error    Wait Until Page Contains Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Does Not Contain Element    ${txt_booking_card_skeleton}    timeout=${DEFAULT_TIMEOUT}
     ${txt_title_booking}=    Replace String    ${txt_title_booking}    {value}    ${Booking['text_title_booking_for_general_customer']}
@@ -22,7 +22,7 @@ Click Button To Add
     Wait Until Element Is Enabled    ${btn_add}    timeout=${DEFAULT_TIMEOUT}
     common.Click When Ready    ${btn_add}
 
-Verify Term & Condition 
+Verify Term & Condition
     [Arguments]    ${txt_term_and_condition}    ${header_term_and_condition}
     ${btn_accept_terms_service}=    Replace String    ${btn_accept_terms_service}    {value}    ${Booking['text_accept_term_and_condition']}
     Wait Until Element Is Visible    ${btn_accept_terms_service}    timeout=${DEFAULT_TIMEOUT}
@@ -187,15 +187,14 @@ Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     Should Be Equal    ${actual_text_address}    ${address_receiver}
     Element Should Be Visible    ${txtbox_store_receiver} 
 
-Click Close Parcel Page
-    common.Click When Ready    ${close_noti_btn}
-    common.Click When Ready    ${close_noticonfirm_btn}
-
-Click Choose Favorites 
+Click Choose Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
+    ${favorites_defult_text}=    Replace String    ${favorites_defult_text}    {value}    ${Booking['text_choose_from_favorite_list']}
     common.Click When Ready    ${choose_favorites_btn}
     Wait Until Element Is Visible    ${favorites_defult_text}    timeout=${DEFAULT_TIMEOUT}
 
 Click Choose Favorites Receiver
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     common.Click When Ready    ${choose_favorites_btn}
 
 Verify Favorites Sender PopUp
@@ -272,6 +271,7 @@ Verify Choose Favorites Receiver List
 
 Verify Choose Receiver From Favorites
     [Arguments]    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode} 
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${tab_send_to_home_verify}=    Replace String    ${tab_send_to_home_verify}    {value}    ${Booking['text_send_home']}
     Wait Until Element Is Visible    ${tab_send_to_home_verify}    timeout=${DEFAULT_TIMEOUT}
@@ -342,6 +342,7 @@ Click Cancel Favorites List
     common.Click When Ready    ${cancel_favorites_btn}
 
 Verify Choose From Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     ${name_text}=    Get Value    ${name_sender_txtbox}
@@ -353,6 +354,7 @@ Verify Choose From Favorites
     Should Be Equal    ${postcode_text}    ${b2c_addbooking_003_ID_5['verify_postcode_sender']}
 
 Verify Not Choose From Favorites
+    ${choose_favorites_btn}=    Replace String    ${choose_favorites_btn}    {value}    ${Booking['text_choose_from_favorite_list']}
     Wait Until Element Is Visible    ${choose_favorites_btn}    timeout=${DEFAULT_TIMEOUT}
     ${phone_text}=    Get Value    ${phone_sender_txtbox}
     Should Not Be Equal    ${phone_text}    ${b2c_addbooking_003_ID_6['verify_phone_sender']}    

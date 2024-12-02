@@ -32,15 +32,14 @@ Check Date And Time Format In Timeline
 
 Compare Time And Title In Timeline
     [Arguments]    ${step_title}    ${step_description}    ${count_timeline}
-    ${sequence}=    Convert To Integer    1
-    # FOR    ${i}    IN RANGE    1    ${count_timeline}
-    FOR    ${i}    IN RANGE    1    10
-        ${isvisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_txt_step_title_in_timeline_history_parcel_page}[${i}]    timeout=1s
-        Run Keyword IF    '${isvisible}' == 'True'    Set Suite Variable    ${sequence}    ${i}
-        ${actual_description}=    Get Text    (${dps_txt_step_description_in_timeline_history_parcel_page})[${sequence}]
-        ${actual_title}=    Get Text    (${dps_txt_step_title_in_timeline_history_parcel_page})[${sequence}]
-        Exit For Loop If    '${actual_title}' == '${step_title}'
-        ${sequence}=    Set Variable    ${sequence + 1}
+    ${actual_title}=    Set Variable    ${EMPTY}
+    ${i}=    Convert To Integer    1
+    WHILE    '${actual_title}' != '${step_title}'
+        ${sequence}=    Set Variable    ${i}
+        Wait Until Element Is Visible    (${dps_txt_step_title_in_timeline_history_parcel_page})[${i}]    timeout=${DEFAULT_TIMEOUT}
+        ${actual_description}=    Get Text    (${dps_txt_step_description_in_timeline_history_parcel_page})[${i}]
+        ${actual_title}=    Get Text    (${dps_txt_step_title_in_timeline_history_parcel_page})[${i}]  
+        ${i}=    Set Variable    ${i + 1} 
     END
     ${dps_card_timeline}=    Replace String    ${dps_card_timeline_history_parcel_page}    {value}    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     Wait Until Element Is Visible    ${dps_card_timeline}    timeout=${DEFAULT_TIMEOUT}
