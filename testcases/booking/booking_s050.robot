@@ -102,8 +102,8 @@ Booking_S050
     Log    Step No.7 กดปุ่ม "Download QR Code"
     b2c_return_business_page.Click Download QR Code Button
     # Expected
-    b2c_return_business_page.Verrify Download QR Code    ${return_business['text_download_qr_success']}
-    common.Verify Capture Screenshot    booking    Booking_S050    Verrify Download QR Code
+    b2c_return_business_page.Verify Download QR Code    ${return_business['text_download_qr_success']}
+    common.Verify Capture Screenshot    booking    Booking_S050    Verify Download QR Code
     
     Log    Step No.8 กดปุ่ม "Copy Link"
     b2c_return_business_page.Click Copy Link Button

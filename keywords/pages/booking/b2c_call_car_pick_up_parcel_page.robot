@@ -255,15 +255,6 @@ Select Pickup Parcel Time
     ${b2c_cbo_time_pickup}=    Replace String    ${b2c_cbo_time_pickup}    {value}    ${time}
     common.Click When Ready    ${b2c_cbo_time_pickup}
 
-Get The Highest Displayed Date And Set New Highest Date
-    Wait Until Element Is Visible    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
-    Wait Until Element Is Visible    ${txt_parcel_pickup_schedule}    timeout=${DEFAULT_TIMEOUT}
-    ${titleName}=    Get Text    ${txt_parcel_pickup_schedule} 
-    ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
-    ${newDate}=    Convert Date    ${highestDisplayedDate}    date_format=%d-%m-%Y    result_format=%Y-%m-%d
-    ${tomorrow_day}=    Add Time To Date    ${newDate}    1 days    result_format=%d-%m-%Y
-    Set Suite Variable    ${newDate}    ${tomorrow_day}
-
 Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
     ${btn_delete_car_round}=    Replace String    ${b2c_btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
@@ -298,15 +289,12 @@ Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
     Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time} 
-    
-Click Select Item On Parcel Pickup Schedule List
-    common.Click When Ready    ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}
 
 Verify Added New Parcel Pickup
     [Arguments]    ${status}    ${parcel_type}    ${round}    ${tomorrow}    ${pickup_time}    ${today}
     ...    ${text_parcel_number}    ${parcel_num}    ${text_price}    ${price_value}    ${text_pickup_location}    ${company_address}
     ${actual_status}=  Replace String   ${b2c_txt_parcel_pickup_round}    {status}    ${status}
-    ${label_pickup_round}=  Replace String   ${actual_status}    {round}    ${round} ${tomorrow} ${pickup_time}
+    ${label_pickup_round}=  Replace String   ${actual_status}    {round}    ${round} ${tomorrow} ${pickup_time} น.
     ${label_pickup_date}=  Replace String   ${label_pickup_round}    {pickupdate}    ${call_car_pick_up['text_parcel_pickup_date']} 
     ${value_pickup_date}=  Replace String   ${label_pickup_date}    {value}    ${tomorrow}
     ${label_cut_off}=  Replace String   ${b2c_txt_cutoff_pickup_round}    {cutoff}    ${call_car_pick_up['text_cut_off_time']}
@@ -321,6 +309,7 @@ Verify Added New Parcel Pickup
     Run Keyword If    '${parcel_type}' == 'พัสดุทั่วไป (Dry)'    Element Should Be Visible   ${img_dry_parcel}
     Run Keyword If    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'    Element Should Be Visible   ${img_dry_parcel}
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
+    Log    ${actual_card}
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    False
     ${today_pattern}    Set Date Pattern    ${today}
@@ -355,7 +344,6 @@ Get Normal Parcel Pickup Date
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel_pickup_list}    {title}    ${call_car_pick_up.car_round_name['normal']}
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {number_of_parcel}    ${call_car_pick_up.default['parcel_number']}
     Scroll Element Into View    ${card_first_normal_parcel}
-    # common.Click When Ready    ${b2c_btn_last_page_car_pickup_page}
     Wait Until Element Is Visible    ${img_parcel_in_card}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${card_first_normal_parcel}
     ${txt_normal_parcel_pickup_schedule}=    Replace String    ${txt_normal_parcel_pickup_schedule}    {value}    ${call_car_pick_up.car_round_name['normal']}

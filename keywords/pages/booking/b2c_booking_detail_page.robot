@@ -81,7 +81,6 @@ Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     Wait Until Page Contains Element    ${b2c_btn_print_the_parcel_payment_slip_disabled}
 
 Click Edit Booking List
-    # Wait Until Element Is Not Visible    ${b2c_img_loading}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_btn_edit_booking_list}=    Replace String    ${b2c_btn_edit_booking_list}    {value}    ${Booking['text_booking_list']}
     Scroll Window To Vertical    0
     common.Click When Ready    ${b2c_btn_edit_booking_list}
@@ -154,7 +153,7 @@ Verify Display Pickup Schedule Data After Canceled
         ...    ELSE    Fail    There is no selected pickup schedule
     END
 
-Select Parcel Pickup Schedule 
+Select Parcel Pickup Schedule
     common.Click When Ready    ${actual_pickup_schedule_checkbox}
 
 Click Save Button In Edit Booking List Popup
@@ -174,7 +173,7 @@ Verify Complete Select Parcel Pickup Schedule And Save
     Wait Until Element Is Visible    ${txt_booking_time_label}    timeout=${DEFAULT_TIMEOUT}
     Should Be Equal As Strings    ${actual_shipping_origin}    ${booking['text_shipping_origin']} ${company_name} ${company_address} ${sub_district} ${district} ${province} ${postcode}
 
-Select Shipping Origin Tab 
+Select Shipping Origin Tab
     [Arguments]    ${aria}
     ${tab_shipping_origin_aria} =  Replace String    ${b2c_tab_shipping_origin_aria}    {value}    ${aria}
     Click When Ready    ${tab_shipping_origin_aria}
@@ -539,9 +538,6 @@ Click Import File Button
     ${btn_import_file}=    Replace String    ${b2c_btn_import_file_detail_page}    {value}    ${Booking['text_btn_import']}
     common.Click When Ready    ${btn_import_file}
 
-Click Import Button
-    common.Click Xpath By JavaScript    ${b2c_btn_import_file_in_popup}
-
 Click Download Import Error File
     ${b2c_btn_import_error_file}=    Replace String    ${b2c_btn_import_error_file}    {value}    ${Booking['text_import_time']}
     common.Click When Ready    ${b2c_btn_import_error_file}
@@ -682,7 +678,6 @@ Verify Import Excel File Inspection Results
     Should Be Equal    ${actual_file_name}    ${file_name}
     Should Be Equal    ${actual_import_success}    ${import_success}
     Should Be Equal    ${actual_import_fail}    ${import_fail}
-    # Verify Import Error File Name Format   ${b2c_txt_value_import_error_file}    # Stuck at Defect108. Waiting for resolve.
 
 Verify Date Format Of Import Excel File
     [Arguments]    ${locator}
@@ -690,22 +685,6 @@ Verify Date Format Of Import Excel File
     ${actual_import_time}=    Get Text    ${locator}
     ${time_convert}    Convert Date    ${actual_import_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
     Should Be Equal    ${actual_import_time}   ${time_convert}
-
-Verify Import Error File Name Format
-    [Arguments]    ${locator}
-    Wait Until Element Is Visible    ${locator}
-    ${actaul_import_error_file_name}=    Get Text    ${locator}
-    ${part}=    Split String    ${actaul_import_error_file_name}    ${SPACE}
-    ${actual_text_subject_part}=    Set Variable    ${part}[0]${SPACE}${part}[1]
-    ${actual_text_date_part}=    Set Variable    ${part}[2] 
-    ${actual_text_date_part}=    Remove String    ${actual_text_date_part}    (
-    ${actual_text_time_part}=    Set Variable    ${part}[3]
-    ${actual_text_time_part}=    Remove String    ${actual_text_time_part}    ).xlsx
-    ${date_convert}=    Convert Date    ${actual_text_date_part}    date_format=%y%m%d    result_format=%d%m%y
-    ${time_convert}=    Convert Date    ${actual_text_time_part}    date_format=%H:%M:%S    result_format=%H:%M
-    Should Be Equal    ${actual_text_subject_part}    ${Booking['text_error_report']}
-    Should Be Equal    ${actual_text_date_part}    ${date_convert}
-    Should Be Equal    ${actual_text_time_part}    ${time_convert}
 
 Select Booked Pickup Time From List
     [Arguments]    ${round}    ${tomorrow}    ${parcel_num}    ${today}    ${price}
@@ -756,7 +735,6 @@ Verify Booking Detail Page After Import File
     ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
     ${count_card}=    Set Variable    0
     Wait Until Page Does Not Contain    ${b2c_txt_import_file_in_popup}
-    # Verify number of parcels
     FOR    ${index}    IN RANGE    ${parcel_num}
         Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
         ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
@@ -768,27 +746,6 @@ Verify Booking Detail Page After Import File
     END
     Should Be Equal As Strings    ${count_card}    ${parcel_num}
     Scroll Window To Vertical    0
-
-Verify Parcel Status Change To Confirm
-    [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
-    ${actual_parcel_list_status}=    Replace String    ${b2c_txt_parcel_list}    {status}    ${status}
-    ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
-    ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
-    ${count_card}=    Set Variable    0
-    ## Verify number of parcels
-    FOR    ${index}    IN RANGE    ${parcel_num}
-        Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
-        ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
-        ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
-        ${count_new_card}=    Get Element Count    ${actual_parcel_list}
-        ${count_card}=    Evaluate    ${count_card} + ${count_new_card}
-        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
-            Verify Parcel ID Format And Value    (${actual_parcel_id})[${i}]    ${parcel_id}
-        END
-        Exit For Loop If    ${boolean} == False
-        common.Click When Ready    ${b2c_btn_next_page_parcel_list}
-    END
-    Should Be Equal As Strings    ${count_card}    ${parcel_num}
         
 Verify Booking Detail Page After Canceled
     [Arguments]    ${status}    ${parcel_id}    ${parcel_num}
@@ -796,7 +753,7 @@ Verify Booking Detail Page After Canceled
     ${actual_parcel_list}=    Replace String    ${actual_parcel_list_status}    {value}    ${parcel_id}
     ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
     ${count_card}=    Set Variable    0
-    ## Verify number of parcels
+    # Verify number of parcels
     FOR    ${index}    IN RANGE    ${parcel_num}
         Wait Until Element Is Visible    ${actual_parcel_list}    timeout=60s
         ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
@@ -807,24 +764,3 @@ Verify Booking Detail Page After Canceled
         common.Click When Ready    ${b2c_btn_next_page_parcel_list}
     END
     Should Be Equal As Strings    ${count_card}    ${parcel_num}
-
-Get Parcels Id And Senders Name
-    [Arguments]    ${parcel_id}    ${parcel_num}
-    Reload Page
-    ${actual_parcel_id}=    Replace String    ${b2c_txt_parcel_id}    {id}    ${parcel_id}
-    ${actual_parcel_sender}=    Replace String    ${b2c_txt_get_sender_name}    {value}    ${Booking['text_sender']}
-    ${list_parcel_and_sender}=    Create Dictionary
-    FOR    ${index}    IN RANGE    ${parcel_num}
-        Wait Until Element Is Visible    ${actual_parcel_id}    timeout=60s
-        ${boolean_text}=    Get Element Attribute    ${b2c_img_next_page_parcel_list}    aria-disabled
-        ${boolean}=    Run Keyword And Return Status    Should Be Equal As Strings    ${boolean_text}    false
-        ${count_new_card}=    Get Element Count    ${actual_parcel_id}
-        FOR    ${i}    IN RANGE    1     ${count_new_card}+1
-            ${sender}=    Get Text    (${actual_parcel_sender})[${i}]
-            ${parcel}=    Get Text    (${actual_parcel_id})[${i}]
-            Set To Dictionary    ${list_parcel_and_sender}    ${sender}=${parcel}
-        END
-        Exit For Loop If    ${boolean} == False
-        common.Click When Ready    ${b2c_btn_next_page_parcel_list}
-    END
-    Set Suite Variable    ${list_parcel_and_sender}

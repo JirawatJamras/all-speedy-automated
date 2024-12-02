@@ -27,9 +27,7 @@ Click Accept Condition Button
 Verify Label Link Return Business Popup
     [Arguments]    ${link_return_business}    ${link_name}    ${phone}    ${name}
     ...            ${shipping_payer}    ${location_pickup}    ${address}    ${postcode}
-    
     Wait Until Element Is Visible    ${txt_link_return_business_header}   timeout=${DEFAULT_TIMEOUT}
-    
     ${actual_link_return_business}=    Get Text    ${txt_link_return_business_header}
     ${actual_link_name}=    Get Text    ${txt_link_name_return_business}
     ${actual_phone}=    Get Text    ${txt_phone_return_business}
@@ -79,7 +77,7 @@ Clear Input
     Mouse Over    ${txtbox_postcode_return_business}
     common.Click Xpath By JavaScript    ${txtbox_postcode_delete}
 
-Input Link Name 
+Input Link Name
     [Arguments]    ${input_link_name}
     common.Input When Ready    ${txtbox_link_name_return_business}    ${input_link_name}
 
@@ -111,9 +109,6 @@ Click Owner Pay
 
 Select Send To Home Tab
     common.Click When Ready    ${tab_send_to_home}
-    
-Select Send To 7-ELEVEN Store Tab
-    common.Click When Ready    ${tab_send_to_store}
 
 Click Save Button
     ${btn_save}=    Replace String    ${btn_save_return_business}    {value}    ${return_business['text_btn_save']}
@@ -182,7 +177,7 @@ Click Download QR Code Button
     ${btn_add_download_qr}=    Replace String    ${btn_popup_return_business}    {value}    ${return_business['text_btn_download_qr']}
     common.Click When Ready    ${btn_add_download_qr}
 
-Verrify Download QR Code
+Verify Download QR Code
     [Arguments]    ${value}
     ${popup_download_qr}=    Replace String    ${msg_popup_success}    {value}    ${value}
     Wait Until Element Is Visible    ${popup_download_qr}    timeout=${DEFAULT_TIMEOUT}
@@ -211,7 +206,6 @@ Click Confirm Button
 Verify Booking Detail Page [Not Have Parcel List]
     [Arguments]    ${booking_id}    ${booking_name}    ${discount_value}    ${insurance_fee_value}    ${cod_fee_value}    
     ...    ${total_price_amount}    ${total_price_value}
-
     ${txt_booking_list} =  Replace String    ${txt_heading_booking_list}    {value}    ${return_business.email_link['text_title_booking_list']}
     ${txt_booking_id}=    Replace String    ${txt_booking_id_return_business}    {value}    ${return_business.email_link['text_booking_id_label']}
     ${txt_booking_name}=    Replace String    ${txt_booking_name_return_business}    {value}    ${return_business.email_link['text_booking_name_label']}
@@ -223,19 +217,14 @@ Verify Booking Detail Page [Not Have Parcel List]
     ${txt_insure}=    Replace String    ${txt_insure_return_business}    {value}    ${return_business.email_link['text_insure']}
     ${txt_cod}=    Replace String    ${txt_cod_return_business}    {value}    ${return_business.email_link['text_cod']}
     ${txt_total}=    Replace String    ${txt_total_return_business}    {value}    ${return_business.email_link['text_total_price']}
-
     ${actual_booking_id}=    Get Text    ${txt_booking_id}
     ${actual_booking_name}=    Get Text    ${txt_booking_name}
     ${actaul_booking_time}=    Get Text    ${txt_booking_time}
     Scroll Element Into View    ${txt_total}
     ${actual_discount}=    Get Text    ${txt_discount}
-    # ${actual_insure}=    Get Text    ${txt_insure}
-    # ${actual_cod}=    Get Text    ${txt_cod}
     ${actual_total}=    Get Text    ${txt_total}
-
     ${booking_time}    Split String And Select    ${actaul_booking_time}    \n    1
     ${time_convert}    Convert Date    ${booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
-
     Wait Until Element Is Visible    ${txt_booking_list}
     Should Be Equal    ${actual_booking_id}    ${booking_id}
     Should Be Equal    ${actual_booking_name}    ${booking_name}
@@ -243,8 +232,6 @@ Verify Booking Detail Page [Not Have Parcel List]
     Wait Until Element Is Visible    ${txt_shipping_origin}
     Wait Until Element Is Visible    ${txt_parcel_list}
     Should Be Equal    ${actual_discount}    ${return_business.email_link['text_dixcount']} ${discount_value}
-    # Should Be Equal    ${actual_insure}    ${Booking['text_insure']} ${insurance_fee_value}
-    # Should Be Equal    ${actual_cod}    ${Booking['text_cod']} ${cod_fee_value}
     Should Be Equal    ${actual_total}    ${return_business.email_link['text_total_price']} ${total_price_amount} ${total_price_value}
     common.Scroll Window To Vertical    0
 
@@ -266,10 +253,8 @@ Verify Create Parcel Popup
     ${txt_parcel_L}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_L']}
     ${txt_parcel_XL}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_XL']}
     ${txt_parcel_XXL}=    Replace String    ${txt_list_parcel_size_return_business}    {value}    ${return_business.email_link['parcel_XXL']}
-
     Wait Until Element Is Visible    ${txt_title}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${txt_sender_info}
-
     ${actual_sender_phone}=    Get Text    ${txt_sender_phone_return_business}
     ${actual_sender_name}=    Get Text    ${txt_sender_name_return_business}
     ${actual_sender_address}=    Get Text    ${txt_sender_address_return_business}
@@ -291,7 +276,6 @@ Verify Create Parcel Popup
     ${actual_parcel_XL}=    Replace String    ${actual_parcel_XL}    \n    ${SPACE}
     ${actual_parcel_XXL}=    Get Text    ${txt_parcel_XXL}
     ${actual_parcel_XXL}=    Replace String    ${actual_parcel_XXL}    \n    ${SPACE}
-
     Should Be Equal    ${actual_sender_phone}    ${text_phone}
     Should Be Equal    ${actual_sender_name}    ${text_name}
     Should Be Equal    ${actual_sender_address}    ${text_address}
@@ -356,21 +340,19 @@ Verify Booking Detail Page
     ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
     ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
-
+    
     Log    Booking List
     ${actual_booking_id}=    Get Text    ${txt_booking_id}
     ${actual_booking_name}=    Get Text    ${txt_booking_name}
     ${actaul_booking_time}=    Get Text    ${txt_booking_time}
-
     ${booking_time}    Split String And Select    ${actaul_booking_time}    \n    1
     ${time_convert}    Convert Date    ${booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
-
     Wait Until Element Is Visible    ${txt_booking_list}
     Should Be Equal    ${actual_booking_id}    ${booking_id}
     Should Be Equal    ${actual_booking_name}    ${booking_name}
     Should Be Equal As Strings    ${booking_time}   ${time_convert}
     Wait Until Element Is Visible    ${txt_shipping_origin}
-
+    
     Log    Parcel List
     Wait Until Element Is Visible    ${txt_parcel_list}
     ${text_parcels}=    Replace String    ${crd_parcel_return_business}    {value}    ${parcel_status}
@@ -380,7 +362,6 @@ Verify Booking Detail Page
     Log    ${actual_text_list_of_parcels}
     Should Be Equal As Strings    ${actual_text_list_of_parcels}
     ...    ${return_business.email_link['text_sender']} ${sender_name} (${sender_phone}) ${return_business.email_link['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${address_full} ${return_business.email_link['text_parcel_type']} ${parcel_type}${return_business.email_link['text_price']} ${price}บาท ${return_business.email_link['text_buy_insure']} ${insure_value} บาท ${return_business.email_link['text_select_cod']} ${cod} บาท ${return_business.email_link['text_print']}
-    
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
@@ -398,13 +379,8 @@ Verify Booking Detail Page
     Log    Booking Summary
     Scroll Element Into View    ${txt_total}
     ${actual_discount}=    Get Text    ${txt_discount}
-    # ${actual_insure}=    Get Text    ${txt_insure}
-    # ${actual_cod}=    Get Text    ${txt_cod}
     ${actual_total}=    Get Text    ${txt_total}
-
     Should Be Equal    ${actual_discount}    ${return_business.email_link['text_dixcount']} ${discount_value}
-    # Should Be Equal    ${actua l_insure}    ${Booking['text_insure']} ${insurance_fee_value}
-    # Should Be Equal    ${actual_cod}    ${Booking['text_cod']} ${cod_fee_value}
     Should Be Equal    ${actual_total}    ${return_business.email_link['text_total_price']} ${total_price_amount} ${total_price_value}
     common.Scroll Window To Vertical    0
 
