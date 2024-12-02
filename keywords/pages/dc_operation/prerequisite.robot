@@ -5,7 +5,7 @@ Resource          ../../../resourses/import.robot
 *** Keywords ***
 DC_Operation_S002
     Log    Reset Cut Off Time To 23:59
-    Reset Cut Off Time
+    dps_home_page.Reset Cut Off Time
 
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
@@ -178,7 +178,6 @@ DC_Operation_S002
     ...    ${DATABASE_NAME}
     ...    ${COLLECTION}
     ...    ${QUERY}
-    # Expected
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected

@@ -29,10 +29,10 @@ DC_Operation_S002:
     car_type: รอบรถพิเศษ
     receiving_type: รอบพิเศษ
     company_address: 44 หมู่ 3
-    sub_district: บางเขน  #ปากเกร็ด
-    district: เมืองนนทบุรี  #ปากเกร็ด
+    sub_district: บางเขน
+    district: เมืองนนทบุรี
     province: นนทบุรี
-    postcode: '11000'  #'11120'
+    postcode: '11000'
     number_of_parcel: '10'
     branch: สาขาหลัก
     receiving_time: '09:00'
@@ -332,8 +332,8 @@ DC_Operation_S005:
     status1: รอขนส่งเข้ารับพัสดุ
     status2: ขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
-      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      #   description: '-'
+      - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+        description: '-'
       - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
         description: ''
       - title: พัสดุเข้าคลังต้นทาง
@@ -344,8 +344,8 @@ DC_Operation_S005:
         description: DC SB
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
-      - title: พัสดุถึงคลังข้ามภาค    #พัสดุถึงคลังปลายทาง
-        description: '-'    #DC SB
+      - title: พัสดุถึงคลังปลายทาง
+        description: 'DC SB'
       - title: พัสดุรอนำจ่ายโดยคลัง
         description: DC SB
   data_in_send_task_tab:
@@ -408,8 +408,8 @@ DC_Operation_S006:
     shipping_destination: ร้าน สาขา CP TOWER สีลม (15888)
     address: 'สีลม บางรัก กรุงเทพมหานคร 10500'
   timeline_in_history_parcel:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
+    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
       description: ''
     - title: พัสดุเข้าคลังต้นทาง
@@ -417,15 +417,15 @@ DC_Operation_S006:
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: ''    # pouch number to be dynamically set
+      description: ''
     - title: พัสดุรอ Scan out ไปคลัง
       description: DC SB
     - title: พัสดุออกจากคลังต้นทาง
       description: DC BB
     - title: พัสดุถึงคลังปลายทาง
       description: DC SB
-    # - title: พัสดุรอนำจ่ายโดยคลัง
-    #   description: DC SB
+    - title: พัสดุรอนำจ่ายโดยคลัง
+      description: DC SB
   data_in_export_task_tab:
     export_to: คลัง DCSB
     transport: CP All
@@ -565,8 +565,8 @@ DC_Operation_S007:
     customer_type: 'B2C'
     transport: CP All
   timeline_in_history_parcel:
-      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      #   description: '-'
+      - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+        description: '-'
       - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
         description: ''
       - title: พัสดุเข้าคลังต้นทาง
@@ -577,8 +577,8 @@ DC_Operation_S007:
         description: DC SB
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
-      # - title: พัสดุถึงคลังปลายทาง
-      #   description: 'DC SB'
+      - title: พัสดุถึงคลังปลายทาง
+        description: 'DC SB'
       - title: พัสดุรอนำจ่ายโดยคลัง
         description: DC SB
 
@@ -638,8 +638,8 @@ DC_Operation_S008:
     shipping_destination: บ้าน
     address: '62 ในเมือง เมืองลำพูน ลำพูน 51000'
   timeline_in_history_parcel:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
+    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
       description: ''
     - title: พัสดุเข้าคลังต้นทาง
@@ -647,17 +647,17 @@ DC_Operation_S008:
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: ''    # pouch number to be dynamically set
-    # - title: พัสดุรอ Scan out ไปคลัง
-    #   description: AC
-    # - title: พัสดุออกจากคลังต้นทาง
-    #   description: DC BB
-    # - title: พัสดุถึงคลังข้ามภาค
-    #   description: AC
-    # - title: พัสดุรอ Scan out ไปคลัง
-    #   description: RDC LP
-    # - title: พัสดุออกจากคลังข้ามภาค
-    #   description: AC
+      description: ''
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: AC
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
+    - title: พัสดุถึงคลังข้ามภาค
+      description: AC
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: RDC LP
+    - title: พัสดุออกจากคลังข้ามภาค
+      description: AC
     - title: พัสดุถึงคลังปลายทาง
       description: RDC LP
     - title: พัสดุรอนำจ่ายโดยคลัง
@@ -832,34 +832,33 @@ DC_Operation_S009:
     customer_type: 'B2C'
     transport: CP All
   timeline_in_history_parcel:
-      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      #   description: '-'
+      - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+        description: '-'
       - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
         description: ''
       - title: พัสดุเข้าคลังต้นทาง
         description: DC BB
       - title: รอปริ้นใบลาเบลติดหน้ากล่อง
         description: '-'
-      # - title: พัสดุรอ Scan out ไปคลัง
-      #   description: AC
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: AC
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
-      # - title: พัสดุถึงคลังข้ามภาค
-      #   description: 'AC'
-      # - title: พัสดุรอ Scan out ไปคลัง
-      # #   description: RDC LP
-      # - title: พัสดุออกจากคลังข้ามภาค
-      #   description: 'AC'
-      # - title: พัสดุถึงคลังปลายทาง
-      #   description: '-'
-      # - title: พัสดุรอนำจ่ายโดยคลัง
-      #   description: DC SB
+      - title: พัสดุถึงคลังข้ามภาค
+        description: 'AC'
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: RDC LP
+      - title: พัสดุออกจากคลังข้ามภาค
+        description: 'AC'
+      - title: พัสดุถึงคลังปลายทาง
+        description: '-'
+      - title: พัสดุรอนำจ่ายโดยคลัง
+        description: DC SB
   scan_in_data_warehouse_ac:
     pouch_number: '-'
     receive_parcel_from: DCBB
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอ Scan out ไปคลัง (RDCLP)
-
 
 DC_Operation_S010:
   sender_name: คุณ i
@@ -919,8 +918,8 @@ DC_Operation_S010:
     shipping_destination: ร้าน สาขา เวียงป่าเป้า (01015)
     address: 'เวียง เวียงป่าเป้า เชียงราย 57170'
   timeline_in_history_parcel:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
+    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
       description: ''
     - title: พัสดุเข้าคลังต้นทาง
@@ -928,15 +927,15 @@ DC_Operation_S010:
     - title: รอปริ้นใบลาเบลติดหน้ากล่อง
       description: '-'
     - title: สเเกนเข้า POUCH
-      description: ''    # pouch number to be dynamically set
+      description: ''
     - title: พัสดุรอ Scan out ไปคลัง
       description: AC
-    # - title: พัสดุออกจากคลังต้นทาง
-    #   description: DC BB
+    - title: พัสดุออกจากคลังต้นทาง
+      description: DC BB
     - title: พัสดุถึงคลังข้ามภาค
       description: AC
-    # - title: พัสดุรอ Scan out ไปคลัง
-    #   description: RDC LP
+    - title: พัสดุรอ Scan out ไปคลัง
+      description: RDC LP
     - title: พัสดุออกจากคลังข้ามภาค
       description: AC
     - title: พัสดุถึงคลังปลายทาง
@@ -1109,28 +1108,28 @@ DC_Operation_S011:
     status1: รอขนส่งเข้ารับพัสดุ
     status2: ขนส่งเข้ารับพัสดุ
   timeline_in_history_parcel:
-      # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-      #   description: '-'
+      - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+        description: '-'
       - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
         description: ''
       - title: พัสดุเข้าคลังต้นทาง
         description: DC BB
       - title: รอปริ้นใบลาเบลติดหน้ากล่อง
         description: '-'
-      # - title: พัสดุรอ Scan out ไปคลัง
-      #   description: AC
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: AC
       - title: พัสดุออกจากคลังต้นทาง
         description: DC BB
-      # - title: พัสดุถึงคลังข้ามภาค
-      #   description: 'AC'
-      # - title: พัสดุรอ Scan out ไปคลัง
-      #   description: RDC LP
-      # - title: พัสดุออกจากคลังข้ามภาค
-      #   description: AC
-      # - title: พัสดุถึงคลังปลายทาง
-      #   description: '-'
-      # - title: พัสดุรอนำจ่ายโดยคลัง
-      #   description: DC SB
+      - title: พัสดุถึงคลังข้ามภาค
+        description: 'AC'
+      - title: พัสดุรอ Scan out ไปคลัง
+        description: RDC LP
+      - title: พัสดุออกจากคลังข้ามภาค
+        description: AC
+      - title: พัสดุถึงคลังปลายทาง
+        description: '-'
+      - title: พัสดุรอนำจ่ายโดยคลัง
+        description: DC SB
 
 DC_Operation_S012:
   sender_name: คุณ b
@@ -1186,8 +1185,8 @@ DC_Operation_S012:
     shipping_destination: 'ร้าน สาขา เรวดี (ตลาดเปรมสุข) (07004)'
     address: 'ตลาดขวัญ เมืองนนทบุรี นนทบุรี 11000'
   timeline_in_history_parcel:
-    # - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
-    #   description: '-'
+    - title: ข้อมูลพัสดุถูกจองในระบบแล้ว
+      description: '-'
     - title: พนักงานขนส่งอยู่ระหว่างไปรับพัสดุ
       description: ''
     - title: พัสดุเข้าคลังต้นทาง
@@ -1298,75 +1297,6 @@ DC_Operation_S014:
       description: '-'
     - title: พัสดุออกจากคลังต้นทาง
       description: DC BB
-
-DC_Operation_S015:
-  data_in_all_task_tab:
-    task_type: งานรับเข้า
-    parcel_owner: Partnership
-    import_from: Store
-    export_to: '-'
-    transport: CP All
-    pouch_number: '-'
-    parcel_size: ซอง A4
-    parcel_status: ร้านรับพัสดุ (คุณาลัย - บางใหญ่)
-  data_in_import_task_tab:
-    import_from: Store
-    transport: CP All
-    parcel_owner: KEX
-  data_in_export_task_tab:
-    import_from: Home
-    transport: Kerry
-    parcel_owner: Partnership  
-  scan_in_data_parcel_detail:
-    # customer_id: '-'
-    # parcel_size: '51 ซม. ซอง A4'
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
-    # courier: Kerry
-    pouch_number: '-'
-    # origin_warehouse: DCBB
-    # send_parcel_to: 'Home (57170)'
-  scan_in_data_label_detail:
-    # courier: 'KEX'
-    # zipcode: '57170 (ซอง A4)'
-    # province: 'เชียงราย'
-    # customer: 'ทดสอบส่งพัสดุ Dropoff'
-    # phone: '0971971445'
-  scan_in_sender_data:
-    # name: คุณ z
-    # phone: '0633906216'
-    # shipping_origin: สาขา คุณาลัย-บางใหญ่ (07465)
-    # address: '47 มาบไผ่ บ้านบึง ชลบุรี'
-  scan_in_receiver_data:
-    # name: ทดสอบส่งพัสดุ Dropoff
-    # phone: '0971971445'
-    # shipping_destination: บ้าน
-    # address: '654 เวียง เวียงป่าเป้า เชียงราย 57170'
-  scan_out_waiting_scan:
-    pouch_number: '-'
-    receive_parcel_from: Store
-    transport: Kerry
-    parcel_owner: Partnership
-    parcel_size: 'ซอง A4'
-    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  scan_out_list_data:
-    pouch_number: '-'
-    receive_parcel_from: Store
-    transport: Kerry
-    parcel_owner: Partnership
-    parcel_size: 'ซอง A4'
-    parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  timeline_in_history_parcel:
-    # - title: ร้านรับพัสดุ
-    #   description: '07465 สาขา คุณาลัย-บางใหญ่'
-    - title: พัสดุเข้าคลังต้นทาง
-      description: DC BB
-    - title: รอปริ้นใบลาเบลติดหน้ากล่อง
-      description: '-'
-    # - title: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-    #   description: '-'
-    # - title: พัสดุออกจากคลังต้นทาง
-    #   description: DC BB
-
 
 DC_Operation_S016:
   sender_name: คุณ a
@@ -1504,68 +1434,6 @@ DC_Operation_S018:
     name: ทดสอบพัสดุCourier
     phone: '0900987354'
     address: '554 หมู่ 3 ปากเกร็ด ปากเกร็ด นนทบุรี 11120'
-
-DC_Operation_S019: 
-  company_name: คุณ ไอดีซี
-  parcel_type:  พัสดุควบคุมอุณหภูมิ
-  parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
-  verify_pickup_time: '09:00:00 - 12:00 น.'
-  parcel_number: '6'
-  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
-  call_car_pick_up:
-    car_type: รอบรถพิเศษ
-    receiving_type: รอบพิเศษ
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด
-    province: นนทบุรี 
-    postcode: '11120'
-  receiving_cycle:
-    company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
-    branch: สาขาหลัก
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
-    province: นนทบุรี 
-    postcode: '11120'  #'11000'
-    receiving_time: '09:00' #'13:00'
-    receiving_type: รอบพิเศษ
-    courier: CPALL
-    number_of_parcel: '6'  #'0'
-    status: 
-      waiting: รอยืนยัน
-      confirm: ยืนยันแล้ว
-
-DC_Operation_S020: 
-  company_name: คุณ ไอดีซี
-  parcel_type:  พัสดุควบคุมอุณหภูมิ
-  parcel_pickup_time: 'ช่วงเช้า 09:00 - 12:00'
-  verify_pickup_time: '09:00:00 - 12:00 น.'
-  parcel_number: '6'
-  shipping_origin: บริษัท ไอดีซี พรีเมียร์ จำกัด ปากเกร็ด ปากเกร็ด นนทบุรี 11120    #บริษัท ไอดีซี พรีเมียร์ จำกัด หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000
-  call_car_pick_up:
-    car_type: รอบรถพิเศษ
-    receiving_type: รอบพิเศษ
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด
-    province: นนทบุรี 
-    postcode: '11120'
-  receiving_cycle:
-    company_name: บริษัท ไอดีซี พรีเมียร์ จำกัด 
-    branch: สาขาหลัก
-    company_address: 200 ชั้น 19 ห้อง1901 จัสมินอินเตอร์เนชั่นแนลทาวเวอร์  #44 หมู่ 3 
-    sub_district: ปากเกร็ด
-    district: ปากเกร็ด  #บางเขน เมืองนนทบุรี
-    province: นนทบุรี 
-    postcode: '11120'  #'11000'
-    receiving_time: '09:00' #'13:00'
-    receiving_type: รอบพิเศษ
-    courier: CPALL
-    number_of_parcel: '6'  #'0'
-    status: 
-      waiting: รอยืนยัน
-      confirm: ยืนยันแล้ว
 
 DC_Operation_S026:
   sender_name: คุณ j
