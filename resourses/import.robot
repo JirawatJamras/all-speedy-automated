@@ -34,15 +34,10 @@ Variables                   testdata/booking/booking.yaml
 ######################## C2C ########################
 Resource                    ../keywords/pages/booking/c2c_landing_page.robot
 Resource                    ../keywords/pages/booking/c2c_login.robot
-Resource                    ../keywords/pages/booking/c2c_profile_page.robot
 Resource                    ../keywords/pages/booking/c2c_login.robot
-Resource                    ../keywords/pages/booking/c2c_login_seven_page.robot
-Resource                    ../keywords/pages/booking/c2c_tracking_page.robot
 
 Resource                    locators/booking/c2c_landing_page.robot
 Resource                    locators/booking/c2c_login.robot
-Resource                    locators/booking/c2c_profile_page.robot
-Resource                    locators/booking/c2c_login_seven_page.robot
 
 ######################## DPS ########################
 Resource                    ../keywords/pages/dc_operation/dps_landing_page.robot
