@@ -16,7 +16,7 @@ DC_Operation_S001:
     number_of_parcel: '10'
     branch: สาขาหลัก
     receiving_time: '09:00'
-    courier: CPALL
+    courier: CP All
 
 DC_Operation_S002:
   company_name: ไอดีซี พรีเมียร์
@@ -36,7 +36,7 @@ DC_Operation_S002:
     number_of_parcel: '10'
     branch: สาขาหลัก
     receiving_time: '09:00'
-    courier: CPALL
+    courier: CP All
 
 DC_Operation_S003:
   sender_name_1: 'คุณ a'

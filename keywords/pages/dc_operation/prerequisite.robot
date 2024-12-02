@@ -234,7 +234,6 @@ DC_Operation_S002
 
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
-    # Defect247
     # Expected
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
@@ -248,7 +247,7 @@ DC_Operation_S002
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
-    ...    ${DC_Operation_S002.receiving_cycle['courier']}
+    ...    CPALL  #${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
@@ -268,7 +267,7 @@ DC_Operation_S002
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
-    ...    ${DC_Operation_S002.receiving_cycle['courier']}
+    ...    CPALL  #${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
@@ -287,7 +286,6 @@ DC_Operation_S002
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
-    ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
@@ -302,7 +300,7 @@ DC_Operation_S002
     ...    ${tomorrow}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['car_type']}
-    ...    ${DC_Operation_S002.receiving_cycle['courier']}
+    ...    CPALL  #${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    22.Verify Parcel Pickup Details Popup
@@ -327,7 +325,6 @@ DC_Operation_S002
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
-    ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['confirm']}
