@@ -7,5 +7,5 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 DC_Operation_S002
-    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150
+    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150    Defect192
     prerequisite.DC_Operation_S002

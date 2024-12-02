@@ -82,6 +82,7 @@ Verify Add Parcel Pickup
         Run Keyword If    '${status}' == 'True'    Exit For Loop
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
+    Scroll Element Into View    ${actual_card}
 
 Search Parcel Pickup By Date
     [Arguments]    ${start_date}    ${end_date}

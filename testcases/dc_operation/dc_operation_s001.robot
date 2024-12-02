@@ -5,9 +5,14 @@ Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschro
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
+
 *** Test Cases ***
 DC_Operation_S001
-    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150    Defect192    Defect221    Defect207
+    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150    Defect192    Defect207    Defect221
+    Set Today
+    Log    Reset Cut Off Time To 23:59
+    Reset Cut Off Time
+
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
     register_general_customers_page.Select Business Customers Tab
@@ -331,7 +336,6 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['postcode']}
     ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
-    ...    CPALL  #${DC_Operation_S001.receiving_cycle['courier']}
     ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['canceled']}

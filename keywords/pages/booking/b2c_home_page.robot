@@ -15,7 +15,6 @@ Click Parcel Delivery Service Menu
 Select Sub Menu Call Car Pick Up
     ${b2c_mnu_call_car_pick_up_home_page}=    Replace String    ${b2c_mnu_call_car_pick_up_home_page}    {value}    ${call_car_pick_up['text_call_car_pick_up']}
     common.Click When Ready    ${b2c_mnu_call_car_pick_up_home_page}
-    Mouse Out    ${b2c_mnu_call_car_pick_up_home_page}
 
 Select Sub Menu Favorites
     ${b2c_mnu_favorites_home_page}=    Replace String    ${b2c_mnu_favorites_home_page}    {value}    ${Booking['text_favorite_list']}

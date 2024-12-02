@@ -145,7 +145,7 @@ Click Pencil Icon
 
     Set Tomorrow Date
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
-    ${row_receiving_cycle}=    Replace String    ${dps_btn_pencil_receiving_cycle}    {company_name}    ${company_name}
+    ${row_receiving_cycle}=    Replace String    ${dps_btn_pencil_receiving_cycle_waiting}    {company_name}    ${company_name}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {address}    ${address}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {sub_district}    ${sub_district}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {district}    ${district}
@@ -158,6 +158,7 @@ Click Pencil Icon
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {cutoff}    ${today}
     ${row_receiving_cycle}=    Replace String    ${row_receiving_cycle}    {status}    ${status}
     Set Suite Variable    ${card_inventory}    ${row_receiving_cycle}
+    Log    ${card_inventory}
     ${element}=    Set Variable    False
 
     WHILE    '${element}' == 'False'
