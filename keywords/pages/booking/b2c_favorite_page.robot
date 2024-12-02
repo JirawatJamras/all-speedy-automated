@@ -295,7 +295,6 @@ Select Pickup Location
     Run Keyword If    '${value}' == 'ส่งร้าน 7-11'    Run Keywords    Scroll Element Into View    ${tab_send_store_favorite_page}
     ...    AND    common.Click When Ready    ${tab_send_store_favorite_page}
 
-
 Input And Select Store Code Receiver
     [Arguments]    ${input_store_receiver}    ${store}
     ${select_store}=    Replace String    ${btn_choose_store}    {value}    ${Booking['text_select_store_on_map']}
@@ -364,7 +363,6 @@ Verify Shipping Origin Area Tab
     Run Keyword If    '${is_body_visible}' == 'true'    Run Keywords    Wait Until Element Is Visible    ${btn_trash_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ...    AND    ${actual_shipping_origin_area_status}=    Get Element Attribute    ${tab_selected_shipping_origin_area_favorite_page}    aria-selected
     ...    AND    Should Be Equal    ${actual_shipping_origin_area_status}    true
-    
 
 Click Add Shipping Origin Area Button
     ${btn_add_shipping_origin_area}=    Replace String    ${btn_add_shipping_origin_area_favorite_page}    {value}    ${favorite['button_add']}
@@ -392,11 +390,6 @@ Verify Data Shipping Origin Area
 Input Shipping Origin Area Favorite Name
     [Arguments]    ${value}
     common.Input When Ready    ${txtbox_shipping_origin_favorite_name_favorite_page}    ${value}
-
-Input Store Code Shipping Origin Area
-    [Arguments]    ${store_code}
-    ${txtbox_shipping_origin_search_store}=    Replace String    ${txtbox_shipping_origin_search_store_favorite_page}    {value}    ${favorite['text_search_store']}
-    common.Input When Ready    ${txtbox_shipping_origin_search_store}    ${store_code}
 
 Input And Select Store Code Shipping Origin Area
     [Arguments]    ${input_store_receiver}    ${store}

@@ -2,7 +2,7 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome   #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
                   ...    AND   Reset Cut Off Time
 Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S048.add_new_pickup['expected']}
@@ -35,7 +35,6 @@ Booking_S048
     common.Verify Capture Screenshot    booking    Booking_S048    1.Verify Car Pickup Schedule Card
 
     Log    Step No.2 กดปุ่ม "เพิ่ม"
-    b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
     b2c_call_car_pick_up_parcel_page.Click Add Button
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Popup Parcel Pickup Schedule

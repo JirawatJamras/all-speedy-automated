@@ -16,7 +16,6 @@ ${b2c_next_page_pickup_round}   //span[@class='anticon anticon-right']/../..
 ${btn_next_months_calendar_in_add_popup}    //button[@class='ant-picker-header-next-btn']
 
 ${b2c_txt_call_pickup_parcel_pickup_page}    //h2[contains(text(),'{value}')]
-${b2c_txt_parcel_pickup_schedule}    //h5[contains(text(),'{value}')]
 ${b2c_txt_parcel_pickup_schedule_in_add_popup}    //span[contains(text(),'{value}')]
 ${b2c_txt_car_round_name_in_add_popup}    //form[@id='basic']//strong[contains(text(),'{value}')]
 ${b2c_txt_parcel_type_in_add_popup}    //label[@for='basic_parcelType']//strong[contains(text(),'{value}')]
@@ -30,8 +29,8 @@ ${b2c_txt_status_and_id_pickup_round}    //span[text()='{status}']/../../../../.
 ${txt_booking_status}    //span[contains(@class,'ant-tag ant-tag-borderless')]//h5[contains(@class,'ant-typography')]
 ${txt_parcel_pickup_schedule}    (//div[contains(@class,'ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small')]//h5[contains(@class,'ant-typography')])[1]
 ${txt_normal_parcel_pickup_schedule}    (//div[contains(@class,'ant-space-horizontal ant-space-align-center ant-space-gap-row-small ant-space-gap-col-small')]//h5[contains(text(),'{value}')])[1]
-${b2c_txt_asking_to_close_popup_in_add_popup}    //h2[@id='swal2-title']
 ${b2c_txt_delete_complete_pickup_page}    //span[text()='{value}']
+${b2c_txt_status_in_card_call_car_pickup_page}    //h5[text()='{value}']
 
 ${b2c_txtbox_parcel_type}    //input[@id='basic_parcelType']/../..
 ${b2c_txtbox_parcel_pickup_date}    //label[@for='basic_date']/../..//div[@class='ant-picker-input']
@@ -46,15 +45,12 @@ ${b2c_cbo_pickup_parcel_date_in_add_popup}    //strong[text()='{value}']/../../.
 ${b2c_cbo_pickup_parcel_time_in_add_popup}    //strong[text()='{value}']/../../../..//input/../..
 ${b2c_cbo_time_pickup}    //div[text()='{value}']
 
-${b2c_b2n_active_date_in_add_popup}    //td[@class='ant-picker-cell ant-picker-cell-in-view']
-
-${b2c_tbl_pickup_parcel_calendar_in_add_popup}    //*[contains(@class,'ant-picker-dropdown')]
 ${b2c_tbl_pickup_parcel_calendar}    //td[@title='{value}']
 
 ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
-${b2c_card_pickup_parcel_schedule_recently_created_call_car_pickup_page}    (//*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div//div[@class='ant-card-meta w-full'])[1]
 ${b2c_card_parcel_pickup_list}    //div[@class='ant-card-body']//div[@class='ant-card-meta w-full']
 ${card_first_normal_parcel_pickup_list}    (//h5[contains(text(),'{title}')]/../../../../..//span[contains(normalize-space(),'{number_of_parcel}')]/../../../../../../../../../..)[1]
+${b2c_card_delete_pickup_parcel_call_car_pickup_page}    (//h5[text()='{value}'])[1]
 
 ${img_dry_parcel}    //div[@class='ant-space-item']//*[@alt='parcel']
 ${img_parcel_in_card}    (//div[@class='ant-card-body']//*[@alt='parcel'])[1]

@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S017
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ กรณีไม่แก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in
-    [Tags]    DC_Operation    UAT    Defect155    Defect209    Defect219    Defect223    Defect260
+    [Tags]    DC_Operation    Dry_Reprint_Label    UAT    Defect155    Defect209    Defect219    Defect223    Defect260
 
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002
@@ -65,7 +65,7 @@ DC_Operation_S017
     ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
     ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    ...    ROUTE  # ${dc_operation.scan_in_title_parcel_detail['route']}   
+    ...    ${dc_operation.scan_in_title_parcel_detail['route']}   
     dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
     ...    ${tracking_i}
     ...    ${DC_Operation_S017.scan_in_data_parcel_detail['customer_id']}
@@ -73,7 +73,7 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.scan_in_data_parcel_detail['crossdock_warehouse']}
     ...    ${DC_Operation_S017.scan_in_data_parcel_detail['destination_warehouse']}
     ...    ${DC_Operation_S017.scan_in_data_parcel_detail['parcel_status']}
-    ...    CP ALL  # ${DC_Operation_S017.scan_in_data_parcel_detail['courier']}
+    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['courier']}
     ...    ${pouch_number}
     ...    ${today}
     ...    ${DC_Operation_S017.scan_in_data_parcel_detail['origin_warehouse']}
@@ -101,7 +101,7 @@ DC_Operation_S017
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S017.scan_in_sender_data['name']}
     ...    ${DC_Operation_S017.scan_in_sender_data['phone']}
-    ...    -  # ${DC_Operation_S017.scan_in_sender_data['shipping_origin']}
+    ...    ${DC_Operation_S017.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S017.scan_in_sender_data['address']}
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -112,7 +112,7 @@ DC_Operation_S017
     dps_scan_page.Verify Data Receiver In Scan Page
     ...    ${DC_Operation_S017.scan_in_receiver_data['name']}
     ...    ${DC_Operation_S017.scan_in_receiver_data['phone']}
-    ...    ร้าน สาขา เวียงป่าเป้า (01015)  # ${DC_Operation_S017.scan_in_receiver_data['shipping_destination']}
+    ...    ${DC_Operation_S017.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S017.scan_in_receiver_data['address']}
     common.Scroll Window To Vertical    425
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    7.Verify Parcel Details After Scanning
@@ -177,7 +177,7 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_warehouse']}
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_store']}
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['crossdock_warehouse']}
-    ...    CP ALL  # ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
+    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_warehouse']}
     dps_history_parcel_page.Verify Title Sender In Warehouse Details
     ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
@@ -185,7 +185,7 @@ DC_Operation_S017
     dps_history_parcel_page.Verify Data Sender In Warehouse Details
     ...    ${DC_Operation_S017.value_sender_in_warehouse['name']}
     ...    ${DC_Operation_S017.value_sender_in_warehouse['phone']}
-    ...    ลำพยา เมืองนครปฐม นครปฐม 73000  # ${DC_Operation_S017.value_sender_in_warehouse['address']}
+    ...    ${DC_Operation_S017.value_sender_in_warehouse['address']}
     dps_history_parcel_page.Verify Title Receiver In Warehouse Details
     ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
     ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
@@ -276,7 +276,7 @@ DC_Operation_S017
     dps_pouch_page.Verify Data In Table On Pouch Detail Popup
     ...    ${tracking_i}
     ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['destination_warehouse']}
-    ...    null  # ${DC_Operation_S017.data_in_pouch_detail.data_in_table['pickup_place']}
+    ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['pickup_place']}
     ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['type']}
     ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    18.Verify Pouch Detail Popup
@@ -354,7 +354,7 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_warehouse']}
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_store']}
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['crossdock_warehouse']}
-    ...    CP ALL  # ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
+    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
     ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_warehouse']}
     dps_history_parcel_page.Verify Title Sender In Warehouse Details
     ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
@@ -362,7 +362,7 @@ DC_Operation_S017
     dps_history_parcel_page.Verify Data Sender In Warehouse Details
     ...    ${DC_Operation_S017.value_sender_in_warehouse['name']}
     ...    ${DC_Operation_S017.value_sender_in_warehouse['phone']}
-    ...    ลำพยา เมืองนครปฐม นครปฐม 73000  # ${DC_Operation_S017.value_sender_in_warehouse['address']}
+    ...    ${DC_Operation_S017.value_sender_in_warehouse['address']}
     dps_history_parcel_page.Verify Title Receiver In Warehouse Details
     ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
     ...    ${dc_operation.label_sender_in_warehouse['sender_address']}

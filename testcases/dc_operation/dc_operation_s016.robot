@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S016
     [Documentation]    คลัง Dry การแก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in ที่คลังต้นทาง
-    [Tags]    DC_Operation    UAT    Defect155    Defect160
+    [Tags]    DC_Operation    Dry_Edit_Size_Parcel    UAT    Defect155    Defect160
 
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002

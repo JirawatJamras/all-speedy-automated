@@ -812,7 +812,7 @@ Get Pouch Number And Verify Pouch Format
     Wait Until Element Is Visible    ${dps_txt_pouch_number_title_in_scan_in_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_pouch_number}=    Get Text    ${dps_txt_pouch_number_title_in_scan_in_page}
     ${pattern}=    Set Variable    ^P\d{2}(0[1-9]|1[0-2])([0-2][1-9]|3[0-1])\d{3}$
-    # Should Match Regexp    ${actual_pouch_number}    ${pattern}    # Defect 260 ถ้าแก้แล้วให้มาเปิด Code
+    Should Match Regexp    ${actual_pouch_number}    ${pattern}
     RETURN    ${actual_pouch_number}
 
 ############################ Move Status Tab #########################################
@@ -1051,6 +1051,3 @@ Click Dropdown Move Status To
 Click Confirm Move Status Button
     ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${dc_operation['button_confirm_move_status']}
     common.Click When Ready    ${btn_confirm_move}
-
-    
-

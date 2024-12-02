@@ -1,14 +1,14 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    chrome    # Unable to run headless
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
 
 *** Test Cases ***
 DC_Operation_S018
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ และใบคัดแยกพัสดุ กรณีแก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in ที่คลังต้นทาง
-    [Tags]    DC_Operation    UAT    Defect209    Defect225    Defect241
+    [Tags]    DC_Operation    Dry_Reprint_Label    UAT    Defect209    Defect225    Defect241
 
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002
@@ -53,7 +53,7 @@ DC_Operation_S018
     ...    ${dc_operation.label_parcel_details_in_warehouse['destination_warehouse']}
     dps_history_parcel_page.Verify Data Parcel Details In Warehouse Details
     ...    ${tracking_a}
-    ...    พัสดุรอ Scan out ไปคลัง DC SB    #${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_status']}
+    ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_status']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['customer_type']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['pouch_number']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['parcel_size']}
@@ -62,7 +62,7 @@ DC_Operation_S018
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['origin_warehouse']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['destination_store']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['crossdock_warehouse']}
-    ...    CP ALL  # ${DC_Operation_S018.value_parcel_details_in_warehouse['shipping_by']}
+    ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['shipping_by']}
     ...    ${DC_Operation_S018.value_parcel_details_in_warehouse['destination_warehouse']}
     dps_history_parcel_page.Verify Title Sender In Warehouse Details
     ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
@@ -70,7 +70,7 @@ DC_Operation_S018
     dps_history_parcel_page.Verify Data Sender In Warehouse Details
     ...    ${DC_Operation_S018.value_sender_in_warehouse['name']}
     ...    ${DC_Operation_S018.value_sender_in_warehouse['phone']}
-    ...    ลำพยา เมืองนครปฐม นครปฐม 73000  # ${DC_Operation_S018.value_sender_in_warehouse['address']}
+    ...    ${DC_Operation_S018.value_sender_in_warehouse['address']}
     dps_history_parcel_page.Verify Title Receiver In Warehouse Details
     ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
     ...    ${dc_operation.label_sender_in_warehouse['sender_address']}

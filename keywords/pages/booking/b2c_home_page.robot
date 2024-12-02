@@ -15,7 +15,6 @@ Click Parcel Delivery Service Menu
 Select Sub Menu Call Car Pick Up
     ${b2c_mnu_call_car_pick_up_home_page}=    Replace String    ${b2c_mnu_call_car_pick_up_home_page}    {value}    ${call_car_pick_up['text_call_car_pick_up']}
     common.Click When Ready    ${b2c_mnu_call_car_pick_up_home_page}
-    Mouse Out    ${b2c_mnu_call_car_pick_up_home_page}
 
 Select Sub Menu Favorites
     ${b2c_mnu_favorites_home_page}=    Replace String    ${b2c_mnu_favorites_home_page}    {value}    ${Booking['text_favorite_list']}
@@ -66,24 +65,10 @@ Verify My Profile Page
     Should Be Equal    ${email}    ${actual_email}
     Should Be Equal    ${position}    ${actual_position}
 
-Verify My Profile PageBusiness
-    [Arguments]    ${name} 
-    Wait Until Element Is Visible    ${b2c_personal_information_txtbox}
-    ${expected_emailtxtbox} =    Get value    ${b2c_personal_information_txtbox}
-    Should Be Equal    ${name}    ${expected_emailtxtbox}
-
 Verify Company Profile Page
     [Arguments]    ${company_profile}
     ${text_company_profile}=        Replace String    ${b2c_txt_sir_name}        {value}    ${company_profile}  
     Wait Until Element Is Visible    ${text_company_profile}    timeout=${DEFAULT_TIMEOUT}
-
-Click Button To Add
-    Wait Until Element Is Visible    ${b2c_btn_add}    timeout=${DEFAULT_TIMEOUT}
-    Click Element        ${b2c_btn_add}
-
-Click Tracking Parcel Delivery Menu
-    ${btn} =  Replace String    ${b2c_mnu_tracking_parcel_delivery}    {value}    ${Booking['text_menu_status_tracking']}
-    common.Click When Ready    ${btn}
 
 Wait Until Profile Page Loaded
     ${b2c_btn_edit_profile_info_home_page}=    Replace String    ${b2c_btn_edit_profile_info_home_page}    {value}    ${Booking['text_btn_edit']}
@@ -91,6 +76,3 @@ Wait Until Profile Page Loaded
     Wait Until Element Is Visible    ${b2c_txt_business_profile_title_home_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Page Contains Element    ${b2c_btn_edit_profile_info_home_page}    timeout=${DEFAULT_TIMEOUT}
     Sleep   3s
-
-Verify Login To Profile Page Correctly
-    Wait Until Profile Page Loaded

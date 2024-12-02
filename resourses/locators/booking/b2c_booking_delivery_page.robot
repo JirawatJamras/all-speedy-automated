@@ -1,6 +1,5 @@
 *** Variables ***
 ${btn_accept_terms_service}     //span[text()='{value}']/..
-${btn_close_condition_popup}     (//button[@type='button' and @class='ant-modal-close'])[1]
 ${btn_parcel_type_dry}     //img[@alt='Dry']
 ${btn_parcel_type_chill}    //img[@alt='Chill']
 ${btn_add_sender_to_favorites}    //div[@id='create_parcel_form_sender_isDefault']//span[@class='anticon anticon-heart']
@@ -24,7 +23,6 @@ ${btn_parcel_select_S2}    //strong[text()= '{value}']/../../../div[@class='ant-
 ${btn_parcel_select_A1}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_parcel_select_A2}    //strong[text()= '{value}']/../../../div[@class='ant-card-body']
 ${btn_use_code}    //button//span[text()='{value}']
-${btn_use_coupon}    //div[contains(@class,'ant-row max-sm:hidden')]//span[text()='{value}']/..
 ${btn_take_out_coupon}    //span[text()='{value}']/..
 ${btn_choose_favorites_list}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[text()='{value_address}' and text()='{value_subdistrict}' and text()='{value_district}' and text()='{value_province}' and text()='{value_postal_code}']/../../../../label
 ${btn_choose_favorites_list_store}    //strong[text()='{value_name}' and text()='{value_phone}' ]/../../../../../div[2]/span[contains(text(),'{store_address}')]/../../../../label
@@ -67,24 +65,19 @@ ${txt_cod}    //label[@title='{value}']
 ${txt_remark}    //label[@title='{value}']
 ${txt_selected_code_detail}    //span//strong[text()='{value}']/../..
 ${txt_store_address}    //textarea[@id='create_parcel_form_receiver_address_display']
-${txt_edit_booking_popup}    //div[@class='ant-modal-content']//div[text()='{value}']
 ${booking_txt_parcel_id_booking_detail_page}    //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div/span/strong
 ${txt_booking_card_skeleton}    (//div[@class='ant-skeleton-content'])[1]
-${txt_selected_coupon_detail}    //form[@id='create_parcel_form']//div[@class='ant-card-body']//div[@class='ant-list-item']
 ${txt_booking_status}    //span[text()='{id}']/..//span[text()='{status}']
 
 ${txtbox_phone_sender}    //input[@id='create_parcel_form_sender_tel']
 ${txtbox_name_sender}    //input[@id='create_parcel_form_sender_name']
 ${txtbox_address_sender}    //textarea[@id='create_parcel_form_sender_address_info']
 ${txtbox_postcode_sender}    //input[@id='create_parcel_form_sender_address_full']
-${txtbox_postcode_sender_not_select_text}    //span[@class='ant-select-selection-placeholder']
-${txtbox_postcode_sender_select_text_in}    //span[@class='ant-select-selection-item']
 ${txtbox_full_postcode_sender}    //input[@id='create_parcel_form_sender_address_full']
 ${txtbox_phone_receiver}    //input[@id='create_parcel_form_receiver_tel']
 ${txtbox_name_receiver}    //input[@id='create_parcel_form_receiver_name']
 ${txtbox_address_receiver}    //textarea[@id='create_parcel_form_receiver_address_info']
 ${txtbox_postcode_receiver}    //input[@id='create_parcel_form_receiver_address_full']
-${txtbox_postcode_receiver_not_select_text}    //span[@class='ant-select-selection-placeholder']
 ${txtbox_postcode_receiver_select_text}    //span[@class='ant-select-selection-item']
 ${txtbox_full_postcode_receiver}    //span[text()='{value} ']/../../..//div[@class='ant-select-selector']//span[1]
 ${txtbox_parcel_remark}    //label[text()='{value}']/../..//textarea[@id='create_parcel_form_remark']
@@ -93,10 +86,8 @@ ${txtbox_cod}    //input[@id='create_parcel_form_codValue']
 ${txtbox_insure_amount}    //label[text()='{value}']/../..//input[@id='create_parcel_form_insureAmount']
 ${txtbox_store_receiver}    (//div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input'])[1]
 ${txtbox_store_receiver_in_favorite}    (//div[@id='favorite_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input'])[1]
-${txtbox_store_receiver_value}    //div[@id='create_parcel_form_receiver_placeType-panel-store']//input[@class='ant-select-selection-search-input']/../../span[2]
 
 ${cbo_postcode_sender}    //div[@title='{value}']
-${cbo_postcode_receiver}    //div[@title='{value}']
 ${cbo_store_receiver}    //div[@title='{value}']
 
 ${tab_send_to_home}    //div[@data-node-key='home']
@@ -106,5 +97,3 @@ ${tab_send_to_store_verify}    //div[@data-node-key='store']//div[@id='create_pa
 
 ${status_active_sender}    //div[@step='1' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']
 ${status_active_receiver}    //div[@step='2' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']
-${status_active_parcel}    //div[@step='3' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']
-${status_active_promotion}    //div[@step='4' and @class='ant-steps-item ant-steps-item-process ant-steps-item-active']

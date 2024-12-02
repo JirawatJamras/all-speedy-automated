@@ -6,24 +6,18 @@ Variables                   config/language/${LANG}.yaml
 
 ######################## B2C ########################
 Resource                    ../keywords/pages/booking/b2c_login_page.robot
-Resource                    ../keywords/pages/booking/b2c_forgot_password_page.robot
 Resource                    ../keywords/pages/booking/b2c_home_page.robot
 Resource                    ../keywords/pages/booking/b2c_booking_delivery_page.robot
 Resource                    ../keywords/pages/booking/b2c_create_parcel_page.robot
-Resource                    ../keywords/pages/booking/b2c_tracking_parcel_delivery_page.robot
-Resource                    ../keywords/pages/booking/b2c_my_parcel_page.robot
 Resource                    ../keywords/pages/booking/b2c_call_car_pick_up_parcel_page.robot
 Resource                    ../keywords/pages/booking/b2c_favorite_page.robot
 Resource                    ../keywords/pages/booking/b2c_booking_detail_page.robot
 Resource                    ../keywords/pages/booking/b2c_return_business_page.robot
 
 Resource                    locators/booking/b2c_login_page.robot
-Resource                    locators/booking/b2c_forgot_password_page.robot
 Resource                    locators/booking/b2c_home_page.robot
 Resource                    locators/booking/b2c_booking_delivery_page.robot
 Resource                    locators/booking/b2c_create_parcel_page.robot
-Resource                    locators/booking/b2c_tracking_parcel_delivery_page.robot
-Resource                    locators/booking/b2c_my_parcel_page.robot
 Resource                    locators/booking/b2c_call_car_pick_up_parcel_page.robot
 Resource                    locators/booking/b2c_favorite_page.robot
 Resource                    locators/booking/b2c_booking_detail_page.robot
@@ -34,15 +28,10 @@ Variables                   testdata/booking/booking.yaml
 ######################## C2C ########################
 Resource                    ../keywords/pages/booking/c2c_landing_page.robot
 Resource                    ../keywords/pages/booking/c2c_login.robot
-Resource                    ../keywords/pages/booking/c2c_profile_page.robot
 Resource                    ../keywords/pages/booking/c2c_login.robot
-Resource                    ../keywords/pages/booking/c2c_login_seven_page.robot
-Resource                    ../keywords/pages/booking/c2c_tracking_page.robot
 
 Resource                    locators/booking/c2c_landing_page.robot
 Resource                    locators/booking/c2c_login.robot
-Resource                    locators/booking/c2c_profile_page.robot
-Resource                    locators/booking/c2c_login_seven_page.robot
 
 ######################## DPS ########################
 Resource                    ../keywords/pages/dc_operation/dps_landing_page.robot

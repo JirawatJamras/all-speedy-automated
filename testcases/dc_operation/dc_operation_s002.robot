@@ -7,5 +7,6 @@ Test Teardown     Close Browser
 
 *** Test Cases ***
 DC_Operation_S002
-    [Tags]    DC_Operation    UAT    Defect043    Defect144    Defect150
+    [Documentation]    คลัง Dry ยืนยันรอบรถเข้ารับพัสดุที่บ้านลูกค้า (Key Account)
+    [Tags]    DC_Operation    Dry_Approved_Request_Pickup_Schedule    UAT    Defect043    Defect144    Defect150    Defect192
     prerequisite.DC_Operation_S002

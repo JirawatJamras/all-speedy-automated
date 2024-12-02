@@ -1,6 +1,5 @@
 *** Variables ***
 ${b2c_mnu_book_parcel_delivery_home_page}    //div[@class='ant-space-item']//a[@href='/booking' and text()='{value}']
-${b2c_mnu_tracking_parcel_delivery}    //div[contains(@class,'ant-col hidden')]//a[@href='/status-tracking' and text()='{value}']
 ${b2c_mnu_parcel_delivery_service_home_page}    //div[text()='{value}']
 ${b2c_mnu_call_car_pick_up_home_page}    //a[text()='{value}']
 ${b2c_mnu_favorites_home_page}    //a[text()='{value}']

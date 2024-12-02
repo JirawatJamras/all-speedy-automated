@@ -15,20 +15,3 @@ Click Log On Button
     Wait Until Element Is Enabled    ${b2c_btn_log_on}    timeout=${DEFAULT_TIMEOUT}
     Click Element    ${b2c_btn_log_on}
     Wait Until Profile Page Loaded
-
-Click Log On Button Only
-    Wait Until Element Is Visible    ${b2c_btn_log_on}
-    Click Element    ${b2c_btn_log_on}
-
-Clear Inputbox Email
-    common.Clear Value Input Text    ${b2c_txtbox_email}
-
-Verify Validation Required Input Email
-    [Arguments]    ${text}
-    Wait Until Element Is Visible    ${b2c_error_message_emailbusiness}
-    Element Should Contain    ${b2c_error_message_emailbusiness}    ${text}
-
-Verify Validation Required Input Password
-    [Arguments]    ${text}
-    Wait Until Element Is Visible    ${b2c_error_message_passwordbusiness}
-    Element Should Contain    ${b2c_error_message_passwordbusiness}    ${text}

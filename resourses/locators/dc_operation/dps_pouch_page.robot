@@ -4,6 +4,7 @@ ${dps_btn_close_pouch_and_print_label_on_warning_popup}    //span[text()='{value
 ${dps_btn_close_x_button_on_popup}    //div[@class='ant-modal-mask']/..//button[@aria-label='Close']
 ${dps_btn_filter_pouch_page}    //span[text()='{value}']/..
 ${dps_btn_search_filter_pouch_page}    //div[text()='{value}']/..
+${dps_btn_close_pouch_in_pouch_page}    //div[@class='ant-modal-content']//span[text()='{value}']/..
 
 ${dps_txt_pouch_in_pouch_list}    //tr[td[1]='{pouch_number}' and td[2]='{inventory_crossdock}' and td[3]='{destination_inventory}' and td[5]//button[@aria-checked='{checked}'] and contains(td[6], '{update_date}')]
 ${dps_txt_title_pouch_pouch_page}    //strong[text()='{value}']
