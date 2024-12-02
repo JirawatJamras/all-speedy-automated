@@ -75,9 +75,8 @@ DC_Operation_S002
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add   
     Sleep    2s
-    # Defect043
     # Expected    
-    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
+    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    7.Verify Term & Condition
 
     Log    Step No.8 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
@@ -136,17 +135,16 @@ DC_Operation_S002
     b2c_booking_detail_page.Select Parcel Pickup Schedule
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
-    # Defect144
     # Expected
-    # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
-    # ...    ${today}
-    # ...    ${DC_Operation_S002.receiving_cycle['company_name']}
-    # ...    ${DC_Operation_S002.receiving_cycle['company_address']}
-    # ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
-    # ...    ${DC_Operation_S002.receiving_cycle['district']}
-    # ...    ${DC_Operation_S002.receiving_cycle['province']}
-    # ...    ${DC_Operation_S002.receiving_cycle['postcode']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    13.Verify Complete Select Parcel Pickup Schedule And Save
+    b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
+    ...    ${today}
+    ...    ${DC_Operation_S002.receiving_cycle['company_name']}
+    ...    ${DC_Operation_S002.receiving_cycle['company_address']}
+    ...    ${DC_Operation_S002.receiving_cycle['sub_district']}
+    ...    ${DC_Operation_S002.receiving_cycle['district']}
+    ...    ${DC_Operation_S002.receiving_cycle['province']}
+    ...    ${DC_Operation_S002.receiving_cycle['postcode']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    13.Verify Complete Select Parcel Pickup Schedule And Save
 
     Log    Step No.14 คลิกปุ่ม Import File
     b2c_booking_detail_page.Click Import File Button
@@ -201,12 +199,11 @@ DC_Operation_S002
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    # Defect150
-    # b2c_booking_detail_page.Verify Booking Detail Page After Import File
-    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    # ...    ${DC_Operation_S002['parcel_number']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.Verify Parcel Status After Cut Off Time
+    b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    ...    ${DC_Operation_S002['parcel_number']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
     Go To    ${DPS_UAT_URL}
@@ -247,7 +244,7 @@ DC_Operation_S002
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
-    ...    CPALL  #${DC_Operation_S002.receiving_cycle['courier']}
+    ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
@@ -267,7 +264,7 @@ DC_Operation_S002
     ...    ${DC_Operation_S002.receiving_cycle['postcode']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
-    ...    CPALL  #${DC_Operation_S002.receiving_cycle['courier']}
+    ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
@@ -300,7 +297,7 @@ DC_Operation_S002
     ...    ${tomorrow}
     ...    ${DC_Operation_S002.receiving_cycle['receiving_time']}
     ...    ${DC_Operation_S002.receiving_cycle['car_type']}
-    ...    CPALL  #${DC_Operation_S002.receiving_cycle['courier']}
+    ...    ${DC_Operation_S002.receiving_cycle['courier']}
     ...    ${DC_Operation_S002.receiving_cycle['number_of_parcel']}
     ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    22.Verify Parcel Pickup Details Popup
