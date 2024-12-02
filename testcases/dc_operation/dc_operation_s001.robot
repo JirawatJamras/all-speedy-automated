@@ -11,7 +11,7 @@ DC_Operation_S001
     [Tags]    DC_Operation    Dry_Rejected_Request_Pickup_Schedule    UAT    Defect043    Defect144    Defect150    Defect192    Defect207    Defect221
     Set Today
     Log    Reset Cut Off Time To 23:59
-    Reset Cut Off Time
+    dps_home_page.Reset Cut Off Time
 
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_UAT_URL}
