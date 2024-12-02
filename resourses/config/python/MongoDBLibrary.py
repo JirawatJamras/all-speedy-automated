@@ -14,25 +14,10 @@ class MongoDBLibrary:
         self.database = self.client[database]
         self.collection = self.database[collection]
 
-    def insert_document(self, document):
-        if self.collection is None:
-            raise Exception("Collection is not set")
-        return self.collection.insert_one(document)
-
-    def get_documents(self, query={}):
-        if self.collection is None:
-            raise Exception("Collection is not set")
-        return self.collection.find(query)
-
     def update_document(self, query, update):
         if self.collection is None:
             raise Exception("Collection is not set")
         return self.collection.update_one(query, {"$set": update})
-
-    def delete_document(self, query={}):
-        if self.collection is None:
-            raise Exception("Collection is not set")
-        return self.collection.delete_one(query)
 
     def disconnect(self):
         if self.client:
