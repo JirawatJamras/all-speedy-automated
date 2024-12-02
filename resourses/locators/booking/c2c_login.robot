@@ -14,4 +14,3 @@ ${c2c_icon_hide_password_login_page}        //*[@placeholder='ระบุรห
 
 ${c2c_expected_email_txtbox_login_page}     //input[@placeholder='ระบุอีเมล์/เบอร์ ALL MEMBER']
 ${c2c_show_password_login_page}             //input[@id='password' and @type='text']
-${c2c_hide_password_login_page}             //input[@id='password' and @type='password']

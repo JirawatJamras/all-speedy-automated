@@ -5,7 +5,7 @@ Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
                   ...    AND   Reset Cut Off Time
-Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule   ${tomorrow}    ${Booking_S018.pickup_time['expected']}
+Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
 
 *** Test Cases ***
@@ -20,6 +20,7 @@ Booking_S018
     b2c_login_page.Click Log On Button
 
     Log    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"
+    Reset Cut Off Time
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
@@ -27,7 +28,6 @@ Booking_S018
     common.Verify Capture Screenshot    booking    Booking_S018    1.Verify Navigate To Call Car Pick Up Page
 
     Log    Step No.2 กดปุ่ม "+ เพิ่ม"
-    # b2c_call_car_pick_up_parcel_page.Get The Highest Displayed Date And Set New Highest Date
     b2c_call_car_pick_up_parcel_page.Click Add Button
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Popup Parcel Pickup Schedule
@@ -65,5 +65,5 @@ Booking_S018
     ...    ${call_car_pick_up['text_price']}
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
-    ...    44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000  #${Booking_S018['pickup_point']}
+    ...    ${Booking_S018['pickup_point']}
     common.Verify Capture Screenshot    booking    Booking_S018    4.Verify Added New Parcel Pickup

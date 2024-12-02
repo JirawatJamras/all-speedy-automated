@@ -1,14 +1,9 @@
 *** Variables ***
 ${b2c_crd_list_of_parcels}    //div[@class='hidden sm:inline']//div[contains(@class,'ant-card ant-card-bordered ant-card-hoverable')]//div[@class='ant-card-body']
-${b2c_crd_list_of_pickup_schedule}    //div[@aria-hidden='false']//div[@class='ant-spin-container']//li[@class='ant-list-item']
 ${b2c_crd_parcel_list}    //div[@class='ant-list-item']//span[text()='{value}']/../../../../..//div[@class='ant-card-body']
 
 ${b2c_txt_booking_list}    //div[@class='hidden sm:inline']//span[contains(@class,'ant-typography')]//strong[text()='{value}']
 ${b2c_txt_list_of_parcels_status}    //div[@class='hidden sm:inline']//span[contains(@class,'ant-typography') and contains(text(),'{value}')]
-${b2c_txt_sender_name}   //div[contains(@class, 'ant-card-body')]//span[contains(text(), '{value}')]
-${b2c_txt_sender_phone}   //div[contains(@class,'ant-row') and contains(normalize-space(.), '{value}')]
-${b2c_txt_receiver_name}   //div[contains(@class, 'ant-list-item')]//div[contains(@class, 'ant-card-body')]//span[contains(text(),'{value}')]
-${b2c_txt_receiver_phone}   //div[contains(@class,'ant-row') and contains(normalize-space(.), '{value}')]
 ${b2c_txt_parcel_status_booking_detail_page}    //*[@class='hidden sm:inline']//span[text()='{value}']
 ${b2c_txt_booking_id_booking_detail_page}    //strong[text()='{value}']/../../..//div[2]//span
 ${b2c_txt_booking_name_booking_detail_page}    //strong[text()='{value}']/../../..//div[4]//span
@@ -26,7 +21,6 @@ ${b2c_txt_paper_size}    //span[text()='{value}']
 ${b2c_txt_list_paper_size}    //div[contains(text(),'{value}')]/../../..
 ${b2c_txt_parcel_label_detail}    //div[contains(@id,'print')]
 ${b2c_txt_booking_id}    //span[normalize-space()='{value}']
-${b2c_txt_edit_complete}    //*[text()='{value}']
 ${b2c_txt_transaction_date}    //strong[text()='{value}']/../../..//span[contains(text(),'{value2}')]
 ${b2c_txt_shipping_origin}    //strong[text()='{value}']/../../..
 ${b2c_txt_import_time}    //th[@class='ant-table-cell' and text()='{value}']
@@ -59,7 +53,6 @@ ${b2c_img_qr_code}    //div[text()='{value}']/../../../..//canvas
 ${b2c_img_loading_in_detail_after_set_origin_shipping}    //div[@role='dialog']//div[@class='ant-modal-content']//img[@class='bg-transparent']
 ${b2c_img_logo_home}    //div[contains(@class,'ant-col flex items-center')]//*[@stroke='currentColor']
 ${b2c_img_logo_store}    //div[contains(@class,'ant-col flex items-center')]//*[@draggable='false' and @loading='lazy']
-${b2c_img_empty_data}    //div[@class='hidden sm:inline']//div[@class='ant-list-empty-text']//div[@class='ant-empty-image']
 ${b2c_img_next_page_parcel_list}    //div[@class='hidden sm:inline']//li[@title='Next Page']
 
 ${b2c_btn_print_the_parcel_payment_slip_disabled}   //button[@type='button' and contains(@class, 'ant-btn-primary') and contains(@class, 'bg-blue-800') and @disabled and span[text()='{value}']]
@@ -68,7 +61,6 @@ ${b2c_btn_select_store}    //button//b[text()='{value}']/..
 ${b2c_btn_save_shipping_origin}    //span[text()='{value}']/..
 ${b2c_btn_print_parcel_label}    //*[@class='hidden sm:inline']//button//span[text()='{value}']
 ${b2c_btn_print_parcel_label_popup}    //div[text()='{value}']/../../..//button//span[text()='{value}']
-${b2c_btn_select_pickup_schedule}   //input[@class='ant-radio-input']/..
 ${b2c_btn_import_file_detail_page}    //span[text()='{value}']/..
 ${b2c_btn_import_file_in_popup}  //input[@id='InputFile']
 ${b2c_btn_template_in_popup}  //span[text()='{value}']/..

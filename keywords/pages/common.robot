@@ -127,6 +127,7 @@ Delete API Booking By Booking ID
     ${response}    DELETE On Session    allspeedy_api    /bookings/${booking_id}    headers=${headers}
     Log    ${response.status_code}
     Log    ${response.content}
+    Log    ${access_token}
 
 Get Parcels And Sender Names
     [Documentation]    Retrieve parcels' codes and sender's names from the API response

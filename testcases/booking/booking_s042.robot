@@ -7,16 +7,8 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headl
 Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
-*** Test Cases ***
-Booking_S042
-    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - เเก้ไขรายการ
-    [Tags]    Booking    Business_To_Customer    UAT    Defect050    Defect078    Defect101    Defect117    Defect119    Defect258
-    Log    Prerequisite S003
-    common.Open URL    ${B2C_UAT_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
-    b2c_login_page.Click Log On Button
+*** Keywords ***
+Booking_S003
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_booking_delivery_page.Click Button To Add
@@ -59,6 +51,20 @@ Booking_S042
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
+
+*** Test Cases ***
+Booking_S042
+    [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - เเก้ไขรายการ
+    [Tags]    Booking    Business_To_Customer    UAT    Defect050    Defect078    Defect101    Defect117    Defect119    Defect258
+    Log    Login
+    common.Open URL    ${B2C_UAT_URL}
+    register_general_customers_page.Select Business Customers Tab
+    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
+    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Click Log On Button
+    
+    Log    Prerequisite S003
+    Booking_S003
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
