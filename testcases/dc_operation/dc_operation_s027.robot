@@ -72,7 +72,7 @@ DC_Operation_s027
 
     Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
     dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
-    Expected
+    # Expected
     dps_scan_page.Verify Parcel Status Dropdown [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    4.Verify Parcel Status Dropdown
 
