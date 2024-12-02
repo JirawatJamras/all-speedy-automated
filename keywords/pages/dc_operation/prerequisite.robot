@@ -6240,7 +6240,7 @@ DC_Operation_S012
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_b}
     Switch Window    NEW
     # Expected
-    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S012['timeline_in_history_parcel']}    4    #5
+    dps_history_parcel_page.Verify Timeline    ${DC_Operation_S012['timeline_in_history_parcel']}    5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    8.Verify Timeline
     Close Window
     Switch Window    MAIN
@@ -6348,7 +6348,7 @@ DC_Operation_S016
     dps_scan_page.Verify Data Sender In Scan Page
     ...    ${DC_Operation_S016.scan_in_sender_data['name']}
     ...    ${DC_Operation_S016.scan_in_sender_data['phone']}
-    ...    -  # ${DC_Operation_S016.scan_in_sender_data['shipping_origin']}
+    ...    ${DC_Operation_S016.scan_in_sender_data['shipping_origin']}
     ...    ${DC_Operation_S016.scan_in_sender_data['address']}
     dps_scan_page.Verify Title Receiver In Scan Page
     ...    ${dc_operation.scan_in_title_receiver_detail['title']}
@@ -6373,7 +6373,7 @@ DC_Operation_S016
 
     Log    Step No.3 คลิก Dropdown Courier แก้ไขเป็น CP All
     dps_scan_page.Click Courier In Scan Page
-    dps_scan_page.Select Courier In Dropdown In Scan Page    CP ALL  # ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['courier']}
+    dps_scan_page.Select Courier In Dropdown In Scan Page    ${DC_Operation_S016.edit_parcel_detail_in_scan_in_tab['courier']}
     # Expected
     dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_label_detail['route']}
