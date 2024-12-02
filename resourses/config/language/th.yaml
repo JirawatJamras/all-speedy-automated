@@ -355,7 +355,7 @@ dc_operation:
   text_transaction_complete: ทำรายการสำเร็จ
   text_warning_confirm_to_close_pouch: ยืนยันการ ปิด Pouch หรือไม่
   text_destination_warehouse: คลังปลายทาง
-  text_parcel_is_on_pouch_warning: พัสดุชิ้นนี้อยู่ใน "ถุง" กรุณา Scan ด้วยเลขถุง เท่านั้น
+  text_parcel_is_on_pouch_warning: พัสดุอยู่ใน Pouch กรุณาสแกน Pouch
   text_unbox_pouch_and_scan_piece_by_piece: กรุณาแกะ Pouch เพื่อสแกนรับพัสดุรายชิ้น
   text_agree: ตกลง
   text_pouch_detail: รายละเอียด Pouch
