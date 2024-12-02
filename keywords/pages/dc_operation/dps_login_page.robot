@@ -13,8 +13,3 @@ Verify Login Page
 
 Click Log On Button
     common.Click when ready    ${dps_btn_log_on}
-
-Verify Error Message
-    [Arguments]    ${expected_error}
-    Wait Until Element Is Visible    ${dps_error_message}    timeout=${DEFAULT_TIMEOUT}
-    Element Should Contain    ${dps_error_message}    ${expected_error}

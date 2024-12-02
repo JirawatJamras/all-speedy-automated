@@ -1051,6 +1051,3 @@ Click Dropdown Move Status To
 Click Confirm Move Status Button
     ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${dc_operation['button_confirm_move_status']}
     common.Click When Ready    ${btn_confirm_move}
-
-    
-

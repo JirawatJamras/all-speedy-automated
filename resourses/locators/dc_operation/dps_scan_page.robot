@@ -16,7 +16,6 @@ ${dps_btn_confirm_scan_out_scan_out_page}    //span[text()='{value}']/../..//but
 ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    //div[@class='ant-modal-content']//span[text()='{value}']/..
 ${dps_btn_waiting_delivery_list_scan_out_page}    //span[text()='{value}']/..
 ${dps_btn_close_popup_success}    //span[@class='ant-modal-close-x']//span[@aria-label='close']
-# ${dps_btn_print_scan_out}    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='{export_to}']/..//td[text()='{deliver}']/..//td[text()='{parcel_amount}'][1]/..//td[text()='{pouch_amount}']/..//td[text()='{total_parcel_pouch}'][2]/..//td[@title='{print}'])[1]
 ${dps_btn_print_scan_out}    (//div[contains(@class,'ant-card ant-card-bordered')]//td[text()='{export_to}']/..//td[text()='{deliver}']/..//td[@title='{print}'])[1]//button
 ${dps_btn_create_pouch}    //span[text()='{value}']/..
 ${dps_btn_confirm_create_pouch}    //div[@role='dialog']//button[@type='submit']

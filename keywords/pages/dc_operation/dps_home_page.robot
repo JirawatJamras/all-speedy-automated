@@ -33,17 +33,6 @@ Select Check Receiving Cycle Menu
     END
     Wait Until Element Is Not Visible    ${dps_img_loading_screen_home_page}    timeout=240s
 
-# Select Warehouse List Button
-#     [Arguments]    ${selected_warehouse}
-#     ${dps_btn_selected_warehouse_list}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
-#     common.Click When Ready    ${dps_btn_selected_warehouse_list}
-#     ${dps_cbo_selected_warehouse_list}=    Replace String    ${dps_cbo_selected_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
-#     ${dps_warehouse_list_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_cbo_selected_warehouse_list}
-#     Run Keyword If    '${dps_warehouse_list_status}' == 'false'    Run Keywords    ${dps_cbo_warehouse_list}=    Replace String    ${dps_cbo_warehouse_list_home_page}    {warehouse}    ${selected_warehouse}
-#     ...    AND    common.Click When Ready    ${dps_cbo_warehouse_list}
-#     Run Keyword If    '${dps_warehouse_list_status}' == 'true'    Run Keywords    ${dps_txt_daily_task_overview}=    Replace String    ${dps_txt_daily_task_overview_home_page}    {value}    ${dc_operation.title['homepage']}
-#     ...    AND    Mouse Over    ${dps_txt_daily_task_overview}
-
 Select Warehouse List Button
     [Arguments]    ${selected_warehouse}
     ${dps_btn_selected_warehouse_list_1}=    Replace String    ${dps_btn_selected_warehouse_list_home_page}    {value}    ${dc_operation.selected_warehouse_list['text_selected_warehouse_list']}
@@ -298,93 +287,6 @@ Get Current DateTime Thai Format
     ${current_date}    Catenate    SEPARATOR=/    ${day}    ${month}    ${year}
     RETURN    ${current_date}
 
-Verify In Warehouse Parcels
-    [Arguments]    ${test_scenario}
-    Verify Export Work Of CP All    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.export_work['cap_all']}
-    Verify Export Work Of J&T    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.export_work['j&t']}
-    Verify Export Work Of DHL    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.export_work['dhl']}
-    Verify Export Work Of Flash    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.export_work['flash']}
-    Verify Export Work Of Kerry    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.export_work['kerry']}
-    Verify Sum number of Export Work
-    Verify Delivery Work Of Store    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.delivery_work['store']}
-    Verify Delivery Work Of House    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.delivery_work['house']}
-    Verify Delivery Work Of 7 Delivery    ${${test_scenario}}.daily_work_overview.in_warehouse_parcels.delivery_work['7_delivery']}
-    Verify Sum Number of Delivery Work
-    Verify Sum Number of In Warehouse Parcels
-
-Verify Export Work Of CP All
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //strong[text()='CP All (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${cp_all_number}    ${number}
-
-Verify Export Work Of J&T
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //strong[text()='J&T (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${j&t_number}    ${number}
-
-Verify Export Work Of DHL
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //strong[text()='DHL (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${dhl_number}    ${number}
-
-Verify Export Work Of Flash
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //strong[text()='Flash (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${flash_number}    ${number}
-
-Verify Export Work Of Kerry
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //strong[text()='Kerry (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${kerry_number}    ${number}
-
-Verify Sum number of Export Work
-    ${sum_number_export_work}    Re Format And Sum Number of Export Work    ${cp_all_number}    ${j&t_number}    ${dhl_number}    ${flash_number}    ${kerry_number}
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_export_work}
-    Set Suite Variable    ${sum_number_export_work}    ${sum_number_export_work}
-    Log    ${sum_number_export_work}
-
-Verify Delivery Work Of Store
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //div[@class='ant-col ant-col-14 css-1x1kih3']//strong[text()='ร้าน (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${in_warehouse_parcels_store_number}    ${number}
-
-Verify Delivery Work Of House
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //div[@class='ant-col ant-col-14 css-1x1kih3']//strong[text()='บ้าน (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${in_warehouse_parcels_house_number}    ${number}
-
-Verify Delivery Work Of 7 Delivery
-    [Arguments]    ${value}
-    Wait Until Element Is Visible    ${dps_txt_parcels_in_warehouse_home_page}    timeout=10s
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${value}
-    ${number}    Get Text    //div[@class='ant-col ant-col-14 css-1x1kih3']//strong[text()='7 Delivery (ชิ้น)']/../../..//span[contains(@class,'font-bold')]
-    Set Suite Variable    ${in_warehouse_parcels_7_delivery_number}    ${number}
-
-Verify Sum Number of Delivery Work
-    ${sum_number_delivery_work}    Re Format And Sum Number of Delivery Work    ${in_warehouse_parcels_store_number}    ${in_warehouse_parcels_house_number}    ${in_warehouse_parcels_7_delivery_number}
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_delivery_work}
-    Set Suite Variable    ${sum_number_delivery_work}    ${sum_number_delivery_work}
-    Log    ${sum_number_delivery_work}
-
-Verify Sum Number of In Warehouse Parcels
-    ${sum_number_in_warehouse_parcels}    Re Format And Sum Number of In Warehouse Parcels    ${sum_number_export_work}    ${sum_number_delivery_work}
-    Element Should Be Visible    ${dps_txt_parcels_in_warehouse_home_page}    ${sum_number_in_warehouse_parcels}
-    Log    ${sum_number_in_warehouse_parcels}
-
 Verify Page Title
     [Arguments]    ${title}
     ${dps_txt_page_title}=  Replace String   ${dps_txt_page_title}  {value}   ${title}
@@ -419,7 +321,6 @@ Verify Label In Send Task Tab
     ${dps_txt_title_table_in_send_task_tab_home_page}=    Replace String    ${dps_txt_title_table_in_send_task_tab_home_page}    {number_of_pieces}    ${number_of_pieces}
     Wait Until Element Is Visible    ${dps_txt_title_table_in_send_task_tab_home_page}    timeout=${DEFAULT_TIMEOUT}
     
-
 Verify Data In Send Task Tab
     [Arguments]    ${send_to}    ${store_code}    ${customer_type}    ${transport}
     ${dps_txt_list_send_task}=    Replace String    ${dps_txt_list_send_task_home_page}    {send_to}    ${send_to}
@@ -427,7 +328,6 @@ Verify Data In Send Task Tab
     ${dps_txt_list_send_task}=    Replace String    ${dps_txt_list_send_task}    {customer_type}    ${customer_type}
     ${dps_txt_list_send_task}=    Replace String    ${dps_txt_list_send_task}    {transport}    ${transport}
     Scroll Element Into View    ${dps_txt_list_send_task}
-    # Element Should Contain    ${dps_txt_list_send_task}    ${send_to} ${store_code} ${customer_type} ${transport}
     Wait Until Element Is Visible    ${dps_txt_list_send_task}    timeout=${DEFAULT_TIMEOUT}
 
 Select Filter Button
