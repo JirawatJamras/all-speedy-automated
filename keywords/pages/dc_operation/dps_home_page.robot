@@ -124,31 +124,6 @@ Verify Parcel Is Not Visible [All Task Tab]
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_status}    ${parcel_status}
     Sleep    5s
     Wait Until Element Is Not Visible    ${dps_txt_list_first_all_task}    timeout=${DEFAULT_TIMEOUT}
-    
-Verify Data In All Task Tab (Loop To Find Each Row)
-    [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
-    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_size}    ${parcel_status}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {export_to}    ${export_to}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {transport}    ${transport}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {pouch_number}    ${pouch_number}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_number}    ${parcel_number}
-        ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_status}    ${parcel_status}
-    WHILE    True
-        ${elementIsVisible}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_txt_list_first_all_task}    timeout=${DEFAULT_TIMEOUT}
-        IF    '${elementIsVisible}' == 'True'
-            Scroll Element Into View    ${dps_txt_list_first_all_task}
-            ${actual_txt_list_first_all_task}=    Get Text    ${dps_txt_list_first_all_task}
-            ${actual_txt_list_first_all_task}=    Replace String    ${actual_txt_list_first_all_task}    \n    ${SPACE}
-            Should Be Equal As Strings    ${actual_txt_list_first_all_task}    ${task_type} ${parcel_owner} ${import_from} ${export_to} ${transport} ${pouch_number} ${parcel_number} ${parcel_status}
-            Exit For Loop
-        ELSE
-            Scroll Element Into View    ${dps_btn_pagination_right_home_page}
-            common.Click When Ready    ${dps_btn_pagination_right_home_page}
-        END
-    END    
 
 Click Dropdown For Select Role
     common.Click When Ready    ${dps_btn_dropdown_select_role}
@@ -239,53 +214,6 @@ Select DPS Menu
     Wait Until Element Is Visible    ${tab_menu}
     Click Element    ${tab_menu}
     Mouse Out    ${tab_menu}
-
-Re Format And Sum Number of Export Work
-    [Arguments]    ${number1}    ${number2}    ${number3}    ${number4}    ${number5}
-    ${number1}=    Convert To Integer    ${number1}
-    ${number2}=    Convert To Integer    ${number2}
-    ${number3}=    Convert To Integer    ${number3}
-    ${number4}=    Convert To Integer    ${number4}
-    ${number5}=    Convert To Integer    ${number5}
-    ${sum_number}=    Evaluate    ${number1} + ${number2} + ${number3}
-    ${sum_number}=    Evaluate    ${sum_number} + ${number4} + ${number5}
-    ${sum_number}=    Convert To String    ${sum_number}
-    RETURN     ${sum_number}
-
-Re Format And Sum Number of Delivery Work
-    [Arguments]    ${number1}    ${number2}    ${number3}
-    ${number1}=    Convert To Integer    ${number1}
-    ${number2}=    Convert To Integer    ${number2}
-    ${number3}=    Convert To Integer    ${number3}
-    ${sum_number}=    Evaluate    ${number1} + ${number2} + ${number3}
-    ${sum_number}=    Convert To String    ${sum_number}
-    RETURN     ${sum_number}
-
-Re Format And Sum Number of In Warehouse Parcels
-    [Arguments]    ${number1}    ${number2}
-    ${number1}=    Convert To Integer    ${number1}
-    ${number2}=    Convert To Integer    ${number2}
-    ${sum_number}=    Evaluate    ${number1} + ${number2}
-    ${sum_number}=    Convert To String    ${sum_number}
-    RETURN     ${sum_number}
-
-Verify Current Date
-    ${dps_txt_date}=    Replace String    ${dps_txt_date}    {value}    ${dc_operation['text_data_at_date']}
-    Wait Until Element Is Visible    ${dps_txt_date}    30s
-    ${Web_Date}    Get Text    ${dps_txt_date}  
-    ${Web_Date}    Split String And Select    ${Web_Date}    ${space}    3
-    ${current_date}    Get Current DateTime Thai Format
-    Should Be Equal    ${Web_Date}    ${current_date}
-
-Get Current DateTime Thai Format
-    ${current_date} =    Get Current Date    result_format=%d/%m/%Y
-    ${day}    Split String And Select    ${current_date}    /    0
-    ${month}    Split String And Select    ${current_date}    /    1
-    ${year}    Split String And Select    ${current_date}    /    2
-    ${year} =    Evaluate    int(${year}) + 543
-    ${year} =    Convert To String    ${year}
-    ${current_date}    Catenate    SEPARATOR=/    ${day}    ${month}    ${year}
-    RETURN    ${current_date}
 
 Verify Page Title
     [Arguments]    ${title}

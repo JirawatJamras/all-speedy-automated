@@ -246,4 +246,5 @@ Verify Close Pouch Confirmation Popup
     Should Be Equal    ${actual_txt_close_pouch}    ${close_pouch}
 
 Click Close Pouch Button In Popup
-    common.Click When Ready    //div[@class='ant-modal-content']//span[text()='ปิด Pouch/Print Label']/..
+    ${dps_btn_close_pouch_in_pouch_page}=    Replace String    ${dps_btn_close_pouch_in_pouch_page}    {value}    ${dc_operation['text_close_pouch_and_print_label']}
+    common.Click When Ready    ${dps_btn_close_pouch_in_pouch_page}
