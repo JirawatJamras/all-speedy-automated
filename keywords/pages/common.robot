@@ -273,4 +273,3 @@ Set Yesterday
     ${year_be}    Evaluate    int(${year}) + 543
     ${yesterday}    Set Variable    ${day}-${month}-${year_be}
     Set Suite Variable    ${yesterday}
-    Log To Console    ${yesterday}
