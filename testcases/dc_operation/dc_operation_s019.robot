@@ -9,7 +9,7 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 *** Test Cases ***
 DC_Operation_S019
     [Documentation]    คลัง Chilled ปฏิเสธรอบรถเข้ารับพัสดุที่บ้านลูกค้า (Key Account)
-    [Tags]    DC_Operation    UAT
+    [Tags]    DC_Operation    Chilled_Rejected_Request_Pickup_Schedule    UAT
     skip
     
     Log    Step No.1 เข้า URL All Speedy

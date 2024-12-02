@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S017
     [Documentation]    คลัง Dry การ Reprint ใบปะหน้าพัสดุ กรณีไม่แก้ไขขนาดพัสดุ / แก้ไข Courier / แก้ไขคลังปลายทาง ในขั้นตอนการ Scan in
-    [Tags]    DC_Operation    UAT    Defect155    Defect209    Defect219    Defect223    Defect260
+    [Tags]    DC_Operation    Dry_Reprint_Label    UAT    Defect155    Defect209    Defect219    Defect223    Defect260
 
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002
