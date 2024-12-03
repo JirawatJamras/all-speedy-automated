@@ -4,13 +4,13 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
+                  ...    AND    Reset Cut Off Time
 Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
 
 *** Keywords ***
 Booking_S018
-    Reset Cut Off Time
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     b2c_call_car_pick_up_parcel_page.Click Add Button
