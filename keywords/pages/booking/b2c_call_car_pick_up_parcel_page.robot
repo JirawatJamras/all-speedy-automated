@@ -271,24 +271,26 @@ Delete The Lastest Parcel Pickup Schedule
 
 Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${tomorrow_date}    ${current_time}
-    ${b2c_card_delete_pickup_parcel}=    Replace String    ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    {value}    ${call_car_pick_up.car_round_name['special']} ${tomorrow_date} ${current_time}
-    ${b2c_txt_status_in_card}=    Replace String    ${b2c_txt_status_in_card_call_car_pickup_page}    {value}    ${call_car_pick_up.status['parcel_in_progress']}
-    Set Today
-    b2c_home_page.Click Parcel Delivery Service Menu
-    b2c_home_page.Select Sub Menu Call Car Pick Up
-    ${status}=    Set Variable    False
-    ${today_pattern}    Set Date Pattern    ${today}
-    ${tomorrow_pattern}    Set Date Pattern    ${tomorrow_date}
-    Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
-    WHILE    '${status}' == 'False'
-        Scroll Window To Vertical    0
-        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_status_in_card}
-        ${visible_card}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_card_delete_pickup_parcel}
-        Scroll Window To Vertical    1000
-        Run Keyword If    '${status}' == 'True' and '${visible_card}' == 'True'    Exit For Loop
-        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
-    END
-    Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time} 
+    IF    '${card_is_visible}' != 'Flase'
+        ${b2c_card_delete_pickup_parcel}=    Replace String    ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    {value}    ${call_car_pick_up.car_round_name['special']} ${tomorrow_date} ${current_time}
+        ${b2c_txt_status_in_card}=    Replace String    ${b2c_txt_status_in_card_call_car_pickup_page}    {value}    ${call_car_pick_up.status['parcel_in_progress']}
+        Set Today
+        b2c_home_page.Click Parcel Delivery Service Menu
+        b2c_home_page.Select Sub Menu Call Car Pick Up
+        ${status}=    Set Variable    False
+        ${today_pattern}    Set Date Pattern    ${today}
+        ${tomorrow_pattern}    Set Date Pattern    ${tomorrow_date}
+        Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
+        WHILE    '${status}' == 'False'
+            Scroll Window To Vertical    0
+            ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_status_in_card}
+            ${visible_card}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_card_delete_pickup_parcel}
+            Scroll Window To Vertical    1000
+            Run Keyword If    '${status}' == 'True' and '${visible_card}' == 'True'    Exit For Loop
+            ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        END
+        Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
+    END 
 
 Verify Added New Parcel Pickup
     [Arguments]    ${status}    ${parcel_type}    ${round}    ${tomorrow}    ${pickup_time}    ${today}
@@ -310,8 +312,8 @@ Verify Added New Parcel Pickup
     Run Keyword If    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'    Element Should Be Visible   ${img_dry_parcel}
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
     Log    ${actual_card}
-    Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    False
+    ${card_is_visible}=    Set Variable    True
     ${today_pattern}    Set Date Pattern    ${today}
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
     Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
@@ -321,7 +323,12 @@ Verify Added New Parcel Pickup
         Scroll Window To Vertical    1000
         Run Keyword If    '${status}' == 'True'    Exit For Loop
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
+        ...    AND    ${card_is_visible}=    Set Variable    Flase
     END
+    Set Global Variable    ${card_is_visible}
 
 Get Cut Off Date From Value
     [Arguments]    ${date}
