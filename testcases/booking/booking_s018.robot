@@ -2,7 +2,7 @@
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
 
-Test Setup        Run Keywords    Open Chrome Browser    chrome    #headlesschrome    #chrome
+Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
                   ...    AND   Reset Cut Off Time
 Test Teardown     Run Keywords   Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
