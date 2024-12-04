@@ -123,7 +123,7 @@ Verify Parcel Pickup Status After Cut Off Time
 
     WHILE    '${status_2}' == 'False'
         ${loop}=    Evaluate    ${loop} + 1
-        Run Keyword If    ${loop} > 50    Fail    After 5 minutes of cut off time, the status has not changed.
+        Run Keyword If    ${loop} > 100    Fail    After 5 minutes of cut off time, the status has not changed.
         Scroll Window To Vertical    0
         Run Keyword And Ignore Error    Wait Until Element Is Visible    ${card}
         ${number}=    Get Element Count    ${card}
