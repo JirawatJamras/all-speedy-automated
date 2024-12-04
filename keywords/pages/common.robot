@@ -207,7 +207,8 @@ Set Yesterday
 ################### Manage Excel ###################    
 Read Row From Excel
     [Arguments]    ${file_path}    ${sheet_name}    ${row_number}
-    ${workbook}=   Evaluate    openpyxl.load_workbook(r"${file_path}")
+    ${excel_file}   Normalize Path    ${file_path} 
+    ${workbook}=   Evaluate    openpyxl.load_workbook(r"${excel_file}")
     ${sheet}=    Set Variable    ${workbook}[${sheet_name}]
     ${row_values}=    Create List
     FOR    ${cell}    IN    @{sheet[${row_number}]}
