@@ -114,6 +114,9 @@ DC_Operation_s026
     Log    Step No.4 คลิกที่กล่อง Pouch
     dps_scan_page.Click Pouch Box    ${pouch_number}    ${dc_operation.label_pouch_detail['default_number_of_parcel']}
     # Expected
+    dps_scan_page.Verify Pouch Detail In Scan Page
+    ...    ${pouch_number}
+    ...    ${DC_Operation_S026.pouch['number_of_parcel']}
     dps_scan_page.Verify Pouch Number Data Parcel Details In Scan Page [CP All Courier]    ${pouch_number}
     dps_scan_page.Verify Pouch Number Data Label Parcel In Scan Page [CP All Courier]    ${pouch_number}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026    4.Verify Parcel Details After Click Pouch Box 1st Time

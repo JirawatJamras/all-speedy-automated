@@ -404,6 +404,13 @@ Click Pouch Box
     Scroll Element Into View    ${text_number_of_parcel}
     common.Click When Ready    ${text_number_of_parcel}
 
+Verify Pouch Box
+    [Arguments]    ${pouch_number}    ${number_of_parcel}
+    ${text_pouch_number}=    Replace String    ${dps_txt_number_of_parcel_in_pouch}    {pouch_number}    ${pouch_number}
+    ${text_number_of_parcel}=    Replace String    ${text_pouch_number}    {value}    ${number_of_parcel}
+    Wait Until Element Into View    ${text_number_of_parcel}
+    Scroll Element Into View    ${text_number_of_parcel}
+
 #################################### Other Courier ####################################
 
 Verify Title Parcel Details In Scan Page [Other Courier]
@@ -1051,3 +1058,4 @@ Click Dropdown Move Status To
 Click Confirm Move Status Button
     ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${dc_operation['button_confirm_move_status']}
     common.Click When Ready    ${btn_confirm_move}
+
