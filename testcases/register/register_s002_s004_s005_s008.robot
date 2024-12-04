@@ -32,7 +32,7 @@ Register_S002
     register_business_pre_register.Input Juristic Identification Number Legal Entity    ${Register_S002['id_number']}
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S002['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
-    common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S002_filled in information 1/2
+    common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S002_filled in information 1
     
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S002['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S002['first_name']}
@@ -40,7 +40,7 @@ Register_S002
     register_business_pre_register.Input Email Legal Entity   ${Register_S002['email']}
     register_business_pre_register.Input Mobile No Legal Entity   ${Register_S002['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity   ${Register_S002['mobile_ext']}
-    common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S002_filled in information 2/2
+    common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S002_filled in information 2
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
