@@ -22,7 +22,7 @@ Booking_S048
     Log    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
-    ${date}    Get Normal Parcel Pickup Date    ${Booking_S048.add_new_pickup['pickup_point']}
+    ${date}    Get Normal Parcel Pickup Date    ${Booking_S048['pickup_point']}
     Set Yesterday    ${date}
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
@@ -36,7 +36,7 @@ Booking_S048
     ...    ${call_car_pick_up['text_price']}
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${Booking_S048.add_new_pickup['pickup_point']}
+    ...    ${Booking_S048['pickup_point']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S048    1.Verify Car Pickup Schedule Card
 
