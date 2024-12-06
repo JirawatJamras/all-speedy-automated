@@ -53,7 +53,6 @@ Resource                    locators/dc_operation/dps_history_parcel_page.robot
 Resource                    locators/dc_operation/dps_wait_delivery.robot
 
 Variables                   testdata/dc_operation/dc_operation.yaml
-Variables                   testdata/dc_operation/booking_dry_test_dc.yaml
 
 ######################## REGISTER ########################
 Resource                    ../keywords/pages/register/register_general_customers_page.robot
