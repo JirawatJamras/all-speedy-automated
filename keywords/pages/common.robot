@@ -195,13 +195,12 @@ Set Today
     Set Suite Variable    ${today}
 
 Set Yesterday
-    ${today}=    Get Current Date    result_format=%Y-%m-%d
-    ${yester_day}=    Subtract Time From Date	    ${today}    1 days    result_format=%d-%m-%Y
-    ${day}    Split String And Select    ${yester_day}    -    0
-    ${month}    Split String And Select    ${yester_day}    -    1
-    ${year}    Split String And Select    ${yester_day}    -    2
-    ${year_be}    Evaluate    int(${year}) + 543
-    ${yesterday}    Set Variable    ${day}-${month}-${year_be}
+    [Arguments]    ${date}
+    ${d}    Split String And Select    ${date}    -    0
+    ${m}    Split String And Select    ${date}    -    1
+    ${y}    Split String And Select    ${date}    -    2
+    ${new_date}    Set Variable    ${y}-${m}-${d}
+    ${yesterday}=    Subtract Time From Date        ${new_date}    1 days    result_format=%d-%m-%Y
     Set Suite Variable    ${yesterday}
 
 ################### Manage Excel ###################    

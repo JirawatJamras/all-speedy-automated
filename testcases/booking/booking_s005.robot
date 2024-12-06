@@ -214,9 +214,9 @@ Booking_S005
     ...    ${Booking_S005['discount_value1']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
+    ...    ${Booking_S005['cod_fee_amount']}
+    ...    ${Booking_S005['cod_fee_value']}
+    ...    ${Booking_S005['total_price_amount']}
     ...    ${Booking_S005['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
@@ -265,9 +265,9 @@ Booking_S005
     ...    ${Booking_S005['discount_value1']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
-    ...    ${Booking.text_default['cod_fee_amount']}
-    ...    ${Booking.text_default['cod_fee_value']}
-    ...    ${Booking.text_default['total_price_amount']}
+    ...    ${Booking_S005['cod_fee_amount']}
+    ...    ${Booking_S005['cod_fee_value']}
+    ...    ${Booking_S005['total_price_amount']}
     ...    ${Booking_S005['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500

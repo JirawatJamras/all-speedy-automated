@@ -49,7 +49,7 @@ ${b2c_tbl_pickup_parcel_calendar}    //td[@title='{value}']
 
 ${b2c_card_pickup_parcel_schedule_call_car_pickup_page}    //*[@id="scrollableDiv"]/div/div/div/div[1]/div/div/div/div[1]
 ${b2c_card_parcel_pickup_list}    //div[@class='ant-card-body']//div[@class='ant-card-meta w-full']
-${card_first_normal_parcel_pickup_list}    (//h5[contains(text(),'{title}')]/../../../../..//span[contains(normalize-space(),'{number_of_parcel}')]/../../../../../../../../../..)[1]
+${card_first_normal_parcel_pickup_list}    (//h5[contains(text(),'{title}')]/../../../../..//span[contains(normalize-space(),'{number_of_parcel}')]/../../../../..//span[contains(text(),'{address}')])[1]
 ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    (//h5[text()='{value}'])[1]
 
 ${img_dry_parcel}    //div[@class='ant-space-item']//*[@alt='parcel']

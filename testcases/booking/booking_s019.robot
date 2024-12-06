@@ -414,5 +414,6 @@ Booking_S019
 
     Log    Step No.22 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
+    Set Global Variable    ${card_is_visible}    True
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S019    22.Verify Print Screen

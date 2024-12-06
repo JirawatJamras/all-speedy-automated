@@ -259,6 +259,7 @@ Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
     ${btn_delete_car_round}=    Replace String    ${b2c_btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
     ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round}    {time}    ${current_time}
+    Log    ${btn_delete_car_round}
     ${b2c_txt_delete_complete_pickup_page}=    Replace String    ${b2c_txt_delete_complete_pickup_page}    {value}    ${Booking['text_delete_data_complete']}
     ${b2c_btn_confirm_in_asking_to_close_popup}=    Replace String    ${b2c_btn_confirm_in_asking_to_close_popup}    {value}    ${Booking['text_confirm_popup']}
     common.Scroll Window To Vertical    0
@@ -347,12 +348,23 @@ Get Cut Off Date From Value
     RETURN    ${cut_off_date}
 
 Get Normal Parcel Pickup Date
+    [Arguments]    ${address}
     Wait Until Element Is Visible    ${img_parcel_in_card}    timeout=${DEFAULT_TIMEOUT}
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel_pickup_list}    {title}    ${call_car_pick_up.car_round_name['normal']}
     ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {number_of_parcel}    ${call_car_pick_up.default['parcel_number']}
-    Scroll Element Into View    ${card_first_normal_parcel}
-    Wait Until Element Is Visible    ${img_parcel_in_card}    timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    ${card_first_normal_parcel}
+    ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {address}    ${address}
+    ${status}=    Set Variable    False
+    WHILE    '${status}' == 'False'
+        Scroll Window To Vertical    0
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${card_first_normal_parcel}
+        Scroll Window To Vertical    1000
+        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
+        ...    AND    ${card_is_visible}=    Set Variable    Flase
+    END
     ${txt_normal_parcel_pickup_schedule}=    Replace String    ${txt_normal_parcel_pickup_schedule}    {value}    ${call_car_pick_up.car_round_name['normal']}
     ${titleName}=    Get Text    ${txt_normal_parcel_pickup_schedule} 
     ${highestDisplayedDate}=    Split String And Select    ${titleName}    ${SPACE}    1
@@ -370,12 +382,34 @@ Get Normal Parcel Pickup Date
     RETURN    ${newDate}
 
 Verify Car Pickup Schedule Card
-    [Arguments]    ${booking_stauts}    ${car_round}    ${pickup_date}    ${pickup_time_title}    ${pickup_time_detail}    ${pickup_point}
-    ${cut_off_date}=    Get Cut Off Date From Value    ${pickup_date}
-    ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel_pickup_list}    {title}    ${car_round}
-    ${card_first_normal_parcel}=    Replace String    ${card_first_normal_parcel}    {number_of_parcel}    ${call_car_pick_up.default['parcel_number']}
-    Scroll Element Into View    ${card_first_normal_parcel}
-    Wait Until Element Is Visible    ${card_first_normal_parcel}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_info_new_pickup_card}=    Get Text    ${card_first_normal_parcel}
-    ${actual_info_new_pickup_card}=    Replace String   ${actual_info_new_pickup_card}   \n   ${SPACE}
-    Should Be Equal As Strings    ${actual_info_new_pickup_card}    ${car_round} ${pickup_date} ${pickup_time_title} น. วันที่รถเข้ารับพัสดุ: ${pickup_date} ${pickup_time_detail}น. เวลา Cut Off รอบรถ: ${cut_off_date} ${Booking.pickup_schedule.default['cut_off_time']} จำนวนพัสดุ: ${call_car_pick_up.default['parcel_number']} ราคา: ${call_car_pick_up.default['price']} จุดรับพัสดุ: ${pickup_point} ${booking_stauts}
+    [Arguments]    ${status}    ${round}    ${date}    ${pickup_time}    ${today}    ${text_parcel_number}
+    ...        ${parcel_num}    ${text_price}    ${price_value}    ${text_pickup_location}    ${company_address}
+    ${actual_status}=  Replace String   ${b2c_txt_parcel_pickup_round}    {status}    ${status}
+    ${label_pickup_round}=  Replace String   ${actual_status}    {round}    ${round} ${date} ${pickup_time} น.
+    ${label_pickup_date}=  Replace String   ${label_pickup_round}    {pickupdate}    ${call_car_pick_up['text_parcel_pickup_date']} 
+    ${value_pickup_date}=  Replace String   ${label_pickup_date}    {value}    ${date}
+    ${label_cut_off}=  Replace String   ${b2c_txt_cutoff_pickup_round}    {cutoff}    ${call_car_pick_up['text_cut_off_time']}
+    
+    ${value_cut_off}=  Replace String   ${label_cut_off}    {cutoff_value}    ${today}
+    ${label_parcel}=  Replace String   ${value_cut_off}    {parcel}    ${text_parcel_number}
+    ${value_parcel}=  Replace String   ${label_parcel}    {value}    ${parcel_num}
+    ${label_price}=  Replace String   ${b2c_txt_location_pickup}    {price}    ${text_price}
+    ${value_price}=  Replace String   ${label_price}    {price_value}    ${price_value}
+    ${label_location}=  Replace String   ${value_price}    {location}    ${text_pickup_location}
+    ${value_location}=  Replace String   ${label_location}    {location_value}    ${company_address}
+    Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
+    ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
+    Log    ${actual_card}
+    ${status}=    Set Variable    False
+    ${card_is_visible}=    Set Variable    True
+    WHILE    '${status}' == 'False'
+        Scroll Window To Vertical    0
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_card}
+        Scroll Window To Vertical    1000
+        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
+        ...    AND    ${card_is_visible}=    Set Variable    Flase
+    END

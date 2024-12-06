@@ -265,7 +265,7 @@ Booking_S022
     Log    Step No.17 ขั้นตอน Promotion
     b2c_booking_delivery_page.Input Promotion    ${Booking_S022['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
-    # # Expected
+    # Expected
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S022.promotion_detail['discount']}
     ...    ${Booking_S022.promotion_detail['promotion_name']}
@@ -449,5 +449,6 @@ Booking_S022
 
     Log    Step No.24 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
+    Set Global Variable    ${card_is_visible}    True
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S022    24.Verify Print Screen

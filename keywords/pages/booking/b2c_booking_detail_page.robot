@@ -20,6 +20,7 @@ Verify Booking Detail Page After Draft
     ${b2c_btn_print_the_parcel_payment_slip_disabled}=    Replace String    ${b2c_btn_print_the_parcel_payment_slip_disabled}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_crd_list_of_parcels}     timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_txt_list_of_parcels_status}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Run Keyword If    '${parcel_size}' == '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
@@ -54,6 +55,7 @@ Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
     ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_btn_print_the_parcel_payment_slip_disabled}=    Replace String    ${b2c_btn_print_the_parcel_payment_slip_disabled}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
@@ -362,7 +364,8 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
     Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    Element Should Contain    ${b2c_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
+    ${actual_txt_shipping_origin_booking_detail_page}=    Get Text    ${b2c_txt_shipping_origin_booking_detail_page}
+    Should Be Equal    ${actual_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
     Reload Page
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}

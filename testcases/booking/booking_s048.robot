@@ -5,7 +5,7 @@ Resource          ../../resourses/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome   #chrome
                   ...    AND   Set Folder Result with date
                   ...    AND   Reset Cut Off Time
-Test Teardown     Run Keywords    b2c_call_car_pick_up_parcel_page.Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S048.add_new_pickup['expected']}
+Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S048.add_new_pickup['expected']}
                   ...    AND    Close Browser
 
 *** Test Cases ***
@@ -22,15 +22,21 @@ Booking_S048
     Log    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
-    ${date}    Get Normal Parcel Pickup Date
+    ${date}    Get Normal Parcel Pickup Date    ${Booking_S048.add_new_pickup['pickup_point']}
+    Set Yesterday    ${date}
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${call_car_pick_up.car_round_name['normal']}
     ...    ${date}
-    ...    ${Booking_S048.pickup_time['expected']}
-    ...    ${Booking_S048.pickup_time['expected']}
-    ...    ${Booking_S048['pickup_point']}
+    ...    ${Booking_S048.add_new_pickup['expected']}
+    ...    ${yesterday}
+    ...    ${call_car_pick_up['text_parcel_number']}
+    ...    ${call_car_pick_up.default['parcel_number']}
+    ...    ${call_car_pick_up['text_price']}
+    ...    ${call_car_pick_up.default['price']}
+    ...    ${call_car_pick_up['text_pickup_location']}
+    ...    ${Booking_S048.add_new_pickup['pickup_point']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S048    1.Verify Car Pickup Schedule Card
 
@@ -48,7 +54,6 @@ Booking_S048
     common.Verify Capture Screenshot    booking    Booking_S048    2.Verify Popup Parcel Pickup Schedule
 
     Log    Step No.3 รอบรถเข้ารับพัสดุ
-    Set Tomorrow Date
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${Booking_S048.add_new_pickup['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${Booking_S048.add_new_pickup['input']}
@@ -56,7 +61,6 @@ Booking_S048
     common.Verify Capture Screenshot    booking    Booking_S048    3.Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.4 กดปุ่ม "บันทึก"
-    Set Today
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
     b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup

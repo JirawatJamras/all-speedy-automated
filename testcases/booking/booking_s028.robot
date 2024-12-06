@@ -310,6 +310,7 @@ Booking_S028
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     Reload Page
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
+    ${booking_time}    Get Booking Time
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page When Select 7-ELEVEN Store
     ...    ${Booking['text_title_booking_list']}
@@ -371,5 +372,6 @@ Booking_S028
 
     Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
+    Set Global Variable    ${card_is_visible}    True
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S028    20.Verify Print Screen

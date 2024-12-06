@@ -126,8 +126,8 @@ Booking_S043
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S043['discount_amount']}
-    ...    ${Booking_S043['discount_value']}
+    ...    ${Booking_S020['discount_amount']}
+    ...    ${Booking_S020['discount_value2']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
@@ -206,7 +206,7 @@ Booking_S043
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S020['discount_amount']}
-    ...    ${Booking_S020['discount_value']}
+    ...    ${Booking_S020['discount_value2']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
@@ -301,8 +301,8 @@ Booking_S043
     ...    ${Booking.text_blank['buy_insurance']}
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
-    ...    ${Booking_S043['discount_amount']}
-    ...    ${Booking_S043['discount_value']}    
+    ...    ${Booking_S020['discount_amount']}
+    ...    ${Booking_S020['discount_value2']}    
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
@@ -408,7 +408,7 @@ Booking_S043
     ...    ${Booking.text_blank['cod_value']}
     ...    ${Booking['text_title_booking_summary']}
     ...    ${Booking_S020['discount_amount']}
-    ...    ${Booking_S020['discount_value']}
+    ...    ${Booking_S020['discount_value2']}
     ...    ${Booking.text_default['insurance_fee_amount']}
     ...    ${Booking.text_default['insurance_fee_value']}
     ...    ${Booking.text_default['cod_fee_amount']}
@@ -570,5 +570,6 @@ Booking_S043
 
     Log    Step No.26 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
+    Set Global Variable    ${card_is_visible}    True
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S043    26.Verify Print Screen

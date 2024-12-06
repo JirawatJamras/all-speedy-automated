@@ -21,7 +21,7 @@ Booking_S003
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S003['sender_postcode_full']}
     b2c_booking_delivery_page.Click Save Button
     ${booking_id}    Get Booking ID
-    ${booking_time}    Get Booking Time
+    Set Suite Variable    ${booking_id}
     b2c_booking_detail_page.Select Draft Booking
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
@@ -40,7 +40,6 @@ Booking_S003
     b2c_booking_delivery_page.Click Use Code Button
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
-    ${booking_time}    Get Booking Time
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
@@ -51,6 +50,7 @@ Booking_S003
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
     ${booking_time}    Get Booking Time
+    Set Suite Variable    ${booking_time}
 
 *** Test Cases ***
 Booking_S042

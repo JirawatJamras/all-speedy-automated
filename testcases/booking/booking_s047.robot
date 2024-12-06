@@ -228,7 +228,7 @@ Booking_S047
 
     Log    Step No.11 เเก้ไขรายการดังนี้
     b2c_favorite_page.Select Pickup Location    ${Booking_S047.edit_receiver['receiver_location_pickup']}
-    b2c_booking_delivery_page.Input And Select Store Code Receiver    ${Booking_S047.edit_receiver['receiver_store_code_5_digits']}    ${Booking_S047.edit_receiver['receiver_store_address']}
+    b2c_favorite_page.Input And Select Store Code Receiver    ${Booking_S047.edit_receiver['receiver_store_code_5_digits']}    ${Booking_S047.edit_receiver['receiver_store_address']}
     b2c_favorite_page.Click Store On Map
     # Expected
     b2c_favorite_page.Verify Store Address Receiver    ${Booking_S047.edit_receiver['receiver_store_full_address']}
