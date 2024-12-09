@@ -30,9 +30,10 @@ Input Company Address Full Legal Entity
     common.Input When Ready    ${register_cbo_company_address_full_legal_entity}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_company_address_full_legal_entity}    {value}    ${select}
     Wait Until Page Contains Element    ${selected_company_address_full}
-    ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${selected_company_address_full}
-    Run Keyword If    '${status}' == 'False'    Scroll Element Into View    ${selected_company_address_full}
-    Wait Until Keyword Succeeds    5x    2s    common.Click when ready    ${selected_company_address_full}  
+    FOR    ${i}    IN RANGE    0    5
+        ${can_click}=    Run Keyword And Return Status    common.Click Xpath By JavaScript    ${selected_company_address_full}
+        Exit For Loop If    ${can_click} == True
+    END
 
 Select Title Name Legal Entity
     [Arguments]    ${title}
@@ -93,7 +94,11 @@ Input Address Full Individual
     [Arguments]    ${value}    ${select}
     common.Input When Ready    ${register_cbo_address_full_individual}     ${value}  
     ${selected_company_address_full}=    Replace String    ${register_cbo_choice_address_full_individual}    {value}    ${select}
-    Wait Until Keyword Succeeds    5x    2s    common.Click when ready     ${selected_company_address_full}
+    Wait Until Page Contains Element    ${selected_company_address_full}    timeout=${DEFAULT_TIMEOUT}
+    FOR    ${i}    IN RANGE    0    5
+        ${can_click}=    Run Keyword And Return Status    common.Click Xpath By JavaScript    ${selected_company_address_full}
+        Exit For Loop If    ${can_click} == True
+    END
 
 Input Mobile No Individual
     [Arguments]    ${value}  
