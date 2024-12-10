@@ -163,7 +163,6 @@ Verify Save Assign To RM Success [legal entity]
         ${status}    ${element}=    Run Keyword And Ignore Error    Wait Until Element Is Visible    ${txt_list_complete}
         Run Keyword And Ignore Error    Scroll Element Into View    ${txt_list_complete}
         Log    ${txt_list_complete}
-        Log To Console    ${element}
         Exit For Loop If    '${status}' == 'Pass'
     END
     Register Keyword To Run On Failure    Capture Page Screenshot
