@@ -22,7 +22,7 @@ ${dps_txt_label_export_task_tab_in_home_page}    //tr[th[1]='{export_to}' and th
 ${dps_txt_dropdown_warehouse_tab_home_page}    //span[@aria-label='down']/../..//div[@class='ant-space-item' and text()]
 
 ${dps_btn_dropdown_select_role}    //span[@aria-label='down-circle']
-${dps_btn_role}    //li[@role='menuitem']//button[text()='{value}']
+${dps_btn_role}   //button[text()='{value}']
 ${dps_btn_selected_warehouse_list_home_page}    //div[text()='{value}']/../..
 ${dps_btn_pagination_right_home_page}    //div[@aria-hidden='false']//span[@aria-label='right']/..
 ${dps_btn_filter_home_page}    //div[@aria-hidden='false']//span[text()='{value}']/..
@@ -36,7 +36,7 @@ ${dps_tab_menu}    //a[@href='/{tabname}']
 ${dps_img_icon_user}    //span[@class='anticon anticon-user']
 ${dps_img_loading_page}    //div[@role='dialog']
 
-${dps_cbo_warehouse_list_home_page}    //li[@role='menuitem']/..//span[text()='{warehouse}']
+${dps_cbo_warehouse_list_home_page}    //span[text()='{warehouse}']
 ${dps_cbo_selected_warehouse_list_home_page}    //span[contains(@class,'ant-checkbox-checked')]/..//span[text()='{warehouse}']
 ${dps_cbo_store_code_home_page}    //div[@title='{value}']
 
