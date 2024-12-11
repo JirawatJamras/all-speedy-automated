@@ -10,7 +10,7 @@ DC_Operation_s026
     [Documentation]    การนำพัสดุใส่ Pouch และนำออกจาก Pouch แบบ Manual ในขั้นตอนการ Scan in 
     [Tags]    DC_Operation    Pouch    UAT    Defect155    Defect209    Defect219    Defect227    Defect249
     Log    Prerequisite S002
-    DC_Operation_S002
+    prerequisite.DC_Operation_S002
 
     ${tracking_j}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S026['sender_name']}
     ${today_repattern}    Set Date Pattern    ${today}
