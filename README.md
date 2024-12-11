@@ -16,10 +16,11 @@ Install Robot Framework:
 
 # all-speedy-automated
 -- Run Command --
-robot -v ENV:uat -i UAT  ../testcases/
 robot -v ENV:uat -i UAT -v LANG:en  ../testcases/
-robot -v ENV:uat -i UAT  ../testcases/booking
-robot -v ENV:uat -i UAT  ../testcases/dc_operation
+robot -v ENV:uat -i UAT  ../testcases/
+robot -v ENV:uat -i Booking  ../testcases/
+robot -v ENV:uat -i DC_Operation  ../testcases/
+robot -v ENV:uat -i Register  ../testcases/
 
 
 # Setting Command
