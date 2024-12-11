@@ -582,6 +582,7 @@ dc_operation:
     parcel_owner: Parcel Owner
     parcel_size: ขนาดพัสดุ
     last_updated_date: วันที่อัปเดตล่าสุด
+    store_accept_parcel_status: ร้านรับพัสดุเข้าระบบ
   label_pouch_detail_in_scan_in_page:
     pouch_number: Pouch Number
     parcel_in_pouch_amount: จำนวนพัสดุใน Pouch
