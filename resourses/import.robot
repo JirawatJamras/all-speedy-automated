@@ -1,7 +1,7 @@
 *** Settings ***
 Resource                    ../keywords/pages/common.robot
 Resource                    config/${ENV}/env_config.robot
-Variables                   testdata/login_user.yaml
+Variables                   config/${ENV}/login_user.yaml
 Variables                   config/language/${LANG}.yaml
 
 ######################## B2C ########################
