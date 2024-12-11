@@ -107,6 +107,7 @@ Input Pouch Number [Scan In Page]
 Click Search Button [Scan In Page]
     ${dps_btn_search_scan_in_page}=    Replace String    ${dps_btn_search_scan_in_page}    {value}    ${dc_operation['text_search']}
     common.Click When Ready    ${dps_btn_search_scan_in_page}
+    Sleep    5s
 
 Verify Navigate To Scan Page And Stay At Scan In Tab
     Sleep    3s
@@ -980,6 +981,10 @@ Input Tracking Number [Move Status]
     ...    ${tracking_number_g}    ${tracking_number_h}    ${tracking_number_i}    ${tracking_number_j}
     common.Input When Ready    ${dps_txtbox_parcel_number_move_status}
     ...    ${tracking_number_b} ${tracking_number_c} ${tracking_number_d} ${tracking_number_e} ${tracking_number_f} ${tracking_number_g} ${tracking_number_h} ${tracking_number_i} ${tracking_number_j}
+ํ
+Input One Tracking Number [Move Status]
+    [Arguments]    ${tracking_number}
+    common.Input When Ready    ${dps_txtbox_parcel_number_move_status}    ${tracking_number}
 
 Verify Search Tracking Number Result
     [Arguments]    ${status}    ${tracking}    ${pouch}    ${courier}    ${owner}    ${size}     ${date}
@@ -991,6 +996,13 @@ Verify Search Tracking Number Result
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {size}    ${size}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {date}    ${date}
     Wait Until Element Is Visible    ${txt_list_data_move_status}
+
+Verify Search Tracking Number Status Result
+    [Arguments]    ${status}    ${tracking}
+    ${txt_list_data_move_status}=    Replace String    ${dps_txt_tracking_data_move_status}    {status}    ${status}
+    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${tracking}
+    ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txt_list_data_move_status}
+    RETURN    ${status}
 
 Click All Checkbox [Move Status]
     common.Click When Ready    ${dps_btn_select_all_on_move_status_tab}
@@ -1051,4 +1063,26 @@ Click Dropdown Move Status To
 Click Confirm Move Status Button
     ${btn_confirm_move}=    Replace String    ${dps_btn_on_move_status_tab}    {value}    ${dc_operation['button_confirm_move_status']}
     common.Click When Ready    ${btn_confirm_move}
+
+Check Used Tracking
+    [Arguments]    ${ROW_NUMBER}    ${tracking_number}    ${parcel_status}
+    ${avalible_tracking}=    Set Variable    False
+    ${status}=    Set Variable    False
+
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
+    dps_scan_page.Select Move Status Tab
+    dps_scan_page.Click Filter Button
+    WHILE    '${status}' == 'False'
+        dps_scan_page.Input One Tracking Number [Move Status]    ${tracking_number}
+        dps_scan_page.Click Search Button [Move Status]
+        ${status}    Verify Search Tracking Number Status Result    ${dc_operation.move_status['store_accept_parcel_status']}    ${tracking_number}
+        Exit For Loop If    '${status}' == 'True'
+        dps_scan_page.Click Clear Button [Move Status]
+        ${ROW_NUMBER}=    Convert To Integer    ${ROW_NUMBER}
+        ${ROW_NUMBER}    Evaluate    ${ROW_NUMBER} + 1
+        ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
+        common.Set Tracking Information from excel    ${tracking_info}       
+    END
+
+
 

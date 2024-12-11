@@ -40,6 +40,9 @@ DC_Operation_S013
     ...    ${dc_operation.title['homepage']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    18.Verify Homepage Title
 
+    Log    Check Used Tracking
+    dps_scan_page.Check Used Tracking    ${ROW_NUMBER}    ${tracking_number}    ${DC_Operation_S013.scan_in_data_parcel_detail['parcel_status']}
+
     Log    Step No.19 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Click Dropdown For Select Role
@@ -97,9 +100,7 @@ DC_Operation_S013
     dps_scan_page.Select Scan In Tab
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_number}
     dps_scan_page.Click Search Button[Scan In Page]
-    dps_home_page.Wait Until DC Operation Home Page Loaded
-    Log    Delete Tracking From Excel
-    common.Delete Row In Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
+
     # Expected    
     dps_scan_page.Verify Title Parcel Details In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}

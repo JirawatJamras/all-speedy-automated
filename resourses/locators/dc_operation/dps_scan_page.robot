@@ -151,6 +151,8 @@ ${dps_txt_courier_move_status}    //input[@id='courier']/../..//span[@class='ant
 ${dps_txt_blank_parcel_owner_move_status}    //input[@id='parcelOwner']/../..//span[@class='ant-select-selection-placeholder']
 ${dps_txt_blank_parcel_size_move_status}    //input[@id='size']/../..//span[@class='ant-select-selection-placeholder']
 ${dps_txt_list_data_move_status}    //div[@aria-hidden='false']//td//*[contains(text(),'{status}')]/../../..//td[text()='{tracking}']/..//td[text()='{pouch}']/..//td[text()='{courier}']/..//td[text()='{owner}']/..//td[text()='{size}']/..//td[contains(text(),'{date}')]
+${dps_txt_tracking_data_move_status}    //div[@aria-hidden='false']//td//*[contains(text(),'{status}')]/../../..//td[text()='{tracking}']
+
 ${dps_txt_move_status_to}    //div[@id='statusCode']//strong[text()='{value}']
 ${dps_txt_tracking_move_status}    //div[@aria-hidden='false']//div[@aria-hidden='false']//td[text()='{value}']
 ${dps_txt_value_pouch_number_scan_in}    //div[@class='cardcontainer']//strong[text()='{text}']/../../..//span[text()='{value}']
