@@ -1486,3 +1486,7 @@ DC_Operation_S026:
     name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
     phone: '0900987354'
     address: '01015 สาขา เวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
+  pounch_number:
+    pounch_status: ปิด POUCH
+    pounch_number: '0'
+    pounch_id: P

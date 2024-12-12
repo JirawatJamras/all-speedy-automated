@@ -180,8 +180,11 @@ Click Accept Button On Popup For Creating Pouch
     common.Click When Ready    ${dps_btn_accept_for_create_pouch_auto}
     
 Get Pouch Number In Scan Page    ##ใช้ชั่วคราว
-    Wait Until Element Is Visible    (//span[text()='ปิด POUCH']/../../../..//span[text()='0']/../..//span[contains(text(),'P')])[1]    timeout=${DEFAULT_TIMEOUT}
-    ${pouch_number}=    Get text    (//span[text()='ปิด POUCH']/../../../..//span[text()='0']/../..//span[contains(text(),'P')])[1]
+    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_status}    ${DC_Operation_S026.pounch_number['pounch_status']}
+    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_number}    ${DC_Operation_S026.pounch_number['pounch_number']}
+    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_id}    ${DC_Operation_S026.pounch_number['pounch_id']}
+    Wait Until Element Is Visible    ${dps_txt_pouch_number_in_scan_page}    timeout=${DEFAULT_TIMEOUT}
+    ${pouch_number}=    Get text    ${dps_txt_pouch_number_in_scan_page}
     RETURN    ${pouch_number}
 
 Verify Label Wait Scan In Warehouse AC
