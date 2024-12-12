@@ -22,6 +22,7 @@ Booking_S048
     ${date}    Get Normal Parcel Pickup Date    ${Booking_S048['pickup_point']}
     Set Yesterday    ${date}
     # Expected
+    Log Defect No:  Defect086,Defect087,Defect107
     b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${call_car_pick_up.car_round_name['normal']}
@@ -60,6 +61,7 @@ Booking_S048
     Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
+    Log Defect No:  Defect086,Defect087,Defect107
     b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${Booking_S048.add_new_pickup['parcel_type']}
