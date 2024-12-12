@@ -76,7 +76,8 @@ DC_Operation_S002
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add
     Sleep    2s
-    # Expected    
+    # Expected
+    Log Defect No:  Defect043
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    7.Verify Term & Condition
 
@@ -138,6 +139,7 @@ DC_Operation_S002
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
     # Expected
+    Log Defect No:  Defect144
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
     ...    ${DC_Operation_S002.receiving_cycle['company_name']}
@@ -184,6 +186,7 @@ DC_Operation_S002
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
+    Log Defect No:  Defect150
     b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
     ...    ${call_car_pick_up.status['arrange_car']}
     ...    ${tomorrow}
@@ -234,6 +237,7 @@ DC_Operation_S002
     Log    Step No.20 เลือกเมนู "ตรวจสอบรอบเข้ารับพัสดุ"
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['check_receiving_cycle']}  
     # Expected
+    Log Defect No:  Defect192
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
@@ -255,6 +259,7 @@ DC_Operation_S002
     Log    Step No.21 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
     # Expected
+    Log Defect No:  Defect192
     dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
@@ -289,6 +294,7 @@ DC_Operation_S002
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
     # Expected
+    Log Defect No:  Defect192
     dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
     ...    ${DC_Operation_S002.receiving_cycle['company_name']} 
     ...    ${DC_Operation_S002.receiving_cycle['company_address']}
@@ -360,6 +366,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${tracking_c}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -392,6 +399,7 @@ DC_Operation_S004
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -432,7 +440,8 @@ DC_Operation_S004
     dps_scan_page.Click Accept Button On Popup For Creating Pouch
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
     Set Suite Variable    ${global_pouch_number}    ${pouch_number}
-    # Expected    
+    # Expected
+    Log Defect No:  Defect155,Defect215,Defect249,Defet260
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -525,6 +534,7 @@ DC_Operation_S004
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_c}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    14.Verify Timeline
@@ -535,6 +545,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_c}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -567,6 +578,7 @@ DC_Operation_S004
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect189,Defect187
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -588,6 +600,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -617,6 +630,7 @@ DC_Operation_S004
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_c}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect177
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    18.Verify Close Pouch Before Scan Out Warning Popup
 
@@ -636,6 +650,7 @@ DC_Operation_S004
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected
+    Log Defect No:  Defect215,Defect223,Defect279,Defect290
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
@@ -707,6 +722,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -743,7 +759,8 @@ DC_Operation_S004
     dps_scan_page.Click Clear Button [Scan Out]
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected 
+    # Expected
+    Log Defect No:  Defect232
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -793,6 +810,7 @@ DC_Operation_S004
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_c}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect270
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    32.Verify Timeline After Scan Out
@@ -804,6 +822,7 @@ DC_Operation_S004
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -820,6 +839,7 @@ DC_Operation_S004
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    33.Verify Delivery List Page
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S004.wait_derivery_data_list['transport']}
@@ -829,6 +849,7 @@ DC_Operation_S004
     Log    Step No.35 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S004.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S004.wait_derivery_data_list['transport']}
@@ -840,6 +861,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_c}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -872,6 +894,7 @@ DC_Operation_S004
     Log   Step No.37 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -892,6 +915,7 @@ DC_Operation_S004
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_c}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect237
     dps_scan_page.Verify Parcel Is On Pouch Warning Popup    ${dc_operation['text_parcel_is_on_pouch_warning']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    38.Verify Parcel Is On Pouch Warning Popup
 
@@ -911,6 +935,7 @@ DC_Operation_S004
     Log    Step No.41 คลิกปุ่มยืนยัน
     dps_scan_page.Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
     # Expected
+    Log Defect No:  Defect242
     dps_scan_page.Verify Label Pouch Detail In Scan In Page
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['pouch_number']}
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['parcel_in_pouch_amount']}
@@ -943,7 +968,8 @@ DC_Operation_S004
     Log    Step No.42 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ c" ในช่องค้นหาด้านล่างรายละเอียด Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number In Search Bar On Pouch Detail Section    ${tracking_c}
     dps_scan_page.Click Search Button Of Pouch Detail Section
-    # Expected    
+    # Expected
+    Log Defect No:  Defect155,Defect215,Defect249,Defect260,Defect268
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -1018,7 +1044,8 @@ DC_Operation_S004
 
     Log    Step No.44 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
-    # Expected 
+    # Expected
+    Log Defect No:  Defect288
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    44.Verify Navigate To Scan Page And Stay At Scan In Tab At Destination Warehouse
 
@@ -1033,6 +1060,7 @@ DC_Operation_S004
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_c}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect270
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    46.Verify Timeline After Scan In At Destination Warehouse
@@ -1043,6 +1071,7 @@ DC_Operation_S004
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_c}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -1075,6 +1104,7 @@ DC_Operation_S004
     Log    Step No.48 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -1099,6 +1129,7 @@ DC_Operation_S005
     Log    Step No.1 เข้าเมนูหน้าหลัก -> เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_d}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -1130,6 +1161,7 @@ DC_Operation_S005
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -1149,6 +1181,7 @@ DC_Operation_S005
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_d}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect155,Defect249
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -1244,6 +1277,7 @@ DC_Operation_S005
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_d}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S005['timeline_in_history_parcel']}    5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    8.Verify Timeline
     Close Window
@@ -1253,6 +1287,7 @@ DC_Operation_S005
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_d}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -1285,6 +1320,7 @@ DC_Operation_S005
     Log    Step No.10 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect169,Defect189,Defect291
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -1306,6 +1342,7 @@ DC_Operation_S005
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -1335,6 +1372,7 @@ DC_Operation_S005
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_d}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect255
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -1384,6 +1422,7 @@ DC_Operation_S005
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_d}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline    ${DC_Operation_S005['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    17.Verify Timeline After Scan Out
     Close Window
@@ -1395,6 +1434,7 @@ DC_Operation_S005
     dps_scan_page.Click Waiting Delivery List Button
     sleep    5s
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -1434,6 +1474,7 @@ DC_Operation_S005
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']}
     # Expected
+    Log Defect No:  Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_d}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -1466,6 +1507,7 @@ DC_Operation_S005
     Log    Step No.22 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -1486,6 +1528,7 @@ DC_Operation_S005
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_d}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect155,Defect212,Defect249,Defect268
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -1555,6 +1598,7 @@ DC_Operation_S005
     Log    Step No.24 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
+    Log Defect No:  Defect222
     dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    24.Verify Accept Scan In Success Popup
 
@@ -1575,6 +1619,7 @@ DC_Operation_S005
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_d}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S005['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    27.Verify Timeline
     Close Window
@@ -1585,6 +1630,7 @@ DC_Operation_S005
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']}
     dps_home_page.Select Tab All Task
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_d}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -1618,6 +1664,7 @@ DC_Operation_S005
     Log    Step No.29 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -1642,6 +1689,7 @@ DC_Operation_S006
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_e}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -1674,6 +1722,7 @@ DC_Operation_S006
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -1713,7 +1762,8 @@ DC_Operation_S006
     Log    Step No.9 คลิกปุ่มตกลง
     dps_scan_page.Click Accept Button On Popup For Creating Pouch
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
-    # Expected    
+    # Expected
+    Log Defect No:  Defect155,Defect215,Defect249,Defect260
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -1806,6 +1856,7 @@ DC_Operation_S006
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    14.Verify Timeline
@@ -1816,6 +1867,7 @@ DC_Operation_S006
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_e}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -1848,6 +1900,7 @@ DC_Operation_S006
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect189,Defect291
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -1869,6 +1922,7 @@ DC_Operation_S006
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -1898,6 +1952,7 @@ DC_Operation_S006
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_e}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect177
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
 
@@ -1917,6 +1972,7 @@ DC_Operation_S006
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected
+    Log Defect No:  Defect215,Defect223,Defect279,Defect290
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
@@ -1989,6 +2045,7 @@ DC_Operation_S006
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -2017,7 +2074,8 @@ DC_Operation_S006
     Log    Step No.26 กรอกหมายเลข Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected 
+    # Expected
+    Log Defect No:  Defect232
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -2067,6 +2125,7 @@ DC_Operation_S006
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    31.Verify Timeline After Scan Out
@@ -2078,6 +2137,7 @@ DC_Operation_S006
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -2094,6 +2154,7 @@ DC_Operation_S006
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    32.Verify Delivery List Page
 
     Log    Step No.33 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S006.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S006.wait_derivery_data_list['transport']}
@@ -2103,6 +2164,7 @@ DC_Operation_S006
     Log    Step No.34 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S006.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S006.wait_derivery_data_list['transport']}
@@ -2114,6 +2176,7 @@ DC_Operation_S006
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_e}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -2146,6 +2209,7 @@ DC_Operation_S006
     Log   Step No.36 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -2166,6 +2230,7 @@ DC_Operation_S006
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_e}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect237
     dps_scan_page.Verify Parcel Is On Pouch Warning Popup    ${dc_operation['text_parcel_is_on_pouch_warning']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    37.Verify Parcel Is On Pouch Warning Popup
 
@@ -2185,6 +2250,7 @@ DC_Operation_S006
     Log    Step No.40 คลิกปุ่มยืนยัน
     dps_scan_page.Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
     # Expected
+    Log Defect No:  Defect242
     dps_scan_page.Verify Label Pouch Detail In Scan In Page
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['pouch_number']}
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['parcel_in_pouch_amount']}
@@ -2217,7 +2283,8 @@ DC_Operation_S006
     Log    Step No.41 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ e" ในช่องค้นหาด้านล่างรายละเอียด Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number In Search Bar On Pouch Detail Section    ${tracking_e}
     dps_scan_page.Click Search Button Of Pouch Detail Section
-    # Expected    
+    # Expected
+    Log Defect No:  Defect155,Defect215,Defect249,Defect260,Defect268
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -2287,6 +2354,7 @@ DC_Operation_S006
     Log    Step No.42 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
+    Log Defect No:  Defect288
     dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    42.Verify Accept Scan In Success Popup
 
@@ -2307,6 +2375,7 @@ DC_Operation_S006
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_e}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230,Defect269
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    45.Verify Timeline After Scan In At Destination Warehouse
@@ -2317,6 +2386,7 @@ DC_Operation_S006
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_e}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -2349,6 +2419,7 @@ DC_Operation_S006
     Log    Step No.47 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -2374,6 +2445,7 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_f}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -2405,6 +2477,7 @@ DC_Operation_S007
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -2424,6 +2497,7 @@ DC_Operation_S007
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_f}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect155,Defect249
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -2518,6 +2592,7 @@ DC_Operation_S007
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_f}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    8.Verify Timeline
     Close Window
@@ -2527,6 +2602,7 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_f}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -2559,6 +2635,7 @@ DC_Operation_S007
     Log    Step No.10 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect169,Defect189
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -2580,6 +2657,7 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect232,Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -2609,6 +2687,7 @@ DC_Operation_S007
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_f}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect255
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -2658,6 +2737,7 @@ DC_Operation_S007
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_f}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    17.Verify Timeline
     Close Window
@@ -2668,6 +2748,7 @@ DC_Operation_S007
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -2705,6 +2786,7 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_f}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -2737,6 +2819,7 @@ DC_Operation_S007
     Log    Step No.22 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -2758,6 +2841,7 @@ DC_Operation_S007
     dps_scan_page.Click Search Button [Scan In Page]
     dps_home_page.Wait Until Page Loaded
     # Expected
+    Log Defect No:  Defect155,Defect212,Defect249,Defect268
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -2828,6 +2912,7 @@ DC_Operation_S007
     Log    Step No.24 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
+    Log Defect No:  Defect222
     dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    24.Verify Accept Scan In Success Popup
 
@@ -2848,6 +2933,7 @@ DC_Operation_S007
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_f}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S007['timeline_in_history_parcel']}    8
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    27.Verify Timeline
     Close Window
@@ -2857,6 +2943,7 @@ DC_Operation_S007
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_f}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -2889,6 +2976,7 @@ DC_Operation_S007
     Log    Step No.29 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -2915,6 +3003,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -2947,6 +3036,7 @@ DC_Operation_S008
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -2985,7 +3075,8 @@ DC_Operation_S008
     
     Log    Step No.9 คลิกปุ่มตกลง
     dps_scan_page.Click Accept Button On Popup For Creating Pouch
-    # Expected    
+    # Expected
+    Log Defect No:  Defect155,Defect260
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
@@ -3079,6 +3170,7 @@ DC_Operation_S008
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    14.Verify Timeline
@@ -3089,6 +3181,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -3111,6 +3204,7 @@ DC_Operation_S008
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect189,Defect291
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -3132,6 +3226,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -3161,6 +3256,7 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect177
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    18.Verify Close Pouch Before Scan Out Warning Popup
 
@@ -3179,6 +3275,7 @@ DC_Operation_S008
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected
+    Log Defect No:  Defect223,Defect279,Defect290
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
@@ -3251,6 +3348,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -3287,7 +3385,8 @@ DC_Operation_S008
     dps_scan_page.Click Clear Button [Scan Out]
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected 
+    # Expected
+    Log Defect No:  Defect232
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -3337,6 +3436,7 @@ DC_Operation_S008
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230,Defect270
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    32.Verify Timeline After Scan Out
@@ -3348,6 +3448,7 @@ DC_Operation_S008
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -3364,6 +3465,7 @@ DC_Operation_S008
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    33.Verify Delivery List Page
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S008.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S008.wait_derivery_data_list['transport']}
@@ -3373,6 +3475,7 @@ DC_Operation_S008
     Log    Step No.35 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S008.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S008.wait_derivery_data_list['transport']}
@@ -3385,6 +3488,7 @@ DC_Operation_S008
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -3409,6 +3513,7 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect237
     dps_scan_page.Verify Parcel Is On Pouch Warning Popup    ${dc_operation['text_parcel_is_on_pouch_warning']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    37.Verify Parcel Is On Pouch Warning Popup
 
@@ -3422,6 +3527,7 @@ DC_Operation_S008
     dps_scan_page.Input Pouch Number [Scan In Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect238
     dps_scan_page.Verify Label Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['pouch_number']}
@@ -3449,6 +3555,7 @@ DC_Operation_S008
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230,Defect239,Defect270
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    41.Verify Timeline After Scan Out
@@ -3459,6 +3566,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect281
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -3495,7 +3603,8 @@ DC_Operation_S008
     dps_scan_page.Click Clear Button [Scan Out]
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected 
+    # Expected
+    Log Defect No:  Defect232,Defect285
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -3545,6 +3654,7 @@ DC_Operation_S008
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230,Defect270
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    10
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    49.Verify Timeline After Scan Out
@@ -3555,6 +3665,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -3578,6 +3689,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -3600,6 +3712,7 @@ DC_Operation_S008
     Log    Step No.52 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -3619,6 +3732,7 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_g}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect237
     dps_scan_page.Verify Parcel Is On Pouch Warning Popup    ${dc_operation['text_parcel_is_on_pouch_warning']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    53.Verify Parcel Is On Pouch Warning Popup
 
@@ -3638,6 +3752,7 @@ DC_Operation_S008
     Log    Step No.56 คลิกปุ่มยืนยัน
     dps_scan_page.Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
     # Expected
+    Log Defect No:  Defect242
     dps_scan_page.Verify Label Pouch Detail In Scan In Page
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['pouch_number']}
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['parcel_in_pouch_amount']}
@@ -3671,6 +3786,7 @@ DC_Operation_S008
     dps_scan_page.Input Tracking Number In Search Bar On Pouch Detail Section    ${tracking_g}
     dps_scan_page.Click Search Button Of Pouch Detail Section
     # Expected
+    Log Defect No:  Defect155,Defect243,Defect260,Defect268
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -3746,7 +3862,8 @@ DC_Operation_S008
 
     Log    Step No.59 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
-    # Expected 
+    # Expected
+    Log Defect No:  Defect288
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    59.Verify Accept Scan In Success Popup After Scan In At RDC LP Warehouse
 
@@ -3761,6 +3878,7 @@ DC_Operation_S008
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_g}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect230,Defect239,Defect270
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    12
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    61.Verify Timeline After Scan Out
@@ -3771,6 +3889,7 @@ DC_Operation_S008
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_g}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -3793,6 +3912,7 @@ DC_Operation_S008
     Log    Step No.63 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -3817,6 +3937,7 @@ DC_Operation_S009
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_h}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -3848,6 +3969,7 @@ DC_Operation_S009
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -3867,6 +3989,7 @@ DC_Operation_S009
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_h}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect155,Defect249
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -3961,6 +4084,7 @@ DC_Operation_S009
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_h}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    8.Verify Timeline
     Close Window
@@ -3970,6 +4094,7 @@ DC_Operation_S009
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_h}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -4002,6 +4127,7 @@ DC_Operation_S009
     Log    Step No.10 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect189,Defect291
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -4023,6 +4149,7 @@ DC_Operation_S009
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect232,Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -4052,6 +4179,7 @@ DC_Operation_S009
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_h}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect255
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -4102,6 +4230,7 @@ DC_Operation_S009
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_h}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}     6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    17.Verify Timeline
     Close Window
@@ -4112,6 +4241,7 @@ DC_Operation_S009
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -4151,6 +4281,7 @@ DC_Operation_S009
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -4175,6 +4306,7 @@ DC_Operation_S009
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_h}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect238,Defect271
     dps_scan_page.Verify Label Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_warehouse_ac['pouch_number']}
@@ -4202,6 +4334,7 @@ DC_Operation_S009
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_h}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    8
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    24.Verify Timeline
     Close Window
@@ -4212,6 +4345,7 @@ DC_Operation_S009
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     # Expected
+    Log Defect No:  Defect274
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -4242,6 +4376,7 @@ DC_Operation_S009
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_h}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect232
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -4292,6 +4427,7 @@ DC_Operation_S009
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_h}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect273
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    31.Verify Timeline
     Close Window
@@ -4301,6 +4437,7 @@ DC_Operation_S009
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']} 
     # Expected
+    Log Defect No:  Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_h}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -4333,6 +4470,7 @@ DC_Operation_S009
     Log    Step No.33 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -4354,6 +4492,7 @@ DC_Operation_S009
     dps_scan_page.Click Search Button [Scan In Page]
     sleep    5s
     # Expected
+    Log Defect No:  Defect243,Defect249
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -4444,6 +4583,7 @@ DC_Operation_S009
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_h}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S009['timeline_in_history_parcel']}    11
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    38.Verify Timeline
     Close Window
@@ -4453,6 +4593,7 @@ DC_Operation_S009
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_h}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -4485,6 +4626,7 @@ DC_Operation_S009
     Log    Step No.40 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -4511,6 +4653,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_i}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -4543,6 +4686,7 @@ DC_Operation_S010
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -4582,7 +4726,8 @@ DC_Operation_S010
     Log    Step No.9 คลิกปุ่มตกลง
     dps_scan_page.Click Accept Button On Popup For Creating Pouch
     ${pouch_number}    Get Pouch Number And Verify Pouch Format   
-    # Expected    
+    # Expected
+    Log Defect No:  Defect155,Defect249
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -4675,6 +4820,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    14.Verify Timeline
@@ -4685,6 +4831,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_i}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -4717,6 +4864,7 @@ DC_Operation_S010
     Log    Step No.16 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect189,Defect291
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -4738,6 +4886,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -4767,6 +4916,7 @@ DC_Operation_S010
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_i}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect177
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ${dc_operation['text_please_close_pouch_before_scan_out']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    18.Verify Close Pouch Before Scan Out Warning Popup
 
@@ -4786,6 +4936,7 @@ DC_Operation_S010
     Log    Step No.20 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected
+    Log Defect No:  Defect223
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
@@ -4858,6 +5009,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -4886,7 +5038,8 @@ DC_Operation_S010
     Log    Step No.26 กรอกหมายเลข Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected 
+    # Expected
+    Log Defect No:  Defect232
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -4936,6 +5089,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    31.Verify Timeline After Scan Out
@@ -4947,6 +5101,7 @@ DC_Operation_S010
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -4963,6 +5118,7 @@ DC_Operation_S010
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    32.Verify Delivery List Page
 
     Log    Step No.33 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S010.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S010.wait_derivery_data_list['transport']}
@@ -4972,6 +5128,7 @@ DC_Operation_S010
     Log    Step No.34 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S010.wait_derivery_data_list['export_to']}
     ...    ${DC_Operation_S010.wait_derivery_data_list['transport']}
@@ -4983,6 +5140,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     # Expected
+    Log Defect No:  Defect280
     dps_scan_page.Verify Label Wait Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['pouch_number']}
@@ -5004,6 +5162,7 @@ DC_Operation_S010
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_i}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect237
     dps_scan_page.Verify Parcel Is On Pouch Warning Popup    ${dc_operation['text_parcel_is_on_pouch_warning']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    36.Verify Parcel Is On Pouch Warning Popup
 
@@ -5017,6 +5176,7 @@ DC_Operation_S010
     dps_scan_page.Input Pouch Number [Scan In Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect238
     Verify Label Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['pouch_number']}
@@ -5044,6 +5204,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    40.Verify Timeline After Scan In At Destination Warehouse
@@ -5054,6 +5215,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect281
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -5090,7 +5252,8 @@ DC_Operation_S010
     dps_scan_page.Click Clear Button [Scan Out]
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${pouch_number}
     dps_scan_page.Click Search Button [Scan Out Page]
-    # Expected 
+    # Expected
+    Log Defect No:  Defect232,Defect285
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -5140,6 +5303,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    48.Verify Timeline After Scan Out
@@ -5150,6 +5314,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_i}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -5182,6 +5347,7 @@ DC_Operation_S010
     Log    Step No.50 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -5201,6 +5367,7 @@ DC_Operation_S010
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_i}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect237
     dps_scan_page.Verify Parcel Is On Pouch Warning Popup    ${dc_operation['text_parcel_is_on_pouch_warning']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    51.Verify Parcel Is On Pouch Warning Popup
 
@@ -5220,6 +5387,7 @@ DC_Operation_S010
     Log    Step No.54 คลิกปุ่มยืนยัน
     dps_scan_page.Click Confirm Button On Unbox Pouch And Scan Piece By Piece Popup
     # Expected
+    Log Defect No:  Defect242
     dps_scan_page.Verify Label Pouch Detail In Scan In Page
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['pouch_number']}
     ...    ${dc_operation.label_pouch_detail_in_scan_in_page['parcel_in_pouch_amount']}
@@ -5252,7 +5420,8 @@ DC_Operation_S010
     Log    Step No.55 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ i" ในช่องค้นหาด้านล่างรายละเอียด Pouch และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number In Search Bar On Pouch Detail Section    ${tracking_i}
     dps_scan_page.Click Search Button Of Pouch Detail Section
-    # Expected   
+    # Expected
+    Log Defect No:  Defect155,Defect243
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -5327,7 +5496,8 @@ DC_Operation_S010
 
     Log    Step No.57 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
-    # Expected 
+    # Expected
+    Log Defect No:  Defect288
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    57.Verify Accept Scan In Success Popup After Scan In At RDC LP Warehouse
 
@@ -5342,6 +5512,7 @@ DC_Operation_S010
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect239
     dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    12
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    59.Verify Timeline After Scan In At Destination Warehouse
@@ -5352,6 +5523,7 @@ DC_Operation_S010
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']} 
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_i}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -5384,6 +5556,7 @@ DC_Operation_S010
     Log    Step No.61 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -5408,6 +5581,7 @@ DC_Operation_S011
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_j}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -5439,6 +5613,7 @@ DC_Operation_S011
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -5458,6 +5633,7 @@ DC_Operation_S011
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect155,Defect249
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -5552,6 +5728,7 @@ DC_Operation_S011
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    8.Verify Timeline
     Close Window
@@ -5561,6 +5738,7 @@ DC_Operation_S011
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']}   
     # Expected
+    Log Defect No:  Defect141,Defect187
     Filter Data By Parcel Number [All Task Tab]    ${tracking_j}
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
@@ -5593,6 +5771,7 @@ DC_Operation_S011
     Log    Step No.10 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
     # Expected
+    Log Defect No:  Defect189,Defect291
     dps_home_page.Verify Label In Export Task Tab
     ...    ${dc_operation.label_export_task_tab['export_to']}
     ...    ${dc_operation.label_export_task_tab['transport']}
@@ -5614,6 +5793,7 @@ DC_Operation_S011
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
+    Log Defect No:  Defect232,Defect265
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -5643,6 +5823,7 @@ DC_Operation_S011
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect255
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -5692,6 +5873,7 @@ DC_Operation_S011
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    17.Verify Timeline
     Close Window
@@ -5702,6 +5884,7 @@ DC_Operation_S011
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -5740,6 +5923,7 @@ DC_Operation_S011
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     # Expected
+    Log Defect No:  Defect238,Defect280
     dps_scan_page.Verify Label Wait Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_waiting_scan_warehouse_ac['pouch_number']}
@@ -5767,6 +5951,7 @@ DC_Operation_S011
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect271
     dps_scan_page.Verify Label Scan In Warehouse AC
     ...    ${dc_operation.scan_in_title_warehouse_ac['parcel_id']}
     ...    ${dc_operation.scan_in_title_warehouse_ac['pouch_number']}
@@ -5794,6 +5979,7 @@ DC_Operation_S011
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    8
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    24.Verify Timeline
     Close Window
@@ -5804,6 +5990,7 @@ DC_Operation_S011
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_AC']}
     # Expected
+    Log Defect No:  Defect274
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -5833,6 +6020,7 @@ DC_Operation_S011
     dps_scan_page.Input Pouch Number [Scan Out Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect232
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -5882,6 +6070,7 @@ DC_Operation_S011
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect273
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    31.Verify Timeline
     Close Window
@@ -5891,6 +6080,7 @@ DC_Operation_S011
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_RDC_LP']} 
     # Expected
+    Log Defect No:  Defect187
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -5922,6 +6112,7 @@ DC_Operation_S011
     Log    Step No.33 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -5943,6 +6134,7 @@ DC_Operation_S011
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect243,Defect249
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -6032,6 +6224,7 @@ DC_Operation_S011
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201,Defect273
     dps_history_parcel_page.Verify Timeline  ${DC_Operation_S011['timeline_in_history_parcel']}    11
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    38.Verify Timeline
     Close Window
@@ -6041,6 +6234,7 @@ DC_Operation_S011
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_BB']} 
     # Expected
+    Log Defect No:  Defect187
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -6072,6 +6266,7 @@ DC_Operation_S011
     Log    Step No.40 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}
@@ -6098,6 +6293,7 @@ DC_Operation_S012
     dps_home_page.Select Tab All Task
     dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${tracking_b}
     # Expected
+    Log Defect No:  Defect138,Defect141,Defect187
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -6129,6 +6325,7 @@ DC_Operation_S012
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
     # Expected
+    Log Defect No:  Defect139,Defect188,Defect291
     dps_home_page.Verify Label In Import Task Tab
     ...    ${dc_operation.label_import_task_tab['import_from']}
     ...    ${dc_operation.label_import_task_tab['transport']}
@@ -6149,6 +6346,7 @@ DC_Operation_S012
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_b}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect155,Defect159,Defect248,Defect254
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -6240,6 +6438,7 @@ DC_Operation_S012
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_b}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect201
     dps_history_parcel_page.Verify Timeline    ${DC_Operation_S012['timeline_in_history_parcel']}    5
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    8.Verify Timeline
     Close Window
@@ -6251,6 +6450,7 @@ DC_Operation_S012
     dps_home_page.Select Tab All Task
     dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${tracking_b}
     # Expected
+    Log Defect No:  Defect138,Defect141,Defect179,Defect187
     dps_home_page.Verify Homepage
     ...    ${dc_operation.breadcrumb['homepage']}
     ...    ${dc_operation.title['homepage']}
@@ -6281,6 +6481,7 @@ DC_Operation_S012
     Log    Step No.10 เลือกแท็บงานนำจ่าย
     dps_home_page.Select Tab Send Task
     # Expected
+    Log Defect No:  Defect147,Defect148,Defect149,Defect190,Defect291
     dps_home_page.Verify Label In Send Task Tab
     ...    ${dc_operation.label_send_task_tab['send_to']}
     ...    ${dc_operation.label_send_task_tab['store_code']}

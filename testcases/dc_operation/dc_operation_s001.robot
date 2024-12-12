@@ -84,6 +84,7 @@ DC_Operation_S001
     Log    Step No.7 คลิกปุ่ม "+ เพิ่ม"
     b2c_booking_delivery_page.Click Button To Add   
     # Expected
+    Log Defect No:  Defect043
     b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    7.Verify Term & Condition
 
@@ -145,6 +146,7 @@ DC_Operation_S001
     b2c_booking_detail_page.Click Save Button In Edit Booking List Popup
     ${booking_id}    Get Booking ID
     # Expected
+    Log Defect No:  Defect144
     b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
     ...    ${today}
     ...    ${DC_Operation_S001.receiving_cycle['company_name']}
@@ -186,6 +188,7 @@ DC_Operation_S001
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
+    Log Defect No:  Defect150
     b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
     ...    ${call_car_pick_up.status['arrange_car']}
     ...    ${tomorrow}
@@ -250,6 +253,7 @@ DC_Operation_S001
     Log    Step No.23 คลิก Dropdown เลือกคลัง เป็น "คลัง DC BB"
     dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
+    Log Defect No:  Defect192
     dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
@@ -271,6 +275,7 @@ DC_Operation_S001
     Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
     # Expected
+    Log Defect No:  Defect192
     dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
     ...    ${dc_operation.title['check_receiving_cycle']}
     ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
@@ -305,6 +310,7 @@ DC_Operation_S001
     ...    ${today}
     ...    ${DC_Operation.status['waiting']}
     # Expected
+    Log Defect No:  Defect192
     dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
     ...    ${DC_Operation_S001.receiving_cycle['company_name']} 
     ...    ${DC_Operation_S001.receiving_cycle['company_address']}
@@ -369,6 +375,7 @@ DC_Operation_S001
     Log    Step No.28 เลือกเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery 
     # Expected
+    Log Defect No:  Defect221
     b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
     ...    ${booking_id}
     ...    ${Booking['text_parcel_status_call_car']}
@@ -397,5 +404,6 @@ DC_Operation_S001
     Log    Step No.31 คลิกแท็บ "รอบรถเข้ารับพัสดุ"
     b2c_booking_detail_page.Select Pickup Schedule Tab
     # Expected
+    Log Defect No:  Defect207
     b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    31.Verify Display Pickup Schedule Data After Canceled
