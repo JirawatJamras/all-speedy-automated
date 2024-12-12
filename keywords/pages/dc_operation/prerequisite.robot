@@ -4,7 +4,7 @@ Resource          ../../../resourses/import.robot
 
 *** Keywords ***
 DC_Operation_S002
-    Log    Reset Cut Off Time To 23:59
+    Log    Reset Cut Off Time To 17:00
     dps_home_page.Reset Cut Off Time
 
     Log    Step No.1 เข้า URL All Speedy

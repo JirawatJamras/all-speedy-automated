@@ -121,7 +121,6 @@ Booking:
     price:  'ราคา :'
     default:
       parcel_number:  '0 รายการ'
-      cut_off_time:  '23:59:00'
       price:  '0 บาท'
   dry_parcel:
     parcel_A4: 'A4'

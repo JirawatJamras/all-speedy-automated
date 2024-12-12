@@ -10,8 +10,8 @@ Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${b
 *** Test Cases ***
 Booking_S002
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก A4 (ไม่มีประกัน ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)    
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    
-    ...    Defect052    Defect055    Defect056    Defect063    Defect078    Defect101    Defect258    Defect261?
+    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect052    Defect055    Defect056
+    ...    Defect063    Defect078    Defect101    Defect258
     Log    Login
     b2c_login_page.Input Email And Password
     b2c_login_page.Click Log On Button
@@ -32,7 +32,7 @@ Booking_S002
 
     Log    Step No.3 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
     b2c_booking_delivery_page.Click Accept Terms of Service
-    # Expected   
+    # Expected
     b2c_booking_delivery_page.Verify Select Parcel Type
     common.Verify Capture Screenshot    booking    Booking_S002    3.Verify Select Parcel Type
 
