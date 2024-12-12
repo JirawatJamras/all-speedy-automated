@@ -52,6 +52,7 @@ DC_Operation_S017
     ${pouch_number}    Get Pouch Number And Verify Pouch Format
     Set Today
     # Expected
+    Log Defect No:  Defect155,Defect260
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
     ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
@@ -147,6 +148,7 @@ DC_Operation_S017
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect209
     dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
     ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
@@ -226,6 +228,7 @@ DC_Operation_S017
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['pouch_label']}
     # Expected
+    Log Defect No:  Defect219
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    16.Verify Popup Error When Click Print Pouch Label And Pouch Is Not Closed
     Close Window
     Switch Window    MAIN
@@ -245,6 +248,7 @@ DC_Operation_S017
     Log    Step No.18 คลิกที่ไอคอนรูปดินสอ
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected
+    Log Defect No:  Defect223
     dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
     ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
     ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
@@ -324,6 +328,7 @@ DC_Operation_S017
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_i}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect209
     dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
     ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
