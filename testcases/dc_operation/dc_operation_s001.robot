@@ -194,12 +194,12 @@ DC_Operation_S001
     ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
     ...    ${DC_Operation_S001['verify_pickup_time']}
     ...    ${DC_Operation_S001['parcel_number']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Parcel Pickup Status After Cut Off Time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.1.Verify Parcel Pickup Status After Cut Off Time
     b2c_home_page.Click Book Parcel Delivery    
     b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
     ...    ${booking_id}
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Booking Status After Cut Off Time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.2.Verify Booking Status After Cut Off Time
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
@@ -207,7 +207,7 @@ DC_Operation_S001
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S001['parcel_number']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.Verify Parcel Status After Cut Off Time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.3.Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
     common.Open URL    ${DPS_URL}

@@ -133,7 +133,7 @@ DC_Operation_S013
     ...    ${zipcode_label} 
     ...    ${customer_label}
     ...    ${phone_label}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    21.Verify Sender Data In Scan In 1
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    21.1.Verify Sender Data In Scan In 1
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
@@ -157,7 +157,7 @@ DC_Operation_S013
     ...    ${receiver_shipping_destination}
     ...    ${receiver_address}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    21.Verify Sender Data In Scan In 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    21.2.Verify Sender Data In Scan In 2
 
     Log    Step No.22 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label

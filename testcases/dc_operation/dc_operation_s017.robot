@@ -193,9 +193,9 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
     ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
     ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.Verify Parcel Details In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.1.Verify Parcel Details In Warehouse
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.Verify Sender And Receiver In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.2.Verify Sender And Receiver In Warehouse
 
     Log    Step No.13 คลิกปุ่ม Dropdown Reprint
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
@@ -370,9 +370,9 @@ DC_Operation_S017
     ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
     ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
     ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.Verify Parcel Details In Warehouse After Close Pouch
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.1.Verify Parcel Details In Warehouse After Close Pouch
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.Verify Sender And Receiver In Warehouse After Close Pouch
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.2.Verify Sender And Receiver In Warehouse After Close Pouch
 
     Log    Step No.25 คลิกปุ่ม Dropdown Reprint
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
