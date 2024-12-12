@@ -73,6 +73,7 @@ DC_Operation_s027
     Log    Step No.4 พิมพ์ข้อความ "พัสดุรอเข้ารับร้าน"
     dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     # Expected
+    Log Defect No:  Defect257
     dps_scan_page.Verify Parcel Status Dropdown [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    4.Verify Parcel Status Dropdown
 
@@ -86,6 +87,7 @@ DC_Operation_s027
     Log    Step No.6 คลิกปุ่มเคลียร์
     dps_scan_page.Click Clear Button [Move Status]
     # Expected
+    Log Defect No:  Defect266
     dps_scan_page.Verify Clear Filter Input
     dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    6.Verify Clear Filter Parcel Status
@@ -105,6 +107,7 @@ DC_Operation_s027
     Log    Step No.9 คลิกช่องค้นหา Parcel Owner
     dps_scan_page.Click Filter With Parcel Owner
     # Expected
+    Log Defect No:  Defect182
     dps_scan_page.Verify Parcel Owner List In Dropdown    ${dc_operation.parcel_owner['speedy']}    ${dc_operation.parcel_owner['partnership']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    9.Verify Parcel Owner List In Dropdown
 
@@ -124,6 +127,7 @@ DC_Operation_s027
     Log    Step No.12 คลิกปุ่มเคลียร์
     dps_scan_page.Click Clear Button [Move Status]
     # Expected
+    Log Defect No:  Defect266
     dps_scan_page.Verify Clear Filter Input
     dps_scan_page.Verify Search Pouch Number Result    ${global_pouch_number}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    12.Verify Clear Filter Pouch Number
@@ -147,6 +151,7 @@ DC_Operation_s027
     ...    ${tracking_j}    
     dps_scan_page.Click Search Button [Move Status]
     # Expected
+    Log Defect No:  Defect266
     dps_scan_page.Verify Search Tracking Number Result   
     ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
     ...    ${tracking_b}
@@ -251,6 +256,7 @@ DC_Operation_s027
     Log    Step No.17 คลิกที่ Pop up บันทึกข้อมูลเรียบร้อย
     dps_scan_page.Click Popup Save Data Success
     # Expected
+    Log Defect No:  Defect284
     dps_scan_page.Verify Move Status Page
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    17.Verify Move Status Page After Change Status
 

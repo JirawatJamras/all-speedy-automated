@@ -27,6 +27,7 @@ DC_Operation_s026
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_j}
     dps_scan_page.Click Search Button [Scan In Page]
     # Expected
+    Log Defect No:  Defect155,Defect249
     dps_home_page.Wait Until Page Loaded
     dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
     ...    ${dc_operation.scan_in_title_parcel_detail['title']}
@@ -97,6 +98,7 @@ DC_Operation_s026
     Log    Step No.2 คลิกปุ่ม "สร้าง" บริเวณกล่อง Pouch
     dps_scan_page.Click Create Pouch Button
     # Expected
+    Log Defect No:  Defect227
     dps_scan_page.Verify Create Pouch Popup
     ...    ${DC_Operation_S026.pouch['origin_warehouse']}
     ...    ${DC_Operation_S026.pouch['destination_warehouse']}
@@ -173,6 +175,7 @@ DC_Operation_s026
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_j}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect209
     dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
     ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
@@ -245,4 +248,5 @@ DC_Operation_s026
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}
     dps_history_parcel_page.Select Reprint Label Type In Dropdown    ${dc_operation.dropdown_reprint_label['pouch_label']}
     # Expected
+    Log Defect No:  Defect219
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S026   14.Verify Popup Error When Click Print Pouch Label And Pouch Is Not Closed
