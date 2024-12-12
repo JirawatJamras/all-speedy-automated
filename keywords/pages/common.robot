@@ -199,6 +199,13 @@ Set Yesterday
     ${yesterday}=    Subtract Time From Date        ${new_date}    1 days    result_format=%d-%m-%Y
     Set Suite Variable    ${yesterday}
 
+Delete ID Number
+    [Arguments]    ${id_number}
+    connect_to_mongodb    ${DB_URI}    ${DATABASE_NAME_bizDB}    ${COLLECTION_ACCOUNTS}
+    ${QUERY_DB}    Create Dictionary    ${QUERY_idNumber}=${id_number}
+    delete_document    ${QUERY_DB}
+    disconnect
+
 ################### Manage Excel ###################    
 Read Row From Excel
     [Arguments]    ${file_path}    ${sheet_name}    ${row_number}

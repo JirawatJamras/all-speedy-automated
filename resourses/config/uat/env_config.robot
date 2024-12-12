@@ -18,3 +18,7 @@ ${DB_URI}           mongodb+srv://admin:PRgxr23TZeubWeQP@all-speedy-db-uat.devnv
 ${DATABASE_NAME}    distcenterdb
 ${COLLECTION}       dc-cut-off-times
 ${QUERY}            Y    #status
+
+${DATABASE_NAME_bizDB}    bizDB
+${COLLECTION_ACCOUNTS}    accounts
+${QUERY_idNumber}         idNumber

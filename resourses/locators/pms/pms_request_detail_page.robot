@@ -52,7 +52,7 @@ ${pms_txt_sale_name}    //label[@for='rmName']
 ${pms_txt_sale_phone}    //label[@for='saleTell']
 ${pms_txt_sale_email}    //label[@for='saleEmail']
 ${pms_txt_sale_information}    //div[text()='{value}']
-${pms_txt_in_request_detail_page}    //div[@class='ant-card-body']//div[contains(text(),'{value}')]/../..
+${pms_txt_in_request_detail_page}    //div[@class='ant-card-body']//*[contains(text(),'{value}')]/../../..
 ${pms_txt_title_assign_rm_popup}    //div[@class='ant-modal-title']//span[text()='{value}']
 ${pms_txt_request_no_in_assign_rm_popup}    //tbody[@class='ant-table-tbody']//td[text()='{value}']
 ${pms_txt_all_rm_in_assign_rm_popup}    //span[text()='{value}']

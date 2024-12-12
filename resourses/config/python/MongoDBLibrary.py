@@ -19,6 +19,11 @@ class MongoDBLibrary:
             raise Exception("Collection is not set")
         return self.collection.update_one(query, {"$set": update})
 
+    def delete_document(self, query={}):
+        if self.collection is None:
+            raise Exception("Collection is not set")
+        return self.collection.delete_one(query)
+
     def disconnect(self):
         if self.client:
             self.client.close()
