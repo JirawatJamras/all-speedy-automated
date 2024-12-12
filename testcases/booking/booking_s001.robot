@@ -16,7 +16,7 @@ Booking_S001
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
     # Expected
-    common.Verify Capture Screenshot    booking    Booking_S001    Verify Login Page
+    common.Verify Capture Screenshot    booking    Booking_S001    1.Verify Login Page
 
     Log    Step No.2 Login
     b2c_login_page.Click Log On Button
@@ -35,4 +35,4 @@ Booking_S001
     ...    ${Booking_S001['phone']}
     ...    ${Booking_S001['email']}
     ...    ${Booking_S001['position']}
-    common.Verify Capture Screenshot    booking    Booking_S001    Verify Home Page
+    common.Verify Capture Screenshot    booking    Booking_S001    2.Verify Home Page

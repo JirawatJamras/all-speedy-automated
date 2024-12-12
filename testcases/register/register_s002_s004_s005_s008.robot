@@ -43,7 +43,7 @@ Register_S002
     register_business_pre_register.Input Email Legal Entity   ${Register_S002['email']}
     register_business_pre_register.Input Mobile No Legal Entity   ${Register_S002['mobile_no']}
     register_business_pre_register.Input Mobile Ext Legal Entity   ${Register_S002['mobile_ext']}
-    common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S002_filled in information 2
+    common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.1.S002_filled in information 2
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm

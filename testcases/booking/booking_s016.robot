@@ -270,9 +270,9 @@ Booking_S016
     ...    ${Booking_S016['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S016    16.Verify Booking Summary After Booking Success
+    common.Verify Capture Screenshot    booking    Booking_S016    16.1.Verify Booking Summary After Booking Success
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S016    16.Verify Booking Detail Page After Booking Success
+    common.Verify Capture Screenshot    booking    Booking_S016    16.2.Verify Booking Detail Page After Booking Success
 
     Log    Step No.17 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -320,9 +320,9 @@ Booking_S016
     ...    ${Booking_S016['total_price_value1']}
     ...    ${Booking.text_blank['origin_shipping']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S016    18.Verify Booking Summary
+    common.Verify Capture Screenshot    booking    Booking_S016    18.1.Verify Booking Summary
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S016    18.Verify Booking Detail Page
+    common.Verify Capture Screenshot    booking    Booking_S016    18.2.Verify Booking Detail Page
     
     Log    Step No.19 กดปุ่ม "แก้ไขรายการบุ๊คกิ้ง"
     b2c_booking_detail_page.Click Edit Booking List
@@ -371,9 +371,9 @@ Booking_S016
     ...    ${Booking_S016['total_price_value2']}
     ...    ${Booking.origin_shipping['15888_store_address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S016    20.Verify Booking Summary After Set Origin Shipping
+    common.Verify Capture Screenshot    booking    Booking_S016    20.1.Verify Booking Summary After Set Origin Shipping
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S016    20.Verify Booking Detail Page After Set Origin Shipping
+    common.Verify Capture Screenshot    booking    Booking_S016    20.2.Verify Booking Detail Page After Set Origin Shipping
 
     Log    Step No.21 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label

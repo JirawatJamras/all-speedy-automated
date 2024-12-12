@@ -136,9 +136,9 @@ Booking_S043
     ...    ${Booking_S020['total_price_value2']}
     ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S043    2.Verify Booking Summary
+    common.Verify Capture Screenshot    booking    Booking_S043    2.1.Verify Booking Summary
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S043    2.Verify Booking Detail Page
+    common.Verify Capture Screenshot    booking    Booking_S043    2.2.Verify Booking Detail Page
 
     Log    Step No.3 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
@@ -215,9 +215,9 @@ Booking_S043
     ...    ${Booking_S020['total_price_value2']}
     ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S043    6.Verify Booking Summary After Edit Sender Data
+    common.Verify Capture Screenshot    booking    Booking_S043    6.1.Verify Booking Summary After Edit Sender Data
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S043    6.Verify Booking Detail Page After Edit Sender Data
+    common.Verify Capture Screenshot    booking    Booking_S043    6.2.Verify Booking Detail Page After Edit Sender Data
 
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
@@ -311,9 +311,9 @@ Booking_S043
     ...    ${Booking_S020['total_price_value2']}
     ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S043    11.Verify Booking Summary After Edit Data Receiver
+    common.Verify Capture Screenshot    booking    Booking_S043    11.1.Verify Booking Summary After Edit Data Receiver
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S043    11.Verify Booking Detail Page After Edit Data Receiver
+    common.Verify Capture Screenshot    booking    Booking_S043    11.2.Verify Booking Detail Page After Edit Data Receiver
 
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
@@ -417,9 +417,9 @@ Booking_S043
     ...    ${Booking_S043['total_price_value2']}
     ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S042    17.Verify Booking Summary After Edit Data Parcel
+    common.Verify Capture Screenshot    booking    Booking_S042    17.1.Verify Booking Summary After Edit Data Parcel
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S042    17.Verify Booking Detail Page After Edit Data Parcel
+    common.Verify Capture Screenshot    booking    Booking_S042    17.2.Verify Booking Detail Page After Edit Data Parcel
 
     Log    Step No.18 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
@@ -540,9 +540,9 @@ Booking_S043
     ...    ${Booking_S043.not_use_code['total_price_value']}
     ...    ${Booking.origin_shipping['idc_company_address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    booking    Booking_S042    24.Verify Booking Summary After Edit Coupon And Code
+    common.Verify Capture Screenshot    booking    Booking_S042    24.1.Verify Booking Summary After Edit Coupon And Code
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    booking    Booking_S042    24.Verify Booking Detail Page After Edit Coupon And Code
+    common.Verify Capture Screenshot    booking    Booking_S042    24.2.Verify Booking Detail Page After Edit Coupon And Code
 
     Log    Step No.25 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
