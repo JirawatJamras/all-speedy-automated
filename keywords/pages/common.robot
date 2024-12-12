@@ -209,6 +209,26 @@ Delete ID Number
     delete_document    ${QUERY_DB}
     disconnect
 
+Check Used Tracking
+    [Arguments]    ${ROW_NUMBER}    ${tracking_number}    ${parcel_status}
+    ${avalible_tracking}=    Set Variable    False
+    ${status}=    Set Variable    False
+
+    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
+    dps_scan_page.Select Move Status Tab
+    dps_scan_page.Click Filter Button
+    WHILE    '${status}' == 'False'
+        dps_scan_page.Input One Tracking Number [Move Status]    ${tracking_number}
+        dps_scan_page.Click Search Button [Move Status]
+        ${status}    Verify Search Tracking Number Status Result    ${dc_operation.move_status['store_accept_parcel_status']}    ${tracking_number}
+        Exit For Loop If    '${status}' == 'True'
+        dps_scan_page.Click Clear Button [Move Status]
+        ${ROW_NUMBER}=    Convert To Integer    ${ROW_NUMBER}
+        ${ROW_NUMBER}    Evaluate    ${ROW_NUMBER} + 1
+        ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
+        common.Set Tracking Information from excel    ${tracking_info}       
+    END
+
 ################### Manage Excel ###################    
 Read Row From Excel
     [Arguments]    ${file_path}    ${sheet_name}    ${row_number}
