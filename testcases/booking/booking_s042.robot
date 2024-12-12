@@ -67,6 +67,7 @@ Booking_S042
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
+    Log Defect No:  Defect117,Defect258
     b2c_booking_delivery_page.Verify Created Booking On Booking Delivery Page
     ...    ${booking_id}
     ...    ${booking_time}
@@ -79,6 +80,7 @@ Booking_S042
     Log    Step No.2 กดรายการบุ๊คกิ้งที่มีสถานะ "รอส่งพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Booking With Waiting For Entering Parcel To System    ${booking_id}
     # Expected
+    Log Defect No:  Defect078,Defect101,Defect258
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
@@ -150,6 +152,7 @@ Booking_S042
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S042['sender_postcode_full']}
     b2c_booking_delivery_page.Click Add To Favorites In Sender
     # Expected
+    Log Defect No:  Defect119
     common.Verify Capture Screenshot    booking    Booking_S042    5.Verify Edit Data Sender
 
     Log    Step No.6 กดปุ่ม "บันทึกเเก้ไข"
@@ -157,6 +160,7 @@ Booking_S042
     Reload Page
     ${booking_time}    Get Booking Time
     # Expected
+    Log Defect No:  Defect078,Defect101,Defect119,Defect258
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
@@ -195,6 +199,7 @@ Booking_S042
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Expected
+    Log Defect No:  Defect119
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -246,6 +251,7 @@ Booking_S042
     b2c_booking_detail_page.Edit Postcode Receiver    ${Booking_S042['receiver_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Receiver Lists    ${Booking_S042['receiver_postcode_full']}
     # Expected
+    Log Defect No:  Defect119
     common.Verify Capture Screenshot    booking    Booking_S042    10.Verify Edit Data Receiver
 
     Log    Step No.11 กดปุ่ม "บันทึกเเก้ไข"
@@ -253,6 +259,7 @@ Booking_S042
     Reload Page
     ${booking_time}    Get Booking Time
     # Expected
+    Log Defect No:  Defect078,Defect101,Defect119,Defect258
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
@@ -291,6 +298,7 @@ Booking_S042
     Log    Step No.12 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Expected
+    Log Defect No:  Defect119
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -308,6 +316,7 @@ Booking_S042
     Log    Step No.13 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
+    Log Defect No:  Defect119
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -366,6 +375,7 @@ Booking_S042
     Reload Page
     ${booking_time}    Get Booking Time
     # Expected
+    Log Defect No:  Defect078,Defect101,Defect119,Defect258
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
@@ -404,6 +414,7 @@ Booking_S042
     Log    Step No.18 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Expected
+    Log Defect No:  Defect119
     b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_sender_information']}
@@ -421,6 +432,7 @@ Booking_S042
     Log    Step No.19 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
+    Log Defect No:  Defect119
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home   
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
@@ -460,6 +472,7 @@ Booking_S042
     Log    Step No.21 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
+    Log Defect No:  Defect050
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S003.promotion_detail['discount']}
     ...    ${Booking_S003.promotion_detail['promotion_name']}
@@ -472,6 +485,7 @@ Booking_S042
     Log    Step No.22 กดปุ่ม "เเก้ไข"
     b2c_booking_detail_page.Click Edit Data
     # Expected
+    Log Defect No:  Defect050
     b2c_booking_delivery_page.Verify Can Edit Selected Coupon And Code
     b2c_booking_delivery_page.Verify Selected Coupon And Code
     ...    ${Booking_S003.promotion_detail['discount']}
@@ -493,6 +507,7 @@ Booking_S042
     Reload Page
     ${booking_time}    Get Booking Time
     # Expected
+    Log Defect No:  Defect078,Defect101,Defect119,Defect258
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
@@ -528,9 +543,10 @@ Booking_S042
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S042    24.2.Verify Booking Detail Page After Coupon And Code
 
-    Log    Step No.19 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.25 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Parcel Label
     # Expected
+    Log Defect No:  Defect119
     b2c_booking_detail_page.Verify Parcel Label
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
@@ -552,7 +568,7 @@ Booking_S042
     ...    ${Booking_S042['parcel_detail_remark']}
     common.Verify Capture Screenshot    booking    Booking_S042    25.Verify Parcel Label
     
-    Log    Step No.20 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
+    Log    Step No.26 กดปุ่ม "พิมพ์ใบจ่ายหน้าพัสดุ" ใน PopUp "พิมพ์ใบจ่ายหน้าพัสดุ"
     b2c_booking_detail_page.Click Print Label On Popup
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S042    26.Verify Print Screen

@@ -49,6 +49,7 @@ Booking_S018
     b2c_call_car_pick_up_parcel_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
+    Log Defect No:  Defect086,Defect087
     b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${Booking_S018['parcel_type']}

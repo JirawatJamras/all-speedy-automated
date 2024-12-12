@@ -13,7 +13,7 @@ Set Cut Off Time
 Reset Cut Off Time
     connect_to_mongodb    ${DB_URI}    ${DATABASE_NAME}    ${COLLECTION}
     ${QUERY}    Create Dictionary    status=${QUERY}
-    ${update}    Create Dictionary    cutOff=23:59
+    ${update}    Create Dictionary    cutOff=17:00
     ${update_with_set}    Create Dictionary    $set=${update}
     update_document    ${QUERY}    ${update}
     disconnect
