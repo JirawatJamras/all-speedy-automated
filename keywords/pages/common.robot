@@ -51,6 +51,7 @@ Set Folder Result with date
     ${FOlDER_RESULT}=    Set Variable    ../results/${date_YYYY_MM_DD}
     Set Global Variable    ${FOlDER_RESULT}
     Set Current Date in Thai
+    Set Suite Variable    ${booking_id}    None
 
 Set Current Date in Thai
     ${date}=    Get Current Date    result_format=%d
@@ -122,13 +123,15 @@ Get Access Token
 
 Delete API Booking By Booking ID
     [Arguments]    ${booking_id}
-    ${access_token}=    Get Access Token
-    Create Session    allspeedy_api    ${CPS_API_URL}
-    &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
-    ${response}    DELETE On Session    allspeedy_api    /bookings/${booking_id}    headers=${headers}
-    Log    ${response.status_code}
-    Log    ${response.content}
-    Log    ${access_token}
+    IF  '${booking_id}' != 'None'
+        ${access_token}=    Get Access Token
+        Create Session    allspeedy_api    ${CPS_API_URL}
+        &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
+        ${response}    DELETE On Session    allspeedy_api    /bookings/${booking_id}    headers=${headers}
+        Log    ${response.status_code}
+        Log    ${response.content}
+        Log    ${access_token}
+    END
 
 Get Parcels And Sender Names
     [Documentation]    Retrieve parcels' codes and sender's names from the API response
