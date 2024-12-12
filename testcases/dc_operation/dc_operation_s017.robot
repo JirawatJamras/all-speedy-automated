@@ -15,7 +15,7 @@ DC_Operation_S017
 
     Log    Login
     ${tracking_i}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S017['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}

@@ -12,7 +12,7 @@ Booking_S006
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก M (มีประกัน ไม่มีCOD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
     [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect043    Defect045    Defect047    Defect048    Defect051    Defect052    Defect053    Defect055    Defect063    Defect078    Defect101    Defect258
     Log    Login
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}

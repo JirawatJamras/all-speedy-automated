@@ -24,7 +24,7 @@ DC_Operation_S013
     common.Set Tracking Information from excel    ${tracking_info}
 
     Log    Step No.17 เข้า Url : https://dps-uat.allspeedy.co.th
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     # Expected 
     dps_login_page.Verify Login Page

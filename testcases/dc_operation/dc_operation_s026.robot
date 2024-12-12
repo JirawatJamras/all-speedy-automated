@@ -16,7 +16,7 @@ DC_Operation_s026
     ${today_repattern}    Set Date Pattern    ${today}
 
     Log    Login
-    Go To    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}

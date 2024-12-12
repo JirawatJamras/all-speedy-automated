@@ -23,7 +23,7 @@ Register_S002_S004_S005_S008
 *** Keywords ***
 Register_S002
     Log    Step No.1 กรอกข้อมูล
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab  
     register_business_customers_page.Click Menu Register Business
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S002['checkbox_partner_types']}
@@ -49,7 +49,7 @@ Register_S002
 
 Register_S004
     Log    Step No.1 กรอกข้อมูล
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab  
     register_business_customers_page.Click Menu Register Business
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S004['checkbox_partner_types']}
@@ -72,7 +72,7 @@ Register_S004
 
 Register_S005
     Log    Step No.1 กรอกข้อมูล
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab  
     register_business_customers_page.Click Menu Register Business
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S005['checkbox_partner_types']}
@@ -94,7 +94,7 @@ Register_S005
 
 Register_S008
     Log    Step No.1 RM Lead ได้รับคำขอที่มีสถานะ "รอบมอบหมาย" คลิกที่แท็บรอดำเนินการเพื่อเลือกรายการคำขอที่ต้องการ กดปุ่ม "Assign RM" 
-    common.Open URL    ${PMS_UAT_URL}
+    common.Open URL    ${PMS_URL}
     pms_landing_page.Click Go Login Button
     pms_login_page.Input Email    ${pms_login_user_01['username']}
     pms_login_page.Input Password    ${pms_login_user_01['password']}

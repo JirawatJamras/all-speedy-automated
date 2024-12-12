@@ -18,7 +18,7 @@ Register_S003_S006
 *** Keywords ***
 Register_S003
     Log    Step No.1 กรอกข้อมูล
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab  
     register_business_customers_page.Click Menu Register Business
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S003['checkbox_partner_types']}
@@ -49,7 +49,7 @@ Register_S003
 
 Register_S006
     Log    Step No.1 กรอกข้อมูล
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab  
     register_business_customers_page.Click Menu Register Business
     register_business_pre_register.Click Checkbox Partner Types Legal    ${Register_S006['checkbox_partner_types']}

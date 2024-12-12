@@ -8,6 +8,7 @@ Open Chrome Browser
     Call Method    ${chrome_options}    add_argument    --disable-gpu
     Call Method    ${chrome_options}    add_argument    --disable-dev-shm-usage
     Call Method    ${chrome_options}    add_argument    --no-sandbox
+    Call Method    ${chrome_options}    add_argument    --kiosk-printing
     # Call Method    ${chrome_options}    add_argument    --headless\=old
     IF  '${chrome}'=='headlesschrome'
         Call Method     ${chrome_options}      add_argument    --headless\=old
@@ -112,7 +113,7 @@ Split String And Select
     RETURN    ${value}
 
 Get Access Token
-    Create Session    auth_session    ${CPS_API_UAT_URL}
+    Create Session    auth_session    ${CPS_API_URL}
     &{auth_payload}    Create Dictionary    email=${b2c_login_user_01['username']}    password=${b2c_login_user_01['password']}
     ${response}    POST On Session    auth_session    /users/b2c/login    json=${auth_payload}
     Should Be Equal As Numbers    ${response.status_code}    200    Failed to authenticate and obtain token
@@ -122,7 +123,7 @@ Get Access Token
 Delete API Booking By Booking ID
     [Arguments]    ${booking_id}
     ${access_token}=    Get Access Token
-    Create Session    allspeedy_api    ${CPS_API_UAT_URL}
+    Create Session    allspeedy_api    ${CPS_API_URL}
     &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
     ${response}    DELETE On Session    allspeedy_api    /bookings/${booking_id}    headers=${headers}
     Log    ${response.status_code}
@@ -134,7 +135,7 @@ Get Parcels And Sender Names
     [Arguments]    ${booking_id}
     ${access_token}=    Get Access Token
     &{headers}    Create Dictionary    token=${access_token}    Accept=application/json, text/plain, */*
-    Create Session    api_session    https://cps-api-uat.allspeedy.co.th/v1
+    Create Session    api_session    ${CPS_API_URL}
     ${response} =    GET On Session    api_session    /bookings/${booking_id}    headers=${headers}
     ${status_code} =    Convert To Integer    ${response.status_code}
     Should Be Equal As Integers    ${status_code}    200    API request failed
@@ -166,13 +167,8 @@ Get Parcel ID By Sender Name
     RETURN    ${parcel_id}
 
 Robot Skip Step Print Label
-    Sleep    5s
-    Switch Window    NEW
-    ${os} =    Evaluate    platform.system().lower()    modules=platform
-    Run Keyword If    'darwin' == '${os}'    Press Keys    None    ESC  # macOS
-    ...               ELSE IF    'windows' == '${os}'    Press Keys    None    TAB+SPACE  # Windows
-    ...               ELSE    Log    Unsupported OS
-    Switch Window    MAIN
+    Log    Robot Skip Verify Print Label Step    # Skip by use this chrome option: Call Method    ${chrome_options}    add_argument    --kiosk-printing
+
 Set Tomorrow Date
     ${today}=    Get Current Date    result_format=%Y-%m-%d
     ${tomorrow_day}=    Add Time To Date    ${today}    1 days    result_format=%d-%m-%Y

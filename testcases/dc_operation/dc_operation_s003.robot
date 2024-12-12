@@ -28,7 +28,7 @@ DC_Operation_S003
     ${tracking_j}   Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S003['sender_name_10']}
 
     Log    Step No.1 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}
     dps_home_page.Click Dropdown For Select Role

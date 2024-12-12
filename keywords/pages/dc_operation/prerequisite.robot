@@ -8,7 +8,7 @@ DC_Operation_S002
     dps_home_page.Reset Cut Off Time
 
     Log    Step No.1 เข้า URL All Speedy
-    common.Open URL   ${B2C_UAT_URL}
+    common.Open URL   ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab
     Sleep    2s
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    1.Verify Login Page
@@ -208,7 +208,7 @@ DC_Operation_S002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
-    Go To    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     # Expected
     dps_landing_page.Verify Go Login Page
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    18.Verify Go Login DPS Page
@@ -330,7 +330,7 @@ DC_Operation_S002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    24.Verify Pickup Schedule Change Status To Confirm
 
     Log    Step No.25 กลับ Speed D "เรียกรถเข้ารับพัสดุ"
-    Go To    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
@@ -351,7 +351,7 @@ DC_Operation_S002
 
 DC_Operation_S004
     ${tracking_c}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S004['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -1091,7 +1091,7 @@ DC_Operation_S004
 
 DC_Operation_S005
     ${tracking_d}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S005['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -1633,7 +1633,7 @@ DC_Operation_S005
 
 DC_Operation_S006
     ${tracking_e}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S006['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -1964,7 +1964,7 @@ DC_Operation_S006
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s
-    Robot Skip Step Print Label
+    common.Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup    ${dc_operation['text_transaction_complete']}
     common.Verify Capture Screenshot  dc_operation    DC_Operation_S006    23.Verify Transaction Complete Popup
@@ -2365,7 +2365,7 @@ DC_Operation_S006
 
 DC_Operation_S007
     ${tracking_f}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S007['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -2906,7 +2906,7 @@ DC_Operation_S007
 DC_Operation_S008
     Log    Pre Condition
     ${tracking_g}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S008['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -3227,7 +3227,7 @@ DC_Operation_S008
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s
-    Robot Skip Step Print Label
+    common.Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup    ${dc_operation['text_transaction_complete']}
     common.Verify Capture Screenshot  dc_operation    DC_Operation_S008    23.Verify Transaction Complete Popup
@@ -3809,7 +3809,7 @@ DC_Operation_S008
 
 DC_Operation_S009
     ${tracking_h}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S009['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -4502,7 +4502,7 @@ DC_Operation_S009
 
 DC_Operation_S010
     ${tracking_i}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S010['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -4833,7 +4833,7 @@ DC_Operation_S010
 
     Log    Step No.23 คลิกปุ่มพิมพ์
     Sleep    5s
-    Robot Skip Step Print Label
+    common.Robot Skip Step Print Label
     # Expected
     dps_pouch_page.Verify Transaction Complete Popup    ${dc_operation['text_transaction_complete']}
     common.Verify Capture Screenshot  dc_operation    DC_Operation_S010    23.Verify Transaction Complete Popup
@@ -5400,7 +5400,7 @@ DC_Operation_S010
 
 DC_Operation_S011
     ${tracking_j}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S011['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -6088,7 +6088,7 @@ DC_Operation_S011
 
 DC_Operation_S012
     ${tracking_b}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S012['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}
@@ -6297,7 +6297,7 @@ DC_Operation_S012
 
 DC_Operation_S016
     ${tracking_a}    Get Parcel Codes By Sender Name    ${Global_ParcelsData}    ${DC_Operation_S016['sender_name']}
-    common.Open URL    ${DPS_UAT_URL}
+    common.Open URL    ${DPS_URL}
     dps_landing_page.Click Go Login Button
     dps_home_page.Click Dropdown For Select Role
     dps_home_page.Select Role    ${dc_operation.role['admin']}

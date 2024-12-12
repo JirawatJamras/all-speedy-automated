@@ -26,7 +26,7 @@ Booking_S024
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่ร้าน 7-11 > ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - รายละเอียดพัสดุ เลือก S0 (ไม่มี COD เเละไม่ใส่หมายเหตุ) - Promotion (ไม่มี)
     [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect052    Defect054    Defect063    Defect076    Defect077    Defect083    Defect126    Defect258    Defect278
     Log    Login
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}

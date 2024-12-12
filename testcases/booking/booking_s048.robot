@@ -13,7 +13,7 @@ Booking_S048
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า เรียกรถเข้ารับพัสดุ (ตรวจสอบรอบรถปกติเเละเพิ่มรอบพิเศษ)
     [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect086    Defect107
     Log    Login
-    common.Open URL    ${B2C_UAT_URL}
+    common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab
     b2c_login_page.Input Email    ${b2c_login_user_01['username']}
     b2c_login_page.Input Password    ${b2c_login_user_01['password']}
