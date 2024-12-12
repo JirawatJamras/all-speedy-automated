@@ -1,0 +1,114 @@
+pipeline {
+    agent { label 'mac_m1_03'}
+    environment {
+        COMPANY_ID = 'ac82bd19-5277-4cea-8c52-68737f4f5071'
+        TYPE = 'robot'
+        AUTOMATED_VERSION = '0.0.1'
+        APP_VERSION = '0.0.1'
+        TEAMS_WEBHOOK_URL = 'https://cpallgroup.webhook.office.com/webhookb2/33907bd5-ae56-49a2-a24b-bfc71f0906ca@0e837ccb-289e-45c4-8f1e-e283bb7f6289/IncomingWebhook/c103797254eb421d99487bed20e8b8bf/029f0d35-c7da-4e56-8f98-2ae1a6bd42a4/V22s3IHjWEriDAKYXMCjPWY6BPNoZFMJG_nlT5IP2O'
+    }
+    stages {
+        stage('Update ChromeDriver') {
+            steps {
+                script {
+                    echo "Updating ChromeDriver to match installed Chrome version"
+                    sh """
+                        CHROME_VERSION=\$(/Applications/Google\\ Chrome.app/Contents/MacOS/Google\\ Chrome --version | awk '{print \$3}')
+                        echo "Installed Chrome version: \$CHROME_VERSION"
+                        curl -L -o chromedriver.zip https://storage.googleapis.com/chrome-for-testing-public/\$CHROME_VERSION/mac-x64/chromedriver-mac-x64.zip
+                        unzip -o chromedriver.zip -d /usr/local/bin/
+                        rm chromedriver.zip
+                        # Ensure correct permissions
+                        mv /usr/local/bin/chromedriver-mac-x64/chromedriver /usr/local/bin/chromedriver
+                        chmod +x /usr/local/bin/chromedriver
+
+                        echo "ChromeDriver installed version:"
+                        /usr/local/bin/chromedriver --version
+                    """
+                }
+            }
+        }
+        stage('Install Python Dependencies') {
+            steps {
+                script {
+                    echo "Installing library"
+                    sh "pip install -r requirement.txt"
+                    def startTime = new Date()
+                    echo "Start Time: ${startTime}"
+                    env.START_TIME = startTime
+                    echo "Start Time: ${env.START_TIME}"
+                }
+            }
+        }
+        stage('Run Robot') {
+            steps {
+                sh """
+                    mkdir -p report results
+                    cd report
+                    robot  -v ENV:${ENV}  -i ${MODULE}  ${SCENARIO_NO}  ../testcases/
+                """
+            }
+            post {
+                always {
+                    echo "Publish Robot Framework test results"
+                    robot(
+                        outputPath: 'report',
+                        outputFileName: 'output.xml',
+                        reportFileName: 'report.html',
+                        logFileName: 'log.html',
+                        disableArchiveOutput: false,
+                        passThreshold: 100.0,
+                        unstableThreshold: 100.0,
+                        otherFiles: '*.png,*.jpg',
+                        onlyCritical: false
+                    )
+                    script {
+                        def endTime = new Date()
+                        echo "Date ${env.START_TIME}  ${endTime}"
+                        if (params.ROBOT_RESULT == 'TRUE') {
+                        archiveArtifacts artifacts: 'results/**', allowEmptyArchive: true
+                        }
+                        def outputXml = readFile('report/output.xml')
+                        def findGenerated = (outputXml =~ /generated="([^"]+)"/)
+                        String startValue = findGenerated.find() ? findGenerated.group(1) : "Not Found"
+                        def findskip = (outputXml =~ /(?i)<stat[^>]*skip="(\d+)"[^>]*>All Tests<\/stat>/)
+                        def findpass = (outputXml =~ /(?i)<stat[^>]*pass="(\d+)"[^>]*>All Tests<\/stat>/)
+                        def findfail = (outputXml =~ /(?i)<stat[^>]*fail="(\d+)"[^>]*>All Tests<\/stat>/)
+                        int skipValue = findskip.find() ? findskip.group(1) as Integer : 0
+                        int passValue = findpass.find() ? findpass.group(1) as Integer : 0
+                        int failValue = findfail.find() ? findfail.group(1) as Integer : 0
+                        int totalTests = passValue + failValue + skipValue
+                        echo "PASS: ${passValue}, FAIL: ${failValue}, SKIP: ${skipValue}"
+                        echo "TOTAL TESTS: ${totalTests}"
+                        echo "Publishing results to LINE Notify"
+                        // Send to LINE Notify
+                        sh """
+                            curl -X POST \
+                                -H 'Authorization: Bearer 4iZaZ9OcuOwlVgceKyr7OAQ2zFq0QQn2RF1RZ5kpbYv' \
+                                -F 'message=${env.JOB_NAME}: Build ${env.BUILD_ID} \n\
+Branch: ${BRANCH}\n\
+Environment: ${ENV} \n\
+Tag: ${MODULE} \n\
+Start Time: ${env.START_TIME} \n\
+End Time: ${endTime} \n\
+Total Scenarios: ${totalTests} (PASS: ${passValue}, FAIL: ${failValue}, SKIP: ${skipValue}) \n\
+Rerport URL: http://10.151.26.82:8080/job/QC-TPL/job/qam-all-speedy/${env.BUILD_ID}/robot/report/report.html' \
+                                https://notify-api.line.me/api/notify
+                        """
+                    }
+                }
+            }
+        }
+    }
+    post {
+        failure {
+            updateGitlabCommitStatus name: 'Rubeus_x_retry', state: 'failed'
+        }
+        success {
+            updateGitlabCommitStatus name: 'Rubeus_x_retry', state: 'success'
+        }
+        always {
+            cleanWs(cleanWhenNotBuilt: false, deleteDirs: true)
+        }
+    }
+}

@@ -277,3 +277,7 @@ Delete Row In Excel
     Run Keyword    Call Method    ${workbook}    save    ${file_path}
     Run Keyword    Call Method    ${workbook}    close
 
+Log Defect No:
+    [Arguments]    ${message}
+    ${message}=    Evaluate    '\\033[38;2;255;165;0m${message}\\033[0m'
+    Log To Console    \n${message}\n

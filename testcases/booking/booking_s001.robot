@@ -21,6 +21,7 @@ Booking_S001
     Log    Step No.2 Login
     b2c_login_page.Click Log On Button
     # Expected
+    Log Defect No:  Defect046
     b2c_home_page.Verify My Profile Page
     ...    ${Booking['text_company_profile']}
     ...    ${Booking['text_profile']}

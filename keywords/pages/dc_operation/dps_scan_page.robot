@@ -179,7 +179,7 @@ Click Accept Button On Popup For Creating Pouch
     ${dps_btn_accept_for_create_pouch_auto}=    Replace String    ${dps_btn_accept_for_create_pouch_auto}    {value}    ${dc_operation['text_confirm']}
     common.Click When Ready    ${dps_btn_accept_for_create_pouch_auto}
     
-Get Pouch Number In Scan Page    ##ใช้ชั่วคราว
+Get Pouch Number In Scan Page
     ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_status}    ${DC_Operation_S026.pounch_number['pounch_status']}
     ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_number}    ${DC_Operation_S026.pounch_number['pounch_number']}
     ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_id}    ${DC_Operation_S026.pounch_number['pounch_id']}
