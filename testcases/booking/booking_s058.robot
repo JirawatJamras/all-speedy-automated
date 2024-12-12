@@ -205,9 +205,9 @@ Booking_S058
     ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
     ...    ${Booking_S031['receiver_address']}
     ...    ${Booking_S031['receiver_postcode_full']}
-    common.Verify Capture Screenshot    booking    Booking_S058    9.Verify Data Receiver In Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    9.1.Verify Data Receiver In Popup
     b2c_favorite_page.Scroll To Display Edit Button
-    common.Verify Capture Screenshot    booking    Booking_S058    9.Verify Data Receiver Footer In Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    9.2.Verify Data Receiver Footer In Popup
 
     Log    Step No.10 กดปุ่ม "เเก้ไข"
     b2c_favorite_page.Click Edit Button
@@ -266,9 +266,9 @@ Booking_S058
     ...    ${EMPTY}
     ...    ${EMPTY}
     ...    ${favorite['text_input_postcode']}
-    common.Verify Capture Screenshot    booking    Booking_S058    13.Verify Add Receiver Favorite Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    13.1.Verify Add Receiver Favorite Popup
     b2c_favorite_page.Scroll To Display Save Button
-    common.Verify Capture Screenshot    booking    Booking_S058    13.Verify Add Receiver Favorite Footer Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    13.2.Verify Add Receiver Favorite Footer Popup
 
     Log    Step No.14 กรอกข้อมูล
     b2c_favorite_page.Input Receiver Favorite Name    ${Booking_S058.add_receiver_favorite['favorite_name']}
@@ -302,9 +302,9 @@ Booking_S058
     ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
     b2c_favorite_page.Verify Data Shipping Origin Area
     ...    ${EMPTY}
-    common.Verify Capture Screenshot    booking    Booking_S058    16.Verify Add Shipping Origin Area Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    16.1.Verify Add Shipping Origin Area Popup
     b2c_favorite_page.Scroll To Display Save Button
-    common.Verify Capture Screenshot    booking    Booking_S058    16.Verify Add Shipping Origin Area Footer Popup
+    common.Verify Capture Screenshot    booking    Booking_S058    16.2.Verify Add Shipping Origin Area Footer Popup
 
     Log    Step No.17 กรอกข้อมูล
     b2c_favorite_page.Input Shipping Origin Area Favorite Name    ${Booking_S058.add_shipping_origin_area['favorite_name']}
