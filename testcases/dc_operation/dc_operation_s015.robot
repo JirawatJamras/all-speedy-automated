@@ -6,8 +6,8 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #head
 Test Teardown     Close Browser
 
 *** Variables ***   
-${SHEET_NAME}    Tracking_S015   # ชื่อชีตที่ต้องการ
-${ROW_NUMBER}    2      # แถวที่ต้องการลบ
+${SHEET_NAME}    Tracking_S015
+${ROW_NUMBER}    2
 
 *** Test Cases ***
 DC_Operation_S015

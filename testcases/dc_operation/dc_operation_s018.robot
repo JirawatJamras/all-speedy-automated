@@ -78,9 +78,9 @@ DC_Operation_S018
     ...    ${DC_Operation_S018.value_receiver_in_warehouse['name']}
     ...    ${DC_Operation_S018.value_receiver_in_warehouse['phone']}
     ...    ${DC_Operation_S018.value_receiver_in_warehouse['address']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    2.Verify Parcel Details In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    2.1.Verify Parcel Details In Warehouse
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    2.Verify Sender And Receiver In Warehouse
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S018    2.2.Verify Sender And Receiver In Warehouse
 
     Log    Step No.3 คลิกปุ่ม Dropdown Reprint
     dps_history_parcel_page.Click Reprint Label Dropdown    ${dc_operation.dropdown_reprint_label['title']}

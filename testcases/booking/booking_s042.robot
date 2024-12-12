@@ -57,10 +57,7 @@ Booking_S042
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - เเก้ไขรายการ
     [Tags]    Booking    Business_To_Customer    UAT    Defect050    Defect078    Defect101    Defect117    Defect119    Defect258
     Log    Login
-    common.Open URL    ${B2C_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Input Email And Password
     b2c_login_page.Click Log On Button
     
     Log    Prerequisite S003

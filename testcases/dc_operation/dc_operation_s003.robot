@@ -59,9 +59,9 @@ DC_Operation_S003
     ...    ${tracking_a}
     ...    ${DC_Operation_S003.data_in_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    1.Verify Homepage
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    1.1.Verify Homepage
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    1.Verify Data In All Task Tab
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    1.2.Verify Data In All Task Tab
 
     Log    Step No.2 เลือกแท็บงานรับเข้า
     dps_home_page.Select Tab Import Task
@@ -117,7 +117,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.scan_in_data_label_detail['zipcode']} 
     ...    ${DC_Operation_S003.scan_in_data_label_detail['customer']}
     ...    ${DC_Operation_S003.scan_in_data_label_detail['phone']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    3.Verify Sender Data In Scan In 1
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    3.1.Verify Sender Data In Scan In 1
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
@@ -141,7 +141,7 @@ DC_Operation_S003
     ...    ${DC_Operation_S003.scan_in_receiver_data['shipping_destination']}
     ...    ${DC_Operation_S003.scan_in_receiver_data['address']}
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    3.Verify Sender Data In Scan In 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    3.2.Verify Sender Data In Scan In 2
 
     Log    Step No.4 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label
@@ -190,9 +190,9 @@ DC_Operation_S003
     ...    ${dc_operation.label_all_task_tab['parcel_number']}
     ...    ${dc_operation.label_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    9.Verify Homepage 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    9.1.Verify Homepage 2
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    9.Verify Data In All Task Tab 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    9.2.Verify Data In All Task Tab 2
 
     Log    Step No.10 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task
@@ -234,10 +234,10 @@ DC_Operation_S003
     ...    ${today}
     ...    ${DC_Operation_S003.scan_out_waiting_scan['parcel_status']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    11.Verify Value Waiting List To Scan Out [Scan Out Page] 1
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    11.1.Verify Value Waiting List To Scan Out [Scan Out Page] 1
     Sleep    1s
     common.Scroll Window To Vertical    1000
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    11.Verify Value Waiting List To Scan Out [Scan Out Page] 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    11.2.Verify Value Waiting List To Scan Out [Scan Out Page] 2
 
     Log    Step No.12 กรอกหมายเลขพัสดุ (Tracking) ที่มีชื่อผู้ส่งเป็น "คุณ a" และ กดค้นหา หรือกด Enter
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_a}

@@ -134,7 +134,7 @@ DC_Operation_S014
     ...    ${zipcode_label} 
     ...    ${customer_label}
     ...    ${phone_label}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    20.Verify Sender Data In Scan In 1
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    20.1.Verify Sender Data In Scan In 1
     dps_scan_page.Verify Title Sender In Scan Page
     ...    ${dc_operation.scan_in_title_sender_detail['title']}
     ...    ${dc_operation.scan_in_title_sender_detail['name']}
@@ -157,7 +157,7 @@ DC_Operation_S014
     ...    ${receiver_phone}
     ...    ${receiver_shipping_destination}
     ...    ${receiver_address}    
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014   20. Verify Sender Data In Scan In 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014   20.2.Verify Sender Data In Scan In 2
 
     Log    Step No.21 คลิกปุ่ม ยืนยัน/Print Label
     dps_scan_page.Click Print Label
@@ -193,9 +193,9 @@ DC_Operation_S014
     ...    ${dc_operation.label_all_task_tab['parcel_size']}
     ...    ${dc_operation.label_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    24.Verify Homepage 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    24.1.Verify Homepage 2
     common.Scroll Window To Vertical    500
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    24.Verify Data In All Task Tab 2
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    24.2.Verify Data In All Task Tab 2
 
     Log    Step No.25 เลือกแท็บงานส่งออก
     dps_home_page.Select Tab Export Task

@@ -13,10 +13,7 @@ Booking_S048
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า เรียกรถเข้ารับพัสดุ (ตรวจสอบรอบรถปกติเเละเพิ่มรอบพิเศษ)
     [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect086    Defect107
     Log    Login
-    common.Open URL    ${B2C_URL}
-    register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Input Email And Password
     b2c_login_page.Click Log On Button
 
     Log    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"
@@ -25,6 +22,7 @@ Booking_S048
     ${date}    Get Normal Parcel Pickup Date    ${Booking_S048['pickup_point']}
     Set Yesterday    ${date}
     # Expected
+    Log Defect No:  Defect086,Defect087,Defect107
     b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${call_car_pick_up.car_round_name['normal']}
@@ -63,6 +61,7 @@ Booking_S048
     Log    Step No.4 กดปุ่ม "บันทึก"
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
+    Log Defect No:  Defect086,Defect087,Defect107
     b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
     ...    ${call_car_pick_up.status['parcel_in_progress']}
     ...    ${Booking_S048.add_new_pickup['parcel_type']}
