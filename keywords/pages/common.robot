@@ -223,10 +223,13 @@ Check Used Tracking
         ${status}    Verify Search Tracking Number Status Result    ${dc_operation.move_status['store_accept_parcel_status']}    ${tracking_number}
         Exit For Loop If    '${status}' == 'True'
         dps_scan_page.Click Clear Button [Move Status]
+        Log To Console    ${ROW_NUMBER}
+        Log    ${ROW_NUMBER}
         ${ROW_NUMBER}=    Convert To Integer    ${ROW_NUMBER}
         ${ROW_NUMBER}    Evaluate    ${ROW_NUMBER} + 1
         ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
-        common.Set Tracking Information from excel    ${tracking_info}       
+        common.Set Tracking Information from excel    ${tracking_info}
+        Run Keyword If    '${tracking_number}' == 'None'    Fail    All tracking numbers have been used. Kindly upload a new file
     END
 
 ################### Manage Excel ###################    

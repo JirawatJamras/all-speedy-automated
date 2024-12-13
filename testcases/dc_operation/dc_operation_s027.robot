@@ -6,7 +6,7 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #head
 Test Teardown     Close Browser
 
 *** Test Cases ***
-DC_Operation_s027
+DC_Operation_S027
     [Documentation]    การ Move Status แบบค้นหาพัสดุ
     [Tags]    DC_Operation    Move Status    UAT    Defect182    Defect257    Defect266    Defect284
 

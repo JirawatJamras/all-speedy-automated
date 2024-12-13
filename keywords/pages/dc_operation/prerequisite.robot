@@ -208,7 +208,7 @@ DC_Operation_S002
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
     ...    ${DC_Operation_S002['parcel_number']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.Verify Parcel Status After Cut Off Time
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.3.Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
     common.Open URL    ${DPS_URL}
@@ -1954,7 +1954,7 @@ DC_Operation_S006
     # Expected
     Log Defect No:  Defect177
     dps_scan_page.Verify Close Pouch Before Scan Out Warning Popup    ${dc_operation['text_please_close_pouch_before_scan_out']}
-    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    Verify Close Pouch Before Scan Out Warning Popup
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    18.Verify Close Pouch Before Scan Out Warning Popup
 
     Log    Step No.19 เลือกเมนู จัดการ Pouch ที่แถบเมนูด้านซ้าย
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['pouch']}
