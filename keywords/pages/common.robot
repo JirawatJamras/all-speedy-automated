@@ -220,11 +220,11 @@ Check Used Tracking
     WHILE    '${status}' == 'False'
         dps_scan_page.Input One Tracking Number [Move Status]    ${tracking_number}
         dps_scan_page.Click Search Button [Move Status]
+        Log   ${ROW_NUMBER}:${tracking_number}
+        Log to Console  ${ROW_NUMBER}:${tracking_number}
         ${status}    Verify Search Tracking Number Status Result    ${dc_operation.move_status['store_accept_parcel_status']}    ${tracking_number}
         Exit For Loop If    '${status}' == 'True'
         dps_scan_page.Click Clear Button [Move Status]
-        Log To Console    ${ROW_NUMBER}
-        Log    ${ROW_NUMBER}
         ${ROW_NUMBER}=    Convert To Integer    ${ROW_NUMBER}
         ${ROW_NUMBER}    Evaluate    ${ROW_NUMBER} + 1
         ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
