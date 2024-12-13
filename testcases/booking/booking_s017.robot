@@ -4,8 +4,8 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome   #chrome
                   ...    AND    Set Folder Result with date
-Test Teardown     Run Keywords    common.Delete API Booking By Booking ID    ${booking_id}
-                  ...    AND    Close Browser
+Test Teardown     Run Keywords    Close Browser
+                  ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
 
 *** Test Cases ***
 Booking_S017

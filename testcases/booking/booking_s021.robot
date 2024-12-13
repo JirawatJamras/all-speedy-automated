@@ -6,8 +6,8 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #head
                   ...    AND    Set Folder Result with date
                   ...    AND    Reset Cut Off Time
 Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
-                  ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    Close Browser
+                  ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
 
 *** Keywords ***
 Booking_S018

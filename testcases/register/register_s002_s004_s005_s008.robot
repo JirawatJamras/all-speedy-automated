@@ -4,10 +4,10 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Run Keywords    Delete ID Number    ${Register_S002['id_number']}
-                  ...    AND   Delete ID Number    ${Register_S004['id_number']}
-                  ...    AND   Delete ID Number    ${Register_S005['id_number']}
-                  ...    AND   Close Browser
+Test Teardown     Run Keywords    Close Browser
+                  ...    AND    Delete ID Number     ${Register_S002['id_number']}
+                  ...    AND    Delete ID Number     ${Register_S004['id_number']}
+                  ...    AND    Delete ID Number     ${Register_S005['id_number']}
 
 *** Test Cases ***
 Register_S002_S004_S005_S008
