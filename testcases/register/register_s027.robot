@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S027
     [Documentation]    Customer : คำขอเพิ่ม Company Admin
-    [Tags]    Register    Customer_Login    UAT
+    [Tags]    Register    Customer_Login    Regression
     skip

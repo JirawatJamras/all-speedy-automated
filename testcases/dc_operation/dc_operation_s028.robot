@@ -8,5 +8,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S028
     [Documentation]    การ Move Status แบบ Import file
-    [Tags]    DC_Operation    Move Status    UAT
+    [Tags]    DC_Operation    Move Status    Regression
     skip

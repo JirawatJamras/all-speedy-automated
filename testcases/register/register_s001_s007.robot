@@ -9,7 +9,7 @@ Test Teardown     Run Keywords    Close Browser
 *** Test Cases ***
 Register_S001_S007
     [Documentation]    Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ และ RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register
-    [Tags]    Register    RM_Lead_Assign_Transaction    UAT
+    [Tags]    Register    RM_Lead_Assign_Transaction    Regression
     Log    Scenario 1 Customer : ลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล) เพื่ออนุมัติ
     Register_S001
     Log    Scenario 7 RM Lead : Assign RM ทีละรายการในคำขอ Pre-Register

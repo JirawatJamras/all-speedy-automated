@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S021
     [Documentation]    RM : การปฎิเสธลูกค้าในข้อมูลลูกค้า
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

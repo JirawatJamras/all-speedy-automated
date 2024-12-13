@@ -53,7 +53,7 @@ Booking_S031
 *** Test Cases ***
 Booking_S054 
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Customer_To_Customer    UAT    Defect050    Defect054    Defect055    Defect075    Defect078    Defect084    Defect101    Defect117    
+    [Tags]    Booking    Customer_To_Customer    Regression    Defect050    Defect054    Defect055    Defect075    Defect078    Defect084    Defect101    Defect117    
     ...    Defect119    Defect133
     Log    Login
     c2c_login.Input Email And Password    ${c2c_login_user_01['username']}    ${c2c_login_user_01['password']}

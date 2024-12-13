@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S012
     [Documentation]    RM : ปฎิเสธ Pre-Register (ลูกค้าบุคคลธรรมดา)
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

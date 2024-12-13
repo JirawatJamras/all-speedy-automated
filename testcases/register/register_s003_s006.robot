@@ -9,7 +9,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S003_S006
     [Documentation]    Customer : ยกเลิกลงทะเบียน Pre-Register
-    [Tags]    Register    Cancel_Pre_Register    UAT
+    [Tags]    Register    Cancel_Pre_Register    Regression
     Log    Scenario 3 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทนิติบุคคล)
     Register_S003
     Log    Scenario 6 Customer : ยกเลิกลงทะเบียน Pre-Register (ลูกค้าประเภทบุคคลธรรมดา)

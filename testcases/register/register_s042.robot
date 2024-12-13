@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S042
     [Documentation]    RM : ปฎิเสธคำขอแก้ไขข้อมูลธนาคาร
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

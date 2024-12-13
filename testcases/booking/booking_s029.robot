@@ -9,7 +9,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S029
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า C-Booking จองการจัดส่งพัสดุ
-    [Tags]    Booking    Login_Customer_To_Customer    UAT
+    [Tags]    Booking    Login_Customer_To_Customer    Regression
     Log    Step No.1 Login
     c2c_login.Input Email And Password    ${c2c_login_user_01['username']}    ${c2c_login_user_01['password']}
     c2c_login.Click Log On Button

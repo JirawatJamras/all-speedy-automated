@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S029
     [Documentation]    Customer : คำขอแก้ไขข้อมูลที่อยู่บริษัท
-    [Tags]    Register    Customer_Login    UAT
+    [Tags]    Register    Customer_Login    Regression
     skip

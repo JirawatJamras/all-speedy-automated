@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S043
     [Documentation]    RM : ปฎิเสธคำขอแก้ไขข้อมูลบริการ
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S046
     [Documentation]    RM : แก้ไขข้อมูลลูกค้าที่ไม่ต้องส่งอนุมัติ
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

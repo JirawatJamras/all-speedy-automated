@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S045
     [Documentation]    RM Lead : อนุมัติคำขอแก้ไขข้อมูลบริการ
-    [Tags]    Register    RM_Lead    UAT
+    [Tags]    Register    RM_Lead    Regression
     skip

@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S027
     [Documentation]    การ Move Status แบบค้นหาพัสดุ
-    [Tags]    DC_Operation    Move Status    UAT    Defect182    Defect257    Defect266    Defect284
+    [Tags]    DC_Operation    Move Status    Regression    Defect182    Defect257    Defect266    Defect284
 
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002

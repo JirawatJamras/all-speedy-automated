@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S013
     [Documentation]    Customer : ลงทะเบียน Full-Register (Inbound) ลูกค้านิติบุคคล
-    [Tags]    Register    Customer_Full_Register_Inbound    UAT
+    [Tags]    Register    Customer_Full_Register_Inbound    Regression
     skip

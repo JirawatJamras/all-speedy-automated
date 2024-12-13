@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S049
     [Documentation]    Customer : แก้ไขโปรไฟล์ของฉัน
-    [Tags]    Register    Customer_Login    UAT
+    [Tags]    Register    Customer_Login    Regression
     skip

@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S030
     [Documentation]    Customer : คำขอแก้ไขข้อมูลผู้ติดต่อ
-    [Tags]    Register    Customer_Login    UAT
+    [Tags]    Register    Customer_Login    Regression
     skip

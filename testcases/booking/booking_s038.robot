@@ -9,7 +9,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S038
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่งต้องการใช้ที่อยู่ผู้ส่งพัสดุเดียวกันทั้งบุ๊คกิ้ง
-    [Tags]    Booking    Business_To_Customer    UAT
+    [Tags]    Booking    Business_To_Customer    Regression
     skip
     # Log    Pre condition
     # Open Chrome Browser   chrome      #headlesschrome   

@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S056
     [Documentation]    ลูกค้า All Member - ตรวจสอบหน้า พัสดุของฉัน Tap รายการพัสดุที่จัดส่ง
-    [Tags]    Booking    Customer_To_Customer    UAT
+    [Tags]    Booking    Customer_To_Customer    Regression
     skip

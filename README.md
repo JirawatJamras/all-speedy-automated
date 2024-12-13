@@ -16,8 +16,8 @@ Install Robot Framework:
 
 # all-speedy-automated
 -- Run Command --
-robot -v ENV:uat -i UAT -v LANG:en  ../testcases/
-robot -v ENV:uat -i UAT  ../testcases/
+robot -v ENV:uat -i Regression -v LANG:en  ../testcases/
+robot -v ENV:uat -i Regression  ../testcases/
 robot -v ENV:uat -i Booking  ../testcases/
 robot -v ENV:uat -i DC_Operation  ../testcases/
 robot -v ENV:uat -i Register  ../testcases/
@@ -25,18 +25,18 @@ robot -v ENV:uat -i Register  ../testcases/
 
 # Setting Command
 -v คือ แทนค่าตัวแปร                    #(\resources\config)
--i คือ Tag                           #[Tags]   UAT    Booking    DC_Operation
+-i คือ Tag                           #[Tags]   Regression    Booking    DC_Operation
 -t คือ testcase เช่น -t *01*          #AllSpeedy_B2C_001_ID_1 
 
 # For Window
-robot -v ENV:uat -i UAT -t *001* -t *003* -t *006*   ../testcases/
+robot -v ENV:uat -i Regression -t *001* -t *003* -t *006*   ../testcases/
 
 # For MacOS
-robot -v ENV:uat -i UAT -t '*001*' -t '*003*' -t '*006*' ../testcases/
+robot -v ENV:uat -i Regression -t '*001*' -t '*003*' -t '*006*' ../testcases/
 
 # Pabot
-pabot --processes 3 -v ENV:uat -i UAT ..\testcases |  tee output.txt
-python -m pabot --processes 3 -v ENV:uat -i UAT ../testcases/  |  tee output.txt
+pabot --processes 3 -v ENV:uat -i Regression ..\testcases |  tee output.txt
+python -m pabot --processes 3 -v ENV:uat -i Regression ../testcases/  |  tee output.txt
 
 Report
      - Report : log.html

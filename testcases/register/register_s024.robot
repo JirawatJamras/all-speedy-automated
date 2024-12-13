@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S024
     [Documentation]    Customer : จัดการผู้ใช้งาน Super User
-    [Tags]    Register    Customer_Login    UAT
+    [Tags]    Register    Customer_Login    Regression
     skip

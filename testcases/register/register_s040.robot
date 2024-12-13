@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S040
     [Documentation]    RM : ปฎิเสธแก้ไขข้อมูลผู้ติดต่อ
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

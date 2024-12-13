@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S049
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า เรียกรถเข้ารับพัสดุ (เพิ่ม/ลด รายการบุ๊คกิ้ง)
-    [Tags]    Booking    Business_To_Customer    UAT
+    [Tags]    Booking    Business_To_Customer    Regression
     skip

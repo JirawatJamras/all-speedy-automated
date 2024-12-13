@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S044
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า ติดตามการจัดส่งพัสดุ
-    [Tags]    Booking    Business_To_Customer    UAT
+    [Tags]    Booking    Business_To_Customer    Regression
     skip

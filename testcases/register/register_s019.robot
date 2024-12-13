@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S019
     [Documentation]    RM : อัปโหลดข้อมูลลูกค้า (ลงทะเบียนแบบ Backdoor)
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

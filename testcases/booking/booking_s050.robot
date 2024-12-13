@@ -8,5 +8,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S050
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า Return Business (เพิ่มรายการ Return Business)
-    [Tags]    Booking    Business_To_Customer    UAT
+    [Tags]    Booking    Business_To_Customer    Regression
     skip

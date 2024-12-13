@@ -9,5 +9,5 @@ Test Teardown     Run Keywords    Reset Cut Off Time
 *** Test Cases ***
 DC_Operation_S020
     [Documentation]    คลัง Chilled ยืนยันรอบรถเข้ารับพัสดุที่บ้านลูกค้า (Key Account)
-    [Tags]    DC_Operation    Chilled_Rejected_Request_Pickup_Schedule    UAT
+    [Tags]    DC_Operation    Chilled_Rejected_Request_Pickup_Schedule    Regression
     skip

@@ -8,5 +8,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S029
     [Documentation]    การ Change Courier
-    [Tags]    DC_Operation    Change Courier    UAT
+    [Tags]    DC_Operation    Change Courier    Regression
     skip

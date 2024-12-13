@@ -55,7 +55,7 @@ Booking_S032
 *** Test Cases ***
 Booking_S058
     [Documentation]    ลูกค้า All Member - ตรวจสอบหน้า รายการโปรด เพิ่มเเละเเก้ไข
-    [Tags]    Booking    Customer_To_Customer    UAT    Defect106    Defect123    Defect124    Defect134    Defect135
+    [Tags]    Booking    Customer_To_Customer    Regression    Defect106    Defect123    Defect124    Defect134    Defect135
     Log    Prerequisite S031
     Booking_S031 
 

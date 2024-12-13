@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S016
     [Documentation]    RM : ปฎิเสธคำขอ Full-Register (Inbound) ที่มีการส่งกลับแก้ไข (ลูกค้าบุคคลธรรมดา)
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

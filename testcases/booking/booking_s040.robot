@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Booking_S040
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ควบคุมอุณหภูมิ) - Import Excel Flie จากปุ่มในหน้า บุ๊คกิ้ง (ตรวจสอบ Error message เเละราคา)
-    [Tags]    Booking    Business_To_Customer    UAT
+    [Tags]    Booking    Business_To_Customer    Regression
     skip

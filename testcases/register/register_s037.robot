@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S037
     [Documentation]    RM : อนุมัติคำขอแก้ไขข้อมูลที่อยู่บริษัท
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

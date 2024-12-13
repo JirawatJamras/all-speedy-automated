@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S048
     [Documentation]    RM : เปลี่ยนสถานะลูกค้าที่ไม่ Active เป็น Inactive
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

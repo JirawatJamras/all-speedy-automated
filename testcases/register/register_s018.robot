@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S018
     [Documentation]    RM : สร้างและปฎิเสธคำขอที่มีการส่งกลับแก้ไข Full-Register (Outbound) ลูกค้าบุคคลธรรมดา
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

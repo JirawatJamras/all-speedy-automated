@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S020
     [Documentation]    RM : การ Update Vendor Code ในข้อมูลลูกค้า
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

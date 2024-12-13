@@ -8,7 +8,7 @@ Test Teardown     Close Browser
 *** Test Cases ***
 DC_Operation_S026
     [Documentation]    การนำพัสดุใส่ Pouch และนำออกจาก Pouch แบบ Manual ในขั้นตอนการ Scan in 
-    [Tags]    DC_Operation    Pouch    UAT    Defect155    Defect209    Defect219    Defect227    Defect249
+    [Tags]    DC_Operation    Pouch    Regression    Defect155    Defect209    Defect219    Defect227    Defect249
     Log    Prerequisite S002
     prerequisite.DC_Operation_S002
 

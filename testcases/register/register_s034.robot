@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S034
     [Documentation]    RM : ปฎิเสธคำขอเพิ่ม Company Admin
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

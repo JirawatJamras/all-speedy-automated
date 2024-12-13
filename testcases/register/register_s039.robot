@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S039
     [Documentation]    RM : อนุมัติคำขอแก้ไขข้อมูลผู้ติดต่อ
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

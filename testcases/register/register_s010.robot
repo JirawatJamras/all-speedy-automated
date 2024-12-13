@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S010
     [Documentation]    RM : ปฏิเสธ Pre-Register (ลูกค้านิติบุคคล)
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

@@ -9,5 +9,5 @@ Test Teardown     Close Browser
 *** Test Cases ***
 Register_S017
     [Documentation]    RM : สร้างและอนุมัติคำขอ Full-Register (Outbound) ลูกค้านิติบุคคล
-    [Tags]    Register    RM    UAT
+    [Tags]    Register    RM    Regression
     skip

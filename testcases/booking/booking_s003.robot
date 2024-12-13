@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    Close Browser
 *** Test Cases ***
 Booking_S003
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก A3 (ไม่มีประกัน ไม่มี COD เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect049    Defect050    Defect052    
+    [Tags]    Booking    Business_To_Customer    Regression    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect049    Defect050    Defect052    
     ...    Defect053    Defect054    Defect055    Defect072    Defect075    Defect078    Defect258
     Log    Login
     b2c_login_page.Input Email And Password    ${b2c_login_user_01['username']}    ${b2c_login_user_01['password']}

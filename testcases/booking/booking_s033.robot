@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    Close Browser
 *** Test Cases ***
 Booking_S033
     [Documentation]    ลูกค้า All Member - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (เลือกจากรายการโปรด)(บันทึกร่าง) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > ไม่เพิ่มเป็นรายการโปรด) - รายละเอียดพัสดุ เลือก L (มีประกัน เเละใส่หมายเหตุ) - Promotion (มี)
-    [Tags]    Booking    Customer_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect050    Defect052    Defect055    Defect063    Defect072    
+    [Tags]    Booking    Customer_To_Customer    Regression    Defect043    Defect045    Defect047    Defect048    Defect050    Defect052    Defect055    Defect063    Defect072    
     ...    Defect075    Defect078    Defect084    Defect099    Defect101    Defect102    Defect103
     Log    Login
     c2c_login.Input Email And Password    ${c2c_login_user_01['username']}    ${c2c_login_user_01['password']}
