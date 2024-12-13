@@ -11,10 +11,7 @@ Booking_S051
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า Return Business (ลูกค้าทั่วไปบุ๊คพัสดุ จาก Link Return Business ที่ได้รับ)
     [Tags]    Booking    Business_To_Customer    UAT
     skip
-    # common.Open URL    ${B2C_URL}
-    # register_general_customers_page.Select Business Customers Tab
-    # b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    # b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    # b2c_login_page.Input Email And Password    ${b2c_login_user_01['username']}    ${b2c_login_user_01['password']}
     # b2c_login_page.Click Log On Button
     # b2c_home_page.Click Parcel Delivery Service Menu
     # b2c_home_page.Select Sub Menu Return Business

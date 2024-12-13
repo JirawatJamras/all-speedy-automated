@@ -13,7 +13,7 @@ Booking_S048
     [Documentation]    ลูกค้า B - ตรวจสอบหน้า เรียกรถเข้ารับพัสดุ (ตรวจสอบรอบรถปกติเเละเพิ่มรอบพิเศษ)
     [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect086    Defect087    Defect107
     Log    Login
-    b2c_login_page.Input Email And Password
+    b2c_login_page.Input Email And Password    ${b2c_login_user_01['username']}    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
 
     Log    Step No.1 กดเมนู "บริการขนส่งพัสดุ > เรียกรถเข้ารับพัสดุ"

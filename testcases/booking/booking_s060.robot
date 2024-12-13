@@ -13,7 +13,7 @@ Booking_S060
     [Tags]    Booking    Business_To_Customer    UAT
     skip
     Log    Pre condition
-    b2c_login_page.Input Email And Password
+    b2c_login_page.Input Email And Password    ${b2c_login_user_01['username']}    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
     b2c_home_page.Click Book Parcel Delivery
     b2c_booking_delivery_page.Click Button To Add

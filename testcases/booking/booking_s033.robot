@@ -13,10 +13,7 @@ Booking_S033
     [Tags]    Booking    Customer_To_Customer    UAT    Defect043    Defect045    Defect047    Defect048    Defect050    Defect052    Defect055    Defect063    Defect072    
     ...    Defect075    Defect078    Defect084    Defect099    Defect101    Defect102    Defect103
     Log    Login
-    common.Open URL    ${C2C_URL}
-    c2c_landing_page.Click Log In Button In Landing Page
-    c2c_login.Input Email    ${c2c_login_user_01['username']}
-    c2c_login.Input Password    ${c2c_login_user_01['password']}
+    c2c_login.Input Email And Password    ${c2c_login_user_01['username']}    ${c2c_login_user_01['password']}
     c2c_login.Click Log On Button
     c2c_landing_page.Click Menu Seven Store
     c2c_landing_page.Click Menu Shipping

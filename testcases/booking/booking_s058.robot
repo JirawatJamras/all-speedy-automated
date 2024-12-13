@@ -8,10 +8,7 @@ Test Teardown     Close Browser
 
 *** Keywords ***
 Booking_S031
-    common.Open URL    ${C2C_URL}
-    c2c_landing_page.Click Log In Button In Landing Page
-    c2c_login.Input Email    ${c2c_login_user_01['username']}
-    c2c_login.Input Password    ${c2c_login_user_01['password']}
+    c2c_login.Input Email And Password    ${c2c_login_user_01['username']}    ${c2c_login_user_01['password']}
     c2c_login.Click Log On Button
     c2c_landing_page.Click Menu Seven Store
     c2c_landing_page.Click Menu Shipping

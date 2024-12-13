@@ -17,7 +17,8 @@ Click Log On Button
     Wait Until Profile Page Loaded
 
 Input Email And Password
+    [Arguments]    ${username}    ${password}
     common.Open URL    ${B2C_URL}
     register_general_customers_page.Select Business Customers Tab
-    b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    b2c_login_page.Input Email    ${username}
+    b2c_login_page.Input Password    ${password}

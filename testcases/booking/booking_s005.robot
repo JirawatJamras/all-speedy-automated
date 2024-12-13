@@ -13,7 +13,7 @@ Booking_S005
     [Tags]    Booking    Business_To_Customer    UAT    Unknown    Defect042    Defect043    Defect045    Defect047    Defect048    Defect050    Defect051    Defect052    
     ...    Defect055    Defect063    Defect075    Defect078    Defect101    Defect258    Defect267
     Log    Login
-    b2c_login_page.Input Email And Password
+    b2c_login_page.Input Email And Password    ${b2c_login_user_01['username']}    ${b2c_login_user_01['password']}
     b2c_login_page.Click Log On Button
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"

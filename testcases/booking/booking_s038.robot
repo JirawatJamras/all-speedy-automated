@@ -14,10 +14,7 @@ Booking_S038
     # Log    Pre condition
     # Open Chrome Browser   chrome      #headlesschrome   
     # Set Folder Result with date
-    # common.Open URL    ${B2C_URL}
-    # register_general_customers_page.Select Business Customers Tab
-    # b2c_login_page.Input Email    ${b2c_login_user_01['username']}
-    # b2c_login_page.Input Password    ${b2c_login_user_01['password']}
+    # c2c_login.Input Email And Password    ${c2c_login_user_01['username']}    ${c2c_login_user_01['password']}
     # b2c_login_page.Click Log On Button
     # Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410004883
     # b2c_booking_detail_page.Wait Until Loading Icon Success

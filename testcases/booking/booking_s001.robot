@@ -11,7 +11,7 @@ Booking_S001
     [Documentation]    Log-In เข้าใช้งานระบบ สำหรับ ลูกค้า Business    
     [Tags]    Booking    Login_Business_To_Customer    UAT    Unknown    Defect046
     Log    Step No.1 Tap ลงทะเบียนลูกค้าธุระกิจ
-    b2c_login_page.Input Email And Password
+    b2c_login_page.Input Email And Password    ${b2c_login_user_01['username']}    ${b2c_login_user_01['password']}
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S001    1.Verify Login Page
 
