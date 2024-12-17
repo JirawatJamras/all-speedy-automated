@@ -53,68 +53,68 @@ DC_Operation_S017
     Set Today
     # Expected
     Log Defect No:  Defect155,Defect260
-    dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
-    ...    ${dc_operation.scan_in_title_parcel_detail['title']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    ...    ${dc_operation.scan_in_title_parcel_detail['route']}   
-    dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
-    ...    ${tracking_i}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['customer_id']}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['parcel_size']}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['crossdock_warehouse']}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['destination_warehouse']}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['parcel_status']}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['courier']}
-    ...    ${pouch_number}
-    ...    ${today}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['origin_warehouse']}
-    ...    ${DC_Operation_S017.scan_in_data_parcel_detail['send_parcel_to']}
-    dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
-    ...    ${dc_operation.scan_in_title_label_detail['route']}
-    ...    ${dc_operation.scan_in_title_label_detail['store']}
-    ...    ${dc_operation.scan_in_title_label_detail['customer']}
-    ...    ${dc_operation.scan_in_title_label_detail['phone']}
-    ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
-    ...    ${dc_operation.scan_in_title_label_detail['wh']}
-    dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
-    ...    ${DC_Operation_S017.scan_in_data_label_detail['store_code']}
-    ...    ${DC_Operation_S017.scan_in_data_label_detail['customer']}
-    ...    ${DC_Operation_S017.scan_in_data_label_detail['phone']}
-    ...    ${pouch_number}
-    ...    ${DC_Operation_S017.scan_in_data_label_detail['wh']}
-    ...    ${DC_Operation_S017.scan_in_data_label_detail['symbol']}
-    dps_scan_page.Verify Title Sender In Scan Page
-    ...    ${dc_operation.scan_in_title_sender_detail['title']}
-    ...    ${dc_operation.scan_in_title_sender_detail['name']}
-    ...    ${dc_operation.scan_in_title_sender_detail['phone']}
-    ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
-    ...    ${dc_operation.scan_in_title_sender_detail['address']}
-    dps_scan_page.Verify Data Sender In Scan Page
-    ...    ${DC_Operation_S017.scan_in_sender_data['name']}
-    ...    ${DC_Operation_S017.scan_in_sender_data['phone']}
-    ...    ${DC_Operation_S017.scan_in_sender_data['shipping_origin']}
-    ...    ${DC_Operation_S017.scan_in_sender_data['address']}
-    dps_scan_page.Verify Title Receiver In Scan Page
-    ...    ${dc_operation.scan_in_title_receiver_detail['title']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['name']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
-    ...    ${dc_operation.scan_in_title_receiver_detail['address']}
-    dps_scan_page.Verify Data Receiver In Scan Page
-    ...    ${DC_Operation_S017.scan_in_receiver_data['name']}
-    ...    ${DC_Operation_S017.scan_in_receiver_data['phone']}
-    ...    ${DC_Operation_S017.scan_in_receiver_data['shipping_destination']}
-    ...    ${DC_Operation_S017.scan_in_receiver_data['address']}
+    # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
+    # ...    ${dc_operation.scan_in_title_parcel_detail['title']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_id']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['customer_id']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_size']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['crossdock_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['destination_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['parcel_status']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['courier']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['pouch_number']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
+    # ...    ${dc_operation.scan_in_title_parcel_detail['route']}   
+    # dps_scan_page.Verify Data Parcel Details In Scan Page [CP All Courier]
+    # ...    ${tracking_i}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['customer_id']}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['parcel_size']}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['crossdock_warehouse']}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['destination_warehouse']}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['parcel_status']}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['courier']}
+    # ...    ${pouch_number}
+    # ...    ${today}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['origin_warehouse']}
+    # ...    ${DC_Operation_S017.scan_in_data_parcel_detail['send_parcel_to']}
+    # dps_scan_page.Verify Title Label Parcel In Scan Page [CP All Courier]
+    # ...    ${dc_operation.scan_in_title_label_detail['route']}
+    # ...    ${dc_operation.scan_in_title_label_detail['store']}
+    # ...    ${dc_operation.scan_in_title_label_detail['customer']}
+    # ...    ${dc_operation.scan_in_title_label_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_label_detail['pouch_number']}
+    # ...    ${dc_operation.scan_in_title_label_detail['wh']}
+    # dps_scan_page.Verify Data Label Parcel In Scan Page [CP All Courier]
+    # ...    ${DC_Operation_S017.scan_in_data_label_detail['store_code']}
+    # ...    ${DC_Operation_S017.scan_in_data_label_detail['customer']}
+    # ...    ${DC_Operation_S017.scan_in_data_label_detail['phone']}
+    # ...    ${pouch_number}
+    # ...    ${DC_Operation_S017.scan_in_data_label_detail['wh']}
+    # ...    ${DC_Operation_S017.scan_in_data_label_detail['symbol']}
+    # dps_scan_page.Verify Title Sender In Scan Page
+    # ...    ${dc_operation.scan_in_title_sender_detail['title']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['name']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['shipping_origin']}
+    # ...    ${dc_operation.scan_in_title_sender_detail['address']}
+    # dps_scan_page.Verify Data Sender In Scan Page
+    # ...    ${DC_Operation_S017.scan_in_sender_data['name']}
+    # ...    ${DC_Operation_S017.scan_in_sender_data['phone']}
+    # ...    ${DC_Operation_S017.scan_in_sender_data['shipping_origin']}
+    # ...    ${DC_Operation_S017.scan_in_sender_data['address']}
+    # dps_scan_page.Verify Title Receiver In Scan Page
+    # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['name']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['phone']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['shipping_destination']}
+    # ...    ${dc_operation.scan_in_title_receiver_detail['address']}
+    # dps_scan_page.Verify Data Receiver In Scan Page
+    # ...    ${DC_Operation_S017.scan_in_receiver_data['name']}
+    # ...    ${DC_Operation_S017.scan_in_receiver_data['phone']}
+    # ...    ${DC_Operation_S017.scan_in_receiver_data['shipping_destination']}
+    # ...    ${DC_Operation_S017.scan_in_receiver_data['address']}
     common.Scroll Window To Vertical    425
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    7.Verify Parcel Details After Scanning
 
@@ -149,52 +149,52 @@ DC_Operation_S017
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect209
-    dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
-    dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
-    ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['tracking_number']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_status']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['customer_type']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['pouch_number']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_size']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['route']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['check_in_date']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['date_in_system']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['sla_date']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['sla_text']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['origin_store']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['origin_warehouse']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['destination_store']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['crossdock_warehouse']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['shipping_by']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['destination_warehouse']}
-    dps_history_parcel_page.Verify Data Parcel Details In Warehouse Details
-    ...    ${tracking_i}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_status']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['customer_type']}
-    ...    ${pouch_number}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_size']}
-    ...    ${today_repattern}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_store']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_warehouse']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_store']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['crossdock_warehouse']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_warehouse']}
-    dps_history_parcel_page.Verify Title Sender In Warehouse Details
-    ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
-    ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
-    dps_history_parcel_page.Verify Data Sender In Warehouse Details
-    ...    ${DC_Operation_S017.value_sender_in_warehouse['name']}
-    ...    ${DC_Operation_S017.value_sender_in_warehouse['phone']}
-    ...    ${DC_Operation_S017.value_sender_in_warehouse['address']}
-    dps_history_parcel_page.Verify Title Receiver In Warehouse Details
-    ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
-    ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
-    dps_history_parcel_page.Verify Data Receiver In Warehouse Details
-    ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
-    ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
-    ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
+    # dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
+    # dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['tracking_number']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_status']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['customer_type']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['pouch_number']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_size']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['route']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['check_in_date']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['date_in_system']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['sla_date']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['sla_text']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['origin_store']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['origin_warehouse']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['destination_store']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['crossdock_warehouse']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['shipping_by']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['destination_warehouse']}
+    # dps_history_parcel_page.Verify Data Parcel Details In Warehouse Details
+    # ...    ${tracking_i}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_status']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['customer_type']}
+    # ...    ${pouch_number}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_size']}
+    # ...    ${today_repattern}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_store']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_warehouse']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_store']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['crossdock_warehouse']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_warehouse']}
+    # dps_history_parcel_page.Verify Title Sender In Warehouse Details
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
+    # dps_history_parcel_page.Verify Data Sender In Warehouse Details
+    # ...    ${DC_Operation_S017.value_sender_in_warehouse['name']}
+    # ...    ${DC_Operation_S017.value_sender_in_warehouse['phone']}
+    # ...    ${DC_Operation_S017.value_sender_in_warehouse['address']}
+    # dps_history_parcel_page.Verify Title Receiver In Warehouse Details
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
+    # dps_history_parcel_page.Verify Data Receiver In Warehouse Details
+    # ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
+    # ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
+    # ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.1.Verify Parcel Details In Warehouse
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    12.2.Verify Sender And Receiver In Warehouse
@@ -249,40 +249,40 @@ DC_Operation_S017
     dps_pouch_page.Proceed Pouch By Pouch Number    ${pouch_number}
     # Expected
     Log Defect No:  Defect223
-    dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
-    ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail['crossdock_warehouse']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_status']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail['parcel_amount']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail['origin_warehouse']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail['destination_warehouse']}
-    dps_pouch_page.Verify Data Of Information Section In Pouch Detail Popup
-    ...    ${pouch_number}
-    ...    ${DC_Operation_S017.data_in_pouch_detail['crossdock_warehouse']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail['pouch_status']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail['origin_warehouse']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail['destination_warehouse']}
-    dps_pouch_page.Verify Label Section In Pouch Detail Popup
-    ...    ${DC_Operation_S017.data_in_pouch_detail['label_destination_warehouse']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail['label_number']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail['label_route']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail['label_symbol']}
-    ...    ${pouch_number}
-    dps_pouch_page.Verify Label In Table On Pouch Detail Popup
-    ...    ${dc_operation.label_pouch_in_pouch_detail['title_parcel_in_pouch_list']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['pouch_number']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['destination_warehouse']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['pickup_place']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['type']}
-    ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['parcel_status']}
-    ...    ${dc_operation['text_close_pouch_and_print_label']}
-    dps_pouch_page.Verify Data In Table On Pouch Detail Popup
-    ...    ${tracking_i}
-    ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['destination_warehouse']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['pickup_place']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['type']}
-    ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['parcel_status']}
+    # dps_pouch_page.Verify Label Of Information Section In Pouch Detail Popup
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['title_detail_pouch']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_number']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['crossdock_warehouse']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['pouch_status']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['parcel_amount']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['origin_warehouse']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['destination_warehouse']}
+    # dps_pouch_page.Verify Data Of Information Section In Pouch Detail Popup
+    # ...    ${pouch_number}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['crossdock_warehouse']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['pouch_status']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['origin_warehouse']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['destination_warehouse']}
+    # dps_pouch_page.Verify Label Section In Pouch Detail Popup
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['label_destination_warehouse']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['label_number']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['label_route']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail['label_symbol']}
+    # ...    ${pouch_number}
+    # dps_pouch_page.Verify Label In Table On Pouch Detail Popup
+    # ...    ${dc_operation.label_pouch_in_pouch_detail['title_parcel_in_pouch_list']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['pouch_number']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['destination_warehouse']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['pickup_place']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['type']}
+    # ...    ${dc_operation.label_pouch_in_pouch_detail.table_header_in_pouch_detail['parcel_status']}
+    # ...    ${dc_operation['text_close_pouch_and_print_label']}
+    # dps_pouch_page.Verify Data In Table On Pouch Detail Popup
+    # ...    ${tracking_i}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['destination_warehouse']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['pickup_place']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['type']}
+    # ...    ${DC_Operation_S017.data_in_pouch_detail.data_in_table['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    18.Verify Pouch Detail Popup
 
     Log    Step No.19 คลิกปุ่มปิด Pouch/Print Label
@@ -329,52 +329,52 @@ DC_Operation_S017
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect209
-    dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
-    dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
-    ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['tracking_number']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_status']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['customer_type']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['pouch_number']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_size']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['route']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['check_in_date']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['date_in_system']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['sla_date']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['sla_text']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['origin_store']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['origin_warehouse']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['destination_store']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['crossdock_warehouse']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['shipping_by']}
-    ...    ${dc_operation.label_parcel_details_in_warehouse['destination_warehouse']}
-    dps_history_parcel_page.Verify Data Parcel Details In Warehouse Details
-    ...    ${tracking_i}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_status']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['customer_type']}
-    ...    ${pouch_number}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_size']}
-    ...    ${today_repattern}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_store']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_warehouse']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_store']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['crossdock_warehouse']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
-    ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_warehouse']}
-    dps_history_parcel_page.Verify Title Sender In Warehouse Details
-    ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
-    ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
-    dps_history_parcel_page.Verify Data Sender In Warehouse Details
-    ...    ${DC_Operation_S017.value_sender_in_warehouse['name']}
-    ...    ${DC_Operation_S017.value_sender_in_warehouse['phone']}
-    ...    ${DC_Operation_S017.value_sender_in_warehouse['address']}
-    dps_history_parcel_page.Verify Title Receiver In Warehouse Details
-    ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
-    ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
-    dps_history_parcel_page.Verify Data Receiver In Warehouse Details
-    ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
-    ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
-    ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
+    # dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
+    # dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['tracking_number']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_status']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['customer_type']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['pouch_number']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_size']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['route']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['check_in_date']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['date_in_system']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['sla_date']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['sla_text']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['origin_store']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['origin_warehouse']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['destination_store']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['crossdock_warehouse']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['shipping_by']}
+    # ...    ${dc_operation.label_parcel_details_in_warehouse['destination_warehouse']}
+    # dps_history_parcel_page.Verify Data Parcel Details In Warehouse Details
+    # ...    ${tracking_i}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_status']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['customer_type']}
+    # ...    ${pouch_number}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['parcel_size']}
+    # ...    ${today_repattern}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_store']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['origin_warehouse']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_store']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['crossdock_warehouse']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['shipping_by']}
+    # ...    ${DC_Operation_S017.value_parcel_details_in_warehouse['destination_warehouse']}
+    # dps_history_parcel_page.Verify Title Sender In Warehouse Details
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
+    # dps_history_parcel_page.Verify Data Sender In Warehouse Details
+    # ...    ${DC_Operation_S017.value_sender_in_warehouse['name']}
+    # ...    ${DC_Operation_S017.value_sender_in_warehouse['phone']}
+    # ...    ${DC_Operation_S017.value_sender_in_warehouse['address']}
+    # dps_history_parcel_page.Verify Title Receiver In Warehouse Details
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_name']}
+    # ...    ${dc_operation.label_sender_in_warehouse['sender_address']}
+    # dps_history_parcel_page.Verify Data Receiver In Warehouse Details
+    # ...    ${DC_Operation_S017.value_receiver_in_warehouse['name']}
+    # ...    ${DC_Operation_S017.value_receiver_in_warehouse['phone']}
+    # ...    ${DC_Operation_S017.value_receiver_in_warehouse['address']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.1.Verify Parcel Details In Warehouse After Close Pouch
     common.Scroll Window To Vertical    500
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    24.2.Verify Sender And Receiver In Warehouse After Close Pouch

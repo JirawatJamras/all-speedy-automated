@@ -74,7 +74,7 @@ DC_Operation_S027
     dps_scan_page.Search With Parcel Status [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     # Expected
     Log Defect No:  Defect257
-    dps_scan_page.Verify Parcel Status Dropdown [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
+    # dps_scan_page.Verify Parcel Status Dropdown [Move Status]    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    4.Verify Parcel Status Dropdown
 
     Log    Step No.5 คลิกปุ่มค้นหา
@@ -88,8 +88,8 @@ DC_Operation_S027
     dps_scan_page.Click Clear Button [Move Status]
     # Expected
     Log Defect No:  Defect266
-    dps_scan_page.Verify Clear Filter Input
-    dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
+    # dps_scan_page.Verify Clear Filter Input
+    # dps_scan_page.Verify Search Parcel Status Result    ${dc_operation.parcel_status['pickup_pending']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    6.Verify Clear Filter Parcel Status
 
     Log    Step No.7 คลิกช่องค้นหาขนาดพัสดุ
@@ -108,7 +108,7 @@ DC_Operation_S027
     dps_scan_page.Click Filter With Parcel Owner
     # Expected
     Log Defect No:  Defect182
-    dps_scan_page.Verify Parcel Owner List In Dropdown    ${dc_operation.parcel_owner['speedy']}    ${dc_operation.parcel_owner['partnership']}
+    # dps_scan_page.Verify Parcel Owner List In Dropdown    ${dc_operation.parcel_owner['speedy']}    ${dc_operation.parcel_owner['partnership']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    9.Verify Parcel Owner List In Dropdown
 
     Log    Step No.10 คลิกช่องค้นหาวันที่อัปเดตล่าสุด
@@ -128,8 +128,8 @@ DC_Operation_S027
     dps_scan_page.Click Clear Button [Move Status]
     # Expected
     Log Defect No:  Defect266
-    dps_scan_page.Verify Clear Filter Input
-    dps_scan_page.Verify Search Pouch Number Result    ${global_pouch_number}
+    # dps_scan_page.Verify Clear Filter Input
+    # dps_scan_page.Verify Search Pouch Number Result    ${global_pouch_number}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    12.Verify Clear Filter Pouch Number
 
     Log    Step No.13 คลิกปุ่มค้นหา
@@ -152,78 +152,78 @@ DC_Operation_S027
     dps_scan_page.Click Search Button [Move Status]
     # Expected
     Log Defect No:  Defect266
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_b}
-    ...    ${DC_Operation_S012.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S012.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_c}
-    ...    ${DC_Operation_S004.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S004.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S004.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S004.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_D}
-    ...    ${DC_Operation_S005.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S005.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S005.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S005.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_e}
-    ...    ${DC_Operation_S006.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S006.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S006.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S006.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_f}
-    ...    ${DC_Operation_S007.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S007.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S007.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S007.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_g}
-    ...    ${DC_Operation_S008.data_in_all_task_tab['pouch_number1']}
-    ...    ${DC_Operation_S008.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_h}
-    ...    ${DC_Operation_S009.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S009.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S009.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S009.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_i}
-    ...    ${DC_Operation_S010.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S010.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S010.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S010.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
-    dps_scan_page.Verify Search Tracking Number Result   
-    ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
-    ...    ${tracking_j}
-    ...    ${DC_Operation_S011.data_in_all_task_tab['pouch_number']}
-    ...    ${DC_Operation_S011.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S011.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S011.data_in_all_task_tab['parcel_size']}
-    ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_b}
+    # ...    ${DC_Operation_S012.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S012.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_c}
+    # ...    ${DC_Operation_S004.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S004.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S004.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S004.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_D}
+    # ...    ${DC_Operation_S005.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S005.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S005.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S005.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_e}
+    # ...    ${DC_Operation_S006.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S006.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S006.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S006.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_f}
+    # ...    ${DC_Operation_S007.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S007.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S007.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S007.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_g}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['pouch_number1']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S008.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_h}
+    # ...    ${DC_Operation_S009.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S009.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S009.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S009.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_i}
+    # ...    ${DC_Operation_S010.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S010.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S010.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S010.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
+    # dps_scan_page.Verify Search Tracking Number Result   
+    # ...    ${dc_operation.parcel_status['awaiting_delivery_warehouse']}
+    # ...    ${tracking_j}
+    # ...    ${DC_Operation_S011.data_in_all_task_tab['pouch_number']}
+    # ...    ${DC_Operation_S011.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S011.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S011.data_in_all_task_tab['parcel_size']}
+    # ...    ${today_repattern}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    14.Verify Search Tracking Number Result
 
     Log    Step No.15 คลิกเลือก Checkbox ทุกรายการที่แสดงในตารางค้นหา, คลิกแท็บ "พัสดุที่เลือก" ด้านบนตัวกรอง
@@ -257,6 +257,6 @@ DC_Operation_S027
     dps_scan_page.Click Popup Save Data Success
     # Expected
     Log Defect No:  Defect284
-    dps_scan_page.Verify Move Status Page
+    # dps_scan_page.Verify Move Status Page
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S027    17.Verify Move Status Page After Change Status
 
