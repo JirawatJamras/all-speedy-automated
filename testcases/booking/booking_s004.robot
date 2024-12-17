@@ -10,7 +10,7 @@ Test Teardown     Run Keywords    Close Browser
 *** Test Cases ***
 Booking_S004
     [Documentation]    ลูกค้า B - สร้างพัสดุ (ทั่วไป) - ข้อมูลผู้ส่ง (ไม่เพิ่มเป็นรายการโปรด) - ข้อมูลผู้รับพัสดุ (ส่งที่บ้าน > เลือกจากรายการโปรด) - รายละเอียดพัสดุ เลือก XS (ไม่มีประกัน มี COD เเละไม่ใส่หมายเหตุ)(บันทึกร่าง) - Promotion (ไม่มี)
-    [Tags]    Booking    Business_To_Customer    Regression    Unknown    Defect043    Defect045    Defect047    Defect048    Defect049    Defect054    Defect055    Defect063    
+    [Tags]    Booking    Business_To_Customer    Regression    Unknown    Defect043    Defect045    Defect047    Defect048    Defect054    Defect055    Defect063    
     ...    Defect078    Defect258    Defect267
     Log    Login
     b2c_login_page.Input Email And Password    ${b2c_login_user_01['username']}    ${b2c_login_user_01['password']}
@@ -239,7 +239,7 @@ Booking_S004
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
-    Log Defect No:  Defect048,Defect049,Defect063,Defect258
+    Log Defect No:  Defect048,Defect063,Defect258
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}
@@ -292,7 +292,7 @@ Booking_S004
     Log    Step No.18 กดรายการบุ๊คกิ้งที่มีสถานะ "เลือกต้นทางจัดส่ง"
     b2c_booking_detail_page.Click Booking With Status Select Shipping Origin    ${booking_id}
     # Expected
-    Log Defect No:  Defect048,Defect049,Defect063.Defect258
+    Log Defect No:  Defect048,Defect063.Defect258
     b2c_booking_detail_page.Verify Booking Detail Page
     ...    ${Booking['text_title_booking_list']}
     ...    ${booking_id}

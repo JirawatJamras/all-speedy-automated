@@ -301,7 +301,7 @@ Input Postcode Sender
 Click Postcode Sender Lists
     [Arguments]    ${name}
     ${cbo_postcode_sender}=    Replace String    ${cbo_postcode_sender}    {value}    ${name}
-    common.Click When Ready    ${cbo_postcode_sender}
+    common.Click Xpath By JavaScript    ${cbo_postcode_sender}
 
 Click Button
     [Arguments]    ${btn}
