@@ -52,6 +52,7 @@ Booking_S048
     common.Verify Capture Screenshot    booking    Booking_S048    2.Verify Popup Parcel Pickup Schedule
 
     Log    Step No.3 รอบรถเข้ารับพัสดุ
+    Set Tomorrow Date
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${Booking_S048.add_new_pickup['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${Booking_S048.add_new_pickup['input']}
@@ -59,6 +60,7 @@ Booking_S048
     common.Verify Capture Screenshot    booking    Booking_S048    3.Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.4 กดปุ่ม "บันทึก"
+    Set Today
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
     Log Defect No:  Defect086,Defect087,Defect107
@@ -74,5 +76,5 @@ Booking_S048
     ...    ${call_car_pick_up['text_price']}
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${Booking_S048.add_new_pickup['pickup_point']}
+    ...    ${Booking_S048['pickup_point']}
     common.Verify Capture Screenshot    booking    Booking_S048    4.Verify Added New Parcel Pickup

@@ -272,7 +272,7 @@ Delete The Lastest Parcel Pickup Schedule
 
 Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
     [Arguments]    ${tomorrow_date}    ${current_time}
-    IF    '${card_is_visible}' != 'Flase'
+    IF    '${card_is_visible}' == 'True'
         ${b2c_card_delete_pickup_parcel}=    Replace String    ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    {value}    ${call_car_pick_up.car_round_name['special']} ${tomorrow_date} ${current_time}
         ${b2c_txt_status_in_card}=    Replace String    ${b2c_txt_status_in_card_call_car_pickup_page}    {value}    ${call_car_pick_up.status['parcel_in_progress']}
         Set Today
@@ -326,10 +326,13 @@ Verify Added New Parcel Pickup
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
-        Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
-        ...    AND    ${card_is_visible}=    Set Variable    Flase
+        IF    '${status_button}' == 'False'    
+            ${card_is_visible}=    Set Variable    False
+            Exit For Loop
+        END
     END
     Set Global Variable    ${card_is_visible}
+    Run Keyword If    '${card_is_visible}' == 'False'    Fail    Cannot find card
 
 Get Cut Off Date From Value
     [Arguments]    ${date}
