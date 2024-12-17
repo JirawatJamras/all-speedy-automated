@@ -187,23 +187,23 @@ DC_Operation_S002
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
     Log Defect No:  Defect150
-    # b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
-    # ...    ${call_car_pick_up.status['arrange_car']}
-    # ...    ${tomorrow}
-    # ...    ${today}
-    # ...    ${booking_id}
-    # ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
-    # ...    ${DC_Operation_S002['verify_pickup_time']}
-    # ...    ${DC_Operation_S002['parcel_number']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.1.Verify Parcel Pickup Status After Cut Off Time
-    # b2c_home_page.Click Book Parcel Delivery    
-    # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
-    # ...    ${booking_id}
-    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.2.Verify Booking Status After Cut Off Time
-    # b2c_booking_delivery_page.Select Booking With Booking ID    
-    # ...    ${booking_id}
-    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    b2c_call_car_pick_up_parcel_page.Verify Parcel Pickup Status After Cut Off Time
+    ...    ${call_car_pick_up.status['arrange_car']}
+    ...    ${tomorrow}
+    ...    ${today}
+    ...    ${booking_id}
+    ...    ${DC_Operation_S002.receiving_cycle['receiving_type']}
+    ...    ${DC_Operation_S002['verify_pickup_time']}
+    ...    ${DC_Operation_S002['parcel_number']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.1.Verify Parcel Pickup Status After Cut Off Time
+    b2c_home_page.Click Book Parcel Delivery    
+    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
+    ...    ${booking_id}
+    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.2.Verify Booking Status After Cut Off Time
+    b2c_booking_delivery_page.Select Booking With Booking ID    
+    ...    ${booking_id}
+    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # b2c_booking_detail_page.Verify Booking Detail Page After Import File
     # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}

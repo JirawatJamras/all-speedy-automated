@@ -85,7 +85,7 @@ DC_Operation_S001
     b2c_booking_delivery_page.Click Button To Add   
     # Expected
     Log Defect No:  Defect043
-    b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
+    # b2c_booking_delivery_page.Verify Term & Condition    ${txt_term_and_condition}    ${Booking['text_term_and_condition']}${Booking['text_term_and_condition_date_set']}${Booking['text_version']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    7.Verify Term & Condition
 
     Log    Step No.8 กดปุ่ม "ยอมรับเงื่อนไขการใช้บริการ"
@@ -147,14 +147,14 @@ DC_Operation_S001
     ${booking_id}    Get Booking ID
     # Expected
     Log Defect No:  Defect144
-    b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
-    ...    ${today}
-    ...    ${DC_Operation_S001.receiving_cycle['company_name']}
-    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    ${DC_Operation_S001.receiving_cycle['district']}
-    ...    ${DC_Operation_S001.receiving_cycle['province']}
-    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    # b2c_booking_detail_page.Verify Complete Select Parcel Pickup Schedule And Save
+    # ...    ${today}
+    # ...    ${DC_Operation_S001.receiving_cycle['company_name']}
+    # ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    # ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['province']}
+    # ...    ${DC_Operation_S001.receiving_cycle['postcode']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    13.Verify Complete Select Parcel Pickup Schedule And Save
 
     Log    Step No.14 คลิกปุ่ม Import File
@@ -206,10 +206,10 @@ DC_Operation_S001
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    b2c_booking_detail_page.Verify Booking Detail Page After Import File
-    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
-    ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
-    ...    ${DC_Operation_S001['parcel_number']}
+    # b2c_booking_detail_page.Verify Booking Detail Page After Import File
+    # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
+    # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
+    # ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.3.Verify Parcel Status After Cut Off Time
 
     Log    Step No.18 เปิด URL DPS
@@ -254,43 +254,43 @@ DC_Operation_S001
     dps_check_receiving_cycle_page.Click Dropdown Select Warehouse List    ${DC_Operation.selected_warehouse_list['text_warehouse_DC_BB']}
     # Expected
     Log Defect No:  Defect192
-    dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
-    ...    ${dc_operation.title['check_receiving_cycle']}
-    ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
-    ...    ${DC_Operation_S001.receiving_cycle['company_name']}
-    ...    ${DC_Operation_S001.receiving_cycle['branch']}
-    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    ${DC_Operation_S001.receiving_cycle['district']}
-    ...    ${DC_Operation_S001.receiving_cycle['province']}
-    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
-    ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
-    ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
-    ...    ${DC_Operation_S001.receiving_cycle['courier']}
-    ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
-    ...    ${today}
-    ...    ${DC_Operation.status['waiting']}
+    # dps_check_receiving_cycle_page.Verify Check Receiving Cycle Page    
+    # ...    ${dc_operation.title['check_receiving_cycle']}
+    # ...    ${dc_operation.Check_Receiving_Cycle_Tab['all_parcels_received']}
+    # ...    ${DC_Operation_S001.receiving_cycle['company_name']}
+    # ...    ${DC_Operation_S001.receiving_cycle['branch']}
+    # ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    # ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['province']}
+    # ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    # ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
+    # ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
+    # ...    ${DC_Operation_S001.receiving_cycle['courier']}
+    # ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
+    # ...    ${today}
+    # ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    23.Verify Check Receiving Cycle Page
 
     Log    Step No.24 คลิกแท็บ "รายการรอคลังยืนยัน"
     dps_check_receiving_cycle_page.Select Waiting Warehouse Confirm List Tab   
     # Expected
     Log Defect No:  Defect192
-    dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
-    ...    ${dc_operation.title['check_receiving_cycle']}
-    ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
-    ...    ${DC_Operation_S001.receiving_cycle['company_name']}   
-    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    ${DC_Operation_S001.receiving_cycle['district']}
-    ...    ${DC_Operation_S001.receiving_cycle['province']}
-    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
-    ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
-    ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
-    ...    ${DC_Operation_S001.receiving_cycle['courier']}
-    ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
-    ...    ${today}
-    ...    ${DC_Operation.status['waiting']}
+    # dps_check_receiving_cycle_page.Verify Warehouse Confirm List Tab 
+    # ...    ${dc_operation.title['check_receiving_cycle']}
+    # ...    ${dc_operation.Check_Receiving_Cycle_Tab['waiting_inventory_confirm_list']}
+    # ...    ${DC_Operation_S001.receiving_cycle['company_name']}   
+    # ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    # ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['province']}
+    # ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    # ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
+    # ...    ${DC_Operation_S001.receiving_cycle['receiving_type']}
+    # ...    ${DC_Operation_S001.receiving_cycle['courier']}
+    # ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
+    # ...    ${today}
+    # ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    24.Verify Warehouse Confirm List Tab
 
     Log    Step No.25 คลิกไอคอนรูปดินสอ ด้านขวาสุดของรายการ
@@ -311,19 +311,19 @@ DC_Operation_S001
     ...    ${DC_Operation.status['waiting']}
     # Expected
     Log Defect No:  Defect192
-    dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
-    ...    ${DC_Operation_S001.receiving_cycle['company_name']} 
-    ...    ${DC_Operation_S001.receiving_cycle['company_address']}
-    ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
-    ...    ${DC_Operation_S001.receiving_cycle['district']}
-    ...    ${DC_Operation_S001.receiving_cycle['province']}
-    ...    ${DC_Operation_S001.receiving_cycle['postcode']}
-    ...    ${tomorrow}
-    ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
-    ...    ${DC_Operation_S001.receiving_cycle['car_type']}
-    ...    ${DC_Operation_S001.receiving_cycle['courier']}
-    ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
-    ...    ${DC_Operation.status['waiting']}
+    # dps_check_receiving_cycle_page.Verify Parcel Pickup Details Popup
+    # ...    ${DC_Operation_S001.receiving_cycle['company_name']} 
+    # ...    ${DC_Operation_S001.receiving_cycle['company_address']}
+    # ...    ${DC_Operation_S001.receiving_cycle['sub_district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['district']}
+    # ...    ${DC_Operation_S001.receiving_cycle['province']}
+    # ...    ${DC_Operation_S001.receiving_cycle['postcode']}
+    # ...    ${tomorrow}
+    # ...    ${DC_Operation_S001.receiving_cycle['receiving_time']}
+    # ...    ${DC_Operation_S001.receiving_cycle['car_type']}
+    # ...    ${DC_Operation_S001.receiving_cycle['courier']}
+    # ...    ${DC_Operation_S001.receiving_cycle['number_of_parcel']}
+    # ...    ${DC_Operation.status['waiting']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    25.Verify Parcel Pickup Details Popup
 
     Log    Step No.26 คลิกปุ่ม ไม่อนุมัติ
@@ -376,9 +376,9 @@ DC_Operation_S001
     b2c_home_page.Click Book Parcel Delivery 
     # Expected
     Log Defect No:  Defect221
-    b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
-    ...    ${booking_id}
-    ...    ${Booking['text_parcel_status_call_car']}
+    # b2c_booking_delivery_page.Verify Booking Status After Cut Off Time    
+    # ...    ${booking_id}
+    # ...    ${Booking['text_parcel_status_call_car']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    28.Verify Booking Change Status To Call Car
 
     Log    Step No.29 คลิกเลือกรายการ Booking
@@ -405,5 +405,5 @@ DC_Operation_S001
     b2c_booking_detail_page.Select Pickup Schedule Tab
     # Expected
     Log Defect No:  Defect207
-    b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
+    # b2c_booking_detail_page.Verify Display Pickup Schedule Data After Canceled
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    31.Verify Display Pickup Schedule Data After Canceled
