@@ -38,12 +38,14 @@ Register_S003
     
     Log    Step No.2 ยกเลิกลงทะเบียน
     register_business_pre_register.Click Cancel
+    # Expected
     register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     common.Verify Capture Screenshot      Register    Register_S003_S006    2.S003_Verify Cancel Popup
 
-    
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     register_business_pre_register.Click Button Confirm Cancel Popup
+    # Expected
+    register_general_customers_page.Navigate To Login Page Correctly
     common.Verify Capture Screenshot      Register    Register_S003_S006    3.S003_Back to login page
 
 
@@ -64,12 +66,14 @@ Register_S006
     register_business_pre_register.Input Mobile Ext Individual    ${Register_S006['mobile_ext']}
     common.Verify Capture Screenshot      Register    Register_S003_S006    1.S006_filled in information
 
-
     Log    Step No.2 ยกเลิกลงทะเบียน
     register_business_pre_register.Click Cancel
+    # Expected
     register_business_pre_register.Verify Cancel Popup    ${Register.Pre_register['text_header_cancel']}    ${Register.Pre_register['text_question_cancel']}
     common.Verify Capture Screenshot      Register    Register_S003_S006    2.S006_Verify Cancel Popup
 
     Log    Step No.3 ตกลงยกเลิกลงทะเบียน
     register_business_pre_register.Click Button Confirm Cancel Popup
+    # Expected
+    register_general_customers_page.Navigate To Login Page Correctly
     common.Verify Capture Screenshot      Register    Register_S003_S006    3.S006_Back to login page

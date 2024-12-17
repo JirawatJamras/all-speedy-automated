@@ -36,7 +36,6 @@ Register_S002
     register_business_pre_register.Input Company Address Legal Entity    ${Register_S002['company_address']}
     register_business_pre_register.Input Company Address Full Legal Entity    ${Register_S002['search_company_address_full']}    ${Register_S002['select_company_address_full']}
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S002_filled in information 1
-    
     register_business_pre_register.Select Title Name Legal Entity    ${Register_S002['title_name']}
     register_business_pre_register.Input First Name Legal Entity    ${Register_S002['first_name']}
     register_business_pre_register.Input Last Name Legal Entity    ${Register_S002['last_name']}
@@ -47,6 +46,7 @@ Register_S002
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
+    # Expected
     register_business_pre_register.Verify Confirm Page        ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    2.S002_Verify Confirm Page
 
@@ -92,6 +92,7 @@ Register_S005
 
     Log    Step No.2 "กดปุ่มลงทะเบียน"
     register_business_pre_register.Click Confirm
+    # Expected
     register_business_pre_register.Verify Confirm Page       ${Register.Pre_register['text_register_success']}
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    2.S005_Verify Confirm Page
 
@@ -127,16 +128,19 @@ Register_S008
     ...    ${Register_S005['mobile_ext']}
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S008_Select Checkbox
     pms_requests_page.Click Assign RM Button
+    # Expected
     pms_requests_page.Verify Assign RM Popup
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    1.S008_Verify Assign RM Popup
 
     Log    Step No.2 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
     pms_requests_page.Click Button To Assign RM    ${Register_S008['rm_name']}
+    # Expected
     pms_requests_page.Verify Already Assign To RM Popup    ${Register_S008['rm_name']}
     common.Verify Capture Screenshot     Register    Register_S002_S004_S005_S008    2.S008_Verify Already Assign To RM Popup
 
     Log    Step No.3 กดปุ่ม "บันทึก"
     pms_requests_page.Click Save Button
+    # Expected
     pms_requests_page.Verify Save Assign To RM Success [legal entity]
     ...    ${Register_S002['checkbox_partner_types']}
     ...    ${Register_S002['company_name']}

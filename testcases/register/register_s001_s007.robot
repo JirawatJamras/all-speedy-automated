@@ -60,6 +60,7 @@ Register_S007
     ...    ${Register_S001['last_name']}
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
+    # Expected
     pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
     ...    ${Register_S001['first_name']}
     ...    ${Register_S001['last_name']}
@@ -80,16 +81,19 @@ Register_S007
     
     Log    Step No.2 RM Lead กดปุ่ม "Assign RM"
     pms_request_detail_page.Click Assign RM Button
+    # Expected
     pms_request_detail_page.Verify Assign RM Popup
     common.Verify Capture Screenshot      Register    Register_S001_S007    2.S007_Verify Assign RM Popup
     
     Log    Step No.3 กดปุ่ม "มอบหมาย" เพื่อเลือก RM "Yada Deenok"
     pms_request_detail_page.Click Button To Assign RM    ${Register_S007['rm_name']}
+    # Expected
     pms_request_detail_page.Verify Assign To RM     ${Register_S007['rm_name']}
     common.Verify Capture Screenshot      Register    Register_S001_S007    3.S007_Verify Assign To RM 
     
     Log    Step No.4 กดปุ่ม "บันทึก"
     pms_request_detail_page.Click Save Button
+    # Expected
     pms_requests_page.Verify Save Assign To RM Success [legal entity] 
     ...    ${Register_S001['checkbox_partner_types']}
     ...    ${Register_S001['company_name']}
