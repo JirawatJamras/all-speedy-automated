@@ -32,6 +32,7 @@ DC_Operation_S018
     dps_history_parcel_page.Click Edit History Parcel    ${tracking_a}
     Switch Window    NEW
     # Expected
+    Log Defect No:  Defect209,Defect225,Defect241
     dps_history_parcel_page.Verify Timeline In Warehouse Details    ${dc_operation.label_parcel_details_in_warehouse['timeline']}
     dps_history_parcel_page.Verify Title Parcel Details In Warehouse Details  
     ...    ${dc_operation.label_parcel_details_in_warehouse['parcel_detail']}
