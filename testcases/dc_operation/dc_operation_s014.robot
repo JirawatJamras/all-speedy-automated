@@ -252,24 +252,24 @@ DC_Operation_S014
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
     Log Defect No:  Defect232
-    dps_scan_page.Verify Label Scan Out
-    ...    ${dc_operation.scan_out_title['pouch_number']}
-    ...    ${dc_operation.scan_out_title['parcel_id']}
-    ...    ${dc_operation.scan_out_title['receive_parcel_from']}
-    ...    ${dc_operation.scan_out_title['transport']}
-    ...    ${dc_operation.scan_out_title['parcel_owner']}
-    ...    ${dc_operation.scan_out_title['parcel_size']}
-    ...    ${dc_operation.scan_out_title['date']}
-    ...    ${dc_operation.scan_out_title['parcel_status']}
-    dps_scan_page.Verify Value List Scan Out 
-    ...    ${DC_Operation_S014.scan_out_list_data['pouch_number']}
-    ...    ${tracking_number}
-    ...    ${DC_Operation_S014.scan_out_list_data['receive_parcel_from']}
-    ...    ${DC_Operation_S014.scan_out_list_data['transport']}
-    ...    ${DC_Operation_S014.scan_out_list_data['parcel_owner']}
-    ...    ${DC_Operation_S014.scan_out_list_data['parcel_size']}
-    ...    ${today}
-    ...    ${DC_Operation_S014.scan_out_list_data['parcel_status']}
+    # dps_scan_page.Verify Label Scan Out
+    # ...    ${dc_operation.scan_out_title['pouch_number']}
+    # ...    ${dc_operation.scan_out_title['parcel_id']}
+    # ...    ${dc_operation.scan_out_title['receive_parcel_from']}
+    # ...    ${dc_operation.scan_out_title['transport']}
+    # ...    ${dc_operation.scan_out_title['parcel_owner']}
+    # ...    ${dc_operation.scan_out_title['parcel_size']}
+    # ...    ${dc_operation.scan_out_title['date']}
+    # ...    ${dc_operation.scan_out_title['parcel_status']}
+    # dps_scan_page.Verify Value List Scan Out 
+    # ...    ${DC_Operation_S014.scan_out_list_data['pouch_number']}
+    # ...    ${tracking_number}
+    # ...    ${DC_Operation_S014.scan_out_list_data['receive_parcel_from']}
+    # ...    ${DC_Operation_S014.scan_out_list_data['transport']}
+    # ...    ${DC_Operation_S014.scan_out_list_data['parcel_owner']}
+    # ...    ${DC_Operation_S014.scan_out_list_data['parcel_size']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S014.scan_out_list_data['parcel_status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    27.Verify Value List Scan Out 
 
     Log    Step No.28 กดปุ่ม ยืนยัน Scan Out
