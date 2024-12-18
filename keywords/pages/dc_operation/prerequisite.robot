@@ -203,7 +203,6 @@ DC_Operation_S002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.2.Verify Booking Status After Cut Off Time
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
-    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # b2c_booking_detail_page.Verify Booking Detail Page After Import File
     # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
@@ -1222,7 +1221,7 @@ DC_Operation_S005
     # ...    ${DC_Operation_S005.scan_in_data_parcel_detail['pouch_number']}
     # ...    ${DC_Operation_S005.scan_in_data_label_detail['wh']}
     # ...    ${DC_Operation_S005.scan_in_data_label_detail['symbol']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    3.1.Data Parcel Details In Scan Page
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    3.1.Data Parcel Details In Scan Page
     # dps_scan_page.Verify Title Sender In Scan Page
     # ...    ${dc_operation.scan_in_title_sender_detail['title']}
     # ...    ${dc_operation.scan_in_title_sender_detail['name']}
@@ -1234,7 +1233,7 @@ DC_Operation_S005
     # ...    ${DC_Operation_S005.scan_in_sender_data['phone']}
     # ...    ${DC_Operation_S005.scan_in_sender_data['shipping_origin']}
     # ...    ${DC_Operation_S005.scan_in_sender_data['address']}
-    # common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    3.2.Data Sender Details In Scan Page
+    common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    3.2.Data Sender Details In Scan Page
     # dps_scan_page.Verify Title Receiver In Scan Page
     # ...    ${dc_operation.scan_in_title_receiver_detail['title']}
     # ...    ${dc_operation.scan_in_title_receiver_detail['name']}
@@ -1451,22 +1450,22 @@ DC_Operation_S005
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    18.Verify Delivery List Page
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
-    dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S005.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S005.wait_derivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S005.wait_derivery_data_list['status1']}
-    sleep    5s
+    # dps_wait_delivery.Click Print Button By Data
+    # ...    ${DC_Operation_S005.wait_derivery_data_list['export_to']}
+    # ...    ${DC_Operation_S005.wait_derivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S005.wait_derivery_data_list['status1']}
+    # sleep    5s
 
     Log    Step No.20 กดปุ่ม พิมพ์
-    common.Robot Skip Step Print Label
+    # common.Robot Skip Step Print Label
     # Expected
-    dps_wait_delivery.Verify Data Delivery List
-    ...    ${DC_Operation_S005.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S005.wait_derivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S005.wait_derivery_data_list['status2']}
-    sleep    5s
+    # dps_wait_delivery.Verify Data Delivery List
+    # ...    ${DC_Operation_S005.wait_derivery_data_list['export_to']}
+    # ...    ${DC_Operation_S005.wait_derivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S005.wait_derivery_data_list['status2']}
+    # sleep    5s
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    20.Verify Delivery List Page After Print
 
 

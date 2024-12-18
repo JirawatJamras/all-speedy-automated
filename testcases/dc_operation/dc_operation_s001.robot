@@ -1,6 +1,7 @@
 *** Settings ***
 Resource          ../../resourses/init_website.robot
 Resource          ../../resourses/import.robot
+# Test Setup        Run Keywords    Open Browser   Chrome   options=add_experimental_option("detach", True)
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Close Browser
@@ -205,7 +206,6 @@ DC_Operation_S001
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    17.2.Verify Booking Status After Cut Off Time
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
-    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # b2c_booking_detail_page.Verify Booking Detail Page After Import File
     # ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     # ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
@@ -384,7 +384,6 @@ DC_Operation_S001
     Log    Step No.29 คลิกเลือกรายการ Booking
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
-    ...    ${Booking['text_parcel_status_call_car']}
     # Expected
     b2c_booking_detail_page.Verify Booking Detail Page After Canceled
     ...    ${Booking['text_parcel_status_waiting_entering']}
