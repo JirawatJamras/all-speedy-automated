@@ -13,7 +13,7 @@ ${ROW_NUMBER}    2
 DC_Operation_S014
     [Documentation]    ลูกค้า C (ส่งพัสดุที่ร้าน 7-11) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
     [Tags]    DC_Operation    Dry_B2C_Send_Parcel_7Shop    Regression    Defect138    Defect139    Defect141    Defect160    Defect181    Defect187    Defect188    Defect189    
-    ...    Defect191    Defect205    Defect218    Defect232    Defect259    Defect291
+    ...    Defect205    Defect218    Defect232    Defect259    Defect291
 
     Log    Step No.1-15 Skip By Use Tracking Mannual
     Set Today
@@ -221,7 +221,7 @@ DC_Operation_S014
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
     dps_scan_page.Select Scan Out Tab
     # Expected
-    Log Defect No:  Defect232
+    Log Defect No:  Defect232,Defect259
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan Out Tab
     dps_scan_page.Verify label Waiting List To Scan Out [Scan Out Page]
     ...    ${dc_operation.scan_out_title_waiting_scan['parcel_id']}
@@ -251,6 +251,7 @@ DC_Operation_S014
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_number}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
+    Log Defect No:  Defect232
     dps_scan_page.Verify Label Scan Out
     ...    ${dc_operation.scan_out_title['pouch_number']}
     ...    ${dc_operation.scan_out_title['parcel_id']}
@@ -261,9 +262,9 @@ DC_Operation_S014
     ...    ${dc_operation.scan_out_title['date']}
     ...    ${dc_operation.scan_out_title['parcel_status']}
     dps_scan_page.Verify Value List Scan Out 
-    ...    ${DC_Operation_S014.scan_out_waiting_scan['pouch_number']}
+    ...    ${DC_Operation_S014.scan_out_list_data['pouch_number']}
     ...    ${tracking_number}
-    ...    ${DC_Operation_S014.scan_out_waiting_scan['receive_parcel_from']}
+    ...    ${DC_Operation_S014.scan_out_list_data['receive_parcel_from']}
     ...    ${DC_Operation_S014.scan_out_list_data['transport']}
     ...    ${DC_Operation_S014.scan_out_list_data['parcel_owner']}
     ...    ${DC_Operation_S014.scan_out_list_data['parcel_size']}

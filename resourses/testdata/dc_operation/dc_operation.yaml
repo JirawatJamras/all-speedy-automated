@@ -1277,7 +1277,7 @@ DC_Operation_S014:
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
   scan_out_list_data:
     pouch_number: '-'
-    receive_parcel_from: Store
+    receive_parcel_from: Home
     transport: Flash
     parcel_owner: Speedy
     parcel_size: กล่อง L
