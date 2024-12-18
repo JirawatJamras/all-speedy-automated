@@ -1,7 +1,6 @@
 *** Settings ***
-Resource          ../../resourses/init_website.robot
-Resource          ../../resourses/import.robot
-# Test Setup        Run Keywords    Open Browser   Chrome   options=add_experimental_option("detach", True)
+Resource          ../../resources/init_website.robot
+Resource          ../../resources/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
 Test Teardown     Run Keywords    dps_home_page.Reset Cut Off Time    17:00

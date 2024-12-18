@@ -277,8 +277,8 @@ Verify Choose Receiver From Favorites
     Should Be Equal    ${postcode_text}    ${receiver_postcode}  
 
 Click Accept Favorites List
-    ${favorites_accetp_btn}=    Replace String    ${favorites_accetp_btn}    {value}    ${Booking['text_btn_select']}
-    common.Click When Ready    ${favorites_accetp_btn}
+    ${favorites_accept_btn}=    Replace String    ${favorites_accept_btn}    {value}    ${Booking['text_btn_select']}
+    common.Click When Ready    ${favorites_accept_btn}
 
 Input Phone Sender
     [Arguments]    ${input_phone_sender}
@@ -414,17 +414,17 @@ Verify Parcel ID Format And Value
     ${isblank}=    Run Keyword And Return Status    Should Be Equal As Strings    ${4_start_unit}    -
     IF    '${isblank}' == 'True'
         Wait Until Element Is Visible    ${locator}    timeout=${DEFAULT_TIMEOUT}
-        ${pearcel_id}=    Get Text    ${locator}
-        Should Be Equal    ${pearcel_id}    ${4_start_unit}
+        ${parcel_id}=    Get Text    ${locator}
+        Should Be Equal    ${parcel_id}    ${4_start_unit}
     ELSE
         Sleep    3s
         Wait Until Element Is Visible    ${locator}    timeout=${DEFAULT_TIMEOUT}
-        ${pearcel_id}=    Get Text    ${locator}
-        ${length}=    Get Length    ${pearcel_id}
-        ${unit_1_to_4}=    Set Variable    ${pearcel_id}[0:4]
+        ${parcel_id}=    Get Text    ${locator}
+        ${length}=    Get Length    ${parcel_id}
+        ${unit_1_to_4}=    Set Variable    ${parcel_id}[0:4]
         ${year_month}=    Get Current Date    result_format=%y%m
         ${year_month_string}=    Convert To String    ${year_month}
-        ${unite_5_to_8}=    Set Variable    ${pearcel_id}[4:8]
+        ${unite_5_to_8}=    Set Variable    ${parcel_id}[4:8]
         Should Be Equal As Integers    ${length}    16
         Should Be Equal As Strings    ${unit_1_to_4}    ${4_start_unit}
         Should Be Equal    ${unite_5_to_8}     ${year_month_string}
