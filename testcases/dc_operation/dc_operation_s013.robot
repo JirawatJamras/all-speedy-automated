@@ -13,7 +13,7 @@ ${ROW_NUMBER}    3
 DC_Operation_S013
     [Documentation]    ลูกค้า B (ส่งพัสดุที่ร้าน 7-11) --> พัสดุ Dry ปลายทางบ้าน ส่งโดย Courier
     [Tags]    DC_Operation    Dry_B2C_Send_Parcel_7Shop    Regression    Defect138    Defect139    Defect141    Defect155    Defect160    Defect181    Defect187    Defect188    
-    ...    Defect189    Defect191    Defect205    Defect218    Defect232    Defect259    Defect291
+    ...    Defect189    Defect205    Defect218    Defect232    Defect259    Defect291
 
     Log    Step No.1-16 Skip By Use Tracking From Excel
     Set Today
@@ -251,7 +251,7 @@ DC_Operation_S013
     dps_scan_page.Input Tracking Number [Scan Out Page]    ${tracking_number}
     dps_scan_page.Click Search Button [Scan Out Page]
     # Expected
-    Log Defect No:  Defect191
+    Log Defect No:  Defect232
     # dps_scan_page.Verify Label Scan Out
     # ...    ${dc_operation.scan_out_title['pouch_number']}
     # ...    ${dc_operation.scan_out_title['parcel_id']}

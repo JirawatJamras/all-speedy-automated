@@ -11,6 +11,7 @@ Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Last
 
 *** Keywords ***
 Booking_S018
+    Set Suite Variable    ${card_is_visible}    False
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     b2c_call_car_pick_up_parcel_page.Click Add Button
