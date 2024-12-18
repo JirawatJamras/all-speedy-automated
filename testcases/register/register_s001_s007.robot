@@ -61,7 +61,7 @@ Register_S007
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
     # Expected
-    Log Defect No:  New Defect 12/12/2024 : Defect292
+    Log Defect No:  New Defect 12/12/2024 : Column last modify date was added.
     pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
     ...    ${Register_S001['first_name']}
     ...    ${Register_S001['last_name']}
