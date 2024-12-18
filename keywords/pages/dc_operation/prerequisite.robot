@@ -1,6 +1,6 @@
 *** Settings ***
-Resource          ../../../resourses/init_website.robot
-Resource          ../../../resourses/import.robot
+Resource          ../../../resources/init_website.robot
+Resource          ../../../resources/import.robot
 
 *** Keywords ***
 DC_Operation_S002
