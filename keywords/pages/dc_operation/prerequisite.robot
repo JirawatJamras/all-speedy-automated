@@ -5,7 +5,7 @@ Resource          ../../../resourses/import.robot
 *** Keywords ***
 DC_Operation_S002
     Log    Reset Cut Off Time To 17:00
-    dps_home_page.Reset Cut Off Time
+    dps_home_page.Reset Cut Off Time    17:00
 
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_URL}
@@ -177,12 +177,9 @@ DC_Operation_S002
     Log To Console    ${ParcelsData}
     Set Global Variable    ${Global_ParcelsData}    ${ParcelsData}
 
-    Log    Step No.17 Cut Off Time
-    dps_home_page.Set Cut Off Time
-    ...    ${DB_URI}
-    ...    ${DATABASE_NAME}
-    ...    ${COLLECTION}
-    ...    ${QUERY}
+    Log    Step No.17 Set Cut Off Time To Current Time    #ถ้าเปลี่ยนเวลาจากเวลาปัจจุบันเป็นเวลาอื่่น จะส่งผลให้ Fail ที่ Keyword Verify Parcel Pickup Status After Cut Off Time
+    ${current_date}    common.Get Current Date For Cut Off Time
+    dps_home_page.Set Cut Off Time    ${current_date}
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected
@@ -378,7 +375,6 @@ DC_Operation_S004
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S004.data_in_all_task_tab['task_type1']}
@@ -557,7 +553,6 @@ DC_Operation_S004
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S004.data_in_all_task_tab['task_type2']}
@@ -873,7 +868,6 @@ DC_Operation_S004
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S004.data_in_all_task_tab['task_type1']}
@@ -1083,7 +1077,6 @@ DC_Operation_S004
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S004.data_in_all_task_tab['task_type3']}
@@ -1141,7 +1134,6 @@ DC_Operation_S005
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S005.data_in_all_task_tab['task_type1']}
@@ -1299,7 +1291,6 @@ DC_Operation_S005
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S005.data_in_all_task_tab['task_type2']}
@@ -1486,7 +1477,6 @@ DC_Operation_S005
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S005.data_in_all_task_tab['task_type1']}
@@ -1642,7 +1632,6 @@ DC_Operation_S005
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S005.data_in_all_task_tab['task_type3']}
@@ -1701,7 +1690,6 @@ DC_Operation_S006
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S006.data_in_all_task_tab['task_type1']}
@@ -1879,7 +1867,6 @@ DC_Operation_S006
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S006.data_in_all_task_tab['task_type2']}
@@ -2188,7 +2175,6 @@ DC_Operation_S006
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S006.data_in_all_task_tab['task_type1']}
@@ -2398,7 +2384,6 @@ DC_Operation_S006
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S006.data_in_all_task_tab['task_type3']}
@@ -2457,7 +2442,6 @@ DC_Operation_S007
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S007.data_in_all_task_tab['task_type1']}
@@ -2614,7 +2598,6 @@ DC_Operation_S007
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S007.data_in_all_task_tab['task_type2']}
@@ -2798,7 +2781,6 @@ DC_Operation_S007
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S007.data_in_all_task_tab['task_type1']}
@@ -2955,7 +2937,6 @@ DC_Operation_S007
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S007.data_in_all_task_tab['task_type3']}
@@ -3015,7 +2996,6 @@ DC_Operation_S008
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}    
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S008.data_in_all_task_tab['task_type1']}
@@ -3949,7 +3929,6 @@ DC_Operation_S009
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S009.data_in_all_task_tab['task_type1']}
@@ -4106,7 +4085,6 @@ DC_Operation_S009
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S009.data_in_all_task_tab['task_type2']}
@@ -4449,7 +4427,6 @@ DC_Operation_S009
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S009.data_in_all_task_tab['task_type1']}
@@ -4605,7 +4582,6 @@ DC_Operation_S009
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S009.data_in_all_task_tab['task_type3']}
@@ -4665,7 +4641,6 @@ DC_Operation_S010
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S010.data_in_all_task_tab['task_type1']}
@@ -4843,7 +4818,6 @@ DC_Operation_S010
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S010.data_in_all_task_tab['task_type2']}
@@ -5326,7 +5300,6 @@ DC_Operation_S010
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S010.data_in_all_task_tab['task_type1']}
@@ -5535,7 +5508,6 @@ DC_Operation_S010
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S010.data_in_all_task_tab['task_type3']}
@@ -5593,7 +5565,6 @@ DC_Operation_S011
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S011.data_in_all_task_tab['task_type']}
@@ -5750,7 +5721,6 @@ DC_Operation_S011
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S011.data_in_all_task_tab['task_type2']}
@@ -6091,7 +6061,6 @@ DC_Operation_S011
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S011.data_in_all_task_tab['task_type']}
@@ -6245,7 +6214,6 @@ DC_Operation_S011
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S011.data_in_all_task_tab['task_type3']}
@@ -6304,7 +6272,6 @@ DC_Operation_S012
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S012.data_in_all_task_tab['task_type1']}
@@ -6314,7 +6281,6 @@ DC_Operation_S012
     # ...    ${DC_Operation_S012.data_in_all_task_tab['transport']}
     # ...    ${DC_Operation_S012.data_in_all_task_tab['pouch_number']}
     # ...    ${tracking_b}
-    # ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_size']}
     # ...    ${DC_Operation_S012.data_in_all_task_tab['parcel_status1']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S012    1.1.Verify Homepage 1st Time
@@ -6461,7 +6427,6 @@ DC_Operation_S012
     # ...    ${dc_operation.label_all_task_tab['transport']}
     # ...    ${dc_operation.label_all_task_tab['pouch_number']}
     # ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    # ...    ${dc_operation.label_all_task_tab['parcel_size']}
     # ...    ${dc_operation.label_all_task_tab['parcel_status']}
     # dps_home_page.Verify Data In All Task Tab
     # ...    ${DC_Operation_S012.data_in_all_task_tab['task_type2']}

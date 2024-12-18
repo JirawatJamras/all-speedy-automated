@@ -4,7 +4,8 @@ Resource          ../../resourses/import.robot
 # Test Setup        Run Keywords    Open Browser   Chrome   options=add_experimental_option("detach", True)
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND   Set Folder Result with date
-Test Teardown     Close Browser
+Test Teardown     Run Keywords    dps_home_page.Reset Cut Off Time    17:00
+                  ...    AND    Close Browser
 
 
 *** Test Cases ***
@@ -13,7 +14,7 @@ DC_Operation_S001
     [Tags]    DC_Operation    Dry_Rejected_Request_Pickup_Schedule    Regression    Defect043    Defect144    Defect150    Defect192    Defect207    Defect221
     Set Today
     Log    Reset Cut Off Time To 17:00
-    dps_home_page.Reset Cut Off Time
+    dps_home_page.Reset Cut Off Time    17:00
 
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_URL}
@@ -180,12 +181,9 @@ DC_Operation_S001
     ...    ${DC_Operation_S001['parcel_number']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S001    16.Verify Import File Success
 
-    Log    Step No.17 Cut Off Time
-    dps_home_page.Set Cut Off Time
-    ...    ${DB_URI}
-    ...    ${DATABASE_NAME}
-    ...    ${COLLECTION}
-    ...    ${QUERY}
+    Log    Step No.17 Set Cut Off Time To Current Time    #ถ้าเปลี่ยนเวลาจากเวลาปัจจุบันเป็นเวลาอื่่น จะส่งผลให้ Fail ที่ Keyword Verify Parcel Pickup Status After Cut Off Time
+    ${current_date}    common.Get Current Date For Cut Off Time
+    dps_home_page.Set Cut Off Time    ${current_date}
     b2c_home_page.Click Parcel Delivery Service Menu
     b2c_home_page.Select Sub Menu Call Car Pick Up
     # Expected

@@ -61,23 +61,23 @@ Register_S007
     ...    ${Register_S001['mobile_no']}
     ...    ${Register_S001['mobile_ext']}
     # Expected
-    Log Defect No:  New Defect 12/12/2024 : Column last modify date was added.
-    # pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
-    # ...    ${Register_S001['first_name']}
-    # ...    ${Register_S001['last_name']}
-    # ...    ${Register_S007['request_type']}
-    # ...    ${Register_S007['reference_request']}
-    # ...    ${Register_S001['checkbox_partner_types']}
-    # ...    ${Register_S001['company_title_name']}
-    # ...    ${Register_S001['company_name']}
-    # ...    ${Register_S001['company_address']}
-    # ...    ${Register_S001['select_company_address_full']}
-    # ...    ${Register_S001['title_name']}
-    # ...    ${Register_S001['first_name']}
-    # ...    ${Register_S001['last_name']}
-    # ...    ${Register_S001['email']}
-    # ...    ${Register_S001['mobile_no']}
-    # ...    ${Register_S001['mobile_ext']}
+    Log Defect No:  New Defect 12/12/2024 : Defect292
+    pms_request_detail_page.Verify Request Detail Page With Status Waiting For Assign
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S007['request_type']}
+    ...    ${Register_S007['reference_request']}
+    ...    ${Register_S001['checkbox_partner_types']}
+    ...    ${Register_S001['company_title_name']}
+    ...    ${Register_S001['company_name']}
+    ...    ${Register_S001['company_address']}
+    ...    ${Register_S001['select_company_address_full']}
+    ...    ${Register_S001['title_name']}
+    ...    ${Register_S001['first_name']}
+    ...    ${Register_S001['last_name']}
+    ...    ${Register_S001['email']}
+    ...    ${Register_S001['mobile_no']}
+    ...    ${Register_S001['mobile_ext']}
     common.Verify Capture Screenshot      Register    Register_S001_S007    1.S007_Verify Request Detail Page With Status Waiting For Assign
     
     Log    Step No.2 RM Lead กดปุ่ม "Assign RM"
