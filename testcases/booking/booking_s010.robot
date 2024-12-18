@@ -65,6 +65,7 @@ Booking_S010
     Log    Step No.6 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
+    Log Defect No:  New Defect : Defect293
     b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home 
     ...    ${Booking['text_title']}
     ...    ${Booking['text_parcel_receiver_information']}
