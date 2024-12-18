@@ -4,7 +4,7 @@ Resource          ../../resourses/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND    Set Folder Result with date
-                  ...    AND    Reset Cut Off Time
+                  ...    AND    dps_home_page.Reset Cut Off Time    17:00
 Test Teardown     Run Keywords   Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
 

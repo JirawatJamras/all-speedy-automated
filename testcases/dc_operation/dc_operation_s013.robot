@@ -63,7 +63,6 @@ DC_Operation_S013
     ...    ${dc_operation.label_all_task_tab['transport']}
     ...    ${dc_operation.label_all_task_tab['pouch_number']}
     ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    ...    ${dc_operation.label_all_task_tab['parcel_size']}
     ...    ${dc_operation.label_all_task_tab['parcel_status']}
     dps_home_page.Verify Data In All Task Tab
     ...    ${DC_Operation_S013.data_in_all_task_tab['task_type']}
@@ -73,7 +72,6 @@ DC_Operation_S013
     ...    ${DC_Operation_S013.data_in_all_task_tab['transport']}
     ...    ${DC_Operation_S013.data_in_all_task_tab['pouch_number']}
     ...    ${tracking_number}
-    ...    ${DC_Operation_S013.data_in_all_task_tab['parcel_size']}
     ...    ${DC_Operation_S013.data_in_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    19.1.Verify Homepage
@@ -193,7 +191,6 @@ DC_Operation_S013
     ...    ${dc_operation.label_all_task_tab['transport']}
     ...    ${dc_operation.label_all_task_tab['pouch_number']}
     ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    ...    ${dc_operation.label_all_task_tab['parcel_size']}
     ...    ${dc_operation.label_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    25.1.Verify Homepage 2

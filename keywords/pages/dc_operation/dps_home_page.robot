@@ -1,19 +1,18 @@
 *** Keywords ***
 Set Cut Off Time
-    [Arguments]    ${uri}    ${name}    ${collection}    ${query}
-    ${time}=    Get Current Date    result_format=%H:%M
-    Set Suite Variable    ${cut_off_time}    ${time}
-    connect_to_mongodb    ${uri}    ${name}    ${collection}
-    ${QUERY}    Create Dictionary    status=${query}
+    [Arguments]    ${time}
+    connect_to_mongodb    ${DB_URI}    ${DATABASE_NAME}    ${COLLECTION}
+    ${QUERY}    Create Dictionary    status=${QUERY}
     ${update}    Create Dictionary    cutOff=${time}
     ${update_with_set}    Create Dictionary    $set=${update}
     update_document    ${QUERY}    ${update}
     disconnect
 
 Reset Cut Off Time
+    [Arguments]    ${time}
     connect_to_mongodb    ${DB_URI}    ${DATABASE_NAME}    ${COLLECTION}
     ${QUERY}    Create Dictionary    status=${QUERY}
-    ${update}    Create Dictionary    cutOff=17:00
+    ${update}    Create Dictionary    cutOff=${time}
     ${update_with_set}    Create Dictionary    $set=${update}
     update_document    ${QUERY}    ${update}
     disconnect
@@ -56,7 +55,7 @@ Verify Homepage
 
 Verify Label In All Task Tab
     [Arguments]    ${task_type}    ${parcel_owner}   ${import_from}    ${export_to}    
-    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_size}    ${parcel_status}
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
     ${dps_txt_task_type_in_all_task_tab}=    Replace String    ${dps_txt_task_type_title_table_in_all_task_tab_home_page}    {title}    ${task_type}
     ${dps_txt_parcel_owner_in_all_task_tab}=    Replace String    ${dps_txt_title_table_in_all_task_tab_home_page}    {title_task_type}    ${task_type}
     ${dps_txt_parcel_owner_in_all_task_tab}=    Replace String    ${dps_txt_parcel_owner_in_all_task_tab}    {main_title}    ${parcel_owner}
@@ -69,8 +68,6 @@ Verify Label In All Task Tab
     ${dps_txt_pouch_number_in_all_task_tab}=    Replace String    ${dps_txt_task_type_title_table_in_all_task_tab_home_page}    {title}    ${pouch_number}
     ${dps_txt_parcel_number_in_all_task_tab}=    Replace String    ${dps_txt_title_table_in_all_task_tab_home_page}    {title_task_type}    ${task_type}
     ${dps_txt_parcel_number_in_all_task_tab}=    Replace String    ${dps_txt_parcel_number_in_all_task_tab}    {main_title}    ${parcel_number}
-    ${dps_txt_parcel_size_in_all_task_tab}=    Replace String    ${dps_txt_title_table_in_all_task_tab_home_page}    {title_task_type}    ${task_type}
-    ${dps_txt_parcel_size_in_all_task_tab}=    Replace String    ${dps_txt_parcel_size_in_all_task_tab}    {main_title}    ${parcel_size}
     ${dps_txt_parcel_status_in_all_task_tab}=    Replace String    ${dps_txt_title_table_in_all_task_tab_home_page}    {title_task_type}    ${task_type}
     ${dps_txt_parcel_status_in_all_task_tab}=    Replace String    ${dps_txt_parcel_status_in_all_task_tab}    {main_title}    ${parcel_status}
     Wait Until Element Is Visible    ${dps_txt_task_type_in_all_task_tab}    timeout=${DEFAULT_TIMEOUT}
@@ -84,7 +81,6 @@ Verify Label In All Task Tab
     ${actual_txt_transport_in_all_task_tab}=    Get Text    ${dps_txt_transport_in_all_task_tab}
     ${actual_txt_pouch_number_in_all_task_tab}=    Get Text    ${dps_txt_pouch_number_in_all_task_tab}
     ${actual_txt_parcel_number_in_all_task_tab}=    Get Text    ${dps_txt_parcel_number_in_all_task_tab}
-    ${actual_txt_parcel_size_in_all_task_tab}=    Get Text    ${dps_txt_parcel_size_in_all_task_tab}
     ${actual_txt_parcel_status_in_all_task_tab}=    Get Text    ${dps_txt_parcel_status_in_all_task_tab}
     Should Be Equal    ${actual_txt_task_type_in_all_task_tab}    ${task_type}
     Should Be Equal    ${actual_txt_parcel_owner_in_all_task_tab}    ${parcel_owner}
@@ -93,12 +89,11 @@ Verify Label In All Task Tab
     Should Be Equal    ${actual_txt_transport_in_all_task_tab}    ${transport}
     Should Be Equal    ${actual_txt_pouch_number_in_all_task_tab}    ${pouch_number}
     Should Be Equal    ${actual_txt_parcel_number_in_all_task_tab}    ${parcel_number}
-    Should Be Equal    ${actual_txt_parcel_size_in_all_task_tab}    ${parcel_size}
     Should Be Equal    ${actual_txt_parcel_status_in_all_task_tab}    ${parcel_status}
 
 Verify Data In All Task Tab
     [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
-    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_size}    ${parcel_status}
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}
@@ -112,7 +107,7 @@ Verify Data In All Task Tab
 
 Verify Parcel Is Not Visible [All Task Tab]
     [Arguments]    ${task_type}    ${parcel_owner}    ${import_from}    ${export_to}    
-    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_size}    ${parcel_status}
+    ...            ${transport}    ${pouch_number}    ${parcel_number}    ${parcel_status}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task_home_page}    {task_type}    ${task_type}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {parcel_owner}    ${parcel_owner}
     ${dps_txt_list_first_all_task}=    Replace String    ${dps_txt_list_first_all_task}    {import_from}    ${import_from}

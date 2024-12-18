@@ -232,6 +232,11 @@ Check Used Tracking
         Run Keyword If    '${tracking_number}' == 'None'    Fail    All tracking numbers have been used. Kindly upload a new file
     END
 
+Get Current Date For Cut Off Time
+    ${time}=    Get Current Date    result_format=%H:%M
+    Set Suite Variable    ${current_date}    ${time}
+    RETURN    ${current_date}
+
 ################### Manage Excel ###################    
 Read Row From Excel
     [Arguments]    ${file_path}    ${sheet_name}    ${row_number}
