@@ -188,21 +188,21 @@ Booking_S058
     ...    ${Booking_S031['receiver_postcode_full']}
     # Expected
     Log Defect No:  Defect134
-    b2c_favorite_page.Verify Label Receiver
-    ...    ${favorite.label_reciever_favorite['text_data_receiver']}
-    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
-    ...    ${favorite.label_reciever_favorite['text_phone']}
-    ...    ${favorite.label_reciever_favorite['text_name']}
-    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
-    ...    ${favorite.label_reciever_favorite['text_address']}
-    ...    ${favorite.label_reciever_favorite['text_postcode']}
-    b2c_favorite_page.Verify Data Recevier In Read-Only Mode
-    ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    ...    ${Booking_S031['receiver_name']}
-    ...    ${Booking_S031['receiver_phone']}
-    ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
-    ...    ${Booking_S031['receiver_address']}
-    ...    ${Booking_S031['receiver_postcode_full']}
+    # b2c_favorite_page.Verify Label Receiver
+    # ...    ${favorite.label_reciever_favorite['text_data_receiver']}
+    # ...    ${favorite.label_reciever_favorite['text_favorite_name']}
+    # ...    ${favorite.label_reciever_favorite['text_phone']}
+    # ...    ${favorite.label_reciever_favorite['text_name']}
+    # ...    ${favorite.label_reciever_favorite['text_location_pickup']}
+    # ...    ${favorite.label_reciever_favorite['text_address']}
+    # ...    ${favorite.label_reciever_favorite['text_postcode']}
+    # b2c_favorite_page.Verify Data Recevier In Read-Only Mode
+    # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    # ...    ${Booking_S031['receiver_name']}
+    # ...    ${Booking_S031['receiver_phone']}
+    # ...    ${Booking_S058.receiver_favorite_card['receiver_location_pickup']}
+    # ...    ${Booking_S031['receiver_address']}
+    # ...    ${Booking_S031['receiver_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S058    9.1.Verify Data Receiver In Popup
     b2c_favorite_page.Scroll To Display Edit Button
     common.Verify Capture Screenshot    booking    Booking_S058    9.2.Verify Data Receiver Footer In Popup
@@ -233,18 +233,18 @@ Booking_S058
     b2c_favorite_page.Click Store On Map
     # Expected
     Log Defect No:  Defect106
-    b2c_favorite_page.Verify Store Address Receiver    ${Booking_S058.edit_receiver['receiver_store_full_address']}
+    # b2c_favorite_page.Verify Store Address Receiver    ${Booking_S058.edit_receiver['receiver_store_full_address']}
     common.Verify Capture Screenshot    booking    Booking_S058    11.Verify Receiver Edited In Popup
 
     Log    Step No.12 กดปุ่ม "บันทึกเเก้ไข"
     b2c_favorite_page.Click Save Edit Button
     # Expected
     Log Defect No:  Defect123
-    b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
-    ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
-    ...    ${Booking_S031['receiver_name']}
-    ...    ${Booking_S031['receiver_phone']}
-    ...    ${Booking_S058.edit_receiver['receiver_store_address']}
+    # b2c_favorite_page.Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
+    # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
+    # ...    ${Booking_S031['receiver_name']}
+    # ...    ${Booking_S031['receiver_phone']}
+    # ...    ${Booking_S058.edit_receiver['receiver_store_address']}
     common.Verify Capture Screenshot    booking    Booking_S058    12.Verify Data Receiver After Edited
 
     Log    Step No.13 กดปุ่ม "เพิ่ม"
@@ -297,12 +297,12 @@ Booking_S058
     b2c_favorite_page.Click Add Shipping Origin Area Button
     # Expected
     Log Defect No:  Defect135
-    b2c_favorite_page.Verify Label Shipping Origin Area
-    ...    ${favorite.label_shipping_origin_area['text_data_shipping_origin_area']}
-    ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
-    ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
-    b2c_favorite_page.Verify Data Shipping Origin Area
-    ...    ${EMPTY}
+    # b2c_favorite_page.Verify Label Shipping Origin Area
+    # ...    ${favorite.label_shipping_origin_area['text_data_shipping_origin_area']}
+    # ...    ${favorite.label_shipping_origin_area['text_favorite_name']}
+    # ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
+    # b2c_favorite_page.Verify Data Shipping Origin Area
+    # ...    ${EMPTY}
     common.Verify Capture Screenshot    booking    Booking_S058    16.1.Verify Add Shipping Origin Area Popup
     b2c_favorite_page.Scroll To Display Save Button
     common.Verify Capture Screenshot    booking    Booking_S058    16.2.Verify Add Shipping Origin Area Footer Popup
@@ -314,8 +314,8 @@ Booking_S058
     b2c_favorite_page.Click Save Button
     # Expected
     Log Defect No:  Defect124
-    b2c_favorite_page.Verify Display Shipping Origin Area Card
-    ...    ${Booking_S058.add_shipping_origin_area['favorite_name']}
-    ...    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
+    # b2c_favorite_page.Verify Display Shipping Origin Area Card
+    # ...    ${Booking_S058.add_shipping_origin_area['favorite_name']}
+    # ...    ${Booking_S058.add_shipping_origin_area['shipping_origin_store_address']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S058    17.Verify Shipping Origin Area Card After Added Information

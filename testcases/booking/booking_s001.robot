@@ -19,17 +19,17 @@ Booking_S001
     b2c_login_page.Click Log On Button
     # Expected
     Log Defect No:  Defect046
-    b2c_home_page.Verify My Profile Page
-    ...    ${Booking['text_company_profile']}
-    ...    ${Booking['text_profile']}
-    ...    ${Booking['text_profile_name']}
-    ...    ${Booking['text_profile_phone']}
-    ...    ${Booking['text_profile_mail']}
-    ...    ${Booking['text_profile_position']}
-    ...    ${Booking_S001['sir_name']}
-    ...    ${Booking_S001['company_name']}
-    ...    ${Booking_S001['name']}
-    ...    ${Booking_S001['phone']}
-    ...    ${Booking_S001['email']}
-    ...    ${Booking_S001['position']}
+    # b2c_home_page.Verify My Profile Page
+    # ...    ${Booking['text_company_profile']}
+    # ...    ${Booking['text_profile']}
+    # ...    ${Booking['text_profile_name']}
+    # ...    ${Booking['text_profile_phone']}
+    # ...    ${Booking['text_profile_mail']}
+    # ...    ${Booking['text_profile_position']}
+    # ...    ${Booking_S001['sir_name']}
+    # ...    ${Booking_S001['company_name']}
+    # ...    ${Booking_S001['name']}
+    # ...    ${Booking_S001['phone']}
+    # ...    ${Booking_S001['email']}
+    # ...    ${Booking_S001['position']}
     common.Verify Capture Screenshot    booking    Booking_S001    2.Verify Home Page

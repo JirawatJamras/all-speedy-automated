@@ -291,7 +291,7 @@ Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
             ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
         END
         Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
-    END 
+    END
 
 Verify Added New Parcel Pickup
     [Arguments]    ${status}    ${parcel_type}    ${round}    ${tomorrow}    ${pickup_time}    ${today}
@@ -314,7 +314,6 @@ Verify Added New Parcel Pickup
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
     Log    ${actual_card}
     ${status}=    Set Variable    False
-    ${card_is_visible}=    Set Variable    True
     ${today_pattern}    Set Date Pattern    ${today}
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
     Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
@@ -322,16 +321,20 @@ Verify Added New Parcel Pickup
         Scroll Window To Vertical    0
         ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_card}
         Scroll Window To Vertical    1000
-        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        IF    '${status}' == 'True'
+            Set Suite Variable    ${card_is_visible}    True
+            Exit For Loop
+        # Run Keyword If    '${status}' == 'True'    Exit For Loop
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        END
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
-        IF    '${status_button}' == 'False'    
-            ${card_is_visible}=    Set Variable    False
-            Exit For Loop
-        END
+        Run Keyword If    '${status_button}' == 'False'    Exit For Loop
+        # IF    '${status_button}' == 'False'    
+
+        #     Exit For Loop
+        # END
     END
-    Set Global Variable    ${card_is_visible}
     Run Keyword If    '${card_is_visible}' == 'False'    Fail    Cannot find card
 
 Get Cut Off Date From Value

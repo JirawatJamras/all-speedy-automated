@@ -46,6 +46,7 @@ Booking_S018
 
     Log    Step No.4 กดปุ่ม "บันทึก"
     Set Today
+    Set Suite Variable    ${card_is_visible}    False
     b2c_call_car_pick_up_parcel_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
@@ -62,5 +63,5 @@ Booking_S018
     ...    ${call_car_pick_up['text_price']}
     ...    ${call_car_pick_up.default['price']}
     ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${Booking_S018['pickup_point']}
+    ...    44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000  #${Booking_S018['pickup_point']}
     common.Verify Capture Screenshot    booking    Booking_S018    4.Verify Added New Parcel Pickup

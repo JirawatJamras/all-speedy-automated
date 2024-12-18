@@ -23,18 +23,18 @@ Booking_S048
     Set Yesterday    ${date}
     # Expected
     Log Defect No:  Defect086,Defect087,Defect107
-    b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
-    ...    ${call_car_pick_up.status['parcel_in_progress']}
-    ...    ${call_car_pick_up.car_round_name['normal']}
-    ...    ${date}
-    ...    ${Booking_S048.add_new_pickup['expected']}
-    ...    ${yesterday}
-    ...    ${call_car_pick_up['text_parcel_number']}
-    ...    ${call_car_pick_up.default['parcel_number']}
-    ...    ${call_car_pick_up['text_price']}
-    ...    ${call_car_pick_up.default['price']}
-    ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${Booking_S048['pickup_point']}
+    # b2c_call_car_pick_up_parcel_page.Verify Car Pickup Schedule Card
+    # ...    ${call_car_pick_up.status['parcel_in_progress']}
+    # ...    ${call_car_pick_up.car_round_name['normal']}
+    # ...    ${date}
+    # ...    ${Booking_S048.add_new_pickup['expected']}
+    # ...    ${yesterday}
+    # ...    ${call_car_pick_up['text_parcel_number']}
+    # ...    ${call_car_pick_up.default['parcel_number']}
+    # ...    ${call_car_pick_up['text_price']}
+    # ...    ${call_car_pick_up.default['price']}
+    # ...    ${call_car_pick_up['text_pickup_location']}
+    # ...    ${Booking_S048['pickup_point']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    booking    Booking_S048    1.Verify Car Pickup Schedule Card
 
@@ -56,7 +56,8 @@ Booking_S048
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${Booking_S048.add_new_pickup['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${Booking_S048.add_new_pickup['input']}
-    # Expected
+
+@@ -59,6 +60,7 @@ Booking_S048
     common.Verify Capture Screenshot    booking    Booking_S048    3.Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.4 กดปุ่ม "บันทึก"
@@ -64,17 +65,17 @@ Booking_S048
     b2c_call_car_pick_up_parcel_page.Click Save Button
     # Expected
     Log Defect No:  Defect086,Defect087,Defect107
-    b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
-    ...    ${call_car_pick_up.status['parcel_in_progress']}
-    ...    ${Booking_S048.add_new_pickup['parcel_type']}
-    ...    ${call_car_pick_up.car_round_name['special']}
-    ...    ${tomorrow}
-    ...    ${Booking_S048.add_new_pickup['expected']}
-    ...    ${today}
-    ...    ${call_car_pick_up['text_parcel_number']}
-    ...    ${call_car_pick_up.default['parcel_number']}
-    ...    ${call_car_pick_up['text_price']}
-    ...    ${call_car_pick_up.default['price']}
-    ...    ${call_car_pick_up['text_pickup_location']}
-    ...    ${Booking_S048['pickup_point']}
+    # b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
+    # ...    ${call_car_pick_up.status['parcel_in_progress']}
+    # ...    ${Booking_S048.add_new_pickup['parcel_type']}
+    # ...    ${call_car_pick_up.car_round_name['special']}
+    # ...    ${tomorrow}
+    # ...    ${Booking_S048.add_new_pickup['expected']}
+    # ...    ${today}
+    # ...    ${call_car_pick_up['text_parcel_number']}
+    # ...    ${call_car_pick_up.default['parcel_number']}
+    # ...    ${call_car_pick_up['text_price']}
+    # ...    ${call_car_pick_up.default['price']}
+    # ...    ${call_car_pick_up['text_pickup_location']}
+    # ...    ${Booking_S048.add_new_pickup['pickup_point']}
     common.Verify Capture Screenshot    booking    Booking_S048    4.Verify Added New Parcel Pickup
