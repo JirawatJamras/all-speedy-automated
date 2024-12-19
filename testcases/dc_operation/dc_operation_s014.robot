@@ -307,6 +307,7 @@ DC_Operation_S014
     dps_scan_page.Select Scan Out Tab
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Label Delivery List
     ...    ${dc_operation.label_delivery_list['export_to']}
     ...    ${dc_operation.label_delivery_list['transport']}
@@ -323,6 +324,7 @@ DC_Operation_S014
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    33.Verify Data Delivery List
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S014.wait_delivery_data_list['export_to']}
     ...    ${DC_Operation_S014.wait_delivery_data_list['transport']}
@@ -330,4 +332,5 @@ DC_Operation_S014
     ...    ${DC_Operation_S014.wait_delivery_data_list['status']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
+    Log Defect No:  Defect289
     common.Robot Skip Step Print Label
