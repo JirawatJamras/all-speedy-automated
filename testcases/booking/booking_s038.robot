@@ -3,7 +3,7 @@ Resource          ../../resources/init_website.robot
 Resource          ../../resources/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
-                  ...    AND   Set Folder Result with date
+                  ...    AND   Set Folder Result With Date
 Test Teardown     Close Browser
 
 *** Test Cases ***
@@ -13,7 +13,7 @@ Booking_S038
     skip
     # Log    Pre condition
     # Open Chrome Browser   chrome      #headlesschrome   
-    # Set Folder Result with date
+    # Set Folder Result With Date
     # c2c_login.Input Email And Password    ${c2c_login_user_01['username']}    ${c2c_login_user_01['password']}
     # b2c_login_page.Click Log On Button
     # Go To    https://www-uat.allspeedy.co.th/booking/detail/B2410004883
