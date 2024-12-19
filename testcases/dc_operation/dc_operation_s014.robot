@@ -15,7 +15,7 @@ DC_Operation_S014
     [Tags]    DC_Operation    Dry_B2C_Send_Parcel_7Shop    Regression    Defect138    Defect139    Defect141    Defect160    Defect181    Defect187    Defect188    Defect189    
     ...    Defect205    Defect218    Defect232    Defect259    Defect291
 
-    Log    Step No.1-15 Skip By Use Tracking Mannual
+    Log    Step No.1-15 Skip By Use Tracking Manual
     Set Today
     Log    Read Row From Excel
     ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
@@ -122,7 +122,7 @@ DC_Operation_S014
     # ...    ${courier}
     # ...    ${DC_Operation_S014.scan_in_data_parcel_detail['pouch_number']}
     # ...    ${create_date}
-    # ...    ${origin_warehoues}
+    # ...    ${origin_warehouse}
     # ...    ${send_parcel_to}
     # dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     # ...    ${dc_operation.scan_in_title_label_detail['courier']}
@@ -272,7 +272,7 @@ DC_Operation_S014
     Log    Step No.28 กดปุ่ม ยืนยัน Scan Out
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
-    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    dps_scan_page.Verify Popup Confirm Scan Out    ${dc_operation.scan_out_title['text_popup_confirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    28.Verify Popup Confirm Scan Out
 
     Log    Step No.29 กดปุ่ม ยืนยัน
@@ -316,18 +316,18 @@ DC_Operation_S014
     ...    ${dc_operation.label_delivery_list['title_date']}
     ...    ${dc_operation.label_delivery_list['title_status']}
     dps_wait_delivery.Verify Data Delivery List
-    ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
+    ...    ${DC_Operation_S014.wait_delivery_data_list['export_to']}
+    ...    ${DC_Operation_S014.wait_delivery_data_list['transport']}
     ...    ${today}
-    ...    ${DC_Operation_S014.wait_derivery_data_list['status']}
+    ...    ${DC_Operation_S014.wait_delivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S014    33.Verify Data Delivery List
 
     Log    Step No.34 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S014.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S014.wait_derivery_data_list['transport']}
+    ...    ${DC_Operation_S014.wait_delivery_data_list['export_to']}
+    ...    ${DC_Operation_S014.wait_delivery_data_list['transport']}
     ...    ${today}
-    ...    ${DC_Operation_S014.wait_derivery_data_list['status']}
+    ...    ${DC_Operation_S014.wait_delivery_data_list['status']}
 
     Log    Step No.35 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label

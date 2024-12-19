@@ -396,7 +396,7 @@ DC_Operation_S017
     # Expected
     dps_history_parcel_page.Verify Reprint Pouch Label Popup
     ...    ${dc_operation.card_reprint_label['text_pouch_label']}
-    ...    ${DC_Operation_S017.data_in_pouch_label['destination_warehourse']}
+    ...    ${DC_Operation_S017.data_in_pouch_label['destination_warehouse']}
     ...    ${DC_Operation_S017.data_in_pouch_label['route']}
-    ...    ${DC_Operation_S017.data_in_pouch_label['destination_warehourse_symbol']}
+    ...    ${DC_Operation_S017.data_in_pouch_label['destination_warehouse_symbol']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S017    26.Verify Reprint Pouch Label

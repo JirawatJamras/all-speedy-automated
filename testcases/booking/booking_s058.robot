@@ -189,13 +189,13 @@ Booking_S058
     # Expected
     Log Defect No:  Defect134
     # b2c_favorite_page.Verify Label Receiver
-    # ...    ${favorite.label_reciever_favorite['text_data_receiver']}
-    # ...    ${favorite.label_reciever_favorite['text_favorite_name']}
-    # ...    ${favorite.label_reciever_favorite['text_phone']}
-    # ...    ${favorite.label_reciever_favorite['text_name']}
-    # ...    ${favorite.label_reciever_favorite['text_location_pickup']}
-    # ...    ${favorite.label_reciever_favorite['text_address']}
-    # ...    ${favorite.label_reciever_favorite['text_postcode']}
+    # ...    ${favorite.label_receiver_favorite['text_data_receiver']}
+    # ...    ${favorite.label_receiver_favorite['text_favorite_name']}
+    # ...    ${favorite.label_receiver_favorite['text_phone']}
+    # ...    ${favorite.label_receiver_favorite['text_name']}
+    # ...    ${favorite.label_receiver_favorite['text_location_pickup']}
+    # ...    ${favorite.label_receiver_favorite['text_address']}
+    # ...    ${favorite.label_receiver_favorite['text_postcode']}
     # b2c_favorite_page.Verify Data Recevier In Read-Only Mode
     # ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
     # ...    ${Booking_S031['receiver_name']}
@@ -211,13 +211,13 @@ Booking_S058
     b2c_favorite_page.Click Edit Button
     # Expected
     b2c_favorite_page.Verify Label Receiver
-    ...    ${favorite.label_reciever_favorite['text_data_receiver']}
-    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
-    ...    ${favorite.label_reciever_favorite['text_phone']}
-    ...    ${favorite.label_reciever_favorite['text_name']}
-    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
-    ...    ${favorite.label_reciever_favorite['text_address']}
-    ...    ${favorite.label_reciever_favorite['text_postcode']}
+    ...    ${favorite.label_receiver_favorite['text_data_receiver']}
+    ...    ${favorite.label_receiver_favorite['text_favorite_name']}
+    ...    ${favorite.label_receiver_favorite['text_phone']}
+    ...    ${favorite.label_receiver_favorite['text_name']}
+    ...    ${favorite.label_receiver_favorite['text_location_pickup']}
+    ...    ${favorite.label_receiver_favorite['text_address']}
+    ...    ${favorite.label_receiver_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Receiver
     ...    ${Booking_S058.receiver_favorite_card['favorite_name']}
     ...    ${Booking_S031['receiver_name']}
@@ -252,13 +252,13 @@ Booking_S058
     b2c_favorite_page.Select Pickup Location    ${Booking_S058.add_receiver_favorite['receiver_location_pickup']}
     # Expected
     b2c_favorite_page.Verify Label Receiver
-    ...    ${favorite.label_reciever_favorite['text_data_receiver']}
-    ...    ${favorite.label_reciever_favorite['text_favorite_name']}
-    ...    ${favorite.label_reciever_favorite['text_phone']}
-    ...    ${favorite.label_reciever_favorite['text_name']}
-    ...    ${favorite.label_reciever_favorite['text_location_pickup']}
-    ...    ${favorite.label_reciever_favorite['text_address']}
-    ...    ${favorite.label_reciever_favorite['text_postcode']}
+    ...    ${favorite.label_receiver_favorite['text_data_receiver']}
+    ...    ${favorite.label_receiver_favorite['text_favorite_name']}
+    ...    ${favorite.label_receiver_favorite['text_phone']}
+    ...    ${favorite.label_receiver_favorite['text_name']}
+    ...    ${favorite.label_receiver_favorite['text_location_pickup']}
+    ...    ${favorite.label_receiver_favorite['text_address']}
+    ...    ${favorite.label_receiver_favorite['text_postcode']}
     b2c_favorite_page.Verify Data Receiver
     ...    ${EMPTY}
     ...    ${EMPTY}

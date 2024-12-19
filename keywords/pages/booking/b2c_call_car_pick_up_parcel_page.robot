@@ -263,7 +263,7 @@ Select Pickup Parcel Time
     ${b2c_cbo_time_pickup}=    Replace String    ${b2c_cbo_time_pickup}    {value}    ${time}
     common.Click When Ready    ${b2c_cbo_time_pickup}
 
-Delete The Lastest Parcel Pickup Schedule
+Delete The Latest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
     ${btn_delete_car_round}=    Replace String    ${b2c_btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
     ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round}    {time}    ${current_time}
@@ -278,7 +278,7 @@ Delete The Lastest Parcel Pickup Schedule
     Click Element    ${b2c_btn_confirm_in_asking_to_close_popup}
     Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
-Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
+Go To Call Car Pickup Menu And Delete The Latest Parcel Pickup Schedule
     [Arguments]    ${tomorrow_date}    ${current_time}
     IF    '${card_is_visible}' == 'True'
         ${b2c_card_delete_pickup_parcel}=    Replace String    ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    {value}    ${call_car_pick_up.car_round_name['special']} ${tomorrow_date} ${current_time}
@@ -298,8 +298,8 @@ Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
             Run Keyword If    '${status}' == 'True' and '${visible_card}' == 'True'    Exit For Loop
             ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
         END
-        Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
-    END
+        Delete The Latest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
+    END 
 
 Verify Added New Parcel Pickup
     [Arguments]    ${status}    ${parcel_type}    ${round}    ${tomorrow}    ${pickup_time}    ${today}
@@ -340,6 +340,7 @@ Verify Added New Parcel Pickup
         Run Keyword If    '${status_button}' == 'False'    Exit For Loop
     END
     Run Keyword If    '${card_is_visible}' == 'False'    Fail    Cannot find card
+    Scroll Element Into View    ${actual_card}
 
 Get Cut Off Date From Value
     [Arguments]    ${date}
@@ -373,7 +374,7 @@ Get Normal Parcel Pickup Date
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
-        ...    AND    ${card_is_visible}=    Set Variable    Flase
+        ...    AND    ${card_is_visible}=    Set Variable    False
     END
     ${txt_normal_parcel_pickup_schedule}=    Replace String    ${txt_normal_parcel_pickup_schedule}    {value}    ${call_car_pick_up.car_round_name['normal']}
     ${titleName}=    Get Text    ${txt_normal_parcel_pickup_schedule} 
@@ -421,5 +422,5 @@ Verify Car Pickup Schedule Card
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
-        ...    AND    ${card_is_visible}=    Set Variable    Flase
+        ...    AND    ${card_is_visible}=    Set Variable    False
     END

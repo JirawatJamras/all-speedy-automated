@@ -213,17 +213,17 @@ Verify Booking Detail Page [Not Have Parcel List]
     ${txt_shipping_origin}=    Replace String    ${txt_shipping_origin_return_business}    {value}    ${return_business.email_link['text_shipping_origin']}
     ${txt_parcel_list}=    Replace String    ${txt_heading_parcel_list_return_business}    {value}    ${return_business.email_link['text_title_parcel_list']}
     ${txt_summary_booking}=    Replace String    ${txt_heading_summary_booking_return_business}    {value}    ${return_business.email_link['text_title_booking_summary']}
-    ${txt_discount}=    Replace String    ${txt_discount_return_business}    {value}    ${return_business.email_link['text_dixcount']}
+    ${txt_discount}=    Replace String    ${txt_discount_return_business}    {value}    ${return_business.email_link['text_discount']}
     ${txt_insure}=    Replace String    ${txt_insure_return_business}    {value}    ${return_business.email_link['text_insure']}
     ${txt_cod}=    Replace String    ${txt_cod_return_business}    {value}    ${return_business.email_link['text_cod']}
     ${txt_total}=    Replace String    ${txt_total_return_business}    {value}    ${return_business.email_link['text_total_price']}
     ${actual_booking_id}=    Get Text    ${txt_booking_id}
     ${actual_booking_name}=    Get Text    ${txt_booking_name}
-    ${actaul_booking_time}=    Get Text    ${txt_booking_time}
+    ${actual_booking_time}=    Get Text    ${txt_booking_time}
     Scroll Element Into View    ${txt_total}
     ${actual_discount}=    Get Text    ${txt_discount}
     ${actual_total}=    Get Text    ${txt_total}
-    ${booking_time}    Split String And Select    ${actaul_booking_time}    \n    1
+    ${booking_time}    Split String And Select    ${actual_booking_time}    \n    1
     ${time_convert}    Convert Date    ${booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
     Wait Until Element Is Visible    ${txt_booking_list}
     Should Be Equal    ${actual_booking_id}    ${booking_id}
@@ -231,7 +231,7 @@ Verify Booking Detail Page [Not Have Parcel List]
     Should Be Equal As Strings    ${booking_time}   ${time_convert}
     Wait Until Element Is Visible    ${txt_shipping_origin}
     Wait Until Element Is Visible    ${txt_parcel_list}
-    Should Be Equal    ${actual_discount}    ${return_business.email_link['text_dixcount']} ${discount_value}
+    Should Be Equal    ${actual_discount}    ${return_business.email_link['text_discount']} ${discount_value}
     Should Be Equal    ${actual_total}    ${return_business.email_link['text_total_price']} ${total_price_amount} ${total_price_value}
     common.Scroll Window To Vertical    0
 
@@ -332,7 +332,7 @@ Verify Booking Detail Page
     ${txt_shipping_origin}=    Replace String    ${txt_shipping_origin_return_business}    {value}    ${return_business.email_link['text_shipping_origin']}
     ${txt_parcel_list}=    Replace String    ${txt_heading_parcel_list_return_business}    {value}    ${return_business.email_link['text_title_parcel_list']}
     ${txt_summary_booking}=    Replace String    ${txt_heading_summary_booking_return_business}    {value}    ${return_business.email_link['text_title_booking_summary']}
-    ${txt_discount}=    Replace String    ${txt_discount_return_business}    {value}    ${return_business.email_link['text_dixcount']}
+    ${txt_discount}=    Replace String    ${txt_discount_return_business}    {value}    ${return_business.email_link['text_discount']}
     ${txt_insure}=    Replace String    ${txt_insure_return_business}    {value}    ${return_business.email_link['text_insure']}
     ${txt_cod}=    Replace String    ${txt_cod_return_business}    {value}    ${return_business.email_link['text_cod']}
     ${txt_total}=    Replace String    ${txt_total_return_business}    {value}    ${return_business.email_link['text_total_price']}
@@ -344,8 +344,8 @@ Verify Booking Detail Page
     Log    Booking List
     ${actual_booking_id}=    Get Text    ${txt_booking_id}
     ${actual_booking_name}=    Get Text    ${txt_booking_name}
-    ${actaul_booking_time}=    Get Text    ${txt_booking_time}
-    ${booking_time}    Split String And Select    ${actaul_booking_time}    \n    1
+    ${actual_booking_time}=    Get Text    ${txt_booking_time}
+    ${booking_time}    Split String And Select    ${actual_booking_time}    \n    1
     ${time_convert}    Convert Date    ${booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
     Wait Until Element Is Visible    ${txt_booking_list}
     Should Be Equal    ${actual_booking_id}    ${booking_id}
@@ -380,7 +380,7 @@ Verify Booking Detail Page
     Scroll Element Into View    ${txt_total}
     ${actual_discount}=    Get Text    ${txt_discount}
     ${actual_total}=    Get Text    ${txt_total}
-    Should Be Equal    ${actual_discount}    ${return_business.email_link['text_dixcount']} ${discount_value}
+    Should Be Equal    ${actual_discount}    ${return_business.email_link['text_discount']} ${discount_value}
     Should Be Equal    ${actual_total}    ${return_business.email_link['text_total_price']} ${total_price_amount} ${total_price_value}
     common.Scroll Window To Vertical    0
 

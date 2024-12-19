@@ -84,7 +84,7 @@ Booking:
   text_send_parcel_speed_d: ส่งพัสดุ สปีด-ดี
   text_delete_data_complete: ลบข้อมูลสำเร็จ
   text_choose_from_favorite_list: เลือกจากรายการโปรด
-  text_add_to_fovorite: เพิ่มเป็นรายการโปรด
+  text_add_to_favorite: เพิ่มเป็นรายการโปรด
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -203,7 +203,7 @@ Booking:
     parcel_buy_insure: มีการซื้อประกัน
     text_postcode: รหัสไปรษณีย์ปลายทาง
     text_store_code: รหัสร้าน
-    text_destination_deparment_code: รหัสสาขาปลายทาง
+    text_destination_department_code: รหัสสาขาปลายทาง
   import_file:
     dry_parcel_file_name: Excel Template พัสดุทั่วไป.xlsx
     dry_parcel_import_success_amount: 'สำเร็จ 15'
@@ -269,7 +269,7 @@ favorite:
     text_name: 'ชื่อ *'
     text_address: 'รายละเอียดที่อยู่ *'
     text_postcode: 'แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *'
-  label_reciever_favorite:
+  label_receiver_favorite:
     text_data_receiver: ข้อมูลผู้รับพัสดุ
     text_favorite_name: 'ชื่อรายการโปรด *'
     text_phone: 'เบอร์โทรศัพท์ *'
@@ -493,7 +493,7 @@ dc_operation:
     parcel_size: ขนาดพัสดุ
     date: วันที่อัปเดตล่าสุด 
     parcel_status: สถานะพัสดุ
-    text_popup_comfirm: ยืนยันการ Scan Out ใช่หรือไม่
+    text_popup_confirm: ยืนยันการ Scan Out ใช่หรือไม่
   label_delivery_list:
     export_to: ส่งออกไปยัง
     transport: ผ่านขนส่ง
@@ -592,7 +592,7 @@ dc_operation:
     crossdock_warehouse: คลัง Crossdock
   label_parcel_in_pouch_in_scan_in_page:
     parcel_number: หมายเลขพัสดุ
-    destination_warehourse: คลังปลายทาง
+    destination_warehouse: คลังปลายทาง
     parcel_size: ขนาดพัสดุ
     type: ประเภท
     parcel_status: สถานะพัสดุ
@@ -819,7 +819,7 @@ return_business:
     text_booking_name_label: 'ชื่อบุ๊คกิ้ง :' 
     text_title_parcel_list: รายการพัสดุ   
     text_title_booking_summary: สรุปรายการบุ๊คกิ้ง
-    text_dixcount: รวมส่วนลด
+    text_discount: รวมส่วนลด
     text_insure: ค่าธรรมเนียมประกัน 
     text_cod: ค่าธรรมเนียม COD    
     text_total_price: ยอดสุทธิ  

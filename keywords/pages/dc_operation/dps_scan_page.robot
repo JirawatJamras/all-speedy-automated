@@ -180,9 +180,9 @@ Click Accept Button On Popup For Creating Pouch
     common.Click When Ready    ${dps_btn_accept_for_create_pouch_auto}
     
 Get Pouch Number In Scan Page
-    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_status}    ${DC_Operation_S026.pounch_number['pounch_status']}
-    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_number}    ${DC_Operation_S026.pounch_number['pounch_number']}
-    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pounch_id}    ${DC_Operation_S026.pounch_number['pounch_id']}
+    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pouch_status}    ${DC_Operation_S026.pouch_number['pouch_status']}
+    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pouch_number}    ${DC_Operation_S026.pouch_number['pouch_number']}
+    ${dps_txt_pouch_number_in_scan_page}=    Replace String    ${dps_txt_pouch_number_in_scan_page}    {pouch_id}    ${DC_Operation_S026.pouch_number['pouch_id']}
     Wait Until Element Is Visible    ${dps_txt_pouch_number_in_scan_page}    timeout=${DEFAULT_TIMEOUT}
     ${pouch_number}=    Get text    ${dps_txt_pouch_number_in_scan_page}
     RETURN    ${pouch_number}
@@ -260,9 +260,9 @@ Input Tracking Number In Search Bar On Pouch Detail Section
     common.Input When Ready  ${dps_txtbox_on_pouch_detail_section}    ${text}
 
 Click Search Button Of Pouch Detail Section
-    ${dps_btn_seach_on_pouch_detail_on_scan_page}=    Replace String    ${dps_btn_seach_on_pouch_detail_on_scan_page}    {label}    ${dc_operation['text_pouch_detail']}
-    ${dps_btn_seach_on_pouch_detail_on_scan_page}=    Replace String    ${dps_btn_seach_on_pouch_detail_on_scan_page}    {value}    ${dc_operation['text_search']}
-    common.Click Xpath By JavaScript    ${dps_btn_seach_on_pouch_detail_on_scan_page}
+    ${dps_btn_search_on_pouch_detail_on_scan_page}=    Replace String    ${dps_btn_search_on_pouch_detail_on_scan_page}    {label}    ${dc_operation['text_pouch_detail']}
+    ${dps_btn_search_on_pouch_detail_on_scan_page}=    Replace String    ${dps_btn_search_on_pouch_detail_on_scan_page}    {value}    ${dc_operation['text_search']}
+    common.Click Xpath By JavaScript    ${dps_btn_search_on_pouch_detail_on_scan_page}
 
 Verify Label Pouch Detail In Scan In Page
     [Arguments]    ${expected_pouch_num}    ${expected_parcel_in_pouch}    ${expected_courier}
@@ -274,7 +274,7 @@ Verify Label Pouch Detail In Scan In Page
     ${dps_txt_date_delivery_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_date_delivery_in_pouch_detail_scan_in_page}    {value}    ${expected_date_delivery_pouch}
     ${dps_txt_origin_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_origin_warehouse_in_pouch_detail_scan_in_page}    {value}    ${expected_origin_warehouse}
     ${dps_txt_destination_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_destination_warehouse_in_pouch_detail_scan_in_page}    {value}    ${expected_destination_warehouse}
-    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}    {value}    ${expected_crossdock_warehouse}
+    ${dps_txt_crossdock_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_crossdock_warehouse_in_pouch_detail_scan_in_page}    {value}    ${expected_crossdock_warehouse}
     Wait Until Element Is Visible    ${dps_txt_pouch_number_in_pouch_detail_scan_in_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_pouch_num}=    Get Text    ${dps_txt_pouch_number_in_pouch_detail_scan_in_page}
     ${actual_parcel_in_pouch}=    Get Text    ${dps_txt_parcel_in_pouch_in_pouch_detail_scan_in_page}
@@ -282,7 +282,7 @@ Verify Label Pouch Detail In Scan In Page
     ${actual_date_delivery}=    Get Text    ${dps_txt_date_delivery_in_pouch_detail_scan_in_page}
     ${actual_origin_warehouse}=    Get Text    ${dps_txt_origin_warehouse_in_pouch_detail_scan_in_page}
     ${actual_destination_warehouse}=    Get Text    ${dps_txt_destination_warehouse_in_pouch_detail_scan_in_page}
-    ${actual_crossdock_warehouse}=    Get Text    ${dps_txt_cossdock_warehouse_in_pouch_detail_scan_in_page}
+    ${actual_crossdock_warehouse}=    Get Text    ${dps_txt_crossdock_warehouse_in_pouch_detail_scan_in_page}
     Should Be Equal    ${actual_pouch_num}    ${expected_pouch_num}
     Should Be Equal    ${actual_parcel_in_pouch}    ${expected_parcel_in_pouch}
     Should Be Equal    ${actual_courier}    ${expected_courier}
@@ -300,7 +300,7 @@ Verify Data Pouch Detail In Scan In Page
     ${dps_txt_data_date_delivery_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_date_delivery_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.label_pouch_detail_in_scan_in_page['date_delivery_origin_warehouse']}
     ${dps_txt_data_origin_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_origin_warehouse_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.label_pouch_detail_in_scan_in_page['origin_warehouse']}
     ${dps_txt_data_destination_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_destination_warehouse_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.label_pouch_detail_in_scan_in_page['destination_warehouse']}
-    ${dps_txt_data_cossdock_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_cossdock_warehouse_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.label_pouch_detail_in_scan_in_page['crossdock_warehouse']}
+    ${dps_txt_data_crossdock_warehouse_in_pouch_detail_scan_in_page}=    Replace String    ${dps_txt_data_crossdock_warehouse_in_pouch_detail_scan_in_page}    {value}    ${dc_operation.label_pouch_detail_in_scan_in_page['crossdock_warehouse']}
     ${dps_parcel_have_to_scan_remaining}=    Replace String    ${dps_parcel_have_to_scan_remaining}    {value}    ${dc_operation['text_parcel_have_to_scan_remaining']}
     ${actual_pouch_num}=    Get Text    ${dps_txt_data_pouch_number_in_pouch_detail_scan_in_page}
     ${actual_parcel_in_pouch}=    Get Text    ${dps_txt_data_parcel_in_pouch_in_pouch_detail_scan_in_page}
@@ -308,7 +308,7 @@ Verify Data Pouch Detail In Scan In Page
     ${actual_date_delivery}=    Get Text    ${dps_txt_data_date_delivery_in_pouch_detail_scan_in_page}
     ${actual_origin_warehouse}=    Get Text    ${dps_txt_data_origin_warehouse_in_pouch_detail_scan_in_page}
     ${actual_destination_warehouse}=    Get Text    ${dps_txt_data_destination_warehouse_in_pouch_detail_scan_in_page}
-    ${actual_crossdock_warehouse}=    Get Text    ${dps_txt_data_cossdock_warehouse_in_pouch_detail_scan_in_page}
+    ${actual_crossdock_warehouse}=    Get Text    ${dps_txt_data_crossdock_warehouse_in_pouch_detail_scan_in_page}
     ${actual_parcel_remaining_in_text}=    Get Text    ${dps_parcel_have_to_scan_remaining}
     ${actual_parcel_remaining_in_table}=    Get Element Count    ${dps_amount_parcel_have_to_scan_remaining_in_table}
     ${actual_parcel_remaining_in_table}=    Convert To String    ${actual_parcel_remaining_in_table}
@@ -324,10 +324,10 @@ Verify Data Pouch Detail In Scan In Page
     Should be Equal    ${actual_parcel_remaining_in_text}    ${actual_parcel_remaining_in_table}
 
 Verify Label Parcel In Pouch In Scan In Page
-    [Arguments]    ${tracking}    ${destination_warehourse}    ${parcel_size}
+    [Arguments]    ${tracking}    ${destination_warehouse}    ${parcel_size}
     ...    ${type}    ${parcel_status}
     ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {tracking}    ${tracking}
-    ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {destination_warehourse}    ${destination_warehourse}
+    ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {destination_warehouse}    ${destination_warehouse}
     ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {parcel_size}    ${parcel_size}
     ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {type}    ${type}
     ${dps_txt_thead_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    {parcel_status}    ${parcel_status}
@@ -335,10 +335,10 @@ Verify Label Parcel In Pouch In Scan In Page
     Wait Until Element Is Visible    ${dps_txt_thead_parcel_in_pouch_scan_in_page}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Data Parcel In Pouch In Scan In Page
-    [Arguments]    ${tracking}    ${destination_warehourse}    ${parcel_size}
+    [Arguments]    ${tracking}    ${destination_warehouse}    ${parcel_size}
     ...    ${type}    ${parcel_status}
     ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {tracking}    ${tracking}
-    ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {destination_warehourse}    ${destination_warehourse}
+    ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {destination_warehouse}    ${destination_warehouse}
     ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {parcel_size}    ${parcel_size}
     ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {type}    ${type}
     ${dps_txt_data_parcel_in_pouch_scan_in_page}=    Replace String    ${dps_txt_data_parcel_in_pouch_scan_in_page}    {parcel_status}    ${parcel_status}
@@ -730,16 +730,16 @@ Verify label Waiting List To Scan Out [Scan Out Page]
     [Arguments]    ${parcel_number}    ${pouch_number}    ${import_from}
     ...    ${deliver}    ${parcel_owner}    ${parcel_size}
     ...    ${update_date}    ${parcel_status}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {update_date}    ${update_date}
-    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    {parcel_status}    ${parcel_status}
-    common.Scroll Into View By Xpath    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    true
-    Wait Until Element Is Visible    ${dps_txt_label_wiating_list_to_scan_out_in_scan_out_page}    timeout=${DEFAULT_TIMEOUT}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {update_date}    ${update_date}
+    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    {parcel_status}    ${parcel_status}
+    common.Scroll Into View By Xpath    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    true
+    Wait Until Element Is Visible    ${dps_txt_label_waiting_list_to_scan_out_in_scan_out_page}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Value Waiting List To Scan Out [Scan Out Page]
     [Arguments]    ${parcel_number}    ${pouch_number}    ${import_from}
@@ -753,15 +753,15 @@ Verify Value Waiting List To Scan Out [Scan Out Page]
     ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
     ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}    {update_date}    ${update_date}
     ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}    {parcel_status}    ${parcel_status}
-    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
-    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
-    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
-    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
-    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
-    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
+    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}    {parcel_number}    ${parcel_number}
+    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}    {pouch_number}    ${pouch_number}
+    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}    {import_from}    ${import_from}
+    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}    {deliver}    ${deliver}
+    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}    {parcel_owner}    ${parcel_owner}
+    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}=    Replace String    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}    {parcel_size}    ${parcel_size}
     common.Scroll Into View By Xpath    ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}    true
     Wait Until Element Is Visible    ${dps_txt_waiting_list_to_scan_out_in_scan_out_page}
-    ${actual_update_date}=    Get Text    ${dps_txt_update_date_of_wiating_list_to_scan_out_in_scan_out_page}
+    ${actual_update_date}=    Get Text    ${dps_txt_update_date_of_waiting_list_to_scan_out_in_scan_out_page}
     Should Match Regexp    ${actual_update_date}    ^\\d{2}-\\d{2}-\\d{4} \\d{2}:\\d{2}$
 
 Verify Close Pouch Before Scan Out Warning Popup

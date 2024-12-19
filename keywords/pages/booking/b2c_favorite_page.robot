@@ -225,28 +225,28 @@ Click Receiver Card
     common.Click When Ready    ${card_receiver_send_home}
 
 Verify Label Receiver
-    [Arguments]    ${text_receiver_data}    ${reciever_favorite_name}   ${receiver_phone}    ${receiver_name}    
+    [Arguments]    ${text_receiver_data}    ${receiver_favorite_name}   ${receiver_phone}    ${receiver_name}    
     ...            ${receiver_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
     Wait Until Element Is Visible    ${txt_receiver_data_in_popup_favorite_page}    timeout=${DEFAULT_TIMEOUT}
-    ${txt_receiver_location_pickup_in_popup}=    Replace String    ${txt_receiver_location_pickup_in_popup_favorite_page}    {value}    ${favorite.label_reciever_favorite['text_location_pickup']}
+    ${txt_receiver_location_pickup_in_popup}=    Replace String    ${txt_receiver_location_pickup_in_popup_favorite_page}    {value}    ${favorite.label_receiver_favorite['text_location_pickup']}
     ${actual_text_receiver_data}=    Get Text    ${txt_receiver_data_in_popup_favorite_page}
     ${actual_text_receiver_favorite_name}=    Get Text    ${txt_receiver_favorite_name_in_popup_favorite_page}
     ${actual_text_receiver_phone}=    Get Text    ${txt_receiver_phone_in_popup_favorite_page}
     ${actual_text_receiver_name}=    Get Text    ${txt_receiver_name_in_popup_favorite_page}
-    ${actaul_text_receiver_location_pickup}=    Get Text    ${txt_receiver_location_pickup_in_popup}
+    ${actual_text_receiver_location_pickup}=    Get Text    ${txt_receiver_location_pickup_in_popup}
     ${actual_text_receiver_address}=    Get Text    ${txt_receiver_address_in_popup_favorite_page}
     ${actual_text_receiver_postcode}=    Get Text    ${txt_receiver_postcode_in_popup_favorite_page}
     Should Be Equal    ${actual_text_receiver_data}    ${text_receiver_data}
-    Should Be Equal    ${actual_text_receiver_favorite_name}    ${reciever_favorite_name}
+    Should Be Equal    ${actual_text_receiver_favorite_name}    ${receiver_favorite_name}
     Should Be Equal    ${actual_text_receiver_phone}    ${receiver_phone}
     Should Be Equal    ${actual_text_receiver_name}    ${receiver_name}
-    Should Be Equal    ${actaul_text_receiver_location_pickup}    ${receiver_location_pickup}
+    Should Be Equal    ${actual_text_receiver_location_pickup}    ${receiver_location_pickup}
     Should Be Equal    ${actual_text_receiver_address}    ${receiver_address}
     Should Be Equal    ${actual_text_receiver_postcode}    ${receiver_full_postcode}
 
 Verify Data Recevier In Read-Only Mode
     [Arguments]    ${receiver_favorite_name}   ${receiver_name}    ${receiver_phone}    
-    ...            ${reciever_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
+    ...            ${receiver_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
     Wait Until Element Is Visible    ${txt_receiver_data_in_popup_favorite_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_receiver_data_in_popup_favorite_page}=    Get Text    ${txt_receiver_data_in_popup_favorite_page}
     ${actual_value_receiver_favorite_name}=    Get Value    ${txtbox_receiver_favorite_name_favorite_page}
@@ -260,8 +260,8 @@ Verify Data Recevier In Read-Only Mode
     Element Should Be Disabled    ${txtbox_receiver_phone_favorite_page}
     Should Be Equal    ${actual_value_receiver_name}    ${receiver_name}
     Element Should Be Disabled    ${txtbox_receiver_name_favorite_page}
-    Run Keyword If    '${reciever_location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
-    Run Keyword If    '${reciever_location_pickup}' == 'ส่งร้าน 7-11'    Element Should Be Visible    ${tab_selected_send_store_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == 'ส่งร้าน 7-11'    Element Should Be Visible    ${tab_selected_send_store_favorite_page}
     Should Be Equal    ${actual_value_receiver_address}    ${receiver_address}
     Element Should Be Disabled    ${txtbox_receiver_address_favorite_page}
     Should Be Equal    ${actual_value_receiver_full_postcode}    ${receiver_full_postcode}
@@ -269,7 +269,7 @@ Verify Data Recevier In Read-Only Mode
 
 Verify Data Receiver
     [Arguments]    ${receiver_favorite_name}   ${receiver_name}    ${receiver_phone}    
-    ...            ${reciever_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
+    ...            ${receiver_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
     ${actual_value_receiver_favorite_name}=    Get Value    ${txtbox_receiver_favorite_name_favorite_page}
     ${actual_value_receiver_phone}=    Get Value    ${txtbox_receiver_phone_favorite_page}
     ${actual_value_receiver_name}=    Get Value    ${txtbox_receiver_name_favorite_page}
@@ -281,8 +281,8 @@ Verify Data Receiver
     Element Should Not Contain    ${txtbox_receiver_phone_favorite_page}    disabled
     Should Be Equal    ${actual_value_receiver_name}    ${receiver_name}
     Element Should Not Contain    ${txtbox_receiver_name_favorite_page}    disabled
-    Run Keyword If    '${reciever_location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
-    Run Keyword If    '${reciever_location_pickup}' == 'ส่งร้าน 7-11'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == 'ส่งร้าน 7-11'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
     Should Be Equal    ${actual_value_receiver_address}    ${receiver_address}
     Element Should Not Contain    ${txtbox_receiver_address_favorite_page}    disabled
     Should Be Equal    ${actual_value_receiver_full_postcode}    ${receiver_full_postcode}
