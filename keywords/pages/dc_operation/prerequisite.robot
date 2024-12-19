@@ -1441,6 +1441,7 @@ DC_Operation_S005
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S005    18.Verify Delivery List Page
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     # dps_wait_delivery.Click Print Button By Data
     # ...    ${DC_Operation_S005.wait_delivery_data_list['export_to']}
     # ...    ${DC_Operation_S005.wait_delivery_data_list['transport']}
@@ -1451,6 +1452,7 @@ DC_Operation_S005
     Log    Step No.20 กดปุ่ม พิมพ์
     # common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     # dps_wait_delivery.Verify Data Delivery List
     # ...    ${DC_Operation_S005.wait_delivery_data_list['export_to']}
     # ...    ${DC_Operation_S005.wait_delivery_data_list['transport']}
@@ -2747,6 +2749,7 @@ DC_Operation_S007
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    18.Verify Delivery List Page
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S007.wait_delivery_data_list['export_to']}
     ...    ${DC_Operation_S007.wait_delivery_data_list['transport']}
@@ -2756,6 +2759,7 @@ DC_Operation_S007
     Log    Step No.20 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S007.wait_delivery_data_list['export_to']}
     ...    ${DC_Operation_S007.wait_delivery_data_list['transport']}
@@ -4235,6 +4239,7 @@ DC_Operation_S009
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    18.Verify Delivery List Page
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S009.wait_delivery_data_list['export_to']}
     ...    ${DC_Operation_S009.wait_delivery_data_list['transport']}
@@ -4244,6 +4249,7 @@ DC_Operation_S009
     Log    Step No.20 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S009.wait_delivery_data_list['export_to']}
     ...    ${DC_Operation_S009.wait_delivery_data_list['transport']}
@@ -5870,6 +5876,7 @@ DC_Operation_S011
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    18.Verify Delivery List Page
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
+    Log Defect No:  Defect289
     dps_wait_delivery.Click Print Button By Data
     ...    ${DC_Operation_S011.wait_delivery_data_list['export_to']}
     ...    ${DC_Operation_S011.wait_delivery_data_list['transport']}
@@ -5880,6 +5887,7 @@ DC_Operation_S011
     Log    Step No.20 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
+    Log Defect No:  Defect289
     dps_wait_delivery.Verify Data Delivery List
     ...    ${DC_Operation_S011.wait_delivery_data_list['export_to']}
     ...    ${DC_Operation_S011.wait_delivery_data_list['transport']}
