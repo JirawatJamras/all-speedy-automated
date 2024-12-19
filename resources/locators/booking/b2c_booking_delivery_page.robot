@@ -68,6 +68,7 @@ ${txt_store_address}    //textarea[@id='create_parcel_form_receiver_address_disp
 ${booking_txt_parcel_id_booking_detail_page}    //*[@id="__next"]/div/div[3]/main/div[1]/div/div[2]/div/div[1]/div/div[4]/div/div[2]/div/div/div/div/div/div/div/div/div/div[1]/div/div/div/div/div/span/strong
 ${txt_booking_card_skeleton}    (//div[@class='ant-skeleton-content'])[1]
 ${txt_booking_status}    //span[text()='{id}']/..//span[text()='{status}']
+${txt_booking_card_id}    //span[text()='{id}']
 
 ${txtbox_phone_sender}    //input[@id='create_parcel_form_sender_tel']
 ${txtbox_name_sender}    //input[@id='create_parcel_form_sender_name']
