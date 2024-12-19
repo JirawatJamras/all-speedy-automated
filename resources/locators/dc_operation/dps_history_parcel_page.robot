@@ -6,7 +6,7 @@ ${dps_btn_reprint_label_history_parcel_page}    //div[text()='{value}']/../..
 ${dps_btn_cancel_reprint_label_history_parcel_page}    //div[text()='{label_type}']/../..//div[text()='{value}']/../..
 ${dps_btn_clear_parcel_number_history_parcel_page}    //input[@id='parcelCode']/..//span[@class='ant-input-clear-icon']
 
-${dps_txtbox_fitler_parcel_number_history_parcel_page}    //input[@id='parcelCode']
+${dps_txtbox_filter_parcel_number_history_parcel_page}    //input[@id='parcelCode']
 
 ${dps_txt_title_history_parcel_history_parcel_page}    //strong[text()='{value}']
 ${dps_txt_header_timeline_history_parcel_page}    //strong[text()='{value}']

@@ -121,7 +121,7 @@ DC_Operation_S013
     ...    ${courier}
     ...    ${DC_Operation_S013.scan_in_data_parcel_detail['pouch_number']}
     ...    ${create_date}
-    ...    ${origin_warehoues}
+    ...    ${origin_warehouse}
     ...    ${send_parcel_to}
     dps_scan_page.Verify Title Label Parcel In Scan Page [Other Courier]
     ...    ${dc_operation.scan_in_title_label_detail['courier']}
@@ -273,7 +273,7 @@ DC_Operation_S013
     dps_scan_page.Click Confirm Scan Out Button
     # Expected
     dps_scan_page.Verify Popup Confirm Scan Out
-    ...    ${dc_operation.scan_out_title['text_popup_comfirm']}
+    ...    ${dc_operation.scan_out_title['text_popup_confirm']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    29.Verify Popup Confirm Scan Out 
 
     Log    Step No.30 กดปุ่ม ยืนยัน
@@ -317,18 +317,18 @@ DC_Operation_S013
     ...    ${dc_operation.label_delivery_list['title_date']}
     ...    ${dc_operation.label_delivery_list['title_status']}
     dps_wait_delivery.Verify Data Delivery List
-    ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S013.wait_derivery_data_list['transport']}
+    ...    ${DC_Operation_S013.wait_delivery_data_list['export_to']}
+    ...    ${DC_Operation_S013.wait_delivery_data_list['transport']}
     ...    ${today}
-    ...    ${DC_Operation_S013.wait_derivery_data_list['status']}
+    ...    ${DC_Operation_S013.wait_delivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    34.Verify Data Delivery List
 
     Log    Step No.35 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S013.wait_derivery_data_list['export_to']}
-    ...    ${DC_Operation_S013.wait_derivery_data_list['transport']}
+    ...    ${DC_Operation_S013.wait_delivery_data_list['export_to']}
+    ...    ${DC_Operation_S013.wait_delivery_data_list['transport']}
     ...    ${today}
-    ...    ${DC_Operation_S013.wait_derivery_data_list['status']}
+    ...    ${DC_Operation_S013.wait_delivery_data_list['status']}
 
     Log    Step No.36 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label

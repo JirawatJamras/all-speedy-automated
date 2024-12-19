@@ -268,7 +268,7 @@ Click Booking With Waiting For Entering Parcel To System
     Scroll Window To Vertical    0
 
 Verify Booking Detail Page
-    [Arguments]    ${title}    ${booking_id}    ${parcel_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
+    [Arguments]    ${title}    ${booking_id}    ${parcel_id}    ${booking_name}    ${booking_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${receiver_address}
     ...    ${receiver_postcode_full}    ${parcel_type}    ${price}    ${insure_value}    ${cod}
@@ -290,8 +290,8 @@ Verify Booking Detail Page
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
-    ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
-    Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
+    ${actual_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
+    Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${booking_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_txt_shipping_origin_booking_detail_page}=    Get Text    ${b2c_txt_shipping_origin_booking_detail_page}
     Should Be Equal    ${actual_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
@@ -300,18 +300,18 @@ Verify Booking Detail Page
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     Should Be Equal    ${title}    ${actual_text_title}
-    Should Be Equal    ${booking_name}    ${actaul_booking_name}
+    Should Be Equal    ${booking_name}    ${actual_booking_name}
     Log    Parcel List
     Wait Until Element Is Visible    ${b2c_txt_parcel_list_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_title_parcel_list}=    Get Text    ${b2c_txt_parcel_list_booking_detail_page}
-    ${actaul_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
+    ${actual_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
-    Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
+    Should Be Equal    ${parcel_status}    ${actual_parcel_status}
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
@@ -339,7 +339,7 @@ Verify Booking Detail Page
     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
 
 Verify Booking Detail Page When Select 7-ELEVEN Store
-    [Arguments]    ${title}    ${booking_id}    ${parcel_id}    ${booking_name}    ${bookig_time}    ${title_parcel_list}    ${parcel_status}
+    [Arguments]    ${title}    ${booking_id}    ${parcel_id}    ${booking_name}    ${booking_time}    ${title_parcel_list}    ${parcel_status}
     ...    ${img_heart_sender}    ${sender_name}    ${sender_phone}
     ...    ${img_heart_receiver}    ${receiver_name}    ${receiver_phone}    ${store_address}
     ...    ${parcel_type}    ${price}    ${insure_value}    ${cod}
@@ -361,8 +361,8 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
-    ${actaul_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
-    Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${bookig_time}
+    ${actual_booking_name}=    Get Text    ${b2c_txt_booking_name_booking_detail_page}
+    Verify Date And Time With Time Distortion    ${text_booking_date_and_time_booking_detail_page}    ${booking_time}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_txt_shipping_origin_booking_detail_page}=    Get Text    ${b2c_txt_shipping_origin_booking_detail_page}
     Should Be Equal    ${actual_txt_shipping_origin_booking_detail_page}    ${origin_shipping}
@@ -371,18 +371,18 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     b2c_booking_delivery_page.Verify Booking ID Format And Value    ${b2c_txt_booking_id_booking_detail_page}    ${booking_id}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     Should Be Equal    ${title}    ${actual_text_title}
-    Should Be Equal    ${booking_name}    ${actaul_booking_name}
+    Should Be Equal    ${booking_name}    ${actual_booking_name}
     Log    Parcel List
     Wait Until Element Is Visible    ${b2c_txt_parcel_list_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_title_parcel_list}=    Get Text    ${b2c_txt_parcel_list_booking_detail_page}
-    ${actaul_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
+    ${actual_parcel_status}=    Get Text    ${b2c_txt_parcel_status_booking_detail_page}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
     Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
-    Should Be Equal    ${parcel_status}    ${actaul_parcel_status}
+    Should Be Equal    ${parcel_status}    ${actual_parcel_status}
     #Sender Heart
     IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
@@ -514,12 +514,12 @@ Click Print Label On Popup
 
 Verify Date And Time With Time Distortion
     [Arguments]    ${locator}    ${booking_time}
-    ${actaul_booking_time}=    Get Text    ${locator}
+    ${actual_booking_time}=    Get Text    ${locator}
     ${match_found}=    Set Variable    False
     FOR    ${time}    IN     @{booking_time}
-        ${time_convert}    Convert Date    ${actaul_booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
-        Should Be Equal    ${actaul_booking_time}   ${time_convert}
-        ${isequal}=    Run Keyword And Return Status    Should Be Equal    ${time}    ${actaul_booking_time}
+        ${time_convert}    Convert Date    ${actual_booking_time}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
+        Should Be Equal    ${actual_booking_time}   ${time_convert}
+        ${isequal}=    Run Keyword And Return Status    Should Be Equal    ${time}    ${actual_booking_time}
         Run Keyword IF  '${isequal}' == 'True'    Run Keywords    Set Suite Variable    ${match_found}    True
         ...    AND    Exit For Loop
     END
@@ -592,71 +592,71 @@ Click Edit Data
     common.Click When Ready    ${btn_edit}
 
 Verify Can Edit Data Sender
-    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_phone}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_name}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_address}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_sender_phone}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_sender_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_sender_address}    timeout=${DEFAULT_TIMEOUT}
     Mouse Over    ${b2c_txtbox_sender_postcode_edit}
-    Wait Until Element Is Visible    ${b2c_btn_cleal_sender_postcode}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_sender_postcode}    timeout=${DEFAULT_TIMEOUT}
 
 Edit Phone Sender
     [Arguments]    ${input_phone_sender}
-    common.Click When Ready    ${b2c_btn_cleal_sender_phone}
+    common.Click When Ready    ${b2c_btn_clear_sender_phone}
     Input Text    ${txtbox_phone_sender}    ${input_phone_sender}
 
 Edit Name Sender
     [Arguments]    ${input_name_sender}
-    common.Click When Ready    ${b2c_btn_cleal_sender_name}
+    common.Click When Ready    ${b2c_btn_clear_sender_name}
     Input Text    ${txtbox_name_sender}    ${input_name_sender}
 
 Edit Address Sender
     [Arguments]    ${input_address_sender}
-    common.Click When Ready    ${b2c_btn_cleal_sender_address}
+    common.Click When Ready    ${b2c_btn_clear_sender_address}
     Input Text    ${txtbox_address_sender}    ${input_address_sender}
 
 Edit Postcode Sender
     [Arguments]    ${input_postcode_sender}
     Mouse Over    ${b2c_txtbox_sender_postcode_edit}
-    common.Click When Ready    ${b2c_btn_cleal_sender_postcode}
+    common.Click When Ready    ${b2c_btn_clear_sender_postcode}
     Input Text    ${txtbox_postcode_sender}    ${input_postcode_sender}
 
 Verify Can Edit Data Receiver
-    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_phone}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_name}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_address}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_receiver_phone}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_receiver_name}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_receiver_address}    timeout=${DEFAULT_TIMEOUT}
     Mouse Over    ${b2c_txtbox_receiver_postcode_edit}
-    Wait Until Element Is Visible    ${b2c_btn_cleal_receiver_postcode}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Visible    ${b2c_btn_clear_receiver_postcode}    timeout=${DEFAULT_TIMEOUT}
 
 Edit Phone Receiver
     [Arguments]    ${input_phone_receiver}
-    common.Click When Ready    ${b2c_btn_cleal_receiver_phone}
+    common.Click When Ready    ${b2c_btn_clear_receiver_phone}
     common.Input When Ready    ${txtbox_phone_receiver}    ${input_phone_receiver}
 
 Edit Name Receiver
     [Arguments]    ${input_name_receiver}
-    common.Click When Ready    ${b2c_btn_cleal_receiver_name}
+    common.Click When Ready    ${b2c_btn_clear_receiver_name}
     common.Input When Ready    ${txtbox_name_receiver}    ${input_name_receiver}
 
 Edit Address Receiver
     [Arguments]    ${input_address_receiver}
-    common.Click When Ready    ${b2c_btn_cleal_receiver_address}
+    common.Click When Ready    ${b2c_btn_clear_receiver_address}
     common.Input When Ready    ${txtbox_address_receiver}    ${input_address_receiver}
 
 Edit Postcode Receiver
     [Arguments]    ${input_postcode_receiver}
     Mouse Over    ${b2c_txtbox_receiver_postcode_edit}
-    common.Click When Ready    ${b2c_btn_cleal_receiver_postcode}
+    common.Click When Ready    ${b2c_btn_clear_receiver_postcode}
     common.Input When Ready    ${txtbox_postcode_receiver}    ${input_postcode_receiver}
 
 Verify Can Edit Data Parcel
     ${insure_amount}=    Replace String    ${txtbox_insure_amount}    {value}    ${Booking['parcel_detail_insure_amount']}
     Element Should Be Enabled    ${b2c_btn_increase_cod_value}
     Element Should Be Enabled   ${b2c_btn_increase_insure_value}
-    Element Should Be Enabled    ${b2c_btn_cleal_parcel_remark_postcode}
+    Element Should Be Enabled    ${b2c_btn_clear_parcel_remark_postcode}
 
 Edit Parcel Remark
     [Arguments]    ${value}
     ${txtbox_parcel_remark}=    Replace String    ${txtbox_parcel_remark}    {value}    ${Booking['parcel_detail_remark']}
-    common.Click When Ready    ${b2c_btn_cleal_parcel_remark_postcode}
+    common.Click When Ready    ${b2c_btn_clear_parcel_remark_postcode}
     common.Input When Ready    ${txtbox_parcel_remark}    ${value}
 
 Edit Insurance

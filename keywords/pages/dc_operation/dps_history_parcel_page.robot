@@ -72,7 +72,7 @@ Filter Data By Parcel Number
     FOR    ${i}    IN RANGE    0    5
         Select Filter Button
         Is Value Present In Parcel Textbox
-        common.Input When Ready    ${dps_txtbox_fitler_parcel_number_history_parcel_page}    ${parcel_number}
+        common.Input When Ready    ${dps_txtbox_filter_parcel_number_history_parcel_page}    ${parcel_number}
         Sleep    3s
         Click Search Button On Filter
         Select Filter Button
@@ -81,8 +81,8 @@ Filter Data By Parcel Number
     END
 
 Is Value Present In Parcel Textbox
-    ${actual_txtbox_fitler_parcel_number}=    Get Value    ${dps_txtbox_fitler_parcel_number_history_parcel_page}
-    ${is_not_empty}=    Run Keyword And Return Status    Should Not Be Empty    ${actual_txtbox_fitler_parcel_number}
+    ${actual_txtbox_filter_parcel_number}=    Get Value    ${dps_txtbox_filter_parcel_number_history_parcel_page}
+    ${is_not_empty}=    Run Keyword And Return Status    Should Not Be Empty    ${actual_txtbox_filter_parcel_number}
     Run Keyword If    '${is_not_empty}' == 'True'    common.Click When Ready    ${dps_btn_clear_parcel_number_history_parcel_page}
     
 Select Filter Button
@@ -236,46 +236,46 @@ Verify Data Parcel Details In Warehouse Details
     Should Be Equal    ${actual_txt_value_destination_warehouse}    ${destination_warehouse}
 
 Verify Title Sender In Warehouse Details
-    [Arguments]    ${sender_name}    ${sender_adderss}
+    [Arguments]    ${sender_name}    ${sender_address}
     ${dps_txt_title_sender_name}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${sender_name}
-    ${dps_txt_title_sender_address}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${sender_adderss}
+    ${dps_txt_title_sender_address}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${sender_address}
     ${actual_txt_title_sender_name}=    Get Text    ${dps_txt_title_sender_name}
     ${actual_txt_title_sender_address}=    Get Text    ${dps_txt_title_sender_address}
     Should Be Equal    ${actual_txt_title_sender_name}    ${sender_name}
-    Should Be Equal    ${actual_txt_title_sender_address}    ${sender_adderss}
+    Should Be Equal    ${actual_txt_title_sender_address}    ${sender_address}
 
 Verify Data Sender In Warehouse Details
-    [Arguments]    ${sender_name}    ${sender_phone}    ${sender_adderss}
+    [Arguments]    ${sender_name}    ${sender_phone}    ${sender_address}
     ${dps_txt_value_sender_name}=    Replace String    ${dps_txt_value_sender_history_parcel_page}    {value}    ${sender_name}
     ${dps_txt_value_sender_phone}=    Replace String    ${dps_txt_value_sender_history_parcel_page}    {value}    ${sender_phone}
-    ${dps_txt_value_sender_address}=    Replace String    ${dps_txt_value_sender_address_history_parcel_page}    {value}    ${sender_adderss}
+    ${dps_txt_value_sender_address}=    Replace String    ${dps_txt_value_sender_address_history_parcel_page}    {value}    ${sender_address}
     ${actual_txt_value_sender_name}=    Get Text    ${dps_txt_value_sender_name}
     ${actual_txt_value_sender_phone}=    Get Text    ${dps_txt_value_sender_phone}
     ${actual_txt_value_sender_address}=    Get Text    ${dps_txt_value_sender_address}
     Should Be Equal    ${actual_txt_value_sender_name}    ${sender_name}
     Should Be Equal    ${actual_txt_value_sender_phone}    ${sender_phone}
-    Should Be Equal    ${actual_txt_value_sender_address}    ${sender_adderss}
+    Should Be Equal    ${actual_txt_value_sender_address}    ${sender_address}
 
 Verify Title Receiver In Warehouse Details
-    [Arguments]    ${receiver_name}    ${receiver_adderss}
+    [Arguments]    ${receiver_name}    ${receiver_address}
     ${dps_txt_title_receiver_name}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${receiver_name}
-    ${dps_txt_title_receiver_address}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${receiver_adderss}
+    ${dps_txt_title_receiver_address}=    Replace String    ${dps_txt_title_parcel_detail_history_parcel_page}    {value}    ${receiver_address}
     ${actual_txt_title_receiver_name}=    Get Text    ${dps_txt_title_receiver_name}
     ${actual_txt_title_receiver_address}=    Get Text    ${dps_txt_title_receiver_address}
     Should Be Equal    ${actual_txt_title_receiver_name}    ${receiver_name}
-    Should Be Equal    ${actual_txt_title_receiver_address}    ${receiver_adderss}
+    Should Be Equal    ${actual_txt_title_receiver_address}    ${receiver_address}
 
 Verify Data Receiver In Warehouse Details
-    [Arguments]    ${receiver_name}    ${receiver_phone}    ${receiver_adderss}
+    [Arguments]    ${receiver_name}    ${receiver_phone}    ${receiver_address}
     ${dps_txt_value_receiver_name}=    Replace String    ${dps_txt_value_receiver_history_parcel_page}    {value}    ${receiver_name}
     ${dps_txt_value_receiver_phone}=    Replace String    ${dps_txt_value_receiver_history_parcel_page}    {value}    ${receiver_phone}
-    ${dps_txt_value_receiver_address}=    Replace String    ${dps_txt_value_receiver_address_history_parcel_page}    {value}    ${receiver_adderss}
+    ${dps_txt_value_receiver_address}=    Replace String    ${dps_txt_value_receiver_address_history_parcel_page}    {value}    ${receiver_address}
     ${actual_txt_value_receiver_name}=    Get Text    ${dps_txt_value_receiver_name}
     ${actual_txt_value_receiver_phone}=    Get Text    ${dps_txt_value_receiver_phone}
     ${actual_txt_value_receiver_address}=    Get Text    ${dps_txt_value_receiver_address}
     Should Be Equal    ${actual_txt_value_receiver_name}    ${receiver_name}
     Should Be Equal    ${actual_txt_value_receiver_phone}    ${receiver_phone}
-    Should Be Equal    ${actual_txt_value_receiver_address}    ${receiver_adderss}
+    Should Be Equal    ${actual_txt_value_receiver_address}    ${receiver_address}
 
 Click Reprint Label Dropdown
     [Arguments]    ${title}

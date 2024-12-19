@@ -263,7 +263,7 @@ Select Pickup Parcel Time
     ${b2c_cbo_time_pickup}=    Replace String    ${b2c_cbo_time_pickup}    {value}    ${time}
     common.Click When Ready    ${b2c_cbo_time_pickup}
 
-Delete The Lastest Parcel Pickup Schedule
+Delete The Latest Parcel Pickup Schedule
     [Arguments]    ${current_date}    ${current_time}
     ${btn_delete_car_round}=    Replace String    ${b2c_btn_delete_car_round_car_pickup_page}    {date}    ${current_date}
     ${btn_delete_car_round}=    Replace String    ${btn_delete_car_round}    {time}    ${current_time}
@@ -278,7 +278,7 @@ Delete The Lastest Parcel Pickup Schedule
     Click Element    ${b2c_btn_confirm_in_asking_to_close_popup}
     Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
-Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
+Go To Call Car Pickup Menu And Delete The Latest Parcel Pickup Schedule
     [Arguments]    ${tomorrow_date}    ${current_time}
     IF    '${card_is_visible}' == 'True'
         ${b2c_card_delete_pickup_parcel}=    Replace String    ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    {value}    ${call_car_pick_up.car_round_name['special']} ${tomorrow_date} ${current_time}
@@ -298,7 +298,7 @@ Go To Call Car Pickup Menu And Delete The Lastest Parcel Pickup Schedule
             Run Keyword If    '${status}' == 'True' and '${visible_card}' == 'True'    Exit For Loop
             ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
         END
-        Delete The Lastest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
+        Delete The Latest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
     END 
 
 Verify Added New Parcel Pickup

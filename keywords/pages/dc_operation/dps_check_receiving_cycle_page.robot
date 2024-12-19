@@ -136,11 +136,11 @@ Verify Warehouse Confirm List Tab
     Register Keyword To Run On Failure    Capture Page Screenshot
 
 Click Pencil Icon
-    [Arguments]    ${bookig_id}    ${title}    ${tab}    ${company_name}    ${address}    ${sub_district}    ${district}    ${province}    ${postcode}
+    [Arguments]    ${booking_id}    ${title}    ${tab}    ${company_name}    ${address}    ${sub_district}    ${district}    ${province}    ${postcode}
     ...    ${receiving_time}    ${receiving_type}    ${number_of_parcel}    ${today}    ${status}
     ${button_filter}=    Replace String    ${dps_btn_filter_parcel_pickup_details}    {value}    ${dc_operation['button_filter']}
     ${button_search}=    Replace String    ${dps_btn_search_parcel_pickup}    {value}    ${dc_operation['button_search']}
-    ${booking_ID}=    Replace String    ${dps_txt_booking_id_parcel_pickup_detail}    {value}    ${bookig_id}
+    ${booking_ID}=    Replace String    ${dps_txt_booking_id_parcel_pickup_detail}    {value}    ${booking_id}
     Register Keyword To Run On Failure    NOTHING
 
     Set Tomorrow Date
