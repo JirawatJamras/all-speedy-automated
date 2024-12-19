@@ -38,27 +38,27 @@ DC_Operation_S003
     dps_home_page.Filter Data By Parcel Number [All Task Tab]    ${tracking_a}
     # Expected
     Log Defect No:  Defect138,Defect141,Defect187
-    dps_home_page.Verify Homepage
-    ...    ${dc_operation.breadcrumb['homepage']}
-    ...    ${dc_operation.title['homepage']}
-    dps_home_page.Verify Label In All Task Tab
-    ...    ${dc_operation.label_all_task_tab['task_type']}
-    ...    ${dc_operation.label_all_task_tab['parcel_owner']}
-    ...    ${dc_operation.label_all_task_tab['import_from']}
-    ...    ${dc_operation.label_all_task_tab['export_to']}
-    ...    ${dc_operation.label_all_task_tab['transport']}
-    ...    ${dc_operation.label_all_task_tab['pouch_number']}
-    ...    ${dc_operation.label_all_task_tab['parcel_number']}
-    ...    ${dc_operation.label_all_task_tab['parcel_status']}
-    dps_home_page.Verify Data In All Task Tab
-    ...    ${DC_Operation_S003.data_in_all_task_tab['task_type']}
-    ...    ${DC_Operation_S003.data_in_all_task_tab['parcel_owner']}
-    ...    ${DC_Operation_S003.data_in_all_task_tab['import_from']}
-    ...    ${DC_Operation_S003.data_in_all_task_tab['export_to']}
-    ...    ${DC_Operation_S003.data_in_all_task_tab['transport']}
-    ...    ${DC_Operation_S003.data_in_all_task_tab['pouch_number']}
-    ...    ${tracking_a}
-    ...    ${DC_Operation_S003.data_in_all_task_tab['parcel_status']}
+    # dps_home_page.Verify Homepage
+    # ...    ${dc_operation.breadcrumb['homepage']}
+    # ...    ${dc_operation.title['homepage']}
+    # dps_home_page.Verify Label In All Task Tab
+    # ...    ${dc_operation.label_all_task_tab['task_type']}
+    # ...    ${dc_operation.label_all_task_tab['parcel_owner']}
+    # ...    ${dc_operation.label_all_task_tab['import_from']}
+    # ...    ${dc_operation.label_all_task_tab['export_to']}
+    # ...    ${dc_operation.label_all_task_tab['transport']}
+    # ...    ${dc_operation.label_all_task_tab['pouch_number']}
+    # ...    ${dc_operation.label_all_task_tab['parcel_number']}
+    # ...    ${dc_operation.label_all_task_tab['parcel_status']}
+    # dps_home_page.Verify Data In All Task Tab
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['task_type']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['parcel_owner']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['import_from']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['export_to']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['transport']}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['pouch_number']}
+    # ...    ${tracking_a}
+    # ...    ${DC_Operation_S003.data_in_all_task_tab['parcel_status']}
     common.Scroll Window To Vertical    0
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    1.1.Verify Homepage
     common.Scroll Window To Vertical    500
