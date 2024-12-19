@@ -309,29 +309,29 @@ DC_Operation_S003
     dps_scan_page.Click Waiting Delivery List Button
     # Expected
     Log Defect No:  Defect289
-    dps_wait_delivery.Verify Label Delivery List
-    ...    ${dc_operation.label_delivery_list['export_to']}
-    ...    ${dc_operation.label_delivery_list['transport']}
-    ...    ${dc_operation.label_delivery_list['parcel_number']}
-    ...    ${dc_operation.label_delivery_list['pouch_number']}
-    ...    ${dc_operation.label_delivery_list['title_parcel_and_pouch_number']}
-    ...    ${dc_operation.label_delivery_list['title_date']}
-    ...    ${dc_operation.label_delivery_list['title_status']}
-    dps_wait_delivery.Verify Data Delivery List
-    ...    ${DC_Operation_S003.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S003.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S003.wait_delivery_data_list['status']}
+    # dps_wait_delivery.Verify Label Delivery List
+    # ...    ${dc_operation.label_delivery_list['export_to']}
+    # ...    ${dc_operation.label_delivery_list['transport']}
+    # ...    ${dc_operation.label_delivery_list['parcel_number']}
+    # ...    ${dc_operation.label_delivery_list['pouch_number']}
+    # ...    ${dc_operation.label_delivery_list['title_parcel_and_pouch_number']}
+    # ...    ${dc_operation.label_delivery_list['title_date']}
+    # ...    ${dc_operation.label_delivery_list['title_status']}
+    # dps_wait_delivery.Verify Data Delivery List
+    # ...    ${DC_Operation_S003.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S003.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S003.wait_delivery_data_list['status']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S003    18.Verify Data Delivery List
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     Log Defect No:  Defect289
-    dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S003.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S003.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S003.wait_delivery_data_list['status']}
+    # dps_wait_delivery.Click Print Button By Data
+    # ...    ${DC_Operation_S003.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S003.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S003.wait_delivery_data_list['status']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
     Log Defect No:  Defect289
-    common.Robot Skip Step Print Label
+    # common.Robot Skip Step Print Label

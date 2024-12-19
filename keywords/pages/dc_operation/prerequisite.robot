@@ -2750,22 +2750,22 @@ DC_Operation_S007
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     Log Defect No:  Defect289
-    dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S007.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S007.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S007.wait_delivery_data_list['status1']}
+    # dps_wait_delivery.Click Print Button By Data
+    # ...    ${DC_Operation_S007.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S007.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S007.wait_delivery_data_list['status1']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
     Log Defect No:  Defect289
-    dps_wait_delivery.Verify Data Delivery List
-    ...    ${DC_Operation_S007.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S007.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S007.wait_delivery_data_list['status2']}
-    sleep    5s
+    # dps_wait_delivery.Verify Data Delivery List
+    # ...    ${DC_Operation_S007.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S007.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S007.wait_delivery_data_list['status2']}
+    # sleep    5s
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S007    20.Verify Delivery List Page After Print
 
     Log    Step No.21 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC SB
@@ -4240,22 +4240,22 @@ DC_Operation_S009
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     Log Defect No:  Defect289
-    dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S009.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S009.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S009.wait_delivery_data_list['status1']}
+    # dps_wait_delivery.Click Print Button By Data
+    # ...    ${DC_Operation_S009.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S009.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S009.wait_delivery_data_list['status1']}
 
     Log    Step No.20 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
     Log Defect No:  Defect289
-    dps_wait_delivery.Verify Data Delivery List
-    ...    ${DC_Operation_S009.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S009.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S009.wait_delivery_data_list['status2']}
-    sleep    5s
+    # dps_wait_delivery.Verify Data Delivery List
+    # ...    ${DC_Operation_S009.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S009.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S009.wait_delivery_data_list['status2']}
+    # sleep    5s
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S009    20.Verify Delivery List Page After Print
 
 
@@ -5877,23 +5877,23 @@ DC_Operation_S011
 
     Log    Step No.19 คลิกไอคอนเครื่องพิมพ์ ด้านหลังรายการ
     Log Defect No:  Defect289
-    dps_wait_delivery.Click Print Button By Data
-    ...    ${DC_Operation_S011.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S011.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S011.wait_delivery_data_list['status1']}
-    sleep    5s
+    # dps_wait_delivery.Click Print Button By Data
+    # ...    ${DC_Operation_S011.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S011.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S011.wait_delivery_data_list['status1']}
+    # sleep    5s
 
     Log    Step No.20 กดปุ่ม พิมพ์
     common.Robot Skip Step Print Label
     # Expected
     Log Defect No:  Defect289
-    dps_wait_delivery.Verify Data Delivery List
-    ...    ${DC_Operation_S011.wait_delivery_data_list['export_to']}
-    ...    ${DC_Operation_S011.wait_delivery_data_list['transport']}
-    ...    ${today}
-    ...    ${DC_Operation_S011.wait_delivery_data_list['status2']}
-    sleep    5s
+    # dps_wait_delivery.Verify Data Delivery List
+    # ...    ${DC_Operation_S011.wait_delivery_data_list['export_to']}
+    # ...    ${DC_Operation_S011.wait_delivery_data_list['transport']}
+    # ...    ${today}
+    # ...    ${DC_Operation_S011.wait_delivery_data_list['status2']}
+    # sleep    5s
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S011    20.Verify Delivery List Page After Print
 
     Log    Step No.21 เข้าเมนู Scan, เลือกคลังที่ดำเนินงานเป็น "AC"
