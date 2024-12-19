@@ -82,7 +82,8 @@ Verify Add Parcel Pickup
         IF    '${status}' == 'True'
             Set Suite Variable    ${card_is_visible}    True
             Exit For Loop
-        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        ELSE
+            common.Click When Ready    ${b2c_btn_next_page_pickup_round}
         END
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
