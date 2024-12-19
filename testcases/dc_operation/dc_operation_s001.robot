@@ -12,8 +12,8 @@ DC_Operation_S001
     [Documentation]    คลัง Dry ปฏิเสธรอบรถเข้ารับพัสดุที่บ้านลูกค้า (Key Account)
     [Tags]    DC_Operation    Dry_Rejected_Request_Pickup_Schedule    Regression    Defect043    Defect144    Defect150    Defect192    Defect207    Defect221
     Set Today
-    Log    Reset Cut Off Time To 17:00
-    dps_home_page.Reset Cut Off Time    17:00
+    Log    Reset Cut Off Time To 23:59    #เพื่อที่จะสามารถรันโรบอทได้หลัง 17:00
+    dps_home_page.Reset Cut Off Time    23:59
 
     Log    Step No.1 เข้า URL All Speedy
     common.Open URL   ${B2C_URL}

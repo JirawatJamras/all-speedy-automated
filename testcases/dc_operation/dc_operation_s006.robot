@@ -17,5 +17,5 @@ DC_Operation_S006
     Log    Prerequisite
     prerequisite.DC_Operation_S002
 
-    Log    S006
+    Log    DC_Operation_S006
     prerequisite.DC_Operation_S006
