@@ -269,7 +269,7 @@ favorite:
     text_name: 'ชื่อ *'
     text_address: 'รายละเอียดที่อยู่ *'
     text_postcode: 'แขวงตำบล/ อำเภอ/ จังหวัด/ รหัสไปรษณีย์ *'
-  label_reciever_favorite:
+  label_receiver_favorite:
     text_data_receiver: ข้อมูลผู้รับพัสดุ
     text_favorite_name: 'ชื่อรายการโปรด *'
     text_phone: 'เบอร์โทรศัพท์ *'

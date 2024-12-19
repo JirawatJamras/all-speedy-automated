@@ -7,7 +7,7 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #head
                   ...    AND    dps_home_page.Reset Cut Off Time    23:59 
 Test Teardown     Run Keywords   Go To Call Car Pickup Menu And Delete The Latest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
-                  ...    AND    dps_home_page.Reset Cut Off Time    17:00 
+                  ...    AND    dps_home_page.Reset Cut Off Time    17:00
 
 *** Test Cases ***
 Booking_S018

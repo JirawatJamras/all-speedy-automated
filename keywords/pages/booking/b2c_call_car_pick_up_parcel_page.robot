@@ -71,7 +71,7 @@ Verify Add Parcel Pickup
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    False
-    ${card_is_visible}=    Set Variable    True
+    ${card_is_visible}=    Set Variable    False
     ${today_pattern}    Set Date Pattern    ${today}
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
     Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
@@ -89,8 +89,8 @@ Verify Add Parcel Pickup
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Exit For Loop
     END
-    Scroll Element Into View    ${actual_card}
     Run Keyword If    '${card_is_visible}' == 'False'    Fail    Cannot find card
+    Scroll Element Into View    ${actual_card}
 
 Search Parcel Pickup By Date
     [Arguments]    ${start_date}    ${end_date}
@@ -340,6 +340,7 @@ Verify Added New Parcel Pickup
         Run Keyword If    '${status_button}' == 'False'    Exit For Loop
     END
     Run Keyword If    '${card_is_visible}' == 'False'    Fail    Cannot find card
+    Scroll Element Into View    ${actual_card}
 
 Get Cut Off Date From Value
     [Arguments]    ${date}
@@ -373,7 +374,7 @@ Get Normal Parcel Pickup Date
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
-        ...    AND    ${card_is_visible}=    Set Variable    Flase
+        ...    AND    ${card_is_visible}=    Set Variable    False
     END
     ${txt_normal_parcel_pickup_schedule}=    Replace String    ${txt_normal_parcel_pickup_schedule}    {value}    ${call_car_pick_up.car_round_name['normal']}
     ${titleName}=    Get Text    ${txt_normal_parcel_pickup_schedule} 
@@ -421,5 +422,5 @@ Verify Car Pickup Schedule Card
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Run Keywords    Fail    Cannot find card
-        ...    AND    ${card_is_visible}=    Set Variable    Flase
+        ...    AND    ${card_is_visible}=    Set Variable    False
     END
