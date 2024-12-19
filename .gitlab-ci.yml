@@ -1,0 +1,180 @@
+stages:
+  - test
+
+variables:
+  ENV: uat  # Set the environment to UAT
+  FRONT_JOB_URL: "http://gitlab.vasup.co.th/gosoft/allspeedy/-/jobs/"
+  REPORT_DIRECTORY: "/artifacts/browse/results"
+  SQUAD_NAME: "All Speedy"
+  LINE_STICKER_ID: 154
+  JOB_STATUS: "FAILURE"
+  ICON_STATUS: "&#x274C;"
+  START_DATE_TIME: 0
+  END_DATE_TIME: 0
+  DURATION_MS: 0
+  PASS: 0
+  FAIL: 0
+  TOTAL_RUN: 0
+  STABILITY_PERCENTAGE: 0
+  LINE_NOTIFY_URL: "https://api.line.me/v2/bot/message/push"
+  ACCESS_TOKEN: "Authorization: Bearer uZfRDvlL1KBscZkCMhta0pDoz/tQSnLSPIsHOjwf7yoTjtNdMxZZQVxRLz3h2o0CQ7+NoV7vc3uHLNbLCPd/ym5YK3SfJHKj6IJH/4WFPBOCTnl1uAhk6DHbHg1mYKtsdC1egMCZ9G5+bNAro5VnXgdB04t89/1O/w1cDnyilFU"
+  ACCESS_TOKEN_LINE: "Authorization: Bearer 4iZaZ9OcuOwlVgceKyr7OAQ2zFq0QQn2RF1RZ5kpbYv"
+  #USER_ID: "C287d0c7c672c0e086cb6447f5c015756"
+  USER_ID: "U84bbc42c619bbe8c7fa840f92b12d613"
+  Content_Type: "Content-Type: application/json"
+  WEBHOOK_URL: "xxxxxx"
+run-tests:
+  stage: test
+  allow_failure: true
+  tags:
+    - windows
+    - runner-for-all  # Updated tags for Windows environment and specific runner
+  variables:
+    REPORT_URL: $FRONT_JOB_URL$CI_JOB_ID$REPORT_DIRECTORY
+  before_script:
+    - echo "Installing dependencies."
+    - pip install -r requirement.txt
+    - pip install selenium --upgrade
+    - mkdir -p report
+    - mkdir -p results
+  script:
+    - echo "Running tests..."
+    #- pabot --processes 10 --outputdir results -v ENV:uat -i UAT ./testcases/
+    - cd report
+    - robot -v ENV:uat -i Regression  ../testcases/
+  after_script:
+    - $CURRENT_DATE = Get-Date
+    # - $END_TIME  $(date +%s)
+    # - $END_DATE_TIME = $(date -u +"%Y-%m-%d %H:%M:%S")
+    # - $START_TIME = $(sed -n '1p' time_stamp.txt)
+    # - echo "$END_TIME $END_DATE_TIME $START_TIME"
+    - cd report
+    - |
+      $XML = [xml](Get-Content -Path "output.xml")
+      $PASS = $XML.robot.statistics.total.stat.pass
+      $FAIL = $XML.robot.statistics.total.stat.fail
+      $SKIP = $XML.robot.statistics.total.stat.skip
+      $START_RAW = $XML.robot.suite.status.start
+      $START = Get-Date $START_RAW
+      $DURATION_RAW = (New-TimeSpan -Start $START -End $CURRENT_DATE).TotalSeconds
+      $START = (Get-Date $START_RAW -Format "dd-MMM-yyyy THH:mm:ss")
+      $DURATION_TOTAL_SECONDS = [double]$DURATION_RAW
+      $HOURS = [math]::Floor($DURATION_TOTAL_SECONDS / 3600)
+      $MINUTES = [math]::Floor(($DURATION_TOTAL_SECONDS % 3600) / 60)
+      $SECONDS = [math]::Floor($DURATION_TOTAL_SECONDS % 60)
+      Write-Output "Pass: $PASS, Fail: $FAIL, Skip: $SKIP"
+      Write-Output "Start Time: $START"
+      Write-Output "Current Time: $CURRENT_DATE"
+      Write-Output "DIFFERENCE SECONDS: $DIFFERENCE_SECONDS"
+    - |
+      $PASS = [int]$PASS
+      $FAIL = [int]$FAIL
+      $SKIP = [int]$SKIP
+      $TOTAL_RUN = $PASS + $FAIL + $SKIP
+    - |
+        if ($FAIL -eq 0) {
+          $LINE_STICKER_ID = 52002734
+          $JOB_STATUS = "SUCCESS"
+        } else {
+          $LINE_STICKER_ID = 52002751
+          $JOB_STATUS = "FAILURE"
+        }
+
+    - echo "SEND LINE_NOTIFY"
+    - |  
+      $jsonPayload = @{
+          to = "$USER_ID"
+          messages = @(
+              @{
+                  type = "text"
+                  text = "Gitlab Vasup`nEnvironment  $ENV`nAll Speedy  Build $CI_JOB_ID`nStart Time  $START`nDuration  $HOURS Hours, $MINUTES Minutes, $SECONDS Seconds`nTotal $TOTAL_RUN Scenarios ( Passed $PASS | Failed $FAIL | Skipped $SKIP ) `nReport  $REPORT_URL"
+              },
+              @{
+                  type= "sticker"
+                  packageId= "11537"
+                  stickerId= "$LINE_STICKER_ID"
+              }
+          )
+      } | ConvertTo-Json -Depth 10 -Compress
+    - curl -X POST "${LINE_NOTIFY_URL}" 
+      -H "${Content_Type}" 
+      -H "${ACCESS_TOKEN}" 
+      -d "$($jsonPayload)"
+
+    - echo "SEND LINE_NOTIFY OLD"
+    - curl -X POST https://notify-api.line.me/api/notify
+      -H "${ACCESS_TOKEN_LINE}"
+      -F "message=Gitlab Vasup`nAll Speedy  Build $CI_JOB_ID`nEnvironment  $ENV`nStart Time  $START`nDuration  $HOURS Hours, $MINUTES Minutes, $SECONDS Seconds`nTotal $TOTAL_RUN Scenarios ( Passed $PASS | Failed $FAIL | Skipped $SKIP ) `nReport  $REPORT_URL"
+      -F "stickerPackageId=2"
+      -F "stickerId=144"
+
+
+    # - echo "Send the webhook message using curl"
+    # - |
+    #   $payload = @{
+    #     type = "message"
+    #     attachments = @(
+    #       @{
+    #         contentType = "application/vnd.microsoft.card.adaptive"
+    #         content = @{
+    #           schema = "http://adaptivecards.io/schemas/adaptive-card.json"
+    #           type = "AdaptiveCard"
+    #           version = "1.4"
+    #           body = @(
+    #             @{
+    #               type = "TextBlock"
+    #               text = "All Speedy  Build $CI_JOB_ID"
+    #               weight = "Bolder"
+    #               size = "Medium"
+    #             },
+    #             @{
+    #               type = "TextBlock"
+    #               text = "Branch Main"
+    #               wrap = $true
+    #             },
+    #             @{
+    #               type = "TextBlock"
+    #               text = "Environment ${ENV}"
+    #               wrap = $true
+    #             },
+    #             @{
+    #               type = "TextBlock"
+    #               text = "Tag UAT"
+    #               wrap = $true
+    #             },
+    #             @{
+    #               type = "TextBlock"
+    #               text = "Start Time $START"
+    #               wrap = $true
+    #             },
+    #             @{
+    #               type = "TextBlock"
+    #               text = "Duration $HOURS Hours, $MINUTES Minutes, $SECONDS Seconds"
+    #               wrap = $true
+    #             },
+    #             @{
+    #               type = "TextBlock"
+    #               text = "Total $TOTAL_RUN Scenarios (Passed $PASS|Failed $FAIL|SKIP $SKIP)"
+    #               wrap = $true
+    #             },
+    #             @{
+    #               type = "TextBlock"
+    #               text = "Report $REPORT_URL"
+    #               wrap = $true
+    #             }
+    #           )
+    #         }
+    #       }
+    #     )
+    #   } | ConvertTo-Json -Depth 10 -Compress
+    # - curl -X POST  ${WEBHOOK_URL}
+    #     -H  "${Content_Type}"
+    #     -d "$($payload)"
+
+
+  artifacts:
+    when: always
+    paths:
+      - report
+      - results
+    expire_in: 1 day
