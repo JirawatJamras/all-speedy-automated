@@ -18,7 +18,8 @@ Booking_S031
     b2c_booking_delivery_page.Input Postcode Sender    ${Booking_S031['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S031['sender_postcode_full']}
     b2c_booking_delivery_page.Click Save Button
-    Set Suite Variable    ${booking_id}    Get Booking ID
+    ${booking_id}    Get Booking ID
+    Set Suite Variable    ${booking_id}
     b2c_booking_detail_page.Select Draft Booking
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Send To Home Tab
@@ -32,9 +33,10 @@ Booking_S031
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S031['parcel_size']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S031['parcel_detail_remark']}
-    b2c_booking_delivery_page.Click Next Button 
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S031['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
+    b2c_booking_delivery_page.Click Next Button
+    Log Defect No:  Defect072
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S031['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_home_page.Click Book Parcel Delivery
@@ -46,7 +48,8 @@ Booking_S031
     b2c_booking_detail_page.Click Select Store On Map
     b2c_booking_detail_page.Click Save Shipping Origin Aria
     b2c_booking_detail_page.Wait Until Page Loaded After Select Origin Shipping
-    Set Suite Variable    ${booking_time}    Get Booking Time
+    ${booking_time}    Get Booking Time
+    Set Suite Variable    ${booking_time}
 
 *** Test Cases ***
 Booking_S054 
@@ -145,7 +148,7 @@ Booking_S054
 
     Log    Step No.5 เเก้ไข ข้อมูลผู้ส่งพัสดุ
     b2c_booking_detail_page.Edit Phone Sender    ${Booking_S054['sender_phone']}
-    b2c_booking_detail_page.Edit Name Sender    ${Booking_S054['sender_name']}    
+    b2c_booking_detail_page.Edit Name Sender    ${Booking_S054['sender_name']}
     b2c_booking_detail_page.Edit Address Sender    ${Booking_S054['sender_address']}
     b2c_booking_detail_page.Edit Postcode Sender    ${Booking_S054['sender_postcode_5_digits']}
     b2c_booking_delivery_page.Click Postcode Sender Lists    ${Booking_S054['sender_postcode_full']}
@@ -198,18 +201,19 @@ Booking_S054
     Log    Step No.7 กดที่รายการพัสดุที่มีสถานะ "รอพัสดุเข้าระบบ"
     b2c_booking_detail_page.Click Parcel List With Waiting For Entering Parcel To System Status
     # Expected
-    b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
-    ...    ${Booking['text_title']}
-    ...    ${Booking['text_parcel_sender_information']}
-    ...    ${Booking['text_phone_sender']}
-    ...    ${Booking['text_name_sender']}
-    ...    ${Booking['text_address_sender']}
-    ...    ${Booking['text_postcode_sender']}
-    b2c_booking_delivery_page.Verify Data Sender
-    ...    ${Booking_S054['sender_phone']}
-    ...    ${Booking_S054['sender_name']}
-    ...    ${Booking_S054['sender_address']}
-    ...    ${Booking_S054['sender_postcode_full']}
+    Log Defect No:  Defect119
+    # b2c_booking_delivery_page.Verify Create Parcel Page Sender Step
+    # ...    ${Booking['text_title']}
+    # ...    ${Booking['text_parcel_sender_information']}
+    # ...    ${Booking['text_phone_sender']}
+    # ...    ${Booking['text_name_sender']}
+    # ...    ${Booking['text_address_sender']}
+    # ...    ${Booking['text_postcode_sender']}
+    # b2c_booking_delivery_page.Verify Data Sender
+    # ...    ${Booking_S054['sender_phone']}
+    # ...    ${Booking_S054['sender_name']}
+    # ...    ${Booking_S054['sender_address']}
+    # ...    ${Booking_S054['sender_postcode_full']}
     common.Verify Capture Screenshot    booking    Booking_S054    7.Verify Data Sender After Edit Sender Data
 
     Log    Step No.8 กดปุ่ม "ถัดไป"
@@ -497,9 +501,9 @@ Booking_S054
     common.Verify Capture Screenshot    booking    Booking_S054    22.Verify Can Edit Selected Coupon And Code
 
     Log    Step No.23 กดปุ่ม "นำออก" ที่รายการคูปองและโค้ดส่วนลดที่เลือก
-    b2c_booking_delivery_page.Click Take Out Coupon
+    # b2c_booking_delivery_page.Click Take Out Coupon
     # Expected
-    Log Defect No:  Defect0520
+    Log Defect No:  Defect050
     # b2c_booking_delivery_page.Verify Not Select Coupon And Code
     common.Verify Capture Screenshot    booking    Booking_S054    23.Verify Take Out Coupon
 

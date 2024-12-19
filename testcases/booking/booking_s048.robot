@@ -57,8 +57,7 @@ Booking_S048
     b2c_call_car_pick_up_parcel_page.Select Parcel Type    ${Booking_S048.add_new_pickup['parcel_type']}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Date    ${tomorrow}
     b2c_call_car_pick_up_parcel_page.Select Parcel Pickup Time    ${Booking_S048.add_new_pickup['input']}
-
-@@ -59,6 +60,7 @@ Booking_S048
+    # Expected
     common.Verify Capture Screenshot    booking    Booking_S048    3.Verify Input Parcel Pickup Schedule In Add Popup
 
     Log    Step No.4 กดปุ่ม "บันทึก"
