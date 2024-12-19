@@ -47,6 +47,7 @@ Booking_S018
 
     Log    Step No.4 กดปุ่ม "บันทึก"
     Set Today
+    Set Suite Variable    ${card_is_visible}    False
     b2c_call_car_pick_up_parcel_page.Click Save Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected

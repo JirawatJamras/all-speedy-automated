@@ -54,7 +54,6 @@ Select Send To 7-ELEVEN Store Tab
 
 Click General Parcel
     common.Click When Ready    ${parcel_type_dry_btn}
-    Wait Until Element Is Visible    ${close_noti_btn}   timeout=${DEFAULT_TIMEOUT}
 
 Click Temperature Controlled Parcel
     common.Click When Ready    ${parcel_type_chill_btn}
