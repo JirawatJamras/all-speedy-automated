@@ -200,7 +200,6 @@ DC_Operation_S002
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S002    17.2.Verify Booking Status After Cut Off Time
     b2c_booking_delivery_page.Select Booking With Booking ID    
     ...    ${booking_id}
-    ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     b2c_booking_detail_page.Verify Booking Detail Page After Import File
     ...    ${Booking['text_waiting_confirm_parcel_pickup']}
     ...    ${call_car_pick_up.text_parcel_id_start_with['dry']}
