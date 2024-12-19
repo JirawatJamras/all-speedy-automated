@@ -232,6 +232,7 @@ Booking_S024
     common.Verify Capture Screenshot    booking    Booking_S024    13.Verify Parcel Detail
 
     Log    Step No.14 ขั้นตอนรายละเอียดพัสดุ
+    Log Defect No:  New Defect : Defect295
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S024['parcel_size']}
     # Expected
     common.Verify Capture Screenshot    booking    Booking_S024    14.Verify Create Parcel Page After Input Parcel Detail Step

@@ -33,7 +33,7 @@ Booking_S022
     b2c_login_page.Click Log On Button
 
     Log    Prerequisite S018
-    Booking_S018
+    # Booking_S018
 
     Log    Step No.1 กดเมนู "จองการจัดส่งพัสดุ"
     b2c_home_page.Click Book Parcel Delivery
@@ -271,6 +271,7 @@ Booking_S022
     common.Verify Capture Screenshot    booking    Booking_S022    16.Verify Promotion
 
     Log    Step No.17 ขั้นตอน Promotion
+    Log Defect No:  New Defect : Defect295
     b2c_booking_delivery_page.Input Promotion    ${Booking_S022['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     # Expected
