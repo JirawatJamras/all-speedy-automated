@@ -71,6 +71,7 @@ Verify Add Parcel Pickup
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
     Register Keyword To Run On Failure    NOTHING
     ${status}=    Set Variable    False
+    ${card_is_visible}=    Set Variable    True
     ${today_pattern}    Set Date Pattern    ${today}
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
     Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
@@ -78,11 +79,17 @@ Verify Add Parcel Pickup
         Scroll Window To Vertical    0
         ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_card}
         Scroll Window To Vertical    1000
-        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
-        Run Keyword If    '${status}' == 'True'    Exit For Loop
+        IF    '${status}' == 'True'
+            Set Suite Variable    ${card_is_visible}    True
+            Exit For Loop
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+        END
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'False'    Exit For Loop
     END
     Scroll Element Into View    ${actual_card}
+    Run Keyword If    '${card_is_visible}' == 'False'    Fail    Cannot find card
 
 Search Parcel Pickup By Date
     [Arguments]    ${start_date}    ${end_date}
@@ -324,16 +331,11 @@ Verify Added New Parcel Pickup
         IF    '${status}' == 'True'
             Set Suite Variable    ${card_is_visible}    True
             Exit For Loop
-        # Run Keyword If    '${status}' == 'True'    Exit For Loop
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
         END
         ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
         ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
         Run Keyword If    '${status_button}' == 'False'    Exit For Loop
-        # IF    '${status_button}' == 'False'    
-
-        #     Exit For Loop
-        # END
     END
     Run Keyword If    '${card_is_visible}' == 'False'    Fail    Cannot find card
 

@@ -2,7 +2,7 @@
 Resource          ../../resources/init_website.robot
 Resource          ../../resources/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
-                  ...    AND   Set Folder Result with date
+                  ...    AND   Set Folder Result With Date
 Test Teardown     Run Keywords    dps_home_page.Reset Cut Off Time    17:00
                   ...    AND    Close Browser
 
@@ -17,5 +17,5 @@ DC_Operation_S010
     Log    Prerequisite
     prerequisite.DC_Operation_S002
 
-    Log    S010
+    Log    DC_Operation_S010
     prerequisite.DC_Operation_S010
