@@ -3,7 +3,7 @@ Resource          ../../resources/init_website.robot
 Resource          ../../resources/import.robot
 
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome   #headlesschrome    #chrome
-                  ...    AND   Set Folder Result with date
+                  ...    AND   Set Folder Result With Date 
 Test Teardown     Run Keywords    Close Browser
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
 

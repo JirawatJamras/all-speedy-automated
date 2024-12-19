@@ -45,7 +45,7 @@ Scroll Window To Horizontal
     [Arguments]           ${value}
     Execute JavaScript    window.scrollTo(${value},0)
 
-Set Folder Result With Date
+Set Folder Result With Date 
     ${date_YYYY_MM_DD}   Get Current Date
     ${date_YYYY_MM_DD}   Convert Date  ${date_YYYY_MM_DD}       result_format=%Y-%m-%d
     ${FOlDER_RESULT}=    Set Variable    ../results/${date_YYYY_MM_DD}

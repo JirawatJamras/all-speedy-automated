@@ -2,8 +2,8 @@
 Resource          ../../resources/init_website.robot
 Resource          ../../resources/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
-                  ...    AND   Set Folder Result With Date
-Test Teardown     Run Keywords    dps_home_page.Reset Cut Off Time    17:00
+                  ...    AND   Set Folder Result With Date 
+Test Teardown     Run Keywords    dps_home_page.Reset Cut Off Time    17:00 
                   ...    AND    Close Browser
 
 *** Test Cases ***
