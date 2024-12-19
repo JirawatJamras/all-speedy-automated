@@ -211,7 +211,7 @@ Delete ID Number
 
 Check Used Tracking
     [Arguments]    ${ROW_NUMBER}    ${tracking_number}    ${parcel_status}
-    ${avalible_tracking}=    Set Variable    False
+    ${available_tracking}=    Set Variable    False
     ${status}=    Set Variable    False
 
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
@@ -258,7 +258,7 @@ Set Tracking Information from excel
     ${size_cm}    Get From List    ${tracking_info}    3
     ${size}    Get From List    ${tracking_info}    4
     ${courier}    Get From List    ${tracking_info}    5
-    ${origin_warehoues}    Get From List    ${tracking_info}    6
+    ${origin_warehouse}    Get From List    ${tracking_info}    6
     ${send_parcel_to}    Get From List    ${tracking_info}    7
     ${sender_name}    Get From List    ${tracking_info}    8
     ${sender_phone}    Get From List    ${tracking_info}    9
@@ -282,7 +282,7 @@ Set Tracking Information from excel
     Set Suite Variable    ${size_cm}
     Set Suite Variable    ${size}
     Set Suite Variable    ${courier}
-    Set Suite Variable    ${origin_warehoues}
+    Set Suite Variable    ${origin_warehouse}
     Set Suite Variable    ${send_parcel_to}
     Set Suite Variable    ${sender_name}
     Set Suite Variable    ${sender_phone}

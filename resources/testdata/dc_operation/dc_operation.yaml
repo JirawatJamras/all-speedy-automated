@@ -105,7 +105,7 @@ DC_Operation_S003:
     parcel_owner: Speedy
     parcel_size: 'กล่อง L'
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง    
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: Home
     transport: Flash
     status: รอขนส่งเข้ารับพัสดุ
@@ -231,7 +231,7 @@ DC_Operation_S004:
       pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
       parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง DC SB
     transport: CP All
     status: รอขนส่งเข้ารับพัสดุ
@@ -244,11 +244,11 @@ DC_Operation_S004:
   data_in_pouch_detail_scan_in_page:
     parcel_amount: '1'
     courier: CP All
-    origin_warehoues: DC BB
-    destination_warehourse: DC SB
+    origin_warehouse: DC BB
+    destination_warehouse: DC SB
     crossdock_warehouse: '-'
   data_in_parcel_in_pouch_scan_in_page:
-    destination_warehourse: DC SB
+    destination_warehouse: DC SB
     parcel_size: ซอง A4
     type: B2C
     parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
@@ -325,7 +325,7 @@ DC_Operation_S005:
     parcel_owner: Speedy
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอ Scan out ไปคลัง (DCSB)
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง DC SB
     transport: CP All
     date: ''
@@ -462,7 +462,7 @@ DC_Operation_S006:
       pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
       parcel_status: พัสดุรอ Scan out ไปคลัง DC SB
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง DC SB
     transport: CP All
     status: รอขนส่งเข้ารับพัสดุ
@@ -475,11 +475,11 @@ DC_Operation_S006:
   data_in_pouch_detail_scan_in_page:
     parcel_amount: '1'
     courier: CP All
-    origin_warehoues: DC BB
-    destination_warehourse: DC SB
+    origin_warehouse: DC BB
+    destination_warehouse: DC SB
     crossdock_warehouse: '-'
   data_in_parcel_in_pouch_scan_in_page:
-    destination_warehourse: DC SB
+    destination_warehouse: DC SB
     parcel_size: ซอง A4
     type: B2C
     parcel_status: พัสดุถึงคลังปลายทาง (DCSB)
@@ -553,7 +553,7 @@ DC_Operation_S007:
     parcel_owner: Speedy
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอ Scan out ไปคลัง (DC SB)
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง DC SB
     transport: CP All
     date: ''
@@ -706,7 +706,7 @@ DC_Operation_S008:
       pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
       parcel_status: พัสดุรอ Scan out ไปคลัง AC
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง AC
     transport: CP All
     status: รอขนส่งเข้ารับพัสดุ
@@ -729,11 +729,11 @@ DC_Operation_S008:
   data_in_pouch_detail_scan_in_page:
     parcel_amount: '1'
     courier: CP All
-    origin_warehoues: DC BB
-    destination_warehourse: RDC LP
+    origin_warehouse: DC BB
+    destination_warehouse: RDC LP
     crossdock_warehouse: AC
   data_in_parcel_in_pouch_scan_in_page:
-    destination_warehourse: RDC LP
+    destination_warehouse: RDC LP
     parcel_size: ซอง A4
     type: B2C
     parcel_status: พัสดุถึงคลังปลายทาง (RDCLP)
@@ -821,7 +821,7 @@ DC_Operation_S009:
     parcel_size: กล่อง XL
     parcel_status1: พัสดุรอ Scan out ไปคลัง (AC)
     parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง AC
     transport: CP All
     status1: รอขนส่งเข้ารับพัสดุ
@@ -984,7 +984,7 @@ DC_Operation_S010:
       pickup_place: 'บริษัท ไอดีซี พรีเมียร์ จำกัด'
       type: B2C
       parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง AC
     transport: CP All
     status: รอขนส่งเข้ารับพัสดุ
@@ -997,11 +997,11 @@ DC_Operation_S010:
   data_in_pouch_detail_scan_in_page:
     parcel_amount: '1'
     courier: CP All
-    origin_warehoues: DC BB
-    destination_warehourse: RDC LP
+    origin_warehouse: DC BB
+    destination_warehouse: RDC LP
     crossdock_warehouse: AC
   data_in_parcel_in_pouch_scan_in_page:
-    destination_warehourse: RDC LP
+    destination_warehouse: RDC LP
     parcel_size: ซอง A4
     type: B2C
     parcel_status: พัสดุถึงคลังปลายทาง (RDCLP)
@@ -1102,7 +1102,7 @@ DC_Operation_S011:
     parcel_size: กล่อง XL
     parcel_status: พัสดุรอ Scan out ไปคลัง (AC)
     parcel_status2: พัสดุรอ Scan out ไปคลัง (RDCLP)
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: คลัง AC
     transport: CP All
     status1: รอขนส่งเข้ารับพัสดุ
@@ -1231,7 +1231,7 @@ DC_Operation_S013:
     parcel_owner: Speedy
     parcel_size: กล่อง L
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: Home
     transport: Flash
     status: รอขนส่งเข้ารับพัสดุ
@@ -1282,7 +1282,7 @@ DC_Operation_S014:
     parcel_owner: Speedy
     parcel_size: กล่อง L
     parcel_status: พัสดุพร้อมให้พาร์ทเนอร์โลจิสติกนำส่ง
-  wait_derivery_data_list:
+  wait_delivery_data_list:
     export_to: Home
     transport: Flash
     status: รอขนส่งเข้ารับพัสดุ
@@ -1330,7 +1330,7 @@ DC_Operation_S016:
     value_parcel_size: '45'
     text_parcel_size: กล่อง S
     courier: CP All
-    destination_warehourse: DC SB
+    destination_warehouse: DC SB
   edit_courier_in_scan_in_tab:
     route: '-'
     zipcode: '11120 (กล่อง S)'
@@ -1340,7 +1340,7 @@ DC_Operation_S016:
     wh: 'DC BB - DC BB'
     wh_after_changing_warehouse: 'DC BB - DC SB'
     symbol: รูปวงกลม
-    symbol_after_changing_warehourse: รูปดาว
+    symbol_after_changing_warehouse: รูปดาว
 
 DC_Operation_S017:
   sender_name: คุณ i
@@ -1395,9 +1395,9 @@ DC_Operation_S017:
     status: 'On'
     status_off: 'Off'
   data_in_pouch_label:
-    destination_warehourse: RDC LP
+    destination_warehouse: RDC LP
     route: DC BB - AC - RDC LP
-    destination_warehourse_symbol: รูปนาฬิกาทราย
+    destination_warehouse_symbol: รูปนาฬิกาทราย
   data_in_pouch_detail:
     crossdock_warehouse: AC
     pouch_status: เปิด
@@ -1486,7 +1486,7 @@ DC_Operation_S026:
     name: ทดสอบพัสดุ Crossdock ส่งร้านไม่สร้าง Pouch
     phone: '0900987354'
     address: '01015 สาขา เวียงป่าเป้า เวียง เวียงป่าเป้า เชียงราย 57170'
-  pounch_number:
-    pounch_status: ปิด POUCH
-    pounch_number: '0'
-    pounch_id: P
+  pouch_number:
+    pouch_status: ปิด POUCH
+    pouch_number: '0'
+    pouch_id: P

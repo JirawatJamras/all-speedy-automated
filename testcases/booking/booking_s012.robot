@@ -379,7 +379,7 @@ Booking_S012
     ...    ${Booking.text_paper_size['size_a4']}
     ...    ${Booking.text_paper_size['size_a5']}
     ...    ${Booking.text_paper_size['size_8cm']}
-    ...    ${Booking.label['text_destination_deparment_code']}
+    ...    ${Booking.label['text_destination_department_code']}
     ...    ${Booking_S012['receiver_store_code_5_digits']}
     ...    ${Booking_S012['parcel_package_type']}
     ...    ${Booking_S012['parcel_size']}

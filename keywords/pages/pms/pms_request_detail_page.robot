@@ -84,8 +84,8 @@ Verify Request Detail Page With Status Waiting For Assign
 
     ${label_customer_type}=    Get Text    ${pms_txt_customer_type}
     ${input_customer_type}=    Get Value    ${pms_txtbox_customer_type}
-    ${label_company_titile}=    Get Text    ${pms_txt_company_titile_name}
-    ${input_company_titile}=    Get Value    ${pms_txtbox_company_title_name}
+    ${label_company_title}=    Get Text    ${pms_txt_company_title_name}
+    ${input_company_title}=    Get Value    ${pms_txtbox_company_title_name}
     ${label_company_name}=    Get Text    ${pms_txt_company_name}
     ${input_company_name}=    Get Value    ${pms_txtbox_company_name}
     ${label_company_id_number}=    Get Text    ${pms_txt_company_id_number}
@@ -108,13 +108,13 @@ Verify Request Detail Page With Status Waiting For Assign
     ${input_email}=    Get Value    ${pms_txtbox_customer_email}
     ${label_customer_phone}=    Get Text    ${pms_txt_customer_phone}
     ${input_customer_phone}=    Get Value    ${pms_txtbox_customer_phone}
-    ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
+    ${label_customer_phone_extra}=    Get Text    ${pms_txt_customer_phone_extra}
     ${input_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra} 
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
     ${label_remark}=    Get Text    ${pms_txt_remark}
 
     Should Be Equal As Strings    ${label_customer_type} ${input_customer_type}    ${rm['text_partner_type']} ${partner_types}
-    Should Be Equal As Strings    ${label_company_titile} ${input_company_titile}    ${rm['text_company_title_name']} ${company_title}
+    Should Be Equal As Strings    ${label_company_title} ${input_company_title}    ${rm['text_company_title_name']} ${company_title}
     Should Be Equal As Strings    ${label_company_name} ${input_company_name}    ${rm['text_company_name']} ${company_name}
     Should Be Equal As Strings    ${label_company_id_number} ${input_company_id_number}    ${rm['text_id_number']} ${JuristicID}
     Should Be Equal As Strings    ${label_mobile_company} ${input_mobile_company}    ${rm['text_mobile_company']} ${EMPTY}
@@ -142,7 +142,7 @@ Verify Information On Request Details Page [legal entity]
     Wait Until Element Is Visible    ${pms_txt_status_detail_header}    timeout=${DEFAULT_TIMEOUT}
 
     ${label_request_detail_header}=    Get Text    ${pms_txt_request_detail_header}
-    ${label_company_title_name}=    Get Text    ${pms_txt_company_titile_name}
+    ${label_company_title_name}=    Get Text    ${pms_txt_company_title_name}
     ${value_company_title_name}=    Get Value    ${pms_txtbox_company_title_name}
     ${label_company_name}=    Get Text    ${pms_txt_company_name}
     ${value_company_name}=    Get Value    ${pms_txtbox_company_name}
@@ -163,7 +163,7 @@ Verify Information On Request Details Page [legal entity]
     ${value_customer_email}=    Get Value    ${pms_txtbox_customer_email} 
     ${label_customer_phone}=    Get Text    ${pms_txt_customer_phone}
     ${value_customer_phone}=    Get Value    ${pms_txtbox_customer_phone} 
-    ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
+    ${label_customer_phone_extra}=    Get Text    ${pms_txt_customer_phone_extra}
     ${value_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra} 
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
     ${rm_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder
@@ -207,7 +207,7 @@ Verify Request Detail Page After RM Approve [legal entity]
     Wait Until Element Is Visible    ${pms_txt_status_detail_header}    timeout=${DEFAULT_TIMEOUT}
 
     ${label_request_detail_header}=    Get Text    ${pms_txt_request_detail_header}
-    ${label_company_title_name}=    Get Text    ${pms_txt_company_titile_name}
+    ${label_company_title_name}=    Get Text    ${pms_txt_company_title_name}
     ${value_company_title_name}=    Get Value    ${pms_txtbox_company_title_name}
     ${label_company_name}=    Get Text    ${pms_txt_company_name}
     ${value_company_name}=    Get Value    ${pms_txtbox_company_name}
@@ -228,7 +228,7 @@ Verify Request Detail Page After RM Approve [legal entity]
     ${value_customer_email}=    Get Value    ${pms_txtbox_customer_email} 
     ${label_customer_phone}=    Get Text    ${pms_txt_customer_phone}
     ${value_customer_phone}=    Get Value    ${pms_txtbox_customer_phone} 
-    ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
+    ${label_customer_phone_extra}=    Get Text    ${pms_txt_customer_phone_extra}
     ${value_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra} 
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
     ${rm_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder
@@ -273,7 +273,7 @@ Verify Information After Reject Request [legal entity]
     Wait Until Element Is Visible    ${pms_txt_status_detail_header}    timeout=${DEFAULT_TIMEOUT}
 
     ${label_request_detail_header}=    Get Text    ${pms_txt_request_detail_header}
-    ${label_company_title_name}=    Get Text    ${pms_txt_company_titile_name}
+    ${label_company_title_name}=    Get Text    ${pms_txt_company_title_name}
     ${value_company_title_name}=    Get Value    ${pms_txtbox_company_title_name}
     ${label_company_name}=    Get Text    ${pms_txt_company_name}
     ${value_company_name}=    Get Value    ${pms_txtbox_company_name}
@@ -294,7 +294,7 @@ Verify Information After Reject Request [legal entity]
     ${value_customer_email}=    Get Value    ${pms_txtbox_customer_email} 
     ${label_customer_phone}=    Get Text    ${pms_txt_customer_phone}
     ${value_customer_phone}=    Get Value    ${pms_txtbox_customer_phone} 
-    ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
+    ${label_customer_phone_extra}=    Get Text    ${pms_txt_customer_phone_extra}
     ${value_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra} 
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
     ${rm_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder
@@ -352,7 +352,7 @@ Verify Information On Request Details Page [Individual]
     ${value_customer_email}=    Get Element Attribute    ${pms_txtbox_customer_email}    placeholder
     ${label_customer_phone}=    Get Text    ${pms_txt_customer_phone}
     ${value_customer_phone}=    Get Value    ${pms_txtbox_customer_phone} 
-    ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
+    ${label_customer_phone_extra}=    Get Text    ${pms_txt_customer_phone_extra}
     ${value_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra}
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
     ${rm_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder
@@ -407,7 +407,7 @@ Verify Request Detail Page After RM Approve [Individual]
     ${value_customer_email}=    Get Element Attribute    ${pms_txtbox_customer_email}    placeholder
     ${label_customer_phone}=    Get Text    ${pms_txt_customer_phone}
     ${value_customer_phone}=    Get Value    ${pms_txtbox_customer_phone} 
-    ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
+    ${label_customer_phone_extra}=    Get Text    ${pms_txt_customer_phone_extra}
     ${value_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra}
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
     ${rm_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder
@@ -463,7 +463,7 @@ Verify Information After Reject Request [Individual]
     ${value_customer_email}=    Get Element Attribute    ${pms_txtbox_customer_email}    placeholder
     ${label_customer_phone}=    Get Text    ${pms_txt_customer_phone}
     ${value_customer_phone}=    Get Value    ${pms_txtbox_customer_phone} 
-    ${label_customer_phone_extra}=    Get Text    ${pms_txt_cusotmer_phone_extra}
+    ${label_customer_phone_extra}=    Get Text    ${pms_txt_customer_phone_extra}
     ${value_customer_phone_extra}=    Get Value    ${pms_txtbox_customer_phone_extra}
     ${label_link_full_register}=    Get Text    ${pms_txt_link_full_register}
     ${rm_link_full_register}=    Get Element Attribute   ${pms_txtbox_link_full_register}    placeholder

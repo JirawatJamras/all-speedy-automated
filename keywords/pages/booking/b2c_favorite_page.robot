@@ -233,14 +233,14 @@ Verify Label Receiver
     ${actual_text_receiver_favorite_name}=    Get Text    ${txt_receiver_favorite_name_in_popup_favorite_page}
     ${actual_text_receiver_phone}=    Get Text    ${txt_receiver_phone_in_popup_favorite_page}
     ${actual_text_receiver_name}=    Get Text    ${txt_receiver_name_in_popup_favorite_page}
-    ${actaul_text_receiver_location_pickup}=    Get Text    ${txt_receiver_location_pickup_in_popup}
+    ${actual_text_receiver_location_pickup}=    Get Text    ${txt_receiver_location_pickup_in_popup}
     ${actual_text_receiver_address}=    Get Text    ${txt_receiver_address_in_popup_favorite_page}
     ${actual_text_receiver_postcode}=    Get Text    ${txt_receiver_postcode_in_popup_favorite_page}
     Should Be Equal    ${actual_text_receiver_data}    ${text_receiver_data}
     Should Be Equal    ${actual_text_receiver_favorite_name}    ${reciever_favorite_name}
     Should Be Equal    ${actual_text_receiver_phone}    ${receiver_phone}
     Should Be Equal    ${actual_text_receiver_name}    ${receiver_name}
-    Should Be Equal    ${actaul_text_receiver_location_pickup}    ${receiver_location_pickup}
+    Should Be Equal    ${actual_text_receiver_location_pickup}    ${receiver_location_pickup}
     Should Be Equal    ${actual_text_receiver_address}    ${receiver_address}
     Should Be Equal    ${actual_text_receiver_postcode}    ${receiver_full_postcode}
 
