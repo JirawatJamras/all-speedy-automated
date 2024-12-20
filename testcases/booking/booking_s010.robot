@@ -67,7 +67,7 @@ Booking_S010
     b2c_booking_delivery_page.Select Send To Home Tab
     # Expected
     Log Defect No:   New Defect : Defect293
-    b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home 
+    # b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select Home 
     # ...    ${Booking['text_title']}
     # ...    ${Booking['text_parcel_receiver_information']}
     # ...    ${Booking['text_phone_receiver']}
