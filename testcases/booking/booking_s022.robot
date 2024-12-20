@@ -272,6 +272,8 @@ Booking_S022
     common.Verify Capture Screenshot    booking    Booking_S022    16.Verify Promotion
 
     Log    Step No.17 ขั้นตอน Promotion
+    Log Defect No:  Defect072
+    Log Defect No:  New Defect : Defect295
     b2c_booking_delivery_page.Input Promotion    ${Booking_S022['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     # Expected

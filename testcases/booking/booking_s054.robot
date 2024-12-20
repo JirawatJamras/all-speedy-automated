@@ -33,7 +33,8 @@ Booking_S031
     b2c_booking_delivery_page.Click Next Button
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S031['parcel_size']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S031['parcel_detail_remark']}
-    b2c_booking_delivery_page.Click Next Button 
+    b2c_booking_delivery_page.Click Next Button
+    Log Defect No:  Defect072
     b2c_booking_delivery_page.Input Promotion    ${Booking_S031['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     b2c_booking_delivery_page.Click Parcel Booking Button

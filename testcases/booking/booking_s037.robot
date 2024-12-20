@@ -188,6 +188,7 @@ Booking_S037
     common.Verify Capture Screenshot    booking    Booking_S037    12.Verify Promotion
 
     Log    Step No.13 ขั้นตอน Promotion
+    Log Defect No:  Defect072
     b2c_booking_delivery_page.Input Promotion    ${Booking_S037['promotion']}
     b2c_booking_delivery_page.Click Use Code Button
     # Expected
