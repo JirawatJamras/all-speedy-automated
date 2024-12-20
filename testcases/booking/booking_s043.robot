@@ -5,7 +5,7 @@ Resource          ../../resources/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND    Set Folder Result With Date 
                   ...    AND    dps_home_page.Reset Cut Off Time    23:59 
-Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Latest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
+Test Teardown     Run Keywords    Find And Delete The Latest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    dps_home_page.Reset Cut Off Time    17:00 
@@ -52,8 +52,9 @@ Booking_S020
     b2c_booking_delivery_page.Select Parcel Size    ${Booking_S020['parcel_size']}
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S020['parcel_detail_remark']}
     b2c_booking_delivery_page.Click Next Button
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S020['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
+    Log Defect No:  Defect072
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S020['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_home_page.Click Book Parcel Delivery

@@ -5,7 +5,7 @@ Resource          ../../resources/import.robot
 Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #headlesschrome    #chrome
                   ...    AND    Set Folder Result With Date 
                   ...    AND    dps_home_page.Reset Cut Off Time    23:59 
-Test Teardown     Run Keywords    Go To Call Car Pickup Menu And Delete The Latest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
+Test Teardown     Run Keywords    Find And Delete The Latest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
                   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    dps_home_page.Reset Cut Off Time    17:00 
@@ -105,16 +105,15 @@ Booking_S026
     # Expected
     Log Defect No:  Defect122
     # b2c_booking_delivery_page.Verify Favorites Receiver PopUp When Address At 7-ELEVEN Store
-    # ...    ${Booking_S026['receiver_name']}
     # ...    ${Booking_S026['receiver_phone']}
+    # ...    ${Booking_S026['receiver_name']}
     # ...    ${Booking_S026['receiver_store_full']}
     common.Verify Capture Screenshot    booking    Booking_S026    7.Verify Favorites Receiver PopUp
 
     Log    Step No.8 กดเลือกรายการ
     b2c_booking_delivery_page.Click Choose Favorites Receiver List When Address At 7-ELEVEN Store    
-    ...    ${Booking_S026['receiver_name']}
-    ...    ${Booking_S026['receiver_name']}
     ...    ${Booking_S026['receiver_phone']}
+    ...    ${Booking_S026['receiver_name']}
     ...    ${Booking_S026['receiver_store_full']}
     b2c_booking_delivery_page.Click Accept Favorites List
     # Expected
