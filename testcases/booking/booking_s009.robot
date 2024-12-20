@@ -240,8 +240,9 @@ Booking_S009
     common.Verify Capture Screenshot    booking    Booking_S009    15.Verify Promotion
 
     Log    Step No.16 ขั้นตอน Promotion
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S009['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
+    Log Defect No:  Defect072
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S009['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
     # Expected
     Log Defect No:  Defect050,Defect072
     # b2c_booking_delivery_page.Verify Selected Coupon And Code

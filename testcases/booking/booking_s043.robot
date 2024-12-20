@@ -54,8 +54,8 @@ Booking_S020
     b2c_booking_delivery_page.Input Parcel Remark    ${Booking_S020['parcel_detail_remark']}
     b2c_booking_delivery_page.Click Next Button
     Log Defect No:  Defect072
-    b2c_booking_delivery_page.Input Promotion    ${Booking_S020['promotion']}
-    b2c_booking_delivery_page.Click Use Code Button
+    # b2c_booking_delivery_page.Input Promotion    ${Booking_S020['promotion']}
+    # b2c_booking_delivery_page.Click Use Code Button
     b2c_booking_delivery_page.Click Parcel Booking Button
     b2c_booking_detail_page.Wait Until Loading Icon Success
     b2c_home_page.Click Book Parcel Delivery
