@@ -278,7 +278,7 @@ Delete The Latest Parcel Pickup Schedule
     Click Element    ${b2c_btn_confirm_in_asking_to_close_popup}
     Wait Until Element Is Visible    ${b2c_txt_delete_complete_pickup_page}    timeout=${DEFAULT_TIMEOUT}
 
-Go To Call Car Pickup Menu And Delete The Latest Parcel Pickup Schedule
+Find And Delete The Latest Parcel Pickup Schedule
     [Arguments]    ${tomorrow_date}    ${current_time}
     IF    '${card_is_visible}' == 'True'
         ${b2c_card_delete_pickup_parcel}=    Replace String    ${b2c_card_delete_pickup_parcel_call_car_pickup_page}    {value}    ${call_car_pick_up.car_round_name['special']} ${tomorrow_date} ${current_time}
