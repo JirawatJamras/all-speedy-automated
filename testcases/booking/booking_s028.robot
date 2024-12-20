@@ -8,7 +8,7 @@ Test Setup        Run Keywords    Open Chrome Browser    headlesschrome    #head
 Test Teardown     Run Keywords    Find And Delete The Latest Parcel Pickup Schedule    ${tomorrow}    ${Booking_S018.pickup_time['expected']}
                   ...    AND    Close Browser
                   ...    AND    Log Defect No:  New Defect : Defect296
-                  ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
+                #   ...    AND    common.Delete API Booking By Booking ID    ${booking_id}
                   ...    AND    dps_home_page.Reset Cut Off Time    17:00 
                   
 *** Keywords ***
