@@ -292,13 +292,21 @@ Find And Delete The Latest Parcel Pickup Schedule
         Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
         WHILE    '${status}' == 'False'
             Scroll Window To Vertical    0
-            ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_status_in_card}
+            ${visible_status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_txt_status_in_card}
             ${visible_card}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_card_delete_pickup_parcel}
+            ${status}=    Evaluate    ${visible_status} and ${visible_card}
             Scroll Window To Vertical    1000
-            Run Keyword If    '${status}' == 'True' and '${visible_card}' == 'True'    Exit For Loop
-            ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+            IF  ${status}
+                Delete The Latest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
+                Exit For Loop
+            ELSE
+                ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+                ${can_not_click_next}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    true
+                Run Keyword IF  '${can_not_click_next}' == 'False'    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+                ...    ELSE    Run Keywords    Log To Console    Cannot find the pickup card. Unable to delete it.
+                ...    AND    Exit For Loop
+            END
         END
-        Delete The Latest Parcel Pickup Schedule    ${tomorrow_date}    ${current_time}
     END 
 
 Verify Added New Parcel Pickup
