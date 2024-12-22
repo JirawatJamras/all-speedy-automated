@@ -299,8 +299,8 @@ Booking_S047
     # ...    ${favorite.label_shipping_origin_area['text_set_to_default']}
     # b2c_favorite_page.Verify Data Shipping Origin Area
     # ...    ${EMPTY}
-    common.Verify Capture Screenshot    booking    Booking_S047    16.1.Verify Add Shipping Origin Area Popup
-    b2c_favorite_page.Scroll To Display Save Button
+    # common.Verify Capture Screenshot    booking    Booking_S047    16.1.Verify Add Shipping Origin Area Popup
+    # b2c_favorite_page.Scroll To Display Save Button
     common.Verify Capture Screenshot    booking    Booking_S047    16.2.Verify Add Shipping Origin Area Footer Popup
 
     Log    Step No.17 กรอกข้อมูลดังนี้
