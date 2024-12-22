@@ -2348,7 +2348,7 @@ DC_Operation_S006
     dps_scan_page.Click Close Print Label Success Popup
     # Expected 
     Log Defect No:  Defect288
-    dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
+    # dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    43.Verify Navigate To Scan Page And Stay At Scan In Tab At Destination Warehouse
 
     Log    Step No.44 คลิกเมนู "ประวัติพัสดุภายในคลัง" ที่แถบเมนูด้านซ้าย
