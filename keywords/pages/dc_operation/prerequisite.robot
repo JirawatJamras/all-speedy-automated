@@ -2341,13 +2341,13 @@ DC_Operation_S006
     Log    Step No.42 คลิกปุ่ม ยืนยัน Scan in
     dps_scan_page.Click Accept Scan In
     # Expected
-    Log Defect No:  Defect288
-    # dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
+    dps_scan_page.Verify Accept Scan In Success Popup    ${dc_operation['text_accept_scan_in_success']}
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    42.Verify Accept Scan In Success Popup
 
     Log    Step No.43 คลิกที่ Pop up
     dps_scan_page.Click Close Print Label Success Popup
     # Expected 
+    Log Defect No:  Defect288
     dps_scan_page.Verify Navigate To Scan Page And Stay At Scan In Tab
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    43.Verify Navigate To Scan Page And Stay At Scan In Tab At Destination Warehouse
 
