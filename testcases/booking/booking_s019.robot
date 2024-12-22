@@ -254,6 +254,7 @@ Booking_S019
     b2c_booking_detail_page.Wait Until Loading Icon Success
     ${booking_time}    Get Booking Time
     # Expected
+    Log Defect No:  New Defect : Defect295
     Log Defect No:  Defect048,Defect063,Defect258
     # b2c_booking_detail_page.Verify Booking Detail Page
     # ...    ${Booking['text_title_booking_list']}
