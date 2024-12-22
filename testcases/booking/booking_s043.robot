@@ -515,9 +515,9 @@ Booking_S043
     common.Verify Capture Screenshot    booking    Booking_S042    22.Verify Can Edit Selected Coupon And Code
 
     Log    Step No.23 กดปุ่ม "นำออก" ที่รายการคูปองและโค้ดส่วนลดที่เลือก
+    Log Defect No:  Defect050
     b2c_booking_delivery_page.Click Take Out Coupon
     # Expected
-    Log Defect No:  Defect050
     # b2c_booking_delivery_page.Verify Not Select Coupon And Code
     common.Verify Capture Screenshot    booking    Booking_S042    23.Verify Take Out Coupon
 
