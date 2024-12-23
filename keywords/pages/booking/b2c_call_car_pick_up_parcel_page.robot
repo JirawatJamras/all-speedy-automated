@@ -128,7 +128,7 @@ Verify Parcel Pickup Status After Cut Off Time
     ${status_2}=    Set Variable    False
     ${loop}=    Set Variable    0
     ${TIME_LIMIT}=    Set Variable    300
-    ${start_time}=    Get Current Date    result_format=%s
+    ${start_time}=    Evaluate    int(time.time())
 
     sleep    5s
     Reload Page
@@ -136,8 +136,8 @@ Verify Parcel Pickup Status After Cut Off Time
     Search Parcel Pickup By Date    ${day}    ${next_day}
 
     WHILE    True
-        ${current_time}=    Get Current Date    result_format=%s
-        ${elapsed_time}=    Evaluate    int(${current_time}) - int(${start_time})
+        ${current_time}=    Evaluate    int(time.time())
+        ${elapsed_time}=    Evaluate    ${current_time} - ${start_time}
         Log    ${start_time} ${current_time} ${elapsed_time}
         Run Keyword If    ${elapsed_time} >= ${TIME_LIMIT}    Fail    After 5 minutes of cut off time, the status has not changed.
 
