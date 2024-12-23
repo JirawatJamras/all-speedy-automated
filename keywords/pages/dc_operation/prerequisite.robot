@@ -2824,7 +2824,6 @@ DC_Operation_S007
     dps_scan_page.Select Warehouse List Button    ${dc_operation.selected_warehouse_list['text_warehouse_DC_SB']}
     dps_scan_page.Input Tracking Number [Scan In Page]    ${tracking_f}
     dps_scan_page.Click Search Button [Scan In Page]
-    dps_home_page.Wait Until Page Loaded
     # Expected
     Log Defect No:  Defect155,Defect212,Defect249,Defect268
     # dps_scan_page.Verify Title Parcel Details In Scan Page [CP All Courier]
