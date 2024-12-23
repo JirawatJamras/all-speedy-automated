@@ -130,7 +130,6 @@ Booking_S034
     Log    Step No.9 กดปุ่ม "ถัดไป"
     b2c_booking_delivery_page.Click Next Button
     # Expected
-    Log Defect No:  New Defect : Defect297
     # b2c_booking_delivery_page.Verify Create Parcel Page Receiver Step When Select 7-ELEVEN Store
     # ...    ${Booking['text_title']}
     # ...    ${Booking['text_parcel_receiver_information']}
