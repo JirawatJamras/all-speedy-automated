@@ -74,6 +74,8 @@ Verify Add Parcel Pickup
     ${card_is_visible}=    Set Variable    False
     ${today_pattern}    Set Date Pattern    ${today}
     ${tomorrow_pattern}    Set Date Pattern    ${tomorrow}
+    sleep    5s
+    Reload Page
     Search Parcel Pickup By Date    ${today_pattern}    ${tomorrow_pattern}
     WHILE    '${status}' == 'False'
         Scroll Window To Vertical    0
