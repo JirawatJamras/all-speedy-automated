@@ -248,6 +248,7 @@ Verify Parcel Pickup Canceled Status
         Run Keyword If    '${status_button}' == 'False'    Run Keywords   Fail    Parcel pickup canceled status not found.
         ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
     END
+    
 Click Parcel Type Dropdown
     ${b2c_btn_basic_parcel_type}=    Replace String    ${b2c_btn_basic_parcel_type_car_pickup_page}    {value}    ${call_car_pick_up['text_parcel_type']}
     common.Click When Ready      ${b2c_btn_basic_parcel_type}
