@@ -127,13 +127,20 @@ Verify Parcel Pickup Status After Cut Off Time
     ${status}=    Set Variable    FAIL
     ${status_2}=    Set Variable    False
     ${loop}=    Set Variable    0
+    ${TIME_LIMIT}=    Set Variable    300
+    ${start_time}=    Get Current Date    result_format=%s
 
+    sleep    5s
+    Reload Page
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Search Parcel Pickup By Date    ${day}    ${next_day}
 
-    WHILE    '${status_2}' == 'False'
-        ${loop}=    Evaluate    ${loop} + 1
-        Run Keyword If    ${loop} > 100    Fail    After 5 minutes of cut off time, the status has not changed.
+    WHILE    True
+        ${current_time}=    Get Current Date    result_format=%s
+        ${elapsed_time}=    Evaluate    int(${current_time}) - int(${start_time})
+        Log    ${start_time} ${current_time} ${elapsed_time}
+        Run Keyword If    ${elapsed_time} >= ${TIME_LIMIT}    Fail    After 5 minutes of cut off time, the status has not changed.
+
         Scroll Window To Vertical    0
         Run Keyword And Ignore Error    Wait Until Element Is Visible    ${card}
         ${number}=    Get Element Count    ${card}
@@ -231,9 +238,16 @@ Verify Parcel Pickup Canceled Status
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
     Search Parcel Pickup By Date    ${day}    ${next_day}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    ${value_pickup_date}${value_parcel}${value_location}
-
+    WHILE    True
+        ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${value_pickup_date}${value_parcel}${value_location}    timeout=2s
+        Run Keyword If    '${status}' == 'True'    Run Keywords
+        ...    common.Scroll Into View By Xpath    ${value_pickup_date}${value_parcel}${value_location}    false
+        ...    AND    Exit For Loop
+        ${nextpage}=    Get Element Attribute    ${b2c_next_page_pickup_round}    aria-disabled
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'False'    Run Keywords   Fail    Parcel pickup canceled status not found.
+        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_round}
+    END
 Click Parcel Type Dropdown
     ${b2c_btn_basic_parcel_type}=    Replace String    ${b2c_btn_basic_parcel_type_car_pickup_page}    {value}    ${call_car_pick_up['text_parcel_type']}
     common.Click When Ready      ${b2c_btn_basic_parcel_type}
