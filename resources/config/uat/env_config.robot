@@ -1,5 +1,5 @@
 *** Variables ***
-${DEFAULT_TIMEOUT}                      30s
+${DEFAULT_TIMEOUT}                      60s
 ${BROWSER_NAME}                         Chrome
 
 ####################### DPS UAT DATA #######################

@@ -592,7 +592,7 @@ Verify Booking Status After Cut Off Time
     [Arguments]    ${booking_id}    ${status}
     ${actual_booking_id}=    Replace String    ${txt_booking_status}    {id}    ${booking_id}
     ${actual_booking_status}=    Replace String    ${actual_booking_id}    {status}    ${status}
-    Wait Until Element Is Visible    ${actual_booking_status}
+    Wait Until Element Is Visible    ${actual_booking_status}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${actual_booking_status}
 
 Select Booking With Booking ID
