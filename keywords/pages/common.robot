@@ -31,6 +31,7 @@ Click Xpath By JavaScript
 Input When Ready
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Enabled    ${locator}    ${DEFAULT_TIMEOUT}
     Input Text    ${locator}    ${text}
 
 Click When Ready
