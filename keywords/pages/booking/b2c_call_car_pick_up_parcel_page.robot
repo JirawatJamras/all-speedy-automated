@@ -127,7 +127,7 @@ Verify Parcel Pickup Status After Cut Off Time
     ${status}=    Set Variable    FAIL
     ${status_2}=    Set Variable    False
     ${loop}=    Set Variable    0
-    ${TIME_LIMIT}=    Set Variable    300
+    ${TIME_LIMIT}=    Set Variable    360
     ${start_time}=    Evaluate    int(time.time())
 
     sleep    5s

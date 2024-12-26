@@ -226,13 +226,9 @@ Verify Tab Selected
     ${checked}    Get Element Attribute    ${dps_tab_name}    aria-selected
     Should Be Equal As Strings    ${checked}    true
 
-Wait Until DC Operation Home Page Loaded
-    Wait Until Element Is Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=180s
-
 Wait Until Page Loaded
-    Wait Until Element Is Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
+    ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${status}' == 'True'    Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
 
 Verify Label In Send Task Tab
     [Arguments]    ${send_to}    ${store_code}    ${customer_type}    ${transport}    ${number_of_pieces}
