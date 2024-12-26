@@ -251,6 +251,7 @@ Click Booking With Status Select Shipping Origin
     [Arguments]    ${booking_id}
     ${booking_id}=    Replace String    ${b2c_txt_booking_id}    {value}    ${booking_id}
     Wait Until Element Is Visible    ${booking_id}    timeout=${DEFAULT_TIMEOUT}
+    Wait Until Element Is Enabled    ${booking_id}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${booking_id}
     common.Click When Ready    ${booking_id}
     Wait Until Element Is Visible    ${b2c_dialog_create_parcel}    timeout=${DEFAULT_TIMEOUT}
