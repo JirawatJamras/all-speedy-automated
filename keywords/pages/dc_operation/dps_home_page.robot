@@ -226,10 +226,6 @@ Verify Tab Selected
     ${checked}    Get Element Attribute    ${dps_tab_name}    aria-selected
     Should Be Equal As Strings    ${checked}    true
 
-Wait Until DC Operation Home Page Loaded
-    Wait Until Element Is Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=180s
-
 Wait Until Page Loaded
     Wait Until Element Is Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}
     Wait Until Element Is Not Visible    ${dps_img_loading_page}    timeout=${DEFAULT_TIMEOUT}

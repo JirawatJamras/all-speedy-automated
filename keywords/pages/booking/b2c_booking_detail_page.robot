@@ -532,8 +532,8 @@ Wait Until Loading Icon Success
     Sleep    5s
 
 Wait Until Page Loaded After Select Origin Shipping
-    Wait Until Element Is Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}
-    Wait Until Element Is Not Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}
+    ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${status}' == 'True'    Wait Until Element Is Not Visible    ${b2c_img_loading_in_detail_after_set_origin_shipping}    timeout=${DEFAULT_TIMEOUT}
     Sleep   3s
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${Booking['text_parcel_status_waiting_entering']}
     Wait Until Element Is Visible    ${b2c_txt_parcel_status_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
