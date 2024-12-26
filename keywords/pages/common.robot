@@ -24,17 +24,20 @@ Open URL
 
 Click Xpath By JavaScript
     [Arguments]    ${path}
-    Wait Until Page Contains Element    xpath=${path}
+    Set Selenium Timeout    60s
+    Wait Until Page Contains Element    xpath=${path}    ${DEFAULT_TIMEOUT}
     Execute JavaScript    document.evaluate("${path}", document.body, null, 9, null).singleNodeValue.click()
 
 Input When Ready
     [Arguments]    ${locator}    ${text}
     Wait Until Element Is Visible    ${locator}    ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Enabled   ${locator}   ${DEFAULT_TIMEOUT}
     Input Text    ${locator}    ${text}
 
 Click When Ready
     [Arguments]   ${locator}
     Wait Until Element Is Visible   ${locator}   ${DEFAULT_TIMEOUT}
+    Wait Until Element Is Enabled   ${locator}   ${DEFAULT_TIMEOUT}
     Click Element    ${locator}
 
 Scroll Window To Vertical

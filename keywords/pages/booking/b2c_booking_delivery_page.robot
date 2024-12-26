@@ -234,6 +234,8 @@ Click Choose Favorites Receiver List When Address At 7-ELEVEN Store
     ${selected_favorites_list}=  Replace String   ${btn_choose_favorites_list_store}   {value_name}   ${receiver_name}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {value_phone}   ${receiver_phone}
     ${selected_favorites_list}=  Replace String   ${selected_favorites_list}   {store_address}   ${receiver_store_address[0]}  
+    Wait Until Element Is Enabled   ${selected_favorites_list}   timeout=${DEFAULT_TIMEOUT}
+    Scroll Element In To View    ${selected_favorites_list}
     common.Click When Ready    ${selected_favorites_list}
 
 Click Choose Favorites Sender List
@@ -592,7 +594,7 @@ Verify Booking Status After Cut Off Time
     [Arguments]    ${booking_id}    ${status}
     ${actual_booking_id}=    Replace String    ${txt_booking_status}    {id}    ${booking_id}
     ${actual_booking_status}=    Replace String    ${actual_booking_id}    {status}    ${status}
-    Wait Until Element Is Visible    ${actual_booking_status}
+    Wait Until Element Is Visible    ${actual_booking_status}    timeout=${DEFAULT_TIMEOUT}
     Scroll Element Into View    ${actual_booking_status}
 
 Select Booking With Booking ID
