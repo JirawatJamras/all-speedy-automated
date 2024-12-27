@@ -707,8 +707,9 @@ Select Booked Pickup Time From List
         ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${actual_pickup_schedule_checkbox}    2s
         Exit For Loop If    '${status}' == 'True'
         ${nextpage}=    Get Element Attribute    ${b2c_btn_status_next_page_pickup_schedule}    aria-disabled
-        Run Keyword If    '${status}' == 'True'    Exit For Loop
-        ...    ELSE    common.Click When Ready    ${b2c_btn_next_page_pickup_schedule}
+        ${status_button}=    Run Keyword And Return Status    Should Be Equal As Strings    ${nextpage}    false
+        Run Keyword If    '${status_button}' == 'True'    common.Click When Ready    ${b2c_btn_next_page_pickup_schedule}
+        ...    ELSE    Fail    There is no selected pickup schedule
     END
     common.Click When Ready    ${actual_pickup_schedule_checkbox}
 
