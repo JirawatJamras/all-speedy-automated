@@ -313,5 +313,4 @@ Delete Row In Excel
 
 Log Defect No:
     [Arguments]    ${message}
-    ${message}=    Evaluate    '\\033[38;2;255;165;0m${message}\\033[0m'
     Log To Console    \n${message}\n
