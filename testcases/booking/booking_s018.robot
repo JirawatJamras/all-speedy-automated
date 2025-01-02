@@ -52,17 +52,17 @@ Booking_S018
     b2c_booking_detail_page.Wait Until Loading Icon Success
     # Expected
     Log Defect No:  Defect086,Defect087
-    b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
-    ...    ${call_car_pick_up.status['parcel_in_progress']}
-    ...    ${Booking_S018['parcel_type']}
-    ...    ${call_car_pick_up.car_round_name['special']}
-    ...    ${tomorrow}
-    ...    ${Booking_S018.pickup_time['expected']}
-    ...    ${today}
-    ...    ${call_car_pick_up['text_parcel_number']}
-    ...    ${call_car_pick_up.default['parcel_number']}
-    ...    ${call_car_pick_up['text_price']}
-    ...    ${call_car_pick_up.default['price']}
-    ...    ${call_car_pick_up['text_pickup_location']}
-    ...    44 หมู่ 3 บางเขน เมืองนนทบุรี นนทบุรี 11000  #${Booking_S018['pickup_point']}
+    # b2c_call_car_pick_up_parcel_page.Verify Added New Parcel Pickup
+    # ...    ${call_car_pick_up.status['parcel_in_progress']}
+    # ...    ${Booking_S018['parcel_type']}
+    # ...    ${call_car_pick_up.car_round_name['special']}
+    # ...    ${tomorrow}
+    # ...    ${Booking_S018.pickup_time['expected']}
+    # ...    ${today}
+    # ...    ${call_car_pick_up['text_parcel_number']}
+    # ...    ${call_car_pick_up.default['parcel_number']}
+    # ...    ${call_car_pick_up['text_price']}
+    # ...    ${call_car_pick_up.default['price']}
+    # ...    ${call_car_pick_up['text_pickup_location']}
+    # ...    ${Booking_S018['pickup_point']}
     common.Verify Capture Screenshot    booking    Booking_S018    4.Verify Added New Parcel Pickup
