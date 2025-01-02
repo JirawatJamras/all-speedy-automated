@@ -1,7 +1,8 @@
 *** Keywords ***
 Proceed Pouch By Pouch Number
     [Arguments]    ${pouch_number}
-    common.Click When Ready    //td[text()='${pouch_number}']/..//td[7]//img/..
+    ${dps_btn_edit_pouch}=    Replace String    ${dps_btn_edit_pouch_in_pouch_page}    {pouch_number}    ${pouch_number}
+    common.Click When Ready    ${dps_btn_edit_pouch}
 
 Click Print Pouch Label
     ${dps_btn_print_pouch_label_pouch_detail_page}=    Replace String    ${dps_btn_print_pouch_label_pouch_detail_page}    {value}    ${dc_operation['text_close_pouch_and_print_label']}
@@ -28,7 +29,7 @@ Verify Pouch In Pouch Page
     ${actual_update_date}=    Get Text    ${dps_txt_pouch_in_pouch_list}//td[6]
     ${expected_update_date_format}    Convert Date    ${actual_update_date}    date_format=%d-%m-%Y %H:%M    result_format=%d-%m-%Y %H:%M
     Should Be Equal    ${actual_update_date}   ${expected_update_date_format}
-    Run Keyword IF    '${pencil_icon}' == 'ไอคอนรูปดินสอ'    Page Should Contain Element    ${dps_img_pencil_in_pouch_in_pouch_list}
+    Run Keyword IF    '${pencil_icon}' == '${dc_operation['icon_pencil']}'    Page Should Contain Element    ${dps_img_pencil_in_pouch_in_pouch_list}
 
 Verify Label Of Information Section In Pouch Detail Popup
     [Arguments]    ${title_pouch_detail}    ${txt_pouch_num}    ${txt_crossdock_warehouse}
@@ -85,9 +86,9 @@ Verify Label Section In Pouch Detail Popup
     Should Be Equal    ${actual_destination_warehouse_name}    ${destination_warehouse_name}
     Should Be Equal    ${actual_number}    ${number}
     Should Be Equal    ${actual_route}    ${route}
-    IF    '${symbol}' == 'รูปดาว'
+    IF    '${symbol}' == '${dc_operation.warehouse_symbol['star']}'
         Wait Until Element Is Visible    ${dps_img_star_symbol_pouch_label}    timeout=10s
-    ELSE IF    '${symbol}' == 'รูปนาฬิกาทราย'
+    ELSE IF    '${symbol}' == '${dc_operation.warehouse_symbol['sandglass']}'
         Wait Until Element Is Visible    ${dps_img_label_hourglass_symbol_pouch_label}    timeout=10s
     END    
     Should Be Equal    ${actual_pouch_number}    ${pouch_number}
@@ -166,7 +167,8 @@ Check Open Pouch And Close Pouch By Destination Inventory
 Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
     [Arguments]    ${destination_inventory}    ${txt_warning}    ${txt_transaction_complete}    ${testcase_name}
     Filter Data By Destination Inventory [Pouch Page]    ${destination_inventory}
-    ${count}=    Get Element Count    //td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true']
+    ${destination_inventory_pouch_detail}=    Replace String    ${dps_txt_destination_inventory_pouch_detail}    {destination_inventory}    ${destination_inventory}
+    ${count}=    Get Element Count    ${destination_inventory_pouch_detail}
     IF  '${count}' != '0'
         FOR    ${index}    IN RANGE    1    ${count}+1
             Log    Step No.2 ปิด Pouch ที่มีปลายทางเป็น ${destination_inventory} (ทำทีละรายการจนหมด)
@@ -191,8 +193,9 @@ Check Open Pouch And Close Pouch By Destination Inventory [Reprint Label]
 
 Click On/OFF Button Of Pouch List
     [Arguments]    ${destination_inventory}
-    common.Scroll Into View By Xpath    (//td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true'])[1]    true
-    common.Click When Ready    (//td[text()='${destination_inventory}']/..//td[5]//button[@aria-checked='true'])[1]
+    ${dps_btn_change_pouch_status}=    Replace String    ${dps_btn_change_pouch_status_in_pouch_page}    {destination_inventory}    ${destination_inventory}
+    common.Scroll Into View By Xpath    ${dps_btn_change_pouch_status}    true
+    common.Click When Ready    ${dps_btn_change_pouch_status}
 
 Verify Warning Confirm To Close Pouch
     [Arguments]    ${expected}
@@ -222,9 +225,10 @@ Verify Transaction Complete Popup Was Closed
 
 Filter Data By Destination Inventory [Pouch Page]
     [Arguments]    ${destination_inventory}
+    ${dps_cbo_destination_inventory_name_for_selection}=    Replace String    ${dps_cbo_destination_inventory_name_for_selection_in_filter}    {destination_inventory}    ${destination_inventory}
     dps_pouch_page.Select Filter Button
     common.Click When Ready    ${dps_cbo_destination_inventory_in_filter}
-    common.Click Xpath By JavaScript    //div[contains(normalize-space(@title), '${destination_inventory}')]
+    common.Click Xpath By JavaScript    ${dps_cbo_destination_inventory_name_for_selection}
     dps_pouch_page.Click Search Button On Filter
 
 Select Filter Button
@@ -234,17 +238,3 @@ Select Filter Button
 Click Search Button On Filter
     ${dps_btn_search_filter}=    Replace String    ${dps_btn_search_filter_pouch_page}    {value}    ${dc_operation['button_search']}
     common.Click When Ready    ${dps_btn_search_filter}
-
-Click Close Pouch Button In Pouch Detail
-    common.Click When Ready    //span[text()=' ปิด Pouch/Print Label']/..
-
-Verify Close Pouch Confirmation Popup
-    [Arguments]    ${close_pouch}
-    ${dps_txt_close_pouch}=    Replace String    //div[@class='ant-modal-content']//div//h1[contains(normalize-space(), '{value}')]    {value}    ${close_pouch}
-    Wait Until Element Is Visible    ${dps_txt_close_pouch}    timeout=${DEFAULT_TIMEOUT}
-    ${actual_txt_close_pouch}=    Get Text    ${dps_txt_close_pouch}
-    Should Be Equal    ${actual_txt_close_pouch}    ${close_pouch}
-
-Click Close Pouch Button In Popup
-    ${dps_btn_close_pouch_in_pouch_page}=    Replace String    ${dps_btn_close_pouch_in_pouch_page}    {value}    ${dc_operation['text_close_pouch_and_print_label']}
-    common.Click When Ready    ${dps_btn_close_pouch_in_pouch_page}
