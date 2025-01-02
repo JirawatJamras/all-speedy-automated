@@ -192,7 +192,7 @@ Booking_S047
     ...    ${favorite.label_receiver_favorite['text_location_pickup']}
     ...    ${favorite.label_receiver_favorite['text_address']}
     ...    ${favorite.label_receiver_favorite['text_postcode']}
-    b2c_favorite_page.Verify Data Recevier In Read-Only Mode
+    b2c_favorite_page.Verify Data Receiver In Read-Only Mode
     ...    ${Booking_S047.receiver_favorite_card['favorite_name']}
     ...    ${Booking_S003['receiver_name']}
     ...    ${Booking_S003['receiver_phone']}

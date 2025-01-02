@@ -53,9 +53,9 @@ Verify Data Link Return Business Popup
     ${txtbox_postcode}=    Replace String    ${opt_postcode_choice_return_business}    {value}    ${postcode}
     ${actual_opt_owner_pay}=    Replace String    ${opt_owner_pay_return_business}    {value}    ${shipping_payer}
     
-    Run Keyword If    '${shipping_payer}' == 'บริษัทชำระค่าจัดส่ง'    
+    Run Keyword If    '${shipping_payer}' == '${return_business.shipping_payer['owner']}'    
     ...    Element Should Be Visible    ${actual_opt_owner_pay}
-    Run Keyword If    '${location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_send_home_return_business}
+    Run Keyword If    '${location_pickup}' == '${Booking['text_send_home']}'    Element Should Be Visible    ${tab_send_home_return_business}
     
     ${value_link_name}=    Get Value    ${txtbox_link_name_return_business}
     ${value_phone}=    Get Value    ${txtbox_phone_return_business}
@@ -363,15 +363,15 @@ Verify Booking Detail Page
     Should Be Equal As Strings    ${actual_text_list_of_parcels}
     ...    ${return_business.email_link['text_sender']} ${sender_name} (${sender_phone}) ${return_business.email_link['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${address_full} ${return_business.email_link['text_parcel_type']} ${parcel_type}${return_business.email_link['text_price']} ${price}บาท ${return_business.email_link['text_buy_insure']} ${insure_value} บาท ${return_business.email_link['text_select_cod']} ${cod} บาท ${return_business.email_link['text_print']}
     #Sender Heart
-    IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_sender}' == '${Booking['text_icon_heart_not_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
-    ELSE IF    '${img_heart_sender}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_sender}' == '${Booking['text_icon_heart_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_sender}
     END
     #Receiver Heart
-    IF         '${img_heart_receiver}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_receiver}' == '${Booking['text_icon_heart_not_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_receiver}  
-    ELSE IF    '${img_heart_receiver}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_receiver}' == '${Booking['text_icon_heart_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
@@ -422,14 +422,14 @@ Verify Parcel Label
     Should Be Equal As Strings    ${actual_list_paper_size}    ${size_a4} ${size_a5} ${size_8cm}
     ${b2c_img_logo_speed_d}=    Replace String    ${b2c_img_logo_speed_d}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_img_logo_speed_d}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${text_postcode_or_storecode}' == 'รหัสไปรษณีย์ปลายทาง'    Wait Until Element IS Visible    ${b2c_img_logo_home}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${text_postcode_or_storecode}' == 'รหัสร้าน'    Wait Until Element IS Visible    ${b2c_img_logo_store}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${text_postcode_or_storecode}' == '${Booking.label['text_postcode']}'    Wait Until Element IS Visible    ${b2c_img_logo_home}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${text_postcode_or_storecode}' == '${Booking.label['text_store_code']}'    Wait Until Element IS Visible    ${b2c_img_logo_store}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_img_qr_code}=    Replace String    ${b2c_img_qr_code}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_img_qr_code}    timeout=${DEFAULT_TIMEOUT}
     ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
     ${parcel_text_size}=    Set Variable    ${EMPTY}
-    IF    '${parcel_box}' == 'กล่อง'
+    IF    '${parcel_box}' == '${Booking['text_box']}'
         Run Keyword If    '${parcel_size}' == 'XS'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XS']}
         Run Keyword If    '${parcel_size}' == 'S'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_S']}
         Run Keyword If    '${parcel_size}' == 'M'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_M']}
@@ -442,14 +442,14 @@ Verify Parcel Label
         Run Keyword If    '${parcel_size}' == 'A1'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A1']}
         Run Keyword If    '${parcel_size}' == 'A2'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A2']}
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} หมายเหตุ : ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_remark']} ${parcel_detail_remark} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ELSE
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} หมายเหตุ : ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_remark']} ${parcel_detail_remark} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     END
 
 Click Print Label On Popup

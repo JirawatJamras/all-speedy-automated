@@ -21,6 +21,8 @@ Booking:
   text_menu_status_tracking: ติดตามการจัดส่งพัสดุ
   text_btn_search: ค้นหา
   text_title_my_parcel: พัสดุของฉัน สาขาหลัก
+  text_general_parcel: พัสดุทั่วไป
+  text_chilled_parcel: พัสดุควบคุมอุณหภูมิ
   text_btn_add: เพิ่ม
   text_btn_next: ถัดไป
   text_btn_edit: แก้ไข
@@ -85,6 +87,15 @@ Booking:
   text_delete_data_complete: ลบข้อมูลสำเร็จ
   text_choose_from_favorite_list: เลือกจากรายการโปรด
   text_add_to_favorite: เพิ่มเป็นรายการโปรด
+  text_icon_heart_not_favorite: รูปหัวใจไม่มีสี
+  text_icon_heart_favorite: รูปหัวใจสีแดง
+  text_baht: 'บาท'
+  text_buy_insure: 'ซื้อประกัน :'
+  text_select_cod: 'COD :'
+  text_short_cod: 'COD'
+  text_total_price: 'ยอดสุทธิ'
+  text_box: 'กล่อง'
+  text_remark: 'หมายเหตุ :'
   img_is_favorite:
     img_sender_heart:  รูปหัวใจสีแดง
     img_receiver_heart:  รูปหัวใจสีแดง
@@ -107,6 +118,10 @@ Booking:
   text_parcel_status_call_car: กำลังเรียกรถเข้ารับ  
   text_waiting_confirm_parcel_pickup: รอยืนยันรอบรถเข้ารับพัสดุ
   text_parcel_type_label: 'ประเภทพัสดุ :'
+  text_price: 'ราคา :'
+  text_discount: 'รวมส่วนลด'
+  text_insure: 'ค่าธรรมเนียมประกัน'
+  text_cod: 'ค่าธรรมเนียม COD'
   text_favorite_list: รายการโปรด
   tab_shipping_origin:
     favorite:  เลือกรายการโปรด

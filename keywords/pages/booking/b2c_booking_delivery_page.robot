@@ -40,9 +40,9 @@ Verify Select Parcel Type
 
 Select Parcel Type
     [Arguments]    ${parcel_type}
-    IF         '${parcel_type}' == 'พัสดุทั่วไป'
+    IF         '${parcel_type}' == '${Booking['text_general_parcel']}'
         Click General Parcel
-    ELSE IF    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'
+    ELSE IF    '${parcel_type}' == '${Booking['text_chilled_parcel']}'
         Click Temperature Controlled Parcel
     END
 
