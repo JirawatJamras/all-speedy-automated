@@ -177,4 +177,4 @@ run-tests:
     paths:
       - report
       - results
-    expire_in: 1 day
+    expire_in: 3 day
