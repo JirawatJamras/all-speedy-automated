@@ -41,7 +41,7 @@ DC_Operation_S013
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S013    18.Verify Homepage Title
 
     Log    Check Used Tracking
-    common.Check Used Tracking    ${ROW_NUMBER}    ${tracking_number}    ${DC_Operation_S013.scan_in_data_parcel_detail['parcel_status']}
+    common.Check API Used Tracking    ${ROW_NUMBER}    ${tracking_number}
 
     Log    Step No.19 เข้าเมนูหน้าหลัก และ เลือก Dropdown ดูข้อมูลคลัง DC BB
     dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['homepage']}

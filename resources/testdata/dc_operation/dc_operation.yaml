@@ -1215,7 +1215,6 @@ DC_Operation_S013:
     transport: Flash
     parcel_owner: Speedy
   scan_in_data_parcel_detail:
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     pouch_number: '-'
   scan_out_waiting_scan:
     pouch_number: '-'
@@ -1266,7 +1265,6 @@ DC_Operation_S014:
     transport: Flash
     parcel_owner: Speedy  
   scan_in_data_parcel_detail:
-    parcel_status: รอปริ้นใบลาเบลติดหน้ากล่อง
     pouch_number: '-'
   scan_out_waiting_scan:
     pouch_number: '-'

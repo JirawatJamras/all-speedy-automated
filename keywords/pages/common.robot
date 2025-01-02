@@ -212,27 +212,31 @@ Delete ID Number
     delete_document    ${QUERY_DB}
     disconnect
 
-Check Used Tracking
-    [Arguments]    ${ROW_NUMBER}    ${tracking_number}    ${parcel_status}
-    ${available_tracking}=    Set Variable    False
+Check API Used Tracking
+    [Arguments]    ${ROW_NUMBER}    ${tracking_number}
     ${status}=    Set Variable    False
-
-    dps_home_page.Select DPS Menu    ${dc_operation.dps_menu['scan']}
-    dps_scan_page.Select Move Status Tab
-    dps_scan_page.Click Filter Button
     WHILE    '${status}' == 'False'
-        dps_scan_page.Input One Tracking Number [Move Status]    ${tracking_number}
-        dps_scan_page.Click Search Button [Move Status]
         Log   ${ROW_NUMBER}:${tracking_number}
         Log to Console  ${ROW_NUMBER}:${tracking_number}
-        ${status}    Verify Search Tracking Number Status Result    ${dc_operation.move_status['store_accept_parcel_status']}    ${tracking_number}
-        Exit For Loop If    '${status}' == 'True'
-        dps_scan_page.Click Clear Button [Move Status]
+        TRY
+                Create Session    dps_allspeedy_api    ${CPS_API_URL}
+                ${headers}    Create Dictionary      Accept=application/json, text/plain, */*
+                ${response}    Get On Session    dps_allspeedy_api    trackings/${tracking_number}  headers=${headers}
+                Log    ${response.text}
+                ${response_json}=  Convert String to JSON    ${response.text}
+                Log  ${response_json}
+                ${statusText} =    Set Variable   ${response_json["data"][0]["trackings"][0]["statusText"]}
+                ${status}=    Run Keyword And Return Status    Should Be Equal     ${statusText}   ${dc_operation.move_status['store_accept_parcel_status']}
+                Exit For Loop If    '${status}' == 'True'
+                Log   ${statusText}
+        EXCEPT
         ${ROW_NUMBER}=    Convert To Integer    ${ROW_NUMBER}
         ${ROW_NUMBER}    Evaluate    ${ROW_NUMBER} + 1
         ${tracking_info}    common.Read Row From Excel    ${path_excel_tracking_number}    ${SHEET_NAME}    ${ROW_NUMBER}
         common.Set Tracking Information from excel    ${tracking_info}
         Run Keyword If    '${tracking_number}' == 'None'    Fail    All tracking numbers have been used. Kindly upload a new file
+        Log to Console    HTTP 404 Error occurred for tracking number: ${tracking_number}
+        END
     END
 
 Get Current Date For Cut Off Time

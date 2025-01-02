@@ -986,10 +986,6 @@ Input Tracking Number [Move Status]
     common.Input When Ready    ${dps_txtbox_parcel_number_move_status}
     ...    ${tracking_number_b} ${tracking_number_c} ${tracking_number_d} ${tracking_number_e} ${tracking_number_f} ${tracking_number_g} ${tracking_number_h} ${tracking_number_i} ${tracking_number_j}
 ํ
-Input One Tracking Number [Move Status]
-    [Arguments]    ${tracking_number}
-    common.Input When Ready    ${dps_txtbox_parcel_number_move_status}    ${tracking_number}
-
 Verify Search Tracking Number Result
     [Arguments]    ${status}    ${tracking}    ${pouch}    ${courier}    ${owner}    ${size}     ${date}
     ${txt_list_data_move_status}=    Replace String    ${dps_txt_list_data_move_status}    {status}    ${status}
@@ -1000,13 +996,6 @@ Verify Search Tracking Number Result
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {size}    ${size}
     ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {date}    ${date}
     Wait Until Element Is Visible    ${txt_list_data_move_status}
-
-Verify Search Tracking Number Status Result
-    [Arguments]    ${status}    ${tracking}
-    ${txt_list_data_move_status}=    Replace String    ${dps_txt_tracking_data_move_status}    {status}    ${status}
-    ${txt_list_data_move_status}=    Replace String    ${txt_list_data_move_status}    {tracking}    ${tracking}
-    ${status}=    Run Keyword And Return Status    Wait Until Element Is Visible    ${txt_list_data_move_status}
-    RETURN    ${status}
 
 Click All Checkbox [Move Status]
     common.Click When Ready    ${dps_btn_select_all_on_move_status_tab}
