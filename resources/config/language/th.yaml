@@ -602,6 +602,10 @@ dc_operation:
   parcel_owner:
     speedy: Speedy
     partnership: Partnership
+  warehouse_symbol:
+    sandglass: รูปนาฬิกาทราย
+    star: รูปดาว
+  pencil_icon: ไอคอนรูปดินสอ
   
 
 rm:
