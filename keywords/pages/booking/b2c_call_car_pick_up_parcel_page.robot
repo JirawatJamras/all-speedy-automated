@@ -342,8 +342,8 @@ Verify Added New Parcel Pickup
     ${label_location}=  Replace String   ${value_price}    {location}    ${text_pickup_location}
     ${value_location}=  Replace String   ${label_location}    {location_value}    ${company_address}
     Wait Until Element Is Visible    ${b2c_card_parcel_pickup_list}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${parcel_type}' == 'พัสดุทั่วไป (Dry)'    Element Should Be Visible   ${img_dry_parcel}
-    Run Keyword If    '${parcel_type}' == 'พัสดุควบคุมอุณหภูมิ'    Element Should Be Visible   ${img_dry_parcel}
+    Run Keyword If    '${parcel_type}' == '${call_car_pick_up.parcel_type['dry']}'    Element Should Be Visible   ${img_dry_parcel}
+    Run Keyword If    '${parcel_type}' == '${call_car_pick_up.parcel_type['chilled']}'    Element Should Be Visible   ${img_dry_parcel}
     ${actual_card}    Set Variable    ${value_pickup_date}${value_parcel}${value_location}
     Log    ${actual_card}
     ${status}=    Set Variable    False

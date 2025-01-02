@@ -337,6 +337,6 @@ Verify Reprint Pouch Label Popup
     Should Be Equal    ${actual_txt_destination_warehouse_in_pouch_label}    ${destination_warehouse}
     Should Be Equal    ${actual_txt_route_in_pouch_label}    ${route}
 
-    Run Keyword If    "$destination_warehouse_symbol" == 'รูปนาฬิกาทราย'    Run Keywords
+    Run Keyword If    "$destination_warehouse_symbol" == '${dc_operation.warehouse_symbol['sandglass']}'    Run Keywords
     ...    ${dps_img_rdclp_warehouse_symbol_in_pouch_label}=    Replace String    ${dps_img_rdclp_warehouse_symbol_in_pouch_label_history_parcel_page}    {label_type}    ${label_type}
     ...    AND    Should Be Visible    ${dps_img_rdclp_warehouse_symbol_in_pouch_label}

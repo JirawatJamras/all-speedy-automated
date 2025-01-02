@@ -530,7 +530,7 @@ DC_Operation_S004
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    14.Verify Timeline
     Close Window
@@ -805,7 +805,7 @@ DC_Operation_S004
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect270
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    32.Verify Timeline After Scan Out
     Close Window
@@ -1054,7 +1054,7 @@ DC_Operation_S004
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect270
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S004['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S004['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S004    46.Verify Timeline After Scan In At Destination Warehouse
     Close Window
@@ -1846,7 +1846,7 @@ DC_Operation_S006
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    14.Verify Timeline
     Close Window
@@ -2114,7 +2114,7 @@ DC_Operation_S006
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    31.Verify Timeline After Scan Out
     Close Window
@@ -2363,7 +2363,7 @@ DC_Operation_S006
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230,Defect269
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S006['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S006['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S006    45.Verify Timeline After Scan In At Destination Warehouse
     Close Window
@@ -3153,7 +3153,7 @@ DC_Operation_S008
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    14.Verify Timeline
     Close Window
@@ -3419,7 +3419,7 @@ DC_Operation_S008
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230,Defect270
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    32.Verify Timeline After Scan Out
     Close Window
@@ -3538,7 +3538,7 @@ DC_Operation_S008
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230,Defect239,Defect270
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    41.Verify Timeline After Scan Out
     Close Window
@@ -3637,7 +3637,7 @@ DC_Operation_S008
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230,Defect270
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    10
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    49.Verify Timeline After Scan Out
     Close Window
@@ -3861,7 +3861,7 @@ DC_Operation_S008
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect230,Defect239,Defect270
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S008['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S008['timeline_in_history_parcel']}    12
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S008    61.Verify Timeline After Scan Out
     Close Window
@@ -4800,7 +4800,7 @@ DC_Operation_S010
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    6
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    14.Verify Timeline
     Close Window
@@ -5068,7 +5068,7 @@ DC_Operation_S010
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    31.Verify Timeline After Scan Out
     Close Window
@@ -5183,7 +5183,7 @@ DC_Operation_S010
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    9
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    40.Verify Timeline After Scan In At Destination Warehouse
     Close Window
@@ -5282,7 +5282,7 @@ DC_Operation_S010
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    7
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    48.Verify Timeline After Scan Out
     Close Window
@@ -5490,7 +5490,7 @@ DC_Operation_S010
     Switch Window    NEW
     # Expected
     Log Defect No:  Defect201,Defect239
-    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    สเเกนเข้า POUCH    ${pouch_number}
+    # dps_history_parcel_page.Set Pouch Number In Timeline List    ${DC_Operation_S010['timeline_in_history_parcel']}    ${dc_operation['text_scan_in_pouch']}    ${pouch_number}
     # dps_history_parcel_page.Verify Timeline  ${DC_Operation_S010['timeline_in_history_parcel']}    12
     common.Verify Capture Screenshot    dc_operation    DC_Operation_S010    59.Verify Timeline After Scan In At Destination Warehouse
     Close Window

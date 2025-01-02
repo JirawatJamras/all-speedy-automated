@@ -17,7 +17,7 @@ Verify Display Sender Card
     Wait Until Element Is Visible    ${card_sender_favorite}    timeout=${DEFAULT_TIMEOUT}
     ${actual_sender_favorite}=    Get Text    ${card_sender_favorite}
     ${actual_sender_favorite}=    Replace String    ${actual_sender_favorite}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ชื่อ : ${sender_name} เบอร์โทรศัพท์ : ${sender_phone} ที่อยู่ : ${sender_address} ${sender_postcode_full}
+    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ${favorite['text_name']} : ${sender_name} ${favorite['text_phone']} : ${sender_phone} ${favorite['text_address']} : ${sender_address} ${sender_postcode_full}
 
 Verify Display Sender Card After Edit Data
     [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
@@ -33,7 +33,7 @@ Verify Display Sender Card After Edit Data
     Wait Until Element Is Visible    ${card_sender_favorite}    timeout=${DEFAULT_TIMEOUT}
     ${actual_sender_favorite}=    Get Text    ${card_sender_favorite}
     ${actual_sender_favorite}=    Replace String    ${actual_sender_favorite}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ชื่อ : ${sender_name} เบอร์โทรศัพท์ : ${sender_phone} ที่อยู่ : ${sender_address} ${sender_postcode_full}
+    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ${favorite['text_name']} : ${sender_name} ${favorite['text_phone']} : ${sender_phone} ${favorite['text_address']} : ${sender_address} ${sender_postcode_full}
 
 Verify Display Sender Card After Add New
     [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
@@ -49,7 +49,7 @@ Verify Display Sender Card After Add New
     Wait Until Element Is Visible    ${card_sender_favorite}    timeout=${DEFAULT_TIMEOUT}
     ${actual_sender_favorite}=    Get Text    ${card_sender_favorite}
     ${actual_sender_favorite}=    Replace String    ${actual_sender_favorite}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ชื่อ : ${sender_name} เบอร์โทรศัพท์ : ${sender_phone} ที่อยู่ : ${sender_address} ${sender_postcode_full}
+    Should Be Equal As Strings    ${actual_sender_favorite}    ${sender_favorite_name} ${favorite['text_name']} : ${sender_name} ${favorite['text_phone']} : ${sender_phone} ${favorite['text_address']} : ${sender_address} ${sender_postcode_full}
 
 Click Sender Card
    [Arguments]    ${sender_favorite_name}    ${sender_name}    ${sender_phone}    ${sender_address}    ${sender_postcode_full}
@@ -152,7 +152,7 @@ Input Sender Postcode
 Select Sender Postcode List
     [Arguments]    ${postcode}
     ${cbo_sender_address}=    Replace String    ${cbo_sender_address_favorite_page}    {value}    ${postcode}
-    common.Click When Ready    ${cbo_sender_address}
+    common.Click Xpath By JavaScript    ${cbo_sender_address}
 
 Click Save Button
     ${btn_save_data}=    Replace String    ${btn_save_data_favorite_page}    {value}    ${favorite['button_save']}
@@ -182,7 +182,7 @@ Verify Display Receiver Card When Select Home
     Wait Until Page Contains Element    ${card_receiver_send_home}    timeout=${DEFAULT_TIMEOUT}
     ${actual_receiver_favorite}=    Get Text    ${card_receiver_send_home}
     ${actual_receiver_favorite}=    Replace String    ${actual_receiver_favorite}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_receiver_favorite}    ${receiver_favorite_name} ชื่อ : ${receiver_name} เบอร์โทรศัพท์ : ${receiver_phone} ที่อยู่ : ${receiver_address} ${receiver_postcode_full}
+    Should Be Equal As Strings    ${actual_receiver_favorite}    ${receiver_favorite_name} ${favorite['text_name']} : ${receiver_name} ${favorite['text_phone']} : ${receiver_phone} ${favorite['text_address']} : ${receiver_address} ${receiver_postcode_full}
 
 Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
     [Arguments]    ${receiver_favorite_name}    ${receiver_name}    ${receiver_phone}    ${receiver_address}
@@ -198,7 +198,7 @@ Verify Display Receiver Card After Edit Data When Select Send To 7-ELEVEN Store
     Wait Until Page Contains Element    ${card_receiver_send_store}    timeout=${DEFAULT_TIMEOUT}
     ${actual_receiver_favorite}=    Get Text    ${card_receiver_send_store}
     ${actual_receiver_favorite}=    Replace String    ${actual_receiver_favorite}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_receiver_favorite}    ${receiver_favorite_name} ชื่อ : ${receiver_name} เบอร์โทรศัพท์ : ${receiver_phone} ที่อยู่ : ${receiver_address}
+    Should Be Equal As Strings    ${actual_receiver_favorite}    ${receiver_favorite_name} ${favorite['text_name']} : ${receiver_name} ${favorite['text_phone']} : ${receiver_phone} ${favorite['text_address']} : ${receiver_address}
 
 Verify Display Receiver Card After Add New When Select Send To Home
     [Arguments]    ${receiver_favorite_name}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
@@ -214,7 +214,7 @@ Verify Display Receiver Card After Add New When Select Send To Home
     Wait Until Page Contains Element    ${card_receiver_send_home}    timeout=${DEFAULT_TIMEOUT}
     ${actual_receiver_favorite}=    Get Text    ${card_receiver_send_home}
     ${actual_receiver_favorite}=    Replace String    ${actual_receiver_favorite}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_receiver_favorite}    ${receiver_favorite_name} ชื่อ : ${receiver_name} เบอร์โทรศัพท์ : ${receiver_phone} ที่อยู่ : ${receiver_address} ${receiver_postcode_full}
+    Should Be Equal As Strings    ${actual_receiver_favorite}    ${receiver_favorite_name} ${favorite['text_name']} : ${receiver_name} ${favorite['text_phone']} : ${receiver_phone} ${favorite['text_address']} : ${receiver_address} ${receiver_postcode_full}
 
 Click Receiver Card
     [Arguments]    ${receiver_favorite_name}    ${receiver_name}    ${receiver_phone}    ${receiver_address}    ${receiver_postcode_full}
@@ -244,7 +244,7 @@ Verify Label Receiver
     Should Be Equal    ${actual_text_receiver_address}    ${receiver_address}
     Should Be Equal    ${actual_text_receiver_postcode}    ${receiver_full_postcode}
 
-Verify Data Recevier In Read-Only Mode
+Verify Data Receiver In Read-Only Mode
     [Arguments]    ${receiver_favorite_name}   ${receiver_name}    ${receiver_phone}    
     ...            ${receiver_location_pickup}    ${receiver_address}    ${receiver_full_postcode}
     Wait Until Element Is Visible    ${txt_receiver_data_in_popup_favorite_page}    timeout=${DEFAULT_TIMEOUT}
@@ -260,8 +260,8 @@ Verify Data Recevier In Read-Only Mode
     Element Should Be Disabled    ${txtbox_receiver_phone_favorite_page}
     Should Be Equal    ${actual_value_receiver_name}    ${receiver_name}
     Element Should Be Disabled    ${txtbox_receiver_name_favorite_page}
-    Run Keyword If    '${receiver_location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
-    Run Keyword If    '${receiver_location_pickup}' == 'ส่งร้าน 7-11'    Element Should Be Visible    ${tab_selected_send_store_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == '${Booking['text_send_home']}'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == '${Booking['text_send_store']}'    Element Should Be Visible    ${tab_selected_send_store_favorite_page}
     Should Be Equal    ${actual_value_receiver_address}    ${receiver_address}
     Element Should Be Disabled    ${txtbox_receiver_address_favorite_page}
     Should Be Equal    ${actual_value_receiver_full_postcode}    ${receiver_full_postcode}
@@ -281,8 +281,8 @@ Verify Data Receiver
     Element Should Not Contain    ${txtbox_receiver_phone_favorite_page}    disabled
     Should Be Equal    ${actual_value_receiver_name}    ${receiver_name}
     Element Should Not Contain    ${txtbox_receiver_name_favorite_page}    disabled
-    Run Keyword If    '${receiver_location_pickup}' == 'ส่งที่บ้าน'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
-    Run Keyword If    '${receiver_location_pickup}' == 'ส่งร้าน 7-11'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == '${Booking['text_send_home']}'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
+    Run Keyword If    '${receiver_location_pickup}' == '${Booking['text_send_store']}'    Element Should Be Visible    ${tab_selected_send_home_favorite_page}
     Should Be Equal    ${actual_value_receiver_address}    ${receiver_address}
     Element Should Not Contain    ${txtbox_receiver_address_favorite_page}    disabled
     Should Be Equal    ${actual_value_receiver_full_postcode}    ${receiver_full_postcode}
@@ -290,9 +290,9 @@ Verify Data Receiver
 
 Select Pickup Location
     [Arguments]    ${value}
-    Run Keyword If    '${value}' == 'ส่งที่บ้าน'    Run Keywords    Scroll Element Into View    ${tab_send_home_favorite_page}
+    Run Keyword If    '${value}' == '${Booking['text_send_home']}'    Run Keywords    Scroll Element Into View    ${tab_send_home_favorite_page}
     ...    AND    common.Click When Ready    ${tab_send_home_favorite_page}
-    Run Keyword If    '${value}' == 'ส่งร้าน 7-11'    Run Keywords    Scroll Element Into View    ${tab_send_store_favorite_page}
+    Run Keyword If    '${value}' == '${Booking['text_send_store']}'    Run Keywords    Scroll Element Into View    ${tab_send_store_favorite_page}
     ...    AND    common.Click When Ready    ${tab_send_store_favorite_page}
 
 Input And Select Store Code Receiver
@@ -421,4 +421,4 @@ Verify Display Shipping Origin Area Card
     Wait Until Element Is Visible    ${card_shipping_origin}    timeout=${DEFAULT_TIMEOUT}
     ${actual_shipping_origin_favorite}=    Get Text    ${card_shipping_origin}
     ${actual_shipping_origin_favorite}=    Replace String    ${actual_shipping_origin_favorite}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_shipping_origin_favorite}    ${shipping_origin_favorite_name} ที่อยู่ : ${shipping_origin_address}
+    Should Be Equal As Strings    ${actual_shipping_origin_favorite}    ${shipping_origin_favorite_name} ${favorite['text_address']} : ${shipping_origin_address}

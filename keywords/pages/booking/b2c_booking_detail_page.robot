@@ -23,23 +23,23 @@ Verify Booking Detail Page After Draft
     Wait Until Element Is Visible    ${b2c_txt_list_of_parcels_status}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Run Keyword If    '${parcel_size}' == '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
-    Run Keyword If    '${parcel_size}' != '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ประเภทพัสดุ : ${parcel_size} ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Run Keyword If    '${parcel_size}' == '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${Booking['text_parcel_type_label']} ${Booking['text_price']} ${price_value}${Booking['text_baht']} ${Booking['text_buy_insure']} ${buy_insurance} ${Booking['text_baht']} ${Booking['text_select_cod']} ${cod_value} ${Booking['text_baht']} ${Booking['text_print_parcel_label']} -
+    Run Keyword If    '${parcel_size}' != '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${Booking['text_parcel_type_label']} ${parcel_size} ${Booking['text_price']} ${price_value}${Booking['text_baht']} ${Booking['text_buy_insure']} ${buy_insurance} ${Booking['text_baht']} ${Booking['text_select_cod']} ${cod_value} ${Booking['text_baht']} ${Booking['text_print_parcel_label']} -
     ${actual_text_booking_list}=    Get Text    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels_status} =    Get Text    ${b2c_txt_list_of_parcels_status}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     #Sender
     Should Be Equal    ${actual_text_booking_list}   ${booking_list}
     Should Be Equal    ${actual_text_list_of_parcels_status}    ${status}
-    IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_sender}' == '${Booking['text_icon_heart_not_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
-    ELSE IF    '${img_heart_sender}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_sender}' == '${Booking['text_icon_heart_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_red_heart_front_sender}
     END
     #Receiver
-    IF         '${img_heart_receiver}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_receiver}' == '${Booking['text_icon_heart_not_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_white_heart_front_receiver}  
-    ELSE IF    '${img_heart_receiver}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_receiver}' == '${Booking['text_icon_heart_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
@@ -60,23 +60,23 @@ Verify Booking Detail Page After Draft When Select 7-ELEVEN Store
     Wait Until Page Contains Element    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels}=    Get Text    ${b2c_crd_list_of_parcels}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
-    Run Keyword If    '${parcel_size}' == '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} ประเภทพัสดุ : ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
-    Run Keyword If    '${parcel_size}' != '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} ประเภทพัสดุ : ${parcel_size} ราคา : ${price_value}บาท ซื้อประกัน : ${buy_insurance} บาท COD : ${cod_value} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Run Keyword If    '${parcel_size}' == '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${store_address} ${Booking['text_parcel_type_label']} ${Booking['text_price']} ${price_value}${Booking['text_baht']} ${Booking['text_buy_insure']} ${buy_insurance} ${Booking['text_baht']} ${Booking['text_select_cod']} ${cod_value} ${Booking['text_baht']} ${Booking['text_print_parcel_label']} -
+    Run Keyword If    '${parcel_size}' != '${EMPTY}'    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${store_address} ${Booking['text_parcel_type_label']} ${parcel_size} ${Booking['text_price']} ${price_value}${Booking['text_baht']} ${Booking['text_buy_insure']} ${buy_insurance} ${Booking['text_baht']} ${Booking['text_select_cod']} ${cod_value} ${Booking['text_baht']} ${Booking['text_print_parcel_label']} -
     ${actual_text_booking_list}=    Get Text    ${b2c_txt_booking_list}
     ${actual_text_list_of_parcels_status} =    Get Text    ${b2c_txt_list_of_parcels_status}
     b2c_booking_delivery_page.Verify Parcel ID Format And Value    ${booking_txt_parcel_id_booking_detail_page}    ${parcel_id}
     #Sender
     Should Be Equal    ${actual_text_booking_list}   ${booking_list}
     Should Be Equal    ${actual_text_list_of_parcels_status}    ${status}
-    IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_sender}' == '${Booking['text_icon_heart_not_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
-    ELSE IF    '${img_heart_sender}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_sender}' == '${Booking['text_icon_heart_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_red_heart_front_sender}
     END
     #Receiver
-    IF         '${img_heart_receiver}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_receiver}' == '${Booking['text_icon_heart_not_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_white_heart_front_receiver}  
-    ELSE IF    '${img_heart_receiver}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_receiver}' == '${Booking['text_icon_heart_favorite']}'
     Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
@@ -94,7 +94,7 @@ Verify Edit Booking List Popup
     ${b2c_txt_parcel_type}=    Replace String    ${b2c_txt_parcel_type}    {value}    ${Booking['text_parcel_type']}
     ${actual_text_parcel_type}    Get Text    ${b2c_txt_parcel_type}
     ${actual_text_parcel_type} =  Replace String    ${actual_text_parcel_type}    \n    ${SPACE}
-    Should Be Equal As Strings    ${actual_text_parcel_type}    ประเภทพัสดุ : ${parcel_type}
+    Should Be Equal As Strings    ${actual_text_parcel_type}    ${Booking['text_parcel_type_label']} ${parcel_type}
     ${b2c_txt_booking_name}=    Replace String    ${b2c_txt_booking_name}    {value}    ${Booking['text_booking_name']}
     ${actual_text_booking_name}    Get Value    ${b2c_txt_booking_name}
     ${b2c_txt_shipping_origin_aria}=    Replace String    ${b2c_txt_shipping_origin_aria}    {value}    ${Booking['text_shipping_origin_aria']}
@@ -289,6 +289,7 @@ Verify Booking Detail Page
     ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
     ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_txt_total_with__discount}=    Replace String    ${b2c_txt_total_with__discount}    {value}    ${Booking['text_discount']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
@@ -311,19 +312,19 @@ Verify Booking Detail Page
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_parcel_type_label']} ${parcel_type} ${Booking['text_price']} ${price}${Booking['text_baht']} ${Booking['text_buy_insure']} ${insure_value} ${Booking['text_baht']} ${Booking['text_select_cod']} ${cod} ${Booking['text_baht']} ${Booking['text_print_parcel_label']} -
     Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
     Should Be Equal    ${parcel_status}    ${actual_parcel_status}
     #Sender Heart
-    IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_sender}' == '${Booking['text_icon_heart_not_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
-    ELSE IF    '${img_heart_sender}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_sender}' == '${Booking['text_icon_heart_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_sender}
     END
     #Receiver Heart
-    IF         '${img_heart_receiver}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_receiver}' == '${Booking['text_icon_heart_not_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_receiver}  
-    ELSE IF    '${img_heart_receiver}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_receiver}' == '${Booking['text_icon_heart_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
@@ -332,12 +333,12 @@ Verify Booking Detail Page
     Log    Booking Summary
     Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
-    Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
-    ${actual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
+    Wait Until Element Is Visible    ${b2c_txt_total_with__discount}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${b2c_txt_total_with__discount}
+    ${actual_txt_price_detail}=   Get Text    ${b2c_txt_total_with__discount}
     ${actual_txt_price_detail} =  Replace String    ${actual_txt_price_detail}    \n    ${SPACE}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    Should Be Equal As Strings    ${actual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
+    Should Be Equal As Strings    ${actual_txt_price_detail}    ${Booking['text_discount']} ${discount_amount} ${discount_value} ${Booking['text_insure']} ${insurance_fee_amount} ${insurance_fee_value} ${Booking['text_cod']} ${cod_fee_amount} ${cod_fee_value} ${Booking['text_total_price']} ${total_price_amount} ${total_price_value}
     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
 
 Verify Booking Detail Page When Select 7-ELEVEN Store
@@ -360,6 +361,7 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     ${b2c_img_white_heart_front_sender}=    Replace String    ${b2c_img_white_heart_front_sender}    {value}    ${Booking['text_sender']}
     ${b2c_img_red_heart_front_receiver}=    Replace String    ${b2c_img_red_heart_front_receiver}    {value}    ${Booking['text_receiver']}
     ${b2c_img_white_heart_front_receiver}=    Replace String    ${b2c_img_white_heart_front_receiver}    {value}    ${Booking['text_receiver']}
+    ${b2c_txt_total_with__discount}=    Replace String    ${b2c_txt_total_with__discount}    {value}    ${Booking['text_discount']}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60s
     Wait Until Element Is Visible    ${b2c_txt_booking_list}    timeout=${DEFAULT_TIMEOUT}
     ${actual_text_title}=    Get text    ${b2c_txt_booking_list}
@@ -382,19 +384,19 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     ${b2c_txt_parcel_status_booking_detail_page}=    Replace String    ${b2c_txt_parcel_status_booking_detail_page}    {value}    ${parcel_status}
     ${actual_text_list_of_parcels} =  Replace String    ${actual_text_list_of_parcels}    \n    ${SPACE}
     Wait Until Element Is Enabled    ${b2c_crd_list_of_parcels}     timeout=60
-    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ผู้ส่ง : ${sender_name} (${sender_phone}) ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} ประเภทพัสดุ : ${parcel_type} ราคา : ${price}บาท ซื้อประกัน : ${insure_value} บาท COD : ${cod} บาท พิมพ์ใบจ่ายหน้าพัสดุ -
+    Should Be Equal As Strings    ${actual_text_list_of_parcels}    ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${store_address} ${Booking['text_parcel_type_label']} ${parcel_type} ${Booking['text_price']} ${price}${Booking['text_baht']} ${Booking['text_buy_insure']} ${insure_value} ${Booking['text_baht']} ${Booking['text_select_cod']} ${cod} ${Booking['text_baht']} ${Booking['text_print_parcel_label']} -
     Should Be Equal    ${title_parcel_list}    ${actual_title_parcel_list}
     Should Be Equal    ${parcel_status}    ${actual_parcel_status}
     #Sender Heart
-    IF         '${img_heart_sender}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_sender}' == '${Booking['text_icon_heart_not_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_sender}     
-    ELSE IF    '${img_heart_sender}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_sender}' == '${Booking['text_icon_heart_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_sender}
     END
     #Receiver Heart
-    IF         '${img_heart_receiver}' == 'รูปหัวใจไม่มีสี'
+    IF         '${img_heart_receiver}' == '${Booking['text_icon_heart_not_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_white_heart_front_receiver}  
-    ELSE IF    '${img_heart_receiver}' == 'รูปหัวใจสีแดง'
+    ELSE IF    '${img_heart_receiver}' == '${Booking['text_icon_heart_favorite']}'
         Wait Until Page Contains Element    ${b2c_img_red_heart_front_receiver} 
     END
     Wait Until Element Is Enabled    ${b2c_ico_trash_red}
@@ -403,12 +405,12 @@ Verify Booking Detail Page When Select 7-ELEVEN Store
     Log    Booking Summary
     Wait Until Element Is Visible    ${b2c_txt_booking_summary_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
     ${actual_txt_title_booking_summary}=    Get Text    ${b2c_txt_booking_summary_booking_detail_page}
-    Wait Until Element Is Visible    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..    timeout=${DEFAULT_TIMEOUT}
-    Scroll Element Into View    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
-    ${actual_txt_price_detail}=   Get Text    //*[@class='hidden sm:inline']//span[text()='รวมส่วนลด']/../../..
+    Wait Until Element Is Visible    ${b2c_txt_total_with__discount}    timeout=${DEFAULT_TIMEOUT}
+    Scroll Element Into View    ${b2c_txt_total_with__discount}
+    ${actual_txt_price_detail}=   Get Text    ${b2c_txt_total_with__discount}
     ${actual_txt_price_detail} =  Replace String    ${actual_txt_price_detail}    \n    ${SPACE}
     Wait Until Element Is Visible    ${b2c_txt_shipping_origin_booking_detail_page}    timeout=${DEFAULT_TIMEOUT}
-    Should Be Equal As Strings    ${actual_txt_price_detail}    รวมส่วนลด ${discount_amount} ${discount_value} ค่าธรรมเนียมประกัน ${insurance_fee_amount} ${insurance_fee_value} ค่าธรรมเนียม COD ${cod_fee_amount} ${cod_fee_value} ยอดสุทธิ ${total_price_amount} ${total_price_value}
+    Should Be Equal As Strings    ${actual_txt_price_detail}    ${Booking['text_discount']} ${discount_amount} ${discount_value} ${Booking['text_insure']} ${insurance_fee_amount} ${insurance_fee_value} ${Booking['text_cod']} ${cod_fee_amount} ${cod_fee_value} ${Booking['text_total_price']} ${total_price_amount} ${total_price_value}
     Should Be Equal    ${booking_summary}    ${actual_txt_title_booking_summary}
 
 Click Print Parcel Label
@@ -433,14 +435,14 @@ Verify Parcel Label
     Should Be Equal As Strings    ${actual_list_paper_size}    ${size_a4} ${size_a5} ${size_8cm}
     ${b2c_img_logo_speed_d}=    Replace String    ${b2c_img_logo_speed_d}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_img_logo_speed_d}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${text_postcode_or_storecode}' == 'รหัสไปรษณีย์ปลายทาง'    Wait Until Element IS Visible    ${b2c_img_logo_home}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${text_postcode_or_storecode}' == 'รหัสร้าน'    Wait Until Element IS Visible    ${b2c_img_logo_store}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${text_postcode_or_storecode}' == '${Booking.label['text_postcode']}'    Wait Until Element IS Visible    ${b2c_img_logo_home}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${text_postcode_or_storecode}' == '${Booking.label['text_store_code']}'    Wait Until Element IS Visible    ${b2c_img_logo_store}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_img_qr_code}=    Replace String    ${b2c_img_qr_code}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_img_qr_code}    timeout=${DEFAULT_TIMEOUT}
     ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
     ${parcel_text_size}=    Set Variable    ${EMPTY}
-    IF    '${parcel_box}' == 'กล่อง'
+    IF    '${parcel_box}' == '${Booking['text_box']}'
         Run Keyword If    '${parcel_size}' == 'XS'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XS']}
         Run Keyword If    '${parcel_size}' == 'S'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_S']}
         Run Keyword If    '${parcel_size}' == 'M'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_M']}
@@ -453,14 +455,14 @@ Verify Parcel Label
         Run Keyword If    '${parcel_size}' == 'A1'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A1']}
         Run Keyword If    '${parcel_size}' == 'A2'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A2']}
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} หมายเหตุ : ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_remark']} ${parcel_detail_remark} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ELSE
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} หมายเหตุ : ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${receiver_address} ${receiver_postcode_full} ${Booking['text_remark']} ${parcel_detail_remark} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     END
 
 Verify Parcel Label When Select 7-ELEVEN Store
@@ -480,14 +482,14 @@ Verify Parcel Label When Select 7-ELEVEN Store
     Should Be Equal As Strings    ${actual_list_paper_size}    ${size_a4} ${size_a5} ${size_8cm}
     ${b2c_img_logo_speed_d}=    Replace String    ${b2c_img_logo_speed_d}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_img_logo_speed_d}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${text_postcode_or_storecode}' == 'รหัสไปรษณีย์ปลายทาง'    Wait Until Element IS Visible    ${b2c_img_logo_home}    timeout=${DEFAULT_TIMEOUT}
-    Run Keyword If    '${text_postcode_or_storecode}' == 'รหัสร้าน'    Wait Until Element IS Visible    ${b2c_img_logo_store}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${text_postcode_or_storecode}' == '${Booking.label['text_postcode']}'    Wait Until Element IS Visible    ${b2c_img_logo_home}    timeout=${DEFAULT_TIMEOUT}
+    Run Keyword If    '${text_postcode_or_storecode}' == '${Booking.label['text_store_code']}'    Wait Until Element IS Visible    ${b2c_img_logo_store}    timeout=${DEFAULT_TIMEOUT}
     ${b2c_img_qr_code}=    Replace String    ${b2c_img_qr_code}    {value}    ${Booking['text_print_parcel_label']}
     Wait Until Element Is Visible    ${b2c_img_qr_code}    timeout=${DEFAULT_TIMEOUT}
     ${actual_list_parcel_label_detail}    Get Text    ${b2c_txt_parcel_label_detail}
     ${actual_list_parcel_label_detail} =  Replace String    ${actual_list_parcel_label_detail}    \n    ${SPACE}
     ${parcel_text_size}=    Set Variable    ${EMPTY}
-    IF    '${parcel_box}' == 'กล่อง'
+    IF    '${parcel_box}' == '${Booking['text_box']}'
         Run Keyword If    '${parcel_size}' == 'XS'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_XS']}
         Run Keyword If    '${parcel_size}' == 'S'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_S']}
         Run Keyword If    '${parcel_size}' == 'M'    Set Suite Variable    ${parcel_text_size}    ${Booking.dry_parcel['parcel_text_size_M']}
@@ -500,14 +502,14 @@ Verify Parcel Label When Select 7-ELEVEN Store
         Run Keyword If    '${parcel_size}' == 'A1'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A1']}
         Run Keyword If    '${parcel_size}' == 'A2'    Set Suite Variable    ${parcel_text_size}    ${Booking.chilled_parcel['parcel_text_size_A2']}
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${store_address} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} หมายเหตุ : ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${parcel_text_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${store_address} ${Booking['text_remark']} ${parcel_detail_remark} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ELSE
         Run Keyword If    '${parcel_detail_remark}' == '-'    Should Be Equal As Strings    ${actual_list_parcel_label_detail}  
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${store_address} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     ...    ELSE    Should Be Equal As Strings    ${actual_list_parcel_label_detail}
-    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ผู้ส่ง : ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ผู้รับ : ${receiver_name} (${receiver_phone}) ${store_address} หมายเหตุ : ${parcel_detail_remark} COD ${parcel_cod} ${parcel_insure} ${parcel_id}
+    ...    ${text_postcode_or_storecode} ${value_receiver_postcode_or_storecode} ${parcel_size} ${parcel_box} ${parcel_size} ${Booking['text_sender']} ${sender_name} (${sender_phone}) ${sender_address} ${sender_postcode_full} ${Booking['text_receiver']} ${receiver_name} (${receiver_phone}) ${store_address} ${Booking['text_remark']} ${parcel_detail_remark} ${Booking['text_short_cod']} ${parcel_cod} ${parcel_insure} ${parcel_id}
     END
     
 Click Print Label On Popup

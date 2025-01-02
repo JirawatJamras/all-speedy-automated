@@ -40,6 +40,7 @@ ${b2c_txt_parcel_list}    //div[@class='hidden sm:inline']//span[text()='{status
 ${b2c_txt_parcel_id}    //div[@class='hidden sm:inline']//strong[contains(text(),'{id}')]
 ${b2c_txt_get_sender_name}    //div[@class='hidden sm:inline']//strong[contains(text(),'{value}')]/../../..//span[text()]
 ${b2c_txt_selected_pickup_type}    //div[text()='{value}']/../../..//span[contains(@class,'ant-radio-checked')]
+${b2c_txt_total_with__discount}    //*[@class='hidden sm:inline']//span[text()='{value}']/../../..
 
 ${b2c_ico_trash_red}   //div[@id='__next']//div[contains(@class, 'ant-card')]//*[name()='svg' and contains(@data-icon,'trash')]//*[name()='path' and contains(@fill,'currentCol')]
 

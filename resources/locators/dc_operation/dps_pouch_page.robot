@@ -5,6 +5,8 @@ ${dps_btn_close_x_button_on_popup}    //div[@class='ant-modal-mask']/..//button[
 ${dps_btn_filter_pouch_page}    //span[text()='{value}']/..
 ${dps_btn_search_filter_pouch_page}    //div[text()='{value}']/..
 ${dps_btn_close_pouch_in_pouch_page}    //div[@class='ant-modal-content']//span[text()='{value}']/..
+${dps_btn_edit_pouch_in_pouch_page}    //td[text()='{pouch_number}']/..//td[7]//img/..
+${dps_btn_change_pouch_status_in_pouch_page}    (//td[text()='{destination_inventory}']/..//td[5]//button[@aria-checked='true'])[1]
 
 ${dps_txt_pouch_in_pouch_list}    //tr[td[1]='{pouch_number}' and td[2]='{inventory_crossdock}' and td[3]='{destination_inventory}' and td[5]//button[@aria-checked='{checked}'] and contains(td[6], '{update_date}')]
 ${dps_txt_title_pouch_pouch_page}    //strong[text()='{value}']
@@ -27,6 +29,7 @@ ${dps_txt_th_parcel_in_table_pouch_detail}    //tr[th='{txt_pouch_number}' and t
 ${dps_txt_destination_inventory_pouch_detail}    //td[text()='{destination_inventory}']/..//td[5]//button[@aria-checked='true']
 
 ${dps_cbo_destination_inventory_in_filter}    //input[@id='destDc']/../..
+${dps_cbo_destination_inventory_name_for_selection_in_filter}    //div[contains(normalize-space(@title), '{destination_inventory}')]
 
 ${dps_img_pencil_in_pouch_in_pouch_list}    //tr[td[1]='{pouch_number}' and td[2]='{inventory_crossdock}' and td[3]='{destination_inventory}'  and td[5]//button[@aria-checked='{checked}'] and contains(td[6], '{update_date}')]//td[7]//img[@src='/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fedit-3.9188d6d3.png&w=1080&q=75']
 ${dps_img_star_symbol_pouch_label}    //div[@class='mt-12']//img[contains(@alt,'DCSB')]
