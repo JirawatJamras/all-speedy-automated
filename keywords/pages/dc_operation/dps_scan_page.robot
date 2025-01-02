@@ -89,7 +89,8 @@ Select Warehouse List Button
 
 Select Tab In Scan Page
     [Arguments]    ${tab}
-    common.Click When Ready    //div[@role='tab' and text()='${tab}']
+    ${dps_btn_tab_in_scan_page}=    Replace String    ${dps_btn_tab_in_scan_page}    {tab}    ${tab}
+    common.Click When Ready    ${dps_btn_tab_in_scan_page}
 
 Select Scan In Tab
     Select Tab In Scan Page    ${dc_operation.tab_scan['scan_in']}
@@ -581,7 +582,7 @@ Verify Data Parcel Details In Scan Page [CP All Courier]
     ${dps_txt_value_receiving_date}=    Replace String    ${dps_txt_value_receiving_date}    {value}    ${dc_operation.scan_in_title_parcel_detail['receiving_date']}
     ${dps_txt_value_origin_warehouse}=    Replace String    ${dps_txt_value_origin_warehouse}    {value}    ${dc_operation.scan_in_title_parcel_detail['origin_warehouse']}
     ${dps_txt_value_send_parcel_to}=    Replace String    ${dps_txt_value_send_parcel_to}    {value}    ${dc_operation.scan_in_title_parcel_detail['send_parcel_to']}
-    ${dps_input_route_parcel_detail_scan_in_page}=    Replace String    ${dps_input_route_parcel_detail_scan_in_page}    {value}    ROUTE    #${dc_operation.scan_in_title_parcel_detail['route']}
+    ${dps_input_route_parcel_detail_scan_in_page}=    Replace String    ${dps_input_route_parcel_detail_scan_in_page}    {value}    ${dc_operation.scan_in_title_parcel_detail['route']}
     ${actual_value_parcel_id}=    Get Text    ${dps_txt_value_parcel_id}
     ${actual_value_customer_id}=    Get Text    ${dps_txt_value_customer_id}
     ${actual_value_parcel_size1}=    Get Value    ${dps_txt_value_parcel_size1}
@@ -659,11 +660,11 @@ Verify Data Label Parcel In Scan Page [CP All Courier]
     Should Be Equal    ${actual_txt_value_label_store}    ${store}
     Should Be Equal    ${actual_txt_value_label_wh}    ${wh}
 
-    IF         '${symbol}' == 'รูปดาว'
+    IF         '${symbol}' == '${dc_operation.warehouse_symbol['star']}'
         Wait Until Page Contains Element    ${dps_img_label_star_symbol_in_scan_page}     
-    ELSE IF    '${symbol}' == 'รูปวงกลม'
+    ELSE IF    '${symbol}' == '${dc_operation.warehouse_symbol['circle']}'
         Wait Until Page Contains Element    ${dps_img_label_circle_symbol_in_scan_page}
-    ELSE IF    '${symbol}' == 'รูปนาฬิกาทราย'
+    ELSE IF    '${symbol}' == '${dc_operation.warehouse_symbol['sandglass']}'
         Wait Until Page Contains Element    ${dps_img_label_hourglass_symbol_in_scan_page}
     END
 
@@ -675,17 +676,17 @@ Click Close Popup Print Scan In Success
 Select Scan Out Tab
     Select Tab In Scan Page    ${dc_operation.tab_scan['scan_out']}
 
-Verify Navigate To Scan Page And Stay At Scan Out Tab     # Scan Out
+Verify Navigate To Scan Page And Stay At Scan Out Tab 
     ${dps_txt_scan_header_ion_scan_page}=    Replace String    ${dps_txt_scan_header_ion_scan_page}    {value}    ${dc_operation.title['scan']}
     ${dps_btn_scan_in_tab_is_active_scan_page}=    Replace String    ${dps_btn_scan_in_tab_is_active_scan_page}    {value}    ${dc_operation.tab_scan['scan_out']}
     Wait Until Element Is Visible    ${dps_txt_scan_header_ion_scan_page}    timeout=10s
     Wait Until Element Is Visible    ${dps_btn_scan_in_tab_is_active_scan_page}    timeout=10s
 
-Click Search Button [Scan Out Page]    # Scan Out
+Click Search Button [Scan Out Page]
     ${dps_btn_search_scan_out_page}=    Replace String    ${dps_btn_search_scan_out_page}    {value}    ${dc_operation['text_search']}
     common.Click When Ready    ${dps_btn_search_scan_out_page}
 
-Click Confirm Scan Out Button    # Scan Out
+Click Confirm Scan Out Button
     ${dps_btn_confirm_scan_out_scan_out_page}=    Replace String    ${dps_btn_confirm_scan_out_scan_out_page}    {value}    ${dc_operation['text_confirm_scan_out']}
     common.Click When Ready    ${dps_btn_confirm_scan_out_scan_out_page}
 
@@ -696,7 +697,7 @@ Verify Popup Confirm Scan Out
     ${actual_txt}=    Get Text    ${dps_txt_popup_scan_out}
     Should Be Equal    ${actual_txt}    ${txt_expected}
 
-Click Confirm Button On Popup Asking To Scan Out    # Scan Out
+Click Confirm Button On Popup Asking To Scan Out
     ${button_confirm}=    Replace String    ${dps_btn_confirm_on_asking_confirm_scan_out_popup}    {value}    ${dc_operation['text_confirm']}
     common.Click When Ready    ${button_confirm}
 
@@ -707,21 +708,21 @@ Verify Popup Save Data Success
     ${actual_txt}=    Get Text    ${dps_txt_save_data_success}
     Should Be Equal    ${actual_txt}    ${expected_txt}
     
-Click Popup Save Data Success    # Scan Out
+Click Popup Save Data Success
     ${dps_txt_save_data_success}=    Replace String    ${dps_txt_save_data_success}    {value}    ${dc_operation['text_save_success']}
     common.Click When Ready    ${dps_txt_save_data_success}
 
-Click Waiting Delivery List Button    # Scan Out
+Click Waiting Delivery List Button
     ${dps_btn_waiting_delivery_list_scan_out_page}=    Replace String    ${dps_btn_waiting_delivery_list_scan_out_page}    {value}    ${dc_operation['text_waiting_delivery_list']}
     common.Scroll Into View By Xpath    ${dps_btn_waiting_delivery_list_scan_out_page}    true
     common.Click When Ready    ${dps_btn_waiting_delivery_list_scan_out_page}
 
-Input Pouch Number [Scan Out Page]    # Scan Out
+Input Pouch Number [Scan Out Page]
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}
 
-Input Tracking Number [Scan Out Page]    # Scan Out
+Input Tracking Number [Scan Out Page]
     [Arguments]    ${value}
     Wait Until Element Is Enabled    ${dps_txtbox_on_scan_out_page}
     common.Input When Ready    ${dps_txtbox_on_scan_out_page}    ${value}

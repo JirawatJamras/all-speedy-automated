@@ -334,6 +334,8 @@ dc_operation:
   text_waiting_delivery_list: รายการรอขนส่งเข้ารับ
   text_please_close_pouch_before_scan_out: 'ปิด Pouch ของพัสดุก่อน Scan out'
   text_unable_to_scan_trcking_becuase_parcel_is_in_pouch: 'ไม่สามารถ scan tracking ได้เนื่องจากพัสดุอยู่ใน pouch กรุณา scan pouch'
+  text_scan_in_pouch: สเเกนเข้า POUCH
+  text_blank: '-'
   icon_pencil: ไอคอนรูปดินสอ
   button_export: Export File
   button_approve: อนุมัติ
@@ -605,7 +607,7 @@ dc_operation:
   warehouse_symbol:
     sandglass: รูปนาฬิกาทราย
     star: รูปดาว
-  pencil_icon: ไอคอนรูปดินสอ
+    circle: รูปวงกลม
   
 
 rm:
