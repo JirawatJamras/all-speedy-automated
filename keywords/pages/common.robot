@@ -229,6 +229,7 @@ Check API Used Tracking
                 ${status}=    Run Keyword And Return Status    Should Be Equal     ${statusText}   ${dc_operation.move_status['store_accept_parcel_status']}
                 Exit For Loop If    '${status}' == 'True'
                 Log   ${statusText}
+                Should Be Equal    '${status}' == 'True'
         EXCEPT
         ${ROW_NUMBER}=    Convert To Integer    ${ROW_NUMBER}
         ${ROW_NUMBER}    Evaluate    ${ROW_NUMBER} + 1
